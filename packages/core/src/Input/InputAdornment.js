@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Success from "@hv/uikit-react-icons/dist/Success";
 import Close from "@hv/uikit-react-icons/dist/CloseXS";
 import Unsuccess from "@hv/uikit-react-icons/dist/Fail";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 
 import validationStates from "./validationStates";
 

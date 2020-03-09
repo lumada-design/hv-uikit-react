@@ -49,7 +49,7 @@ const styles = theme => ({
     margin: `0 3px`
   },
   disabled: {
-    ...theme.hv.typography.disabledText
+    ...theme.hv.typography.infoText
   },
   maxCharacter: {
     ...theme.hv.typography.infoText

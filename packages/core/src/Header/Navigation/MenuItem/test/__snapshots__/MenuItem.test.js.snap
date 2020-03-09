@@ -831,16 +831,15 @@ exports[`MenuItem withStyles should be able to render 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle-8",
                     "4xlTitle": "HvTypography-4xlTitle-7",
                     "5xlTitle": "HvTypography-5xlTitle-6",
-                    "baseFontFamily": "HvTypography-baseFontFamily-29",
+                    "baseFontFamily": "HvTypography-baseFontFamily-28",
                     "disabledButtonText": "HvTypography-disabledButtonText-20",
-                    "disabledText": "HvTypography-disabledText-27",
                     "highlightText": "HvTypography-highlightText-16",
                     "infoText": "HvTypography-infoText-25",
                     "inlineLink": "HvTypography-inlineLink-19",
                     "lTitle": "HvTypography-lTitle-11",
                     "labelText": "HvTypography-labelText-24",
                     "mTitle": "HvTypography-mTitle-12",
-                    "margin": "HvTypography-margin-30",
+                    "margin": "HvTypography-margin-29",
                     "normalText": "HvTypography-normalText-17",
                     "placeholderText": "HvTypography-placeholderText-21",
                     "sLink": "HvTypography-sLink-26",
@@ -848,7 +847,7 @@ exports[`MenuItem withStyles should be able to render 1`] = `
                     "sTitle": "HvTypography-sTitle-13",
                     "selectedNavText": "HvTypography-selectedNavText-22",
                     "selectedText": "HvTypography-selectedText-18",
-                    "vizText": "HvTypography-vizText-28",
+                    "vizText": "HvTypography-vizText-27",
                     "xlTitle": "HvTypography-xlTitle-10",
                     "xsTitle": "HvTypography-xsTitle-14",
                     "xxlTitle": "HvTypography-xxlTitle-9",
@@ -860,7 +859,7 @@ exports[`MenuItem withStyles should be able to render 1`] = `
                 variant="normalText"
               >
                 <p
-                  className="HvTypography-normalText-17 HvTypography-baseFontFamily-29 HvTypography-margin-30"
+                  className="HvTypography-normalText-17 HvTypography-baseFontFamily-28 HvTypography-margin-29"
                 >
                   someLabel
                 </p>

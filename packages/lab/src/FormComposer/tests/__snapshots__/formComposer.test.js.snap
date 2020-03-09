@@ -802,12 +802,12 @@ exports[`FormComposer withStyles should render correctly 1`] = `
       <HvFormComposer
         classes={
           Object {
-            "componentContainer": "HvFormComposer-componentContainer-35",
-            "footer": "HvFormComposer-footer-37",
-            "mainContainer": "HvFormComposer-mainContainer-33",
-            "navContainer": "HvFormComposer-navContainer-34",
-            "root": "HvFormComposer-root-32",
-            "title": "HvFormComposer-title-36",
+            "componentContainer": "HvFormComposer-componentContainer-34",
+            "footer": "HvFormComposer-footer-36",
+            "mainContainer": "HvFormComposer-mainContainer-32",
+            "navContainer": "HvFormComposer-navContainer-33",
+            "root": "HvFormComposer-root-31",
+            "title": "HvFormComposer-title-35",
           }
         }
         footerContent={Array []}
@@ -832,43 +832,42 @@ exports[`FormComposer withStyles should render correctly 1`] = `
         mainTitle=""
       >
         <div
-          className="HvFormComposer-root-32"
+          className="HvFormComposer-root-31"
         >
           <WithStyles(ForwardRef)
-            className="HvFormComposer-title-36"
+            className="HvFormComposer-title-35"
             component={null}
             paragraph={false}
             variant="xlTitle"
           >
             <ForwardRef
-              className="HvFormComposer-title-36"
+              className="HvFormComposer-title-35"
               classes={
                 Object {
-                  "3xlTitle": "HvTypography-3xlTitle-40",
-                  "4xlTitle": "HvTypography-4xlTitle-39",
-                  "5xlTitle": "HvTypography-5xlTitle-38",
-                  "baseFontFamily": "HvTypography-baseFontFamily-61",
-                  "disabledButtonText": "HvTypography-disabledButtonText-52",
-                  "disabledText": "HvTypography-disabledText-59",
-                  "highlightText": "HvTypography-highlightText-48",
-                  "infoText": "HvTypography-infoText-57",
-                  "inlineLink": "HvTypography-inlineLink-51",
-                  "lTitle": "HvTypography-lTitle-43",
-                  "labelText": "HvTypography-labelText-56",
-                  "mTitle": "HvTypography-mTitle-44",
-                  "margin": "HvTypography-margin-62",
-                  "normalText": "HvTypography-normalText-49",
-                  "placeholderText": "HvTypography-placeholderText-53",
-                  "sLink": "HvTypography-sLink-58",
-                  "sText": "HvTypography-sText-55",
-                  "sTitle": "HvTypography-sTitle-45",
-                  "selectedNavText": "HvTypography-selectedNavText-54",
-                  "selectedText": "HvTypography-selectedText-50",
-                  "vizText": "HvTypography-vizText-60",
-                  "xlTitle": "HvTypography-xlTitle-42",
-                  "xsTitle": "HvTypography-xsTitle-46",
-                  "xxlTitle": "HvTypography-xxlTitle-41",
-                  "xxsTitle": "HvTypography-xxsTitle-47",
+                  "3xlTitle": "HvTypography-3xlTitle-39",
+                  "4xlTitle": "HvTypography-4xlTitle-38",
+                  "5xlTitle": "HvTypography-5xlTitle-37",
+                  "baseFontFamily": "HvTypography-baseFontFamily-59",
+                  "disabledButtonText": "HvTypography-disabledButtonText-51",
+                  "highlightText": "HvTypography-highlightText-47",
+                  "infoText": "HvTypography-infoText-56",
+                  "inlineLink": "HvTypography-inlineLink-50",
+                  "lTitle": "HvTypography-lTitle-42",
+                  "labelText": "HvTypography-labelText-55",
+                  "mTitle": "HvTypography-mTitle-43",
+                  "margin": "HvTypography-margin-60",
+                  "normalText": "HvTypography-normalText-48",
+                  "placeholderText": "HvTypography-placeholderText-52",
+                  "sLink": "HvTypography-sLink-57",
+                  "sText": "HvTypography-sText-54",
+                  "sTitle": "HvTypography-sTitle-44",
+                  "selectedNavText": "HvTypography-selectedNavText-53",
+                  "selectedText": "HvTypography-selectedText-49",
+                  "vizText": "HvTypography-vizText-58",
+                  "xlTitle": "HvTypography-xlTitle-41",
+                  "xsTitle": "HvTypography-xsTitle-45",
+                  "xxlTitle": "HvTypography-xxlTitle-40",
+                  "xxsTitle": "HvTypography-xxsTitle-46",
                 }
               }
               component={null}
@@ -876,15 +875,15 @@ exports[`FormComposer withStyles should render correctly 1`] = `
               variant="xlTitle"
             >
               <h1
-                className="HvTypography-xlTitle-42 HvTypography-baseFontFamily-61 HvTypography-margin-62 HvFormComposer-title-36"
+                className="HvTypography-xlTitle-41 HvTypography-baseFontFamily-59 HvTypography-margin-60 HvFormComposer-title-35"
               />
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <div
-            className="HvFormComposer-mainContainer-33"
+            className="HvFormComposer-mainContainer-32"
           >
             <div
-              className="HvFormComposer-componentContainer-35"
+              className="HvFormComposer-componentContainer-34"
             >
               <div
                 key="Group1"
@@ -898,31 +897,30 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                   <ForwardRef
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-40",
-                        "4xlTitle": "HvTypography-4xlTitle-39",
-                        "5xlTitle": "HvTypography-5xlTitle-38",
-                        "baseFontFamily": "HvTypography-baseFontFamily-61",
-                        "disabledButtonText": "HvTypography-disabledButtonText-52",
-                        "disabledText": "HvTypography-disabledText-59",
-                        "highlightText": "HvTypography-highlightText-48",
-                        "infoText": "HvTypography-infoText-57",
-                        "inlineLink": "HvTypography-inlineLink-51",
-                        "lTitle": "HvTypography-lTitle-43",
-                        "labelText": "HvTypography-labelText-56",
-                        "mTitle": "HvTypography-mTitle-44",
-                        "margin": "HvTypography-margin-62",
-                        "normalText": "HvTypography-normalText-49",
-                        "placeholderText": "HvTypography-placeholderText-53",
-                        "sLink": "HvTypography-sLink-58",
-                        "sText": "HvTypography-sText-55",
-                        "sTitle": "HvTypography-sTitle-45",
-                        "selectedNavText": "HvTypography-selectedNavText-54",
-                        "selectedText": "HvTypography-selectedText-50",
-                        "vizText": "HvTypography-vizText-60",
-                        "xlTitle": "HvTypography-xlTitle-42",
-                        "xsTitle": "HvTypography-xsTitle-46",
-                        "xxlTitle": "HvTypography-xxlTitle-41",
-                        "xxsTitle": "HvTypography-xxsTitle-47",
+                        "3xlTitle": "HvTypography-3xlTitle-39",
+                        "4xlTitle": "HvTypography-4xlTitle-38",
+                        "5xlTitle": "HvTypography-5xlTitle-37",
+                        "baseFontFamily": "HvTypography-baseFontFamily-59",
+                        "disabledButtonText": "HvTypography-disabledButtonText-51",
+                        "highlightText": "HvTypography-highlightText-47",
+                        "infoText": "HvTypography-infoText-56",
+                        "inlineLink": "HvTypography-inlineLink-50",
+                        "lTitle": "HvTypography-lTitle-42",
+                        "labelText": "HvTypography-labelText-55",
+                        "mTitle": "HvTypography-mTitle-43",
+                        "margin": "HvTypography-margin-60",
+                        "normalText": "HvTypography-normalText-48",
+                        "placeholderText": "HvTypography-placeholderText-52",
+                        "sLink": "HvTypography-sLink-57",
+                        "sText": "HvTypography-sText-54",
+                        "sTitle": "HvTypography-sTitle-44",
+                        "selectedNavText": "HvTypography-selectedNavText-53",
+                        "selectedText": "HvTypography-selectedText-49",
+                        "vizText": "HvTypography-vizText-58",
+                        "xlTitle": "HvTypography-xlTitle-41",
+                        "xsTitle": "HvTypography-xsTitle-45",
+                        "xxlTitle": "HvTypography-xxlTitle-40",
+                        "xxsTitle": "HvTypography-xxsTitle-46",
                       }
                     }
                     component={null}
@@ -931,7 +929,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                     variant="mTitle"
                   >
                     <h3
-                      className="HvTypography-mTitle-44 HvTypography-baseFontFamily-61 HvTypography-margin-62"
+                      className="HvTypography-mTitle-43 HvTypography-baseFontFamily-59 HvTypography-margin-60"
                       id="Group1"
                     >
                       Group1

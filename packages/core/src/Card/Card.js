@@ -4,7 +4,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import { Card, withStyles } from "@material-ui/core";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
 import Focus from "../Focus";
 import Header from "./Header";
 import Content from "./Content";

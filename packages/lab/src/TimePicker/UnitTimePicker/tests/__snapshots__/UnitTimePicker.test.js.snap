@@ -785,13 +785,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
       <UnitTimePicker
         classes={
           Object {
-            "addIcon": "HvTimePickerUnitTimePicker-addIcon-104",
-            "inputContainer": "HvTimePickerUnitTimePicker-inputContainer-106",
-            "subtractIcon": "HvTimePickerUnitTimePicker-subtractIcon-105",
-            "unitTimeContainer": "HvTimePickerUnitTimePicker-unitTimeContainer-100",
-            "unitTimeInput": "HvTimePickerUnitTimePicker-unitTimeInput-101",
-            "unitTimeInputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-            "unitTimeInputRootInvalid": "HvTimePickerUnitTimePicker-unitTimeInputRootInvalid-103",
+            "addIcon": "HvTimePickerUnitTimePicker-addIcon-98",
+            "inputContainer": "HvTimePickerUnitTimePicker-inputContainer-100",
+            "subtractIcon": "HvTimePickerUnitTimePicker-subtractIcon-99",
+            "unitTimeContainer": "HvTimePickerUnitTimePicker-unitTimeContainer-94",
+            "unitTimeInput": "HvTimePickerUnitTimePicker-unitTimeInput-95",
+            "unitTimeInputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot-96",
+            "unitTimeInputRootInvalid": "HvTimePickerUnitTimePicker-unitTimeInputRootInvalid-97",
           }
         }
         onChangeUnitTimeValue={[MockFunction]}
@@ -799,27 +799,27 @@ exports[`UnitTimePicker should render correctly 1`] = `
         unitValue={30}
       >
         <div
-          className="HvTimePickerUnitTimePicker-unitTimeContainer-100"
+          className="HvTimePickerUnitTimePicker-unitTimeContainer-94"
         >
           <WithStyles(DropUpXS)
-            className="HvTimePickerUnitTimePicker-addIcon-104"
+            className="HvTimePickerUnitTimePicker-addIcon-98"
             onClick={[Function]}
           >
             <DropUpXS
-              className="HvTimePickerUnitTimePicker-addIcon-104"
+              className="HvTimePickerUnitTimePicker-addIcon-98"
               classes={
                 Object {
-                  "root": "HvIconDropUpXS-root-107",
-                  "rootL": "HvIconDropUpXS-rootL-111",
-                  "rootM": "HvIconDropUpXS-rootM-110",
-                  "rootS": "HvIconDropUpXS-rootS-109",
-                  "rootXs": "HvIconDropUpXS-rootXs-108",
+                  "root": "HvIconDropUpXS-root-101",
+                  "rootL": "HvIconDropUpXS-rootL-105",
+                  "rootM": "HvIconDropUpXS-rootM-104",
+                  "rootS": "HvIconDropUpXS-rootS-103",
+                  "rootXs": "HvIconDropUpXS-rootXs-102",
                 }
               }
               onClick={[Function]}
             >
               <div
-                className="HvTimePickerUnitTimePicker-addIcon-104 HvIconDropUpXS-root-107 HvIconDropUpXS-rootXs-108"
+                className="HvTimePickerUnitTimePicker-addIcon-98 HvIconDropUpXS-root-101 HvIconDropUpXS-rootXs-102"
                 onClick={[Function]}
               >
                 <svg
@@ -843,13 +843,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
             className=""
             classes={
               Object {
-                "input": "HvTimePickerUnitTimePicker-unitTimeInput-101",
-                "inputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                "root": "HvTimePickerUnitTimePicker-inputContainer-106",
+                "input": "HvTimePickerUnitTimePicker-unitTimeInput-95",
+                "inputRoot": "HvTimePickerUnitTimePicker-unitTimeInputRoot-96",
+                "root": "HvTimePickerUnitTimePicker-inputContainer-100",
               }
             }
             customFixedIcon={null}
-            disableClear={false}
+            disableClear={true}
             disabled={false}
             externalWarningTextOverride={null}
             infoIcon={false}
@@ -883,30 +883,30 @@ exports[`UnitTimePicker should render correctly 1`] = `
               className=""
               classes={
                 Object {
-                  "adornmentButton": "HvInput-adornmentButton-127",
-                  "adornmentsBox": "HvInput-adornmentsBox-126",
-                  "icon": "HvInput-icon-128",
-                  "iconClear": "HvInput-iconClear-129",
-                  "infoIconContainer": "HvInput-infoIconContainer-123",
-                  "infoText": "HvInput-infoText-124",
-                  "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                  "inputDisabled": "HvInput-inputDisabled-118",
-                  "inputRoot": "HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                  "inputRootDisabled": "HvInput-inputRootDisabled-114",
-                  "inputRootFocused": "HvInput-inputRootFocused-115",
-                  "inputRootInvalid": "HvInput-inputRootInvalid-116",
-                  "label": "HvInput-label-121",
-                  "labelContainer": "HvInput-labelContainer-120",
-                  "labelDisabled": "HvInput-labelDisabled-122",
-                  "multiLine": "HvInput-multiLine-119",
-                  "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
-                  "suggestionList": "HvInput-suggestionList-131",
-                  "suggestionsContainer": "HvInput-suggestionsContainer-130",
-                  "textWarning": "HvInput-textWarning-125",
+                  "adornmentButton": "HvInput-adornmentButton-121",
+                  "adornmentsBox": "HvInput-adornmentsBox-120",
+                  "icon": "HvInput-icon-122",
+                  "iconClear": "HvInput-iconClear-123",
+                  "infoIconContainer": "HvInput-infoIconContainer-117",
+                  "infoText": "HvInput-infoText-118",
+                  "input": "HvInput-input-111 HvTimePickerUnitTimePicker-unitTimeInput-95",
+                  "inputDisabled": "HvInput-inputDisabled-112",
+                  "inputRoot": "HvInput-inputRoot-107 HvTimePickerUnitTimePicker-unitTimeInputRoot-96",
+                  "inputRootDisabled": "HvInput-inputRootDisabled-108",
+                  "inputRootFocused": "HvInput-inputRootFocused-109",
+                  "inputRootInvalid": "HvInput-inputRootInvalid-110",
+                  "label": "HvInput-label-115",
+                  "labelContainer": "HvInput-labelContainer-114",
+                  "labelDisabled": "HvInput-labelDisabled-116",
+                  "multiLine": "HvInput-multiLine-113",
+                  "root": "HvInput-root-106 HvTimePickerUnitTimePicker-inputContainer-100",
+                  "suggestionList": "HvInput-suggestionList-125",
+                  "suggestionsContainer": "HvInput-suggestionsContainer-124",
+                  "textWarning": "HvInput-textWarning-119",
                 }
               }
               customFixedIcon={null}
-              disableClear={false}
+              disableClear={true}
               disabled={false}
               externalWarningTextOverride={null}
               infoIcon={false}
@@ -936,60 +936,26 @@ exports[`UnitTimePicker should render correctly 1`] = `
               value={30}
             >
               <div
-                className="HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106"
+                className="HvInput-root-106 HvTimePickerUnitTimePicker-inputContainer-100"
                 id="hv-input-2"
                 onBlur={[Function]}
               >
                 <div
-                  className="HvInput-labelContainer-120"
+                  className="HvInput-labelContainer-114"
                 />
                 <WithStyles(ForwardRef(Input))
                   autoFocus={false}
-                  className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
+                  className="HvInput-inputRoot-107 HvTimePickerUnitTimePicker-unitTimeInputRoot-96"
                   classes={
                     Object {
-                      "disabled": "HvInput-inputDisabled-118",
-                      "focused": "HvInput-inputRootFocused-115",
-                      "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                      "multiline": "HvInput-multiLine-119",
+                      "disabled": "HvInput-inputDisabled-112",
+                      "focused": "HvInput-inputRootFocused-109",
+                      "input": "HvInput-input-111 HvTimePickerUnitTimePicker-unitTimeInput-95",
+                      "multiline": "HvInput-multiLine-113",
                     }
                   }
                   disabled={false}
-                  endAdornment={
-                    <InputAdornment
-                      classes={
-                        Object {
-                          "adornmentButton": "HvInput-adornmentButton-127",
-                          "adornmentsBox": "HvInput-adornmentsBox-126",
-                          "icon": "HvInput-icon-128",
-                          "iconClear": "HvInput-iconClear-129",
-                          "infoIconContainer": "HvInput-infoIconContainer-123",
-                          "infoText": "HvInput-infoText-124",
-                          "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                          "inputDisabled": "HvInput-inputDisabled-118",
-                          "inputRoot": "HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                          "inputRootDisabled": "HvInput-inputRootDisabled-114",
-                          "inputRootFocused": "HvInput-inputRootFocused-115",
-                          "inputRootInvalid": "HvInput-inputRootInvalid-116",
-                          "label": "HvInput-label-121",
-                          "labelContainer": "HvInput-labelContainer-120",
-                          "labelDisabled": "HvInput-labelDisabled-122",
-                          "multiLine": "HvInput-multiLine-119",
-                          "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
-                          "suggestionList": "HvInput-suggestionList-131",
-                          "suggestionsContainer": "HvInput-suggestionsContainer-130",
-                          "textWarning": "HvInput-textWarning-125",
-                        }
-                      }
-                      clearButtonLabel="Clear the text"
-                      customFixedIcon={null}
-                      handleClear={[Function]}
-                      inputId="hv-input-2-input"
-                      showClear={true}
-                      showValidationIcon={false}
-                      validationState="empty"
-                    />
-                  }
+                  endAdornment={null}
                   id="hv-input-2-input"
                   inputProps={
                     Object {
@@ -1008,62 +974,28 @@ exports[`UnitTimePicker should render correctly 1`] = `
                 >
                   <ForwardRef(Input)
                     autoFocus={false}
-                    className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
+                    className="HvInput-inputRoot-107 HvTimePickerUnitTimePicker-unitTimeInputRoot-96"
                     classes={
                       Object {
                         "colorSecondary": "MuiInput-colorSecondary",
-                        "disabled": "Mui-disabled HvInput-inputDisabled-118",
+                        "disabled": "Mui-disabled HvInput-inputDisabled-112",
                         "error": "Mui-error",
-                        "focused": "Mui-focused HvInput-inputRootFocused-115",
+                        "focused": "Mui-focused HvInput-inputRootFocused-109",
                         "formControl": "MuiInput-formControl",
                         "fullWidth": "MuiInput-fullWidth",
-                        "input": "MuiInput-input HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
+                        "input": "MuiInput-input HvInput-input-111 HvTimePickerUnitTimePicker-unitTimeInput-95",
                         "inputMarginDense": "MuiInput-inputMarginDense",
                         "inputMultiline": "MuiInput-inputMultiline",
                         "inputTypeSearch": "MuiInput-inputTypeSearch",
                         "marginDense": "MuiInput-marginDense",
-                        "multiline": "MuiInput-multiline HvInput-multiLine-119",
+                        "multiline": "MuiInput-multiline HvInput-multiLine-113",
                         "root": "MuiInput-root",
                         "underline": "MuiInput-underline",
                       }
                     }
                     disableUnderline={true}
                     disabled={false}
-                    endAdornment={
-                      <InputAdornment
-                        classes={
-                          Object {
-                            "adornmentButton": "HvInput-adornmentButton-127",
-                            "adornmentsBox": "HvInput-adornmentsBox-126",
-                            "icon": "HvInput-icon-128",
-                            "iconClear": "HvInput-iconClear-129",
-                            "infoIconContainer": "HvInput-infoIconContainer-123",
-                            "infoText": "HvInput-infoText-124",
-                            "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                            "inputDisabled": "HvInput-inputDisabled-118",
-                            "inputRoot": "HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                            "inputRootDisabled": "HvInput-inputRootDisabled-114",
-                            "inputRootFocused": "HvInput-inputRootFocused-115",
-                            "inputRootInvalid": "HvInput-inputRootInvalid-116",
-                            "label": "HvInput-label-121",
-                            "labelContainer": "HvInput-labelContainer-120",
-                            "labelDisabled": "HvInput-labelDisabled-122",
-                            "multiLine": "HvInput-multiLine-119",
-                            "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
-                            "suggestionList": "HvInput-suggestionList-131",
-                            "suggestionsContainer": "HvInput-suggestionsContainer-130",
-                            "textWarning": "HvInput-textWarning-125",
-                          }
-                        }
-                        clearButtonLabel="Clear the text"
-                        customFixedIcon={null}
-                        handleClear={[Function]}
-                        inputId="hv-input-2-input"
-                        showClear={true}
-                        showValidationIcon={false}
-                        validationState="empty"
-                      />
-                    }
+                    endAdornment={null}
                     id="hv-input-2-input"
                     inputProps={
                       Object {
@@ -1082,61 +1014,27 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   >
                     <WithStyles(ForwardRef(InputBase))
                       autoFocus={false}
-                      className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
+                      className="HvInput-inputRoot-107 HvTimePickerUnitTimePicker-unitTimeInputRoot-96"
                       classes={
                         Object {
                           "colorSecondary": "MuiInput-colorSecondary",
-                          "disabled": "Mui-disabled HvInput-inputDisabled-118",
+                          "disabled": "Mui-disabled HvInput-inputDisabled-112",
                           "error": "Mui-error",
-                          "focused": "Mui-focused HvInput-inputRootFocused-115",
+                          "focused": "Mui-focused HvInput-inputRootFocused-109",
                           "formControl": "MuiInput-formControl",
                           "fullWidth": "MuiInput-fullWidth",
-                          "input": "MuiInput-input HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
+                          "input": "MuiInput-input HvInput-input-111 HvTimePickerUnitTimePicker-unitTimeInput-95",
                           "inputMarginDense": "MuiInput-inputMarginDense",
                           "inputMultiline": "MuiInput-inputMultiline",
                           "inputTypeSearch": "MuiInput-inputTypeSearch",
                           "marginDense": "MuiInput-marginDense",
-                          "multiline": "MuiInput-multiline HvInput-multiLine-119",
+                          "multiline": "MuiInput-multiline HvInput-multiLine-113",
                           "root": "MuiInput-root",
                           "underline": null,
                         }
                       }
                       disabled={false}
-                      endAdornment={
-                        <InputAdornment
-                          classes={
-                            Object {
-                              "adornmentButton": "HvInput-adornmentButton-127",
-                              "adornmentsBox": "HvInput-adornmentsBox-126",
-                              "icon": "HvInput-icon-128",
-                              "iconClear": "HvInput-iconClear-129",
-                              "infoIconContainer": "HvInput-infoIconContainer-123",
-                              "infoText": "HvInput-infoText-124",
-                              "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                              "inputDisabled": "HvInput-inputDisabled-118",
-                              "inputRoot": "HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                              "inputRootDisabled": "HvInput-inputRootDisabled-114",
-                              "inputRootFocused": "HvInput-inputRootFocused-115",
-                              "inputRootInvalid": "HvInput-inputRootInvalid-116",
-                              "label": "HvInput-label-121",
-                              "labelContainer": "HvInput-labelContainer-120",
-                              "labelDisabled": "HvInput-labelDisabled-122",
-                              "multiLine": "HvInput-multiLine-119",
-                              "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
-                              "suggestionList": "HvInput-suggestionList-131",
-                              "suggestionsContainer": "HvInput-suggestionsContainer-130",
-                              "textWarning": "HvInput-textWarning-125",
-                            }
-                          }
-                          clearButtonLabel="Clear the text"
-                          customFixedIcon={null}
-                          handleClear={[Function]}
-                          inputId="hv-input-2-input"
-                          showClear={true}
-                          showValidationIcon={false}
-                          validationState="empty"
-                        />
-                      }
+                      endAdornment={null}
                       fullWidth={false}
                       id="hv-input-2-input"
                       inputComponent="input"
@@ -1158,18 +1056,18 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     >
                       <ForwardRef(InputBase)
                         autoFocus={false}
-                        className="HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102"
+                        className="HvInput-inputRoot-107 HvTimePickerUnitTimePicker-unitTimeInputRoot-96"
                         classes={
                           Object {
                             "adornedEnd": "MuiInputBase-adornedEnd",
                             "adornedStart": "MuiInputBase-adornedStart",
                             "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
-                            "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-118",
+                            "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled-112",
                             "error": "Mui-error Mui-error",
-                            "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-115",
+                            "focused": "Mui-focused Mui-focused HvInput-inputRootFocused-109",
                             "formControl": "MuiInputBase-formControl MuiInput-formControl",
                             "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
-                            "input": "MuiInputBase-input MuiInput-input HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
+                            "input": "MuiInputBase-input MuiInput-input HvInput-input-111 HvTimePickerUnitTimePicker-unitTimeInput-95",
                             "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
                             "inputAdornedStart": "MuiInputBase-inputAdornedStart",
                             "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
@@ -1177,46 +1075,12 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
                             "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
                             "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
-                            "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-119",
+                            "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine-113",
                             "root": "MuiInputBase-root MuiInput-root",
                           }
                         }
                         disabled={false}
-                        endAdornment={
-                          <InputAdornment
-                            classes={
-                              Object {
-                                "adornmentButton": "HvInput-adornmentButton-127",
-                                "adornmentsBox": "HvInput-adornmentsBox-126",
-                                "icon": "HvInput-icon-128",
-                                "iconClear": "HvInput-iconClear-129",
-                                "infoIconContainer": "HvInput-infoIconContainer-123",
-                                "infoText": "HvInput-infoText-124",
-                                "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                                "inputDisabled": "HvInput-inputDisabled-118",
-                                "inputRoot": "HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                                "inputRootDisabled": "HvInput-inputRootDisabled-114",
-                                "inputRootFocused": "HvInput-inputRootFocused-115",
-                                "inputRootInvalid": "HvInput-inputRootInvalid-116",
-                                "label": "HvInput-label-121",
-                                "labelContainer": "HvInput-labelContainer-120",
-                                "labelDisabled": "HvInput-labelDisabled-122",
-                                "multiLine": "HvInput-multiLine-119",
-                                "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
-                                "suggestionList": "HvInput-suggestionList-131",
-                                "suggestionsContainer": "HvInput-suggestionsContainer-130",
-                                "textWarning": "HvInput-textWarning-125",
-                              }
-                            }
-                            clearButtonLabel="Clear the text"
-                            customFixedIcon={null}
-                            handleClear={[Function]}
-                            inputId="hv-input-2-input"
-                            showClear={true}
-                            showValidationIcon={false}
-                            validationState="empty"
-                          />
-                        }
+                        endAdornment={null}
                         fullWidth={false}
                         id="hv-input-2-input"
                         inputComponent="input"
@@ -1237,12 +1101,12 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         value={30}
                       >
                         <div
-                          className="MuiInputBase-root MuiInput-root HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102 MuiInputBase-adornedEnd"
+                          className="MuiInputBase-root MuiInput-root HvInput-inputRoot-107 HvTimePickerUnitTimePicker-unitTimeInputRoot-96"
                           onClick={[Function]}
                         >
                           <input
                             autoFocus={false}
-                            className="MuiInputBase-input MuiInput-input HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101 MuiInputBase-inputAdornedEnd"
+                            className="MuiInputBase-input MuiInput-input HvInput-input-111 HvTimePickerUnitTimePicker-unitTimeInput-95"
                             disabled={false}
                             id="hv-input-2-input"
                             onAnimationStart={[Function]}
@@ -1254,90 +1118,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             type="text"
                             value={30}
                           />
-                          <InputAdornment
-                            classes={
-                              Object {
-                                "adornmentButton": "HvInput-adornmentButton-127",
-                                "adornmentsBox": "HvInput-adornmentsBox-126",
-                                "icon": "HvInput-icon-128",
-                                "iconClear": "HvInput-iconClear-129",
-                                "infoIconContainer": "HvInput-infoIconContainer-123",
-                                "infoText": "HvInput-infoText-124",
-                                "input": "HvInput-input-117 HvTimePickerUnitTimePicker-unitTimeInput-101",
-                                "inputDisabled": "HvInput-inputDisabled-118",
-                                "inputRoot": "HvInput-inputRoot-113 HvTimePickerUnitTimePicker-unitTimeInputRoot-102",
-                                "inputRootDisabled": "HvInput-inputRootDisabled-114",
-                                "inputRootFocused": "HvInput-inputRootFocused-115",
-                                "inputRootInvalid": "HvInput-inputRootInvalid-116",
-                                "label": "HvInput-label-121",
-                                "labelContainer": "HvInput-labelContainer-120",
-                                "labelDisabled": "HvInput-labelDisabled-122",
-                                "multiLine": "HvInput-multiLine-119",
-                                "root": "HvInput-root-112 HvTimePickerUnitTimePicker-inputContainer-106",
-                                "suggestionList": "HvInput-suggestionList-131",
-                                "suggestionsContainer": "HvInput-suggestionsContainer-130",
-                                "textWarning": "HvInput-textWarning-125",
-                              }
-                            }
-                            clearButtonLabel="Clear the text"
-                            customFixedIcon={null}
-                            handleClear={[Function]}
-                            inputId="hv-input-2-input"
-                            showClear={true}
-                            showValidationIcon={false}
-                            validationState="empty"
-                          >
-                            <div
-                              aria-hidden="true"
-                              className="HvInput-adornmentsBox-126"
-                            >
-                              <button
-                                aria-controls="hv-input-2-input"
-                                aria-label="Clear the text"
-                                className="HvInput-adornmentButton-127 HvInput-iconClear-129"
-                                onKeyDown={[Function]}
-                                onMouseDown={[Function]}
-                                tabIndex={-1}
-                                title="Clear the text"
-                                type="button"
-                              >
-                                <WithStyles(CloseXS)
-                                  className="HvInput-icon-128"
-                                >
-                                  <CloseXS
-                                    className="HvInput-icon-128"
-                                    classes={
-                                      Object {
-                                        "root": "HvIconCloseXS-root-164",
-                                        "rootL": "HvIconCloseXS-rootL-168",
-                                        "rootM": "HvIconCloseXS-rootM-167",
-                                        "rootS": "HvIconCloseXS-rootS-166",
-                                        "rootXs": "HvIconCloseXS-rootXs-165",
-                                      }
-                                    }
-                                  >
-                                    <div
-                                      className="HvInput-icon-128 HvIconCloseXS-root-164 HvIconCloseXS-rootXs-165"
-                                    >
-                                      <svg
-                                        focusable={false}
-                                        height="12px"
-                                        viewBox="0 0 12 12"
-                                        width="12px"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          className="color0"
-                                          d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </CloseXS>
-                                </WithStyles(CloseXS)>
-                              </button>
-                            </div>
-                          </InputAdornment>
                         </div>
                       </ForwardRef(InputBase)>
                     </WithStyles(ForwardRef(InputBase))>
@@ -1349,7 +1129,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   aria-labelledby={null}
                   aria-live="polite"
                   aria-relevant="additions text"
-                  className="HvInput-textWarning-125 HvInput-infoText-124"
+                  className="HvInput-textWarning-119 HvInput-infoText-118"
                   component={null}
                   paragraph={false}
                   style={
@@ -1365,34 +1145,33 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     aria-labelledby={null}
                     aria-live="polite"
                     aria-relevant="additions text"
-                    className="HvInput-textWarning-125 HvInput-infoText-124"
+                    className="HvInput-textWarning-119 HvInput-infoText-118"
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-171",
-                        "4xlTitle": "HvTypography-4xlTitle-170",
-                        "5xlTitle": "HvTypography-5xlTitle-169",
-                        "baseFontFamily": "HvTypography-baseFontFamily-192",
-                        "disabledButtonText": "HvTypography-disabledButtonText-183",
-                        "disabledText": "HvTypography-disabledText-190",
-                        "highlightText": "HvTypography-highlightText-179",
-                        "infoText": "HvTypography-infoText-188",
-                        "inlineLink": "HvTypography-inlineLink-182",
-                        "lTitle": "HvTypography-lTitle-174",
-                        "labelText": "HvTypography-labelText-187",
-                        "mTitle": "HvTypography-mTitle-175",
-                        "margin": "HvTypography-margin-193",
-                        "normalText": "HvTypography-normalText-180",
-                        "placeholderText": "HvTypography-placeholderText-184",
-                        "sLink": "HvTypography-sLink-189",
-                        "sText": "HvTypography-sText-186",
-                        "sTitle": "HvTypography-sTitle-176",
-                        "selectedNavText": "HvTypography-selectedNavText-185",
-                        "selectedText": "HvTypography-selectedText-181",
-                        "vizText": "HvTypography-vizText-191",
-                        "xlTitle": "HvTypography-xlTitle-173",
-                        "xsTitle": "HvTypography-xsTitle-177",
-                        "xxlTitle": "HvTypography-xxlTitle-172",
-                        "xxsTitle": "HvTypography-xxsTitle-178",
+                        "3xlTitle": "HvTypography-3xlTitle-160",
+                        "4xlTitle": "HvTypography-4xlTitle-159",
+                        "5xlTitle": "HvTypography-5xlTitle-158",
+                        "baseFontFamily": "HvTypography-baseFontFamily-180",
+                        "disabledButtonText": "HvTypography-disabledButtonText-172",
+                        "highlightText": "HvTypography-highlightText-168",
+                        "infoText": "HvTypography-infoText-177",
+                        "inlineLink": "HvTypography-inlineLink-171",
+                        "lTitle": "HvTypography-lTitle-163",
+                        "labelText": "HvTypography-labelText-176",
+                        "mTitle": "HvTypography-mTitle-164",
+                        "margin": "HvTypography-margin-181",
+                        "normalText": "HvTypography-normalText-169",
+                        "placeholderText": "HvTypography-placeholderText-173",
+                        "sLink": "HvTypography-sLink-178",
+                        "sText": "HvTypography-sText-175",
+                        "sTitle": "HvTypography-sTitle-165",
+                        "selectedNavText": "HvTypography-selectedNavText-174",
+                        "selectedText": "HvTypography-selectedText-170",
+                        "vizText": "HvTypography-vizText-179",
+                        "xlTitle": "HvTypography-xlTitle-162",
+                        "xsTitle": "HvTypography-xsTitle-166",
+                        "xxlTitle": "HvTypography-xxlTitle-161",
+                        "xxsTitle": "HvTypography-xxsTitle-167",
                       }
                     }
                     component={null}
@@ -1410,7 +1189,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       aria-labelledby={null}
                       aria-live="polite"
                       aria-relevant="additions text"
-                      className="HvTypography-sText-186 HvTypography-baseFontFamily-192 HvTypography-margin-193 HvInput-textWarning-125 HvInput-infoText-124"
+                      className="HvTypography-sText-175 HvTypography-baseFontFamily-180 HvTypography-margin-181 HvInput-textWarning-119 HvInput-infoText-118"
                       style={
                         Object {
                           "display": "none",
@@ -1423,24 +1202,24 @@ exports[`UnitTimePicker should render correctly 1`] = `
             </HvInput>
           </WithStyles(HvInput)>
           <WithStyles(DropDownXS)
-            className="HvTimePickerUnitTimePicker-subtractIcon-105"
+            className="HvTimePickerUnitTimePicker-subtractIcon-99"
             onClick={[Function]}
           >
             <DropDownXS
-              className="HvTimePickerUnitTimePicker-subtractIcon-105"
+              className="HvTimePickerUnitTimePicker-subtractIcon-99"
               classes={
                 Object {
-                  "root": "HvIconDropDownXS-root-194",
-                  "rootL": "HvIconDropDownXS-rootL-198",
-                  "rootM": "HvIconDropDownXS-rootM-197",
-                  "rootS": "HvIconDropDownXS-rootS-196",
-                  "rootXs": "HvIconDropDownXS-rootXs-195",
+                  "root": "HvIconDropDownXS-root-182",
+                  "rootL": "HvIconDropDownXS-rootL-186",
+                  "rootM": "HvIconDropDownXS-rootM-185",
+                  "rootS": "HvIconDropDownXS-rootS-184",
+                  "rootXs": "HvIconDropDownXS-rootXs-183",
                 }
               }
               onClick={[Function]}
             >
               <div
-                className="HvTimePickerUnitTimePicker-subtractIcon-105 HvIconDropDownXS-root-194 HvIconDropDownXS-rootXs-195"
+                className="HvTimePickerUnitTimePicker-subtractIcon-99 HvIconDropDownXS-root-182 HvIconDropDownXS-rootXs-183"
                 onClick={[Function]}
               >
                 <svg

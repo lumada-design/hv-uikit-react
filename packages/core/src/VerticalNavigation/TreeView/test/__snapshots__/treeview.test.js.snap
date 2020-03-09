@@ -867,13 +867,13 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   innerRef={
                     Object {
                       "current": <div
-                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                         id="hv-verticalnavigation-treeviewitem2-button"
                         role="button"
                         tabindex="0"
                       >
                         <div
-                          class="HvIconPlay-root-52 HvIconPlay-rootS-54"
+                          class="HvIconPlay-root-51 HvIconPlay-rootS-53"
                           style="width: 32px; height: 32px;"
                         >
                           <svg
@@ -908,16 +908,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle-29",
                         "4xlTitle": "HvTypography-4xlTitle-28",
                         "5xlTitle": "HvTypography-5xlTitle-27",
-                        "baseFontFamily": "HvTypography-baseFontFamily-50",
+                        "baseFontFamily": "HvTypography-baseFontFamily-49",
                         "disabledButtonText": "HvTypography-disabledButtonText-41",
-                        "disabledText": "HvTypography-disabledText-48",
                         "highlightText": "HvTypography-highlightText-37",
                         "infoText": "HvTypography-infoText-46",
                         "inlineLink": "HvTypography-inlineLink-40",
                         "lTitle": "HvTypography-lTitle-32",
                         "labelText": "HvTypography-labelText-45",
                         "mTitle": "HvTypography-mTitle-33",
-                        "margin": "HvTypography-margin-51",
+                        "margin": "HvTypography-margin-50",
                         "normalText": "HvTypography-normalText-38",
                         "placeholderText": "HvTypography-placeholderText-42",
                         "sLink": "HvTypography-sLink-47",
@@ -925,7 +924,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         "sTitle": "HvTypography-sTitle-34",
                         "selectedNavText": "HvTypography-selectedNavText-43",
                         "selectedText": "HvTypography-selectedText-39",
-                        "vizText": "HvTypography-vizText-49",
+                        "vizText": "HvTypography-vizText-48",
                         "xlTitle": "HvTypography-xlTitle-31",
                         "xsTitle": "HvTypography-xsTitle-35",
                         "xxlTitle": "HvTypography-xxlTitle-30",
@@ -942,7 +941,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                       id="hv-verticalnavigation-treeviewitem2-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -966,16 +965,16 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           }
                           classes={
                             Object {
-                              "root": "HvIconPlay-root-52",
-                              "rootL": "HvIconPlay-rootL-56",
-                              "rootM": "HvIconPlay-rootM-55",
-                              "rootS": "HvIconPlay-rootS-54",
-                              "rootXs": "HvIconPlay-rootXs-53",
+                              "root": "HvIconPlay-root-51",
+                              "rootL": "HvIconPlay-rootL-55",
+                              "rootM": "HvIconPlay-rootM-54",
+                              "rootS": "HvIconPlay-rootS-53",
+                              "rootXs": "HvIconPlay-rootXs-52",
                             }
                           }
                         >
                           <div
-                            className="HvIconPlay-root-52 HvIconPlay-rootS-54"
+                            className="HvIconPlay-root-51 HvIconPlay-rootS-53"
                             style={
                               Object {
                                 "height": "32px",
@@ -1058,7 +1057,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                 id="hv-verticalnavigation-treeviewitem3-button"
                                 role="button"
                                 tabindex="0"
@@ -1081,16 +1080,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle-29",
                                 "4xlTitle": "HvTypography-4xlTitle-28",
                                 "5xlTitle": "HvTypography-5xlTitle-27",
-                                "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                "baseFontFamily": "HvTypography-baseFontFamily-49",
                                 "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                "disabledText": "HvTypography-disabledText-48",
                                 "highlightText": "HvTypography-highlightText-37",
                                 "infoText": "HvTypography-infoText-46",
                                 "inlineLink": "HvTypography-inlineLink-40",
                                 "lTitle": "HvTypography-lTitle-32",
                                 "labelText": "HvTypography-labelText-45",
                                 "mTitle": "HvTypography-mTitle-33",
-                                "margin": "HvTypography-margin-51",
+                                "margin": "HvTypography-margin-50",
                                 "normalText": "HvTypography-normalText-38",
                                 "placeholderText": "HvTypography-placeholderText-42",
                                 "sLink": "HvTypography-sLink-47",
@@ -1098,7 +1096,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "sTitle": "HvTypography-sTitle-34",
                                 "selectedNavText": "HvTypography-selectedNavText-43",
                                 "selectedText": "HvTypography-selectedText-39",
-                                "vizText": "HvTypography-vizText-49",
+                                "vizText": "HvTypography-vizText-48",
                                 "xlTitle": "HvTypography-xlTitle-31",
                                 "xsTitle": "HvTypography-xsTitle-35",
                                 "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1115,7 +1113,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                               id="hv-verticalnavigation-treeviewitem3-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -1182,7 +1180,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                         id="hv-verticalnavigation-treeviewitem4-button"
                                         role="button"
                                         tabindex="0"
@@ -1205,16 +1203,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "3xlTitle": "HvTypography-3xlTitle-29",
                                         "4xlTitle": "HvTypography-4xlTitle-28",
                                         "5xlTitle": "HvTypography-5xlTitle-27",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-49",
                                         "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                        "disabledText": "HvTypography-disabledText-48",
                                         "highlightText": "HvTypography-highlightText-37",
                                         "infoText": "HvTypography-infoText-46",
                                         "inlineLink": "HvTypography-inlineLink-40",
                                         "lTitle": "HvTypography-lTitle-32",
                                         "labelText": "HvTypography-labelText-45",
                                         "mTitle": "HvTypography-mTitle-33",
-                                        "margin": "HvTypography-margin-51",
+                                        "margin": "HvTypography-margin-50",
                                         "normalText": "HvTypography-normalText-38",
                                         "placeholderText": "HvTypography-placeholderText-42",
                                         "sLink": "HvTypography-sLink-47",
@@ -1222,7 +1219,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "sTitle": "HvTypography-sTitle-34",
                                         "selectedNavText": "HvTypography-selectedNavText-43",
                                         "selectedText": "HvTypography-selectedText-39",
-                                        "vizText": "HvTypography-vizText-49",
+                                        "vizText": "HvTypography-vizText-48",
                                         "xlTitle": "HvTypography-xlTitle-31",
                                         "xsTitle": "HvTypography-xsTitle-35",
                                         "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1239,7 +1236,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     variant="normalText"
                                   >
                                     <div
-                                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                       id="hv-verticalnavigation-treeviewitem4-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -1307,7 +1304,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     Object {
                                       "current": <div
                                         aria-current="page"
-                                        class="HvTypography-selectedText-39 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                        class="HvTypography-selectedText-39 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                         id="hv-verticalnavigation-treeviewitem5-button"
                                         role="button"
                                         tabindex="0"
@@ -1331,16 +1328,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "3xlTitle": "HvTypography-3xlTitle-29",
                                         "4xlTitle": "HvTypography-4xlTitle-28",
                                         "5xlTitle": "HvTypography-5xlTitle-27",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-49",
                                         "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                        "disabledText": "HvTypography-disabledText-48",
                                         "highlightText": "HvTypography-highlightText-37",
                                         "infoText": "HvTypography-infoText-46",
                                         "inlineLink": "HvTypography-inlineLink-40",
                                         "lTitle": "HvTypography-lTitle-32",
                                         "labelText": "HvTypography-labelText-45",
                                         "mTitle": "HvTypography-mTitle-33",
-                                        "margin": "HvTypography-margin-51",
+                                        "margin": "HvTypography-margin-50",
                                         "normalText": "HvTypography-normalText-38",
                                         "placeholderText": "HvTypography-placeholderText-42",
                                         "sLink": "HvTypography-sLink-47",
@@ -1348,7 +1344,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "sTitle": "HvTypography-sTitle-34",
                                         "selectedNavText": "HvTypography-selectedNavText-43",
                                         "selectedText": "HvTypography-selectedText-39",
-                                        "vizText": "HvTypography-vizText-49",
+                                        "vizText": "HvTypography-vizText-48",
                                         "xlTitle": "HvTypography-xlTitle-31",
                                         "xsTitle": "HvTypography-xsTitle-35",
                                         "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1366,7 +1362,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   >
                                     <div
                                       aria-current="page"
-                                      className="HvTypography-selectedText-39 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                      className="HvTypography-selectedText-39 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                       id="hv-verticalnavigation-treeviewitem5-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -1432,7 +1428,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                         id="hv-verticalnavigation-treeviewitem6-button"
                                         role="button"
                                         tabindex="0"
@@ -1455,16 +1451,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "3xlTitle": "HvTypography-3xlTitle-29",
                                         "4xlTitle": "HvTypography-4xlTitle-28",
                                         "5xlTitle": "HvTypography-5xlTitle-27",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-49",
                                         "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                        "disabledText": "HvTypography-disabledText-48",
                                         "highlightText": "HvTypography-highlightText-37",
                                         "infoText": "HvTypography-infoText-46",
                                         "inlineLink": "HvTypography-inlineLink-40",
                                         "lTitle": "HvTypography-lTitle-32",
                                         "labelText": "HvTypography-labelText-45",
                                         "mTitle": "HvTypography-mTitle-33",
-                                        "margin": "HvTypography-margin-51",
+                                        "margin": "HvTypography-margin-50",
                                         "normalText": "HvTypography-normalText-38",
                                         "placeholderText": "HvTypography-placeholderText-42",
                                         "sLink": "HvTypography-sLink-47",
@@ -1472,7 +1467,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "sTitle": "HvTypography-sTitle-34",
                                         "selectedNavText": "HvTypography-selectedNavText-43",
                                         "selectedText": "HvTypography-selectedText-39",
-                                        "vizText": "HvTypography-vizText-49",
+                                        "vizText": "HvTypography-vizText-48",
                                         "xlTitle": "HvTypography-xlTitle-31",
                                         "xsTitle": "HvTypography-xsTitle-35",
                                         "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1489,7 +1484,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     variant="normalText"
                                   >
                                     <div
-                                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                       id="hv-verticalnavigation-treeviewitem6-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -1571,7 +1566,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                         id="hv-verticalnavigation-treeviewitem7-button"
                                         role="button"
                                         tabindex="0"
@@ -1594,16 +1589,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "3xlTitle": "HvTypography-3xlTitle-29",
                                         "4xlTitle": "HvTypography-4xlTitle-28",
                                         "5xlTitle": "HvTypography-5xlTitle-27",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-49",
                                         "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                        "disabledText": "HvTypography-disabledText-48",
                                         "highlightText": "HvTypography-highlightText-37",
                                         "infoText": "HvTypography-infoText-46",
                                         "inlineLink": "HvTypography-inlineLink-40",
                                         "lTitle": "HvTypography-lTitle-32",
                                         "labelText": "HvTypography-labelText-45",
                                         "mTitle": "HvTypography-mTitle-33",
-                                        "margin": "HvTypography-margin-51",
+                                        "margin": "HvTypography-margin-50",
                                         "normalText": "HvTypography-normalText-38",
                                         "placeholderText": "HvTypography-placeholderText-42",
                                         "sLink": "HvTypography-sLink-47",
@@ -1611,7 +1605,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                         "sTitle": "HvTypography-sTitle-34",
                                         "selectedNavText": "HvTypography-selectedNavText-43",
                                         "selectedText": "HvTypography-selectedText-39",
-                                        "vizText": "HvTypography-vizText-49",
+                                        "vizText": "HvTypography-vizText-48",
                                         "xlTitle": "HvTypography-xlTitle-31",
                                         "xsTitle": "HvTypography-xsTitle-35",
                                         "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1628,7 +1622,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     variant="normalText"
                                   >
                                     <div
-                                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                       id="hv-verticalnavigation-treeviewitem7-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -1703,13 +1697,13 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   innerRef={
                     Object {
                       "current": <div
-                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                        class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                         id="hv-verticalnavigation-treeviewitem8-button"
                         role="button"
                         tabindex="0"
                       >
                         <div
-                          class="HvIconStop-root-57 HvIconStop-rootS-59"
+                          class="HvIconStop-root-56 HvIconStop-rootS-58"
                           style="width: 32px; height: 32px;"
                         >
                           <svg
@@ -1744,16 +1738,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle-29",
                         "4xlTitle": "HvTypography-4xlTitle-28",
                         "5xlTitle": "HvTypography-5xlTitle-27",
-                        "baseFontFamily": "HvTypography-baseFontFamily-50",
+                        "baseFontFamily": "HvTypography-baseFontFamily-49",
                         "disabledButtonText": "HvTypography-disabledButtonText-41",
-                        "disabledText": "HvTypography-disabledText-48",
                         "highlightText": "HvTypography-highlightText-37",
                         "infoText": "HvTypography-infoText-46",
                         "inlineLink": "HvTypography-inlineLink-40",
                         "lTitle": "HvTypography-lTitle-32",
                         "labelText": "HvTypography-labelText-45",
                         "mTitle": "HvTypography-mTitle-33",
-                        "margin": "HvTypography-margin-51",
+                        "margin": "HvTypography-margin-50",
                         "normalText": "HvTypography-normalText-38",
                         "placeholderText": "HvTypography-placeholderText-42",
                         "sLink": "HvTypography-sLink-47",
@@ -1761,7 +1754,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         "sTitle": "HvTypography-sTitle-34",
                         "selectedNavText": "HvTypography-selectedNavText-43",
                         "selectedText": "HvTypography-selectedText-39",
-                        "vizText": "HvTypography-vizText-49",
+                        "vizText": "HvTypography-vizText-48",
                         "xlTitle": "HvTypography-xlTitle-31",
                         "xsTitle": "HvTypography-xsTitle-35",
                         "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1778,7 +1771,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                      className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                       id="hv-verticalnavigation-treeviewitem8-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -1802,16 +1795,16 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           }
                           classes={
                             Object {
-                              "root": "HvIconStop-root-57",
-                              "rootL": "HvIconStop-rootL-61",
-                              "rootM": "HvIconStop-rootM-60",
-                              "rootS": "HvIconStop-rootS-59",
-                              "rootXs": "HvIconStop-rootXs-58",
+                              "root": "HvIconStop-root-56",
+                              "rootL": "HvIconStop-rootL-60",
+                              "rootM": "HvIconStop-rootM-59",
+                              "rootS": "HvIconStop-rootS-58",
+                              "rootXs": "HvIconStop-rootXs-57",
                             }
                           }
                         >
                           <div
-                            className="HvIconStop-root-57 HvIconStop-rootS-59"
+                            className="HvIconStop-root-56 HvIconStop-rootS-58"
                             style={
                               Object {
                                 "height": "32px",
@@ -1894,7 +1887,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                 id="hv-verticalnavigation-treeviewitem9-button"
                                 role="button"
                                 tabindex="0"
@@ -1917,16 +1910,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle-29",
                                 "4xlTitle": "HvTypography-4xlTitle-28",
                                 "5xlTitle": "HvTypography-5xlTitle-27",
-                                "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                "baseFontFamily": "HvTypography-baseFontFamily-49",
                                 "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                "disabledText": "HvTypography-disabledText-48",
                                 "highlightText": "HvTypography-highlightText-37",
                                 "infoText": "HvTypography-infoText-46",
                                 "inlineLink": "HvTypography-inlineLink-40",
                                 "lTitle": "HvTypography-lTitle-32",
                                 "labelText": "HvTypography-labelText-45",
                                 "mTitle": "HvTypography-mTitle-33",
-                                "margin": "HvTypography-margin-51",
+                                "margin": "HvTypography-margin-50",
                                 "normalText": "HvTypography-normalText-38",
                                 "placeholderText": "HvTypography-placeholderText-42",
                                 "sLink": "HvTypography-sLink-47",
@@ -1934,7 +1926,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "sTitle": "HvTypography-sTitle-34",
                                 "selectedNavText": "HvTypography-selectedNavText-43",
                                 "selectedText": "HvTypography-selectedText-39",
-                                "vizText": "HvTypography-vizText-49",
+                                "vizText": "HvTypography-vizText-48",
                                 "xlTitle": "HvTypography-xlTitle-31",
                                 "xsTitle": "HvTypography-xsTitle-35",
                                 "xxlTitle": "HvTypography-xxlTitle-30",
@@ -1951,7 +1943,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                               id="hv-verticalnavigation-treeviewitem9-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -2017,7 +2009,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                 id="hv-verticalnavigation-treeviewitem10-button"
                                 role="button"
                                 tabindex="0"
@@ -2040,16 +2032,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle-29",
                                 "4xlTitle": "HvTypography-4xlTitle-28",
                                 "5xlTitle": "HvTypography-5xlTitle-27",
-                                "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                "baseFontFamily": "HvTypography-baseFontFamily-49",
                                 "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                "disabledText": "HvTypography-disabledText-48",
                                 "highlightText": "HvTypography-highlightText-37",
                                 "infoText": "HvTypography-infoText-46",
                                 "inlineLink": "HvTypography-inlineLink-40",
                                 "lTitle": "HvTypography-lTitle-32",
                                 "labelText": "HvTypography-labelText-45",
                                 "mTitle": "HvTypography-mTitle-33",
-                                "margin": "HvTypography-margin-51",
+                                "margin": "HvTypography-margin-50",
                                 "normalText": "HvTypography-normalText-38",
                                 "placeholderText": "HvTypography-placeholderText-42",
                                 "sLink": "HvTypography-sLink-47",
@@ -2057,7 +2048,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "sTitle": "HvTypography-sTitle-34",
                                 "selectedNavText": "HvTypography-selectedNavText-43",
                                 "selectedText": "HvTypography-selectedText-39",
-                                "vizText": "HvTypography-vizText-49",
+                                "vizText": "HvTypography-vizText-48",
                                 "xlTitle": "HvTypography-xlTitle-31",
                                 "xsTitle": "HvTypography-xsTitle-35",
                                 "xxlTitle": "HvTypography-xxlTitle-30",
@@ -2074,7 +2065,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                               id="hv-verticalnavigation-treeviewitem10-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -2140,7 +2131,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                                class="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                                 id="hv-verticalnavigation-treeviewitem11-button"
                                 role="button"
                                 tabindex="0"
@@ -2163,16 +2154,15 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle-29",
                                 "4xlTitle": "HvTypography-4xlTitle-28",
                                 "5xlTitle": "HvTypography-5xlTitle-27",
-                                "baseFontFamily": "HvTypography-baseFontFamily-50",
+                                "baseFontFamily": "HvTypography-baseFontFamily-49",
                                 "disabledButtonText": "HvTypography-disabledButtonText-41",
-                                "disabledText": "HvTypography-disabledText-48",
                                 "highlightText": "HvTypography-highlightText-37",
                                 "infoText": "HvTypography-infoText-46",
                                 "inlineLink": "HvTypography-inlineLink-40",
                                 "lTitle": "HvTypography-lTitle-32",
                                 "labelText": "HvTypography-labelText-45",
                                 "mTitle": "HvTypography-mTitle-33",
-                                "margin": "HvTypography-margin-51",
+                                "margin": "HvTypography-margin-50",
                                 "normalText": "HvTypography-normalText-38",
                                 "placeholderText": "HvTypography-placeholderText-42",
                                 "sLink": "HvTypography-sLink-47",
@@ -2180,7 +2170,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 "sTitle": "HvTypography-sTitle-34",
                                 "selectedNavText": "HvTypography-selectedNavText-43",
                                 "selectedText": "HvTypography-selectedText-39",
-                                "vizText": "HvTypography-vizText-49",
+                                "vizText": "HvTypography-vizText-48",
                                 "xlTitle": "HvTypography-xlTitle-31",
                                 "xsTitle": "HvTypography-xsTitle-35",
                                 "xxlTitle": "HvTypography-xxlTitle-30",
@@ -2197,7 +2187,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-50 HvTypography-margin-51 HvVerticalNavigationTreeViewItem-content-26"
+                              className="HvTypography-normalText-38 HvTypography-baseFontFamily-49 HvTypography-margin-50 HvVerticalNavigationTreeViewItem-content-26"
                               id="hv-verticalnavigation-treeviewitem11-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -3011,19 +3001,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
         className=""
         classes={
           Object {
-            "collapsed": "HvVerticalNavigationTreeView-collapsed-129",
-            "content": "HvVerticalNavigationTreeView-content-135",
-            "disabled": "HvVerticalNavigationTreeView-disabled-126",
-            "expanded": "HvVerticalNavigationTreeView-expanded-130",
-            "group": "HvVerticalNavigationTreeView-group-124",
-            "noIcon": "HvVerticalNavigationTreeView-noIcon-133",
-            "node": "HvVerticalNavigationTreeView-node-125",
-            "root": "HvVerticalNavigationTreeView-root-123",
-            "selectable": "HvVerticalNavigationTreeView-selectable-127",
-            "selected": "HvVerticalNavigationTreeView-selected-131",
-            "unselectable": "HvVerticalNavigationTreeView-unselectable-128",
-            "unselected": "HvVerticalNavigationTreeView-unselected-132",
-            "withIcon": "HvVerticalNavigationTreeView-withIcon-134",
+            "collapsed": "HvVerticalNavigationTreeView-collapsed-127",
+            "content": "HvVerticalNavigationTreeView-content-133",
+            "disabled": "HvVerticalNavigationTreeView-disabled-124",
+            "expanded": "HvVerticalNavigationTreeView-expanded-128",
+            "group": "HvVerticalNavigationTreeView-group-122",
+            "noIcon": "HvVerticalNavigationTreeView-noIcon-131",
+            "node": "HvVerticalNavigationTreeView-node-123",
+            "root": "HvVerticalNavigationTreeView-root-121",
+            "selectable": "HvVerticalNavigationTreeView-selectable-125",
+            "selected": "HvVerticalNavigationTreeView-selected-129",
+            "unselectable": "HvVerticalNavigationTreeView-unselectable-126",
+            "unselected": "HvVerticalNavigationTreeView-unselected-130",
+            "withIcon": "HvVerticalNavigationTreeView-withIcon-132",
           }
         }
         collapsible={false}
@@ -3033,7 +3023,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
         selected="4"
       >
         <ul
-          className="HvVerticalNavigationTreeView-root-123"
+          className="HvVerticalNavigationTreeView-root-121"
           id="hv-verticalnavigation-treeview23"
           role="tree"
         >
@@ -3053,19 +3043,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               className=""
               classes={
                 Object {
-                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                  "content": "HvVerticalNavigationTreeViewItem-content-148",
-                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                  "group": "HvVerticalNavigationTreeViewItem-group-137",
-                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                  "node": "HvVerticalNavigationTreeViewItem-node-138",
-                  "root": "HvVerticalNavigationTreeViewItem-root-136",
-                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                  "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                  "content": "HvVerticalNavigationTreeViewItem-content-146",
+                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                  "group": "HvVerticalNavigationTreeViewItem-group-135",
+                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                  "node": "HvVerticalNavigationTreeViewItem-node-136",
+                  "root": "HvVerticalNavigationTreeViewItem-root-134",
+                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                  "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                 }
               }
               collapseIcon={null}
@@ -3079,25 +3069,25 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-expanded-141 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem24"
                 role="treeitem"
               >
                 <WithStyles(ForwardRef)
-                  className="HvVerticalNavigationTreeViewItem-content-148"
+                  className="HvVerticalNavigationTreeViewItem-content-146"
                   component="div"
                   id="hv-verticalnavigation-treeviewitem24-button"
                   innerRef={
                     Object {
                       "current": <div
-                        class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                        class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                         id="hv-verticalnavigation-treeviewitem24-button"
                         role="button"
                         tabindex="-1"
                       >
                         <div
-                          class="HvIconPlay-root-174 HvIconPlay-rootS-176"
+                          class="HvIconPlay-root-171 HvIconPlay-rootS-173"
                           style="width: 32px; height: 32px;"
                         >
                           <svg
@@ -3126,34 +3116,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   variant="normalText"
                 >
                   <ForwardRef
-                    className="HvVerticalNavigationTreeViewItem-content-148"
+                    className="HvVerticalNavigationTreeViewItem-content-146"
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-151",
-                        "4xlTitle": "HvTypography-4xlTitle-150",
-                        "5xlTitle": "HvTypography-5xlTitle-149",
-                        "baseFontFamily": "HvTypography-baseFontFamily-172",
-                        "disabledButtonText": "HvTypography-disabledButtonText-163",
-                        "disabledText": "HvTypography-disabledText-170",
-                        "highlightText": "HvTypography-highlightText-159",
-                        "infoText": "HvTypography-infoText-168",
-                        "inlineLink": "HvTypography-inlineLink-162",
-                        "lTitle": "HvTypography-lTitle-154",
-                        "labelText": "HvTypography-labelText-167",
-                        "mTitle": "HvTypography-mTitle-155",
-                        "margin": "HvTypography-margin-173",
-                        "normalText": "HvTypography-normalText-160",
-                        "placeholderText": "HvTypography-placeholderText-164",
-                        "sLink": "HvTypography-sLink-169",
-                        "sText": "HvTypography-sText-166",
-                        "sTitle": "HvTypography-sTitle-156",
-                        "selectedNavText": "HvTypography-selectedNavText-165",
-                        "selectedText": "HvTypography-selectedText-161",
-                        "vizText": "HvTypography-vizText-171",
-                        "xlTitle": "HvTypography-xlTitle-153",
-                        "xsTitle": "HvTypography-xsTitle-157",
-                        "xxlTitle": "HvTypography-xxlTitle-152",
-                        "xxsTitle": "HvTypography-xxsTitle-158",
+                        "3xlTitle": "HvTypography-3xlTitle-149",
+                        "4xlTitle": "HvTypography-4xlTitle-148",
+                        "5xlTitle": "HvTypography-5xlTitle-147",
+                        "baseFontFamily": "HvTypography-baseFontFamily-169",
+                        "disabledButtonText": "HvTypography-disabledButtonText-161",
+                        "highlightText": "HvTypography-highlightText-157",
+                        "infoText": "HvTypography-infoText-166",
+                        "inlineLink": "HvTypography-inlineLink-160",
+                        "lTitle": "HvTypography-lTitle-152",
+                        "labelText": "HvTypography-labelText-165",
+                        "mTitle": "HvTypography-mTitle-153",
+                        "margin": "HvTypography-margin-170",
+                        "normalText": "HvTypography-normalText-158",
+                        "placeholderText": "HvTypography-placeholderText-162",
+                        "sLink": "HvTypography-sLink-167",
+                        "sText": "HvTypography-sText-164",
+                        "sTitle": "HvTypography-sTitle-154",
+                        "selectedNavText": "HvTypography-selectedNavText-163",
+                        "selectedText": "HvTypography-selectedText-159",
+                        "vizText": "HvTypography-vizText-168",
+                        "xlTitle": "HvTypography-xlTitle-151",
+                        "xsTitle": "HvTypography-xsTitle-155",
+                        "xxlTitle": "HvTypography-xxlTitle-150",
+                        "xxsTitle": "HvTypography-xxsTitle-156",
                       }
                     }
                     component="div"
@@ -3166,7 +3155,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                      className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                       id="hv-verticalnavigation-treeviewitem24-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -3190,16 +3179,16 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           }
                           classes={
                             Object {
-                              "root": "HvIconPlay-root-174",
-                              "rootL": "HvIconPlay-rootL-178",
-                              "rootM": "HvIconPlay-rootM-177",
-                              "rootS": "HvIconPlay-rootS-176",
-                              "rootXs": "HvIconPlay-rootXs-175",
+                              "root": "HvIconPlay-root-171",
+                              "rootL": "HvIconPlay-rootL-175",
+                              "rootM": "HvIconPlay-rootM-174",
+                              "rootS": "HvIconPlay-rootS-173",
+                              "rootXs": "HvIconPlay-rootXs-172",
                             }
                           }
                         >
                           <div
-                            className="HvIconPlay-root-174 HvIconPlay-rootS-176"
+                            className="HvIconPlay-root-171 HvIconPlay-rootS-173"
                             style={
                               Object {
                                 "height": "32px",
@@ -3228,7 +3217,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <ul
-                  className="HvVerticalNavigationTreeViewItem-group-137"
+                  className="HvVerticalNavigationTreeViewItem-group-135"
                   role="group"
                 >
                   <WithStyles(TreeViewItem)
@@ -3247,19 +3236,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       className=""
                       classes={
                         Object {
-                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                          "content": "HvVerticalNavigationTreeViewItem-content-148",
-                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                          "group": "HvVerticalNavigationTreeViewItem-group-137",
-                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                          "node": "HvVerticalNavigationTreeViewItem-node-138",
-                          "root": "HvVerticalNavigationTreeViewItem-root-136",
-                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                          "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                          "content": "HvVerticalNavigationTreeViewItem-content-146",
+                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                          "group": "HvVerticalNavigationTreeViewItem-group-135",
+                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                          "node": "HvVerticalNavigationTreeViewItem-node-136",
+                          "root": "HvVerticalNavigationTreeViewItem-root-134",
+                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                          "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                         }
                       }
                       collapseIcon={null}
@@ -3273,18 +3262,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-expanded-141 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                         id="hv-verticalnavigation-treeviewitem25"
                         role="treeitem"
                       >
                         <WithStyles(ForwardRef)
-                          className="HvVerticalNavigationTreeViewItem-content-148"
+                          className="HvVerticalNavigationTreeViewItem-content-146"
                           component="div"
                           id="hv-verticalnavigation-treeviewitem25-button"
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                 id="hv-verticalnavigation-treeviewitem25-button"
                                 role="button"
                                 tabindex="-1"
@@ -3301,34 +3290,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           variant="normalText"
                         >
                           <ForwardRef
-                            className="HvVerticalNavigationTreeViewItem-content-148"
+                            className="HvVerticalNavigationTreeViewItem-content-146"
                             classes={
                               Object {
-                                "3xlTitle": "HvTypography-3xlTitle-151",
-                                "4xlTitle": "HvTypography-4xlTitle-150",
-                                "5xlTitle": "HvTypography-5xlTitle-149",
-                                "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                "disabledText": "HvTypography-disabledText-170",
-                                "highlightText": "HvTypography-highlightText-159",
-                                "infoText": "HvTypography-infoText-168",
-                                "inlineLink": "HvTypography-inlineLink-162",
-                                "lTitle": "HvTypography-lTitle-154",
-                                "labelText": "HvTypography-labelText-167",
-                                "mTitle": "HvTypography-mTitle-155",
-                                "margin": "HvTypography-margin-173",
-                                "normalText": "HvTypography-normalText-160",
-                                "placeholderText": "HvTypography-placeholderText-164",
-                                "sLink": "HvTypography-sLink-169",
-                                "sText": "HvTypography-sText-166",
-                                "sTitle": "HvTypography-sTitle-156",
-                                "selectedNavText": "HvTypography-selectedNavText-165",
-                                "selectedText": "HvTypography-selectedText-161",
-                                "vizText": "HvTypography-vizText-171",
-                                "xlTitle": "HvTypography-xlTitle-153",
-                                "xsTitle": "HvTypography-xsTitle-157",
-                                "xxlTitle": "HvTypography-xxlTitle-152",
-                                "xxsTitle": "HvTypography-xxsTitle-158",
+                                "3xlTitle": "HvTypography-3xlTitle-149",
+                                "4xlTitle": "HvTypography-4xlTitle-148",
+                                "5xlTitle": "HvTypography-5xlTitle-147",
+                                "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                "highlightText": "HvTypography-highlightText-157",
+                                "infoText": "HvTypography-infoText-166",
+                                "inlineLink": "HvTypography-inlineLink-160",
+                                "lTitle": "HvTypography-lTitle-152",
+                                "labelText": "HvTypography-labelText-165",
+                                "mTitle": "HvTypography-mTitle-153",
+                                "margin": "HvTypography-margin-170",
+                                "normalText": "HvTypography-normalText-158",
+                                "placeholderText": "HvTypography-placeholderText-162",
+                                "sLink": "HvTypography-sLink-167",
+                                "sText": "HvTypography-sText-164",
+                                "sTitle": "HvTypography-sTitle-154",
+                                "selectedNavText": "HvTypography-selectedNavText-163",
+                                "selectedText": "HvTypography-selectedText-159",
+                                "vizText": "HvTypography-vizText-168",
+                                "xlTitle": "HvTypography-xlTitle-151",
+                                "xsTitle": "HvTypography-xsTitle-155",
+                                "xxlTitle": "HvTypography-xxlTitle-150",
+                                "xxsTitle": "HvTypography-xxsTitle-156",
                               }
                             }
                             component="div"
@@ -3341,7 +3329,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                              className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                               id="hv-verticalnavigation-treeviewitem25-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -3353,7 +3341,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           </ForwardRef>
                         </WithStyles(ForwardRef)>
                         <ul
-                          className="HvVerticalNavigationTreeViewItem-group-137"
+                          className="HvVerticalNavigationTreeViewItem-group-135"
                           role="group"
                         >
                           <WithStyles(TreeViewItem)
@@ -3372,19 +3360,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               className=""
                               classes={
                                 Object {
-                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                                  "content": "HvVerticalNavigationTreeViewItem-content-148",
-                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                                  "group": "HvVerticalNavigationTreeViewItem-group-137",
-                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                                  "node": "HvVerticalNavigationTreeViewItem-node-138",
-                                  "root": "HvVerticalNavigationTreeViewItem-root-136",
-                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                                  "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                                  "content": "HvVerticalNavigationTreeViewItem-content-146",
+                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                                  "group": "HvVerticalNavigationTreeViewItem-group-135",
+                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                                  "node": "HvVerticalNavigationTreeViewItem-node-136",
+                                  "root": "HvVerticalNavigationTreeViewItem-root-134",
+                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                                  "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                                 }
                               }
                               collapseIcon={null}
@@ -3399,18 +3387,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             >
                               <li
                                 aria-disabled={true}
-                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-disabled-139"
+                                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-disabled-137"
                                 id="hv-verticalnavigation-treeviewitem26"
                                 role="treeitem"
                               >
                                 <WithStyles(ForwardRef)
-                                  className="HvVerticalNavigationTreeViewItem-content-148"
+                                  className="HvVerticalNavigationTreeViewItem-content-146"
                                   component="div"
                                   id="hv-verticalnavigation-treeviewitem26-button"
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                        class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                         id="hv-verticalnavigation-treeviewitem26-button"
                                         role="button"
                                         tabindex="-1"
@@ -3427,34 +3415,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   variant="normalText"
                                 >
                                   <ForwardRef
-                                    className="HvVerticalNavigationTreeViewItem-content-148"
+                                    className="HvVerticalNavigationTreeViewItem-content-146"
                                     classes={
                                       Object {
-                                        "3xlTitle": "HvTypography-3xlTitle-151",
-                                        "4xlTitle": "HvTypography-4xlTitle-150",
-                                        "5xlTitle": "HvTypography-5xlTitle-149",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                        "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                        "disabledText": "HvTypography-disabledText-170",
-                                        "highlightText": "HvTypography-highlightText-159",
-                                        "infoText": "HvTypography-infoText-168",
-                                        "inlineLink": "HvTypography-inlineLink-162",
-                                        "lTitle": "HvTypography-lTitle-154",
-                                        "labelText": "HvTypography-labelText-167",
-                                        "mTitle": "HvTypography-mTitle-155",
-                                        "margin": "HvTypography-margin-173",
-                                        "normalText": "HvTypography-normalText-160",
-                                        "placeholderText": "HvTypography-placeholderText-164",
-                                        "sLink": "HvTypography-sLink-169",
-                                        "sText": "HvTypography-sText-166",
-                                        "sTitle": "HvTypography-sTitle-156",
-                                        "selectedNavText": "HvTypography-selectedNavText-165",
-                                        "selectedText": "HvTypography-selectedText-161",
-                                        "vizText": "HvTypography-vizText-171",
-                                        "xlTitle": "HvTypography-xlTitle-153",
-                                        "xsTitle": "HvTypography-xsTitle-157",
-                                        "xxlTitle": "HvTypography-xxlTitle-152",
-                                        "xxsTitle": "HvTypography-xxsTitle-158",
+                                        "3xlTitle": "HvTypography-3xlTitle-149",
+                                        "4xlTitle": "HvTypography-4xlTitle-148",
+                                        "5xlTitle": "HvTypography-5xlTitle-147",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                        "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                        "highlightText": "HvTypography-highlightText-157",
+                                        "infoText": "HvTypography-infoText-166",
+                                        "inlineLink": "HvTypography-inlineLink-160",
+                                        "lTitle": "HvTypography-lTitle-152",
+                                        "labelText": "HvTypography-labelText-165",
+                                        "mTitle": "HvTypography-mTitle-153",
+                                        "margin": "HvTypography-margin-170",
+                                        "normalText": "HvTypography-normalText-158",
+                                        "placeholderText": "HvTypography-placeholderText-162",
+                                        "sLink": "HvTypography-sLink-167",
+                                        "sText": "HvTypography-sText-164",
+                                        "sTitle": "HvTypography-sTitle-154",
+                                        "selectedNavText": "HvTypography-selectedNavText-163",
+                                        "selectedText": "HvTypography-selectedText-159",
+                                        "vizText": "HvTypography-vizText-168",
+                                        "xlTitle": "HvTypography-xlTitle-151",
+                                        "xsTitle": "HvTypography-xsTitle-155",
+                                        "xxlTitle": "HvTypography-xxlTitle-150",
+                                        "xxsTitle": "HvTypography-xxsTitle-156",
                                       }
                                     }
                                     component="div"
@@ -3467,7 +3454,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     variant="normalText"
                                   >
                                     <div
-                                      className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                      className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                       id="hv-verticalnavigation-treeviewitem26-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -3497,19 +3484,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               className=""
                               classes={
                                 Object {
-                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                                  "content": "HvVerticalNavigationTreeViewItem-content-148",
-                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                                  "group": "HvVerticalNavigationTreeViewItem-group-137",
-                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                                  "node": "HvVerticalNavigationTreeViewItem-node-138",
-                                  "root": "HvVerticalNavigationTreeViewItem-root-136",
-                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                                  "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                                  "content": "HvVerticalNavigationTreeViewItem-content-146",
+                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                                  "group": "HvVerticalNavigationTreeViewItem-group-135",
+                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                                  "node": "HvVerticalNavigationTreeViewItem-node-136",
+                                  "root": "HvVerticalNavigationTreeViewItem-root-134",
+                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                                  "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                                 }
                               }
                               collapseIcon={null}
@@ -3524,18 +3511,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             >
                               <li
                                 aria-selected={true}
-                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-selected-144"
+                                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-selected-142"
                                 id="hv-verticalnavigation-treeviewitem27"
                                 role="treeitem"
                               >
                                 <WithStyles(ForwardRef)
-                                  className="HvVerticalNavigationTreeViewItem-content-148"
+                                  className="HvVerticalNavigationTreeViewItem-content-146"
                                   component="div"
                                   id="hv-verticalnavigation-treeviewitem27-button"
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-selectedText-161 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                        class="HvTypography-selectedText-159 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                         id="hv-verticalnavigation-treeviewitem27-button"
                                         role="button"
                                         tabindex="0"
@@ -3552,34 +3539,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   variant="selectedText"
                                 >
                                   <ForwardRef
-                                    className="HvVerticalNavigationTreeViewItem-content-148"
+                                    className="HvVerticalNavigationTreeViewItem-content-146"
                                     classes={
                                       Object {
-                                        "3xlTitle": "HvTypography-3xlTitle-151",
-                                        "4xlTitle": "HvTypography-4xlTitle-150",
-                                        "5xlTitle": "HvTypography-5xlTitle-149",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                        "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                        "disabledText": "HvTypography-disabledText-170",
-                                        "highlightText": "HvTypography-highlightText-159",
-                                        "infoText": "HvTypography-infoText-168",
-                                        "inlineLink": "HvTypography-inlineLink-162",
-                                        "lTitle": "HvTypography-lTitle-154",
-                                        "labelText": "HvTypography-labelText-167",
-                                        "mTitle": "HvTypography-mTitle-155",
-                                        "margin": "HvTypography-margin-173",
-                                        "normalText": "HvTypography-normalText-160",
-                                        "placeholderText": "HvTypography-placeholderText-164",
-                                        "sLink": "HvTypography-sLink-169",
-                                        "sText": "HvTypography-sText-166",
-                                        "sTitle": "HvTypography-sTitle-156",
-                                        "selectedNavText": "HvTypography-selectedNavText-165",
-                                        "selectedText": "HvTypography-selectedText-161",
-                                        "vizText": "HvTypography-vizText-171",
-                                        "xlTitle": "HvTypography-xlTitle-153",
-                                        "xsTitle": "HvTypography-xsTitle-157",
-                                        "xxlTitle": "HvTypography-xxlTitle-152",
-                                        "xxsTitle": "HvTypography-xxsTitle-158",
+                                        "3xlTitle": "HvTypography-3xlTitle-149",
+                                        "4xlTitle": "HvTypography-4xlTitle-148",
+                                        "5xlTitle": "HvTypography-5xlTitle-147",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                        "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                        "highlightText": "HvTypography-highlightText-157",
+                                        "infoText": "HvTypography-infoText-166",
+                                        "inlineLink": "HvTypography-inlineLink-160",
+                                        "lTitle": "HvTypography-lTitle-152",
+                                        "labelText": "HvTypography-labelText-165",
+                                        "mTitle": "HvTypography-mTitle-153",
+                                        "margin": "HvTypography-margin-170",
+                                        "normalText": "HvTypography-normalText-158",
+                                        "placeholderText": "HvTypography-placeholderText-162",
+                                        "sLink": "HvTypography-sLink-167",
+                                        "sText": "HvTypography-sText-164",
+                                        "sTitle": "HvTypography-sTitle-154",
+                                        "selectedNavText": "HvTypography-selectedNavText-163",
+                                        "selectedText": "HvTypography-selectedText-159",
+                                        "vizText": "HvTypography-vizText-168",
+                                        "xlTitle": "HvTypography-xlTitle-151",
+                                        "xsTitle": "HvTypography-xsTitle-155",
+                                        "xxlTitle": "HvTypography-xxlTitle-150",
+                                        "xxsTitle": "HvTypography-xxsTitle-156",
                                       }
                                     }
                                     component="div"
@@ -3592,7 +3578,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     variant="selectedText"
                                   >
                                     <div
-                                      className="HvTypography-selectedText-161 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                      className="HvTypography-selectedText-159 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                       id="hv-verticalnavigation-treeviewitem27-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -3622,19 +3608,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               className=""
                               classes={
                                 Object {
-                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                                  "content": "HvVerticalNavigationTreeViewItem-content-148",
-                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                                  "group": "HvVerticalNavigationTreeViewItem-group-137",
-                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                                  "node": "HvVerticalNavigationTreeViewItem-node-138",
-                                  "root": "HvVerticalNavigationTreeViewItem-root-136",
-                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                                  "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                                  "content": "HvVerticalNavigationTreeViewItem-content-146",
+                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                                  "group": "HvVerticalNavigationTreeViewItem-group-135",
+                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                                  "node": "HvVerticalNavigationTreeViewItem-node-136",
+                                  "root": "HvVerticalNavigationTreeViewItem-root-134",
+                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                                  "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                                 }
                               }
                               collapseIcon={null}
@@ -3648,18 +3634,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               selectable={false}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-unselectable-141"
+                                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-unselectable-139"
                                 id="hv-verticalnavigation-treeviewitem28"
                                 role="treeitem"
                               >
                                 <WithStyles(ForwardRef)
-                                  className="HvVerticalNavigationTreeViewItem-content-148"
+                                  className="HvVerticalNavigationTreeViewItem-content-146"
                                   component="div"
                                   id="hv-verticalnavigation-treeviewitem28-button"
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                        class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                         id="hv-verticalnavigation-treeviewitem28-button"
                                         role="button"
                                         tabindex="-1"
@@ -3676,34 +3662,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   variant="normalText"
                                 >
                                   <ForwardRef
-                                    className="HvVerticalNavigationTreeViewItem-content-148"
+                                    className="HvVerticalNavigationTreeViewItem-content-146"
                                     classes={
                                       Object {
-                                        "3xlTitle": "HvTypography-3xlTitle-151",
-                                        "4xlTitle": "HvTypography-4xlTitle-150",
-                                        "5xlTitle": "HvTypography-5xlTitle-149",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                        "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                        "disabledText": "HvTypography-disabledText-170",
-                                        "highlightText": "HvTypography-highlightText-159",
-                                        "infoText": "HvTypography-infoText-168",
-                                        "inlineLink": "HvTypography-inlineLink-162",
-                                        "lTitle": "HvTypography-lTitle-154",
-                                        "labelText": "HvTypography-labelText-167",
-                                        "mTitle": "HvTypography-mTitle-155",
-                                        "margin": "HvTypography-margin-173",
-                                        "normalText": "HvTypography-normalText-160",
-                                        "placeholderText": "HvTypography-placeholderText-164",
-                                        "sLink": "HvTypography-sLink-169",
-                                        "sText": "HvTypography-sText-166",
-                                        "sTitle": "HvTypography-sTitle-156",
-                                        "selectedNavText": "HvTypography-selectedNavText-165",
-                                        "selectedText": "HvTypography-selectedText-161",
-                                        "vizText": "HvTypography-vizText-171",
-                                        "xlTitle": "HvTypography-xlTitle-153",
-                                        "xsTitle": "HvTypography-xsTitle-157",
-                                        "xxlTitle": "HvTypography-xxlTitle-152",
-                                        "xxsTitle": "HvTypography-xxsTitle-158",
+                                        "3xlTitle": "HvTypography-3xlTitle-149",
+                                        "4xlTitle": "HvTypography-4xlTitle-148",
+                                        "5xlTitle": "HvTypography-5xlTitle-147",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                        "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                        "highlightText": "HvTypography-highlightText-157",
+                                        "infoText": "HvTypography-infoText-166",
+                                        "inlineLink": "HvTypography-inlineLink-160",
+                                        "lTitle": "HvTypography-lTitle-152",
+                                        "labelText": "HvTypography-labelText-165",
+                                        "mTitle": "HvTypography-mTitle-153",
+                                        "margin": "HvTypography-margin-170",
+                                        "normalText": "HvTypography-normalText-158",
+                                        "placeholderText": "HvTypography-placeholderText-162",
+                                        "sLink": "HvTypography-sLink-167",
+                                        "sText": "HvTypography-sText-164",
+                                        "sTitle": "HvTypography-sTitle-154",
+                                        "selectedNavText": "HvTypography-selectedNavText-163",
+                                        "selectedText": "HvTypography-selectedText-159",
+                                        "vizText": "HvTypography-vizText-168",
+                                        "xlTitle": "HvTypography-xlTitle-151",
+                                        "xsTitle": "HvTypography-xsTitle-155",
+                                        "xxlTitle": "HvTypography-xxlTitle-150",
+                                        "xxsTitle": "HvTypography-xxsTitle-156",
                                       }
                                     }
                                     component="div"
@@ -3716,7 +3701,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     variant="normalText"
                                   >
                                     <div
-                                      className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                      className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                       id="hv-verticalnavigation-treeviewitem28-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -3754,19 +3739,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               className=""
                               classes={
                                 Object {
-                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                                  "content": "HvVerticalNavigationTreeViewItem-content-148",
-                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                                  "group": "HvVerticalNavigationTreeViewItem-group-137",
-                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                                  "node": "HvVerticalNavigationTreeViewItem-node-138",
-                                  "root": "HvVerticalNavigationTreeViewItem-root-136",
-                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                                  "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                                  "content": "HvVerticalNavigationTreeViewItem-content-146",
+                                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                                  "group": "HvVerticalNavigationTreeViewItem-group-135",
+                                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                                  "node": "HvVerticalNavigationTreeViewItem-node-136",
+                                  "root": "HvVerticalNavigationTreeViewItem-root-134",
+                                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                                  "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                                 }
                               }
                               collapseIcon={null}
@@ -3788,18 +3773,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               selectable={null}
                             >
                               <li
-                                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                                 id="hv-verticalnavigation-treeviewitem29"
                                 role="treeitem"
                               >
                                 <WithStyles(ForwardRef)
-                                  className="HvVerticalNavigationTreeViewItem-content-148"
+                                  className="HvVerticalNavigationTreeViewItem-content-146"
                                   component="div"
                                   id="hv-verticalnavigation-treeviewitem29-button"
                                   innerRef={
                                     Object {
                                       "current": <div
-                                        class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                        class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                         id="hv-verticalnavigation-treeviewitem29-button"
                                         role="button"
                                         tabindex="-1"
@@ -3816,34 +3801,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   variant="normalText"
                                 >
                                   <ForwardRef
-                                    className="HvVerticalNavigationTreeViewItem-content-148"
+                                    className="HvVerticalNavigationTreeViewItem-content-146"
                                     classes={
                                       Object {
-                                        "3xlTitle": "HvTypography-3xlTitle-151",
-                                        "4xlTitle": "HvTypography-4xlTitle-150",
-                                        "5xlTitle": "HvTypography-5xlTitle-149",
-                                        "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                        "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                        "disabledText": "HvTypography-disabledText-170",
-                                        "highlightText": "HvTypography-highlightText-159",
-                                        "infoText": "HvTypography-infoText-168",
-                                        "inlineLink": "HvTypography-inlineLink-162",
-                                        "lTitle": "HvTypography-lTitle-154",
-                                        "labelText": "HvTypography-labelText-167",
-                                        "mTitle": "HvTypography-mTitle-155",
-                                        "margin": "HvTypography-margin-173",
-                                        "normalText": "HvTypography-normalText-160",
-                                        "placeholderText": "HvTypography-placeholderText-164",
-                                        "sLink": "HvTypography-sLink-169",
-                                        "sText": "HvTypography-sText-166",
-                                        "sTitle": "HvTypography-sTitle-156",
-                                        "selectedNavText": "HvTypography-selectedNavText-165",
-                                        "selectedText": "HvTypography-selectedText-161",
-                                        "vizText": "HvTypography-vizText-171",
-                                        "xlTitle": "HvTypography-xlTitle-153",
-                                        "xsTitle": "HvTypography-xsTitle-157",
-                                        "xxlTitle": "HvTypography-xxlTitle-152",
-                                        "xxsTitle": "HvTypography-xxsTitle-158",
+                                        "3xlTitle": "HvTypography-3xlTitle-149",
+                                        "4xlTitle": "HvTypography-4xlTitle-148",
+                                        "5xlTitle": "HvTypography-5xlTitle-147",
+                                        "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                        "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                        "highlightText": "HvTypography-highlightText-157",
+                                        "infoText": "HvTypography-infoText-166",
+                                        "inlineLink": "HvTypography-inlineLink-160",
+                                        "lTitle": "HvTypography-lTitle-152",
+                                        "labelText": "HvTypography-labelText-165",
+                                        "mTitle": "HvTypography-mTitle-153",
+                                        "margin": "HvTypography-margin-170",
+                                        "normalText": "HvTypography-normalText-158",
+                                        "placeholderText": "HvTypography-placeholderText-162",
+                                        "sLink": "HvTypography-sLink-167",
+                                        "sText": "HvTypography-sText-164",
+                                        "sTitle": "HvTypography-sTitle-154",
+                                        "selectedNavText": "HvTypography-selectedNavText-163",
+                                        "selectedText": "HvTypography-selectedText-159",
+                                        "vizText": "HvTypography-vizText-168",
+                                        "xlTitle": "HvTypography-xlTitle-151",
+                                        "xsTitle": "HvTypography-xsTitle-155",
+                                        "xxlTitle": "HvTypography-xxlTitle-150",
+                                        "xxsTitle": "HvTypography-xxsTitle-156",
                                       }
                                     }
                                     component="div"
@@ -3856,7 +3840,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     variant="normalText"
                                   >
                                     <div
-                                      className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                      className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                       id="hv-verticalnavigation-treeviewitem29-button"
                                       onClick={[Function]}
                                       onKeyDown={[Function]}
@@ -3894,19 +3878,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               className=""
               classes={
                 Object {
-                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                  "content": "HvVerticalNavigationTreeViewItem-content-148",
-                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                  "group": "HvVerticalNavigationTreeViewItem-group-137",
-                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                  "node": "HvVerticalNavigationTreeViewItem-node-138",
-                  "root": "HvVerticalNavigationTreeViewItem-root-136",
-                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                  "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                  "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                  "content": "HvVerticalNavigationTreeViewItem-content-146",
+                  "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                  "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                  "group": "HvVerticalNavigationTreeViewItem-group-135",
+                  "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                  "node": "HvVerticalNavigationTreeViewItem-node-136",
+                  "root": "HvVerticalNavigationTreeViewItem-root-134",
+                  "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                  "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                  "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                  "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                  "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                 }
               }
               collapseIcon={null}
@@ -3920,25 +3904,25 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-expanded-143 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-expanded-141 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem30"
                 role="treeitem"
               >
                 <WithStyles(ForwardRef)
-                  className="HvVerticalNavigationTreeViewItem-content-148"
+                  className="HvVerticalNavigationTreeViewItem-content-146"
                   component="div"
                   id="hv-verticalnavigation-treeviewitem30-button"
                   innerRef={
                     Object {
                       "current": <div
-                        class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                        class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                         id="hv-verticalnavigation-treeviewitem30-button"
                         role="button"
                         tabindex="-1"
                       >
                         <div
-                          class="HvIconStop-root-179 HvIconStop-rootS-181"
+                          class="HvIconStop-root-176 HvIconStop-rootS-178"
                           style="width: 32px; height: 32px;"
                         >
                           <svg
@@ -3967,34 +3951,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   variant="normalText"
                 >
                   <ForwardRef
-                    className="HvVerticalNavigationTreeViewItem-content-148"
+                    className="HvVerticalNavigationTreeViewItem-content-146"
                     classes={
                       Object {
-                        "3xlTitle": "HvTypography-3xlTitle-151",
-                        "4xlTitle": "HvTypography-4xlTitle-150",
-                        "5xlTitle": "HvTypography-5xlTitle-149",
-                        "baseFontFamily": "HvTypography-baseFontFamily-172",
-                        "disabledButtonText": "HvTypography-disabledButtonText-163",
-                        "disabledText": "HvTypography-disabledText-170",
-                        "highlightText": "HvTypography-highlightText-159",
-                        "infoText": "HvTypography-infoText-168",
-                        "inlineLink": "HvTypography-inlineLink-162",
-                        "lTitle": "HvTypography-lTitle-154",
-                        "labelText": "HvTypography-labelText-167",
-                        "mTitle": "HvTypography-mTitle-155",
-                        "margin": "HvTypography-margin-173",
-                        "normalText": "HvTypography-normalText-160",
-                        "placeholderText": "HvTypography-placeholderText-164",
-                        "sLink": "HvTypography-sLink-169",
-                        "sText": "HvTypography-sText-166",
-                        "sTitle": "HvTypography-sTitle-156",
-                        "selectedNavText": "HvTypography-selectedNavText-165",
-                        "selectedText": "HvTypography-selectedText-161",
-                        "vizText": "HvTypography-vizText-171",
-                        "xlTitle": "HvTypography-xlTitle-153",
-                        "xsTitle": "HvTypography-xsTitle-157",
-                        "xxlTitle": "HvTypography-xxlTitle-152",
-                        "xxsTitle": "HvTypography-xxsTitle-158",
+                        "3xlTitle": "HvTypography-3xlTitle-149",
+                        "4xlTitle": "HvTypography-4xlTitle-148",
+                        "5xlTitle": "HvTypography-5xlTitle-147",
+                        "baseFontFamily": "HvTypography-baseFontFamily-169",
+                        "disabledButtonText": "HvTypography-disabledButtonText-161",
+                        "highlightText": "HvTypography-highlightText-157",
+                        "infoText": "HvTypography-infoText-166",
+                        "inlineLink": "HvTypography-inlineLink-160",
+                        "lTitle": "HvTypography-lTitle-152",
+                        "labelText": "HvTypography-labelText-165",
+                        "mTitle": "HvTypography-mTitle-153",
+                        "margin": "HvTypography-margin-170",
+                        "normalText": "HvTypography-normalText-158",
+                        "placeholderText": "HvTypography-placeholderText-162",
+                        "sLink": "HvTypography-sLink-167",
+                        "sText": "HvTypography-sText-164",
+                        "sTitle": "HvTypography-sTitle-154",
+                        "selectedNavText": "HvTypography-selectedNavText-163",
+                        "selectedText": "HvTypography-selectedText-159",
+                        "vizText": "HvTypography-vizText-168",
+                        "xlTitle": "HvTypography-xlTitle-151",
+                        "xsTitle": "HvTypography-xsTitle-155",
+                        "xxlTitle": "HvTypography-xxlTitle-150",
+                        "xxsTitle": "HvTypography-xxsTitle-156",
                       }
                     }
                     component="div"
@@ -4007,7 +3990,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                      className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                       id="hv-verticalnavigation-treeviewitem30-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
@@ -4031,16 +4014,16 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           }
                           classes={
                             Object {
-                              "root": "HvIconStop-root-179",
-                              "rootL": "HvIconStop-rootL-183",
-                              "rootM": "HvIconStop-rootM-182",
-                              "rootS": "HvIconStop-rootS-181",
-                              "rootXs": "HvIconStop-rootXs-180",
+                              "root": "HvIconStop-root-176",
+                              "rootL": "HvIconStop-rootL-180",
+                              "rootM": "HvIconStop-rootM-179",
+                              "rootS": "HvIconStop-rootS-178",
+                              "rootXs": "HvIconStop-rootXs-177",
                             }
                           }
                         >
                           <div
-                            className="HvIconStop-root-179 HvIconStop-rootS-181"
+                            className="HvIconStop-root-176 HvIconStop-rootS-178"
                             style={
                               Object {
                                 "height": "32px",
@@ -4069,7 +4052,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <ul
-                  className="HvVerticalNavigationTreeViewItem-group-137"
+                  className="HvVerticalNavigationTreeViewItem-group-135"
                   role="group"
                 >
                   <WithStyles(TreeViewItem)
@@ -4088,19 +4071,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       className=""
                       classes={
                         Object {
-                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                          "content": "HvVerticalNavigationTreeViewItem-content-148",
-                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                          "group": "HvVerticalNavigationTreeViewItem-group-137",
-                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                          "node": "HvVerticalNavigationTreeViewItem-node-138",
-                          "root": "HvVerticalNavigationTreeViewItem-root-136",
-                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                          "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                          "content": "HvVerticalNavigationTreeViewItem-content-146",
+                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                          "group": "HvVerticalNavigationTreeViewItem-group-135",
+                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                          "node": "HvVerticalNavigationTreeViewItem-node-136",
+                          "root": "HvVerticalNavigationTreeViewItem-root-134",
+                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                          "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                         }
                       }
                       collapseIcon={null}
@@ -4114,18 +4097,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                         id="hv-verticalnavigation-treeviewitem31"
                         role="treeitem"
                       >
                         <WithStyles(ForwardRef)
-                          className="HvVerticalNavigationTreeViewItem-content-148"
+                          className="HvVerticalNavigationTreeViewItem-content-146"
                           component="div"
                           id="hv-verticalnavigation-treeviewitem31-button"
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                 id="hv-verticalnavigation-treeviewitem31-button"
                                 role="button"
                                 tabindex="-1"
@@ -4142,34 +4125,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           variant="normalText"
                         >
                           <ForwardRef
-                            className="HvVerticalNavigationTreeViewItem-content-148"
+                            className="HvVerticalNavigationTreeViewItem-content-146"
                             classes={
                               Object {
-                                "3xlTitle": "HvTypography-3xlTitle-151",
-                                "4xlTitle": "HvTypography-4xlTitle-150",
-                                "5xlTitle": "HvTypography-5xlTitle-149",
-                                "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                "disabledText": "HvTypography-disabledText-170",
-                                "highlightText": "HvTypography-highlightText-159",
-                                "infoText": "HvTypography-infoText-168",
-                                "inlineLink": "HvTypography-inlineLink-162",
-                                "lTitle": "HvTypography-lTitle-154",
-                                "labelText": "HvTypography-labelText-167",
-                                "mTitle": "HvTypography-mTitle-155",
-                                "margin": "HvTypography-margin-173",
-                                "normalText": "HvTypography-normalText-160",
-                                "placeholderText": "HvTypography-placeholderText-164",
-                                "sLink": "HvTypography-sLink-169",
-                                "sText": "HvTypography-sText-166",
-                                "sTitle": "HvTypography-sTitle-156",
-                                "selectedNavText": "HvTypography-selectedNavText-165",
-                                "selectedText": "HvTypography-selectedText-161",
-                                "vizText": "HvTypography-vizText-171",
-                                "xlTitle": "HvTypography-xlTitle-153",
-                                "xsTitle": "HvTypography-xsTitle-157",
-                                "xxlTitle": "HvTypography-xxlTitle-152",
-                                "xxsTitle": "HvTypography-xxsTitle-158",
+                                "3xlTitle": "HvTypography-3xlTitle-149",
+                                "4xlTitle": "HvTypography-4xlTitle-148",
+                                "5xlTitle": "HvTypography-5xlTitle-147",
+                                "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                "highlightText": "HvTypography-highlightText-157",
+                                "infoText": "HvTypography-infoText-166",
+                                "inlineLink": "HvTypography-inlineLink-160",
+                                "lTitle": "HvTypography-lTitle-152",
+                                "labelText": "HvTypography-labelText-165",
+                                "mTitle": "HvTypography-mTitle-153",
+                                "margin": "HvTypography-margin-170",
+                                "normalText": "HvTypography-normalText-158",
+                                "placeholderText": "HvTypography-placeholderText-162",
+                                "sLink": "HvTypography-sLink-167",
+                                "sText": "HvTypography-sText-164",
+                                "sTitle": "HvTypography-sTitle-154",
+                                "selectedNavText": "HvTypography-selectedNavText-163",
+                                "selectedText": "HvTypography-selectedText-159",
+                                "vizText": "HvTypography-vizText-168",
+                                "xlTitle": "HvTypography-xlTitle-151",
+                                "xsTitle": "HvTypography-xsTitle-155",
+                                "xxlTitle": "HvTypography-xxlTitle-150",
+                                "xxsTitle": "HvTypography-xxsTitle-156",
                               }
                             }
                             component="div"
@@ -4182,7 +4164,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                              className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                               id="hv-verticalnavigation-treeviewitem31-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -4212,19 +4194,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       className=""
                       classes={
                         Object {
-                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                          "content": "HvVerticalNavigationTreeViewItem-content-148",
-                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                          "group": "HvVerticalNavigationTreeViewItem-group-137",
-                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                          "node": "HvVerticalNavigationTreeViewItem-node-138",
-                          "root": "HvVerticalNavigationTreeViewItem-root-136",
-                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                          "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                          "content": "HvVerticalNavigationTreeViewItem-content-146",
+                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                          "group": "HvVerticalNavigationTreeViewItem-group-135",
+                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                          "node": "HvVerticalNavigationTreeViewItem-node-136",
+                          "root": "HvVerticalNavigationTreeViewItem-root-134",
+                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                          "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                         }
                       }
                       collapseIcon={null}
@@ -4238,18 +4220,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                         id="hv-verticalnavigation-treeviewitem32"
                         role="treeitem"
                       >
                         <WithStyles(ForwardRef)
-                          className="HvVerticalNavigationTreeViewItem-content-148"
+                          className="HvVerticalNavigationTreeViewItem-content-146"
                           component="div"
                           id="hv-verticalnavigation-treeviewitem32-button"
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                 id="hv-verticalnavigation-treeviewitem32-button"
                                 role="button"
                                 tabindex="-1"
@@ -4266,34 +4248,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           variant="normalText"
                         >
                           <ForwardRef
-                            className="HvVerticalNavigationTreeViewItem-content-148"
+                            className="HvVerticalNavigationTreeViewItem-content-146"
                             classes={
                               Object {
-                                "3xlTitle": "HvTypography-3xlTitle-151",
-                                "4xlTitle": "HvTypography-4xlTitle-150",
-                                "5xlTitle": "HvTypography-5xlTitle-149",
-                                "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                "disabledText": "HvTypography-disabledText-170",
-                                "highlightText": "HvTypography-highlightText-159",
-                                "infoText": "HvTypography-infoText-168",
-                                "inlineLink": "HvTypography-inlineLink-162",
-                                "lTitle": "HvTypography-lTitle-154",
-                                "labelText": "HvTypography-labelText-167",
-                                "mTitle": "HvTypography-mTitle-155",
-                                "margin": "HvTypography-margin-173",
-                                "normalText": "HvTypography-normalText-160",
-                                "placeholderText": "HvTypography-placeholderText-164",
-                                "sLink": "HvTypography-sLink-169",
-                                "sText": "HvTypography-sText-166",
-                                "sTitle": "HvTypography-sTitle-156",
-                                "selectedNavText": "HvTypography-selectedNavText-165",
-                                "selectedText": "HvTypography-selectedText-161",
-                                "vizText": "HvTypography-vizText-171",
-                                "xlTitle": "HvTypography-xlTitle-153",
-                                "xsTitle": "HvTypography-xsTitle-157",
-                                "xxlTitle": "HvTypography-xxlTitle-152",
-                                "xxsTitle": "HvTypography-xxsTitle-158",
+                                "3xlTitle": "HvTypography-3xlTitle-149",
+                                "4xlTitle": "HvTypography-4xlTitle-148",
+                                "5xlTitle": "HvTypography-5xlTitle-147",
+                                "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                "highlightText": "HvTypography-highlightText-157",
+                                "infoText": "HvTypography-infoText-166",
+                                "inlineLink": "HvTypography-inlineLink-160",
+                                "lTitle": "HvTypography-lTitle-152",
+                                "labelText": "HvTypography-labelText-165",
+                                "mTitle": "HvTypography-mTitle-153",
+                                "margin": "HvTypography-margin-170",
+                                "normalText": "HvTypography-normalText-158",
+                                "placeholderText": "HvTypography-placeholderText-162",
+                                "sLink": "HvTypography-sLink-167",
+                                "sText": "HvTypography-sText-164",
+                                "sTitle": "HvTypography-sTitle-154",
+                                "selectedNavText": "HvTypography-selectedNavText-163",
+                                "selectedText": "HvTypography-selectedText-159",
+                                "vizText": "HvTypography-vizText-168",
+                                "xlTitle": "HvTypography-xlTitle-151",
+                                "xsTitle": "HvTypography-xsTitle-155",
+                                "xxlTitle": "HvTypography-xxlTitle-150",
+                                "xxsTitle": "HvTypography-xxsTitle-156",
                               }
                             }
                             component="div"
@@ -4306,7 +4287,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                              className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                               id="hv-verticalnavigation-treeviewitem32-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
@@ -4336,19 +4317,19 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       className=""
                       classes={
                         Object {
-                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-142",
-                          "content": "HvVerticalNavigationTreeViewItem-content-148",
-                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-139",
-                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-143",
-                          "group": "HvVerticalNavigationTreeViewItem-group-137",
-                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-146",
-                          "node": "HvVerticalNavigationTreeViewItem-node-138",
-                          "root": "HvVerticalNavigationTreeViewItem-root-136",
-                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-140",
-                          "selected": "HvVerticalNavigationTreeViewItem-selected-144",
-                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-141",
-                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-145",
-                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-147",
+                          "collapsed": "HvVerticalNavigationTreeViewItem-collapsed-140",
+                          "content": "HvVerticalNavigationTreeViewItem-content-146",
+                          "disabled": "HvVerticalNavigationTreeViewItem-disabled-137",
+                          "expanded": "HvVerticalNavigationTreeViewItem-expanded-141",
+                          "group": "HvVerticalNavigationTreeViewItem-group-135",
+                          "noIcon": "HvVerticalNavigationTreeViewItem-noIcon-144",
+                          "node": "HvVerticalNavigationTreeViewItem-node-136",
+                          "root": "HvVerticalNavigationTreeViewItem-root-134",
+                          "selectable": "HvVerticalNavigationTreeViewItem-selectable-138",
+                          "selected": "HvVerticalNavigationTreeViewItem-selected-142",
+                          "unselectable": "HvVerticalNavigationTreeViewItem-unselectable-139",
+                          "unselected": "HvVerticalNavigationTreeViewItem-unselected-143",
+                          "withIcon": "HvVerticalNavigationTreeViewItem-withIcon-145",
                         }
                       }
                       collapseIcon={null}
@@ -4362,18 +4343,18 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-node-138 HvVerticalNavigationTreeViewItem-selectable-140 HvVerticalNavigationTreeViewItem-unselected-145"
+                        className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
                         id="hv-verticalnavigation-treeviewitem33"
                         role="treeitem"
                       >
                         <WithStyles(ForwardRef)
-                          className="HvVerticalNavigationTreeViewItem-content-148"
+                          className="HvVerticalNavigationTreeViewItem-content-146"
                           component="div"
                           id="hv-verticalnavigation-treeviewitem33-button"
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                                class="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                                 id="hv-verticalnavigation-treeviewitem33-button"
                                 role="button"
                                 tabindex="-1"
@@ -4390,34 +4371,33 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           variant="normalText"
                         >
                           <ForwardRef
-                            className="HvVerticalNavigationTreeViewItem-content-148"
+                            className="HvVerticalNavigationTreeViewItem-content-146"
                             classes={
                               Object {
-                                "3xlTitle": "HvTypography-3xlTitle-151",
-                                "4xlTitle": "HvTypography-4xlTitle-150",
-                                "5xlTitle": "HvTypography-5xlTitle-149",
-                                "baseFontFamily": "HvTypography-baseFontFamily-172",
-                                "disabledButtonText": "HvTypography-disabledButtonText-163",
-                                "disabledText": "HvTypography-disabledText-170",
-                                "highlightText": "HvTypography-highlightText-159",
-                                "infoText": "HvTypography-infoText-168",
-                                "inlineLink": "HvTypography-inlineLink-162",
-                                "lTitle": "HvTypography-lTitle-154",
-                                "labelText": "HvTypography-labelText-167",
-                                "mTitle": "HvTypography-mTitle-155",
-                                "margin": "HvTypography-margin-173",
-                                "normalText": "HvTypography-normalText-160",
-                                "placeholderText": "HvTypography-placeholderText-164",
-                                "sLink": "HvTypography-sLink-169",
-                                "sText": "HvTypography-sText-166",
-                                "sTitle": "HvTypography-sTitle-156",
-                                "selectedNavText": "HvTypography-selectedNavText-165",
-                                "selectedText": "HvTypography-selectedText-161",
-                                "vizText": "HvTypography-vizText-171",
-                                "xlTitle": "HvTypography-xlTitle-153",
-                                "xsTitle": "HvTypography-xsTitle-157",
-                                "xxlTitle": "HvTypography-xxlTitle-152",
-                                "xxsTitle": "HvTypography-xxsTitle-158",
+                                "3xlTitle": "HvTypography-3xlTitle-149",
+                                "4xlTitle": "HvTypography-4xlTitle-148",
+                                "5xlTitle": "HvTypography-5xlTitle-147",
+                                "baseFontFamily": "HvTypography-baseFontFamily-169",
+                                "disabledButtonText": "HvTypography-disabledButtonText-161",
+                                "highlightText": "HvTypography-highlightText-157",
+                                "infoText": "HvTypography-infoText-166",
+                                "inlineLink": "HvTypography-inlineLink-160",
+                                "lTitle": "HvTypography-lTitle-152",
+                                "labelText": "HvTypography-labelText-165",
+                                "mTitle": "HvTypography-mTitle-153",
+                                "margin": "HvTypography-margin-170",
+                                "normalText": "HvTypography-normalText-158",
+                                "placeholderText": "HvTypography-placeholderText-162",
+                                "sLink": "HvTypography-sLink-167",
+                                "sText": "HvTypography-sText-164",
+                                "sTitle": "HvTypography-sTitle-154",
+                                "selectedNavText": "HvTypography-selectedNavText-163",
+                                "selectedText": "HvTypography-selectedText-159",
+                                "vizText": "HvTypography-vizText-168",
+                                "xlTitle": "HvTypography-xlTitle-151",
+                                "xsTitle": "HvTypography-xsTitle-155",
+                                "xxlTitle": "HvTypography-xxlTitle-150",
+                                "xxsTitle": "HvTypography-xxsTitle-156",
                               }
                             }
                             component="div"
@@ -4430,7 +4410,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText-160 HvTypography-baseFontFamily-172 HvTypography-margin-173 HvVerticalNavigationTreeViewItem-content-148"
+                              className="HvTypography-normalText-158 HvTypography-baseFontFamily-169 HvTypography-margin-170 HvVerticalNavigationTreeViewItem-content-146"
                               id="hv-verticalnavigation-treeviewitem33-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}

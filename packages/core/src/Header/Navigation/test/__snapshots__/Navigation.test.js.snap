@@ -909,16 +909,15 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                     "3xlTitle": "HvTypography-3xlTitle-15",
                                     "4xlTitle": "HvTypography-4xlTitle-14",
                                     "5xlTitle": "HvTypography-5xlTitle-13",
-                                    "baseFontFamily": "HvTypography-baseFontFamily-36",
+                                    "baseFontFamily": "HvTypography-baseFontFamily-35",
                                     "disabledButtonText": "HvTypography-disabledButtonText-27",
-                                    "disabledText": "HvTypography-disabledText-34",
                                     "highlightText": "HvTypography-highlightText-23",
                                     "infoText": "HvTypography-infoText-32",
                                     "inlineLink": "HvTypography-inlineLink-26",
                                     "lTitle": "HvTypography-lTitle-18",
                                     "labelText": "HvTypography-labelText-31",
                                     "mTitle": "HvTypography-mTitle-19",
-                                    "margin": "HvTypography-margin-37",
+                                    "margin": "HvTypography-margin-36",
                                     "normalText": "HvTypography-normalText-24",
                                     "placeholderText": "HvTypography-placeholderText-28",
                                     "sLink": "HvTypography-sLink-33",
@@ -926,7 +925,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                     "sTitle": "HvTypography-sTitle-20",
                                     "selectedNavText": "HvTypography-selectedNavText-29",
                                     "selectedText": "HvTypography-selectedText-25",
-                                    "vizText": "HvTypography-vizText-35",
+                                    "vizText": "HvTypography-vizText-34",
                                     "xlTitle": "HvTypography-xlTitle-17",
                                     "xsTitle": "HvTypography-xsTitle-21",
                                     "xxlTitle": "HvTypography-xxlTitle-16",
@@ -938,7 +937,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                 variant="normalText"
                               >
                                 <p
-                                  className="HvTypography-normalText-24 HvTypography-baseFontFamily-36 HvTypography-margin-37"
+                                  className="HvTypography-normalText-24 HvTypography-baseFontFamily-35 HvTypography-margin-36"
                                 >
                                   someLabel
                                 </p>

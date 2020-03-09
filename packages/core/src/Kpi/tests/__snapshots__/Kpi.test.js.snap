@@ -797,15 +797,15 @@ exports[`Kpi should render correctly 1`] = `
         className=""
         classes={
           Object {
-            "comparisonComposition": "HvKpi-comparisonComposition-41",
-            "comparisonContainer": "HvKpi-comparisonContainer-37",
-            "indicatorText": "HvKpi-indicatorText-40",
-            "indicatorUnit": "HvKpi-indicatorUnit-39",
-            "indicatorsContainer": "HvKpi-indicatorsContainer-38",
-            "kpiContainer": "HvKpi-kpiContainer-35",
-            "spacingToTheRight": "HvKpi-spacingToTheRight-42",
-            "trendLine": "HvKpi-trendLine-43",
-            "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-36",
+            "comparisonComposition": "HvKpi-comparisonComposition-40",
+            "comparisonContainer": "HvKpi-comparisonContainer-36",
+            "indicatorText": "HvKpi-indicatorText-39",
+            "indicatorUnit": "HvKpi-indicatorUnit-38",
+            "indicatorsContainer": "HvKpi-indicatorsContainer-37",
+            "kpiContainer": "HvKpi-kpiContainer-34",
+            "spacingToTheRight": "HvKpi-spacingToTheRight-41",
+            "trendLine": "HvKpi-trendLine-42",
+            "visualIndicatorContainer": "HvKpi-visualIndicatorContainer-35",
           }
         }
         indicatorTextVariant="lTitle"
@@ -823,7 +823,7 @@ exports[`Kpi should render correctly 1`] = `
         visualIndicator={null}
       >
         <div
-          className="HvKpi-kpiContainer-35"
+          className="HvKpi-kpiContainer-34"
         >
           <div>
             <WithStyles(ForwardRef)
@@ -834,31 +834,30 @@ exports[`Kpi should render correctly 1`] = `
               <ForwardRef
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-46",
-                    "4xlTitle": "HvTypography-4xlTitle-45",
-                    "5xlTitle": "HvTypography-5xlTitle-44",
-                    "baseFontFamily": "HvTypography-baseFontFamily-67",
-                    "disabledButtonText": "HvTypography-disabledButtonText-58",
-                    "disabledText": "HvTypography-disabledText-65",
-                    "highlightText": "HvTypography-highlightText-54",
-                    "infoText": "HvTypography-infoText-63",
-                    "inlineLink": "HvTypography-inlineLink-57",
-                    "lTitle": "HvTypography-lTitle-49",
-                    "labelText": "HvTypography-labelText-62",
-                    "mTitle": "HvTypography-mTitle-50",
-                    "margin": "HvTypography-margin-68",
-                    "normalText": "HvTypography-normalText-55",
-                    "placeholderText": "HvTypography-placeholderText-59",
-                    "sLink": "HvTypography-sLink-64",
-                    "sText": "HvTypography-sText-61",
-                    "sTitle": "HvTypography-sTitle-51",
-                    "selectedNavText": "HvTypography-selectedNavText-60",
-                    "selectedText": "HvTypography-selectedText-56",
-                    "vizText": "HvTypography-vizText-66",
-                    "xlTitle": "HvTypography-xlTitle-48",
-                    "xsTitle": "HvTypography-xsTitle-52",
-                    "xxlTitle": "HvTypography-xxlTitle-47",
-                    "xxsTitle": "HvTypography-xxsTitle-53",
+                    "3xlTitle": "HvTypography-3xlTitle-45",
+                    "4xlTitle": "HvTypography-4xlTitle-44",
+                    "5xlTitle": "HvTypography-5xlTitle-43",
+                    "baseFontFamily": "HvTypography-baseFontFamily-65",
+                    "disabledButtonText": "HvTypography-disabledButtonText-57",
+                    "highlightText": "HvTypography-highlightText-53",
+                    "infoText": "HvTypography-infoText-62",
+                    "inlineLink": "HvTypography-inlineLink-56",
+                    "lTitle": "HvTypography-lTitle-48",
+                    "labelText": "HvTypography-labelText-61",
+                    "mTitle": "HvTypography-mTitle-49",
+                    "margin": "HvTypography-margin-66",
+                    "normalText": "HvTypography-normalText-54",
+                    "placeholderText": "HvTypography-placeholderText-58",
+                    "sLink": "HvTypography-sLink-63",
+                    "sText": "HvTypography-sText-60",
+                    "sTitle": "HvTypography-sTitle-50",
+                    "selectedNavText": "HvTypography-selectedNavText-59",
+                    "selectedText": "HvTypography-selectedText-55",
+                    "vizText": "HvTypography-vizText-64",
+                    "xlTitle": "HvTypography-xlTitle-47",
+                    "xsTitle": "HvTypography-xsTitle-51",
+                    "xxlTitle": "HvTypography-xxlTitle-46",
+                    "xxsTitle": "HvTypography-xxsTitle-52",
                   }
                 }
                 component={null}
@@ -866,7 +865,7 @@ exports[`Kpi should render correctly 1`] = `
                 variant="highlightText"
               >
                 <p
-                  className="HvTypography-highlightText-54 HvTypography-baseFontFamily-67 HvTypography-margin-68"
+                  className="HvTypography-highlightText-53 HvTypography-baseFontFamily-65 HvTypography-margin-66"
                 >
                   Avg. service time
                 </p>
@@ -874,43 +873,42 @@ exports[`Kpi should render correctly 1`] = `
             </WithStyles(ForwardRef)>
           </div>
           <div
-            className="HvKpi-indicatorsContainer-38"
+            className="HvKpi-indicatorsContainer-37"
           >
             <WithStyles(ForwardRef)
-              className="HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
+              className="HvKpi-spacingToTheRight-41 HvKpi-indicatorText-39"
               component={null}
               paragraph={false}
               variant="lTitle"
             >
               <ForwardRef
-                className="HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
+                className="HvKpi-spacingToTheRight-41 HvKpi-indicatorText-39"
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-46",
-                    "4xlTitle": "HvTypography-4xlTitle-45",
-                    "5xlTitle": "HvTypography-5xlTitle-44",
-                    "baseFontFamily": "HvTypography-baseFontFamily-67",
-                    "disabledButtonText": "HvTypography-disabledButtonText-58",
-                    "disabledText": "HvTypography-disabledText-65",
-                    "highlightText": "HvTypography-highlightText-54",
-                    "infoText": "HvTypography-infoText-63",
-                    "inlineLink": "HvTypography-inlineLink-57",
-                    "lTitle": "HvTypography-lTitle-49",
-                    "labelText": "HvTypography-labelText-62",
-                    "mTitle": "HvTypography-mTitle-50",
-                    "margin": "HvTypography-margin-68",
-                    "normalText": "HvTypography-normalText-55",
-                    "placeholderText": "HvTypography-placeholderText-59",
-                    "sLink": "HvTypography-sLink-64",
-                    "sText": "HvTypography-sText-61",
-                    "sTitle": "HvTypography-sTitle-51",
-                    "selectedNavText": "HvTypography-selectedNavText-60",
-                    "selectedText": "HvTypography-selectedText-56",
-                    "vizText": "HvTypography-vizText-66",
-                    "xlTitle": "HvTypography-xlTitle-48",
-                    "xsTitle": "HvTypography-xsTitle-52",
-                    "xxlTitle": "HvTypography-xxlTitle-47",
-                    "xxsTitle": "HvTypography-xxsTitle-53",
+                    "3xlTitle": "HvTypography-3xlTitle-45",
+                    "4xlTitle": "HvTypography-4xlTitle-44",
+                    "5xlTitle": "HvTypography-5xlTitle-43",
+                    "baseFontFamily": "HvTypography-baseFontFamily-65",
+                    "disabledButtonText": "HvTypography-disabledButtonText-57",
+                    "highlightText": "HvTypography-highlightText-53",
+                    "infoText": "HvTypography-infoText-62",
+                    "inlineLink": "HvTypography-inlineLink-56",
+                    "lTitle": "HvTypography-lTitle-48",
+                    "labelText": "HvTypography-labelText-61",
+                    "mTitle": "HvTypography-mTitle-49",
+                    "margin": "HvTypography-margin-66",
+                    "normalText": "HvTypography-normalText-54",
+                    "placeholderText": "HvTypography-placeholderText-58",
+                    "sLink": "HvTypography-sLink-63",
+                    "sText": "HvTypography-sText-60",
+                    "sTitle": "HvTypography-sTitle-50",
+                    "selectedNavText": "HvTypography-selectedNavText-59",
+                    "selectedText": "HvTypography-selectedText-55",
+                    "vizText": "HvTypography-vizText-64",
+                    "xlTitle": "HvTypography-xlTitle-47",
+                    "xsTitle": "HvTypography-xsTitle-51",
+                    "xxlTitle": "HvTypography-xxlTitle-46",
+                    "xxsTitle": "HvTypography-xxsTitle-52",
                   }
                 }
                 component={null}
@@ -918,47 +916,46 @@ exports[`Kpi should render correctly 1`] = `
                 variant="lTitle"
               >
                 <h2
-                  className="HvTypography-lTitle-49 HvTypography-baseFontFamily-67 HvTypography-margin-68 HvKpi-spacingToTheRight-42 HvKpi-indicatorText-40"
+                  className="HvTypography-lTitle-48 HvTypography-baseFontFamily-65 HvTypography-margin-66 HvKpi-spacingToTheRight-41 HvKpi-indicatorText-39"
                 >
                   8.85
                 </h2>
               </ForwardRef>
             </WithStyles(ForwardRef)>
             <WithStyles(ForwardRef)
-              className="HvKpi-indicatorUnit-39"
+              className="HvKpi-indicatorUnit-38"
               component={null}
               paragraph={false}
               variant="sTitle"
             >
               <ForwardRef
-                className="HvKpi-indicatorUnit-39"
+                className="HvKpi-indicatorUnit-38"
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle-46",
-                    "4xlTitle": "HvTypography-4xlTitle-45",
-                    "5xlTitle": "HvTypography-5xlTitle-44",
-                    "baseFontFamily": "HvTypography-baseFontFamily-67",
-                    "disabledButtonText": "HvTypography-disabledButtonText-58",
-                    "disabledText": "HvTypography-disabledText-65",
-                    "highlightText": "HvTypography-highlightText-54",
-                    "infoText": "HvTypography-infoText-63",
-                    "inlineLink": "HvTypography-inlineLink-57",
-                    "lTitle": "HvTypography-lTitle-49",
-                    "labelText": "HvTypography-labelText-62",
-                    "mTitle": "HvTypography-mTitle-50",
-                    "margin": "HvTypography-margin-68",
-                    "normalText": "HvTypography-normalText-55",
-                    "placeholderText": "HvTypography-placeholderText-59",
-                    "sLink": "HvTypography-sLink-64",
-                    "sText": "HvTypography-sText-61",
-                    "sTitle": "HvTypography-sTitle-51",
-                    "selectedNavText": "HvTypography-selectedNavText-60",
-                    "selectedText": "HvTypography-selectedText-56",
-                    "vizText": "HvTypography-vizText-66",
-                    "xlTitle": "HvTypography-xlTitle-48",
-                    "xsTitle": "HvTypography-xsTitle-52",
-                    "xxlTitle": "HvTypography-xxlTitle-47",
-                    "xxsTitle": "HvTypography-xxsTitle-53",
+                    "3xlTitle": "HvTypography-3xlTitle-45",
+                    "4xlTitle": "HvTypography-4xlTitle-44",
+                    "5xlTitle": "HvTypography-5xlTitle-43",
+                    "baseFontFamily": "HvTypography-baseFontFamily-65",
+                    "disabledButtonText": "HvTypography-disabledButtonText-57",
+                    "highlightText": "HvTypography-highlightText-53",
+                    "infoText": "HvTypography-infoText-62",
+                    "inlineLink": "HvTypography-inlineLink-56",
+                    "lTitle": "HvTypography-lTitle-48",
+                    "labelText": "HvTypography-labelText-61",
+                    "mTitle": "HvTypography-mTitle-49",
+                    "margin": "HvTypography-margin-66",
+                    "normalText": "HvTypography-normalText-54",
+                    "placeholderText": "HvTypography-placeholderText-58",
+                    "sLink": "HvTypography-sLink-63",
+                    "sText": "HvTypography-sText-60",
+                    "sTitle": "HvTypography-sTitle-50",
+                    "selectedNavText": "HvTypography-selectedNavText-59",
+                    "selectedText": "HvTypography-selectedText-55",
+                    "vizText": "HvTypography-vizText-64",
+                    "xlTitle": "HvTypography-xlTitle-47",
+                    "xsTitle": "HvTypography-xsTitle-51",
+                    "xxlTitle": "HvTypography-xxlTitle-46",
+                    "xxsTitle": "HvTypography-xxsTitle-52",
                   }
                 }
                 component={null}
@@ -966,7 +963,7 @@ exports[`Kpi should render correctly 1`] = `
                 variant="sTitle"
               >
                 <h4
-                  className="HvTypography-sTitle-51 HvTypography-baseFontFamily-67 HvTypography-margin-68 HvKpi-indicatorUnit-39"
+                  className="HvTypography-sTitle-50 HvTypography-baseFontFamily-65 HvTypography-margin-66 HvKpi-indicatorUnit-38"
                 >
                   MS
                 </h4>

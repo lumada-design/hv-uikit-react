@@ -26,7 +26,6 @@
     "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
-    "update-uikit-common": "npm update @hv/uikit-common-themes",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json"
   },
   "peerDependencies": {
@@ -43,9 +42,7 @@
     "moment-timezone": "^0.5.28",
     "prop-types": "^15.7.2",
     "rc-slider": "8.6.3",
-    "rc-tooltip": "^3.7.3",
-    "react-day-picker": "^7.3.0",
-    "smoothscroll-polyfill": "^0.4.4"
+    "rc-tooltip": "^3.7.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

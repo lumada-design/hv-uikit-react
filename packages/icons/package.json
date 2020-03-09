@@ -14,15 +14,15 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "build": "npm-run-all clean convert build:* copy",
+    "build": "npm-run-all clean svg-optimize convert build:* copy",
+    "svg-optimize": "npx svgo --config=./svgo-config.yml -r -f assets assets",
+    "convert": "node ./src/svgToReact.js dir --input assets/ --output bin --force",
     "build:babel": "npx babel bin -d dist --source-maps --copy-files",
     "build:types": "node ./src/typeGen/main.js --input dist --output dist/@types; cp ./src/typeGen/index.d.ts dist",
-    "convert": "node ./src/svgToReact.js dir --input node_modules/@hv/uikit-common-icons/dist/Generic --output bin --force",
     "copy": "npx cp -f bin/index.js dist/index.es.js",
     "clean": "npx del-cli dist bin",
     "prepare": "npm run build",
     "link": "npm link",
-    "update-uikit-common": "npm update @hv/uikit-common-icons",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json"
   },
   "peerDependencies": {
@@ -31,8 +31,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@hv/uikit-common-icons": "^1.14.0",
-    "@hv/uikit-common-themes": "^1.5.0",
+    "@hv/uikit-common-themes": "^1.5.2",
     "clsx": "^1.0.4"
   },
   "devDependencies": {
@@ -55,8 +54,8 @@
     "npx": "^10.2.0",
     "prop-types": "^15.7.2",
     "recursive-readdir": "^2.2.2",
-    "rimraf": "^3.0.2",
-    "yargs": "^15.1.0"
+    "svgo": "^1.3.2",
+    "yargs": "^15.3.0"
   },
   "files": [
     "dist"

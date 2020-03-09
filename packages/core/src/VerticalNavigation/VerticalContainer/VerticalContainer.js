@@ -9,8 +9,8 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import { ClickAwayListener, withStyles } from "@material-ui/core";
 import clsx from "clsx";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import Menu from "@hv/uikit-react-icons/dist/Menu";
+import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
 import Button from "../../Button";
 
 import useUniqueId from "../../useUniqueId";
