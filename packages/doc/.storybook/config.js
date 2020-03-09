@@ -6,11 +6,6 @@ import withLayout from "./layout-addon";
 
 const req = require.context("../stories", true, /\.js$/);
 
-const routerWrapper = {
-  push: (route, params, options) => {},
-  prefetch: (route, params) => {}
-};
-
 const loadStories = () => {
   req.keys().forEach(filename => req(filename));
 };
@@ -37,7 +32,7 @@ const App = ({ story, initialTheme = "dawn" }) => {
   };
 
   return (
-    <HvProvider router={routerWrapper} uiKitTheme={theme} changeTheme={switchTheme}>
+    <HvProvider uiKitTheme={theme} changeTheme={switchTheme}>
       {story()}
     </HvProvider>
   );

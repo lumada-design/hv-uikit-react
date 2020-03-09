@@ -3,7 +3,6 @@
 exports[`User withStyles should handle click action correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -2964,7 +2963,6 @@ exports[`User withStyles should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -2998,7 +2996,6 @@ exports[`User withStyles should render correctly 1`] = `
 exports[`User withStyles should render correctly with props 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

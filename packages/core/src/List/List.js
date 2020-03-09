@@ -187,12 +187,12 @@ class List extends React.Component {
   };
 
   renderItemText = item => {
-    const { multiSelect, useRouter, hasTooltips } = this.props;
+    const { multiSelect, hasTooltips } = this.props;
     const Text = () => this.renderText(item);
     const ItemText = hasTooltips ? withTooltip(Text, item.label) : Text;
 
     return !multiSelect && item.path ? (
-      <HvLink key={item.label} route={item.path} params={item.params || {}} useRouter={useRouter}>
+      <HvLink key={item.label} route={item.path}>
         <ItemText />
       </HvLink>
     ) : (
@@ -337,7 +337,6 @@ List.propTypes = {
    * - iconCallback: The icon.
    * - showNavIcon: If true renders the navigation icon on the right.
    * - path: The path to navigate to.
-   * - params: The params to pass to the router.
    */
   // eslint-disable-next-line react/no-unused-prop-types
   values: PropTypes.arrayOf(
@@ -376,10 +375,6 @@ List.propTypes = {
    * If true renders list itens with radio or checkbox selectors.
    */
   useSelector: PropTypes.bool,
-  /**
-   * Indicates if the router should be used when item has path.
-   */
-  useRouter: PropTypes.bool,
   /**
    * Call back fired when list item is selected. Returns selection state.
    */
@@ -422,7 +417,6 @@ List.defaultProps = {
   showSelectAll: false,
   labels: DEFAULT_LABELS,
   useSelector: false,
-  useRouter: false,
   selectable: true,
   selectDefault: false,
   singleSelectionToggle: true,

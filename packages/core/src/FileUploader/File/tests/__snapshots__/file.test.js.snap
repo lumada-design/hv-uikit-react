@@ -3,7 +3,6 @@
 exports[`File withStyles - Invalid File should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1123,7 +1122,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
 exports[`File withStyles - Valid File should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

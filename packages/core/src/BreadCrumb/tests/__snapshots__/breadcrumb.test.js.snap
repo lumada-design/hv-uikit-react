@@ -3,7 +3,6 @@
 exports[`Breadcrumb withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -782,7 +781,6 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
       listRoute={Array []}
       maxVisible={9999}
       url={null}
-      useRouter={false}
     >
       <BreadCrumb
         className=""
@@ -799,7 +797,6 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
         listRoute={Array []}
         maxVisible={9999}
         url={null}
-        useRouter={false}
       >
         <nav
           className="HvBreadCrumb-root-1"

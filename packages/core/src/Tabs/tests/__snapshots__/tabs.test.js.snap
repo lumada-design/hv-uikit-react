@@ -3,7 +3,6 @@
 exports[`Compose Tabs withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1436,7 +1435,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
 exports[`Tabs withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

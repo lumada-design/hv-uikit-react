@@ -770,7 +770,6 @@ exports[`ModalContent Component should render correctly if opened 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -1553,7 +1552,6 @@ exports[`ModalContent withStyles should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

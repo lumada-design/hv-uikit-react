@@ -770,7 +770,6 @@ exports[`Badge  should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

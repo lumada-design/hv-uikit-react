@@ -42,14 +42,13 @@ LastPathElement.propTypes = {
 /**
  * Representation of an path element. This element contains a link.
  *
- * @param useRouter
  * @param elem
  * @param classes
  * @returns {*}
  * @constructor
  */
-const Page = ({ useRouter, elem, classes }) => (
-  <HvLink route={elem.path} params={elem.params} useRouter={useRouter}>
+const Page = ({ elem, classes }) => (
+  <HvLink route={elem.path} params={elem.params}>
     <div className={classes.centerContainer}>
       <HvTypography variant="sLink" className={classes.link}>
         {startCase(elem.label)}
@@ -59,7 +58,6 @@ const Page = ({ useRouter, elem, classes }) => (
 );
 
 Page.propTypes = {
-  useRouter: PropTypes.bool.isRequired,
   elem: PropTypes.shape({
     path: PropTypes.string,
     params: PropTypes.instanceOf(Object),
@@ -93,12 +91,11 @@ PathElement.propTypes = {
 /**
  * Helper function to build a new path list with one element with the list for the submenu.
  *
- * @param useRouter
  * @param listRoute
  * @param maxVisible
  * @returns {*}
  */
-const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
+const pathWithSubMenu = (listRoute, maxVisible) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
 
@@ -120,7 +117,6 @@ const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
  * Breadcrumb element.
  *
  * @param classes
- * @param useRouter
  * @param listRoute
  * @param maxVisible
  * @returns {*}
@@ -130,7 +126,6 @@ const BreadCrumb = ({
   classes,
   className,
   id,
-  useRouter,
   listRoute,
   maxVisible,
   url,
@@ -146,7 +141,7 @@ const BreadCrumb = ({
     listPath = [];
 
     // get the domain
-    const baseUrl = !useRouter ? url.match(/^.*\/\/[^/]+/, "") : "";
+    const baseUrl = url.match(/^.*\/\/[^/]+/, "");
 
     // get url without domain
     const urlWithoutDomain = url.replace(/^.*\/\/[^/]+/, "");
@@ -163,7 +158,7 @@ const BreadCrumb = ({
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(useRouter, listPath, maxVisibleElem)
+      ? pathWithSubMenu(listPath, maxVisibleElem)
       : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
@@ -181,7 +176,7 @@ const BreadCrumb = ({
               {React.isValidElement(elem) ? (
                 elem
               ) : (
-                <Page key={key} useRouter={useRouter} elem={elem} classes={classes} />
+                <Page key={key} elem={elem} classes={classes} />
               )}
             </PathElement>
           );
@@ -221,10 +216,6 @@ BreadCrumb.propTypes = {
     orderedList: PropTypes.string
   }).isRequired,
   /**
-   * Should use the router.
-   */
-  useRouter: PropTypes.bool,
-  /**
    * List of breadcrumb.
    */
   listRoute: PropTypes.arrayOf(
@@ -246,7 +237,6 @@ BreadCrumb.propTypes = {
 BreadCrumb.defaultProps = {
   className: "",
   id: undefined,
-  useRouter: false,
   maxVisible: 9999,
   listRoute: [],
   url: null

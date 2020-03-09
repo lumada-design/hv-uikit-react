@@ -3,7 +3,6 @@
 exports[`<EmptyState /> with Element title/message/action should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1621,7 +1620,6 @@ exports[`<EmptyState /> with String title/message should render correctly 1`] = 
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

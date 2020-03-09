@@ -18,16 +18,8 @@ describe("Provider", () => {
     }
   });
 
-  const mockRouter = {
-    router: "/mock"
-  };
-
   beforeEach(async () => {
-    wrapper = shallow(
-      <HvProvider theme={mockOverriden} router={mockRouter}>
-        Mock
-      </HvProvider>
-    );
+    wrapper = shallow(<HvProvider theme={mockOverriden}>Mock</HvProvider>);
   });
 
   it("should be defined", () => {
