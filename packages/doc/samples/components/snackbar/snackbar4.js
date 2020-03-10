@@ -1,70 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-class SimpleSnackbar extends React.Component {
-  state = {
-    open: false
+const SimpleSnackbar = props => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
   };
 
-  handleClick = () => {
-    this.setState({ open: true });
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
   };
 
-  handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    this.setState({ open: false });
-  };
-
-  render() {
-    const {
-      id,
-      label,
-      buttonLabel,
-      variant,
-      showIcon,
-      anchorOrigin,
-      action,
-      actionCallback,
-      customIcon
-    } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <Button
-          id={id ? `${id}-open-button` : undefined}
-          onClick={this.handleClick}
-          variant="contained"
-          color="primary"
-          style={{ width: "150px" }}
-        >
-          {buttonLabel}
-        </Button>
-        <HvSnackbar
-          id={id}
-          open={open}
-          label={label}
-          onClose={this.handleClose}
-          anchorOrigin={anchorOrigin}
-          variant={variant}
-          customIcon={customIcon}
-          showIcon={showIcon}
-          offset={60}
-          action={action}
-          actionCallback={actionCallback}
-        />
-      </div>
-    );
-  }
-}
+  const { id, ...other } = props;
+  return (
+    <div>
+      <Button
+        id={id ? `${id}-open-button` : undefined}
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        style={{ width: "150px" }}
+      >
+        Click me
+      </Button>
+      <HvSnackbar
+        id={id}
+        open={open}
+        onClose={handleClose}
+        offset={60}
+        {...other}
+      />
+    </div>
+  );
+};
 
 export default (
   <SimpleSnackbar
     id="actionStructure"
-    buttonLabel="Click me"
     label="This is a snackbar."
     variant="default"
     showIcon

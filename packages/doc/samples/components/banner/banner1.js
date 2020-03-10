@@ -6,7 +6,10 @@ const find = (array, value) => array.findIndex(element => element === value);
 
 // Simple controller for the offset of the banners.
 class Controller extends React.Component {
-  state = { banners: [] };
+  constructor() {
+    super();
+    this.state = { banners: [] };
+  }
 
   openCallback = id => {
     const { banners } = this.state;

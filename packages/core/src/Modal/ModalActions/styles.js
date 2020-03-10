@@ -6,7 +6,7 @@ const styles = theme => ({
   },
   spacing: {
     "& > :not(:first-child)": {
-      marginLeft: `${theme.hv.spacing.sm}px`
+      marginLeft: `${theme.hv.spacing.xs}px`
     }
   }
 });

@@ -1,63 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
 import { Info } from "@hv/uikit-react-icons/dist";
 
-class SimpleSnackbar extends React.Component {
-  state = {
-    open: false
+const SimpleSnackbar = props => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
   };
 
-  handleClick = () => {
-    this.setState({ open: true });
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
   };
 
-  handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    this.setState({ open: false });
-  };
-
-  render() {
-    const {
-      id,
-      label,
-      variant,
-      showIcon,
-      anchorOrigin,
-      action,
-      customIcon
-    } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <Button
-          id={id ? `${id}-open-button` : undefined}
-          onClick={this.handleClick}
-          variant="contained"
-          color="primary"
-          style={{ width: "150px" }}
-        >
-          Click me
-        </Button>
-        <HvSnackbar
-          id={id}
-          open={open}
-          label={label}
-          onClose={this.handleClose}
-          anchorOrigin={anchorOrigin}
-          variant={variant}
-          customIcon={customIcon}
-          showIcon={showIcon}
-          action={action}
-          offset={60}
-        />
-      </div>
-    );
-  }
-}
+  const { id, ...other } = props;
+  return (
+    <div>
+      <Button
+        id={id ? `${id}-open-button` : undefined}
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        style={{ width: "150px" }}
+      >
+        Click me
+      </Button>
+      <HvSnackbar open={open} onClose={handleClose} offset={60} {...other} />
+    </div>
+  );
+};
 
 export default (
   <SimpleSnackbar
