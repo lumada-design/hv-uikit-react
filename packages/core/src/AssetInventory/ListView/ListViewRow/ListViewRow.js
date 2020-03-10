@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../../styles/withStyles";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Actions from "../../../Actions";
 import Cell from "../ListViewCell";

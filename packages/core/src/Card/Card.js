@@ -3,13 +3,14 @@ import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
-import { Card, withStyles } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
 import Focus from "../Focus";
 import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
 import Media from "./Media";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-card-";

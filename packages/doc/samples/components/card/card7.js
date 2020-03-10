@@ -4,7 +4,7 @@ import HvCard, {
   HvCardMedia
 } from "@hv/uikit-react-core/dist/Card";
 import { Add, Delete, Preview, Upload } from "@hv/uikit-react-icons/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import leaf from "./resources/leaf.png";
 
 const styles = theme => ({

@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
-import { CardHeader, withStyles } from "@material-ui/core";
+import { CardHeader } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 const DEFAULT_ID = "hv-header";

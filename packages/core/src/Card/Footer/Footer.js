@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
-import { CardActions, withStyles } from "@material-ui/core";
+import { CardActions } from "@material-ui/core";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Actions from "../../Actions";
 import withConfig from "../../config/withConfig";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

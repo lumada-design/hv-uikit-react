@@ -6,7 +6,7 @@ import isEqual from "lodash/isEqual";
 import uniqueId from "lodash/uniqueId";
 import sort from "lodash/sortBy";
 import isEmpty from "lodash/isEmpty";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import MultiButton from "./Multibutton/Multibutton";
 import Search from "./Search/Search";
 import Sort from "./Sort/Sort";

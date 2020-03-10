@@ -1,7 +1,7 @@
 import React from "react";
 import HvTabs from "@hv/uikit-react-core/dist/Tabs";
 import HvTab from "@hv/uikit-react-core/dist/Tab";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 const StyledTabs = withStyles({
   flexContainer: {

@@ -1,4 +1,4 @@
-import { withStyles } from "@material-ui/core";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import styles from "./styles";
 import Accessibility from "./Accessibility";
 

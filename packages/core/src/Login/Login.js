@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
 import Success from "@hv/uikit-react-icons/dist/Success";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
+import withStyles from "../styles/withStyles";
 import HvGrid from "../Grid";
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";

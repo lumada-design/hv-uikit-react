@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "@material-ui/core";
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const HitachiLogo = props => {
   const theme = useTheme();

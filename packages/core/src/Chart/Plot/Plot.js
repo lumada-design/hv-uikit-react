@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
 import equals from "lodash/isEqual";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

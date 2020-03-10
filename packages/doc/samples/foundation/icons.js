@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import * as genericIconComponentList from "@hv/uikit-react-icons/dist";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";

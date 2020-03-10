@@ -1,7 +1,7 @@
 import React from "react";
 import HvNotificationPanel from "@hv/uikit-react-lab/dist/NotificationPanel";
 import { Alert, Close, Level5 } from "@hv/uikit-react-icons/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 const styles = {
   panel: { top: "65px", height: "500px" },

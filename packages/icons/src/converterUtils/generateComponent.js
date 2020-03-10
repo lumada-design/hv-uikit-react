@@ -46,8 +46,8 @@ module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import withStyles from "@material-ui/core/styles/withStyles";
-import useTheme from "@material-ui/core/styles/useTheme";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const X_SMALL = "${calcSize(12)}px";
 const X_SMALL_BOX = "${USE_DS_SPECS ? 32 : calcSize(12)}px";

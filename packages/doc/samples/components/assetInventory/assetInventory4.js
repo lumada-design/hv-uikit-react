@@ -22,7 +22,7 @@ import {
   Preview,
   Upload
 } from "@hv/uikit-react-icons/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 // https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/samples/components/assetInventory/ServerSideTester.js
 import { getPages, fetchData, doSearch, doSort } from "./ServerSideTester";
 

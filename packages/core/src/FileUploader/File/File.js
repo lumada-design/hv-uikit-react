@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
-import { IconButton, withStyles } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
 import Close from "@hv/uikit-react-icons/dist/Close";
 import Success from "@hv/uikit-react-icons/dist/Success";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 const getStatusIcon = (classes, status) => {

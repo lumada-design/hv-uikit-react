@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";

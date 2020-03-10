@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Collapse, IconButton, useTheme } from "@material-ui/core";
+import { Collapse, IconButton } from "@material-ui/core";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import { Code } from "@hv/uikit-react-icons/dist";
+
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const CodeButton = ({ onClick }) => (
   <IconButton onClick={onClick} style={{ marginLeft: "auto" }}>

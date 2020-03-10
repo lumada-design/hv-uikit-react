@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import { KeyboardCodes, isBrowser } from "../utils";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import HvTypography from "../../Typography";
 import useUniqueId from "../../useUniqueId";
 import styles from "./styles";

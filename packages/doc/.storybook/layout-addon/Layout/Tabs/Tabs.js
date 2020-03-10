@@ -4,10 +4,12 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Tab as MUITab, Tabs as MUITabs, useTheme } from "@material-ui/core";
+import { Tab as MUITab, Tabs as MUITabs } from "@material-ui/core";
 import TableAPI from "../TableAPI";
 import TableCSS from "../TableCSS";
 import Accessibility from "../Accessibility";
+
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const TabUsage = ({ parameters }) => {
   const { usage } = parameters;
@@ -18,7 +20,7 @@ const TabUsage = ({ parameters }) => {
       language="javascript"
       style={theme.hv.type === "dark" ? darcula : prism}
       customStyle={{
-        backgroundColor: theme.palette.atmo3,
+        backgroundColor: theme.hv.palette.atmo3,
         margin: 0,
         borderRadius: 0,
         fontSize: 14

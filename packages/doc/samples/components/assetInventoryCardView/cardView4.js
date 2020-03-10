@@ -1,6 +1,6 @@
 import React from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import HvCard, {
   HvCardFooter,
   HvCardMedia

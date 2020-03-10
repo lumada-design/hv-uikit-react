@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import Pagination from "@hv/uikit-react-core/dist/Pagination";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 

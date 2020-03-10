@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import styles from "./styles";
 

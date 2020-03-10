@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import useUniqueId from "../../useUniqueId";
 import HvTypography from "../../Typography";
 
@@ -290,7 +290,7 @@ const TreeViewItem = props => {
         component="div"
         variant={selectable && selected ? "selectedText" : "normalText"}
         role="button"
-        innerRef={actionableRef}
+        ref={actionableRef}
         className={classes.content}
         tabIndex={tabbable ? 0 : -1}
         onKeyDown={handleKeyDown}

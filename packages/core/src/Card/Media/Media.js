@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { CardMedia, withStyles } from "@material-ui/core";
+import { CardMedia } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

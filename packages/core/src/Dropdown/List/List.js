@@ -4,7 +4,7 @@ import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
-import { Popper, useTheme, withStyles } from "@material-ui/core";
+import { Popper } from "@material-ui/core";
 import OutsideClickHandler from "react-outside-click-handler";
 import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
 import InnerList from "../../List";
@@ -13,6 +13,8 @@ import Actions from "../Actions";
 import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
 import ConditionalWrapper from "../../utils/ConditionalWrapper";
+import useTheme from "../../styles/useTheme";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 const List = ({

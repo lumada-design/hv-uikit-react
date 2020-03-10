@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DialogActions, withStyles } from "@material-ui/core";
+import { DialogActions } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

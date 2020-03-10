@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
 import Separator from "@hv/uikit-react-icons/dist/DropRightXS";
 import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
+import withStyles from "../styles/withStyles";
 import HvTypography from "../Typography";
 import HvDropDownMenu from "../DropDownMenu";
 import HvLink from "../Link";

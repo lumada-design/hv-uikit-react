@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
-import { Slide, Snackbar, withStyles } from "@material-ui/core";
+import { Slide, Snackbar } from "@material-ui/core";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 const transLeft = props => <Slide {...props} direction="left" />;

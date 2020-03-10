@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { IconButton, Popper, useTheme, withStyles } from "@material-ui/core";
+import { IconButton, Popper } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import OutsideClickHandler from "react-outside-click-handler";
 import uniqueId from "lodash/uniqueId";
@@ -10,6 +10,8 @@ import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
+import useTheme from "../styles/useTheme";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 /**

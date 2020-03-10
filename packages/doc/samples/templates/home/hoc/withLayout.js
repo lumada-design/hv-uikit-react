@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useMediaQuery, useTheme, withStyles } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import classNames from "classnames";
 import isEmpty from "lodash/isEmpty";
 import Header from "../components/Header";

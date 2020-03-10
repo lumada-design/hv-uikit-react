@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { DialogTitle, withStyles } from "@material-ui/core";
+import { DialogTitle } from "@material-ui/core";
 import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import DropZone from "./DropZone";
 import FileList from "./FileList";
 import styles from "./styles";

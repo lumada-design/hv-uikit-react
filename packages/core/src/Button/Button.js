@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Button, withStyles } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import getMaterialConfiguration from "./materialConfigurarion";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 const HvButton = props => {

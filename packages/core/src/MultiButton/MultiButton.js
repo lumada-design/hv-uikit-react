@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { map, filter } from "lodash";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import HvButton from "../Button";
 import styles from "./styles";
 

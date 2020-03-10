@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
-import { Switch, withStyles } from "@material-ui/core";
+import { Switch } from "@material-ui/core";
 import CheckMark from "@hv/uikit-react-icons/dist/Good";
 import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 const HvSwitch = props => {

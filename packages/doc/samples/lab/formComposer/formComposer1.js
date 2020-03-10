@@ -1,5 +1,5 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvInput from "@hv/uikit-react-core/dist/Input";

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { useTheme } from "@material-ui/core/styles";
 import HvHeader, {
   HvHeaderBrand,
   HvHeaderActions,
@@ -10,6 +9,8 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvBadge from "@hv/uikit-react-core/dist/Badge";
 import { Alert, Menu, User } from "@hv/uikit-react-icons/dist";
 import HitachiLogo from "./assets/HitachiLogo";
+
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const navigationData = [
   {

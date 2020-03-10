@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../../styles/withStyles";
 import Close from "@hv/uikit-react-icons/dist/CloseXS";
 import Actions from "../../../Actions";
 import styles from "./styles";

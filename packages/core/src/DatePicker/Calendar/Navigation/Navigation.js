@@ -2,10 +2,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
 import DropLeftIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
 import DropRightIcon from "@hv/uikit-react-icons/dist/DropRightXS";
 import { KeyboardCodes, isKeypress } from "../../../utils/KeyboardUtils";
+import withStyles from "../../../styles/withStyles";
 import HvTypography from "../../../Typography";
 import styles from "./styles";
 

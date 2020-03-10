@@ -2,13 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
-import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
+import { ClickAwayListener, Popper } from "@material-ui/core";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
 import clsx from "clsx";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import Typography from "../Typography";
 import Calendar from "./Calendar";
 import Actions from "./Actions";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 import {

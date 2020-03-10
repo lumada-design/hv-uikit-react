@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
 import { parseList, parseState } from "./utils";
 import HvCheckBox from "../Selectors/CheckBox";

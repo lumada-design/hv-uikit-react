@@ -3,9 +3,10 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
-import { Dialog, withStyles } from "@material-ui/core";
+import { Dialog } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/Close";
 import Button from "../Button";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 /**

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { clone, fill } from "lodash";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import Chart from "../Chart";
 import { setData, setLayout } from "./barchartPlotlyOverrides";
 import styles from "./styles";

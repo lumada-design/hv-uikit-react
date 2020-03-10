@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
-import { useTheme, withStyles } from "@material-ui/core";
+import useTheme from "../styles/useTheme";
+import withStyles from "../styles/withStyles";
 import Tooltip from "./Tooltip";
 import {
   setLayout,

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Fade from "react-reveal/Fade";
 import { isNil, last } from "lodash";
 import clsx from "clsx";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import isBrowser from "../utils/browser";
 import Title from "./Title";
 import SearchBox from "../SearchBox";

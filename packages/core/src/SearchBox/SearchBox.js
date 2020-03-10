@@ -8,9 +8,9 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import partial from "lodash/partial";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
 import SearchIcon from "@hv/uikit-react-icons/dist/Search";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
+import withStyles from "../styles/withStyles";
 import HvInput from "../Input";
 import styles from "./styles";
 

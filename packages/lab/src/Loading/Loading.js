@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isEmpty from "lodash/isEmpty";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import styles from "./styles";
 
 import HvTypography from "@hv/uikit-react-core/dist/Typography";

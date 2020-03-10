@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { withStyles } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import withStyles from "../styles/withStyles";
 import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
 import styles from "./styles";

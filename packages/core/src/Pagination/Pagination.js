@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
-import { IconButton, withStyles } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import Down from "@hv/uikit-react-icons/dist/DropDownXS";
 import ArrowFirst from "@hv/uikit-react-icons/dist/Start";
 import ArrowLeft from "@hv/uikit-react-icons/dist/Backwards";
@@ -11,6 +11,7 @@ import ArrowLast from "@hv/uikit-react-icons/dist/End";
 import { KeyboardCodes as Codes, isKeypress } from "../utils/KeyboardUtils";
 import HvTypography from "../Typography";
 import HvInput from "../Input";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 const Pagination = ({

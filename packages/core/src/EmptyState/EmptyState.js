@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import isString from "lodash/isString";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../styles/withStyles";
 import HvTypography from "../Typography";
 import styles from "./styles";
 

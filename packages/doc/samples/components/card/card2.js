@@ -9,7 +9,7 @@ import {
 } from "@hv/uikit-react-icons/dist";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import leaf from "./resources/leaf.png";
 
 const configuration = {

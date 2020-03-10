@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import { ClickAwayListener, withStyles } from "@material-ui/core";
+import { ClickAwayListener } from "@material-ui/core";
 import clsx from "clsx";
 import Menu from "@hv/uikit-react-icons/dist/Menu";
 import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
@@ -17,6 +17,7 @@ import useUniqueId from "../../useUniqueId";
 
 import { getFirstAndLastFocus } from "../../utils/focusableElementFinder";
 
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

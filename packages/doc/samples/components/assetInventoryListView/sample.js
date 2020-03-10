@@ -4,7 +4,7 @@ import AssetInventoryListView, {
   HvListViewCell
 } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import {
   Level1,
   Level2Average,

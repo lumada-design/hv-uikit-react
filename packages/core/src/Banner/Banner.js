@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { Slide, Snackbar, withStyles } from "@material-ui/core";
+import { Slide, Snackbar } from "@material-ui/core";
 import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
+import withStyles from "../styles/withStyles";
 import HvBannerContentWrapper from "./BannerWrapper";
 import styles from "./styles";
 

@@ -2,7 +2,7 @@
 import React from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import Sort from "@hv/uikit-react-icons/dist/SortXS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescendingXS";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscendingXS";

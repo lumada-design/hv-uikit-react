@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
-import { SnackbarContent, withStyles } from "@material-ui/core";
+import { SnackbarContent } from "@material-ui/core";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 /**

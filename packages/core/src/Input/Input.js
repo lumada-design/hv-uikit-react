@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
-import { Input, withStyles } from "@material-ui/core";
+import { Input } from "@material-ui/core";
 import InfoS from "@hv/uikit-react-icons/dist/Info";
 import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
 import isBrowser from "../utils/browser";
@@ -13,6 +13,7 @@ import HvList from "../List";
 import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
+import withStyles from "../styles/withStyles";
 import styles from "./styles";
 
 class HvInput extends React.Component {

@@ -23,7 +23,7 @@ import {
   Preview,
   Upload
 } from "@hv/uikit-react-icons/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 const getStatus = statusNumber => {
   switch (statusNumber) {

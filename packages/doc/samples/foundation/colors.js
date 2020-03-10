@@ -1,5 +1,7 @@
 import React from "react";
-import { useTheme, withStyles } from "@material-ui/core";
+
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 const styles = theme => ({
   colorGroup: {

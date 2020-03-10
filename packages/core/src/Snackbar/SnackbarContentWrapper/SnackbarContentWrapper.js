@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import { SnackbarContent, withStyles } from "@material-ui/core";
+import { SnackbarContent } from "@material-ui/core";
 import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
 import Actions from "../../Actions";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {

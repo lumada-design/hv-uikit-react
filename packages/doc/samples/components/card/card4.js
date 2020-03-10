@@ -2,7 +2,7 @@ import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 const configurationNoMedia = {
   title: "Advanced Server DS120",

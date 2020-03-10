@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import useUniqueId from "../../useUniqueId";
 import TreeView, { TreeViewItem } from "../TreeView";
 import styles from "./styles";

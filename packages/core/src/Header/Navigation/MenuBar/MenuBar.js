@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../../styles/withStyles";
 import useUniqueId from "../../../useUniqueId";
 import { FocusContext } from "../utils/FocusContext";
 import SelectionContext from "../utils/SelectionContext";

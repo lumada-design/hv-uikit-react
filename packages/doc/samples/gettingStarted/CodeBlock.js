@@ -1,8 +1,8 @@
 import React from "react";
-import { useTheme } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const CodeBlock = ({ language, value }) => {
   const theme = useTheme();

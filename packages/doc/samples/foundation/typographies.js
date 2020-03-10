@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Collapse from "@material-ui/core/Collapse";
 import { Code } from "@hv/uikit-react-icons/dist";
 import IconButton from "@material-ui/core/IconButton";
-import { useTheme } from "@material-ui/core";
+import useTheme from "@hv/uikit-react-core/dist/styles/useTheme";
 
 const styles = theme => ({
   group: {

@@ -1,7 +1,7 @@
 import React from "react";
 import Tooltip from "@hv/uikit-react-core/dist/Tooltip";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 
 // To ensure conformity with the design specs for this component,
 // import the styling provided with the component

@@ -10,7 +10,7 @@ import {
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import TextArea from "@hv/uikit-react-core/dist/TextArea";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@hv/uikit-react-core/dist/styles/withStyles";
 import Input from "@hv/uikit-react-core/dist/Input";
 
 const btnStyle = {

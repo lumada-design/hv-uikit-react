@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import uniqueId from "lodash/uniqueId";
-import { CardContent, withStyles } from "@material-ui/core";
+import { CardContent, } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import styles from "./styles";
 
 const DEFAULT_ID = "hv-content";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
-import { withStyles } from "@material-ui/core";
+import withStyles from "../../styles/withStyles";
 import File from "../File";
 import styles from "./styles";
 
