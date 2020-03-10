@@ -3,11 +3,11 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import { Download, Play, Pause, Stop } from "@hv/uikit-react-icons/dist";
 
-const buttonStyles = () => ({
+const buttonStyles = {
   root: {
     margin: "10px 20px"
   }
-});
+};
 
 const Button = withStyles(buttonStyles)(HvButton);
 

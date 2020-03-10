@@ -1,6 +1,6 @@
 import IconArrowUp from "../../../../components/kpi/assets/arrow-green-up.svg";
 
-const styles = () => ({
+const styles = {
   kpi: {
     position: "relative",
     top: "1px"
@@ -20,6 +20,6 @@ const styles = () => ({
   title: {
     marginBottom: "20px"
   }
-});
+};
 
 export default styles;

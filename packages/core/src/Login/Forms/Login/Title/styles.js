@@ -1,4 +1,4 @@
-const styles = () => ({
+const styles = {
   root: {
     display: "flex",
     flexDirection: "column",
@@ -15,6 +15,6 @@ const styles = () => ({
   separator: {
     height: "15px"
   }
-});
+};
 
 export default styles;
