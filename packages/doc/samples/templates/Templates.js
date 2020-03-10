@@ -11,7 +11,7 @@ This file is used to present a index of the existing templates in the Storybook.
 by itself or shouldn't be used by any template. 
  */
 
-const styles = () => ({
+const styles = {
   title: {
     paddingBottom: "10px"
   },
@@ -27,7 +27,7 @@ const styles = () => ({
   sema0: {
     backgroundColor: "transparent"
   }
-});
+};
 
 const mediaStyle = theme => ({
   mediaContainer: {

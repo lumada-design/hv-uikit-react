@@ -1,5 +1,5 @@
-const styles = () => ({
+const styles = {
   root: {}
-});
+};
 
 export default styles;

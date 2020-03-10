@@ -3,11 +3,11 @@ import HvTabs from "@hv/uikit-react-core/dist/Tabs";
 import HvTab from "@hv/uikit-react-core/dist/Tab";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const StyledTabs = withStyles(() => ({
+const StyledTabs = withStyles({
   flexContainer: {
     justifyContent: "center"
   }
-}))(props => <HvTabs {...props} />);
+})(props => <HvTabs {...props} />);
 
 function Sample5() {
   const [value, setValue] = React.useState(0);

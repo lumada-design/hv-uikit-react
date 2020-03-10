@@ -131,7 +131,7 @@ const ${componentName} = ({
   );
 };
 
-const styles = () => ({
+const styles = {
   root: {
     display: "flex",
     "& svg": {
@@ -154,7 +154,7 @@ const styles = () => ({
     width: LARGE_BOX,
     height: LARGE_BOX
   }
-});
+};
 
 ${componentName}.propTypes = {
   /**
