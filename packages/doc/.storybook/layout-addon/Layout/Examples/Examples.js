@@ -25,7 +25,7 @@ const Example = ({ classes, example }) => {
   let component, snippet;
   if (isPath) {
     component = require(`../../../../samples/${src}`).default;
-    snippet = require(`!!raw-loader!../../../../samples/${src}`);
+    snippet = require(`!!raw-loader!../../../../samples/${src}`).default;
   }
 
   return (
