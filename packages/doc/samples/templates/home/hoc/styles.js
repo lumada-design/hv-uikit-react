@@ -1,4 +1,4 @@
-const styles = () => ({
+const styles = {
   section: {
     paddingTop: "50px",
     display: "flex"
@@ -17,6 +17,6 @@ const styles = () => ({
     flexGrow: 1,
     padding: "30px 15px 0 15px"
   }
-});
+};
 
 export default styles;

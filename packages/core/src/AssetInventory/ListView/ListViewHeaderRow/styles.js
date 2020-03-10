@@ -1,4 +1,4 @@
-const styles = () => ({
+const styles = {
   selectCell: {
     maxWidth: "32px",
     marginRight: "10px"
@@ -17,6 +17,6 @@ const styles = () => ({
   headCell: {
     padding: "0"
   }
-});
+};
 
 export default styles;

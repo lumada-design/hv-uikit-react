@@ -94,7 +94,7 @@ const containerStyle = {
   display: "flex"
 };
 
-const styles = () => ({
+const styles = {
   container: {
     width: 555
   },
@@ -106,22 +106,22 @@ const styles = () => ({
   infoText: {
     paddingBottom: 20
   }
-});
+};
 
-const textAreaStyles = () => ({
+const textAreaStyles = {
   container: {
     width: 555
   },
   textAreaContainer: {
     paddingTop: 30
   }
-});
+};
 
-const contentStyles = () => ({
+const contentStyles = {
   paper: {
     width: 555
   }
-});
+};
 
 const InputWithStyles = withStyles(styles)(Input);
 const TextAreaWithStyles = withStyles(textAreaStyles)(TextArea);

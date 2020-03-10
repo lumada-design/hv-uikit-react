@@ -22,11 +22,11 @@ const headerStyles = theme => ({
   }
 });
 
-const footerStyles = () => ({
+const footerStyles = {
   root: {
     borderTop: "none"
   }
-});
+};
 
 const HeaderWithStyles = withStyles(headerStyles)(HvCardHeader);
 const FooterWithStyles = withStyles(footerStyles)(HvCardFooter);
