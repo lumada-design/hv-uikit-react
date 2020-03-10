@@ -6,11 +6,11 @@ const muiToolbar = theme => ({
     }
   },
   gutters: {
-    paddingLeft: `${theme.spacing.sm}px`,
-    paddingRight: `${theme.spacing.sm}px`,
+    paddingLeft: theme.spacing("sm"),
+    paddingRight: theme.spacing("sm"),
     "@media (min-width:600px)": {
-      paddingLeft: `${theme.spacing.sm}px`,
-      paddingRight: `${theme.spacing.sm}px`
+      paddingLeft: theme.spacing("sm"),
+      paddingRight: theme.spacing("sm")
     }
   },
   dense: {

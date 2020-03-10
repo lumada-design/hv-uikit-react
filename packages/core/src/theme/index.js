@@ -1,11 +1,7 @@
-import { createMuiTheme } from "@material-ui/core";
+import muiCreateBreakpoints from "@material-ui/core/styles/createBreakpoints";
+import muiCreateSpacing from "@material-ui/core/styles/createSpacing";
 import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
 import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
-import muiAppBarOverrides from "./overrides/muiAppBar";
-import muiToolbarOverrides from "./overrides/muiToolbar";
-import muiIconButtonOverrides from "./overrides/muiIconButton";
-import createTypography from "./typography";
-import createPalette from "./palette";
 import createSpacing from "./spacing";
 
 const getTheme = uiKitTheme => {
@@ -21,19 +17,10 @@ const getTheme = uiKitTheme => {
 const hvTheme = uiKitTheme => {
   const theme = getTheme(uiKitTheme);
 
-  const themeSpacing = createSpacing(theme);
-  const themePalette = createPalette(theme);
-  const themeTypography = createTypography(themePalette, theme);
-
-  return createMuiTheme({
-    shadows: Array(25).fill("none"),
-    spacing: themeSpacing,
-    palette: themePalette,
-    typography: themeTypography,
-    shape: {
-      borderRadius: 0
-    },
-    breakpoints: {
+  return {
+    ...theme,
+    spacing: muiCreateSpacing(createSpacing(theme)),
+    breakpoints: muiCreateBreakpoints({
       values: {
         xs: 0,
         sm: 600,
@@ -41,28 +28,19 @@ const hvTheme = uiKitTheme => {
         lg: 1270,
         xl: 1920
       }
+    }),
+    zIndex: {
+      mobileStepper: 1000,
+      speedDial: 1050,
+      appBar: 1100,
+      drawer: 1200,
+      modal: 1300,
+      snackbar: 1400,
+      tooltip: 1500,
     },
-    props: {
-      MuiButtonBase: {
-        disableRipple: true
-      },
-      MuiInput: {
-        disableUnderline: true
-      }
-    },
-    overrides: {
-      MuiAppBar: {
-        ...muiAppBarOverrides(theme)
-      },
-      MuiToolbar: {
-        ...muiToolbarOverrides(theme)
-      },
-      MuiIconButton: {
-        ...muiIconButtonOverrides(theme)
-      }
-    },
+    // deprecated
     hv: theme
-  });
+  };
 };
 
 const defaultTheme = hvTheme();

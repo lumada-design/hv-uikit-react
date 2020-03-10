@@ -16,8 +16,7 @@ const palette = theme =>
     },
     background: {
       default: theme.palette.atmosphere.atmo3
-    },
-    ...Object.assign({}, ...Object.values(theme.palette))
+    }
   });
 
 export default palette;
