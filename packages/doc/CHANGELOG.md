@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@2.0.0-next.1...@hv/uikit-react-doc@2.0.0-next.3) (2020-03-10)
+
+
+### Features
+
+* **deprecations:** remove searchbox from lab. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([875fb0f](https://github.com/pentaho/hv-uikit-react/commit/875fb0f3767a38e57dc1af5b182ae5598a4beb1f))
+* **dropdowmenu:** add onToggleOpen. [#1208](https://github.com/pentaho/hv-uikit-react/issues/1208) ([401219a](https://github.com/pentaho/hv-uikit-react/commit/401219a4aafb674f9f14265f85564c268c79390a))
+
+
+
+
+
 # [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@2.0.0-next.1...@hv/uikit-react-doc@2.0.0-next.2) (2020-03-09)
 
 

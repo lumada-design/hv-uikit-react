@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.0.0-next.2 (2020-03-10)
+
+**Note:** Version bump only for package @hv/uikit-common-themes
+
+
+
+
+
 # 2.0.0-next.1 (2020-03-09)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
