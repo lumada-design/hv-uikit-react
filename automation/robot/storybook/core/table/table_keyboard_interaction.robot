@@ -5,13 +5,10 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Test Setup        go to url and wait until element is visible     ${STORYBOOK_URL}/iframe.html?id=coretable--tablecheckbox    ${input_page}    10s
+Test Setup        go to url and wait until element is visible     ${STORYBOOK_URL}/iframe.html?id=coretable--tablecheckbox    ${table}    10s
 Test Teardown     Run Keyword If Test Failed                      Capture Page Screenshot    ${SUITE_NAME}.png
 Force Tags        keyboard
-Documentation    don't was applied the below wai-aria, just the customized navigation as described on below test cases
-...              https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-18
-...              https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-for-data-grids
-...              since these are composite samples, the atomic component keyboard interaction is left for his tests
+Documentation     https://www.w3.org/TR/wai-aria-practices/#table
 
 
 *** Test Cases ***
@@ -27,17 +24,17 @@ header enter: sort the column ascending and descending when is pressed ENTER foc
     set focus and press keys             ${column1_header}                  TAB
     Element Should Be Focused            ${column2_header} [role=button]
     Press Keys                           None                               ENTER
-    Element Attribute Value Should Be    ${column2_header}                  aria-sort    descending
-    Press Keys                           None                               ENTER
     Element Attribute Value Should Be    ${column2_header}                  aria-sort    ascending
+    Press Keys                           None                               ENTER
+    Element Attribute Value Should Be    ${column2_header}                  aria-sort    descending
 
 header space: sort the column ascending and descending when is pressed SPACE focused column header  
     set focus and press keys             ${column1_header}                  TAB
     Element Should Be Focused            ${column2_header} [role=button]
     Press Keys                           None                               SPACE
-    Element Attribute Value Should Be    ${column2_header}                  aria-sort    descending
-    Press Keys                           None                               SPACE
     Element Attribute Value Should Be    ${column2_header}                  aria-sort    ascending
+    Press Keys                           None                               SPACE
+    Element Attribute Value Should Be    ${column2_header}                  aria-sort    descending
 
 header shift+tab: change focus to previous sortable column header when pressed SHIFT+TAB on column header
     set focus and press keys             ${column8_header}                  SHIFT+TAB

@@ -2,6 +2,7 @@
 Library      SeleniumLibrary
 Library      OperatingSystem
 Library      Collections
+Library      String
 Variables    storybook_variables.yaml
 
 *** Keywords ***
@@ -135,3 +136,20 @@ wait until css attribute not contain
 
 restore default windows size 1920 1080
     Set Window Size    1920    1080    True
+
+get elements text
+    [Arguments]    ${csslocator}
+    ${csslocator}=    Replace String        ${csslocator}    css:    ${EMPTY}
+    ${values}         Execute Javascript    return Array.from(document.querySelectorAll("${csslocator}")).map(function(el){return el.innerText.trim();}).join(',')
+    #not supported on ie11                  return Array.from(document.querySelectorAll("${csslocator}")).map(el => el.innerText).join(',')
+    [Return]          ${values}
+    
+elements text should be
+    [Arguments]    ${csslocator}    ${text}
+    ${values}          get elements text    ${csslocator}
+    Should Be Equal    ${values}            ${text}          ignore_case=True
+
+elements text should not be
+    [Arguments]    ${csslocator}    ${text}
+    ${values}              get elements text    ${csslocator}
+    Should Not Be Equal    ${values}            ${text}          ignore_case=True
