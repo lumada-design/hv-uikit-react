@@ -12,10 +12,13 @@ import styles from "./styles";
  * The recovery password form.
  */
 class Recovery extends React.Component {
-  state = {
-    email: "",
-    recoverStatus: "processing"
-  };
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      recoverStatus: "processing"
+    };
+  }
 
   /**
    * Sleep function.

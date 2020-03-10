@@ -1,56 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-class SimpleBanner extends React.Component {
-  state = {
-    open: false
+const SimpleBanner = props => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
   };
 
-  handleClick = () => {
-    this.setState({ open: true });
+  const handleClose = (action, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
   };
 
-  handleClose = (action, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    this.setState({ open: false });
-  };
-
-  render() {
-    const {
-      label,
-      variant,
-      showIcon,
-      anchorOrigin,
-      action,
-      customIcon
-    } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <Button
-          onClick={this.handleClick}
-          variant="contained"
-          color="primary"
-          style={{ width: "150px" }}
-        >
-          Click me
-        </Button>
-        <HvBanner
-          open={open}
-          label={`This is ${label}`}
-          onClose={this.handleClose}
-          anchorOrigin={anchorOrigin}
-          variant={variant}
-          customIcon={customIcon}
-          showIcon={showIcon}
-          actionsOnlabel={action}
-        />
-      </div>
-    );
-  }
-}
+  const { label, action, ...other } = props;
+  return (
+    <div>
+      <Button
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        style={{ width: "150px" }}
+      >
+        Click me
+      </Button>
+      <HvBanner
+        open={open}
+        label={`This is ${label}`}
+        onClose={handleClose}
+        actionsOnlabel={action}
+        {...other}
+      />
+    </div>
+  );
+};
 
 export default <SimpleBanner label="Banner" variant="default" />;

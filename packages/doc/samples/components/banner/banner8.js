@@ -7,8 +7,6 @@ import Button from "@hv/uikit-react-core/dist/Button";
 
 const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
 
-const ActionButton = () => <Button category="semantic">Action</Button>;
-
 const actionArray = [
   { id: "action1", label: "Action 1", disabled: false },
   { id: "action2", label: "Action 2", disabled: false }
@@ -22,7 +20,7 @@ export default (
     <BannerContentWrapper
       content="This is a default banner."
       variant="default"
-      actions={<ActionButton />}
+      actions={<Button category="semantic">Action</Button>}
       actionsPosition="inline"
       onClose={() => {}}
     />
@@ -47,7 +45,7 @@ export default (
       content="This is a success banner."
       variant="success"
       showIcon
-      actions={<ActionButton />}
+      actions={<Button category="semantic">Action</Button>}
       actionsPosition="inline"
       onClose={() => {}}
     />
