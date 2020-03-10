@@ -42,28 +42,43 @@ LastPathElement.propTypes = {
 /**
  * Representation of an path element. This element contains a link.
  *
+ * @param Component
+ * @param onClick
  * @param elem
  * @param classes
  * @returns {*}
  * @constructor
  */
-const Page = ({ elem, classes }) => (
-  <HvLink route={elem.path} params={elem.params}>
-    <div className={classes.centerContainer}>
-      <HvTypography variant="sLink" className={classes.link}>
-        {startCase(elem.label)}
-      </HvTypography>
-    </div>
-  </HvLink>
-);
+const Page = ({ Component, onClick, elem, classes }) => {
+  return (
+    <HvLink
+      route={elem.path}
+      Component={Component}
+      onClick={onClick}
+      data={elem}
+    >
+      <div className={classes.centerContainer}>
+        <HvTypography variant="sLink" className={classes.link}>
+          {startCase(elem.label)}
+        </HvTypography>
+      </div>
+    </HvLink>
+  );
+};
 
 Page.propTypes = {
+  Component: PropTypes.elementType,
+  onClick: PropTypes.func,
   elem: PropTypes.shape({
     path: PropTypes.string,
-    params: PropTypes.instanceOf(Object),
     label: PropTypes.string
   }).isRequired,
   classes: PropTypes.instanceOf(Object).isRequired
+};
+
+Page.defaultProps = {
+  Component: undefined,
+  onClick: undefined
 };
 
 /**
@@ -129,6 +144,8 @@ const BreadCrumb = ({
   listRoute,
   maxVisible,
   url,
+  onClick,
+  component,
   ...other
 }) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
@@ -163,6 +180,8 @@ const BreadCrumb = ({
 
   const lastIndex = breadcrumbPath.length - 1;
 
+  const Component = onClick ? component : undefined;
+
   return (
     <nav id={internalId} className={clsx(classes.root, className)} {...other}>
       <ol className={classes.orderedList}>
@@ -176,7 +195,13 @@ const BreadCrumb = ({
               {React.isValidElement(elem) ? (
                 elem
               ) : (
-                <Page key={key} elem={elem} classes={classes} />
+                <Page
+                  key={key}
+                  elem={elem}
+                  classes={classes}
+                  Component={Component}
+                  onClick={onClick}
+                />
               )}
             </PathElement>
           );
@@ -231,7 +256,16 @@ BreadCrumb.propTypes = {
   /**
    * Number of pages visible.
    */
-  maxVisible: PropTypes.number
+  maxVisible: PropTypes.number,
+  /**
+   * The component used for the link node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Function passed to the component. If defined the component prop is used as the link node.
+   */
+  onClick: PropTypes.func
 };
 
 BreadCrumb.defaultProps = {
@@ -239,7 +273,9 @@ BreadCrumb.defaultProps = {
   id: undefined,
   maxVisible: 9999,
   listRoute: [],
-  url: null
+  url: null,
+  component: "div",
+  onClick: undefined
 };
 
 export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);
