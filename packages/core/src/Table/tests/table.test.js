@@ -276,10 +276,6 @@ describe("Hv Table", () => {
 
     it("should add an expander if the subElementTemplate is defined", () => {
       const subElementTemplate = () => <div />;
-      const rowInfo = {
-        row: "row",
-        viewIndex: 1
-      };
       wrapper = mount(
         <HvProvider>
           <HvTable
@@ -294,9 +290,8 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
-      const row = instance.getTrProps("state", rowInfo);
-      expect(row.onClick).toBeInstanceOf(Function);
+      const expander = wrapper.find({ role: "button" });
+      expect(expander.length).toEqual(3);
     });
 
     it("should fetch data", () => {
