@@ -52,7 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@material-ui/core": "^4.9.5",
+    "@material-ui/core": "^4.8.0",
     "@storybook/storybook-deployer": "^2.8.3",
     "babel-eslint": "^10.1.0",
     "chalk": "^3.0.0",
@@ -74,8 +74,8 @@
     "npx": "^10.2.2",
     "prettier": "^1.19.1",
     "prompt-input": "^3.0.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "spdx-correct": "^3.1.0",
     "spdx-satisfies": "^5.0.0"
   }
