@@ -298,7 +298,7 @@ describe("Calendar utils - getFormattedDate", () => {
   it("should return a date as a string with the format `14 Aug, 2019`", () => {
     expect(
       getFormattedDate(convertISOStringDateToDate("2019-08-14"), "en-US")
-    ).toBe("14 Aug, 2019");
+    ).toBe("14 Aug 2019");
   });
 });
 
