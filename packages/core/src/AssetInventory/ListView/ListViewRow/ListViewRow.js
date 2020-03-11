@@ -19,6 +19,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
+import uniqueId from "lodash/uniqueId";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
@@ -31,20 +32,20 @@ const selectCell = (
   checkboxSelected,
   checkboxIndeterminate,
   checkboxSemantic,
-  id
+  checkboxId
 ) => (
   <Cell
     className={classes.selectCell}
     semantic={checkboxSemantic}
-    id={`checkbox${id}`}
-    key={`checkbox${id}`}
+    id={`checkbox${checkboxId}`}
+    key={`checkbox${checkboxId}`}
   >
     <HvCheckbox
       value={checkboxValue}
       onChange={onCheckboxSelected}
       checked={checkboxSelected}
       indeterminate={checkboxIndeterminate}
-      id={id}
+      id={`checkbox${checkboxId}`}
     />
   </Cell>
 );
@@ -107,6 +108,8 @@ const row = (
     return child;
   });
 
+  const checkboxId = id || uniqueId("hv-checkbox-");
+
   return (
     <tr
       id={id}
@@ -126,7 +129,7 @@ const row = (
           checkboxSelected,
           checkboxIndeterminate,
           checkboxSemantic,
-          id
+          checkboxId
         )}
       {clonedChildren}
       {renderActionsCell &&
