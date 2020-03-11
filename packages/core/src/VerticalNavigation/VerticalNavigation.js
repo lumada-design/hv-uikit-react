@@ -97,6 +97,4 @@ VerticalNavigation.defaultProps = {
   closeOnExit: false
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigation" })(
-  VerticalNavigation
-);
+export default withStyles(styles, { name: "HvVerticalNavigation" })(VerticalNavigation);

@@ -61,12 +61,8 @@ describe("CheckBox withStyles", () => {
 
     expect(component.find(CheckBoxIcon).length).toBe(1);
 
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(
-      false
-    );
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(
-      false
-    );
+    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
+    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
@@ -81,29 +77,18 @@ describe("CheckBox withStyles", () => {
 
     expect(component.find(CheckBoxIcon).length).toBe(1);
 
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(
-      true
-    );
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(
-      true
-    );
+    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
+    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
   });
 
   it("should apply the correct class name when there is a label at the start", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <CheckBoxWithStyles
-          label="test"
-          labelPlacement={labelPositions.start}
-        />
+        <CheckBoxWithStyles label="test" labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(CheckBox);
-    expect(
-      getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)
-    ).toBe(true);
-    expect(
-      getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)
-    ).toBe(false);
+    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(true);
+    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(false);
   });
 
   it("should apply the correct class name when there is a label at the end", () => {
@@ -112,12 +97,8 @@ describe("CheckBox withStyles", () => {
         <CheckBoxWithStyles label="test" labelPlacement={labelPositions.end} />
       </HvProvider>
     ).find(CheckBox);
-    expect(
-      getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)
-    ).toBe(false);
-    expect(
-      getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)
-    ).toBe(true);
+    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(false);
+    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(true);
   });
 
   it("should not apply any class name when there is no label specified", () => {
@@ -126,11 +107,7 @@ describe("CheckBox withStyles", () => {
         <CheckBoxWithStyles labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(CheckBox);
-    expect(
-      getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)
-    ).toBe(false);
-    expect(
-      getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)
-    ).toBe(false);
+    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(false);
+    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(false);
   });
 });

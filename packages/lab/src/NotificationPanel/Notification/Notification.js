@@ -34,12 +34,8 @@ export default class Notification extends Component {
       <div className={clsx(classes.root, { [classes.read]: isRead })}>
         <div className={classes.iconContainer}>{icon}</div>
         <div>
-          <div className={clsx(classes.title, { [classes.read]: isRead })}>
-            {title}
-          </div>
-          <div
-            className={clsx(classes.timeContainer, { [classes.read]: isRead })}
-          >
+          <div className={clsx(classes.title, { [classes.read]: isRead })}>{title}</div>
+          <div className={clsx(classes.timeContainer, { [classes.read]: isRead })}>
             <div className={clsx(classes.bullet, { [classes.hide]: isRead })} />
             <div className={classes.time}>{this.getTime()}</div>
           </div>
@@ -69,11 +65,7 @@ Notification.propTypes = {
     /**
      * date the notification was created
      */
-    date: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.object
-    ]).isRequired,
+    date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
     /**
      * renderable icon that denotes the status of the notification
      */

@@ -37,9 +37,9 @@ const MainToolTip = ({ classes, coordinates, data, useSingle }) => {
 
   return (
     <div ref={ref} className={classes.root} style={style}>
-      {(useSingle && (
-        <SingleTooltip title={data.title} value={data.elements[0].value} />
-      )) || <MultipleTooltip data={data} />}
+      {(useSingle && <SingleTooltip title={data.title} value={data.elements[0].value} />) || (
+        <MultipleTooltip data={data} />
+      )}
     </div>
   );
 };

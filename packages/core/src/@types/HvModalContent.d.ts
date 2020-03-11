@@ -1,11 +1,7 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvModalContent extends React.Component<
-    HvModalContentProps,
-    any
-  > {}
+declare module "@hv/uikit-react-core/dist" {
+  export class HvModalContent extends React.Component<HvModalContentProps, any> {}
 
-  export interface HvModalContentProps
-    extends React.HTMLAttributes<HvModalContent> {
+  export interface HvModalContentProps extends React.HTMLAttributes<HvModalContent> {
     /**
      * A Jss Object used to override or extend the styles applied.
      */
@@ -13,11 +9,11 @@ declare module '@hv/uikit-react-core/dist' {
       /**
        * Style applied to the root of the component (container for the content).
        */
-      root?: string
+      root?: string;
       /**
        * Style applied when the content is a string.
        */
-      textContent?: string
-    }
+      textContent?: string;
+    };
   }
 }

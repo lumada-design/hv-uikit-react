@@ -7,8 +7,7 @@ const data = [
     id: 14,
     name: "Event 1",
     createdDate: "10/14/2018",
-    eventType:
-      "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    eventType: "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
     status: "Open",
     riskScore: "98",
     severity: "Critical",
@@ -178,8 +177,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value =>
-        moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
       fixed: "left"
     },

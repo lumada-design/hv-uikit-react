@@ -141,9 +141,7 @@ const Row = ({ classes, status, value, id }) => {
 
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
-          <HvTypography variant="highlightText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
           <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>
@@ -200,13 +198,9 @@ const TextRender = ({ id, values }) => (
           <HvTypography variant="labelText"> title</HvTypography>
           <HvTypography variant="normalText">{value.headerTitle}</HvTypography>
           <HvTypography variant="labelText"> description</HvTypography>
-          <HvTypography variant="normalText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="normalText">{value.event.description}</HvTypography>
           <HvTypography variant="labelText"> probability</HvTypography>
-          <HvTypography variant="normalText">
-            {value.event.probability}
-          </HvTypography>
+          <HvTypography variant="normalText">{value.event.probability}</HvTypography>
         </Grid>
       ))}
     </Grid>
@@ -246,9 +240,7 @@ const machineData = id => ({
 });
 
 const values = (num = 10) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 // ----------------------- Configuration ------------------------------
 

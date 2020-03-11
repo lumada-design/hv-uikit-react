@@ -37,8 +37,7 @@ class MultiButton extends React.Component {
     let newState;
 
     const clickedBtnDefs = buttons[idx];
-    const btnClickable =
-      clickedBtnDefs.enforced !== undefined ? clickedBtnDefs : false;
+    const btnClickable = clickedBtnDefs.enforced !== undefined ? clickedBtnDefs : false;
 
     const clickedBtnId = buttons[idx].id;
     const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
@@ -47,17 +46,11 @@ class MultiButton extends React.Component {
       return;
     }
 
-    if (
-      checkedItems.length === minSelection &&
-      checkedItems.indexOf(clickedBtnId) !== -1
-    ) {
+    if (checkedItems.length === minSelection && checkedItems.indexOf(clickedBtnId) !== -1) {
       return;
     }
 
-    if (
-      checkedItems.length === maxSelection &&
-      checkedItems.indexOf(clickedBtnId) === -1
-    ) {
+    if (checkedItems.length === maxSelection && checkedItems.indexOf(clickedBtnId) === -1) {
       return;
     }
 

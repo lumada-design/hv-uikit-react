@@ -3,8 +3,7 @@ const data = [
     id: 14,
     name: "Event 1",
     createdDate: "10/14/2018",
-    eventType:
-      "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
+    eventType: "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
     status: "Open",
     riskScore: "98",
     severity: "Critical",

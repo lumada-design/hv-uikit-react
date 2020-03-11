@@ -1,8 +1,5 @@
 import React from "react";
-import HvCard, {
-  HvCardFooter,
-  HvCardHeader
-} from "@hv/uikit-react-core/dist/Card";
+import HvCard, { HvCardFooter, HvCardHeader } from "@hv/uikit-react-core/dist/Card";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import { Upload, MoreOptionsVertical } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";

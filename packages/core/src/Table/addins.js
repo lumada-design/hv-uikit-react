@@ -11,9 +11,7 @@ const buildLink = col => {
   const column = col;
   if (column.cellType === "link") {
     column.Cell = data => (
-      <HvLink route={data.original.link.url}>
-        {data.original.link.displayText}
-      </HvLink>
+      <HvLink route={data.original.link.url}>{data.original.link.displayText}</HvLink>
     );
   }
 };

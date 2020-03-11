@@ -46,9 +46,7 @@ const InnerContent = ({ classes, values }) => (
   </>
 );
 
-const innerContentFunc = values => (
-  <InnerContent classes={styles} values={values} />
-);
+const innerContentFunc = values => <InnerContent classes={styles} values={values} />;
 
 // -------------------- Data --------------------
 
@@ -81,9 +79,7 @@ const machineData = id => ({
 });
 
 const values = (num = 10) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 // --------------- Configuration ----------------
 const myActions = [
@@ -124,8 +120,7 @@ const viewConfiguration = {
   },
   isSelectable: true,
   actions: myActions,
-  actionsCallback: (id, action) =>
-    alert(`You have pressed card ${id} with action ${action.label}`)
+  actionsCallback: (id, action) => alert(`You have pressed card ${id} with action ${action.label}`)
 };
 
 export default (

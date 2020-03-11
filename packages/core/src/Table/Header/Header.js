@@ -51,11 +51,7 @@ const Header = React.memo(
       <div className={clsx(classes.headerContainer)}>
         {columnSortable && (
           <div
-            id={
-              id != null
-                ? `${tableInternalId}-column-${id}-sort-button`
-                : undefined
-            }
+            id={id != null ? `${tableInternalId}-column-${id}-sort-button` : undefined}
             className={clsx(classes.rtSortIcon, {
               [classes.rtSortIconNumeric]: cellType === "numeric"
             })}
@@ -71,13 +67,10 @@ const Header = React.memo(
           })}
         >
           <HvTypography
-            id={
-              id != null ? `${tableInternalId}-column-${id}-label` : undefined
-            }
+            id={id != null ? `${tableInternalId}-column-${id}-label` : undefined}
             variant="highlightText"
             className={clsx(classes.headerProps, {
-              [classes.headerAlphaNumeric]:
-                cellType === "alpha-numeric" || cellType === "link",
+              [classes.headerAlphaNumeric]: cellType === "alpha-numeric" || cellType === "link",
               [classes.headerNumeric]: cellType === "numeric"
             })}
           >

@@ -8,14 +8,8 @@ import Popper from "@material-ui/core/Popper";
 import UnitTimePicker from "./UnitTimePicker";
 import { TimePickerUnits, TimeFormat } from "./enums";
 import { getPeriodForDate } from "./timePickerUtils";
-import {
-  getFormattedTime,
-  getTimeFormatForLocale
-} from "./timePickerFormatter";
-import {
-  getHoursForTimeFormat,
-  getTimeWithFormat24
-} from "./timePickerConverter";
+import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";
+import { getHoursForTimeFormat, getTimeWithFormat24 } from "./timePickerConverter";
 import PeriodPicker from "./PeriodPicker";
 
 class HvTimePicker extends React.Component {
@@ -168,10 +162,7 @@ class HvTimePicker extends React.Component {
     this.setState({
       selectedTime
     });
-    const selectedTimeIn24Format = getTimeWithFormat24(
-      selectedTime,
-      timeFormat
-    );
+    const selectedTimeIn24Format = getTimeWithFormat24(selectedTime, timeFormat);
     onChange(selectedTimeIn24Format);
   };
 
@@ -243,10 +234,7 @@ class HvTimePicker extends React.Component {
             type="text"
             readOnly
           />
-          <TimeIcon
-            className={classes.icon}
-            onClick={this.handleTimeIconClick}
-          />
+          <TimeIcon className={classes.icon} onClick={this.handleTimeIconClick} />
         </div>
       </>
     );
@@ -322,10 +310,7 @@ class HvTimePicker extends React.Component {
         />
         {timeFormat === TimeFormat.H12 && (
           <div className={classes.periodContainer}>
-            <PeriodPicker
-              onChangePeriod={this.handleChangePeriod}
-              period={selectedTime.period}
-            />
+            <PeriodPicker onChangePeriod={this.handleChangePeriod} period={selectedTime.period} />
           </div>
         )}
       </div>

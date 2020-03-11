@@ -65,12 +65,7 @@ describe("BreadcrumbsA11Y", () => {
   it("5 paths visible of 7", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Breadcrumb
-          listRoute={data}
-          useRouter={false}
-          maxVisible={5}
-          id="breadcrumb1"
-        />
+        <Breadcrumb listRoute={data} useRouter={false} maxVisible={5} id="breadcrumb1" />
       </HvProvider>
     );
 
@@ -81,12 +76,7 @@ describe("BreadcrumbsA11Y", () => {
   it("2 paths visible of 8", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Breadcrumb
-          listRoute={data}
-          useRouter={false}
-          maxVisible={2}
-          id="breadcrumb1"
-        />
+        <Breadcrumb listRoute={data} useRouter={false} maxVisible={2} id="breadcrumb1" />
       </HvProvider>
     );
 

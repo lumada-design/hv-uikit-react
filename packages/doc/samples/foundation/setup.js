@@ -34,33 +34,32 @@ const Setup = ({ classes }) => (
   <>
     <div className={classes.title}>Design System</div>
     <div className={classes.block1}>
-      Hitachi Design System initiative produces reusable patterns and captures
-      common methodologies, reducing design and implementation effort.
+      Hitachi Design System initiative produces reusable patterns and captures common methodologies,
+      reducing design and implementation effort.
       <br />
-      It stands as a catalyzer for design alignment and governance across the
-      organization, generating a unique and characteristic design language,
-      capable of positioning Hitachi as a worldwide design reference.
+      It stands as a catalyzer for design alignment and governance across the organization,
+      generating a unique and characteristic design language, capable of positioning Hitachi as a
+      worldwide design reference.
     </div>
     <div className={classes.title}>UI Kit</div>
     <div className={classes.block2}>
-      This UI Kit provides front-end developers & engineers a collection of
-      reusable React components to build their applications.
+      This UI Kit provides front-end developers & engineers a collection of reusable React
+      components to build their applications.
       <br />
-      It enables developers to use consistent markup, styles, and behavior in
-      prototype and production work.
+      It enables developers to use consistent markup, styles, and behavior in prototype and
+      production work.
       <br />
       <br />
       The UI Kit components are divided in two groups:
       <br />
       <br />
       <span className={classes.span}> Components - </span>
-      components that are fully compliant with Design system guidelines and UI
-      Kit best practices.
+      components that are fully compliant with Design system guidelines and UI Kit best practices.
       <br />
       <br />
       <span className={classes.span}> Lab - </span>
-      components contributed by external teams for specific use cases and not
-      fully compliant with Design System guidelines, so use it carefully.
+      components contributed by external teams for specific use cases and not fully compliant with
+      Design System guidelines, so use it carefully.
     </div>
   </>
 );

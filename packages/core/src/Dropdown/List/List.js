@@ -337,10 +337,7 @@ const List = ({
       style={{ zIndex: theme.zIndex.tooltip }}
     >
       <OutsideClickHandler onOutsideClick={e => handleCancel(e)}>
-        <ConditionalWrapper
-          condition={showList}
-          wrapper={c => <FocusTrap>{c}</FocusTrap>}
-        >
+        <ConditionalWrapper condition={showList} wrapper={c => <FocusTrap>{c}</FocusTrap>}>
           {renderInnerList()}
         </ConditionalWrapper>
       </OutsideClickHandler>

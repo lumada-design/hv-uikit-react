@@ -5,21 +5,15 @@ import { Calendar, Plane, User } from "@hv/uikit-react-icons/dist";
 const menuOptions = [
   {
     label: "Label 1",
-    iconCallback: ({ isSelected }) => (
-      <User color={isSelected ? "atmo1" : undefined} />
-    )
+    iconCallback: ({ isSelected }) => <User color={isSelected ? "atmo1" : undefined} />
   },
   {
     label: "Label 2",
-    iconCallback: ({ isSelected }) => (
-      <Calendar color={isSelected ? "atmo1" : undefined} />
-    )
+    iconCallback: ({ isSelected }) => <Calendar color={isSelected ? "atmo1" : undefined} />
   },
   {
     label: "Label 3",
-    iconCallback: ({ isSelected }) => (
-      <Plane color={isSelected ? "atmo1" : undefined} />
-    )
+    iconCallback: ({ isSelected }) => <Plane color={isSelected ? "atmo1" : undefined} />
   }
 ];
 

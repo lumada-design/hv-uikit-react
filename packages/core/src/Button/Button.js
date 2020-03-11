@@ -8,7 +8,7 @@ import styles from "./styles";
 const HvButton = props => {
   const {
     classes,
-    className = "a",
+    className = "",
     id = undefined,
     children,
     disabled,
@@ -44,10 +44,6 @@ const HvButton = props => {
 };
 
 HvButton.propTypes = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
   /**
    * Category of button to use
    */

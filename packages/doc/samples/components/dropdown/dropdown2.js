@@ -57,12 +57,4 @@ const labels = {
   multiSelectionConjunction: "and-l"
 };
 
-export default (
-  <HvDropdown
-    id="dropdown2"
-    values={data}
-    multiSelect
-    showSearch
-    labels={labels}
-  />
-);
+export default <HvDropdown id="dropdown2" values={data} multiSelect showSearch labels={labels} />;

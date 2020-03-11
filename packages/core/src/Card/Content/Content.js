@@ -11,14 +11,7 @@ const DEFAULT_ID = "hv-content";
  *
  * @param {Object} { classes, className, innerCardContent, ...other }
  */
-const Content = ({
-  id,
-  classes,
-  className,
-  innerCardContent,
-  onClickAction,
-  ...others
-}) => (
+const Content = ({ id, classes, className, innerCardContent, onClickAction, ...others }) => (
   <CardContent
     id={id || uniqueId(DEFAULT_ID)}
     className={clsx(classes.content, className)}

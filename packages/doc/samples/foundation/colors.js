@@ -44,10 +44,7 @@ const Group = ({ classes, name, colors }) => {
           <div key={idx} className={classes.colorContainer}>
             <div className={classes.colorName}>{color}</div>
             <div className={classes.colorCode}>{colors[color]}</div>
-            <div
-              className={classes.colorSquare}
-              style={{ backgroundColor: colors[color] }}
-            />
+            <div className={classes.colorSquare} style={{ backgroundColor: colors[color] }} />
           </div>
         ))}
       </div>
@@ -66,9 +63,7 @@ const ColorsGroup = ({ classes, keys, colors }) => (
 
 const Colors = ({ classes, palettePath }) => {
   const theme = useTheme();
-  const palette = palettePath
-    ? theme.hv[palettePath].palette
-    : theme.hv.palette;
+  const palette = palettePath ? theme.hv[palettePath].palette : theme.hv.palette;
   const keys = Object.keys(palette);
   return (
     <div>

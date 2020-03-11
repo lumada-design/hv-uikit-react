@@ -36,11 +36,7 @@ export default (
     <Button startIcon={<Download />} category="primary">
       Download plug-in
     </Button>
-    <Button
-      style={{ width: 260 }}
-      startIcon={<Download />}
-      category="secondary"
-    >
+    <Button style={{ width: 260 }} startIcon={<Download />} category="secondary">
       Download
     </Button>
     <Button startIcon={<Download />} category="ghost">

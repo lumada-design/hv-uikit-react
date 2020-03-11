@@ -16,8 +16,7 @@ storiesOf("Lab", module).add("Slider", () => <HvSlider />, {
     },
     {
       title: "2. Three knobs",
-      description:
-        "Shows the possibility of manipulating N quantity of knobs and a range",
+      description: "Shows the possibility of manipulating N quantity of knobs and a range",
       src: "lab/slider/slider2"
     },
     {
@@ -33,8 +32,7 @@ storiesOf("Lab", module).add("Slider", () => <HvSlider />, {
     },
     {
       title: "5. Three knobs with different range",
-      description:
-        "Shows the possibility of manipulating N quantity of knobs and a range",
+      description: "Shows the possibility of manipulating N quantity of knobs and a range",
       src: "lab/slider/slider5"
     }
   ]

@@ -50,13 +50,7 @@ class Header extends React.Component {
    * @param showValue
    * @returns {*}
    */
-  chooseShowValue = (
-    shouldCloseCalendar,
-    isInvalid,
-    value,
-    formatShowValue,
-    showValue
-  ) => {
+  chooseShowValue = (shouldCloseCalendar, isInvalid, value, formatShowValue, showValue) => {
     let newShowValue;
     if (shouldCloseCalendar) {
       if (!isInvalid) newShowValue = showValue;

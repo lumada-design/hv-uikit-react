@@ -34,8 +34,7 @@ const About = ({ classes }) => (
   <>
     <div className={classes.title}>About lab</div>
     <div className={classes.block1}>
-      This package hosts the incubator components that are not yet ready to move
-      to the core.
+      This package hosts the incubator components that are not yet ready to move to the core.
     </div>
   </>
 );

@@ -15,10 +15,7 @@ describe("Checkbox A11Y", () => {
   it("no label", async () => {
     const wrapper = mount(
       <HvProvider>
-        <CheckboxWithStyles
-          id="test"
-          inputProps={{ "aria-label": "Checkbox" }}
-        />
+        <CheckboxWithStyles id="test" inputProps={{ "aria-label": "Checkbox" }} />
       </HvProvider>
     );
 

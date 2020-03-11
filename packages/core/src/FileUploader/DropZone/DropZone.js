@@ -39,8 +39,7 @@ const DropZone = ({
 
       const isSizeAllowed = file.size <= maxFileSize;
       const isFileAccepted =
-        !acceptedFiles.length ||
-        acceptedFiles.indexOf(file.type.split("/")[1]) > -1;
+        !acceptedFiles.length || acceptedFiles.indexOf(file.type.split("/")[1]) > -1;
 
       if (!isFileAccepted) {
         newFile.errorMessage = labels.fileTypeError;
@@ -64,11 +63,7 @@ const DropZone = ({
 
   return (
     <>
-      <div
-        id={fileDropZoneId}
-        className={classes.dropZoneLabelsGroup}
-        aria-label="File Dropzone"
-      >
+      <div id={fileDropZoneId} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
         <HvTypography
           variant="labelText"
           component="label"
@@ -83,12 +78,8 @@ const DropZone = ({
         </HvTypography>
         {acceptedFiles.length > 0 && (
           <>
-            <HvTypography variant="labelText">
-              {labels.acceptedFiles}
-            </HvTypography>
-            <HvTypography variant="infoText">
-              {acceptedFiles.join(", ")}
-            </HvTypography>
+            <HvTypography variant="labelText">{labels.acceptedFiles}</HvTypography>
+            <HvTypography variant="infoText">{acceptedFiles.join(", ")}</HvTypography>
           </>
         )}
       </div>
@@ -153,9 +144,7 @@ const DropZone = ({
           {dragState ? (
             <>
               <div className={classes.dropZoneAreaLabels}>
-                <HvTypography className={classes.dragText}>
-                  {labels.dropFiles}
-                </HvTypography>
+                <HvTypography className={classes.dragText}>{labels.dropFiles}</HvTypography>
               </div>
             </>
           ) : (
@@ -168,9 +157,7 @@ const DropZone = ({
               <div className={classes.dropZoneAreaLabels}>
                 <HvTypography className={classes.dragText}>
                   {labels.drag}
-                  <span className={classes.selectFilesText}>
-                    {`\xa0${labels.selectFiles}`}
-                  </span>
+                  <span className={classes.selectFilesText}>{`\xa0${labels.selectFiles}`}</span>
                 </HvTypography>
               </div>
             </>

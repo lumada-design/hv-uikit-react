@@ -57,12 +57,7 @@ describe("Modal Component", () => {
   it("allows external props to be added", () => {
     wrapper = shallow(
       <HvProvider>
-        <Modal
-          open={open}
-          onClose={onCloseMock}
-          disableBackdropClick
-          disableEscapeKeyDown
-        >
+        <Modal open={open} onClose={onCloseMock} disableBackdropClick disableEscapeKeyDown>
           Modal Content
         </Modal>
       </HvProvider>

@@ -45,11 +45,7 @@ describe("ToggleButton withStyles", () => {
 
     wrapper = mount(
       <HvProvider>
-        <ToggleButton
-          notSelectedIcon={Unlock}
-          selectedIcon={Lock}
-          onClick={onClickMock}
-        />
+        <ToggleButton notSelectedIcon={Unlock} selectedIcon={Lock} onClick={onClickMock} />
       </HvProvider>
     );
     const divs = wrapper.find("div");

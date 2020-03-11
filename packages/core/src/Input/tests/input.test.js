@@ -91,11 +91,7 @@ describe("Input", () => {
     const inputText = "test";
     wrapper = mount(
       <HvProvider>
-        <Input
-          validationState={validationStates.valid}
-          labels={labels}
-          initialValue={inputText}
-        />
+        <Input validationState={validationStates.valid} labels={labels} initialValue={inputText} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -114,12 +110,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    testState(
-      labels.warningText,
-      validationStates.invalid,
-      inputText,
-      inputInstance
-    );
+    testState(labels.warningText, validationStates.invalid, inputText, inputInstance);
   });
 
   it("should return the value on focus and correctly update the state", () => {
@@ -166,11 +157,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <Input
-          initialValue={defaultInputText}
-          onChange={onChange}
-          labels={labels}
-        />
+        <Input initialValue={defaultInputText} onChange={onChange} labels={labels} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -189,11 +176,7 @@ describe("Input", () => {
     };
     wrapper = mount(
       <HvProvider>
-        <Input
-          initialValue={defaultInputText}
-          onChange={onChange}
-          labels={labels}
-        />
+        <Input initialValue={defaultInputText} onChange={onChange} labels={labels} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -237,10 +220,7 @@ describe("Input", () => {
     const suggestionSelected = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <Input
-          labels={labels}
-          suggestionSelectedCallback={suggestionSelected}
-        />
+        <Input labels={labels} suggestionSelectedCallback={suggestionSelected} />
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
@@ -275,12 +255,7 @@ describe("Input", () => {
     });
     testState(null, validationStates.filled, inputText, inputInstance);
     inputInstance.onInputBlurHandler();
-    testState(
-      labels.warningText,
-      validationStates.invalid,
-      inputText,
-      inputInstance
-    );
+    testState(labels.warningText, validationStates.invalid, inputText, inputInstance);
   });
 
   it("should showInfo emails on blur", () => {
@@ -308,12 +283,7 @@ describe("Input", () => {
     });
     testState(null, validationStates.filled, inputText, inputInstance);
     inputInstance.onInputBlurHandler();
-    testState(
-      labels.warningText,
-      validationStates.invalid,
-      inputText,
-      inputInstance
-    );
+    testState(labels.warningText, validationStates.invalid, inputText, inputInstance);
   });
 
   it("should showInfo use custom validations on blur", () => {
@@ -337,12 +307,7 @@ describe("Input", () => {
     );
     const inputInstance = getInput(wrapper);
     inputInstance.onInputBlurHandler();
-    testState(
-      labels.warningText,
-      validationStates.invalid,
-      defaultInputText,
-      inputInstance
-    );
+    testState(labels.warningText, validationStates.invalid, defaultInputText, inputInstance);
   });
 
   it("should check maximum number of characters on blur", () => {
@@ -444,12 +409,7 @@ describe("Input", () => {
     });
     testState(null, validationStates.empty, inputText, inputInstance);
     inputInstance.onInputBlurHandler();
-    testState(
-      labels.requiredWarningText,
-      validationStates.invalid,
-      inputText,
-      inputInstance
-    );
+    testState(labels.requiredWarningText, validationStates.invalid, inputText, inputInstance);
   });
 
   it("should pass validation if empty when not required", () => {

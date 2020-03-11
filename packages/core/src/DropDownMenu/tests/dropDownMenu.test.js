@@ -45,11 +45,7 @@ describe("DropDownMenu", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu
-            id="dropdownMenu"
-            dataList={menuOptions}
-            icon={<div />}
-          />
+          <DropDownMenu id="dropdownMenu" dataList={menuOptions} icon={<div />} />
         </HvProvider>
       );
     });
@@ -127,11 +123,7 @@ describe("DropDownMenu", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu
-            dataList={menuOptions}
-            icon={<div />}
-            disablePortal={false}
-          />
+          <DropDownMenu dataList={menuOptions} icon={<div />} disablePortal={false} />
         </HvProvider>
       );
     });

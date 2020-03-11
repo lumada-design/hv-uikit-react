@@ -156,10 +156,7 @@ describe("TimePicker", () => {
     const mockTimeFormat = "mockTimeFormat";
     timePickerComponent.setState({ timeFormat: mockTimeFormat });
     timePickerInstance.onSelectedTimeChange(mockSelectedTime);
-    expect(converters.getTimeWithFormat24).toHaveBeenCalledWith(
-      mockSelectedTime,
-      mockTimeFormat
-    );
+    expect(converters.getTimeWithFormat24).toHaveBeenCalledWith(mockSelectedTime, mockTimeFormat);
     expect(mockOnChange).toHaveBeenCalledWith("mockGetTimeWithFormat24");
   });
 
@@ -220,10 +217,7 @@ describe("TimePicker", () => {
       timePopperOpen: true,
       timePopperAnchor: null
     });
-    const spyRenderContent = jest.spyOn(
-      timePickerInstance,
-      "renderTimePopperContent"
-    );
+    const spyRenderContent = jest.spyOn(timePickerInstance, "renderTimePopperContent");
     const PopperComp = timePickerInstance.renderPopper;
     const PopperWrapper = mount(
       <HvProvider>

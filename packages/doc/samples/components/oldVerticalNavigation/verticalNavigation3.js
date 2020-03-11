@@ -1,13 +1,6 @@
 import React from "react";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/OldVerticalNavigation";
-import {
-  Calendar,
-  Components,
-  LineChart,
-  Machine,
-  Plane,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { Calendar, Components, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
 
 const data = {
   showSearch: true,
@@ -30,12 +23,16 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -49,25 +46,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }

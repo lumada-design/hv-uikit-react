@@ -36,9 +36,7 @@ const Example = ({ classes, example }) => {
       </div>
       {example.description && (
         <div className={classes.titleContainer}>
-          <HvTypography variant="normalText">
-            {example.description}
-          </HvTypography>
+          <HvTypography variant="normalText">{example.description}</HvTypography>
           <CodeButton onClick={toggleSnippetArea} />
         </div>
       )}
@@ -52,9 +50,7 @@ const Example = ({ classes, example }) => {
             {isPath ? snippet : example.snippet}
           </SyntaxHighlighter>
         </Collapse>
-        <div className={classes.component}>
-          {isPath ? component : example.src}
-        </div>
+        <div className={classes.component}>{isPath ? component : example.src}</div>
       </div>
     </>
   );

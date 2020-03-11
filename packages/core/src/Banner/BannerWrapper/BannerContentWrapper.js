@@ -28,8 +28,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     content,
     ...other
   } = props;
-  const icon =
-    customIcon || (showIcon && severityIcon(mapSeverityToVariant(variant)));
+  const icon = customIcon || (showIcon && severityIcon(mapSeverityToVariant(variant)));
 
   let effectiveActionsPosition = actionsPosition;
   if (actionsPosition === "auto") {
@@ -94,8 +93,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"])
-    .isRequired,
+  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"]).isRequired,
   /**
    * Controls if the associated icon to the variant should be shown.
    */
@@ -143,6 +141,4 @@ HvBannerContentWrapper.defaultProps = {
   actionsPosition: "auto"
 };
 
-export default withStyles(styles, { name: "HvBannerContentWrapper" })(
-  HvBannerContentWrapper
-);
+export default withStyles(styles, { name: "HvBannerContentWrapper" })(HvBannerContentWrapper);

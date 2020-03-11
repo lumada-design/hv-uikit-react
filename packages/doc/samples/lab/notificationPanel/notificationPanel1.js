@@ -54,9 +54,7 @@ const SimpleNotificationPanel = ({ classes }) => {
   );
 };
 
-const SimpleNotificationPanelWithStyles = withStyles(styles)(
-  SimpleNotificationPanel
-);
+const SimpleNotificationPanelWithStyles = withStyles(styles)(SimpleNotificationPanel);
 
 export default (
   <div

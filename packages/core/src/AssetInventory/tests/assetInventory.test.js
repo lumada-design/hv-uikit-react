@@ -273,31 +273,21 @@ describe("Asset Inventory ", () => {
       </HvProvider>
     );
 
-    let view = wrapper.findWhere(
-      n => n.type() === MockView && n.prop("id") === "view1"
-    );
+    let view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
 
     expect(view.exists()).toBe(true);
 
-    view = wrapper.findWhere(
-      n => n.type() === MockView && n.prop("id") === "view2"
-    );
+    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
 
     expect(view.exists()).toBe(false);
 
-    wrapper
-      .findWhere(n => n.type() === "button" && n.prop("id") === "view2")
-      .simulate("click");
+    wrapper.findWhere(n => n.type() === "button" && n.prop("id") === "view2").simulate("click");
 
-    view = wrapper.findWhere(
-      n => n.type() === MockView && n.prop("id") === "view2"
-    );
+    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
 
     expect(view.exists()).toBe(true);
 
-    view = wrapper.findWhere(
-      n => n.type() === MockView && n.prop("id") === "view1"
-    );
+    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
 
     expect(view.exists()).toBe(false);
   });
@@ -305,11 +295,7 @@ describe("Asset Inventory ", () => {
   it("should render pagination", () => {
     wrapper = mount(
       <HvProvider>
-        <AssetInventory
-          values={values}
-          configuration={{ metadata: [] }}
-          hasPagination
-        >
+        <AssetInventory values={values} configuration={{ metadata: [] }} hasPagination>
           <MockView id="view1">test1</MockView>
         </AssetInventory>
       </HvProvider>
@@ -421,11 +407,7 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues[1].id).toBe("2");
 
     wrapper
-      .findWhere(
-        n =>
-          n.type() === "button" &&
-          n.prop("id") === "hv-pagination-nextPage-button"
-      )
+      .findWhere(n => n.type() === "button" && n.prop("id") === "hv-pagination-nextPage-button")
       .simulate("click");
 
     expect(instance.state.viewValues.length).toBe(2);

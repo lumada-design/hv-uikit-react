@@ -7,6 +7,4 @@ const labels = {
   inputLabel: "What's your favorite animal?"
 };
 
-export default (
-  <HvInput labels={labels} showInfo={false} />
-);
+export default <HvInput labels={labels} showInfo={false} />;

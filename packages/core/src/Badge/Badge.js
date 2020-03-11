@@ -6,18 +6,9 @@ import Typography from "../Typography";
 import styles from "./styles";
 
 const Badge = props => {
-  const {
-    classes,
-    showCount,
-    count,
-    maxCount,
-    icon,
-    text,
-    textVariant
-  } = props;
+  const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
-  const Component =
-    icon || (text && <Typography variant={textVariant}>{text}</Typography>);
+  const Component = icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
   const badgeClasses = clsx(classes.badgePosition, {
     [classes.badge]: count > 0,
@@ -76,7 +67,7 @@ Badge.propTypes = {
     /**
      * Styles applied to the component badge container.
      */
-    badgeContainer: PropTypes.string,
+    badgeContainer: PropTypes.string
   }).isRequired,
   /**
    * Count is the number of unread notifications

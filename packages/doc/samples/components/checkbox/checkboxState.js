@@ -33,19 +33,9 @@ const CheckboxStateManager = () => {
         onChange={() => setCChecked(!cChecked)}
       />
 
-      <HvCheckBox
-        id="checkState4"
-        label="Checkbox indeterminate disabled"
-        disabled
-        indeterminate
-      />
+      <HvCheckBox id="checkState4" label="Checkbox indeterminate disabled" disabled indeterminate />
       <HvCheckBox id="checkState5" label="Checkbox disabled" disabled />
-      <HvCheckBox
-        id="checkState6"
-        label="Checkbox checked disabled"
-        checked
-        disabled
-      />
+      <HvCheckBox id="checkState6" label="Checkbox checked disabled" checked disabled />
     </div>
   );
 };

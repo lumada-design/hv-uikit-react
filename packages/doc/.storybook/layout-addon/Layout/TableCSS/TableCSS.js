@@ -19,11 +19,7 @@ const TableCSS = ({ classes, propsMetaData }) => {
           return (
             <tr key={key}>
               <td>{key}</td>
-              {prop.description ? (
-                <td>{parseDescription(prop.description)}</td>
-              ) : (
-                <td />
-              )}
+              {prop.description ? <td>{parseDescription(prop.description)}</td> : <td />}
             </tr>
           );
         })}

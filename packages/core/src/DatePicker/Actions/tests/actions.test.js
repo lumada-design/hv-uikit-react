@@ -19,12 +19,7 @@ describe("<Actions />", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Actions
-          id="id"
-          onCancel={onCancelMock()}
-          onApply={onApplyMock()}
-          labels={mockLabels}
-        />
+        <Actions id="id" onCancel={onCancelMock()} onApply={onApplyMock()} labels={mockLabels} />
       </HvProvider>
     );
   });

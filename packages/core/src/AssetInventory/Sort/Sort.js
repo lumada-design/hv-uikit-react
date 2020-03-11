@@ -61,23 +61,16 @@ const sortByType = type => {
  *
  * @param sort
  */
-const sortValues = ({
-  accessor,
-  sortFunction: externalSortFunction,
-  type,
-  cellType
-}) => {
+const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellType }) => {
   let selectedSortFunc;
 
   const sortFunction = externalSortFunction || sortByType(cellType);
 
   if (type === "asc") {
-    selectedSortFunc = (a, b) =>
-      sortFunction(get(a, accessor), get(b, accessor)) ? -1 : 1;
+    selectedSortFunc = (a, b) => (sortFunction(get(a, accessor), get(b, accessor)) ? -1 : 1);
   }
   if (type === "desc") {
-    selectedSortFunc = (a, b) =>
-      sortFunction(get(a, accessor), get(b, accessor)) ? 1 : -1;
+    selectedSortFunc = (a, b) => (sortFunction(get(a, accessor), get(b, accessor)) ? 1 : -1);
   }
   return selectedSortFunc;
 };
@@ -92,15 +85,7 @@ const sortValues = ({
  * @returns {*}
  * @constructor
  */
-const Sort = ({
-  id,
-  labels,
-  selected,
-  onSelection,
-  metadata,
-  onSortChange,
-  disablePortal
-}) => {
+const Sort = ({ id, labels, selected, onSelection, metadata, onSortChange, disablePortal }) => {
   const innerSortValues = data => {
     onSelection(sortValues(data), data.id);
   };
@@ -170,8 +155,7 @@ Sort.defaultProps = {
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.metadata === nextProps.metadata &&
-  prevProps.selected === nextProps.selected;
+  prevProps.metadata === nextProps.metadata && prevProps.selected === nextProps.selected;
 
 export default memo(Sort, arePropsEqual);
 export { sortOperationSetup, sortValues };

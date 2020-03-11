@@ -14,11 +14,7 @@ export default (
         Enable
       </Grid>
       <Grid item xl={2}>
-        <HvButton
-          id="default"
-          startIcon={CautionS}
-          onClick={() => myAlert("default")}
-        >
+        <HvButton id="default" startIcon={CautionS} onClick={() => myAlert("default")}>
           default
         </HvButton>
       </Grid>
@@ -33,12 +29,7 @@ export default (
         </HvButton>
       </Grid>
       <Grid item xl={2}>
-        <HvButton
-          id="ghost"
-          category="ghost"
-          startIcon={CautionS}
-          onClick={() => myAlert("ghost")}
-        >
+        <HvButton id="ghost" category="ghost" startIcon={CautionS} onClick={() => myAlert("ghost")}>
           ghost
         </HvButton>
       </Grid>

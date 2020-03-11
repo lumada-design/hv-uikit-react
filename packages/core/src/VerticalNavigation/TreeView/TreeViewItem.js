@@ -1,20 +1,11 @@
-import React, {
-  useRef,
-  useMemo,
-  useContext,
-  useEffect,
-  useCallback
-} from "react";
+import React, { useRef, useMemo, useContext, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
 import HvTypography from "../../Typography";
 
-import {
-  TreeViewControlContext,
-  TreeViewStateContext
-} from "./TreeViewContexts";
+import { TreeViewControlContext, TreeViewStateContext } from "./TreeViewContexts";
 
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
@@ -78,12 +69,9 @@ const TreeViewItem = props => {
   const listItemRef = useRef(null);
   const actionableRef = useRef(null);
 
-  const expandable = Boolean(
-    Array.isArray(children) ? children.length : children
-  );
+  const expandable = Boolean(Array.isArray(children) ? children.length : children);
 
-  const selectable =
-    selectableProp != null ? selectableProp : !(collapsible && expandable);
+  const selectable = selectableProp != null ? selectableProp : !(collapsible && expandable);
 
   const expanded = treeViewStateContext.isExpanded(nodeId);
   const selected = treeViewStateContext.isSelected(nodeId);
@@ -106,17 +94,7 @@ const TreeViewItem = props => {
 
       return false;
     },
-    [
-      collapsible,
-      disabled,
-      expandable,
-      expanded,
-      nodeId,
-      select,
-      selectable,
-      selected,
-      toggle
-    ]
+    [collapsible, disabled, expandable, expanded, nodeId, select, selectable, selected, toggle]
   );
 
   const onChangeCallback = usePropAsRef(onClick);
@@ -163,12 +141,7 @@ const TreeViewItem = props => {
       let isEventHandled = false;
       const { key } = event;
 
-      if (
-        event.altKey ||
-        event.ctrlKey ||
-        event.metaKey ||
-        event.currentTarget !== event.target
-      ) {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.currentTarget !== event.target) {
         return;
       }
 
@@ -258,14 +231,7 @@ const TreeViewItem = props => {
     return () => {
       removeNodeFromNodeMap(nodeId);
     };
-  }, [
-    addNodeToNodeMap,
-    childIds,
-    label,
-    nodeId,
-    nodePayloadRef,
-    removeNodeFromNodeMap
-  ]);
+  }, [addNodeToNodeMap, childIds, label, nodeId, nodePayloadRef, removeNodeFromNodeMap]);
 
   // focus the rendered DOM element (if tabbable)
   useEffect(() => {
@@ -295,9 +261,7 @@ const TreeViewItem = props => {
         tabIndex={tabbable ? 0 : -1}
         onKeyDown={handleKeyDown}
         onClick={handleClick}
-        aria-current={
-          !treeviewMode && selectable && selected ? "page" : undefined
-        }
+        aria-current={!treeviewMode && selectable && selected ? "page" : undefined}
       >
         {renderedIcon}
         {label}

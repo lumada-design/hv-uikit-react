@@ -1,12 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import {
-  Tool,
-  Level1,
-  Level2Average,
-  Level3Bad
-} from "@hv/uikit-react-icons/dist";
+import { Tool, Level1, Level2Average, Level3Bad } from "@hv/uikit-react-icons/dist";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
@@ -37,10 +32,7 @@ const ThroughputKpiTextConfiguration = score => ({
 const Content = ({ classes, value, icon }) => (
   <>
     <Grid container>
-      <HvKpi
-        labels={ThroughputKpiTextConfiguration(value)}
-        visualIndicator={icon}
-      />
+      <HvKpi labels={ThroughputKpiTextConfiguration(value)} visualIndicator={icon} />
     </Grid>
     <Grid container>
       <Grid item className={classes.item} xs={4} sm={8} md={12} lg={12} xl={12}>
@@ -65,9 +57,7 @@ export default (
       <HvCard
         icon={<Tool />}
         headerTitle="Replace contaminated oil"
-        innerCardContent={
-          <ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />
-        }
+        innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
         semantic="sema2"
         isSelectable
         checkboxValue="value"
@@ -79,10 +69,7 @@ export default (
         icon={<Tool />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
-          <ContentWithStyles
-            value="45"
-            icon={<Level2Average semantic="sema3" />}
-          />
+          <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
         }
         semantic="sema3"
         isSelectable
@@ -94,9 +81,7 @@ export default (
       <HvCard
         icon={<Tool />}
         headerTitle="Replace contaminated oil"
-        innerCardContent={
-          <ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />
-        }
+        innerCardContent={<ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />}
         semantic="sema4"
         isSelectable
         checkboxValue="value"

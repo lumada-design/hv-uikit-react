@@ -7,8 +7,7 @@ storiesOf("Components/Navigation System/Horizontal Navigation", module).add(
   () => <HvHeaderBrand />,
   {
     title: "Brand",
-    description:
-      "Component of the header, responsible for presenting brand content.",
+    description: "Component of the header, responsible for presenting brand content.",
     usage: "import HvHeaderBrand from '@hv/uikit-react-core/dist/Header/Brand'"
   }
 );

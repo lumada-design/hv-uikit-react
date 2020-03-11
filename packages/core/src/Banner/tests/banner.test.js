@@ -6,11 +6,7 @@ import Banner from "../Banner";
 import HvBannerContentWrapper from "../BannerWrapper";
 import BannerWithStyles from "../index";
 import HvProvider from "../../Provider";
-import {
-  mapSeverityToVariant,
-  severityIcon,
-  variantIcon
-} from "../BannerWrapper/VariantUtils";
+import { mapSeverityToVariant, severityIcon, variantIcon } from "../BannerWrapper/VariantUtils";
 import Button from "../../Button";
 
 describe("Banner ", () => {
@@ -59,12 +55,7 @@ describe("Banner ", () => {
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles
-          variant="error"
-          open
-          showIcon={false}
-          onClose={() => {}}
-        />
+        <BannerWithStyles variant="error" open showIcon={false} onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(0);
@@ -73,12 +64,7 @@ describe("Banner ", () => {
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles
-          variant="default"
-          open
-          customIcon={<Fail />}
-          onClose={() => {}}
-        />
+        <BannerWithStyles variant="default" open customIcon={<Fail />} onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -166,12 +152,7 @@ describe("Banner ", () => {
 
     component = mount(
       <HvProvider>
-        <BannerWithStyles
-          open
-          offset={offset}
-          anchorOrigin="bottom"
-          onClose={() => {}}
-        />
+        <BannerWithStyles open offset={offset} anchorOrigin="bottom" onClose={() => {}} />
       </HvProvider>
     ).find(MaterialSnackbar);
 

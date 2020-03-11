@@ -23,7 +23,6 @@ const isKeycode = (number, keyCode) =>
  *  @param {Number} keycode - The number to check.
  *  @returns - ´true´ if the keycode is the corresponding key, ´false´ if the keycode is corresponding key or undefined if the event does not exist or is not a keypress.
  */
-const isKeypress = (event, keyCode) =>
-  isKeycode(getKeyCodeFromEvent(event), keyCode);
+const isKeypress = (event, keyCode) => isKeycode(getKeyCodeFromEvent(event), keyCode);
 
 export { getKeyCodeFromEvent, isKeycode, isKeypress };

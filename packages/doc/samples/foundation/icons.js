@@ -42,9 +42,7 @@ const dropdownLabels = {
   multiSelectionConjunction: ""
 };
 
-const keys = Array.from(
-  new Set([...Object.keys(genericIconComponentList)])
-).sort();
+const keys = Array.from(new Set([...Object.keys(genericIconComponentList)])).sort();
 
 const Group = ({ groupLabel, classes, iconSize, colorArray = [] }) => {
   return (

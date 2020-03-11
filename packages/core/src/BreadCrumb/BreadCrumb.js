@@ -30,9 +30,7 @@ const removeExtension = label =>
  */
 const LastPathElement = ({ classes, label }) => (
   <li className={classes.centerContainer}>
-    <HvTypography variant="sText">
-      {startCase(removeExtension(label))}
-    </HvTypography>
+    <HvTypography variant="sText">{startCase(removeExtension(label))}</HvTypography>
   </li>
 );
 
@@ -183,12 +181,7 @@ const BreadCrumb = ({
               {React.isValidElement(elem) ? (
                 elem
               ) : (
-                <Page
-                  key={key}
-                  useRouter={useRouter}
-                  elem={elem}
-                  classes={classes}
-                />
+                <Page key={key} useRouter={useRouter} elem={elem} classes={classes} />
               )}
             </PathElement>
           );

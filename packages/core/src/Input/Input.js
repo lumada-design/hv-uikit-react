@@ -26,8 +26,7 @@ class HvInput extends React.Component {
       validationState,
       value: value || initialValue,
       suggestionValues: null,
-      warningText:
-        validationState === validationStates.invalid ? labels.warningText : null
+      warningText: validationState === validationStates.invalid ? labels.warningText : null
     };
   }
 
@@ -52,10 +51,7 @@ class HvInput extends React.Component {
    */
   manageInputValueState = (value, warningText) => {
     this.setState({
-      validationState:
-        value && value !== ""
-          ? validationStates.filled
-          : validationStates.empty,
+      validationState: value && value !== "" ? validationStates.filled : validationStates.empty,
       warningText,
       value
     });
@@ -139,12 +135,7 @@ class HvInput extends React.Component {
   onInputBlurHandler = () => {
     const { value } = this.state;
     const { onBlur, labels, isRequired } = this.props;
-    const {
-      validation,
-      validationType,
-      minCharQuantity,
-      maxCharQuantity
-    } = this.props;
+    const { validation, validationType, minCharQuantity, maxCharQuantity } = this.props;
 
     let validationState;
     let warningText = null;
@@ -157,11 +148,7 @@ class HvInput extends React.Component {
         validationState = validationStates.empty;
       }
     } else {
-      const valueSizeStatus = validateCharLength(
-        value,
-        maxCharQuantity,
-        minCharQuantity
-      );
+      const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
       const valid = validateInput(value, validation, validationType);
 
       if (valid && valueSizeStatus) {
@@ -310,8 +297,7 @@ class HvInput extends React.Component {
         validation !== null);
 
     // show the clear button only if the input is enabled, disableClear is false and the input is not empty
-    const showClear =
-      !disabled && !disableClear && stateValue != null && stateValue !== "";
+    const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
 
     const adornment = this.getInputAdornment(
       `${internalId}-input`,
@@ -349,11 +335,7 @@ class HvInput extends React.Component {
           )}
 
           {showInfo && infoIcon && labels.infoText && (
-            <div
-              aria-hidden="true"
-              title={labels.infoText}
-              className={classes.infoIconContainer}
-            >
+            <div aria-hidden="true" title={labels.infoText} className={classes.infoIconContainer}>
               <InfoS />
             </div>
           )}
@@ -361,11 +343,7 @@ class HvInput extends React.Component {
 
         <Input
           id={`${internalId}-input`}
-          aria-describedby={
-            showInfo && labels.infoText
-              ? `${internalId}-description`
-              : undefined
-          }
+          aria-describedby={showInfo && labels.infoText ? `${internalId}-description` : undefined}
           autoFocus={autoFocus}
           onKeyDown={this.onKeyDownHandler}
           onBlur={this.onInputBlurHandler}
@@ -382,15 +360,13 @@ class HvInput extends React.Component {
           }}
           className={clsx(classes.inputRoot, {
             [classes.inputRootDisabled]: disabled,
-            [classes.inputRootInvalid]:
-              stateValidationState === validationStates.invalid
+            [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
           })}
           onChange={this.onChangeHandler}
           inputProps={{
             required: isRequired,
             "aria-required": isRequired || undefined,
-            "aria-invalid":
-              stateValidationState === validationStates.invalid || undefined,
+            "aria-invalid": stateValidationState === validationStates.invalid || undefined,
             ...inputProps
           }}
           inputRef={inputRef}
@@ -423,9 +399,7 @@ class HvInput extends React.Component {
             className={clsx(classes.infoText)}
             style={{
               display:
-                !infoIcon && stateValidationState !== validationStates.invalid
-                  ? "block"
-                  : "none"
+                !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
             }}
           >
             {labels.infoText}
@@ -436,10 +410,7 @@ class HvInput extends React.Component {
           variant="sText"
           className={clsx(classes.textWarning, classes.infoText)}
           style={{
-            display:
-              stateValidationState === validationStates.invalid
-                ? "block"
-                : "none"
+            display: stateValidationState === validationStates.invalid ? "block" : "none"
           }}
           aria-live="polite"
           aria-controls={`${internalId}-input`}

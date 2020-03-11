@@ -136,19 +136,14 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow
-      checkboxValue={value.id}
-      checkboxSelected={value.checkboxSelected}
-    >
+    <HvListViewRow checkboxValue={value.id} checkboxSelected={value.checkboxSelected}>
       <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon className={classes.icon} semantic={status.sema} />
       </HvListViewCell>
 
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
-          <HvTypography variant="highlightText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
           <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>

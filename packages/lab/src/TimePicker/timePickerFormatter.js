@@ -42,9 +42,7 @@ const getTimeFormatForLocale = locale => {
 const getFormattedTime = time => {
   const { hours, minutes, seconds } = time;
 
-  let timeToRender = `${padTime(hours)}:${padTime(minutes)}:${padTime(
-    seconds
-  )}`;
+  let timeToRender = `${padTime(hours)}:${padTime(minutes)}:${padTime(seconds)}`;
   if (time.period) {
     timeToRender += ` ${time.period}`;
   }

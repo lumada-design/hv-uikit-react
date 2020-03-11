@@ -1,10 +1,7 @@
 import React from "react";
 import Chart from "react-google-charts";
 import { HvCard, HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
-import {
-  Level2Average as Average,
-  BottomXS as ArrowDown
-} from "@hv/uikit-react-icons/dist";
+import { Level2Average as Average, BottomXS as ArrowDown } from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Total number of events",

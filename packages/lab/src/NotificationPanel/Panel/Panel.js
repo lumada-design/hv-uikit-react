@@ -23,16 +23,12 @@ export default class Panel extends Component {
       footer,
       children
     } = this.props;
-    const newNotificationCount = _.filter(
-      notifications,
-      notification => !notification.isRead
-    ).length;
+    const newNotificationCount = _.filter(notifications, notification => !notification.isRead)
+      .length;
 
     return (
       <div
-        className={`${classes.root} ${open ? classes.open : ""} ${
-          classes.panel
-        }`}
+        className={`${classes.root} ${open ? classes.open : ""} ${classes.panel}`}
         ref={this.rootRef}
       >
         <div className={classes.header}>

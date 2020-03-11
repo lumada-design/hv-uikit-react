@@ -16,8 +16,7 @@ storiesOf("Components/Navigation System/Vertical Navigation", module).add(
       "<li>Action</li>" +
       "</ul>" +
       "<br>To build the vertical navigation a composition of these elements should be used.",
-    usage:
-      "import HvVerticalNavigation from '@hv/uikit-react-core/dist/VerticalNavigation'",
+    usage: "import HvVerticalNavigation from '@hv/uikit-react-core/dist/VerticalNavigation'",
     examples: [
       {
         title: "1. Vertical navigation system",

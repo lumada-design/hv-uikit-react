@@ -92,13 +92,11 @@ export default class TextTruncate extends Component {
   };
 
   onTruncated = () => {
-    typeof this.props.onTruncated === "function" &&
-      setTimeout(() => this.props.onTruncated(), 0);
+    typeof this.props.onTruncated === "function" && setTimeout(() => this.props.onTruncated(), 0);
   };
 
   onCalculated = () => {
-    typeof this.props.onCalculated === "function" &&
-      setTimeout(() => this.props.onCalculated(), 0);
+    typeof this.props.onCalculated === "function" && setTimeout(() => this.props.onCalculated(), 0);
   };
 
   update = () => {
@@ -186,9 +184,7 @@ export default class TextTruncate extends Component {
     let loopCnt = 0;
 
     while (displayLine-- > 0) {
-      ext = displayLine
-        ? ""
-        : truncateText + (childText ? ` ${childText}` : "");
+      ext = displayLine ? "" : truncateText + (childText ? ` ${childText}` : "");
       while (currentPos <= maxTextLength) {
         truncatedText = text.substr(startPos, currentPos);
         width = this.measureWidth(truncatedText + ext);
@@ -246,8 +242,7 @@ export default class TextTruncate extends Component {
         !isPrevLineWithoutSpace &&
         text.substr(lastPos, currentPos).indexOf(" ") === -1
       ) {
-        isPrevLineWithoutSpace =
-          text.substr(lastPos, currentPos).indexOf(" ") === -1;
+        isPrevLineWithoutSpace = text.substr(lastPos, currentPos).indexOf(" ") === -1;
         displayLine--;
       }
       lastPos = currentPos + 1;
@@ -262,11 +257,7 @@ export default class TextTruncate extends Component {
     this.onToggled(true);
     return (
       <div {...props}>
-        {createElement(
-          textElement,
-          props,
-          `${text.substr(0, startPos) + truncateText} `
-        )}
+        {createElement(textElement, props, `${text.substr(0, startPos) + truncateText} `)}
         {textTruncateChild}
       </div>
     );
@@ -292,9 +283,7 @@ export default class TextTruncate extends Component {
     const { fontWeight, fontStyle, fontSize, fontFamily } = style;
 
     const renderText =
-      this.scope && line
-        ? this.getRenderText()
-        : createElement(textElement, props, text);
+      this.scope && line ? this.getRenderText() : createElement(textElement, props, text);
     const rootProps = {
       ref: el => {
         this.scope = el;

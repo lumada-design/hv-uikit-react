@@ -15,17 +15,9 @@ export default (
     <p />
     <SnackbarContentWrapper label="This is a snackbar." variant="default" />
     <p />
-    <SnackbarContentWrapper
-      label="This is a success message."
-      variant="success"
-      showIcon
-    />
+    <SnackbarContentWrapper label="This is a success message." variant="success" showIcon />
     <p />
-    <SnackbarContentWrapper
-      label="This is an error message."
-      variant="error"
-      showIcon
-    />
+    <SnackbarContentWrapper label="This is an error message." variant="error" showIcon />
     <p />
     <Typography variant="xsTitle">Action</Typography>
     <p />

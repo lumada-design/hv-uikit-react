@@ -29,9 +29,7 @@ const findFirstChildByParentId = (data = [], id) => {
 };
 
 const navigationDepth = arr =>
-  Array.isArray(arr)
-    ? 1 + Math.max(...arr.map(el => navigationDepth(el.data)))
-    : 0;
+  Array.isArray(arr) ? 1 + Math.max(...arr.map(el => navigationDepth(el.data))) : 0;
 
 /**
  *
@@ -84,8 +82,7 @@ const withLayout = (
       setIsOpen(prevState => !prevState);
     };
 
-    const showVerticalNavigation =
-      hasHeader && !isEmpty(verticalNavData) && (isMdUp || isOpen);
+    const showVerticalNavigation = hasHeader && !isEmpty(verticalNavData) && (isMdUp || isOpen);
 
     return (
       <>

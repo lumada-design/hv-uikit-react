@@ -8,8 +8,7 @@ const callSimulation = () =>
     }, 2000);
   });
 
-const labels = 
-{
+const labels = {
   titleText: "Title text",
   recoveryTitle: "Recovery title",
   messageToRecover: "Message to recover",
@@ -31,8 +30,7 @@ const labels =
   recoverButton: "Recover label",
   recoveringMessage: "Recovering label",
   incorrectCredentialsMessage: "Incorrect credentials message label"
-
-}
+};
 
 export default (
   <div

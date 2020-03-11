@@ -47,15 +47,11 @@ describe("<Calendar /> with minimum configuration", () => {
   });
 
   it("should have the month in the state be the same as the one set in the selectedDate", () => {
-    expect(calendarInstance.state.calendarModel.month).toBe(
-      selectedDate.getUTCMonth() + 1
-    );
+    expect(calendarInstance.state.calendarModel.month).toBe(selectedDate.getUTCMonth() + 1);
   });
 
   it("should have the year in the state be the same as the one set in the selectedDate", () => {
-    expect(calendarInstance.state.calendarModel.year).toBe(
-      selectedDate.getUTCFullYear()
-    );
+    expect(calendarInstance.state.calendarModel.year).toBe(selectedDate.getUTCFullYear());
   });
 
   it("should have the viewMode in the state set to Calendar", () => {

@@ -8,21 +8,11 @@ import styles from "./styles";
 
 const renderNode = (className, node, variant) => (
   <div className={className}>
-    {isString(node) ? (
-      <HvTypography variant={variant}>{node}</HvTypography>
-    ) : (
-      node
-    )}
+    {isString(node) ? <HvTypography variant={variant}>{node}</HvTypography> : node}
   </div>
 );
 
-const EmptyState = ({
-  classes,
-  title = null,
-  message = null,
-  action = null,
-  icon
-}) => (
+const EmptyState = ({ classes, title = null, message = null, action = null, icon }) => (
   <div className={classes.root}>
     <div
       className={clsx(classes.container, {

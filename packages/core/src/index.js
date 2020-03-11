@@ -2,13 +2,7 @@
 export { default as HvBanner } from "./Banner";
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvButton } from "./Button";
-export {
-  default as HvCard,
-  HvCardHeader,
-  HvCardFooter,
-  HvCardContent,
-  HvCardMedia
-} from "./Card";
+export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMedia } from "./Card";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvHeader } from "./Header";
@@ -17,12 +11,7 @@ export { default as HvSearchBox } from "./SearchBox";
 export { default as HvKpi } from "./Kpi";
 export { default as HvLink } from "./Link";
 export { default as HvLogin } from "./Login";
-export {
-  default as HvModal,
-  HvModalTitle,
-  HvModalContent,
-  HvModalActions
-} from "./Modal";
+export { default as HvModal, HvModalTitle, HvModalContent, HvModalActions } from "./Modal";
 export { HvCheckBox, HvRadio, labelPositions } from "./Selectors";
 export { default as HvSnackbar } from "./Snackbar";
 export { default as HvTable } from "./Table";

@@ -17,12 +17,7 @@ const getComponentsMetadata = children => {
     return element;
   });
 
-  if (
-    nodes[0] &&
-    nodes[0].type &&
-    nodes[0].type.Naked &&
-    nodes[0].type.Naked.__docgenInfo
-  ) {
+  if (nodes[0] && nodes[0].type && nodes[0].type.Naked && nodes[0].type.Naked.__docgenInfo) {
     return {
       propsMetaData: nodes[0].type.Naked.__docgenInfo.props,
       descriptionMetadata: nodes[0].type.Naked.__docgenInfo.description
@@ -62,22 +57,13 @@ const SimpleBanner = ({ compNameToUse }) => {
 
 const Main = ({ classes, children, context, config }) => {
   const { kind, story, parameters } = context;
-  const {
-    examples,
-    title,
-    description,
-    designSystemLink,
-    deprecated,
-    componentToUse
-  } = parameters;
+  const { examples, title, description, designSystemLink, deprecated, componentToUse } = parameters;
 
   if (parameters.options.noAddon) return children;
 
   const isComponent = shouldShowHeader(kind);
 
-  let processedKind = kind.startsWith("Components")
-    ? kind.replace("Components", "Core")
-    : kind;
+  let processedKind = kind.startsWith("Components") ? kind.replace("Components", "Core") : kind;
   processedKind = (story === "Icons" && "Icons") || processedKind;
   processedKind = (story === "Typography" && "Core") || processedKind;
 
@@ -93,13 +79,9 @@ const Main = ({ classes, children, context, config }) => {
             (story === "Icons" && `v${iconsPackage.version}`) ||
             (story === "Typography" && `v${corePackage.version}`) ||
             ""}`}
-          <span className={classes.name}>
-            {story === "Icons" ? "" : `- ${story}`}
-          </span>
+          <span className={classes.name}>{story === "Icons" ? "" : `- ${story}`}</span>
         </div>
-        {isComponent && (
-          <Button onClick={config.changeTheme}>Toggle theme</Button>
-        )}
+        {isComponent && <Button onClick={config.changeTheme}>Toggle theme</Button>}
       </div>
       <div className={classes.contentWithHeader}>
         {title ? (
@@ -109,9 +91,7 @@ const Main = ({ classes, children, context, config }) => {
               {title}
               <span className={classes.link}>
                 {designSystemLink && (
-                  <HvLink route={designSystemLink}>
-                    &nbsp;&nbsp;[DS Pattern]
-                  </HvLink>
+                  <HvLink route={designSystemLink}>&nbsp;&nbsp;[DS Pattern]</HvLink>
                 )}
               </span>
             </div>

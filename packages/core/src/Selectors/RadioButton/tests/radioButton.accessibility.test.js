@@ -15,10 +15,7 @@ describe("InputA11Y", () => {
   it("normal state", async () => {
     const wrapper = mount(
       <HvProvider>
-        <RadioButtonWithStyles
-          id="test"
-          radioProps={{ inputProps: { "aria-label": "Radio" } }}
-        />
+        <RadioButtonWithStyles id="test" radioProps={{ inputProps: { "aria-label": "Radio" } }} />
       </HvProvider>
     );
 

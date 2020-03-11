@@ -4,8 +4,7 @@ import HvLogin from "@hv/uikit-react-core/dist/Login";
 
 storiesOf("Components", module).add("Login", () => <HvLogin />, {
   title: "Login",
-  description:
-    "Login form with the capability for recovery of lost credentials.",
+  description: "Login form with the capability for recovery of lost credentials.",
   usage: "import { HvLogin } from '@hv/uikit-react-core/dist/Login'",
   examples: [
     {

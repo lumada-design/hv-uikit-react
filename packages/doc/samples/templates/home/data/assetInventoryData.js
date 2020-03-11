@@ -1,5 +1,4 @@
-const randomGenerator = (max, min) =>
-  Math.floor(Math.random() * (max - min + 1)) + min;
+const randomGenerator = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const riskDownTime = {
   headerTitle: "Downtime track ",
@@ -24,8 +23,7 @@ const severeBreakdown = {
 const dataGenerator = id => {
   const risk = randomGenerator(100, 1);
   const timeHorizon = randomGenerator(8, 1);
-  const data =
-    randomGenerator(10, 1) % 2 === 0 ? riskDownTime : severeBreakdown;
+  const data = randomGenerator(10, 1) % 2 === 0 ? riskDownTime : severeBreakdown;
   return {
     headerTitle: data.headerTitle + (id + 1),
     id: `id_${id}`,

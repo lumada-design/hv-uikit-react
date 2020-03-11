@@ -61,12 +61,7 @@ describe("Snackbar ", () => {
   it("shouldn't render the success icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles
-          open
-          variant="success"
-          showIcon={false}
-          transitionDirection="down"
-        />
+        <SnackBarWithStyles open variant="success" showIcon={false} transitionDirection="down" />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -114,11 +109,7 @@ describe("Snackbar ", () => {
   it("should render the action when a component is passed", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles
-          open
-          variant="success"
-          action={<a href=" ">Event</a>}
-        />
+        <SnackBarWithStyles open variant="success" action={<a href=" ">Event</a>} />
       </HvProvider>
     )
       .find(SnackBarContent)
