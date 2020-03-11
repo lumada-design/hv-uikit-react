@@ -37,13 +37,7 @@ Header.propTypes = {
   /**
    * Position of the component.
    */
-  position: PropTypes.oneOf([
-    "static",
-    "relative",
-    "fixed",
-    "absolute",
-    "sticky"
-  ]),
+  position: PropTypes.oneOf(["static", "relative", "fixed", "absolute", "sticky"]),
   /**
    * Children to be rendered.
    */

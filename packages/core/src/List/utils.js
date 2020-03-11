@@ -12,12 +12,8 @@ const parseState = (list, labels) => {
   const selection = list.filter(elem => elem.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
-  const anySelectableSelected = list.some(
-    elem => elem.selected || elem.disabled
-  );
-  const allSelectableSelected = list.every(
-    elem => elem.selected || elem.disabled
-  );
+  const anySelectableSelected = list.some(elem => elem.selected || elem.disabled);
+  const allSelectableSelected = list.every(elem => elem.selected || elem.disabled);
   const selectionLabel = !anySelected
     ? selectAll
     : `${selection.length} ${selectionConjunction} ${list.length}`;
@@ -36,12 +32,7 @@ const parseState = (list, labels) => {
 };
 
 const parseList = (list, item, props, selectAll) => {
-  const {
-    multiSelect,
-    selectable,
-    selectDefault,
-    singleSelectionToggle
-  } = props;
+  const { multiSelect, selectable, selectDefault, singleSelectionToggle } = props;
 
   let anySelected = false;
   const newList = list.map(elem => {
@@ -60,17 +51,14 @@ const parseList = (list, item, props, selectAll) => {
       if (multiSelect) {
         selectionState = item ? !elem.selected : true;
       } else {
-        selectionState =
-          !anySelected &&
-          (item && singleSelectionToggle ? !elem.selected : true);
+        selectionState = !anySelected && (item && singleSelectionToggle ? !elem.selected : true);
       }
 
       newItem.selected = selectionState;
       anySelected = true;
     }
 
-    if (typeof selectAll === "boolean" && !elem.disabled)
-      newItem.selected = selectAll;
+    if (typeof selectAll === "boolean" && !elem.disabled) newItem.selected = selectAll;
 
     // normalize item selected prop if not provided
     if (!newItem.selected) newItem.selected = false;

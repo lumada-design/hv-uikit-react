@@ -167,10 +167,7 @@ const HvCard = ({
             />
           )}
           {innerCardContent && (
-            <Content
-              id={defaultContentId}
-              innerCardContent={innerCardContent}
-            />
+            <Content id={defaultContentId} innerCardContent={innerCardContent} />
           )}
         </div>
       </Focus>

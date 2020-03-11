@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import { ClickAwayListener, withStyles } from "@material-ui/core";
@@ -95,10 +89,8 @@ const VerticalContainer = ({
           !isNil(focusableList.current.first)
         ) {
           if (
-            (event.shiftKey &&
-              event.target.id === focusableList.current.first.id) ||
-            (!event.shiftKey &&
-              event.target.id === focusableList.current.last.id)
+            (event.shiftKey && event.target.id === focusableList.current.first.id) ||
+            (!event.shiftKey && event.target.id === focusableList.current.last.id)
           ) {
             toggleOpen(false);
           }
@@ -127,14 +119,7 @@ const VerticalContainer = ({
         </Button>
       </div>
     ),
-    [
-      buttonAriaLabel,
-      classes.anchorBar,
-      classes.button,
-      internalId,
-      open,
-      toggleOpen
-    ]
+    [buttonAriaLabel, classes.anchorBar, classes.button, internalId, open, toggleOpen]
   );
 
   const renderedContainer = useMemo(

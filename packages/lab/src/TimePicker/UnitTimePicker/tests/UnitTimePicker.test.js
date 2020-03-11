@@ -110,9 +110,7 @@ describe("UnitTimePicker", () => {
       currentValue: TimePickerUnits.MINUTE.max
     });
     unitTimePickerInstance.handleAddTime();
-    expect(unitTimePickerInstance.state.currentValue).toBe(
-      TimePickerUnits.MINUTE.min
-    );
+    expect(unitTimePickerInstance.state.currentValue).toBe(TimePickerUnits.MINUTE.min);
   });
 
   it("handleSubtractTime - should update the currentValue in the state by subtracting 1", () => {
@@ -125,9 +123,7 @@ describe("UnitTimePicker", () => {
       currentValue: TimePickerUnits.MINUTE.min
     });
     unitTimePickerInstance.handleSubtractTime();
-    expect(unitTimePickerInstance.state.currentValue).toBe(
-      TimePickerUnits.MINUTE.max
-    );
+    expect(unitTimePickerInstance.state.currentValue).toBe(TimePickerUnits.MINUTE.max);
   });
 
   it("renderTimeUnit - should return the state currentValue if isFocused", () => {

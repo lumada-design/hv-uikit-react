@@ -30,8 +30,7 @@ const simulateUpload = (files, setList, times = 0) => {
     }, 250);
 };
 
-const removeFromList = (list, fileToRemove) =>
-  list.filter(file => file.name !== fileToRemove.name);
+const removeFromList = (list, fileToRemove) => list.filter(file => file.name !== fileToRemove.name);
 
 const Sample = () => {
   const [list, setList] = useState([]);

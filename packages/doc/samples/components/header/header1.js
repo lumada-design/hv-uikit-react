@@ -82,11 +82,7 @@ const HeaderSample = () => {
       )}
       <HvHeaderBrand logo={<HitachiLogo />} name="Lumada App" />
       {isMdUp && (
-        <HvHeaderNavigation
-          data={navigationData}
-          selected={selected}
-          onClick={handleChange}
-        />
+        <HvHeaderNavigation data={navigationData} selected={selected} onClick={handleChange} />
       )}
       <HvHeaderActions>
         <HvButton
@@ -110,4 +106,8 @@ const HeaderSample = () => {
   );
 };
 
-export default <div style={{ height: 100 }}><HeaderSample /></div>;
+export default (
+  <div style={{ height: 100 }}>
+    <HeaderSample />
+  </div>
+);

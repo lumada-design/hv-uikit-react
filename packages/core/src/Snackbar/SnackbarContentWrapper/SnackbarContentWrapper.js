@@ -28,10 +28,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
       classes={{ root: classes.root, message: classes.message }}
       className={classes[variant]}
       message={
-        <div
-          {...(id && { id: `${id}-message` })}
-          className={classes.messageSpan}
-        >
+        <div {...(id && { id: `${id}-message` })} className={classes.messageSpan}>
           {icon && <div className={classes.iconVariant}>{icon}</div>}
           <TextTruncate
             {...(id && { id: `${id}-message-text` })}
@@ -42,11 +39,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
           />
           {action && (
             <div {...(id && { id: `${id}-action` })} className={classes.action}>
-              <Actions
-                category="semantic"
-                actions={innerAction}
-                actionsCallback={actionCallback}
-              />
+              <Actions category="semantic" actions={innerAction} actionsCallback={actionCallback} />
             </div>
           )}
         </div>
@@ -108,6 +101,4 @@ HvSnackbarContentWrapper.defaultProps = {
   actionCallback: () => {}
 };
 
-export default withStyles(styles, { name: "HvSnackbarContentWrapper" })(
-  HvSnackbarContentWrapper
-);
+export default withStyles(styles, { name: "HvSnackbarContentWrapper" })(HvSnackbarContentWrapper);

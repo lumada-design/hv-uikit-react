@@ -7,9 +7,7 @@ storiesOf("Components/Navigation System/Vertical Navigation", module).add(
   () => <Actions />,
   {
     title: "Actions",
-    description:
-      "Component of the vertical navigation, acting as a container for action content.",
-    usage:
-      "import Actions from '@hv/uikit-react-core/dist/VerticalNavigation/Actions'"
+    description: "Component of the vertical navigation, acting as a container for action content.",
+    usage: "import Actions from '@hv/uikit-react-core/dist/VerticalNavigation/Actions'"
   }
 );

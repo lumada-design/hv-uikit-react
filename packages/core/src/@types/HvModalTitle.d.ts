@@ -1,8 +1,7 @@
-declare module '@hv/uikit-react-core/dist' {
+declare module "@hv/uikit-react-core/dist" {
   export class HvModalTitle extends React.Component<HvModalTitleProps, any> {}
 
-  export interface HvModalTitleProps
-    extends React.HTMLAttributes<HvModalTitle> {
+  export interface HvModalTitleProps extends React.HTMLAttributes<HvModalTitle> {
     /**
      * A Jss Object used to override or extend the styles applied.
      */
@@ -10,39 +9,39 @@ declare module '@hv/uikit-react-core/dist' {
       /**
        * Style applied to the root of the component (container for the title).
        */
-      root?: string
+      root?: string;
       /**
        * Style applied to the container of the title
        */
-      messageContainer?: string
+      messageContainer?: string;
       /**
        * Style applied to the text when the icon is present.
        */
-      textWithIcon?: string
+      textWithIcon?: string;
       /**
        * Style applied to the icon.
        */
-      icon?: string
-    }
+      icon?: string;
+    };
 
     /**
      * Variant of the modal.
      */
-    variant?: 'success' | 'warning' | 'error' | 'info' | 'default'
+    variant?: "success" | "warning" | "error" | "info" | "default";
 
     /**
      * Controls if the associated icon to the variant should be shown.
      */
-    showIcon?: boolean
+    showIcon?: boolean;
 
     /**
      * Custom icon to replace the variant default.
      */
-    customIcon?: React.ReactNode
+    customIcon?: React.ReactNode;
 
     /**
      * The theme passed by the provider.
      */
-    theme?: any
+    theme?: any;
   }
 }

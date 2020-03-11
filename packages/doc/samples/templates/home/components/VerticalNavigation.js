@@ -35,11 +35,7 @@ const NavigationTemplate = ({ hasAnchor }) => {
           isOpen={!isMdUp ? null : isOpen || (!hasAnchor && isMdUp)}
           toggleOpenCallback={value => shouldBeOpen(value)}
         >
-          <Navigation
-            data={verticalNavData}
-            selected={verticalSelection}
-            onClick={handleChange}
-          />
+          <Navigation data={verticalNavData} selected={verticalSelection} onClick={handleChange} />
           {!isMdUp && (
             <Actions>
               <Action label="Settings" icon={<Settings />} />

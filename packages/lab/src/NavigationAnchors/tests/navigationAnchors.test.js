@@ -60,11 +60,7 @@ describe("User withStyles", () => {
 
     wrapper = mount(
       <HvProvider>
-        <NavigationAnchors
-          classes={{}}
-          options={options}
-          onClick={onClickCallback}
-        />
+        <NavigationAnchors classes={{}} options={options} onClick={onClickCallback} />
       </HvProvider>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -74,12 +70,7 @@ describe("User withStyles", () => {
     expect(onClick).not.toHaveBeenCalled();
 
     wrapper = mount(
-      <NavigationAnchors
-        classes={{}}
-        href={false}
-        options={options}
-        onClick={onClickCallback}
-      />
+      <NavigationAnchors classes={{}} href={false} options={options} onClick={onClickCallback} />
     );
     expect(toJson(wrapper)).toMatchSnapshot();
 

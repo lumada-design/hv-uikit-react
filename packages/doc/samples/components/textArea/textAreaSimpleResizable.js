@@ -6,6 +6,4 @@ const labels = {
   placeholder: "Enter value"
 };
 
-export default (
-  <HvTextArea label="Text Area" labels={labels} id="test" rows={5} resizable />
-);
+export default <HvTextArea label="Text Area" labels={labels} id="test" rows={5} resizable />;

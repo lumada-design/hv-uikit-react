@@ -17,11 +17,7 @@ const FocusProvider = props => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { children } = props;
 
-  return (
-    <FocusContext.Provider value={{ state, dispatch }}>
-      {children}
-    </FocusContext.Provider>
-  );
+  return <FocusContext.Provider value={{ state, dispatch }}>{children}</FocusContext.Provider>;
 };
 
 FocusProvider.propTypes = {

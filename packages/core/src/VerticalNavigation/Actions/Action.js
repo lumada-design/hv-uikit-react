@@ -14,8 +14,7 @@ const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
     event => {
       if (
         onClick == null ||
-        (!isKeypress(event, KeyboardCodes.Enter) &&
-          !isKeypress(event, KeyboardCodes.SpaceBar))
+        (!isKeypress(event, KeyboardCodes.Enter) && !isKeypress(event, KeyboardCodes.SpaceBar))
       ) {
         return;
       }
@@ -96,6 +95,4 @@ Action.defaultProps = {
   onClick: undefined
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigationAction" })(
-  Action
-);
+export default withStyles(styles, { name: "HvVerticalNavigationAction" })(Action);

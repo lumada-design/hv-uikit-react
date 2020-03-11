@@ -46,9 +46,7 @@ const HvBanner = props => {
   const [bannerId] = useState(id || uniqueId("hv-banner-"));
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
-  const SlideTransition = properties => (
-    <Slide {...properties} direction={transitionDirection} />
-  );
+  const SlideTransition = properties => <Slide {...properties} direction={transitionDirection} />;
 
   const bannerClasses = {
     anchorOriginTopCenter: classes.anchorOriginTopCenter,
@@ -163,11 +161,7 @@ HvBanner.propTypes = {
   /**
    * The position property of the header.
    */
-  actionsPosition: PropTypes.PropTypes.oneOf([
-    "auto",
-    "inline",
-    "bottom-right"
-  ]),
+  actionsPosition: PropTypes.PropTypes.oneOf(["auto", "inline", "bottom-right"]),
   /**
    * How much the transition animation last in milliseconds, if 0 no animation is played.
    */

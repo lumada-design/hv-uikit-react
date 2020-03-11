@@ -37,11 +37,7 @@ const App = ({ story, initialTheme = "dawn" }) => {
   };
 
   return (
-    <HvProvider
-      router={routerWrapper}
-      uiKitTheme={theme}
-      changeTheme={switchTheme}
-    >
+    <HvProvider router={routerWrapper} uiKitTheme={theme} changeTheme={switchTheme}>
       {story()}
     </HvProvider>
   );

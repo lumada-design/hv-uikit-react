@@ -1,6 +1,6 @@
 import "@storybook/addon-actions/register";
-import '@storybook/addon-options/register';
-import '@storybook/addon-links/register';
+import "@storybook/addon-options/register";
+import "@storybook/addon-links/register";
 import addons from "@storybook/addons";
 
 addons.register("layout-addon", api => {});

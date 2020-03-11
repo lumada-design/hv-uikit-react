@@ -1,10 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
-import HvCard, {
-  HvCardFooter,
-  HvCardMedia
-} from "@hv/uikit-react-core/dist/Card";
+import HvCard, { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import { Upload, MoreOptionsVertical, Tool } from "@hv/uikit-react-icons/dist";
 import leaf from "../card/resources/leaf.png";
@@ -96,9 +93,7 @@ const machineData = id => ({
 });
 
 const values = (num = 10) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 // --------------- Configuration ----------------
 const viewConfiguration = {

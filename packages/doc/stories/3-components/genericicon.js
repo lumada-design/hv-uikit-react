@@ -4,8 +4,7 @@ import { CheckboxCheck } from "@hv/uikit-react-icons/dist";
 
 storiesOf("Components", module).add("Generic Icon", () => <CheckboxCheck />, {
   title: "Generic Icons",
-  description:
-    "Usage of Generic Icons that can be altered to standard or custom sizes and colors",
+  description: "Usage of Generic Icons that can be altered to standard or custom sizes and colors",
   usage: "import { CheckboxCheck } from '@hv/uikit-react-icons/dist'",
   examples: [
     {

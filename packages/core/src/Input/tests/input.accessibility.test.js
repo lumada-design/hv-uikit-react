@@ -83,12 +83,7 @@ describe("InputA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <Input
-          labels={labels}
-          initialValue="Initial value"
-          validationState="invalid"
-          id="test"
-        />
+        <Input labels={labels} initialValue="Initial value" validationState="invalid" id="test" />
       </HvProvider>
     );
 

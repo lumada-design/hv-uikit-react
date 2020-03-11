@@ -15,11 +15,6 @@ export default (
       display: "flex"
     }}
   >
-    <HvLogin
-      login={callSimulation}
-      recovery={callSimulation}
-      id="test"
-      allowRecover
-    />
+    <HvLogin login={callSimulation} recovery={callSimulation} id="test" allowRecover />
   </div>
 );

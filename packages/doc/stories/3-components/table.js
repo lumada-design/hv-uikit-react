@@ -39,8 +39,7 @@ storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
     },
     {
       title: "6. With checkbox and custom content",
-      description:
-        "each row can be checked to be selected and some cells contain custom content",
+      description: "each row can be checked to be selected and some cells contain custom content",
       src: "components/table/tableTypical"
     },
     {
@@ -51,8 +50,7 @@ storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
     },
     {
       title: "8. With null data values",
-      description:
-        "some rows have null data values which should be replaced by emdashes",
+      description: "some rows have null data values which should be replaced by emdashes",
       src: "components/table/tableNulls"
     }
   ]

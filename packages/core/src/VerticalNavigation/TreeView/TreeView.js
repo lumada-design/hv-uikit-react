@@ -1,27 +1,14 @@
-import React, {
-  useState,
-  useRef,
-  useMemo,
-  useEffect,
-  useCallback
-} from "react";
+import React, { useState, useRef, useMemo, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
 
-import {
-  TreeViewControlContext,
-  TreeViewStateContext
-} from "./TreeViewContexts";
+import { TreeViewControlContext, TreeViewStateContext } from "./TreeViewContexts";
 
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
-import {
-  NodeTreeMapUtils,
-  NodeTreeExpandUtils,
-  NodeTreeNavigationUtils
-} from "./utils";
+import { NodeTreeMapUtils, NodeTreeExpandUtils, NodeTreeNavigationUtils } from "./utils";
 
 import styles from "./styles";
 
@@ -54,14 +41,14 @@ const TreeView = props => {
     nodeId => !collapsible || NodeTreeExpandUtils.isExpanded(expanded, nodeId),
     [collapsible, expanded]
   );
-  const isTabbable = useCallback(
-    nodeId => !treeviewMode || tabable === nodeId,
-    [treeviewMode, tabable]
-  );
-  const isSelected = useCallback(
-    nodeId => selectable && selected != null && selected === nodeId,
-    [selectable, selected]
-  );
+  const isTabbable = useCallback(nodeId => !treeviewMode || tabable === nodeId, [
+    treeviewMode,
+    tabable
+  ]);
+  const isSelected = useCallback(nodeId => selectable && selected != null && selected === nodeId, [
+    selectable,
+    selected
+  ]);
 
   // onChange prop was causing unneeded context changes
   // we just need to keep it as a mutable reference
@@ -83,17 +70,11 @@ const TreeView = props => {
   );
 
   const getNextNode = useCallback(
-    nodeId =>
-      NodeTreeNavigationUtils.getNextNode(isExpanded, nodeMap.current, nodeId),
+    nodeId => NodeTreeNavigationUtils.getNextNode(isExpanded, nodeMap.current, nodeId),
     [isExpanded]
   );
   const getPreviousNode = useCallback(
-    nodeId =>
-      NodeTreeNavigationUtils.getPreviousNode(
-        isExpanded,
-        nodeMap.current,
-        nodeId
-      ),
+    nodeId => NodeTreeNavigationUtils.getPreviousNode(isExpanded, nodeMap.current, nodeId),
     [isExpanded]
   );
   const getFirstNode = useCallback(() => {
@@ -104,8 +85,7 @@ const TreeView = props => {
     return null;
   }, []);
   const getLastNode = useCallback(
-    (nodeId = -1) =>
-      NodeTreeNavigationUtils.getLastNode(isExpanded, nodeMap.current, nodeId),
+    (nodeId = -1) => NodeTreeNavigationUtils.getLastNode(isExpanded, nodeMap.current, nodeId),
     [isExpanded]
   );
 
@@ -114,10 +94,7 @@ const TreeView = props => {
       if (nodeId) {
         if (treeviewMode) {
           setTabable(nodeId);
-        } else if (
-          nodeMap.current[nodeId] &&
-          nodeMap.current[nodeId].nodeActionableRef.current
-        ) {
+        } else if (nodeMap.current[nodeId] && nodeMap.current[nodeId].nodeActionableRef.current) {
           nodeMap.current[nodeId].nodeActionableRef.current.focus();
         }
       }
@@ -190,11 +167,7 @@ const TreeView = props => {
         return false;
       }
 
-      const newExpanded = NodeTreeExpandUtils.expandAllSiblings(
-        expanded,
-        nodeMap.current,
-        nodeId
-      );
+      const newExpanded = NodeTreeExpandUtils.expandAllSiblings(expanded, nodeMap.current, nodeId);
       setExpandedState(newExpanded);
 
       return true;
@@ -224,10 +197,7 @@ const TreeView = props => {
     (nodeId, char) => {
       const toFocus = NodeTreeNavigationUtils.getNodeByFirstCharacter(
         nodeMap.current,
-        NodeTreeExpandUtils.getVisibleNodes(
-          collapsible ? expanded : true,
-          nodeMap.current
-        ),
+        NodeTreeExpandUtils.getVisibleNodes(collapsible ? expanded : true, nodeMap.current),
         nodeId,
         char
       );
@@ -243,21 +213,17 @@ const TreeView = props => {
 
   const addNodeToNodeMap = useCallback(
     (nodeId, childrenIds, nodePayloadRef, nodeActionableRef, label) => {
-      nodeMap.current = NodeTreeMapUtils.addNodeToNodeMap(
-        nodeMap.current,
-        nodeId,
-        childrenIds,
-        { nodePayloadRef, nodeActionableRef, label }
-      );
+      nodeMap.current = NodeTreeMapUtils.addNodeToNodeMap(nodeMap.current, nodeId, childrenIds, {
+        nodePayloadRef,
+        nodeActionableRef,
+        label
+      });
     },
     []
   );
 
   const removeNodeFromNodeMap = useCallback(nodeId => {
-    nodeMap.current = NodeTreeMapUtils.removeNodeFromNodeMap(
-      nodeMap.current,
-      nodeId
-    );
+    nodeMap.current = NodeTreeMapUtils.removeNodeFromNodeMap(nodeMap.current, nodeId);
   }, []);
 
   const previousChildIds = useRef([]);
@@ -414,6 +380,4 @@ TreeView.defaultProps = {
   children: null
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigationTreeView" })(
-  TreeView
-);
+export default withStyles(styles, { name: "HvVerticalNavigationTreeView" })(TreeView);

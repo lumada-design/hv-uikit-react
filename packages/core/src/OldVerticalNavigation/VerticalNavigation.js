@@ -154,8 +154,7 @@ class VerticalNavigation extends React.Component {
     if (!isNil(results)) {
       const newData = data.map(elem => {
         const newElem = { ...elem };
-        newElem.isHidden =
-          results.find(result => result.label === elem.label) === undefined;
+        newElem.isHidden = results.find(result => result.label === elem.label) === undefined;
         return newElem;
       });
       last(list).data = newData;
@@ -180,23 +179,16 @@ class VerticalNavigation extends React.Component {
     const isFirstLevel = list.length === 1;
     const showSearchBox = currentList.showSearch;
     const noValues =
-      !isNil(currentList.data) &&
-      Array.isArray(currentList.data) &&
-      currentList.data.length > 0;
+      !isNil(currentList.data) && Array.isArray(currentList.data) && currentList.data.length > 0;
 
     return (
       <div className={classes.innerContainer}>
         {noValues && (
           <div className={classes.listContainer}>
-            {currentTitle && (
-              <Title title={currentTitle} onClick={this.onReturn} />
-            )}
+            {currentTitle && <Title title={currentTitle} onClick={this.onReturn} />}
             {showSearchBox && (
               <div className={classes.searchBoxContainer}>
-                <SearchBox
-                  onChange={str => this.handleSearch(str)}
-                  value={searchStr}
-                />
+                <SearchBox onChange={str => this.handleSearch(str)} value={searchStr} />
               </div>
             )}
             <div
@@ -206,11 +198,7 @@ class VerticalNavigation extends React.Component {
                 [classes.withTitleAndSearch]: showSearchBox && currentTitle
               })}
             >
-              <List
-                values={currentList.data}
-                onClick={this.onSelection}
-                selectDefault={false}
-              />
+              <List values={currentList.data} onClick={this.onSelection} selectDefault={false} />
             </div>
           </div>
         )}
@@ -220,11 +208,7 @@ class VerticalNavigation extends React.Component {
               [classes.soloActionContainer]: !noValues
             })}
           >
-            <List
-              values={actionValues}
-              selectDefault={false}
-              onClick={onClickAction}
-            />
+            <List values={actionValues} selectDefault={false} onClick={onClickAction} />
           </div>
         )}
       </div>
@@ -353,6 +337,4 @@ VerticalNavigation.defaultProps = {
   noAnimation: false
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigation" })(
-  VerticalNavigation
-);
+export default withStyles(styles, { name: "HvVerticalNavigation" })(VerticalNavigation);

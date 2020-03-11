@@ -6,9 +6,7 @@ export default class NodeTreeExpandUtils {
   static toggle(expanded, nodeId) {
     let newExpanded;
     if (expanded.indexOf(nodeId) !== -1) {
-      newExpanded = expanded.filter(
-        expandedNodeId => expandedNodeId !== nodeId
-      );
+      newExpanded = expanded.filter(expandedNodeId => expandedNodeId !== nodeId);
     } else {
       newExpanded = [...expanded, nodeId];
     }
@@ -22,9 +20,7 @@ export default class NodeTreeExpandUtils {
 
     const diff = parent.children
       .filter(childNode => nodeMap[childNode].children != null)
-      .filter(
-        childNode => !NodeTreeExpandUtils.isExpanded(expanded, childNode)
-      );
+      .filter(childNode => !NodeTreeExpandUtils.isExpanded(expanded, childNode));
 
     if (diff.length > 0) {
       return [...expanded, ...diff];
@@ -40,18 +36,14 @@ export default class NodeTreeExpandUtils {
     }
 
     const visibleChilds =
-      nodeId === -1 ||
-      expanded === true ||
-      NodeTreeExpandUtils.isExpanded(expanded, nodeId);
+      nodeId === -1 || expanded === true || NodeTreeExpandUtils.isExpanded(expanded, nodeId);
 
     if (visibleChilds) {
       const node = nodeMap[nodeId];
 
       if (node && node.children) {
         node.children.forEach(childId =>
-          toReturn.push(
-            ...NodeTreeExpandUtils.getVisibleNodes(expanded, nodeMap, childId)
-          )
+          toReturn.push(...NodeTreeExpandUtils.getVisibleNodes(expanded, nodeMap, childId))
         );
       }
     }

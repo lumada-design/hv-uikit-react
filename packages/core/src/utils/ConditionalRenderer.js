@@ -1,4 +1,3 @@
-const ConditionalRenderer = ({ condition, children }) =>
-  condition ? children : null;
+const ConditionalRenderer = ({ condition, children }) => (condition ? children : null);
 
 export default ConditionalRenderer;

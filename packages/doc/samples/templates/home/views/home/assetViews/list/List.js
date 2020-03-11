@@ -1,17 +1,8 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import {
-  HvListViewCell,
-  HvListViewRow
-} from "@hv/uikit-react-core/dist/AssetInventory/ListView";
+import { HvListViewCell, HvListViewRow } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import Typography from "@hv/uikit-react-core/dist/Typography";
-import {
-  Level1,
-  Level2Average,
-  Level3Bad,
-  Level4,
-  Level5
-} from "@hv/uikit-react-icons/dist";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
 import styles from "./styles";
 
 const Row = ({ classes, status, value, id }) => {
@@ -29,9 +20,7 @@ const Row = ({ classes, status, value, id }) => {
 
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div className={classes.cellInline}>
-          <Typography variant="highlightText">
-            {value.event.description}
-          </Typography>
+          <Typography variant="highlightText">{value.event.description}</Typography>
           <Typography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </Typography>
@@ -95,14 +84,7 @@ const rowRenderer = (value, index) => {
       break;
   }
 
-  return (
-    <StyledRow
-      status={status}
-      value={value}
-      id={value.id + index}
-      key={value.id + index}
-    />
-  );
+  return <StyledRow status={status} value={value} id={value.id + index} key={value.id + index} />;
 };
 
 export default rowRenderer;

@@ -17,15 +17,7 @@ import styles from "./styles";
  * @constructor
  */
 
-const ModalTitle = ({
-  classes,
-  className,
-  children,
-  variant,
-  showIcon,
-  customIcon,
-  ...others
-}) => {
+const ModalTitle = ({ classes, className, children, variant, showIcon, customIcon, ...others }) => {
   const isString = typeof children === "string";
 
   let icon = null;
@@ -39,11 +31,7 @@ const ModalTitle = ({
   }
 
   return (
-    <DialogTitle
-      className={clsx(classes.root, className)}
-      disableTypography
-      {...others}
-    >
+    <DialogTitle className={clsx(classes.root, className)} disableTypography {...others}>
       <div className={classes.messageContainer}>
         {icon}
         <div className={clsx({ [classes.textWithIcon]: icon })}>

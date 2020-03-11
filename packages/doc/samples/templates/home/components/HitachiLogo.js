@@ -48,6 +48,4 @@ const HitachiLogo = props => {
   );
 };
 
-export default props => (
-  <HitachiLogo style={{ width: 72, height: 20 }} {...props} />
-);
+export default props => <HitachiLogo style={{ width: 72, height: 20 }} {...props} />;

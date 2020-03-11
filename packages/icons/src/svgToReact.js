@@ -46,9 +46,7 @@ const writeFile = (processedSVG, fileName) => {
 
   fs.appendFile(
     path.resolve(componentOutputFolder, `index.js`),
-    `export { default as ${fileName
-      .split(".")
-      .join("")} } from "./${fileName}";\n`,
+    `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`,
     () => {}
   );
 };
@@ -78,9 +76,7 @@ const runUtil = (fileToRead, fileToWrite) => {
       let defaultWidth = "50px";
       let defaultHeight = "50px";
       if (body.firstChild.hasAttribute("viewBox")) {
-        const [minX, minY, width, height] = body.firstChild
-          .getAttribute("viewBox")
-          .split(/[,\s]+/);
+        const [minX, minY, width, height] = body.firstChild.getAttribute("viewBox").split(/[,\s]+/);
         defaultWidth = width;
         defaultHeight = height;
       }

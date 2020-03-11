@@ -19,8 +19,7 @@ const HvKpi = props => {
     ...other
   } = props;
 
-  const InternalVisualComparison =
-    typeof visualComparison === "string" ? HvTypography : "div";
+  const InternalVisualComparison = typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
     <div id={id} className={clsx(classes.kpiContainer, className)} {...other}>
@@ -29,12 +28,7 @@ const HvKpi = props => {
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
-          <div
-            className={clsx(
-              classes.visualIndicatorContainer,
-              classes.spacingToTheRight
-            )}
-          >
+          <div className={clsx(classes.visualIndicatorContainer, classes.spacingToTheRight)}>
             {visualIndicator}
           </div>
         )}
@@ -44,10 +38,7 @@ const HvKpi = props => {
         >
           {labels.indicator}
         </HvTypography>
-        <HvTypography
-          className={classes.indicatorUnit}
-          variant={indicatorUnitTextVariant}
-        >
+        <HvTypography className={classes.indicatorUnit} variant={indicatorUnitTextVariant}>
           {labels.unit}
         </HvTypography>
       </div>
@@ -162,12 +153,7 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorTextVariant: PropTypes.oneOf([
-    "5xlTitle",
-    "xxlTitle",
-    "lTitle",
-    "sTitle"
-  ]),
+  indicatorTextVariant: PropTypes.oneOf(["5xlTitle", "xxlTitle", "lTitle", "sTitle"]),
   /**
    *  The typography variant used in the main text indicator of the KPI
    */

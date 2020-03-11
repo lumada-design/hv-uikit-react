@@ -148,10 +148,7 @@ class UnitTimePicker extends React.Component {
             placeholder: ""
           }}
         />
-        <SubtractTimeIcon
-          className={classes.subtractIcon}
-          onClick={this.handleSubtractTime}
-        />
+        <SubtractTimeIcon className={classes.subtractIcon} onClick={this.handleSubtractTime} />
       </div>
     );
   }

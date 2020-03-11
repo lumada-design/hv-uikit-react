@@ -29,9 +29,7 @@ const TabUsage = ({ parameters }) => {
   );
 };
 
-const TabAPI = ({ propsMetaData }) => (
-  <TableAPI propsMetaData={propsMetaData} />
-);
+const TabAPI = ({ propsMetaData }) => <TableAPI propsMetaData={propsMetaData} />;
 
 const TabCSS = ({ propsMetaData }) => (
   <TableCSS propsMetaData={propsMetaData["classes"].type.value} />

@@ -18,12 +18,7 @@ export default class NodeTreeNavigationUtils {
       }
 
       if (node.parent !== -1) {
-        return NodeTreeNavigationUtils.getNextNode(
-          isExpanded,
-          nodeMap,
-          node.parent,
-          true
-        );
+        return NodeTreeNavigationUtils.getNextNode(isExpanded, nodeMap, node.parent, true);
       }
     }
 
@@ -76,11 +71,7 @@ export default class NodeTreeNavigationUtils {
       const node = nodeMap[nId];
       const firstChar = node.label.substring(0, 1).toLowerCase();
 
-      if (
-        (!toFocus || useNext) &&
-        lowercaseChar === firstChar &&
-        nId !== nodeId
-      ) {
+      if ((!toFocus || useNext) && lowercaseChar === firstChar && nId !== nodeId) {
         toFocus = nId;
 
         useNext = false;

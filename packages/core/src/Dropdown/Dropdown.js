@@ -51,11 +51,7 @@ class Dropdown extends React.Component {
 
       return {
         isOpen: props.expanded,
-        selectionLabel: getSelectionLabel(
-          props.values,
-          labels,
-          props.multiSelect
-        ),
+        selectionLabel: getSelectionLabel(props.values, labels, props.multiSelect),
         anchorEl: null,
         values: props.values,
         labels
@@ -125,11 +121,7 @@ class Dropdown extends React.Component {
     const { classes, labels } = this.props;
     return (
       // eslint-disable-next-line jsx-a11y/label-has-for
-      <label
-        id={`${internalId}-label`}
-        className={classes.label}
-        htmlFor={`${internalId}-header`}
-      >
+      <label id={`${internalId}-label`} className={classes.label} htmlFor={`${internalId}-header`}>
         {labels.title}
       </label>
     );

@@ -9,11 +9,7 @@ import Typography from "../../Typography";
 import List from "../List";
 import Dropdown from "..";
 
-const mockData = [
-  { label: "Value 1" },
-  { label: "Value 2" },
-  { label: "Value 3" }
-];
+const mockData = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];
 
 const mockDataWithIds = [
   { id: "id-1", label: "Value 1" },
@@ -44,13 +40,7 @@ describe("<Dropdown />", () => {
 
       wrapper = mount(
         <HvProvider>
-          <Dropdown
-            values={mockData}
-            onChange={onChangeMock}
-            showSearch
-            selectDefault
-            expanded
-          />
+          <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault expanded />
         </HvProvider>
       );
 
@@ -89,12 +79,7 @@ describe("<Dropdown />", () => {
       act(() => {
         wrapper = mount(
           <HvProvider>
-            <Dropdown
-              values={mockData}
-              onChange={onChangeMock}
-              showSearch
-              selectDefault
-            />
+            <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault />
           </HvProvider>
         );
       });
@@ -133,14 +118,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <Dropdown
-            id="test-dropdown"
-            values={mockData}
-            multiSelect
-            showSearch
-            disabled
-            expanded
-          />
+          <Dropdown id="test-dropdown" values={mockData} multiSelect showSearch disabled expanded />
         </HvProvider>
       );
     });
@@ -177,12 +155,7 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <Dropdown
-            multiSelect
-            values={mockDataWithIds}
-            onChange={onChangeMock}
-            expanded
-          />
+          <Dropdown multiSelect values={mockDataWithIds} onChange={onChangeMock} expanded />
         </HvProvider>
       );
     });

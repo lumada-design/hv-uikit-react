@@ -26,10 +26,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     this.setState({
-      username:
-        localStorage.getItem("username") != null
-          ? localStorage.getItem("username")
-          : ""
+      username: localStorage.getItem("username") != null ? localStorage.getItem("username") : ""
     });
   }
 
@@ -114,19 +111,12 @@ class Login extends React.Component {
 
     const customMessageElement =
       !loginError && customMessage != null ? (
-        <MessageElement
-          showMessage={classes.showCustomMessage}
-          message={customMessage}
-        />
+        <MessageElement showMessage={classes.showCustomMessage} message={customMessage} />
       ) : null;
     return (
       <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
         <div className={classes.title}>
-          <Title
-            titleText={titleText}
-            logo={logo}
-            titleComponent={titleComponent}
-          />
+          <Title titleText={titleText} logo={logo} titleComponent={titleComponent} />
         </div>
 
         <div className={classes.errorMessageContainer}>
@@ -195,11 +185,7 @@ class Login extends React.Component {
 
         {allowRecover ? (
           <div className={classes.forgotCredentials}>
-            <HvButton
-              category="ghost"
-              onClick={onClick}
-              className={classes.sentenceCase}
-            >
+            <HvButton category="ghost" onClick={onClick} className={classes.sentenceCase}>
               {forgotYourCredentialMessage}
             </HvButton>
           </div>

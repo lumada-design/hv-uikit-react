@@ -64,20 +64,8 @@ const groups = [
   {
     title: "Group 2 - Dropdown",
     children: [
-      <HvDropdown
-        name="dropdown1"
-        values={data}
-        multiSelect
-        showSearch
-        label="Dropdown 1"
-      />,
-      <HvDropdown
-        name="dropdown2"
-        values={data}
-        multiSelect
-        showSearch
-        label="Dropdown 2"
-      />
+      <HvDropdown name="dropdown1" values={data} multiSelect showSearch label="Dropdown 1" />,
+      <HvDropdown name="dropdown2" values={data} multiSelect showSearch label="Dropdown 2" />
     ]
   }
 ];

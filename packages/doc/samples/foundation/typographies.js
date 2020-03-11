@@ -45,11 +45,7 @@ const text =
   "ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
 
 const CodeButton = ({ classes, onClick }) => (
-  <IconButton
-    className={classes.iconCode}
-    aria-label="Delete"
-    onClick={onClick}
-  >
+  <IconButton className={classes.iconCode} aria-label="Delete" onClick={onClick}>
     <Code className={classes.icon} />
   </IconButton>
 );
@@ -95,7 +91,7 @@ const Typographies = ({ classes }) => {
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
         .filter(item => !Array.isArray(typography[item]))
-        .map((group) => (
+        .map(group => (
           <Group
             key={`group_${group}`}
             classes={classes}

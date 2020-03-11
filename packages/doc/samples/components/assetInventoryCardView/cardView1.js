@@ -35,9 +35,7 @@ const machineData = id => ({
 });
 
 const values = (num = 10) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 // --------------- Configuration ----------------
 const myActions = [
@@ -78,17 +76,11 @@ const viewConfiguration = {
   },
   isSelectable: true,
   actions: myActions,
-  actionsCallback: (id, action) =>
-    alert(`You have pressed card ${id} with action ${action.label}`)
+  actionsCallback: (id, action) => alert(`You have pressed card ${id} with action ${action.label}`)
 };
 
 export default (
   <div>
-    <CardView
-      id="id1"
-      icon={<Tool />}
-      values={values()}
-      viewConfiguration={viewConfiguration}
-    />
+    <CardView id="id1" icon={<Tool />} values={values()} viewConfiguration={viewConfiguration} />
   </div>
 );

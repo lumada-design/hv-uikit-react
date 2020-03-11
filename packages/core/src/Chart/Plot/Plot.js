@@ -89,9 +89,6 @@ Plot.defaultProps = {
 };
 
 const arePropsEqual = (prevProps, nextProps) =>
-  equals(prevProps.data, nextProps.data) &&
-  equals(prevProps.layout, nextProps.layout);
+  equals(prevProps.data, nextProps.data) && equals(prevProps.layout, nextProps.layout);
 
-export default withStyles(styles, { name: "HvChartPlot" })(
-  memo(Plot, arePropsEqual)
-);
+export default withStyles(styles, { name: "HvChartPlot" })(memo(Plot, arePropsEqual));

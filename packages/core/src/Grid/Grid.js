@@ -12,6 +12,8 @@ const BREAKPOINT_GUTTERS = {
   xl: 2
 };
 
+const SPACINGS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 const HvGrid = ({ container, gutterSpacing = "auto", ...other }) => {
   const width = useWidth();
   let gridSpacing = gutterSpacing;
@@ -24,33 +26,20 @@ const HvGrid = ({ container, gutterSpacing = "auto", ...other }) => {
     }
   }
 
-  return (
-    <Grid {...(container && { container, spacing: gridSpacing })} {...other} />
-  );
+  return <Grid {...(container && { container, spacing: gridSpacing })} {...other} />;
 };
 
 HvGrid.propTypes = {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |   To update them edit the d.ts file and run "npm run proptypes"    |
-  // ----------------------------------------------------------------------
   /**
    * Defines the space between the type item component. It can only be used on a type container component.
    * Based in the 7.5px factor defined in the theme, it allows the definition of this factor based on the factor
    * (number between 0 and 10), breakpoint or auto.
    */
-  gutterSpacing: PropTypes.oneOfType([
-    PropTypes.oneOf(["auto", "lg", "md", "sm", "xl", "xs"]),
-    PropTypes.number
-  ]),
+  gutterSpacing: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", "auto", ...SPACINGS]),
   /**
    * @ignore
    */
-  container: PropTypes.bool,
-  /**
-   * The content of the component.
-   */
-  children: PropTypes.node
+  container: PropTypes.bool
 };
 
 export default withStyles({}, { name: "HvGrid" })(HvGrid);

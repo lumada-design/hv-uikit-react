@@ -58,18 +58,14 @@ const Footer = ({
             "aria-describedby": checkboxAriaDescribedBy
           }}
           inputProps={{
-            "aria-label": "card-checkbox-input",
+            "aria-label": "card-checkbox-input"
           }}
         />
       </div>
     )}
     <div
       className={
-        classes[
-          `${
-            isSelectable || Array.isArray(actions) ? "right" : actionsAlignment
-          }Container`
-        ]
+        classes[`${isSelectable || Array.isArray(actions) ? "right" : actionsAlignment}Container`]
       }
     >
       <Actions

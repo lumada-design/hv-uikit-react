@@ -53,7 +53,6 @@ AssetMultiButton.defaultProps = {
   onViewChange: null
 };
 
-const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.views === nextProps.views;
+const arePropsEqual = (prevProps, nextProps) => prevProps.views === nextProps.views;
 
 export default memo(AssetMultiButton, arePropsEqual);

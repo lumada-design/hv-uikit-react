@@ -85,11 +85,7 @@ function MyVerticalNavigation() {
 
   return (
     <div style={sampleContainerStyle}>
-      <VerticalNavigation
-        navigationLabel="Example 2 navigation"
-        isCollapsable
-        closeOnExit
-      >
+      <VerticalNavigation navigationLabel="Example 2 navigation" isCollapsable closeOnExit>
         <Navigation
           label="Example 2 navigation"
           selected={value}

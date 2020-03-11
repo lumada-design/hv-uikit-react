@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 import { Success } from "@hv/uikit-react-icons/dist";
-import {
-  HvModal,
-  HvModalTitle,
-  HvModalContent,
-  HvModalActions
-} from "@hv/uikit-react-core/dist";
+import { HvModal, HvModalTitle, HvModalContent, HvModalActions } from "@hv/uikit-react-core/dist";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import TextArea from "@hv/uikit-react-core/dist/TextArea";
@@ -27,17 +22,12 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
       <HvButton style={btnStyle} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvModal
-        classes={classes}
-        open={open}
-        onClose={() => setOpen(false)}
-        id="test"
-      >
+      <HvModal classes={classes} open={open} onClose={() => setOpen(false)} id="test">
         {title}
         {content || (
           <HvModalContent>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
           </HvModalContent>
         )}
         <HvModalActions>
@@ -97,11 +87,7 @@ const dataTypicalExample = [
 ];
 
 const SimpleTable = () => (
-  <HvTable
-    data={dataTypicalExample}
-    columns={getColumns()}
-    showPagination={false}
-  />
+  <HvTable data={dataTypicalExample} columns={getColumns()} showPagination={false} />
 );
 
 const containerStyle = {

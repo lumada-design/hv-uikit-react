@@ -58,9 +58,7 @@ class HvLogin extends React.Component {
       formClasses
     } = this.props;
     const { inRecoveryMode, isLoading } = this.state;
-    const backgroundLoginImg = !backgroundImage.length
-      ? defaultBackImage
-      : backgroundImage;
+    const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
 
     let form;
     if (inRecoveryMode) {
@@ -120,26 +118,10 @@ class HvLogin extends React.Component {
             margin: 0
           }}
         >
-          <HvGrid
-            item
-            xs={false}
-            sm={false}
-            md={8}
-            lg={8}
-            xl={8}
-            className={classes.panelPosition}
-          >
+          <HvGrid item xs={false} sm={false} md={8} lg={8} xl={8} className={classes.panelPosition}>
             <div id={id} className={clsx(classes.root, className)} />
           </HvGrid>
-          <HvGrid
-            item
-            xs={12}
-            sm={12}
-            md={5}
-            lg={5}
-            xl={5}
-            className={classes.rightContainer}
-          >
+          <HvGrid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.rightContainer}>
             <div>{form}</div>
           </HvGrid>
         </HvGrid>
@@ -292,10 +274,8 @@ HvLogin.defaultProps = {
   labels: {
     titleText: "Welcome",
     recoveryTitle: "Recover Credentials",
-    messageToRecover:
-      "You will receive an email with instructions to recover your credentials",
-    messageAfterRecover:
-      "The instructions to recover your credentials were sent.",
+    messageToRecover: "You will receive an email with instructions to recover your credentials",
+    messageAfterRecover: "The instructions to recover your credentials were sent.",
     recoveryInputLabel: "Email",
     recoveryPlaceholder: "Enter text",
     recoveryErrorMessage: "The email you've entered doesn't match any account",
@@ -312,8 +292,7 @@ HvLogin.defaultProps = {
     cancelButton: "Cancel",
     recoverButton: "Recover",
     recoveringMessage: "Recovering",
-    incorrectCredentialsMessage:
-      "Incorrect Username and/or Password. Please try again."
+    incorrectCredentialsMessage: "Incorrect Username and/or Password. Please try again."
   },
   customMessage: {},
   formClasses: null

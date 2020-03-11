@@ -27,12 +27,7 @@ const ActionContainer = ({ id, classes, onClose, action, actionCallback }) => (
     </div>
     {action && (
       <div className={classes.actionsInnerContainer}>
-        <Actions
-          id={id}
-          category="semantic"
-          actions={action}
-          actionsCallback={actionCallback}
-        />
+        <Actions id={id} category="semantic" actions={action} actionsCallback={actionCallback} />
       </div>
     )}
   </div>
@@ -78,6 +73,4 @@ ActionContainer.defaultProps = {
   actionCallback: () => {}
 };
 
-export default withStyles(styles, { name: "HvActionContainer" })(
-  ActionContainer
-);
+export default withStyles(styles, { name: "HvActionContainer" })(ActionContainer);

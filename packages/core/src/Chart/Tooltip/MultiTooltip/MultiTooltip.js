@@ -22,10 +22,7 @@ const MultiTooltip = ({ classes, data }) => (
     <div className={classes.valuesContainer}>
       {data.elements.map(element => (
         <div key={element.name} className={classes.values}>
-          <div
-            className={classes.color}
-            style={{ backgroundColor: element.color }}
-          />
+          <div className={classes.color} style={{ backgroundColor: element.color }} />
           <div className={classes.separatorColor} />
           <div>
             <Typography variant="labelText">{element.name}</Typography>
@@ -104,8 +101,7 @@ MultiTooltip.propTypes = {
   }).isRequired
 };
 
-const arePropsEqual = (prevProps, nextProps) =>
-  prevProps.data === nextProps.data;
+const arePropsEqual = (prevProps, nextProps) => prevProps.data === nextProps.data;
 
 export default withStyles(styles, { name: "HvChartMultiTooltip" })(
   memo(MultiTooltip, arePropsEqual)

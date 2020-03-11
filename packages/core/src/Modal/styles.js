@@ -8,10 +8,7 @@ const styles = theme => ({
     background: `${theme.hv.palette.atmosphere.atmo1}`,
     padding: "0px",
     overflow: "hidden",
-    filter: `drop-shadow(0px 2px 12px ${fade(
-      hexToRgb(theme.hv.palette.accent.acce1),
-      0.12
-    )})`
+    filter: `drop-shadow(0px 2px 12px ${fade(hexToRgb(theme.hv.palette.accent.acce1), 0.12)})`
   },
   closeButton: {
     position: "absolute",

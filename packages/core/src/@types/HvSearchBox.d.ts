@@ -1,16 +1,16 @@
-declare module '@hv/uikit-react-core/dist' {
+declare module "@hv/uikit-react-core/dist" {
   export class HvSearchBox extends React.Component<HvSearchBoxProps, any> {}
 
   export interface SearchBoxLabel {
-    inputLabel?: string
-    placeholder?: string
+    inputLabel?: string;
+    placeholder?: string;
   }
 
   export interface HvSearchBoxProps extends React.HTMLAttributes<HvSearchBox> {
     /**
      * The theme passed by the provider.
      */
-    theme?: any
+    theme?: any;
 
     /**
      * A Jss Object used to override or extend the styles applied to the search box.
@@ -19,8 +19,8 @@ declare module '@hv/uikit-react-core/dist' {
       /**
        * Styles applied to searchbox root.
        */
-      root: string
-    }
+      root: string;
+    };
 
     /**
      * An Object containing the various text associated with the searchbox.
@@ -28,66 +28,66 @@ declare module '@hv/uikit-react-core/dist' {
      * - inputLabel: the label on top of the searchbox.
      * - placeholder: the placeholder value of the searchbox.
      */
-    labels?: SearchBoxLabel
+    labels?: SearchBoxLabel;
 
     /**
      * The initial value of the searchbox
      */
-    value?: string
+    value?: string;
 
     /**
      * The function that will be executed when the searchbox changes,
      * it receives the searchbox value
      */
-    onChange?: (...args: any[]) => any
+    onChange?: (...args: any[]) => any;
 
     /**
      * The function that will be executed to received an array of objects that has a label and id to create list of suggestion
      */
-    suggestionListCallback?: (...ags: any[]) => any
+    suggestionListCallback?: (...ags: any[]) => any;
 
     /**
      * The function that will be executed after selecting a value in the suggestion list
      */
-    suggestionSelectedCallback?: (...args: any[]) => any
+    suggestionSelectedCallback?: (...args: any[]) => any;
 
     /**
      * The function that will be executed onBlur, allows checking the validation state,
      * it receives the value and the validation state (´empty´, ´filled´, ´invalid´, ´valid´).
      */
-    onBlur?: (...args: any[]) => any
+    onBlur?: (...args: any[]) => any;
 
     /**
      * The function that will be executed onFocus, allows checking the value state,
      * it receives the value.
      */
-    onFocus?: (...args: any[]) => any
+    onFocus?: (...args: any[]) => any;
 
     /**
      * The function that will be executed onKeyDown, allows checking the value state,
      * it receives the value.
      */
-    onKeyDown?: (...args: any[]) => any
+    onKeyDown?: (...args: any[]) => any;
 
     /**
      * The function that will be executed on Enter, allows checking the value state,
      * it receives the value.
      */
-    onSubmit?: (...args: any[]) => any
+    onSubmit?: (...args: any[]) => any;
 
     /**
      * If `true` it should autofocus.
      */
-    autoFocus?: boolean
+    autoFocus?: boolean;
 
     /**
      * If ´true´ the searchBox is disabled.
      */
-    disabled?: boolean
+    disabled?: boolean;
 
     /**
      * The initial value of the searchBox.
      */
-    initialValue?: string
+    initialValue?: string;
   }
 }

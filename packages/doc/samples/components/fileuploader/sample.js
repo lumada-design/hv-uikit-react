@@ -55,9 +55,7 @@ const removeFile = (fileToRemove, setList) => {
 
   // the filename isn't necessarly unique (e.g. the user can add two different files
   // from different folders with the same), so an individual ID is created in each file
-  setList(previousList =>
-    previousList.filter(file => file.id !== fileToRemove.id)
-  );
+  setList(previousList => previousList.filter(file => file.id !== fileToRemove.id));
 };
 
 const Sample = () => {

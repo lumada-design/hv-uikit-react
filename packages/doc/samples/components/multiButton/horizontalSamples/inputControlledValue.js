@@ -26,16 +26,10 @@ function WrapperComp() {
 
   return (
     <>
-      <Button
-        style={btnStyle}
-        onClick={() => setValue(initialButtonsDefinitions)}
-      >
+      <Button style={btnStyle} onClick={() => setValue(initialButtonsDefinitions)}>
         Initial Props
       </Button>
-      <Button
-        style={btnStyle}
-        onClick={() => setValue(finalButtonsDefinitions)}
-      >
+      <Button style={btnStyle} onClick={() => setValue(finalButtonsDefinitions)}>
         New Props
       </Button>
       <div style={{ width: "400px" }}>

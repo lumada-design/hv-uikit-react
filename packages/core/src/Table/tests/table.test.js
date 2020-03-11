@@ -89,9 +89,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const headers = wrapper
-        .find(".ReactTable .rt-table .rt-thead.-header .rt-tr")
-        .children();
+      const headers = wrapper.find(".ReactTable .rt-table .rt-thead.-header .rt-tr").children();
       expect(headers).toHaveLength(3);
     });
 
@@ -438,11 +436,7 @@ describe("Hv Table", () => {
           <HvTable
             classes={classesToApply}
             columns={columns}
-            data={[
-              { t1: "test1" },
-              { t1: "test2" },
-              { t1: "test3", noActions: true }
-            ]}
+            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3", noActions: true }]}
             pageSize={5}
             secondaryActions={[
               {

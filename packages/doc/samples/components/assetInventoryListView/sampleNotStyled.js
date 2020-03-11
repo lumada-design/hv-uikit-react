@@ -5,13 +5,7 @@ import AssetInventoryListView, {
 } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
-import {
-  Level1,
-  Level2Average,
-  Level3Bad,
-  Level4,
-  Level5
-} from "@hv/uikit-react-icons/dist";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
 
 const values = [
   {
@@ -63,9 +57,7 @@ const Row = ({ classes, status, value, id }) => {
 
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
-          <HvTypography variant="highlightText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
           <HvTypography className={classes.timestamp} variant="infoText">
             {value.event.timestamp}
           </HvTypography>
@@ -129,20 +121,7 @@ const rowRenderer = (value, index) => {
       break;
   }
 
-  return (
-    <StyledRow
-      status={status}
-      value={value}
-      key={value.id + index}
-      id={value.id + index}
-    />
-  );
+  return <StyledRow status={status} value={value} key={value.id + index} id={value.id + index} />;
 };
 
-export default (
-  <AssetInventoryListView
-    icon={<Level1 />}
-    values={values}
-    renderer={rowRenderer}
-  />
-);
+export default <AssetInventoryListView icon={<Level1 />} values={values} renderer={rowRenderer} />;

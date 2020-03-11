@@ -2,11 +2,7 @@ import React from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { linkTo } from "@storybook/addon-links";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Card, {
-  HvCardContent,
-  HvCardFooter,
-  HvCardMedia
-} from "@hv/uikit-react-core/dist/Card";
+import Card, { HvCardContent, HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 
@@ -72,9 +68,7 @@ const Cards = ({ classes, containers }) =>
           <img src={container.img} alt="img" className={classes.img} />
         </CardMedia>
         <HvCardContent
-          innerCardContent={
-            <SingleContent classes={classes} labels={container.labels} />
-          }
+          innerCardContent={<SingleContent classes={classes} labels={container.labels} />}
           onClick={link(container.associatedStory)}
           style={{ cursor: "pointer" }}
         />

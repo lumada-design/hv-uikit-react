@@ -9,7 +9,6 @@ storiesOf("Components/Navigation System/Horizontal Navigation", module).add(
     title: "Navigation",
     description:
       "Component of the header, responsible for presenting navigation content. Only one sub-level should be used.",
-    usage:
-      "import HvHeaderNavigation from '@hv/uikit-react-core/dist/Header/Navigation'"
+    usage: "import HvHeaderNavigation from '@hv/uikit-react-core/dist/Header/Navigation'"
   }
 );

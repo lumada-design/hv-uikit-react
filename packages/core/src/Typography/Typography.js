@@ -44,19 +44,13 @@ const HvTypography = React.forwardRef(
 
     ref
   ) => {
-    const Component =
-      component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
+    const Component = component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
     return (
       <Component
         id={id}
         ref={ref}
-        className={clsx(
-          classes[variant],
-          classes.baseFontFamily,
-          classes.margin,
-          className
-        )}
+        className={clsx(classes[variant], classes.baseFontFamily, classes.margin, className)}
         {...other}
       >
         {children}

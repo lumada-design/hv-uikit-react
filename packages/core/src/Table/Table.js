@@ -19,17 +19,8 @@ import Sort from "@hv/uikit-react-icons/dist/SortXS";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
-import {
-  appendClassnames,
-  createExpanderButton,
-  setHeaderSortableClass
-} from "./columnUtils";
-import {
-  isIndeterminateStatus,
-  isSelected,
-  toggleAll,
-  toggleSelection
-} from "./checkBoxUtils";
+import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
+import { isIndeterminateStatus, isSelected, toggleAll, toggleSelection } from "./checkBoxUtils";
 import Pagination from "./Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
@@ -155,13 +146,8 @@ class Table extends React.Component {
       return sortInfo[0].desc === true ? <SortDesc /> : <SortAsc />;
     }
 
-    const columnDef = columns.filter(
-      item => item.id === id || item.accessor === id
-    );
-    if (
-      (columnDef.length && isNil(columnDef[0].sortable) && sortable) ||
-      columnDef[0].sortable
-    ) {
+    const columnDef = columns.filter(item => item.id === id || item.accessor === id);
+    if ((columnDef.length && isNil(columnDef[0].sortable) && sortable) || columnDef[0].sortable) {
       return <Sort />;
     }
 
@@ -178,12 +164,7 @@ class Table extends React.Component {
 
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
-    const {
-      pageSize = data.length,
-      onPageSizeChange,
-      onPageChange,
-      pages
-    } = this.props;
+    const { pageSize = data.length, onPageSizeChange, onPageChange, pages } = this.props;
 
     return {
       id: `${internalId}-pagination`,
@@ -285,8 +266,7 @@ class Table extends React.Component {
       let cursor = `${page * pageSize}`;
       if (
         sortedFromState.length > 0 &&
-        (sortedFromState[0].id !== sorted[0].id ||
-          sortedFromState[0].desc !== sorted[0].desc)
+        (sortedFromState[0].id !== sorted[0].id || sortedFromState[0].desc !== sorted[0].desc)
       ) {
         cursor = "0";
       }
@@ -385,10 +365,7 @@ class Table extends React.Component {
     const rowElementId = this.computeRowElementId(rowInfo);
 
     return {
-      id:
-        rowElementId && column.id
-          ? `${rowElementId}-column-${column.id}`
-          : undefined,
+      id: rowElementId && column.id ? `${rowElementId}-column-${column.id}` : undefined,
       className: classes.td
     };
   };
@@ -451,12 +428,7 @@ class Table extends React.Component {
   computeRowId(rowInfo) {
     const { idForCheckbox } = this.props;
 
-    if (
-      idForCheckbox &&
-      rowInfo &&
-      rowInfo.original &&
-      rowInfo.original[idForCheckbox]
-    ) {
+    if (idForCheckbox && rowInfo && rowInfo.original && rowInfo.original[idForCheckbox]) {
       return rowInfo.original[idForCheckbox];
     }
 
@@ -480,24 +452,13 @@ class Table extends React.Component {
       ...other
     } = this.props;
 
-    const {
-      internalId,
-      expanded,
-      selectAll,
-      selection,
-      recordQuantity
-    } = this.state;
+    const { internalId, expanded, selectAll, selection, recordQuantity } = this.state;
 
-    const AugmentedTable = idForCheckbox
-      ? ReactTableCheckbox
-      : ReactTableFixedColumns;
+    const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
 
     // Add dropdown menu column if secondaryActions exists in props
-    if (
-      !!secondaryActions &&
-      !columns.some(col => col.accessor === "secondaryActions")
-    ) {
+    if (!!secondaryActions && !columns.some(col => col.accessor === "secondaryActions")) {
       columns.push({
         headerText: "",
         accessor: "secondaryActions",
@@ -544,11 +505,7 @@ class Table extends React.Component {
     });
 
     // add expander button
-    const newColumn = createExpanderButton(
-      columns,
-      subElementTemplate,
-      classes
-    );
+    const newColumn = createExpanderButton(columns, subElementTemplate, classes);
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
 
@@ -859,7 +816,7 @@ Table.defaultProps = {
   useRouter: false,
   selections: undefined,
   onSelection: () => {},
-  secondaryActions: null,
+  secondaryActions: null
 };
 
 export default withStyles(styles, { name: "HvTable" })(withConfig(Table));

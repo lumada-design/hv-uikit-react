@@ -45,8 +45,7 @@ const getHeaderNumber = str => Number(str.substr(0, str.indexOf(" ")));
  * @param b
  * @returns {number}
  */
-const sortAsc = (a, b) =>
-  getHeaderNumber(a.headerTitle) - getHeaderNumber(b.headerTitle);
+const sortAsc = (a, b) => getHeaderNumber(a.headerTitle) - getHeaderNumber(b.headerTitle);
 
 /**
  * Sort descending.
@@ -55,8 +54,7 @@ const sortAsc = (a, b) =>
  * @param b
  * @returns {number}
  */
-const sortDesc = (a, b) =>
-  getHeaderNumber(b.headerTitle) - getHeaderNumber(a.headerTitle);
+const sortDesc = (a, b) => getHeaderNumber(b.headerTitle) - getHeaderNumber(a.headerTitle);
 
 /**
  * Values generator.
@@ -64,9 +62,7 @@ const sortDesc = (a, b) =>
  * @returns {[]}
  */
 const valuesGenerator = (num = 50) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 let values = valuesGenerator();
 let searchString = "";
@@ -79,8 +75,7 @@ let searchString = "";
  * @param page
  * @returns {*}
  */
-const getSlicePage = (values2, size, page) =>
-  values2.slice(size * page, size * (page + 1));
+const getSlicePage = (values2, size, page) => values2.slice(size * page, size * (page + 1));
 
 /**
  * Filter function for the search.
@@ -88,8 +83,7 @@ const getSlicePage = (values2, size, page) =>
  * @param data
  * @returns {boolean}
  */
-const searchFilter = data =>
-  data.headerTitle.toUpperCase().includes(searchString);
+const searchFilter = data => data.headerTitle.toUpperCase().includes(searchString);
 
 /**
  * Returns the data for the page.
@@ -98,8 +92,7 @@ const searchFilter = data =>
  * @param page
  * @returns {*}
  */
-const fetchData = (size, page) =>
-  getSlicePage(values.filter(searchFilter), size, page);
+const fetchData = (size, page) => getSlicePage(values.filter(searchFilter), size, page);
 
 /**
  * Sets the search string and returns the values filtered.

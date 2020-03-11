@@ -9,7 +9,6 @@ storiesOf("Components/Navigation System/Vertical Navigation", module).add(
     title: "2. Navigation",
     description:
       "Component of the vertical navigation, responsible for presenting navigation content.",
-    usage:
-      "import Navigation from '@hv/uikit-react-core/dist/VerticalNavigation/Navigation'"
+    usage: "import Navigation from '@hv/uikit-react-core/dist/VerticalNavigation/Navigation'"
   }
 );

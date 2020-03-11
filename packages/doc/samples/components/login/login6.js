@@ -18,8 +18,7 @@ export default (
       allowRecover={false}
       allowRememberMe={false}
       customMessage={{
-        text:
-          "Here is some message.\nErrors will override it. Log in for error."
+        text: "Here is some message.\nErrors will override it. Log in for error."
       }}
     />
   </div>

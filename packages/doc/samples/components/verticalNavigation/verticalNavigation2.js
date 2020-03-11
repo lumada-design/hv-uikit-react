@@ -1,13 +1,8 @@
 import React from "react";
 
-import VerticalNavigation, {
-  Navigation
-} from "@hv/uikit-react-core/dist/VerticalNavigation";
+import VerticalNavigation, { Navigation } from "@hv/uikit-react-core/dist/VerticalNavigation";
 
-import {
-  Tool,
-  Operation,
-} from "@hv/uikit-react-icons/dist";
+import { Tool, Operation } from "@hv/uikit-react-icons/dist";
 
 const navigationData = [
   {

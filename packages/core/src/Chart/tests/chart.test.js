@@ -74,12 +74,7 @@ describe("Chart withStyles", () => {
   it("should render a subtitle", () => {
     wrapper = mount(
       <HvProvider>
-        <Chart
-          data={data}
-          layout={layout}
-          title="This is a title"
-          subtitle="This is a subtitle"
-        />
+        <Chart data={data} layout={layout} title="This is a title" subtitle="This is a subtitle" />
       </HvProvider>
     );
     const subTitle = wrapper.find("p");

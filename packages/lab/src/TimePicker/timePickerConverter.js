@@ -37,15 +37,9 @@ const getTimeWithFormat24 = (time, timeFormat) => {
   const { hours, period } = time;
   const timeIn24Format = { ...time };
   if (timeFormat === TimeFormat.H12) {
-    if (
-      period === PeriodPickerOptions.AM &&
-      hours === TimePickerUnits.HOUR_12.max
-    ) {
+    if (period === PeriodPickerOptions.AM && hours === TimePickerUnits.HOUR_12.max) {
       timeIn24Format.hours = TimePickerUnits.HOUR_24.min;
-    } else if (
-      period === PeriodPickerOptions.PM &&
-      hours < TimePickerUnits.HOUR_12.max
-    ) {
+    } else if (period === PeriodPickerOptions.PM && hours < TimePickerUnits.HOUR_12.max) {
       timeIn24Format.hours = hours + TimePickerUnits.HOUR_12.max;
     }
   }

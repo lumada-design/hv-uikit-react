@@ -195,12 +195,7 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <List
-            values={mockDataMultiSelection}
-            onChange={onChangeMock}
-            multiSelect
-            showSelectAll
-          />
+          <List values={mockDataMultiSelection} onChange={onChangeMock} multiSelect showSelectAll />
         </HvProvider>
       );
     });

@@ -9,9 +9,7 @@ import styles from "./styles";
 const HeaderCells = (classes, columnConfiguration) =>
   columnConfiguration.map((configuration, index) => {
     const alignConf =
-      !isNil(configuration) && !isNil(configuration.align)
-        ? configuration.align
-        : undefined;
+      !isNil(configuration) && !isNil(configuration.align) ? configuration.align : undefined;
 
     const keyIndex = `th${index}`;
 
@@ -30,14 +28,7 @@ const HeaderCells = (classes, columnConfiguration) =>
     );
   });
 
-const ListViewHeaderRow = ({
-  viewConfiguration,
-  classes,
-  id,
-  align,
-  className,
-  ...other
-}) => {
+const ListViewHeaderRow = ({ viewConfiguration, classes, id, align, className, ...other }) => {
   const { columnConfiguration } = viewConfiguration;
 
   return (
@@ -98,6 +89,4 @@ ListViewHeaderRow.defaultProps = {
   viewConfiguration: null
 };
 
-export default withStyles(styles, { name: "HvListViewHeaderRow" })(
-  ListViewHeaderRow
-);
+export default withStyles(styles, { name: "HvListViewHeaderRow" })(ListViewHeaderRow);

@@ -1,9 +1,6 @@
 import React from "react";
 import { HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
-import {
-  Level0Good as Success,
-  UpXS as ArrowUp
-} from "@hv/uikit-react-icons/dist";
+import { Level0Good as Success, UpXS as ArrowUp } from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Avg. service time",

@@ -50,8 +50,7 @@ const Barchart = ({
     const { width } = ref.current.getBoundingClientRect();
     const plotWidth = width - MARGIN;
     const groupWidth = plotWidth / numberOfGroup;
-    const colWidth =
-      groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
+    const colWidth = groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
 
     const greaterThan90 = colWidth / numberOfBarsByGroup > MAX_BAR_WIDTH;
     const isAlreadyGreaterThan90 = plotData[0].width !== undefined;

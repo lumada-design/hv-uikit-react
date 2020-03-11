@@ -1,12 +1,6 @@
 import React from "react";
 import List from "@hv/uikit-react-core/dist/List";
-import {
-  Calendar,
-  LineChart,
-  Machine,
-  Plane,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({

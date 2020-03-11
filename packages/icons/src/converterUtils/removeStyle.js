@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /**
  * Removes style tags from a node and its children
@@ -7,10 +7,10 @@
  * @return undefined
  */
 module.exports = function removeStyle(node) {
-  const elements = node.getElementsByTagName('*');
-    for(var key in elements) {
-      if(elements[key].removeAttribute) {
-        elements[key].removeAttribute('style');
-      }
+  const elements = node.getElementsByTagName("*");
+  for (var key in elements) {
+    if (elements[key].removeAttribute) {
+      elements[key].removeAttribute("style");
     }
-}
+  }
+};

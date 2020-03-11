@@ -1,5 +1,5 @@
-const astTypes = require('ast-types');
-const { utils: docgenUtils } = require('react-docgen');
+const astTypes = require("ast-types");
+const { utils: docgenUtils } = require("react-docgen");
 
 const { getPropertyName, isReactForwardRefCall, printValue, resolveToValue } = docgenUtils;
 
@@ -14,7 +14,7 @@ function getDefaultValue(path) {
     defaultValue = node.raw;
   } else {
     if (types.AssignmentPattern.check(path.node)) {
-      path = resolveToValue(path.get('right'));
+      path = resolveToValue(path.get("right"));
     } else {
       path = resolveToValue(path);
     }
@@ -25,13 +25,13 @@ function getDefaultValue(path) {
       defaultValue = printValue(path);
     }
   }
-  if (typeof defaultValue !== 'undefined') {
+  if (typeof defaultValue !== "undefined") {
     return {
       value: defaultValue,
       computed:
         types.CallExpression.check(node) ||
         types.MemberExpression.check(node) ||
-        types.Identifier.check(node),
+        types.Identifier.check(node)
     };
   }
 
@@ -42,13 +42,13 @@ function getDefaultValuesFromProps(properties, documentation) {
   properties
     .filter(propertyPath => types.Property.check(propertyPath.node))
     // Don't evaluate property if component is functional and the node is not an AssignmentPattern
-    .filter(propertyPath => types.AssignmentPattern.check(propertyPath.get('value').node))
+    .filter(propertyPath => types.AssignmentPattern.check(propertyPath.get("value").node))
     .forEach(propertyPath => {
       const propName = getPropertyName(propertyPath);
       if (!propName) return;
 
       const propDescriptor = documentation.getPropDescriptor(propName);
-      const defaultValue = getDefaultValue(propertyPath.get('value', 'right'));
+      const defaultValue = getDefaultValue(propertyPath.get("value", "right"));
       if (defaultValue) {
         propDescriptor.defaultValue = defaultValue;
       }
@@ -57,7 +57,7 @@ function getDefaultValuesFromProps(properties, documentation) {
 
 function getRenderBody(componentDefinition) {
   var value = resolveToValue(componentDefinition);
-  return value.get('body', 'body');
+  return value.get("body", "body");
 }
 
 function getPropsPath(functionBody) {
@@ -68,9 +68,9 @@ function getPropsPath(functionBody) {
       return types.VariableDeclaration.check(path.node);
     })
     .forEach(path => {
-      const declaratorPath = path.get('declarations', 0);
-      if (declaratorPath.get('init', 'name').value === 'props') {
-        propsPath = declaratorPath.get('id');
+      const declaratorPath = path.get("declarations", 0);
+      if (declaratorPath.get("init", "name").value === "props") {
+        propsPath = declaratorPath.get("id");
       }
     });
 
@@ -81,6 +81,6 @@ module.exports = function defaultPropsHandler(documentation, componentDefinition
   var renderBody = getRenderBody(componentDefinition);
   var props = getPropsPath(renderBody);
   if (props !== undefined) {
-    getDefaultValuesFromProps(props.get('properties'), documentation);
+    getDefaultValuesFromProps(props.get("properties"), documentation);
   }
 };

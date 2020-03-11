@@ -59,8 +59,7 @@ const HvSnackbar = props => {
   return (
     <Snackbar
       {...(offset && {
-        style:
-          anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
+        style: anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
       })}
       classes={classes}
       className={className}

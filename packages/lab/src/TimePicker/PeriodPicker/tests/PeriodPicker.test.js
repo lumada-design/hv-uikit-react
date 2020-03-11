@@ -18,10 +18,7 @@ describe("PeriodPicker", () => {
     mockOnChangePeriod = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <PeriodPickerWithStyles
-          period={defaultPeriod}
-          onChangePeriod={mockOnChangePeriod}
-        />
+        <PeriodPickerWithStyles period={defaultPeriod} onChangePeriod={mockOnChangePeriod} />
       </HvProvider>
     );
     periodPickerComponent = wrapper.find(PeriodPicker);

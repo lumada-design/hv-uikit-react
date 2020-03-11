@@ -52,9 +52,7 @@ const wrapper = (format, id, classes) => {
     return data => <div className={classes.textContainer}>{format(data)}</div>;
   }
   /* eslint no-underscore-dangle: 0 */
-  return data => (
-    <div className={classes.textContainer}>{data.row._original[id]}</div>
-  );
+  return data => <div className={classes.textContainer}>{data.row._original[id]}</div>;
 };
 
 /**
@@ -114,17 +112,9 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
       <>
         <div className={clsx(classes.iconContainer)}>
           {isExpanded ? (
-            <AngleUp
-              className={classes.separatorContainer}
-              width="10px"
-              height="10px"
-            />
+            <AngleUp className={classes.separatorContainer} width="10px" height="10px" />
           ) : (
-            <AngleDown
-              className={classes.separatorContainer}
-              width="10px"
-              height="10px"
-            />
+            <AngleDown className={classes.separatorContainer} width="10px" height="10px" />
           )}
         </div>
 
@@ -151,12 +141,7 @@ const createExpanderButton = (columns, subElementTemplate, classes) => {
  * @param {Array} colSortedSelected - An array containing the columns to be sorted.
  * @param {Object} classes - contains the classes to apply to the column.
  */
-const appendClassnames = (
-  column,
-  colSortedSelected,
-  classes,
-  tableSortable
-) => {
+const appendClassnames = (column, colSortedSelected, classes, tableSortable) => {
   const col = column;
   // build the link component if the cell has cellType "link"
   buildLink(col);
