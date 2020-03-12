@@ -808,7 +808,6 @@ exports[`<Actions /> should render correctly 1`] = `
           <WithStyles(HvButton)
             category="ghost"
             className="HvDatePickerActions-button-1"
-            disabled={false}
             id="id-apply"
             onClick={[Function]}
           >
@@ -832,7 +831,6 @@ exports[`<Actions /> should render correctly 1`] = `
                   "startIcon": "HvButton-startIcon-14",
                 }
               }
-              disabled={false}
               id="id-apply"
               onClick={[Function]}
             >
@@ -850,7 +848,6 @@ exports[`<Actions /> should render correctly 1`] = `
                 }
                 color="primary"
                 disableRipple={true}
-                disabled={false}
                 id="id-apply"
                 onClick={[Function]}
                 variant="text"
@@ -892,7 +889,6 @@ exports[`<Actions /> should render correctly 1`] = `
                   }
                   color="primary"
                   disableRipple={true}
-                  disabled={false}
                   id="id-apply"
                   onClick={[Function]}
                   variant="text"
@@ -961,7 +957,6 @@ exports[`<Actions /> should render correctly 1`] = `
           <WithStyles(HvButton)
             category="ghost"
             className="HvDatePickerActions-button-1"
-            disabled={false}
             id="id-cancel"
             onClick={[Function]}
           >
@@ -985,7 +980,6 @@ exports[`<Actions /> should render correctly 1`] = `
                   "startIcon": "HvButton-startIcon-14",
                 }
               }
-              disabled={false}
               id="id-cancel"
               onClick={[Function]}
             >
@@ -1003,7 +997,6 @@ exports[`<Actions /> should render correctly 1`] = `
                 }
                 color="primary"
                 disableRipple={true}
-                disabled={false}
                 id="id-cancel"
                 onClick={[Function]}
                 variant="text"
@@ -1045,7 +1038,6 @@ exports[`<Actions /> should render correctly 1`] = `
                   }
                   color="primary"
                   disableRipple={true}
-                  disabled={false}
                   id="id-cancel"
                   onClick={[Function]}
                   variant="text"

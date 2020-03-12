@@ -22,13 +22,9 @@ const TableAPI = ({ classes, propsMetaData }) => (
 
         return (
           <tr key={key}>
-            <td
-              className={classNames({
-                [classes.deprecated]: isDeprecated(prop)
-              })}
-            >
-              {key}
-            </td>
+            <td className={classNames({
+              [classes.deprecated]: prop.deprecated
+            })}>{key}</td>
             <td>{prop.type ? propType : ""}</td>
             {prop.required ? <td>true</td> : <td>-</td>}
             {prop.defaultValue ? (

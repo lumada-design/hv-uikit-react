@@ -865,8 +865,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
           >
             <WithStyles(ForwardRef)
               className="HvDropdown-selection-951 HvDropdown-truncate-954 HvDropdown-selectionDisabled-955"
-              component={null}
-              paragraph={false}
               variant="normalText"
             >
               <ForwardRef
@@ -899,8 +897,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                     "xxsTitle": "HvTypography-xxsTitle-965",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="normalText"
               >
                 <p
@@ -2127,7 +2123,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <li
                                         aria-selected="false"
-                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                         id="test-dropdown-values-list-item-0"
                                         role="option"
                                         tabindex="-1"
@@ -2185,7 +2181,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       </li>
                                       <li
                                         aria-selected="false"
-                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                         id="test-dropdown-values-list-item-1"
                                         role="option"
                                         tabindex="-1"
@@ -2243,7 +2239,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       </li>
                                       <li
                                         aria-selected="false"
-                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                         id="test-dropdown-values-list-item-2"
                                         role="option"
                                         tabindex="-1"
@@ -3058,8 +3054,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 aria-live="polite"
                                                 aria-relevant="additions text"
                                                 className="HvInput-textWarning-1013 HvInput-infoText-1012"
-                                                component={null}
-                                                paragraph={false}
                                                 style={
                                                   Object {
                                                     "display": "none",
@@ -3102,8 +3096,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "xxsTitle": "HvTypography-xxsTitle-965",
                                                     }
                                                   }
-                                                  component={null}
-                                                  paragraph={false}
                                                   style={
                                                     Object {
                                                       "display": "none",
@@ -3727,7 +3719,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     >
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-0"
                                                         role="option"
                                                         tabindex="-1"
@@ -3785,7 +3777,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       </li>
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-1"
                                                         role="option"
                                                         tabindex="-1"
@@ -3843,7 +3835,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       </li>
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-2"
                                                         role="option"
                                                         tabindex="-1"
@@ -3939,7 +3931,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-0"
                                                           role="option"
                                                           tabindex="-1"
@@ -3997,7 +3989,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -4055,7 +4047,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -4126,7 +4118,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 >
                                                   <li
                                                     aria-selected={false}
-                                                    className="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                    className="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                     id="test-dropdown-values-list-item-0"
                                                     onBlur={[Function]}
                                                     onClick={[Function]}
@@ -4623,7 +4615,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     >
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-0"
                                                         role="option"
                                                         tabindex="-1"
@@ -4681,7 +4673,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       </li>
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-1"
                                                         role="option"
                                                         tabindex="-1"
@@ -4739,7 +4731,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       </li>
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-2"
                                                         role="option"
                                                         tabindex="-1"
@@ -4835,7 +4827,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-0"
                                                           role="option"
                                                           tabindex="-1"
@@ -4893,7 +4885,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -4951,7 +4943,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -5022,7 +5014,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 >
                                                   <li
                                                     aria-selected={false}
-                                                    className="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                    className="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                     id="test-dropdown-values-list-item-1"
                                                     onBlur={[Function]}
                                                     onClick={[Function]}
@@ -5519,7 +5511,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     >
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-0"
                                                         role="option"
                                                         tabindex="-1"
@@ -5577,7 +5569,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       </li>
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-1"
                                                         role="option"
                                                         tabindex="-1"
@@ -5635,7 +5627,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       </li>
                                                       <li
                                                         aria-selected="false"
-                                                        class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                        class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                         id="test-dropdown-values-list-item-2"
                                                         role="option"
                                                         tabindex="-1"
@@ -5731,7 +5723,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-0"
                                                           role="option"
                                                           tabindex="-1"
@@ -5789,7 +5781,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -5847,7 +5839,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                          class="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                           id="test-dropdown-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -5918,7 +5910,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 >
                                                   <li
                                                     aria-selected={false}
-                                                    className="HvList-listItem-1129 HvList-condensed-1130 HvList-selector-1131 Focus-root-1142 Focus-focusDisabled-1145"
+                                                    className="HvList-listItem-1129 HvList-selector-1131 HvList-condensed-1130 Focus-root-1142 Focus-focusDisabled-1145"
                                                     id="test-dropdown-values-list-item-2"
                                                     onBlur={[Function]}
                                                     onClick={[Function]}
@@ -6448,7 +6440,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         <WithStyles(HvButton)
                                           category="ghost"
                                           className="HvDropdownActions-button-1149"
-                                          disabled={false}
                                           id="test-dropdown-values-actions-apply"
                                           onClick={[Function]}
                                         >
@@ -6472,7 +6463,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 "startIcon": "HvButton-startIcon-1162",
                                               }
                                             }
-                                            disabled={false}
                                             id="test-dropdown-values-actions-apply"
                                             onClick={[Function]}
                                           >
@@ -6490,7 +6480,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               }
                                               color="primary"
                                               disableRipple={true}
-                                              disabled={false}
                                               id="test-dropdown-values-actions-apply"
                                               onClick={[Function]}
                                               variant="text"
@@ -6532,7 +6521,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 }
                                                 color="primary"
                                                 disableRipple={true}
-                                                disabled={false}
                                                 id="test-dropdown-values-actions-apply"
                                                 onClick={[Function]}
                                                 variant="text"
@@ -6601,7 +6589,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         <WithStyles(HvButton)
                                           category="ghost"
                                           className="HvDropdownActions-button-1149"
-                                          disabled={false}
                                           id="test-dropdown-values-actions-cancel"
                                           onClick={[Function]}
                                         >
@@ -6625,7 +6612,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 "startIcon": "HvButton-startIcon-1162",
                                               }
                                             }
-                                            disabled={false}
                                             id="test-dropdown-values-actions-cancel"
                                             onClick={[Function]}
                                           >
@@ -6643,7 +6629,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               }
                                               color="primary"
                                               disableRipple={true}
-                                              disabled={false}
                                               id="test-dropdown-values-actions-cancel"
                                               onClick={[Function]}
                                               variant="text"
@@ -6685,7 +6670,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 }
                                                 color="primary"
                                                 disableRipple={true}
-                                                disabled={false}
                                                 id="test-dropdown-values-actions-cancel"
                                                 onClick={[Function]}
                                                 variant="text"
@@ -7636,8 +7620,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
           >
             <WithStyles(ForwardRef)
               className="HvDropdown-selection-803 HvDropdown-truncate-806"
-              component={null}
-              paragraph={false}
               variant="normalText"
             >
               <ForwardRef
@@ -7670,8 +7652,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                     "xxsTitle": "HvTypography-xxsTitle-817",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="normalText"
               >
                 <p
@@ -8989,8 +8969,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     <Text>
                                                       <WithStyles(ForwardRef)
                                                         className="HvList-label-860 HvList-truncate-863"
-                                                        component={null}
-                                                        paragraph={false}
                                                         variant="normalText"
                                                       >
                                                         <ForwardRef
@@ -9023,8 +9001,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                               "xxsTitle": "HvTypography-xxsTitle-817",
                                                             }
                                                           }
-                                                          component={null}
-                                                          paragraph={false}
                                                           variant="normalText"
                                                         >
                                                           <p
@@ -9194,8 +9170,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     <Text>
                                                       <WithStyles(ForwardRef)
                                                         className="HvList-label-860 HvList-truncate-863"
-                                                        component={null}
-                                                        paragraph={false}
                                                         variant="normalText"
                                                       >
                                                         <ForwardRef
@@ -9228,8 +9202,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                               "xxsTitle": "HvTypography-xxsTitle-817",
                                                             }
                                                           }
-                                                          component={null}
-                                                          paragraph={false}
                                                           variant="normalText"
                                                         >
                                                           <p
@@ -9399,8 +9371,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     <Text>
                                                       <WithStyles(ForwardRef)
                                                         className="HvList-label-860 HvList-truncate-863"
-                                                        component={null}
-                                                        paragraph={false}
                                                         variant="normalText"
                                                       >
                                                         <ForwardRef
@@ -9433,8 +9403,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                               "xxsTitle": "HvTypography-xxsTitle-817",
                                                             }
                                                           }
-                                                          component={null}
-                                                          paragraph={false}
                                                           variant="normalText"
                                                         >
                                                           <p
@@ -10336,8 +10304,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               className="HvDropdown-selection-6 HvDropdown-truncate-9"
-              component={null}
-              paragraph={false}
               variant="normalText"
             >
               <ForwardRef
@@ -10370,8 +10336,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-20",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="normalText"
               >
                 <p
@@ -11392,8 +11356,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 aria-live="polite"
                                                 aria-relevant="additions text"
                                                 className="HvInput-textWarning-68 HvInput-infoText-67"
-                                                component={null}
-                                                paragraph={false}
                                                 style={
                                                   Object {
                                                     "display": "none",
@@ -11436,8 +11398,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "xxsTitle": "HvTypography-xxsTitle-20",
                                                     }
                                                   }
-                                                  component={null}
-                                                  paragraph={false}
                                                   style={
                                                     Object {
                                                       "display": "none",
@@ -11727,8 +11687,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     <Text>
                                                       <WithStyles(ForwardRef)
                                                         className="HvList-label-121 HvList-truncate-124 HvList-selected-117"
-                                                        component={null}
-                                                        paragraph={false}
                                                         variant="selectedText"
                                                       >
                                                         <ForwardRef
@@ -11761,8 +11719,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "xxsTitle": "HvTypography-xxsTitle-20",
                                                             }
                                                           }
-                                                          component={null}
-                                                          paragraph={false}
                                                           variant="selectedText"
                                                         >
                                                           <p
@@ -11934,8 +11890,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     <Text>
                                                       <WithStyles(ForwardRef)
                                                         className="HvList-label-121 HvList-truncate-124"
-                                                        component={null}
-                                                        paragraph={false}
                                                         variant="normalText"
                                                       >
                                                         <ForwardRef
@@ -11968,8 +11922,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "xxsTitle": "HvTypography-xxsTitle-20",
                                                             }
                                                           }
-                                                          component={null}
-                                                          paragraph={false}
                                                           variant="normalText"
                                                         >
                                                           <p
@@ -12141,8 +12093,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     <Text>
                                                       <WithStyles(ForwardRef)
                                                         className="HvList-label-121 HvList-truncate-124"
-                                                        component={null}
-                                                        paragraph={false}
                                                         variant="normalText"
                                                       >
                                                         <ForwardRef
@@ -12175,8 +12125,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "xxsTitle": "HvTypography-xxsTitle-20",
                                                             }
                                                           }
-                                                          component={null}
-                                                          paragraph={false}
                                                           variant="normalText"
                                                         >
                                                           <p

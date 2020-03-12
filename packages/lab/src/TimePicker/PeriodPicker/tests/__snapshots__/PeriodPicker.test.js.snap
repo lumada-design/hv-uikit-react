@@ -834,8 +834,6 @@ exports[`PeriodPicker should render correctly 1`] = `
           </WithStyles(DropUpXS)>
           <WithStyles(ForwardRef)
             className="HvTimePickerPeriodPicker-periodText-39"
-            component={null}
-            paragraph={false}
             variant="highlightText"
           >
             <ForwardRef
@@ -868,8 +866,6 @@ exports[`PeriodPicker should render correctly 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle-55",
                 }
               }
-              component={null}
-              paragraph={false}
               variant="highlightText"
             >
               <p

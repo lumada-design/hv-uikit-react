@@ -939,7 +939,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 component="label"
                 htmlFor="hv-fileuploader-2-dropzone-input-file"
                 id="hv-fileuploader-2-dropzone-input-file-label"
-                paragraph={false}
                 variant="labelText"
               >
                 <ForwardRef
@@ -974,7 +973,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   component="label"
                   htmlFor="hv-fileuploader-2-dropzone-input-file"
                   id="hv-fileuploader-2-dropzone-input-file-label"
-                  paragraph={false}
                   variant="labelText"
                 >
                   <label
@@ -985,8 +983,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 </ForwardRef>
               </WithStyles(ForwardRef)>
               <WithStyles(ForwardRef)
-                component={null}
-                paragraph={false}
                 variant="infoText"
               >
                 <ForwardRef
@@ -1018,8 +1014,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle-86",
                     }
                   }
-                  component={null}
-                  paragraph={false}
                   variant="infoText"
                 >
                   <p
@@ -1030,8 +1024,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 </ForwardRef>
               </WithStyles(ForwardRef)>
               <WithStyles(ForwardRef)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 <ForwardRef
@@ -1063,8 +1055,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle-86",
                     }
                   }
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   <p
@@ -1073,8 +1063,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 </ForwardRef>
               </WithStyles(ForwardRef)>
               <WithStyles(ForwardRef)
-                component={null}
-                paragraph={false}
                 variant="infoText"
               >
                 <ForwardRef
@@ -1106,8 +1094,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle-86",
                     }
                   }
-                  component={null}
-                  paragraph={false}
                   variant="infoText"
                 >
                   <p
@@ -1187,9 +1173,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 >
                   <WithStyles(ForwardRef)
                     className="HvFileUploaderDropZone-dragText-75"
-                    component={null}
-                    paragraph={false}
-                    variant="normalText"
                   >
                     <ForwardRef
                       className="HvFileUploaderDropZone-dragText-75"
@@ -1221,9 +1204,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           "xxsTitle": "HvTypography-xxsTitle-86",
                         }
                       }
-                      component={null}
-                      paragraph={false}
-                      variant="normalText"
                     >
                       <p
                         className="HvTypography-normalText-88 HvTypography-baseFontFamily-99 HvTypography-margin-100 HvFileUploaderDropZone-dragText-75"
@@ -1341,8 +1321,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText-113"
-                      component={null}
-                      paragraph={false}
                       variant="sText"
                     >
                       <ForwardRef
@@ -1375,8 +1353,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle-86",
                           }
                         }
-                        component={null}
-                        paragraph={false}
                         variant="sText"
                       >
                         <p
@@ -1390,8 +1366,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       className="HvFileUploaderFile-progressTextContainer-109"
                     >
                       <WithStyles(ForwardRef)
-                        component={null}
-                        paragraph={false}
                         variant="sText"
                       >
                         <ForwardRef
@@ -1423,8 +1397,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-86",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="sText"
                         >
                           <p
@@ -1605,8 +1577,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText-113"
-                      component={null}
-                      paragraph={false}
                       variant="sText"
                     >
                       <ForwardRef
@@ -1639,8 +1609,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle-86",
                           }
                         }
-                        component={null}
-                        paragraph={false}
                         variant="sText"
                       >
                         <p
@@ -1654,8 +1622,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       className="HvFileUploaderFile-progressTextContainer-109"
                     >
                       <WithStyles(ForwardRef)
-                        component={null}
-                        paragraph={false}
                         variant="sText"
                       >
                         <ForwardRef
@@ -1687,8 +1653,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-86",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="sText"
                         >
                           <p

@@ -29,7 +29,12 @@ module.exports = ({ config, mode }) => {
           presets: ["@babel/preset-env", "@babel/preset-react"],
           plugins: [
             "@babel/plugin-proposal-class-properties",
-            "react-docgen",
+            [
+              "babel-plugin-react-docgen",
+              {
+                handlers: ["react-docgen-deprecation-handler", "../../../.storybook/defaultPropsHandler", "../../../.storybook/defaultValuePropsHandler"] // optional array of custom handlers (use the string name of the package in the array)
+              }
+            ],
             [
               "module-resolver",
               {

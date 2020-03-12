@@ -899,8 +899,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
                             tabIndex={0}
                           >
                             <WithStyles(ForwardRef)
-                              component={null}
-                              paragraph={false}
                               variant="normalText"
                             >
                               <ForwardRef
@@ -932,8 +930,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                     "xxsTitle": "HvTypography-xxsTitle-22",
                                   }
                                 }
-                                component={null}
-                                paragraph={false}
                                 variant="normalText"
                               >
                                 <p

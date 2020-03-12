@@ -1028,7 +1028,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                         classes={
                                           Object {
                                             "dense": undefined,
-                                            "primary": "undefined",
+                                            "primary": "",
                                           }
                                         }
                                         key=".0"
@@ -1040,7 +1040,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                               "dense": "MuiListItemText-dense",
                                               "inset": "MuiListItemText-inset",
                                               "multiline": "MuiListItemText-multiline",
-                                              "primary": "MuiListItemText-primary undefined",
+                                              "primary": "MuiListItemText-primary",
                                               "root": "MuiListItemText-root",
                                               "secondary": "MuiListItemText-secondary",
                                             }
@@ -1051,12 +1051,12 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                             className="MuiListItemText-root MuiListItemText-dense"
                                           >
                                             <WithStyles(ForwardRef(Typography))
-                                              className="MuiListItemText-primary undefined"
+                                              className="MuiListItemText-primary"
                                               component="span"
                                               variant="body2"
                                             >
                                               <ForwardRef(Typography)
-                                                className="MuiListItemText-primary undefined"
+                                                className="MuiListItemText-primary"
                                                 classes={
                                                   Object {
                                                     "alignCenter": "MuiTypography-alignCenter",
@@ -1095,7 +1095,7 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                                 variant="body2"
                                               >
                                                 <span
-                                                  className="MuiTypography-root MuiListItemText-primary undefined MuiTypography-body2"
+                                                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                                 >
                                                   Option1
                                                 </span>
@@ -1695,7 +1695,7 @@ exports[`User withStyles should handle click action correctly 2`] = `
                                     classes={
                                       Object {
                                         "dense": undefined,
-                                        "primary": "undefined",
+                                        "primary": "",
                                       }
                                     }
                                     key=".0"
@@ -1707,7 +1707,7 @@ exports[`User withStyles should handle click action correctly 2`] = `
                                           "dense": "MuiListItemText-dense",
                                           "inset": "MuiListItemText-inset",
                                           "multiline": "MuiListItemText-multiline",
-                                          "primary": "MuiListItemText-primary undefined",
+                                          "primary": "MuiListItemText-primary",
                                           "root": "MuiListItemText-root",
                                           "secondary": "MuiListItemText-secondary",
                                         }
@@ -1718,12 +1718,12 @@ exports[`User withStyles should handle click action correctly 2`] = `
                                         className="MuiListItemText-root MuiListItemText-dense"
                                       >
                                         <WithStyles(ForwardRef(Typography))
-                                          className="MuiListItemText-primary undefined"
+                                          className="MuiListItemText-primary"
                                           component="span"
                                           variant="body2"
                                         >
                                           <ForwardRef(Typography)
-                                            className="MuiListItemText-primary undefined"
+                                            className="MuiListItemText-primary"
                                             classes={
                                               Object {
                                                 "alignCenter": "MuiTypography-alignCenter",
@@ -1762,7 +1762,7 @@ exports[`User withStyles should handle click action correctly 2`] = `
                                             variant="body2"
                                           >
                                             <span
-                                              className="MuiTypography-root MuiListItemText-primary undefined MuiTypography-body2"
+                                              className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                             >
                                               Option1
                                             </span>
@@ -4022,7 +4022,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                         classes={
                                           Object {
                                             "dense": undefined,
-                                            "primary": "undefined",
+                                            "primary": "",
                                           }
                                         }
                                         key=".0"
@@ -4034,7 +4034,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                               "dense": "MuiListItemText-dense",
                                               "inset": "MuiListItemText-inset",
                                               "multiline": "MuiListItemText-multiline",
-                                              "primary": "MuiListItemText-primary undefined",
+                                              "primary": "MuiListItemText-primary",
                                               "root": "MuiListItemText-root",
                                               "secondary": "MuiListItemText-secondary",
                                             }
@@ -4045,12 +4045,12 @@ exports[`User withStyles should render correctly with props 1`] = `
                                             className="MuiListItemText-root MuiListItemText-dense"
                                           >
                                             <WithStyles(ForwardRef(Typography))
-                                              className="MuiListItemText-primary undefined"
+                                              className="MuiListItemText-primary"
                                               component="span"
                                               variant="body2"
                                             >
                                               <ForwardRef(Typography)
-                                                className="MuiListItemText-primary undefined"
+                                                className="MuiListItemText-primary"
                                                 classes={
                                                   Object {
                                                     "alignCenter": "MuiTypography-alignCenter",
@@ -4089,7 +4089,7 @@ exports[`User withStyles should render correctly with props 1`] = `
                                                 variant="body2"
                                               >
                                                 <span
-                                                  className="MuiTypography-root MuiListItemText-primary undefined MuiTypography-body2"
+                                                  className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                                 >
                                                   Option1
                                                 </span>

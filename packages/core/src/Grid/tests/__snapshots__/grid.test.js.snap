@@ -777,145 +777,127 @@ exports[`Grid withStyles should render correctly 1`] = `
         classes={Object {}}
       />
     </WithStyles(CssBaseline)>
-    <WithStyles(HvGrid)
-      alignContent="stretch"
-      alignItems="stretch"
-      component="div"
-      container={false}
-      direction="row"
-      item={false}
-      justify="flex-start"
-      lg={false}
-      md={false}
-      sm={false}
-      wrap="wrap"
-      xl={false}
-      xs={false}
-      zeroMinWidth={false}
-    >
+    <WithStyles(HvGrid)>
       <HvGrid
-        alignContent="stretch"
-        alignItems="stretch"
-        classes={
-          Object {
-            "align-content-xs-center": "HvGrid-align-content-xs-center-14",
-            "align-content-xs-flex-end": "HvGrid-align-content-xs-flex-end-16",
-            "align-content-xs-flex-start": "HvGrid-align-content-xs-flex-start-15",
-            "align-content-xs-space-around": "HvGrid-align-content-xs-space-around-18",
-            "align-content-xs-space-between": "HvGrid-align-content-xs-space-between-17",
-            "align-items-xs-baseline": "HvGrid-align-items-xs-baseline-13",
-            "align-items-xs-center": "HvGrid-align-items-xs-center-10",
-            "align-items-xs-flex-end": "HvGrid-align-items-xs-flex-end-12",
-            "align-items-xs-flex-start": "HvGrid-align-items-xs-flex-start-11",
-            "container": "HvGrid-container-2",
-            "direction-xs-column": "HvGrid-direction-xs-column-5",
-            "direction-xs-column-reverse": "HvGrid-direction-xs-column-reverse-6",
-            "direction-xs-row-reverse": "HvGrid-direction-xs-row-reverse-7",
-            "grid-lg-1": "HvGrid-grid-lg-1-75",
-            "grid-lg-10": "HvGrid-grid-lg-10-84",
-            "grid-lg-11": "HvGrid-grid-lg-11-85",
-            "grid-lg-12": "HvGrid-grid-lg-12-86",
-            "grid-lg-2": "HvGrid-grid-lg-2-76",
-            "grid-lg-3": "HvGrid-grid-lg-3-77",
-            "grid-lg-4": "HvGrid-grid-lg-4-78",
-            "grid-lg-5": "HvGrid-grid-lg-5-79",
-            "grid-lg-6": "HvGrid-grid-lg-6-80",
-            "grid-lg-7": "HvGrid-grid-lg-7-81",
-            "grid-lg-8": "HvGrid-grid-lg-8-82",
-            "grid-lg-9": "HvGrid-grid-lg-9-83",
-            "grid-lg-auto": "HvGrid-grid-lg-auto-73",
-            "grid-lg-true": "HvGrid-grid-lg-true-74",
-            "grid-md-1": "HvGrid-grid-md-1-61",
-            "grid-md-10": "HvGrid-grid-md-10-70",
-            "grid-md-11": "HvGrid-grid-md-11-71",
-            "grid-md-12": "HvGrid-grid-md-12-72",
-            "grid-md-2": "HvGrid-grid-md-2-62",
-            "grid-md-3": "HvGrid-grid-md-3-63",
-            "grid-md-4": "HvGrid-grid-md-4-64",
-            "grid-md-5": "HvGrid-grid-md-5-65",
-            "grid-md-6": "HvGrid-grid-md-6-66",
-            "grid-md-7": "HvGrid-grid-md-7-67",
-            "grid-md-8": "HvGrid-grid-md-8-68",
-            "grid-md-9": "HvGrid-grid-md-9-69",
-            "grid-md-auto": "HvGrid-grid-md-auto-59",
-            "grid-md-true": "HvGrid-grid-md-true-60",
-            "grid-sm-1": "HvGrid-grid-sm-1-47",
-            "grid-sm-10": "HvGrid-grid-sm-10-56",
-            "grid-sm-11": "HvGrid-grid-sm-11-57",
-            "grid-sm-12": "HvGrid-grid-sm-12-58",
-            "grid-sm-2": "HvGrid-grid-sm-2-48",
-            "grid-sm-3": "HvGrid-grid-sm-3-49",
-            "grid-sm-4": "HvGrid-grid-sm-4-50",
-            "grid-sm-5": "HvGrid-grid-sm-5-51",
-            "grid-sm-6": "HvGrid-grid-sm-6-52",
-            "grid-sm-7": "HvGrid-grid-sm-7-53",
-            "grid-sm-8": "HvGrid-grid-sm-8-54",
-            "grid-sm-9": "HvGrid-grid-sm-9-55",
-            "grid-sm-auto": "HvGrid-grid-sm-auto-45",
-            "grid-sm-true": "HvGrid-grid-sm-true-46",
-            "grid-xl-1": "HvGrid-grid-xl-1-89",
-            "grid-xl-10": "HvGrid-grid-xl-10-98",
-            "grid-xl-11": "HvGrid-grid-xl-11-99",
-            "grid-xl-12": "HvGrid-grid-xl-12-100",
-            "grid-xl-2": "HvGrid-grid-xl-2-90",
-            "grid-xl-3": "HvGrid-grid-xl-3-91",
-            "grid-xl-4": "HvGrid-grid-xl-4-92",
-            "grid-xl-5": "HvGrid-grid-xl-5-93",
-            "grid-xl-6": "HvGrid-grid-xl-6-94",
-            "grid-xl-7": "HvGrid-grid-xl-7-95",
-            "grid-xl-8": "HvGrid-grid-xl-8-96",
-            "grid-xl-9": "HvGrid-grid-xl-9-97",
-            "grid-xl-auto": "HvGrid-grid-xl-auto-87",
-            "grid-xl-true": "HvGrid-grid-xl-true-88",
-            "grid-xs-1": "HvGrid-grid-xs-1-33",
-            "grid-xs-10": "HvGrid-grid-xs-10-42",
-            "grid-xs-11": "HvGrid-grid-xs-11-43",
-            "grid-xs-12": "HvGrid-grid-xs-12-44",
-            "grid-xs-2": "HvGrid-grid-xs-2-34",
-            "grid-xs-3": "HvGrid-grid-xs-3-35",
-            "grid-xs-4": "HvGrid-grid-xs-4-36",
-            "grid-xs-5": "HvGrid-grid-xs-5-37",
-            "grid-xs-6": "HvGrid-grid-xs-6-38",
-            "grid-xs-7": "HvGrid-grid-xs-7-39",
-            "grid-xs-8": "HvGrid-grid-xs-8-40",
-            "grid-xs-9": "HvGrid-grid-xs-9-41",
-            "grid-xs-auto": "HvGrid-grid-xs-auto-31",
-            "grid-xs-true": "HvGrid-grid-xs-true-32",
-            "item": "HvGrid-item-3",
-            "justify-xs-center": "HvGrid-justify-xs-center-19",
-            "justify-xs-flex-end": "HvGrid-justify-xs-flex-end-20",
-            "justify-xs-space-around": "HvGrid-justify-xs-space-around-22",
-            "justify-xs-space-between": "HvGrid-justify-xs-space-between-21",
-            "justify-xs-space-evenly": "HvGrid-justify-xs-space-evenly-23",
-            "root": "HvGrid-root-1",
-            "spacing-xs-15": "HvGrid-spacing-xs-15-25",
-            "spacing-xs-16": "HvGrid-spacing-xs-16-26",
-            "spacing-xs-24": "HvGrid-spacing-xs-24-27",
-            "spacing-xs-30": "HvGrid-spacing-xs-30-28",
-            "spacing-xs-32": "HvGrid-spacing-xs-32-29",
-            "spacing-xs-40": "HvGrid-spacing-xs-40-30",
-            "spacing-xs-8": "HvGrid-spacing-xs-8-24",
-            "wrap-xs-nowrap": "HvGrid-wrap-xs-nowrap-8",
-            "wrap-xs-wrap-reverse": "HvGrid-wrap-xs-wrap-reverse-9",
-            "zeroMinWidth": "HvGrid-zeroMinWidth-4",
-          }
-        }
-        component="div"
-        container={false}
-        direction="row"
-        item={false}
-        justify="flex-start"
-        lg={false}
-        md={false}
-        sm={false}
-        wrap="wrap"
-        xl={false}
-        xs={false}
-        zeroMinWidth={false}
+        classes={Object {}}
       >
-        <div
-          className="HvGrid-root-1"
-        />
+        <WithStyles(ForwardRef(Grid))
+          classes={Object {}}
+        >
+          <ForwardRef(Grid)
+            classes={
+              Object {
+                "align-content-xs-center": "MuiGrid-align-content-xs-center",
+                "align-content-xs-flex-end": "MuiGrid-align-content-xs-flex-end",
+                "align-content-xs-flex-start": "MuiGrid-align-content-xs-flex-start",
+                "align-content-xs-space-around": "MuiGrid-align-content-xs-space-around",
+                "align-content-xs-space-between": "MuiGrid-align-content-xs-space-between",
+                "align-items-xs-baseline": "MuiGrid-align-items-xs-baseline",
+                "align-items-xs-center": "MuiGrid-align-items-xs-center",
+                "align-items-xs-flex-end": "MuiGrid-align-items-xs-flex-end",
+                "align-items-xs-flex-start": "MuiGrid-align-items-xs-flex-start",
+                "container": "MuiGrid-container",
+                "direction-xs-column": "MuiGrid-direction-xs-column",
+                "direction-xs-column-reverse": "MuiGrid-direction-xs-column-reverse",
+                "direction-xs-row-reverse": "MuiGrid-direction-xs-row-reverse",
+                "grid-lg-1": "MuiGrid-grid-lg-1",
+                "grid-lg-10": "MuiGrid-grid-lg-10",
+                "grid-lg-11": "MuiGrid-grid-lg-11",
+                "grid-lg-12": "MuiGrid-grid-lg-12",
+                "grid-lg-2": "MuiGrid-grid-lg-2",
+                "grid-lg-3": "MuiGrid-grid-lg-3",
+                "grid-lg-4": "MuiGrid-grid-lg-4",
+                "grid-lg-5": "MuiGrid-grid-lg-5",
+                "grid-lg-6": "MuiGrid-grid-lg-6",
+                "grid-lg-7": "MuiGrid-grid-lg-7",
+                "grid-lg-8": "MuiGrid-grid-lg-8",
+                "grid-lg-9": "MuiGrid-grid-lg-9",
+                "grid-lg-auto": "MuiGrid-grid-lg-auto",
+                "grid-lg-true": "MuiGrid-grid-lg-true",
+                "grid-md-1": "MuiGrid-grid-md-1",
+                "grid-md-10": "MuiGrid-grid-md-10",
+                "grid-md-11": "MuiGrid-grid-md-11",
+                "grid-md-12": "MuiGrid-grid-md-12",
+                "grid-md-2": "MuiGrid-grid-md-2",
+                "grid-md-3": "MuiGrid-grid-md-3",
+                "grid-md-4": "MuiGrid-grid-md-4",
+                "grid-md-5": "MuiGrid-grid-md-5",
+                "grid-md-6": "MuiGrid-grid-md-6",
+                "grid-md-7": "MuiGrid-grid-md-7",
+                "grid-md-8": "MuiGrid-grid-md-8",
+                "grid-md-9": "MuiGrid-grid-md-9",
+                "grid-md-auto": "MuiGrid-grid-md-auto",
+                "grid-md-true": "MuiGrid-grid-md-true",
+                "grid-sm-1": "MuiGrid-grid-sm-1",
+                "grid-sm-10": "MuiGrid-grid-sm-10",
+                "grid-sm-11": "MuiGrid-grid-sm-11",
+                "grid-sm-12": "MuiGrid-grid-sm-12",
+                "grid-sm-2": "MuiGrid-grid-sm-2",
+                "grid-sm-3": "MuiGrid-grid-sm-3",
+                "grid-sm-4": "MuiGrid-grid-sm-4",
+                "grid-sm-5": "MuiGrid-grid-sm-5",
+                "grid-sm-6": "MuiGrid-grid-sm-6",
+                "grid-sm-7": "MuiGrid-grid-sm-7",
+                "grid-sm-8": "MuiGrid-grid-sm-8",
+                "grid-sm-9": "MuiGrid-grid-sm-9",
+                "grid-sm-auto": "MuiGrid-grid-sm-auto",
+                "grid-sm-true": "MuiGrid-grid-sm-true",
+                "grid-xl-1": "MuiGrid-grid-xl-1",
+                "grid-xl-10": "MuiGrid-grid-xl-10",
+                "grid-xl-11": "MuiGrid-grid-xl-11",
+                "grid-xl-12": "MuiGrid-grid-xl-12",
+                "grid-xl-2": "MuiGrid-grid-xl-2",
+                "grid-xl-3": "MuiGrid-grid-xl-3",
+                "grid-xl-4": "MuiGrid-grid-xl-4",
+                "grid-xl-5": "MuiGrid-grid-xl-5",
+                "grid-xl-6": "MuiGrid-grid-xl-6",
+                "grid-xl-7": "MuiGrid-grid-xl-7",
+                "grid-xl-8": "MuiGrid-grid-xl-8",
+                "grid-xl-9": "MuiGrid-grid-xl-9",
+                "grid-xl-auto": "MuiGrid-grid-xl-auto",
+                "grid-xl-true": "MuiGrid-grid-xl-true",
+                "grid-xs-1": "MuiGrid-grid-xs-1",
+                "grid-xs-10": "MuiGrid-grid-xs-10",
+                "grid-xs-11": "MuiGrid-grid-xs-11",
+                "grid-xs-12": "MuiGrid-grid-xs-12",
+                "grid-xs-2": "MuiGrid-grid-xs-2",
+                "grid-xs-3": "MuiGrid-grid-xs-3",
+                "grid-xs-4": "MuiGrid-grid-xs-4",
+                "grid-xs-5": "MuiGrid-grid-xs-5",
+                "grid-xs-6": "MuiGrid-grid-xs-6",
+                "grid-xs-7": "MuiGrid-grid-xs-7",
+                "grid-xs-8": "MuiGrid-grid-xs-8",
+                "grid-xs-9": "MuiGrid-grid-xs-9",
+                "grid-xs-auto": "MuiGrid-grid-xs-auto",
+                "grid-xs-true": "MuiGrid-grid-xs-true",
+                "item": "MuiGrid-item",
+                "justify-xs-center": "MuiGrid-justify-xs-center",
+                "justify-xs-flex-end": "MuiGrid-justify-xs-flex-end",
+                "justify-xs-space-around": "MuiGrid-justify-xs-space-around",
+                "justify-xs-space-between": "MuiGrid-justify-xs-space-between",
+                "justify-xs-space-evenly": "MuiGrid-justify-xs-space-evenly",
+                "root": "MuiGrid-root",
+                "spacing-xs-1": "MuiGrid-spacing-xs-1",
+                "spacing-xs-10": "MuiGrid-spacing-xs-10",
+                "spacing-xs-2": "MuiGrid-spacing-xs-2",
+                "spacing-xs-3": "MuiGrid-spacing-xs-3",
+                "spacing-xs-4": "MuiGrid-spacing-xs-4",
+                "spacing-xs-5": "MuiGrid-spacing-xs-5",
+                "spacing-xs-6": "MuiGrid-spacing-xs-6",
+                "spacing-xs-7": "MuiGrid-spacing-xs-7",
+                "spacing-xs-8": "MuiGrid-spacing-xs-8",
+                "spacing-xs-9": "MuiGrid-spacing-xs-9",
+                "wrap-xs-nowrap": "MuiGrid-wrap-xs-nowrap",
+                "wrap-xs-wrap-reverse": "MuiGrid-wrap-xs-wrap-reverse",
+                "zeroMinWidth": "MuiGrid-zeroMinWidth",
+              }
+            }
+          >
+            <div
+              className="MuiGrid-root"
+            />
+          </ForwardRef(Grid)>
+        </WithStyles(ForwardRef(Grid))>
       </HvGrid>
     </WithStyles(HvGrid)>
   </ThemeProvider>

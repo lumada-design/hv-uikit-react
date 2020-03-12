@@ -811,24 +811,18 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
       tooltipData={
         <div>
           <ForwardRef(WithStyles)
-            component={null}
-            paragraph={false}
             variant="labelText"
           >
             
           </ForwardRef(WithStyles)>
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Status
             </ForwardRef(WithStyles)>
             <div />
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="sText"
             >
               Open
@@ -836,16 +830,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
           </div>
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Date
             </ForwardRef(WithStyles)>
             <div />
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="sText"
             >
               12/08/2018
@@ -853,16 +843,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
           </div>
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Assignee
             </ForwardRef(WithStyles)>
             <div />
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="sText"
             >
               Management
@@ -870,16 +856,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
           </div>
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Approval
             </ForwardRef(WithStyles)>
             <div />
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="sText"
             >
               Not yet requested
@@ -938,24 +920,18 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
         tooltipData={
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               
             </ForwardRef(WithStyles)>
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Status
               </ForwardRef(WithStyles)>
               <div />
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="sText"
               >
                 Open
@@ -963,16 +939,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             </div>
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Date
               </ForwardRef(WithStyles)>
               <div />
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="sText"
               >
                 12/08/2018
@@ -980,16 +952,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             </div>
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Assignee
               </ForwardRef(WithStyles)>
               <div />
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="sText"
               >
                 Management
@@ -997,16 +965,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             </div>
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Approval
               </ForwardRef(WithStyles)>
               <div />
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="sText"
               >
                 Not yet requested
@@ -1047,24 +1011,18 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
           title={
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 
               </ForwardRef(WithStyles)>
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   Status
                 </ForwardRef(WithStyles)>
                 <div />
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="sText"
                 >
                   Open
@@ -1072,16 +1030,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               </div>
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   Date
                 </ForwardRef(WithStyles)>
                 <div />
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="sText"
                 >
                   12/08/2018
@@ -1089,16 +1043,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               </div>
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   Assignee
                 </ForwardRef(WithStyles)>
                 <div />
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="sText"
                 >
                   Management
@@ -1106,16 +1056,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               </div>
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   Approval
                 </ForwardRef(WithStyles)>
                 <div />
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="sText"
                 >
                   Not yet requested
@@ -1164,24 +1110,18 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
             title={
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   
                 </ForwardRef(WithStyles)>
                 <div>
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="labelText"
                   >
                     Status
                   </ForwardRef(WithStyles)>
                   <div />
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="sText"
                   >
                     Open
@@ -1189,16 +1129,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                 </div>
                 <div>
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="labelText"
                   >
                     Date
                   </ForwardRef(WithStyles)>
                   <div />
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="sText"
                   >
                     12/08/2018
@@ -1206,16 +1142,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                 </div>
                 <div>
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="labelText"
                   >
                     Assignee
                   </ForwardRef(WithStyles)>
                   <div />
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="sText"
                   >
                     Management
@@ -1223,16 +1155,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
                 </div>
                 <div>
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="labelText"
                   >
                     Approval
                   </ForwardRef(WithStyles)>
                   <div />
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="sText"
                   >
                     Not yet requested
@@ -2101,24 +2029,18 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
       tooltipData={
         <div>
           <ForwardRef(WithStyles)
-            component={null}
-            paragraph={false}
             variant="labelText"
           >
             January
           </ForwardRef(WithStyles)>
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Sales
             </ForwardRef(WithStyles)>
             <div />
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="sText"
             >
               52,000 units
@@ -2126,16 +2048,12 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
           </div>
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Profit
             </ForwardRef(WithStyles)>
             <div />
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="sText"
             >
               50%
@@ -2194,24 +2112,18 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
         tooltipData={
           <div>
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               January
             </ForwardRef(WithStyles)>
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Sales
               </ForwardRef(WithStyles)>
               <div />
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="sText"
               >
                 52,000 units
@@ -2219,16 +2131,12 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             </div>
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Profit
               </ForwardRef(WithStyles)>
               <div />
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="sText"
               >
                 50%
@@ -2269,24 +2177,18 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
           title={
             <div>
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 January
               </ForwardRef(WithStyles)>
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   Sales
                 </ForwardRef(WithStyles)>
                 <div />
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="sText"
                 >
                   52,000 units
@@ -2294,16 +2196,12 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               </div>
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   Profit
                 </ForwardRef(WithStyles)>
                 <div />
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="sText"
                 >
                   50%
@@ -2352,24 +2250,18 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
             title={
               <div>
                 <ForwardRef(WithStyles)
-                  component={null}
-                  paragraph={false}
                   variant="labelText"
                 >
                   January
                 </ForwardRef(WithStyles)>
                 <div>
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="labelText"
                   >
                     Sales
                   </ForwardRef(WithStyles)>
                   <div />
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="sText"
                   >
                     52,000 units
@@ -2377,16 +2269,12 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
                 </div>
                 <div>
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="labelText"
                   >
                     Profit
                   </ForwardRef(WithStyles)>
                   <div />
                   <ForwardRef(WithStyles)
-                    component={null}
-                    paragraph={false}
                     variant="sText"
                   >
                     50%
@@ -3254,8 +3142,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
       }
       tooltipData={
         <ForwardRef(WithStyles)
-          component={null}
-          paragraph={false}
           variant="labelText"
         >
           Grid View
@@ -3311,8 +3197,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         }
         tooltipData={
           <ForwardRef(WithStyles)
-            component={null}
-            paragraph={false}
             variant="labelText"
           >
             Grid View
@@ -3350,8 +3234,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
           placement="top"
           title={
             <ForwardRef(WithStyles)
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               Grid View
@@ -3397,8 +3279,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             placement="top"
             title={
               <ForwardRef(WithStyles)
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 Grid View
