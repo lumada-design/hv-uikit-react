@@ -61,7 +61,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       <WithStyles(HvButton)
         category="ghost"
         className="HvActions-button-6"
-        disabled={false}
         id="-0-action-view"
         key="-0-action-view"
         onClick={[Function]}
@@ -86,7 +85,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               "startIcon": "HvButton-startIcon-22",
             }
           }
-          disabled={false}
           id="-0-action-view"
           onClick={[Function]}
         >
@@ -104,7 +102,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             }
             color="primary"
             disableRipple={true}
-            disabled={false}
             id="-0-action-view"
             onClick={[Function]}
             variant="text"
@@ -146,7 +143,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               }
               color="primary"
               disableRipple={true}
-              disabled={false}
               id="-0-action-view"
               onClick={[Function]}
               variant="text"
@@ -1069,7 +1065,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       <WithStyles(HvButton)
         category="ghost"
         className="HvActions-button-108"
-        disabled={false}
         id="-0-action-view"
         key="-0-action-view"
         onClick={[Function]}
@@ -1094,7 +1089,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               "startIcon": "HvButton-startIcon-124",
             }
           }
-          disabled={false}
           id="-0-action-view"
           onClick={[Function]}
         >
@@ -1112,7 +1106,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             }
             color="primary"
             disableRipple={true}
-            disabled={false}
             id="-0-action-view"
             onClick={[Function]}
             variant="text"
@@ -1154,7 +1147,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               }
               color="primary"
               disableRipple={true}
-              disabled={false}
               id="-0-action-view"
               onClick={[Function]}
               variant="text"
@@ -1223,7 +1215,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       <WithStyles(HvButton)
         category="ghost"
         className="HvActions-button-108"
-        disabled={false}
         id="-1-action-delete"
         key="-1-action-delete"
         onClick={[Function]}
@@ -1248,7 +1239,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               "startIcon": "HvButton-startIcon-124",
             }
           }
-          disabled={false}
           id="-1-action-delete"
           onClick={[Function]}
         >
@@ -1266,7 +1256,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             }
             color="primary"
             disableRipple={true}
-            disabled={false}
             id="-1-action-delete"
             onClick={[Function]}
             variant="text"
@@ -1308,7 +1297,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               }
               color="primary"
               disableRipple={true}
-              disabled={false}
               id="-1-action-delete"
               onClick={[Function]}
               variant="text"

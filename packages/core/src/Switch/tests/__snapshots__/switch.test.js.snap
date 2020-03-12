@@ -831,10 +831,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-leftLabel-275 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -867,10 +864,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -1165,10 +1159,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-rightLabel-276 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -1201,10 +1192,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -2054,10 +2042,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-leftLabel-275 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -2090,10 +2075,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -2388,10 +2370,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-rightLabel-276 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -2424,10 +2403,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -3277,10 +3253,7 @@ exports[`Switch label click label can be clicked 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-leftLabel-275 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -3313,10 +3286,7 @@ exports[`Switch label click label can be clicked 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -3611,10 +3581,7 @@ exports[`Switch label click label can be clicked 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-rightLabel-276 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -3647,10 +3614,7 @@ exports[`Switch label click label can be clicked 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -4500,10 +4464,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-leftLabel-275 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -4536,10 +4497,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -4834,10 +4792,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-rightLabel-276 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -4870,10 +4825,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -5723,10 +5675,7 @@ exports[`Switch with no label display but with custom label configuration should
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-leftLabel-275 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -5759,10 +5708,7 @@ exports[`Switch with no label display but with custom label configuration should
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -6057,10 +6003,7 @@ exports[`Switch with no label display but with custom label configuration should
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-rightLabel-276 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -6093,10 +6036,7 @@ exports[`Switch with no label display but with custom label configuration should
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -6946,10 +6886,7 @@ exports[`Switch withStyles should render correctly 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-leftLabel-275 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -6982,10 +6919,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}
@@ -7280,10 +7214,7 @@ exports[`Switch withStyles should render correctly 1`] = `
             <WithStyles(ForwardRef)
               aria-disabled={false}
               className="HvSwitch-rightLabel-276 HvSwitch-labelSelected-274"
-              component={null}
               onClick={[Function]}
-              paragraph={false}
-              variant="normalText"
             >
               <ForwardRef
                 aria-disabled={false}
@@ -7316,10 +7247,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-287",
                   }
                 }
-                component={null}
                 onClick={[Function]}
-                paragraph={false}
-                variant="normalText"
               >
                 <p
                   aria-disabled={false}

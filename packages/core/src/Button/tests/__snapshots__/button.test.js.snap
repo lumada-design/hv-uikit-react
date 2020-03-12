@@ -777,15 +777,8 @@ exports[`Button should render correctly 1`] = `
         classes={Object {}}
       />
     </WithStyles(CssBaseline)>
-    <WithStyles(HvButton)
-      category="primary"
-      className=""
-      disabled={false}
-      onClick={[Function]}
-    >
+    <WithStyles(HvButton)>
       <HvButton
-        category="primary"
-        className=""
         classes={
           Object {
             "ghost": "HvButton-ghost-52",
@@ -803,8 +796,6 @@ exports[`Button should render correctly 1`] = `
             "startIcon": "HvButton-startIcon-58",
           }
         }
-        disabled={false}
-        onClick={[Function]}
       >
         <WithStyles(ForwardRef(Button))
           className=""
@@ -820,7 +811,6 @@ exports[`Button should render correctly 1`] = `
           }
           color="primary"
           disableRipple={true}
-          disabled={false}
           onClick={[Function]}
           variant="contained"
         >
@@ -861,7 +851,6 @@ exports[`Button should render correctly 1`] = `
             }
             color="primary"
             disableRipple={true}
-            disabled={false}
             onClick={[Function]}
             variant="contained"
           >

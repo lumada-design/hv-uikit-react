@@ -836,8 +836,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
         >
           <WithStyles(ForwardRef)
             className="HvFormComposer-title-35"
-            component={null}
-            paragraph={false}
             variant="xlTitle"
           >
             <ForwardRef
@@ -870,8 +868,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle-46",
                 }
               }
-              component={null}
-              paragraph={false}
               variant="xlTitle"
             >
               <h1
@@ -889,9 +885,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                 key="Group1"
               >
                 <WithStyles(ForwardRef)
-                  component={null}
                   id="Group1"
-                  paragraph={false}
                   variant="mTitle"
                 >
                   <ForwardRef
@@ -923,9 +917,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle-46",
                       }
                     }
-                    component={null}
                     id="Group1"
-                    paragraph={false}
                     variant="mTitle"
                   >
                     <h3

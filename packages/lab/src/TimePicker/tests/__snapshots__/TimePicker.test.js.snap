@@ -857,8 +857,6 @@ exports[`TimePicker should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               className="HvTimePicker-label-51"
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               <ForwardRef
@@ -891,8 +889,6 @@ exports[`TimePicker should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-67",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="labelText"
               >
                 <p

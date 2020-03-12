@@ -880,7 +880,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                       }
                       category="icon"
                       className="HvVerticalNavigationVerticalContainer-button-10"
-                      disabled={false}
                       id="hv-verticalnavigation1-container-hamburger-button"
                       onClick={[Function]}
                     >
@@ -938,7 +937,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             "startIcon": "HvButton-startIcon-25",
                           }
                         }
-                        disabled={false}
                         id="hv-verticalnavigation1-container-hamburger-button"
                         onClick={[Function]}
                       >
@@ -990,7 +988,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                           }
                           color="primary"
                           disableRipple={true}
-                          disabled={false}
                           id="hv-verticalnavigation1-container-hamburger-button"
                           onClick={[Function]}
                           variant="text"
@@ -1066,7 +1063,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             }
                             color="primary"
                             disableRipple={true}
-                            disabled={false}
                             id="hv-verticalnavigation1-container-hamburger-button"
                             onClick={[Function]}
                             variant="text"
@@ -2123,7 +2119,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                       }
                       category="icon"
                       className="HvVerticalNavigationVerticalContainer-button-72"
-                      disabled={false}
                       id="hv-verticalnavigation2-container-hamburger-button"
                       onClick={[Function]}
                     >
@@ -2181,7 +2176,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             "startIcon": "HvButton-startIcon-87",
                           }
                         }
-                        disabled={false}
                         id="hv-verticalnavigation2-container-hamburger-button"
                         onClick={[Function]}
                       >
@@ -2233,7 +2227,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                           }
                           color="primary"
                           disableRipple={true}
-                          disabled={false}
                           id="hv-verticalnavigation2-container-hamburger-button"
                           onClick={[Function]}
                           variant="text"
@@ -2309,7 +2302,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             }
                             color="primary"
                             disableRipple={true}
-                            disabled={false}
                             id="hv-verticalnavigation2-container-hamburger-button"
                             onClick={[Function]}
                             variant="text"
@@ -3351,7 +3343,7 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
                     onKeyDown={[Function]}
                   >
                     <div
-                      className="HvVerticalNavigation-root-125 undefined"
+                      className="HvVerticalNavigation-root-125"
                       id="hv-verticalnavigation3"
                     >
                       <div>

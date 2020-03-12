@@ -7,23 +7,25 @@
   "author": {
     "name": "Hitachi Vantara UI Kit Team"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "dev": "npm-run-all clean babel:watch copy",
-    "build": "npm-run-all clean babel:build copy test:clean",
-    "babel:watch": "npx babel src -d dist --source-maps --copy-files --watch",
-    "babel:build": "npx babel src -d dist --source-maps --copy-files",
-    "copy": "npx cp -f src/index.js dist/index.es.js",
+    "dev": "npm-run-all -p build:esm:watch build:copy-files:watch",
+    "build": "npm-run-all clean build:cjs build:esm build:es build:copy-files",
+    "build:cjs": "cross-env NODE_ENV=production BABEL_ENV=cjs babel --source-maps --config-file ../../babel.config.js ./src --out-dir ./dist --ignore \"**/*.test.js\"",
+    "build:cjs:watch": "nodemon --watch src -x \"npm run build:cjs\" --ignore \"**/*.test.js\"",
+    "build:esm": "cross-env NODE_ENV=production BABEL_ENV=esm babel --source-maps --config-file ../../babel.config.js ./src --out-dir ./dist/esm --ignore \"**/*.test.js\"",
+    "build:esm:watch": "nodemon --watch src -x \"npm run build:esm\"  --ignore \"**/*.test.js\"",
+    "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --source-maps --config-file ../../babel.config.js ./src --out-dir ./dist/es --ignore \"**/*.test.js\"",
+    "build:es:watch": "nodemon --watch src -x \"npm run build:es\"  --ignore \"**/*.test.js\"",
+    "build:copy-files": "node ../../scripts/copyFiles.js",
+    "build:copy-files:watch": "nodemon --watch src -x \"npm run build:copy-files\" --ignore \"**/*.test.js\"",
     "clean": "npx del-cli dist",
     "test": "jest -c config/jest-config.js --coverage",
     "test:watch": "jest -c config/jest-config.js --watch",
     "test:update": "jest -c ./config/jest-config.js --u",
-    "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json"
@@ -59,21 +61,24 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
-    "@babel/runtime": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^4.0.0",
     "cash-cp": "^0.2.0",
-    "del-cli": "^3.0.0",
+    "babel-plugin-optimize-clsx": "^2.6.0",
+    "babel-plugin-typescript-to-proptypes": "^1.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "cross-env": "^7.0.0",
     "jest": "^24.9.0",
     "jest-axe": "^3.3.0",
     "jest-canvas-mock": "^2.2.0",
     "jest-junit": "^6.3.0",
     "jss-snapshot-serializer": "^1.0.0",
+    "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5"
   },
   "files": [
@@ -81,5 +86,6 @@
   ],
   "jest": {
     "testEnvironment": "node"
-  }
+  },
+  "sideEffects": false
 }

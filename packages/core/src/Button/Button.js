@@ -8,13 +8,13 @@ import styles from "./styles";
 const HvButton = props => {
   const {
     classes,
-    className,
-    id,
+    className = "a",
+    id = undefined,
     children,
     disabled,
     onClick,
-    category,
-    startIcon,
+    category = "primary",
+    startIcon = undefined,
     ...other
   } = props;
 
@@ -44,53 +44,30 @@ const HvButton = props => {
 };
 
 HvButton.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
   /**
-   * Category of button to use.
+   * Category of button to use
    */
   category: PropTypes.oneOf([
-    "primary",
-    "secondary",
     "ghost",
     "ghostSecondary",
-    "semantic",
-    "icon"
+    "icon",
+    "primary",
+    "secondary",
+    "semantic"
   ]),
   /**
-   * Class names to be applied.
+   * The content of the button.
    */
-  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
   /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
-  /**
-   * A Jss Object used to override or extend the styles applied.
+   * Override or extend the styles applied to the component.
+   * See CSS API tab for more details.
    */
   classes: PropTypes.shape({
-    /**
-     * Styles applied to the component root class.
-     */
-    root: PropTypes.string,
-    /**
-     * Styles applied to the component root when category is icon.
-     */
-    rootIcon: PropTypes.string,
-    /**
-     * Styles applied to the primary button.
-     */
-    primary: PropTypes.string,
-    /**
-     * Styles applied to the primary button when it is disabled.
-     */
-    primaryDisabled: PropTypes.string,
-    /**
-     * Styles applied to the secondary button.
-     */
-    secondary: PropTypes.string,
-    /**
-     * Styles applied to the secondary button when it is disabled.
-     */
-    secondaryDisabled: PropTypes.string,
     /**
      * Styles applied to the ghost button.
      */
@@ -108,6 +85,30 @@ HvButton.propTypes = {
      */
     ghostSecondaryDisabled: PropTypes.string,
     /**
+     * Styles applied to the primary button.
+     */
+    primary: PropTypes.string,
+    /**
+     * Styles applied to the primary button when it is disabled.
+     */
+    primaryDisabled: PropTypes.string,
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the component root when category is icon.
+     */
+    rootIcon: PropTypes.string,
+    /**
+     * Styles applied to the secondary button.
+     */
+    secondary: PropTypes.string,
+    /**
+     * Styles applied to the secondary button when it is disabled.
+     */
+    secondaryDisabled: PropTypes.string,
+    /**
      * Styles applied to the semantic button.
      */
     semantic: PropTypes.string,
@@ -116,35 +117,31 @@ HvButton.propTypes = {
      */
     semanticDisabled: PropTypes.string,
     /**
-     * Styles applied to the icon on the left.
+     * Styles applied to the inspireRed primary button.
      */
     startIcon: PropTypes.string
-  }).isRequired,
+  }),
   /**
-   * The content inside the button.
+   * @ignore
    */
-  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
   /**
-   * If `true` the button is disabled and the onClick function will not be called.
+   * If `true`, the button will be disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * The function executed when the button is pressed.
+   * Id to be applied to the root node.
    */
-  onClick: PropTypes.instanceOf(Function),
+  id: PropTypes.string,
   /**
-   * The icon to be rendered before the children.
+   * The function executed when the button is pressed.
+   * @param event React.MouseEvent<HTMLButtonElement>
+   */
+  onClick: PropTypes.func,
+  /**
+   * Element placed before the children.
    */
   startIcon: PropTypes.node
-};
-
-HvButton.defaultProps = {
-  className: "",
-  id: undefined,
-  category: "primary",
-  disabled: false,
-  onClick: () => {},
-  startIcon: undefined
 };
 
 export default withStyles(styles, { name: "HvButton" })(HvButton);

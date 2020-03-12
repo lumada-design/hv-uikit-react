@@ -12,7 +12,10 @@ module.exports = {
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-curly-newline": "off"
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
+    "react/jsx-curly-newline": "off",
+    "react/require-default-props": "off"
   },
   env: {
     browser: true,

@@ -878,7 +878,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             component="label"
             htmlFor="hv-filedropzone-2-input-file"
             id="hv-filedropzone-2-input-file-label"
-            paragraph={false}
             variant="labelText"
           >
             <ForwardRef
@@ -913,7 +912,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               component="label"
               htmlFor="hv-filedropzone-2-input-file"
               id="hv-filedropzone-2-input-file-label"
-              paragraph={false}
               variant="labelText"
             >
               <label
@@ -924,8 +922,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
-            component={null}
-            paragraph={false}
             variant="infoText"
           >
             <ForwardRef
@@ -957,8 +953,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle-59",
                 }
               }
-              component={null}
-              paragraph={false}
               variant="infoText"
             >
               <p
@@ -1038,9 +1032,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             >
               <WithStyles(ForwardRef)
                 className="HvFileUploaderDropZone-dragText-48"
-                component={null}
-                paragraph={false}
-                variant="normalText"
               >
                 <ForwardRef
                   className="HvFileUploaderDropZone-dragText-48"
@@ -1072,9 +1063,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle-59",
                     }
                   }
-                  component={null}
-                  paragraph={false}
-                  variant="normalText"
                 >
                   <p
                     className="HvTypography-normalText-61 HvTypography-baseFontFamily-72 HvTypography-margin-73 HvFileUploaderDropZone-dragText-48"
@@ -1974,7 +1962,6 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             component="label"
             htmlFor="hv-filedropzone-4-input-file"
             id="hv-filedropzone-4-input-file-label"
-            paragraph={false}
             variant="labelText"
           >
             <ForwardRef
@@ -2009,7 +1996,6 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               component="label"
               htmlFor="hv-filedropzone-4-input-file"
               id="hv-filedropzone-4-input-file-label"
-              paragraph={false}
               variant="labelText"
             >
               <label
@@ -2020,8 +2006,6 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             </ForwardRef>
           </WithStyles(ForwardRef)>
           <WithStyles(ForwardRef)
-            component={null}
-            paragraph={false}
             variant="infoText"
           >
             <ForwardRef
@@ -2053,8 +2037,6 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle-137",
                 }
               }
-              component={null}
-              paragraph={false}
               variant="infoText"
             >
               <p
@@ -2134,9 +2116,6 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             >
               <WithStyles(ForwardRef)
                 className="HvFileUploaderDropZone-dragText-126"
-                component={null}
-                paragraph={false}
-                variant="normalText"
               >
                 <ForwardRef
                   className="HvFileUploaderDropZone-dragText-126"
@@ -2168,9 +2147,6 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle-137",
                     }
                   }
-                  component={null}
-                  paragraph={false}
-                  variant="normalText"
                 >
                   <p
                     className="HvTypography-normalText-139 HvTypography-baseFontFamily-150 HvTypography-margin-151 HvFileUploaderDropZone-dragText-126"

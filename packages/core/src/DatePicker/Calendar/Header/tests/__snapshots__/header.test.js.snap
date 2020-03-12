@@ -803,8 +803,6 @@ exports[`<Header /> should render correctly 1`] = `
       >
         <WithStyles(ForwardRef)
           className="HvDatePickerHeader-rangeLabel-1"
-          component={null}
-          paragraph={false}
           variant="labelText"
         >
           <ForwardRef
@@ -837,8 +835,6 @@ exports[`<Header /> should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle-16",
               }
             }
-            component={null}
-            paragraph={false}
             variant="labelText"
           >
             <p
@@ -856,8 +852,6 @@ exports[`<Header /> should render correctly 1`] = `
             className="HvDatePickerHeader-headerDayOfWeek-3"
           >
             <WithStyles(ForwardRef)
-              component={null}
-              paragraph={false}
               variant="normalText"
             >
               <ForwardRef
@@ -889,8 +883,6 @@ exports[`<Header /> should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-16",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="normalText"
               >
                 <p

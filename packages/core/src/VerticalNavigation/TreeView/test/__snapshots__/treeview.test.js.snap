@@ -856,7 +856,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23 HvVerticalNavigationTreeViewItem-expanded-21"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem2"
               >
@@ -896,7 +896,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   }
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  paragraph={false}
                   role="button"
                   tabIndex={0}
                   variant="normalText"
@@ -935,7 +934,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     id="hv-verticalnavigation-treeviewitem2-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    paragraph={false}
                     role="button"
                     tabIndex={0}
                     variant="normalText"
@@ -1047,7 +1045,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                        className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23 HvVerticalNavigationTreeViewItem-expanded-21"
                         id="hv-verticalnavigation-treeviewitem3"
                       >
                         <WithStyles(ForwardRef)
@@ -1068,7 +1066,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={0}
                           variant="normalText"
@@ -1107,7 +1104,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem3-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={0}
                             variant="normalText"
@@ -1191,7 +1187,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={0}
                                   variant="normalText"
@@ -1230,7 +1225,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem4-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={0}
                                     variant="normalText"
@@ -1315,7 +1309,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={0}
                                   variant="selectedText"
@@ -1355,7 +1348,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem5-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={0}
                                     variant="selectedText"
@@ -1439,7 +1431,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={0}
                                   variant="normalText"
@@ -1478,7 +1469,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem6-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={0}
                                     variant="normalText"
@@ -1577,7 +1567,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={0}
                                   variant="normalText"
@@ -1616,7 +1605,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem7-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={0}
                                     variant="normalText"
@@ -1686,7 +1674,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-expanded-21 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23"
+                className="HvVerticalNavigationTreeViewItem-node-16 HvVerticalNavigationTreeViewItem-selectable-18 HvVerticalNavigationTreeViewItem-unselected-23 HvVerticalNavigationTreeViewItem-expanded-21"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem8"
               >
@@ -1726,7 +1714,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                   }
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  paragraph={false}
                   role="button"
                   tabIndex={0}
                   variant="normalText"
@@ -1765,7 +1752,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     id="hv-verticalnavigation-treeviewitem8-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    paragraph={false}
                     role="button"
                     tabIndex={0}
                     variant="normalText"
@@ -1898,7 +1884,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={0}
                           variant="normalText"
@@ -1937,7 +1922,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem9-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={0}
                             variant="normalText"
@@ -2020,7 +2004,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={0}
                           variant="normalText"
@@ -2059,7 +2042,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem10-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={0}
                             variant="normalText"
@@ -2142,7 +2124,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={0}
                           variant="normalText"
@@ -2181,7 +2162,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem11-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={0}
                             variant="normalText"
@@ -3069,7 +3049,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-expanded-141 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
+                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143 HvVerticalNavigationTreeViewItem-expanded-141"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem24"
                 role="treeitem"
@@ -3110,7 +3090,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   }
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  paragraph={false}
                   role="button"
                   tabIndex={-1}
                   variant="normalText"
@@ -3149,7 +3128,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     id="hv-verticalnavigation-treeviewitem24-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    paragraph={false}
                     role="button"
                     tabIndex={-1}
                     variant="normalText"
@@ -3262,7 +3240,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       selectable={null}
                     >
                       <li
-                        className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-expanded-141 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
+                        className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143 HvVerticalNavigationTreeViewItem-expanded-141"
                         id="hv-verticalnavigation-treeviewitem25"
                         role="treeitem"
                       >
@@ -3284,7 +3262,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={-1}
                           variant="normalText"
@@ -3323,7 +3300,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem25-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={-1}
                             variant="normalText"
@@ -3409,7 +3385,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={-1}
                                   variant="normalText"
@@ -3448,7 +3423,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem26-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={-1}
                                     variant="normalText"
@@ -3533,7 +3507,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={0}
                                   variant="selectedText"
@@ -3572,7 +3545,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem27-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={0}
                                     variant="selectedText"
@@ -3656,7 +3628,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={-1}
                                   variant="normalText"
@@ -3695,7 +3666,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem28-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={-1}
                                     variant="normalText"
@@ -3795,7 +3765,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   }
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  paragraph={false}
                                   role="button"
                                   tabIndex={-1}
                                   variant="normalText"
@@ -3834,7 +3803,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     id="hv-verticalnavigation-treeviewitem29-button"
                                     onClick={[Function]}
                                     onKeyDown={[Function]}
-                                    paragraph={false}
                                     role="button"
                                     tabIndex={-1}
                                     variant="normalText"
@@ -3904,7 +3872,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               selectable={null}
             >
               <li
-                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-expanded-141 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143"
+                className="HvVerticalNavigationTreeViewItem-node-136 HvVerticalNavigationTreeViewItem-selectable-138 HvVerticalNavigationTreeViewItem-unselected-143 HvVerticalNavigationTreeViewItem-expanded-141"
                 data-hasicon={true}
                 id="hv-verticalnavigation-treeviewitem30"
                 role="treeitem"
@@ -3945,7 +3913,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                   }
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  paragraph={false}
                   role="button"
                   tabIndex={-1}
                   variant="normalText"
@@ -3984,7 +3951,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     id="hv-verticalnavigation-treeviewitem30-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    paragraph={false}
                     role="button"
                     tabIndex={-1}
                     variant="normalText"
@@ -4119,7 +4085,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={-1}
                           variant="normalText"
@@ -4158,7 +4123,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem31-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={-1}
                             variant="normalText"
@@ -4242,7 +4206,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={-1}
                           variant="normalText"
@@ -4281,7 +4244,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem32-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={-1}
                             variant="normalText"
@@ -4365,7 +4327,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                           }
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={-1}
                           variant="normalText"
@@ -4404,7 +4365,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             id="hv-verticalnavigation-treeviewitem33-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            paragraph={false}
                             role="button"
                             tabIndex={-1}
                             variant="normalText"
