@@ -46,6 +46,7 @@ export default (
       listRoute={data}
       id="breadcrumb1"
       aria-label="Breadcrumb"
+      onClick={(event,elem) => alert(elem.path)}
     />
   </div>
 );

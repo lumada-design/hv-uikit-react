@@ -3,7 +3,6 @@
 exports[`<Calendar /> with configurations should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -3788,7 +3787,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
 exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

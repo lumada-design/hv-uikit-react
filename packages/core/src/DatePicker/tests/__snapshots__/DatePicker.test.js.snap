@@ -3,7 +3,6 @@
 exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1713,7 +1712,6 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
 exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -3423,7 +3421,6 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
 exports[`<DatePicker /> with custom properties should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -5173,7 +5170,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
 exports[`<DatePicker /> with minimum configuration should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

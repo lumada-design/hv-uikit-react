@@ -3,7 +3,6 @@
 exports[`Multi Line Tooltip - No Header should render multiple line tooltip correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1221,7 +1220,6 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
 exports[`Multi Line Tooltip - With Header should render multiple line tooltip with header correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -2335,7 +2333,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
 exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

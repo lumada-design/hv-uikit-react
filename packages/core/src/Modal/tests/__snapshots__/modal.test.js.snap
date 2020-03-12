@@ -770,7 +770,6 @@ exports[`Modal Component allows external props to be added 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -1558,7 +1557,6 @@ exports[`Modal Component allows external styles to be added 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -2351,7 +2349,6 @@ exports[`Modal Component should render correctly if closed 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -3137,7 +3134,6 @@ exports[`Modal Component should render correctly if opened 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -3923,7 +3919,6 @@ exports[`Modal withStyles should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

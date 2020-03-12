@@ -3,7 +3,6 @@
 exports[`Dropzone withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1087,7 +1086,6 @@ exports[`Dropzone withStyles should render correctly 1`] = `
 exports[`Dropzone withStyles should render correctly when disabled 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

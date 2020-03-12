@@ -3,7 +3,6 @@
 exports[`<Navigation /> navigation should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

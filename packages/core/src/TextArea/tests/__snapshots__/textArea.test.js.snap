@@ -770,7 +770,6 @@ exports[`TextArea Component should render correctly if opened 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -1567,7 +1566,6 @@ exports[`TextArea withStyles should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

@@ -113,3 +113,5 @@ With our first major release several components where reviewed in order to remov
   - Css class **upperArea** remove
 - Tooltip
   - Renamed `multitooltip` class to `tooltipMulti`.
+- Provider
+  - The routing was removed from the provider. The component HvLink that used the router now offers a href or a div with the onClick.

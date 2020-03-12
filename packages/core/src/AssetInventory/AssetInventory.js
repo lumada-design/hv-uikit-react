@@ -393,11 +393,12 @@ class AssetInventory extends React.Component {
 
     let childProps = {};
 
-    if (!isNil(configuration) && !isNil(configuration.viewConfiguration)) {
-      childProps = { ...configuration.viewConfiguration };
-    }
     if (!isNil(child.props) && !isNil(child.props.viewConfiguration)) {
       childProps = { ...child.props.viewConfiguration };
+    }
+
+    if (!isNil(configuration) && !isNil(configuration.viewConfiguration)) {
+      childProps = { ...configuration.viewConfiguration };
     }
 
     this.propsFillerManager(child, childProps, [

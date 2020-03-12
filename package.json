@@ -25,6 +25,7 @@
     "build": "npx lerna run build",
     "doc": "npx lerna run doc --stream",
     "test": "npx lerna run test --parallel",
+    "test:update": "npx lerna run test:update --parallel",
     "link": "npx lerna run link",
     "generate": "node generator/index.js",
     "publish-": "npx lerna publish --yes",

@@ -42,30 +42,43 @@ LastPathElement.propTypes = {
 /**
  * Representation of an path element. This element contains a link.
  *
- * @param useRouter
+ * @param Component
+ * @param onClick
  * @param elem
  * @param classes
  * @returns {*}
  * @constructor
  */
-const Page = ({ useRouter, elem, classes }) => (
-  <HvLink route={elem.path} params={elem.params} useRouter={useRouter}>
-    <div className={classes.centerContainer}>
-      <HvTypography variant="sLink" className={classes.link}>
-        {startCase(elem.label)}
-      </HvTypography>
-    </div>
-  </HvLink>
-);
+const Page = ({ Component, onClick, elem, classes }) => {
+  return (
+    <HvLink
+      route={elem.path}
+      Component={Component}
+      onClick={onClick}
+      data={elem}
+    >
+      <div className={classes.centerContainer}>
+        <HvTypography variant="sLink" className={classes.link}>
+          {startCase(elem.label)}
+        </HvTypography>
+      </div>
+    </HvLink>
+  );
+};
 
 Page.propTypes = {
-  useRouter: PropTypes.bool.isRequired,
+  Component: PropTypes.elementType,
+  onClick: PropTypes.func,
   elem: PropTypes.shape({
     path: PropTypes.string,
-    params: PropTypes.instanceOf(Object),
     label: PropTypes.string
   }).isRequired,
   classes: PropTypes.instanceOf(Object).isRequired
+};
+
+Page.defaultProps = {
+  Component: undefined,
+  onClick: undefined
 };
 
 /**
@@ -93,12 +106,11 @@ PathElement.propTypes = {
 /**
  * Helper function to build a new path list with one element with the list for the submenu.
  *
- * @param useRouter
  * @param listRoute
  * @param maxVisible
  * @returns {*}
  */
-const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
+const pathWithSubMenu = (listRoute, maxVisible) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
 
@@ -120,7 +132,6 @@ const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
  * Breadcrumb element.
  *
  * @param classes
- * @param useRouter
  * @param listRoute
  * @param maxVisible
  * @returns {*}
@@ -130,10 +141,11 @@ const BreadCrumb = ({
   classes,
   className,
   id,
-  useRouter,
   listRoute,
   maxVisible,
   url,
+  onClick,
+  component,
   ...other
 }) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
@@ -146,7 +158,7 @@ const BreadCrumb = ({
     listPath = [];
 
     // get the domain
-    const baseUrl = !useRouter ? url.match(/^.*\/\/[^/]+/, "") : "";
+    const baseUrl = url.match(/^.*\/\/[^/]+/, "");
 
     // get url without domain
     const urlWithoutDomain = url.replace(/^.*\/\/[^/]+/, "");
@@ -163,10 +175,12 @@ const BreadCrumb = ({
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(useRouter, listPath, maxVisibleElem)
+      ? pathWithSubMenu(listPath, maxVisibleElem)
       : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
+
+  const Component = onClick ? component : undefined;
 
   return (
     <nav id={internalId} className={clsx(classes.root, className)} {...other}>
@@ -181,7 +195,13 @@ const BreadCrumb = ({
               {React.isValidElement(elem) ? (
                 elem
               ) : (
-                <Page key={key} useRouter={useRouter} elem={elem} classes={classes} />
+                <Page
+                  key={key}
+                  elem={elem}
+                  classes={classes}
+                  Component={Component}
+                  onClick={onClick}
+                />
               )}
             </PathElement>
           );
@@ -221,10 +241,6 @@ BreadCrumb.propTypes = {
     orderedList: PropTypes.string
   }).isRequired,
   /**
-   * Should use the router.
-   */
-  useRouter: PropTypes.bool,
-  /**
    * List of breadcrumb.
    */
   listRoute: PropTypes.arrayOf(
@@ -240,16 +256,26 @@ BreadCrumb.propTypes = {
   /**
    * Number of pages visible.
    */
-  maxVisible: PropTypes.number
+  maxVisible: PropTypes.number,
+  /**
+   * The component used for the link node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Function passed to the component. If defined the component prop is used as the link node.
+   */
+  onClick: PropTypes.func
 };
 
 BreadCrumb.defaultProps = {
   className: "",
   id: undefined,
-  useRouter: false,
   maxVisible: 9999,
   listRoute: [],
-  url: null
+  url: null,
+  component: "div",
+  onClick: undefined
 };
 
 export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);
