@@ -7,6 +7,6 @@ RUN npm config set unsafe-perm true
 RUN npm ci --silent
 RUN npm run bootstrap
 
-CMD ["npm", "run", "automation"]
+CMD ["npm", "run", "automation:run"]
 
 EXPOSE 9002
