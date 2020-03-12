@@ -3,8 +3,7 @@ module.exports = {
   rules: {
     "no-console": "off",
     "react/prop-types": "off",
-    "no-alert": "off",
-    "no-underscore-dangle": "off"
+    "no-alert": "off"
   },
   env: {
     browser: true,

@@ -1,66 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-class SimpleBanner extends React.Component {
-  state = {
-    open: false
+const SimpleBanner = props => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
   };
 
-  handleClick = () => {
-    this.setState({ open: true });
+  const handleClose = (action, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
   };
 
-  handleClose = (action, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    this.setState({ open: false });
-  };
-
-  render() {
-    const {
-      id,
-      label,
-      labelButton,
-      variant,
-      showIcon,
-      anchorOrigin,
-      actions,
-      actionsCallback,
-      actionsPosition,
-      customIcon,
-      offset
-    } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <Button
-          onClick={this.handleClick}
-          variant="contained"
-          color="primary"
-          style={{ width: "150px" }}
-        >
-          {labelButton}
-        </Button>
-        <HvBanner
-          id={id}
-          open={open}
-          label={label}
-          onClose={this.handleClose}
-          anchorOrigin={anchorOrigin}
-          variant={variant}
-          customIcon={customIcon}
-          showIcon={showIcon}
-          actions={actions}
-          actionsCallback={actionsCallback}
-          actionsPosition={actionsPosition}
-          offset={offset}
-        />
-      </div>
-    );
-  }
-}
+  const { labelButton, ...other } = props;
+  return (
+    <div>
+      <Button
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        style={{ width: "150px" }}
+      >
+        {labelButton}
+      </Button>
+      <HvBanner open={open} onClose={handleClose} {...other} />
+    </div>
+  );
+};
 
 export default (
   <SimpleBanner
@@ -72,7 +40,9 @@ export default (
       { id: "action1", label: "Action 1", disabled: false },
       { id: "action2", label: "Action 2", disabled: false }
     ]}
-    actionsCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
+    actionsCallback={(id, action) =>
+      alert(`clicked ${id} with ${action.label}`)
+    }
     actionsPosition="bottom-right"
   />
 );

@@ -2,6 +2,8 @@ import React from "react";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import Chart from "react-google-charts";
 
+/* eslint-disable no-underscore-dangle */
+
 const data = [
   {
     id: 1,

@@ -13,13 +13,16 @@ import styles from "./styles";
  * Login main form.
  */
 class Login extends React.Component {
-  state = {
-    password: "",
-    username: "",
-    isLogging: false,
-    rememberMe: false,
-    loginError: false
-  };
+  constructor() {
+    super();
+    this.state = {
+      password: "",
+      username: "",
+      isLogging: false,
+      rememberMe: false,
+      loginError: false
+    };
+  }
 
   componentDidMount() {
     this.setState({

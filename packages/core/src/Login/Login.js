@@ -14,7 +14,13 @@ import styles from "./styles";
  * Main container for the Login component.
  */
 class HvLogin extends React.Component {
-  state = { inRecoveryMode: false, isLoading: true };
+  constructor() {
+    super();
+    this.state = {
+      inRecoveryMode: false,
+      isLoading: true
+    };
+  }
 
   /**
    * When the component is fully loaded the state is changed
