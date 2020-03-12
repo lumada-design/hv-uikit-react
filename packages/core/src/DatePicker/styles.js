@@ -34,7 +34,11 @@ const icon = {
 const styles = theme => ({
   inputCalendarClosed: {
     ...inputRoot(theme),
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    "&:hover": {
+      cursor: "pointer",
+      border: `1px solid ${theme.hv.palette.accent.acce1}`
+    }
   },
   inputCalendarOpen: {
     ...inputRoot(theme),
@@ -54,6 +58,9 @@ const styles = theme => ({
     background: "transparent",
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.normalText,
+    "&:hover": {
+      cursor: "pointer"
+    },
     "&:focus": {
       outline: "none"
     },
@@ -152,15 +159,11 @@ const styles = theme => ({
   },
   calendarOpenDown: {
     background: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: `0 0px 0 ${
-      theme.hv.palette.atmosphere.atmo1
-    }, 0 1px 8px rgba(65,65,65,.12)`
+    boxShadow: `0 0px 0 ${theme.hv.palette.atmosphere.atmo1}, 0 1px 8px rgba(65,65,65,.12)`
   },
   calendarOpenUp: {
     background: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: `0 0px 0 ${
-      theme.hv.palette.atmosphere.atmo1
-    }, 0 1px 8px rgba(65,65,65,.12)`
+    boxShadow: `0 0px 0 ${theme.hv.palette.atmosphere.atmo1}, 0 1px 8px rgba(65,65,65,.12)`
   }
 });
 

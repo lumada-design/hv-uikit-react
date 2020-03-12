@@ -5122,6 +5122,10 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
+.HvDatePicker-inputCalendarClosed-1970:hover {
+  cursor: pointer;
+  border: 1px solid #414141;
+}
 .HvDatePicker-inputCalendarOpen-1971 {
   height: 32px;
   border: 1px solid #FFFFFF;
@@ -5149,6 +5153,9 @@ body {
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+.HvDatePicker-input-1974:hover {
+  cursor: pointer;
 }
 .HvDatePicker-input-1974:focus {
   outline: none;
@@ -5313,6 +5320,10 @@ body {
                     "position": "relative",
                   },
                   Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
+                  Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
@@ -5339,6 +5350,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "width": "100%",
+                  },
+                  Object {
+                    "cursor": "pointer",
                   },
                   Object {
                     "outline": "none",
@@ -5522,6 +5536,9 @@ body {
                   ".HvDatePicker-input-1974:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-1974:hover": Object {
+                    "cursor": "pointer",
+                  },
                   ".HvDatePicker-inputCalendarClosed-1970": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
@@ -5530,6 +5547,10 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-1970:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
                   },
                   ".HvDatePicker-inputCalendarOpen-1971": Object {
                     "background": "#FFFFFF",
@@ -6266,6 +6287,13 @@ body {
                   ".HvDatePicker-input-1974:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-1974:hover": Object {
+                    "cursor": "pointer",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-1970:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
                   "actionsContainer": Object {
                     "textAlign": "right",
                   },
@@ -6330,6 +6358,9 @@ body {
                     "&:focus": Object {
                       "outline": "none",
                     },
+                    "&:hover": Object {
+                      "cursor": "pointer",
+                    },
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -6347,6 +6378,10 @@ body {
                     "width": "100%",
                   },
                   "inputCalendarClosed": Object {
+                    "&:hover": Object {
+                      "border": "1px solid #414141",
+                      "cursor": "pointer",
+                    },
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "fontFamily": Array [
@@ -10456,7 +10491,7 @@ body {
               readOnly={true}
               tabIndex={-1}
               type="text"
-              value="5 Jan, 2019 - 10 Jan, 2019"
+              value="5 Jan 2019 - 10 Jan 2019"
             />
             <WithStyles(Calendar)
               className="HvDatePicker-icon-1975"
@@ -16586,6 +16621,10 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
+.HvDatePicker-inputCalendarClosed-670:hover {
+  cursor: pointer;
+  border: 1px solid #414141;
+}
 .HvDatePicker-inputCalendarOpen-671 {
   height: 32px;
   border: 1px solid #FFFFFF;
@@ -16613,6 +16652,9 @@ body {
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+.HvDatePicker-input-674:hover {
+  cursor: pointer;
 }
 .HvDatePicker-input-674:focus {
   outline: none;
@@ -16777,6 +16819,10 @@ body {
                     "position": "relative",
                   },
                   Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
+                  Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
@@ -16803,6 +16849,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "width": "100%",
+                  },
+                  Object {
+                    "cursor": "pointer",
                   },
                   Object {
                     "outline": "none",
@@ -16986,6 +17035,9 @@ body {
                   ".HvDatePicker-input-674:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-674:hover": Object {
+                    "cursor": "pointer",
+                  },
                   ".HvDatePicker-inputCalendarClosed-670": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
@@ -16994,6 +17046,10 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-670:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
                   },
                   ".HvDatePicker-inputCalendarOpen-671": Object {
                     "background": "#FFFFFF",
@@ -17730,6 +17786,13 @@ body {
                   ".HvDatePicker-input-674:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-674:hover": Object {
+                    "cursor": "pointer",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-670:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
                   "actionsContainer": Object {
                     "textAlign": "right",
                   },
@@ -17794,6 +17857,9 @@ body {
                     "&:focus": Object {
                       "outline": "none",
                     },
+                    "&:hover": Object {
+                      "cursor": "pointer",
+                    },
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -17811,6 +17877,10 @@ body {
                     "width": "100%",
                   },
                   "inputCalendarClosed": Object {
+                    "&:hover": Object {
+                      "border": "1px solid #414141",
+                      "cursor": "pointer",
+                    },
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "fontFamily": Array [
@@ -21919,7 +21989,7 @@ body {
               readOnly={true}
               tabIndex={-1}
               type="text"
-              value="1 Jan, 2019"
+              value="1 Jan 2019"
             />
             <WithStyles(Calendar)
               className="HvDatePicker-icon-675"
@@ -28049,6 +28119,10 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
+.HvDatePicker-inputCalendarClosed-2630:hover {
+  cursor: pointer;
+  border: 1px solid #414141;
+}
 .HvDatePicker-inputCalendarOpen-2631 {
   height: 32px;
   border: 1px solid #FFFFFF;
@@ -28076,6 +28150,9 @@ body {
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+.HvDatePicker-input-2634:hover {
+  cursor: pointer;
 }
 .HvDatePicker-input-2634:focus {
   outline: none;
@@ -28240,6 +28317,10 @@ body {
                     "position": "relative",
                   },
                   Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
+                  Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
@@ -28266,6 +28347,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "width": "100%",
+                  },
+                  Object {
+                    "cursor": "pointer",
                   },
                   Object {
                     "outline": "none",
@@ -28449,6 +28533,9 @@ body {
                   ".HvDatePicker-input-2634:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-2634:hover": Object {
+                    "cursor": "pointer",
+                  },
                   ".HvDatePicker-inputCalendarClosed-2630": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
@@ -28457,6 +28544,10 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-2630:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
                   },
                   ".HvDatePicker-inputCalendarOpen-2631": Object {
                     "background": "#FFFFFF",
@@ -29193,6 +29284,13 @@ body {
                   ".HvDatePicker-input-2634:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-2634:hover": Object {
+                    "cursor": "pointer",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-2630:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
                   "actionsContainer": Object {
                     "textAlign": "right",
                   },
@@ -29257,6 +29355,9 @@ body {
                     "&:focus": Object {
                       "outline": "none",
                     },
+                    "&:hover": Object {
+                      "cursor": "pointer",
+                    },
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -29274,6 +29375,10 @@ body {
                     "width": "100%",
                   },
                   "inputCalendarClosed": Object {
+                    "&:hover": Object {
+                      "border": "1px solid #414141",
+                      "cursor": "pointer",
+                    },
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "fontFamily": Array [
@@ -38182,7 +38287,7 @@ body {
               readOnly={true}
               tabIndex={-1}
               type="text"
-              value="5 Jan, 2019"
+              value="5 Jan 2019"
             />
             <WithStyles(Calendar)
               className="HvDatePicker-icon-2635"
@@ -44312,6 +44417,10 @@ body {
   padding-left: 10px;
   padding-right: 30px;
 }
+.HvDatePicker-inputCalendarClosed-34:hover {
+  cursor: pointer;
+  border: 1px solid #414141;
+}
 .HvDatePicker-inputCalendarOpen-35 {
   height: 32px;
   border: 1px solid #FFFFFF;
@@ -44339,6 +44448,9 @@ body {
   line-height: 20px;
   font-weight: 400;
   letter-spacing: 0.02em;
+}
+.HvDatePicker-input-38:hover {
+  cursor: pointer;
 }
 .HvDatePicker-input-38:focus {
   outline: none;
@@ -44503,6 +44615,10 @@ body {
                     "position": "relative",
                   },
                   Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
+                  Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #FFFFFF",
                     "box-shadow": "0 2px 12px rgba(65,65,65,.12)",
@@ -44529,6 +44645,9 @@ body {
                     "letter-spacing": "0.02em",
                     "line-height": "20px",
                     "width": "100%",
+                  },
+                  Object {
+                    "cursor": "pointer",
                   },
                   Object {
                     "outline": "none",
@@ -44712,6 +44831,9 @@ body {
                   ".HvDatePicker-input-38:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-38:hover": Object {
+                    "cursor": "pointer",
+                  },
                   ".HvDatePicker-inputCalendarClosed-34": Object {
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
@@ -44720,6 +44842,10 @@ body {
                     "padding-left": "10px",
                     "padding-right": "30px",
                     "position": "relative",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-34:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
                   },
                   ".HvDatePicker-inputCalendarOpen-35": Object {
                     "background": "#FFFFFF",
@@ -45456,6 +45582,13 @@ body {
                   ".HvDatePicker-input-38:focus": Object {
                     "outline": "none",
                   },
+                  ".HvDatePicker-input-38:hover": Object {
+                    "cursor": "pointer",
+                  },
+                  ".HvDatePicker-inputCalendarClosed-34:hover": Object {
+                    "border": "1px solid #414141",
+                    "cursor": "pointer",
+                  },
                   "actionsContainer": Object {
                     "textAlign": "right",
                   },
@@ -45520,6 +45653,9 @@ body {
                     "&:focus": Object {
                       "outline": "none",
                     },
+                    "&:hover": Object {
+                      "cursor": "pointer",
+                    },
                     "background": "transparent",
                     "border": "none",
                     "color": "#414141",
@@ -45537,6 +45673,10 @@ body {
                     "width": "100%",
                   },
                   "inputCalendarClosed": Object {
+                    "&:hover": Object {
+                      "border": "1px solid #414141",
+                      "cursor": "pointer",
+                    },
                     "background": "#FFFFFF",
                     "border": "1px solid #BCBCBC",
                     "fontFamily": Array [
