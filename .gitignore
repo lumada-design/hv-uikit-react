@@ -51,3 +51,5 @@ eslint.xml
 *.iml
 .history
 .vscode
+
+report.*

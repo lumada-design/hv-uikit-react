@@ -237,7 +237,7 @@ class Wrapper extends React.Component {
     const labels = {
       titleText: "This is a Title",
       subtitleText: "This is a Subtitle"
-    }
+    };
 
     return (
       <HvTable
@@ -250,6 +250,8 @@ class Wrapper extends React.Component {
         defaultSorted={sorted}
         labels={labels}
         onPageSizeChange={this.onPageSizeChange}
+        tableProps={{ tableCaption: "A Custom Table Caption" }}
+        rowCount={data.length}
       />
     );
   }

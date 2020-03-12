@@ -70,6 +70,10 @@ storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
       description:
         "some rows have null data values which should be replaced by emdashes",
       src: "components/table/tableNulls"
+    },
+    {
+      title: "9. With Server Side Data/Pagination",
+      src: "components/table/customTableSample"
     }
   ]
 });

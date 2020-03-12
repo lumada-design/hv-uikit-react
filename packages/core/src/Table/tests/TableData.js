@@ -1,6 +1,25 @@
+/*
+ * Copyright 2020 Hitachi Vantara Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import React from "react";
 import moment from "moment";
-import HvTable from "@hv/uikit-react-core/dist/Table";
+
+const labels = {
+  titleText: "This is a Title",
+  subtitleText: "This is a Subtitle"
+};
 
 const data = [
   {
@@ -103,8 +122,7 @@ const data = [
     riskScore: "98",
     severity: "Critical",
     priority: "Critical",
-    link: { displayText: "Asset 1", url: "blablabla" },
-    noActions: true
+    link: { displayText: "Asset 1", url: "blablabla" }
   },
   {
     id: 4,
@@ -126,8 +144,7 @@ const data = [
     riskScore: "98",
     severity: "Major",
     priority: "High",
-    link: { displayText: "Asset 1", url: "blablabla" },
-    noActions: true
+    link: { displayText: "Asset 1", url: "blablabla" }
   },
   {
     id: 2,
@@ -149,133 +166,90 @@ const data = [
     riskScore: "98",
     severity: "Critical",
     priority: "Critical",
-    link: { displayText: "Asset 1", url: "blablabla" },
-    noActions: true
+    link: { displayText: "Asset 1", url: "blablabla" }
   }
 ];
 
-class Wrapper extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sorted: [{ id: "createdDate", desc: true }],
-      pageSize: 10
-    };
-  }
-
-  getColumns = () => [
-    {
-      headerText: "Title",
-      accessor: "name",
-      cellType: "alpha-numeric",
-      fixed: "left",
-      sortMethod: (a, b) => {
-        if (a === b) {
-          return 0;
-        }
-        const aReverse = Number(a.split(" ")[1]);
-        const bReverse = Number(b.split(" ")[1]);
-        return aReverse > bReverse ? 1 : -1;
+const getColumns = () => [
+  {
+    headerText: "Title",
+    accessor: "name",
+    cellType: "alpha-numeric",
+    fixed: "left",
+    sortMethod: (a, b) => {
+      if (a === b) {
+        return 0;
       }
-    },
-    {
-      headerText: "Time",
-      accessor: "createdDate",
-      format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
-      cellType: "numeric",
-      fixed: "left"
-    },
-    {
-      headerText: "Event Type",
-      accessor: "eventType",
-      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
-    },
-    {
-      headerText: "Status",
-      accessor: "status",
-      format: value => value.original.status.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
-    },
-    {
-      headerText: "Probability",
-      accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
-    },
-    {
-      headerText: "Severity",
-      accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
-    },
-    {
-      headerText: "Priority",
-      accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
-    },
-    {
-      headerText: "Asset",
-      accessor: "asset",
-      cellType: "link",
-      sortable: false
+      const aReverse = Number(a.split(" ")[1]);
+      const bReverse = Number(b.split(" ")[1]);
+      return aReverse > bReverse ? 1 : -1;
     }
-  ];
-
-  onPageSizeChange = newPageSize => {
-    this.setState({
-      pageSize: newPageSize
-    });
-  };
-
-  render() {
-    const { pageSize, sorted, titleText, subtitleText } = this.state;
-
-    const labels = {
-      titleText: "This is a Title",
-      subtitleText: "This is a Subtitle"
-    };
-
-    return (
-      <HvTable
-        data={data}
-        columns={this.getColumns()}
-        defaultPageSize={10}
-        pageSize={pageSize}
-        resizable={false}
-        defaultSorted={sorted}
-        labels={labels}
-        onPageSizeChange={this.onPageSizeChange}
-        idForCheckbox="id"
-        secondaryActions={[
-          {
-            label: "Share",
-            action: data => {
-              alert(`Sharing ${JSON.stringify(data)}`);
-            }
-          },
-          {
-            label: "Hide",
-            action: data => {
-              alert(`Hiding ${JSON.stringify(data)}`);
-            }
-          },
-          {
-            label: "Remove",
-            action: data => {
-              alert(`Removing ${JSON.stringify(data)}`);
-            }
-          }
-        ]}
-        rowCount={data.length}
-      />
-    );
+  },
+  {
+    headerText: "Time",
+    accessor: "createdDate",
+    format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
+    cellType: "numeric"
+  },
+  {
+    headerText: "Event Type",
+    accessor: "eventType",
+    format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+    style: { textTransform: "capitalize" },
+    cellType: "alpha-numeric"
+  },
+  {
+    headerText: "Status",
+    accessor: "status",
+    format: value => value.original.status.toLowerCase(),
+    style: { textTransform: "capitalize" },
+    cellType: "alpha-numeric"
+  },
+  {
+    headerText: "Probability",
+    accessor: "riskScore",
+    format: value => `${value.original.riskScore}%`,
+    cellType: "numeric"
+  },
+  {
+    headerText: "Severity",
+    accessor: "severity",
+    format: value => value.original.severity.toLowerCase(),
+    style: { textTransform: "capitalize" },
+    cellType: "alpha-numeric",
+    sortable: false
+  },
+  {
+    headerText: "Priority",
+    accessor: "priority",
+    format: value => value.original.priority.toLowerCase(),
+    style: { textTransform: "capitalize" },
+    cellType: "alpha-numeric"
+  },
+  {
+    headerText: "Asset",
+    accessor: "asset",
+    cellType: "link",
+    fixed: "right",
+    sortable: false
   }
-}
+];
 
-export default <Wrapper />;
+const sorted = [{ id: "createdDate", desc: true }];
+
+const subElementTemplate = row => (
+  <div>
+    <table>
+      <tr>
+        <th>first</th>
+        <th>second</th>
+      </tr>
+      <tr>
+        <td>{row.original.subElementTitle}</td>
+        <td>{row.original.subElementTitle2}</td>
+      </tr>
+    </table>
+  </div>
+);
+
+export { labels, data, getColumns, sorted, subElementTemplate };

@@ -236,7 +236,7 @@ class Wrapper extends React.Component {
     const labels = {
       titleText: "This is a Title",
       subtitleText: "This is a Subtitle"
-    }
+    };
 
     return (
       <HvTable
@@ -249,6 +249,7 @@ class Wrapper extends React.Component {
         labels={labels}
         onPageSizeChange={this.onPageSizeChange}
         idForCheckbox="id"
+        rowCount={data.length}
       />
     );
   }

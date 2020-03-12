@@ -25924,6 +25924,11 @@ body {
             "pageSizeSelectorDescription": "Select how many to display",
             "pagesIndeterminate": "Many",
             "pagesSeparator": "of",
+            "paginationFirstPageTitle": "Go To First Page",
+            "paginationLastPageTitle": "Go To Last Page",
+            "paginationNextPageTitle": "Go To Next Page",
+            "paginationPreviousPageTitle": "Go To Previous Page",
+            "paginationTitle": "Select Page",
           }
         }
         onPageChange={[Function]}
@@ -28779,27 +28784,30 @@ body {
                 </span>
               </ForwardRef>
             </WithStyles(Component)>
-            <select
-              aria-label="Select how many to display"
-              className="Pagination-pageSizeOptionsSelect-311"
-              disabled={false}
-              id="hv-pagination-4-pageSize"
-              onChange={[Function]}
-              value={5}
-            >
-              <option
-                key="5"
+            <label>
+              <select
+                aria-label="Select how many to display"
+                className="Pagination-pageSizeOptionsSelect-311"
+                disabled={false}
+                id="hv-pagination-4-pageSize"
+                onChange={[Function]}
+                title="Select Page"
                 value={5}
               >
-                5
-              </option>
-              <option
-                key="10"
-                value={10}
-              >
-                10
-              </option>
-            </select>
+                <option
+                  key="5"
+                  value={5}
+                >
+                  5
+                </option>
+                <option
+                  key="10"
+                  value={10}
+                >
+                  10
+                </option>
+              </select>
+            </label>
             <WithStyles(DropDownXS)
               className="Pagination-selectDownIcon-320"
             >
@@ -31671,12 +31679,15 @@ body {
             className="Pagination-pageNavigator-312"
           >
             <WithStyles(IconButton)
+              aria-label="hv-pagination-4-firstPage-button"
               className="Pagination-iconContainer-318"
               disabled={false}
               id="hv-pagination-4-firstPage-button"
               onClick={[Function]}
+              title="Go To First Page"
             >
               <IconButton
+                aria-label="hv-pagination-4-firstPage-button"
                 className="Pagination-iconContainer-318"
                 classes={
                   Object {
@@ -31692,16 +31703,20 @@ body {
                 disabled={false}
                 id="hv-pagination-4-firstPage-button"
                 onClick={[Function]}
+                title="Go To First Page"
               >
                 <WithStyles(ButtonBase)
+                  aria-label="hv-pagination-4-firstPage-button"
                   centerRipple={true}
                   className="MuiIconButton-root-351 Pagination-iconContainer-318"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-firstPage-button"
                   onClick={[Function]}
+                  title="Go To First Page"
                 >
                   <ButtonBase
+                    aria-label="hv-pagination-4-firstPage-button"
                     centerRipple={true}
                     className="MuiIconButton-root-351 Pagination-iconContainer-318"
                     classes={
@@ -31719,9 +31734,11 @@ body {
                     id="hv-pagination-4-firstPage-button"
                     onClick={[Function]}
                     tabIndex="0"
+                    title="Go To First Page"
                     type="button"
                   >
                     <button
+                      aria-label="hv-pagination-4-firstPage-button"
                       className="MuiButtonBase-root-357 MuiIconButton-root-351 Pagination-iconContainer-318"
                       disabled={false}
                       id="hv-pagination-4-firstPage-button"
@@ -31738,6 +31755,7 @@ body {
                       onTouchMove={[Function]}
                       onTouchStart={[Function]}
                       tabIndex="0"
+                      title="Go To First Page"
                       type="button"
                     >
                       <span
@@ -32715,12 +32733,15 @@ body {
               </IconButton>
             </WithStyles(IconButton)>
             <WithStyles(IconButton)
+              arial-label="hv-pagination-4-previousPage-button"
               className="Pagination-iconContainer-318"
               disabled={false}
               id="hv-pagination-4-previousPage-button"
               onClick={[Function]}
+              title="Go To Previous Page"
             >
               <IconButton
+                arial-label="hv-pagination-4-previousPage-button"
                 className="Pagination-iconContainer-318"
                 classes={
                   Object {
@@ -32736,16 +32757,20 @@ body {
                 disabled={false}
                 id="hv-pagination-4-previousPage-button"
                 onClick={[Function]}
+                title="Go To Previous Page"
               >
                 <WithStyles(ButtonBase)
+                  arial-label="hv-pagination-4-previousPage-button"
                   centerRipple={true}
                   className="MuiIconButton-root-351 Pagination-iconContainer-318"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-previousPage-button"
                   onClick={[Function]}
+                  title="Go To Previous Page"
                 >
                   <ButtonBase
+                    arial-label="hv-pagination-4-previousPage-button"
                     centerRipple={true}
                     className="MuiIconButton-root-351 Pagination-iconContainer-318"
                     classes={
@@ -32763,9 +32788,11 @@ body {
                     id="hv-pagination-4-previousPage-button"
                     onClick={[Function]}
                     tabIndex="0"
+                    title="Go To Previous Page"
                     type="button"
                   >
                     <button
+                      arial-label="hv-pagination-4-previousPage-button"
                       className="MuiButtonBase-root-357 MuiIconButton-root-351 Pagination-iconContainer-318"
                       disabled={false}
                       id="hv-pagination-4-previousPage-button"
@@ -32782,6 +32809,7 @@ body {
                       onTouchMove={[Function]}
                       onTouchStart={[Function]}
                       tabIndex="0"
+                      title="Go To Previous Page"
                       type="button"
                     >
                       <span
@@ -39475,12 +39503,15 @@ body {
               </WithStyles(Component)>
             </div>
             <WithStyles(IconButton)
+              arial-label="hv-pagination-4-nextPage-button"
               className="Pagination-iconContainer-318"
               disabled={false}
               id="hv-pagination-4-nextPage-button"
               onClick={[Function]}
+              title="Go To Next Page"
             >
               <IconButton
+                arial-label="hv-pagination-4-nextPage-button"
                 className="Pagination-iconContainer-318"
                 classes={
                   Object {
@@ -39496,16 +39527,20 @@ body {
                 disabled={false}
                 id="hv-pagination-4-nextPage-button"
                 onClick={[Function]}
+                title="Go To Next Page"
               >
                 <WithStyles(ButtonBase)
+                  arial-label="hv-pagination-4-nextPage-button"
                   centerRipple={true}
                   className="MuiIconButton-root-351 Pagination-iconContainer-318"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-nextPage-button"
                   onClick={[Function]}
+                  title="Go To Next Page"
                 >
                   <ButtonBase
+                    arial-label="hv-pagination-4-nextPage-button"
                     centerRipple={true}
                     className="MuiIconButton-root-351 Pagination-iconContainer-318"
                     classes={
@@ -39523,9 +39558,11 @@ body {
                     id="hv-pagination-4-nextPage-button"
                     onClick={[Function]}
                     tabIndex="0"
+                    title="Go To Next Page"
                     type="button"
                   >
                     <button
+                      arial-label="hv-pagination-4-nextPage-button"
                       className="MuiButtonBase-root-357 MuiIconButton-root-351 Pagination-iconContainer-318"
                       disabled={false}
                       id="hv-pagination-4-nextPage-button"
@@ -39542,6 +39579,7 @@ body {
                       onTouchMove={[Function]}
                       onTouchStart={[Function]}
                       tabIndex="0"
+                      title="Go To Next Page"
                       type="button"
                     >
                       <span
@@ -40519,12 +40557,15 @@ body {
               </IconButton>
             </WithStyles(IconButton)>
             <WithStyles(IconButton)
+              aria-label="hv-pagination-4-lastPage-button"
               className="Pagination-iconContainer-318"
               disabled={false}
               id="hv-pagination-4-lastPage-button"
               onClick={[Function]}
+              title="Go To Last Page"
             >
               <IconButton
+                aria-label="hv-pagination-4-lastPage-button"
                 className="Pagination-iconContainer-318"
                 classes={
                   Object {
@@ -40540,16 +40581,20 @@ body {
                 disabled={false}
                 id="hv-pagination-4-lastPage-button"
                 onClick={[Function]}
+                title="Go To Last Page"
               >
                 <WithStyles(ButtonBase)
+                  aria-label="hv-pagination-4-lastPage-button"
                   centerRipple={true}
                   className="MuiIconButton-root-351 Pagination-iconContainer-318"
                   disabled={false}
                   focusRipple={true}
                   id="hv-pagination-4-lastPage-button"
                   onClick={[Function]}
+                  title="Go To Last Page"
                 >
                   <ButtonBase
+                    aria-label="hv-pagination-4-lastPage-button"
                     centerRipple={true}
                     className="MuiIconButton-root-351 Pagination-iconContainer-318"
                     classes={
@@ -40567,9 +40612,11 @@ body {
                     id="hv-pagination-4-lastPage-button"
                     onClick={[Function]}
                     tabIndex="0"
+                    title="Go To Last Page"
                     type="button"
                   >
                     <button
+                      aria-label="hv-pagination-4-lastPage-button"
                       className="MuiButtonBase-root-357 MuiIconButton-root-351 Pagination-iconContainer-318"
                       disabled={false}
                       id="hv-pagination-4-lastPage-button"
@@ -40586,6 +40633,7 @@ body {
                       onTouchMove={[Function]}
                       onTouchStart={[Function]}
                       tabIndex="0"
+                      title="Go To Last Page"
                       type="button"
                     >
                       <span

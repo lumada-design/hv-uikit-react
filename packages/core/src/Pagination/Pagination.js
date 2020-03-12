@@ -31,6 +31,9 @@ import {
 import HvTypography from "../Typography";
 import HvInput from "../Input";
 
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/label-has-for */
+
 const Pagination = ({
   theme,
   classes,
@@ -85,20 +88,23 @@ const Pagination = ({
             <HvTypography component="span" variant="sText">
               {computedLabels.pageSizePrev}
             </HvTypography>
-            <select
-              id={`${internalId}-pageSize`}
-              disabled={pageSize === 0}
-              className={classes.pageSizeOptionsSelect}
-              aria-label={computedLabels.pageSizeSelectorDescription}
-              onChange={e => onPageSizeChange(Number(e.target.value))}
-              value={pageSize}
-            >
-              {pageSizeOptions.map(option => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
+            <label>
+              <select
+                id={`${internalId}-pageSize`}
+                title={computedLabels.paginationTitle}
+                disabled={pageSize === 0}
+                className={classes.pageSizeOptionsSelect}
+                aria-label={computedLabels.pageSizeSelectorDescription}
+                onChange={e => onPageSizeChange(Number(e.target.value))}
+                value={pageSize}
+              >
+                {pageSizeOptions.map(option => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </label>
             <Down className={classes.selectDownIcon} />
             <HvTypography component="span" variant="sText">
               {computedLabels.pageSizeEntryName}
@@ -108,6 +114,8 @@ const Pagination = ({
       </div>
       <div className={classes.pageNavigator}>
         <IconButton
+          aria-label={`${internalId}-firstPage-button`}
+          title={computedLabels.paginationFirstPageTitle}
           id={`${internalId}-firstPage-button`}
           className={classes.iconContainer}
           disabled={!canPrevious}
@@ -119,6 +127,8 @@ const Pagination = ({
           />
         </IconButton>
         <IconButton
+          arial-label={`${internalId}-previousPage-button`}
+          title={computedLabels.paginationPreviousPageTitle}
           id={`${internalId}-previousPage-button`}
           className={classes.iconContainer}
           disabled={!canPrevious}
@@ -132,24 +142,29 @@ const Pagination = ({
         <div className={classes.pageInfo}>
           {showPageJump ? (
             <div className={classes.pageJump}>
-              <HvInput
-                id={`${internalId}-currentPage`}
-                labels={computedLabels}
-                classes={{
-                  input: classes.pageSizeInput,
-                  inputRoot: classes.pageSizeInputRoot,
-                  container: classes.pageSizeInputContainer
-                }}
-                onChange={val => setStatePage(val - 1)}
-                initialValue={`${statePage + 1}`}
-                inputValue={`${statePage === "" ? "" : Number(statePage) + 1}`}
-                onBlur={applyPage}
-                onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
-                validationIconVisible={false}
-                disabled={pageSize === 0}
-                disableClear
-                type="number"
-              />
+              <label>
+                <HvInput
+                  id={`${internalId}-currentPage`}
+                  aria-label={`${internalId}-currentPage`}
+                  labels={computedLabels}
+                  classes={{
+                    input: classes.pageSizeInput,
+                    inputRoot: classes.pageSizeInputRoot,
+                    container: classes.pageSizeInputContainer
+                  }}
+                  onChange={val => setStatePage(val - 1)}
+                  initialValue={`${statePage + 1}`}
+                  inputValue={`${
+                    statePage === "" ? "" : Number(statePage) + 1
+                  }`}
+                  onBlur={applyPage}
+                  onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
+                  validationIconVisible={false}
+                  disabled={pageSize === 0}
+                  disableClear
+                  type="number"
+                />
+              </label>
             </div>
           ) : (
             <HvTypography component="span" variant="sText">
@@ -168,6 +183,8 @@ const Pagination = ({
           </HvTypography>
         </div>
         <IconButton
+          arial-label={`${internalId}-nextPage-button`}
+          title={computedLabels.paginationNextPageTitle}
           id={`${internalId}-nextPage-button`}
           className={classes.iconContainer}
           disabled={!canNext}
@@ -179,6 +196,8 @@ const Pagination = ({
           />
         </IconButton>
         <IconButton
+          aria-label={`${internalId}-lastPage-button`}
+          title={computedLabels.paginationLastPageTitle}
           id={`${internalId}-lastPage-button`}
           className={classes.iconContainer}
           disabled={!canNext}
@@ -309,7 +328,12 @@ Pagination.propTypes = {
     pageSizeEntryName: PropTypes.string,
     pageSizeSelectorDescription: PropTypes.string,
     pagesSeparator: PropTypes.string,
-    pagesIndeterminate: PropTypes.string
+    pagesIndeterminate: PropTypes.string,
+    paginationTitle: PropTypes.string,
+    paginationFirstPageTitle: PropTypes.string,
+    paginationPreviousPageTitle: PropTypes.string,
+    paginationNextPageTitle: PropTypes.string,
+    paginationLastPageTitle: PropTypes.string
   })
 };
 
@@ -331,7 +355,12 @@ Pagination.defaultProps = {
     pageSizeEntryName: "rows",
     pageSizeSelectorDescription: "Select how many to display",
     pagesSeparator: "of",
-    pagesIndeterminate: "Many"
+    pagesIndeterminate: "Many",
+    paginationTitle: "Select Page",
+    paginationFirstPageTitle: "Go To First Page",
+    paginationPreviousPageTitle: "Go To Previous Page",
+    paginationNextPageTitle: "Go To Next Page",
+    paginationLastPageTitle: "Go To Last Page"
   }
 };
 
