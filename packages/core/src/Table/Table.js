@@ -21,7 +21,6 @@ import uniqueId from "lodash/uniqueId";
 import classNames from "classnames";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
-import checkboxHOC from "react-table/lib/hoc/selectTable";
 
 import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
@@ -31,6 +30,7 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
+import checkboxHOC from "./selectTable";
 import {
   appendClassnames,
   createExpanderButton,
@@ -232,22 +232,17 @@ class Table extends React.Component {
 
   getCheckboxProps = () => {
     const { classes } = this.props;
-    const { selection, internalId } = this.state;
+    const { internalId } = this.state;
 
     return {
       selectWidth: 32,
       SelectAllInputComponent: () => (
         <div className={classNames(classes.checkBox)} />
       ),
-      SelectInputComponent: props => (
-        <HvCheckBox
-          inputProps={{ "aria-label": `${internalId}-select-${props.id}` }}
-          id={`${internalId}-select-${props.id}`}
-          checked={isSelected(props.id, selection)}
-          onChange={() => this.toggleSelection(props.id)}
-          onClick={event => event.stopPropagation()}
-        />
-      )
+      toggleSelection: (id, shiftkey, row) => {
+        this.toggleSelection(row.id);
+      },
+      internalId
     };
   };
 
@@ -393,9 +388,6 @@ class Table extends React.Component {
     if (subElementTemplate && rowInfo && rowInfo.row) {
       return {
         ...baseTrProps,
-        onClick: () => {
-          this.toggleExpand(rowInfo.viewIndex);
-        },
         className: classNames(classes.tr, classes.pointer)
       };
     }

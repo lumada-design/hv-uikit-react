@@ -136,6 +136,7 @@ const createExpanderButton = (
           onKeyDown={event =>
             onKeyHandler(event, rest.row._viewIndex, toggleExpand)
           }
+          onClick={() => toggleExpand(rest.row._viewIndex)}
           aria-expanded={isExpanded}
         >
           {isExpanded ? (
