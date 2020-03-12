@@ -1,3 +1,6 @@
+export { default as HvBadge } from "./Badge";
+export * from "./Badge";
+
 export { default as HvButton } from "./Button";
 export * from "./Button";
 
