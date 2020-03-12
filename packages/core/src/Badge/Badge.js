@@ -6,7 +6,15 @@ import Typography from "../Typography";
 import styles from "./styles";
 
 const Badge = props => {
-  const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
+  const {
+    classes,
+    showCount = false,
+    count,
+    maxCount = 99,
+    icon = null,
+    text = null,
+    textVariant = null
+  } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
   const Component = icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
@@ -45,21 +53,13 @@ Badge.propTypes = {
      */
     badge: PropTypes.string,
     /**
-     * Styles applied to the component badge count.
+     * Styles applied to the component badge icon.
      */
-    count: PropTypes.string,
-    /**
-     * Styles applied to the component badge when count greater than 9.
-     */
-    badgeTwoDigits: PropTypes.string,
+    badgeIcon: PropTypes.string,
     /**
      * Styles applied to the component when shows count.
      */
     showCount: PropTypes.string,
-    /**
-     * Styles applied to the component badge icon.
-     */
-    badgeIcon: PropTypes.string,
     /**
      * Styles applied to the component when count has one digit.
      */
@@ -93,14 +93,6 @@ Badge.propTypes = {
    * Text variant.
    */
   textVariant: PropTypes.string
-};
-
-Badge.defaultProps = {
-  showCount: false,
-  maxCount: 99,
-  icon: null,
-  text: null,
-  textVariant: null
 };
 
 export default withStyles(styles, { name: "HvBadge" })(Badge);

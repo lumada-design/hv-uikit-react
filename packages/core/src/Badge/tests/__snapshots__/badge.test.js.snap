@@ -776,11 +776,6 @@ exports[`Badge  should render correctly 1`] = `
   >
     <WithStyles(Badge)
       count={0}
-      icon={null}
-      maxCount={99}
-      showCount={false}
-      text={null}
-      textVariant={null}
     />
   </ContextProvider>
 </ThemeProvider>
