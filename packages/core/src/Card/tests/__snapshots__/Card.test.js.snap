@@ -6,800 +6,777 @@ exports[`Card withStyles should be able to render with every property defined 1`
   theme={null}
   uiKitTheme="dawn"
 >
-  <ThemeProvider
-    theme={
-      Object {
-        "breakpoints": Object {
-          "between": [Function],
-          "down": [Function],
-          "keys": Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-          "only": [Function],
-          "up": [Function],
-          "values": Object {
-            "lg": 1270,
-            "md": 960,
-            "sm": 600,
-            "xl": 1920,
-            "xs": 0,
-          },
-          "width": [Function],
-        },
-        "direction": "ltr",
-        "hv": Object {
-          "deprecated": Object {
-            "palette": Object {
-              "accent": Object {},
-              "atmosphere": Object {},
-              "base": Object {},
-              "semantic": Object {},
-              "support": Object {},
+  <StylesProvider
+    generateClassName={[Function]}
+    injectFirst={true}
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "breakpoints": Object {
+            "between": [Function],
+            "down": [Function],
+            "keys": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+            "only": [Function],
+            "up": [Function],
+            "values": Object {
+              "lg": 1270,
+              "md": 960,
+              "sm": 600,
+              "xl": 1920,
+              "xs": 0,
             },
+            "width": [Function],
+          },
+          "direction": "ltr",
+          "hv": Object {
+            "deprecated": Object {
+              "palette": Object {
+                "accent": Object {},
+                "atmosphere": Object {},
+                "base": Object {},
+                "semantic": Object {},
+                "support": Object {},
+              },
+              "typography": Object {
+                "disabledText": Object {},
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {},
+                  "polarizes": Object {},
+                  "sequential": Object {},
+                  "undefinedState": Object {},
+                },
+              },
+            },
+            "name": "dawn",
+            "palette": Object {
+              "accent": Object {
+                "acce0": "#FFFFFF",
+                "acce1": "#414141",
+                "acce2": "#146BD2",
+                "acce2h": "#4389DB",
+                "acce3": "#CC0000",
+              },
+              "atmosphere": Object {
+                "atmo1": "#FFFFFF",
+                "atmo2": "#F9F9F9",
+                "atmo3": "#F5F5F5",
+                "atmo4": "#F0F0F0",
+                "atmo5": "#DEDEDE",
+                "atmo6": "#BCBCBC",
+                "atmo7": "#999999",
+              },
+              "base": Object {
+                "base1": "#FFFFFF",
+                "base2": "#414141",
+              },
+              "semantic": Object {
+                "sema1": "#63A621",
+                "sema10": "#EF9A9A",
+                "sema11": "#E57373",
+                "sema12": "#EF5350",
+                "sema13": "#E53935",
+                "sema14": "#C62828",
+                "sema15": "#80DEEA",
+                "sema16": "#4DD0E1",
+                "sema17": "#26C6DA",
+                "sema18": "#00ACC1",
+                "sema19": "#00838F",
+                "sema2": "#72CCCB",
+                "sema3": "#E68C17",
+                "sema4": "#FF5252",
+                "sema5": "#C51162",
+                "sema6": "#AA00FF",
+                "sema7": "#D3E3F6",
+                "sema8": "#DFECD1",
+                "sema9": "#F5D8D8",
+              },
+              "support": Object {
+                "supp1": "#0F8B8D",
+                "supp2": "#734B6D",
+                "supp3": "#4E7599",
+                "supp4": "#C19C31",
+                "supp5": "#546B6B",
+              },
+            },
+            "spacing": Object {
+              "lg": 60,
+              "md": 30,
+              "sm": 20,
+              "xl": 90,
+              "xs": 10,
+            },
+            "type": "light",
             "typography": Object {
-              "disabledText": Object {},
+              "3xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "4xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "5xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "disabledButtonText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "disabledText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "highlightText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "infoText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "inlineLink": Object {
+                "color": "#146BD2",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "lTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "labelText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "mTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "normalText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "placeholderText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "sLink": Object {
+                "color": "#146BD2",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "selectedNavText": Object {
+                "color": "#CC0000",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "selectedText": Object {
+                "background": "#414141",
+                "color": "#F9F9F9",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "vizText": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
+              "xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "xsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
+              "xxlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "xxsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
             },
             "viz": Object {
               "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "undefinedState": Object {},
+                "categorical": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz10": "#419393",
+                  "cviz11": "#58C9DD",
+                  "cviz12": "#F8C189",
+                  "cviz13": "#528BBF",
+                  "cviz14": "#DE64BD",
+                  "cviz15": "#73BF9C",
+                  "cviz16": "#9672C1",
+                  "cviz17": "#EB95AF",
+                  "cviz18": "#646A98",
+                  "cviz19": "#D88136",
+                  "cviz2": "#FF990D",
+                  "cviz20": "#309B59",
+                  "cviz3": "#D31F6B",
+                  "cviz4": "#FFD00A",
+                  "cviz5": "#18C38A",
+                  "cviz6": "#098CB2",
+                  "cviz7": "#EA5B86",
+                  "cviz8": "#9B469B",
+                  "cviz9": "#F4763D",
+                },
+                "polarizes": Object {
+                  "cviz21": "#869F1E",
+                  "cviz22": "#A4991C",
+                  "cviz23": "#C4931A",
+                  "cviz24": "#E68C17",
+                  "cviz25": "#F27034",
+                  "cviz26": "#FF5252",
+                  "cviz27": "#EC3D57",
+                  "cviz28": "#D8265D",
+                  "sema1": "#63A621",
+                  "sema5": "#C51162",
+                },
+                "sequential": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz1_100": "#E3F1F6",
+                  "cviz1_200": "#CFEAF3",
+                  "cviz1_300": "#BAE3F3",
+                  "cviz1_400": "#A6DCEE",
+                  "cviz1_500": "#92D5EC",
+                  "cviz1_600": "#7ECEE9",
+                  "cviz1_700": "#69C7E7",
+                  "cviz1_800": "#55C0E4",
+                  "cviz1_900": "#40B9E2",
+                },
+                "undefinedState": Object {
+                  "atmo5": "#DEDEDE",
+                },
               },
             },
           },
-          "name": "dawn",
-          "palette": Object {
-            "accent": Object {
-              "acce0": "#FFFFFF",
-              "acce1": "#414141",
-              "acce2": "#146BD2",
-              "acce2h": "#4389DB",
-              "acce3": "#CC0000",
-            },
-            "atmosphere": Object {
-              "atmo1": "#FFFFFF",
-              "atmo2": "#F9F9F9",
-              "atmo3": "#F5F5F5",
-              "atmo4": "#F0F0F0",
-              "atmo5": "#DEDEDE",
-              "atmo6": "#BCBCBC",
-              "atmo7": "#999999",
-            },
-            "base": Object {
-              "base1": "#FFFFFF",
-              "base2": "#414141",
-            },
-            "semantic": Object {
-              "sema1": "#63A621",
-              "sema10": "#EF9A9A",
-              "sema11": "#E57373",
-              "sema12": "#EF5350",
-              "sema13": "#E53935",
-              "sema14": "#C62828",
-              "sema15": "#80DEEA",
-              "sema16": "#4DD0E1",
-              "sema17": "#26C6DA",
-              "sema18": "#00ACC1",
-              "sema19": "#00838F",
-              "sema2": "#72CCCB",
-              "sema3": "#E68C17",
-              "sema4": "#FF5252",
-              "sema5": "#C51162",
-              "sema6": "#AA00FF",
-              "sema7": "#D3E3F6",
-              "sema8": "#DFECD1",
-              "sema9": "#F5D8D8",
-            },
-            "support": Object {
-              "supp1": "#0F8B8D",
-              "supp2": "#734B6D",
-              "supp3": "#4E7599",
-              "supp4": "#C19C31",
-              "supp5": "#546B6B",
-            },
-          },
-          "spacing": Object {
-            "lg": 60,
-            "md": 30,
-            "sm": 20,
-            "xl": 90,
-            "xs": 10,
-          },
-          "type": "light",
-          "typography": Object {
-            "3xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "4xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "5xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "disabledButtonText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "disabledText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "highlightText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "infoText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "inlineLink": Object {
-              "color": "#146BD2",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "lTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "labelText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "mTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "normalText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "placeholderText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "sLink": Object {
-              "color": "#146BD2",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "selectedNavText": Object {
-              "color": "#CC0000",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "selectedText": Object {
-              "background": "#414141",
-              "color": "#F9F9F9",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "vizText": Object {
-              "color": "#414141",
-              "fontSize": "10px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "15px",
-            },
-            "xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "xsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-            "xxlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "xxsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-          },
-          "viz": Object {
-            "palette": Object {
-              "categorical": Object {
-                "cviz1": "#2DB3E0",
-                "cviz10": "#419393",
-                "cviz11": "#58C9DD",
-                "cviz12": "#F8C189",
-                "cviz13": "#528BBF",
-                "cviz14": "#DE64BD",
-                "cviz15": "#73BF9C",
-                "cviz16": "#9672C1",
-                "cviz17": "#EB95AF",
-                "cviz18": "#646A98",
-                "cviz19": "#D88136",
-                "cviz2": "#FF990D",
-                "cviz20": "#309B59",
-                "cviz3": "#D31F6B",
-                "cviz4": "#FFD00A",
-                "cviz5": "#18C38A",
-                "cviz6": "#098CB2",
-                "cviz7": "#EA5B86",
-                "cviz8": "#9B469B",
-                "cviz9": "#F4763D",
+          "mixins": Object {
+            "gutters": [Function],
+            "toolbar": Object {
+              "@media (min-width:0px) and (orientation: landscape)": Object {
+                "minHeight": 48,
               },
-              "polarizes": Object {
-                "cviz21": "#869F1E",
-                "cviz22": "#A4991C",
-                "cviz23": "#C4931A",
-                "cviz24": "#E68C17",
-                "cviz25": "#F27034",
-                "cviz26": "#FF5252",
-                "cviz27": "#EC3D57",
-                "cviz28": "#D8265D",
-                "sema1": "#63A621",
-                "sema5": "#C51162",
-              },
-              "sequential": Object {
-                "cviz1": "#2DB3E0",
-                "cviz1_100": "#E3F1F6",
-                "cviz1_200": "#CFEAF3",
-                "cviz1_300": "#BAE3F3",
-                "cviz1_400": "#A6DCEE",
-                "cviz1_500": "#92D5EC",
-                "cviz1_600": "#7ECEE9",
-                "cviz1_700": "#69C7E7",
-                "cviz1_800": "#55C0E4",
-                "cviz1_900": "#40B9E2",
-              },
-              "undefinedState": Object {
-                "atmo5": "#DEDEDE",
-              },
-            },
-          },
-        },
-        "mixins": Object {
-          "gutters": [Function],
-          "toolbar": Object {
-            "@media (min-width:0px) and (orientation: landscape)": Object {
-              "minHeight": 48,
-            },
-            "@media (min-width:600px)": Object {
-              "minHeight": 64,
-            },
-            "minHeight": 56,
-          },
-        },
-        "overrides": Object {
-          "MuiAppBar": Object {
-            "colorDefault": Object {
-              "backgroundColor": "#FFFFFF",
-              "contrastText": "#414141",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "height": "50px",
-              },
-              "borderTop": "4px solid #CC0000",
-            },
-          },
-          "MuiIconButton": Object {
-            "root": Object {
-              "&:focus": Object {
-                "outlineColor": "Highlight",
-                "outlineOffset": -2,
-                "outlineStyle": "auto",
-                "outlineWidth": 4,
-              },
-              "&:hover": Object {
-                "backgroundColor": "#F0F0F0",
-              },
-              "borderRadius": 0,
-              "padding": 0,
-            },
-          },
-          "MuiToolbar": Object {
-            "dense": Object {
-              "minHeight": "46px",
-            },
-            "gutters": Object {
               "@media (min-width:600px)": Object {
+                "minHeight": 64,
+              },
+              "minHeight": 56,
+            },
+          },
+          "overrides": Object {
+            "MuiAppBar": Object {
+              "colorDefault": Object {
+                "backgroundColor": "#FFFFFF",
+                "contrastText": "#414141",
+              },
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "height": "50px",
+                },
+                "borderTop": "4px solid #CC0000",
+              },
+            },
+            "MuiIconButton": Object {
+              "root": Object {
+                "&:focus": Object {
+                  "outlineColor": "Highlight",
+                  "outlineOffset": -2,
+                  "outlineStyle": "auto",
+                  "outlineWidth": 4,
+                },
+                "&:hover": Object {
+                  "backgroundColor": "#F0F0F0",
+                },
+                "borderRadius": 0,
+                "padding": 0,
+              },
+            },
+            "MuiToolbar": Object {
+              "dense": Object {
+                "minHeight": "46px",
+              },
+              "gutters": Object {
+                "@media (min-width:600px)": Object {
+                  "paddingLeft": "20px",
+                  "paddingRight": "20px",
+                },
                 "paddingLeft": "20px",
                 "paddingRight": "20px",
               },
-              "paddingLeft": "20px",
-              "paddingRight": "20px",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "minHeight": "46px",
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "minHeight": "46px",
+                },
+                "alignItems": "center",
               },
-              "alignItems": "center",
             },
           },
-        },
-        "palette": Object {
-          "acce0": "#FFFFFF",
-          "acce1": "#414141",
-          "acce2": "#146BD2",
-          "acce2h": "#4389DB",
-          "acce3": "#CC0000",
-          "action": Object {
-            "activatedOpacity": 0.12,
-            "active": "rgba(0, 0, 0, 0.54)",
-            "disabled": "rgba(0, 0, 0, 0.26)",
-            "disabledBackground": "rgba(0, 0, 0, 0.12)",
-            "disabledOpacity": 0.38,
-            "focus": "rgba(0, 0, 0, 0.12)",
-            "focusOpacity": 0.12,
-            "hover": "rgba(0, 0, 0, 0.04)",
-            "hoverOpacity": 0.04,
-            "selected": "rgba(0, 0, 0, 0.08)",
-            "selectedOpacity": 0.08,
+          "palette": Object {
+            "acce0": "#FFFFFF",
+            "acce1": "#414141",
+            "acce2": "#146BD2",
+            "acce2h": "#4389DB",
+            "acce3": "#CC0000",
+            "action": Object {
+              "activatedOpacity": 0.12,
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+              "disabledBackground": "rgba(0, 0, 0, 0.12)",
+              "disabledOpacity": 0.38,
+              "focus": "rgba(0, 0, 0, 0.12)",
+              "focusOpacity": 0.12,
+              "hover": "rgba(0, 0, 0, 0.04)",
+              "hoverOpacity": 0.04,
+              "selected": "rgba(0, 0, 0, 0.08)",
+              "selectedOpacity": 0.08,
+            },
+            "atmo1": "#FFFFFF",
+            "atmo2": "#F9F9F9",
+            "atmo3": "#F5F5F5",
+            "atmo4": "#F0F0F0",
+            "atmo5": "#DEDEDE",
+            "atmo6": "#BCBCBC",
+            "atmo7": "#999999",
+            "augmentColor": [Function],
+            "background": Object {
+              "default": "#F5F5F5",
+              "paper": "#fff",
+            },
+            "base1": "#FFFFFF",
+            "base2": "#414141",
+            "common": Object {
+              "black": "#000",
+              "white": "#fff",
+            },
+            "contrastThreshold": 3,
+            "divider": "rgba(0, 0, 0, 0.12)",
+            "error": Object {
+              "contrastText": "#fff",
+              "dark": "#d32f2f",
+              "light": "#e57373",
+              "main": "#f44336",
+            },
+            "getContrastText": [Function],
+            "grey": Object {
+              "100": "#f5f5f5",
+              "200": "#eeeeee",
+              "300": "#e0e0e0",
+              "400": "#bdbdbd",
+              "50": "#fafafa",
+              "500": "#9e9e9e",
+              "600": "#757575",
+              "700": "#616161",
+              "800": "#424242",
+              "900": "#212121",
+              "A100": "#d5d5d5",
+              "A200": "#aaaaaa",
+              "A400": "#303030",
+              "A700": "#616161",
+            },
+            "info": Object {
+              "contrastText": "#fff",
+              "dark": "#1976d2",
+              "light": "#64b5f6",
+              "main": "#2196f3",
+            },
+            "primary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(14, 74, 147)",
+              "light": "#4389DB",
+              "main": "#146BD2",
+            },
+            "secondary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(45, 45, 45)",
+              "light": "#999999",
+              "main": "#414141",
+            },
+            "sema1": "#63A621",
+            "sema10": "#EF9A9A",
+            "sema11": "#E57373",
+            "sema12": "#EF5350",
+            "sema13": "#E53935",
+            "sema14": "#C62828",
+            "sema15": "#80DEEA",
+            "sema16": "#4DD0E1",
+            "sema17": "#26C6DA",
+            "sema18": "#00ACC1",
+            "sema19": "#00838F",
+            "sema2": "#72CCCB",
+            "sema3": "#E68C17",
+            "sema4": "#FF5252",
+            "sema5": "#C51162",
+            "sema6": "#AA00FF",
+            "sema7": "#D3E3F6",
+            "sema8": "#DFECD1",
+            "sema9": "#F5D8D8",
+            "success": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#388e3c",
+              "light": "#81c784",
+              "main": "#4caf50",
+            },
+            "supp1": "#0F8B8D",
+            "supp2": "#734B6D",
+            "supp3": "#4E7599",
+            "supp4": "#C19C31",
+            "supp5": "#546B6B",
+            "text": Object {
+              "disabled": "#999999",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "primary": "#414141",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+            "tonalOffset": 0.2,
+            "type": "light",
+            "warning": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#f57c00",
+              "light": "#ffb74d",
+              "main": "#ff9800",
+            },
           },
-          "atmo1": "#FFFFFF",
-          "atmo2": "#F9F9F9",
-          "atmo3": "#F5F5F5",
-          "atmo4": "#F0F0F0",
-          "atmo5": "#DEDEDE",
-          "atmo6": "#BCBCBC",
-          "atmo7": "#999999",
-          "augmentColor": [Function],
-          "background": Object {
-            "default": "#F5F5F5",
-            "paper": "#fff",
+          "props": Object {
+            "MuiButtonBase": Object {
+              "disableRipple": true,
+            },
+            "MuiInput": Object {
+              "disableUnderline": true,
+            },
           },
-          "base1": "#FFFFFF",
-          "base2": "#414141",
-          "common": Object {
-            "black": "#000",
-            "white": "#fff",
-          },
-          "contrastThreshold": 3,
-          "divider": "rgba(0, 0, 0, 0.12)",
-          "error": Object {
-            "contrastText": "#fff",
-            "dark": "#d32f2f",
-            "light": "#e57373",
-            "main": "#f44336",
-          },
-          "getContrastText": [Function],
-          "grey": Object {
-            "100": "#f5f5f5",
-            "200": "#eeeeee",
-            "300": "#e0e0e0",
-            "400": "#bdbdbd",
-            "50": "#fafafa",
-            "500": "#9e9e9e",
-            "600": "#757575",
-            "700": "#616161",
-            "800": "#424242",
-            "900": "#212121",
-            "A100": "#d5d5d5",
-            "A200": "#aaaaaa",
-            "A400": "#303030",
-            "A700": "#616161",
-          },
-          "info": Object {
-            "contrastText": "#fff",
-            "dark": "#1976d2",
-            "light": "#64b5f6",
-            "main": "#2196f3",
-          },
-          "primary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(14, 74, 147)",
-            "light": "#4389DB",
-            "main": "#146BD2",
-          },
-          "secondary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(45, 45, 45)",
-            "light": "#999999",
-            "main": "#414141",
-          },
-          "sema1": "#63A621",
-          "sema10": "#EF9A9A",
-          "sema11": "#E57373",
-          "sema12": "#EF5350",
-          "sema13": "#E53935",
-          "sema14": "#C62828",
-          "sema15": "#80DEEA",
-          "sema16": "#4DD0E1",
-          "sema17": "#26C6DA",
-          "sema18": "#00ACC1",
-          "sema19": "#00838F",
-          "sema2": "#72CCCB",
-          "sema3": "#E68C17",
-          "sema4": "#FF5252",
-          "sema5": "#C51162",
-          "sema6": "#AA00FF",
-          "sema7": "#D3E3F6",
-          "sema8": "#DFECD1",
-          "sema9": "#F5D8D8",
-          "success": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#388e3c",
-            "light": "#81c784",
-            "main": "#4caf50",
-          },
-          "supp1": "#0F8B8D",
-          "supp2": "#734B6D",
-          "supp3": "#4E7599",
-          "supp4": "#C19C31",
-          "supp5": "#546B6B",
-          "text": Object {
-            "disabled": "#999999",
-            "hint": "rgba(0, 0, 0, 0.38)",
-            "primary": "#414141",
-            "secondary": "rgba(0, 0, 0, 0.54)",
-          },
-          "tonalOffset": 0.2,
-          "type": "light",
-          "warning": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#f57c00",
-            "light": "#ffb74d",
-            "main": "#ff9800",
-          },
-        },
-        "props": Object {
-          "MuiButtonBase": Object {
-            "disableRipple": true,
-          },
-          "MuiInput": Object {
-            "disableUnderline": true,
-          },
-        },
-        "shadows": Array [
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-        ],
-        "shape": Object {
-          "borderRadius": 0,
-        },
-        "spacing": [Function],
-        "transitions": Object {
-          "create": [Function],
-          "duration": Object {
-            "complex": 375,
-            "enteringScreen": 225,
-            "leavingScreen": 195,
-            "short": 250,
-            "shorter": 200,
-            "shortest": 150,
-            "standard": 300,
-          },
-          "easing": Object {
-            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-          },
-          "getAutoHeightDuration": [Function],
-        },
-        "typography": Object {
-          "body1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "body2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "button": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-            "textTransform": "uppercase",
-          },
-          "caption": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 1.66,
-          },
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
+          "shadows": Array [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
           ],
-          "fontSize": 14,
-          "fontWeightBold": 700,
-          "fontWeightLight": 300,
-          "fontWeightMedium": 500,
-          "fontWeightRegular": 400,
-          "h1": Object {
-            "color": "#414141",
+          "shape": Object {
+            "borderRadius": 0,
+          },
+          "spacing": [Function],
+          "transitions": Object {
+            "create": [Function],
+            "duration": Object {
+              "complex": 375,
+              "enteringScreen": 225,
+              "leavingScreen": 195,
+              "short": 250,
+              "shorter": 200,
+              "shortest": 150,
+              "standard": 300,
+            },
+            "easing": Object {
+              "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+              "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+              "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+              "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+            },
+            "getAutoHeightDuration": [Function],
+          },
+          "typography": Object {
+            "body1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "body2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "button": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+              "textTransform": "uppercase",
+            },
+            "caption": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 1.66,
+            },
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "32px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+            "fontSize": 14,
+            "fontWeightBold": 700,
+            "fontWeightLight": 300,
+            "fontWeightMedium": 500,
+            "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h3": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h4": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h5": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "lineHeight": 1.334,
+            },
+            "h6": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "lineHeight": 1.6,
+            },
+            "htmlFontSize": 16,
+            "overline": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
+            },
+            "pxToRem": [Function],
+            "round": [Function],
+            "subtitle1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "subtitle2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
+            },
+            "suppressDeprecationWarnings": true,
           },
-          "h2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "32px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+          "zIndex": Object {
+            "appBar": 1100,
+            "drawer": 1200,
+            "mobileStepper": 1000,
+            "modal": 1300,
+            "snackbar": 1400,
+            "speedDial": 1050,
+            "tooltip": 1500,
           },
-          "h3": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h4": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h5": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.5rem",
-            "fontWeight": 400,
-            "lineHeight": 1.334,
-          },
-          "h6": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.25rem",
-            "fontWeight": 500,
-            "lineHeight": 1.6,
-          },
-          "htmlFontSize": 16,
-          "overline": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 2.66,
-            "textTransform": "uppercase",
-          },
-          "pxToRem": [Function],
-          "round": [Function],
-          "subtitle1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "subtitle2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
-          },
-          "suppressDeprecationWarnings": true,
-        },
-        "zIndex": Object {
-          "appBar": 1100,
-          "drawer": 1200,
-          "mobileStepper": 1000,
-          "modal": 1300,
-          "snackbar": 1400,
-          "speedDial": 1050,
-          "tooltip": 1500,
-        },
-        Symbol(mui.nested): false,
+          Symbol(mui.nested): false,
+        }
       }
-    }
-  >
-    <WithStyles(CssBaseline)>
-      <CssBaseline
-        classes={Object {}}
-      />
-    </WithStyles(CssBaseline)>
-    <WithStyles(HvCard)
-      actions="actions"
-      actionsAlignment="left"
-      actionsCallback={[Function]}
-      checkboxLabel=""
-      checkboxSelected={false}
-      checkboxValue="value"
-      className=""
-      headerTitle="title"
-      icon="icon"
-      innerCardContent={<div />}
-      isSelectable={true}
-      maxVisibleActions={1}
-      mediaPath="path"
-      mediaTitle=""
-      noFooter={false}
-      noHeader={false}
-      onChange={[Function]}
-      onClickAction={null}
-      selectOnClickAction={false}
-      semantic="sema0"
-      subheader="subtitle"
     >
-      <HvCard
+      <CssBaseline />
+      <WithStyles(HvCard)
         actions="actions"
         actionsAlignment="left"
         actionsCallback={[Function]}
@@ -807,38 +784,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
         checkboxSelected={false}
         checkboxValue="value"
         className=""
-        classes={
-          Object {
-            "cardOutLine": "HvCard-cardOutLine-24",
-            "root": "HvCard-root-1",
-            "selectable": "HvCard-selectable-27",
-            "selected": "HvCard-selected-28",
-            "sema0": "HvCard-sema0-2",
-            "sema1": "HvCard-sema1-3",
-            "sema10": "HvCard-sema10-12",
-            "sema11": "HvCard-sema11-13",
-            "sema12": "HvCard-sema12-14",
-            "sema13": "HvCard-sema13-15",
-            "sema14": "HvCard-sema14-16",
-            "sema15": "HvCard-sema15-17",
-            "sema16": "HvCard-sema16-18",
-            "sema17": "HvCard-sema17-19",
-            "sema18": "HvCard-sema18-20",
-            "sema19": "HvCard-sema19-21",
-            "sema2": "HvCard-sema2-4",
-            "sema3": "HvCard-sema3-5",
-            "sema4": "HvCard-sema4-6",
-            "sema5": "HvCard-sema5-7",
-            "sema6": "HvCard-sema6-8",
-            "sema7": "HvCard-sema7-9",
-            "sema8": "HvCard-sema8-10",
-            "sema9": "HvCard-sema9-11",
-            "semanticContainer": "HvCard-semanticContainer-23",
-            "semanticSelected": "HvCard-semanticSelected-22",
-            "upperAreaReference": "HvCard-upperAreaReference-25",
-            "upperAreaSelectable": "HvCard-upperAreaSelectable-26",
-          }
-        }
         headerTitle="title"
         icon="icon"
         innerCardContent={<div />}
@@ -854,95 +799,128 @@ exports[`Card withStyles should be able to render with every property defined 1`
         semantic="sema0"
         subheader="subtitle"
       >
-        <div
-          className="HvCard-semanticContainer-23"
+        <HvCard
+          actions="actions"
+          actionsAlignment="left"
+          actionsCallback={[Function]}
+          checkboxLabel=""
+          checkboxSelected={false}
+          checkboxValue="value"
+          className=""
+          classes={
+            Object {
+              "cardOutLine": "HvCard-cardOutLine",
+              "root": "HvCard-root",
+              "selectable": "HvCard-selectable",
+              "selected": "HvCard-selected",
+              "sema0": "HvCard-sema0",
+              "sema1": "HvCard-sema1",
+              "sema10": "HvCard-sema10",
+              "sema11": "HvCard-sema11",
+              "sema12": "HvCard-sema12",
+              "sema13": "HvCard-sema13",
+              "sema14": "HvCard-sema14",
+              "sema15": "HvCard-sema15",
+              "sema16": "HvCard-sema16",
+              "sema17": "HvCard-sema17",
+              "sema18": "HvCard-sema18",
+              "sema19": "HvCard-sema19",
+              "sema2": "HvCard-sema2",
+              "sema3": "HvCard-sema3",
+              "sema4": "HvCard-sema4",
+              "sema5": "HvCard-sema5",
+              "sema6": "HvCard-sema6",
+              "sema7": "HvCard-sema7",
+              "sema8": "HvCard-sema8",
+              "sema9": "HvCard-sema9",
+              "semanticContainer": "HvCard-semanticContainer",
+              "semanticSelected": "HvCard-semanticSelected",
+              "upperAreaReference": "HvCard-upperAreaReference",
+              "upperAreaSelectable": "HvCard-upperAreaSelectable",
+            }
+          }
+          headerTitle="title"
+          icon="icon"
+          innerCardContent={<div />}
+          isSelectable={true}
+          maxVisibleActions={1}
+          mediaPath="path"
+          mediaTitle=""
+          noFooter={false}
+          noHeader={false}
+          onChange={[Function]}
+          onClickAction={null}
+          selectOnClickAction={false}
+          semantic="sema0"
+          subheader="subtitle"
         >
           <div
-            className="HvCard-sema0-2"
-          />
-        </div>
-        <WithStyles(ForwardRef(Card))
-          className="HvCard-root-1 HvCard-selectable-27"
-          id="hv-card-1"
-        >
-          <ForwardRef(Card)
-            className="HvCard-root-1 HvCard-selectable-27"
-            classes={
-              Object {
-                "root": "MuiCard-root",
-              }
-            }
+            className="HvCard-semanticContainer"
+          >
+            <div
+              className="HvCard-sema0"
+            />
+          </div>
+          <WithStyles(ForwardRef(Card))
+            className="HvCard-root HvCard-selectable"
             id="hv-card-1"
           >
-            <WithStyles(ForwardRef(Paper))
-              className="MuiCard-root HvCard-root-1 HvCard-selectable-27"
-              elevation={1}
+            <ForwardRef(Card)
+              className="HvCard-root HvCard-selectable"
+              classes={
+                Object {
+                  "root": "MuiCard-root",
+                }
+              }
               id="hv-card-1"
             >
-              <ForwardRef(Paper)
-                className="MuiCard-root HvCard-root-1 HvCard-selectable-27"
-                classes={
-                  Object {
-                    "elevation0": "MuiPaper-elevation0",
-                    "elevation1": "MuiPaper-elevation1",
-                    "elevation10": "MuiPaper-elevation10",
-                    "elevation11": "MuiPaper-elevation11",
-                    "elevation12": "MuiPaper-elevation12",
-                    "elevation13": "MuiPaper-elevation13",
-                    "elevation14": "MuiPaper-elevation14",
-                    "elevation15": "MuiPaper-elevation15",
-                    "elevation16": "MuiPaper-elevation16",
-                    "elevation17": "MuiPaper-elevation17",
-                    "elevation18": "MuiPaper-elevation18",
-                    "elevation19": "MuiPaper-elevation19",
-                    "elevation2": "MuiPaper-elevation2",
-                    "elevation20": "MuiPaper-elevation20",
-                    "elevation21": "MuiPaper-elevation21",
-                    "elevation22": "MuiPaper-elevation22",
-                    "elevation23": "MuiPaper-elevation23",
-                    "elevation24": "MuiPaper-elevation24",
-                    "elevation3": "MuiPaper-elevation3",
-                    "elevation4": "MuiPaper-elevation4",
-                    "elevation5": "MuiPaper-elevation5",
-                    "elevation6": "MuiPaper-elevation6",
-                    "elevation7": "MuiPaper-elevation7",
-                    "elevation8": "MuiPaper-elevation8",
-                    "elevation9": "MuiPaper-elevation9",
-                    "outlined": "MuiPaper-outlined",
-                    "root": "MuiPaper-root",
-                    "rounded": "MuiPaper-rounded",
-                  }
-                }
+              <WithStyles(ForwardRef(Paper))
+                className="MuiCard-root HvCard-root HvCard-selectable"
                 elevation={1}
                 id="hv-card-1"
               >
-                <div
-                  className="MuiPaper-root MuiCard-root HvCard-root-1 HvCard-selectable-27 MuiPaper-elevation1 MuiPaper-rounded"
+                <ForwardRef(Paper)
+                  className="MuiCard-root HvCard-root HvCard-selectable"
+                  classes={
+                    Object {
+                      "elevation0": "MuiPaper-elevation0",
+                      "elevation1": "MuiPaper-elevation1",
+                      "elevation10": "MuiPaper-elevation10",
+                      "elevation11": "MuiPaper-elevation11",
+                      "elevation12": "MuiPaper-elevation12",
+                      "elevation13": "MuiPaper-elevation13",
+                      "elevation14": "MuiPaper-elevation14",
+                      "elevation15": "MuiPaper-elevation15",
+                      "elevation16": "MuiPaper-elevation16",
+                      "elevation17": "MuiPaper-elevation17",
+                      "elevation18": "MuiPaper-elevation18",
+                      "elevation19": "MuiPaper-elevation19",
+                      "elevation2": "MuiPaper-elevation2",
+                      "elevation20": "MuiPaper-elevation20",
+                      "elevation21": "MuiPaper-elevation21",
+                      "elevation22": "MuiPaper-elevation22",
+                      "elevation23": "MuiPaper-elevation23",
+                      "elevation24": "MuiPaper-elevation24",
+                      "elevation3": "MuiPaper-elevation3",
+                      "elevation4": "MuiPaper-elevation4",
+                      "elevation5": "MuiPaper-elevation5",
+                      "elevation6": "MuiPaper-elevation6",
+                      "elevation7": "MuiPaper-elevation7",
+                      "elevation8": "MuiPaper-elevation8",
+                      "elevation9": "MuiPaper-elevation9",
+                      "outlined": "MuiPaper-outlined",
+                      "root": "MuiPaper-root",
+                      "rounded": "MuiPaper-rounded",
+                    }
+                  }
+                  elevation={1}
                   id="hv-card-1"
                 >
-                  <WithStyles(Focus)
-                    configuration={Object {}}
-                    disabled={false}
-                    focusDisabled={true}
-                    focusOnClick={false}
-                    rootRef={Object {}}
-                    selected={false}
-                    strategy="card"
-                    useArrows={true}
-                    useFalseFocus={true}
+                  <div
+                    className="MuiPaper-root MuiCard-root HvCard-root HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
+                    id="hv-card-1"
                   >
-                    <Focus
-                      classes={
-                        Object {
-                          "disabled": "Focus-disabled-60",
-                          "externalReference": "Focus-externalReference-63",
-                          "falseFocus": "Focus-falseFocus-64",
-                          "focusDisabled": "Focus-focusDisabled-61",
-                          "focused": "Focus-focused-62",
-                          "root": "Focus-root-58",
-                          "selected": "Focus-selected-59",
-                        }
-                      }
+                    <WithStyles(Focus)
                       configuration={Object {}}
                       disabled={false}
                       focusDisabled={true}
@@ -953,82 +931,85 @@ exports[`Card withStyles should be able to render with every property defined 1`
                       useArrows={true}
                       useFalseFocus={true}
                     >
-                      <ConditionalWrapper
-                        condition={true}
-                        wrapper={[Function]}
+                      <Focus
+                        classes={
+                          Object {
+                            "disabled": "Focus-disabled-32",
+                            "externalReference": "Focus-externalReference-35",
+                            "falseFocus": "Focus-falseFocus-36",
+                            "focusDisabled": "Focus-focusDisabled-33",
+                            "focused": "Focus-focused-34",
+                            "root": "Focus-root-30",
+                            "selected": "Focus-selected-31",
+                          }
+                        }
+                        configuration={Object {}}
+                        disabled={false}
+                        focusDisabled={true}
+                        focusOnClick={false}
+                        rootRef={Object {}}
+                        selected={false}
+                        strategy="card"
+                        useArrows={true}
+                        useFalseFocus={true}
                       >
-                        <div
-                          className="Focus-externalReference-63"
+                        <ConditionalWrapper
+                          condition={true}
+                          wrapper={[Function]}
                         >
                           <div
-                            aria-checked={false}
-                            className="Focus-root-58 Focus-focusDisabled-61"
-                            id="hv-card-1-upper-area"
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            selected={false}
+                            className="Focus-externalReference-35"
                           >
-                            <WithStyles(Header)
-                              aria-label="title"
-                              className=""
-                              headerTitle="title"
-                              icon="icon"
-                              id="hv-card-1-header"
-                              onClickAction={[Function]}
-                              subheader="subtitle"
+                            <div
+                              aria-checked={false}
+                              className="Focus-root-30 Focus-focusDisabled-33"
+                              id="hv-card-1-upper-area"
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              selected={false}
                             >
-                              <Header
+                              <WithStyles(Header)
                                 aria-label="title"
                                 className=""
-                                classes={
-                                  Object {
-                                    "action": "HvCardHeader-action-69",
-                                    "content": "HvCardHeader-content-70",
-                                    "root": "HvCardHeader-root-65",
-                                    "subheader": "HvCardHeader-subheader-68",
-                                    "title": "HvCardHeader-title-66",
-                                    "titleShort": "HvCardHeader-titleShort-67",
-                                  }
-                                }
                                 headerTitle="title"
                                 icon="icon"
                                 id="hv-card-1-header"
                                 onClickAction={[Function]}
                                 subheader="subtitle"
                               >
-                                <WithStyles(ForwardRef(CardHeader))
-                                  action="icon"
+                                <Header
                                   aria-label="title"
-                                  className="HvCardHeader-root-65"
+                                  className=""
                                   classes={
                                     Object {
-                                      "action": "HvCardHeader-action-69",
-                                      "content": "HvCardHeader-content-70",
-                                      "subheader": "HvCardHeader-subheader-68",
-                                      "title": "HvCardHeader-titleShort-67",
+                                      "action": "HvCardHeader-action",
+                                      "content": "HvCardHeader-content",
+                                      "root": "HvCardHeader-root",
+                                      "subheader": "HvCardHeader-subheader",
+                                      "title": "HvCardHeader-title",
+                                      "titleShort": "HvCardHeader-titleShort",
                                     }
                                   }
+                                  headerTitle="title"
+                                  icon="icon"
                                   id="hv-card-1-header"
-                                  onClick={[Function]}
+                                  onClickAction={[Function]}
                                   subheader="subtitle"
-                                  title="title"
                                 >
-                                  <ForwardRef(CardHeader)
+                                  <WithStyles(ForwardRef(CardHeader))
                                     action="icon"
                                     aria-label="title"
-                                    className="HvCardHeader-root-65"
+                                    className="HvCardHeader-root"
                                     classes={
                                       Object {
-                                        "action": "MuiCardHeader-action HvCardHeader-action-69",
-                                        "avatar": "MuiCardHeader-avatar",
-                                        "content": "MuiCardHeader-content HvCardHeader-content-70",
-                                        "root": "MuiCardHeader-root",
-                                        "subheader": "MuiCardHeader-subheader HvCardHeader-subheader-68",
-                                        "title": "MuiCardHeader-title HvCardHeader-titleShort-67",
+                                        "action": "HvCardHeader-action",
+                                        "content": "HvCardHeader-content",
+                                        "subheader": "HvCardHeader-subheader",
+                                        "title": "HvCardHeader-titleShort",
                                       }
                                     }
                                     id="hv-card-1-header"
@@ -1036,826 +1017,42 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                     subheader="subtitle"
                                     title="title"
                                   >
-                                    <div
+                                    <ForwardRef(CardHeader)
+                                      action="icon"
                                       aria-label="title"
-                                      className="MuiCardHeader-root HvCardHeader-root-65"
+                                      className="HvCardHeader-root"
+                                      classes={
+                                        Object {
+                                          "action": "MuiCardHeader-action HvCardHeader-action",
+                                          "avatar": "MuiCardHeader-avatar",
+                                          "content": "MuiCardHeader-content HvCardHeader-content",
+                                          "root": "MuiCardHeader-root",
+                                          "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
+                                          "title": "MuiCardHeader-title HvCardHeader-titleShort",
+                                        }
+                                      }
                                       id="hv-card-1-header"
                                       onClick={[Function]}
+                                      subheader="subtitle"
+                                      title="title"
                                     >
                                       <div
-                                        className="MuiCardHeader-content HvCardHeader-content-70"
+                                        aria-label="title"
+                                        className="MuiCardHeader-root HvCardHeader-root"
+                                        id="hv-card-1-header"
+                                        onClick={[Function]}
                                       >
-                                        <WithStyles(ForwardRef(Typography))
-                                          className="MuiCardHeader-title HvCardHeader-titleShort-67"
-                                          component="span"
-                                          display="block"
-                                          variant="h5"
+                                        <div
+                                          className="MuiCardHeader-content HvCardHeader-content"
                                         >
-                                          <ForwardRef(Typography)
-                                            className="MuiCardHeader-title HvCardHeader-titleShort-67"
-                                            classes={
-                                              Object {
-                                                "alignCenter": "MuiTypography-alignCenter",
-                                                "alignJustify": "MuiTypography-alignJustify",
-                                                "alignLeft": "MuiTypography-alignLeft",
-                                                "alignRight": "MuiTypography-alignRight",
-                                                "body1": "MuiTypography-body1",
-                                                "body2": "MuiTypography-body2",
-                                                "button": "MuiTypography-button",
-                                                "caption": "MuiTypography-caption",
-                                                "colorError": "MuiTypography-colorError",
-                                                "colorInherit": "MuiTypography-colorInherit",
-                                                "colorPrimary": "MuiTypography-colorPrimary",
-                                                "colorSecondary": "MuiTypography-colorSecondary",
-                                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                "displayBlock": "MuiTypography-displayBlock",
-                                                "displayInline": "MuiTypography-displayInline",
-                                                "gutterBottom": "MuiTypography-gutterBottom",
-                                                "h1": "MuiTypography-h1",
-                                                "h2": "MuiTypography-h2",
-                                                "h3": "MuiTypography-h3",
-                                                "h4": "MuiTypography-h4",
-                                                "h5": "MuiTypography-h5",
-                                                "h6": "MuiTypography-h6",
-                                                "noWrap": "MuiTypography-noWrap",
-                                                "overline": "MuiTypography-overline",
-                                                "paragraph": "MuiTypography-paragraph",
-                                                "root": "MuiTypography-root",
-                                                "srOnly": "MuiTypography-srOnly",
-                                                "subtitle1": "MuiTypography-subtitle1",
-                                                "subtitle2": "MuiTypography-subtitle2",
-                                              }
-                                            }
+                                          <WithStyles(ForwardRef(Typography))
+                                            className="MuiCardHeader-title HvCardHeader-titleShort"
                                             component="span"
                                             display="block"
                                             variant="h5"
                                           >
-                                            <span
-                                              className="MuiTypography-root MuiCardHeader-title HvCardHeader-titleShort-67 MuiTypography-h5 MuiTypography-displayBlock"
-                                            >
-                                              title
-                                            </span>
-                                          </ForwardRef(Typography)>
-                                        </WithStyles(ForwardRef(Typography))>
-                                        <WithStyles(ForwardRef(Typography))
-                                          className="MuiCardHeader-subheader HvCardHeader-subheader-68"
-                                          color="textSecondary"
-                                          component="span"
-                                          display="block"
-                                          variant="body1"
-                                        >
-                                          <ForwardRef(Typography)
-                                            className="MuiCardHeader-subheader HvCardHeader-subheader-68"
-                                            classes={
-                                              Object {
-                                                "alignCenter": "MuiTypography-alignCenter",
-                                                "alignJustify": "MuiTypography-alignJustify",
-                                                "alignLeft": "MuiTypography-alignLeft",
-                                                "alignRight": "MuiTypography-alignRight",
-                                                "body1": "MuiTypography-body1",
-                                                "body2": "MuiTypography-body2",
-                                                "button": "MuiTypography-button",
-                                                "caption": "MuiTypography-caption",
-                                                "colorError": "MuiTypography-colorError",
-                                                "colorInherit": "MuiTypography-colorInherit",
-                                                "colorPrimary": "MuiTypography-colorPrimary",
-                                                "colorSecondary": "MuiTypography-colorSecondary",
-                                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                "displayBlock": "MuiTypography-displayBlock",
-                                                "displayInline": "MuiTypography-displayInline",
-                                                "gutterBottom": "MuiTypography-gutterBottom",
-                                                "h1": "MuiTypography-h1",
-                                                "h2": "MuiTypography-h2",
-                                                "h3": "MuiTypography-h3",
-                                                "h4": "MuiTypography-h4",
-                                                "h5": "MuiTypography-h5",
-                                                "h6": "MuiTypography-h6",
-                                                "noWrap": "MuiTypography-noWrap",
-                                                "overline": "MuiTypography-overline",
-                                                "paragraph": "MuiTypography-paragraph",
-                                                "root": "MuiTypography-root",
-                                                "srOnly": "MuiTypography-srOnly",
-                                                "subtitle1": "MuiTypography-subtitle1",
-                                                "subtitle2": "MuiTypography-subtitle2",
-                                              }
-                                            }
-                                            color="textSecondary"
-                                            component="span"
-                                            display="block"
-                                            variant="body1"
-                                          >
-                                            <span
-                                              className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader-68 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-                                            >
-                                              subtitle
-                                            </span>
-                                          </ForwardRef(Typography)>
-                                        </WithStyles(ForwardRef(Typography))>
-                                      </div>
-                                      <div
-                                        className="MuiCardHeader-action HvCardHeader-action-69"
-                                      >
-                                        icon
-                                      </div>
-                                    </div>
-                                  </ForwardRef(CardHeader)>
-                                </WithStyles(ForwardRef(CardHeader))>
-                              </Header>
-                            </WithStyles(Header)>
-                            <WithStyles(Media)
-                              aria-label="title"
-                              className=""
-                              id="hv-card-1-media"
-                              mediaPath="path"
-                              mediaTitle=""
-                              onClickAction={[Function]}
-                            >
-                              <Media
-                                aria-label="title"
-                                className=""
-                                classes={
-                                  Object {
-                                    "media": "HvCardMedia-media-108",
-                                    "mediaContainer": "HvCardMedia-mediaContainer-107",
-                                  }
-                                }
-                                id="hv-card-1-media"
-                                mediaPath="path"
-                                mediaTitle=""
-                                onClickAction={[Function]}
-                              >
-                                <div
-                                  className="HvCardMedia-mediaContainer-107"
-                                >
-                                  <WithStyles(ForwardRef(CardMedia))
-                                    aria-label="title"
-                                    className="HvCardMedia-media-108"
-                                    id="hv-card-1-media"
-                                    image="path"
-                                    onClick={[Function]}
-                                    role="img"
-                                    title=""
-                                  >
-                                    <ForwardRef(CardMedia)
-                                      aria-label="title"
-                                      className="HvCardMedia-media-108"
-                                      classes={
-                                        Object {
-                                          "img": "MuiCardMedia-img",
-                                          "media": "MuiCardMedia-media",
-                                          "root": "MuiCardMedia-root",
-                                        }
-                                      }
-                                      id="hv-card-1-media"
-                                      image="path"
-                                      onClick={[Function]}
-                                      role="img"
-                                      title=""
-                                    >
-                                      <div
-                                        aria-label="title"
-                                        className="MuiCardMedia-root HvCardMedia-media-108"
-                                        id="hv-card-1-media"
-                                        onClick={[Function]}
-                                        role="img"
-                                        style={
-                                          Object {
-                                            "backgroundImage": "url(\\"path\\")",
-                                          }
-                                        }
-                                        title=""
-                                      />
-                                    </ForwardRef(CardMedia)>
-                                  </WithStyles(ForwardRef(CardMedia))>
-                                </div>
-                              </Media>
-                            </WithStyles(Media)>
-                            <WithStyles(Content)
-                              className=""
-                              id="hv-card-1-content"
-                              innerCardContent={<div />}
-                              onClickAction={[Function]}
-                            >
-                              <Content
-                                className=""
-                                classes={
-                                  Object {
-                                    "bottomBorder": "HvCardContent-bottomBorder-113",
-                                    "content": "HvCardContent-content-112",
-                                    "item": "HvCardContent-item-114",
-                                  }
-                                }
-                                id="hv-card-1-content"
-                                innerCardContent={<div />}
-                                onClickAction={[Function]}
-                              >
-                                <WithStyles(ForwardRef(CardContent))
-                                  className="HvCardContent-content-112"
-                                  id="hv-card-1-content"
-                                  onClick={[Function]}
-                                >
-                                  <ForwardRef(CardContent)
-                                    className="HvCardContent-content-112"
-                                    classes={
-                                      Object {
-                                        "root": "MuiCardContent-root",
-                                      }
-                                    }
-                                    id="hv-card-1-content"
-                                    onClick={[Function]}
-                                  >
-                                    <div
-                                      className="MuiCardContent-root HvCardContent-content-112"
-                                      id="hv-card-1-content"
-                                      onClick={[Function]}
-                                    >
-                                      <div />
-                                    </div>
-                                  </ForwardRef(CardContent)>
-                                </WithStyles(ForwardRef(CardContent))>
-                              </Content>
-                            </WithStyles(Content)>
-                          </div>
-                        </div>
-                      </ConditionalWrapper>
-                    </Focus>
-                  </WithStyles(Focus)>
-                  <WithStyles(Component)
-                    actions="actions"
-                    actionsAlignment="left"
-                    actionsCallback={[Function]}
-                    checkboxAriaDescribedBy="hv-card-1-header"
-                    checkboxAriaLabelledBy="hv-card-1-header"
-                    checkboxLabel=""
-                    checkboxSelected={false}
-                    checkboxValue="value"
-                    disableSpacing={true}
-                    id="hv-card-1-footer"
-                    isSelectable={true}
-                    maxVisibleActions={1}
-                    onChange={[Function]}
-                  >
-                    <Component
-                      actions="actions"
-                      actionsAlignment="left"
-                      actionsCallback={[Function]}
-                      checkboxAriaDescribedBy="hv-card-1-header"
-                      checkboxAriaLabelledBy="hv-card-1-header"
-                      checkboxLabel=""
-                      checkboxSelected={false}
-                      checkboxValue="value"
-                      classes={
-                        Object {
-                          "leftContainer": "HvCardFooter-leftContainer-117",
-                          "rightContainer": "HvCardFooter-rightContainer-118",
-                          "root": "HvCardFooter-root-116",
-                        }
-                      }
-                      disableSpacing={true}
-                      id="hv-card-1-footer"
-                      isSelectable={true}
-                      maxVisibleActions={1}
-                      onChange={[Function]}
-                    >
-                      <Footer
-                        actions="actions"
-                        actionsAlignment="left"
-                        actionsCallback={[Function]}
-                        checkboxAriaDescribedBy="hv-card-1-header"
-                        checkboxAriaLabelledBy="hv-card-1-header"
-                        checkboxLabel=""
-                        checkboxSelected={false}
-                        checkboxValue="value"
-                        className=""
-                        classes={
-                          Object {
-                            "leftContainer": "HvCardFooter-leftContainer-117",
-                            "rightContainer": "HvCardFooter-rightContainer-118",
-                            "root": "HvCardFooter-root-116",
-                          }
-                        }
-                        config={
-                          Object {
-                            "changeTheme": [Function],
-                          }
-                        }
-                        disableSpacing={true}
-                        id="hv-card-1-footer"
-                        isSelectable={true}
-                        maxVisibleActions={1}
-                        onChange={[Function]}
-                      >
-                        <WithStyles(ForwardRef(CardActions))
-                          className="HvCardFooter-root-116"
-                          config={
-                            Object {
-                              "changeTheme": [Function],
-                            }
-                          }
-                          disableSpacing={true}
-                        >
-                          <ForwardRef(CardActions)
-                            className="HvCardFooter-root-116"
-                            classes={
-                              Object {
-                                "root": "MuiCardActions-root",
-                                "spacing": "MuiCardActions-spacing",
-                              }
-                            }
-                            config={
-                              Object {
-                                "changeTheme": [Function],
-                              }
-                            }
-                            disableSpacing={true}
-                          >
-                            <div
-                              className="MuiCardActions-root HvCardFooter-root-116"
-                              config={
-                                Object {
-                                  "changeTheme": [Function],
-                                }
-                              }
-                            >
-                              <div
-                                className="HvCardFooter-leftContainer-117"
-                              >
-                                <WithStyles(HvCheckbox)
-                                  checkboxProps={
-                                    Object {
-                                      "aria-describedby": "hv-card-1-header",
-                                      "aria-label": undefined,
-                                      "aria-labelledby": "hv-card-1-header",
-                                    }
-                                  }
-                                  checked={false}
-                                  className=""
-                                  disabled={false}
-                                  inputProps={
-                                    Object {
-                                      "aria-label": "card-checkbox-input",
-                                    }
-                                  }
-                                  label=""
-                                  labelPlacement="end"
-                                  onChange={[Function]}
-                                  value="value"
-                                >
-                                  <HvCheckbox
-                                    checkboxProps={
-                                      Object {
-                                        "aria-describedby": "hv-card-1-header",
-                                        "aria-label": undefined,
-                                        "aria-labelledby": "hv-card-1-header",
-                                      }
-                                    }
-                                    checked={false}
-                                    className=""
-                                    classes={
-                                      Object {
-                                        "checkBox": "HvCheckBox-checkBox-127",
-                                        "container": "HvCheckBox-container-121",
-                                        "disableFocus": "HvCheckBox-disableFocus-122",
-                                        "icon": "HvCheckBox-icon-128",
-                                        "labelDisabled": "HvCheckBox-labelDisabled-124",
-                                        "labelEnd": "HvCheckBox-labelEnd-125",
-                                        "labelStart": "HvCheckBox-labelStart-126",
-                                        "labelTypography": "HvCheckBox-labelTypography-123",
-                                      }
-                                    }
-                                    disabled={false}
-                                    inputProps={
-                                      Object {
-                                        "aria-label": "card-checkbox-input",
-                                      }
-                                    }
-                                    label=""
-                                    labelPlacement="end"
-                                    onChange={[Function]}
-                                    value="value"
-                                  >
-                                    <WithStyles(ForwardRef(FormControlLabel))
-                                      className="HvCheckBox-container-121"
-                                      classes={
-                                        Object {
-                                          "disabled": "HvCheckBox-labelDisabled-124",
-                                          "label": "HvCheckBox-labelTypography-123",
-                                        }
-                                      }
-                                      control={
-                                        <ForwardRef(WithStyles)
-                                          aria-describedby="hv-card-1-header"
-                                          aria-labelledby="hv-card-1-header"
-                                          checked={false}
-                                          checkedIcon={
-                                            <ForwardRef(WithStyles)
-                                              className="HvCheckBox-icon-128"
-                                            />
-                                          }
-                                          className="HvCheckBox-checkBox-127"
-                                          color="default"
-                                          disableRipple={true}
-                                          disabled={false}
-                                          icon={
-                                            <ForwardRef(WithStyles)
-                                              className="HvCheckBox-icon-128"
-                                            />
-                                          }
-                                          id="hv-checkbox-2-input"
-                                          indeterminateIcon={
-                                            <ForwardRef(WithStyles)
-                                              className="HvCheckBox-icon-128"
-                                            />
-                                          }
-                                          inputProps={
-                                            Object {
-                                              "aria-label": "card-checkbox-input",
-                                            }
-                                          }
-                                          onBlur={[Function]}
-                                          onChange={[Function]}
-                                          value="value"
-                                        />
-                                      }
-                                      disabled={false}
-                                      id="hv-checkbox-2"
-                                      label=""
-                                      labelPlacement="end"
-                                    >
-                                      <ForwardRef(FormControlLabel)
-                                        className="HvCheckBox-container-121"
-                                        classes={
-                                          Object {
-                                            "disabled": "Mui-disabled HvCheckBox-labelDisabled-124",
-                                            "label": "MuiFormControlLabel-label HvCheckBox-labelTypography-123",
-                                            "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom",
-                                            "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart",
-                                            "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop",
-                                            "root": "MuiFormControlLabel-root",
-                                          }
-                                        }
-                                        control={
-                                          <ForwardRef(WithStyles)
-                                            aria-describedby="hv-card-1-header"
-                                            aria-labelledby="hv-card-1-header"
-                                            checked={false}
-                                            checkedIcon={
-                                              <ForwardRef(WithStyles)
-                                                className="HvCheckBox-icon-128"
-                                              />
-                                            }
-                                            className="HvCheckBox-checkBox-127"
-                                            color="default"
-                                            disableRipple={true}
-                                            disabled={false}
-                                            icon={
-                                              <ForwardRef(WithStyles)
-                                                className="HvCheckBox-icon-128"
-                                              />
-                                            }
-                                            id="hv-checkbox-2-input"
-                                            indeterminateIcon={
-                                              <ForwardRef(WithStyles)
-                                                className="HvCheckBox-icon-128"
-                                              />
-                                            }
-                                            inputProps={
-                                              Object {
-                                                "aria-label": "card-checkbox-input",
-                                              }
-                                            }
-                                            onBlur={[Function]}
-                                            onChange={[Function]}
-                                            value="value"
-                                          />
-                                        }
-                                        disabled={false}
-                                        id="hv-checkbox-2"
-                                        label=""
-                                        labelPlacement="end"
-                                      >
-                                        <label
-                                          className="MuiFormControlLabel-root HvCheckBox-container-121"
-                                          id="hv-checkbox-2"
-                                        >
-                                          <WithStyles(ForwardRef(Checkbox))
-                                            aria-describedby="hv-card-1-header"
-                                            aria-labelledby="hv-card-1-header"
-                                            checked={false}
-                                            checkedIcon={
-                                              <ForwardRef(WithStyles)
-                                                className="HvCheckBox-icon-128"
-                                              />
-                                            }
-                                            className="HvCheckBox-checkBox-127"
-                                            color="default"
-                                            disableRipple={true}
-                                            disabled={false}
-                                            icon={
-                                              <ForwardRef(WithStyles)
-                                                className="HvCheckBox-icon-128"
-                                              />
-                                            }
-                                            id="hv-checkbox-2-input"
-                                            indeterminateIcon={
-                                              <ForwardRef(WithStyles)
-                                                className="HvCheckBox-icon-128"
-                                              />
-                                            }
-                                            inputProps={
-                                              Object {
-                                                "aria-label": "card-checkbox-input",
-                                              }
-                                            }
-                                            onBlur={[Function]}
-                                            onChange={[Function]}
-                                            value="value"
-                                          >
-                                            <ForwardRef(Checkbox)
-                                              aria-describedby="hv-card-1-header"
-                                              aria-labelledby="hv-card-1-header"
-                                              checked={false}
-                                              checkedIcon={
-                                                <ForwardRef(WithStyles)
-                                                  className="HvCheckBox-icon-128"
-                                                />
-                                              }
-                                              className="HvCheckBox-checkBox-127"
-                                              classes={
-                                                Object {
-                                                  "checked": "Mui-checked",
-                                                  "colorPrimary": "MuiCheckbox-colorPrimary",
-                                                  "colorSecondary": "MuiCheckbox-colorSecondary",
-                                                  "disabled": "Mui-disabled",
-                                                  "indeterminate": "MuiCheckbox-indeterminate",
-                                                  "root": "MuiCheckbox-root",
-                                                }
-                                              }
-                                              color="default"
-                                              disableRipple={true}
-                                              disabled={false}
-                                              icon={
-                                                <ForwardRef(WithStyles)
-                                                  className="HvCheckBox-icon-128"
-                                                />
-                                              }
-                                              id="hv-checkbox-2-input"
-                                              indeterminateIcon={
-                                                <ForwardRef(WithStyles)
-                                                  className="HvCheckBox-icon-128"
-                                                />
-                                              }
-                                              inputProps={
-                                                Object {
-                                                  "aria-label": "card-checkbox-input",
-                                                }
-                                              }
-                                              onBlur={[Function]}
-                                              onChange={[Function]}
-                                              value="value"
-                                            >
-                                              <WithStyles(ForwardRef(SwitchBase))
-                                                aria-describedby="hv-card-1-header"
-                                                aria-labelledby="hv-card-1-header"
-                                                checked={false}
-                                                checkedIcon={
-                                                  <ForwardRef(WithStyles)
-                                                    className="HvCheckBox-icon-128"
-                                                    fontSize="default"
-                                                  />
-                                                }
-                                                className="HvCheckBox-checkBox-127"
-                                                classes={
-                                                  Object {
-                                                    "checked": "Mui-checked",
-                                                    "disabled": "Mui-disabled",
-                                                    "root": "MuiCheckbox-root",
-                                                  }
-                                                }
-                                                color="default"
-                                                disableRipple={true}
-                                                disabled={false}
-                                                icon={
-                                                  <ForwardRef(WithStyles)
-                                                    className="HvCheckBox-icon-128"
-                                                    fontSize="default"
-                                                  />
-                                                }
-                                                id="hv-checkbox-2-input"
-                                                inputProps={
-                                                  Object {
-                                                    "aria-label": "card-checkbox-input",
-                                                    "data-indeterminate": false,
-                                                  }
-                                                }
-                                                onBlur={[Function]}
-                                                onChange={[Function]}
-                                                type="checkbox"
-                                                value="value"
-                                              >
-                                                <ForwardRef(SwitchBase)
-                                                  aria-describedby="hv-card-1-header"
-                                                  aria-labelledby="hv-card-1-header"
-                                                  checked={false}
-                                                  checkedIcon={
-                                                    <ForwardRef(WithStyles)
-                                                      className="HvCheckBox-icon-128"
-                                                      fontSize="default"
-                                                    />
-                                                  }
-                                                  className="HvCheckBox-checkBox-127"
-                                                  classes={
-                                                    Object {
-                                                      "checked": "PrivateSwitchBase-checked-142 Mui-checked",
-                                                      "disabled": "PrivateSwitchBase-disabled-143 Mui-disabled",
-                                                      "input": "PrivateSwitchBase-input-144",
-                                                      "root": "PrivateSwitchBase-root-141 MuiCheckbox-root",
-                                                    }
-                                                  }
-                                                  color="default"
-                                                  disableRipple={true}
-                                                  disabled={false}
-                                                  icon={
-                                                    <ForwardRef(WithStyles)
-                                                      className="HvCheckBox-icon-128"
-                                                      fontSize="default"
-                                                    />
-                                                  }
-                                                  id="hv-checkbox-2-input"
-                                                  inputProps={
-                                                    Object {
-                                                      "aria-label": "card-checkbox-input",
-                                                      "data-indeterminate": false,
-                                                    }
-                                                  }
-                                                  onBlur={[Function]}
-                                                  onChange={[Function]}
-                                                  type="checkbox"
-                                                  value="value"
-                                                >
-                                                  <WithStyles(ForwardRef(IconButton))
-                                                    aria-describedby="hv-card-1-header"
-                                                    aria-labelledby="hv-card-1-header"
-                                                    className="PrivateSwitchBase-root-141 MuiCheckbox-root HvCheckBox-checkBox-127"
-                                                    color="default"
-                                                    component="span"
-                                                    disableRipple={true}
-                                                    disabled={false}
-                                                    onBlur={[Function]}
-                                                    onFocus={[Function]}
-                                                    tabIndex={null}
-                                                  >
-                                                    <ForwardRef(IconButton)
-                                                      aria-describedby="hv-card-1-header"
-                                                      aria-labelledby="hv-card-1-header"
-                                                      className="PrivateSwitchBase-root-141 MuiCheckbox-root HvCheckBox-checkBox-127"
-                                                      classes={
-                                                        Object {
-                                                          "colorInherit": "MuiIconButton-colorInherit",
-                                                          "colorPrimary": "MuiIconButton-colorPrimary",
-                                                          "colorSecondary": "MuiIconButton-colorSecondary",
-                                                          "disabled": "Mui-disabled",
-                                                          "edgeEnd": "MuiIconButton-edgeEnd",
-                                                          "edgeStart": "MuiIconButton-edgeStart",
-                                                          "label": "MuiIconButton-label",
-                                                          "root": "MuiIconButton-root",
-                                                          "sizeSmall": "MuiIconButton-sizeSmall",
-                                                        }
-                                                      }
-                                                      color="default"
-                                                      component="span"
-                                                      disableRipple={true}
-                                                      disabled={false}
-                                                      onBlur={[Function]}
-                                                      onFocus={[Function]}
-                                                      tabIndex={null}
-                                                    >
-                                                      <WithStyles(ForwardRef(ButtonBase))
-                                                        aria-describedby="hv-card-1-header"
-                                                        aria-labelledby="hv-card-1-header"
-                                                        centerRipple={true}
-                                                        className="MuiIconButton-root PrivateSwitchBase-root-141 MuiCheckbox-root HvCheckBox-checkBox-127"
-                                                        component="span"
-                                                        disableRipple={true}
-                                                        disabled={false}
-                                                        focusRipple={true}
-                                                        onBlur={[Function]}
-                                                        onFocus={[Function]}
-                                                        tabIndex={null}
-                                                      >
-                                                        <ForwardRef(ButtonBase)
-                                                          aria-describedby="hv-card-1-header"
-                                                          aria-labelledby="hv-card-1-header"
-                                                          centerRipple={true}
-                                                          className="MuiIconButton-root PrivateSwitchBase-root-141 MuiCheckbox-root HvCheckBox-checkBox-127"
-                                                          classes={
-                                                            Object {
-                                                              "disabled": "Mui-disabled",
-                                                              "focusVisible": "Mui-focusVisible",
-                                                              "root": "MuiButtonBase-root",
-                                                            }
-                                                          }
-                                                          component="span"
-                                                          disableRipple={true}
-                                                          disabled={false}
-                                                          focusRipple={true}
-                                                          onBlur={[Function]}
-                                                          onFocus={[Function]}
-                                                          tabIndex={null}
-                                                        >
-                                                          <span
-                                                            aria-describedby="hv-card-1-header"
-                                                            aria-disabled={false}
-                                                            aria-labelledby="hv-card-1-header"
-                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-141 MuiCheckbox-root HvCheckBox-checkBox-127"
-                                                            onBlur={[Function]}
-                                                            onDragLeave={[Function]}
-                                                            onFocus={[Function]}
-                                                            onKeyDown={[Function]}
-                                                            onKeyUp={[Function]}
-                                                            onMouseDown={[Function]}
-                                                            onMouseLeave={[Function]}
-                                                            onMouseUp={[Function]}
-                                                            onTouchEnd={[Function]}
-                                                            onTouchMove={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            tabIndex={null}
-                                                          >
-                                                            <span
-                                                              className="MuiIconButton-label"
-                                                            >
-                                                              <input
-                                                                aria-label="card-checkbox-input"
-                                                                checked={false}
-                                                                className="PrivateSwitchBase-input-144"
-                                                                data-indeterminate={false}
-                                                                disabled={false}
-                                                                id="hv-checkbox-2-input"
-                                                                onChange={[Function]}
-                                                                type="checkbox"
-                                                                value="value"
-                                                              />
-                                                              <WithStyles(Checkbox)
-                                                                className="HvCheckBox-icon-128"
-                                                                fontSize="default"
-                                                              >
-                                                                <Checkbox
-                                                                  className="HvCheckBox-icon-128"
-                                                                  classes={
-                                                                    Object {
-                                                                      "root": "HvIconCheckbox-root-157",
-                                                                      "rootL": "HvIconCheckbox-rootL-161",
-                                                                      "rootM": "HvIconCheckbox-rootM-160",
-                                                                      "rootS": "HvIconCheckbox-rootS-159",
-                                                                      "rootXs": "HvIconCheckbox-rootXs-158",
-                                                                    }
-                                                                  }
-                                                                  fontSize="default"
-                                                                >
-                                                                  <div
-                                                                    className="HvCheckBox-icon-128 HvIconCheckbox-root-157 HvIconCheckbox-rootS-159"
-                                                                    fontSize="default"
-                                                                  >
-                                                                    <svg
-                                                                      focusable={false}
-                                                                      height="16px"
-                                                                      viewBox="0 0 16 16"
-                                                                      width="16px"
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                      <path
-                                                                        className="color0"
-                                                                        d="M0 0h16v16H0z"
-                                                                        fill="#FFFFFF"
-                                                                      />
-                                                                      <path
-                                                                        className="color1"
-                                                                        d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
-                                                                        fill="#414141"
-                                                                      />
-                                                                    </svg>
-                                                                  </div>
-                                                                </Checkbox>
-                                                              </WithStyles(Checkbox)>
-                                                            </span>
-                                                            <NoSsr />
-                                                          </span>
-                                                        </ForwardRef(ButtonBase)>
-                                                      </WithStyles(ForwardRef(ButtonBase))>
-                                                    </ForwardRef(IconButton)>
-                                                  </WithStyles(ForwardRef(IconButton))>
-                                                </ForwardRef(SwitchBase)>
-                                              </WithStyles(ForwardRef(SwitchBase))>
-                                            </ForwardRef(Checkbox)>
-                                          </WithStyles(ForwardRef(Checkbox))>
-                                          <WithStyles(ForwardRef(Typography))
-                                            className="MuiFormControlLabel-label HvCheckBox-labelTypography-123"
-                                            component="span"
-                                          >
                                             <ForwardRef(Typography)
-                                              className="MuiFormControlLabel-label HvCheckBox-labelTypography-123"
+                                              className="MuiCardHeader-title HvCardHeader-titleShort"
                                               classes={
                                                 Object {
                                                   "alignCenter": "MuiTypography-alignCenter",
@@ -1891,58 +1088,862 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                 }
                                               }
                                               component="span"
+                                              display="block"
+                                              variant="h5"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography-123 MuiTypography-body1"
-                                              />
+                                                className="MuiTypography-root MuiCardHeader-title HvCardHeader-titleShort MuiTypography-h5 MuiTypography-displayBlock"
+                                              >
+                                                title
+                                              </span>
                                             </ForwardRef(Typography)>
                                           </WithStyles(ForwardRef(Typography))>
-                                        </label>
-                                      </ForwardRef(FormControlLabel)>
-                                    </WithStyles(ForwardRef(FormControlLabel))>
-                                  </HvCheckbox>
-                                </WithStyles(HvCheckbox)>
-                              </div>
-                              <div
-                                className="HvCardFooter-rightContainer-118"
+                                          <WithStyles(ForwardRef(Typography))
+                                            className="MuiCardHeader-subheader HvCardHeader-subheader"
+                                            color="textSecondary"
+                                            component="span"
+                                            display="block"
+                                            variant="body1"
+                                          >
+                                            <ForwardRef(Typography)
+                                              className="MuiCardHeader-subheader HvCardHeader-subheader"
+                                              classes={
+                                                Object {
+                                                  "alignCenter": "MuiTypography-alignCenter",
+                                                  "alignJustify": "MuiTypography-alignJustify",
+                                                  "alignLeft": "MuiTypography-alignLeft",
+                                                  "alignRight": "MuiTypography-alignRight",
+                                                  "body1": "MuiTypography-body1",
+                                                  "body2": "MuiTypography-body2",
+                                                  "button": "MuiTypography-button",
+                                                  "caption": "MuiTypography-caption",
+                                                  "colorError": "MuiTypography-colorError",
+                                                  "colorInherit": "MuiTypography-colorInherit",
+                                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                  "displayBlock": "MuiTypography-displayBlock",
+                                                  "displayInline": "MuiTypography-displayInline",
+                                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                                  "h1": "MuiTypography-h1",
+                                                  "h2": "MuiTypography-h2",
+                                                  "h3": "MuiTypography-h3",
+                                                  "h4": "MuiTypography-h4",
+                                                  "h5": "MuiTypography-h5",
+                                                  "h6": "MuiTypography-h6",
+                                                  "noWrap": "MuiTypography-noWrap",
+                                                  "overline": "MuiTypography-overline",
+                                                  "paragraph": "MuiTypography-paragraph",
+                                                  "root": "MuiTypography-root",
+                                                  "srOnly": "MuiTypography-srOnly",
+                                                  "subtitle1": "MuiTypography-subtitle1",
+                                                  "subtitle2": "MuiTypography-subtitle2",
+                                                }
+                                              }
+                                              color="textSecondary"
+                                              component="span"
+                                              display="block"
+                                              variant="body1"
+                                            >
+                                              <span
+                                                className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                                              >
+                                                subtitle
+                                              </span>
+                                            </ForwardRef(Typography)>
+                                          </WithStyles(ForwardRef(Typography))>
+                                        </div>
+                                        <div
+                                          className="MuiCardHeader-action HvCardHeader-action"
+                                        >
+                                          icon
+                                        </div>
+                                      </div>
+                                    </ForwardRef(CardHeader)>
+                                  </WithStyles(ForwardRef(CardHeader))>
+                                </Header>
+                              </WithStyles(Header)>
+                              <WithStyles(Media)
+                                aria-label="title"
+                                className=""
+                                id="hv-card-1-media"
+                                mediaPath="path"
+                                mediaTitle=""
+                                onClickAction={[Function]}
                               >
-                                <WithStyles(Actions)
-                                  actions="actions"
-                                  actionsCallback={[Function]}
-                                  category="ghost"
-                                  id="value"
-                                  maxVisibleActions={1}
+                                <Media
+                                  aria-label="title"
+                                  className=""
+                                  classes={
+                                    Object {
+                                      "media": "HvCardMedia-media",
+                                      "mediaContainer": "HvCardMedia-mediaContainer",
+                                    }
+                                  }
+                                  id="hv-card-1-media"
+                                  mediaPath="path"
+                                  mediaTitle=""
+                                  onClickAction={[Function]}
                                 >
-                                  <Actions
+                                  <div
+                                    className="HvCardMedia-mediaContainer"
+                                  >
+                                    <WithStyles(ForwardRef(CardMedia))
+                                      aria-label="title"
+                                      className="HvCardMedia-media"
+                                      id="hv-card-1-media"
+                                      image="path"
+                                      onClick={[Function]}
+                                      role="img"
+                                      title=""
+                                    >
+                                      <ForwardRef(CardMedia)
+                                        aria-label="title"
+                                        className="HvCardMedia-media"
+                                        classes={
+                                          Object {
+                                            "img": "MuiCardMedia-img",
+                                            "media": "MuiCardMedia-media",
+                                            "root": "MuiCardMedia-root",
+                                          }
+                                        }
+                                        id="hv-card-1-media"
+                                        image="path"
+                                        onClick={[Function]}
+                                        role="img"
+                                        title=""
+                                      >
+                                        <div
+                                          aria-label="title"
+                                          className="MuiCardMedia-root HvCardMedia-media"
+                                          id="hv-card-1-media"
+                                          onClick={[Function]}
+                                          role="img"
+                                          style={
+                                            Object {
+                                              "backgroundImage": "url(\\"path\\")",
+                                            }
+                                          }
+                                          title=""
+                                        />
+                                      </ForwardRef(CardMedia)>
+                                    </WithStyles(ForwardRef(CardMedia))>
+                                  </div>
+                                </Media>
+                              </WithStyles(Media)>
+                              <WithStyles(Content)
+                                className=""
+                                id="hv-card-1-content"
+                                innerCardContent={<div />}
+                                onClickAction={[Function]}
+                              >
+                                <Content
+                                  className=""
+                                  classes={
+                                    Object {
+                                      "bottomBorder": "HvCardContent-bottomBorder",
+                                      "content": "HvCardContent-content",
+                                      "item": "HvCardContent-item",
+                                    }
+                                  }
+                                  id="hv-card-1-content"
+                                  innerCardContent={<div />}
+                                  onClickAction={[Function]}
+                                >
+                                  <WithStyles(ForwardRef(CardContent))
+                                    className="HvCardContent-content"
+                                    id="hv-card-1-content"
+                                    onClick={[Function]}
+                                  >
+                                    <ForwardRef(CardContent)
+                                      className="HvCardContent-content"
+                                      classes={
+                                        Object {
+                                          "root": "MuiCardContent-root",
+                                        }
+                                      }
+                                      id="hv-card-1-content"
+                                      onClick={[Function]}
+                                    >
+                                      <div
+                                        className="MuiCardContent-root HvCardContent-content"
+                                        id="hv-card-1-content"
+                                        onClick={[Function]}
+                                      >
+                                        <div />
+                                      </div>
+                                    </ForwardRef(CardContent)>
+                                  </WithStyles(ForwardRef(CardContent))>
+                                </Content>
+                              </WithStyles(Content)>
+                            </div>
+                          </div>
+                        </ConditionalWrapper>
+                      </Focus>
+                    </WithStyles(Focus)>
+                    <WithStyles(Component)
+                      actions="actions"
+                      actionsAlignment="left"
+                      actionsCallback={[Function]}
+                      checkboxAriaDescribedBy="hv-card-1-header"
+                      checkboxAriaLabelledBy="hv-card-1-header"
+                      checkboxLabel=""
+                      checkboxSelected={false}
+                      checkboxValue="value"
+                      disableSpacing={true}
+                      id="hv-card-1-footer"
+                      isSelectable={true}
+                      maxVisibleActions={1}
+                      onChange={[Function]}
+                    >
+                      <Component
+                        actions="actions"
+                        actionsAlignment="left"
+                        actionsCallback={[Function]}
+                        checkboxAriaDescribedBy="hv-card-1-header"
+                        checkboxAriaLabelledBy="hv-card-1-header"
+                        checkboxLabel=""
+                        checkboxSelected={false}
+                        checkboxValue="value"
+                        classes={
+                          Object {
+                            "leftContainer": "HvCardFooter-leftContainer",
+                            "rightContainer": "HvCardFooter-rightContainer",
+                            "root": "HvCardFooter-root",
+                          }
+                        }
+                        disableSpacing={true}
+                        id="hv-card-1-footer"
+                        isSelectable={true}
+                        maxVisibleActions={1}
+                        onChange={[Function]}
+                      >
+                        <Footer
+                          actions="actions"
+                          actionsAlignment="left"
+                          actionsCallback={[Function]}
+                          checkboxAriaDescribedBy="hv-card-1-header"
+                          checkboxAriaLabelledBy="hv-card-1-header"
+                          checkboxLabel=""
+                          checkboxSelected={false}
+                          checkboxValue="value"
+                          className=""
+                          classes={
+                            Object {
+                              "leftContainer": "HvCardFooter-leftContainer",
+                              "rightContainer": "HvCardFooter-rightContainer",
+                              "root": "HvCardFooter-root",
+                            }
+                          }
+                          config={
+                            Object {
+                              "changeTheme": [Function],
+                            }
+                          }
+                          disableSpacing={true}
+                          id="hv-card-1-footer"
+                          isSelectable={true}
+                          maxVisibleActions={1}
+                          onChange={[Function]}
+                        >
+                          <WithStyles(ForwardRef(CardActions))
+                            className="HvCardFooter-root"
+                            config={
+                              Object {
+                                "changeTheme": [Function],
+                              }
+                            }
+                            disableSpacing={true}
+                          >
+                            <ForwardRef(CardActions)
+                              className="HvCardFooter-root"
+                              classes={
+                                Object {
+                                  "root": "MuiCardActions-root",
+                                  "spacing": "MuiCardActions-spacing",
+                                }
+                              }
+                              config={
+                                Object {
+                                  "changeTheme": [Function],
+                                }
+                              }
+                              disableSpacing={true}
+                            >
+                              <div
+                                className="MuiCardActions-root HvCardFooter-root"
+                                config={
+                                  Object {
+                                    "changeTheme": [Function],
+                                  }
+                                }
+                              >
+                                <div
+                                  className="HvCardFooter-leftContainer"
+                                >
+                                  <WithStyles(HvCheckbox)
+                                    checkboxProps={
+                                      Object {
+                                        "aria-describedby": "hv-card-1-header",
+                                        "aria-label": undefined,
+                                        "aria-labelledby": "hv-card-1-header",
+                                      }
+                                    }
+                                    checked={false}
+                                    className=""
+                                    disabled={false}
+                                    inputProps={
+                                      Object {
+                                        "aria-label": "card-checkbox-input",
+                                      }
+                                    }
+                                    label=""
+                                    labelPlacement="end"
+                                    onChange={[Function]}
+                                    value="value"
+                                  >
+                                    <HvCheckbox
+                                      checkboxProps={
+                                        Object {
+                                          "aria-describedby": "hv-card-1-header",
+                                          "aria-label": undefined,
+                                          "aria-labelledby": "hv-card-1-header",
+                                        }
+                                      }
+                                      checked={false}
+                                      className=""
+                                      classes={
+                                        Object {
+                                          "checkBox": "HvCheckBox-checkBox",
+                                          "container": "HvCheckBox-container",
+                                          "disableFocus": "HvCheckBox-disableFocus",
+                                          "icon": "HvCheckBox-icon",
+                                          "labelDisabled": "HvCheckBox-labelDisabled",
+                                          "labelEnd": "HvCheckBox-labelEnd",
+                                          "labelStart": "HvCheckBox-labelStart",
+                                          "labelTypography": "HvCheckBox-labelTypography",
+                                        }
+                                      }
+                                      disabled={false}
+                                      inputProps={
+                                        Object {
+                                          "aria-label": "card-checkbox-input",
+                                        }
+                                      }
+                                      label=""
+                                      labelPlacement="end"
+                                      onChange={[Function]}
+                                      value="value"
+                                    >
+                                      <WithStyles(ForwardRef(FormControlLabel))
+                                        className="HvCheckBox-container"
+                                        classes={
+                                          Object {
+                                            "disabled": "HvCheckBox-labelDisabled",
+                                            "label": "HvCheckBox-labelTypography",
+                                          }
+                                        }
+                                        control={
+                                          <ForwardRef(WithStyles)
+                                            aria-describedby="hv-card-1-header"
+                                            aria-labelledby="hv-card-1-header"
+                                            checked={false}
+                                            checkedIcon={
+                                              <ForwardRef(WithStyles)
+                                                className="HvCheckBox-icon"
+                                              />
+                                            }
+                                            className="HvCheckBox-checkBox"
+                                            color="default"
+                                            disableRipple={true}
+                                            disabled={false}
+                                            icon={
+                                              <ForwardRef(WithStyles)
+                                                className="HvCheckBox-icon"
+                                              />
+                                            }
+                                            id="hv-checkbox-2-input"
+                                            indeterminateIcon={
+                                              <ForwardRef(WithStyles)
+                                                className="HvCheckBox-icon"
+                                              />
+                                            }
+                                            inputProps={
+                                              Object {
+                                                "aria-label": "card-checkbox-input",
+                                              }
+                                            }
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            value="value"
+                                          />
+                                        }
+                                        disabled={false}
+                                        id="hv-checkbox-2"
+                                        label=""
+                                        labelPlacement="end"
+                                      >
+                                        <ForwardRef(FormControlLabel)
+                                          className="HvCheckBox-container"
+                                          classes={
+                                            Object {
+                                              "disabled": "Mui-disabled HvCheckBox-labelDisabled",
+                                              "label": "MuiFormControlLabel-label HvCheckBox-labelTypography",
+                                              "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom",
+                                              "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart",
+                                              "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop",
+                                              "root": "MuiFormControlLabel-root",
+                                            }
+                                          }
+                                          control={
+                                            <ForwardRef(WithStyles)
+                                              aria-describedby="hv-card-1-header"
+                                              aria-labelledby="hv-card-1-header"
+                                              checked={false}
+                                              checkedIcon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
+                                              }
+                                              className="HvCheckBox-checkBox"
+                                              color="default"
+                                              disableRipple={true}
+                                              disabled={false}
+                                              icon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
+                                              }
+                                              id="hv-checkbox-2-input"
+                                              indeterminateIcon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
+                                              }
+                                              inputProps={
+                                                Object {
+                                                  "aria-label": "card-checkbox-input",
+                                                }
+                                              }
+                                              onBlur={[Function]}
+                                              onChange={[Function]}
+                                              value="value"
+                                            />
+                                          }
+                                          disabled={false}
+                                          id="hv-checkbox-2"
+                                          label=""
+                                          labelPlacement="end"
+                                        >
+                                          <label
+                                            className="MuiFormControlLabel-root HvCheckBox-container"
+                                            id="hv-checkbox-2"
+                                          >
+                                            <WithStyles(ForwardRef(Checkbox))
+                                              aria-describedby="hv-card-1-header"
+                                              aria-labelledby="hv-card-1-header"
+                                              checked={false}
+                                              checkedIcon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
+                                              }
+                                              className="HvCheckBox-checkBox"
+                                              color="default"
+                                              disableRipple={true}
+                                              disabled={false}
+                                              icon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
+                                              }
+                                              id="hv-checkbox-2-input"
+                                              indeterminateIcon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
+                                              }
+                                              inputProps={
+                                                Object {
+                                                  "aria-label": "card-checkbox-input",
+                                                }
+                                              }
+                                              onBlur={[Function]}
+                                              onChange={[Function]}
+                                              value="value"
+                                            >
+                                              <ForwardRef(Checkbox)
+                                                aria-describedby="hv-card-1-header"
+                                                aria-labelledby="hv-card-1-header"
+                                                checked={false}
+                                                checkedIcon={
+                                                  <ForwardRef(WithStyles)
+                                                    className="HvCheckBox-icon"
+                                                  />
+                                                }
+                                                className="HvCheckBox-checkBox"
+                                                classes={
+                                                  Object {
+                                                    "checked": "Mui-checked",
+                                                    "colorPrimary": "MuiCheckbox-colorPrimary",
+                                                    "colorSecondary": "MuiCheckbox-colorSecondary",
+                                                    "disabled": "Mui-disabled",
+                                                    "indeterminate": "MuiCheckbox-indeterminate",
+                                                    "root": "MuiCheckbox-root",
+                                                  }
+                                                }
+                                                color="default"
+                                                disableRipple={true}
+                                                disabled={false}
+                                                icon={
+                                                  <ForwardRef(WithStyles)
+                                                    className="HvCheckBox-icon"
+                                                  />
+                                                }
+                                                id="hv-checkbox-2-input"
+                                                indeterminateIcon={
+                                                  <ForwardRef(WithStyles)
+                                                    className="HvCheckBox-icon"
+                                                  />
+                                                }
+                                                inputProps={
+                                                  Object {
+                                                    "aria-label": "card-checkbox-input",
+                                                  }
+                                                }
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                value="value"
+                                              >
+                                                <WithStyles(ForwardRef(SwitchBase))
+                                                  aria-describedby="hv-card-1-header"
+                                                  aria-labelledby="hv-card-1-header"
+                                                  checked={false}
+                                                  checkedIcon={
+                                                    <ForwardRef(WithStyles)
+                                                      className="HvCheckBox-icon"
+                                                      fontSize="default"
+                                                    />
+                                                  }
+                                                  className="HvCheckBox-checkBox"
+                                                  classes={
+                                                    Object {
+                                                      "checked": "Mui-checked",
+                                                      "disabled": "Mui-disabled",
+                                                      "root": "MuiCheckbox-root",
+                                                    }
+                                                  }
+                                                  color="default"
+                                                  disableRipple={true}
+                                                  disabled={false}
+                                                  icon={
+                                                    <ForwardRef(WithStyles)
+                                                      className="HvCheckBox-icon"
+                                                      fontSize="default"
+                                                    />
+                                                  }
+                                                  id="hv-checkbox-2-input"
+                                                  inputProps={
+                                                    Object {
+                                                      "aria-label": "card-checkbox-input",
+                                                      "data-indeterminate": false,
+                                                    }
+                                                  }
+                                                  onBlur={[Function]}
+                                                  onChange={[Function]}
+                                                  type="checkbox"
+                                                  value="value"
+                                                >
+                                                  <ForwardRef(SwitchBase)
+                                                    aria-describedby="hv-card-1-header"
+                                                    aria-labelledby="hv-card-1-header"
+                                                    checked={false}
+                                                    checkedIcon={
+                                                      <ForwardRef(WithStyles)
+                                                        className="HvCheckBox-icon"
+                                                        fontSize="default"
+                                                      />
+                                                    }
+                                                    className="HvCheckBox-checkBox"
+                                                    classes={
+                                                      Object {
+                                                        "checked": "PrivateSwitchBase-checked-92 Mui-checked",
+                                                        "disabled": "PrivateSwitchBase-disabled-93 Mui-disabled",
+                                                        "input": "PrivateSwitchBase-input-94",
+                                                        "root": "PrivateSwitchBase-root-91 MuiCheckbox-root",
+                                                      }
+                                                    }
+                                                    color="default"
+                                                    disableRipple={true}
+                                                    disabled={false}
+                                                    icon={
+                                                      <ForwardRef(WithStyles)
+                                                        className="HvCheckBox-icon"
+                                                        fontSize="default"
+                                                      />
+                                                    }
+                                                    id="hv-checkbox-2-input"
+                                                    inputProps={
+                                                      Object {
+                                                        "aria-label": "card-checkbox-input",
+                                                        "data-indeterminate": false,
+                                                      }
+                                                    }
+                                                    onBlur={[Function]}
+                                                    onChange={[Function]}
+                                                    type="checkbox"
+                                                    value="value"
+                                                  >
+                                                    <WithStyles(ForwardRef(IconButton))
+                                                      aria-describedby="hv-card-1-header"
+                                                      aria-labelledby="hv-card-1-header"
+                                                      className="PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
+                                                      color="default"
+                                                      component="span"
+                                                      disableRipple={true}
+                                                      disabled={false}
+                                                      onBlur={[Function]}
+                                                      onFocus={[Function]}
+                                                      tabIndex={null}
+                                                    >
+                                                      <ForwardRef(IconButton)
+                                                        aria-describedby="hv-card-1-header"
+                                                        aria-labelledby="hv-card-1-header"
+                                                        className="PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
+                                                        classes={
+                                                          Object {
+                                                            "colorInherit": "MuiIconButton-colorInherit",
+                                                            "colorPrimary": "MuiIconButton-colorPrimary",
+                                                            "colorSecondary": "MuiIconButton-colorSecondary",
+                                                            "disabled": "Mui-disabled",
+                                                            "edgeEnd": "MuiIconButton-edgeEnd",
+                                                            "edgeStart": "MuiIconButton-edgeStart",
+                                                            "label": "MuiIconButton-label",
+                                                            "root": "MuiIconButton-root",
+                                                            "sizeSmall": "MuiIconButton-sizeSmall",
+                                                          }
+                                                        }
+                                                        color="default"
+                                                        component="span"
+                                                        disableRipple={true}
+                                                        disabled={false}
+                                                        onBlur={[Function]}
+                                                        onFocus={[Function]}
+                                                        tabIndex={null}
+                                                      >
+                                                        <WithStyles(ForwardRef(ButtonBase))
+                                                          aria-describedby="hv-card-1-header"
+                                                          aria-labelledby="hv-card-1-header"
+                                                          centerRipple={true}
+                                                          className="MuiIconButton-root PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          component="span"
+                                                          disableRipple={true}
+                                                          disabled={false}
+                                                          focusRipple={true}
+                                                          onBlur={[Function]}
+                                                          onFocus={[Function]}
+                                                          tabIndex={null}
+                                                        >
+                                                          <ForwardRef(ButtonBase)
+                                                            aria-describedby="hv-card-1-header"
+                                                            aria-labelledby="hv-card-1-header"
+                                                            centerRipple={true}
+                                                            className="MuiIconButton-root PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            classes={
+                                                              Object {
+                                                                "disabled": "Mui-disabled",
+                                                                "focusVisible": "Mui-focusVisible",
+                                                                "root": "MuiButtonBase-root",
+                                                              }
+                                                            }
+                                                            component="span"
+                                                            disableRipple={true}
+                                                            disabled={false}
+                                                            focusRipple={true}
+                                                            onBlur={[Function]}
+                                                            onFocus={[Function]}
+                                                            tabIndex={null}
+                                                          >
+                                                            <span
+                                                              aria-describedby="hv-card-1-header"
+                                                              aria-disabled={false}
+                                                              aria-labelledby="hv-card-1-header"
+                                                              className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              onBlur={[Function]}
+                                                              onDragLeave={[Function]}
+                                                              onFocus={[Function]}
+                                                              onKeyDown={[Function]}
+                                                              onKeyUp={[Function]}
+                                                              onMouseDown={[Function]}
+                                                              onMouseLeave={[Function]}
+                                                              onMouseUp={[Function]}
+                                                              onTouchEnd={[Function]}
+                                                              onTouchMove={[Function]}
+                                                              onTouchStart={[Function]}
+                                                              tabIndex={null}
+                                                            >
+                                                              <span
+                                                                className="MuiIconButton-label"
+                                                              >
+                                                                <input
+                                                                  aria-label="card-checkbox-input"
+                                                                  checked={false}
+                                                                  className="PrivateSwitchBase-input-94"
+                                                                  data-indeterminate={false}
+                                                                  disabled={false}
+                                                                  id="hv-checkbox-2-input"
+                                                                  onChange={[Function]}
+                                                                  type="checkbox"
+                                                                  value="value"
+                                                                />
+                                                                <WithStyles(Checkbox)
+                                                                  className="HvCheckBox-icon"
+                                                                  fontSize="default"
+                                                                >
+                                                                  <Checkbox
+                                                                    className="HvCheckBox-icon"
+                                                                    classes={
+                                                                      Object {
+                                                                        "root": "HvIconCheckbox-root",
+                                                                        "rootL": "HvIconCheckbox-rootL",
+                                                                        "rootM": "HvIconCheckbox-rootM",
+                                                                        "rootS": "HvIconCheckbox-rootS",
+                                                                        "rootXs": "HvIconCheckbox-rootXs",
+                                                                      }
+                                                                    }
+                                                                    fontSize="default"
+                                                                  >
+                                                                    <div
+                                                                      className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                      fontSize="default"
+                                                                    >
+                                                                      <svg
+                                                                        focusable={false}
+                                                                        height="16px"
+                                                                        viewBox="0 0 16 16"
+                                                                        width="16px"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                      >
+                                                                        <path
+                                                                          className="color0"
+                                                                          d="M0 0h16v16H0z"
+                                                                          fill="#FFFFFF"
+                                                                        />
+                                                                        <path
+                                                                          className="color1"
+                                                                          d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
+                                                                          fill="#414141"
+                                                                        />
+                                                                      </svg>
+                                                                    </div>
+                                                                  </Checkbox>
+                                                                </WithStyles(Checkbox)>
+                                                              </span>
+                                                              <NoSsr />
+                                                            </span>
+                                                          </ForwardRef(ButtonBase)>
+                                                        </WithStyles(ForwardRef(ButtonBase))>
+                                                      </ForwardRef(IconButton)>
+                                                    </WithStyles(ForwardRef(IconButton))>
+                                                  </ForwardRef(SwitchBase)>
+                                                </WithStyles(ForwardRef(SwitchBase))>
+                                              </ForwardRef(Checkbox)>
+                                            </WithStyles(ForwardRef(Checkbox))>
+                                            <WithStyles(ForwardRef(Typography))
+                                              className="MuiFormControlLabel-label HvCheckBox-labelTypography"
+                                              component="span"
+                                            >
+                                              <ForwardRef(Typography)
+                                                className="MuiFormControlLabel-label HvCheckBox-labelTypography"
+                                                classes={
+                                                  Object {
+                                                    "alignCenter": "MuiTypography-alignCenter",
+                                                    "alignJustify": "MuiTypography-alignJustify",
+                                                    "alignLeft": "MuiTypography-alignLeft",
+                                                    "alignRight": "MuiTypography-alignRight",
+                                                    "body1": "MuiTypography-body1",
+                                                    "body2": "MuiTypography-body2",
+                                                    "button": "MuiTypography-button",
+                                                    "caption": "MuiTypography-caption",
+                                                    "colorError": "MuiTypography-colorError",
+                                                    "colorInherit": "MuiTypography-colorInherit",
+                                                    "colorPrimary": "MuiTypography-colorPrimary",
+                                                    "colorSecondary": "MuiTypography-colorSecondary",
+                                                    "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                    "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                    "displayBlock": "MuiTypography-displayBlock",
+                                                    "displayInline": "MuiTypography-displayInline",
+                                                    "gutterBottom": "MuiTypography-gutterBottom",
+                                                    "h1": "MuiTypography-h1",
+                                                    "h2": "MuiTypography-h2",
+                                                    "h3": "MuiTypography-h3",
+                                                    "h4": "MuiTypography-h4",
+                                                    "h5": "MuiTypography-h5",
+                                                    "h6": "MuiTypography-h6",
+                                                    "noWrap": "MuiTypography-noWrap",
+                                                    "overline": "MuiTypography-overline",
+                                                    "paragraph": "MuiTypography-paragraph",
+                                                    "root": "MuiTypography-root",
+                                                    "srOnly": "MuiTypography-srOnly",
+                                                    "subtitle1": "MuiTypography-subtitle1",
+                                                    "subtitle2": "MuiTypography-subtitle2",
+                                                  }
+                                                }
+                                                component="span"
+                                              >
+                                                <span
+                                                  className="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
+                                                />
+                                              </ForwardRef(Typography)>
+                                            </WithStyles(ForwardRef(Typography))>
+                                          </label>
+                                        </ForwardRef(FormControlLabel)>
+                                      </WithStyles(ForwardRef(FormControlLabel))>
+                                    </HvCheckbox>
+                                  </WithStyles(HvCheckbox)>
+                                </div>
+                                <div
+                                  className="HvCardFooter-rightContainer"
+                                >
+                                  <WithStyles(Actions)
                                     actions="actions"
                                     actionsCallback={[Function]}
                                     category="ghost"
-                                    classes={
-                                      Object {
-                                        "actionContainer": "HvActions-actionContainer-163",
-                                        "button": "HvActions-button-162",
-                                        "dropDownMenu": "HvActions-dropDownMenu-164",
-                                        "dropDownMenuIcon": "HvActions-dropDownMenuIcon-165",
-                                      }
-                                    }
                                     id="value"
                                     maxVisibleActions={1}
-                                  />
-                                </WithStyles(Actions)>
+                                  >
+                                    <Actions
+                                      actions="actions"
+                                      actionsCallback={[Function]}
+                                      category="ghost"
+                                      classes={
+                                        Object {
+                                          "actionContainer": "HvActions-actionContainer",
+                                          "button": "HvActions-button",
+                                          "dropDownMenu": "HvActions-dropDownMenu",
+                                          "dropDownMenuIcon": "HvActions-dropDownMenuIcon",
+                                        }
+                                      }
+                                      id="value"
+                                      maxVisibleActions={1}
+                                    />
+                                  </WithStyles(Actions)>
+                                </div>
                               </div>
-                            </div>
-                          </ForwardRef(CardActions)>
-                        </WithStyles(ForwardRef(CardActions))>
-                      </Footer>
-                    </Component>
-                  </WithStyles(Component)>
-                </div>
-              </ForwardRef(Paper)>
-            </WithStyles(ForwardRef(Paper))>
-          </ForwardRef(Card)>
-        </WithStyles(ForwardRef(Card))>
-      </HvCard>
-    </WithStyles(HvCard)>
-  </ThemeProvider>
+                            </ForwardRef(CardActions)>
+                          </WithStyles(ForwardRef(CardActions))>
+                        </Footer>
+                      </Component>
+                    </WithStyles(Component)>
+                  </div>
+                </ForwardRef(Paper)>
+              </WithStyles(ForwardRef(Paper))>
+            </ForwardRef(Card)>
+          </WithStyles(ForwardRef(Card))>
+        </HvCard>
+      </WithStyles(HvCard)>
+    </ThemeProvider>
+  </StylesProvider>
 </HvProvider>
 `;

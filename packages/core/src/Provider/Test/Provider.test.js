@@ -2,7 +2,7 @@
 
 import React from "react";
 import { shallow, mount } from "enzyme";
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
+import { ThemeProvider as MuiThemeProvider, createMuiTheme } from "@material-ui/core";
 import { ConfigProvider } from "../../config/context";
 import HvProvider from "../Provider";
 
@@ -42,14 +42,16 @@ describe("Provider", () => {
   });
 
   it("should override the hv-theme with the app-theme", () => {
-    expect(wrapper.props().theme.typography.h1.fontSize).toEqual(
+    const muiThemeProvider = wrapper.find(MuiThemeProvider);
+    expect(muiThemeProvider.props().theme.typography.h1.fontSize).toEqual(
       mockOverriden.typography.h1.fontSize
     );
   });
 
   it("should not override the hv-theme if there is no app theme defined", () => {
     const wrapperNotOverriden = shallow(<HvProvider> Mock </HvProvider>);
-    expect(wrapperNotOverriden.props().theme.typography.h1.fontSize).not.toEqual(
+    const muiThemeProvider = wrapperNotOverriden.find(MuiThemeProvider);
+    expect(muiThemeProvider.props().theme.typography.h1.fontSize).not.toEqual(
       mockOverriden.typography.h1.fontSize
     );
   });

@@ -6,807 +6,791 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
   theme={null}
   uiKitTheme="dawn"
 >
-  <ThemeProvider
-    theme={
-      Object {
-        "breakpoints": Object {
-          "between": [Function],
-          "down": [Function],
-          "keys": Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-          "only": [Function],
-          "up": [Function],
-          "values": Object {
-            "lg": 1270,
-            "md": 960,
-            "sm": 600,
-            "xl": 1920,
-            "xs": 0,
-          },
-          "width": [Function],
-        },
-        "direction": "ltr",
-        "hv": Object {
-          "deprecated": Object {
-            "palette": Object {
-              "accent": Object {},
-              "atmosphere": Object {},
-              "base": Object {},
-              "semantic": Object {},
-              "support": Object {},
+  <StylesProvider
+    generateClassName={[Function]}
+    injectFirst={true}
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "breakpoints": Object {
+            "between": [Function],
+            "down": [Function],
+            "keys": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+            "only": [Function],
+            "up": [Function],
+            "values": Object {
+              "lg": 1270,
+              "md": 960,
+              "sm": 600,
+              "xl": 1920,
+              "xs": 0,
             },
+            "width": [Function],
+          },
+          "direction": "ltr",
+          "hv": Object {
+            "deprecated": Object {
+              "palette": Object {
+                "accent": Object {},
+                "atmosphere": Object {},
+                "base": Object {},
+                "semantic": Object {},
+                "support": Object {},
+              },
+              "typography": Object {
+                "disabledText": Object {},
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {},
+                  "polarizes": Object {},
+                  "sequential": Object {},
+                  "undefinedState": Object {},
+                },
+              },
+            },
+            "name": "dawn",
+            "palette": Object {
+              "accent": Object {
+                "acce0": "#FFFFFF",
+                "acce1": "#414141",
+                "acce2": "#146BD2",
+                "acce2h": "#4389DB",
+                "acce3": "#CC0000",
+              },
+              "atmosphere": Object {
+                "atmo1": "#FFFFFF",
+                "atmo2": "#F9F9F9",
+                "atmo3": "#F5F5F5",
+                "atmo4": "#F0F0F0",
+                "atmo5": "#DEDEDE",
+                "atmo6": "#BCBCBC",
+                "atmo7": "#999999",
+              },
+              "base": Object {
+                "base1": "#FFFFFF",
+                "base2": "#414141",
+              },
+              "semantic": Object {
+                "sema1": "#63A621",
+                "sema10": "#EF9A9A",
+                "sema11": "#E57373",
+                "sema12": "#EF5350",
+                "sema13": "#E53935",
+                "sema14": "#C62828",
+                "sema15": "#80DEEA",
+                "sema16": "#4DD0E1",
+                "sema17": "#26C6DA",
+                "sema18": "#00ACC1",
+                "sema19": "#00838F",
+                "sema2": "#72CCCB",
+                "sema3": "#E68C17",
+                "sema4": "#FF5252",
+                "sema5": "#C51162",
+                "sema6": "#AA00FF",
+                "sema7": "#D3E3F6",
+                "sema8": "#DFECD1",
+                "sema9": "#F5D8D8",
+              },
+              "support": Object {
+                "supp1": "#0F8B8D",
+                "supp2": "#734B6D",
+                "supp3": "#4E7599",
+                "supp4": "#C19C31",
+                "supp5": "#546B6B",
+              },
+            },
+            "spacing": Object {
+              "lg": 60,
+              "md": 30,
+              "sm": 20,
+              "xl": 90,
+              "xs": 10,
+            },
+            "type": "light",
             "typography": Object {
-              "disabledText": Object {},
+              "3xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "4xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "5xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "disabledButtonText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "disabledText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "highlightText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "infoText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "inlineLink": Object {
+                "color": "#146BD2",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "lTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "labelText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "mTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "normalText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "placeholderText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "sLink": Object {
+                "color": "#146BD2",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "selectedNavText": Object {
+                "color": "#CC0000",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "selectedText": Object {
+                "background": "#414141",
+                "color": "#F9F9F9",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "vizText": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
+              "xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "xsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
+              "xxlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "xxsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
             },
             "viz": Object {
               "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "undefinedState": Object {},
+                "categorical": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz10": "#419393",
+                  "cviz11": "#58C9DD",
+                  "cviz12": "#F8C189",
+                  "cviz13": "#528BBF",
+                  "cviz14": "#DE64BD",
+                  "cviz15": "#73BF9C",
+                  "cviz16": "#9672C1",
+                  "cviz17": "#EB95AF",
+                  "cviz18": "#646A98",
+                  "cviz19": "#D88136",
+                  "cviz2": "#FF990D",
+                  "cviz20": "#309B59",
+                  "cviz3": "#D31F6B",
+                  "cviz4": "#FFD00A",
+                  "cviz5": "#18C38A",
+                  "cviz6": "#098CB2",
+                  "cviz7": "#EA5B86",
+                  "cviz8": "#9B469B",
+                  "cviz9": "#F4763D",
+                },
+                "polarizes": Object {
+                  "cviz21": "#869F1E",
+                  "cviz22": "#A4991C",
+                  "cviz23": "#C4931A",
+                  "cviz24": "#E68C17",
+                  "cviz25": "#F27034",
+                  "cviz26": "#FF5252",
+                  "cviz27": "#EC3D57",
+                  "cviz28": "#D8265D",
+                  "sema1": "#63A621",
+                  "sema5": "#C51162",
+                },
+                "sequential": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz1_100": "#E3F1F6",
+                  "cviz1_200": "#CFEAF3",
+                  "cviz1_300": "#BAE3F3",
+                  "cviz1_400": "#A6DCEE",
+                  "cviz1_500": "#92D5EC",
+                  "cviz1_600": "#7ECEE9",
+                  "cviz1_700": "#69C7E7",
+                  "cviz1_800": "#55C0E4",
+                  "cviz1_900": "#40B9E2",
+                },
+                "undefinedState": Object {
+                  "atmo5": "#DEDEDE",
+                },
               },
             },
           },
-          "name": "dawn",
-          "palette": Object {
-            "accent": Object {
-              "acce0": "#FFFFFF",
-              "acce1": "#414141",
-              "acce2": "#146BD2",
-              "acce2h": "#4389DB",
-              "acce3": "#CC0000",
-            },
-            "atmosphere": Object {
-              "atmo1": "#FFFFFF",
-              "atmo2": "#F9F9F9",
-              "atmo3": "#F5F5F5",
-              "atmo4": "#F0F0F0",
-              "atmo5": "#DEDEDE",
-              "atmo6": "#BCBCBC",
-              "atmo7": "#999999",
-            },
-            "base": Object {
-              "base1": "#FFFFFF",
-              "base2": "#414141",
-            },
-            "semantic": Object {
-              "sema1": "#63A621",
-              "sema10": "#EF9A9A",
-              "sema11": "#E57373",
-              "sema12": "#EF5350",
-              "sema13": "#E53935",
-              "sema14": "#C62828",
-              "sema15": "#80DEEA",
-              "sema16": "#4DD0E1",
-              "sema17": "#26C6DA",
-              "sema18": "#00ACC1",
-              "sema19": "#00838F",
-              "sema2": "#72CCCB",
-              "sema3": "#E68C17",
-              "sema4": "#FF5252",
-              "sema5": "#C51162",
-              "sema6": "#AA00FF",
-              "sema7": "#D3E3F6",
-              "sema8": "#DFECD1",
-              "sema9": "#F5D8D8",
-            },
-            "support": Object {
-              "supp1": "#0F8B8D",
-              "supp2": "#734B6D",
-              "supp3": "#4E7599",
-              "supp4": "#C19C31",
-              "supp5": "#546B6B",
-            },
-          },
-          "spacing": Object {
-            "lg": 60,
-            "md": 30,
-            "sm": 20,
-            "xl": 90,
-            "xs": 10,
-          },
-          "type": "light",
-          "typography": Object {
-            "3xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "4xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "5xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "disabledButtonText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "disabledText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "highlightText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "infoText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "inlineLink": Object {
-              "color": "#146BD2",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "lTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "labelText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "mTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "normalText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "placeholderText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "sLink": Object {
-              "color": "#146BD2",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "selectedNavText": Object {
-              "color": "#CC0000",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "selectedText": Object {
-              "background": "#414141",
-              "color": "#F9F9F9",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "vizText": Object {
-              "color": "#414141",
-              "fontSize": "10px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "15px",
-            },
-            "xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "xsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-            "xxlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "xxsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-          },
-          "viz": Object {
-            "palette": Object {
-              "categorical": Object {
-                "cviz1": "#2DB3E0",
-                "cviz10": "#419393",
-                "cviz11": "#58C9DD",
-                "cviz12": "#F8C189",
-                "cviz13": "#528BBF",
-                "cviz14": "#DE64BD",
-                "cviz15": "#73BF9C",
-                "cviz16": "#9672C1",
-                "cviz17": "#EB95AF",
-                "cviz18": "#646A98",
-                "cviz19": "#D88136",
-                "cviz2": "#FF990D",
-                "cviz20": "#309B59",
-                "cviz3": "#D31F6B",
-                "cviz4": "#FFD00A",
-                "cviz5": "#18C38A",
-                "cviz6": "#098CB2",
-                "cviz7": "#EA5B86",
-                "cviz8": "#9B469B",
-                "cviz9": "#F4763D",
+          "mixins": Object {
+            "gutters": [Function],
+            "toolbar": Object {
+              "@media (min-width:0px) and (orientation: landscape)": Object {
+                "minHeight": 48,
               },
-              "polarizes": Object {
-                "cviz21": "#869F1E",
-                "cviz22": "#A4991C",
-                "cviz23": "#C4931A",
-                "cviz24": "#E68C17",
-                "cviz25": "#F27034",
-                "cviz26": "#FF5252",
-                "cviz27": "#EC3D57",
-                "cviz28": "#D8265D",
-                "sema1": "#63A621",
-                "sema5": "#C51162",
-              },
-              "sequential": Object {
-                "cviz1": "#2DB3E0",
-                "cviz1_100": "#E3F1F6",
-                "cviz1_200": "#CFEAF3",
-                "cviz1_300": "#BAE3F3",
-                "cviz1_400": "#A6DCEE",
-                "cviz1_500": "#92D5EC",
-                "cviz1_600": "#7ECEE9",
-                "cviz1_700": "#69C7E7",
-                "cviz1_800": "#55C0E4",
-                "cviz1_900": "#40B9E2",
-              },
-              "undefinedState": Object {
-                "atmo5": "#DEDEDE",
-              },
-            },
-          },
-        },
-        "mixins": Object {
-          "gutters": [Function],
-          "toolbar": Object {
-            "@media (min-width:0px) and (orientation: landscape)": Object {
-              "minHeight": 48,
-            },
-            "@media (min-width:600px)": Object {
-              "minHeight": 64,
-            },
-            "minHeight": 56,
-          },
-        },
-        "overrides": Object {
-          "MuiAppBar": Object {
-            "colorDefault": Object {
-              "backgroundColor": "#FFFFFF",
-              "contrastText": "#414141",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "height": "50px",
-              },
-              "borderTop": "4px solid #CC0000",
-            },
-          },
-          "MuiIconButton": Object {
-            "root": Object {
-              "&:focus": Object {
-                "outlineColor": "Highlight",
-                "outlineOffset": -2,
-                "outlineStyle": "auto",
-                "outlineWidth": 4,
-              },
-              "&:hover": Object {
-                "backgroundColor": "#F0F0F0",
-              },
-              "borderRadius": 0,
-              "padding": 0,
-            },
-          },
-          "MuiToolbar": Object {
-            "dense": Object {
-              "minHeight": "46px",
-            },
-            "gutters": Object {
               "@media (min-width:600px)": Object {
+                "minHeight": 64,
+              },
+              "minHeight": 56,
+            },
+          },
+          "overrides": Object {
+            "MuiAppBar": Object {
+              "colorDefault": Object {
+                "backgroundColor": "#FFFFFF",
+                "contrastText": "#414141",
+              },
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "height": "50px",
+                },
+                "borderTop": "4px solid #CC0000",
+              },
+            },
+            "MuiIconButton": Object {
+              "root": Object {
+                "&:focus": Object {
+                  "outlineColor": "Highlight",
+                  "outlineOffset": -2,
+                  "outlineStyle": "auto",
+                  "outlineWidth": 4,
+                },
+                "&:hover": Object {
+                  "backgroundColor": "#F0F0F0",
+                },
+                "borderRadius": 0,
+                "padding": 0,
+              },
+            },
+            "MuiToolbar": Object {
+              "dense": Object {
+                "minHeight": "46px",
+              },
+              "gutters": Object {
+                "@media (min-width:600px)": Object {
+                  "paddingLeft": "20px",
+                  "paddingRight": "20px",
+                },
                 "paddingLeft": "20px",
                 "paddingRight": "20px",
               },
-              "paddingLeft": "20px",
-              "paddingRight": "20px",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "minHeight": "46px",
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "minHeight": "46px",
+                },
+                "alignItems": "center",
               },
-              "alignItems": "center",
             },
           },
-        },
-        "palette": Object {
-          "acce0": "#FFFFFF",
-          "acce1": "#414141",
-          "acce2": "#146BD2",
-          "acce2h": "#4389DB",
-          "acce3": "#CC0000",
-          "action": Object {
-            "activatedOpacity": 0.12,
-            "active": "rgba(0, 0, 0, 0.54)",
-            "disabled": "rgba(0, 0, 0, 0.26)",
-            "disabledBackground": "rgba(0, 0, 0, 0.12)",
-            "disabledOpacity": 0.38,
-            "focus": "rgba(0, 0, 0, 0.12)",
-            "focusOpacity": 0.12,
-            "hover": "rgba(0, 0, 0, 0.04)",
-            "hoverOpacity": 0.04,
-            "selected": "rgba(0, 0, 0, 0.08)",
-            "selectedOpacity": 0.08,
+          "palette": Object {
+            "acce0": "#FFFFFF",
+            "acce1": "#414141",
+            "acce2": "#146BD2",
+            "acce2h": "#4389DB",
+            "acce3": "#CC0000",
+            "action": Object {
+              "activatedOpacity": 0.12,
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+              "disabledBackground": "rgba(0, 0, 0, 0.12)",
+              "disabledOpacity": 0.38,
+              "focus": "rgba(0, 0, 0, 0.12)",
+              "focusOpacity": 0.12,
+              "hover": "rgba(0, 0, 0, 0.04)",
+              "hoverOpacity": 0.04,
+              "selected": "rgba(0, 0, 0, 0.08)",
+              "selectedOpacity": 0.08,
+            },
+            "atmo1": "#FFFFFF",
+            "atmo2": "#F9F9F9",
+            "atmo3": "#F5F5F5",
+            "atmo4": "#F0F0F0",
+            "atmo5": "#DEDEDE",
+            "atmo6": "#BCBCBC",
+            "atmo7": "#999999",
+            "augmentColor": [Function],
+            "background": Object {
+              "default": "#F5F5F5",
+              "paper": "#fff",
+            },
+            "base1": "#FFFFFF",
+            "base2": "#414141",
+            "common": Object {
+              "black": "#000",
+              "white": "#fff",
+            },
+            "contrastThreshold": 3,
+            "divider": "rgba(0, 0, 0, 0.12)",
+            "error": Object {
+              "contrastText": "#fff",
+              "dark": "#d32f2f",
+              "light": "#e57373",
+              "main": "#f44336",
+            },
+            "getContrastText": [Function],
+            "grey": Object {
+              "100": "#f5f5f5",
+              "200": "#eeeeee",
+              "300": "#e0e0e0",
+              "400": "#bdbdbd",
+              "50": "#fafafa",
+              "500": "#9e9e9e",
+              "600": "#757575",
+              "700": "#616161",
+              "800": "#424242",
+              "900": "#212121",
+              "A100": "#d5d5d5",
+              "A200": "#aaaaaa",
+              "A400": "#303030",
+              "A700": "#616161",
+            },
+            "info": Object {
+              "contrastText": "#fff",
+              "dark": "#1976d2",
+              "light": "#64b5f6",
+              "main": "#2196f3",
+            },
+            "primary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(14, 74, 147)",
+              "light": "#4389DB",
+              "main": "#146BD2",
+            },
+            "secondary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(45, 45, 45)",
+              "light": "#999999",
+              "main": "#414141",
+            },
+            "sema1": "#63A621",
+            "sema10": "#EF9A9A",
+            "sema11": "#E57373",
+            "sema12": "#EF5350",
+            "sema13": "#E53935",
+            "sema14": "#C62828",
+            "sema15": "#80DEEA",
+            "sema16": "#4DD0E1",
+            "sema17": "#26C6DA",
+            "sema18": "#00ACC1",
+            "sema19": "#00838F",
+            "sema2": "#72CCCB",
+            "sema3": "#E68C17",
+            "sema4": "#FF5252",
+            "sema5": "#C51162",
+            "sema6": "#AA00FF",
+            "sema7": "#D3E3F6",
+            "sema8": "#DFECD1",
+            "sema9": "#F5D8D8",
+            "success": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#388e3c",
+              "light": "#81c784",
+              "main": "#4caf50",
+            },
+            "supp1": "#0F8B8D",
+            "supp2": "#734B6D",
+            "supp3": "#4E7599",
+            "supp4": "#C19C31",
+            "supp5": "#546B6B",
+            "text": Object {
+              "disabled": "#999999",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "primary": "#414141",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+            "tonalOffset": 0.2,
+            "type": "light",
+            "warning": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#f57c00",
+              "light": "#ffb74d",
+              "main": "#ff9800",
+            },
           },
-          "atmo1": "#FFFFFF",
-          "atmo2": "#F9F9F9",
-          "atmo3": "#F5F5F5",
-          "atmo4": "#F0F0F0",
-          "atmo5": "#DEDEDE",
-          "atmo6": "#BCBCBC",
-          "atmo7": "#999999",
-          "augmentColor": [Function],
-          "background": Object {
-            "default": "#F5F5F5",
-            "paper": "#fff",
+          "props": Object {
+            "MuiButtonBase": Object {
+              "disableRipple": true,
+            },
+            "MuiInput": Object {
+              "disableUnderline": true,
+            },
           },
-          "base1": "#FFFFFF",
-          "base2": "#414141",
-          "common": Object {
-            "black": "#000",
-            "white": "#fff",
-          },
-          "contrastThreshold": 3,
-          "divider": "rgba(0, 0, 0, 0.12)",
-          "error": Object {
-            "contrastText": "#fff",
-            "dark": "#d32f2f",
-            "light": "#e57373",
-            "main": "#f44336",
-          },
-          "getContrastText": [Function],
-          "grey": Object {
-            "100": "#f5f5f5",
-            "200": "#eeeeee",
-            "300": "#e0e0e0",
-            "400": "#bdbdbd",
-            "50": "#fafafa",
-            "500": "#9e9e9e",
-            "600": "#757575",
-            "700": "#616161",
-            "800": "#424242",
-            "900": "#212121",
-            "A100": "#d5d5d5",
-            "A200": "#aaaaaa",
-            "A400": "#303030",
-            "A700": "#616161",
-          },
-          "info": Object {
-            "contrastText": "#fff",
-            "dark": "#1976d2",
-            "light": "#64b5f6",
-            "main": "#2196f3",
-          },
-          "primary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(14, 74, 147)",
-            "light": "#4389DB",
-            "main": "#146BD2",
-          },
-          "secondary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(45, 45, 45)",
-            "light": "#999999",
-            "main": "#414141",
-          },
-          "sema1": "#63A621",
-          "sema10": "#EF9A9A",
-          "sema11": "#E57373",
-          "sema12": "#EF5350",
-          "sema13": "#E53935",
-          "sema14": "#C62828",
-          "sema15": "#80DEEA",
-          "sema16": "#4DD0E1",
-          "sema17": "#26C6DA",
-          "sema18": "#00ACC1",
-          "sema19": "#00838F",
-          "sema2": "#72CCCB",
-          "sema3": "#E68C17",
-          "sema4": "#FF5252",
-          "sema5": "#C51162",
-          "sema6": "#AA00FF",
-          "sema7": "#D3E3F6",
-          "sema8": "#DFECD1",
-          "sema9": "#F5D8D8",
-          "success": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#388e3c",
-            "light": "#81c784",
-            "main": "#4caf50",
-          },
-          "supp1": "#0F8B8D",
-          "supp2": "#734B6D",
-          "supp3": "#4E7599",
-          "supp4": "#C19C31",
-          "supp5": "#546B6B",
-          "text": Object {
-            "disabled": "#999999",
-            "hint": "rgba(0, 0, 0, 0.38)",
-            "primary": "#414141",
-            "secondary": "rgba(0, 0, 0, 0.54)",
-          },
-          "tonalOffset": 0.2,
-          "type": "light",
-          "warning": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#f57c00",
-            "light": "#ffb74d",
-            "main": "#ff9800",
-          },
-        },
-        "props": Object {
-          "MuiButtonBase": Object {
-            "disableRipple": true,
-          },
-          "MuiInput": Object {
-            "disableUnderline": true,
-          },
-        },
-        "shadows": Array [
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-        ],
-        "shape": Object {
-          "borderRadius": 0,
-        },
-        "spacing": [Function],
-        "transitions": Object {
-          "create": [Function],
-          "duration": Object {
-            "complex": 375,
-            "enteringScreen": 225,
-            "leavingScreen": 195,
-            "short": 250,
-            "shorter": 200,
-            "shortest": 150,
-            "standard": 300,
-          },
-          "easing": Object {
-            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-          },
-          "getAutoHeightDuration": [Function],
-        },
-        "typography": Object {
-          "body1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "body2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "button": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-            "textTransform": "uppercase",
-          },
-          "caption": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 1.66,
-          },
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
+          "shadows": Array [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
           ],
-          "fontSize": 14,
-          "fontWeightBold": 700,
-          "fontWeightLight": 300,
-          "fontWeightMedium": 500,
-          "fontWeightRegular": 400,
-          "h1": Object {
-            "color": "#414141",
+          "shape": Object {
+            "borderRadius": 0,
+          },
+          "spacing": [Function],
+          "transitions": Object {
+            "create": [Function],
+            "duration": Object {
+              "complex": 375,
+              "enteringScreen": 225,
+              "leavingScreen": 195,
+              "short": 250,
+              "shorter": 200,
+              "shortest": 150,
+              "standard": 300,
+            },
+            "easing": Object {
+              "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+              "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+              "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+              "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+            },
+            "getAutoHeightDuration": [Function],
+          },
+          "typography": Object {
+            "body1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "body2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "button": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+              "textTransform": "uppercase",
+            },
+            "caption": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 1.66,
+            },
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "32px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+            "fontSize": 14,
+            "fontWeightBold": 700,
+            "fontWeightLight": 300,
+            "fontWeightMedium": 500,
+            "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h3": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h4": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h5": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "lineHeight": 1.334,
+            },
+            "h6": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "lineHeight": 1.6,
+            },
+            "htmlFontSize": 16,
+            "overline": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
+            },
+            "pxToRem": [Function],
+            "round": [Function],
+            "subtitle1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "subtitle2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
+            },
+            "suppressDeprecationWarnings": true,
           },
-          "h2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "32px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+          "zIndex": Object {
+            "appBar": 1100,
+            "drawer": 1200,
+            "mobileStepper": 1000,
+            "modal": 1300,
+            "snackbar": 1400,
+            "speedDial": 1050,
+            "tooltip": 1500,
           },
-          "h3": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h4": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h5": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.5rem",
-            "fontWeight": 400,
-            "lineHeight": 1.334,
-          },
-          "h6": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.25rem",
-            "fontWeight": 500,
-            "lineHeight": 1.6,
-          },
-          "htmlFontSize": 16,
-          "overline": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 2.66,
-            "textTransform": "uppercase",
-          },
-          "pxToRem": [Function],
-          "round": [Function],
-          "subtitle1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "subtitle2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
-          },
-          "suppressDeprecationWarnings": true,
-        },
-        "zIndex": Object {
-          "appBar": 1100,
-          "drawer": 1200,
-          "mobileStepper": 1000,
-          "modal": 1300,
-          "snackbar": 1400,
-          "speedDial": 1050,
-          "tooltip": 1500,
-        },
-        Symbol(mui.nested): false,
-      }
-    }
-  >
-    <WithStyles(CssBaseline)>
-      <CssBaseline
-        classes={Object {}}
-      />
-    </WithStyles(CssBaseline)>
-    <WithStyles(HvTabs)
-      value={1}
-    >
-      <HvTabs
-        classes={
-          Object {
-            "flexContainer": "HvTabs-flexContainer-23",
-            "indicator": "HvTabs-indicator-21",
-            "root": "HvTabs-root-20",
-            "scroller": "HvTabs-scroller-22",
-          }
+          Symbol(mui.nested): false,
         }
+      }
+    >
+      <CssBaseline />
+      <WithStyles(HvTabs)
         value={1}
       >
-        <WithStyles(ForwardRef(Tabs))
-          TabIndicatorProps={
-            Object {
-              "children": <div />,
-            }
-          }
+        <HvTabs
           classes={
             Object {
-              "flexContainer": "HvTabs-flexContainer-23",
-              "indicator": "HvTabs-indicator-21",
-              "root": "HvTabs-root-20",
-              "scroller": "HvTabs-scroller-22",
+              "flexContainer": "HvTabs-flexContainer",
+              "indicator": "HvTabs-indicator",
+              "root": "HvTabs-root",
+              "scroller": "HvTabs-scroller",
             }
           }
           value={1}
         >
-          <ForwardRef(Tabs)
+          <WithStyles(ForwardRef(Tabs))
             TabIndicatorProps={
               Object {
                 "children": <div />,
@@ -814,76 +798,73 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
             }
             classes={
               Object {
-                "centered": "MuiTabs-centered",
-                "fixed": "MuiTabs-fixed",
-                "flexContainer": "MuiTabs-flexContainer HvTabs-flexContainer-23",
-                "flexContainerVertical": "MuiTabs-flexContainerVertical",
-                "indicator": "MuiTabs-indicator HvTabs-indicator-21",
-                "root": "MuiTabs-root HvTabs-root-20",
-                "scrollButtons": "MuiTabs-scrollButtons",
-                "scrollButtonsDesktop": "MuiTabs-scrollButtonsDesktop",
-                "scrollable": "MuiTabs-scrollable",
-                "scroller": "MuiTabs-scroller HvTabs-scroller-22",
-                "vertical": "MuiTabs-vertical",
+                "flexContainer": "HvTabs-flexContainer",
+                "indicator": "HvTabs-indicator",
+                "root": "HvTabs-root",
+                "scroller": "HvTabs-scroller",
               }
             }
             value={1}
           >
-            <div
-              className="MuiTabs-root HvTabs-root-20"
+            <ForwardRef(Tabs)
+              TabIndicatorProps={
+                Object {
+                  "children": <div />,
+                }
+              }
+              classes={
+                Object {
+                  "centered": "MuiTabs-centered",
+                  "fixed": "MuiTabs-fixed",
+                  "flexContainer": "MuiTabs-flexContainer HvTabs-flexContainer",
+                  "flexContainerVertical": "MuiTabs-flexContainerVertical",
+                  "indicator": "MuiTabs-indicator HvTabs-indicator",
+                  "root": "MuiTabs-root HvTabs-root",
+                  "scrollButtons": "MuiTabs-scrollButtons",
+                  "scrollButtonsDesktop": "MuiTabs-scrollButtonsDesktop",
+                  "scrollable": "MuiTabs-scrollable",
+                  "scroller": "MuiTabs-scroller HvTabs-scroller",
+                  "vertical": "MuiTabs-vertical",
+                }
+              }
+              value={1}
             >
               <div
-                className="MuiTabs-scroller HvTabs-scroller-22 MuiTabs-fixed"
-                onScroll={[Function]}
-                style={
-                  Object {
-                    "marginBottom": null,
-                    "overflow": "hidden",
-                  }
-                }
+                className="MuiTabs-root HvTabs-root"
               >
                 <div
-                  className="MuiTabs-flexContainer HvTabs-flexContainer-23"
-                  role="tablist"
+                  className="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed"
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "marginBottom": null,
+                      "overflow": "hidden",
+                    }
+                  }
                 >
-                  <WithStyles(HvTab)
-                    disabled={false}
-                    fullWidth={false}
-                    icon={null}
-                    indicator={false}
-                    key=".0"
-                    label="Clickable Tab"
-                    selected={false}
-                    textColor="inherit"
-                    value={0}
+                  <div
+                    className="MuiTabs-flexContainer HvTabs-flexContainer"
+                    role="tablist"
                   >
-                    <HvTab
-                      classes={
-                        Object {
-                          "disabled": "HvTab-disabled-37",
-                          "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-36",
-                        }
-                      }
+                    <WithStyles(HvTab)
                       disabled={false}
                       fullWidth={false}
                       icon={null}
                       indicator={false}
+                      key=".0"
                       label="Clickable Tab"
                       selected={false}
                       textColor="inherit"
                       value={0}
                     >
-                      <WithStyles(ForwardRef(Tab))
+                      <HvTab
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-37",
-                            "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-36",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
-                        disableRipple={true}
-                        disableTouchRipple={true}
                         disabled={false}
                         fullWidth={false}
                         icon={null}
@@ -893,19 +874,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         textColor="inherit"
                         value={0}
                       >
-                        <ForwardRef(Tab)
+                        <WithStyles(ForwardRef(Tab))
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-37",
-                              "fullWidth": "MuiTab-fullWidth",
-                              "labelIcon": "MuiTab-labelIcon",
-                              "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-36",
-                              "textColorInherit": "MuiTab-textColorInherit",
-                              "textColorPrimary": "MuiTab-textColorPrimary",
-                              "textColorSecondary": "MuiTab-textColorSecondary",
-                              "wrapped": "MuiTab-wrapped",
-                              "wrapper": "MuiTab-wrapper",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
@@ -919,26 +893,35 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           textColor="inherit"
                           value={0}
                         >
-                          <WithStyles(ForwardRef(ButtonBase))
-                            aria-selected={false}
-                            className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
+                          <ForwardRef(Tab)
+                            classes={
+                              Object {
+                                "disabled": "Mui-disabled HvTab-disabled",
+                                "fullWidth": "MuiTab-fullWidth",
+                                "labelIcon": "MuiTab-labelIcon",
+                                "root": "MuiTab-root HvTab-root",
+                                "selected": "Mui-selected HvTab-selected",
+                                "textColorInherit": "MuiTab-textColorInherit",
+                                "textColorPrimary": "MuiTab-textColorPrimary",
+                                "textColorSecondary": "MuiTab-textColorSecondary",
+                                "wrapped": "MuiTab-wrapped",
+                                "wrapper": "MuiTab-wrapper",
+                              }
+                            }
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
-                            focusRipple={true}
-                            onClick={[Function]}
-                            role="tab"
+                            fullWidth={false}
+                            icon={null}
+                            indicator={false}
+                            label="Clickable Tab"
+                            selected={false}
+                            textColor="inherit"
+                            value={0}
                           >
-                            <ForwardRef(ButtonBase)
+                            <WithStyles(ForwardRef(ButtonBase))
                               aria-selected={false}
-                              className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
-                              classes={
-                                Object {
-                                  "disabled": "Mui-disabled",
-                                  "focusVisible": "Mui-focusVisible",
-                                  "root": "MuiButtonBase-root",
-                                }
-                              }
+                              className="MuiTab-root HvTab-root MuiTab-textColorInherit"
                               disableRipple={true}
                               disableTouchRipple={true}
                               disabled={false}
@@ -946,77 +929,75 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               onClick={[Function]}
                               role="tab"
                             >
-                              <button
+                              <ForwardRef(ButtonBase)
                                 aria-selected={false}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
+                                className="MuiTab-root HvTab-root MuiTab-textColorInherit"
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "root": "MuiButtonBase-root",
+                                  }
+                                }
+                                disableRipple={true}
+                                disableTouchRipple={true}
                                 disabled={false}
-                                onBlur={[Function]}
+                                focusRipple={true}
                                 onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
                                 role="tab"
-                                tabIndex={0}
-                                type="button"
                               >
-                                <span
-                                  className="MuiTab-wrapper"
+                                <button
+                                  aria-selected={false}
+                                  className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onDragLeave={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                  role="tab"
+                                  tabIndex={0}
+                                  type="button"
                                 >
-                                  Clickable Tab
-                                </span>
-                                <NoSsr />
-                              </button>
-                            </ForwardRef(ButtonBase)>
-                          </WithStyles(ForwardRef(ButtonBase))>
-                        </ForwardRef(Tab)>
-                      </WithStyles(ForwardRef(Tab))>
-                    </HvTab>
-                  </WithStyles(HvTab)>
-                  <WithStyles(HvTab)
-                    disabled={false}
-                    fullWidth={false}
-                    icon={null}
-                    indicator={false}
-                    key=".1"
-                    label="Clickable Tab"
-                    selected={true}
-                    textColor="inherit"
-                    value={1}
-                  >
-                    <HvTab
-                      classes={
-                        Object {
-                          "disabled": "HvTab-disabled-37",
-                          "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-36",
-                        }
-                      }
+                                  <span
+                                    className="MuiTab-wrapper"
+                                  >
+                                    Clickable Tab
+                                  </span>
+                                  <NoSsr />
+                                </button>
+                              </ForwardRef(ButtonBase)>
+                            </WithStyles(ForwardRef(ButtonBase))>
+                          </ForwardRef(Tab)>
+                        </WithStyles(ForwardRef(Tab))>
+                      </HvTab>
+                    </WithStyles(HvTab)>
+                    <WithStyles(HvTab)
                       disabled={false}
                       fullWidth={false}
                       icon={null}
                       indicator={false}
+                      key=".1"
                       label="Clickable Tab"
                       selected={true}
                       textColor="inherit"
                       value={1}
                     >
-                      <WithStyles(ForwardRef(Tab))
+                      <HvTab
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-37",
-                            "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-36",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
-                        disableRipple={true}
-                        disableTouchRipple={true}
                         disabled={false}
                         fullWidth={false}
                         icon={null}
@@ -1026,19 +1007,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         textColor="inherit"
                         value={1}
                       >
-                        <ForwardRef(Tab)
+                        <WithStyles(ForwardRef(Tab))
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-37",
-                              "fullWidth": "MuiTab-fullWidth",
-                              "labelIcon": "MuiTab-labelIcon",
-                              "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-36",
-                              "textColorInherit": "MuiTab-textColorInherit",
-                              "textColorPrimary": "MuiTab-textColorPrimary",
-                              "textColorSecondary": "MuiTab-textColorSecondary",
-                              "wrapped": "MuiTab-wrapped",
-                              "wrapper": "MuiTab-wrapper",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
@@ -1052,26 +1026,35 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           textColor="inherit"
                           value={1}
                         >
-                          <WithStyles(ForwardRef(ButtonBase))
-                            aria-selected={true}
-                            className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-36"
+                          <ForwardRef(Tab)
+                            classes={
+                              Object {
+                                "disabled": "Mui-disabled HvTab-disabled",
+                                "fullWidth": "MuiTab-fullWidth",
+                                "labelIcon": "MuiTab-labelIcon",
+                                "root": "MuiTab-root HvTab-root",
+                                "selected": "Mui-selected HvTab-selected",
+                                "textColorInherit": "MuiTab-textColorInherit",
+                                "textColorPrimary": "MuiTab-textColorPrimary",
+                                "textColorSecondary": "MuiTab-textColorSecondary",
+                                "wrapped": "MuiTab-wrapped",
+                                "wrapper": "MuiTab-wrapper",
+                              }
+                            }
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
-                            focusRipple={true}
-                            onClick={[Function]}
-                            role="tab"
+                            fullWidth={false}
+                            icon={null}
+                            indicator={false}
+                            label="Clickable Tab"
+                            selected={true}
+                            textColor="inherit"
+                            value={1}
                           >
-                            <ForwardRef(ButtonBase)
+                            <WithStyles(ForwardRef(ButtonBase))
                               aria-selected={true}
-                              className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-36"
-                              classes={
-                                Object {
-                                  "disabled": "Mui-disabled",
-                                  "focusVisible": "Mui-focusVisible",
-                                  "root": "MuiButtonBase-root",
-                                }
-                              }
+                              className="MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
                               disableRipple={true}
                               disableTouchRipple={true}
                               disabled={false}
@@ -1079,77 +1062,75 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               onClick={[Function]}
                               role="tab"
                             >
-                              <button
+                              <ForwardRef(ButtonBase)
                                 aria-selected={true}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root-35 MuiTab-textColorInherit Mui-selected HvTab-selected-36"
+                                className="MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "root": "MuiButtonBase-root",
+                                  }
+                                }
+                                disableRipple={true}
+                                disableTouchRipple={true}
                                 disabled={false}
-                                onBlur={[Function]}
+                                focusRipple={true}
                                 onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
                                 role="tab"
-                                tabIndex={0}
-                                type="button"
                               >
-                                <span
-                                  className="MuiTab-wrapper"
+                                <button
+                                  aria-selected={true}
+                                  className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit Mui-selected HvTab-selected"
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onDragLeave={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                  role="tab"
+                                  tabIndex={0}
+                                  type="button"
                                 >
-                                  Clickable Tab
-                                </span>
-                                <NoSsr />
-                              </button>
-                            </ForwardRef(ButtonBase)>
-                          </WithStyles(ForwardRef(ButtonBase))>
-                        </ForwardRef(Tab)>
-                      </WithStyles(ForwardRef(Tab))>
-                    </HvTab>
-                  </WithStyles(HvTab)>
-                  <WithStyles(HvTab)
-                    disabled={false}
-                    fullWidth={false}
-                    icon={null}
-                    indicator={false}
-                    key=".2"
-                    label="Clickable Tab"
-                    selected={false}
-                    textColor="inherit"
-                    value={2}
-                  >
-                    <HvTab
-                      classes={
-                        Object {
-                          "disabled": "HvTab-disabled-37",
-                          "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-36",
-                        }
-                      }
+                                  <span
+                                    className="MuiTab-wrapper"
+                                  >
+                                    Clickable Tab
+                                  </span>
+                                  <NoSsr />
+                                </button>
+                              </ForwardRef(ButtonBase)>
+                            </WithStyles(ForwardRef(ButtonBase))>
+                          </ForwardRef(Tab)>
+                        </WithStyles(ForwardRef(Tab))>
+                      </HvTab>
+                    </WithStyles(HvTab)>
+                    <WithStyles(HvTab)
                       disabled={false}
                       fullWidth={false}
                       icon={null}
                       indicator={false}
+                      key=".2"
                       label="Clickable Tab"
                       selected={false}
                       textColor="inherit"
                       value={2}
                     >
-                      <WithStyles(ForwardRef(Tab))
+                      <HvTab
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-37",
-                            "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-36",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
-                        disableRipple={true}
-                        disableTouchRipple={true}
                         disabled={false}
                         fullWidth={false}
                         icon={null}
@@ -1159,19 +1140,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         textColor="inherit"
                         value={2}
                       >
-                        <ForwardRef(Tab)
+                        <WithStyles(ForwardRef(Tab))
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-37",
-                              "fullWidth": "MuiTab-fullWidth",
-                              "labelIcon": "MuiTab-labelIcon",
-                              "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-36",
-                              "textColorInherit": "MuiTab-textColorInherit",
-                              "textColorPrimary": "MuiTab-textColorPrimary",
-                              "textColorSecondary": "MuiTab-textColorSecondary",
-                              "wrapped": "MuiTab-wrapped",
-                              "wrapper": "MuiTab-wrapper",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
@@ -1185,26 +1159,35 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           textColor="inherit"
                           value={2}
                         >
-                          <WithStyles(ForwardRef(ButtonBase))
-                            aria-selected={false}
-                            className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
+                          <ForwardRef(Tab)
+                            classes={
+                              Object {
+                                "disabled": "Mui-disabled HvTab-disabled",
+                                "fullWidth": "MuiTab-fullWidth",
+                                "labelIcon": "MuiTab-labelIcon",
+                                "root": "MuiTab-root HvTab-root",
+                                "selected": "Mui-selected HvTab-selected",
+                                "textColorInherit": "MuiTab-textColorInherit",
+                                "textColorPrimary": "MuiTab-textColorPrimary",
+                                "textColorSecondary": "MuiTab-textColorSecondary",
+                                "wrapped": "MuiTab-wrapped",
+                                "wrapper": "MuiTab-wrapper",
+                              }
+                            }
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
-                            focusRipple={true}
-                            onClick={[Function]}
-                            role="tab"
+                            fullWidth={false}
+                            icon={null}
+                            indicator={false}
+                            label="Clickable Tab"
+                            selected={false}
+                            textColor="inherit"
+                            value={2}
                           >
-                            <ForwardRef(ButtonBase)
+                            <WithStyles(ForwardRef(ButtonBase))
                               aria-selected={false}
-                              className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
-                              classes={
-                                Object {
-                                  "disabled": "Mui-disabled",
-                                  "focusVisible": "Mui-focusVisible",
-                                  "root": "MuiButtonBase-root",
-                                }
-                              }
+                              className="MuiTab-root HvTab-root MuiTab-textColorInherit"
                               disableRipple={true}
                               disableTouchRipple={true}
                               disabled={false}
@@ -1212,77 +1195,75 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               onClick={[Function]}
                               role="tab"
                             >
-                              <button
+                              <ForwardRef(ButtonBase)
                                 aria-selected={false}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
+                                className="MuiTab-root HvTab-root MuiTab-textColorInherit"
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "root": "MuiButtonBase-root",
+                                  }
+                                }
+                                disableRipple={true}
+                                disableTouchRipple={true}
                                 disabled={false}
-                                onBlur={[Function]}
+                                focusRipple={true}
                                 onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
                                 role="tab"
-                                tabIndex={0}
-                                type="button"
                               >
-                                <span
-                                  className="MuiTab-wrapper"
+                                <button
+                                  aria-selected={false}
+                                  className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onDragLeave={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                  role="tab"
+                                  tabIndex={0}
+                                  type="button"
                                 >
-                                  Clickable Tab
-                                </span>
-                                <NoSsr />
-                              </button>
-                            </ForwardRef(ButtonBase)>
-                          </WithStyles(ForwardRef(ButtonBase))>
-                        </ForwardRef(Tab)>
-                      </WithStyles(ForwardRef(Tab))>
-                    </HvTab>
-                  </WithStyles(HvTab)>
-                  <WithStyles(HvTab)
-                    disabled={false}
-                    fullWidth={false}
-                    icon={null}
-                    indicator={false}
-                    key=".3"
-                    label="Clickable Tab"
-                    selected={false}
-                    textColor="inherit"
-                    value={3}
-                  >
-                    <HvTab
-                      classes={
-                        Object {
-                          "disabled": "HvTab-disabled-37",
-                          "root": "HvTab-root-35",
-                          "selected": "HvTab-selected-36",
-                        }
-                      }
+                                  <span
+                                    className="MuiTab-wrapper"
+                                  >
+                                    Clickable Tab
+                                  </span>
+                                  <NoSsr />
+                                </button>
+                              </ForwardRef(ButtonBase)>
+                            </WithStyles(ForwardRef(ButtonBase))>
+                          </ForwardRef(Tab)>
+                        </WithStyles(ForwardRef(Tab))>
+                      </HvTab>
+                    </WithStyles(HvTab)>
+                    <WithStyles(HvTab)
                       disabled={false}
                       fullWidth={false}
                       icon={null}
                       indicator={false}
+                      key=".3"
                       label="Clickable Tab"
                       selected={false}
                       textColor="inherit"
                       value={3}
                     >
-                      <WithStyles(ForwardRef(Tab))
+                      <HvTab
                         classes={
                           Object {
-                            "disabled": "HvTab-disabled-37",
-                            "root": "HvTab-root-35",
-                            "selected": "HvTab-selected-36",
+                            "disabled": "HvTab-disabled",
+                            "root": "HvTab-root",
+                            "selected": "HvTab-selected",
                           }
                         }
-                        disableRipple={true}
-                        disableTouchRipple={true}
                         disabled={false}
                         fullWidth={false}
                         icon={null}
@@ -1292,19 +1273,12 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         textColor="inherit"
                         value={3}
                       >
-                        <ForwardRef(Tab)
+                        <WithStyles(ForwardRef(Tab))
                           classes={
                             Object {
-                              "disabled": "Mui-disabled HvTab-disabled-37",
-                              "fullWidth": "MuiTab-fullWidth",
-                              "labelIcon": "MuiTab-labelIcon",
-                              "root": "MuiTab-root HvTab-root-35",
-                              "selected": "Mui-selected HvTab-selected-36",
-                              "textColorInherit": "MuiTab-textColorInherit",
-                              "textColorPrimary": "MuiTab-textColorPrimary",
-                              "textColorSecondary": "MuiTab-textColorSecondary",
-                              "wrapped": "MuiTab-wrapped",
-                              "wrapper": "MuiTab-wrapper",
+                              "disabled": "HvTab-disabled",
+                              "root": "HvTab-root",
+                              "selected": "HvTab-selected",
                             }
                           }
                           disableRipple={true}
@@ -1318,26 +1292,35 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           textColor="inherit"
                           value={3}
                         >
-                          <WithStyles(ForwardRef(ButtonBase))
-                            aria-selected={false}
-                            className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
+                          <ForwardRef(Tab)
+                            classes={
+                              Object {
+                                "disabled": "Mui-disabled HvTab-disabled",
+                                "fullWidth": "MuiTab-fullWidth",
+                                "labelIcon": "MuiTab-labelIcon",
+                                "root": "MuiTab-root HvTab-root",
+                                "selected": "Mui-selected HvTab-selected",
+                                "textColorInherit": "MuiTab-textColorInherit",
+                                "textColorPrimary": "MuiTab-textColorPrimary",
+                                "textColorSecondary": "MuiTab-textColorSecondary",
+                                "wrapped": "MuiTab-wrapped",
+                                "wrapper": "MuiTab-wrapper",
+                              }
+                            }
                             disableRipple={true}
                             disableTouchRipple={true}
                             disabled={false}
-                            focusRipple={true}
-                            onClick={[Function]}
-                            role="tab"
+                            fullWidth={false}
+                            icon={null}
+                            indicator={false}
+                            label="Clickable Tab"
+                            selected={false}
+                            textColor="inherit"
+                            value={3}
                           >
-                            <ForwardRef(ButtonBase)
+                            <WithStyles(ForwardRef(ButtonBase))
                               aria-selected={false}
-                              className="MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
-                              classes={
-                                Object {
-                                  "disabled": "Mui-disabled",
-                                  "focusVisible": "Mui-focusVisible",
-                                  "root": "MuiButtonBase-root",
-                                }
-                              }
+                              className="MuiTab-root HvTab-root MuiTab-textColorInherit"
                               disableRipple={true}
                               disableTouchRipple={true}
                               disabled={false}
@@ -1345,61 +1328,59 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                               onClick={[Function]}
                               role="tab"
                             >
-                              <button
+                              <ForwardRef(ButtonBase)
                                 aria-selected={false}
-                                className="MuiButtonBase-root MuiTab-root HvTab-root-35 MuiTab-textColorInherit"
+                                className="MuiTab-root HvTab-root MuiTab-textColorInherit"
+                                classes={
+                                  Object {
+                                    "disabled": "Mui-disabled",
+                                    "focusVisible": "Mui-focusVisible",
+                                    "root": "MuiButtonBase-root",
+                                  }
+                                }
+                                disableRipple={true}
+                                disableTouchRipple={true}
                                 disabled={false}
-                                onBlur={[Function]}
+                                focusRipple={true}
                                 onClick={[Function]}
-                                onDragLeave={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchMove={[Function]}
-                                onTouchStart={[Function]}
                                 role="tab"
-                                tabIndex={0}
-                                type="button"
                               >
-                                <span
-                                  className="MuiTab-wrapper"
+                                <button
+                                  aria-selected={false}
+                                  className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
+                                  disabled={false}
+                                  onBlur={[Function]}
+                                  onClick={[Function]}
+                                  onDragLeave={[Function]}
+                                  onFocus={[Function]}
+                                  onKeyDown={[Function]}
+                                  onKeyUp={[Function]}
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchEnd={[Function]}
+                                  onTouchMove={[Function]}
+                                  onTouchStart={[Function]}
+                                  role="tab"
+                                  tabIndex={0}
+                                  type="button"
                                 >
-                                  Clickable Tab
-                                </span>
-                                <NoSsr />
-                              </button>
-                            </ForwardRef(ButtonBase)>
-                          </WithStyles(ForwardRef(ButtonBase))>
-                        </ForwardRef(Tab)>
-                      </WithStyles(ForwardRef(Tab))>
-                    </HvTab>
-                  </WithStyles(HvTab)>
-                </div>
-                <WithStyles(ForwardRef(TabIndicator))
-                  className="MuiTabs-indicator HvTabs-indicator-21"
-                  color="secondary"
-                  orientation="horizontal"
-                  style={
-                    Object {
-                      "left": 0,
-                      "width": 0,
-                    }
-                  }
-                >
-                  <ForwardRef(TabIndicator)
-                    className="MuiTabs-indicator HvTabs-indicator-21"
-                    classes={
-                      Object {
-                        "colorPrimary": "PrivateTabIndicator-colorPrimary-52",
-                        "colorSecondary": "PrivateTabIndicator-colorSecondary-53",
-                        "root": "PrivateTabIndicator-root-51",
-                        "vertical": "PrivateTabIndicator-vertical-54",
-                      }
-                    }
+                                  <span
+                                    className="MuiTab-wrapper"
+                                  >
+                                    Clickable Tab
+                                  </span>
+                                  <NoSsr />
+                                </button>
+                              </ForwardRef(ButtonBase)>
+                            </WithStyles(ForwardRef(ButtonBase))>
+                          </ForwardRef(Tab)>
+                        </WithStyles(ForwardRef(Tab))>
+                      </HvTab>
+                    </WithStyles(HvTab)>
+                  </div>
+                  <WithStyles(ForwardRef(TabIndicator))
+                    className="MuiTabs-indicator HvTabs-indicator"
                     color="secondary"
                     orientation="horizontal"
                     style={
@@ -1409,8 +1390,18 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                       }
                     }
                   >
-                    <span
-                      className="PrivateTabIndicator-root-51 PrivateTabIndicator-colorSecondary-53 MuiTabs-indicator HvTabs-indicator-21"
+                    <ForwardRef(TabIndicator)
+                      className="MuiTabs-indicator HvTabs-indicator"
+                      classes={
+                        Object {
+                          "colorPrimary": "PrivateTabIndicator-colorPrimary-41",
+                          "colorSecondary": "PrivateTabIndicator-colorSecondary-42",
+                          "root": "PrivateTabIndicator-root-40",
+                          "vertical": "PrivateTabIndicator-vertical-43",
+                        }
+                      }
+                      color="secondary"
+                      orientation="horizontal"
                       style={
                         Object {
                           "left": 0,
@@ -1418,17 +1409,27 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         }
                       }
                     >
-                      <div />
-                    </span>
-                  </ForwardRef(TabIndicator)>
-                </WithStyles(ForwardRef(TabIndicator))>
+                      <span
+                        className="PrivateTabIndicator-root-40 PrivateTabIndicator-colorSecondary-42 MuiTabs-indicator HvTabs-indicator"
+                        style={
+                          Object {
+                            "left": 0,
+                            "width": 0,
+                          }
+                        }
+                      >
+                        <div />
+                      </span>
+                    </ForwardRef(TabIndicator)>
+                  </WithStyles(ForwardRef(TabIndicator))>
+                </div>
               </div>
-            </div>
-          </ForwardRef(Tabs)>
-        </WithStyles(ForwardRef(Tabs))>
-      </HvTabs>
-    </WithStyles(HvTabs)>
-  </ThemeProvider>
+            </ForwardRef(Tabs)>
+          </WithStyles(ForwardRef(Tabs))>
+        </HvTabs>
+      </WithStyles(HvTabs)>
+    </ThemeProvider>
+  </StylesProvider>
 </HvProvider>
 `;
 
@@ -1438,803 +1439,788 @@ exports[`Tabs withStyles should render correctly 1`] = `
   theme={null}
   uiKitTheme="dawn"
 >
-  <ThemeProvider
-    theme={
-      Object {
-        "breakpoints": Object {
-          "between": [Function],
-          "down": [Function],
-          "keys": Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-          "only": [Function],
-          "up": [Function],
-          "values": Object {
-            "lg": 1270,
-            "md": 960,
-            "sm": 600,
-            "xl": 1920,
-            "xs": 0,
-          },
-          "width": [Function],
-        },
-        "direction": "ltr",
-        "hv": Object {
-          "deprecated": Object {
-            "palette": Object {
-              "accent": Object {},
-              "atmosphere": Object {},
-              "base": Object {},
-              "semantic": Object {},
-              "support": Object {},
+  <StylesProvider
+    generateClassName={[Function]}
+    injectFirst={true}
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "breakpoints": Object {
+            "between": [Function],
+            "down": [Function],
+            "keys": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+            "only": [Function],
+            "up": [Function],
+            "values": Object {
+              "lg": 1270,
+              "md": 960,
+              "sm": 600,
+              "xl": 1920,
+              "xs": 0,
             },
+            "width": [Function],
+          },
+          "direction": "ltr",
+          "hv": Object {
+            "deprecated": Object {
+              "palette": Object {
+                "accent": Object {},
+                "atmosphere": Object {},
+                "base": Object {},
+                "semantic": Object {},
+                "support": Object {},
+              },
+              "typography": Object {
+                "disabledText": Object {},
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {},
+                  "polarizes": Object {},
+                  "sequential": Object {},
+                  "undefinedState": Object {},
+                },
+              },
+            },
+            "name": "dawn",
+            "palette": Object {
+              "accent": Object {
+                "acce0": "#FFFFFF",
+                "acce1": "#414141",
+                "acce2": "#146BD2",
+                "acce2h": "#4389DB",
+                "acce3": "#CC0000",
+              },
+              "atmosphere": Object {
+                "atmo1": "#FFFFFF",
+                "atmo2": "#F9F9F9",
+                "atmo3": "#F5F5F5",
+                "atmo4": "#F0F0F0",
+                "atmo5": "#DEDEDE",
+                "atmo6": "#BCBCBC",
+                "atmo7": "#999999",
+              },
+              "base": Object {
+                "base1": "#FFFFFF",
+                "base2": "#414141",
+              },
+              "semantic": Object {
+                "sema1": "#63A621",
+                "sema10": "#EF9A9A",
+                "sema11": "#E57373",
+                "sema12": "#EF5350",
+                "sema13": "#E53935",
+                "sema14": "#C62828",
+                "sema15": "#80DEEA",
+                "sema16": "#4DD0E1",
+                "sema17": "#26C6DA",
+                "sema18": "#00ACC1",
+                "sema19": "#00838F",
+                "sema2": "#72CCCB",
+                "sema3": "#E68C17",
+                "sema4": "#FF5252",
+                "sema5": "#C51162",
+                "sema6": "#AA00FF",
+                "sema7": "#D3E3F6",
+                "sema8": "#DFECD1",
+                "sema9": "#F5D8D8",
+              },
+              "support": Object {
+                "supp1": "#0F8B8D",
+                "supp2": "#734B6D",
+                "supp3": "#4E7599",
+                "supp4": "#C19C31",
+                "supp5": "#546B6B",
+              },
+            },
+            "spacing": Object {
+              "lg": 60,
+              "md": 30,
+              "sm": 20,
+              "xl": 90,
+              "xs": 10,
+            },
+            "type": "light",
             "typography": Object {
-              "disabledText": Object {},
+              "3xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "4xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "5xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "disabledButtonText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "disabledText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "highlightText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "infoText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "inlineLink": Object {
+                "color": "#146BD2",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "lTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "labelText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "mTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "normalText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "placeholderText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "sLink": Object {
+                "color": "#146BD2",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "selectedNavText": Object {
+                "color": "#CC0000",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "selectedText": Object {
+                "background": "#414141",
+                "color": "#F9F9F9",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "vizText": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
+              "xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "xsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
+              "xxlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "xxsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
             },
             "viz": Object {
               "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "undefinedState": Object {},
+                "categorical": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz10": "#419393",
+                  "cviz11": "#58C9DD",
+                  "cviz12": "#F8C189",
+                  "cviz13": "#528BBF",
+                  "cviz14": "#DE64BD",
+                  "cviz15": "#73BF9C",
+                  "cviz16": "#9672C1",
+                  "cviz17": "#EB95AF",
+                  "cviz18": "#646A98",
+                  "cviz19": "#D88136",
+                  "cviz2": "#FF990D",
+                  "cviz20": "#309B59",
+                  "cviz3": "#D31F6B",
+                  "cviz4": "#FFD00A",
+                  "cviz5": "#18C38A",
+                  "cviz6": "#098CB2",
+                  "cviz7": "#EA5B86",
+                  "cviz8": "#9B469B",
+                  "cviz9": "#F4763D",
+                },
+                "polarizes": Object {
+                  "cviz21": "#869F1E",
+                  "cviz22": "#A4991C",
+                  "cviz23": "#C4931A",
+                  "cviz24": "#E68C17",
+                  "cviz25": "#F27034",
+                  "cviz26": "#FF5252",
+                  "cviz27": "#EC3D57",
+                  "cviz28": "#D8265D",
+                  "sema1": "#63A621",
+                  "sema5": "#C51162",
+                },
+                "sequential": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz1_100": "#E3F1F6",
+                  "cviz1_200": "#CFEAF3",
+                  "cviz1_300": "#BAE3F3",
+                  "cviz1_400": "#A6DCEE",
+                  "cviz1_500": "#92D5EC",
+                  "cviz1_600": "#7ECEE9",
+                  "cviz1_700": "#69C7E7",
+                  "cviz1_800": "#55C0E4",
+                  "cviz1_900": "#40B9E2",
+                },
+                "undefinedState": Object {
+                  "atmo5": "#DEDEDE",
+                },
               },
             },
           },
-          "name": "dawn",
-          "palette": Object {
-            "accent": Object {
-              "acce0": "#FFFFFF",
-              "acce1": "#414141",
-              "acce2": "#146BD2",
-              "acce2h": "#4389DB",
-              "acce3": "#CC0000",
-            },
-            "atmosphere": Object {
-              "atmo1": "#FFFFFF",
-              "atmo2": "#F9F9F9",
-              "atmo3": "#F5F5F5",
-              "atmo4": "#F0F0F0",
-              "atmo5": "#DEDEDE",
-              "atmo6": "#BCBCBC",
-              "atmo7": "#999999",
-            },
-            "base": Object {
-              "base1": "#FFFFFF",
-              "base2": "#414141",
-            },
-            "semantic": Object {
-              "sema1": "#63A621",
-              "sema10": "#EF9A9A",
-              "sema11": "#E57373",
-              "sema12": "#EF5350",
-              "sema13": "#E53935",
-              "sema14": "#C62828",
-              "sema15": "#80DEEA",
-              "sema16": "#4DD0E1",
-              "sema17": "#26C6DA",
-              "sema18": "#00ACC1",
-              "sema19": "#00838F",
-              "sema2": "#72CCCB",
-              "sema3": "#E68C17",
-              "sema4": "#FF5252",
-              "sema5": "#C51162",
-              "sema6": "#AA00FF",
-              "sema7": "#D3E3F6",
-              "sema8": "#DFECD1",
-              "sema9": "#F5D8D8",
-            },
-            "support": Object {
-              "supp1": "#0F8B8D",
-              "supp2": "#734B6D",
-              "supp3": "#4E7599",
-              "supp4": "#C19C31",
-              "supp5": "#546B6B",
-            },
-          },
-          "spacing": Object {
-            "lg": 60,
-            "md": 30,
-            "sm": 20,
-            "xl": 90,
-            "xs": 10,
-          },
-          "type": "light",
-          "typography": Object {
-            "3xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "4xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "5xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "disabledButtonText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "disabledText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "highlightText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "infoText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "inlineLink": Object {
-              "color": "#146BD2",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "lTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "labelText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "mTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "normalText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "placeholderText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "sLink": Object {
-              "color": "#146BD2",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "selectedNavText": Object {
-              "color": "#CC0000",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "selectedText": Object {
-              "background": "#414141",
-              "color": "#F9F9F9",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "vizText": Object {
-              "color": "#414141",
-              "fontSize": "10px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "15px",
-            },
-            "xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "xsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-            "xxlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "xxsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-          },
-          "viz": Object {
-            "palette": Object {
-              "categorical": Object {
-                "cviz1": "#2DB3E0",
-                "cviz10": "#419393",
-                "cviz11": "#58C9DD",
-                "cviz12": "#F8C189",
-                "cviz13": "#528BBF",
-                "cviz14": "#DE64BD",
-                "cviz15": "#73BF9C",
-                "cviz16": "#9672C1",
-                "cviz17": "#EB95AF",
-                "cviz18": "#646A98",
-                "cviz19": "#D88136",
-                "cviz2": "#FF990D",
-                "cviz20": "#309B59",
-                "cviz3": "#D31F6B",
-                "cviz4": "#FFD00A",
-                "cviz5": "#18C38A",
-                "cviz6": "#098CB2",
-                "cviz7": "#EA5B86",
-                "cviz8": "#9B469B",
-                "cviz9": "#F4763D",
+          "mixins": Object {
+            "gutters": [Function],
+            "toolbar": Object {
+              "@media (min-width:0px) and (orientation: landscape)": Object {
+                "minHeight": 48,
               },
-              "polarizes": Object {
-                "cviz21": "#869F1E",
-                "cviz22": "#A4991C",
-                "cviz23": "#C4931A",
-                "cviz24": "#E68C17",
-                "cviz25": "#F27034",
-                "cviz26": "#FF5252",
-                "cviz27": "#EC3D57",
-                "cviz28": "#D8265D",
-                "sema1": "#63A621",
-                "sema5": "#C51162",
-              },
-              "sequential": Object {
-                "cviz1": "#2DB3E0",
-                "cviz1_100": "#E3F1F6",
-                "cviz1_200": "#CFEAF3",
-                "cviz1_300": "#BAE3F3",
-                "cviz1_400": "#A6DCEE",
-                "cviz1_500": "#92D5EC",
-                "cviz1_600": "#7ECEE9",
-                "cviz1_700": "#69C7E7",
-                "cviz1_800": "#55C0E4",
-                "cviz1_900": "#40B9E2",
-              },
-              "undefinedState": Object {
-                "atmo5": "#DEDEDE",
-              },
-            },
-          },
-        },
-        "mixins": Object {
-          "gutters": [Function],
-          "toolbar": Object {
-            "@media (min-width:0px) and (orientation: landscape)": Object {
-              "minHeight": 48,
-            },
-            "@media (min-width:600px)": Object {
-              "minHeight": 64,
-            },
-            "minHeight": 56,
-          },
-        },
-        "overrides": Object {
-          "MuiAppBar": Object {
-            "colorDefault": Object {
-              "backgroundColor": "#FFFFFF",
-              "contrastText": "#414141",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "height": "50px",
-              },
-              "borderTop": "4px solid #CC0000",
-            },
-          },
-          "MuiIconButton": Object {
-            "root": Object {
-              "&:focus": Object {
-                "outlineColor": "Highlight",
-                "outlineOffset": -2,
-                "outlineStyle": "auto",
-                "outlineWidth": 4,
-              },
-              "&:hover": Object {
-                "backgroundColor": "#F0F0F0",
-              },
-              "borderRadius": 0,
-              "padding": 0,
-            },
-          },
-          "MuiToolbar": Object {
-            "dense": Object {
-              "minHeight": "46px",
-            },
-            "gutters": Object {
               "@media (min-width:600px)": Object {
+                "minHeight": 64,
+              },
+              "minHeight": 56,
+            },
+          },
+          "overrides": Object {
+            "MuiAppBar": Object {
+              "colorDefault": Object {
+                "backgroundColor": "#FFFFFF",
+                "contrastText": "#414141",
+              },
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "height": "50px",
+                },
+                "borderTop": "4px solid #CC0000",
+              },
+            },
+            "MuiIconButton": Object {
+              "root": Object {
+                "&:focus": Object {
+                  "outlineColor": "Highlight",
+                  "outlineOffset": -2,
+                  "outlineStyle": "auto",
+                  "outlineWidth": 4,
+                },
+                "&:hover": Object {
+                  "backgroundColor": "#F0F0F0",
+                },
+                "borderRadius": 0,
+                "padding": 0,
+              },
+            },
+            "MuiToolbar": Object {
+              "dense": Object {
+                "minHeight": "46px",
+              },
+              "gutters": Object {
+                "@media (min-width:600px)": Object {
+                  "paddingLeft": "20px",
+                  "paddingRight": "20px",
+                },
                 "paddingLeft": "20px",
                 "paddingRight": "20px",
               },
-              "paddingLeft": "20px",
-              "paddingRight": "20px",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "minHeight": "46px",
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "minHeight": "46px",
+                },
+                "alignItems": "center",
               },
-              "alignItems": "center",
             },
           },
-        },
-        "palette": Object {
-          "acce0": "#FFFFFF",
-          "acce1": "#414141",
-          "acce2": "#146BD2",
-          "acce2h": "#4389DB",
-          "acce3": "#CC0000",
-          "action": Object {
-            "activatedOpacity": 0.12,
-            "active": "rgba(0, 0, 0, 0.54)",
-            "disabled": "rgba(0, 0, 0, 0.26)",
-            "disabledBackground": "rgba(0, 0, 0, 0.12)",
-            "disabledOpacity": 0.38,
-            "focus": "rgba(0, 0, 0, 0.12)",
-            "focusOpacity": 0.12,
-            "hover": "rgba(0, 0, 0, 0.04)",
-            "hoverOpacity": 0.04,
-            "selected": "rgba(0, 0, 0, 0.08)",
-            "selectedOpacity": 0.08,
+          "palette": Object {
+            "acce0": "#FFFFFF",
+            "acce1": "#414141",
+            "acce2": "#146BD2",
+            "acce2h": "#4389DB",
+            "acce3": "#CC0000",
+            "action": Object {
+              "activatedOpacity": 0.12,
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+              "disabledBackground": "rgba(0, 0, 0, 0.12)",
+              "disabledOpacity": 0.38,
+              "focus": "rgba(0, 0, 0, 0.12)",
+              "focusOpacity": 0.12,
+              "hover": "rgba(0, 0, 0, 0.04)",
+              "hoverOpacity": 0.04,
+              "selected": "rgba(0, 0, 0, 0.08)",
+              "selectedOpacity": 0.08,
+            },
+            "atmo1": "#FFFFFF",
+            "atmo2": "#F9F9F9",
+            "atmo3": "#F5F5F5",
+            "atmo4": "#F0F0F0",
+            "atmo5": "#DEDEDE",
+            "atmo6": "#BCBCBC",
+            "atmo7": "#999999",
+            "augmentColor": [Function],
+            "background": Object {
+              "default": "#F5F5F5",
+              "paper": "#fff",
+            },
+            "base1": "#FFFFFF",
+            "base2": "#414141",
+            "common": Object {
+              "black": "#000",
+              "white": "#fff",
+            },
+            "contrastThreshold": 3,
+            "divider": "rgba(0, 0, 0, 0.12)",
+            "error": Object {
+              "contrastText": "#fff",
+              "dark": "#d32f2f",
+              "light": "#e57373",
+              "main": "#f44336",
+            },
+            "getContrastText": [Function],
+            "grey": Object {
+              "100": "#f5f5f5",
+              "200": "#eeeeee",
+              "300": "#e0e0e0",
+              "400": "#bdbdbd",
+              "50": "#fafafa",
+              "500": "#9e9e9e",
+              "600": "#757575",
+              "700": "#616161",
+              "800": "#424242",
+              "900": "#212121",
+              "A100": "#d5d5d5",
+              "A200": "#aaaaaa",
+              "A400": "#303030",
+              "A700": "#616161",
+            },
+            "info": Object {
+              "contrastText": "#fff",
+              "dark": "#1976d2",
+              "light": "#64b5f6",
+              "main": "#2196f3",
+            },
+            "primary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(14, 74, 147)",
+              "light": "#4389DB",
+              "main": "#146BD2",
+            },
+            "secondary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(45, 45, 45)",
+              "light": "#999999",
+              "main": "#414141",
+            },
+            "sema1": "#63A621",
+            "sema10": "#EF9A9A",
+            "sema11": "#E57373",
+            "sema12": "#EF5350",
+            "sema13": "#E53935",
+            "sema14": "#C62828",
+            "sema15": "#80DEEA",
+            "sema16": "#4DD0E1",
+            "sema17": "#26C6DA",
+            "sema18": "#00ACC1",
+            "sema19": "#00838F",
+            "sema2": "#72CCCB",
+            "sema3": "#E68C17",
+            "sema4": "#FF5252",
+            "sema5": "#C51162",
+            "sema6": "#AA00FF",
+            "sema7": "#D3E3F6",
+            "sema8": "#DFECD1",
+            "sema9": "#F5D8D8",
+            "success": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#388e3c",
+              "light": "#81c784",
+              "main": "#4caf50",
+            },
+            "supp1": "#0F8B8D",
+            "supp2": "#734B6D",
+            "supp3": "#4E7599",
+            "supp4": "#C19C31",
+            "supp5": "#546B6B",
+            "text": Object {
+              "disabled": "#999999",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "primary": "#414141",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+            "tonalOffset": 0.2,
+            "type": "light",
+            "warning": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#f57c00",
+              "light": "#ffb74d",
+              "main": "#ff9800",
+            },
           },
-          "atmo1": "#FFFFFF",
-          "atmo2": "#F9F9F9",
-          "atmo3": "#F5F5F5",
-          "atmo4": "#F0F0F0",
-          "atmo5": "#DEDEDE",
-          "atmo6": "#BCBCBC",
-          "atmo7": "#999999",
-          "augmentColor": [Function],
-          "background": Object {
-            "default": "#F5F5F5",
-            "paper": "#fff",
+          "props": Object {
+            "MuiButtonBase": Object {
+              "disableRipple": true,
+            },
+            "MuiInput": Object {
+              "disableUnderline": true,
+            },
           },
-          "base1": "#FFFFFF",
-          "base2": "#414141",
-          "common": Object {
-            "black": "#000",
-            "white": "#fff",
-          },
-          "contrastThreshold": 3,
-          "divider": "rgba(0, 0, 0, 0.12)",
-          "error": Object {
-            "contrastText": "#fff",
-            "dark": "#d32f2f",
-            "light": "#e57373",
-            "main": "#f44336",
-          },
-          "getContrastText": [Function],
-          "grey": Object {
-            "100": "#f5f5f5",
-            "200": "#eeeeee",
-            "300": "#e0e0e0",
-            "400": "#bdbdbd",
-            "50": "#fafafa",
-            "500": "#9e9e9e",
-            "600": "#757575",
-            "700": "#616161",
-            "800": "#424242",
-            "900": "#212121",
-            "A100": "#d5d5d5",
-            "A200": "#aaaaaa",
-            "A400": "#303030",
-            "A700": "#616161",
-          },
-          "info": Object {
-            "contrastText": "#fff",
-            "dark": "#1976d2",
-            "light": "#64b5f6",
-            "main": "#2196f3",
-          },
-          "primary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(14, 74, 147)",
-            "light": "#4389DB",
-            "main": "#146BD2",
-          },
-          "secondary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(45, 45, 45)",
-            "light": "#999999",
-            "main": "#414141",
-          },
-          "sema1": "#63A621",
-          "sema10": "#EF9A9A",
-          "sema11": "#E57373",
-          "sema12": "#EF5350",
-          "sema13": "#E53935",
-          "sema14": "#C62828",
-          "sema15": "#80DEEA",
-          "sema16": "#4DD0E1",
-          "sema17": "#26C6DA",
-          "sema18": "#00ACC1",
-          "sema19": "#00838F",
-          "sema2": "#72CCCB",
-          "sema3": "#E68C17",
-          "sema4": "#FF5252",
-          "sema5": "#C51162",
-          "sema6": "#AA00FF",
-          "sema7": "#D3E3F6",
-          "sema8": "#DFECD1",
-          "sema9": "#F5D8D8",
-          "success": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#388e3c",
-            "light": "#81c784",
-            "main": "#4caf50",
-          },
-          "supp1": "#0F8B8D",
-          "supp2": "#734B6D",
-          "supp3": "#4E7599",
-          "supp4": "#C19C31",
-          "supp5": "#546B6B",
-          "text": Object {
-            "disabled": "#999999",
-            "hint": "rgba(0, 0, 0, 0.38)",
-            "primary": "#414141",
-            "secondary": "rgba(0, 0, 0, 0.54)",
-          },
-          "tonalOffset": 0.2,
-          "type": "light",
-          "warning": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#f57c00",
-            "light": "#ffb74d",
-            "main": "#ff9800",
-          },
-        },
-        "props": Object {
-          "MuiButtonBase": Object {
-            "disableRipple": true,
-          },
-          "MuiInput": Object {
-            "disableUnderline": true,
-          },
-        },
-        "shadows": Array [
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-        ],
-        "shape": Object {
-          "borderRadius": 0,
-        },
-        "spacing": [Function],
-        "transitions": Object {
-          "create": [Function],
-          "duration": Object {
-            "complex": 375,
-            "enteringScreen": 225,
-            "leavingScreen": 195,
-            "short": 250,
-            "shorter": 200,
-            "shortest": 150,
-            "standard": 300,
-          },
-          "easing": Object {
-            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-          },
-          "getAutoHeightDuration": [Function],
-        },
-        "typography": Object {
-          "body1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "body2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "button": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-            "textTransform": "uppercase",
-          },
-          "caption": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 1.66,
-          },
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
+          "shadows": Array [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
           ],
-          "fontSize": 14,
-          "fontWeightBold": 700,
-          "fontWeightLight": 300,
-          "fontWeightMedium": 500,
-          "fontWeightRegular": 400,
-          "h1": Object {
-            "color": "#414141",
+          "shape": Object {
+            "borderRadius": 0,
+          },
+          "spacing": [Function],
+          "transitions": Object {
+            "create": [Function],
+            "duration": Object {
+              "complex": 375,
+              "enteringScreen": 225,
+              "leavingScreen": 195,
+              "short": 250,
+              "shorter": 200,
+              "shortest": 150,
+              "standard": 300,
+            },
+            "easing": Object {
+              "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+              "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+              "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+              "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+            },
+            "getAutoHeightDuration": [Function],
+          },
+          "typography": Object {
+            "body1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "body2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "button": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+              "textTransform": "uppercase",
+            },
+            "caption": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 1.66,
+            },
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "32px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+            "fontSize": 14,
+            "fontWeightBold": 700,
+            "fontWeightLight": 300,
+            "fontWeightMedium": 500,
+            "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h3": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h4": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h5": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "lineHeight": 1.334,
+            },
+            "h6": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "lineHeight": 1.6,
+            },
+            "htmlFontSize": 16,
+            "overline": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
+            },
+            "pxToRem": [Function],
+            "round": [Function],
+            "subtitle1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "subtitle2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
+            },
+            "suppressDeprecationWarnings": true,
           },
-          "h2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "32px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+          "zIndex": Object {
+            "appBar": 1100,
+            "drawer": 1200,
+            "mobileStepper": 1000,
+            "modal": 1300,
+            "snackbar": 1400,
+            "speedDial": 1050,
+            "tooltip": 1500,
           },
-          "h3": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h4": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h5": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.5rem",
-            "fontWeight": 400,
-            "lineHeight": 1.334,
-          },
-          "h6": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.25rem",
-            "fontWeight": 500,
-            "lineHeight": 1.6,
-          },
-          "htmlFontSize": 16,
-          "overline": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 2.66,
-            "textTransform": "uppercase",
-          },
-          "pxToRem": [Function],
-          "round": [Function],
-          "subtitle1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "subtitle2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
-          },
-          "suppressDeprecationWarnings": true,
-        },
-        "zIndex": Object {
-          "appBar": 1100,
-          "drawer": 1200,
-          "mobileStepper": 1000,
-          "modal": 1300,
-          "snackbar": 1400,
-          "speedDial": 1050,
-          "tooltip": 1500,
-        },
-        Symbol(mui.nested): false,
-      }
-    }
-  >
-    <WithStyles(CssBaseline)>
-      <CssBaseline
-        classes={Object {}}
-      />
-    </WithStyles(CssBaseline)>
-    <WithStyles(HvTabs)>
-      <HvTabs
-        classes={
-          Object {
-            "flexContainer": "HvTabs-flexContainer-4",
-            "indicator": "HvTabs-indicator-2",
-            "root": "HvTabs-root-1",
-            "scroller": "HvTabs-scroller-3",
-          }
+          Symbol(mui.nested): false,
         }
-      >
-        <WithStyles(ForwardRef(Tabs))
-          TabIndicatorProps={
-            Object {
-              "children": <div />,
-            }
-          }
+      }
+    >
+      <CssBaseline />
+      <WithStyles(HvTabs)>
+        <HvTabs
           classes={
             Object {
-              "flexContainer": "HvTabs-flexContainer-4",
-              "indicator": "HvTabs-indicator-2",
-              "root": "HvTabs-root-1",
-              "scroller": "HvTabs-scroller-3",
+              "flexContainer": "HvTabs-flexContainer",
+              "indicator": "HvTabs-indicator",
+              "root": "HvTabs-root",
+              "scroller": "HvTabs-scroller",
             }
           }
         >
-          <ForwardRef(Tabs)
+          <WithStyles(ForwardRef(Tabs))
             TabIndicatorProps={
               Object {
                 "children": <div />,
@@ -2242,58 +2228,54 @@ exports[`Tabs withStyles should render correctly 1`] = `
             }
             classes={
               Object {
-                "centered": "MuiTabs-centered",
-                "fixed": "MuiTabs-fixed",
-                "flexContainer": "MuiTabs-flexContainer HvTabs-flexContainer-4",
-                "flexContainerVertical": "MuiTabs-flexContainerVertical",
-                "indicator": "MuiTabs-indicator HvTabs-indicator-2",
-                "root": "MuiTabs-root HvTabs-root-1",
-                "scrollButtons": "MuiTabs-scrollButtons",
-                "scrollButtonsDesktop": "MuiTabs-scrollButtonsDesktop",
-                "scrollable": "MuiTabs-scrollable",
-                "scroller": "MuiTabs-scroller HvTabs-scroller-3",
-                "vertical": "MuiTabs-vertical",
+                "flexContainer": "HvTabs-flexContainer",
+                "indicator": "HvTabs-indicator",
+                "root": "HvTabs-root",
+                "scroller": "HvTabs-scroller",
               }
             }
           >
-            <div
-              className="MuiTabs-root HvTabs-root-1"
+            <ForwardRef(Tabs)
+              TabIndicatorProps={
+                Object {
+                  "children": <div />,
+                }
+              }
+              classes={
+                Object {
+                  "centered": "MuiTabs-centered",
+                  "fixed": "MuiTabs-fixed",
+                  "flexContainer": "MuiTabs-flexContainer HvTabs-flexContainer",
+                  "flexContainerVertical": "MuiTabs-flexContainerVertical",
+                  "indicator": "MuiTabs-indicator HvTabs-indicator",
+                  "root": "MuiTabs-root HvTabs-root",
+                  "scrollButtons": "MuiTabs-scrollButtons",
+                  "scrollButtonsDesktop": "MuiTabs-scrollButtonsDesktop",
+                  "scrollable": "MuiTabs-scrollable",
+                  "scroller": "MuiTabs-scroller HvTabs-scroller",
+                  "vertical": "MuiTabs-vertical",
+                }
+              }
             >
               <div
-                className="MuiTabs-scroller HvTabs-scroller-3 MuiTabs-fixed"
-                onScroll={[Function]}
-                style={
-                  Object {
-                    "marginBottom": null,
-                    "overflow": "hidden",
-                  }
-                }
+                className="MuiTabs-root HvTabs-root"
               >
                 <div
-                  className="MuiTabs-flexContainer HvTabs-flexContainer-4"
-                  role="tablist"
-                />
-                <WithStyles(ForwardRef(TabIndicator))
-                  className="MuiTabs-indicator HvTabs-indicator-2"
-                  color="secondary"
-                  orientation="horizontal"
+                  className="MuiTabs-scroller HvTabs-scroller MuiTabs-fixed"
+                  onScroll={[Function]}
                   style={
                     Object {
-                      "left": 0,
-                      "width": 0,
+                      "marginBottom": null,
+                      "overflow": "hidden",
                     }
                   }
                 >
-                  <ForwardRef(TabIndicator)
-                    className="MuiTabs-indicator HvTabs-indicator-2"
-                    classes={
-                      Object {
-                        "colorPrimary": "PrivateTabIndicator-colorPrimary-17",
-                        "colorSecondary": "PrivateTabIndicator-colorSecondary-18",
-                        "root": "PrivateTabIndicator-root-16",
-                        "vertical": "PrivateTabIndicator-vertical-19",
-                      }
-                    }
+                  <div
+                    className="MuiTabs-flexContainer HvTabs-flexContainer"
+                    role="tablist"
+                  />
+                  <WithStyles(ForwardRef(TabIndicator))
+                    className="MuiTabs-indicator HvTabs-indicator"
                     color="secondary"
                     orientation="horizontal"
                     style={
@@ -2303,8 +2285,18 @@ exports[`Tabs withStyles should render correctly 1`] = `
                       }
                     }
                   >
-                    <span
-                      className="PrivateTabIndicator-root-16 PrivateTabIndicator-colorSecondary-18 MuiTabs-indicator HvTabs-indicator-2"
+                    <ForwardRef(TabIndicator)
+                      className="MuiTabs-indicator HvTabs-indicator"
+                      classes={
+                        Object {
+                          "colorPrimary": "PrivateTabIndicator-colorPrimary-13",
+                          "colorSecondary": "PrivateTabIndicator-colorSecondary-14",
+                          "root": "PrivateTabIndicator-root-12",
+                          "vertical": "PrivateTabIndicator-vertical-15",
+                        }
+                      }
+                      color="secondary"
+                      orientation="horizontal"
                       style={
                         Object {
                           "left": 0,
@@ -2312,16 +2304,26 @@ exports[`Tabs withStyles should render correctly 1`] = `
                         }
                       }
                     >
-                      <div />
-                    </span>
-                  </ForwardRef(TabIndicator)>
-                </WithStyles(ForwardRef(TabIndicator))>
+                      <span
+                        className="PrivateTabIndicator-root-12 PrivateTabIndicator-colorSecondary-14 MuiTabs-indicator HvTabs-indicator"
+                        style={
+                          Object {
+                            "left": 0,
+                            "width": 0,
+                          }
+                        }
+                      >
+                        <div />
+                      </span>
+                    </ForwardRef(TabIndicator)>
+                  </WithStyles(ForwardRef(TabIndicator))>
+                </div>
               </div>
-            </div>
-          </ForwardRef(Tabs)>
-        </WithStyles(ForwardRef(Tabs))>
-      </HvTabs>
-    </WithStyles(HvTabs)>
-  </ThemeProvider>
+            </ForwardRef(Tabs)>
+          </WithStyles(ForwardRef(Tabs))>
+        </HvTabs>
+      </WithStyles(HvTabs)>
+    </ThemeProvider>
+  </StylesProvider>
 </HvProvider>
 `;
