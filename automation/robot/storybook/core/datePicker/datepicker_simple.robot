@@ -17,31 +17,31 @@ ${labelInputDate}    css:input[placeholder='Select a date']
 Verify default date 
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
-    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
+    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         1 Jan, 1970
+    Element Attribute Value Should Be    ${input}                    value         1 Jan 1970
 
 When delete date the default date is replaced
     [Tags]    bug-firefox-webdriver
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
-    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
+    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${input}                    2s
     clean input                          ${input}
     Click Element                        ${outside}
-    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
+    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
 
 When insert invalid date the default date is replaced
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
     Wait Until Element Is Visible        DatePicker                  10s
-    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
+    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${input}                    2s
     force input                          ${input}                    02/30/1970
     Click Element                        ${outside}
-    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan, 1970
+    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
 
 Change the date with clicks
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
@@ -52,7 +52,7 @@ Change the date with clicks
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         9 Jan, 1970
+    Element Attribute Value Should Be    ${input}                    value         9 Jan 1970
 
 Change the date with input and enter
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
@@ -64,7 +64,7 @@ Change the date with input and enter
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         2 Jan, 1970
+    Element Attribute Value Should Be    ${input}                    value         2 Jan 1970
 
 Change the date with input and outside
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
@@ -76,7 +76,7 @@ Change the date with input and outside
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         2 Jan, 1970
+    Element Attribute Value Should Be    ${input}                    value         2 Jan 1970
 
 Change month by using the arrows icons
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
@@ -93,7 +93,7 @@ Change month by using the arrows icons
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         9 Feb, 1970
+    Element Attribute Value Should Be    ${input}                    value         9 Feb 1970
 
 Change month using the month screen
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
@@ -101,12 +101,12 @@ Change month using the month screen
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Click element                        ${navigationMonth}
-    Click element                        //p[contains(.,'Mar')]
+    Click element                        //p[contains(.'Mar')]
     Wait Until Element Is Visible        ${day9}                     2s
     Click Element                        ${day9}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         9 Mar, 1970
+    Element Attribute Value Should Be    ${input}                    value         9 Mar 1970
 
 Change year by using the arrows icons
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
@@ -123,6 +123,5 @@ Change year by using the arrows icons
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
-    Element Attribute Value Should Be    ${input}                    value         9 Jan, 1971
+    Element Attribute Value Should Be    ${input}                    value         9 Jan 1971
 
-    
