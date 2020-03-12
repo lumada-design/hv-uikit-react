@@ -6,823 +6,780 @@ exports[`Custom Pagination should render correctly 1`] = `
   theme={null}
   uiKitTheme="dawn"
 >
-  <ThemeProvider
-    theme={
-      Object {
-        "breakpoints": Object {
-          "between": [Function],
-          "down": [Function],
-          "keys": Array [
-            "xs",
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-          "only": [Function],
-          "up": [Function],
-          "values": Object {
-            "lg": 1270,
-            "md": 960,
-            "sm": 600,
-            "xl": 1920,
-            "xs": 0,
-          },
-          "width": [Function],
-        },
-        "direction": "ltr",
-        "hv": Object {
-          "deprecated": Object {
-            "palette": Object {
-              "accent": Object {},
-              "atmosphere": Object {},
-              "base": Object {},
-              "semantic": Object {},
-              "support": Object {},
+  <StylesProvider
+    generateClassName={[Function]}
+    injectFirst={true}
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "breakpoints": Object {
+            "between": [Function],
+            "down": [Function],
+            "keys": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+            "only": [Function],
+            "up": [Function],
+            "values": Object {
+              "lg": 1270,
+              "md": 960,
+              "sm": 600,
+              "xl": 1920,
+              "xs": 0,
             },
+            "width": [Function],
+          },
+          "direction": "ltr",
+          "hv": Object {
+            "deprecated": Object {
+              "palette": Object {
+                "accent": Object {},
+                "atmosphere": Object {},
+                "base": Object {},
+                "semantic": Object {},
+                "support": Object {},
+              },
+              "typography": Object {
+                "disabledText": Object {},
+              },
+              "viz": Object {
+                "palette": Object {
+                  "categorical": Object {},
+                  "polarizes": Object {},
+                  "sequential": Object {},
+                  "undefinedState": Object {},
+                },
+              },
+            },
+            "name": "dawn",
+            "palette": Object {
+              "accent": Object {
+                "acce0": "#FFFFFF",
+                "acce1": "#414141",
+                "acce2": "#146BD2",
+                "acce2h": "#4389DB",
+                "acce3": "#CC0000",
+              },
+              "atmosphere": Object {
+                "atmo1": "#FFFFFF",
+                "atmo2": "#F9F9F9",
+                "atmo3": "#F5F5F5",
+                "atmo4": "#F0F0F0",
+                "atmo5": "#DEDEDE",
+                "atmo6": "#BCBCBC",
+                "atmo7": "#999999",
+              },
+              "base": Object {
+                "base1": "#FFFFFF",
+                "base2": "#414141",
+              },
+              "semantic": Object {
+                "sema1": "#63A621",
+                "sema10": "#EF9A9A",
+                "sema11": "#E57373",
+                "sema12": "#EF5350",
+                "sema13": "#E53935",
+                "sema14": "#C62828",
+                "sema15": "#80DEEA",
+                "sema16": "#4DD0E1",
+                "sema17": "#26C6DA",
+                "sema18": "#00ACC1",
+                "sema19": "#00838F",
+                "sema2": "#72CCCB",
+                "sema3": "#E68C17",
+                "sema4": "#FF5252",
+                "sema5": "#C51162",
+                "sema6": "#AA00FF",
+                "sema7": "#D3E3F6",
+                "sema8": "#DFECD1",
+                "sema9": "#F5D8D8",
+              },
+              "support": Object {
+                "supp1": "#0F8B8D",
+                "supp2": "#734B6D",
+                "supp3": "#4E7599",
+                "supp4": "#C19C31",
+                "supp5": "#546B6B",
+              },
+            },
+            "spacing": Object {
+              "lg": 60,
+              "md": 30,
+              "sm": 20,
+              "xl": 90,
+              "xs": 10,
+            },
+            "type": "light",
             "typography": Object {
-              "disabledText": Object {},
+              "3xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "4xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "5xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "52px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "60px",
+              },
+              "disabledButtonText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "disabledText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "highlightText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "infoText": Object {
+                "color": "#999999",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "inlineLink": Object {
+                "color": "#146BD2",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "lTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "labelText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "mTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "normalText": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "placeholderText": Object {
+                "color": "#999999",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "sLink": Object {
+                "color": "#146BD2",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sText": Object {
+                "color": "#414141",
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
+              },
+              "sTitle": Object {
+                "color": "#414141",
+                "fontSize": "22px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "30px",
+              },
+              "selectedNavText": Object {
+                "color": "#CC0000",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "selectedText": Object {
+                "background": "#414141",
+                "color": "#F9F9F9",
+                "fontSize": "14px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "20px",
+              },
+              "vizText": Object {
+                "color": "#414141",
+                "fontSize": "10px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "15px",
+              },
+              "xlTitle": Object {
+                "color": "#414141",
+                "fontSize": "32px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "40px",
+              },
+              "xsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
+              "xxlTitle": Object {
+                "color": "#414141",
+                "fontSize": "42px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "52px",
+              },
+              "xxsTitle": Object {
+                "color": "#414141",
+                "fontSize": "18px",
+                "fontWeight": 400,
+                "letterSpacing": "0.02em",
+                "lineHeight": "28px",
+              },
             },
             "viz": Object {
               "palette": Object {
-                "categorical": Object {},
-                "polarizes": Object {},
-                "sequential": Object {},
-                "undefinedState": Object {},
+                "categorical": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz10": "#419393",
+                  "cviz11": "#58C9DD",
+                  "cviz12": "#F8C189",
+                  "cviz13": "#528BBF",
+                  "cviz14": "#DE64BD",
+                  "cviz15": "#73BF9C",
+                  "cviz16": "#9672C1",
+                  "cviz17": "#EB95AF",
+                  "cviz18": "#646A98",
+                  "cviz19": "#D88136",
+                  "cviz2": "#FF990D",
+                  "cviz20": "#309B59",
+                  "cviz3": "#D31F6B",
+                  "cviz4": "#FFD00A",
+                  "cviz5": "#18C38A",
+                  "cviz6": "#098CB2",
+                  "cviz7": "#EA5B86",
+                  "cviz8": "#9B469B",
+                  "cviz9": "#F4763D",
+                },
+                "polarizes": Object {
+                  "cviz21": "#869F1E",
+                  "cviz22": "#A4991C",
+                  "cviz23": "#C4931A",
+                  "cviz24": "#E68C17",
+                  "cviz25": "#F27034",
+                  "cviz26": "#FF5252",
+                  "cviz27": "#EC3D57",
+                  "cviz28": "#D8265D",
+                  "sema1": "#63A621",
+                  "sema5": "#C51162",
+                },
+                "sequential": Object {
+                  "cviz1": "#2DB3E0",
+                  "cviz1_100": "#E3F1F6",
+                  "cviz1_200": "#CFEAF3",
+                  "cviz1_300": "#BAE3F3",
+                  "cviz1_400": "#A6DCEE",
+                  "cviz1_500": "#92D5EC",
+                  "cviz1_600": "#7ECEE9",
+                  "cviz1_700": "#69C7E7",
+                  "cviz1_800": "#55C0E4",
+                  "cviz1_900": "#40B9E2",
+                },
+                "undefinedState": Object {
+                  "atmo5": "#DEDEDE",
+                },
               },
             },
           },
-          "name": "dawn",
-          "palette": Object {
-            "accent": Object {
-              "acce0": "#FFFFFF",
-              "acce1": "#414141",
-              "acce2": "#146BD2",
-              "acce2h": "#4389DB",
-              "acce3": "#CC0000",
-            },
-            "atmosphere": Object {
-              "atmo1": "#FFFFFF",
-              "atmo2": "#F9F9F9",
-              "atmo3": "#F5F5F5",
-              "atmo4": "#F0F0F0",
-              "atmo5": "#DEDEDE",
-              "atmo6": "#BCBCBC",
-              "atmo7": "#999999",
-            },
-            "base": Object {
-              "base1": "#FFFFFF",
-              "base2": "#414141",
-            },
-            "semantic": Object {
-              "sema1": "#63A621",
-              "sema10": "#EF9A9A",
-              "sema11": "#E57373",
-              "sema12": "#EF5350",
-              "sema13": "#E53935",
-              "sema14": "#C62828",
-              "sema15": "#80DEEA",
-              "sema16": "#4DD0E1",
-              "sema17": "#26C6DA",
-              "sema18": "#00ACC1",
-              "sema19": "#00838F",
-              "sema2": "#72CCCB",
-              "sema3": "#E68C17",
-              "sema4": "#FF5252",
-              "sema5": "#C51162",
-              "sema6": "#AA00FF",
-              "sema7": "#D3E3F6",
-              "sema8": "#DFECD1",
-              "sema9": "#F5D8D8",
-            },
-            "support": Object {
-              "supp1": "#0F8B8D",
-              "supp2": "#734B6D",
-              "supp3": "#4E7599",
-              "supp4": "#C19C31",
-              "supp5": "#546B6B",
-            },
-          },
-          "spacing": Object {
-            "lg": 60,
-            "md": 30,
-            "sm": 20,
-            "xl": 90,
-            "xs": 10,
-          },
-          "type": "light",
-          "typography": Object {
-            "3xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "4xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "5xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "52px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "60px",
-            },
-            "disabledButtonText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "disabledText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "highlightText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "infoText": Object {
-              "color": "#999999",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "inlineLink": Object {
-              "color": "#146BD2",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "lTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "labelText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "mTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "normalText": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "placeholderText": Object {
-              "color": "#999999",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "sLink": Object {
-              "color": "#146BD2",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sText": Object {
-              "color": "#414141",
-              "fontSize": "12px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "16px",
-            },
-            "sTitle": Object {
-              "color": "#414141",
-              "fontSize": "22px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "30px",
-            },
-            "selectedNavText": Object {
-              "color": "#CC0000",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "selectedText": Object {
-              "background": "#414141",
-              "color": "#F9F9F9",
-              "fontSize": "14px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "20px",
-            },
-            "vizText": Object {
-              "color": "#414141",
-              "fontSize": "10px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "15px",
-            },
-            "xlTitle": Object {
-              "color": "#414141",
-              "fontSize": "32px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "40px",
-            },
-            "xsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 600,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-            "xxlTitle": Object {
-              "color": "#414141",
-              "fontSize": "42px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "52px",
-            },
-            "xxsTitle": Object {
-              "color": "#414141",
-              "fontSize": "18px",
-              "fontWeight": 400,
-              "letterSpacing": "0.02em",
-              "lineHeight": "28px",
-            },
-          },
-          "viz": Object {
-            "palette": Object {
-              "categorical": Object {
-                "cviz1": "#2DB3E0",
-                "cviz10": "#419393",
-                "cviz11": "#58C9DD",
-                "cviz12": "#F8C189",
-                "cviz13": "#528BBF",
-                "cviz14": "#DE64BD",
-                "cviz15": "#73BF9C",
-                "cviz16": "#9672C1",
-                "cviz17": "#EB95AF",
-                "cviz18": "#646A98",
-                "cviz19": "#D88136",
-                "cviz2": "#FF990D",
-                "cviz20": "#309B59",
-                "cviz3": "#D31F6B",
-                "cviz4": "#FFD00A",
-                "cviz5": "#18C38A",
-                "cviz6": "#098CB2",
-                "cviz7": "#EA5B86",
-                "cviz8": "#9B469B",
-                "cviz9": "#F4763D",
+          "mixins": Object {
+            "gutters": [Function],
+            "toolbar": Object {
+              "@media (min-width:0px) and (orientation: landscape)": Object {
+                "minHeight": 48,
               },
-              "polarizes": Object {
-                "cviz21": "#869F1E",
-                "cviz22": "#A4991C",
-                "cviz23": "#C4931A",
-                "cviz24": "#E68C17",
-                "cviz25": "#F27034",
-                "cviz26": "#FF5252",
-                "cviz27": "#EC3D57",
-                "cviz28": "#D8265D",
-                "sema1": "#63A621",
-                "sema5": "#C51162",
-              },
-              "sequential": Object {
-                "cviz1": "#2DB3E0",
-                "cviz1_100": "#E3F1F6",
-                "cviz1_200": "#CFEAF3",
-                "cviz1_300": "#BAE3F3",
-                "cviz1_400": "#A6DCEE",
-                "cviz1_500": "#92D5EC",
-                "cviz1_600": "#7ECEE9",
-                "cviz1_700": "#69C7E7",
-                "cviz1_800": "#55C0E4",
-                "cviz1_900": "#40B9E2",
-              },
-              "undefinedState": Object {
-                "atmo5": "#DEDEDE",
-              },
-            },
-          },
-        },
-        "mixins": Object {
-          "gutters": [Function],
-          "toolbar": Object {
-            "@media (min-width:0px) and (orientation: landscape)": Object {
-              "minHeight": 48,
-            },
-            "@media (min-width:600px)": Object {
-              "minHeight": 64,
-            },
-            "minHeight": 56,
-          },
-        },
-        "overrides": Object {
-          "MuiAppBar": Object {
-            "colorDefault": Object {
-              "backgroundColor": "#FFFFFF",
-              "contrastText": "#414141",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "height": "50px",
-              },
-              "borderTop": "4px solid #CC0000",
-            },
-          },
-          "MuiIconButton": Object {
-            "root": Object {
-              "&:focus": Object {
-                "outlineColor": "Highlight",
-                "outlineOffset": -2,
-                "outlineStyle": "auto",
-                "outlineWidth": 4,
-              },
-              "&:hover": Object {
-                "backgroundColor": "#F0F0F0",
-              },
-              "borderRadius": 0,
-              "padding": 0,
-            },
-          },
-          "MuiToolbar": Object {
-            "dense": Object {
-              "minHeight": "46px",
-            },
-            "gutters": Object {
               "@media (min-width:600px)": Object {
+                "minHeight": 64,
+              },
+              "minHeight": 56,
+            },
+          },
+          "overrides": Object {
+            "MuiAppBar": Object {
+              "colorDefault": Object {
+                "backgroundColor": "#FFFFFF",
+                "contrastText": "#414141",
+              },
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "height": "50px",
+                },
+                "borderTop": "4px solid #CC0000",
+              },
+            },
+            "MuiIconButton": Object {
+              "root": Object {
+                "&:focus": Object {
+                  "outlineColor": "Highlight",
+                  "outlineOffset": -2,
+                  "outlineStyle": "auto",
+                  "outlineWidth": 4,
+                },
+                "&:hover": Object {
+                  "backgroundColor": "#F0F0F0",
+                },
+                "borderRadius": 0,
+                "padding": 0,
+              },
+            },
+            "MuiToolbar": Object {
+              "dense": Object {
+                "minHeight": "46px",
+              },
+              "gutters": Object {
+                "@media (min-width:600px)": Object {
+                  "paddingLeft": "20px",
+                  "paddingRight": "20px",
+                },
                 "paddingLeft": "20px",
                 "paddingRight": "20px",
               },
-              "paddingLeft": "20px",
-              "paddingRight": "20px",
-            },
-            "root": Object {
-              "@media (min-width: 600px)": Object {
-                "minHeight": "46px",
+              "root": Object {
+                "@media (min-width: 600px)": Object {
+                  "minHeight": "46px",
+                },
+                "alignItems": "center",
               },
-              "alignItems": "center",
             },
           },
-        },
-        "palette": Object {
-          "acce0": "#FFFFFF",
-          "acce1": "#414141",
-          "acce2": "#146BD2",
-          "acce2h": "#4389DB",
-          "acce3": "#CC0000",
-          "action": Object {
-            "activatedOpacity": 0.12,
-            "active": "rgba(0, 0, 0, 0.54)",
-            "disabled": "rgba(0, 0, 0, 0.26)",
-            "disabledBackground": "rgba(0, 0, 0, 0.12)",
-            "disabledOpacity": 0.38,
-            "focus": "rgba(0, 0, 0, 0.12)",
-            "focusOpacity": 0.12,
-            "hover": "rgba(0, 0, 0, 0.04)",
-            "hoverOpacity": 0.04,
-            "selected": "rgba(0, 0, 0, 0.08)",
-            "selectedOpacity": 0.08,
+          "palette": Object {
+            "acce0": "#FFFFFF",
+            "acce1": "#414141",
+            "acce2": "#146BD2",
+            "acce2h": "#4389DB",
+            "acce3": "#CC0000",
+            "action": Object {
+              "activatedOpacity": 0.12,
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+              "disabledBackground": "rgba(0, 0, 0, 0.12)",
+              "disabledOpacity": 0.38,
+              "focus": "rgba(0, 0, 0, 0.12)",
+              "focusOpacity": 0.12,
+              "hover": "rgba(0, 0, 0, 0.04)",
+              "hoverOpacity": 0.04,
+              "selected": "rgba(0, 0, 0, 0.08)",
+              "selectedOpacity": 0.08,
+            },
+            "atmo1": "#FFFFFF",
+            "atmo2": "#F9F9F9",
+            "atmo3": "#F5F5F5",
+            "atmo4": "#F0F0F0",
+            "atmo5": "#DEDEDE",
+            "atmo6": "#BCBCBC",
+            "atmo7": "#999999",
+            "augmentColor": [Function],
+            "background": Object {
+              "default": "#F5F5F5",
+              "paper": "#fff",
+            },
+            "base1": "#FFFFFF",
+            "base2": "#414141",
+            "common": Object {
+              "black": "#000",
+              "white": "#fff",
+            },
+            "contrastThreshold": 3,
+            "divider": "rgba(0, 0, 0, 0.12)",
+            "error": Object {
+              "contrastText": "#fff",
+              "dark": "#d32f2f",
+              "light": "#e57373",
+              "main": "#f44336",
+            },
+            "getContrastText": [Function],
+            "grey": Object {
+              "100": "#f5f5f5",
+              "200": "#eeeeee",
+              "300": "#e0e0e0",
+              "400": "#bdbdbd",
+              "50": "#fafafa",
+              "500": "#9e9e9e",
+              "600": "#757575",
+              "700": "#616161",
+              "800": "#424242",
+              "900": "#212121",
+              "A100": "#d5d5d5",
+              "A200": "#aaaaaa",
+              "A400": "#303030",
+              "A700": "#616161",
+            },
+            "info": Object {
+              "contrastText": "#fff",
+              "dark": "#1976d2",
+              "light": "#64b5f6",
+              "main": "#2196f3",
+            },
+            "primary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(14, 74, 147)",
+              "light": "#4389DB",
+              "main": "#146BD2",
+            },
+            "secondary": Object {
+              "contrastText": "#fff",
+              "dark": "rgb(45, 45, 45)",
+              "light": "#999999",
+              "main": "#414141",
+            },
+            "sema1": "#63A621",
+            "sema10": "#EF9A9A",
+            "sema11": "#E57373",
+            "sema12": "#EF5350",
+            "sema13": "#E53935",
+            "sema14": "#C62828",
+            "sema15": "#80DEEA",
+            "sema16": "#4DD0E1",
+            "sema17": "#26C6DA",
+            "sema18": "#00ACC1",
+            "sema19": "#00838F",
+            "sema2": "#72CCCB",
+            "sema3": "#E68C17",
+            "sema4": "#FF5252",
+            "sema5": "#C51162",
+            "sema6": "#AA00FF",
+            "sema7": "#D3E3F6",
+            "sema8": "#DFECD1",
+            "sema9": "#F5D8D8",
+            "success": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#388e3c",
+              "light": "#81c784",
+              "main": "#4caf50",
+            },
+            "supp1": "#0F8B8D",
+            "supp2": "#734B6D",
+            "supp3": "#4E7599",
+            "supp4": "#C19C31",
+            "supp5": "#546B6B",
+            "text": Object {
+              "disabled": "#999999",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "primary": "#414141",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+            "tonalOffset": 0.2,
+            "type": "light",
+            "warning": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#f57c00",
+              "light": "#ffb74d",
+              "main": "#ff9800",
+            },
           },
-          "atmo1": "#FFFFFF",
-          "atmo2": "#F9F9F9",
-          "atmo3": "#F5F5F5",
-          "atmo4": "#F0F0F0",
-          "atmo5": "#DEDEDE",
-          "atmo6": "#BCBCBC",
-          "atmo7": "#999999",
-          "augmentColor": [Function],
-          "background": Object {
-            "default": "#F5F5F5",
-            "paper": "#fff",
+          "props": Object {
+            "MuiButtonBase": Object {
+              "disableRipple": true,
+            },
+            "MuiInput": Object {
+              "disableUnderline": true,
+            },
           },
-          "base1": "#FFFFFF",
-          "base2": "#414141",
-          "common": Object {
-            "black": "#000",
-            "white": "#fff",
-          },
-          "contrastThreshold": 3,
-          "divider": "rgba(0, 0, 0, 0.12)",
-          "error": Object {
-            "contrastText": "#fff",
-            "dark": "#d32f2f",
-            "light": "#e57373",
-            "main": "#f44336",
-          },
-          "getContrastText": [Function],
-          "grey": Object {
-            "100": "#f5f5f5",
-            "200": "#eeeeee",
-            "300": "#e0e0e0",
-            "400": "#bdbdbd",
-            "50": "#fafafa",
-            "500": "#9e9e9e",
-            "600": "#757575",
-            "700": "#616161",
-            "800": "#424242",
-            "900": "#212121",
-            "A100": "#d5d5d5",
-            "A200": "#aaaaaa",
-            "A400": "#303030",
-            "A700": "#616161",
-          },
-          "info": Object {
-            "contrastText": "#fff",
-            "dark": "#1976d2",
-            "light": "#64b5f6",
-            "main": "#2196f3",
-          },
-          "primary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(14, 74, 147)",
-            "light": "#4389DB",
-            "main": "#146BD2",
-          },
-          "secondary": Object {
-            "contrastText": "#fff",
-            "dark": "rgb(45, 45, 45)",
-            "light": "#999999",
-            "main": "#414141",
-          },
-          "sema1": "#63A621",
-          "sema10": "#EF9A9A",
-          "sema11": "#E57373",
-          "sema12": "#EF5350",
-          "sema13": "#E53935",
-          "sema14": "#C62828",
-          "sema15": "#80DEEA",
-          "sema16": "#4DD0E1",
-          "sema17": "#26C6DA",
-          "sema18": "#00ACC1",
-          "sema19": "#00838F",
-          "sema2": "#72CCCB",
-          "sema3": "#E68C17",
-          "sema4": "#FF5252",
-          "sema5": "#C51162",
-          "sema6": "#AA00FF",
-          "sema7": "#D3E3F6",
-          "sema8": "#DFECD1",
-          "sema9": "#F5D8D8",
-          "success": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#388e3c",
-            "light": "#81c784",
-            "main": "#4caf50",
-          },
-          "supp1": "#0F8B8D",
-          "supp2": "#734B6D",
-          "supp3": "#4E7599",
-          "supp4": "#C19C31",
-          "supp5": "#546B6B",
-          "text": Object {
-            "disabled": "#999999",
-            "hint": "rgba(0, 0, 0, 0.38)",
-            "primary": "#414141",
-            "secondary": "rgba(0, 0, 0, 0.54)",
-          },
-          "tonalOffset": 0.2,
-          "type": "light",
-          "warning": Object {
-            "contrastText": "rgba(0, 0, 0, 0.87)",
-            "dark": "#f57c00",
-            "light": "#ffb74d",
-            "main": "#ff9800",
-          },
-        },
-        "props": Object {
-          "MuiButtonBase": Object {
-            "disableRipple": true,
-          },
-          "MuiInput": Object {
-            "disableUnderline": true,
-          },
-        },
-        "shadows": Array [
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-          "none",
-        ],
-        "shape": Object {
-          "borderRadius": 0,
-        },
-        "spacing": [Function],
-        "transitions": Object {
-          "create": [Function],
-          "duration": Object {
-            "complex": 375,
-            "enteringScreen": 225,
-            "leavingScreen": 195,
-            "short": 250,
-            "shorter": 200,
-            "shortest": 150,
-            "standard": 300,
-          },
-          "easing": Object {
-            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
-            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
-            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
-          },
-          "getAutoHeightDuration": [Function],
-        },
-        "typography": Object {
-          "body1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "body2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "button": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-            "textTransform": "uppercase",
-          },
-          "caption": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 1.66,
-          },
-          "fontFamily": Array [
-            "'Open Sans'",
-            "Arial",
-            "Helvetica",
-            "sans-serif",
+          "shadows": Array [
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
+            "none",
           ],
-          "fontSize": 14,
-          "fontWeightBold": 700,
-          "fontWeightLight": 300,
-          "fontWeightMedium": 500,
-          "fontWeightRegular": 400,
-          "h1": Object {
-            "color": "#414141",
+          "shape": Object {
+            "borderRadius": 0,
+          },
+          "spacing": [Function],
+          "transitions": Object {
+            "create": [Function],
+            "duration": Object {
+              "complex": 375,
+              "enteringScreen": 225,
+              "leavingScreen": 195,
+              "short": 250,
+              "shorter": 200,
+              "shortest": 150,
+              "standard": 300,
+            },
+            "easing": Object {
+              "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+              "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+              "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+              "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+            },
+            "getAutoHeightDuration": [Function],
+          },
+          "typography": Object {
+            "body1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "body2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "button": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+              "textTransform": "uppercase",
+            },
+            "caption": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 1.66,
+            },
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "32px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+            "fontSize": 14,
+            "fontWeightBold": 700,
+            "fontWeightLight": 300,
+            "fontWeightMedium": 500,
+            "fontWeightRegular": 400,
+            "h1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "32px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "40px",
+            },
+            "h3": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h4": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "22px",
+              "fontWeight": 400,
+              "letterSpacing": "0.02em",
+              "lineHeight": "30px",
+            },
+            "h5": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "lineHeight": 1.334,
+            },
+            "h6": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "lineHeight": 1.6,
+            },
+            "htmlFontSize": 16,
+            "overline": Object {
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
+            },
+            "pxToRem": [Function],
+            "round": [Function],
+            "subtitle1": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "14px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "20px",
+            },
+            "subtitle2": Object {
+              "color": "#414141",
+              "fontFamily": Array [
+                "'Open Sans'",
+                "Arial",
+                "Helvetica",
+                "sans-serif",
+              ],
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
+            },
+            "suppressDeprecationWarnings": true,
           },
-          "h2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "32px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "40px",
+          "zIndex": Object {
+            "appBar": 1100,
+            "drawer": 1200,
+            "mobileStepper": 1000,
+            "modal": 1300,
+            "snackbar": 1400,
+            "speedDial": 1050,
+            "tooltip": 1500,
           },
-          "h3": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h4": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "22px",
-            "fontWeight": 400,
-            "letterSpacing": "0.02em",
-            "lineHeight": "30px",
-          },
-          "h5": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.5rem",
-            "fontWeight": 400,
-            "lineHeight": 1.334,
-          },
-          "h6": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "1.25rem",
-            "fontWeight": 500,
-            "lineHeight": 1.6,
-          },
-          "htmlFontSize": 16,
-          "overline": Object {
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "0.75rem",
-            "fontWeight": 400,
-            "lineHeight": 2.66,
-            "textTransform": "uppercase",
-          },
-          "pxToRem": [Function],
-          "round": [Function],
-          "subtitle1": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "14px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "20px",
-          },
-          "subtitle2": Object {
-            "color": "#414141",
-            "fontFamily": Array [
-              "'Open Sans'",
-              "Arial",
-              "Helvetica",
-              "sans-serif",
-            ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
-          },
-          "suppressDeprecationWarnings": true,
-        },
-        "zIndex": Object {
-          "appBar": 1100,
-          "drawer": 1200,
-          "mobileStepper": 1000,
-          "modal": 1300,
-          "snackbar": 1400,
-          "speedDial": 1050,
-          "tooltip": 1500,
-        },
-        Symbol(mui.nested): false,
-      }
-    }
-  >
-    <WithStyles(CssBaseline)>
-      <CssBaseline
-        classes={Object {}}
-      />
-    </WithStyles(CssBaseline)>
-    <WithStyles(Pagination)
-      canNext={true}
-      canPrevious={true}
-      className=""
-      labels={
-        Object {
-          "pageSizeEntryName": "rows",
-          "pageSizePrev": "Show",
-          "pageSizeSelectorDescription": "Select how many to display",
-          "pagesIndeterminate": "Many",
-          "pagesSeparator": "of",
+          Symbol(mui.nested): false,
         }
       }
-      onPageChange={[Function]}
-      onPageSizeChange={[Function]}
-      page={2}
-      pageSize={5}
-      pageSizeOptions={
-        Array [
-          5,
-          10,
-        ]
-      }
-      pages={4}
-      showPageJump={false}
-      showPageSizeOptions={true}
     >
-      <Pagination
+      <CssBaseline />
+      <WithStyles(Pagination)
         canNext={true}
         canPrevious={true}
         className=""
-        classes={
-          Object {
-            "icon": "HvPagination-icon-329",
-            "iconContainer": "HvPagination-iconContainer-328",
-            "pageInfo": "HvPagination-pageInfo-323",
-            "pageJump": "HvPagination-pageJump-324",
-            "pageNavigator": "HvPagination-pageNavigator-322",
-            "pageSizeInput": "HvPagination-pageSizeInput-325",
-            "pageSizeInputContainer": "HvPagination-pageSizeInputContainer-327",
-            "pageSizeInputRoot": "HvPagination-pageSizeInputRoot-326",
-            "pageSizeOptions": "HvPagination-pageSizeOptions-320",
-            "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect-321",
-            "root": "HvPagination-root-319",
-            "selectDownIcon": "HvPagination-selectDownIcon-330",
-          }
-        }
         labels={
           Object {
             "pageSizeEntryName": "rows",
@@ -846,746 +803,790 @@ exports[`Custom Pagination should render correctly 1`] = `
         showPageJump={false}
         showPageSizeOptions={true}
       >
-        <div
-          className="HvPagination-root-319"
-          id="hv-pagination-4"
+        <Pagination
+          canNext={true}
+          canPrevious={true}
+          className=""
+          classes={
+            Object {
+              "icon": "HvPagination-icon",
+              "iconContainer": "HvPagination-iconContainer",
+              "pageInfo": "HvPagination-pageInfo",
+              "pageJump": "HvPagination-pageJump",
+              "pageNavigator": "HvPagination-pageNavigator",
+              "pageSizeInput": "HvPagination-pageSizeInput",
+              "pageSizeInputContainer": "HvPagination-pageSizeInputContainer",
+              "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
+              "pageSizeOptions": "HvPagination-pageSizeOptions",
+              "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
+              "root": "HvPagination-root",
+              "selectDownIcon": "HvPagination-selectDownIcon",
+            }
+          }
+          labels={
+            Object {
+              "pageSizeEntryName": "rows",
+              "pageSizePrev": "Show",
+              "pageSizeSelectorDescription": "Select how many to display",
+              "pagesIndeterminate": "Many",
+              "pagesSeparator": "of",
+            }
+          }
+          onPageChange={[Function]}
+          onPageSizeChange={[Function]}
+          page={2}
+          pageSize={5}
+          pageSizeOptions={
+            Array [
+              5,
+              10,
+            ]
+          }
+          pages={4}
+          showPageJump={false}
+          showPageSizeOptions={true}
         >
           <div
-            className="HvPagination-pageSizeOptions-320"
+            className="HvPagination-root"
+            id="hv-pagination-4"
           >
-            <WithStyles(ForwardRef)
-              component="span"
-              variant="sText"
+            <div
+              className="HvPagination-pageSizeOptions"
             >
-              <ForwardRef
-                classes={
-                  Object {
-                    "3xlTitle": "HvTypography-3xlTitle-333",
-                    "4xlTitle": "HvTypography-4xlTitle-332",
-                    "5xlTitle": "HvTypography-5xlTitle-331",
-                    "baseFontFamily": "HvTypography-baseFontFamily-353",
-                    "disabledButtonText": "HvTypography-disabledButtonText-345",
-                    "highlightText": "HvTypography-highlightText-341",
-                    "infoText": "HvTypography-infoText-350",
-                    "inlineLink": "HvTypography-inlineLink-344",
-                    "lTitle": "HvTypography-lTitle-336",
-                    "labelText": "HvTypography-labelText-349",
-                    "mTitle": "HvTypography-mTitle-337",
-                    "margin": "HvTypography-margin-354",
-                    "normalText": "HvTypography-normalText-342",
-                    "placeholderText": "HvTypography-placeholderText-346",
-                    "sLink": "HvTypography-sLink-351",
-                    "sText": "HvTypography-sText-348",
-                    "sTitle": "HvTypography-sTitle-338",
-                    "selectedNavText": "HvTypography-selectedNavText-347",
-                    "selectedText": "HvTypography-selectedText-343",
-                    "vizText": "HvTypography-vizText-352",
-                    "xlTitle": "HvTypography-xlTitle-335",
-                    "xsTitle": "HvTypography-xsTitle-339",
-                    "xxlTitle": "HvTypography-xxlTitle-334",
-                    "xxsTitle": "HvTypography-xxsTitle-340",
-                  }
-                }
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="sText"
               >
-                <span
-                  className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "baseFontFamily": "HvTypography-baseFontFamily",
+                      "disabledButtonText": "HvTypography-disabledButtonText",
+                      "highlightText": "HvTypography-highlightText",
+                      "infoText": "HvTypography-infoText",
+                      "inlineLink": "HvTypography-inlineLink",
+                      "lTitle": "HvTypography-lTitle",
+                      "labelText": "HvTypography-labelText",
+                      "mTitle": "HvTypography-mTitle",
+                      "margin": "HvTypography-margin",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "sLink": "HvTypography-sLink",
+                      "sText": "HvTypography-sText",
+                      "sTitle": "HvTypography-sTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "selectedText": "HvTypography-selectedText",
+                      "vizText": "HvTypography-vizText",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
+                  }
+                  component="span"
+                  variant="sText"
                 >
-                  Show
-                </span>
-              </ForwardRef>
-            </WithStyles(ForwardRef)>
-            <select
-              aria-label="Select how many to display"
-              className="HvPagination-pageSizeOptionsSelect-321"
-              disabled={false}
-              id="hv-pagination-4-pageSize"
-              onChange={[Function]}
-              value={5}
-            >
-              <option
-                key="5"
+                  <span
+                    className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                  >
+                    Show
+                  </span>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+              <select
+                aria-label="Select how many to display"
+                className="HvPagination-pageSizeOptionsSelect"
+                disabled={false}
+                id="hv-pagination-4-pageSize"
+                onChange={[Function]}
                 value={5}
               >
-                5
-              </option>
-              <option
-                key="10"
-                value={10}
-              >
-                10
-              </option>
-            </select>
-            <WithStyles(DropDownXS)
-              className="HvPagination-selectDownIcon-330"
-            >
-              <DropDownXS
-                className="HvPagination-selectDownIcon-330"
-                classes={
-                  Object {
-                    "root": "HvIconDropDownXS-root-355",
-                    "rootL": "HvIconDropDownXS-rootL-359",
-                    "rootM": "HvIconDropDownXS-rootM-358",
-                    "rootS": "HvIconDropDownXS-rootS-357",
-                    "rootXs": "HvIconDropDownXS-rootXs-356",
-                  }
-                }
-              >
-                <div
-                  className="HvPagination-selectDownIcon-330 HvIconDropDownXS-root-355 HvIconDropDownXS-rootXs-356"
+                <option
+                  key="5"
+                  value={5}
                 >
-                  <svg
-                    focusable={false}
-                    height="12px"
-                    viewBox="0 0 12 12"
-                    width="12px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className="color0"
-                      d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </DropDownXS>
-            </WithStyles(DropDownXS)>
-            <WithStyles(ForwardRef)
-              component="span"
-              variant="sText"
-            >
-              <ForwardRef
-                classes={
-                  Object {
-                    "3xlTitle": "HvTypography-3xlTitle-333",
-                    "4xlTitle": "HvTypography-4xlTitle-332",
-                    "5xlTitle": "HvTypography-5xlTitle-331",
-                    "baseFontFamily": "HvTypography-baseFontFamily-353",
-                    "disabledButtonText": "HvTypography-disabledButtonText-345",
-                    "highlightText": "HvTypography-highlightText-341",
-                    "infoText": "HvTypography-infoText-350",
-                    "inlineLink": "HvTypography-inlineLink-344",
-                    "lTitle": "HvTypography-lTitle-336",
-                    "labelText": "HvTypography-labelText-349",
-                    "mTitle": "HvTypography-mTitle-337",
-                    "margin": "HvTypography-margin-354",
-                    "normalText": "HvTypography-normalText-342",
-                    "placeholderText": "HvTypography-placeholderText-346",
-                    "sLink": "HvTypography-sLink-351",
-                    "sText": "HvTypography-sText-348",
-                    "sTitle": "HvTypography-sTitle-338",
-                    "selectedNavText": "HvTypography-selectedNavText-347",
-                    "selectedText": "HvTypography-selectedText-343",
-                    "vizText": "HvTypography-vizText-352",
-                    "xlTitle": "HvTypography-xlTitle-335",
-                    "xsTitle": "HvTypography-xsTitle-339",
-                    "xxlTitle": "HvTypography-xxlTitle-334",
-                    "xxsTitle": "HvTypography-xxsTitle-340",
+                  5
+                </option>
+                <option
+                  key="10"
+                  value={10}
+                >
+                  10
+                </option>
+              </select>
+              <WithStyles(DropDownXS)
+                className="HvPagination-selectDownIcon"
+              >
+                <DropDownXS
+                  className="HvPagination-selectDownIcon"
+                  classes={
+                    Object {
+                      "root": "HvIconDropDownXS-root",
+                      "rootL": "HvIconDropDownXS-rootL",
+                      "rootM": "HvIconDropDownXS-rootM",
+                      "rootS": "HvIconDropDownXS-rootS",
+                      "rootXs": "HvIconDropDownXS-rootXs",
+                    }
                   }
-                }
+                >
+                  <div
+                    className="HvPagination-selectDownIcon HvIconDropDownXS-root HvIconDropDownXS-rootXs"
+                  >
+                    <svg
+                      focusable={false}
+                      height="12px"
+                      viewBox="0 0 12 12"
+                      width="12px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </DropDownXS>
+              </WithStyles(DropDownXS)>
+              <WithStyles(ForwardRef)
                 component="span"
                 variant="sText"
               >
-                <span
-                  className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
-                >
-                  rows
-                </span>
-              </ForwardRef>
-            </WithStyles(ForwardRef)>
-          </div>
-          <div
-            className="HvPagination-pageNavigator-322"
-          >
-            <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-328"
-              disabled={false}
-              id="hv-pagination-4-firstPage-button"
-              onClick={[Function]}
-            >
-              <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-328"
-                classes={
-                  Object {
-                    "colorInherit": "MuiIconButton-colorInherit",
-                    "colorPrimary": "MuiIconButton-colorPrimary",
-                    "colorSecondary": "MuiIconButton-colorSecondary",
-                    "disabled": "Mui-disabled",
-                    "edgeEnd": "MuiIconButton-edgeEnd",
-                    "edgeStart": "MuiIconButton-edgeStart",
-                    "label": "MuiIconButton-label",
-                    "root": "MuiIconButton-root",
-                    "sizeSmall": "MuiIconButton-sizeSmall",
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "baseFontFamily": "HvTypography-baseFontFamily",
+                      "disabledButtonText": "HvTypography-disabledButtonText",
+                      "highlightText": "HvTypography-highlightText",
+                      "infoText": "HvTypography-infoText",
+                      "inlineLink": "HvTypography-inlineLink",
+                      "lTitle": "HvTypography-lTitle",
+                      "labelText": "HvTypography-labelText",
+                      "mTitle": "HvTypography-mTitle",
+                      "margin": "HvTypography-margin",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "sLink": "HvTypography-sLink",
+                      "sText": "HvTypography-sText",
+                      "sTitle": "HvTypography-sTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "selectedText": "HvTypography-selectedText",
+                      "vizText": "HvTypography-vizText",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
                   }
-                }
+                  component="span"
+                  variant="sText"
+                >
+                  <span
+                    className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                  >
+                    rows
+                  </span>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+            </div>
+            <div
+              className="HvPagination-pageNavigator"
+            >
+              <WithStyles(ForwardRef(IconButton))
+                className="HvPagination-iconContainer"
                 disabled={false}
                 id="hv-pagination-4-firstPage-button"
                 onClick={[Function]}
               >
-                <WithStyles(ForwardRef(ButtonBase))
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-328"
+                <ForwardRef(IconButton)
+                  className="HvPagination-iconContainer"
+                  classes={
+                    Object {
+                      "colorInherit": "MuiIconButton-colorInherit",
+                      "colorPrimary": "MuiIconButton-colorPrimary",
+                      "colorSecondary": "MuiIconButton-colorSecondary",
+                      "disabled": "Mui-disabled",
+                      "edgeEnd": "MuiIconButton-edgeEnd",
+                      "edgeStart": "MuiIconButton-edgeStart",
+                      "label": "MuiIconButton-label",
+                      "root": "MuiIconButton-root",
+                      "sizeSmall": "MuiIconButton-sizeSmall",
+                    }
+                  }
                   disabled={false}
-                  focusRipple={true}
                   id="hv-pagination-4-firstPage-button"
                   onClick={[Function]}
                 >
-                  <ForwardRef(ButtonBase)
+                  <WithStyles(ForwardRef(ButtonBase))
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-328"
-                    classes={
-                      Object {
-                        "disabled": "Mui-disabled",
-                        "focusVisible": "Mui-focusVisible",
-                        "root": "MuiButtonBase-root",
-                      }
-                    }
-                    disableRipple={true}
+                    className="MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     focusRipple={true}
                     id="hv-pagination-4-firstPage-button"
                     onClick={[Function]}
                   >
-                    <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
+                    <ForwardRef(ButtonBase)
+                      centerRipple={true}
+                      className="MuiIconButton-root HvPagination-iconContainer"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disableRipple={true}
                       disabled={false}
+                      focusRipple={true}
                       id="hv-pagination-4-firstPage-button"
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onDragLeave={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchMove={[Function]}
-                      onTouchStart={[Function]}
-                      tabIndex={0}
-                      type="button"
                     >
-                      <span
-                        className="MuiIconButton-label"
+                      <button
+                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                        disabled={false}
+                        id="hv-pagination-4-firstPage-button"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <WithStyles(Start)
-                          className="HvPagination-icon-329"
+                        <span
+                          className="MuiIconButton-label"
                         >
-                          <Start
-                            className="HvPagination-icon-329"
-                            classes={
-                              Object {
-                                "root": "HvIconStart-root-372",
-                                "rootL": "HvIconStart-rootL-376",
-                                "rootM": "HvIconStart-rootM-375",
-                                "rootS": "HvIconStart-rootS-374",
-                                "rootXs": "HvIconStart-rootXs-373",
-                              }
-                            }
+                          <WithStyles(Start)
+                            className="HvPagination-icon"
                           >
-                            <div
-                              className="HvPagination-icon-329 HvIconStart-root-372 HvIconStart-rootS-374"
+                            <Start
+                              className="HvPagination-icon"
+                              classes={
+                                Object {
+                                  "root": "HvIconStart-root",
+                                  "rootL": "HvIconStart-rootL",
+                                  "rootM": "HvIconStart-rootM",
+                                  "rootS": "HvIconStart-rootS",
+                                  "rootXs": "HvIconStart-rootXs",
+                                }
+                              }
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
                               >
-                                <path
-                                  className="color0"
-                                  d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Start>
-                        </WithStyles(Start)>
-                      </span>
-                      <NoSsr />
-                    </button>
-                  </ForwardRef(ButtonBase)>
-                </WithStyles(ForwardRef(ButtonBase))>
-              </ForwardRef(IconButton)>
-            </WithStyles(ForwardRef(IconButton))>
-            <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-328"
-              disabled={false}
-              id="hv-pagination-4-previousPage-button"
-              onClick={[Function]}
-            >
-              <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-328"
-                classes={
-                  Object {
-                    "colorInherit": "MuiIconButton-colorInherit",
-                    "colorPrimary": "MuiIconButton-colorPrimary",
-                    "colorSecondary": "MuiIconButton-colorSecondary",
-                    "disabled": "Mui-disabled",
-                    "edgeEnd": "MuiIconButton-edgeEnd",
-                    "edgeStart": "MuiIconButton-edgeStart",
-                    "label": "MuiIconButton-label",
-                    "root": "MuiIconButton-root",
-                    "sizeSmall": "MuiIconButton-sizeSmall",
-                  }
-                }
+                                <svg
+                                  focusable={false}
+                                  height="16px"
+                                  viewBox="0 0 16 16"
+                                  width="16px"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </Start>
+                          </WithStyles(Start)>
+                        </span>
+                        <NoSsr />
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(IconButton)>
+              </WithStyles(ForwardRef(IconButton))>
+              <WithStyles(ForwardRef(IconButton))
+                className="HvPagination-iconContainer"
                 disabled={false}
                 id="hv-pagination-4-previousPage-button"
                 onClick={[Function]}
               >
-                <WithStyles(ForwardRef(ButtonBase))
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-328"
+                <ForwardRef(IconButton)
+                  className="HvPagination-iconContainer"
+                  classes={
+                    Object {
+                      "colorInherit": "MuiIconButton-colorInherit",
+                      "colorPrimary": "MuiIconButton-colorPrimary",
+                      "colorSecondary": "MuiIconButton-colorSecondary",
+                      "disabled": "Mui-disabled",
+                      "edgeEnd": "MuiIconButton-edgeEnd",
+                      "edgeStart": "MuiIconButton-edgeStart",
+                      "label": "MuiIconButton-label",
+                      "root": "MuiIconButton-root",
+                      "sizeSmall": "MuiIconButton-sizeSmall",
+                    }
+                  }
                   disabled={false}
-                  focusRipple={true}
                   id="hv-pagination-4-previousPage-button"
                   onClick={[Function]}
                 >
-                  <ForwardRef(ButtonBase)
+                  <WithStyles(ForwardRef(ButtonBase))
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-328"
-                    classes={
-                      Object {
-                        "disabled": "Mui-disabled",
-                        "focusVisible": "Mui-focusVisible",
-                        "root": "MuiButtonBase-root",
-                      }
-                    }
-                    disableRipple={true}
+                    className="MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     focusRipple={true}
                     id="hv-pagination-4-previousPage-button"
                     onClick={[Function]}
                   >
-                    <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
+                    <ForwardRef(ButtonBase)
+                      centerRipple={true}
+                      className="MuiIconButton-root HvPagination-iconContainer"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disableRipple={true}
                       disabled={false}
+                      focusRipple={true}
                       id="hv-pagination-4-previousPage-button"
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onDragLeave={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchMove={[Function]}
-                      onTouchStart={[Function]}
-                      tabIndex={0}
-                      type="button"
                     >
-                      <span
-                        className="MuiIconButton-label"
+                      <button
+                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                        disabled={false}
+                        id="hv-pagination-4-previousPage-button"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <WithStyles(Backwards)
-                          className="HvPagination-icon-329"
+                        <span
+                          className="MuiIconButton-label"
                         >
-                          <Backwards
-                            className="HvPagination-icon-329"
-                            classes={
-                              Object {
-                                "root": "HvIconBackwards-root-377",
-                                "rootL": "HvIconBackwards-rootL-381",
-                                "rootM": "HvIconBackwards-rootM-380",
-                                "rootS": "HvIconBackwards-rootS-379",
-                                "rootXs": "HvIconBackwards-rootXs-378",
-                              }
-                            }
+                          <WithStyles(Backwards)
+                            className="HvPagination-icon"
                           >
-                            <div
-                              className="HvPagination-icon-329 HvIconBackwards-root-377 HvIconBackwards-rootS-379"
+                            <Backwards
+                              className="HvPagination-icon"
+                              classes={
+                                Object {
+                                  "root": "HvIconBackwards-root",
+                                  "rootL": "HvIconBackwards-rootL",
+                                  "rootM": "HvIconBackwards-rootM",
+                                  "rootS": "HvIconBackwards-rootS",
+                                  "rootXs": "HvIconBackwards-rootXs",
+                                }
+                              }
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
                               >
-                                <path
-                                  className="color0"
-                                  d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Backwards>
-                        </WithStyles(Backwards)>
-                      </span>
-                      <NoSsr />
-                    </button>
-                  </ForwardRef(ButtonBase)>
-                </WithStyles(ForwardRef(ButtonBase))>
-              </ForwardRef(IconButton)>
-            </WithStyles(ForwardRef(IconButton))>
-            <div
-              className="HvPagination-pageInfo-323"
-            >
-              <WithStyles(ForwardRef)
-                component="span"
-                variant="sText"
+                                <svg
+                                  focusable={false}
+                                  height="16px"
+                                  viewBox="0 0 16 16"
+                                  width="16px"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </Backwards>
+                          </WithStyles(Backwards)>
+                        </span>
+                        <NoSsr />
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(IconButton)>
+              </WithStyles(ForwardRef(IconButton))>
+              <div
+                className="HvPagination-pageInfo"
               >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle-333",
-                      "4xlTitle": "HvTypography-4xlTitle-332",
-                      "5xlTitle": "HvTypography-5xlTitle-331",
-                      "baseFontFamily": "HvTypography-baseFontFamily-353",
-                      "disabledButtonText": "HvTypography-disabledButtonText-345",
-                      "highlightText": "HvTypography-highlightText-341",
-                      "infoText": "HvTypography-infoText-350",
-                      "inlineLink": "HvTypography-inlineLink-344",
-                      "lTitle": "HvTypography-lTitle-336",
-                      "labelText": "HvTypography-labelText-349",
-                      "mTitle": "HvTypography-mTitle-337",
-                      "margin": "HvTypography-margin-354",
-                      "normalText": "HvTypography-normalText-342",
-                      "placeholderText": "HvTypography-placeholderText-346",
-                      "sLink": "HvTypography-sLink-351",
-                      "sText": "HvTypography-sText-348",
-                      "sTitle": "HvTypography-sTitle-338",
-                      "selectedNavText": "HvTypography-selectedNavText-347",
-                      "selectedText": "HvTypography-selectedText-343",
-                      "vizText": "HvTypography-vizText-352",
-                      "xlTitle": "HvTypography-xlTitle-335",
-                      "xsTitle": "HvTypography-xsTitle-339",
-                      "xxlTitle": "HvTypography-xxlTitle-334",
-                      "xxsTitle": "HvTypography-xxsTitle-340",
-                    }
-                  }
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="sText"
                 >
-                  <span
-                    className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
-                  >
-                    3
-                  </span>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-              <WithStyles(ForwardRef)
-                component="span"
-                variant="sText"
-              >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle-333",
-                      "4xlTitle": "HvTypography-4xlTitle-332",
-                      "5xlTitle": "HvTypography-5xlTitle-331",
-                      "baseFontFamily": "HvTypography-baseFontFamily-353",
-                      "disabledButtonText": "HvTypography-disabledButtonText-345",
-                      "highlightText": "HvTypography-highlightText-341",
-                      "infoText": "HvTypography-infoText-350",
-                      "inlineLink": "HvTypography-inlineLink-344",
-                      "lTitle": "HvTypography-lTitle-336",
-                      "labelText": "HvTypography-labelText-349",
-                      "mTitle": "HvTypography-mTitle-337",
-                      "margin": "HvTypography-margin-354",
-                      "normalText": "HvTypography-normalText-342",
-                      "placeholderText": "HvTypography-placeholderText-346",
-                      "sLink": "HvTypography-sLink-351",
-                      "sText": "HvTypography-sText-348",
-                      "sTitle": "HvTypography-sTitle-338",
-                      "selectedNavText": "HvTypography-selectedNavText-347",
-                      "selectedText": "HvTypography-selectedText-343",
-                      "vizText": "HvTypography-vizText-352",
-                      "xlTitle": "HvTypography-xlTitle-335",
-                      "xsTitle": "HvTypography-xsTitle-339",
-                      "xxlTitle": "HvTypography-xxlTitle-334",
-                      "xxsTitle": "HvTypography-xxsTitle-340",
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "baseFontFamily": "HvTypography-baseFontFamily",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "margin": "HvTypography-margin",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
                     }
-                  }
+                    component="span"
+                    variant="sText"
+                  >
+                    <span
+                      className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                    >
+                      3
+                    </span>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="sText"
                 >
-                  <span
-                    className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
-                  >
-                     of 
-                  </span>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-              <WithStyles(ForwardRef)
-                component="span"
-                id="hv-pagination-4-totalPages"
-                variant="sText"
-              >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle-333",
-                      "4xlTitle": "HvTypography-4xlTitle-332",
-                      "5xlTitle": "HvTypography-5xlTitle-331",
-                      "baseFontFamily": "HvTypography-baseFontFamily-353",
-                      "disabledButtonText": "HvTypography-disabledButtonText-345",
-                      "highlightText": "HvTypography-highlightText-341",
-                      "infoText": "HvTypography-infoText-350",
-                      "inlineLink": "HvTypography-inlineLink-344",
-                      "lTitle": "HvTypography-lTitle-336",
-                      "labelText": "HvTypography-labelText-349",
-                      "mTitle": "HvTypography-mTitle-337",
-                      "margin": "HvTypography-margin-354",
-                      "normalText": "HvTypography-normalText-342",
-                      "placeholderText": "HvTypography-placeholderText-346",
-                      "sLink": "HvTypography-sLink-351",
-                      "sText": "HvTypography-sText-348",
-                      "sTitle": "HvTypography-sTitle-338",
-                      "selectedNavText": "HvTypography-selectedNavText-347",
-                      "selectedText": "HvTypography-selectedText-343",
-                      "vizText": "HvTypography-vizText-352",
-                      "xlTitle": "HvTypography-xlTitle-335",
-                      "xsTitle": "HvTypography-xsTitle-339",
-                      "xxlTitle": "HvTypography-xxlTitle-334",
-                      "xxsTitle": "HvTypography-xxsTitle-340",
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "baseFontFamily": "HvTypography-baseFontFamily",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "margin": "HvTypography-margin",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
                     }
-                  }
+                    component="span"
+                    variant="sText"
+                  >
+                    <span
+                      className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                    >
+                       of 
+                    </span>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+                <WithStyles(ForwardRef)
                   component="span"
                   id="hv-pagination-4-totalPages"
                   variant="sText"
                 >
-                  <span
-                    className="HvTypography-sText-348 HvTypography-baseFontFamily-353 HvTypography-margin-354"
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "baseFontFamily": "HvTypography-baseFontFamily",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "margin": "HvTypography-margin",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    component="span"
                     id="hv-pagination-4-totalPages"
+                    variant="sText"
                   >
-                    4
-                  </span>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-            </div>
-            <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-328"
-              disabled={false}
-              id="hv-pagination-4-nextPage-button"
-              onClick={[Function]}
-            >
-              <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-328"
-                classes={
-                  Object {
-                    "colorInherit": "MuiIconButton-colorInherit",
-                    "colorPrimary": "MuiIconButton-colorPrimary",
-                    "colorSecondary": "MuiIconButton-colorSecondary",
-                    "disabled": "Mui-disabled",
-                    "edgeEnd": "MuiIconButton-edgeEnd",
-                    "edgeStart": "MuiIconButton-edgeStart",
-                    "label": "MuiIconButton-label",
-                    "root": "MuiIconButton-root",
-                    "sizeSmall": "MuiIconButton-sizeSmall",
-                  }
-                }
+                    <span
+                      className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                      id="hv-pagination-4-totalPages"
+                    >
+                      4
+                    </span>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </div>
+              <WithStyles(ForwardRef(IconButton))
+                className="HvPagination-iconContainer"
                 disabled={false}
                 id="hv-pagination-4-nextPage-button"
                 onClick={[Function]}
               >
-                <WithStyles(ForwardRef(ButtonBase))
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-328"
+                <ForwardRef(IconButton)
+                  className="HvPagination-iconContainer"
+                  classes={
+                    Object {
+                      "colorInherit": "MuiIconButton-colorInherit",
+                      "colorPrimary": "MuiIconButton-colorPrimary",
+                      "colorSecondary": "MuiIconButton-colorSecondary",
+                      "disabled": "Mui-disabled",
+                      "edgeEnd": "MuiIconButton-edgeEnd",
+                      "edgeStart": "MuiIconButton-edgeStart",
+                      "label": "MuiIconButton-label",
+                      "root": "MuiIconButton-root",
+                      "sizeSmall": "MuiIconButton-sizeSmall",
+                    }
+                  }
                   disabled={false}
-                  focusRipple={true}
                   id="hv-pagination-4-nextPage-button"
                   onClick={[Function]}
                 >
-                  <ForwardRef(ButtonBase)
+                  <WithStyles(ForwardRef(ButtonBase))
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-328"
-                    classes={
-                      Object {
-                        "disabled": "Mui-disabled",
-                        "focusVisible": "Mui-focusVisible",
-                        "root": "MuiButtonBase-root",
-                      }
-                    }
-                    disableRipple={true}
+                    className="MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     focusRipple={true}
                     id="hv-pagination-4-nextPage-button"
                     onClick={[Function]}
                   >
-                    <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
+                    <ForwardRef(ButtonBase)
+                      centerRipple={true}
+                      className="MuiIconButton-root HvPagination-iconContainer"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disableRipple={true}
                       disabled={false}
+                      focusRipple={true}
                       id="hv-pagination-4-nextPage-button"
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onDragLeave={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchMove={[Function]}
-                      onTouchStart={[Function]}
-                      tabIndex={0}
-                      type="button"
                     >
-                      <span
-                        className="MuiIconButton-label"
+                      <button
+                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                        disabled={false}
+                        id="hv-pagination-4-nextPage-button"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <WithStyles(Forwards)
-                          className="HvPagination-icon-329"
+                        <span
+                          className="MuiIconButton-label"
                         >
-                          <Forwards
-                            className="HvPagination-icon-329"
-                            classes={
-                              Object {
-                                "root": "HvIconForwards-root-382",
-                                "rootL": "HvIconForwards-rootL-386",
-                                "rootM": "HvIconForwards-rootM-385",
-                                "rootS": "HvIconForwards-rootS-384",
-                                "rootXs": "HvIconForwards-rootXs-383",
-                              }
-                            }
+                          <WithStyles(Forwards)
+                            className="HvPagination-icon"
                           >
-                            <div
-                              className="HvPagination-icon-329 HvIconForwards-root-382 HvIconForwards-rootS-384"
+                            <Forwards
+                              className="HvPagination-icon"
+                              classes={
+                                Object {
+                                  "root": "HvIconForwards-root",
+                                  "rootL": "HvIconForwards-rootL",
+                                  "rootM": "HvIconForwards-rootM",
+                                  "rootS": "HvIconForwards-rootS",
+                                  "rootXs": "HvIconForwards-rootXs",
+                                }
+                              }
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvPagination-icon HvIconForwards-root HvIconForwards-rootS"
                               >
-                                <path
-                                  className="color0"
-                                  d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </Forwards>
-                        </WithStyles(Forwards)>
-                      </span>
-                      <NoSsr />
-                    </button>
-                  </ForwardRef(ButtonBase)>
-                </WithStyles(ForwardRef(ButtonBase))>
-              </ForwardRef(IconButton)>
-            </WithStyles(ForwardRef(IconButton))>
-            <WithStyles(ForwardRef(IconButton))
-              className="HvPagination-iconContainer-328"
-              disabled={false}
-              id="hv-pagination-4-lastPage-button"
-              onClick={[Function]}
-            >
-              <ForwardRef(IconButton)
-                className="HvPagination-iconContainer-328"
-                classes={
-                  Object {
-                    "colorInherit": "MuiIconButton-colorInherit",
-                    "colorPrimary": "MuiIconButton-colorPrimary",
-                    "colorSecondary": "MuiIconButton-colorSecondary",
-                    "disabled": "Mui-disabled",
-                    "edgeEnd": "MuiIconButton-edgeEnd",
-                    "edgeStart": "MuiIconButton-edgeStart",
-                    "label": "MuiIconButton-label",
-                    "root": "MuiIconButton-root",
-                    "sizeSmall": "MuiIconButton-sizeSmall",
-                  }
-                }
+                                <svg
+                                  focusable={false}
+                                  height="16px"
+                                  viewBox="0 0 16 16"
+                                  width="16px"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </Forwards>
+                          </WithStyles(Forwards)>
+                        </span>
+                        <NoSsr />
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(IconButton)>
+              </WithStyles(ForwardRef(IconButton))>
+              <WithStyles(ForwardRef(IconButton))
+                className="HvPagination-iconContainer"
                 disabled={false}
                 id="hv-pagination-4-lastPage-button"
                 onClick={[Function]}
               >
-                <WithStyles(ForwardRef(ButtonBase))
-                  centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer-328"
+                <ForwardRef(IconButton)
+                  className="HvPagination-iconContainer"
+                  classes={
+                    Object {
+                      "colorInherit": "MuiIconButton-colorInherit",
+                      "colorPrimary": "MuiIconButton-colorPrimary",
+                      "colorSecondary": "MuiIconButton-colorSecondary",
+                      "disabled": "Mui-disabled",
+                      "edgeEnd": "MuiIconButton-edgeEnd",
+                      "edgeStart": "MuiIconButton-edgeStart",
+                      "label": "MuiIconButton-label",
+                      "root": "MuiIconButton-root",
+                      "sizeSmall": "MuiIconButton-sizeSmall",
+                    }
+                  }
                   disabled={false}
-                  focusRipple={true}
                   id="hv-pagination-4-lastPage-button"
                   onClick={[Function]}
                 >
-                  <ForwardRef(ButtonBase)
+                  <WithStyles(ForwardRef(ButtonBase))
                     centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer-328"
-                    classes={
-                      Object {
-                        "disabled": "Mui-disabled",
-                        "focusVisible": "Mui-focusVisible",
-                        "root": "MuiButtonBase-root",
-                      }
-                    }
-                    disableRipple={true}
+                    className="MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     focusRipple={true}
                     id="hv-pagination-4-lastPage-button"
                     onClick={[Function]}
                   >
-                    <button
-                      className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer-328"
+                    <ForwardRef(ButtonBase)
+                      centerRipple={true}
+                      className="MuiIconButton-root HvPagination-iconContainer"
+                      classes={
+                        Object {
+                          "disabled": "Mui-disabled",
+                          "focusVisible": "Mui-focusVisible",
+                          "root": "MuiButtonBase-root",
+                        }
+                      }
+                      disableRipple={true}
                       disabled={false}
+                      focusRipple={true}
                       id="hv-pagination-4-lastPage-button"
-                      onBlur={[Function]}
                       onClick={[Function]}
-                      onDragLeave={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      onKeyUp={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseLeave={[Function]}
-                      onMouseUp={[Function]}
-                      onTouchEnd={[Function]}
-                      onTouchMove={[Function]}
-                      onTouchStart={[Function]}
-                      tabIndex={0}
-                      type="button"
                     >
-                      <span
-                        className="MuiIconButton-label"
+                      <button
+                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                        disabled={false}
+                        id="hv-pagination-4-lastPage-button"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onDragLeave={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        onMouseDown={[Function]}
+                        onMouseLeave={[Function]}
+                        onMouseUp={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchMove={[Function]}
+                        onTouchStart={[Function]}
+                        tabIndex={0}
+                        type="button"
                       >
-                        <WithStyles(End)
-                          className="HvPagination-icon-329"
+                        <span
+                          className="MuiIconButton-label"
                         >
-                          <End
-                            className="HvPagination-icon-329"
-                            classes={
-                              Object {
-                                "root": "HvIconEnd-root-387",
-                                "rootL": "HvIconEnd-rootL-391",
-                                "rootM": "HvIconEnd-rootM-390",
-                                "rootS": "HvIconEnd-rootS-389",
-                                "rootXs": "HvIconEnd-rootXs-388",
-                              }
-                            }
+                          <WithStyles(End)
+                            className="HvPagination-icon"
                           >
-                            <div
-                              className="HvPagination-icon-329 HvIconEnd-root-387 HvIconEnd-rootS-389"
+                            <End
+                              className="HvPagination-icon"
+                              classes={
+                                Object {
+                                  "root": "HvIconEnd-root",
+                                  "rootL": "HvIconEnd-rootL",
+                                  "rootM": "HvIconEnd-rootM",
+                                  "rootS": "HvIconEnd-rootS",
+                                  "rootXs": "HvIconEnd-rootXs",
+                                }
+                              }
                             >
-                              <svg
-                                focusable={false}
-                                height="16px"
-                                viewBox="0 0 16 16"
-                                width="16px"
-                                xmlns="http://www.w3.org/2000/svg"
+                              <div
+                                className="HvPagination-icon HvIconEnd-root HvIconEnd-rootS"
                               >
-                                <path
-                                  className="color0"
-                                  d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
-                                  fill="#414141"
-                                />
-                              </svg>
-                            </div>
-                          </End>
-                        </WithStyles(End)>
-                      </span>
-                      <NoSsr />
-                    </button>
-                  </ForwardRef(ButtonBase)>
-                </WithStyles(ForwardRef(ButtonBase))>
-              </ForwardRef(IconButton)>
-            </WithStyles(ForwardRef(IconButton))>
+                                <svg
+                                  focusable={false}
+                                  height="16px"
+                                  viewBox="0 0 16 16"
+                                  width="16px"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    className="color0"
+                                    d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
+                                    fill="#414141"
+                                  />
+                                </svg>
+                              </div>
+                            </End>
+                          </WithStyles(End)>
+                        </span>
+                        <NoSsr />
+                      </button>
+                    </ForwardRef(ButtonBase)>
+                  </WithStyles(ForwardRef(ButtonBase))>
+                </ForwardRef(IconButton)>
+              </WithStyles(ForwardRef(IconButton))>
+            </div>
           </div>
-        </div>
-      </Pagination>
-    </WithStyles(Pagination)>
-  </ThemeProvider>
+        </Pagination>
+      </WithStyles(Pagination)>
+    </ThemeProvider>
+  </StylesProvider>
 </HvProvider>
 `;

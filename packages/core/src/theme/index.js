@@ -67,5 +67,8 @@ const hvTheme = uiKitTheme => {
 
 const defaultTheme = hvTheme();
 
+export { default as generateClassName } from "./generateClassName";
+export { default as CssBaseline } from "./CssBaseline";
+
 export { hvTheme as themeBuilder };
 export default defaultTheme;
