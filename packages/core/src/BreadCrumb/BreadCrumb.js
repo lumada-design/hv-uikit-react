@@ -51,12 +51,7 @@ LastPathElement.propTypes = {
  */
 const Page = ({ Component, onClick, elem, classes }) => {
   return (
-    <HvLink
-      route={elem.path}
-      Component={Component}
-      onClick={onClick}
-      data={elem}
-    >
+    <HvLink route={elem.path} Component={Component} onClick={onClick} data={elem}>
       <div className={classes.centerContainer}>
         <HvTypography variant="sLink" className={classes.link}>
           {startCase(elem.label)}
@@ -174,9 +169,7 @@ const BreadCrumb = ({
   }
 
   const breadcrumbPath =
-    listPath.length > maxVisibleElem
-      ? pathWithSubMenu(listPath, maxVisibleElem)
-      : listPath;
+    listPath.length > maxVisibleElem ? pathWithSubMenu(listPath, maxVisibleElem) : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
 

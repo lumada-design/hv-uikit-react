@@ -14,16 +14,8 @@ const CheckboxStateManager = () => {
 
   return (
     <div style={{ display: "inline-flex", flexDirection: "column" }}>
-      <HvRadio
-        label="Radio 1"
-        checked={checkedRadio === valueA}
-        onChange={onChangeRadio(valueA)}
-      />
-      <HvRadio
-        label="Radio 2"
-        checked={checkedRadio === valueB}
-        onChange={onChangeRadio(valueB)}
-      />
+      <HvRadio label="Radio 1" checked={checkedRadio === valueA} onChange={onChangeRadio(valueA)} />
+      <HvRadio label="Radio 2" checked={checkedRadio === valueB} onChange={onChangeRadio(valueB)} />
     </div>
   );
 };
