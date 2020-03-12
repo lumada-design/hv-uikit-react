@@ -1909,14 +1909,12 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                 <WithStyles(Actions)
                                   actions="actions"
                                   actionsCallback={[Function]}
-                                  category="ghost"
                                   id="value"
                                   maxVisibleActions={1}
                                 >
                                   <Actions
                                     actions="actions"
                                     actionsCallback={[Function]}
-                                    category="ghost"
                                     classes={
                                       Object {
                                         "actionContainer": "HvActions-actionContainer-163",

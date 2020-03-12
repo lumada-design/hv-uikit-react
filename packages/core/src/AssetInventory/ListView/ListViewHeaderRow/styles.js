@@ -14,6 +14,7 @@ const styles = () => ({
   selectable: {
     marginLeft: "42px"
   },
+  notSelectable: {},
   headCell: {
     padding: "0"
   }

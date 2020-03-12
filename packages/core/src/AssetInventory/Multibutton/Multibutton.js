@@ -10,7 +10,7 @@ import MultiButton from "../../MultiButton";
  * @returns {*}
  * @constructor
  */
-const AssetMultiButton = ({ id, views, changeView, onViewChange }) => {
+const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
   const options = [];
 
   views.map(view =>
@@ -47,10 +47,6 @@ AssetMultiButton.propTypes = {
   ).isRequired,
   changeView: PropTypes.func.isRequired,
   onViewChange: PropTypes.func
-};
-
-AssetMultiButton.defaultProps = {
-  onViewChange: null
 };
 
 const arePropsEqual = (prevProps, nextProps) => prevProps.views === nextProps.views;

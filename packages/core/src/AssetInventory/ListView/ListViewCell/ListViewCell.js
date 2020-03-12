@@ -45,12 +45,12 @@ const cell = (
 
 const ListViewCell = ({
   classes,
-  className,
-  id,
+  className = "",
+  id = "",
   children,
-  align,
-  columnIndex,
-  semantic,
+  align = undefined,
+  columnIndex = undefined,
+  semantic = undefined,
   ...other
 }) => (
   <ListViewContextConsumer>
@@ -128,14 +128,6 @@ ListViewCell.propTypes = {
     "atmo6"
   ]),
   children: PropTypes.node.isRequired
-};
-
-ListViewCell.defaultProps = {
-  id: "",
-  semantic: undefined,
-  align: undefined,
-  columnIndex: undefined,
-  className: ""
 };
 
 export default withStyles(styles, { name: "HvListViewCell" })(ListViewCell);

@@ -45,16 +45,26 @@ const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata
  * @constructor
  */
 const CardView = ({
-  id,
-  className,
+  id = "",
+  className = "",
   classes,
   icon,
   values,
   selectedValues,
-  renderer,
-  viewConfiguration,
-  innerCardContent,
-  metadata,
+  renderer = undefined,
+  viewConfiguration = {
+    onSelection: null,
+    breakpoints: {
+      xs: false,
+      sm: false,
+      md: false,
+      lg: false,
+      xl: false
+    },
+    actions: null,
+  },
+  innerCardContent = undefined,
+  metadata = undefined,
   ...others
 }) => {
   // If no custom render is passed, the render uses the standard card implementation
@@ -197,26 +207,6 @@ CardView.propTypes = {
       xl: PropTypes.oneOf(sizeProps)
     })
   })
-};
-
-CardView.defaultProps = {
-  className: "",
-  id: "",
-  selectedValues: null,
-  renderer: undefined,
-  innerCardContent: undefined,
-  metadata: undefined,
-  viewConfiguration: {
-    onSelection: null,
-    breakpoints: {
-      xs: false,
-      sm: false,
-      md: false,
-      lg: false,
-      xl: false
-    },
-    actions: null
-  }
 };
 
 export default withStyles(styles, { name: "HvCardView" })(CardView);

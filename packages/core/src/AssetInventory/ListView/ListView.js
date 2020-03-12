@@ -17,16 +17,16 @@ const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata })
   });
 
 const ListView = ({
-  className,
-  id,
+  className = "",
+  id = "",
   icon,
-  viewConfiguration,
+  viewConfiguration = null,
   classes,
   renderer,
   values,
-  selectedValues,
-  cellSpacing,
-  metadata,
+  selectedValues = null,
+  cellSpacing = "0",
+  metadata = undefined,
   ...other
 }) => (
   <Grid container justify="center" alignContent="stretch">
@@ -146,15 +146,6 @@ ListView.propTypes = {
       searchFunction: PropTypes.func
     })
   )
-};
-
-ListView.defaultProps = {
-  cellSpacing: "0",
-  viewConfiguration: null,
-  className: "",
-  id: "",
-  metadata: undefined,
-  selectedValues: null
 };
 
 export default withStyles(styles, { name: "HvListView" })(ListView);

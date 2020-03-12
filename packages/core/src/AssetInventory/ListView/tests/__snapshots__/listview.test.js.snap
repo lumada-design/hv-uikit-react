@@ -773,13 +773,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
       }
     }
   >
-    <WithStyles(ListView)
-      cellSpacing="0"
-      className=""
-      id=""
-      selectedValues={null}
-      viewConfiguration={null}
-    />
+    <WithStyles(ListView) />
   </ContextProvider>
 </ThemeProvider>
 `;

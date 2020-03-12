@@ -6,7 +6,14 @@ import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
 import styles from "./styles";
 
-const Actions = ({ classes, id, category, actions, actionsCallback, maxVisibleActions }) => {
+const Actions = ({
+  classes,
+  id = "",
+  category = "ghost",
+  actions = [],
+  actionsCallback = {},
+  maxVisibleActions = Infinity
+}) => {
   if (!Array.isArray(actions)) {
     return React.isValidElement(actions) ? actions : null;
   }
@@ -114,14 +121,6 @@ Actions.propTypes = {
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
   maxVisibleActions: PropTypes.number
-};
-
-Actions.defaultProps = {
-  id: "",
-  category: "ghost",
-  actions: [],
-  actionsCallback() {},
-  maxVisibleActions: Infinity
 };
 
 export default withStyles(styles, { name: "HvActions" })(Actions);

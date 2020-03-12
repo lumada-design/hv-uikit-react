@@ -20,7 +20,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
     ]
   }
   actionsCallback={[Function]}
-  category="ghost"
   id=""
   maxVisibleActions={1}
 >
@@ -43,7 +42,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       ]
     }
     actionsCallback={[Function]}
-    category="ghost"
     classes={
       Object {
         "actionContainer": "HvActions-actionContainer-7",
@@ -591,7 +589,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
     ]
   }
   actionsCallback={[Function]}
-  category="ghost"
   id=""
   maxVisibleActions={0}
 >
@@ -614,7 +611,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       ]
     }
     actionsCallback={[Function]}
-    category="ghost"
     classes={
       Object {
         "actionContainer": "HvActions-actionContainer-79",
@@ -1024,7 +1020,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     ]
   }
   actionsCallback={[Function]}
-  category="ghost"
   id=""
   maxVisibleActions={2}
 >
@@ -1047,7 +1042,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       ]
     }
     actionsCallback={[Function]}
-    category="ghost"
     classes={
       Object {
         "actionContainer": "HvActions-actionContainer-109",
