@@ -33,14 +33,8 @@ const MessageContainer = ({
       {message}
     </HvTypography>
     {actionsOnMessage && (
-      <div
-        {...(id && { id: `${id}-message-actions` })}
-        className={classes.actionMessageContainer}
-      >
-        <Actions
-          actions={actionsOnMessage}
-          actionsCallback={actionsOnMessageCallback}
-        />
+      <div {...(id && { id: `${id}-message-actions` })} className={classes.actionMessageContainer}>
+        <Actions actions={actionsOnMessage} actionsCallback={actionsOnMessageCallback} />
       </div>
     )}
   </>
@@ -92,6 +86,4 @@ MessageContainer.defaultProps = {
   actionsOnMessageCallback: () => {}
 };
 
-export default withStyles(styles, { name: "HvMessageContainer" })(
-  MessageContainer
-);
+export default withStyles(styles, { name: "HvMessageContainer" })(MessageContainer);

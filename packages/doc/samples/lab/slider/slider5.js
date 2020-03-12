@@ -27,9 +27,7 @@ const ExtendedHvSlider = ({ knobPropertiesDefault, knobProperties }) => {
 
   return (
     <>
-      <HvButton onClick={() => setKnobValues(knobPropertiesDefault)}>
-        Reset
-      </HvButton>
+      <HvButton onClick={() => setKnobValues(knobPropertiesDefault)}>Reset</HvButton>
       <HvSlider
         markStep={10}
         knobProperties={knobProperties}

@@ -36,9 +36,7 @@ export default (
     variant="error"
     showIcon
     actions={[{ id: "action1", label: "Action", disabled: false }]}
-    actionsCallback={(id, action) =>
-      alert(`clicked ${id} with ${action.label}`)
-    }
+    actionsCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
     actionsPosition="inline"
   />
 );

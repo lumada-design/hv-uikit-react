@@ -22,9 +22,7 @@ const Title = ({ classes, logo, titleText, titleComponent }) => {
 
   return (
     <div className={classes.root}>
-      {logo != null && (
-        <img src={logo} className={classes.logoImage} alt="Company logo" />
-      )}
+      {logo != null && <img src={logo} className={classes.logoImage} alt="Company logo" />}
 
       <HvTypography
         variant="mTitle"

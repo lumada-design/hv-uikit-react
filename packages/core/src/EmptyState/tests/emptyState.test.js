@@ -16,12 +16,7 @@ describe("<EmptyState /> with String title/message", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <EmptyState
-          classes={mockClasses}
-          title={mockTitle}
-          message={mockMessage}
-          icon={mockIcon}
-        />
+        <EmptyState classes={mockClasses} title={mockTitle} message={mockMessage} icon={mockIcon} />
       </HvProvider>
     );
   });

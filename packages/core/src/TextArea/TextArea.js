@@ -20,8 +20,7 @@ class HvTextArea extends React.Component {
     const { initialValue, autoScroll } = this.props;
 
     this.state = {
-      currentValueLength:
-        initialValue !== undefined ? this.limitValue(initialValue).length : 0,
+      currentValueLength: initialValue !== undefined ? this.limitValue(initialValue).length : 0,
       autoScrolling: autoScroll
     };
     this.textInputRef = React.createRef();
@@ -32,8 +31,7 @@ class HvTextArea extends React.Component {
     const { currentValueLength: oldLength } = prevState;
 
     if (nextValue !== undefined) {
-      const nextLength =
-        nextValue.length > maxCharQuantity ? maxCharQuantity : nextValue.length;
+      const nextLength = nextValue.length > maxCharQuantity ? maxCharQuantity : nextValue.length;
 
       if (nextLength !== oldLength) {
         return {

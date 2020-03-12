@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { useMediaQuery, useTheme } from "@material-ui/core";
-import {
-  Alert,
-  BarChart,
-  Menu,
-  Settings,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { Alert, BarChart, Menu, Settings, User } from "@hv/uikit-react-icons/dist";
 import { HvBadge, HvButton, HvEmptyState } from "@hv/uikit-react-core/dist";
 import VerticalNavigation, {
   Action,
@@ -35,9 +29,7 @@ const findById = (data = [], id) => {
 };
 
 const navigationDepth = arr =>
-  Array.isArray(arr)
-    ? 1 + Math.max(...arr.map(el => navigationDepth(el.data)))
-    : 0;
+  Array.isArray(arr) ? 1 + Math.max(...arr.map(el => navigationDepth(el.data))) : 0;
 
 // eslint-disable-next-line react/prop-types
 const NavigationTemplate = () => {
@@ -54,8 +46,7 @@ const NavigationTemplate = () => {
     ...el,
     data: trimHeader ? undefined : el.data
   }));
-  const verticalNavData =
-    (!isMdUp && navigationData) || (trimHeader && selectionData.data) || [];
+  const verticalNavData = (!isMdUp && navigationData) || (trimHeader && selectionData.data) || [];
 
   const handleChange = (evt, selectedItem) => {
     setPage(selectedItem);
@@ -78,11 +69,7 @@ const NavigationTemplate = () => {
         )}
         <HvHeaderBrand logo={<HitachiLogo />} name="Maintenance Insights" />
         {isMdUp && (
-          <HvHeaderNavigation
-            data={headerNavData}
-            selection={selection}
-            onChange={handleChange}
-          />
+          <HvHeaderNavigation data={headerNavData} selection={selection} onChange={handleChange} />
         )}
         <HvHeaderActions>
           {isMdUp && (

@@ -29,6 +29,4 @@ const SimpleSnackbar = props => {
   );
 };
 
-export default (
-  <SimpleSnackbar label="This is a snackbar." variant="default" showIcon />
-);
+export default <SimpleSnackbar label="This is a snackbar." variant="default" showIcon />;

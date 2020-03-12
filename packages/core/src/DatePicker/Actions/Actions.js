@@ -6,20 +6,10 @@ import styles from "./styles";
 
 const Actions = ({ id, classes, onCancel, onApply, labels }) => (
   <div className={classes.root}>
-    <HvButton
-      id={`${id}-apply`}
-      className={classes.button}
-      onClick={onApply}
-      category="ghost"
-    >
+    <HvButton id={`${id}-apply`} className={classes.button} onClick={onApply} category="ghost">
       {labels.applyLabel}
     </HvButton>
-    <HvButton
-      id={`${id}-cancel`}
-      className={classes.button}
-      onClick={onCancel}
-      category="ghost"
-    >
+    <HvButton id={`${id}-cancel`} className={classes.button} onClick={onCancel} category="ghost">
       {labels.cancelLabel}
     </HvButton>
   </div>

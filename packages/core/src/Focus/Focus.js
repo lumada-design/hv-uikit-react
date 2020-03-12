@@ -28,9 +28,7 @@ const Focus = props => {
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
   const getFocuses = () =>
-    rootRef.current
-      ? Array.from(rootRef.current.getElementsByClassName(classes.root))
-      : [];
+    rootRef.current ? Array.from(rootRef.current.getElementsByClassName(classes.root)) : [];
 
   const setTabIndex = (el, tabIndex = 0) => {
     const elChildFocus = getFocusableChildren(el)[0];
@@ -44,9 +42,7 @@ const Focus = props => {
 
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
-    const firstSelected = focuses.find(focus =>
-      focus.classList.contains(classes.selected)
-    );
+    const firstSelected = focuses.find(focus => focus.classList.contains(classes.selected));
 
     if (!firstSelected) return;
     focuses.forEach(focus => setTabIndex(focus, -1));
@@ -240,10 +236,7 @@ Focus.propTypes = {
   /**
    * The reference to the root element to hold all Focus' context.
    */
-  rootRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any })
-  ]),
+  rootRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any })]),
   /**
    * Extra configuration for the child element.
    */

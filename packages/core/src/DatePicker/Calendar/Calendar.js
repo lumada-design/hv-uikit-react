@@ -51,10 +51,7 @@ class Calendar extends React.Component {
    * @memberOf Calendar
    */
   static getDerivedStateFromProps(props, state) {
-    if (
-      isDate(props.selectedDate) &&
-      !isSameDay(props.selectedDate, state.selectedDate)
-    ) {
+    if (isDate(props.selectedDate) && !isSameDay(props.selectedDate, state.selectedDate)) {
       const newState = {};
       newState.selectedDate = props.selectedDate;
 
@@ -84,22 +81,10 @@ class Calendar extends React.Component {
   initLocalizedLabels = () => {
     const { locale } = this.state;
 
-    this.listMonthNamesLong = getMonthNamesList(
-      locale,
-      REPRESENTATION_VALUES.LONG
-    );
-    this.listMonthNamesShort = getMonthNamesList(
-      locale,
-      REPRESENTATION_VALUES.SHORT
-    );
-    this.listWeekdayNamesNarrow = getWeekdayNamesList(
-      locale,
-      REPRESENTATION_VALUES.NARROW
-    );
-    this.listWeekdayNamesLong = getWeekdayNamesList(
-      locale,
-      REPRESENTATION_VALUES.LONG
-    );
+    this.listMonthNamesLong = getMonthNamesList(locale, REPRESENTATION_VALUES.LONG);
+    this.listMonthNamesShort = getMonthNamesList(locale, REPRESENTATION_VALUES.SHORT);
+    this.listWeekdayNamesNarrow = getWeekdayNamesList(locale, REPRESENTATION_VALUES.NARROW);
+    this.listWeekdayNamesLong = getWeekdayNamesList(locale, REPRESENTATION_VALUES.LONG);
   };
 
   changeSelectedDateHeader = (date, shouldCloseCalendar) =>
@@ -162,11 +147,7 @@ class Calendar extends React.Component {
     const { handleVisibleDateChange } = this.props;
 
     if (typeof handleVisibleDateChange === "function") {
-      const visibleDate = makeUTCDate(
-        calendarModel.year,
-        calendarModel.month,
-        1
-      );
+      const visibleDate = makeUTCDate(calendarModel.year, calendarModel.month, 1);
       handleVisibleDateChange(visibleDate);
     }
   };
@@ -188,9 +169,7 @@ class Calendar extends React.Component {
 
     const isDateObject = isDate(selectedDate);
     const validSelectedDate = isDateObject ? selectedDate : makeUTCToday();
-    const validVisibleDate = isDate(visibleDate)
-      ? visibleDate
-      : validSelectedDate;
+    const validVisibleDate = isDate(visibleDate) ? visibleDate : validSelectedDate;
 
     const visibleMonth = validVisibleDate.getUTCMonth() + 1;
     const visibleYear = validVisibleDate.getUTCFullYear();
@@ -334,10 +313,7 @@ class Calendar extends React.Component {
     const inMonth =
       calendarModel.month &&
       calendarModel.year &&
-      isSameMonth(
-        currentDate,
-        makeUTCDate(calendarModel.year, calendarModel.month, 1)
-      );
+      isSameMonth(currentDate, makeUTCDate(calendarModel.year, calendarModel.month, 1));
 
     // Checks if the date is in a valid range
     const dateInValidRange = isDateInValidRange(currentDate);
@@ -354,9 +330,7 @@ class Calendar extends React.Component {
       className += ` ${classes.calendarDateNotInMonth}`;
     }
 
-    const onClickFunc = dateInValidRange
-      ? this.selectDate(currentDate)
-      : undefined;
+    const onClickFunc = dateInValidRange ? this.selectDate(currentDate) : undefined;
 
     return (
       <div
@@ -369,9 +343,7 @@ class Calendar extends React.Component {
       >
         <HvTypography
           variant={typographyVariant}
-          className={`${className} ${
-            dateInValidRange ? "" : classes.calendarDateInvalid
-          }`}
+          className={`${className} ${dateInValidRange ? "" : classes.calendarDateInvalid}`}
         >
           {currentDate.getUTCDate()}
         </HvTypography>

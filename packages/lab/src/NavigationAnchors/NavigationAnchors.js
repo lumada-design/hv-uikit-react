@@ -149,9 +149,7 @@ class NavigationAnchors extends React.Component {
                 gutters: classes.listItemGutters
               }}
               key={option.key || option.label}
-              onClick={event =>
-                this.handleListItemClick(event, option.value, index)
-              }
+              onClick={event => this.handleListItemClick(event, option.value, index)}
               selected={selectedIndex === index}
             >
               <ListItemText
@@ -179,19 +177,14 @@ NavigationAnchors.propTypes = {
   /**
    * An Array of Objects with Label and Value. Label is the displayed Element and Value is the local navigation location applied
    */
-  options: PropTypes.arrayOf(
-    (propValue, key, componentName, location, propFullName) => {
-      if (
-        propValue[key].label === undefined ||
-        propValue[key].value === undefined
-      ) {
-        return new Error(
-          `Invalid prop "${propFullName}" supplied to "${componentName}". Validation Failed.`
-        );
-      }
-      return null;
+  options: PropTypes.arrayOf((propValue, key, componentName, location, propFullName) => {
+    if (propValue[key].label === undefined || propValue[key].value === undefined) {
+      return new Error(
+        `Invalid prop "${propFullName}" supplied to "${componentName}". Validation Failed.`
+      );
     }
-  ).isRequired,
+    return null;
+  }).isRequired,
   /**
    * True if the href location link should be applied. It will create an a element around every list item
    */

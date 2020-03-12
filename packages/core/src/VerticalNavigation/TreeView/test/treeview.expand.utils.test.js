@@ -95,11 +95,7 @@ describe("NodeTreeExpandUtils", () => {
   describe("expandAllSiblings", () => {
     it("at root", () => {
       const expanded = [];
-      const result = NodeTreeExpandUtils.expandAllSiblings(
-        expanded,
-        nodeMap,
-        "A"
-      );
+      const result = NodeTreeExpandUtils.expandAllSiblings(expanded, nodeMap, "A");
 
       expect(Object.is(expanded, result)).toBe(false);
       expect(result.sort()).toEqual(["A", "C"]);
@@ -107,11 +103,7 @@ describe("NodeTreeExpandUtils", () => {
 
     it("not at root", () => {
       const expanded = ["A", "C"];
-      const result = NodeTreeExpandUtils.expandAllSiblings(
-        expanded,
-        nodeMap,
-        "A1"
-      );
+      const result = NodeTreeExpandUtils.expandAllSiblings(expanded, nodeMap, "A1");
 
       expect(Object.is(expanded, result)).toBe(false);
       expect(result.sort()).toEqual(["A", "A3", "C"]);
@@ -119,11 +111,7 @@ describe("NodeTreeExpandUtils", () => {
 
     it("nothing happens if already expanded", () => {
       const expanded = ["A", "A3", "C"];
-      const result = NodeTreeExpandUtils.expandAllSiblings(
-        expanded,
-        nodeMap,
-        "A1"
-      );
+      const result = NodeTreeExpandUtils.expandAllSiblings(expanded, nodeMap, "A1");
 
       expect(Object.is(expanded, result)).toBe(true);
     });
@@ -145,24 +133,11 @@ describe("NodeTreeExpandUtils", () => {
     it("grandchild expanded", () => {
       const result = NodeTreeExpandUtils.getVisibleNodes(["A", "A3"], nodeMap);
 
-      expect(result.sort()).toEqual([
-        "A",
-        "A1",
-        "A2",
-        "A3",
-        "A3a",
-        "A3b",
-        "A3c",
-        "B",
-        "C"
-      ]);
+      expect(result.sort()).toEqual(["A", "A1", "A2", "A3", "A3a", "A3b", "A3c", "B", "C"]);
     });
 
     it("all expanded", () => {
-      const result = NodeTreeExpandUtils.getVisibleNodes(
-        ["A", "A3", "C"],
-        nodeMap
-      );
+      const result = NodeTreeExpandUtils.getVisibleNodes(["A", "A3", "C"], nodeMap);
 
       expect(result.sort()).toEqual([
         "A",

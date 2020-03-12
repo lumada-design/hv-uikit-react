@@ -47,15 +47,9 @@ describe("Login ", () => {
     const loginComponent = wrapper.find(LoginForm);
 
     expect(loginComponent.length).toBe(1);
-    expect(loginComponent.find('input[name="username"]').prop("disabled")).toBe(
-      false
-    );
-    expect(loginComponent.find('input[name="password"]').prop("disabled")).toBe(
-      false
-    );
-    expect(loginComponent.find('button[type="submit"]').prop("disabled")).toBe(
-      false
-    );
+    expect(loginComponent.find('input[name="username"]').prop("disabled")).toBe(false);
+    expect(loginComponent.find('input[name="password"]').prop("disabled")).toBe(false);
+    expect(loginComponent.find('button[type="submit"]').prop("disabled")).toBe(false);
   });
 
   it("shouldn't render the Recovery form", () => {
@@ -106,11 +100,7 @@ describe("Login ", () => {
 
     const wrapper2 = mount(
       <HvProvider>
-        <Login
-          login={loginMock}
-          recovery={recoverMock}
-          titleComponent={<TitleComponentProp />}
-        />
+        <Login login={loginMock} recovery={recoverMock} titleComponent={<TitleComponentProp />} />
       </HvProvider>
     );
 

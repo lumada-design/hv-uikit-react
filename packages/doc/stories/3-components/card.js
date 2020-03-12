@@ -51,8 +51,7 @@ storiesOf("Components/Card", module).add("Card", () => <HvCard />, {
     {
       title: "10. Whole card selectable with click action",
       src: "components/card/card10",
-      description:
-        "Showcasing the ability to select anywhere in the content and click action"
+      description: "Showcasing the ability to select anywhere in the content and click action"
     },
     {
       title: "11. Selectable card without footer",
@@ -62,8 +61,7 @@ storiesOf("Components/Card", module).add("Card", () => <HvCard />, {
     {
       title: "12. Whole card selectable with click action that does not select",
       src: "components/card/card12",
-      description:
-        "Showcasing the ability to have a click action without selecting"
+      description: "Showcasing the ability to have a click action without selecting"
     }
   ]
 });

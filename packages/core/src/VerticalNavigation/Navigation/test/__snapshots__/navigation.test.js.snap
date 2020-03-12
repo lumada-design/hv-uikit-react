@@ -1076,7 +1076,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         }
                         onClick={[Function]}
                         onKeyDown={[Function]}
-                        paragraph={false}
                         role="button"
                         tabIndex={0}
                         variant="normalText"
@@ -1115,7 +1114,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                           id="hv-verticalnavigation-treeviewitem2-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
-                          paragraph={false}
                           role="button"
                           tabIndex={0}
                           variant="normalText"

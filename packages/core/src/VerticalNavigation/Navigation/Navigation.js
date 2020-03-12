@@ -10,28 +10,13 @@ const createListHierarchy = items =>
     const { id: itemId, label: itemLabel, icon, data: children } = item;
 
     return (
-      <TreeViewItem
-        key={itemId}
-        nodeId={itemId}
-        label={itemLabel}
-        icon={icon}
-        payload={item}
-      >
+      <TreeViewItem key={itemId} nodeId={itemId} label={itemLabel} icon={icon} payload={item}>
         {children ? createListHierarchy(children) : undefined}
       </TreeViewItem>
     );
   });
 
-const Navigation = ({
-  theme,
-  classes,
-  id,
-  label,
-  data,
-  selected,
-  onClick,
-  ...other
-}) => {
+const Navigation = ({ theme, classes, id, label, data, selected, onClick, ...other }) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-navigation");
 
   const handleChange = useCallback(
@@ -112,6 +97,4 @@ Navigation.defaultProps = {
   onClick: () => {}
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigationNavigation" })(
-  Navigation
-);
+export default withStyles(styles, { name: "HvVerticalNavigationNavigation" })(Navigation);

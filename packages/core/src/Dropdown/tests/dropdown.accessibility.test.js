@@ -11,11 +11,7 @@ expect.extend(toHaveNoViolations);
 
 /* eslint-disable no-console */
 
-const mockData = [
-  { label: "Value 1" },
-  { label: "Value 2" },
-  { label: "Value 3" }
-];
+const mockData = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];
 
 describe("Dropdown A11Y", () => {
   let wrapper;

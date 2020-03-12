@@ -108,9 +108,7 @@ class Recovery extends React.Component {
             }}
             password={false}
             onChange={this.handleInputChange()}
-            externalWarningTextOverride={
-              recoverStatus === "error" ? recoveryErrorMessage : null
-            }
+            externalWarningTextOverride={recoverStatus === "error" ? recoveryErrorMessage : null}
             autoFocus
           />
         </div>

@@ -45,12 +45,6 @@ const ariaProps = {
 
 export default (
   <ListWrapper>
-    <List
-      values={data}
-      multiSelect
-      showSelectAll
-      useSelector
-      listProps={ariaProps}
-    />
+    <List values={data} multiSelect showSelectAll useSelector listProps={ariaProps} />
   </ListWrapper>
 );

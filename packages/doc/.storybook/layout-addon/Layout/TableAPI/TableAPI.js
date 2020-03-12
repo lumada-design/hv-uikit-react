@@ -17,30 +17,21 @@ const TableAPI = ({ classes, propsMetaData }) => (
       {Object.keys(propsMetaData).map(key => {
         const prop = propsMetaData[key];
 
-        const propType =
-          key === "classes" ? "Check the CSS tab" : parseType(prop.type);
+        const propType = key === "classes" ? "Check the CSS tab" : parseType(prop.type);
 
         return (
           <tr key={key}>
             <td
               className={classNames({
-                [classes.deprecated]: isDeprecated(prop)
+                [classes.deprecated]: prop.deprecated
               })}
             >
               {key}
             </td>
             <td>{prop.type ? propType : ""}</td>
             {prop.required ? <td>true</td> : <td>-</td>}
-            {prop.defaultValue ? (
-              <td>{prop.defaultValue.value}</td>
-            ) : (
-              <td>none</td>
-            )}
-            {prop.description ? (
-              <td>{parseDescription(prop.description)}</td>
-            ) : (
-              <td />
-            )}
+            {prop.defaultValue ? <td>{prop.defaultValue.value}</td> : <td>none</td>}
+            {prop.description ? <td>{parseDescription(prop.description)}</td> : <td />}
           </tr>
         );
       })}

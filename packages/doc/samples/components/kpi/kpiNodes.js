@@ -9,7 +9,7 @@ const labels = {
 const kpiContainer = {
   minWidth: "190px",
   padding: "20px"
-}
+};
 
 export default (
   <div style={kpiContainer}>

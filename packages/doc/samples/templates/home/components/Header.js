@@ -19,12 +19,7 @@ const NavigationTemplate = () => {
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
-  const {
-    headerNav,
-    headerSelection,
-    onHeaderSelection,
-    shouldBeOpen
-  } = useContext(NavContext);
+  const { headerNav, headerSelection, onHeaderSelection, shouldBeOpen } = useContext(NavContext);
 
   const handleChange = (evt, selectedItem) => {
     console.log("selectedItem: ", selectedItem);
@@ -44,32 +39,17 @@ const NavigationTemplate = () => {
           <Menu />
         </HvButton>
       )}
-      <HvHeaderBrand
-        logo={<HitachiLogo />}
-        name={!isXs ? "Maintenance Insights" : undefined}
-      />
+      <HvHeaderBrand logo={<HitachiLogo />} name={!isXs ? "Maintenance Insights" : undefined} />
       {isMdUp && (
-        <HvHeaderNavigation
-          data={headerNav}
-          selected={headerSelection}
-          onClick={handleChange}
-        />
+        <HvHeaderNavigation data={headerNav} selected={headerSelection} onClick={handleChange} />
       )}
       <HvHeaderActions>
         {isMdUp && (
           <>
-            <HvButton
-              category="icon"
-              onClick={handleClick}
-              aria-label="settings"
-            >
+            <HvButton category="icon" onClick={handleClick} aria-label="settings">
               <Settings boxStyles={boxStyles} />
             </HvButton>
-            <HvButton
-              category="icon"
-              onClick={handleClick}
-              aria-label="profile"
-            >
+            <HvButton category="icon" onClick={handleClick} aria-label="profile">
               <User boxStyles={boxStyles} />
             </HvButton>
           </>

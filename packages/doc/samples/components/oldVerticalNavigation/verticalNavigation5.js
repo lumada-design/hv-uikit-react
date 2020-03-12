@@ -32,93 +32,133 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-243",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-245",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-246",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-247",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-248",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-249",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-250",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-251",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-252",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-253",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-254",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-255",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-256",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-257",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-258",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-259",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-260",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           },
           {
             label: "Variant Y-261",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-262",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -132,25 +172,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -173,12 +221,16 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -192,25 +244,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -233,12 +293,16 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -252,25 +316,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -293,12 +365,16 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -312,25 +388,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -353,12 +437,16 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -372,25 +460,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -413,12 +509,16 @@ const data = {
         data: [
           {
             label: "Variant Y-242",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             path: "route3"
           },
           {
             label: "Variant Y-244",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }
@@ -432,25 +532,33 @@ const data = {
         data: [
           {
             label: "Variant X-333",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />,
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            ),
             showNavIcon: true,
             subData: {
               showSearch: true,
               data: [
                 {
                   label: "Component KY-121",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 },
                 {
                   label: "Component HS-921",
-                  iconCallback: ({ isSelected }) => <Machine color={isSelected ? "atmo1" : undefined} />
+                  iconCallback: ({ isSelected }) => (
+                    <Machine color={isSelected ? "atmo1" : undefined} />
+                  )
                 }
               ]
             }
           },
           {
             label: "Variant X-335",
-            iconCallback: ({ isSelected }) => <Components color={isSelected ? "atmo1" : undefined} />
+            iconCallback: ({ isSelected }) => (
+              <Components color={isSelected ? "atmo1" : undefined} />
+            )
           }
         ]
       }

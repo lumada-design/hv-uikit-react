@@ -827,8 +827,6 @@ exports[`Kpi should render correctly 1`] = `
         >
           <div>
             <WithStyles(ForwardRef)
-              component={null}
-              paragraph={false}
               variant="highlightText"
             >
               <ForwardRef
@@ -860,8 +858,6 @@ exports[`Kpi should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-52",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="highlightText"
               >
                 <p
@@ -877,8 +873,6 @@ exports[`Kpi should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               className="HvKpi-spacingToTheRight-41 HvKpi-indicatorText-39"
-              component={null}
-              paragraph={false}
               variant="lTitle"
             >
               <ForwardRef
@@ -911,8 +905,6 @@ exports[`Kpi should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-52",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="lTitle"
               >
                 <h2
@@ -924,8 +916,6 @@ exports[`Kpi should render correctly 1`] = `
             </WithStyles(ForwardRef)>
             <WithStyles(ForwardRef)
               className="HvKpi-indicatorUnit-38"
-              component={null}
-              paragraph={false}
               variant="sTitle"
             >
               <ForwardRef
@@ -958,8 +948,6 @@ exports[`Kpi should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle-52",
                   }
                 }
-                component={null}
-                paragraph={false}
                 variant="sTitle"
               >
                 <h4

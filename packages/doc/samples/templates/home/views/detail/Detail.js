@@ -34,10 +34,7 @@ const Detail = ({ classes }) => {
   return (
     <Grid container>
       <Grid item xs={1} sm={2} md={4} lg={4} xl={4}>
-        <HvKpi
-          labels={labels}
-          visualComparison={averageComparisonVisualAverage(classes)}
-        />
+        <HvKpi labels={labels} visualComparison={averageComparisonVisualAverage(classes)} />
       </Grid>
       <Grid item xs={1} sm={2} md={4} lg={4} xl={4}>
         <HvKpi labels={labels} visualIndicator={<Good semantic="sema1" />} />

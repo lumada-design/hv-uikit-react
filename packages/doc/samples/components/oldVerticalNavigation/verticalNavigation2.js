@@ -1,35 +1,22 @@
 import React from "react";
 import HvVerticalNavigation from "@hv/uikit-react-core/dist/OldVerticalNavigation";
-import {
-  Calendar,
-  Components,
-  LineChart,
-  Machine,
-  Plane,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { Calendar, Components, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
 
 const data = {
   data: [
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) => (
-        <User color={isSelected ? "atmo1" : undefined} />
-      ),
+      iconCallback: ({ isSelected }) => <User color={isSelected ? "atmo1" : undefined} />,
       path: "route3"
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) => (
-        <Calendar color={isSelected ? "atmo1" : undefined} />
-      )
+      iconCallback: ({ isSelected }) => <Calendar color={isSelected ? "atmo1" : undefined} />
     },
     {
       label: "Advanced server DS250",
       showNavIcon: true,
-      iconCallback: ({ isSelected }) => (
-        <LineChart color={isSelected ? "atmo1" : undefined} />
-      ),
+      iconCallback: ({ isSelected }) => <LineChart color={isSelected ? "atmo1" : undefined} />,
       subData: {
         data: [
           {
@@ -50,9 +37,7 @@ const data = {
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) => (
-        <Plane color={isSelected ? "atmo1" : undefined} />
-      ),
+      iconCallback: ({ isSelected }) => <Plane color={isSelected ? "atmo1" : undefined} />,
       showNavIcon: true,
       subData: {
         data: [

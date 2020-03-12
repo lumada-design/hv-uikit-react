@@ -57,8 +57,8 @@ describe("Provider", () => {
 
   it("should not override the hv-theme if there is no app theme defined", () => {
     const wrapperNotOverriden = shallow(<HvProvider> Mock </HvProvider>);
-    expect(
-      wrapperNotOverriden.props().theme.typography.h1.fontSize
-    ).not.toEqual(mockOverriden.typography.h1.fontSize);
+    expect(wrapperNotOverriden.props().theme.typography.h1.fontSize).not.toEqual(
+      mockOverriden.typography.h1.fontSize
+    );
   });
 });

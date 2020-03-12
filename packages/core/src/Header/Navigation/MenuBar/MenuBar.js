@@ -14,8 +14,7 @@ const MenuBar = ({ classes, id, data, onClick, type }) => {
   const { state } = useContext(FocusContext);
 
   const isMenu = type === "menu";
-  const isActive =
-    isMenu && data.filter(item => item.id === selectionPath[1]).length > 0;
+  const isActive = isMenu && data.filter(item => item.id === selectionPath[1]).length > 0;
 
   const handleMouseOver = () => {
     const { itemFocused } = state;
@@ -29,12 +28,7 @@ const MenuBar = ({ classes, id, data, onClick, type }) => {
         [classes.active]: isActive
       })}
     >
-      <ul
-        id={uniqueId}
-        className={classes.list}
-        onMouseOver={handleMouseOver}
-        onFocus={() => {}}
-      >
+      <ul id={uniqueId} className={classes.list} onMouseOver={handleMouseOver} onFocus={() => {}}>
         {data.map(item => (
           <MenuItem key={item.id} item={item} type={type} onClick={onClick} />
         ))}

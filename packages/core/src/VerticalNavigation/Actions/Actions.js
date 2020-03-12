@@ -44,6 +44,4 @@ Actions.defaultProps = {
   children: undefined
 };
 
-export default withStyles(styles, { name: "HvVerticalNavigationActions" })(
-  Actions
-);
+export default withStyles(styles, { name: "HvVerticalNavigationActions" })(Actions);

@@ -14,9 +14,7 @@ export default (
       console.log(`my value is ${value}`);
     }}
     onBlur={(value, validationState) => {
-      console.log(
-        `my value is ${value} and my validation state is ${validationState}`
-      );
+      console.log(`my value is ${value} and my validation state is ${validationState}`);
     }}
     onChange={value => `${value}.`}
   />

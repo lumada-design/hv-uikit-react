@@ -81,9 +81,7 @@ const removeFile = (fileToRemove, setList) => {
   clearInterval(uploadHandlers[fileToRemove.id]);
   delete uploadHandlers[fileToRemove.id];
 
-  setList(previousList =>
-    previousList.filter(file => file.id !== fileToRemove.id)
-  );
+  setList(previousList => previousList.filter(file => file.id !== fileToRemove.id));
 };
 
 const Sample = () => {

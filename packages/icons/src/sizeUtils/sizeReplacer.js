@@ -13,8 +13,5 @@ module.exports = function ReplaceSize(fileData, sizeObject) {
   return fileData
     .replace(widthRegexp, ``)
     .replace(heightRegexp, ``)
-    .replace(
-      viewBoxRegexp,
-      `viewBox={viewbox} height={size.height} width={size.width}`
-    );
+    .replace(viewBoxRegexp, `viewBox={viewbox} height={size.height} width={size.width}`);
 };

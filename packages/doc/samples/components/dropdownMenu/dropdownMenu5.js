@@ -20,10 +20,7 @@ const ControlledDropdownMenu = () => {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          category="ghost"
-          onClick={() => setOpen(prevState => !prevState)}
-        >
+        <Button category="ghost" onClick={() => setOpen(prevState => !prevState)}>
           {open ? "Close" : "Open"}
         </Button>
         <DropDownMenu

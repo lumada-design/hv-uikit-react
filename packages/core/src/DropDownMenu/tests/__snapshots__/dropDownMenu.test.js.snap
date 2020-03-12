@@ -3566,8 +3566,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label-485 HvList-truncate-488"
-                                              component={null}
-                                              paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
@@ -3600,8 +3598,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle-506",
                                                   }
                                                 }
-                                                component={null}
-                                                paragraph={false}
                                                 variant="normalText"
                                               >
                                                 <p
@@ -3771,8 +3767,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label-485 HvList-truncate-488"
-                                              component={null}
-                                              paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
@@ -3805,8 +3799,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle-506",
                                                   }
                                                 }
-                                                component={null}
-                                                paragraph={false}
                                                 variant="normalText"
                                               >
                                                 <p
@@ -3976,8 +3968,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label-485 HvList-truncate-488"
-                                              component={null}
-                                              paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
@@ -4010,8 +4000,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle-506",
                                                   }
                                                 }
-                                                component={null}
-                                                paragraph={false}
                                                 variant="normalText"
                                               >
                                                 <p
@@ -7452,8 +7440,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label-42 HvList-truncate-45"
-                                              component={null}
-                                              paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
@@ -7486,8 +7472,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle-63",
                                                   }
                                                 }
-                                                component={null}
-                                                paragraph={false}
                                                 variant="normalText"
                                               >
                                                 <p
@@ -7657,8 +7641,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label-42 HvList-truncate-45"
-                                              component={null}
-                                              paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
@@ -7691,8 +7673,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle-63",
                                                   }
                                                 }
-                                                component={null}
-                                                paragraph={false}
                                                 variant="normalText"
                                               >
                                                 <p
@@ -7862,8 +7842,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label-42 HvList-truncate-45"
-                                              component={null}
-                                              paragraph={false}
                                               variant="normalText"
                                             >
                                               <ForwardRef
@@ -7896,8 +7874,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle-63",
                                                   }
                                                 }
-                                                component={null}
-                                                paragraph={false}
                                                 variant="normalText"
                                               >
                                                 <p

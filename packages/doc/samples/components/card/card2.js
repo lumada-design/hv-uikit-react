@@ -1,12 +1,6 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import {
-  Add,
-  Delete,
-  Level3Bad as FailureIcon,
-  Preview,
-  Upload
-} from "@hv/uikit-react-icons/dist";
+import { Add, Delete, Level3Bad as FailureIcon, Preview, Upload } from "@hv/uikit-react-icons/dist";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -92,9 +86,7 @@ const MultipleActionsWithMedia = ({ classes }) => {
   );
 };
 
-const MultipleActionsWithMediaWithStyles = withStyles(mediaStyles)(
-  MultipleActionsWithMedia
-);
+const MultipleActionsWithMediaWithStyles = withStyles(mediaStyles)(MultipleActionsWithMedia);
 
 const SubHeader = ({ classes }) => (
   <div>

@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Unlock } from "@hv/uikit-react-icons/dist";
-import {
-  HvModal,
-  HvModalActions,
-  HvModalContent,
-  HvModalTitle
-} from "@hv/uikit-react-core/dist";
+import { HvModal, HvModalActions, HvModalContent, HvModalTitle } from "@hv/uikit-react-core/dist";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 
 const btnStyle = {
@@ -32,8 +27,8 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         {title}
         {content || (
           <HvModalContent>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
           </HvModalContent>
         )}
         <HvModalActions>
@@ -52,10 +47,6 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
 export default (
   <SimpleModal
     buttonMessage="Custom icon"
-    title={
-      <HvModalTitle customIcon={<Unlock iconSize="M" />}>
-        Are you sure?
-      </HvModalTitle>
-    }
+    title={<HvModalTitle customIcon={<Unlock iconSize="M" />}>Are you sure?</HvModalTitle>}
   />
 );

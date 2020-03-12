@@ -46,12 +46,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea
-          rows={4}
-          initialValue="test"
-          onChange={onChangeMock}
-          maxCharQuantity={10}
-        />
+        <TextArea rows={4} initialValue="test" onChange={onChangeMock} maxCharQuantity={10} />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
@@ -65,12 +60,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea
-          rows={4}
-          initialValue="test"
-          onChange={onChangeMock}
-          maxCharQuantity={5}
-        />
+        <TextArea rows={4} initialValue="test" onChange={onChangeMock} maxCharQuantity={5} />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();

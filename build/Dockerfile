@@ -32,7 +32,7 @@ COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./scripts ./scripts
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./config ./config
 
 # copy the top orchestrator package's files
-COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./package.json ./package-lock.json ./lerna.json ./
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./package.json ./package-lock.json ./lerna.json ./babel.config.js ./prettier.config.js ./LICENSE.txt ./
 
 # bootstrap the top orchestrator package
 RUN npm ci

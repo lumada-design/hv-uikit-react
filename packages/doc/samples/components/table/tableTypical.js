@@ -84,17 +84,11 @@ class Wrapper extends React.Component {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          [
-            " ",
-            Number(cellData.row._original.salesGrowth),
-            `color:${cellData.row._original.color}`
-          ]
+          [" ", Number(cellData.row._original.salesGrowth), `color:${cellData.row._original.color}`]
         ];
         return (
           <div style={{ display: "flex" }}>
-            <div style={{ alignSelf: "center" }}>
-              {`${cellData.row._original.salesGrowth}€`}
-            </div>
+            <div style={{ alignSelf: "center" }}>{`${cellData.row._original.salesGrowth}€`}</div>
             <div style={{ alignSelf: "center" }}>
               <Chart
                 width="55px"

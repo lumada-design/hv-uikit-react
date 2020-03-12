@@ -46,8 +46,7 @@ export const getWeekdayNumber = date => date.getUTCDay();
  * @param {number} day
  * @returns {Date}
  */
-export const makeUTCDate = (year, month, day) =>
-  new Date(Date.UTC(year, month - 1, day, 0));
+export const makeUTCDate = (year, month, day) => new Date(Date.UTC(year, month - 1, day, 0));
 
 /**
  * Creates a date in UTC timezone from an ISO string.
@@ -55,8 +54,7 @@ export const makeUTCDate = (year, month, day) =>
  * @param {string} isoStringDate ISO formatted date.
  * @returns {Date}
  */
-export const makeUTCDateFromISOString = isoStringDate =>
-  new Date(isoStringDate);
+export const makeUTCDateFromISOString = isoStringDate => new Date(isoStringDate);
 
 /**
  * Creates a new date object with today's date in UTC timezone.
@@ -65,11 +63,7 @@ export const makeUTCDateFromISOString = isoStringDate =>
  */
 export const makeUTCToday = () => {
   const today = new Date();
-  return makeUTCDate(
-    today.getFullYear(),
-    today.getMonth() + 1,
-    today.getDate()
-  );
+  return makeUTCDate(today.getFullYear(), today.getMonth() + 1, today.getDate());
 };
 
 /**
@@ -80,11 +74,7 @@ export const makeUTCToday = () => {
  * @constructor
  */
 export const UTCToLocalDate = utcDate =>
-  new Date(
-    utcDate.getUTCFullYear(),
-    utcDate.getUTCMonth(),
-    utcDate.getUTCDate()
-  );
+  new Date(utcDate.getUTCFullYear(), utcDate.getUTCMonth(), utcDate.getUTCDate());
 
 /**
  * Returns the first day of the month for a given year.
@@ -94,8 +84,7 @@ export const UTCToLocalDate = utcDate =>
  * @param {number} year - Number of the year.
  * @returns {number} The first day of the month for the received year.
  */
-export const getMonthFirstDay = (month, year) =>
-  getWeekdayNumber(makeUTCDate(year, month, 1));
+export const getMonthFirstDay = (month, year) => getWeekdayNumber(makeUTCDate(year, month, 1));
 
 /**
  * Checks if the received date is a valid date.
@@ -162,11 +151,7 @@ export const isSameDay = (date1, date2) => {
   const date1Month = date1.getUTCMonth() + 1;
   const date1Year = date1.getUTCFullYear();
 
-  return (
-    date2Day === date1Date &&
-    date2Month === date1Month &&
-    date2Year === date1Year
-  );
+  return date2Day === date1Date && date2Month === date1Month && date2Year === date1Year;
 };
 
 /**
@@ -191,8 +176,7 @@ export const getDateISO = date => {
  * @param {string} isoStringDate - The string to be checked.
  * @returns {boolean} True if the received string is in a valid ISO format, false otherwise.
  */
-export const isValidISOString = isoStringDate =>
-  /\d{4}-\d{2}-\d{2}/.test(isoStringDate);
+export const isValidISOString = isoStringDate => /\d{4}-\d{2}-\d{2}/.test(isoStringDate);
 
 /**
  * Converts a ISO date string ("YYYY-MM-DD") into a new Date.
@@ -205,9 +189,7 @@ export const isValidISOString = isoStringDate =>
 export const convertISOStringDateToDate = isoStringDate => {
   if (isoStringDate !== "" && !isValidISOString(isoStringDate)) {
     // eslint-disable-next-line no-console
-    console.warn(
-      `The date must be in ISO format (YYYY-MM-DD): ${isoStringDate}`
-    );
+    console.warn(`The date must be in ISO format (YYYY-MM-DD): ${isoStringDate}`);
     return null;
   }
   const convertedDate = makeUTCDateFromISOString(isoStringDate);
@@ -257,10 +239,7 @@ export const getNextMonth = (month, year) => {
  * @param {string} [representationValue=REPRESENTATION_VALUES.LONG] - The locale to be applied to the Intl format.
  * @returns {Array} An array with all the months names.
  */
-export const getMonthNamesList = (
-  locale,
-  representationValue = REPRESENTATION_VALUES.LONG
-) => {
+export const getMonthNamesList = (locale, representationValue = REPRESENTATION_VALUES.LONG) => {
   const options = {
     month: representationValue
   };
@@ -278,10 +257,7 @@ export const getMonthNamesList = (
  * @param {string} representativeValue - The locale to be applied to the Intl format.
  * @returns {Array} An array with all the weekday names.
  */
-export const getWeekdayNamesList = (
-  locale,
-  representativeValue = REPRESENTATION_VALUES.LONG
-) => {
+export const getWeekdayNamesList = (locale, representativeValue = REPRESENTATION_VALUES.LONG) => {
   const weekdayNames = [];
   for (let day = 4; day <= 10; day += 1) {
     weekdayNames.push(
@@ -307,9 +283,7 @@ export const getMonthName = (
   representationValue = REPRESENTATION_VALUES.LONG
 ) => {
   const auxDate = new Date(1970, monthIndex, 1);
-  return new Intl.DateTimeFormat(locale, { month: representationValue }).format(
-    auxDate
-  );
+  return new Intl.DateTimeFormat(locale, { month: representationValue }).format(auxDate);
 };
 
 /**
@@ -338,8 +312,7 @@ export const createDatesArray = (month, year) => {
   // Initializes the variables needed to calculate the dates for the received month and year
   const monthDays = getMonthDays(month, year);
   const daysFromPrevMonth = getMonthFirstDay(month, year);
-  const daysFromNextMonth =
-    CALENDAR_WEEKS * 7 - (daysFromPrevMonth + monthDays);
+  const daysFromNextMonth = CALENDAR_WEEKS * 7 - (daysFromPrevMonth + monthDays);
   const prevMonthYear = getPreviousMonth(month, year);
   const nextMonthYear = getNextMonth(month, year);
   const prevMonthDays = getMonthDays(prevMonthYear.month, prevMonthYear.year);
@@ -414,9 +387,7 @@ export const isValidLocale = locale => {
 export const isPreviousDateValid = (year, month) => {
   const previousMonthYear = getPreviousMonth(month, year);
 
-  return isDateInValidRange(
-    makeUTCDate(previousMonthYear.year, previousMonthYear.month, 1)
-  );
+  return isDateInValidRange(makeUTCDate(previousMonthYear.year, previousMonthYear.month, 1));
 };
 
 /**
@@ -429,7 +400,5 @@ export const isPreviousDateValid = (year, month) => {
 export const isNextDateValid = (year, month) => {
   const nextMonthYear = getNextMonth(month, year);
 
-  return isDateInValidRange(
-    makeUTCDate(nextMonthYear.year, nextMonthYear.month, 1)
-  );
+  return isDateInValidRange(makeUTCDate(nextMonthYear.year, nextMonthYear.month, 1));
 };

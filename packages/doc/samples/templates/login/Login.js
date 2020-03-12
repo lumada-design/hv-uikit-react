@@ -17,12 +17,7 @@ const LoginTemplate = ({ classes }) => (
       <HvHeaderBrand logo={<HitachiLogo />} name="Maintenance Insights" />
     </Header>
     <div className={classes.root}>
-      <Login
-        id="test"
-        login={callSimulation}
-        recovery={callSimulation}
-        allowRecover
-      />
+      <Login id="test" login={callSimulation} recovery={callSimulation} allowRecover />
     </div>
   </div>
 );

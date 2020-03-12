@@ -4,8 +4,7 @@ import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 
 storiesOf("Lab", module).add("FormComposer", () => <HvFormComposer />, {
   title: "FormComposer",
-  description:
-    "A form composer component used to create a form dynamically, still in development",
+  description: "A form composer component used to create a form dynamically, still in development",
   usage: "import HvFormComposer from '@hv/uikit-react-lab/dist/FormComposer'",
   examples: [
     {

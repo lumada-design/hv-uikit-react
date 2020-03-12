@@ -14,10 +14,7 @@ describe("MenuItem withStyles", () => {
     wrapper = mount(
       <HvProvider>
         <SelectionContext.Provider value={contextValue}>
-          <MenuItem
-            item={{ id: "someId ", label: "someLabel" }}
-            type="menubar"
-          />
+          <MenuItem item={{ id: "someId ", label: "someLabel" }} type="menubar" />
         </SelectionContext.Provider>
       </HvProvider>
     );

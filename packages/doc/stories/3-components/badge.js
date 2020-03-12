@@ -14,8 +14,7 @@ storiesOf("Components", module).add("Badge", () => <HvBadge />, {
     },
     {
       title: "2. With Icon",
-      description:
-        "Badges show when there are unread notifications with an icon.",
+      description: "Badges show when there are unread notifications with an icon.",
       src: "components/badge/badgeWithIcon.js"
     },
     {

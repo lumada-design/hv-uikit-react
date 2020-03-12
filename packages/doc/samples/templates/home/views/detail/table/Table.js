@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 
-const Table = ({data, columns, title}) => {
+const Table = ({ data, columns, title }) => {
   const [pageSize, setPageSize] = useState(10);
 
   const onPageSizeChange = newPageSize => setPageSize(newPageSize);

@@ -23,8 +23,7 @@ const TooltipControl = (
 
 const data = (
   <HvTypography variant="infoText">
-    Tooltips can showcase truncated text. The text should be concise and not
-    redundant.
+    Tooltips can showcase truncated text. The text should be concise and not redundant.
   </HvTypography>
 );
 

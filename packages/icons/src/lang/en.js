@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 module.exports.helptext = `
 Welcome to SVG to React. This tool takes a svg file and outputs

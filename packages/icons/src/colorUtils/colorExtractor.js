@@ -17,10 +17,7 @@ module.exports = function extractColors(fileData) {
   do {
     matcher = regexp.exec(fileData);
     if (matcher) {
-      if (
-        !result.colorArray.includes(matcher[1]) &&
-        !result.colorArray.includes(matcher[2])
-      ) {
+      if (!result.colorArray.includes(matcher[1]) && !result.colorArray.includes(matcher[2])) {
         if (matcher[1] !== undefined && matcher[1] !== null) {
           result.colorArray.push(matcher[1]);
           result.colorText = result.colorText.concat(`"${matcher[1]}",`);

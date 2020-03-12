@@ -6,14 +6,7 @@ import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
 import styles from "./styles";
 
-const Actions = ({
-  classes,
-  id,
-  category,
-  actions,
-  actionsCallback,
-  maxVisibleActions
-}) => {
+const Actions = ({ classes, id, category, actions, actionsCallback, maxVisibleActions }) => {
   if (!Array.isArray(actions)) {
     return React.isValidElement(actions) ? actions : null;
   }
@@ -41,9 +34,7 @@ const Actions = ({
 
     return (
       <div className={classes.actionContainer}>
-        {actsVisible.map((action, idx) =>
-          renderButton(action, `${id}-${idx}-action-${action.id}`)
-        )}
+        {actsVisible.map((action, idx) => renderButton(action, `${id}-${idx}-action-${action.id}`))}
         <DropDownMenu
           classes={{ root: classes.dropDownMenu }}
           icon={<MoreVert className={classes.dropDownMenuIcon} />}
@@ -64,9 +55,7 @@ const Actions = ({
 
   return actions.length > maxVisibleActions
     ? renderActionsGrid(actions)
-    : actions.map((action, idx) =>
-        renderButton(action, `${id}-${idx}-action-${action.id}`)
-      );
+    : actions.map((action, idx) => renderButton(action, `${id}-${idx}-action-${action.id}`));
 };
 
 Actions.propTypes = {
@@ -98,13 +87,7 @@ Actions.propTypes = {
   /**
    * Button category.
    */
-  category: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "ghost",
-    "ghostSecondary",
-    "semantic"
-  ]),
+  category: PropTypes.oneOf(["primary", "secondary", "ghost", "ghostSecondary", "semantic"]),
   /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon, disabled}´

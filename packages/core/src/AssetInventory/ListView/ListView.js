@@ -8,17 +8,10 @@ import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";
 import styles from "./styles";
 
-const Rows = ({
-  renderer,
-  values,
-  selectedValues,
-  viewConfiguration,
-  metadata
-}) =>
+const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata }) =>
   values.map((value, index) => {
     // eslint-disable-next-line no-param-reassign
-    value.checkboxSelected =
-      selectedValues && selectedValues.includes(value.id);
+    value.checkboxSelected = selectedValues && selectedValues.includes(value.id);
 
     return renderer(value, index, viewConfiguration, metadata);
   });
@@ -38,12 +31,7 @@ const ListView = ({
 }) => (
   <Grid container justify="center" alignContent="stretch">
     <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-      <table
-        className={clsx(className, classes.root)}
-        cellSpacing={cellSpacing}
-        id={id}
-        {...other}
-      >
+      <table className={clsx(className, classes.root)} cellSpacing={cellSpacing} id={id} {...other}>
         {!isNil(viewConfiguration) &&
           !isNil(viewConfiguration.columnConfiguration) &&
           viewConfiguration.columnConfiguration.length > 0 &&

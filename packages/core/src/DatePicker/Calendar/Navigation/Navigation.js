@@ -20,10 +20,7 @@ const Navigation = ({
   isNextEnabled
 }) => {
   const onkeyDownHandler = (event, funcAction) => {
-    if (
-      isKeypress(event, KeyboardCodes.Enter) ||
-      isKeypress(event, KeyboardCodes.Space)
-    ) {
+    if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
       event.preventDefault();
       funcAction(event);
     }
@@ -33,30 +30,20 @@ const Navigation = ({
     <div className={classes.root}>
       <DropLeftIcon
         id={`${id}-left`}
-        className={`${classes.icon} ${
-          isPreviousEnabled ? "" : classes.disabled
-        }`}
+        className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
         onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
         onKeyDown={event =>
-          isNextEnabled
-            ? onkeyDownHandler(event, onNavigatePrevious)
-            : undefined
+          isNextEnabled ? onkeyDownHandler(event, onNavigatePrevious) : undefined
         }
         tabIndex={0}
       />
 
       <div
         id={id}
-        className={`${
-          typeof onTextClick === "function"
-            ? classes.text
-            : classes.textWithoutHover
-        }`}
+        className={`${typeof onTextClick === "function" ? classes.text : classes.textWithoutHover}`}
         role="presentation"
         onClick={onTextClick}
-        onKeyDown={
-          onTextClick && (event => onkeyDownHandler(event, onTextClick))
-        }
+        onKeyDown={onTextClick && (event => onkeyDownHandler(event, onTextClick))}
         tabIndex={onTextClick ? 0 : -1}
       >
         <HvTypography variant="normalText">{navigationText}</HvTypography>
@@ -66,9 +53,7 @@ const Navigation = ({
         id={`${id}-right`}
         className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
         onClick={isNextEnabled ? onNavigateNext : undefined}
-        onKeyDown={event =>
-          isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined
-        }
+        onKeyDown={event => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}
         tabIndex={0}
       />
     </div>
@@ -119,6 +104,4 @@ Navigation.defaultProps = {
   isNextEnabled: true
 };
 
-export default withStyles(styles, { name: "HvDatePickerNavigation" })(
-  Navigation
-);
+export default withStyles(styles, { name: "HvDatePickerNavigation" })(Navigation);

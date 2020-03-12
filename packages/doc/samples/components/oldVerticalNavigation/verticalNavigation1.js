@@ -7,31 +7,23 @@ const data = {
   data: [
     {
       label: "Advanced server DS120",
-      iconCallback: ({ isSelected }) => (
-        <User color={isSelected ? "atmo1" : undefined} />
-      )
+      iconCallback: ({ isSelected }) => <User color={isSelected ? "atmo1" : undefined} />
     },
     {
       label: "Advanced server DS122",
-      iconCallback: ({ isSelected }) => (
-        <Calendar color={isSelected ? "atmo1" : undefined} />
-      )
+      iconCallback: ({ isSelected }) => <Calendar color={isSelected ? "atmo1" : undefined} />
     },
     {
       label: "Advanced server DS250"
     },
     {
       label: "Advanced server DS530",
-      iconCallback: ({ isSelected }) => (
-        <Plane color={isSelected ? "atmo1" : undefined} />
-      )
+      iconCallback: ({ isSelected }) => <Plane color={isSelected ? "atmo1" : undefined} />
     },
     {
       label: "Advanced server DS555",
       selected: false,
-      iconCallback: ({ isSelected }) => (
-        <LineChart color={isSelected ? "atmo1" : undefined} />
-      )
+      iconCallback: ({ isSelected }) => <LineChart color={isSelected ? "atmo1" : undefined} />
     }
   ]
 };

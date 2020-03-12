@@ -10,10 +10,4 @@ const labels = {
   requiredWarningText: "The number is required"
 };
 
-export default (
-  <HvInput
-    labels={labels}
-    maxCharQuantity={5}
-    validationType="number"
-  />
-);
+export default <HvInput labels={labels} maxCharQuantity={5} validationType="number" />;

@@ -149,26 +149,20 @@ describe("Calendar utils - isDateInValidRange", () => {
   const originalWarn = console.warn;
 
   it("should return `true` if the date is 2019-01-01", () => {
-    expect(isDateInValidRange(convertISOStringDateToDate("2019-01-01"))).toBe(
-      true
-    );
+    expect(isDateInValidRange(convertISOStringDateToDate("2019-01-01"))).toBe(true);
   });
   it("should return `false` if the value received is 0999-01-01", () => {
     // Expected warning  "The received date is invalid: 0999-01-01"
     console.warn = jest.fn();
 
-    expect(isDateInValidRange(convertISOStringDateToDate("0999-01-01"))).toBe(
-      false
-    );
+    expect(isDateInValidRange(convertISOStringDateToDate("0999-01-01"))).toBe(false);
     console.warn = originalWarn;
   });
   it("should return `false` if the value received is 10999-01-01", () => {
     // Expected warning  "The received date is invalid: 0999-01-01"
     console.warn = jest.fn();
 
-    expect(isDateInValidRange(convertISOStringDateToDate("10999-01-01"))).toBe(
-      false
-    );
+    expect(isDateInValidRange(convertISOStringDateToDate("10999-01-01"))).toBe(false);
     console.warn = originalWarn;
   });
 });
@@ -191,33 +185,23 @@ describe("Calendar utils - isSameMonth", () => {
     ).toBe(false);
   });
   it("should return `false` if one of the dates is invalid", () => {
-    expect(
-      isSameMonth(convertISOStringDateToDate("2019-01-01"), undefined)
-    ).toBe(false);
+    expect(isSameMonth(convertISOStringDateToDate("2019-01-01"), undefined)).toBe(false);
   });
 });
 
 describe("Calendar utils - isSameDay", () => {
   it("should return `true` if the received dates are in the same day, month and year", () => {
     expect(
-      isSameDay(
-        convertISOStringDateToDate("2019-01-01"),
-        convertISOStringDateToDate("2019-01-01")
-      )
+      isSameDay(convertISOStringDateToDate("2019-01-01"), convertISOStringDateToDate("2019-01-01"))
     ).toBe(true);
   });
   it("should return `false` if the received dates are not in the same day, month and year", () => {
     expect(
-      isSameDay(
-        convertISOStringDateToDate("2019-01-01"),
-        convertISOStringDateToDate("2019-01-31")
-      )
+      isSameDay(convertISOStringDateToDate("2019-01-01"), convertISOStringDateToDate("2019-01-31"))
     ).toBe(false);
   });
   it("should return `false` if one of the dates is invalid", () => {
-    expect(isSameDay(convertISOStringDateToDate("2019-01-01"), undefined)).toBe(
-      false
-    );
+    expect(isSameDay(convertISOStringDateToDate("2019-01-01"), undefined)).toBe(false);
   });
 });
 
@@ -292,9 +276,9 @@ describe("Calendar utils - getMonthName", () => {
 
 describe("Calendar utils - getFormattedDate", () => {
   it("should return a date as a string with the format `14 Aug, 2019`", () => {
-    expect(
-      getFormattedDate(convertISOStringDateToDate("2019-08-14"), "en-US")
-    ).toBe("14 Aug, 2019");
+    expect(getFormattedDate(convertISOStringDateToDate("2019-08-14"), "en-US")).toBe(
+      "14 Aug, 2019"
+    );
   });
 });
 
@@ -310,8 +294,7 @@ describe("Calendar utils - createDatesArray", () => {
     for (let iMonth = 1; iMonth <= 12; iMonth += 1) {
       datesArray = createDatesArray(iMonth, year);
       const currentMonthDates = datesArray.filter(
-        date =>
-          date.getUTCMonth() + 1 === iMonth && date.getUTCFullYear() === year
+        date => date.getUTCMonth() + 1 === iMonth && date.getUTCFullYear() === year
       );
       const monthDays = getMonthDays(iMonth, year);
 
@@ -343,9 +326,7 @@ describe("Calendar utils - createDatesArray", () => {
     );
 
     const totalAmountOfDates =
-      previousMonthDates.length +
-      currentMonthDates.length +
-      nextMonthDates.length;
+      previousMonthDates.length + currentMonthDates.length + nextMonthDates.length;
     expect(totalAmountOfDates).toBe(42);
   });
 });

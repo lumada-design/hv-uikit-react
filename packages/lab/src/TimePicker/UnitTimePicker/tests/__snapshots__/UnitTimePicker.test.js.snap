@@ -1130,8 +1130,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   aria-live="polite"
                   aria-relevant="additions text"
                   className="HvInput-textWarning-119 HvInput-infoText-118"
-                  component={null}
-                  paragraph={false}
                   style={
                     Object {
                       "display": "none",
@@ -1174,8 +1172,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle-167",
                       }
                     }
-                    component={null}
-                    paragraph={false}
                     style={
                       Object {
                         "display": "none",

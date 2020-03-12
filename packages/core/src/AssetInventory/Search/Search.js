@@ -32,8 +32,7 @@ const searchOperationSetup = metadata => {
 const filter = (value, criteria, searchValue) => {
   const evalValue = get(value, criteria.accessor);
 
-  if (criteria.searchFunction)
-    return criteria.searchFunction(evalValue, searchValue);
+  if (criteria.searchFunction) return criteria.searchFunction(evalValue, searchValue);
 
   switch (criteria.cellType.toUpperCase()) {
     case "NUMERIC":
@@ -60,10 +59,7 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
 
   searchableCriteria.forEach(criteria => {
     values.forEach(value => {
-      if (
-        filter(value, criteria, searchValue) &&
-        !filteredValues.includes(value)
-      )
+      if (filter(value, criteria, searchValue) && !filteredValues.includes(value))
         filteredValues.push(value);
     });
   });
@@ -82,15 +78,7 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
  * @returns {*}
  * @constructor
  */
-const Search = ({
-  id,
-  searchBoxLabels,
-  searchString,
-  onFilter,
-  onSearch,
-  values,
-  metadata
-}) => {
+const Search = ({ id, searchBoxLabels, searchString, onFilter, onSearch, values, metadata }) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
   const handler = value => {

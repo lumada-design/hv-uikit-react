@@ -36,11 +36,7 @@ const selectCell = (
 );
 
 const actionsCell = (classes, id, viewConfiguration) => (
-  <Cell
-    className={classes.actionSeparator}
-    id={`action${id}`}
-    key={`action${id}`}
-  >
+  <Cell className={classes.actionSeparator} id={`action${id}`} key={`action${id}`}>
     <Actions
       id={id}
       actions={viewConfiguration.actions}
@@ -77,9 +73,7 @@ const row = (
     isNil(viewConfiguration) || isNil(viewConfiguration.isSelectable)
       ? renderSelectCell
       : viewConfiguration.isSelectable;
-  const renderActionsCell = !(
-    isNil(viewConfiguration) || isNil(viewConfiguration.actions)
-  );
+  const renderActionsCell = !(isNil(viewConfiguration) || isNil(viewConfiguration.actions));
   const clonedChildren = map(children, (child, index) => {
     if (!isNil(columnConfiguration)) {
       return React.cloneElement(child, {
@@ -115,8 +109,7 @@ const row = (
           id
         )}
       {clonedChildren}
-      {renderActionsCell &&
-        actionsCell(classes, checkboxValue || id, viewConfiguration)}
+      {renderActionsCell && actionsCell(classes, checkboxValue || id, viewConfiguration)}
     </tr>
   );
 };

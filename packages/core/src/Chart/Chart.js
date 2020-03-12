@@ -4,12 +4,7 @@ import isNil from "lodash/isNil";
 import clsx from "clsx";
 import { useTheme, withStyles } from "@material-ui/core";
 import Tooltip from "./Tooltip";
-import {
-  setLayout,
-  setLegend,
-  setXaxis,
-  setYaxis
-} from "./chartPlotlyOverrides";
+import { setLayout, setLegend, setXaxis, setYaxis } from "./chartPlotlyOverrides";
 import Typography from "../Typography";
 import Plot from "./Plot";
 import styles from "./styles";
@@ -21,13 +16,7 @@ import styles from "./styles";
  * @param theme
  * @returns {*}
  */
-const propsLayoutSetter = (
-  inputLayout,
-  theme,
-  isHorizontal,
-  xAxisTitle,
-  yAxisTitle
-) => {
+const propsLayoutSetter = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTitle) => {
   const layoutStyles = styles(theme);
   const layout = inputLayout === undefined ? {} : inputLayout;
 
@@ -80,13 +69,7 @@ const Chart = ({
     ? data[0].orientation.toUpperCase() === "H"
     : false;
 
-  const newLayout = propsLayoutSetter(
-    layout,
-    theme,
-    isHorizontal,
-    xAxisTitle,
-    yAxisTitle
-  );
+  const newLayout = propsLayoutSetter(layout, theme, isHorizontal, xAxisTitle, yAxisTitle);
 
   /**
    * Extract data from the plotly onHover event to be used to create the tooltip.
@@ -100,9 +83,7 @@ const Chart = ({
     };
     eventData.points.forEach(p => {
       dataFromPoints.elements.push({
-        color: p.fullData.marker
-          ? p.fullData.marker.color
-          : p.fullData.line.color,
+        color: p.fullData.marker ? p.fullData.marker.color : p.fullData.line.color,
         name: p.fullData.name,
         value: isHorizontal ? p.x : p.y
       });
@@ -130,13 +111,7 @@ const Chart = ({
 
   return (
     <div classes={classes}>
-      {isHover && (
-        <Tooltip
-          coordinates={coordinates}
-          data={dataTooltip}
-          useSingle={useSingle}
-        />
-      )}
+      {isHover && <Tooltip coordinates={coordinates} data={dataTooltip} useSingle={useSingle} />}
       <div className={classes.root}>
         <div className={classes.titleContainer}>
           {title && <Typography variant="mTitle">{title}</Typography>}
@@ -144,10 +119,7 @@ const Chart = ({
             {subtitle && <Typography variant="sText">{subtitle}</Typography>}
           </div>
         </div>
-        <div
-          className={clsx({ [classes.paddingTop]: title })}
-          onMouseMove={e => onMouseMove(e)}
-        >
+        <div className={clsx({ [classes.paddingTop]: title })} onMouseMove={e => onMouseMove(e)}>
           <Plot
             title={title}
             data={data}

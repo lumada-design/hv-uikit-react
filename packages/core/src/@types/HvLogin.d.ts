@@ -1,33 +1,33 @@
-declare module '@hv/uikit-react-core/dist' {
+declare module "@hv/uikit-react-core/dist" {
   export class HvLogin extends React.Component<HvLoginProps, any> {}
 
   export interface LoginInfo {
-    username: string
-    password: string
+    username: string;
+    password: string;
   }
 
   export interface LoginLabel {
-    titleText?: string
-    recoveryTitle?: string
-    messageToRecover?: string
-    messageAfterRecover?: string
-    recoveryInputLabel?: string
-    recoveryPlaceholder?: string
-    recoveryErrorMessage?: string
-    userNameInputLabel?: string
-    userNamePlaceHolder?: string
-    passwordInputLabel?: string
-    passwordPlaceHolder?: string
-    rememberMeLabel?: string
-    loginButtonMessage?: string
-    loginButtonLabel?: string
-    forgotYourCredentialMessage?: string
-    emailLabel: string
-    emailPlaceholder: string
-    cancelButton: string
-    recoverButton: string
-    recoveringMessage: string
-    incorrectCredentialsMessage?: string
+    titleText?: string;
+    recoveryTitle?: string;
+    messageToRecover?: string;
+    messageAfterRecover?: string;
+    recoveryInputLabel?: string;
+    recoveryPlaceholder?: string;
+    recoveryErrorMessage?: string;
+    userNameInputLabel?: string;
+    userNamePlaceHolder?: string;
+    passwordInputLabel?: string;
+    passwordPlaceHolder?: string;
+    rememberMeLabel?: string;
+    loginButtonMessage?: string;
+    loginButtonLabel?: string;
+    forgotYourCredentialMessage?: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    cancelButton: string;
+    recoverButton: string;
+    recoveringMessage: string;
+    incorrectCredentialsMessage?: string;
   }
 
   export interface HvLoginProps extends React.HTMLAttributes<HvLogin> {
@@ -38,77 +38,77 @@ declare module '@hv/uikit-react-core/dist' {
       /**
        * Styles applied to the component root class.
        */
-      root?: string
+      root?: string;
       /**
        * Styles applied to the right container.
        */
-      rightContainer?: string
+      rightContainer?: string;
       /**
        * Styles applied to the form, inside the right container.
        */
-      formContainer?: string
-    }
+      formContainer?: string;
+    };
 
     /**
      * the function invoked for the log in
      */
-    login: (info: LoginInfo) => any
+    login: (info: LoginInfo) => any;
 
     /**
      * the function invoked for the recovery
      */
-    recovery?: (...args: any[]) => any
+    recovery?: (...args: any[]) => any;
 
     /**
      * the url for the background image
      */
-    backgroundImage?: string
+    backgroundImage?: string;
 
     /**
      * Sizing for background image
      */
-    backgroundImageSize?: string
+    backgroundImageSize?: string;
 
     /**
      * the welcome message.
      * @deprecated Instead use the labels property
      */
-    titleText?: string
+    titleText?: string;
 
     /**
      * the url for the logo in the welcome message.
      */
-    logo?: string
+    logo?: string;
 
     /**
      * a component to replace the welcome message
      */
-    titleComponent?: React.ReactElement
+    titleComponent?: React.ReactElement;
 
     /**
      * the component should have the recovery capability
      */
-    allowRecover?: boolean
+    allowRecover?: boolean;
 
     /**
      * the component should have the remember me capability
      */
-    allowRememberMe?: boolean
+    allowRememberMe?: boolean;
 
     /**
      * Icon to be presented when the recovery occurs successfully.
      */
-    okRecoveryIcon?: React.ReactElement
+    okRecoveryIcon?: React.ReactElement;
 
     /**
      * Icon to be presented when an error occurs in the login.
      */
-    errorLoginIcon?: React.ReactElement
+    errorLoginIcon?: React.ReactElement;
 
     /**
      *  Incorrect Credentials Message.
      */
-    incorrectCredentialsMessage?: string
+    incorrectCredentialsMessage?: string;
 
     /**
      * The object that contains the different labels inside the kpi.
@@ -127,72 +127,72 @@ declare module '@hv/uikit-react-core/dist' {
      * - rememberMeLabel: Remember me label.
      * - incorrectCredentialsMessage: Incorrect Credentials Message
      */
-    labels?: LoginLabel
+    labels?: LoginLabel;
 
     /**
      * Recovery title.
      * @deprecated Instead use the labels property
      */
-    recoveryTitle?: string
+    recoveryTitle?: string;
 
     /**
      * Message to recover.
      * @deprecated Instead use the labels property
      */
-    messageToRecover?: string
+    messageToRecover?: string;
 
     /**
      * Message shown after recover.
      * @deprecated Instead use the labels property
      */
-    messageAfterRecover?: string
+    messageAfterRecover?: string;
 
     /**
      * Recovery input label.
      * @deprecated Instead use the labels property
      */
-    recoveryInputLabel?: string
+    recoveryInputLabel?: string;
 
     /**
      * Recovery placeholder.
      * @deprecated Instead use the labels property
      */
-    recoveryPlaceholder?: string
+    recoveryPlaceholder?: string;
 
     /**
      * Message shown when an error occurs.
      * @deprecated Instead use the labels property
      */
-    recoveryErrorMessage?: string
+    recoveryErrorMessage?: string;
 
     /**
      * Input user name label.
      * @deprecated Instead use the labels property
      */
-    userNameInputLabel?: string
+    userNameInputLabel?: string;
 
     /**
      * Input user name placeholder.
      * @deprecated Instead use the labels property
      */
-    userNamePlaceHolder?: string
+    userNamePlaceHolder?: string;
 
     /**
      * Password label.
      * @deprecated Instead use the labels property
      */
-    passwordInputLabel?: string
+    passwordInputLabel?: string;
 
     /**
      * Password placeholder.
      * @deprecated Instead use the labels property
      */
-    passwordPlaceHolder?: string
+    passwordPlaceHolder?: string;
 
     /**
      * Remember me label.
      * @deprecated Instead use the labels property
      */
-    rememberMeLabel?: string
+    rememberMeLabel?: string;
   }
 }

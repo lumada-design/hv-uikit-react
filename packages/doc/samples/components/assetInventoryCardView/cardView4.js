@@ -1,10 +1,7 @@
 import React from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import withStyles from "@material-ui/core/styles/withStyles";
-import HvCard, {
-  HvCardFooter,
-  HvCardMedia
-} from "@hv/uikit-react-core/dist/Card";
+import HvCard, { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons/dist";
 import leaf from "../card/resources/leaf.png";
 import compressor from "../card/resources/compressor.png";
@@ -71,9 +68,7 @@ const machineData = id => ({
 });
 
 const values = (num = 10) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 // --------------- Configuration ----------------
 const myActions = [
@@ -114,8 +109,7 @@ const viewConfiguration = {
   },
   isSelectable: true,
   actions: myActions,
-  actionsCallback: (id, action) =>
-    alert(`You have pressed card ${id} with action ${action.label}`)
+  actionsCallback: (id, action) => alert(`You have pressed card ${id} with action ${action.label}`)
 };
 
 export default (

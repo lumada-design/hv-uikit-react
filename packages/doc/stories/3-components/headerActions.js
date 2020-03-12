@@ -7,9 +7,7 @@ storiesOf("Components/Navigation System/Horizontal Navigation", module).add(
   () => <HvHeaderActions />,
   {
     title: "Actions",
-    description:
-      "Component of the header, responsible for presenting actions content.",
-    usage:
-      "import HvHeaderActions from '@hv/uikit-react-core/dist/Header/Actions'"
+    description: "Component of the header, responsible for presenting actions content.",
+    usage: "import HvHeaderActions from '@hv/uikit-react-core/dist/Header/Actions'"
   }
 );

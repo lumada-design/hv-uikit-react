@@ -92,10 +92,7 @@ const Pagination = ({
           disabled={!canPrevious}
           onClick={() => changePage(0)}
         >
-          <ArrowFirst
-            className={classes.icon}
-            color={!canPrevious ? "atmo7" : undefined}
-          />
+          <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
         </IconButton>
         <IconButton
           id={`${internalId}-previousPage-button`}
@@ -103,10 +100,7 @@ const Pagination = ({
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
         >
-          <ArrowLeft
-            className={classes.icon}
-            color={!canPrevious ? "atmo7" : undefined}
-          />
+          <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
         </IconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
@@ -138,11 +132,7 @@ const Pagination = ({
           <HvTypography component="span" variant="sText">
             {` ${computedLabels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography
-            id={`${internalId}-totalPages`}
-            component="span"
-            variant="sText"
-          >
+          <HvTypography id={`${internalId}-totalPages`} component="span" variant="sText">
             {pages || 1}
           </HvTypography>
         </div>
@@ -152,10 +142,7 @@ const Pagination = ({
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
         >
-          <ArrowRight
-            className={classes.icon}
-            color={!canNext ? "atmo7" : undefined}
-          />
+          <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
         </IconButton>
         <IconButton
           id={`${internalId}-lastPage-button`}
@@ -163,10 +150,7 @@ const Pagination = ({
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
         >
-          <ArrowLast
-            className={classes.icon}
-            color={!canNext ? "atmo7" : undefined}
-          />
+          <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
         </IconButton>
       </div>
     </div>

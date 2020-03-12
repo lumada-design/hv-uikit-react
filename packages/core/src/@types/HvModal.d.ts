@@ -1,4 +1,4 @@
-declare module '@hv/uikit-react-core/dist' {
+declare module "@hv/uikit-react-core/dist" {
   export class HvModal extends React.Component<HvModalProps, any> {}
 
   export interface HvModalProps extends React.HTMLAttributes<HvModal> {
@@ -9,25 +9,25 @@ declare module '@hv/uikit-react-core/dist' {
       /**
        * Style applied to the background (outside) of the component.
        */
-      background?: string
+      background?: string;
       /**
        * Style applied to the component (root).
        */
-      paper?: string
+      paper?: string;
       /**
        * Style applied to the close button.
        */
-      closeButton?: string
-    }
+      closeButton?: string;
+    };
 
     /**
      * Current state of the modal.
      */
-    open: boolean
+    open: boolean;
 
     /**
      * Function executed on close.
      */
-    onClose: (...args: any[]) => any
+    onClose: (...args: any[]) => any;
   }
 }

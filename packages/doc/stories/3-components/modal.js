@@ -10,8 +10,7 @@ storiesOf("Components/Modal", module).add("Modal", () => <HvModal />, {
   examples: [
     {
       title: "1. with text",
-      description:
-        "The modal allow the definition of variants, that alters the presented icon.",
+      description: "The modal allow the definition of variants, that alters the presented icon.",
       src: "components/modal/modal1"
     },
     {

@@ -45,10 +45,7 @@ export default (
         <HvButton category="ghost" onClick={() => myAlert("ghost")} />
       </Grid>
       <Grid item xl={2}>
-        <HvButton
-          category="ghostSecondary"
-          onClick={() => myAlert("ghostSecondary")}
-        />
+        <HvButton category="ghostSecondary" onClick={() => myAlert("ghostSecondary")} />
       </Grid>
     </Grid>
   </>

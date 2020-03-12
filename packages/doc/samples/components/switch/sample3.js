@@ -7,10 +7,5 @@ const labels = {
 };
 
 export default (
-  <Switch
-    checked={false}
-    disabled={false}
-    labels={labels}
-    aria-label="Server online"
-  />
+  <Switch checked={false} disabled={false} labels={labels} aria-label="Server online" />
 );

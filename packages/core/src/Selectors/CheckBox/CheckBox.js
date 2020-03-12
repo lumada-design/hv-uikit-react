@@ -41,9 +41,7 @@ const prepareIcon = (classes, disabled) => {
   return {
     emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
     checkedIcon: <CheckBoxCheckedIcon color={color} className={classes.icon} />,
-    indeterminateIcon: (
-      <CheckBoxPartialIcon color={color} className={classes.icon} />
-    )
+    indeterminateIcon: <CheckBoxPartialIcon color={color} className={classes.icon} />
   };
 };
 

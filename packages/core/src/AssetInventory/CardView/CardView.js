@@ -13,12 +13,7 @@ import styles from "./styles";
  * @returns {function(*, *): *}
  * @constructor
  */
-const CardRenderChooser = (
-  viewConfiguration,
-  render,
-  innerCardContent,
-  metadata
-) => {
+const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata) => {
   if (render) {
     return data => render(data, viewConfiguration, metadata);
   }
@@ -63,12 +58,7 @@ const CardView = ({
   ...others
 }) => {
   // If no custom render is passed, the render uses the standard card implementation
-  const cardRender = CardRenderChooser(
-    viewConfiguration,
-    renderer,
-    innerCardContent,
-    metadata
-  );
+  const cardRender = CardRenderChooser(viewConfiguration, renderer, innerCardContent, metadata);
 
   const { breakpoints } = viewConfiguration;
 

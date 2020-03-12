@@ -15,8 +15,7 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
     },
     {
       title: "2. Input with icon info",
-      description:
-        "Showing the info icon instead of the info text bellow the input",
+      description: "Showing the info icon instead of the info text bellow the input",
       src: "components/input/inputSimpleWithIconInfo"
     },
     {
@@ -32,8 +31,7 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
     },
     {
       title: "5. No validation",
-      description:
-        "Input that disables every type of validations not showing validation icons",
+      description: "Input that disables every type of validations not showing validation icons",
       src: "components/input/inputNoValidation"
     },
     {
@@ -56,8 +54,7 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
     },
     {
       title: "9. Email",
-      description:
-        "Email required input, that only accepts valid email addresses",
+      description: "Email required input, that only accepts valid email addresses",
       src: "components/input/inputEmail"
     },
     {

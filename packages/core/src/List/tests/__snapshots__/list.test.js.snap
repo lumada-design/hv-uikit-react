@@ -1130,8 +1130,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-386 HvList-truncate-389 HvList-selected-382"
-                        component={null}
-                        paragraph={false}
                         variant="selectedText"
                       >
                         <ForwardRef
@@ -1164,8 +1162,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-407",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="selectedText"
                         >
                           <p
@@ -1344,8 +1340,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-386 HvList-truncate-389"
-                        component={null}
-                        paragraph={false}
                         variant="normalText"
                       >
                         <ForwardRef
@@ -1378,8 +1372,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-407",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="normalText"
                         >
                           <p
@@ -1558,8 +1550,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-386 HvList-truncate-389 HvList-selected-382"
-                        component={null}
-                        paragraph={false}
                         variant="selectedText"
                       >
                         <ForwardRef
@@ -1592,8 +1582,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-407",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="selectedText"
                         >
                           <p
@@ -7235,8 +7223,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-10 HvList-truncate-13 HvList-selected-6"
-                        component={null}
-                        paragraph={false}
                         variant="selectedText"
                       >
                         <ForwardRef
@@ -7269,8 +7255,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-31",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="selectedText"
                         >
                           <p
@@ -7442,8 +7426,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-10 HvList-truncate-13"
-                        component={null}
-                        paragraph={false}
                         variant="normalText"
                       >
                         <ForwardRef
@@ -7476,8 +7458,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-31",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="normalText"
                         >
                           <p
@@ -7649,8 +7629,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-10 HvList-truncate-13"
-                        component={null}
-                        paragraph={false}
                         variant="normalText"
                       >
                         <ForwardRef
@@ -7683,8 +7661,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-31",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="normalText"
                         >
                           <p
@@ -8832,8 +8808,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-331 HvList-truncate-334 HvList-labelIconLeftPadding-332"
-                        component={null}
-                        paragraph={false}
                         variant="normalText"
                       >
                         <ForwardRef
@@ -8866,8 +8840,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-357",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="normalText"
                         >
                           <p
@@ -9105,8 +9077,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-331 HvList-truncate-334 HvList-noIconLeftPadding-333"
-                        component={null}
-                        paragraph={false}
                         variant="normalText"
                       >
                         <ForwardRef
@@ -9139,8 +9109,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-357",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="normalText"
                         >
                           <p
@@ -9378,8 +9346,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     <Text>
                       <WithStyles(ForwardRef)
                         className="HvList-label-331 HvList-truncate-334 HvList-noIconLeftPadding-333"
-                        component={null}
-                        paragraph={false}
                         variant="normalText"
                       >
                         <ForwardRef
@@ -9412,8 +9378,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle-357",
                             }
                           }
-                          component={null}
-                          paragraph={false}
                           variant="normalText"
                         >
                           <p

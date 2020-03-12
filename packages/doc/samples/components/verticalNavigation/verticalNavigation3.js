@@ -6,13 +6,7 @@ import VerticalNavigation, {
   Navigation
 } from "@hv/uikit-react-core/dist/VerticalNavigation";
 
-import {
-  OpenBook,
-  LogOut,
-  Operation,
-  Tool,
-  User
-} from "@hv/uikit-react-icons/dist";
+import { OpenBook, LogOut, Operation, Tool, User } from "@hv/uikit-react-icons/dist";
 
 const navigationData = [
   {

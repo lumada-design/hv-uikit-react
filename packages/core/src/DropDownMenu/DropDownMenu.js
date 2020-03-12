@@ -139,9 +139,7 @@ const DropDownMenu = ({
             createOptions={{
               escapeDeactivates: false,
               allowOutsideClick: true,
-              fallbackFocus: document.getElementById(
-                `${internalId}-icon-button`
-              )
+              fallbackFocus: document.getElementById(`${internalId}-icon-button`)
             }}
           >
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}

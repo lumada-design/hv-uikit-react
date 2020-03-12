@@ -140,9 +140,7 @@ const Row = ({ classes, status, value, id }) => {
 
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
-          <HvTypography variant="highlightText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
           <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>
@@ -222,9 +220,7 @@ const machineData = id => ({
 });
 
 const values = (num = 10) =>
-  Array.from(Array(num).keys()).map(i =>
-    i % 2 === 0 ? compressorData(i) : machineData(i)
-  );
+  Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
 
 // ----------------------- Configuration ------------------------------
 

@@ -9,6 +9,4 @@ const labels = {
   maxCharQuantityWarningText: "Max characters exceeded"
 };
 
-export default (
-  <HvInput labels={labels} disabled />
-);
+export default <HvInput labels={labels} disabled />;

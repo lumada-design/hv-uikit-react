@@ -31,9 +31,5 @@ const SimpleBanner = props => {
 };
 
 export default (
-  <SimpleBanner
-    label="This is a default banner."
-    variant="default"
-    customIcon={<Info />}
-  />
+  <SimpleBanner label="This is a default banner." variant="default" customIcon={<Info />} />
 );

@@ -61,10 +61,7 @@ describe("Slider ", () => {
 
   const wrapper = mount(
     <HvProvider>
-      <SliderWithStyles
-        knobProperties={knobProperties}
-        defaultValues={knobPropertiesDefaults}
-      />
+      <SliderWithStyles knobProperties={knobProperties} defaultValues={knobPropertiesDefaults} />
     </HvProvider>
   );
 

@@ -46,10 +46,7 @@ class HvFormComposer extends React.Component {
    * @param {Function} originalHandler - The handler that was originally triggered.
    */
   getValuesHandler = originalHandler => {
-    if (
-      originalHandler !== undefined &&
-      typeof originalHandler === "function"
-    ) {
+    if (originalHandler !== undefined && typeof originalHandler === "function") {
       originalHandler(this.getValues());
     }
   };
@@ -77,14 +74,7 @@ class HvFormComposer extends React.Component {
   };
 
   render() {
-    const {
-      classes,
-      mainTitle,
-      groups,
-      hasNavigation,
-      hasFooter,
-      footerContent
-    } = this.props;
+    const { classes, mainTitle, groups, hasNavigation, hasFooter, footerContent } = this.props;
 
     const footerElements = footerContent.map((child, i) => {
       const key = `fc-${i}`;
@@ -110,11 +100,7 @@ class HvFormComposer extends React.Component {
               <div key={key}>
                 {React.cloneElement(child, {
                   onChange: value =>
-                    this.childOnChangeHandler(
-                      value,
-                      child.props.name,
-                      child.props.onChange
-                    )
+                    this.childOnChangeHandler(value, child.props.name, child.props.onChange)
                 })}
               </div>
             );
@@ -131,10 +117,7 @@ class HvFormComposer extends React.Component {
         <div className={classes.mainContainer}>
           {hasNavigation && (
             <div className={classes.navContainer}>
-              <HvNavigationAnchors
-                options={navigationOptions}
-                floating={false}
-              />
+              <HvNavigationAnchors options={navigationOptions} floating={false} />
             </div>
           )}
           <div className={classes.componentContainer}>{groupedComponents}</div>

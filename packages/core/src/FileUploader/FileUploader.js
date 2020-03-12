@@ -65,6 +65,13 @@ FileUploader.propTypes = {
    * - progressConjunction: The label used in the middle of the progress message.
    */
   labels: PropTypes.shape({
+    /**
+     *
+     */
+    acceptedFiles: PropTypes.string,
+    /**
+     *
+     */
     progressConjunction: PropTypes.string,
     /**
      * Dropzone area label.

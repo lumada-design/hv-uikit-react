@@ -856,7 +856,6 @@ exports[`Custom Pagination should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               component="span"
-              paragraph={false}
               variant="sText"
             >
               <ForwardRef
@@ -889,7 +888,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   }
                 }
                 component="span"
-                paragraph={false}
                 variant="sText"
               >
                 <span
@@ -956,7 +954,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             </WithStyles(DropDownXS)>
             <WithStyles(ForwardRef)
               component="span"
-              paragraph={false}
               variant="sText"
             >
               <ForwardRef
@@ -989,7 +986,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   }
                 }
                 component="span"
-                paragraph={false}
                 variant="sText"
               >
                 <span
@@ -1232,7 +1228,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             >
               <WithStyles(ForwardRef)
                 component="span"
-                paragraph={false}
                 variant="sText"
               >
                 <ForwardRef
@@ -1265,7 +1260,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                   }
                   component="span"
-                  paragraph={false}
                   variant="sText"
                 >
                   <span
@@ -1277,7 +1271,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               </WithStyles(ForwardRef)>
               <WithStyles(ForwardRef)
                 component="span"
-                paragraph={false}
                 variant="sText"
               >
                 <ForwardRef
@@ -1310,7 +1303,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                   }
                   component="span"
-                  paragraph={false}
                   variant="sText"
                 >
                   <span
@@ -1323,7 +1315,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               <WithStyles(ForwardRef)
                 component="span"
                 id="hv-pagination-4-totalPages"
-                paragraph={false}
                 variant="sText"
               >
                 <ForwardRef
@@ -1357,7 +1348,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   }
                   component="span"
                   id="hv-pagination-4-totalPages"
-                  paragraph={false}
                   variant="sText"
                 >
                   <span

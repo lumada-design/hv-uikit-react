@@ -39,8 +39,7 @@ class AssetInventory extends React.Component {
     const innerPageSize = pageSize || pageSizeOptions[0];
     const viewValues = this.getPaginationData(values, innerPageSize, page);
     const selectedViewId =
-      selectedView ||
-      (Array.isArray(children) ? children[0].props.id : children.props.id);
+      selectedView || (Array.isArray(children) ? children[0].props.id : children.props.id);
     this.state = {
       internalId: id || uniqueId("hv-assetinventory-"),
       selectedView: selectedViewId,
@@ -78,10 +77,7 @@ class AssetInventory extends React.Component {
 
     if (
       !AssetInventory.areArraysEquals(props.values, state.originalValues) ||
-      !AssetInventory.areArraysEquals(
-        props.selectedValues,
-        state.originalSelectedValues
-      )
+      !AssetInventory.areArraysEquals(props.selectedValues, state.originalSelectedValues)
     ) {
       result = {
         originalValues: props.values,
@@ -199,13 +195,7 @@ class AssetInventory extends React.Component {
    * @returns {*}
    */
   renderSearch = () => {
-    const {
-      values,
-      classes,
-      searchBoxLabels,
-      configuration,
-      onSearch
-    } = this.props;
+    const { values, classes, searchBoxLabels, configuration, onSearch } = this.props;
     const { internalId, searchString } = this.state;
     return (
       <div className={classes.searchBoxContainer}>
@@ -241,13 +231,7 @@ class AssetInventory extends React.Component {
    * @returns {*}
    */
   renderSort = () => {
-    const {
-      labels,
-      configuration,
-      classes,
-      onSortChange,
-      disablePortal
-    } = this.props;
+    const { labels, configuration, classes, onSortChange, disablePortal } = this.props;
     const { internalId, selectedSort } = this.state;
     const dropDownLabel = {
       title: labels.sortBy
@@ -316,13 +300,9 @@ class AssetInventory extends React.Component {
 
     const { internalId, pageSize, page, values } = this.state;
 
-    const numPages = paginationServerSide
-      ? pages
-      : Math.ceil(values.length / pageSize);
+    const numPages = paginationServerSide ? pages : Math.ceil(values.length / pageSize);
 
-    const onPageChangeInternal = paginationServerSide
-      ? onPageChange
-      : this.paginationOnPageChange;
+    const onPageChangeInternal = paginationServerSide ? onPageChange : this.paginationOnPageChange;
 
     const onPageSizeChangeInternal = paginationServerSide
       ? onPageSizeChange
@@ -479,10 +459,7 @@ class AssetInventory extends React.Component {
 
     const showButtons = children.length > 1;
     const showSort = find(configuration.metadata, element => element.sortable);
-    const showSearch = find(
-      configuration.metadata,
-      element => element.searchable
-    );
+    const showSearch = find(configuration.metadata, element => element.searchable);
     const showRightControls = showButtons || showSort;
     const views = [];
 
@@ -587,10 +564,7 @@ AssetInventory.propTypes = {
   /**
    * Views components.
    */
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   /**
    * Data passed to the component.
    */

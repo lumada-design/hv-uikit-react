@@ -1,12 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import {
-  Add,
-  Upload,
-  Delete,
-  Preview
-} from "@hv/uikit-react-icons/dist";
+import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
 
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";
@@ -27,11 +22,7 @@ describe("Actions with array", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <Actions
-          actions={actions}
-          maxVisibleActions={2}
-          actionsCallback={actionsCallbackMock}
-        />
+        <Actions actions={actions} maxVisibleActions={2} actionsCallback={actionsCallbackMock} />
       </HvProvider>
     );
   });

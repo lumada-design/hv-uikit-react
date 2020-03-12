@@ -149,11 +149,7 @@ describe("Multibutton - Enforce No Selection", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <MultiButton
-          buttons={conditionalButtonsDefinitions}
-          type="mixed"
-          multi
-        />
+        <MultiButton buttons={conditionalButtonsDefinitions} type="mixed" multi />
       </HvProvider>
     );
   });

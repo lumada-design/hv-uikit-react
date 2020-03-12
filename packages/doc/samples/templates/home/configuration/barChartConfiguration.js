@@ -1,11 +1,4 @@
-import {
-  quarter,
-  trace5,
-  trace4,
-  trace3,
-  trace2,
-  trace1
-} from "../data/barChartData";
+import { quarter, trace5, trace4, trace3, trace2, trace1 } from "../data/barChartData";
 
 const t1 = {
   x: quarter,

@@ -79,12 +79,7 @@ class List extends React.Component {
     const { list, labels, anySelectableSelected } = this.state;
     const { onChange } = this.props;
 
-    const parsedList = parseList(
-      list,
-      null,
-      this.props,
-      !anySelectableSelected
-    );
+    const parsedList = parseList(list, null, this.props, !anySelectableSelected);
     const parsedState = parseState(parsedList, labels);
 
     this.setState({ ...parsedState });
@@ -109,13 +104,7 @@ class List extends React.Component {
   };
 
   renderListItem = (item, i) => {
-    const {
-      classes,
-      multiSelect,
-      useSelector,
-      selectable,
-      condensed
-    } = this.props;
+    const { classes, multiSelect, useSelector, selectable, condensed } = this.props;
     const { internalId, selection, anySelected } = this.state;
 
     const itemId = `${internalId}-item-${i}`;
@@ -203,12 +192,7 @@ class List extends React.Component {
     const ItemText = hasTooltips ? withTooltip(Text, item.label) : Text;
 
     return !multiSelect && item.path ? (
-      <HvLink
-        key={item.label}
-        route={item.path}
-        params={item.params || {}}
-        useRouter={useRouter}
-      >
+      <HvLink key={item.label} route={item.path} params={item.params || {}} useRouter={useRouter}>
         <ItemText />
       </HvLink>
     ) : (
@@ -253,14 +237,7 @@ class List extends React.Component {
   };
 
   render() {
-    const {
-      classes,
-      multiSelect,
-      useSelector,
-      showSelectAll,
-      selectable,
-      listProps
-    } = this.props;
+    const { classes, multiSelect, useSelector, showSelectAll, selectable, listProps } = this.props;
     const { list, internalId } = this.state;
 
     return (
@@ -275,9 +252,7 @@ class List extends React.Component {
             aria-multiselectable={multiSelect || undefined}
             {...listProps}
           >
-            {list.map(
-              (item, i) => !item.isHidden && this.renderListItem(item, i)
-            )}
+            {list.map((item, i) => !item.isHidden && this.renderListItem(item, i))}
           </ul>
         )}
       </div>

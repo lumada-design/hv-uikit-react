@@ -9,10 +9,7 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
       paletteArray.forEach(defaultColor => {
         const themeColor = `"${categoryObject[themeColorName]}"`;
         if (themeColor === defaultColor.toUpperCase()) {
-          result = defaultPalette.replace(
-            `${defaultColor}`,
-            `theme.palette.${themeColorName}`
-          );
+          result = defaultPalette.replace(`${defaultColor}`, `theme.palette.${themeColorName}`);
         }
       });
     });

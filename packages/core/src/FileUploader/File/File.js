@@ -32,9 +32,7 @@ const getProgressText = (classes, data, progressConjunctionLabel) => {
       )}
 
       {!hasFailed && data.size && (
-        <HvTypography variant="sText">
-          {`\xa0${convertUnits(data.size)}`}
-        </HvTypography>
+        <HvTypography variant="sText">{`\xa0${convertUnits(data.size)}`}</HvTypography>
       )}
 
       {hasFailed && data.errorMessage && (
@@ -72,10 +70,7 @@ const File = ({
       {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
-        <span
-          className={classes.progressbar}
-          style={{ width: getProgressBarWith(data) }}
-        />
+        <span className={classes.progressbar} style={{ width: getProgressBarWith(data) }} />
       )}
 
       {statusIcon}

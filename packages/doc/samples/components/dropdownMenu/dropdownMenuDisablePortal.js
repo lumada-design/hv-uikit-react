@@ -9,10 +9,6 @@ const menuOptions = [
 
 export default (
   <div style={{ display: "flex", justifyContent: "center" }}>
-    <DropDownMenu
-      id="dpmDisablePortal"
-      dataList={menuOptions}
-      disablePortal
-    />
+    <DropDownMenu id="dpmDisablePortal" dataList={menuOptions} disablePortal />
   </div>
 );

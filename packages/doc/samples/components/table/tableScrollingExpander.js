@@ -159,11 +159,7 @@ class Wrapper extends React.Component {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          [
-            " ",
-            Number(cellData.row._original.allocateVsCapability),
-            "color:black"
-          ]
+          [" ", Number(cellData.row._original.allocateVsCapability), "color:black"]
         ];
         return (
           <div style={{ display: "flex" }}>
@@ -208,8 +204,7 @@ class Wrapper extends React.Component {
       accessor: "totalThroughput",
       minWidth: 130,
       cellType: "numeric",
-      Cell: cellData =>
-        `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
+      Cell: cellData => `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
     },
     {
       headerText: "Average service time",

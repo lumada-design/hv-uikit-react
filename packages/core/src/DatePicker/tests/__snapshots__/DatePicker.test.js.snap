@@ -5037,8 +5037,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
         >
           <WithStyles(ForwardRef)
             className="HvDatePicker-label-2639"
-            component={null}
-            paragraph={false}
             variant="labelText"
           >
             <ForwardRef
@@ -5071,8 +5069,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle-2668",
                 }
               }
-              component={null}
-              paragraph={false}
               variant="labelText"
             >
               <p
