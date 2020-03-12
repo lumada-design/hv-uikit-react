@@ -18,9 +18,11 @@ const styles = theme => ({
   header: {
     backgroundColor: theme.hv.palette.accent.acce0,
     ...theme.hv.typography.normalText,
+    color: theme.hv.palette.base.base2,
     borderBottomColor: theme.hv.palette.atmosphere.atmo5,
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
+    boxShadow: "0 2px 12px rgba(65,65,65,0.12)",
     fontSize: 14,
     display: "flex",
     justifyContent: "space-between",
