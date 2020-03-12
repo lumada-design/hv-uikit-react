@@ -770,7 +770,6 @@ exports[`ModalActions Component allows external props to be added 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -1554,7 +1553,6 @@ exports[`ModalActions Component allows external styles to be added 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -2343,7 +2341,6 @@ exports[`ModalActions Component should render correctly if opened 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -3126,7 +3123,6 @@ exports[`ModalActions withStyles should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

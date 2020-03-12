@@ -3,7 +3,6 @@
 exports[`<List /> Multi selection should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -841,7 +840,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
       selectable={true}
       showSelectAll={true}
       singleSelectionToggle={true}
-      useRouter={false}
       useSelector={false}
       values={
         Array [
@@ -941,7 +939,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
         selectable={true}
         showSelectAll={true}
         singleSelectionToggle={true}
-        useRouter={false}
         useSelector={false}
         values={
           Array [
@@ -1607,7 +1604,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
 exports[`<List /> Multi selection with selectors should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -2505,7 +2501,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
       selectable={true}
       showSelectAll={true}
       singleSelectionToggle={true}
-      useRouter={false}
       useSelector={true}
       values={
         Array [
@@ -2665,7 +2660,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
         selectable={true}
         showSelectAll={true}
         singleSelectionToggle={true}
-        useRouter={false}
         useSelector={true}
         values={
           Array [
@@ -6201,7 +6195,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
 exports[`<List /> Single selection should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -6992,7 +6985,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
       selectable={true}
       showSelectAll={false}
       singleSelectionToggle={false}
-      useRouter={false}
       useSelector={false}
       values={
         Array [
@@ -7043,7 +7035,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
         selectable={true}
         showSelectAll={false}
         singleSelectionToggle={false}
-        useRouter={false}
         useSelector={false}
         values={
           Array [
@@ -7686,7 +7677,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
 exports[`<List /> Single selection with icons should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -8477,7 +8467,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
       selectable={true}
       showSelectAll={false}
       singleSelectionToggle={true}
-      useRouter={false}
       useSelector={false}
       values={
         Array [
@@ -8530,7 +8519,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
         selectable={true}
         showSelectAll={false}
         singleSelectionToggle={true}
-        useRouter={false}
         useSelector={false}
         values={
           Array [
@@ -9439,7 +9427,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
 exports[`<List /> Single selection with selectors should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -10230,7 +10217,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
       selectable={true}
       showSelectAll={false}
       singleSelectionToggle={true}
-      useRouter={false}
       useSelector={true}
       values={
         Array [
@@ -10281,7 +10267,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         selectable={true}
         showSelectAll={false}
         singleSelectionToggle={true}
-        useRouter={false}
         useSelector={true}
         values={
           Array [

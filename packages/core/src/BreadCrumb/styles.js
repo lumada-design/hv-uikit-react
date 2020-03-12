@@ -15,6 +15,7 @@ const styles = theme => ({
     overflow: "hidden",
     textOverflow: "ellipsis",
     "&:hover": {
+      cursor: "pointer",
       textDecoration: "none",
       color: theme.hv.palette.accent.acce2h
     }

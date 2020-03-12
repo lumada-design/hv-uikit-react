@@ -3,7 +3,6 @@
 exports[`Switch input area hover input can be hovered in 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1214,7 +1213,6 @@ exports[`Switch input area hover input can be hovered in 1`] = `
 exports[`Switch input area hover input can be hovered out 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -2425,7 +2423,6 @@ exports[`Switch input area hover input can be hovered out 1`] = `
 exports[`Switch label click label can be clicked 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -3636,7 +3633,6 @@ exports[`Switch label click label can be clicked 1`] = `
 exports[`Switch with Custom Configurations should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -4847,7 +4843,6 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
 exports[`Switch with no label display but with custom label configuration should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -6058,7 +6053,6 @@ exports[`Switch with no label display but with custom label configuration should
 exports[`Switch withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

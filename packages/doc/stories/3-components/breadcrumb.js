@@ -30,6 +30,12 @@ storiesOf("Components", module).add("BreadCrumb", () => <HvBreadcrumb />, {
       title:
         "5. Passing url 'https://hitachivantara.sharepoint.com/sites/DesignSystem/Pattern%20Library/Home.aspx' with 2 paths visible",
       src: "components/breadcrumb/breadcrumb5"
+    },
+    {
+      title: "6. All paths visible",
+      description:
+        "Passing an onClick function that will render divs for links.",
+      src: "components/breadcrumb/breadcrumb6"
     }
   ]
 });

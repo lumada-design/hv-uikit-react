@@ -3,7 +3,6 @@
 exports[`<TreeView /> navigation tree should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -2195,7 +2194,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
 exports[`<TreeView /> treeview should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

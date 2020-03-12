@@ -3,7 +3,6 @@
 exports[`DropDownMenu component with portal closes on double click 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -1013,7 +1012,6 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
 exports[`DropDownMenu component with portal is rendered correctly and behaves as expected 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -2023,7 +2021,6 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
 exports[`DropDownMenu component with portal opens on click 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -3338,7 +3335,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             selectable={false}
                             showSelectAll={false}
                             singleSelectionToggle={true}
-                            useRouter={false}
                             useSelector={false}
                             values={
                               Array [
@@ -3389,7 +3385,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               selectable={false}
                               showSelectAll={false}
                               singleSelectionToggle={true}
-                              useRouter={false}
                               useSelector={false}
                               values={
                                 Array [
@@ -4036,7 +4031,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
 exports[`DropDownMenu component without portal closes on double click 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -5048,7 +5042,6 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
 exports[`DropDownMenu component without portal is rendered correctly and behaves as expected 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -6060,7 +6053,6 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
 exports[`DropDownMenu component without portal opens on click 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -7212,7 +7204,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                             selectable={false}
                             showSelectAll={false}
                             singleSelectionToggle={true}
-                            useRouter={false}
                             useSelector={false}
                             values={
                               Array [
@@ -7263,7 +7254,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               selectable={false}
                               showSelectAll={false}
                               singleSelectionToggle={true}
-                              useRouter={false}
                               useSelector={false}
                               values={
                                 Array [

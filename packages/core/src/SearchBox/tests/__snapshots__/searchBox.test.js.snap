@@ -770,7 +770,6 @@ exports[`<SearchBox /> renders correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >
@@ -1569,7 +1568,6 @@ exports[`<SearchBox /> renders disabled correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

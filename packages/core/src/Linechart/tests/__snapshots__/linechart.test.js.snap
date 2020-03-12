@@ -770,7 +770,6 @@ exports[`Linechart withStyles should render correctly 1`] = `
     value={
       Object {
         "changeTheme": [Function],
-        "router": null,
       }
     }
   >

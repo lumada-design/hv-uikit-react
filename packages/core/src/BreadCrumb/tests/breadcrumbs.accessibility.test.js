@@ -54,7 +54,7 @@ describe("BreadcrumbsA11Y", () => {
   it("all paths visible", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Breadcrumb listRoute={data} useRouter={false} id="breadcrumb1" />
+        <Breadcrumb listRoute={data} id="breadcrumb1" />
       </HvProvider>
     );
 
@@ -65,7 +65,7 @@ describe("BreadcrumbsA11Y", () => {
   it("5 paths visible of 7", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Breadcrumb listRoute={data} useRouter={false} maxVisible={5} id="breadcrumb1" />
+        <Breadcrumb listRoute={data} maxVisible={5} id="breadcrumb1" />
       </HvProvider>
     );
 
@@ -76,7 +76,24 @@ describe("BreadcrumbsA11Y", () => {
   it("2 paths visible of 8", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Breadcrumb listRoute={data} useRouter={false} maxVisible={2} id="breadcrumb1" />
+        <Breadcrumb listRoute={data} maxVisible={2} id="breadcrumb1" />
+      </HvProvider>
+    );
+
+    const results = await axe(wrapper.html());
+    expect(results).toHaveNoViolations();
+  });
+
+  it("all paths visible with div", async () => {
+    const wrapper = mount(
+      <HvProvider>
+        <Breadcrumb
+          listRoute={data}
+          id="breadcrumb1"
+          onClick={(event, elem) => {
+            console.log(elem);
+          }}
+        />
       </HvProvider>
     );
 

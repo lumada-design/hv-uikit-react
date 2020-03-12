@@ -3,7 +3,6 @@
 exports[`Actions should be able to render 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >

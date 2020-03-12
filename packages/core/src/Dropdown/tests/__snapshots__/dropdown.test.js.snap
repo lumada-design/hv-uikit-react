@@ -3,7 +3,6 @@
 exports[`<Dropdown /> <Dropdown /> with multiselect and search should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -3619,7 +3618,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       selectable={true}
                                       showSelectAll={false}
                                       singleSelectionToggle={true}
-                                      useRouter={false}
                                       useSelector={true}
                                       values={
                                         Array [
@@ -3675,7 +3673,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         selectable={true}
                                         showSelectAll={false}
                                         singleSelectionToggle={true}
-                                        useRouter={false}
                                         useSelector={true}
                                         values={
                                           Array [
@@ -6760,7 +6757,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
 exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -8736,7 +8732,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       selectable={true}
                                       showSelectAll={false}
                                       singleSelectionToggle={true}
-                                      useRouter={false}
                                       useSelector={false}
                                       values={
                                         Array [
@@ -8792,7 +8787,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                         selectable={true}
                                         showSelectAll={false}
                                         singleSelectionToggle={true}
-                                        useRouter={false}
                                         useSelector={false}
                                         values={
                                           Array [
@@ -9444,7 +9438,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
 exports[`<Dropdown /> with defaults should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
-  router={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -11451,7 +11444,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                       selectable={true}
                                       showSelectAll={false}
                                       singleSelectionToggle={true}
-                                      useRouter={false}
                                       useSelector={false}
                                       values={
                                         Array [
@@ -11507,7 +11499,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                         selectable={true}
                                         showSelectAll={false}
                                         singleSelectionToggle={true}
-                                        useRouter={false}
                                         useSelector={false}
                                         values={
                                           Array [

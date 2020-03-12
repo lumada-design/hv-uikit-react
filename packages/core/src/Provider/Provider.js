@@ -34,8 +34,8 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
-const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
-  const pConfig = { router, changeTheme };
+const HvProvider = ({ children, theme, uiKitTheme, changeTheme }) => {
+  const pConfig = { changeTheme };
 
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
   window.hvTheme = customTheme;
@@ -60,16 +60,11 @@ HvProvider.propTypes = {
   /**
    * Which of design system default themes to use.
    */
-  changeTheme: PropTypes.func,
-  /**
-   * Configuration object for routing, exposes push and prefetch
-   */
-  router: PropTypes.instanceOf(Object)
+  changeTheme: PropTypes.func
 };
 
 HvProvider.defaultProps = {
   theme: null,
-  router: null,
   uiKitTheme: "dawn",
   changeTheme: () => {}
 };

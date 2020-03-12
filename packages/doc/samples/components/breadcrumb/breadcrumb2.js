@@ -35,7 +35,6 @@ const data = [
 export default (
   <HvBreadCrumb
     listRoute={data}
-    useRouter={false}
     maxVisible={5}
     id="breadcrumb2"
     aria-label="Breadcrumb"
