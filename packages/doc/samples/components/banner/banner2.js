@@ -17,12 +17,7 @@ const SimpleBanner = props => {
 
   return (
     <div>
-      <Button
-        onClick={handleClick}
-        variant="contained"
-        color="primary"
-        style={{ width: "150px" }}
-      >
+      <Button onClick={handleClick} variant="contained" color="primary" style={{ width: "150px" }}>
         Click me
       </Button>
       <HvBanner open={open} onClose={handleClose} {...props} />

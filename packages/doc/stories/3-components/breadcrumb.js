@@ -33,8 +33,7 @@ storiesOf("Components", module).add("BreadCrumb", () => <HvBreadcrumb />, {
     },
     {
       title: "6. All paths visible",
-      description:
-        "Passing an onClick function that will render divs for links.",
+      description: "Passing an onClick function that will render divs for links.",
       src: "components/breadcrumb/breadcrumb6"
     }
   ]

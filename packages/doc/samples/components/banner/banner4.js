@@ -17,12 +17,7 @@ const SimpleBanner = props => {
   const { labelButton, ...other } = props;
   return (
     <div>
-      <Button
-        onClick={handleClick}
-        variant="contained"
-        color="primary"
-        style={{ width: "150px" }}
-      >
+      <Button onClick={handleClick} variant="contained" color="primary" style={{ width: "150px" }}>
         {labelButton}
       </Button>
       <HvBanner open={open} onClose={handleClose} {...other} />
@@ -40,9 +35,7 @@ export default (
       { id: "action1", label: "Action 1", disabled: false },
       { id: "action2", label: "Action 2", disabled: false }
     ]}
-    actionsCallback={(id, action) =>
-      alert(`clicked ${id} with ${action.label}`)
-    }
+    actionsCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
     actionsPosition="bottom-right"
   />
 );
