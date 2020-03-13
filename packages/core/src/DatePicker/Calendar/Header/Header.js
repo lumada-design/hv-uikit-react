@@ -37,7 +37,7 @@ import classNames from "classnames";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
 
-const format = date => date.format("D MMM, YYYY");
+const format = date => date.format("D MMM YYYY");
 
 class Header extends React.Component {
   constructor(props) {
