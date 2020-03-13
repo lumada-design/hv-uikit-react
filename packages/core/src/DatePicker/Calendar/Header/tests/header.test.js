@@ -55,7 +55,7 @@ describe("<Header />", () => {
     HeaderInstance.checkInputData();
 
     expect(HeaderInstance.state.value.format("DD-MM-YYYY")).toBe("01-01-2020");
-    expect(HeaderInstance.state.showValue).toBe("1 Jan, 2020");
+    expect(HeaderInstance.state.showValue).toBe("1 Jan 2020");
     expect(HeaderInstance.state.weekDay).toBe("Wed");
   });
 
@@ -78,7 +78,7 @@ describe("<Header />", () => {
     HeaderInstance.checkInputData();
 
     expect(HeaderInstance.state.value.format("DD-MM-YYYY")).toBe("01-01-2020");
-    expect(HeaderInstance.state.showValue).toBe("1 Jan, 2020");
+    expect(HeaderInstance.state.showValue).toBe("1 Jan 2020");
     expect(HeaderInstance.state.weekDay).toBe("Qua");
   });
 

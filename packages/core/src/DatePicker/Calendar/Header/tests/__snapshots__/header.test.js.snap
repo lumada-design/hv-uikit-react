@@ -14375,7 +14375,7 @@ body {
               onFocus={[Function]}
               onKeyDown={[Function]}
               placeholder="MM/DD/YYYY"
-              value="1 Jan, 2020"
+              value="1 Jan 2020"
             />
           </div>
         </div>
