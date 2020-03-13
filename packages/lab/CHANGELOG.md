@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.0...@hv/uikit-react-lab@1.19.1) (2020-03-13)
+
+
+### Bug Fixes
+
+* **slider:** set correct dependency. [#1230](https://github.com/pentaho/hv-uikit-react/issues/1230) ([f2ab2ce](https://github.com/pentaho/hv-uikit-react/commit/f2ab2ce0e92e1cc5d1ef612a2f47b0911194d407))
+
+
+
+
+
 # [1.19.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.1...@hv/uikit-react-lab@1.19.0) (2020-03-07)
 
 
