@@ -14,7 +14,6 @@ theses list did not compatible with list selenium keywords
 
 *** Test Cases ***
 close dropdown and save selection when select an item on simple dropdown
-    [Tags]    TTT
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown7
     Wait Until Element Is Enabled        ${dropdown}      10s
     Element Text Should Be               ${dropdown} p    Select...

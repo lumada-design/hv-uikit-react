@@ -7,7 +7,7 @@ export const outlineStyles = {
   outlineOffset: -2
 };
 
-const styles = () => ({
+const styles = {
   root: {},
   selected: {},
   disabled: {},
@@ -47,6 +47,6 @@ const styles = () => ({
     backgroundColor: "transparent",
     pointerEvents: "none"
   }
-});
+};
 
 export default styles;

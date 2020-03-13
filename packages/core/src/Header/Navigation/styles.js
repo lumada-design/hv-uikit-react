@@ -1,4 +1,4 @@
-const styles = () => ({
+const styles = {
   root: {
     position: "absolute",
     width: "100%",
@@ -6,6 +6,6 @@ const styles = () => ({
     top: "0px",
     left: "0px"
   }
-});
+};
 
 export default styles;

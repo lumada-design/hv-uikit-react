@@ -4,7 +4,7 @@ import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import * as genericIconComponentList from "@hv/uikit-react-icons/dist";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-const styles = () => ({
+const styles = {
   groupContainer: {
     paddingBottom: "30px"
   },
@@ -23,7 +23,7 @@ const styles = () => ({
     flexDirection: "column",
     alignItems: "center"
   }
-});
+};
 
 const dropdownSizes = [
   { id: "0", label: "XS" },

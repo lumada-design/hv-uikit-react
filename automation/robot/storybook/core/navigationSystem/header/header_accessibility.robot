@@ -15,7 +15,7 @@ ${pa11yScript}    pa11y
 
 *** Test Cases ***
 header with 2 levels against WCAG2AA standard
-    [Tags]    error
+    [Tags]    issue
     [Documentation]    = error =
     ...                - actions buttons should have text/title
     ...                - ul error it is problem on axe runner not on accessibility

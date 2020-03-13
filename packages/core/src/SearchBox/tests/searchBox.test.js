@@ -15,10 +15,7 @@ describe("<SearchBox />", () => {
         <SearchBox onChange={onChangeMock} />
       </HvProvider>
     );
-    const props = wrapper
-      .children()
-      .childAt(1)
-      .props();
+    const props = wrapper.find(SearchBox).props();
     expect(props.value).toEqual(undefined);
     expect(props.onChange).toBe(onChangeMock);
   });
@@ -48,8 +45,7 @@ describe("<SearchBox />", () => {
       </HvProvider>
     );
     wrapper
-      .children()
-      .childAt(1)
+      .find(SearchBox)
       .children()
       .children()
       .props()
@@ -64,10 +60,7 @@ describe("<SearchBox />", () => {
         <SearchBox onChange={onChangeMock} value={testSearchInput} />
       </HvProvider>
     );
-    const props = wrapper
-      .children()
-      .childAt(1)
-      .props();
+    const props = wrapper.find(SearchBox).props();
     expect(props.value).toEqual(testSearchInput);
   });
 });

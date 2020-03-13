@@ -1,13 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import set from "lodash/set";
 import merge from "lodash/merge";
 import isEmpty from "lodash/isEmpty";
 import cloneDeep from "lodash/cloneDeep";
 import diff from "deep-diff";
-import { CssBaseline, ThemeProvider, createMuiTheme } from "@material-ui/core";
+
+import {
+  ThemeProvider as MuiThemeProvider,
+  StylesProvider as MuiStylesProvider,
+  createMuiTheme
+} from "@material-ui/core";
+
+import { themeBuilder, generateClassName, CssBaseline } from "../theme";
+
 import { ConfigProvider } from "../config/context";
-import { themeBuilder } from "../theme";
 
 /**
  * Augments the target theme with the differences found in the source theme.
@@ -38,12 +46,16 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme }) => {
   const pConfig = { changeTheme };
 
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
+
   window.hvTheme = customTheme;
+
   return (
-    <ThemeProvider theme={customTheme}>
-      <CssBaseline />
-      <ConfigProvider value={pConfig}>{children}</ConfigProvider>
-    </ThemeProvider>
+    <MuiStylesProvider injectFirst generateClassName={generateClassName}>
+      <MuiThemeProvider theme={customTheme}>
+        <CssBaseline />
+        <ConfigProvider value={pConfig}>{children}</ConfigProvider>
+      </MuiThemeProvider>
+    </MuiStylesProvider>
   );
 };
 
