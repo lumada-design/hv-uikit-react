@@ -17,7 +17,7 @@ declare module '@hv/uikit-react-core/dist/Typography' {
      * Either a string to use a DOM element or a component.
      * By default, it maps the variant to a good default headline component.
      */
-    component?: React.ReactElement
+    component?: string | React.ComponentType<any>
 
     /**
      * If `true`, the text will have a bottom margin.
