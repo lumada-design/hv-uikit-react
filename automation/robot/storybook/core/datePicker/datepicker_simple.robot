@@ -101,7 +101,7 @@ Change month using the month screen
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Click element                        ${navigationMonth}
-    Click element                        //p[contains(.'Mar')]
+    Click element                        //p[contains(.,'Mar')]
     Wait Until Element Is Visible        ${day9}                     2s
     Click Element                        ${day9}
     Click Element                        DatePicker
