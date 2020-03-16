@@ -70,8 +70,8 @@ DOM contains aria-expanded=boolean when a row is expanded and shrink
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coretable--tableexpander
     Wait Until Page Contains             This is a Title             10s
     Page Should Not Contain Element      css:[aria-expanded=true]
-    Click Element                        ${row_1}
+    Click Element                        ${expander_button}
     Element Attribute Value Should Be    ${row_1}                    aria-expanded    true
-    Click Element                        ${cell_1_1}
+    Click Element                        ${expander_button}
     Element Attribute Value Should Be    ${row_1}                    aria-expanded    ${None}
           
