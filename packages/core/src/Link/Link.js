@@ -4,16 +4,7 @@ import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const HvLink = props => {
-  const {
-    classes,
-    children,
-    route,
-    Component,
-    onClick,
-    data,
-    tabIndex,
-    ...other
-  } = props;
+  const { classes, children, route, Component, onClick, data, tabIndex, ...other } = props;
 
   return onClick ? (
     <Component

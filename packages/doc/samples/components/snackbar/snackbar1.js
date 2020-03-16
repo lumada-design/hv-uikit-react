@@ -25,13 +25,7 @@ const SimpleSnackbar = props => {
       >
         {variant}
       </Button>
-      <HvSnackbar
-        open={open}
-        onClose={handleClose}
-        offset={60}
-        variant={variant}
-        {...other}
-      />
+      <HvSnackbar open={open} onClose={handleClose} offset={60} variant={variant} {...other} />
     </div>
   );
 };

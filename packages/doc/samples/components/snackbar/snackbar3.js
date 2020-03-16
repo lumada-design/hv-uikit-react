@@ -16,12 +16,7 @@ const SimpleSnackbar = props => {
 
   return (
     <div>
-      <Button
-        onClick={handleClick}
-        variant="contained"
-        color="primary"
-        style={{ width: "150px" }}
-      >
+      <Button onClick={handleClick} variant="contained" color="primary" style={{ width: "150px" }}>
         Click me
       </Button>
       <HvSnackbar open={open} onClose={handleClose} offset={60} {...props} />
@@ -29,6 +24,4 @@ const SimpleSnackbar = props => {
   );
 };
 
-export default (
-  <SimpleSnackbar label="This is a snackbar without icon" variant="default" />
-);
+export default <SimpleSnackbar label="This is a snackbar without icon" variant="default" />;
