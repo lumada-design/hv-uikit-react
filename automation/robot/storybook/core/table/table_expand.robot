@@ -11,38 +11,38 @@ Force Tags        smoke
 
 
 *** Test Cases ***
-expand line when any part of line is clicked
+expand line when expander button is clicked
     Page Should Not Contain              Company
-    Click Element                        ${row_1}
+    Click Element                        ${expander_button}
     Wait Until Page Contains             Company     3s
     
-shrink expanded line when any part of expended line is clicked 
-    Click Element                        ${row_1}
+shrink expanded line when expander button is clicked 
+    Click Element                        ${expander_button}
     Wait Until Page Contains             Company                     3s
-    Click Element                        ${cell_1_1}
+    Click Element                        ${expander_button}
     Wait Until Page Does Not Contain     Company                     3s
 
 shrink expanded line when any column is sorted
-    Click Element                       ${row_1}
+    Click Element                       ${expander_button}
     Wait Until Page Contains            Company            3s
     Click Element                       ${column1_header}
     Wait Until Page Does Not Contain    Company            3s
     
 shrink expanded line when it is changed the navigation page
     Select From List By Value           ${page_size}    5    
-    Click Element                       ${row_1}
+    Click Element                       ${expander_button}
     Wait Until Page Contains            Company         3s
     Click Element                       ${next_page}
     Wait Until Page Does Not Contain    Company         3s
 
 shrink expanded line when it is changed the number of rows per page
-    Click Element                       ${row_1}
+    Click Element                       ${expander_button}
     Wait Until Page Contains            Company         3s
     Select From List By Value           ${page_size}    5
     Wait Until Page Does Not Contain    Company         3s
 
 do not shrink data when any part of expanded area is clicked
-    Click Element               ${row_1}
+    Click Element               ${expander_button}
     Wait Until Page Contains    Company                         3s
     Click Element               xpath://th[text()='Company']
     Page Should Contain         Company
