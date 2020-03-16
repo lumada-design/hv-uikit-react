@@ -341,7 +341,7 @@ export const getFormattedDate = (date, locale) =>
     date.getUTCMonth(),
     locale,
     REPRESENTATION_VALUES.SHORT
-  )}, ${date.getUTCFullYear()}`;
+  )} ${date.getUTCFullYear()}`;
 /**
  * Creates an array of 42 days. The complete current month and enough days from the previous and next months to fill
  * the 42 positions.

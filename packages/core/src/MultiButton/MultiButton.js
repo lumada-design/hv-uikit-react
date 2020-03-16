@@ -100,7 +100,7 @@ class MultiButton extends React.Component {
   }
 
   render() {
-    const { className, classes, vertical, type, buttons } = this.props;
+    const { className, classes, vertical, type, buttons, ...other } = this.props;
 
     /**
      * Generate button content elements to render the component itself
@@ -139,6 +139,7 @@ class MultiButton extends React.Component {
           key={`btnkey_${idx + 1}`}
           id={button.id}
           onClick={e => this.handleClick(e, idx)}
+          aria-pressed={checkedItems.indexOf(button.id) !== -1}
           className={classNames(
             classes.btnBase,
             classes.btnSecondary,
@@ -150,6 +151,7 @@ class MultiButton extends React.Component {
             className
           )}
           category={button.selected ? "secondary" : "ghost"}
+          {...button.buttonProps}
         >
           {generateBtnContents(type, button)}
         </HvButton>
@@ -161,6 +163,7 @@ class MultiButton extends React.Component {
         className={classNames(classes.root, {
           [classes.rootVertical]: vertical
         })}
+        {...other}
       >
         {buttonList}
       </div>
@@ -204,25 +207,29 @@ MultiButton.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       /**
-       * he button id
+       * the button id.
        */
       id: PropTypes.string.isRequired,
       /**
-       * the button label
+       * the button label.
        */
       value: PropTypes.string,
       /**
-       * icon in button
+       * icon in button.
        */
       icon: PropTypes.node,
       /**
-       * If the button is selected
+       * If the button is selected.
        */
       selected: PropTypes.bool,
       /**
-       * Specify if item can be toggled or not
+       * Specify if item can be toggled or not.
        */
-      enforced: PropTypes.bool
+      enforced: PropTypes.bool,
+      /**
+       * Values to be passed onto the button.
+       */
+      buttonProps: PropTypes.object
     })
   ).isRequired,
   /**

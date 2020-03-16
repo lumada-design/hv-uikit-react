@@ -1,0 +1,7 @@
+name: storybook-launcher
+description: Starts and stops the storybook container
+runs:
+  using: node12
+  main: lib/start/index.js
+  post: lib/stop/index.js
+  post-if: always()

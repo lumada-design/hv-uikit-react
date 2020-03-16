@@ -21,19 +21,16 @@ import uniqueId from "lodash/uniqueId";
 import classNames from "classnames";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
-import checkboxHOC from "react-table/lib/hoc/selectTable";
 
 import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
-import SortAsc from "@hv/uikit-react-icons/dist/Generic/SortAscendingXS";
-import SortDesc from "@hv/uikit-react-icons/dist/Generic/SortDescendingXS";
-import Sort from "@hv/uikit-react-icons/dist/Generic/SortXS";
 import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
+import checkboxHOC from "./selectTable";
 import {
   appendClassnames,
   createExpanderButton,
@@ -154,36 +151,6 @@ class Table extends React.Component {
   };
 
   /**
-   *
-   * Returns the corresponding icon for the type of sorting (ascending or descending).
-   *
-   * @param id - the used to find the column.
-   * @returns {*} - 'false' if the column doesn't exist.
-   */
-  getSortedComponent = id => {
-    const { sorted } = this.state;
-    const { columns, sortable } = this.props;
-
-    const sortInfo = sorted.filter(item => item.id === id);
-
-    if (sortInfo.length) {
-      return sortInfo[0].desc === true ? <SortDesc /> : <SortAsc />;
-    }
-
-    const columnDef = columns.filter(
-      item => item.id === id || item.accessor === id
-    );
-    if (
-      (columnDef.length && _.isNil(columnDef[0].sortable) && sortable) ||
-      columnDef[0].sortable
-    ) {
-      return <Sort />;
-    }
-
-    return false;
-  };
-
-  /**
    * Pagination customizations.
    *
    * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
@@ -217,10 +184,8 @@ class Table extends React.Component {
         }
       }),
       ...(showPagination && pages && { pages }),
-
       ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
         (pageSize && { defaultPageSize: pageSize })),
-
       ...{ showPageSizeOptions: showPageSize }
     };
   };
@@ -245,11 +210,8 @@ class Table extends React.Component {
    * Add the class "sorted" to the selected column.
    *
    * @param sortedColumn - the column representation from the user.
-   * @param col - column representation from react tables that is going to be modified.
    */
-  onSortChange = (sortedColumn, col) => {
-    const column = col;
-    column.className = "sorted";
+  onSortChange = sortedColumn => {
     this.setState({ sorted: sortedColumn, expanded: {} });
   };
 
@@ -270,21 +232,17 @@ class Table extends React.Component {
 
   getCheckboxProps = () => {
     const { classes } = this.props;
-    const { selection, internalId } = this.state;
+    const { internalId } = this.state;
 
     return {
       selectWidth: 32,
       SelectAllInputComponent: () => (
         <div className={classNames(classes.checkBox)} />
       ),
-      SelectInputComponent: props => (
-        <HvCheckBox
-          id={`${internalId}-select-${props.id}`}
-          checked={isSelected(props.id, selection)}
-          onChange={() => this.toggleSelection(props.id)}
-          onClick={event => event.stopPropagation()}
-        />
-      )
+      toggleSelection: (id, shiftkey, row) => {
+        this.toggleSelection(row.id);
+      },
+      internalId
     };
   };
 
@@ -329,10 +287,24 @@ class Table extends React.Component {
       isSortable = null;
     }
 
+    let ariaSort;
+
+    if (sorted.length > 0) {
+      if (column.id === sorted[0].id) {
+        const sortDirection =
+          sorted[0].desc === true ? "descending" : "ascending";
+        ariaSort = {
+          "aria-sort": sortDirection
+        };
+      } else ariaSort = { "aria-sort": undefined };
+    }
+
     appendClassnames(column, sorted, classes, sortable);
 
     return {
       id: column.id ? `${internalId}-column-${column.id}` : undefined,
+      scope: "col",
+      ...ariaSort,
       className:
         column.id !== "secondaryActions"
           ? setHeaderSortableClass(isSortable, classes.theadTh)
@@ -347,12 +319,40 @@ class Table extends React.Component {
    */
   getTBodyProps = () => {
     const { classes, data } = this.props;
-
     return {
+      role: "rowgroup",
       className: classNames(classes.tbody, {
         [classes.tBodyEmpty]: data.length === 0
       })
     };
+  };
+
+  /**
+   * A getter for the row provided by the React table
+   * used to correct the role definition for the row element.
+   *
+   * @returns {Object} - The object that contains the correct role to be applied to the table rows.
+   */
+  getTrGroupProps = () => {
+    const { classes } = this.props;
+    const baseTrGroupProps = {
+      role: undefined,
+      className: classes.trGroups
+    };
+
+    return baseTrGroupProps;
+  };
+
+  /**
+   * Open and closes the expander of a row.
+   *
+   * @param {numeric} rowIndex - The index of the row to toggle.
+   */
+  toggleExpand = rowIndex => {
+    const { expanded } = this.state;
+    this.setState({
+      expanded: { [rowIndex]: !expanded[rowIndex] }
+    });
   };
 
   /**
@@ -365,21 +365,29 @@ class Table extends React.Component {
    */
   getTrProps = (state, rowInfo) => {
     const { classes, subElementTemplate } = this.props;
-    const { expanded, selection } = this.state;
+    const { selection, expanded } = this.state;
+
+    const expandedProps =
+      rowInfo !== undefined &&
+      expanded[0] &&
+      Object.keys(expanded).toString() === rowInfo.nestingPath.toString()
+        ? { "aria-expanded": true }
+        : undefined;
+
+    const ariaRowIndex =
+      rowInfo !== undefined ? { "aria-rowindex": rowInfo.index } : undefined;
 
     const baseTrProps = {
       id: this.computeRowElementId(rowInfo),
-      className: classes.tr
+      className: classes.tr,
+      role: "row",
+      "aria-selected": "false",
+      ...expandedProps,
+      ...ariaRowIndex
     };
-
     if (subElementTemplate && rowInfo && rowInfo.row) {
       return {
         ...baseTrProps,
-        onClick: () => {
-          this.setState({
-            expanded: { [rowInfo.viewIndex]: !expanded[rowInfo.viewIndex] }
-          });
-        },
         className: classNames(classes.tr, classes.pointer)
       };
     }
@@ -389,11 +397,31 @@ class Table extends React.Component {
     if (rowId && selection.includes(rowId)) {
       return {
         ...baseTrProps,
-        className: classNames(classes.tr, "selected")
+        className: classNames(classes.tr, "selected"),
+        "aria-selected": "true"
       };
     }
 
     return baseTrProps;
+  };
+
+  getTableProps = () => {
+    const { classes, tableProps, rowCount } = this.props;
+
+    const baseTableProps = {
+      role: "table",
+      className: classes.table
+    };
+
+    if (tableProps) {
+      return {
+        ...baseTableProps,
+        caption: tableProps.tableCaption,
+        "aria-rowcount": rowCount
+      };
+    }
+
+    return baseTableProps;
   };
 
   getTdProps = (state, rowInfo, column) => {
@@ -406,7 +434,8 @@ class Table extends React.Component {
         rowElementId && column.id
           ? `${rowElementId}-column-${column.id}`
           : undefined,
-      className: classes.td
+      className: classes.td,
+      role: "cell"
     };
   };
 
@@ -493,9 +522,11 @@ class Table extends React.Component {
       idForCheckbox,
       useRouter,
       getTrProps,
+      getTableProps,
       labels,
       secondaryActions,
       sortable,
+      rowCount,
       ...other
     } = this.props;
 
@@ -534,6 +565,7 @@ class Table extends React.Component {
                 event.stopPropagation();
                 item.action(props.original);
               }}
+              aria-label={`${this.computeRowElementId(props)}-secondaryActions`}
             />
           )
       });
@@ -553,6 +585,7 @@ class Table extends React.Component {
             column={column}
             sort={sorted}
             tableSortable={sortable}
+            onSortChange={this.onSortChange}
           />
         );
       }
@@ -566,7 +599,8 @@ class Table extends React.Component {
     const newColumn = createExpanderButton(
       columns,
       subElementTemplate,
-      classes
+      classes,
+      this.toggleExpand
     );
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
@@ -601,6 +635,7 @@ class Table extends React.Component {
             <div className={classes.checkBoxText}>
               <HvCheckBox
                 id={`${internalId}-select-all`}
+                aria-label="blah"
                 onChange={() => this.toggleAll()}
                 checked={selectAll}
                 disabled={data.length === 0}
@@ -622,6 +657,7 @@ class Table extends React.Component {
           {...this.getCheckboxProps()}
           /* eslint no-return-assign: 0 */
           ref={r => (this.checkboxTable = r)}
+          getTableProps={this.getTableProps}
           getTheadThProps={this.getTheadThProps}
           getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
           getTdProps={this.getTdProps}
@@ -635,6 +671,7 @@ class Table extends React.Component {
           keyField={idForCheckbox}
           isSelected={key => isSelected(key, selection)}
           NoDataComponent={NoData}
+          getTrGroupProps={this.getTrGroupProps}
         />
       </div>
     );
@@ -825,7 +862,14 @@ Table.propTypes = {
       label: PropTypes.string,
       action: PropTypes.func
     })
-  )
+  ),
+
+  getTableProps: PropTypes.func,
+  tableProps: PropTypes.shape({}),
+  /**
+   * Number of rows available in table to display in aria-rowcount
+   */
+  rowCount: PropTypes.number
 };
 
 Table.defaultProps = {
@@ -855,7 +899,10 @@ Table.defaultProps = {
   useRouter: false,
   selections: undefined,
   onSelection: () => {},
-  secondaryActions: null
+  secondaryActions: null,
+  getTableProps: undefined,
+  tableProps: { tableCaption: "Table Caption" },
+  rowCount: undefined
 };
 
 export default Table;

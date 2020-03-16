@@ -13,7 +13,8 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
-    "automation": "start-storybook -p 9002 --quiet"
+    "automation:run": "start-storybook -p 9002 --quiet",
+    "automation:package": "build-storybook -c .storybook -o dist --quiet"
   },
   "dependencies": {
     "@hv/uikit-react-core": "^1.26.0",

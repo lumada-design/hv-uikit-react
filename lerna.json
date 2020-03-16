@@ -3,8 +3,7 @@
   "version": "independent",
   "command": {
     "publish": {
-      "npmClient": "npm",
-      "registry": "https://nexus.pentaho.org/repository/public-npm-release/"
+      "npmClient": "npm"
     },
     "version": {
       "allowBranch": ["master", "alpha"],

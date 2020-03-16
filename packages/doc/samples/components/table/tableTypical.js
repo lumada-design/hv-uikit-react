@@ -55,7 +55,7 @@ class Wrapper extends React.Component {
     super(props);
     this.state = {
       pageSize: 10,
-      sorted: [{ id: "createdDate", desc: true }],
+      sorted: [{ id: "createdDate", desc: true }]
     };
   }
 
@@ -91,8 +91,7 @@ class Wrapper extends React.Component {
         return (
           <div style={{ display: "flex" }}>
             <div style={{ alignSelf: "center" }}>
-              {cellData.row._original.salesGrowth}
-  €
+              {cellData.row._original.salesGrowth}€
             </div>
             <div style={{ alignSelf: "center" }}>
               <Chart
@@ -129,14 +128,14 @@ class Wrapper extends React.Component {
   };
 
   render() {
-    const {sorted, pageSize} = this.state;
+    const { sorted, pageSize } = this.state;
 
     const labels = {
       titleText: "Sales overview",
       subtitleText: "Click on a row to see store details"
-    }
+    };
 
-    return(
+    return (
       <HvTable
         data={data}
         columns={this.getColumns()}
@@ -147,12 +146,10 @@ class Wrapper extends React.Component {
         defaultSorted={sorted}
         labels={labels}
         idForCheckbox="id"
+        rowCount={data.length}
       />
-    )
+    );
   }
-
 }
 
-export default (
-  <Wrapper/>
-);
+export default <Wrapper />;

@@ -1,0 +1,81 @@
+name: Continuous Integration
+on: [push, pull_request]
+
+env:
+  RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
+
+jobs:
+  Build:
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          npm config set registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Generate Storybook
+        run: npm run automation:package
+
+      - name: Archive Storybook
+        uses: actions/upload-artifact@v1
+        with:
+          name: storybook
+          path: automation/storybook/dist
+
+  Robot:
+    if: github.event_name == 'pull_request' && github.base_ref == 'master'
+    needs: Build
+    runs-on: [self-hosted, Windows]
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [firefox, ie, chrome]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: storybook
+          path: .github/storybook/www
+
+      - name: Run Storybook
+        uses: ./.github/storybook
+
+      - name: Run Robot
+        shell: cmd
+        run: >-
+          robot 
+          --variable STORYBOOK_URL:http://localhost:9002 
+          --variable BROWSER:${{ matrix.browser }} 
+          --exclude pa11y 
+          --exclude issueORissue-${{ matrix.browser }}ORimage 
+          --exclude bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins
+          --report reports/report.html
+          --log reports/log.html 
+          automation\robot\storybook\core
+
+      - name: Save Reports
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: ${{ matrix.browser }}-reports
+          path: reports

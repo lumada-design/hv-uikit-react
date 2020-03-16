@@ -12,23 +12,23 @@ Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 *** Test Cases ***
 focus next option when pressing DOWN on option
     [Tags]    bug-ie-webdriver
-    Go To                                     ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible             ${list}       10s
-    set focus and press keys                  ${option1}    DOWN
-    element attribute value should contain    ${option2}    class    focused
-    Press Keys                                ${None}       DOWN
-    element attribute value should contain    ${option3}    class    focused
-    wait until element attribute value does not contain    ${option2}    class    focused    1s
+    Go To                                       ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Wait Until Element Is Visible               ${list}       10s
+    set focus and press keys                    ${option1}    DOWN
+    element attribute value should contain      ${option2}    class    focused
+    Press Keys                                  ${None}       DOWN
+    element attribute value should contain      ${option3}    class    focused
+    wait until element attribute not contain    ${option2}    class    focused
 
 focus the previous option when pressing UP on option
     [Tags]    bug-ie-webdriver    
-    Go To                                     ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible             ${list}       10s
-    set focus and press keys                  ${option5}    UP
-    element attribute value should contain    ${option4}    class    focused
-    Press Keys                                ${None}       UP
-    element attribute value should contain    ${option3}    class    focused
-    wait until element attribute value does not contain    ${option4}    class    focused    1s
+    Go To                                       ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Wait Until Element Is Visible               ${list}       10s
+    set focus and press keys                    ${option5}    UP
+    element attribute value should contain      ${option4}    class    focused
+    Press Keys                                  ${None}       UP
+    element attribute value should contain      ${option3}    class    focused
+    wait until element attribute not contain    ${option4}    class    focused
 
 focus the first option when pressing DOWN on last option
     Go To                                     ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
@@ -44,11 +44,11 @@ focus the last option when pressing UP on first option
 
 exit focus from list when pressing TAB on option
     [Tags]    bug-ie-webdriver    
-    Go To                                     ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
-    Wait Until Element Is Visible             ${list}       10s
-    set focus and press keys                  ${option1}    TAB
-    wait until element attribute value does not contain     ${option1}    class    focused    1s
-    wait until element attribute value does not contain     ${option2}    class    focused    1s    
+    Go To                                       ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Wait Until Element Is Visible               ${list}       10s
+    set focus and press keys                    ${option1}    TAB
+    wait until element attribute not contain    ${option1}    class    focused
+    wait until element attribute not contain    ${option2}    class    focused
 
 focus first option when a list (no default options selected) is focused
     Go To                                     ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection-not-selected
