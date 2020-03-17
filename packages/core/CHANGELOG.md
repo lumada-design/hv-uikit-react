@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.26.0...@hv/uikit-react-core@1.27.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **datepicker:** adjust according to ds pattern 1.2.1. [#1094](https://github.com/pentaho/hv-uikit-react/issues/1094) ([5ef1526](https://github.com/pentaho/hv-uikit-react/commit/5ef15260c6a33134807d53a0465dca4c5d880950))
+* **datepicker:** adjust according to ds pattern 1.2.1. [#1094](https://github.com/pentaho/hv-uikit-react/issues/1094) ([6c41b79](https://github.com/pentaho/hv-uikit-react/commit/6c41b797f739a85a25a17e368e434c3c8726ffb9))
+* **emptystate:** alignment on text margins [#1095](https://github.com/pentaho/hv-uikit-react/issues/1095) ([93e1d6c](https://github.com/pentaho/hv-uikit-react/commit/93e1d6cde95f2638c9bc07a5f33a6657a96cb57a))
+* **login:** recovery message not showing. [#1224](https://github.com/pentaho/hv-uikit-react/issues/1224) ([51a5c69](https://github.com/pentaho/hv-uikit-react/commit/51a5c693a5bd1e79e01339d30dfc10a71a586003))
+
+
+### Features
+
+* **multibutton:** reviewing accesibility. [#1079](https://github.com/pentaho/hv-uikit-react/issues/1079) ([0341ff1](https://github.com/pentaho/hv-uikit-react/commit/0341ff1b4aeb4e179a43fb2f7b276082760a53fc))
+* **table:** aria roles a11y review. [#1076](https://github.com/pentaho/hv-uikit-react/issues/1076) ([d38d242](https://github.com/pentaho/hv-uikit-react/commit/d38d242e3410191efb4c67dad09c60dfab28a37b))
+* **table:** reviewing keyboard accessibility ([bc8b084](https://github.com/pentaho/hv-uikit-react/commit/bc8b08405982bfb87aae9f51be5dee8fb3f2774c))
+
+
+
+
+
 # [1.26.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.25.0...@hv/uikit-react-core@1.26.0) (2020-03-07)
 
 

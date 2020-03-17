@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.20.2...@hv/uikit-react-doc@1.21.0) (2020-03-17)
+
+
+### Features
+
+* **multibutton:** reviewing accesibility. [#1079](https://github.com/pentaho/hv-uikit-react/issues/1079) ([0341ff1](https://github.com/pentaho/hv-uikit-react/commit/0341ff1b4aeb4e179a43fb2f7b276082760a53fc))
+* **table:** aria roles a11y review. [#1076](https://github.com/pentaho/hv-uikit-react/issues/1076) ([d38d242](https://github.com/pentaho/hv-uikit-react/commit/d38d242e3410191efb4c67dad09c60dfab28a37b))
+
+
+
+
+
 ## [1.20.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.20.1...@hv/uikit-react-doc@1.20.2) (2020-03-13)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
