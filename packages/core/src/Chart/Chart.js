@@ -139,7 +139,12 @@ Chart.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object),
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    titleContainer: PropTypes.string,
+    subtitle: PropTypes.string,
+    paddingTop: PropTypes.string
+  }),
   /**
    * Title of the chart.
    */

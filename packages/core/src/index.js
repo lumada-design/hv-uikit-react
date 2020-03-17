@@ -28,6 +28,8 @@ export { default as HvAssetInventory } from "./AssetInventory";
 export { default as HvDatePicker } from "./DatePicker";
 export { default as HvFileUploader } from "./FileUploader";
 export { default as HvEmptyState } from "./EmptyState";
+export { default as HvBarchart } from "./Barchart";
+export { default as HvLinechart } from "./Linechart";
 
 // theme
 export { default as hvTheme } from "./theme";

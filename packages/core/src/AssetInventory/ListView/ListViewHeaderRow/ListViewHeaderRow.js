@@ -28,7 +28,13 @@ const HeaderCells = (classes, columnConfiguration) =>
     );
   });
 
-const ListViewHeaderRow = ({ viewConfiguration, classes, id, align, className, ...other }) => {
+const ListViewHeaderRow = ({
+  viewConfiguration = null,
+  classes,
+  id = "",
+  className = "",
+  ...other
+}) => {
   const { columnConfiguration } = viewConfiguration;
 
   return (
@@ -47,10 +53,6 @@ const ListViewHeaderRow = ({ viewConfiguration, classes, id, align, className, .
 };
 
 ListViewHeaderRow.propTypes = {
-  /**
-   * alignment of the header it correspond to the htlm tag
-   */
-  align: PropTypes.string,
   /**
    * Id to be applied to the root node.
    */
@@ -78,15 +80,16 @@ ListViewHeaderRow.propTypes = {
     /**
      * Styles applied the header when not selectable.
      */
-    notSelectable: PropTypes.string
+    notSelectable: PropTypes.string,
+    /**
+     * TODO: add description
+     */
+    selectCell: PropTypes.string,
+    /**
+     * TODO: add description
+     */
+    headCell: PropTypes.string
   }).isRequired
-};
-
-ListViewHeaderRow.defaultProps = {
-  className: "",
-  id: "",
-  align: "center",
-  viewConfiguration: null
 };
 
 export default withStyles(styles, { name: "HvListViewHeaderRow" })(ListViewHeaderRow);

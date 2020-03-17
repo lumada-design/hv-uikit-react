@@ -62,7 +62,7 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme }) => {
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
   /**
-   * The material theme object that can be used to override the defaults
+   * The UI-Kit theme object to be wrapped by the MUI theme.
    */
   theme: PropTypes.instanceOf(Object),
   /**

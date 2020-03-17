@@ -1,2 +1,2 @@
-export { default } from "./Badge.js";
+export { default } from "./Badge";
 export * from "./Badge";

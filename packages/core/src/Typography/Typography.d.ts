@@ -4,11 +4,6 @@ import { StandardProps } from "@material-ui/core";
 export interface HvTypographyProps
   extends StandardProps<React.HTMLAttributes<HTMLSpanElement>, HvTypographyClassKey> {
   /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
-
-  /**
    * The selected typography.
    */
   variant?:
@@ -47,12 +42,6 @@ export interface HvTypographyProps
    * If `true`, the text will have a bottom margin.
    */
   paragraph?: boolean;
-
-  /**
-   * The text to be set.
-   * @required
-   */
-  children: React.ReactNode;
 }
 
 export type HvTypographyClassKey =

@@ -42,15 +42,13 @@ class MultiButton extends React.Component {
     const clickedBtnId = buttons[idx].id;
     const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
 
-    if (btnClickable) {
+    if (btnClickable) return;
+
+    if (checkedItems.length === minSelection && checkedItems.includes(clickedBtnId)) {
       return;
     }
 
-    if (checkedItems.length === minSelection && checkedItems.indexOf(clickedBtnId) !== -1) {
-      return;
-    }
-
-    if (checkedItems.length === maxSelection && checkedItems.indexOf(clickedBtnId) === -1) {
+    if (checkedItems.length === maxSelection && !checkedItems.includes(clickedBtnId)) {
       return;
     }
 
@@ -75,7 +73,7 @@ class MultiButton extends React.Component {
     this.setState({
       checkedItems: newState
     });
-    onChange(newState);
+    onChange(e, newState);
   }
 
   renderButton(button, idx) {

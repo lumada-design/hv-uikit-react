@@ -1,42 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import PropTypes from "prop-types/index";
 
 export interface HvBadgeProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBadgeClassKey> {
-  /**
-   *   A Jss Object used to override or extend the styles applied to the badge.
-   */
-  classes?: {
-    /**
-     * Styles applied to the component root class.
-     */
-    root?: string;
-    /**
-     * Styles applied to the component badge position.
-     */
-    badgePosition?: string;
-    /**
-     * Styles applied to the component badge.
-     */
-    badge?: string;
-    /**
-     * Styles applied to the component badge icon.
-     */
-    badgeIcon?: string;
-    /**
-     * Styles applied to the component when shows count.
-     */
-    showCount?: string;
-    /**
-     * Styles applied to the component when count has one digit.
-     */
-    badgeOneDigit?: string;
-    /**
-     * Styles applied to the component badge container.
-     */
-    badgeContainer?: string
-  };
   /**
    * Count is the number of unread notifications
    */

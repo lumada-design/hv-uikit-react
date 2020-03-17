@@ -17,24 +17,21 @@ const isPrintableCharacter = str => str && str.length === 1 && str.match(/\S/);
 const TreeViewItem = props => {
   const {
     id,
-    className,
+    className = "",
     classes,
 
-    disabled,
+    disabled = false,
 
-    collapseIcon,
-    expandIcon,
-
-    selectable: selectableProp,
+    selectable: selectableProp = null,
 
     nodeId,
-    icon,
+    icon = null,
     label,
-    payload,
+    payload = null,
 
-    onClick,
+    onClick = null,
 
-    children,
+    children = null,
 
     // eslint-disable-next-line react/prop-types
     theme,
@@ -382,14 +379,6 @@ TreeViewItem.propTypes = {
    */
   selectable: PropTypes.bool,
   /**
-   * The icon used to collapse the node.
-   */
-  collapseIcon: PropTypes.node,
-  /**
-   * The icon used to expand the node.
-   */
-  expandIcon: PropTypes.node,
-  /**
    * The id of the node.
    */
   nodeId: PropTypes.string.isRequired,
@@ -414,19 +403,6 @@ TreeViewItem.propTypes = {
    * The content of the component.
    */
   children: PropTypes.node
-};
-
-TreeViewItem.defaultProps = {
-  id: undefined,
-  className: "",
-  disabled: false,
-  collapseIcon: null,
-  expandIcon: null,
-  selectable: null,
-  icon: null,
-  payload: null,
-  onClick: null,
-  children: null
 };
 
 export default withStyles(styles, {

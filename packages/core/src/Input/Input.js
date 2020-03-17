@@ -121,6 +121,7 @@ class HvInput extends React.Component {
   onChangeHandler = event => {
     const { onChange } = this.props;
     const { value } = event.target;
+    // TODO review this on change does not correspond to the material on change and requires event
     const newValue = onChange(value);
     this.suggestionHandler(value);
     this.manageInputValueState(newValue, null);

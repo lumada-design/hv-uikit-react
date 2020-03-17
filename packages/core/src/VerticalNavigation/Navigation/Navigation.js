@@ -16,7 +16,15 @@ const createListHierarchy = items =>
     );
   });
 
-const Navigation = ({ theme, classes, id, label, data, selected, onClick, ...other }) => {
+const Navigation = ({
+  classes,
+  id,
+  label = null,
+  data,
+  selected = null,
+  onClick = null,
+  ...other
+}) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-navigation");
 
   const handleChange = useCallback(
@@ -43,10 +51,6 @@ const Navigation = ({ theme, classes, id, label, data, selected, onClick, ...oth
 };
 
 Navigation.propTypes = {
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -86,15 +90,6 @@ Navigation.propTypes = {
    * Callback triggered when any item is clicked.
    */
   onClick: PropTypes.func
-};
-
-Navigation.defaultProps = {
-  theme: undefined,
-
-  id: undefined,
-  label: null,
-  selected: null,
-  onClick: () => {}
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationNavigation" })(Navigation);

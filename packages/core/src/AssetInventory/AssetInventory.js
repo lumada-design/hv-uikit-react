@@ -14,6 +14,8 @@ import Grid from "../Grid";
 import Pagination from "../Pagination";
 import styles from "./styles";
 
+// TODO: review event args
+
 /**
  * Asset inventory component.
  */
@@ -236,6 +238,8 @@ class AssetInventory extends React.Component {
     const dropDownLabel = {
       title: labels.sortBy
     };
+
+    // TODO: pass sortProps instead of labels.sortBy
     return (
       <div className={classes.sortContainer}>
         <Sort
@@ -476,6 +480,8 @@ class AssetInventory extends React.Component {
 
     const pagination = this.renderPagination();
 
+    // TODO: pass others accordingly
+    // TODO: pass classes.root
     return (
       <div id={internalId} className={className}>
         {FilterPlaceholder && this.renderFilterPlaceholder()}

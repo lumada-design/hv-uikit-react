@@ -777,9 +777,7 @@ exports[`ModalContent Component should render correctly if opened 1`] = `
         }
       }
     >
-      <WithStyles(ModalContent)
-        className=""
-      >
+      <WithStyles(ModalContent)>
         Modal Content
       </WithStyles(ModalContent)>
     </ContextProvider>
@@ -1564,9 +1562,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(ModalContent)
-        className=""
-      >
+      <WithStyles(ModalContent)>
         Modal Content
       </WithStyles(ModalContent)>
     </ContextProvider>

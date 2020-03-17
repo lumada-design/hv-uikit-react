@@ -87,13 +87,7 @@ describe("BreadcrumbsA11Y", () => {
   it("all paths visible with div", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Breadcrumb
-          listRoute={data}
-          id="breadcrumb1"
-          onClick={(event, elem) => {
-            console.log(elem);
-          }}
-        />
+        <Breadcrumb listRoute={data} id="breadcrumb1" />
       </HvProvider>
     );
 

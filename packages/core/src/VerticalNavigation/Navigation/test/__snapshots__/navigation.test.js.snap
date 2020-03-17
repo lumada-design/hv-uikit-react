@@ -819,7 +819,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
         }
         label="Example 1 navigation"
         onChange={[MockFunction]}
-        onClick={[Function]}
         selected="01-01"
       >
         <Navigation
@@ -870,7 +869,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
           }
           label="Example 1 navigation"
           onChange={[MockFunction]}
-          onClick={[Function]}
           selected="01-01"
         >
           <nav
@@ -880,16 +878,12 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
             onChange={[MockFunction]}
           >
             <WithStyles(TreeView)
-              className=""
-              collapsible={false}
               id="hv-verticalnavigation-navigation1-tree"
               mode="navigation"
               onChange={[Function]}
-              selectable={true}
               selected="01-01"
             >
               <TreeView
-                className=""
                 classes={
                   Object {
                     "collapsed": "HvVerticalNavigationTreeView-collapsed",
@@ -907,11 +901,9 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeView-withIcon",
                   }
                 }
-                collapsible={false}
                 id="hv-verticalnavigation-navigation1-tree"
                 mode="navigation"
                 onChange={[Function]}
-                selectable={true}
                 selected="01-01"
               >
                 <ul
@@ -919,15 +911,10 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                   id="hv-verticalnavigation-navigation1-tree"
                 >
                   <WithStyles(TreeViewItem)
-                    className=""
-                    collapseIcon={null}
-                    disabled={false}
-                    expandIcon={null}
                     icon={<ForwardRef(WithStyles) />}
                     key="01"
                     label="System"
                     nodeId="01"
-                    onClick={null}
                     payload={
                       Object {
                         "children": Array [
@@ -966,10 +953,8 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                         "label": "System",
                       }
                     }
-                    selectable={null}
                   >
                     <TreeViewItem
-                      className=""
                       classes={
                         Object {
                           "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -987,13 +972,9 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                           "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                         }
                       }
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
                       icon={<ForwardRef(WithStyles) />}
                       label="System"
                       nodeId="01"
-                      onClick={null}
                       payload={
                         Object {
                           "children": Array [
@@ -1032,7 +1013,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                           "label": "System",
                         }
                       }
-                      selectable={null}
                     >
                       <li
                         className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"

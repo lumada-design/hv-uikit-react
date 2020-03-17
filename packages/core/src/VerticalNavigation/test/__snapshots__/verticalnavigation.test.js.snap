@@ -777,7 +777,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
     >
       <CssBaseline />
       <WithStyles(VerticalNavigation)
-        closeOnExit={false}
         isCollapsable={true}
         isOpen={false}
         position="fixed"
@@ -786,17 +785,16 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
         <VerticalNavigation
           classes={
             Object {
+              "noCollapse": "HvVerticalNavigation-noCollapse",
               "root": "HvVerticalNavigation-root",
             }
           }
-          closeOnExit={false}
           isCollapsable={true}
           isOpen={false}
           position="fixed"
           toggleOpenCallback={[MockFunction]}
         >
           <WithStyles(VerticalContainer)
-            className=""
             closeOnExit={false}
             id="hv-verticalnavigation1-container"
             isAnchorBarVisible={true}
@@ -805,7 +803,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
             toggleOpenCallback={[MockFunction]}
           >
             <VerticalContainer
-              className=""
               classes={
                 Object {
                   "absolute": "HvVerticalNavigationVerticalContainer-absolute",
@@ -2016,7 +2013,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
     >
       <CssBaseline />
       <WithStyles(VerticalNavigation)
-        closeOnExit={false}
         isCollapsable={true}
         isOpen={true}
         position="fixed"
@@ -2025,17 +2021,16 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
         <VerticalNavigation
           classes={
             Object {
+              "noCollapse": "HvVerticalNavigation-noCollapse",
               "root": "HvVerticalNavigation-root",
             }
           }
-          closeOnExit={false}
           isCollapsable={true}
           isOpen={true}
           position="fixed"
           toggleOpenCallback={[MockFunction]}
         >
           <WithStyles(VerticalContainer)
-            className=""
             closeOnExit={false}
             id="hv-verticalnavigation2-container"
             isAnchorBarVisible={true}
@@ -2044,7 +2039,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
             toggleOpenCallback={[MockFunction]}
           >
             <VerticalContainer
-              className=""
               classes={
                 Object {
                   "absolute": "HvVerticalNavigationVerticalContainer-absolute",
@@ -3275,7 +3269,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
     >
       <CssBaseline />
       <WithStyles(VerticalNavigation)
-        closeOnExit={false}
         isCollapsable={false}
         isOpen={true}
         position="fixed"
@@ -3284,17 +3277,16 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
         <VerticalNavigation
           classes={
             Object {
+              "noCollapse": "HvVerticalNavigation-noCollapse",
               "root": "HvVerticalNavigation-root",
             }
           }
-          closeOnExit={false}
           isCollapsable={false}
           isOpen={true}
           position="fixed"
           toggleOpenCallback={[MockFunction]}
         >
           <WithStyles(VerticalContainer)
-            className=""
             closeOnExit={false}
             id="hv-verticalnavigation3-container"
             isAnchorBarVisible={false}
@@ -3303,7 +3295,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
             toggleOpenCallback={[MockFunction]}
           >
             <VerticalContainer
-              className=""
               classes={
                 Object {
                   "absolute": "HvVerticalNavigationVerticalContainer-absolute",
@@ -4142,7 +4133,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
     >
       <CssBaseline />
       <WithStyles(VerticalNavigation)
-        closeOnExit={false}
         isCollapsable={false}
         isOpen={false}
         position="fixed"
@@ -4151,17 +4141,16 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
         <VerticalNavigation
           classes={
             Object {
+              "noCollapse": "HvVerticalNavigation-noCollapse",
               "root": "HvVerticalNavigation-root",
             }
           }
-          closeOnExit={false}
           isCollapsable={false}
           isOpen={false}
           position="fixed"
           toggleOpenCallback={[MockFunction]}
         >
           <WithStyles(VerticalContainer)
-            className=""
             closeOnExit={false}
             id="hv-verticalnavigation4-container"
             isAnchorBarVisible={false}
@@ -4170,7 +4159,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
             toggleOpenCallback={[MockFunction]}
           >
             <VerticalContainer
-              className=""
               classes={
                 Object {
                   "absolute": "HvVerticalNavigationVerticalContainer-absolute",

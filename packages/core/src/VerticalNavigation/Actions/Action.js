@@ -7,7 +7,7 @@ import useUniqueId from "../../useUniqueId";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 
-const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
+const Action = ({ classes, id, label = "", icon, onClick, ...others }) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-action-");
 
   const handleKeyDown = useCallback(
@@ -53,10 +53,6 @@ const Action = ({ theme, classes, id, label, icon, onClick, ...others }) => {
 
 Action.propTypes = {
   /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
    * A Jss Object used to override or extend the styles applied to the component.
    */
   classes: PropTypes.shape({
@@ -85,14 +81,6 @@ Action.propTypes = {
    * Callback called when clicked.
    */
   onClick: PropTypes.func
-};
-
-Action.defaultProps = {
-  theme: undefined,
-  id: undefined,
-  label: "",
-  icon: undefined,
-  onClick: undefined
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationAction" })(Action);

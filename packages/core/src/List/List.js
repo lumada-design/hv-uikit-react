@@ -372,7 +372,7 @@ List.propTypes = {
     selectionConjunction: PropTypes.string
   }),
   /**
-   * If true renders list itens with radio or checkbox selectors.
+   * If true renders list items with radio or checkbox selectors.
    */
   useSelector: PropTypes.bool,
   /**
@@ -386,16 +386,16 @@ List.propTypes = {
   /**
    * If ´true´ the list items will show the selection state.
    */
-  selectable: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
+  selectable: PropTypes.bool,
   /**
    * If ´true´ and none element selected,
    * single select has default (first) label selected.
    */
-  selectDefault: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
+  selectDefault: PropTypes.bool,
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
+  singleSelectionToggle: PropTypes.bool,
   /**
    * If ´true´ the list will be rendered without vertical spacing.
    */

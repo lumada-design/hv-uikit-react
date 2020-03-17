@@ -12,10 +12,10 @@ const VerticalNavigation = props => {
     classes,
     isOpen: isOpenProp,
     toggleOpenCallback,
-    isCollapsable,
+    isCollapsable = false,
     children,
-    position,
-    closeOnExit
+    position = "static",
+    closeOnExit = false
   } = props;
 
   const internalId = useUniqueId(id, "hv-verticalnavigation");
@@ -85,16 +85,6 @@ VerticalNavigation.propTypes = {
    * Defines if the navigation should close when losing focus / clicking outside.
    */
   closeOnExit: PropTypes.bool
-};
-
-VerticalNavigation.defaultProps = {
-  id: undefined,
-  children: undefined,
-  isCollapsable: false,
-  isOpen: undefined,
-  toggleOpenCallback: () => {},
-  position: "static",
-  closeOnExit: false
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigation" })(VerticalNavigation);

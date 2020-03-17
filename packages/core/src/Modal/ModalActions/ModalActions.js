@@ -12,7 +12,7 @@ import styles from "./styles";
  * @returns {*}
  * @constructor
  */
-const HvModalActions = ({ classes, className, children, ...others }) => (
+const HvModalActions = ({ classes, className = "", children, ...others }) => (
   <DialogActions
     classes={{
       root: classes.root,
@@ -47,10 +47,6 @@ HvModalActions.propTypes = {
    * Actions of the modal.
    */
   children: PropTypes.node.isRequired
-};
-
-HvModalActions.defaultProps = {
-  className: ""
 };
 
 export default withStyles(styles, { name: "HvModalActions" })(HvModalActions);
