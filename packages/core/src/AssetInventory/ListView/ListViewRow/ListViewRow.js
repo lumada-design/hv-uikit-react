@@ -115,17 +115,17 @@ const row = (
 };
 
 const ListViewRow = ({
-  viewConfiguration,
+  viewConfiguration = null,
   classes,
-  className,
-  id,
+  className = "",
+  id = undefined,
   children,
-  isSelectable,
-  onSelection,
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxSemantic,
+  isSelectable = undefined,
+  onSelection = () => {},
+  checkboxValue = "",
+  checkboxSelected = undefined,
+  checkboxIndeterminate = undefined,
+  checkboxSemantic = undefined,
   ...other
 }) => (
   <ListViewContextConsumer>
@@ -242,18 +242,6 @@ ListViewRow.propTypes = {
     "atmo5",
     "atmo6"
   ])
-};
-
-ListViewRow.defaultProps = {
-  className: "",
-  isSelectable: undefined,
-  id: undefined,
-  viewConfiguration: null,
-  checkboxValue: "",
-  checkboxSelected: undefined,
-  checkboxIndeterminate: undefined,
-  checkboxSemantic: undefined,
-  onSelection: () => {}
 };
 
 export default withStyles(styles, { name: "HvListViewRow" })(ListViewRow);

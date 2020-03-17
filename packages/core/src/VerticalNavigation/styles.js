@@ -11,7 +11,8 @@ const styles = theme => ({
     "& > :first-child:not(:last-child)": {
       padding: `${theme.hv.spacing.sm}px  ${theme.hv.spacing.sm}px  ${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px `
     }
-  }
+  },
+  noCollapse: {}
 });
 
 export default styles;

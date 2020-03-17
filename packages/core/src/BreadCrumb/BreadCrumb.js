@@ -49,17 +49,15 @@ LastPathElement.propTypes = {
  * @returns {*}
  * @constructor
  */
-const Page = ({ Component, onClick, elem, classes }) => {
-  return (
-    <HvLink route={elem.path} Component={Component} onClick={onClick} data={elem}>
-      <div className={classes.centerContainer}>
-        <HvTypography variant="sLink" className={classes.link}>
-          {startCase(elem.label)}
-        </HvTypography>
-      </div>
-    </HvLink>
-  );
-};
+const Page = ({ Component, onClick, elem, classes }) => (
+  <HvLink route={elem.path} Component={Component} onClick={onClick} data={elem}>
+    <div className={classes.centerContainer}>
+      <HvTypography variant="sLink" className={classes.link}>
+        {startCase(elem.label)}
+      </HvTypography>
+    </div>
+  </HvLink>
+);
 
 Page.propTypes = {
   Component: PropTypes.elementType,

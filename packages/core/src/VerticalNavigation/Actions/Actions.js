@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core";
 import useUniqueId from "../../useUniqueId";
 import styles from "./styles";
 
-const Actions = ({ theme, classes, id, children, ...others }) => {
+const Actions = ({ classes, id, children, ...others }) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-actions-");
 
   return (
@@ -15,10 +15,6 @@ const Actions = ({ theme, classes, id, children, ...others }) => {
 };
 
 Actions.propTypes = {
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
   /**
    * A Jss Object used to override or extend the styles applied to the component.
    */
@@ -36,12 +32,6 @@ Actions.propTypes = {
    * Node to be rendered
    */
   children: PropTypes.node
-};
-
-Actions.defaultProps = {
-  theme: undefined,
-  id: undefined,
-  children: undefined
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationActions" })(Actions);

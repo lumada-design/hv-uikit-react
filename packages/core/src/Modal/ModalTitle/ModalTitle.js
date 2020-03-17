@@ -17,7 +17,15 @@ import styles from "./styles";
  * @constructor
  */
 
-const ModalTitle = ({ classes, className, children, variant, showIcon, customIcon, ...others }) => {
+const ModalTitle = ({
+  classes,
+  className = "",
+  children,
+  variant = "default",
+  showIcon = true,
+  customIcon = null,
+  ...others
+}) => {
   const isString = typeof children === "string";
 
   let icon = null;
@@ -85,13 +93,6 @@ ModalTitle.propTypes = {
    * Node to be render.
    */
   children: PropTypes.node.isRequired
-};
-
-ModalTitle.defaultProps = {
-  className: "",
-  variant: "default",
-  customIcon: null,
-  showIcon: true
 };
 
 export default withStyles(styles, { name: "HvModalTitle" })(ModalTitle);

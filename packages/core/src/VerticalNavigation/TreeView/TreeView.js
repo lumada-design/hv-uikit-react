@@ -15,14 +15,14 @@ import styles from "./styles";
 const TreeView = props => {
   const {
     id,
-    className,
+    className = "",
     classes,
-    mode,
-    collapsible,
-    selectable,
-    selected,
-    onChange,
-    children,
+    mode = "treeview",
+    collapsible = false,
+    selectable = true,
+    selected = null,
+    onChange = null,
+    children = null,
     ...other
   } = props;
 
@@ -367,17 +367,6 @@ TreeView.propTypes = {
    * The content of the component.
    */
   children: PropTypes.node
-};
-
-TreeView.defaultProps = {
-  id: undefined,
-  className: "",
-  mode: "treeview",
-  selectable: true,
-  selected: null,
-  collapsible: false,
-  onChange: null,
-  children: null
 };
 
 export default withStyles(styles, { name: "HvVerticalNavigationTreeView" })(TreeView);

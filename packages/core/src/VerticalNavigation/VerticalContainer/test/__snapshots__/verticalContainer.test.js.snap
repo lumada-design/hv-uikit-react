@@ -777,14 +777,7 @@ exports[`VerticalContainer withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(VerticalContainer)
-        className=""
-        closeOnExit={true}
-        isAnchorBarVisible={true}
-        isOpen={false}
-        position="static"
-        toggleOpenCallback={[Function]}
-      >
+      <WithStyles(VerticalContainer)>
         <div
           id="test_div"
         />

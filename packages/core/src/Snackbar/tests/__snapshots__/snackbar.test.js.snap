@@ -776,38 +776,8 @@ exports[`Snackbar  should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(HvSnackbar)
-        action={null}
-        actionCallback={[Function]}
-        anchorOrigin={
-          Object {
-            "horizontal": "right",
-            "vertical": "top",
-          }
-        }
-        autoHideDuration={5000}
-        className=""
-        customIcon={null}
-        id={null}
-        label=""
-        onClose={null}
-        open={false}
-        showIcon={false}
-        transitionDirection="left"
-        transitionDuration={300}
-        variant="default"
-      >
+      <WithStyles(HvSnackbar)>
         <HvSnackbar
-          action={null}
-          actionCallback={[Function]}
-          anchorOrigin={
-            Object {
-              "horizontal": "right",
-              "vertical": "top",
-            }
-          }
-          autoHideDuration={5000}
-          className=""
           classes={
             Object {
               "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter",
@@ -818,15 +788,6 @@ exports[`Snackbar  should render correctly 1`] = `
               "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
             }
           }
-          customIcon={null}
-          id={null}
-          label=""
-          onClose={null}
-          open={false}
-          showIcon={false}
-          transitionDirection="left"
-          transitionDuration={300}
-          variant="default"
         >
           <WithStyles(ForwardRef(Snackbar))
             TransitionComponent={[Function]}

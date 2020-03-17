@@ -778,8 +778,6 @@ exports[`Modal Component allows external props to be added 1`] = `
       }
     >
       <WithStyles(Modal)
-        buttonTitle="Close"
-        className=""
         disableBackdropClick={true}
         disableEscapeKeyDown={true}
         onClose={[MockFunction]}
@@ -1570,8 +1568,6 @@ exports[`Modal Component allows external styles to be added 1`] = `
       }
     >
       <WithStyles(Modal)
-        buttonTitle="Close"
-        className=""
         classes={
           Object {
             "background": "testClassBackground",
@@ -2367,8 +2363,6 @@ exports[`Modal Component should render correctly if closed 1`] = `
       }
     >
       <WithStyles(Modal)
-        buttonTitle="Close"
-        className=""
         onClose={[MockFunction]}
         open={false}
       >
@@ -3157,8 +3151,6 @@ exports[`Modal Component should render correctly if opened 1`] = `
       }
     >
       <WithStyles(Modal)
-        buttonTitle="Close"
-        className=""
         onClose={[MockFunction]}
         open={true}
       >
@@ -3946,10 +3938,7 @@ exports[`Modal withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(Modal)
-        buttonTitle="Close"
-        className=""
-      >
+      <WithStyles(Modal)>
         Modal Content
       </WithStyles(Modal)>
     </ContextProvider>

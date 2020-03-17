@@ -261,7 +261,6 @@ Pagination.propTypes = {
   id: PropTypes.string,
   /**
    * An object containing all the labels for the component.
-   *
    */
   labels: PropTypes.shape({
     pageSizePrev: PropTypes.string,

@@ -778,9 +778,6 @@ exports[`CardView should render correctly 1`] = `
       }
     >
       <WithStyles(CardView)
-        className=""
-        id=""
-        selectedValues={null}
         values={
           Array [
             Object {
@@ -800,19 +797,6 @@ exports[`CardView should render correctly 1`] = `
               "subheader": "Compressor",
             },
           ]
-        }
-        viewConfiguration={
-          Object {
-            "actions": null,
-            "breakpoints": Object {
-              "lg": false,
-              "md": false,
-              "sm": false,
-              "xl": false,
-              "xs": false,
-            },
-            "onSelection": null,
-          }
         }
       />
     </ContextProvider>

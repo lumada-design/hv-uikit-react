@@ -20,14 +20,14 @@ import styles from "./styles";
  */
 const VerticalContainer = ({
   id,
-  className,
+  className = "",
   classes,
-  isAnchorBarVisible,
-  isOpen,
+  isAnchorBarVisible = true,
+  isOpen = false,
   toggleOpenCallback,
   buttonAriaLabel,
   children,
-  position,
+  position = "static",
   closeOnExit
 }) => {
   const internalId = useUniqueId(id, "hv-verticalnavigation-verticalcontainer");
@@ -255,17 +255,6 @@ VerticalContainer.propTypes = {
    * Defines if the content pane should close when losing focus / clicking outside.
    */
   closeOnExit: PropTypes.bool
-};
-
-VerticalContainer.defaultProps = {
-  className: "",
-  position: "static",
-  isOpen: false,
-  isAnchorBarVisible: true,
-  id: undefined,
-  buttonAriaLabel: undefined,
-  toggleOpenCallback: () => {},
-  closeOnExit: true
 };
 
 export default withStyles(styles, {

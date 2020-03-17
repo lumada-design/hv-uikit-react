@@ -777,15 +777,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
     >
       <CssBaseline />
       <WithStyles(TreeView)
-        className=""
-        collapsible={false}
         mode="navigation"
         onChange={[MockFunction]}
-        selectable={true}
         selected="4"
       >
         <TreeView
-          className=""
           classes={
             Object {
               "collapsed": "HvVerticalNavigationTreeView-collapsed",
@@ -803,10 +799,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeView-withIcon",
             }
           }
-          collapsible={false}
           mode="navigation"
           onChange={[MockFunction]}
-          selectable={true}
           selected="4"
         >
           <ul
@@ -814,19 +808,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
             id="hv-verticalnavigation-treeview1"
           >
             <WithStyles(TreeViewItem)
-              className=""
-              collapseIcon={null}
-              disabled={false}
-              expandIcon={null}
               icon={<ForwardRef(WithStyles) />}
               label="System"
               nodeId="1"
-              onClick={null}
-              payload={null}
-              selectable={null}
             >
               <TreeViewItem
-                className=""
                 classes={
                   Object {
                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -844,15 +830,9 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                   }
                 }
-                collapseIcon={null}
-                disabled={false}
-                expandIcon={null}
                 icon={<ForwardRef(WithStyles) />}
                 label="System"
                 nodeId="1"
-                onClick={null}
-                payload={null}
-                selectable={null}
               >
                 <li
                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
@@ -1003,19 +983,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     className="HvVerticalNavigationTreeViewItem-group"
                   >
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="SCPodF"
                       nodeId="2"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1033,15 +1004,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="SCPodF"
                         nodeId="2"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
@@ -1123,19 +1087,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             className="HvVerticalNavigationTreeViewItem-group"
                           >
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
                               disabled={true}
-                              expandIcon={null}
-                              icon={null}
                               label="Compute"
                               nodeId="3"
-                              onClick={null}
-                              payload={null}
-                              selectable={null}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1153,15 +1109,9 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
                                 disabled={true}
-                                expandIcon={null}
-                                icon={null}
                                 label="Compute"
                                 nodeId="3"
-                                onClick={null}
-                                payload={null}
-                                selectable={null}
                               >
                                 <li
                                   aria-disabled={true}
@@ -1244,19 +1194,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               </TreeViewItem>
                             </WithStyles(TreeViewItem)>
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
-                              disabled={false}
-                              expandIcon={null}
-                              icon={null}
                               label="Storage"
                               nodeId="4"
-                              onClick={null}
-                              payload={null}
-                              selectable={null}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1274,15 +1215,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
-                                disabled={false}
-                                expandIcon={null}
-                                icon={null}
                                 label="Storage"
                                 nodeId="4"
-                                onClick={null}
-                                payload={null}
-                                selectable={null}
                               >
                                 <li
                                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected"
@@ -1368,19 +1302,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               </TreeViewItem>
                             </WithStyles(TreeViewItem)>
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
-                              disabled={false}
-                              expandIcon={null}
-                              icon={null}
                               label="Ethernet"
                               nodeId="5"
-                              onClick={null}
-                              payload={null}
                               selectable={false}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1398,14 +1324,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
-                                disabled={false}
-                                expandIcon={null}
-                                icon={null}
                                 label="Ethernet"
                                 nodeId="5"
-                                onClick={null}
-                                payload={null}
                                 selectable={false}
                               >
                                 <li
@@ -1488,14 +1408,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               </TreeViewItem>
                             </WithStyles(TreeViewItem)>
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
-                              disabled={false}
-                              expandIcon={null}
-                              icon={null}
                               label="Fiber Channel"
                               nodeId="6"
-                              onClick={null}
                               payload={
                                 Object {
                                   "params": Object {
@@ -1505,10 +1419,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                   "path": "/hello/world",
                                 }
                               }
-                              selectable={null}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1526,13 +1438,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
-                                disabled={false}
-                                expandIcon={null}
-                                icon={null}
                                 label="Fiber Channel"
                                 nodeId="6"
-                                onClick={null}
                                 payload={
                                   Object {
                                     "params": Object {
@@ -1542,7 +1449,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                     "path": "/hello/world",
                                   }
                                 }
-                                selectable={null}
                               >
                                 <li
                                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -1632,19 +1538,11 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               </TreeViewItem>
             </WithStyles(TreeViewItem)>
             <WithStyles(TreeViewItem)
-              className=""
-              collapseIcon={null}
-              disabled={false}
-              expandIcon={null}
               icon={<ForwardRef(WithStyles) />}
               label="Administration"
               nodeId="7"
-              onClick={null}
-              payload={null}
-              selectable={null}
             >
               <TreeViewItem
-                className=""
                 classes={
                   Object {
                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1662,15 +1560,9 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                   }
                 }
-                collapseIcon={null}
-                disabled={false}
-                expandIcon={null}
                 icon={<ForwardRef(WithStyles) />}
                 label="Administration"
                 nodeId="7"
-                onClick={null}
-                payload={null}
-                selectable={null}
               >
                 <li
                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
@@ -1821,19 +1713,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                     className="HvVerticalNavigationTreeViewItem-group"
                   >
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="Rest API"
                       nodeId="8"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1851,15 +1734,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="Rest API"
                         nodeId="8"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -1941,19 +1817,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       </TreeViewItem>
                     </WithStyles(TreeViewItem)>
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="License"
                       nodeId="9"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -1971,15 +1838,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="License"
                         nodeId="9"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -2061,19 +1921,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       </TreeViewItem>
                     </WithStyles(TreeViewItem)>
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="Log Bundle"
                       nodeId="10"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -2091,15 +1942,8 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="Log Bundle"
                         nodeId="10"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -2969,15 +2813,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
     >
       <CssBaseline />
       <WithStyles(TreeView)
-        className=""
-        collapsible={false}
-        mode="treeview"
         onChange={[MockFunction]}
-        selectable={true}
         selected="4"
       >
         <TreeView
-          className=""
           classes={
             Object {
               "collapsed": "HvVerticalNavigationTreeView-collapsed",
@@ -2995,10 +2834,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               "withIcon": "HvVerticalNavigationTreeView-withIcon",
             }
           }
-          collapsible={false}
-          mode="treeview"
           onChange={[MockFunction]}
-          selectable={true}
           selected="4"
         >
           <ul
@@ -3007,19 +2843,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
             role="tree"
           >
             <WithStyles(TreeViewItem)
-              className=""
-              collapseIcon={null}
-              disabled={false}
-              expandIcon={null}
               icon={<ForwardRef(WithStyles) />}
               label="System"
               nodeId="1"
-              onClick={null}
-              payload={null}
-              selectable={null}
             >
               <TreeViewItem
-                className=""
                 classes={
                   Object {
                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3037,15 +2865,9 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                   }
                 }
-                collapseIcon={null}
-                disabled={false}
-                expandIcon={null}
                 icon={<ForwardRef(WithStyles) />}
                 label="System"
                 nodeId="1"
-                onClick={null}
-                payload={null}
-                selectable={null}
               >
                 <li
                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
@@ -3198,19 +3020,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     role="group"
                   >
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="SCPodF"
                       nodeId="2"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3228,15 +3041,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="SCPodF"
                         nodeId="2"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
@@ -3320,19 +3126,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             role="group"
                           >
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
                               disabled={true}
-                              expandIcon={null}
-                              icon={null}
                               label="Compute"
                               nodeId="3"
-                              onClick={null}
-                              payload={null}
-                              selectable={null}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3350,15 +3148,9 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
                                 disabled={true}
-                                expandIcon={null}
-                                icon={null}
                                 label="Compute"
                                 nodeId="3"
-                                onClick={null}
-                                payload={null}
-                                selectable={null}
                               >
                                 <li
                                   aria-disabled={true}
@@ -3442,19 +3234,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               </TreeViewItem>
                             </WithStyles(TreeViewItem)>
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
-                              disabled={false}
-                              expandIcon={null}
-                              icon={null}
                               label="Storage"
                               nodeId="4"
-                              onClick={null}
-                              payload={null}
-                              selectable={null}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3472,15 +3255,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
-                                disabled={false}
-                                expandIcon={null}
-                                icon={null}
                                 label="Storage"
                                 nodeId="4"
-                                onClick={null}
-                                payload={null}
-                                selectable={null}
                               >
                                 <li
                                   aria-selected={true}
@@ -3564,19 +3340,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               </TreeViewItem>
                             </WithStyles(TreeViewItem)>
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
-                              disabled={false}
-                              expandIcon={null}
-                              icon={null}
                               label="Ethernet"
                               nodeId="5"
-                              onClick={null}
-                              payload={null}
                               selectable={false}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3594,14 +3362,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
-                                disabled={false}
-                                expandIcon={null}
-                                icon={null}
                                 label="Ethernet"
                                 nodeId="5"
-                                onClick={null}
-                                payload={null}
                                 selectable={false}
                               >
                                 <li
@@ -3685,14 +3447,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               </TreeViewItem>
                             </WithStyles(TreeViewItem)>
                             <WithStyles(TreeViewItem)
-                              className=""
-                              collapseIcon={null}
-                              disabled={false}
-                              expandIcon={null}
-                              icon={null}
                               label="Fiber Channel"
                               nodeId="6"
-                              onClick={null}
                               payload={
                                 Object {
                                   "params": Object {
@@ -3702,10 +3458,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                   "path": "/hello/world",
                                 }
                               }
-                              selectable={null}
                             >
                               <TreeViewItem
-                                className=""
                                 classes={
                                   Object {
                                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3723,13 +3477,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                                   }
                                 }
-                                collapseIcon={null}
-                                disabled={false}
-                                expandIcon={null}
-                                icon={null}
                                 label="Fiber Channel"
                                 nodeId="6"
-                                onClick={null}
                                 payload={
                                   Object {
                                     "params": Object {
@@ -3739,7 +3488,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                     "path": "/hello/world",
                                   }
                                 }
-                                selectable={null}
                               >
                                 <li
                                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -3830,19 +3578,11 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               </TreeViewItem>
             </WithStyles(TreeViewItem)>
             <WithStyles(TreeViewItem)
-              className=""
-              collapseIcon={null}
-              disabled={false}
-              expandIcon={null}
               icon={<ForwardRef(WithStyles) />}
               label="Administration"
               nodeId="7"
-              onClick={null}
-              payload={null}
-              selectable={null}
             >
               <TreeViewItem
-                className=""
                 classes={
                   Object {
                     "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -3860,15 +3600,9 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                   }
                 }
-                collapseIcon={null}
-                disabled={false}
-                expandIcon={null}
                 icon={<ForwardRef(WithStyles) />}
                 label="Administration"
                 nodeId="7"
-                onClick={null}
-                payload={null}
-                selectable={null}
               >
                 <li
                   className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
@@ -4021,19 +3755,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                     role="group"
                   >
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="Rest API"
                       nodeId="8"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -4051,15 +3776,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="Rest API"
                         nodeId="8"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -4142,19 +3860,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       </TreeViewItem>
                     </WithStyles(TreeViewItem)>
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="License"
                       nodeId="9"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -4172,15 +3881,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="License"
                         nodeId="9"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
@@ -4263,19 +3965,10 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       </TreeViewItem>
                     </WithStyles(TreeViewItem)>
                     <WithStyles(TreeViewItem)
-                      className=""
-                      collapseIcon={null}
-                      disabled={false}
-                      expandIcon={null}
-                      icon={null}
                       label="Log Bundle"
                       nodeId="10"
-                      onClick={null}
-                      payload={null}
-                      selectable={null}
                     >
                       <TreeViewItem
-                        className=""
                         classes={
                           Object {
                             "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
@@ -4293,15 +3986,8 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                             "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
                           }
                         }
-                        collapseIcon={null}
-                        disabled={false}
-                        expandIcon={null}
-                        icon={null}
                         label="Log Bundle"
                         nodeId="10"
-                        onClick={null}
-                        payload={null}
-                        selectable={null}
                       >
                         <li
                           className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"

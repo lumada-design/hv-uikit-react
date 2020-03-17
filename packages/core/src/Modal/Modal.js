@@ -12,22 +12,27 @@ import styles from "./styles";
  * Modal component.
  *
  * @param classes
+ * @param className
+ * @param id
  * @param children
  * @param open
  * @param onClose
+ * @param firstFocusable
+ * @param buttonTitle
+ * @param close
  * @param others
  * @returns {*}
  * @constructor
  */
 const Modal = ({
   classes,
-  className,
+  className = "",
   id,
   children,
   open,
   onClose,
   firstFocusable,
-  buttonTitle,
+  buttonTitle = "Close",
   ...others
 }) => {
   const [internalId] = useState(id || uniqueId("hv-modal-"));
@@ -134,13 +139,6 @@ Modal.propTypes = {
    * Title for the button close.
    */
   buttonTitle: PropTypes.string
-};
-
-Modal.defaultProps = {
-  className: "",
-  id: undefined,
-  firstFocusable: undefined,
-  buttonTitle: "Close"
 };
 
 export default withStyles(styles, { name: "HvModal" })(Modal);

@@ -28,20 +28,20 @@ const snackBarDirComponent = direction => {
 const HvSnackbar = props => {
   const {
     classes,
-    className,
+    className = "",
     id,
-    open,
-    onClose,
-    label,
-    anchorOrigin,
-    autoHideDuration,
-    variant,
-    showIcon,
-    customIcon,
-    action,
-    actionCallback,
-    transitionDuration,
-    transitionDirection,
+    open = false,
+    onClose = null,
+    label = "",
+    anchorOrigin = { vertical: "top", horizontal: "right" },
+    autoHideDuration = 5000,
+    variant = "default",
+    showIcon = false,
+    customIcon = null,
+    action = null,
+    actionCallback = () => {},
+    transitionDuration = 300,
+    transitionDirection = "left",
     offset
   } = props;
 
@@ -185,24 +185,6 @@ HvSnackbar.propTypes = {
    * Custom offset from top/bottom of the page, in px.
    */
   offset: PropTypes.number
-};
-
-HvSnackbar.defaultProps = {
-  className: "",
-  id: null,
-  label: "",
-  open: false,
-  anchorOrigin: { vertical: "top", horizontal: "right" },
-  onClose: null,
-  autoHideDuration: 5000,
-  customIcon: null,
-  showIcon: false,
-  action: null,
-  actionCallback: () => {},
-  variant: "default",
-  transitionDuration: 300,
-  transitionDirection: "left",
-  offset: undefined
 };
 
 export default withStyles(styles, { name: "HvSnackbar" })(HvSnackbar);

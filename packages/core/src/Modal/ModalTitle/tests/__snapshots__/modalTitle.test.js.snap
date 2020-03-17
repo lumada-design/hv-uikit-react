@@ -777,12 +777,7 @@ exports[`ModalContent withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(ModalTitle)
-        className=""
-        customIcon={null}
-        showIcon={true}
-        variant="default"
-      >
+      <WithStyles(ModalTitle)>
         Modal Content
       </WithStyles(ModalTitle)>
     </ContextProvider>
@@ -1567,12 +1562,7 @@ exports[`ModalTitle Component should render correctly if opened 1`] = `
         }
       }
     >
-      <WithStyles(ModalTitle)
-        className=""
-        customIcon={null}
-        showIcon={true}
-        variant="default"
-      >
+      <WithStyles(ModalTitle)>
         Modal Content
       </WithStyles(ModalTitle)>
     </ContextProvider>

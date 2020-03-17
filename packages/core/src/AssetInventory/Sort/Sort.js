@@ -85,7 +85,15 @@ const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellTy
  * @returns {*}
  * @constructor
  */
-const Sort = ({ id, labels, selected, onSelection, metadata, onSortChange, disablePortal }) => {
+const Sort = ({
+  id = undefined,
+  labels,
+  selected = undefined,
+  onSelection,
+  metadata,
+  onSortChange = null,
+  disablePortal = false
+}) => {
   const innerSortValues = data => {
     onSelection(sortValues(data), data.id);
   };
@@ -145,13 +153,6 @@ Sort.propTypes = {
    * Disable portal on the dropdown
    */
   disablePortal: PropTypes.bool
-};
-
-Sort.defaultProps = {
-  id: undefined,
-  selected: undefined,
-  onSortChange: null,
-  disablePortal: false
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

@@ -15,7 +15,7 @@
     "allowJs": true,
     "paths": {
       "@hv/uikit-react-core": ["./packages/core/src"],
-      "@hv/uikit-react-core/*": ["./packages/core/src/*"],
+      "@hv/uikit-react-core/*": ["./packages/core/src/*"]
     }
   },
   "exclude": ["**/dist/"]

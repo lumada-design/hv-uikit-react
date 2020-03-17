@@ -30,7 +30,6 @@ const EmptyState = ({ classes, title = null, message = null, action = null, icon
 );
 
 EmptyState.propTypes = {
-  /* eslint-disable react/require-default-props */
   /**
    * A Jss Object used to override or extend the styles applied to the empty state component.
    */

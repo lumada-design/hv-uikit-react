@@ -78,7 +78,15 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
  * @returns {*}
  * @constructor
  */
-const Search = ({ id, searchBoxLabels, searchString, onFilter, onSearch, values, metadata }) => {
+const Search = ({
+  id = undefined,
+  searchBoxLabels,
+  searchString = undefined,
+  onFilter,
+  onSearch = null,
+  values,
+  metadata
+}) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
   const handler = value => {
@@ -143,12 +151,6 @@ Search.propTypes = {
    * Search string
    */
   searchString: PropTypes.string
-};
-
-Search.defaultProps = {
-  id: undefined,
-  onSearch: null,
-  searchString: undefined
 };
 
 export default Search;

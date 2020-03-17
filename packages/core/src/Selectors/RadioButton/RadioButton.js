@@ -176,7 +176,7 @@ HvRadio.propTypes = {
    */
   value: PropTypes.string,
   /**
-   * The label to be added to the checkbox.
+   * The label to be added to the radio button.
    */
   label: PropTypes.string,
   /**

@@ -6,7 +6,14 @@ import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
 import styles from "./styles";
 
-const Actions = ({ classes, id, category, actions, actionsCallback, maxVisibleActions }) => {
+const Actions = ({
+  classes,
+  id = "",
+  category = "ghost",
+  actions = [],
+  actionsCallback = {},
+  maxVisibleActions = Infinity
+}) => {
   if (!Array.isArray(actions)) {
     return React.isValidElement(actions) ? actions : null;
   }
@@ -18,12 +25,14 @@ const Actions = ({ classes, id, category, actions, actionsCallback, maxVisibleAc
       category={category}
       className={classes.button}
       disabled={action.disabled}
+      // TODO handle `event` arg
       onClick={() => actionsCallback(id, action)}
+      // TODO: should be ...action others instead
       aria-label={action.ariaLabel}
       aria-labelledby={action.ariaLabelledBy}
       aria-describedby={action.ariaDescribedBy}
     >
-      {action.iconCallback && action.iconCallback()}
+      {action?.iconCallback?.({ isDisabled: action.disabled })}
       {action.label}
     </HvButton>
   );
@@ -53,6 +62,8 @@ const Actions = ({ classes, id, category, actions, actionsCallback, maxVisibleAc
     );
   };
 
+  // TODO: should have a classes.root
+  // TODO: should have ...others
   return actions.length > maxVisibleActions
     ? renderActionsGrid(actions)
     : actions.map((action, idx) => renderButton(action, `${id}-${idx}-action-${action.id}`));
@@ -114,14 +125,6 @@ Actions.propTypes = {
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
   maxVisibleActions: PropTypes.number
-};
-
-Actions.defaultProps = {
-  id: "",
-  category: "ghost",
-  actions: [],
-  actionsCallback() {},
-  maxVisibleActions: Infinity
 };
 
 export default withStyles(styles, { name: "HvActions" })(Actions);

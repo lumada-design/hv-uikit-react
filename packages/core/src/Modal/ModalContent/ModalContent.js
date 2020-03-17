@@ -14,7 +14,7 @@ import styles from "./styles";
  * @returns {*}
  * @constructor
  */
-const ModalContent = ({ classes, className, children }) => {
+const ModalContent = ({ classes, className = "", children }) => {
   const isString = typeof children === "string";
 
   return (
@@ -50,10 +50,6 @@ ModalContent.propTypes = {
    * Content to be render.
    */
   children: PropTypes.node.isRequired
-};
-
-ModalContent.defaultProps = {
-  className: ""
 };
 
 export default withStyles(styles, { name: "HvModalContent" })(ModalContent);

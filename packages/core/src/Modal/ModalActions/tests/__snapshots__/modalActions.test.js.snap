@@ -778,7 +778,6 @@ exports[`ModalActions Component allows external props to be added 1`] = `
       }
     >
       <WithStyles(HvModalActions)
-        className=""
         disableActionSpacing={true}
       >
         Modal Content
@@ -1566,7 +1565,6 @@ exports[`ModalActions Component allows external styles to be added 1`] = `
       }
     >
       <WithStyles(HvModalActions)
-        className=""
         classes={
           Object {
             "action": "testClassAction",
@@ -2358,9 +2356,7 @@ exports[`ModalActions Component should render correctly if opened 1`] = `
         }
       }
     >
-      <WithStyles(HvModalActions)
-        className=""
-      >
+      <WithStyles(HvModalActions)>
         Modal Content
       </WithStyles(HvModalActions)>
     </ContextProvider>
@@ -3145,9 +3141,7 @@ exports[`ModalActions withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(HvModalActions)
-        className=""
-      >
+      <WithStyles(HvModalActions)>
         Modal Content
       </WithStyles(HvModalActions)>
     </ContextProvider>
