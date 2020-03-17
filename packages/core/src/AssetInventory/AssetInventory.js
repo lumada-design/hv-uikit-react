@@ -67,13 +67,6 @@ class AssetInventory extends React.Component {
     };
   }
 
-  /**
-   * Update the values with the new received.
-   *
-   * @param props
-   * @param state
-   * @returns {{originalValues: *}|null}
-   */
   static getDerivedStateFromProps(props, state) {
     let result = {};
 
@@ -140,14 +133,6 @@ class AssetInventory extends React.Component {
     return isEmpty(result) ? null : result;
   }
 
-  /**
-   * Sets the data that is shown in the component, for the case of the use of pagination.
-   *
-   * @param values
-   * @param pageSize
-   * @param page
-   * @returns {*}
-   */
   getPaginationData = (values, pageSize, page) => {
     const { hasPagination, paginationServerSide } = this.props;
     return hasPagination && !paginationServerSide
@@ -155,11 +140,6 @@ class AssetInventory extends React.Component {
       : values;
   };
 
-  /**
-   * Change between views.
-   *
-   * @param id a array with the selected ids.
-   */
   changeView = id => {
     const selectedId = id[0];
 
@@ -168,11 +148,6 @@ class AssetInventory extends React.Component {
     });
   };
 
-  /**
-   * Set the values to be shown in the views.
-   *
-   * @param returnedViewValues
-   */
   setViewValues = returnedViewValues => {
     const { pageSize, page } = this.state;
     this.setState({
@@ -180,12 +155,6 @@ class AssetInventory extends React.Component {
     });
   };
 
-  /**
-   * Set the return results to the values states. The page has to change to 0, so the pagination can start over.
-   *
-   * @param results
-   * @param value
-   */
   setSearchResults = (results, value) => {
     this.setState({ values: results, page: 0, searchString: value });
     this.setViewValues(results);
@@ -214,12 +183,6 @@ class AssetInventory extends React.Component {
     );
   };
 
-  /**
-   * Sort the view values according the received sort function.
-   *
-   * @param sortFunc
-   * @param id
-   */
   onSort = (sortFunc, id) => {
     const { values } = this.state;
     values.sort(sortFunc);
@@ -227,11 +190,6 @@ class AssetInventory extends React.Component {
     this.setState({ selectedSort: id });
   };
 
-  /**
-   * Show the sort component.
-   *
-   * @returns {*}
-   */
   renderSort = () => {
     const { labels, configuration, classes, onSortChange, disablePortal } = this.props;
     const { internalId, selectedSort } = this.state;
@@ -255,11 +213,6 @@ class AssetInventory extends React.Component {
     );
   };
 
-  /**
-   * Pagination on page change when no server side pagination.
-   *
-   * @param page
-   */
   paginationOnPageChange = page => {
     const { values, pageSize } = this.state;
 
@@ -271,11 +224,6 @@ class AssetInventory extends React.Component {
     });
   };
 
-  /**
-   * Pagination on page size change when no server side pagination.
-   *
-   * @param newPageSize
-   */
   paginationOnPageSizeChange = newPageSize => {
     const { values, page } = this.state;
 
@@ -287,11 +235,6 @@ class AssetInventory extends React.Component {
     });
   };
 
-  /**
-   * Pagination render.
-   *
-   * @returns {*}
-   */
   renderPagination = () => {
     const {
       paginationServerSide,
@@ -331,12 +274,6 @@ class AssetInventory extends React.Component {
     );
   };
 
-  /**
-   * Updates the selectedValues list in each interaction, calling the onSelection passed by props.
-   *
-   * @param onSelection
-   * @returns {function(...[*]=)}
-   */
   innerOnSelection = onSelection => event => {
     const { selectedValues } = this.state;
     const id = event.target.value;
@@ -354,25 +291,10 @@ class AssetInventory extends React.Component {
     onSelection(event);
   };
 
-  /**
-   * Auxiliary function.
-   *
-   * @param source
-   * @param target
-   * @param props
-   */
   propsFillerManager = (source, target, props) => {
     props.forEach(prop => this.propsFiller(source, target, prop[0], prop[1]));
   };
 
-  /**
-   * Auxiliary function.
-   *
-   * @param source
-   * @param target
-   * @param propName
-   * @param value
-   */
   propsFiller = (source, target, propName, value) => {
     if (isNil(source.props[propName])) {
       // eslint-disable-next-line no-param-reassign
@@ -380,11 +302,6 @@ class AssetInventory extends React.Component {
     }
   };
 
-  /**
-   * Pass the props on the component into the children's.
-   *
-   * @param child
-   */
   fillChildProp(child) {
     const {
       onSelection,

@@ -12,17 +12,6 @@ import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
 import styles from "./styles";
 
-/**
- * Dropdown component with a menu.
- *
- * @param icon
- * @param classes
- * @param placement
- * @param dataList
- * @param id
- * @returns {*}
- * @constructor
- */
 const DropDownMenu = ({
   icon,
   classes,
@@ -72,11 +61,7 @@ const DropDownMenu = ({
     handleToggle(event, false);
   };
 
-  /**
-   * If the ESCAPE key is pressed the close handler must beSpace called.
-   *Space
-   * @param event
-   */
+  // If the ESCAPE key is pressed the close handler must be called.
   const handleKeyDown = event => {
     if (isKeypress(event, KeyboardCodes.Esc)) {
       handleClose(event);

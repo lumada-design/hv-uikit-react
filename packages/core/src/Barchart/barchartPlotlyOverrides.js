@@ -1,11 +1,5 @@
 import clone from "lodash/cloneDeep";
 
-/**
- * Set the property if it is null.
- * @param object
- * @param property
- * @param value
- */
 const setterIfNil = (object, property, value) => {
   // eslint-disable-next-line no-param-reassign
   object[property] = object[property] || value;
@@ -13,9 +7,7 @@ const setterIfNil = (object, property, value) => {
 
 /**
  * Auxiliary functions to set the layout in order to follow the DS guideline.
- *
  */
-
 export const setLayout = (inputLayout, stack) => {
   const layout = inputLayout === undefined ? {} : clone(inputLayout);
   setterIfNil(layout, "bargap", 0.25);

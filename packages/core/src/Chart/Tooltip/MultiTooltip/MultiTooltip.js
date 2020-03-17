@@ -4,14 +4,6 @@ import { withStyles } from "@material-ui/core";
 import Typography from "../../../Typography";
 import styles from "./styles";
 
-/**
- * Tooltip with color representation.
- *
- * @param classes
- * @param data
- * @returns {*}
- * @constructor
- */
 const MultiTooltip = ({ classes, data }) => (
   <div className={classes.root}>
     <div className={classes.title}>

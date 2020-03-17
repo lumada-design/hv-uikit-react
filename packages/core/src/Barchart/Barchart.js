@@ -9,18 +9,6 @@ import styles from "./styles";
 const MARGIN = 50;
 const MAX_BAR_WIDTH = 90;
 
-/**
- * Component responsible for the presentation of the barchart component.
- *
- * @param title
- * @param subtitle
- * @param data
- * @param layout
- * @param config
- * @param tooltipType
- * @returns {*}
- * @constructor
- */
 const Barchart = ({
   classes,
   title,

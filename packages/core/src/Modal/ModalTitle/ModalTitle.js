@@ -6,17 +6,6 @@ import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
 import styles from "./styles";
 
-/**
- * Title component of the modal.
- *
- * @param classes
- * @param children
- * @param disableTypography
- * @param others
- * @returns {*}
- * @constructor
- */
-
 const ModalTitle = ({
   classes,
   className = "",

@@ -3,12 +3,6 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import DropDown from "../../Dropdown";
 
-/**
- * Filter the metadata that has searchable definitions.
- *
- * @param metadata
- * @returns {[]}
- */
 const sortOperationSetup = (metadata, selectedSort) => {
   const sortableCriteria = [];
 
@@ -38,12 +32,6 @@ const sortOperationSetup = (metadata, selectedSort) => {
   return sortableCriteria;
 };
 
-/**
- * Get the sort function according the type.
- *
- * @param type
- * @returns {(function(*=, *=): boolean)|(function(*, *): boolean)}
- */
 const sortByType = type => {
   switch (type.toUpperCase()) {
     case "NUMERIC":
@@ -56,11 +44,6 @@ const sortByType = type => {
   }
 };
 
-/**
- * Calls the passed onSelection passing the sort function.
- *
- * @param sort
- */
 const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellType }) => {
   let selectedSortFunc;
 
@@ -75,16 +58,6 @@ const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellTy
   return selectedSortFunc;
 };
 
-/**
- * Sort component.
- *
- * @param id
- * @param labels
- * @param onSelection
- * @param metadata
- * @returns {*}
- * @constructor
- */
 const Sort = ({
   id = undefined,
   labels,

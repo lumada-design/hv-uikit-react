@@ -5,16 +5,6 @@ import HvTypography from "../../../Typography";
 import Actions from "../../../Actions";
 import styles from "./styles";
 
-/**
- * Container for the message of the banner. This message may include:
- * - Icon (variant or custom)
- * - Text
- * - Actions
- *
- * @param props
- * @returns {*}
- * @constructor
- */
 const MessageContainer = ({
   id,
   classes,

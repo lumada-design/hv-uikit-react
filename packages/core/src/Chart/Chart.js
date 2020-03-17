@@ -9,13 +9,6 @@ import Typography from "../Typography";
 import Plot from "./Plot";
 import styles from "./styles";
 
-/**
- * Setter of default layout properties.
- *
- * @param inputLayout
- * @param theme
- * @returns {*}
- */
 const propsLayoutSetter = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTitle) => {
   const layoutStyles = styles(theme);
   const layout = inputLayout === undefined ? {} : inputLayout;
@@ -35,18 +28,6 @@ const propsLayoutSetter = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTi
   return layout;
 };
 
-/**
- * Component responsible for the presentation of the barchart component.
- *
- * @param title
- * @param subtitle
- * @param data
- * @param layout
- * @param config
- * @param tooltipType
- * @returns {*}
- * @constructor
- */
 const Chart = ({
   classes,
   title,
@@ -71,11 +52,7 @@ const Chart = ({
 
   const newLayout = propsLayoutSetter(layout, theme, isHorizontal, xAxisTitle, yAxisTitle);
 
-  /**
-   * Extract data from the plotly onHover event to be used to create the tooltip.
-   *
-   * @param eventData
-   */
+  // Extract data from the plotly onHover event to be used to create the tooltip.
   const onHover = eventData => {
     const dataFromPoints = {
       title: isHorizontal ? eventData.points[0].y : eventData.points[0].x,
@@ -96,10 +73,7 @@ const Chart = ({
 
   const onUnHover = () => setIsHover(false);
 
-  /**
-   * Obtains the cursor coordinates to send to the tooltip.
-   * @param eventData
-   */
+  // Obtains the cursor coordinates to send to the tooltip.
   const onMouseMove = eventData => {
     setCoordinates({
       x: eventData.pageX,

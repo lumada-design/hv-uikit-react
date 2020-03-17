@@ -2,14 +2,6 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import MultiButton from "../../MultiButton";
 
-/**
- * AssetMultiButton component.
- *
- * @param views
- * @param changeView
- * @returns {*}
- * @constructor
- */
 const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
   const options = [];
 

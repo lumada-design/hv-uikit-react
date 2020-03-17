@@ -6,14 +6,7 @@ import { CardHeader, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const DEFAULT_ID = "hv-header";
-/**
- * The header container that possesses three slots:
- * - icon
- * - title
- * - subheader
- *
- * @param {*} { classes, headerTitle, subheader, icon }
- */
+
 const Header = ({
   classes,
   className,

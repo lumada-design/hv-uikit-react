@@ -4,15 +4,6 @@ import { withStyles } from "@material-ui/core";
 import Typography from "../../../Typography";
 import styles from "./styles";
 
-/**
- * Tooltip for the cases with a single group.
- *
- * @param classes
- * @param title
- * @param value
- * @returns {*}
- * @constructor
- */
 const SingleTooltip = ({ classes, title, value }) => (
   <div className={classes.root}>
     <div>

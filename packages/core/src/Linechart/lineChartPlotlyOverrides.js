@@ -1,11 +1,5 @@
 import clone from "lodash/cloneDeep";
 
-/**
- * Set the property if it is null.
- * @param object
- * @param property
- * @param value
- */
 const setterIfNil = (object, property, value) => {
   // eslint-disable-next-line no-param-reassign
   object[property] = object[property] || value;

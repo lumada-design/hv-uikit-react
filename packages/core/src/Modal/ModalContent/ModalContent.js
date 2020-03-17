@@ -5,15 +5,6 @@ import clsx from "clsx";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 
-/**
- * Message container. The passed children is render in this container, creating
- * a typography node if the children is of the string type.
- *
- * @param classes
- * @param children
- * @returns {*}
- * @constructor
- */
 const ModalContent = ({ classes, className = "", children }) => {
   const isString = typeof children === "string";
 

@@ -5,18 +5,6 @@ import Chart from "../Chart";
 import { setData, setLayout } from "./lineChartPlotlyOverrides";
 import styles from "./styles";
 
-/**
- * Component responsible for the presentation of the barchart component.
- *
- * @param title
- * @param subtitle
- * @param data
- * @param layout
- * @param config
- * @param tooltipType
- * @returns {*}
- * @constructor
- */
 const Linechart = ({
   classes,
   title,

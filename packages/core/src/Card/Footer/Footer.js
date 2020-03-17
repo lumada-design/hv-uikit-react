@@ -7,22 +7,6 @@ import Actions from "../../Actions";
 import withConfig from "../../config/withConfig";
 import styles from "./styles";
 
-/**
- * The footer container contains the actions of the cards also
- * it creates a checkbox if the card is required to be selectable positioning it to the left.
- *
- * @param {Object} {
- *   classes,
- *   actions,
- *   isSelectable,
- *   onChange,
- *   checkboxValue,
- *   checkboxSelected,
- *   checkboxIndeterminate,
- *   checkboxLabel,
- *   ...other
- * }
- */
 const Footer = ({
   classes,
   id,
