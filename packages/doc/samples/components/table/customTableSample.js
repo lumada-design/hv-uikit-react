@@ -173,8 +173,8 @@ class Wrapper extends React.Component {
       subtitleText
     } = this.state;
     const labels = {
-      titleText: "This is The Title",
-      subtitleText: "This is The Subtitle"
+      titleText: "This is a title",
+      subtitleText: "This is a subtitle"
     };
     return (
       <HvTable
