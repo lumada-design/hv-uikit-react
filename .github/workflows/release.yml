@@ -1,30 +1,60 @@
 name: Release
-# need to review event that will trigger this, and a way to pass the release type
-on: repository_dispatch
+on:
+  schedule:
+    - cron: "0 8 * * *" # daily at 08:00
 
 env:
+  RELEASE_MESSAGE: 'chore(release): publish'
+
   RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
   PUBLISH_REGISTRY: http://svdrvrh8bs1.pentaho.net:8081/artifactory/api/npm/npm-local/
 
 jobs:
-  # Need to remove the nexus reference in the lerna.json file for this to work
-  Publish:
-    runs-on: self-hosted
+  # this method works with both scheduled and push events, scheduled does not have commit info
+  release-check:                                        
+    runs-on: [self-hosted, Linux]
+    steps:
+      - name: Release Check 
+        uses: actions/github-script@0.8.0
+        with:
+          script: |
+            const commit = await github.repos.getCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha
+            })
+
+            const message = commit.data.commit.message
+
+            if(message.includes('${{ env.RELEASE_MESSAGE }}')){
+              console.log('A release has already been performed, cancelling workflow...')
+
+              await github.actions.cancelWorkflowRun({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: ${{ github.run_id }}
+              })
+            }
+
+  release-perform:
+    needs: release-check
+    runs-on: [self-hosted, Linux]
     container: 
       image: node:12.14.1-buster
       options: -u 1000
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Bootstrap
+      - name: Install
         run: |
           npm config set registry ${RESOLVE_REGISTRY}
           npm ci
-          npm run bootstrap
+
+      - name: Bootstrap
+        run: npm run bootstrap
 
       - name: Publish Setup
         run: |
@@ -37,5 +67,5 @@ jobs:
           git config --global user.email "actions@users.noreply.github.com"
 
       - name: Publish
-        run: npm run publish-prerelease -- --no-git-reset
+        run: npm run publish- -- --no-git-reset
    
