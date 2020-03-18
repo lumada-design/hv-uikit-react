@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.0.0-next.1...@hv/uikit-react-core@2.0.0-next.2) (2020-03-18)
+
+
+### Features
+
+* **dropdowmenu:** add onToggleOpen. [#1208](https://github.com/pentaho/hv-uikit-react/issues/1208) ([401219a](https://github.com/pentaho/hv-uikit-react/commit/401219a4aafb674f9f14265f85564c268c79390a))
+* **styles:** generate stable class names [#1257](https://github.com/pentaho/hv-uikit-react/issues/1257) ([a52b22c](https://github.com/pentaho/hv-uikit-react/commit/a52b22c878bf6aabbc30113cc0a1605ebcebb6f6))
+* **typescript:** add type definitions. [#533](https://github.com/pentaho/hv-uikit-react/issues/533) ([e5e9f3f](https://github.com/pentaho/hv-uikit-react/commit/e5e9f3f0c29ad14906a8c5cd090cb54c484d896c))
+* **typescript:** add typescript definitions for Badge ([9025f25](https://github.com/pentaho/hv-uikit-react/commit/9025f25ca31a4456b32a9f4c957cc406815b2d30))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+
+
+
+
+
 # [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.25.0...@hv/uikit-react-core@2.0.0-next.1) (2020-03-04)
 
 

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.0.0-next.1...@hv/uikit-react-lab@2.0.0-next.2) (2020-03-18)
+
+
+### Features
+
+* **deprecations:** remove searchbox from lab. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([875fb0f](https://github.com/pentaho/hv-uikit-react/commit/875fb0f3767a38e57dc1af5b182ae5598a4beb1f))
+* **styles:** generate stable class names [#1257](https://github.com/pentaho/hv-uikit-react/issues/1257) ([a52b22c](https://github.com/pentaho/hv-uikit-react/commit/a52b22c878bf6aabbc30113cc0a1605ebcebb6f6))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+
+
+
+
+
 # [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.1...@hv/uikit-react-lab@2.0.0-next.1) (2020-03-04)
 
 

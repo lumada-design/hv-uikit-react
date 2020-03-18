@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.0.0-next.1...@hv/uikit-react-icons@2.0.0-next.2) (2020-03-18)
+
+
+### Features
+
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+
+
+
+
+
 # [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.0...@hv/uikit-react-icons@2.0.0-next.1) (2020-03-04)
 
 
