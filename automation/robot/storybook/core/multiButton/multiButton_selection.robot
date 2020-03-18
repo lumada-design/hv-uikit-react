@@ -51,10 +51,10 @@ multiButton minimum selection
 
 multiButton input controlled value
     Go To                            ${storybook_iframe}inputcontrolledvalue
-    Wait Until Element Is Visible    map    10s    error message: The page don't was visible in 2 seconds
-    verify element count             //button[contains(@class,'MultiButton')]    4
+    Wait Until Element Is Visible    map                                         10s        error message: The page don't was visible in 2 seconds
+    Page Should Contain Element      //button[contains(@class,'MultiButton')]    limit=4
     Click Button                     New Props
-    verify element count             //button[contains(@class,'MultiButton')]    2
+    Page Should Contain Element      //button[contains(@class,'MultiButton')]    limit=2
 
 multiButton maximun selection
     Go To                            ${storybook_iframe}maximumselectionhorizontalmultipleselection

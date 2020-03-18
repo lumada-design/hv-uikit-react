@@ -14,7 +14,7 @@ Test there is no state transition on mouse hover disabled button
     ...                verify button don't change with mouse hover it
     ...
     Wait Until Element Is Visible    ${button_locator}
-    verify CSS properties do not changes with mouse hover    ${button_locator}
+    verify element background-color does not change on mouse over and mouse out    ${button_locator}
 
 *** Test Cases ***                                       button_locator         
 mouse hover on disabled default button                   disabledPrimary        
@@ -22,3 +22,5 @@ mouse hover on disabled secondary button                 disabledSecondary
 mouse hover on disabled ghost button                     disabledGhost          
 mouse hover on disabled ghost Secondary button           disabledGhostSecondary 
 mouse hover on disabled semantic button                  disabledSemantic
+
+

@@ -19,11 +19,12 @@ Test button state transition between focus-hover-focus
     Click Button                ${button_locator}
     Alert Should Be Present
     Element Should Be Focused   ${button_locator}
-    verify button background-color change on and removing mouse hover    ${button_locator}
+    verify element background-color change on mouse over and mouse out    ${button_locator}
 
-*** Test Cases ***                                      button_locator
+*** Test Cases ***                                      button
 mouse hover on focused default button                   default
 mouse hover on focused secondary button                 secondary
 mouse hover on focused ghost button                     ghost
 mouse hover on focused ghost Secondary button           ghostSecondary
 mouse hover on focused semantic button                  semantic
+    [Tags]    bug-firefox-webdriver    #suspects firefox is putting mouse over on element when is used keyword mouse over css:body
