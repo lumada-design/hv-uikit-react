@@ -21,15 +21,8 @@ storybook sample labelOnlyVerticalMultipleSelection against standard            
 storybook sample labelOnlyVerticalSingleSelection against standard               ${pa11y_script}labelonlyverticalsingleselection
 storybook sample labelWithIconVerticalMultipleSelection against standard         ${pa11y_script}labelwithiconverticalmultipleselection
 storybook sample labelWithIconVerticalSingleSelection against standard           ${pa11y_script}labelwithiconverticalsingleselection
+storybook sample iconOnlyHorizontalMultipleSelection against standard            ${pa11y_script}icononlyhorizontalmultipleselection
 
-storybook sample iconOnlyHorizontalMultipleSelection against standard
-    [Template]    NONE
-    [Documentation]
-    ...    = ATTENTION! =
-    ...     - storybook samples just with icons don't are complained with WCAG2AA roles (buttons should have a name)
-    ...     - was reported related isse https://github.com/pentaho/hv-uikit-react/issues/683, the similar related story book tests samples was turned disabled
-    ...    ---
-    pa11y result should be equal as file    ${pa11y_script}icononlyhorizontalmultipleselection    ${CURDIR}/WCAG2AA_icononlyhorizontalmultipleselection.json
 
 #storybook sample iconOnlyHorizontalSingleSelection against standard              icononlyhorizontalsingleselection
 #storybook sample iconOnlyVerticalMultipleSelection against standard              icononlyverticalmultipleselection

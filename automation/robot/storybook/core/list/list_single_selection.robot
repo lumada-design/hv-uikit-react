@@ -13,8 +13,8 @@ Documentation     options selections just for lists with single selection
 list option change background when mouse hover on option
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection
     Wait Until Element Is Visible          ${list}             10s
-    verify element background-color change on mouse over    ${option1}
-    verify element background-color change on mouse over    ${option2}
+    verify element background-color change on mouse over and mouse out    ${option1}
+    verify element background-color change on mouse over and mouse out    ${option2}
 
 remove a selected option when click on it (single selection list)
     Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--single-selection

@@ -6,10 +6,12 @@ Suite Setup       open storybook
 Suite Teardown    Close Browser
 Force Tags        smoke
 
+
 *** Variables ***
 ${file_location}         ${CURDIR}\\sample.txt
 ${dropZone-inputArea}    automationfileuploader1-dropzone-button
 ${fileLine}              //ul[contains(@id,'fileuploader1-filelist')]/li
+
 
 *** Test Cases ***
 dropZone is clickable
@@ -23,13 +25,13 @@ remove files one by one
     ${fileName}                         Get Text                         xpath:(${fileLine})[2]/p
     Click element                       xpath:(${fileLine})[2]/button
     Wait Until Page Does Not Contain    ${fileName}                      2s
-    verify element count                ${fileLine}                      3
+    Page Should Contain Element         ${fileLine}                      limit=3
     Click element                       xpath:(${fileLine})[2]/button
-    verify element count                ${fileLine}                      2
+    Page Should Contain Element         ${fileLine}                      limit=2
     Click element                       xpath:(${fileLine})[2]/button
-    verify element count                ${fileLine}                      1
+    Page Should Contain Element         ${fileLine}                      limit=1
     Click element                       xpath:(${fileLine})[1]/button
-    verify element count                ${fileLine}                      0
+    Page Should Contain Element         ${fileLine}                      limit=0
 
 label when file exceeds the maximum size
     Go To                            ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea

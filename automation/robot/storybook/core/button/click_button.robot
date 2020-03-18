@@ -18,7 +18,7 @@ Test button state transition between default-focus
     ...
     Click Button                 ${button_locator}
     Alert Should Be Present
-    remove mouse hover button
+    Mouse Over                   css:body
     Element Should Be Focused    ${button_locator}
 
 *** Test Cases ***                        button         
