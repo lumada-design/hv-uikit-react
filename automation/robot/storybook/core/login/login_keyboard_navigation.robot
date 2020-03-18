@@ -12,11 +12,11 @@ Force Tags        smoke            keyboard
 *** Keywords ***
 submit credentials pressing ENTER
     [Arguments]    ${locator}
-    Set Focus To Element          ${locator}
-    Element Should Be Focused     ${locator}
-    Press Keys                    None               ENTER
-    Wait Until Page Contains      Logging            3s
-    Element Should Be Disabled    ${button_login}
+    Set Focus To Element           ${locator}
+    Element Should Be Focused      ${locator}
+    Press Keys                     None          ENTER
+    Wait Until Page Contains       Logging       3s
+    Wait Until Keyword Succeeds    3             300ms    Element Should Be Disabled    ${button_login}
 
 
 *** Test Cases ***
