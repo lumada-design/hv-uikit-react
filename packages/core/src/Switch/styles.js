@@ -24,15 +24,17 @@ const styles = theme => ({
   },
   switchRoot: {
     width: 52,
+    height: 22,
   },
+
   switchBase: {
     width: 52,
-    height: `${theme.hv.spacing.sm}px`,
+    height: 22,
     "&$checked": {
       "& input": {
-        width: 51,
+        width: 52,
         left: -32,
-        height: 21
+        height: 22
       },
       "& + $bar": {
         opacity: 1
@@ -40,108 +42,110 @@ const styles = theme => ({
     }
   },
 
-    bar: {
-      borderRadius: 15,
-      width: 52,
-      height: `${theme.hv.spacing.sm}px`,
-      left: 17,
-      top: 8,
-      border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo2,
-      opacity: 1
-    },
+  bar: {
+    borderRadius: 15,
+    width: 52,
+    height: `${theme.hv.spacing.sm}px`,
+    left: 17,
+    top: 8,
+    border: `solid 1px ${theme.hv.palette.accent.acce1}`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    opacity: 1
+  },
 
-    icon: {
-      width: 16,
-      height: 16,
-      border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo2,
-      marginLeft: -32,
-      marginTop: 2
-    },
+  icon: {
+    width: 14,
+    height: 14,
+    border: `solid 1px ${theme.hv.palette.accent.acce1}`,
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    marginLeft: -32,
+    marginTop: 0
+  },
 
-    checked: {
-      transform: "translateX(32px)",
-      width: `${theme.hv.spacing.sm}px`,
-      height: `${theme.hv.spacing.sm}px`,
-      top: 1
-    },
+  checked: {
+    transform: "translateX(32px)",
+    width: `${theme.hv.spacing.sm}px`,
+    height: `${theme.hv.spacing.sm}px`,
+    top: 1
+  },
 
-    iconChecked: {
-      backgroundColor: theme.hv.palette.atmosphere.atmo1,
-      border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-      marginLeft: "unset",
-      position:"absolute",
-      right:2,
-      top:0
-    },
+  iconChecked: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
+    border: `solid 1px transparent`,
+    marginLeft: "unset",
+    position: "absolute",
+    right: 3,
+    top: 3
+  },
 
-    disabled: {
-      color: theme.hv.palette.atmosphere.atmo4,
-      borderColor: theme.hv.palette.atmosphere.atmo6,
-      cursor: "no-drop",
-      "& + $bar": {
-        backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
-        border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-        opacity: 1,
-        cursor: "no-drop"
-      },
-      "& $icon": {
-        backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
-        border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
-      }
-    },
-
-    disabledLabel: {
-      ...theme.hv.typography.placeholderText,
-      height: `${theme.hv.spacing.sm}px`,
+  disabled: {
+    color: theme.hv.palette.atmosphere.atmo4,
+    borderColor: theme.hv.palette.atmosphere.atmo6,
+    cursor: "no-drop",
+    "& + $bar": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
+      opacity: 1,
       cursor: "no-drop"
     },
+    "& $icon": {
+      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+    }
+  },
 
-    labelDeselected: {
-      ...theme.hv.typography.normalText,
-      height: `${theme.hv.spacing.sm}px`,
-      cursor: "pointer",
-    },
-    labelSelected: {
-      height: `${theme.hv.spacing.sm}px`,
-      cursor: "default"
-    },
+  disabledLabel: {
+    ...theme.hv.typography.placeholderText,
+    height: `${theme.hv.spacing.sm}px`,
+    cursor: "no-drop"
+  },
 
-    labelLeftPositioning: {
-      paddingRight: `${theme.hv.spacing.xs}px`
-    },
+  labelDeselected: {
+    ...theme.hv.typography.normalText,
+    height: `${theme.hv.spacing.sm}px`,
+    cursor: "pointer",
+  },
+  labelSelected: {
+    height: `${theme.hv.spacing.sm}px`,
+    cursor: "default"
+  },
 
-    labelRightPositioning: {
-      paddingLeft: `${theme.hv.spacing.xs}px`
-    },
+  labelLeftPositioning: {
+    paddingRight: `${theme.hv.spacing.xs}px`
+  },
 
-    uncheckedHoverClass: {
-      border: `1px solid ${theme.hv.palette.accent.acce1} !important`,
-    },
+  labelRightPositioning: {
+    paddingLeft: `${theme.hv.spacing.xs}px`
+  },
 
-    uncheckedIconHoverClass: {
-      border: `1px solid ${theme.hv.palette.accent.acce1} !important`
-    },
+  uncheckedHoverClass: {
+    border: `1px solid ${theme.hv.palette.accent.acce1} !important`,
+  },
 
-    checkedHoverClass: {
-      opacity: 1
-    },
+  uncheckedIconHoverClass: {
+    border: `1px solid ${theme.hv.palette.accent.acce1} !important`
+  },
+
+  checkedHoverClass: {
+    opacity: 1
+  },
 
 
   checkedIcon: {
     clipPath: "circle(8px)",
     WebkitClipPath: "circle(8px)",
     marginLeft: 0,
-    width: "16px !important",
-    height: "16px !important",
-    background:`${theme.hv.palette.atmosphere.atmo1} `,
-    border:`1px solid ${theme.hv.palette.accent.acce1}`,
-    borderRadius:"50%",
-    "& div":{
+    width: "14px !important",
+    height: "14px !important",
+    background: `${theme.hv.palette.atmosphere.atmo1} `,
+    border: "none",
+    borderRadius: "50%",
+    "& div": {
       position: "relative",
-      top: "-1px",
-      left: "-1px"
+      top: 0,
+      left: 0,
+      height: 14,
+      width: 14
     }
   }
 });
