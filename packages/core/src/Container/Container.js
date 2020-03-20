@@ -1,0 +1,65 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles, Container } from "@material-ui/core";
+import { styles as containerStyles } from "@material-ui/core/Container/Container";
+
+// inherit material ui styles so people can override them too
+const styles = theme => ({
+  ...containerStyles(theme),
+  root: {
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: theme.spacing(2),
+      paddingRight: theme.spacing(2)
+    }
+  }
+});
+
+/**
+ * We override the default maxWidth to xl
+ */
+const HvContainer = ({ maxWidth = "xl", fixed, ...other }) => {
+  return <Container maxWidth={maxWidth} fixed={fixed} {...other} />;
+};
+
+/*
+ * copied from Material-UI Container.js since we simply override the styles of the component
+ * please make sure this is updated when we update our Material-UI dependency
+ */
+HvContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: PropTypes.object.isRequired,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the left and right padding is removed.
+   */
+  disableGutters: PropTypes.bool,
+  /**
+   * Set the max-width to match the min-width of the current breakpoint.
+   * This is useful if you'd prefer to design for a fixed set of sizes
+   * instead of trying to accommodate a fully fluid viewport.
+   * It's fluid by default.
+   */
+  fixed: PropTypes.bool,
+  /**
+   * Determine the max-width of the container.
+   * The container width grows with the size of the screen.
+   * Set to `false` to disable `maxWidth`.
+   */
+  maxWidth: PropTypes.oneOf(["xs", "sm", "md", "lg", "xl", false])
+};
+
+export default withStyles(styles, { name: "HvContainer" })(HvContainer);

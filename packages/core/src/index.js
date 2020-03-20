@@ -3,6 +3,7 @@ export { default as HvBanner } from "./Banner";
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvButton } from "./Button";
 export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMedia } from "./Card";
+export { default as HvContainer } from "./Container";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvHeader } from "./Header";

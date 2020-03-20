@@ -12,7 +12,8 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/forbid-prop-types": "off"
   },
   settings: {
     react: {
