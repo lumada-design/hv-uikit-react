@@ -1,46 +1,55 @@
 *** Setting ***
 Library    Process
 Library    OperatingSystem
-Library    ${CURDIR}${/}RemoveAttributesAndIndent.py
-Library    ${CURDIR}${/}DiffFiles.py
+Library    customLibrary.py    
+Library    String    
+
+
+*** Variables ***
+@{pa11y_options}    node              %{pa11y_home}/pa11y.js
+...                 --runner          htmlcs                             --runner    axe
+...                 --standard        WCAG2AA
+...                 --root-element    div[class|='Component-content']
+# pa11y options based on https://github.com/pa11y/pa11y
+
 
 *** Keywords ***
-files should be equal
-    [Arguments]    ${expectedFile}
+get story file name from url
+    [Arguments]    ${url}       
+    ${story}    Fetch From Right    ${url}    id=
+    [Return]    ${OUTPUT_DIR}${/}${story}
+
+get pa11y errors
+    [Arguments]    ${url}
+    [Documentation]    
+    ...    run pa11y script against ${url} and return path of saved errors results 
+    ...
+    ${story}                       get story file name from url    ${url}
+    ${pa11yResult}=                Run Process                     @{pa11y_options}
+    ...                            --reporter                      json                ${url}
+    ...                            stdout=${story}                 stderr=STDOUT       timeout=60s
+    Should Be Equal As Integers    ${pa11yResult.rc}               2                   ${pa11yResult.stdout}
+    [Return]                       ${pa11yResult.stdout_path}
+    
+pa11y should not find errors
+    [Arguments]    ${url}
     [Documentation]
-     ...   | Arguments:   | Description                                            |
-     ...   | expectedFile | file path with expected results                        |
+     ...   run pa11y script against ${url}
+     ...   fails if pa11y return errors and in this case is saved a related error file on outputdir
      ...
-     ...   Run diff of generated files and prints both files to the output
-     ...   Fails if files don't are compared/exists or if files don't are equivalent.
-     ...
-    ${diffResult}=                 Run Process            python         ${CURDIR}${/}DiffFiles.py        ${expectedFile}
-    Should Be Empty                ${diffResult.stdout}
+    ${story}                       get story file name from url    ${url}
+    ${pa11yResult}=                Run Process                     @{pa11y_options}    ${url}
+    ...                            stdout=${story}                 stderr=STDOUT       timeout=60s
+    Should Be Equal As Integers    ${pa11yResult.rc}               0                   please look errors file: \n ${pa11yResult.stdout_path} \n
+    Remove File                    ${story}
 
 pa11y result should be equal as file
-    [Arguments]    ${pa11yScript}    ${expectedFile}
+    [Arguments]    ${url}    ${expectedFile}
     [Documentation]
-     ...   | Arguments:   | Description                                            |
-     ...   | pa11yScript  | pa11y cmd instruction (https://github.com/pa11y/pa11y) |
-     ...   | expectedFile | file path with expected results                        |
+     ...   run pa11y script against ${url} and compare results a given file. \n
+     ...   fails if files don't are equal and in this case is saved a related error file on outputdir
      ...
-     ...   Run pa11y script and then compared saved results file with a given file. \n
-     ...   Fails if files don't are compared/exists or if files don't are equivalent.
-     ...
-    ${pa11yResult}=              Run Process              ${pa11yScript}                               stdout=${expectedFile}Delete    shell=True    timeout=120s
-    Should Be Empty              ${pa11yResult.stderr}
-    ${pythonResult}=             Run Process              python                                       ${CURDIR}${/}RemoveAttributesAndIndent.py    ${expectedFile}  shell=True
-    Log                          ${pythonResult.stdout}   WARN
-    files should be equal        ${expectedFile}
-    Remove File                  ${expectedFile}Delete
-    Remove File                  ${expectedFile}2
-
-pa11y should not find errors
-    [Arguments]    ${pa11yScript}
-    [Documentation]
-     ...   | Arguments:      | Description                                            |
-     ...   | pa11yScript     | pa11y cmd instruction (https://github.com/pa11y/pa11y) |
-     ...   Fails if pa11y return any error
-     ...
-    ${pa11yResult}=                Run Process          ${pa11yScript}    shell=True    timeout=120s
-    Should Be Equal As Integers    ${pa11yResult.rc}    0                 ${pa11yResult.stderr} ${pa11yResult.stdout}
+    ${file}=                 get pa11y errors    ${url}
+    Extract Codes            ${file}             ${file}_codes
+    Files Should Be Equal    ${expectedFile}     ${file}_codes
+    Remove Files             ${file}             ${file}_codes
