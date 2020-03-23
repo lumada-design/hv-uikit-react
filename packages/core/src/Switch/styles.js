@@ -119,11 +119,11 @@ const styles = theme => ({
   },
 
   uncheckedHoverClass: {
-    border: `1px solid ${theme.hv.palette.accent.acce1} !important`,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
   },
 
   uncheckedIconHoverClass: {
-    border: `1px solid ${theme.hv.palette.accent.acce1} !important`
+    border: `1px solid ${theme.hv.palette.accent.acce1}`
   },
 
   checkedHoverClass: {
@@ -135,9 +135,9 @@ const styles = theme => ({
     clipPath: "circle(8px)",
     WebkitClipPath: "circle(8px)",
     marginLeft: 0,
-    width: "14px !important",
-    height: "14px !important",
-    background: `${theme.hv.palette.atmosphere.atmo1} `,
+    width: 14,
+    height: 14,
+    background: `${theme.hv.palette.atmosphere.atmo1}`,
     border: "none",
     borderRadius: "50%",
     "& div": {
