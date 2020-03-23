@@ -72,7 +72,6 @@ const styles = theme => ({
           boxShadow: "none",
           "& > div": {
             width: "100%",
-            // margin: "1px 0px",
             alignSelf: "baseline"
           },
           "& > div.rt-resizer": {
