@@ -103,7 +103,7 @@ const DropDownMenu = ({
   const IconRender = icon || (
     <MoreVert
       boxStyles={{ width: "32px", height: "32px" }}
-      color={[disabled ? theme.hv.palette.atmosphere.atmo7 : undefined]}
+      color={[disabled ? theme.hv.palette.atmosphere.atmo7 : theme.hv.palette.accent.acce1]}
     />
   );
 
