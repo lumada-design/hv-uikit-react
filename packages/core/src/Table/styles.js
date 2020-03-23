@@ -283,7 +283,14 @@ const styles = theme => ({
   },
   iconContainer: {
     width: "30px",
-    height: "30px"
+    height: "30px",
+    cursor: "pointer"
+  },
+  iconContainerDisabled: {
+    width: "30px",
+    height: "30px",
+    cursor: "not-allowed",
+    opacity: "0.5"
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"

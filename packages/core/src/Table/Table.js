@@ -62,7 +62,7 @@ const ReactTableCheckbox = checkboxHOC(ReactTable);
  *
  * The type is defined by the existence of the properties:
  *  - subElementTemplate: Creates a table with expander;
- *  - idForCheckbox: Creates a table with checkboxs;
+ *  - idForCheckbox: Creates a table with checkboxes;
  *  - None: Creates a simple table.
  *
  *   Just one of this properties should be set (or none) has it isn't possible to have a table with
@@ -82,6 +82,8 @@ class Table extends React.Component {
       initiallyLoaded: false,
       // Controls which row is expanded.
       expanded: {},
+      // Controls which row is about to collapse to open a new one.
+      previousExpanded: {},
       // Controls which row is selected using the checkboxes.
       selection: props.selections || [],
       // Controls if the select all options has been used
@@ -348,11 +350,35 @@ class Table extends React.Component {
    *
    * @param {numeric} rowIndex - The index of the row to toggle.
    */
-  toggleExpand = rowIndex => {
-    const { expanded } = this.state;
-    this.setState({
-      expanded: { [rowIndex]: !expanded[rowIndex] }
-    });
+  toggleExpand = (rowIndex, row) => {
+    const { expanded, previousExpanded } = this.state;
+    const { expanderOptions } = this.props;
+
+    const newState = { [rowIndex]: !expanded[rowIndex] };
+
+    // Trigger onExpand function when no row is expanded
+    if (Object.keys(expanded).length === 0) {
+      this.setState({ expanded: newState, previousExpanded: row });
+      if (expanderOptions && expanderOptions.onExpand) {
+        expanderOptions.onExpand(row);
+      }
+
+      // Trigger onCollapse function when closing expanded row
+    } else if (Object.keys(expanded)[0] === Object.keys(newState)[0]) {
+      this.setState({ expanded: {} });
+      if (expanderOptions && expanderOptions.onCollapse) {
+        expanderOptions.onCollapse(previousExpanded);
+      }
+    } else {
+      // Trigger onCollapse function on expanded row, and onExpand a new one
+      this.setState({ expanded: newState });
+      if (expanderOptions && expanderOptions.onCollapse) {
+        expanderOptions.onCollapse(previousExpanded);
+      }
+      if (expanderOptions && expanderOptions.onExpand) {
+        expanderOptions.onExpand(row);
+      }
+    }
   };
 
   /**
@@ -388,7 +414,7 @@ class Table extends React.Component {
     if (subElementTemplate && rowInfo && rowInfo.row) {
       return {
         ...baseTrProps,
-        className: classNames(classes.tr, classes.pointer)
+        className: classNames(classes.tr)
       };
     }
 
@@ -461,7 +487,7 @@ class Table extends React.Component {
   };
 
   /**
-   * Selects all the avaible rows on the page.
+   * Selects all the available rows on the page.
    */
   toggleAll = () => {
     const { idForCheckbox, onSelection } = this.props;
@@ -527,6 +553,7 @@ class Table extends React.Component {
       secondaryActions,
       sortable,
       rowCount,
+      expanderOptions,
       ...other
     } = this.props;
 
@@ -542,6 +569,27 @@ class Table extends React.Component {
       ? ReactTableCheckbox
       : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
+
+    /**
+     * Handle secondaryActions availability per row
+     * on the table data elements, should have an array with :
+     * {
+     *  ...props,
+     *  actions : [ 'idAction1', 'idAction4' ] // this will disable actions 'idAction2/idAction3'
+     * }
+     * @param {Object} rowItem - row item.
+     * @param {Array} actionsList - list of available secondaryActions.
+     */
+    /* eslint-disable indent */
+    const handleAvailableActions = (rowItem, actionsList) => {
+      return Object.prototype.hasOwnProperty.call(rowItem, "actions")
+        ? actionsList.map(item => ({
+            ...item,
+            disabled: !rowItem.actions.includes(item.id)
+          }))
+        : actionsList;
+    };
+    /* eslint-enable indent */
 
     // Add dropdown menu column if secondaryActions exists in props
     if (
@@ -560,10 +608,16 @@ class Table extends React.Component {
               id={`${this.computeRowElementId(props)}-secondaryActions`}
               disablePortal={false}
               icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
-              dataList={secondaryActions}
+              dataList={handleAvailableActions(
+                props.original,
+                secondaryActions
+              )}
               onClick={(item, event) => {
                 event.stopPropagation();
-                item.action(props.original);
+                // remove error when clicking on the threeDots button
+                if (item) {
+                  item.action(props.original);
+                }
               }}
               aria-label={`${this.computeRowElementId(props)}-secondaryActions`}
             />
@@ -600,7 +654,8 @@ class Table extends React.Component {
       columns,
       subElementTemplate,
       classes,
-      this.toggleExpand
+      this.toggleExpand,
+      expanderOptions
     );
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
@@ -869,7 +924,25 @@ Table.propTypes = {
   /**
    * Number of rows available in table to display in aria-rowcount
    */
-  rowCount: PropTypes.number
+  rowCount: PropTypes.number,
+  /**
+   * The labels inside the table.
+   */
+  expanderOptions: PropTypes.shape({
+    /**
+     * onExpand Trigger when expanding row drillDown
+     */
+    onExpand: PropTypes.func,
+    /**
+     * onCollapse Trigger when closing row drillDown
+     */
+    onCollapse: PropTypes.func,
+    /**
+     * Handler to control if row expander button should be disabled or available
+     * return boolean (true --> disable row)
+     */
+    disableRowExpander: PropTypes.func
+  })
 };
 
 Table.defaultProps = {
@@ -902,7 +975,8 @@ Table.defaultProps = {
   secondaryActions: null,
   getTableProps: undefined,
   tableProps: { tableCaption: "Table Caption" },
-  rowCount: undefined
+  rowCount: undefined,
+  expanderOptions: undefined
 };
 
 export default Table;

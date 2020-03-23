@@ -32,7 +32,7 @@ import { buildLink } from "./addins";
  * @param {Boolean} initiallyLoaded - if it is the first load of the table.
  * @param {Object} column - An object containing information about the column.
  * @param {Array} colSortedSelected - An array containing the columns to be sorted.
- * @returns {String} - The classname to apply.
+ * @returns {String} - The className to apply.
  */
 
 /**
@@ -57,12 +57,13 @@ const wrapper = (format, id, classes) => {
  *  Set the class responsible for the alignment of the displayed text,
  *  depending of the property "cellType", set in the columns definition.
  *
- * @param {String} cellType - A string that identified the type of alingment required.
+ * @param {String} cellType - A string that identified the type of alignment required.
  * @param {Object} classes - An object containing he classes to applied depending on the alignment type.
  * @returns {String} - The class to apply.
  */
 const setColumnAlignment = (cellType, classes) => {
   let classToApply;
+  /* eslint-disable indent */
   switch (cellType) {
     case "alpha-numeric":
       classToApply = classNames(classes.alphaNumeric, "alphaNumeric");
@@ -76,6 +77,7 @@ const setColumnAlignment = (cellType, classes) => {
     default:
       classToApply = classes.centered;
   }
+  /* eslint-enable indent */
   return classToApply;
 };
 
@@ -106,7 +108,8 @@ const createExpanderButton = (
   columns,
   subElementTemplate,
   classes,
-  toggleExpand
+  toggleExpand,
+  expanderOptions
 ) => {
   const newColumns = columns;
   if (subElementTemplate) {
@@ -115,57 +118,79 @@ const createExpanderButton = (
       classes.expand
     );
 
-    const onKeyHandler = (event, rowIndex, toggleExpandCallback) => {
+    const onKeyHandler = (event, rowIndex, toggleExpandCallback, row) => {
       if (
         isKeypress(event, KeyboardCodes.Enter) ||
         isKeypress(event, KeyboardCodes.SpaceBar)
       ) {
         event.preventDefault();
-        toggleExpandCallback(rowIndex);
+        toggleExpandCallback(rowIndex, row);
       }
     };
 
     // eslint-disable-next-line react/prop-types
-    newColumns[0].Cell = ({ isExpanded, ...rest }) => (
-      <>
-        <div
-          className={classNames(classes.iconContainer)}
-          aria-label="row expander button"
-          role="button"
-          tabIndex="0"
-          onKeyDown={event =>
-            onKeyHandler(event, rest.row._viewIndex, toggleExpand)
-          }
-          onClick={() => toggleExpand(rest.row._viewIndex)}
-          aria-expanded={isExpanded}
-        >
-          {isExpanded ? (
-            <AngleUp
-              className={classes.separatorContainer}
-              width="10px"
-              height="10px"
-            />
-          ) : (
-            <AngleDown
-              className={classes.separatorContainer}
-              width="10px"
-              height="10px"
-            />
-          )}
-        </div>
+    newColumns[0].Cell = ({ isExpanded, ...rest }) => {
+      let expanderRowIsDisabled = false;
 
-        <div
-          className={classNames({
-            [classes.textContainer]: rest.column.cellType === "alpha-numeric",
-            [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
-            [classes.firstWithNumeric]: rest.column.cellType === "numeric"
-          })}
-        >
-          {/* eslint-disable-next-line no-underscore-dangle */}
-          {rest.row._original[rest.column.id]}
-        </div>
-      </>
-    );
+      if (expanderOptions !== undefined) {
+        expanderRowIsDisabled = expanderOptions.disableRowExpander(
+          rest.row._original
+        );
+      }
+
+      return (
+        <>
+          <div
+            className={
+              // eslint-disable-next-line no-nested-ternary
+              expanderRowIsDisabled
+                ? classNames(classes.iconContainerDisabled)
+                : classNames(classes.iconContainer)
+            }
+            aria-label="row expander button"
+            role="button"
+            tabIndex="0"
+            onKeyDown={event => {
+              if (!expanderRowIsDisabled)
+                onKeyHandler(
+                  event,
+                  rest.row._viewIndex,
+                  toggleExpand,
+                  rest.row._original
+                );
+            }}
+            onClick={() => {
+              if (!expanderRowIsDisabled)
+                toggleExpand(rest.row._viewIndex, rest.row._original);
+            }}
+            aria-expanded={isExpanded}
+          >
+            {isExpanded ? (
+              <AngleUp
+                className={classes.separatorContainer}
+                width="10px"
+                height="10px"
+              />
+            ) : (
+              <AngleDown
+                className={classes.separatorContainer}
+                width="10px"
+                height="10px"
+              />
+            )}
+          </div>
+          <div
+            className={classNames({
+              [classes.textContainer]: rest.column.cellType === "alpha-numeric",
+              [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
+              [classes.firstWithNumeric]: rest.column.cellType === "numeric"
+            })}
+          >
+            {rest.row._original[rest.column.id]}
+          </div>
+        </>
+      );
+    };
   }
   return newColumns;
 };

@@ -10,17 +10,23 @@
 import React from "react";
 import HvCheckBox from "../Selectors/CheckBox";
 
-const defaultSelectInputComponent = props => {
+const defaultSelectInputComponent = ({
+  internalId,
+  id,
+  checked,
+  row,
+  onClick
+}) => {
   return (
     <HvCheckBox
-      inputProps={{ "aria-label": `${props.internalId}-select-${props.id}` }}
-      id={props.id}
-      checked={props.checked}
+      inputProps={{ "aria-label": `${internalId}-select-${id}` }}
+      id={id}
+      checked={checked}
       onChange={() => {}}
       onClick={e => {
         const { shiftKey } = e;
         e.stopPropagation();
-        props.onClick(props.id, shiftKey, props.row);
+        onClick(id, shiftKey, row);
       }}
     />
   );
