@@ -9484,6 +9484,7 @@ body {
   margin-top: -2px;
 }
 .HvInput-infoText-122 {
+  color: #414141;
   display: block;
   padding-top: 8px;
 }
@@ -9671,6 +9672,7 @@ input:-webkit-autofill {
                     "margin-top": "-2px",
                   },
                   Object {
+                    "color": "#414141",
                     "display": "block",
                     "padding-top": "8px",
                   },
@@ -10070,6 +10072,7 @@ input:-webkit-autofill {
                     "margin-top": "-2px",
                   },
                   ".HvInput-infoText-122": Object {
+                    "color": "#414141",
                     "display": "block",
                     "padding-top": "8px",
                   },
@@ -10538,6 +10541,7 @@ input:-webkit-autofill {
                     "width": "32px",
                   },
                   "infoText": Object {
+                    "color": "#414141",
                     "display": "block",
                     "padding-top": "8px",
                   },
@@ -11207,6 +11211,7 @@ input:-webkit-autofill {
                     "width": "32px",
                   },
                   "infoText": Object {
+                    "color": "#414141",
                     "display": "block",
                     "paddingTop": "8px",
                   },

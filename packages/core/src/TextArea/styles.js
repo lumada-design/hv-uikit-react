@@ -68,7 +68,8 @@ const styles = theme => ({
     ...theme.hv.typography.disabledText
   },
   maxCharacter: {
-    ...theme.hv.typography.infoText
+    ...theme.hv.typography.infoText,
+    color: theme.hv.palette.accent.acce1
   },
   currentCounter: {
     ...theme.hv.typography.labelText
