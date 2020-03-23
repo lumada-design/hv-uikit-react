@@ -1,0 +1,20 @@
+{
+  "name": "@hv/uikit-react-automation-robot",
+  "version": "1.0.0",
+  "description": "Environment for test UI components running pa11y tool.",
+  "homepage": "https://github.com/pentaho/hv-uikit-react",
+  "license": "Apache-2.0",
+  "private": true,
+  "author": {
+    "name": "Hitachi Vantara UI Kit Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pentaho/hv-uikit-react.git"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+    "pa11y": "^5.3.0"
+  }
+}
