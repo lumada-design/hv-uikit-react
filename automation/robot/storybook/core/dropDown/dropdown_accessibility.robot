@@ -3,17 +3,19 @@ Resource         ../../_resources/accessibility.robot
 Variables        ../../_resources/storybook_variables.yaml
 Force Tags       pa11y
 
+
 *** Variables ***
-${pa11y_script}    pa11y  --reporter json --runner htmlcs --runner axe --standard WCAG2AA --root-element "div[class|='Component-content']" ${STORYBOOK_URL}/iframe.html?id=coredropdown--
+${url}    ${STORYBOOK_URL}/iframe.html?id=coredropdown--
+
 
 *** Test Cases ***
 storybook sample dropdown disabled against WCAG2AA standard
     [Documentation]
     ...    = ATTENTION! =
-    ...    the expected *error* is ignored as per "Design System Team" feedback
+    ...    contrast *error* is too ignored as "Design System Team" feedback: \n
     ...    https://github.com/pentaho/hv-uikit-react/issues/775#issuecomment-557167364
     ...    ---
-    pa11y result should be equal as file    ${pa11y_script}dropdown9    ${CURDIR}/WCAG2AA_dropdown9.json
+    pa11y result should be equal as file    ${url}dropdown9    ${CURDIR}/WCAG2AA_dropdown9.json
 
 storybook sample dropdown dropped against WCAG2AA standard
-    pa11y should not find errors    ${pa11y_script}dropdown11
+    pa11y should not find errors    ${url}dropdown11
