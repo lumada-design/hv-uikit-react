@@ -6,11 +6,7 @@ import { CardContent, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const DEFAULT_ID = "hv-content";
-/**
- * The content container.
- *
- * @param {Object} { classes, className, innerCardContent, ...other }
- */
+
 const Content = ({ id, classes, className, innerCardContent, onClickAction, ...others }) => (
   <CardContent
     id={id || uniqueId(DEFAULT_ID)}

@@ -13,32 +13,7 @@ import Media from "./Media";
 import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-card-";
-/**
- * Card container that layouts the subcomponents if there are children, the children are rendered instead.
- *
- * @param {Object} {
- *   classes,
- *   className,
- *   children,
- *   icon,
- *   headerTitle,
- *   subheader,
- *   innerCardContent,
- *   actions,
- *   isSelectable,
- *   semantic,
- *   onChange,
- *   checkboxValue,
- *   checkboxLabel,
- *   checkboxSelected,
- *   checkboxIndeterminate,
- *   mediaPath,
- *   mediaTitle,
- *   mediaHeight,
- *   ...other
- * }
- * @returns
- */
+
 const HvCard = ({
   classes,
   className,

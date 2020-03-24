@@ -7,13 +7,6 @@ import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
 import styles from "./styles";
 
-/**
- * Container of banner.
- *
- * @param props
- * @returns {*}
- * @constructor
- */
 const HvBannerContentWrapper = React.forwardRef((props, ref) => {
   const {
     id,

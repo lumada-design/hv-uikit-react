@@ -40,16 +40,6 @@ class Header extends React.Component {
     return null;
   }
 
-  /**
-   * Choose the value that should be displayed in the input.
-   *
-   * @param shouldCloseCalendar
-   * @param isInvalid
-   * @param value
-   * @param formatShowValue
-   * @param showValue
-   * @returns {*}
-   */
   chooseShowValue = (shouldCloseCalendar, isInvalid, value, formatShowValue, showValue) => {
     let newShowValue;
     if (shouldCloseCalendar) {

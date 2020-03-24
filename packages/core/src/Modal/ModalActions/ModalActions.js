@@ -3,15 +3,6 @@ import PropTypes from "prop-types";
 import { DialogActions, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-/**
- * Actions of the modal.
- *
- * @param classes
- * @param children
- * @param others
- * @returns {*}
- * @constructor
- */
 const HvModalActions = ({ classes, className = "", children, ...others }) => (
   <DialogActions
     classes={{

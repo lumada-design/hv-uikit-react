@@ -10,13 +10,6 @@ const offset = 20;
 /**
  * Component responsible for deciding which tooltip should be use and to calculate
  * the exact position where it should be render.
- *
- * @param classes
- * @param coordinates
- * @param data
- * @param useSingle
- * @returns {*}
- * @constructor
  */
 const MainToolTip = ({ classes, coordinates, data, useSingle }) => {
   const { x, y } = coordinates;

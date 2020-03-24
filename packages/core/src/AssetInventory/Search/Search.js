@@ -3,12 +3,6 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import SearchBox from "../../SearchBox";
 
-/**
- * Filter the metadata that has searchable definitions.
- *
- * @param metadata
- * @returns {[]}
- */
 const searchOperationSetup = metadata => {
   const searchableCriteria = [];
 
@@ -21,14 +15,6 @@ const searchOperationSetup = metadata => {
   return searchableCriteria;
 };
 
-/**
- * Filter the search string, based in the criteria, using the value.
- *
- * @param value
- * @param criteria
- * @param searchValue
- * @returns {boolean|*}
- */
 const filter = (value, criteria, searchValue) => {
   const evalValue = get(value, criteria.accessor);
 
@@ -46,14 +32,6 @@ const filter = (value, criteria, searchValue) => {
   }
 };
 
-/**
- * For each criteria the value is evaluated, returning a list of filtered results.
- *
- * @param searchValue
- * @param values
- * @param searchableCriteria
- * @returns {[]}
- */
 const searchOperation = (searchValue, values, searchableCriteria) => {
   const filteredValues = [];
 
@@ -67,17 +45,6 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
   return filteredValues;
 };
 
-/**
- * Search component.
- *
- * @param id
- * @param labels
- * @param onFilter
- * @param values
- * @param metadata
- * @returns {*}
- * @constructor
- */
 const Search = ({
   id = undefined,
   searchBoxLabels,

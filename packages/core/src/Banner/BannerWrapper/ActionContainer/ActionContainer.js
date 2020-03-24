@@ -5,15 +5,6 @@ import Close from "@hv/uikit-react-icons/dist/CloseXS";
 import Actions from "../../../Actions";
 import styles from "./styles";
 
-/**
- * Container for the actions. This actions include:
- * - X button for close
- * - The passed actions
- * *
- * @param props
- * @returns {*}
- * @constructor
- */
 const ActionContainer = ({ id, classes, onClose, action, actionCallback }) => (
   <div className={classes.actionContainer}>
     <div

@@ -8,22 +8,6 @@ import Close from "@hv/uikit-react-icons/dist/Close";
 import Button from "../Button";
 import styles from "./styles";
 
-/**
- * Modal component.
- *
- * @param classes
- * @param className
- * @param id
- * @param children
- * @param open
- * @param onClose
- * @param firstFocusable
- * @param buttonTitle
- * @param close
- * @param others
- * @returns {*}
- * @constructor
- */
 const Modal = ({
   classes,
   className = "",

@@ -6,14 +6,6 @@ import capitalize from "lodash/capitalize";
 import HvBannerContentWrapper from "./BannerWrapper";
 import styles from "./styles";
 
-/**
- * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
- * set in the HvBannerContentWrapper.
- *
- * @param props
- * @returns {*}
- * @constructor
- */
 const HvBanner = props => {
   const {
     classes,

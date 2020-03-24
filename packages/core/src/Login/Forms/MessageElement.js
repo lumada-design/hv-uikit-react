@@ -2,13 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import HvTypography from "../../Typography";
 
-/**
- * Message composes by an icon and a text message.
- *
- * @param props
- * @returns {*}
- * @constructor
- */
 const MessageElement = ({ iconElement, showMessage, icon, message }) => {
   const iconClone =
     iconElement != null

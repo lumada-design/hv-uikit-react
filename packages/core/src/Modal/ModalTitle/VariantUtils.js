@@ -36,12 +36,6 @@ export const severityIcon = (severity, theme) => {
   return icon;
 };
 
-/**
- *
- *
- * @param {string}severity
- * @returns {string}
- */
 export const mapSeverityToVariant = severity => {
   let variant;
   switch (severity.toLowerCase()) {

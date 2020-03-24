@@ -12,22 +12,9 @@ import HvDropDownMenu from "../DropDownMenu";
 import HvLink from "../Link";
 import styles from "./styles";
 
-/**
- * Removes the extension of the label.
- *
- * @param label
- * @returns {string | *}
- */
 const removeExtension = label =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
 
-/**
- * Representation of last path element. This element doesn't have a link.
- *
- * @param label
- * @returns {*}
- * @constructor
- */
 const LastPathElement = ({ classes, label }) => (
   <li className={classes.centerContainer}>
     <HvTypography variant="sText">{startCase(removeExtension(label))}</HvTypography>
@@ -39,16 +26,6 @@ LastPathElement.propTypes = {
   label: PropTypes.string.isRequired
 };
 
-/**
- * Representation of an path element. This element contains a link.
- *
- * @param Component
- * @param onClick
- * @param elem
- * @param classes
- * @returns {*}
- * @constructor
- */
 const Page = ({ Component, onClick, elem, classes }) => (
   <HvLink route={elem.path} Component={Component} onClick={onClick} data={elem}>
     <div className={classes.centerContainer}>
@@ -74,14 +51,6 @@ Page.defaultProps = {
   onClick: undefined
 };
 
-/**
- * Container of the intermediates path elements with the separator.
- *
- * @param classes
- * @param children
- * @returns {*}
- * @constructor
- */
 const PathElement = ({ classes, children }) => (
   <li className={classes.centerContainer}>
     {children}
@@ -96,13 +65,6 @@ PathElement.propTypes = {
   children: PropTypes.element.isRequired
 };
 
-/**
- * Helper function to build a new path list with one element with the list for the submenu.
- *
- * @param listRoute
- * @param maxVisible
- * @returns {*}
- */
 const pathWithSubMenu = (listRoute, maxVisible) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
@@ -121,15 +83,6 @@ const pathWithSubMenu = (listRoute, maxVisible) => {
   return listRoute;
 };
 
-/**
- * Breadcrumb element.
- *
- * @param classes
- * @param listRoute
- * @param maxVisible
- * @returns {*}
- * @constructor
- */
 const BreadCrumb = ({
   classes,
   className,

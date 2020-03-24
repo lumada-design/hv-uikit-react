@@ -5,14 +5,6 @@ import Card from "../../Card";
 import Grid from "../../Grid";
 import styles from "./styles";
 
-/**
- * Definition of which render should be used.
- *
- * @param viewConfiguration
- * @param Render
- * @returns {function(*, *): *}
- * @constructor
- */
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata) => {
   if (render) {
     return data => render(data, viewConfiguration, metadata);
@@ -31,19 +23,6 @@ const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata
   );
 };
 
-/**
- * Card container component.
- *
- * @param id
- * @param className
- * @param classes
- * @param values
- * @param render
- * @param viewConfiguration
- * @param others
- * @returns {*}
- * @constructor
- */
 const CardView = ({
   id = "",
   className = "",

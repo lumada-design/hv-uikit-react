@@ -8,19 +8,6 @@ import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-toggle-button-";
 
-/**
- * Toggle Button.
- *
- * @param classes
- * @param selected
- * @param notSelectedTitle
- * @param notSelectedIcon
- * @param selectedIcon
- * @param selectedTitle
- * @param onClick
- * @returns {*}
- * @constructor
- */
 const ToggleButton = ({
   classes,
   className,

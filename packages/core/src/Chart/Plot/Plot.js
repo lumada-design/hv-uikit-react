@@ -6,16 +6,6 @@ import equals from "lodash/isEqual";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-/**
- * Plotly plot.
- *
- * @param classes
- * @param data
- * @param onHover
- * @param onUnHover
- * @returns {*}
- * @constructor
- */
 const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot }) => {
   const [revision, setRevision] = useState(0);
   const [newData, setNewData] = useState(data);
