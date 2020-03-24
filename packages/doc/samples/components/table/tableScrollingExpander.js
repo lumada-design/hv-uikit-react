@@ -279,7 +279,7 @@ class Wrapper extends React.Component {
 
     const labels = {
       titleText: "Storage arrays",
-      subtitleText: "Click data centers or storage arrays to drill down"
+      subtitleText: "Click data centers or storage arrays to drill down."
     };
 
     return (
