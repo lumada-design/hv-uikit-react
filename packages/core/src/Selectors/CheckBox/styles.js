@@ -38,7 +38,6 @@ const styles = theme => ({
     "&$labelDisabled": {
       ...theme.hv.typography.placeholderText
     },
-    background: "blue",
     display: "flex",
     justifyContent: "center"
   },
