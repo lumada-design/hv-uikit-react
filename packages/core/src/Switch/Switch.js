@@ -20,7 +20,7 @@ import BaseSwitch from "@material-ui/core/Switch";
 
 import classnames from "classnames";
 import uniqueId from "lodash/uniqueId";
-import CheckMark from "@hv/uikit-react-icons/dist/Generic/Good";
+import CheckMark from "@hv/uikit-react-icons/dist/Generic/CompletedStep";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
@@ -130,7 +130,7 @@ const Switch = props => {
             {...(displayIconChecked && {
               checkedIcon: (
                 <div className={classes.checkedIcon}>
-                  <CheckMark width="12px" height="12px" color={["acce1"]} />
+                  <CheckMark width="14px" height="14px" color={["acce1"]} />
                 </div>
               )
             })}
