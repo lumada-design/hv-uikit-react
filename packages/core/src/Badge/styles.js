@@ -32,13 +32,14 @@ const styles = theme => ({
   },
   badgeIcon: {
     position: "relative",
-    top: "2px",
+    top: "1px",
     left: "-7px"
   },
   showCount: {
     ...theme.hv.typography.labelText,
     fontFamily: theme.hv.typography.fontFamily,
-    padding: "0 0.5em",
+    padding: "0 5px",
+    maxWidth: 30,
     color: theme.hv.palette.atmosphere.atmo1
   },
   badgeOneDigit: {
