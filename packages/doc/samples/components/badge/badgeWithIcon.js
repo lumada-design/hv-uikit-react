@@ -4,7 +4,9 @@ import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
 
 const exampleStyles = {
   display: "flex",
-  width: "800px",
+  flexWrap: "wrap",
+  maxWidth: "800px",
+  padding: "0 30px 0 0",
   justifyContent: "space-between"
 };
 
@@ -25,9 +27,9 @@ export default (
 
     <HvBadge count={1} icon={<Alert boxStyles={boxStyles} style={svgStyles} />} />
 
-    <HvBadge showCount count={8} icon={<Alert boxStyles={boxStyles} style={svgStyles} />} />
+    <HvBadge showCount count={2} icon={<Alert boxStyles={boxStyles} style={svgStyles} />} />
 
-    <HvBadge showCount count={88} icon={<Alert boxStyles={boxStyles} style={svgStyles} />} />
+    <HvBadge showCount count={88} maxCount={9} icon={<Alert boxStyles={boxStyles} style={svgStyles} />} />
 
     <HvBadge showCount count={888} icon={<Alert boxStyles={boxStyles} style={svgStyles} />} />
   </div>
