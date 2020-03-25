@@ -10,28 +10,28 @@ Force Tags        smoke    keyboard
 *** Test Cases ***
 First element is focused
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coremodal--modal1
-    Wait Until Element Is Enabled    Success                   10s
-    Click Button                     Success
+    Wait Until Element Is Enabled    Warning                   10s
+    Click Button                     Warning
     Wait Until Element Is Visible    css:div[role='dialog']    10s
     Element Should Be Focused        test-close
-    verify element is not focused    switchAnyway
+    verify element is not focused    apply
     
-SwitchAnyway button is focused
+Apply button is focused
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coremodal--modal2
     Wait Until Element Is Enabled    modalButton               7s
     Click Button                     modalButton
     Wait Until Element Is Visible    css:div[role='dialog']    10s
-    Element Should Be Focused        switchAnyway
+    Element Should Be Focused        apply
     verify element is not focused    test-close
     
 Focus trap works
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coremodal--modal1
-    Wait Until Element Is Enabled    Success                   10s
-    Click Button                     Success
+    Wait Until Element Is Enabled    Warning                   10s
+    Click Button                     Warning
     Wait Until Element Is Visible    css:div[role='dialog']    10s
     Element Should Be Focused        test-close
     Press Keys                       css:div[role='dialog']    TAB     
-    Element Should Be Focused        switchAnyway
+    Element Should Be Focused        apply
     Press Keys                       None                      TAB     
     Element Should Be Focused        cancel
     Press Keys                       None                      TAB 

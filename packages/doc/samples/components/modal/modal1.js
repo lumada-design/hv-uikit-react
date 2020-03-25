@@ -43,13 +43,13 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         {content ? (
           content
         ) : (
-          <HvModalContent>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
-          </HvModalContent>
-        )}
+            <HvModalContent>
+              Switching to model view will clear all the fields in your
+              visualization. You will need to re-select your fields.
+            </HvModalContent>
+          )}
         <HvModalActions>
-          <HvButton id="switchAnyway" category="ghost">Switch anyway</HvButton>
+          <HvButton id="apply" category="ghost">Apply</HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
@@ -69,23 +69,12 @@ const generalIconProps = { iconSize: "M" };
 export default (
   <div style={containerStyle}>
     <SimpleModal
-      buttonMessage="Success"
-      title={
-        <HvModalTitle
-          customIcon={iconWrapper(Success, "sema1", generalIconProps)()}
-        >
-          Are you sure?
-        </HvModalTitle>
-      }
-    />
-    <p />
-    <SimpleModal
       buttonMessage="Warning"
       title={
         <HvModalTitle
           customIcon={iconWrapper(Warning, "sema3", generalIconProps)()}
         >
-          Are you sure?
+          Switch model view?
         </HvModalTitle>
       }
     />
@@ -96,7 +85,7 @@ export default (
         <HvModalTitle
           customIcon={iconWrapper(Fail, "sema4", generalIconProps)()}
         >
-          Are you sure?
+          Switch model view?
         </HvModalTitle>
       }
     />
