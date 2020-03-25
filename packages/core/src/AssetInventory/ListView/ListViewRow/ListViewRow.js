@@ -41,6 +41,7 @@ const selectCell = (
     key={`checkbox${checkboxId}`}
   >
     <HvCheckbox
+      className={classes.checkboxPlacement}
       value={checkboxValue}
       onChange={onCheckboxSelected}
       checked={checkboxSelected}

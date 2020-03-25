@@ -20,7 +20,6 @@ const styles = theme => ({
     marginRight: 0,
     marginLeft: 0,
     display: "flex",
-    justifyContent: "center",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
@@ -38,8 +37,7 @@ const styles = theme => ({
     "&$labelDisabled": {
       ...theme.hv.typography.placeholderText
     },
-    display: "flex",
-    justifyContent: "center"
+    display: "flex"
   },
   labelDisabled: {
     backgroundColor: "transparent",

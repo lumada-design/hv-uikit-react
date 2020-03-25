@@ -16,7 +16,8 @@
 
 const styles = theme => ({
   selectCell: {
-    width: "32px"
+    width: "32px",
+    background: "red"
   },
   root: {
     background: theme.hv.palette.atmosphere.atmo1,
@@ -63,6 +64,10 @@ const styles = theme => ({
     "& > button": {
       float: "right"
     }
+  },
+  checkboxPlacement: {
+    display: "flex",
+    justifyContent: "center"
   }
 });
 
