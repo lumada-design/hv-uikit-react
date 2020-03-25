@@ -2,7 +2,10 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
-Suite Setup       open storybook
+Suite Setup       open storybook    ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
+Test Setup        Run Keywords
+...               Reload Page                      AND
+...               Wait Until Element Is Enabled    ${tooltipPlaceholder}    10s
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -10,19 +13,15 @@ Force Tags        smoke
 *** Variables ***
 ${tooltipPlaceholder}    xpath://p[contains(.,'Hover here')]
 ${tooltip}               css:div[id|='mui-tooltip']
+
+
 *** Test Cases ***
-
-
 tooltip is triggered when mouse hover item
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
-    Wait Until Element Is Enabled    ${tooltipPlaceholder}    10s
-    Element Should Not Be Visible    ${tooltip}               2s
+    Element Should Not Be Visible    ${tooltip}
     Mouse Over                       ${tooltipPlaceholder}
     Wait Until Element Is Visible    ${tooltip}               5s
 
 tooltip is dismissed when mouse leaves touch target
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
-    Wait Until Element Is Enabled        ${tooltipPlaceholder}    10s
     Click Element                        ${tooltipPlaceholder}
     Wait Until Element Is Visible        ${tooltip}               5s
     Mouse Out                            ${tooltipPlaceholder}
@@ -30,8 +29,6 @@ tooltip is dismissed when mouse leaves touch target
 
 tooltip is triggered when item is focused
     [Tags]    keyboard    bug-infrastructure-ie
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
-    Wait Until Element Is Enabled        ${tooltipPlaceholder}    10s
     Element Should Not Be Visible        ${tooltip}
     Press Keys                           css:button               TAB
     Wait Until Element Is Visible        ${tooltip}               5s
@@ -40,9 +37,7 @@ tooltip is triggered when item is focused
 
 tooltip is dismissed when is removed the item focus
     [Tags]    keyboard    bug-infrastructure-ie
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
-    Wait Until Element Is Enabled        ${tooltipPlaceholder}    10s
-    Element Should Not Be Visible        ${tooltip}               2s
+    Element Should Not Be Visible        ${tooltip}
     Mouse Over                           ${tooltipPlaceholder}
     Wait Until Element Is Visible        ${tooltip}               5s
     Press Keys                           ${tooltipPlaceholder}    TAB

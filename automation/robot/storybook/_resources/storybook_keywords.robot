@@ -20,7 +20,7 @@ go to url and wait until element is visible
     [Arguments]    ${page}    ${locator}    ${seconds}
     [Documentation]    go to 'url' and wait the 'seconds' until 'element' is visible 
     Go To                            ${page}
-    Wait Until Element Is Visible    ${locator}    10s
+    Wait Until Element Is Visible    ${locator}    ${seconds}
 
 get constanct css property value
     [Arguments]        ${locator}    ${property}
@@ -70,14 +70,27 @@ open storybook
     Open Browser    ${url}    ${browser}    options=add_argument("--window-size=1920,1080"); add_argument("--start-maximized"); add_argument("--headless")
     Maximize Browser Window
 
-verify element background-color change on mouse over
+verify element background-color change on mouse over and mouse out
     [Arguments]    ${locator}
     [Documentation]    mouse over element and verify background-color change
-    Mouse Over    css:body
-    ${value}                       get constanct css property value    ${locator}    background-color
-    mouse over                     ${locator}
-    Wait Until Keyword Succeeds    5                                   500ms         verify css element property has different value    ${locator}    background-color    ${value}
-   
+    Mouse Over                           css:body
+    ${value}                             get constanct css property value    ${locator}    background-color
+    mouse over                           ${locator}
+    Wait Until Keyword Succeeds          3x    700ms
+    ...                                  verify css element property has different value    ${locator}    background-color    ${value}
+    Mouse Over                           css:body
+    verify css element property value    ${locator}    background-color    ${value}
+
+verify element background-color does not change on mouse over and mouse out
+    [Arguments]    ${locator}
+    [Documentation]    mouse over element and verify background-color change
+    Mouse Over                           css:body
+    ${value}                             get css property value    ${locator}    background-color
+    mouse over                           ${locator}
+    verify css element property value    ${locator}    background-color    ${value}
+    Mouse Over                           css:body
+    verify css element property value    ${locator}    background-color    ${value}
+
 verify css element property value
     [Arguments]    ${locator}    ${property}    ${value}
     ${current_value}    get constanct css property value    ${locator}    ${property}
