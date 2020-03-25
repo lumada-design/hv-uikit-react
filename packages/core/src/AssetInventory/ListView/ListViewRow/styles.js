@@ -16,8 +16,7 @@
 
 const styles = theme => ({
   selectCell: {
-    width: "32px",
-    background: "red"
+    width: "32px"
   },
   root: {
     background: theme.hv.palette.atmosphere.atmo1,
