@@ -28,11 +28,11 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Lint
-        run: npm run lint
+     # - name: Lint
+     #   run: npm run lint
 
-      - name: Test
-        run: npm run test
+     # - name: Test
+     #   run: npm run test
 
       - name: Generate Storybook
         run: npm run automation:package
