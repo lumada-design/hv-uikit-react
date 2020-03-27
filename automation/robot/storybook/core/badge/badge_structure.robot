@@ -2,22 +2,24 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
-Suite Setup       open storybook
+Suite Setup       Run Keywords
+...               open storybook    ${STORYBOOK_URL}/iframe.html?id=corebadge--badgewithicon
+...               AND               Wait Until Page Contains    8    10s
 Suite Teardown    Close Browser
 Force Tags        smoke    
 
 
 *** Test Cases ***
 badge maxCount is 99
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corebadge--badgewithicon
-    Wait Until Element Is Visible    //div[contains(@class,'Badge-showCount') and contains(.,'99+')]      10s
-    
+    Page Should Contain   99+
+
 all badges renders an icon
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corebadge--badgewithicon
-    Wait Until Element Is Visible    //*[local-name() = 'svg']    7s
-    Page Should Contain Element      //*[local-name() = 'svg']    limit=5
-    
+    Element Should Be Visible      //*[local-name() = 'svg']
+    Page Should Contain Element    //*[local-name() = 'svg']    limit=5
+
 all badges renders a text
-    go to                          ${STORYBOOK_URL}/iframe.html?id=corebadge--badgewithtext
-    Wait Until Page Contains       Events                    10s
-    Page Should Contain Element    //*[text() = 'Events']    limit=5
+    Page Should Contain    88
+    
+to delete
+    Capture Page Screenshot    test.png
+
