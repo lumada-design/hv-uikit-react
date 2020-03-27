@@ -16,10 +16,13 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import isNill from "lodash/isNil";
 import classNames from "classnames";
 import HvTypography from "../../Typography";
 import ImageContainer from "../ImageContainer";
+
+import styles from "./styles";
 
 /**
  * Separator element between company and product information.
@@ -142,10 +145,10 @@ Brand.propTypes = {
 };
 
 Brand.defaultProps = {
-  centerAlignElement:null,
+  centerAlignElement: null,
   companyLogo: null,
   productLogo: null,
   productText: null
 };
 
-export default Brand;
+export default withStyles(styles, { name: "HvHeaderBrand" })(Brand);

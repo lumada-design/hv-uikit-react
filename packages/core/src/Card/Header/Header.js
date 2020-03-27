@@ -16,10 +16,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 import uniqueId from "lodash/uniqueId";
 import CardHeader from "@material-ui/core/CardHeader";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import styles from "./styles";
 
 const DEFAULT_ID = "hv-header";
 /**
@@ -30,12 +32,12 @@ const DEFAULT_ID = "hv-header";
  *
  * @param {*} { classes, headerTitle, subheader, icon }
  */
-const Header = ({ 
-  classes, 
-  className, 
-  headerTitle, 
-  subheader, 
-  icon, 
+const Header = ({
+  classes,
+  className,
+  headerTitle,
+  subheader,
+  icon,
   id,
   onClickAction,
   ...other
@@ -128,4 +130,4 @@ Header.defaultProps = {
   onClickAction: () => {}
 };
 
-export default Header;
+export default withStyles(styles, { name: "HvCardHeader" })(Header);

@@ -19,6 +19,9 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 const BREAKPOINT_GUTTERS = {
   xs: 15,
   sm: 15,
@@ -321,4 +324,4 @@ Grid.defaultProps = {
   children: undefined
 };
 
-export default Grid;
+export default withStyles(styles, { name: "HvGrid" })(Grid);

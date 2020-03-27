@@ -18,12 +18,13 @@ import _ from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
 import diff from "deep-diff";
+import JssProvider from "react-jss/lib/JssProvider";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
 import createTypography from "@material-ui/core/styles/createTypography";
 import createPalette from "@material-ui/core/styles/createPalette";
 import { ConfigProvider } from "../config/context";
-import { themeBuilder } from "../theme";
+import { themeBuilder, generateClassName } from "../theme";
 
 const muiDefaultPalette = createPalette({});
 const muiDefaultTypography = createTypography(muiDefaultPalette, {
@@ -69,29 +70,32 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
   const pConfig = { router, changeTheme };
 
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
+
   return (
-    <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
-      <CssBaseline />
-      <ConfigProvider value={pConfig}>{children}</ConfigProvider>
-    </MuiThemeProvider>
+    <JssProvider generateClassName={generateClassName}>
+      <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
+        <CssBaseline />
+        <ConfigProvider value={pConfig}>{children}</ConfigProvider>
+      </MuiThemeProvider>
+    </JssProvider>
   );
 };
 
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  /** 
-   * The material theme object that can be used to override the defaults 
+  /**
+   * The material theme object that can be used to override the defaults
    */
   theme: PropTypes.instanceOf(Object),
-  /** 
+  /**
    * Which of design system default themes to use.
    */
   uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
-  /** 
+  /**
    * Which of design system default themes to use.
    */
   changeTheme: PropTypes.func,
-  /** 
+  /**
    * Configuration object for routing, exposes push and prefetch
    */
   router: PropTypes.instanceOf(Object)

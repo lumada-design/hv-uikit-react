@@ -16,6 +16,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
 import HvButton from "../../Button";
 
 const Actions = ({
@@ -80,4 +82,4 @@ Actions.defaultProps = {
   applyLabel: "Apply"
 };
 
-export default Actions;
+export default withStyles(styles, { name: "HvDropDownActions" })(Actions);

@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import uniqueId from "lodash/uniqueId";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
@@ -23,6 +24,8 @@ import Close from "@hv/uikit-react-icons/dist/Generic/Close";
 import HvTypography from "../../Typography";
 import Button from "../../Button";
 import { convertUnits } from "../utils";
+
+import styles from "./styles";
 
 const getStatusIcon = (classes, theme, status) => {
   const { sema1, sema4 } = theme.hv.palette.semantic;
@@ -151,4 +154,4 @@ File.defaultProps = {
   id: null
 };
 
-export default File;
+export default withStyles(styles, { name: "HvFile" })(File);

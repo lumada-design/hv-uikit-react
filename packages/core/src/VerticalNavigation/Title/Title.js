@@ -16,13 +16,15 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 
 import NavIcon from "@hv/uikit-react-icons/dist/Generic/DropLeftXS";
 import Typography from "../../Typography";
 
+import styles from "./styles";
+
 const onKeyDownHandler = (event, onClick) => {
-  
   if (isKeypress(event, KeyboardCodes.Enter)) {
     onClick();
   }
@@ -60,4 +62,4 @@ Title.propTypes = {
 
 Title.defaultProps = {};
 
-export default Title;
+export default withStyles(styles, { name: "HvTitle" })(Title);

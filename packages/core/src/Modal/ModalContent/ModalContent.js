@@ -16,9 +16,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import classNames from "classnames";
 import HvTypography from "../../Typography";
+
+import styles from "./styles";
 
 /**
  * Message container. The passed children is render in this container, creating
@@ -75,4 +78,4 @@ ModalContent.defaultProps = {
   className: ""
 };
 
-export default ModalContent;
+export default withStyles(styles, { name: "HvModalContent" })(ModalContent);

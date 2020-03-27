@@ -27,6 +27,8 @@ import HvTypography from "../Typography";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
 
+import mainStyles from "./styles";
+
 const DEFAULT_LABELS = {
   select: "Select...",
   selectAll: "All",
@@ -471,4 +473,4 @@ Dropdown.defaultProps = {
   singleSelectionToggle: true
 };
 
-export default Dropdown;
+export default withStyles(mainStyles, { name: "HvDropdown" })(Dropdown);

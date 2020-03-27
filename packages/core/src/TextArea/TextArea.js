@@ -16,11 +16,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvTypography from "../Typography";
 import Input from "../Input";
+
+import styles from "./styles";
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
@@ -394,4 +397,4 @@ HvTextArea.defaultProps = {
   resizable: false
 };
 
-export default HvTextArea;
+export default withStyles(styles, { name: "HvTextArea" })(HvTextArea);

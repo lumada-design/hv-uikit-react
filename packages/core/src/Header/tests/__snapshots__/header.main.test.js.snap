@@ -1,66 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header withStyles should render correctly 1`] = `
-<Main
-  actionValues={null}
-  basePath=""
-  className=""
+<WithStyles(HvHeader)
   classes={
     Object {
-      "navButton": "Main-navButton-2",
-      "shadowPadding": "Main-shadowPadding-1",
-      "verticalNavigationContainer": "Main-verticalNavigationContainer-4",
-      "verticalNavigationContainerAbsolute": "Main-verticalNavigationContainerAbsolute-6",
-      "verticalNavigationContainerFixed": "Main-verticalNavigationContainerFixed-5",
-      "verticalNavigationSeparation": "Main-verticalNavigationSeparation-3",
+      "navButton": "WithStyles-HvHeader--navButton-2",
+      "shadowPadding": "WithStyles-HvHeader--shadowPadding-1",
+      "verticalNavigationContainer": "WithStyles-HvHeader--verticalNavigationContainer-4",
+      "verticalNavigationContainerAbsolute": "WithStyles-HvHeader--verticalNavigationContainerAbsolute-6",
+      "verticalNavigationContainerFixed": "WithStyles-HvHeader--verticalNavigationContainerFixed-5",
+      "verticalNavigationSeparation": "WithStyles-HvHeader--verticalNavigationSeparation-3",
     }
   }
-  companyLogo={null}
-  fixVerticalNavigation={false}
-  itemActions={null}
-  label={null}
-  labels={Object {}}
-  navigationStructure={
-    Object {
-      "data": Array [
-        Object {
-          "iconCallback": undefined,
-          "id": undefined,
-          "isHidden": false,
-          "label": "",
-          "leftIcon": null,
-          "params": Object {},
-          "path": "",
-          "selected": false,
-          "showNavIcon": false,
-          "subData": Object {
-            "data": Array [
-              Object {
-                "label": "",
-                "path": "",
-              },
-            ],
-            "showSearch": false,
-          },
-        },
-      ],
-      "showSearch": false,
-    }
-  }
-  onNavigationClick={[Function]}
-  onNavigationKeyDown={[Function]}
-  position="fixed"
-  productLogo={null}
-  responsivenessConfig={
-    Object {
-      "centerAlignElement": "sm",
-      "showActions": "sm",
-      "showHbMenus": "sm",
-      "showNavigation": "md",
-      "showUser": "sm",
-    }
-  }
-  selected={0}
   theme={
     Object {
       "breakpoints": Object {
@@ -423,9 +374,5 @@ exports[`Header withStyles should render correctly 1`] = `
       },
     }
   }
-  useRouter={false}
-  userClick={null}
-  userData={Object {}}
-  userIcon={null}
 />
 `;

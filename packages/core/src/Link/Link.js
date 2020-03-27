@@ -18,8 +18,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import withConfig from "../config/withConfig";
+
+import styles from "./styles";
 
 class HvLink extends React.Component {
   componentDidMount() {
@@ -41,11 +44,11 @@ class HvLink extends React.Component {
       useRouter,
       onClick,
       tabIndex,
-        ...other
+      ...other
     } = this.props;
 
     const handleClick = e => {
-      if(isKeypress(e, KeyboardCodes.Tab)) return;
+      if (isKeypress(e, KeyboardCodes.Tab)) return;
       if (useRouter && config.router) {
         onClick({ route, params });
         e.preventDefault();
@@ -54,7 +57,14 @@ class HvLink extends React.Component {
     };
 
     return useRouter ? (
-      <div onClick={handleClick} role="button" className={classes.a} onKeyDown={handleClick} tabIndex={tabIndex} {...other}>
+      <div
+        onClick={handleClick}
+        role="button"
+        className={classes.a}
+        onKeyDown={handleClick}
+        tabIndex={tabIndex}
+        {...other}
+      >
         {children}
       </div>
     ) : (
@@ -85,4 +95,4 @@ HvLink.defaultProps = {
   onClick: () => {}
 };
 
-export default withConfig(HvLink);
+export default withStyles(styles, { name: "HvLink" })(withConfig(HvLink));

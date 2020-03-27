@@ -20,6 +20,9 @@ import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import classNames from "classnames";
 import uniqueId from "lodash/uniqueId";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 const DEFAULT_ID_PREFIX = "hv-toggle-button-";
 
 /**
@@ -180,4 +183,4 @@ ToggleButton.defaultProps = {
   disabled: false
 };
 
-export default ToggleButton;
+export default withStyles(styles, { name: "HvToggleButton" })(ToggleButton);

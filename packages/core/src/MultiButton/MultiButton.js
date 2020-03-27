@@ -16,9 +16,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 import { map, filter } from "lodash";
 import HvButton from "../Button";
+
+import styles from "./styles";
 
 class MultiButton extends React.Component {
   constructor(props) {
@@ -100,7 +103,14 @@ class MultiButton extends React.Component {
   }
 
   render() {
-    const { className, classes, vertical, type, buttons, ...other } = this.props;
+    const {
+      className,
+      classes,
+      vertical,
+      type,
+      buttons,
+      ...other
+    } = this.props;
 
     /**
      * Generate button content elements to render the component itself
@@ -255,4 +265,4 @@ MultiButton.defaultProps = {
   maxSelection: null
 };
 
-export default MultiButton;
+export default withStyles(styles, { name: "HvMultiButton" })(MultiButton);

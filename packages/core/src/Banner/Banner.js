@@ -16,12 +16,14 @@
 
 import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import Snackbar from "@material-ui/core/Snackbar";
 import Slide from "@material-ui/core/Slide";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
 import HvBannerContentWrapper from "./BannerWrapper";
+import styles from "./styles";
 
 /**
  * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
@@ -265,4 +267,4 @@ HvBanner.defaultProps = {
   actionsOnMessage: undefined
 };
 
-export default HvBanner;
+export default withStyles(styles, { name: "HvBanner" })(HvBanner);

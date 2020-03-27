@@ -18,6 +18,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 /**
  * Mapping of typography with HTML elements.
  * @type {{infoText: string, xxsTitle: string, disabledButtonText: string, xsTitle: string, labelText: string, "5xlTitle": string, sTitle: string, xlTitle: string, highlightText: string, inlineLink: string, lTitle: string, normalText: string, "4xlTitle": string, "3xlTitle": string, sLink: string, xxlTitle: string, mTitle: string, disabledText: string, vizText: string}}
@@ -57,35 +60,40 @@ const defaultVariantMapping = {
  * @returns {*}
  * @constructor
  */
-const Typography = React.forwardRef(({
-  variant,
-  classes,
-  paragraph,
-  className,
-  component,
-  id,
-  children,
-  ...other
-}, ref) => {
-  const Component = component ||
-    (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
+const Typography = React.forwardRef(
+  (
+    {
+      variant,
+      classes,
+      paragraph,
+      className,
+      component,
+      id,
+      children,
+      ...other
+    },
+    ref
+  ) => {
+    const Component =
+      component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
-  return (
-    <Component
-      id={id}
-      ref={ref}
-      className={classNames(
-        classes[variant],
-        classes.baseFontFamily,
-        classes.margin,
-        className
-      )}
-      {...other}
-    >
-      {children}
-    </Component>
-  );
-});
+    return (
+      <Component
+        id={id}
+        ref={ref}
+        className={classNames(
+          classes[variant],
+          classes.baseFontFamily,
+          classes.margin,
+          className
+        )}
+        {...other}
+      >
+        {children}
+      </Component>
+    );
+  }
+);
 
 Typography.propTypes = {
   /**
@@ -153,4 +161,4 @@ Typography.defaultProps = {
   children: ""
 };
 
-export default Typography;
+export default withStyles(styles, { name: "HvTypography" })(Typography);

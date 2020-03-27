@@ -16,12 +16,15 @@
 
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import uniqueId from "lodash/uniqueId";
 import classnames from "classnames";
 import Doc from "@hv/uikit-react-icons/dist/Generic/Doc";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
+
+import styles from "./styles";
 
 const DropZone = ({
   id,
@@ -117,7 +120,7 @@ const DropZone = ({
         role="button"
         tabIndex={0}
         onDragEnter={event => {
-          if(!disabled) {
+          if (!disabled) {
             enterDropArea();
             event.stopPropagation();
             event.preventDefault();
@@ -126,14 +129,14 @@ const DropZone = ({
         onDragLeave={leaveDropArea}
         onDropCapture={leaveDropArea}
         onDragOver={event => {
-          if(!disabled) {
+          if (!disabled) {
             enterDropArea();
             event.stopPropagation();
             event.preventDefault();
           }
         }}
         onDrop={event => {
-          if(!disabled) {
+          if (!disabled) {
             event.stopPropagation();
             event.preventDefault();
             onChangeHandler(event.dataTransfer.files);
@@ -157,7 +160,7 @@ const DropZone = ({
             inputRef.current.value = null;
           }}
           onChange={() => {
-            if(!disabled) {
+            if (!disabled) {
               onChangeHandler(inputRef.current.files);
             }
           }}
@@ -255,4 +258,4 @@ DropZone.defaultProps = {
   onFilesAdded: () => {}
 };
 
-export default DropZone;
+export default withStyles(styles, { name: "HvDropZone" })(DropZone);

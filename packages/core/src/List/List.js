@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
@@ -28,6 +29,8 @@ import HvTypography from "../Typography";
 import withTooltip from "../withTooltip";
 import HvLink from "../Link";
 import Focus from "../Focus";
+
+import styles from "./styles";
 
 const DEFAULT_STATE = {
   list: [],
@@ -473,4 +476,4 @@ List.defaultProps = {
   listProps: undefined
 };
 
-export default List;
+export default withStyles(styles, { name: "HvList" })(List);

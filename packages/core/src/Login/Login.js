@@ -21,6 +21,9 @@ import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import Success from "@hv/uikit-react-icons/dist/Generic/Success";
 import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 import HvGrid from "../Grid";
 
 import Login from "./Forms/Login";
@@ -428,4 +431,4 @@ HvLogin.defaultProps = {
   incorrectCredentialsMessage: undefined
 };
 
-export default HvLogin;
+export default withStyles(styles, { name: "HvLogin" })(HvLogin);

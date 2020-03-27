@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
 import Tooltip from "./Tooltip";
@@ -236,4 +237,4 @@ Chart.defaultProps = {
   yAxisTitle: null
 };
 
-export default Chart;
+export default withStyles(styleCreator, { name: "HvChart" })(Chart);

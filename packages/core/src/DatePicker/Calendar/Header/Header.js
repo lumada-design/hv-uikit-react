@@ -32,10 +32,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
+
 import moment from "moment";
 import classNames from "classnames";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
+
+import styles from "./styles";
 
 const format = date => date.format("D MMM YYYY");
 
@@ -245,4 +249,4 @@ Header.defaultProps = {
   topText: null
 };
 
-export default Header;
+export default withStyles(styles, { name: "HvDatePickerHeader" })(Header);

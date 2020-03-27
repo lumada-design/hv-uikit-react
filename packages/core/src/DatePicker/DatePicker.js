@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
@@ -26,6 +27,8 @@ import Typography from "../Typography";
 import Popper from "../utils/Popper";
 import Calendar from "./Calendar";
 import Actions from "./Actions";
+
+import styles from "./styles";
 
 import {
   convertISOStringDateToDate,
@@ -600,7 +603,12 @@ class HvDatePicker extends React.Component {
       escapeWithReference
     } = this.props;
 
-    const { internalId, calendarOpen, calendarAnchorElement, calendarFlipped } = this.state;
+    const {
+      internalId,
+      calendarOpen,
+      calendarAnchorElement,
+      calendarFlipped
+    } = this.state;
 
     const RenderCalendar = rangeMode
       ? this.renderRangeCalendars()
@@ -769,4 +777,4 @@ HvDatePicker.defaultProps = {
   escapeWithReference: true
 };
 
-export default HvDatePicker;
+export default withStyles(styles, { name: "HvDatePicker" })(HvDatePicker);

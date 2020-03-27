@@ -128,7 +128,7 @@ const styles = theme => ({
             background: theme.hv.palette.atmosphere.atmo4
           },
           "& $tr.selected > div": {
-            background: theme.hv.palette.atmosphere.atmo1,
+            background: theme.hv.palette.atmosphere.atmo1
           },
           "& $tr.selected:hover > div": {
             background: theme.hv.palette.atmosphere.atmo4

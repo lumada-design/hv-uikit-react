@@ -16,9 +16,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 import HvTypography from "../../Typography";
 import ImageContainer from "../ImageContainer";
+
+import styles from "./styles";
 
 /**
  * User container. The render include a text area and a passed image/icon.
@@ -32,7 +35,7 @@ import ImageContainer from "../ImageContainer";
  * @constructor
  */
 const User = ({ classes, userData, userIcon, onClick, labels }) => {
-  if (!userData && !userIcon) return (<div>{labels.tenantName}</div>);
+  if (!userData && !userIcon) return <div>{labels.tenantName}</div>;
   return (
     <div
       className={classNames(classes.userContainer, {
@@ -97,4 +100,4 @@ User.defaultProps = {
   labels: {}
 };
 
-export default User;
+export default withStyles(styles, { name: "HvHeaderUser" })(User);

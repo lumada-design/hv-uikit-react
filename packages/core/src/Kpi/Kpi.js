@@ -16,9 +16,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import classNames from "classnames";
 import HvTypography from "../Typography";
+
+import styles from "./styles";
 
 const HvKpi = props => {
   const {
@@ -41,7 +44,11 @@ const HvKpi = props => {
     typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
-    <div id={id} className={classNames(classes.kpiContainer, className)} {...other}>
+    <div
+      id={id}
+      className={classNames(classes.kpiContainer, className)}
+      {...other}
+    >
       <div>
         <HvTypography variant="highlightText">
           {definedLabels.title}
@@ -212,7 +219,7 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle","sText", "infoText"])
+  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "sText", "infoText"])
 };
 
 HvKpi.defaultProps = {
@@ -232,4 +239,4 @@ HvKpi.defaultProps = {
   kpiTextConfiguration: undefined
 };
 
-export default HvKpi;
+export default withStyles(styles, { name: "HvKpi" })(HvKpi);
