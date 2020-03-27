@@ -87,7 +87,7 @@ jobs:
           --exclude bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins
           --report reports/report.html
           --log reports/log.html 
-          automation\robot\storybook\core\badge
+          automation\robot\storybook\core
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
