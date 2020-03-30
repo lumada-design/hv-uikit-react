@@ -36,8 +36,7 @@ const styles = theme => ({
     ...theme.hv.typography.normalText,
     "&$labelDisabled": {
       ...theme.hv.typography.placeholderText
-    },
-    display: "flex"
+    }
   },
   labelDisabled: {
     backgroundColor: "transparent",
@@ -48,10 +47,10 @@ const styles = theme => ({
     }
   },
   labelEnd: {
-    paddingRight: "8px"
+    margingRight: "8px"
   },
   labelStart: {
-    paddingLeft: "8px"
+    marginLeft: "8px"
   },
   checkBox: {
     padding: 0
@@ -59,6 +58,11 @@ const styles = theme => ({
   icon: {
     width: "32px",
     height: "32px"
+  },
+  truncate: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
   }
 });
 

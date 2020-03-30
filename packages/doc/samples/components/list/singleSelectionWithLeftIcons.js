@@ -26,7 +26,7 @@ const styles = theme => ({
   disabled: {
     "& svg *.color0": {
       fill: theme.hv.palette.atmosphere.atmo7
-    },
+    }
   }
 });
 
@@ -85,9 +85,11 @@ const data = [
   }
 ];
 
-const ListWrapper = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
-);
+const ListWrapper = withStyles(styles, {
+  withTheme: true
+})(({ classes, children }) => (
+  <div className={classes.wrapper}>{children}</div>
+));
 
 // Passing the aria-label to the component is necessary in order for the component
 // to meet accessibility requirements
@@ -96,8 +98,7 @@ const ariaProps = {
 };
 
 export default (
-    <ListWrapper>
-      <List values={data} selectDefault listProps={ariaProps} />
-    </ListWrapper>
+  <ListWrapper>
+    <List values={data} selectDefault listProps={ariaProps} hasTooltips />
+  </ListWrapper>
 );
-
