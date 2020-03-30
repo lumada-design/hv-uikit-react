@@ -19,10 +19,6 @@ export interface HvRadioButtonProps extends StandardProps<RadioProps, HvRadioBut
    * Extra properties passed to the MUI FormControlLabel component.
    */
   formControlLabelProps?: FormControlProps;
-  /**
-   * Extra properties passed to the MUI Radio component.
-   */
-  radioProps?: RadioProps;
 }
 
 export type HvRadioButtonClassKey =

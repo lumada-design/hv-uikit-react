@@ -1,5 +1,3 @@
-const styles = {
-  root: {}
-};
+const styles = {};
 
 export default styles;

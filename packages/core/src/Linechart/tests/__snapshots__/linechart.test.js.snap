@@ -778,8 +778,6 @@ exports[`Linechart withStyles should render correctly 1`] = `
       }
     >
       <WithStyles(Linechart)
-        classes={null}
-        config={null}
         data={
           Array [
             Object {
@@ -798,11 +796,6 @@ exports[`Linechart withStyles should render correctly 1`] = `
           ]
         }
         layout={Object {}}
-        rangeSlider={false}
-        subtitle=""
-        title=""
-        tooltipType="multiple"
-        type="line"
       />
     </ContextProvider>
   </ThemeProvider>

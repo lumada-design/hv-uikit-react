@@ -10,17 +10,19 @@ const MARGIN = 50;
 const MAX_BAR_WIDTH = 90;
 
 const Barchart = ({
+  id,
   classes,
   title,
   subtitle,
   data,
   layout,
   config,
-  tooltipType,
-  stack,
-  horizontal,
+  tooltipType = "multiple",
+  stack = false,
+  horizontal = false,
   xAxisTitle,
-  yAxisTitle
+  yAxisTitle,
+  ...others
 }) => {
   const newLayout = setLayout(layout, stack);
   const newData = setData(data, horizontal);
@@ -69,6 +71,7 @@ const Barchart = ({
 
   return (
     <Chart
+      id={id}
       classes={classes}
       title={title}
       subtitle={subtitle}
@@ -79,10 +82,15 @@ const Barchart = ({
       config={config}
       tooltipType={tooltipType}
       afterPlot={recalculateBarWidth}
+      {...others}
     />
   );
 };
 Barchart.propTypes = {
+  /**
+   * An Id passed on to the component
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -127,19 +135,6 @@ Barchart.propTypes = {
    * Defines the title of the Y axis.
    */
   yAxisTitle: PropTypes.string
-};
-
-Barchart.defaultProps = {
-  classes: null,
-  layout: undefined,
-  title: "",
-  subtitle: "",
-  tooltipType: "multiple",
-  config: null,
-  stack: false,
-  horizontal: false,
-  xAxisTitle: undefined,
-  yAxisTitle: undefined
 };
 
 export default withStyles(styles, { name: "HvBarchart" })(Barchart);

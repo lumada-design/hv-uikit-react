@@ -1,4 +1,8 @@
 const styles = theme => ({
+  root: {
+    margin: 0,
+    fontFamily: theme.hv.typography.fontFamily
+  },
   "5xlTitle": theme.hv.typography["5xlTitle"],
   "4xlTitle": theme.hv.typography["4xlTitle"],
   "3xlTitle": theme.hv.typography["3xlTitle"],
@@ -20,13 +24,7 @@ const styles = theme => ({
   labelText: theme.hv.typography.labelText,
   infoText: theme.hv.typography.infoText,
   sLink: theme.hv.typography.sLink,
-  vizText: theme.hv.typography.vizText,
-  baseFontFamily: {
-    fontFamily: theme.hv.typography.fontFamily
-  },
-  margin: {
-    margin: 0
-  }
+  vizText: theme.hv.typography.vizText
 });
 
 export default styles;

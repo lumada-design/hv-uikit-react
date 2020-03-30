@@ -4,40 +4,38 @@ import clsx from "clsx";
 import { IconButton, Popper, useTheme, withStyles } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import OutsideClickHandler from "react-outside-click-handler";
-import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
-import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
+import { isKeypress, KeyboardCodes } from "../utils";
 import List from "../List";
-import getPrevNextFocus from "../utils/focusableElementFinder";
+import { setId, getPrevNextFocus } from "..";
 import styles from "./styles";
+import withId from "../withId";
 
 const DropDownMenu = ({
-  icon,
-  classes,
-  placement,
-  dataList,
   id,
-  disabled,
-  disablePortal,
-  onClick,
+  classes,
+  className,
+  icon,
+  placement = "left",
+  dataList,
+  disablePortal = false,
   onToggleOpen,
-  keepOpened,
-  expanded,
+  onClick,
+  keepOpened = true,
+  disabled = false,
+  expanded = false,
   ...others
 }) => {
   const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
-  const [internalId] = useState(id || uniqueId("hv-dropdown-menu"));
   const anchorRef = React.useRef(null);
-  const focusNodes = getPrevNextFocus(`${internalId}-icon-button`);
+  const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
   const theme = useTheme();
 
   useEffect(() => {
     if (didMountRef.current) {
-      if (onToggleOpen) {
-        onToggleOpen(open);
-      }
+      onToggleOpen?.(open);
     } else didMountRef.current = true;
   }, [open]);
 
@@ -86,19 +84,13 @@ const DropDownMenu = ({
     }
   };
 
-  const IconRender = icon || (
-    <MoreVert
-      boxStyles={{ width: "32px", height: "32px" }}
-      color={disabled ? "atmo7" : undefined}
-    />
-  );
-
   return (
-    <div id={internalId} className={classes.root}>
+    <div id={id} className={clsx(className, classes.root)}>
       <IconButton
-        id={`${internalId}-icon-button`}
+        id={setId(id, "icon-button")}
         buttonRef={anchorRef}
-        aria-controls={open ? `${internalId}-list` : undefined}
+        aria-label="Dropdown menu"
+        aria-controls={open ? `${id}` : undefined}
         aria-haspopup="true"
         aria-expanded={open ? true : undefined}
         onClick={handleToggle}
@@ -109,7 +101,7 @@ const DropDownMenu = ({
         disabled={disabled}
         {...others}
       >
-        {IconRender}
+        {icon || <MoreVert color={disabled ? "atmo7" : undefined} />}
       </IconButton>
       <Popper
         disablePortal={disablePortal}
@@ -124,20 +116,19 @@ const DropDownMenu = ({
             createOptions={{
               escapeDeactivates: false,
               allowOutsideClick: true,
-              fallbackFocus: document.getElementById(`${internalId}-icon-button`)
+              fallbackFocus: document.getElementById(setId(id, "icon-button"))
             }}
           >
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div className={classes.menuList} onKeyDown={handleKeyDown}>
               <List
-                id={`${internalId}-list`}
+                id={setId(id, "list")}
                 values={dataList}
                 selectable={false}
-                onClick={(item, event) => {
+                onClick={(event, item) => {
                   if (!keepOpened) handleToggle(event, false);
-                  if (onClick) onClick(item, event);
+                  onClick?.(event, item);
                 }}
-                condensed
               />
             </div>
           </FocusTrap>
@@ -148,6 +139,10 @@ const DropDownMenu = ({
 };
 
 DropDownMenu.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * Id to be applied to the root node.
    */
@@ -225,16 +220,4 @@ DropDownMenu.propTypes = {
   expanded: PropTypes.bool
 };
 
-DropDownMenu.defaultProps = {
-  id: undefined,
-  placement: "left",
-  disablePortal: false,
-  onToggleOpen: null,
-  onClick: null,
-  keepOpened: true,
-  disabled: false,
-  icon: undefined,
-  expanded: false
-};
-
-export default withStyles(styles, { name: "HvDropDownMenu" })(DropDownMenu);
+export default withStyles(styles, { name: "HvDropDownMenu" })(withId(DropDownMenu));

@@ -35,7 +35,7 @@ export default (
       { id: "action1", label: "Action 1", disabled: false },
       { id: "action2", label: "Action 2", disabled: false }
     ]}
-    actionsCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
+    actionsCallback={(e, id, action) => alert(`clicked ${id} with ${action.label}`)}
     actionsPosition="bottom-right"
   />
 );

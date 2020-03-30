@@ -92,7 +92,7 @@ describe("Switch label click", () => {
     </HvProvider>
   );
 
-  const clickableLabel = wrapper.find("#hvswitch_leftButton");
+  const clickableLabel = wrapper.find("#hvswitch-left-button");
   clickableLabel.simulate("click", {
     target: { classname: "labelDeselected" }
   });

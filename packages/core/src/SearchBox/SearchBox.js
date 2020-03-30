@@ -10,9 +10,15 @@ import partial from "lodash/partial";
 import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import SearchIcon from "@hv/uikit-react-icons/dist/Search";
+import withLabels from "../withLabels";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import HvInput from "../Input";
 import styles from "./styles";
+
+const DEFAULT_LABELS = {
+  inputLabel: "",
+  placeholder: "Search"
+};
 
 /**
  *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
@@ -24,19 +30,9 @@ import styles from "./styles";
 const onKeyDownHandler = (handlers, event, value) => {
   const [onKeyDown, onSubmit] = handlers;
   if (isKeypress(event, KeyboardCodes.Enter)) {
-    // for legacy purposes, check the length of the parameters associated with onSubmit
-    // 1 = the older api; 2 = new api
-    if (onSubmit.length === 1) {
-      onSubmit(value);
-      // eslint-disable-next-line no-console
-      console.warn(
-        "WARNING: Note that in the future rather than receiving the value as argument it should receive the event and the value"
-      );
-    } else {
-      onSubmit(event, value);
-    }
+    onSubmit?.(event, value);
   }
-  onKeyDown(event, value);
+  onKeyDown?.(event, value);
 };
 
 /**
@@ -44,23 +40,15 @@ const onKeyDownHandler = (handlers, event, value) => {
  *
  *  @param disabled - contains the onKeyDown event
  */
-const changeIconColor = disabled =>
-  disabled ? (
-    <SearchIcon
-      color="atmo7"
-      boxStyles={{
-        width: "30px",
-        height: "30px"
-      }}
-    />
-  ) : (
-    <SearchIcon
-      boxStyles={{
-        width: "30px",
-        height: "30px"
-      }}
-    />
-  );
+const changeIconColor = disabled => (
+  <SearchIcon
+    color={disabled ? "atmo7" : undefined}
+    boxStyles={{
+      width: "30px",
+      height: "30px"
+    }}
+  />
+);
 
 const iconStateHandler = (value, disabled, setIcon) => {
   if (isNil(value) || value === "") {
@@ -76,10 +64,10 @@ const iconStateHandler = (value, disabled, setIcon) => {
  *  @param contextValues - array with the callback to use the disabled flag.
  *  @param value - the value inside the input.
  */
-const onChangeHandler = (contextValues, value) => {
+const onChangeHandler = (contextValues, event, value) => {
   const [onChange, disabled, setIcon] = contextValues;
   let newValue = value;
-  newValue = onChange(newValue);
+  newValue = onChange(event, newValue);
   iconStateHandler(value, disabled, setIcon);
   return newValue;
 };
@@ -93,7 +81,7 @@ const onChangeHandler = (contextValues, value) => {
 const onFocusHandler = (contextValues, value) => {
   const [onFocus, disabled, setIcon] = contextValues;
   iconStateHandler(value, disabled, setIcon);
-  onFocus(value);
+  onFocus?.(value);
 };
 
 /**
@@ -105,31 +93,29 @@ const onFocusHandler = (contextValues, value) => {
 const onBlurHandler = (contextValues, value) => {
   const [onBlur, disabled, setIcon] = contextValues;
   setIcon(changeIconColor(disabled));
-  onBlur(value);
+  onBlur?.(value);
 };
 
-const HvSearchBox = props => {
-  const {
-    classes,
-    id,
-    className,
-    labels,
-    initialValue,
-    value,
-    onChange,
-    disabled,
-    suggestionListCallback,
-    suggestionSelectedCallback,
-    onBlur,
-    onFocus,
-    onKeyDown,
-    onSubmit,
-    autoFocus,
-    ariaLabel
-  } = props;
-
+const HvSearchBox = ({
+  classes,
+  id,
+  className,
+  labels,
+  initialValue = "",
+  value,
+  onChange = (event, payload) => payload,
+  disabled = false,
+  suggestionListCallback,
+  suggestionSelectedCallback,
+  onBlur,
+  onFocus,
+  onKeyDown,
+  onSubmit,
+  autoFocus = false,
+  ariaLabel = "search",
+  ...others
+}) => {
   const [lensIcon, setIcon] = useState(changeIconColor(disabled));
-
   return (
     <>
       <HvInput
@@ -150,6 +136,7 @@ const HvSearchBox = props => {
         showInfo={false}
         validationIconVisible={false}
         inputProps={{ "aria-label": ariaLabel }}
+        {...others}
       />
     </>
   );
@@ -240,25 +227,4 @@ HvSearchBox.propTypes = {
   ariaLabel: PropTypes.string
 };
 
-HvSearchBox.defaultProps = {
-  value: undefined,
-  initialValue: "",
-  className: "",
-  id: "",
-  labels: {
-    inputLabel: "",
-    placeholder: "Search"
-  },
-  onChange: value => value,
-  onBlur: () => {},
-  onFocus: () => {},
-  onKeyDown: () => {},
-  onSubmit: () => {},
-  suggestionListCallback: () => {},
-  suggestionSelectedCallback: () => {},
-  autoFocus: false,
-  disabled: false,
-  ariaLabel: "search"
-};
-
-export default withStyles(styles, { name: "HvSearchBox" })(HvSearchBox);
+export default withStyles(styles, { name: "HvSearchBox" })(withLabels(DEFAULT_LABELS)(HvSearchBox));

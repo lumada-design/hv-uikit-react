@@ -1,20 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../useUniqueId";
+import clsx from "clsx";
 import styles from "./styles";
 
-const Actions = ({ classes, id, children, ...others }) => {
-  const internalId = useUniqueId(id, "hv-verticalnavigation-actions-");
-
+const Actions = ({ className, classes, id, children, ...others }) => {
   return (
-    <div id={internalId} className={classes.root} {...others}>
+    <div id={id} className={clsx(className, classes.root)} {...others}>
       {children}
     </div>
   );
 };
 
 Actions.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the component.
    */

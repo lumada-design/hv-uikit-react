@@ -1,27 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../useUniqueId";
 import { FocusProvider } from "./utils/FocusContext";
 import SelectionContext from "./utils/SelectionContext";
 import useSelectionPath from "./utils/useSelectionPath";
 import MenuBar from "./MenuBar";
 import styles from "./styles";
 
-const Navigation = ({ classes, id, data, selected, onClick }) => {
-  const uniqueId = useUniqueId(id, "hv-navigation-");
+const Navigation = ({ classes, className, data, selected, onClick, ...others }) => {
   const selectionPath = useSelectionPath(data, selected);
 
   const handleClick = (e, selectedItem) => {
-    if (onClick) {
-      onClick(e, selectedItem);
-    }
+    onClick?.(e, selectedItem);
   };
 
   return (
     <SelectionContext.Provider value={selectionPath}>
       <FocusProvider>
-        <nav id={uniqueId} className={classes.root}>
+        <nav className={clsx(className, classes.root)} {...others}>
           <MenuBar data={data} onClick={handleClick} type="menubar" />
         </nav>
       </FocusProvider>
@@ -40,9 +37,9 @@ Navigation.propTypes = {
     root: PropTypes.string
   }).isRequired,
   /**
-   * Id to be applied to the root node.
+   * Class names to be applied.
    */
-  id: PropTypes.string,
+  className: PropTypes.string,
   /**
    * An array containing the data for each menu item.
    *
@@ -63,12 +60,6 @@ Navigation.propTypes = {
    * Callback triggered when any item is clicked.
    */
   onClick: PropTypes.func
-};
-
-Navigation.defaultProps = {
-  id: undefined,
-  selected: null,
-  onClick: () => {}
 };
 
 export default withStyles(styles, { name: "HvHeaderNavigation" })(Navigation);

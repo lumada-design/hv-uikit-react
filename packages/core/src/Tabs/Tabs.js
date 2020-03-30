@@ -3,20 +3,32 @@ import PropTypes from "prop-types";
 import { Tabs, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvTabs = ({ classes, ...others }) => (
-  <Tabs
-    classes={{
-      root: classes.root,
-      flexContainer: classes.flexContainer,
-      indicator: classes.indicator,
-      scroller: classes.scroller
-    }}
-    {...others}
-    TabIndicatorProps={{ children: <div /> }}
-  />
-);
+const HvTabs = props => {
+  const { classes, ...others } = props;
+
+  return (
+    <Tabs
+      classes={{
+        root: classes.root,
+        flexContainer: classes.flexContainer,
+        indicator: classes.indicator,
+        scroller: classes.scroller
+      }}
+      {...others}
+      TabIndicatorProps={{ children: <div /> }}
+    />
+  );
+};
 
 HvTabs.propTypes = {
+  /**
+   * Identifier.
+   */
+  id: PropTypes.string,
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * The content of the component.
    */
@@ -54,12 +66,6 @@ HvTabs.propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any
-};
-
-HvTabs.defaultProps = {
-  children: null,
-  onChange: undefined,
-  value: undefined
 };
 
 export default withStyles(styles, { name: "HvTabs" })(HvTabs);

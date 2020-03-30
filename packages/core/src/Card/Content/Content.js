@@ -1,22 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import uniqueId from "lodash/uniqueId";
 import { CardContent, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const DEFAULT_ID = "hv-content";
-
-const Content = ({ id, classes, className, innerCardContent, onClickAction, ...others }) => (
-  <CardContent
-    id={id || uniqueId(DEFAULT_ID)}
-    className={clsx(classes.content, className)}
-    onClick={onClickAction}
-    {...others}
-  >
-    {innerCardContent}
-  </CardContent>
-);
+const Content = props => {
+  const { id, classes, className, children, onClick, ...others } = props;
+  return (
+    <CardContent id={id} className={clsx(classes.content, className)} onClick={onClick} {...others}>
+      {children}
+    </CardContent>
+  );
+};
 
 Content.propTypes = {
   /**
@@ -34,27 +29,16 @@ Content.propTypes = {
     /**
      * Style applied to the root component.
      */
-    content: PropTypes.string,
-    /**
-     * Style applied to the bottom border of the component is needed.
-     */
-    bottomBorder: PropTypes.string
+    content: PropTypes.string
   }).isRequired,
   /**
    *  The renderable content inside the body of the card.
    */
-  innerCardContent: PropTypes.node,
+  children: PropTypes.node,
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClickAction: PropTypes.func
-};
-
-Content.defaultProps = {
-  className: "",
-  id: undefined,
-  innerCardContent: undefined,
-  onClickAction: () => {}
+  onClick: PropTypes.func
 };
 
 export default withStyles(styles, { name: "HvCardContent" })(Content);

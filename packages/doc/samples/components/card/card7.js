@@ -5,7 +5,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import leaf from "./resources/leaf.png";
 
 const styles = theme => ({
-  mediaContainer: {
+  root: {
     width: "100%",
     paddingBottom: "0px",
     borderLeft: `1px solid ${theme.palette.grey.plain}`,
@@ -49,9 +49,16 @@ const myActions = [
 export default (
   <div style={{ width: "500px" }}>
     <HvCard>
-      <CustomMedia mediaPath={leaf} mediaHeight={160} />
+      <CustomMedia mediaPath={leaf} mediaHeight={160} aria-label="leafy leaf" />
       <HvCardFooter
-        checkboxAriaLabel="Composed card"
+        aria-label="Composed card"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "Composed card",
+          inputProps: {
+            "aria-label": "composed input"
+          }
+        }}
         actions={myActions}
         isSelectable
         onChange={event => console.log(`my value is ${event.target.value}`)}

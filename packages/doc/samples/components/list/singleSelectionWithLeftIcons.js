@@ -4,7 +4,7 @@ import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = theme => ({
-  wrapper: {
+  root: {
     width: 240,
     padding: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1
@@ -46,18 +46,11 @@ const data = [
   }
 ];
 
-const ListWrapper = withStyles(styles)(({ classes, children }) => (
-  <div className={classes.wrapper}>{children}</div>
-));
+const StyledList = withStyles(styles)(List);
 
-// Passing the aria-label to the component is necessary in order for the component
-// to meet accessibility requirements
-const ariaProps = {
+const otherProps = {
+  id: "list",
   "aria-label": "Single Selection List with Left Icons Title"
 };
 
-export default (
-  <ListWrapper>
-    <List values={data} selectDefault listProps={ariaProps} />
-  </ListWrapper>
-);
+export default <StyledList values={data} selectDefault {...otherProps} />;

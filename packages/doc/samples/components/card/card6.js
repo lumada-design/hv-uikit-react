@@ -60,7 +60,22 @@ export default (
         innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
         semantic="sema2"
         isSelectable
-        checkboxValue="value"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "leaf checkbox",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
+        cardButtonProps={{
+          "aria-label": "leaf"
+        }}
+        headerProps={{
+          "aria-label": "leaf"
+        }}
+        footerProps={{
+          "aria-label": "leaf"
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </Grid>
@@ -73,7 +88,22 @@ export default (
         }
         semantic="sema3"
         isSelectable
-        checkboxValue="value"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "leaf checkbox",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
+        cardButtonProps={{
+          "aria-label": "leaf"
+        }}
+        headerProps={{
+          "aria-label": "leaf"
+        }}
+        footerProps={{
+          "aria-label": "leaf"
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </Grid>
@@ -84,7 +114,22 @@ export default (
         innerCardContent={<ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />}
         semantic="sema4"
         isSelectable
-        checkboxValue="value"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "leaf checkbox",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
+        cardButtonProps={{
+          "aria-label": "leaf"
+        }}
+        headerProps={{
+          "aria-label": "leaf"
+        }}
+        footerProps={{
+          "aria-label": "leaf"
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </Grid>

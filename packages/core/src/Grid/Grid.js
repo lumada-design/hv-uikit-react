@@ -17,7 +17,7 @@ const SPACINGS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 /**
  * We override the default spacing to "auto"
  */
-const HvGrid = ({ container, spacing = "auto", ...other }) => {
+const HvGrid = ({ container, spacing = "auto", ...others }) => {
   const width = useWidth();
   let gridSpacing = spacing;
 
@@ -29,7 +29,7 @@ const HvGrid = ({ container, spacing = "auto", ...other }) => {
     }
   }
 
-  return <Grid {...(container && { container, spacing: gridSpacing })} {...other} />;
+  return <Grid {...(container && { container, spacing: gridSpacing })} {...others} />;
 };
 
 /*
@@ -62,6 +62,7 @@ HvGrid.propTypes = {
    * Override or extend the styles applied to the component.
    * See [CSS API](#css) below for more details.
    */
+  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
   /**
    * @ignore

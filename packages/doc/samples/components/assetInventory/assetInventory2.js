@@ -118,7 +118,9 @@ const cardRenderer = (value, viewConfiguration) => {
       headerTitle={value.headerTitle}
       innerCardContent={<ContentWithStyles values={value} icon={StyledIcon} />}
       semantic={sema}
-      checkboxValue={value.id}
+      checkboxProps={{
+        value: value.id
+      }}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
       actions={viewConfiguration.actions}
@@ -134,7 +136,7 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxValue={value.id}>
+    <HvListViewRow checkboxProps={{ value: value.id }}>
       <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon semantic={status.sema} className={classes.icon} />
       </HvListViewCell>
@@ -305,7 +307,7 @@ export default (
     onSelection={event => console.log(event.target.value)}
     isSelectable
     actions={myActions}
-    actionsCallback={(id, action) =>
+    actionsCallback={(e, id, action) =>
       console.log(`You have pressed card ${id} with action ${action.label}`)
     }
   >

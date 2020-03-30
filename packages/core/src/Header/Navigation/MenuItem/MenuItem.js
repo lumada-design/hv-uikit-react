@@ -4,14 +4,12 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "../../../utils/KeyboardUtils";
 import HvTypography from "../../../Typography";
-import useUniqueId from "../../../useUniqueId";
 import SelectionContext from "../utils/SelectionContext";
 import { FocusContext } from "../utils/FocusContext";
 import MenuBar from "../MenuBar";
 import styles from "./styles";
 
 const MenuItem = ({ classes, id, item, type, onClick }) => {
-  const uniqueId = useUniqueId(id, "hv-menuItem-");
   const selectionPath = useContext(SelectionContext);
   const { dispatch } = useContext(FocusContext);
 
@@ -31,9 +29,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
         event.currentTarget.blur();
       }
 
-      if (onClick) {
-        onClick(event, item);
-      }
+      onClick?.(event, item);
     }
   };
 
@@ -43,7 +39,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
 
   return (
     <li
-      id={uniqueId}
+      id={id}
       key={item.label}
       role="none"
       className={clsx(classes.root, classes[`${type}Item`], {
@@ -106,11 +102,6 @@ MenuItem.propTypes = {
    * The type of menu.
    */
   type: PropTypes.oneOf(["menubar", "menu"]).isRequired
-};
-
-MenuItem.defaultProps = {
-  id: undefined,
-  onClick: () => {}
 };
 
 export default withStyles(styles, { name: "HvHeaderMenuItem" })(MenuItem);

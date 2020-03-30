@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import DropLeftIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
 import DropRightIcon from "@hv/uikit-react-icons/dist/DropRightXS";
-import { KeyboardCodes, isKeypress } from "../../../utils/KeyboardUtils";
+import { KeyboardCodes, isKeypress, setId } from "../../../utils";
 import HvTypography from "../../../Typography";
 import styles from "./styles";
 
@@ -29,7 +29,7 @@ const Navigation = ({
   return (
     <div className={classes.root}>
       <DropLeftIcon
-        id={`${id}-left`}
+        id={setId(id, "left")}
         className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
         onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
         onKeyDown={event =>
@@ -50,7 +50,7 @@ const Navigation = ({
       </div>
 
       <DropRightIcon
-        id={`${id}-right`}
+        id={setId(id, "right")}
         className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
         onClick={isNextEnabled ? onNavigateNext : undefined}
         onKeyDown={event => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}

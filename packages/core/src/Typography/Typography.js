@@ -29,35 +29,30 @@ const defaultVariantMapping = {
   vizText: "p"
 };
 
-const HvTypography = React.forwardRef(
-  (
-    {
-      variant = "normalText",
-      classes = {},
-      paragraph = false,
-      className = undefined,
-      component = null,
-      id = undefined,
-      children = "",
-      ...other
-    },
+const HvTypography = React.forwardRef((props, ref) => {
+  const {
+    id,
+    variant = "normalText",
+    classes,
+    paragraph = false,
+    className,
+    component,
+    children,
+    ...others
+  } = props;
+  const Component = component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
-    ref
-  ) => {
-    const Component = component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
-
-    return (
-      <Component
-        id={id}
-        ref={ref}
-        className={clsx(classes[variant], classes.baseFontFamily, classes.margin, className)}
-        {...other}
-      >
-        {children}
-      </Component>
-    );
-  }
-);
+  return (
+    <Component
+      id={id}
+      ref={ref}
+      className={clsx(className, classes.root, classes[variant])}
+      {...others}
+    >
+      {children}
+    </Component>
+  );
+});
 
 HvTypography.propTypes = {
   /**
@@ -69,6 +64,10 @@ HvTypography.propTypes = {
    * See CSS API tab for more details.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root element
+     */
+    root: PropTypes.string,
     /**
      * Styles applied to the 3xlTitle variant
      */

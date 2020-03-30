@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Banner  should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -777,27 +773,11 @@ exports[`Banner  should render correctly 1`] = `
     >
       <CssBaseline />
       <WithStyles(HvBanner)
-        actions={null}
-        actionsCallback={[Function]}
-        actionsPosition="auto"
-        anchorOrigin="top"
-        className=""
-        customIcon={null}
-        label=""
-        offset={60}
         onClose={[Function]}
         open={false}
-        showIcon={false}
-        transitionDirection="down"
-        transitionDuration={300}
         variant="default"
       >
         <HvBanner
-          actions={null}
-          actionsCallback={[Function]}
-          actionsPosition="auto"
-          anchorOrigin="top"
-          className=""
           classes={
             Object {
               "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter",
@@ -806,14 +786,8 @@ exports[`Banner  should render correctly 1`] = `
               "rootClosed": "HvBanner-rootClosed",
             }
           }
-          customIcon={null}
-          label=""
-          offset={60}
           onClose={[Function]}
           open={false}
-          showIcon={false}
-          transitionDirection="down"
-          transitionDuration={300}
           variant="default"
         >
           <WithStyles(ForwardRef(Snackbar))
@@ -824,7 +798,6 @@ exports[`Banner  should render correctly 1`] = `
                 "vertical": "top",
               }
             }
-            className=""
             classes={
               Object {
                 "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter",
@@ -832,7 +805,6 @@ exports[`Banner  should render correctly 1`] = `
                 "root": "HvBanner-rootClosed",
               }
             }
-            id="hv-banner-1"
             open={false}
             style={
               Object {
@@ -849,7 +821,6 @@ exports[`Banner  should render correctly 1`] = `
                   "vertical": "top",
                 }
               }
-              className=""
               classes={
                 Object {
                   "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter HvBanner-anchorOriginBottomCenter",
@@ -861,7 +832,6 @@ exports[`Banner  should render correctly 1`] = `
                   "root": "MuiSnackbar-root HvBanner-rootClosed",
                 }
               }
-              id="hv-banner-1"
               open={false}
               style={
                 Object {

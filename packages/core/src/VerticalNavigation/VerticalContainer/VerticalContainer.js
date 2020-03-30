@@ -6,9 +6,7 @@ import clsx from "clsx";
 import Menu from "@hv/uikit-react-icons/dist/Menu";
 import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
 import Button from "../../Button";
-
-import useUniqueId from "../../useUniqueId";
-
+import { setId } from "../../utils";
 import { getFirstAndLastFocus } from "../../utils/focusableElementFinder";
 
 import styles from "./styles";
@@ -20,7 +18,7 @@ import styles from "./styles";
  */
 const VerticalContainer = ({
   id,
-  className = "",
+  className,
   classes,
   isAnchorBarVisible = true,
   isOpen = false,
@@ -28,10 +26,9 @@ const VerticalContainer = ({
   buttonAriaLabel,
   children,
   position = "static",
-  closeOnExit
+  closeOnExit,
+  ...others
 }) => {
-  const internalId = useUniqueId(id, "hv-verticalnavigation-verticalcontainer");
-
   const [open, setOpen] = useState(isOpen);
   const [prevPropOpen, setPrevPropOpen] = useState(null);
   const containerRef = useRef(null);
@@ -71,7 +68,7 @@ const VerticalContainer = ({
       } else {
         setOpen(prevState => !prevState);
       }
-      if (toggleOpenCallback) toggleOpenCallback(open);
+      toggleOpenCallback?.(open);
     },
     [toggleOpenCallback, open]
   );
@@ -106,9 +103,9 @@ const VerticalContainer = ({
   );
   const renderedAnchorBar = useMemo(
     () => (
-      <div id={`${internalId}-anchor-bar`} className={classes.anchorBar}>
+      <div id={setId(id, "anchor-bar")} className={classes.anchorBar}>
         <Button
-          id={`${internalId}-hamburger-button`}
+          id={setId(id, "hamburger-button")}
           className={classes.button}
           buttonRef={buttonRef}
           onClick={() => toggleOpen()}
@@ -119,7 +116,7 @@ const VerticalContainer = ({
         </Button>
       </div>
     ),
-    [buttonAriaLabel, classes.anchorBar, classes.button, internalId, open, toggleOpen]
+    [buttonAriaLabel, classes.anchorBar, classes.button, id, open, toggleOpen]
   );
 
   const renderedContainer = useMemo(
@@ -128,7 +125,7 @@ const VerticalContainer = ({
         {isAnchorBarVisible && <div className={classes.separator} />}
         {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div
-          id={`${internalId}-container`}
+          id={setId(id, "container")}
           ref={containerRef}
           className={classes.contentContainer}
           onKeyDown={handlerKeyContainer}
@@ -142,7 +139,7 @@ const VerticalContainer = ({
       classes.contentContainer,
       classes.separator,
       handlerKeyContainer,
-      internalId,
+      id,
       isAnchorBarVisible
     ]
   );
@@ -158,7 +155,7 @@ const VerticalContainer = ({
       })}
     >
       <ClickAwayListener onClickAway={() => closeOnExit && toggleOpen(false)}>
-        <div id={`${internalId}`} className={classes.verticalContainer}>
+        <div id={id} className={classes.verticalContainer} {...others}>
           {isAnchorBarVisible && renderedAnchorBar}
           {open && renderedContainer}
         </div>

@@ -3,6 +3,7 @@ import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../Typography";
 import Actions from "../../../Actions";
+import { setId } from "../../../utils";
 import styles from "./styles";
 
 const MessageContainer = ({
@@ -15,15 +16,11 @@ const MessageContainer = ({
 }) => (
   <>
     {icon && <div className={classes.iconContainer}>{icon}</div>}
-    <HvTypography
-      variant="normalText"
-      {...(id && { id: `${id}-message-text` })}
-      className={classes.message}
-    >
+    <HvTypography id={setId(id, "message-text")} variant="normalText" className={classes.message}>
       {message}
     </HvTypography>
     {actionsOnMessage && (
-      <div {...(id && { id: `${id}-message-actions` })} className={classes.actionMessageContainer}>
+      <div id={setId(id, "message-actions")} className={classes.actionMessageContainer}>
         <Actions actions={actionsOnMessage} actionsCallback={actionsOnMessageCallback} />
       </div>
     )}
@@ -65,15 +62,6 @@ MessageContainer.propTypes = {
    * The callback function ran when an action is triggered, receiving ´actionsOnMessage´ as param
    */
   actionsOnMessageCallback: PropTypes.func
-};
-
-MessageContainer.defaultProps = {
-  id: null,
-  classes: null,
-  icon: null,
-  message: "",
-  actionsOnMessage: undefined,
-  actionsOnMessageCallback: () => {}
 };
 
 export default withStyles(styles, { name: "HvMessageContainer" })(MessageContainer);

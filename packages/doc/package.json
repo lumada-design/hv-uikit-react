@@ -15,7 +15,8 @@
   "scripts": {
     "doc": "start-storybook -p 9001 -c .storybook -p --quiet",
     "build": "build-storybook -c .storybook -o dist --quiet",
-    "clean": "npx del-cli dist"
+    "clean": "npx del-cli dist",
+    "lint:prettier": "npx prettier --check \"samples/**/*.js\""
   },
   "peerDependencies": {
     "@material-ui/core": "^4.8.0",

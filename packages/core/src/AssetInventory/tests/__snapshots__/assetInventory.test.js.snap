@@ -777,49 +777,8 @@ exports[`Asset Inventory  should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(AssetInventory)
-        FilterPlaceholder={null}
-        actions={null}
-        actionsCallback={null}
-        className=""
+      <WithStyles(Component)
         configuration={Array []}
-        disablePortal={false}
-        hasPagination={false}
-        isSelectable={false}
-        labels={
-          Object {
-            "sortBy": "Sort by",
-          }
-        }
-        maxVisibleActions={1}
-        onPageChange={null}
-        onPageSizeChange={null}
-        onSearch={null}
-        onSelection={null}
-        onSortChange={null}
-        onViewChange={[Function]}
-        page={0}
-        pageSizeOptions={
-          Array [
-            5,
-            10,
-            20,
-            25,
-            50,
-            100,
-          ]
-        }
-        pages={0}
-        paginationServerSide={false}
-        searchBoxLabels={
-          Object {
-            "inputLabel": "",
-            "placeholder": "Search",
-          }
-        }
-        selectedValues={Array []}
-        selectedView={null}
-        sortOptionId={null}
         values={
           Array [
             Object {
@@ -846,7 +805,7 @@ exports[`Asset Inventory  should render correctly 1`] = `
         <div
           id="id0"
         />
-      </WithStyles(AssetInventory)>
+      </WithStyles(Component)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

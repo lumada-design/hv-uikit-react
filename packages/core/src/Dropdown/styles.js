@@ -9,7 +9,7 @@ const styles = theme => ({
       border: `1px solid ${theme.hv.palette.accent.acce1}`
     }
   },
-  rootActive: {
+  rootOpen: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
     boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
     "&:hover": {

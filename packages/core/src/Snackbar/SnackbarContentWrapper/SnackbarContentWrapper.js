@@ -3,6 +3,7 @@ import PropTypes, { oneOfType } from "prop-types";
 import { SnackbarContent, withStyles } from "@material-ui/core";
 import TextTruncate from "./MultiLineEllipsis";
 import variantIcon from "./VariantIcons";
+import { setId } from "../../utils";
 import Actions from "../../Actions";
 import styles from "./styles";
 
@@ -16,7 +17,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
     variant,
     action,
     actionCallback,
-    ...other
+    ...others
   } = props;
   const icon = customIcon || (showIcon && variantIcon(variant));
   const innerAction = React.isValidElement(action) ? action : [action];
@@ -28,23 +29,23 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
       classes={{ root: classes.root, message: classes.message }}
       className={classes[variant]}
       message={
-        <div {...(id && { id: `${id}-message` })} className={classes.messageSpan}>
+        <div id={setId(id, "message")} className={classes.messageSpan}>
           {icon && <div className={classes.iconVariant}>{icon}</div>}
           <TextTruncate
-            {...(id && { id: `${id}-message-text` })}
+            id={setId(id, "message-text")}
             containerClassName={classes.messageText}
             line={3}
             text={label}
             textElement="div"
           />
           {action && (
-            <div {...(id && { id: `${id}-action` })} className={classes.action}>
+            <div id={setId(id, "action")} className={classes.action}>
               <Actions category="semantic" actions={innerAction} actionsCallback={actionCallback} />
             </div>
           )}
         </div>
       }
-      {...other}
+      {...others}
     />
   );
 });
@@ -90,15 +91,6 @@ HvSnackbarContentWrapper.propTypes = {
    *  The callback function ran when an action is triggered, receiving ´action´ as param
    */
   actionCallback: PropTypes.func
-};
-
-HvSnackbarContentWrapper.defaultProps = {
-  id: undefined,
-  label: "",
-  showIcon: false,
-  customIcon: null,
-  action: null,
-  actionCallback: () => {}
 };
 
 export default withStyles(styles, { name: "HvSnackbarContentWrapper" })(HvSnackbarContentWrapper);

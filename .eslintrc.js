@@ -7,13 +7,14 @@ module.exports = {
   rules: {
     "react/jsx-filename-extension": [1, { extensions: javascriptFileExtensions }],
     "react/jsx-wrap-multilines": ["error", { declaration: false, assignment: false }],
-    "no-underscore-dangle": ["error", { allow: ["_offset"] }],
     "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline": "off",
     "react/require-default-props": "off",
-    "react/forbid-prop-types": "off"
+
+    // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
+    "no-unused-expressions": "off"
   },
   settings: {
     react: {

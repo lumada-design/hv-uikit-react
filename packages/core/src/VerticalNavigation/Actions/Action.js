@@ -3,13 +3,11 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { KeyboardCodes, isKeypress } from "../../utils/KeyboardUtils";
-import useUniqueId from "../../useUniqueId";
 import HvTypography from "../../Typography";
+import { setId } from "../../utils";
 import styles from "./styles";
 
-const Action = ({ classes, id, label = "", icon, onClick, ...others }) => {
-  const internalId = useUniqueId(id, "hv-verticalnavigation-action-");
-
+const Action = ({ className, classes, id, label = "", icon, onClick, ...others }) => {
   const handleKeyDown = useCallback(
     event => {
       if (
@@ -35,11 +33,11 @@ const Action = ({ classes, id, label = "", icon, onClick, ...others }) => {
 
   return (
     <HvTypography
-      id={`${internalId}-button`}
+      id={setId(id, "button")}
       component="div"
       variant="normalText"
       role="button"
-      className={clsx(classes.action, { [classes.noIcon]: !icon })}
+      className={clsx(className, classes.action, { [classes.noIcon]: !icon })}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={onClick}
@@ -52,6 +50,10 @@ const Action = ({ classes, id, label = "", icon, onClick, ...others }) => {
 };
 
 Action.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the component.
    */

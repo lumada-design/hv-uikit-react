@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Kpi should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -776,10 +772,7 @@ exports[`Kpi should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(HvKpi)
-        className=""
-        indicatorTextVariant="lTitle"
-        indicatorUnitTextVariant="sTitle"
+      <WithStyles(Component)
         labels={
           Object {
             "comparisonIndicatorInfo": "vs last 24h.",
@@ -788,12 +781,8 @@ exports[`Kpi should render correctly 1`] = `
             "unit": "MS",
           }
         }
-        trendIndicator={null}
-        visualComparison={null}
-        visualIndicator={null}
       >
-        <HvKpi
-          className=""
+        <Component
           classes={
             Object {
               "comparisonComposition": "HvKpi-comparisonComposition",
@@ -801,14 +790,12 @@ exports[`Kpi should render correctly 1`] = `
               "indicatorText": "HvKpi-indicatorText",
               "indicatorUnit": "HvKpi-indicatorUnit",
               "indicatorsContainer": "HvKpi-indicatorsContainer",
-              "kpiContainer": "HvKpi-kpiContainer",
+              "root": "HvKpi-root",
               "spacingToTheRight": "HvKpi-spacingToTheRight",
               "trendLine": "HvKpi-trendLine",
               "visualIndicatorContainer": "HvKpi-visualIndicatorContainer",
             }
           }
-          indicatorTextVariant="lTitle"
-          indicatorUnitTextVariant="sTitle"
           labels={
             Object {
               "comparisonIndicatorInfo": "vs last 24h.",
@@ -817,149 +804,167 @@ exports[`Kpi should render correctly 1`] = `
               "unit": "MS",
             }
           }
-          trendIndicator={null}
-          visualComparison={null}
-          visualIndicator={null}
         >
-          <div
-            className="HvKpi-kpiContainer"
+          <HvKpi
+            classes={
+              Object {
+                "comparisonComposition": "HvKpi-comparisonComposition",
+                "comparisonContainer": "HvKpi-comparisonContainer",
+                "indicatorText": "HvKpi-indicatorText",
+                "indicatorUnit": "HvKpi-indicatorUnit",
+                "indicatorsContainer": "HvKpi-indicatorsContainer",
+                "root": "HvKpi-root",
+                "spacingToTheRight": "HvKpi-spacingToTheRight",
+                "trendLine": "HvKpi-trendLine",
+                "visualIndicatorContainer": "HvKpi-visualIndicatorContainer",
+              }
+            }
+            labels={
+              Object {
+                "comparisonIndicatorInfo": "vs last 24h.",
+                "indicator": "8.85",
+                "title": "Avg. service time",
+                "unit": "MS",
+              }
+            }
           >
-            <div>
-              <WithStyles(ForwardRef)
-                variant="highlightText"
-              >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
-                      "disabledButtonText": "HvTypography-disabledButtonText",
-                      "highlightText": "HvTypography-highlightText",
-                      "infoText": "HvTypography-infoText",
-                      "inlineLink": "HvTypography-inlineLink",
-                      "lTitle": "HvTypography-lTitle",
-                      "labelText": "HvTypography-labelText",
-                      "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "sLink": "HvTypography-sLink",
-                      "sText": "HvTypography-sText",
-                      "sTitle": "HvTypography-sTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "selectedText": "HvTypography-selectedText",
-                      "vizText": "HvTypography-vizText",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
-                    }
-                  }
+            <div
+              className="HvKpi-root"
+            >
+              <div>
+                <WithStyles(ForwardRef)
                   variant="highlightText"
                 >
-                  <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin"
-                  >
-                    Avg. service time
-                  </p>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-            </div>
-            <div
-              className="HvKpi-indicatorsContainer"
-            >
-              <WithStyles(ForwardRef)
-                className="HvKpi-spacingToTheRight HvKpi-indicatorText"
-                variant="lTitle"
-              >
-                <ForwardRef
-                  className="HvKpi-spacingToTheRight HvKpi-indicatorText"
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
-                      "disabledButtonText": "HvTypography-disabledButtonText",
-                      "highlightText": "HvTypography-highlightText",
-                      "infoText": "HvTypography-infoText",
-                      "inlineLink": "HvTypography-inlineLink",
-                      "lTitle": "HvTypography-lTitle",
-                      "labelText": "HvTypography-labelText",
-                      "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "sLink": "HvTypography-sLink",
-                      "sText": "HvTypography-sText",
-                      "sTitle": "HvTypography-sTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "selectedText": "HvTypography-selectedText",
-                      "vizText": "HvTypography-vizText",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
                     }
-                  }
+                    variant="highlightText"
+                  >
+                    <p
+                      className="HvTypography-root HvTypography-highlightText"
+                    >
+                      Avg. service time
+                    </p>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </div>
+              <div
+                className="HvKpi-indicatorsContainer"
+              >
+                <WithStyles(ForwardRef)
+                  className="HvKpi-spacingToTheRight HvKpi-indicatorText"
                   variant="lTitle"
                 >
-                  <h2
-                    className="HvTypography-lTitle HvTypography-baseFontFamily HvTypography-margin HvKpi-spacingToTheRight HvKpi-indicatorText"
-                  >
-                    8.85
-                  </h2>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-              <WithStyles(ForwardRef)
-                className="HvKpi-indicatorUnit"
-                variant="sTitle"
-              >
-                <ForwardRef
-                  className="HvKpi-indicatorUnit"
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
-                      "disabledButtonText": "HvTypography-disabledButtonText",
-                      "highlightText": "HvTypography-highlightText",
-                      "infoText": "HvTypography-infoText",
-                      "inlineLink": "HvTypography-inlineLink",
-                      "lTitle": "HvTypography-lTitle",
-                      "labelText": "HvTypography-labelText",
-                      "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "sLink": "HvTypography-sLink",
-                      "sText": "HvTypography-sText",
-                      "sTitle": "HvTypography-sTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "selectedText": "HvTypography-selectedText",
-                      "vizText": "HvTypography-vizText",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
+                  <ForwardRef
+                    className="HvKpi-spacingToTheRight HvKpi-indicatorText"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
                     }
-                  }
+                    variant="lTitle"
+                  >
+                    <h2
+                      className="HvKpi-spacingToTheRight HvKpi-indicatorText HvTypography-root HvTypography-lTitle"
+                    >
+                      8.85
+                    </h2>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+                <WithStyles(ForwardRef)
+                  className="HvKpi-indicatorUnit"
                   variant="sTitle"
                 >
-                  <h4
-                    className="HvTypography-sTitle HvTypography-baseFontFamily HvTypography-margin HvKpi-indicatorUnit"
+                  <ForwardRef
+                    className="HvKpi-indicatorUnit"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    variant="sTitle"
                   >
-                    MS
-                  </h4>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
+                    <h4
+                      className="HvKpi-indicatorUnit HvTypography-root HvTypography-sTitle"
+                    >
+                      MS
+                    </h4>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </div>
             </div>
-          </div>
-        </HvKpi>
-      </WithStyles(HvKpi)>
+          </HvKpi>
+        </Component>
+      </WithStyles(Component)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

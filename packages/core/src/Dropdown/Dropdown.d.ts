@@ -75,7 +75,7 @@ export interface HvDropdownProps
 
 export type HvDropdownClassKey =
   | "root"
-  | "rootActive"
+  | "rootOpen"
   | "rootDisabled"
   | "label"
   | "header"

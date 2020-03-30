@@ -777,23 +777,9 @@ exports[`TextArea Component should render correctly if opened 1`] = `
         }
       }
     >
-      <WithStyles(HvTextArea)
-        autoScroll={false}
-        className=""
-        disabled={false}
+      <WithStyles(Component)
         initialValue="test"
-        labels={
-          Object {
-            "inputLabel": "",
-            "maxCharQuantityWarningText": "",
-            "minCharQuantityWarningText": "",
-            "placeholder": "",
-            "requiredWarningText": "",
-            "warningText": "",
-          }
-        }
         onChange={[Function]}
-        resizable={false}
         rows={4}
       />
     </ContextProvider>
@@ -1578,24 +1564,7 @@ exports[`TextArea withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(HvTextArea)
-        autoScroll={false}
-        className=""
-        disabled={false}
-        labels={
-          Object {
-            "inputLabel": "",
-            "maxCharQuantityWarningText": "",
-            "minCharQuantityWarningText": "",
-            "placeholder": "",
-            "requiredWarningText": "",
-            "warningText": "",
-          }
-        }
-        onChange={[Function]}
-        resizable={false}
-        rows={1}
-      />
+      <WithStyles(Component) />
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

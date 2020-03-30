@@ -1,4 +1,4 @@
-import { isKeypress } from "../utils/KeyboardUtils";
+import { isKeypress } from "../utils";
 
 export const isKey = (evt, key) => isKeypress(evt, key);
 

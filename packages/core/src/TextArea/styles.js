@@ -57,7 +57,7 @@ const styles = theme => ({
   currentCounter: {
     ...theme.hv.typography.labelText
   },
-  textAreaContainer: {
+  root: {
     display: "inline-block"
   }
 });

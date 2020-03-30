@@ -2,35 +2,39 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
 import { Switch, withStyles } from "@material-ui/core";
 import CheckMark from "@hv/uikit-react-icons/dist/Good";
-import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
+import { setId, isKeypress, KeyboardCodes } from "../utils";
+import withLabels from "../withLabels";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
 import styles from "./styles";
 
+const DEFAULT_LABELS = {
+  left: "Off",
+  right: "On"
+};
+
 const HvSwitch = props => {
   const {
+    id,
+    className,
     classes,
-    checked,
-    disabled,
+    checked = true,
+    disabled = false,
     onChange,
     labels,
-    id,
-    showLabels,
-    value,
-    displayIconChecked,
-    ...other
+    showLabels = true,
+    value = "",
+    displayIconChecked = false,
+    ...others
   } = props;
 
   const [clickState, setClicked] = useState(checked);
-  const DEFAULT_ID_PREFIX = "hv-switch-";
-  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
 
   const handleChange = event => {
     setClicked(event.target.checked);
-    onChange(event);
+    onChange?.(event);
   };
 
   const onKeyDownHandler = event => {
@@ -48,7 +52,7 @@ const HvSwitch = props => {
   };
 
   const renderLabel = position => (
-    <div id={!isNil(id) ? `${id}_${position}Button` : undefined}>
+    <div id={!isNil(id) ? setId(id, position, "button") : undefined}>
       <HvTypography
         className={clsx(classes[`${position}Label`], {
           [classes.disabledLabel]: disabled,
@@ -66,7 +70,7 @@ const HvSwitch = props => {
   const checkedIcon = <CheckMark iconSize="XS" className={classes.checkedIcon} />;
 
   return (
-    <div className={classes.root} id={`${internalId}_root`}>
+    <div className={clsx(classes.root, className)}>
       {showLabels && renderLabel("left")}
       <Focus strategy="card" useFalseFocus>
         <div
@@ -77,8 +81,8 @@ const HvSwitch = props => {
           aria-checked={clickState}
           onKeyDown={disabled ? undefined : onKeyDownHandler}
           aria-disabled={disabled}
-          id={internalId}
-          {...other}
+          id={id}
+          {...others}
         >
           <Switch
             tabIndex="-1"
@@ -88,7 +92,7 @@ const HvSwitch = props => {
             value={value}
             inputProps={{
               // dummy aria-label this component is not tabbable and it is just presentational.
-              // the accesibility test were always failing because of the missing aria label.
+              // the accessibility test were always failing because of the missing aria label.
               "aria-label": "base switch"
             }}
             classes={{
@@ -109,6 +113,10 @@ const HvSwitch = props => {
 };
 
 HvSwitch.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -198,18 +206,4 @@ HvSwitch.propTypes = {
   displayIconChecked: PropTypes.bool
 };
 
-HvSwitch.defaultProps = {
-  checked: true,
-  disabled: false,
-  onChange: () => {},
-  labels: {
-    left: "Off",
-    right: "On"
-  },
-  id: undefined,
-  value: "",
-  showLabels: true,
-  displayIconChecked: false
-};
-
-export default withStyles(styles, { name: "HvSwitch" })(HvSwitch);
+export default withStyles(styles, { name: "HvSwitch" })(withLabels(DEFAULT_LABELS)(HvSwitch));

@@ -119,8 +119,10 @@ const cardRenderer = (data, viewConfiguration) => {
       headerTitle={data.headerTitle}
       innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
       semantic={sema}
-      checkboxValue={data.id}
-      checkboxSelected={data.checkboxSelected}
+      checkboxProps={{
+        value: data.id
+      }}
+      checked={data.checkboxSelected}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
       actions={viewConfiguration.actions}
@@ -136,7 +138,7 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxValue={value.id} checkboxSelected={value.checkboxSelected}>
+    <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checkboxSelected}>
       <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon className={classes.icon} semantic={status.sema} />
       </HvListViewCell>
@@ -264,7 +266,7 @@ class ServerSideAssetInventory extends React.Component {
     }));
   };
 
-  onSearch = search => {
+  onSearch = (event, search) => {
     this.setState(prevState => ({
       page: 0,
       values: doSearch(search, prevState.pageSize),
@@ -283,7 +285,7 @@ class ServerSideAssetInventory extends React.Component {
         onSelection={event => console.log(event.target.value)}
         isSelectable
         actions={myActions}
-        actionsCallback={(id, action) =>
+        actionsCallback={(e, id, action) =>
           console.log(`You have pressed card ${id} with action ${action.label}`)
         }
         // Pagination

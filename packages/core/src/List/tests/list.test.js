@@ -122,7 +122,7 @@ describe("<List />", () => {
       jest.runAllTimers();
 
       expect(instance.state.selectionLabel).toBe("1 of 3");
-      expect(onClickMock).toBeCalledWith({ label: "Value 1" }, mockEvt);
+      expect(onClickMock).toBeCalledWith(mockEvt, { label: "Value 1" });
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: false },

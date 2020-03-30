@@ -18,8 +18,8 @@ export default (
     <DropDownMenu
       id="dropMenu"
       dataList={menuOptions}
-      onToggleOpen={isOpen => alert(`Dropdown is ${isOpen ? "open" : "closed"}`)}
-      onClick={item => alert(item.label)}
+      onToggleOpen={isOpen => console.log(`Dropdown is ${isOpen ? "open" : "closed"}`)}
+      onClick={(e, item) => console.log(item.label)}
       disablePortal={false}
       aria-label="dropdownMenu-1"
       keepOpened={false}

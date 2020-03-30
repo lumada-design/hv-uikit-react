@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
-import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
 import { Card, withStyles } from "@material-ui/core";
-import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
+import { setId, KeyboardCodes, isKeypress } from "../utils";
 import Focus from "../Focus";
 import Header from "./Header";
 import Content from "./Content";
@@ -12,15 +10,15 @@ import Footer from "./Footer";
 import Media from "./Media";
 import styles from "./styles";
 
-const DEFAULT_ID_PREFIX = "hv-card-";
-
 const HvCard = ({
   classes,
   className,
   id,
-  defaultCardAriaLabel,
-  defaultCardAriaLabelledBy,
-  defaultCardAriaDescribedBy,
+  cardButtonProps = {},
+  headerProps = {},
+  footerProps = {},
+  contentProps = {},
+  mediaProps = {},
   children,
   icon,
   headerTitle,
@@ -28,60 +26,38 @@ const HvCard = ({
   innerCardContent,
   actions,
   actionsCallback,
-  maxVisibleActions,
-  actionsAlignment,
-  isSelectable,
-  semantic,
+  maxVisibleActions = 1,
+  actionsAlignment = "left",
+  isSelectable = false,
+  semantic = "sema0",
   onChange,
-  checkboxValue,
-  checkboxLabel,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxAriaLabel,
-  checkboxAriaLabelledBy,
-  checkboxAriaDescribedBy,
+  checked = false,
+  checkboxProps,
   mediaPath,
   mediaTitle,
   mediaHeight,
-  mediaAriaLabel,
-  mediaAriaLabelledBy,
-  mediaAriaDescribedBy,
-  onClickAction,
-  noHeader,
-  noFooter,
-  selectOnClickAction,
-  actionItemWidth,
-  ...other
+  onClick,
+  noHeader = false,
+  noFooter = false,
+  selectOnClickAction = false,
+  ...others
 }) => {
-  const [selected, setSelected] = useState(checkboxSelected);
-
+  const [selected, setSelected] = useState(checked);
   const footerExist = (actions || isSelectable) && !noFooter;
-  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
-  const defaultFooterId = `${internalId}-footer`;
-  const defaultHeaderId = `${internalId}-header`;
-  const defaultContentId = `${internalId}-content`;
-  const defaultMediaId = `${internalId}-media`;
-
-  const isFunction = value => typeof value === "function";
 
   const clickActionHandler = evt => {
     if (isSelectable && selectOnClickAction) {
-      onChange(evt);
+      onChange?.(evt);
       setSelected(!selected);
     }
-    if (isFunction(onClickAction)) onClickAction(evt, !selected);
+    onClick?.(evt, !selected);
   };
 
   const getRole = (fSelectable, fselectOnClickAction) => {
-    if (!isFunction(onClickAction)) {
-      if (!fSelectable || !fselectOnClickAction) {
-        return undefined;
-      }
+    if (!onClick && (!fSelectable || !fselectOnClickAction)) {
+      return undefined;
     }
-    if (fSelectable) {
-      return "checkbox";
-    }
-    return "button";
+    return fSelectable ? "checkbox" : "button";
   };
 
   const KeyUpHandler = evt => {
@@ -91,23 +67,21 @@ const HvCard = ({
       isKeypress(evt, KeyboardCodes.SpaceBar)
     ) {
       if (isSelectable && selectOnClickAction) {
-        onChange(evt);
+        onChange?.(evt);
         setSelected(!selected);
       }
-      if (isFunction(onClickAction)) onClickAction(evt, !selected);
+      onClick?.(evt, !selected);
     }
   };
 
-  const cardButtonProps = {
-    id: `${internalId}-upper-area`,
+  const internalCardButtonProps = {
+    id: setId(id, "upper-area"),
     role: getRole(isSelectable, selectOnClickAction),
     tabIndex: getRole(isSelectable, selectOnClickAction) ? "0" : undefined,
     onClick: clickActionHandler,
     onKeyUp: KeyUpHandler,
-    "aria-label": defaultCardAriaLabel,
-    "aria-labelledby": defaultCardAriaLabelledBy,
-    "aria-describedby": defaultCardAriaDescribedBy,
-    "aria-checked": isSelectable ? selected : undefined
+    "aria-checked": isSelectable ? selected : undefined,
+    ...cardButtonProps
   };
 
   const defaultContent = (
@@ -115,58 +89,51 @@ const HvCard = ({
       <Focus strategy="card" useFalseFocus>
         <div
           className={clsx({
-            [classes.upperAreaSelectable]: cardButtonProps.tabIndex
+            [classes.upperAreaSelectable]: internalCardButtonProps.tabIndex
           })}
-          {...cardButtonProps}
+          {...internalCardButtonProps}
         >
           {!noHeader && (
             <Header
-              id={defaultHeaderId}
+              id={setId(id, "header")}
               icon={icon}
               headerTitle={headerTitle}
               subheader={subheader}
-              aria-label={defaultCardAriaLabel || headerTitle}
-              aria-labelledby={defaultCardAriaLabelledBy}
-              aria-describedby={defaultCardAriaDescribedBy}
+              {...headerProps}
             />
           )}
-          {!isNil(mediaPath) && mediaPath.length > 0 && (
+          {mediaPath && mediaPath.length > 0 && (
             <Media
-              id={defaultMediaId}
+              id={setId(id, "media")}
               mediaPath={mediaPath}
-              mediaTitle={mediaTitle}
+              title={mediaTitle}
               mediaHeight={mediaHeight}
-              aria-label={mediaAriaLabel || headerTitle}
-              aria-labelledby={mediaAriaLabelledBy}
-              aria-describedby={mediaAriaDescribedBy}
+              {...mediaProps}
             />
           )}
           {innerCardContent && (
-            <Content id={defaultContentId} innerCardContent={innerCardContent} />
+            <Content id={setId(id, "content")} {...contentProps}>
+              {innerCardContent}
+            </Content>
           )}
         </div>
       </Focus>
       {footerExist && (
         <Footer
           disableSpacing
-          checkboxValue={checkboxValue}
+          checkboxProps={checkboxProps}
           actions={actions}
-          id={defaultFooterId}
+          id={setId(id, "footer")}
           actionsCallback={actionsCallback}
           maxVisibleActions={maxVisibleActions}
           actionsAlignment={actionsAlignment}
           isSelectable={isSelectable}
           onChange={event => {
             setSelected(event.target.checked);
-            onChange(event);
+            onChange?.(event);
           }}
-          checkboxAriaLabel={checkboxAriaLabel}
-          checkboxAriaLabelledBy={checkboxAriaLabelledBy || defaultHeaderId}
-          checkboxAriaDescribedBy={checkboxAriaDescribedBy || defaultHeaderId}
-          checkboxLabel={checkboxLabel}
-          checkboxSelected={selected}
-          checkboxIndeterminate={checkboxIndeterminate}
-          actionItemWidth={actionItemWidth}
+          checked={selected}
+          {...footerProps}
         />
       )}
     </>
@@ -174,7 +141,7 @@ const HvCard = ({
 
   return (
     <>
-      <div className={classes.semanticContainer}>
+      <div className={clsx(classes.semanticContainer, classes.root)}>
         <div
           className={clsx({
             [classes[semantic]]: semantic,
@@ -183,16 +150,13 @@ const HvCard = ({
         />
       </div>
       <Card
-        className={clsx(classes.root, classes.borderTop, className, {
+        id={id}
+        className={clsx(classes.cardContainer, className, {
           [classes.selectable]: isSelectable,
-          [classes.rootSelected]: selected,
+          [classes.cardContainerSelected]: selected,
           [classes.selected]: selected
         })}
-        aria-label={defaultCardAriaLabel}
-        aria-labelledby={defaultCardAriaLabelledBy}
-        aria-describedby={defaultCardAriaDescribedBy}
-        id={internalId}
-        {...other}
+        {...others}
       >
         {children || defaultContent}
       </Card>
@@ -206,21 +170,29 @@ HvCard.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Id to be applied to the root node.
+   * Id to be applied to the cardContainer node.
    */
   id: PropTypes.string,
   /**
-   *  Used to define a string that labels the current element.
+   * Extra properties to be passed element used to represent the clickable default card.
    */
-  defaultCardAriaLabel: PropTypes.string,
+  cardButtonProps: PropTypes.instanceOf(Object),
   /**
-   *  Establishes relationships between objects and their label(s), and its value should be one or more element IDs.
+   * Extra properties to be passed element used to represent the default header card.
    */
-  defaultCardAriaLabelledBy: PropTypes.string,
+  headerProps: PropTypes.instanceOf(Object),
   /**
-   *  Used to indicate the IDs of the elements that describe the object.
+   * Extra properties to be passed element used to represent the default media element.
    */
-  defaultCardAriaDescribedBy: PropTypes.string,
+  mediaProps: PropTypes.instanceOf(Object),
+  /**
+   * Extra properties to be passed element used to represent the default footer card.
+   */
+  footerProps: PropTypes.instanceOf(Object),
+  /**
+   * Extra properties to be passed element used to represent the default content card.
+   */
+  contentProps: PropTypes.instanceOf(Object),
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -230,13 +202,13 @@ HvCard.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Style applied to the root when component is selected.
+     * Style applied to the cardContainer.
      */
-    rootSelected: PropTypes.string,
+    cardContainer: PropTypes.string,
     /**
-     * Style applied to the border top.
+     * Style applied to the cardContainer when component is selected.
      */
-    borderTop: PropTypes.string,
+    cardContainerSelected: PropTypes.string,
     /**
      * Style applied to the upper area when the component is selectable.
      */
@@ -313,18 +285,6 @@ HvCard.propTypes = {
    */
   mediaHeight: PropTypes.number,
   /**
-   *  Used to define a string that labels the media element.
-   */
-  mediaAriaLabel: PropTypes.string,
-  /**
-   *  Establishes relationships between the media and it's label(s), its value should be one or more element IDs.
-   */
-  mediaAriaLabelledBy: PropTypes.string,
-  /**
-   *  Used to indicate the IDs of the elements that describe the media element.
-   */
-  mediaAriaDescribedBy: PropTypes.string,
-  /**
    *  The border color at the top of the card. Must be one of palette semantic colors. To set another color, the borderTop should be override.
    */
   semantic: PropTypes.oneOf([
@@ -353,7 +313,7 @@ HvCard.propTypes = {
    *  The function that will be executed when the upper part of the card is clicked.
    *  only works for the default card.
    */
-  onClickAction: PropTypes.func,
+  onClick: PropTypes.func,
   /**
    *  Removes the header for the default card.
    */
@@ -376,82 +336,19 @@ HvCard.propTypes = {
    */
   isSelectable: PropTypes.bool,
   /**
-   *  The value the checkbox in the footer will return when selected.
+   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
+   * note: if this value is specified the state of the checkbox must be managed
    */
-  checkboxValue: PropTypes.string,
+  checked: PropTypes.bool,
   /**
-   *  The label for the checkbox in the footer of the card.
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
    */
-  checkboxLabel: PropTypes.string,
-  /**
-   *  ´true´ if the checkbox is selected or ´false´ if not selected.
-   *
-   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
-   */
-  checkboxSelected: PropTypes.bool,
-  /**
-   *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
-   */
-  checkboxIndeterminate: PropTypes.bool,
-  /**
-   *  Used to define a string that labels the checkbox element.
-   */
-  checkboxAriaLabel: PropTypes.string,
-  /**
-   *  Establishes relationships between checkbox and it's label(s), its value should be one or more element IDs.
-   */
-  checkboxAriaLabelledBy: PropTypes.string,
-  /**
-   *  Used to indicate the IDs of the elements that describe the checkbox.
-   */
-  checkboxAriaDescribedBy: PropTypes.string,
+  checkboxProps: PropTypes.instanceOf(Object),
   /**
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
-  maxVisibleActions: PropTypes.number,
-  /**
-   *  Width applicable to the action container, to handle an issue Safari has when using css flex:
-   *  It resizes descendant divs, unless a width is forced
-   *     */
-  actionItemWidth: PropTypes.number
-};
-
-HvCard.defaultProps = {
-  className: "",
-  id: undefined,
-  defaultCardAriaLabel: undefined,
-  defaultCardAriaLabelledBy: undefined,
-  defaultCardAriaDescribedBy: undefined,
-  headerTitle: undefined,
-  semantic: "sema0",
-  isSelectable: false,
-  children: undefined,
-  icon: undefined,
-  subheader: undefined,
-  innerCardContent: undefined,
-  onChange: () => {},
-  onClickAction: null,
-  selectOnClickAction: false,
-  noHeader: false,
-  noFooter: false,
-  actions: null,
-  actionsCallback: () => {},
-  actionsAlignment: "left",
-  mediaHeight: undefined,
-  mediaPath: "",
-  mediaTitle: "",
-  mediaAriaLabel: undefined,
-  mediaAriaLabelledBy: undefined,
-  mediaAriaDescribedBy: undefined,
-  checkboxValue: "",
-  checkboxLabel: "",
-  checkboxSelected: false,
-  checkboxIndeterminate: undefined,
-  checkboxAriaLabel: undefined,
-  checkboxAriaLabelledBy: undefined,
-  checkboxAriaDescribedBy: undefined,
-  maxVisibleActions: 1,
-  actionItemWidth: undefined
+  maxVisibleActions: PropTypes.number
 };
 
 export default withStyles(styles, { name: "HvCard" })(HvCard);

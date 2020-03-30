@@ -45,4 +45,5 @@ const getFirstAndLastFocus = node => {
   };
 };
 
-export { getPrevNextFocus as default, getFirstAndLastFocus };
+export { getFirstAndLastFocus, getPrevNextFocus };
+export default getPrevNextFocus;

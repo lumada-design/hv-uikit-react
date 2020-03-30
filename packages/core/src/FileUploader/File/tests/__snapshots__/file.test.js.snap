@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`File withStyles - Invalid File should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -787,7 +783,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             "status": "success",
           }
         }
-        id={null}
         onFileRemoved={[MockFunction]}
         onFilesAdded={[Function]}
         progressConjunctionLabel="progressConjunctionLabel"
@@ -816,7 +811,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               "status": "success",
             }
           }
-          id={null}
           onFileRemoved={[MockFunction]}
           onFilesAdded={[Function]}
           progressConjunctionLabel="progressConjunctionLabel"
@@ -875,7 +869,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "baseFontFamily": "HvTypography-baseFontFamily",
                   "disabledButtonText": "HvTypography-disabledButtonText",
                   "highlightText": "HvTypography-highlightText",
                   "infoText": "HvTypography-infoText",
@@ -883,9 +876,9 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                   "lTitle": "HvTypography-lTitle",
                   "labelText": "HvTypography-labelText",
                   "mTitle": "HvTypography-mTitle",
-                  "margin": "HvTypography-margin",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
                   "sLink": "HvTypography-sLink",
                   "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
@@ -901,7 +894,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               variant="sText"
             >
               <p
-                className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin HvFileUploaderFile-nameText"
+                className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
               >
                 somefile.png
               </p>
@@ -919,7 +912,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "baseFontFamily": "HvTypography-baseFontFamily",
                     "disabledButtonText": "HvTypography-disabledButtonText",
                     "highlightText": "HvTypography-highlightText",
                     "infoText": "HvTypography-infoText",
@@ -927,9 +919,9 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                     "lTitle": "HvTypography-lTitle",
                     "labelText": "HvTypography-labelText",
                     "mTitle": "HvTypography-mTitle",
-                    "margin": "HvTypography-margin",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
                     "sLink": "HvTypography-sLink",
                     "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
@@ -945,7 +937,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 variant="labelText"
               >
                 <p
-                  className="HvTypography-labelText HvTypography-baseFontFamily HvTypography-margin"
+                  className="HvTypography-root HvTypography-labelText"
                 >
                   25.00B progressConjunctionLabel
                 </p>
@@ -960,7 +952,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "baseFontFamily": "HvTypography-baseFontFamily",
                     "disabledButtonText": "HvTypography-disabledButtonText",
                     "highlightText": "HvTypography-highlightText",
                     "infoText": "HvTypography-infoText",
@@ -968,9 +959,9 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                     "lTitle": "HvTypography-lTitle",
                     "labelText": "HvTypography-labelText",
                     "mTitle": "HvTypography-mTitle",
-                    "margin": "HvTypography-margin",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
                     "sLink": "HvTypography-sLink",
                     "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
@@ -986,7 +977,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 variant="sText"
               >
                 <p
-                  className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                  className="HvTypography-root HvTypography-sText"
                 >
                    875.00B
                 </p>
@@ -997,7 +988,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             aria-label="progressConjunctionLabel"
             category="ghost"
             className="HvFileUploaderFile-removeButton"
-            id="hv-file-2-remove-button"
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
@@ -1017,7 +1007,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                   "sizeSmall": "MuiIconButton-sizeSmall",
                 }
               }
-              id="hv-file-2-remove-button"
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
@@ -1027,7 +1016,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                 className="MuiIconButton-root HvFileUploaderFile-removeButton"
                 disabled={false}
                 focusRipple={true}
-                id="hv-file-2-remove-button"
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
@@ -1045,7 +1033,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
-                  id="hv-file-2-remove-button"
                   onClick={[Function]}
                 >
                   <button
@@ -1053,7 +1040,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                     category="ghost"
                     className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
                     disabled={false}
-                    id="hv-file-2-remove-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}
@@ -1121,11 +1107,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
 `;
 
 exports[`File withStyles - Valid File should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -1907,7 +1889,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             "status": "success",
           }
         }
-        id={null}
         onFileRemoved={[MockFunction]}
         onFilesAdded={[Function]}
         progressConjunctionLabel="progressConjunctionLabel"
@@ -1936,7 +1917,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               "status": "success",
             }
           }
-          id={null}
           onFileRemoved={[MockFunction]}
           onFilesAdded={[Function]}
           progressConjunctionLabel="progressConjunctionLabel"
@@ -1995,7 +1975,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "baseFontFamily": "HvTypography-baseFontFamily",
                   "disabledButtonText": "HvTypography-disabledButtonText",
                   "highlightText": "HvTypography-highlightText",
                   "infoText": "HvTypography-infoText",
@@ -2003,9 +1982,9 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                   "lTitle": "HvTypography-lTitle",
                   "labelText": "HvTypography-labelText",
                   "mTitle": "HvTypography-mTitle",
-                  "margin": "HvTypography-margin",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
                   "sLink": "HvTypography-sLink",
                   "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
@@ -2021,7 +2000,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               variant="sText"
             >
               <p
-                className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin HvFileUploaderFile-nameText"
+                className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
               >
                 somefile.png
               </p>
@@ -2039,7 +2018,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "baseFontFamily": "HvTypography-baseFontFamily",
                     "disabledButtonText": "HvTypography-disabledButtonText",
                     "highlightText": "HvTypography-highlightText",
                     "infoText": "HvTypography-infoText",
@@ -2047,9 +2025,9 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                     "lTitle": "HvTypography-lTitle",
                     "labelText": "HvTypography-labelText",
                     "mTitle": "HvTypography-mTitle",
-                    "margin": "HvTypography-margin",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
                     "sLink": "HvTypography-sLink",
                     "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
@@ -2065,7 +2043,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 variant="labelText"
               >
                 <p
-                  className="HvTypography-labelText HvTypography-baseFontFamily HvTypography-margin"
+                  className="HvTypography-root HvTypography-labelText"
                 >
                   25.00B progressConjunctionLabel
                 </p>
@@ -2080,7 +2058,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "baseFontFamily": "HvTypography-baseFontFamily",
                     "disabledButtonText": "HvTypography-disabledButtonText",
                     "highlightText": "HvTypography-highlightText",
                     "infoText": "HvTypography-infoText",
@@ -2088,9 +2065,9 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                     "lTitle": "HvTypography-lTitle",
                     "labelText": "HvTypography-labelText",
                     "mTitle": "HvTypography-mTitle",
-                    "margin": "HvTypography-margin",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
                     "sLink": "HvTypography-sLink",
                     "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
@@ -2106,7 +2083,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 variant="sText"
               >
                 <p
-                  className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                  className="HvTypography-root HvTypography-sText"
                 >
                    875.00B
                 </p>
@@ -2117,7 +2094,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             aria-label="progressConjunctionLabel"
             category="ghost"
             className="HvFileUploaderFile-removeButton"
-            id="hv-file-2-remove-button"
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
@@ -2137,7 +2113,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                   "sizeSmall": "MuiIconButton-sizeSmall",
                 }
               }
-              id="hv-file-2-remove-button"
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
@@ -2147,7 +2122,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                 className="MuiIconButton-root HvFileUploaderFile-removeButton"
                 disabled={false}
                 focusRipple={true}
-                id="hv-file-2-remove-button"
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
@@ -2165,7 +2139,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
-                  id="hv-file-2-remove-button"
                   onClick={[Function]}
                 >
                   <button
@@ -2173,7 +2146,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                     category="ghost"
                     className="MuiButtonBase-root MuiIconButton-root HvFileUploaderFile-removeButton"
                     disabled={false}
-                    id="hv-file-2-remove-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}

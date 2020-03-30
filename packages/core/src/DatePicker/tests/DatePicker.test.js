@@ -10,8 +10,7 @@ import { convertISOStringDateToDate, getFormattedDate } from "../Calendar/utils"
 import Actions from "../Actions";
 import Calendar from "../Calendar";
 
-import DatePickerWithStyles from "../index";
-import DatePicker from "../DatePicker";
+import DatePicker from "../index";
 
 describe("<DatePicker /> with minimum configuration", () => {
   let wrapper;
@@ -21,7 +20,7 @@ describe("<DatePicker /> with minimum configuration", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles />
+        <DatePicker />
       </HvProvider>
     );
     DatePickerComponent = wrapper.find("HvDatePicker");
@@ -77,17 +76,6 @@ describe("<DatePicker /> with minimum configuration", () => {
 
     expect(wrapper.find(Actions).length).toBe(0);
   });
-
-  it("should apply the default properties", () => {
-    expect(DatePickerInstance.props.rangeMode).toBe(DatePicker.defaultProps.rangeMode);
-    expect(DatePickerInstance.props.horizontalPlacement).toBe(
-      DatePicker.defaultProps.horizontalPlacement
-    );
-    expect(DatePickerInstance.props.value).toBe(DatePicker.defaultProps.value);
-    expect(DatePickerInstance.props.locale).toBe(DatePicker.defaultProps.locale);
-    expect(DatePickerInstance.props.showActions).toBe(DatePicker.defaultProps.showActions);
-    expect(DatePickerInstance.props.onChange).toBe(DatePicker.defaultProps.onChange);
-  });
 });
 
 describe("<DatePicker /> with Single Calendar mode", () => {
@@ -98,7 +86,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles rangeMode={false} value="2019-01-01" locale="en-US" />
+        <DatePicker rangeMode={false} value="2019-01-01" locale="en-US" />
       </HvProvider>
     );
     DatePickerComponent = wrapper.find("HvDatePicker");
@@ -200,12 +188,7 @@ describe("<DatePicker /> with simple Calendar with actions ", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles
-          rangeMode={false}
-          value={originalDateString}
-          locale="en-US"
-          showActions
-        />
+        <DatePicker rangeMode={false} value={originalDateString} locale="en-US" showActions />
       </HvProvider>
     );
     DatePickerComponent = wrapper.find("HvDatePicker");
@@ -258,7 +241,7 @@ describe("<DatePicker /> with range Calendar with actions ", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles
+        <DatePicker
           rangeMode
           locale="en-US"
           startValue={originalStartDateString}
@@ -315,12 +298,7 @@ describe("<DatePicker /> with Range Calendar mode", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles
-          rangeMode
-          locale="en-US"
-          startValue="2019-01-05"
-          endValue="2019-01-10"
-        />
+        <DatePicker rangeMode locale="en-US" startValue="2019-01-05" endValue="2019-01-10" />
       </HvProvider>
     );
     DatePickerComponent = wrapper.find("HvDatePicker");
@@ -414,7 +392,7 @@ describe("<DatePicker /> with custom properties", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles
+        <DatePicker
           locale="en-US"
           value="2019-01-05"
           labels={labels}
@@ -492,7 +470,7 @@ describe("<DatePicker /> with custom properties", () => {
 
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles onChange={handleOnchange} />
+        <DatePicker onChange={handleOnchange} />
       </HvProvider>
     );
     DatePickerInstance = wrapper.find("HvDatePicker").instance();

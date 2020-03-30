@@ -59,7 +59,7 @@ const CustomSample = () => {
       id="cardId"
       innerCardContent={<SingleContent classes={styles}/>}
       aria-label={"Asset Avatar L90 press enter or space to use this card main action"}
-      onClickAction={()=>{setToggleA(!toggleA)}}
+      onClick={()=>{setToggleA(!toggleA)}}
       onChange={()=>{setToggleB(!toggleB)}}
       isSelectable
     />

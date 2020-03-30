@@ -2,38 +2,37 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../useUniqueId";
 import VerticalContainer from "./VerticalContainer";
+import { setId } from "../utils";
 import styles from "./styles";
 
-const VerticalNavigation = props => {
-  const {
-    id,
-    classes,
-    isOpen: isOpenProp,
-    toggleOpenCallback,
-    isCollapsable = false,
-    children,
-    position = "static",
-    closeOnExit = false
-  } = props;
-
-  const internalId = useUniqueId(id, "hv-verticalnavigation");
-
+const VerticalNavigation = ({
+  id,
+  className,
+  classes,
+  isOpen: isOpenProp,
+  toggleOpenCallback,
+  isCollapsable = false,
+  children,
+  position = "static",
+  closeOnExit = false,
+  ...others
+}) => {
   const isOpen = isOpenProp != null ? isOpenProp : !isCollapsable;
 
   return (
     <VerticalContainer
-      id={`${internalId}-container`}
+      id={setId(id, "container")}
       isOpen={isOpen}
       toggleOpenCallback={toggleOpenCallback}
       position={position}
       isAnchorBarVisible={isCollapsable}
       closeOnExit={closeOnExit}
+      {...others}
     >
       <div
-        id={internalId}
-        className={clsx(classes.root, {
+        id={id}
+        className={clsx(className, classes.root, {
           [classes.noCollapsable]: !isCollapsable
         })}
       >
@@ -48,6 +47,10 @@ VerticalNavigation.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string,
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the component.
    */

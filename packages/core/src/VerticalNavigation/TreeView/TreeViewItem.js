@@ -1,12 +1,12 @@
-import React, { useRef, useMemo, useContext, useEffect, useCallback } from "react";
+import React, { useCallback, useContext, useEffect, useMemo, useRef } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../useUniqueId";
 import HvTypography from "../../Typography";
 
 import { TreeViewControlContext, TreeViewStateContext } from "./TreeViewContexts";
 
+import { setId } from "../../utils";
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
 
@@ -17,7 +17,7 @@ const isPrintableCharacter = str => str && str.length === 1 && str.match(/\S/);
 const TreeViewItem = props => {
   const {
     id,
-    className = "",
+    className,
     classes,
 
     disabled = false,
@@ -31,12 +31,9 @@ const TreeViewItem = props => {
 
     onClick = null,
 
-    children = null,
+    children,
 
-    // eslint-disable-next-line react/prop-types
-    theme,
-
-    ...other
+    ...others
   } = props;
 
   const treeViewControlContext = useContext(TreeViewControlContext);
@@ -60,8 +57,6 @@ const TreeViewItem = props => {
   } = treeViewControlContext;
 
   const treeviewMode = mode === "treeview";
-
-  const internalId = useUniqueId(id, "hv-verticalnavigation-treeviewitem");
 
   const listItemRef = useRef(null);
   const actionableRef = useRef(null);
@@ -249,7 +244,7 @@ const TreeViewItem = props => {
   const renderedContent = useMemo(
     () => (
       <HvTypography
-        id={`${internalId}-button`}
+        id={setId(id, "button")}
         component="div"
         variant={selectable && selected ? "selectedText" : "normalText"}
         role="button"
@@ -268,7 +263,7 @@ const TreeViewItem = props => {
       classes.content,
       handleClick,
       handleKeyDown,
-      internalId,
+      id,
       label,
       treeviewMode,
       renderedIcon,
@@ -291,7 +286,7 @@ const TreeViewItem = props => {
   return (
     <li
       ref={listItemRef}
-      id={internalId}
+      id={id}
       className={clsx(classes.node, className, {
         [classes.disabled]: disabled,
         [classes.collapsed]: expandable && !expanded,
@@ -308,7 +303,7 @@ const TreeViewItem = props => {
         role: "treeitem",
         "aria-selected": selectable && selected ? true : undefined
       })}
-      {...other}
+      {...others}
     >
       {renderedContent}
       {renderedChildren}

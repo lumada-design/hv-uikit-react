@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropDownXS";
-import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
+import { setId, isKeypress, KeyboardCodes } from "../utils";
 import HvTypography from "../Typography";
+import withLabels from "../withLabels";
+import withId from "../withId";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
 import styles from "./styles";
@@ -24,37 +25,27 @@ const DEFAULT_STATE = {
   isOpen: false,
   selectionLabel: null,
   anchorEl: null,
-  values: [],
-  labels: DEFAULT_LABELS
+  values: []
 };
 
-class Dropdown extends React.Component {
+class HvDropdown extends React.Component {
   constructor(props) {
     super(props);
 
     this.ref = React.createRef();
 
-    const { id } = props;
-
     this.state = {
-      internalId: id || uniqueId("hv-dropdown-"),
       ...DEFAULT_STATE
     };
   }
 
   static getDerivedStateFromProps(props, state) {
     if (props.values !== state.values) {
-      const labels = {
-        ...DEFAULT_LABELS,
-        ...props.labels
-      };
-
       return {
         isOpen: props.expanded,
-        selectionLabel: getSelectionLabel(props.values, labels, props.multiSelect),
+        selectionLabel: getSelectionLabel(props.values, props.labels, props.multiSelect),
         anchorEl: null,
-        values: props.values,
-        labels
+        values: props.values
       };
     }
 
@@ -104,8 +95,7 @@ class Dropdown extends React.Component {
    * @memberof Dropdown
    */
   handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
-    const { multiSelect, onChange } = this.props;
-    const { labels } = this.state;
+    const { multiSelect, onChange, labels } = this.props;
     const selected = getSelected(selection);
 
     if (commitChanges) {
@@ -117,11 +107,9 @@ class Dropdown extends React.Component {
   }
 
   renderLabel() {
-    const { internalId } = this.state;
-    const { classes, labels } = this.props;
+    const { id, classes, labels } = this.props;
     return (
-      // eslint-disable-next-line jsx-a11y/label-has-for
-      <label id={`${internalId}-label`} className={classes.label} htmlFor={`${internalId}-header`}>
+      <label id={setId(id, "label")} className={classes.label} htmlFor={setId(id, "header")}>
         {labels.title}
       </label>
     );
@@ -133,7 +121,7 @@ class Dropdown extends React.Component {
       disabled,
       values,
       id,
-      labels: propLabels,
+      labels,
       multiSelect,
       showSearch,
       expanded,
@@ -146,14 +134,14 @@ class Dropdown extends React.Component {
       ...others
     } = this.props;
 
-    const { isOpen, labels, selectionLabel, internalId } = this.state;
+    const { isOpen, selectionLabel } = this.state;
 
     const color = disabled ? "atmo7" : undefined;
 
     return (
       <div
-        id={`${internalId}-header`}
-        aria-labelledby={labels.title ? `${internalId}-label` : undefined}
+        id={setId(id, "header")}
+        aria-labelledby={labels.title ? setId(id, "label") : undefined}
         className={clsx(classes.header, {
           [classes.headerDisabled]: disabled
         })}
@@ -183,19 +171,21 @@ class Dropdown extends React.Component {
 
   renderList() {
     const {
+      id,
       multiSelect,
       showSearch,
       selectDefault,
       notifyChangesOnFirstRender,
       disablePortal,
       hasTooltips,
+      labels,
       singleSelectionToggle
     } = this.props;
-    const { isOpen, values, labels, anchorEl, internalId } = this.state;
+    const { isOpen, values, anchorEl } = this.state;
 
     return (
       <List
-        id={`${internalId}-values`}
+        id={setId(id, "values")}
         values={values}
         multiSelect={multiSelect}
         showSearch={showSearch}
@@ -208,35 +198,34 @@ class Dropdown extends React.Component {
         hasTooltips={hasTooltips}
         disablePortal={disablePortal}
         isOpen={isOpen}
-        listProps={{
-          "aria-labelledby": labels.title ? `${internalId}-label` : undefined
-        }}
         anchorEl={anchorEl}
         singleSelectionToggle={singleSelectionToggle}
+        aria-labelledby={labels.title ? setId(id, "label") : undefined}
       />
     );
   }
 
   render() {
-    const { classes, className, labels, disabled } = this.props;
-    const { isOpen, internalId } = this.state;
+    const { id, classes, className, labels, disabled } = this.props;
+    const { isOpen } = this.state;
 
     return (
       <>
+        {/* TODO: remove label? use composition */}
         {labels.title ? this.renderLabel() : null}
         <div
-          id={internalId}
+          id={id}
           role="combobox"
           aria-expanded={isOpen}
-          aria-owns={isOpen ? `${internalId}-values` : undefined}
-          aria-controls={isOpen ? `${internalId}-values` : undefined}
-          aria-labelledby={labels.title ? `${internalId}-label` : undefined}
+          aria-owns={isOpen ? setId(id, "values") : undefined}
+          aria-controls={isOpen ? setId(id, "values") : undefined}
+          aria-labelledby={labels.title ? setId(id, "label") : undefined}
           ref={el => {
             this.node = el;
           }}
           className={clsx(classes.root, className, {
             [classes.rootDisabled]: disabled,
-            [classes.rootActive]: isOpen
+            [classes.rootOpen]: isOpen
           })}
         >
           {this.renderHeader()}
@@ -247,7 +236,7 @@ class Dropdown extends React.Component {
   }
 }
 
-Dropdown.propTypes = {
+HvDropdown.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -267,7 +256,7 @@ Dropdown.propTypes = {
     /**
      * Styles applied to the component when is open.
      */
-    rootActive: PropTypes.string,
+    rootOpen: PropTypes.string,
     /**
      * Styles applied to the component when is disable.
      */
@@ -387,7 +376,7 @@ Dropdown.propTypes = {
   singleSelectionToggle: PropTypes.bool
 };
 
-Dropdown.defaultProps = {
+HvDropdown.defaultProps = {
   className: "",
   id: undefined,
   values: null,
@@ -404,4 +393,6 @@ Dropdown.defaultProps = {
   singleSelectionToggle: true
 };
 
-export default withStyles(styles, { name: "HvDropdown" })(Dropdown);
+export default withStyles(styles, { name: "HvDropdown" })(
+  withLabels(DEFAULT_LABELS)(withId(HvDropdown))
+);

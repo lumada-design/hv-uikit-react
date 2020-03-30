@@ -55,6 +55,15 @@ export default (
       headerTitle="Asset Avatar L90"
       subheader="Compressor"
       id="test"
+      cardButtonProps={{
+        "aria-label ": "Compressor "
+      }}
+      headerProps={{
+        "aria-label ": "Compressor "
+      }}
+      footerProps={{
+        "aria-label ": "Compressor "
+      }}
       innerCardContent={<SingleContent classes={styles} />}
       mediaPath={compressor}
       mediaHeight={186}

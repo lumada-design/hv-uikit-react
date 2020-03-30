@@ -2,21 +2,13 @@ import { CardMediaProps, StandardProps } from "@material-ui/core";
 
 export interface HvCardMediaProps extends StandardProps<CardMediaProps, HvCardMediaClassKey> {
   /**
-   *  Used to define a string that labels the current element.
+   * Extra properties passed to the media element.
    */
-  mediaAriaLabel?: string;
-  /**
-   *  Establishes relationships between objects and their label(s), and its value should be one or more element IDs.
-   */
-  mediaAriaLabelledBy?: string;
-  /**
-   *  Used to indicate the IDs of the elements that describe the object.
-   */
-  mediaAriaDescribedBy?: string;
+  mediaProps?: object;
   /**
    *  The title of the media.
    */
-  mediaTitle?: string;
+  title?: string;
   /**
    *  The path to the image to show in the media slot.
    */
@@ -31,6 +23,6 @@ export interface HvCardMediaProps extends StandardProps<CardMediaProps, HvCardMe
   onClickAction?: (event: MouseEvent) => void;
 }
 
-export type HvCardMediaClassKey = "mediaContainer" | "media";
+export type HvCardMediaClassKey = "root" | "media";
 
 export default function HvCardMedia(props: HvCardMediaProps): JSX.Element | null;

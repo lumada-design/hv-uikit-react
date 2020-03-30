@@ -7,15 +7,15 @@ import styles from "./styles";
 
 const HvButton = props => {
   const {
+    id,
     classes,
-    className = "",
-    id = undefined,
+    className,
     children,
     disabled,
     onClick,
     category = "primary",
-    startIcon = undefined,
-    ...other
+    startIcon,
+    ...others
   } = props;
 
   const buttonConfiguration = getMaterialConfiguration(classes, category);
@@ -36,7 +36,7 @@ const HvButton = props => {
       disableRipple
       onClick={onClickHandler}
       startIcon={startIcon}
-      {...other}
+      {...others}
     >
       {children}
     </Button>

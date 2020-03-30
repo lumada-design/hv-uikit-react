@@ -26,7 +26,7 @@ const ControlledDropdownMenu = () => {
         <DropDownMenu
           id="dropMenu"
           dataList={menuOptions}
-          onClick={item => alert(item.label)}
+          onClick={(e, item) => console.log(item.label)}
           onToggleOpen={value => setOpen(value)}
           disablePortal={false}
           aria-label="dropdownMenu-1"

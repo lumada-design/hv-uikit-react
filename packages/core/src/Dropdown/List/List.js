@@ -6,7 +6,7 @@ import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
 import { Popper, useTheme, withStyles } from "@material-ui/core";
 import OutsideClickHandler from "react-outside-click-handler";
-import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
+import { setId, isKeypress, KeyboardCodes } from "../../utils";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
 import Actions from "../Actions";
@@ -18,19 +18,19 @@ import styles from "./styles";
 const List = ({
   id,
   classes,
-  values,
-  multiSelect,
-  showSearch,
+  values = [],
+  multiSelect = false,
+  showSearch = false,
   onChange,
   labels,
-  selectDefault,
-  notifyChangesOnFirstRender,
-  hasTooltips,
-  disablePortal,
-  isOpen,
-  anchorEl,
-  listProps,
-  singleSelectionToggle
+  selectDefault = true,
+  notifyChangesOnFirstRender = false,
+  hasTooltips = false,
+  disablePortal = true,
+  isOpen = false,
+  anchorEl = null,
+  singleSelectionToggle,
+  ...others
 }) => {
   const [searchStr, setSearchStr] = useState();
   const [list, setList] = useState(clone(values));
@@ -53,7 +53,7 @@ const List = ({
   useEffect(() => {
     setList(values);
     if (notifyChangesOnFirstRender) {
-      onChange(values, false, false, true);
+      onChange?.(values, false, false, true);
     }
     if (list) {
       // eslint-disable-next-line no-use-before-define
@@ -97,10 +97,10 @@ const List = ({
   const renderSearch = () => (
     <div className={classes.searchContainer}>
       <Search
-        id={`${id}-search`}
+        id={setId(id, "search")}
         value={searchStr}
         values={values}
-        onChange={str => handleSearch(str)}
+        onChange={(event, str) => handleSearch(str)}
       />
     </div>
   );
@@ -129,7 +129,7 @@ const List = ({
    * @param notifyChanges
    */
   const sendOnChange = (selection, commitChanges, toggle, notifyChanges) => {
-    onChange(selection, commitChanges, toggle, notifyChanges);
+    onChange?.(selection, commitChanges, toggle, notifyChanges);
     updateSelectionLabel(selection);
   };
 
@@ -163,7 +163,7 @@ const List = ({
   const renderSelectAll = () => (
     <div className={classes.selectAllContainer}>
       <HvCheckBox
-        id={`${id}-select-all`}
+        id={setId(id, "select-all")}
         label={selectionLabel}
         onChange={() => handleSelectAll()}
         classes={{ container: classes.selection }}
@@ -246,7 +246,7 @@ const List = ({
   const renderActions = () => (
     <div className={classes.actions}>
       <Actions
-        id={`${id}-actions`}
+        id={setId(id, "actions")}
         onCancel={() => handleCancel()}
         onApply={() => handleApply()}
         labels={labels}
@@ -300,7 +300,7 @@ const List = ({
         <div className={classes.listContainer}>
           {showList && (
             <InnerList
-              id={`${id}-list`}
+              id={setId(id, "list")}
               values={list}
               multiSelect={multiSelect}
               useSelector={multiSelect}
@@ -309,10 +309,10 @@ const List = ({
               labels={newLabels}
               selectDefault={selectDefault}
               hasTooltips={hasTooltips}
-              listProps={listProps}
               selectable
               condensed
               singleSelectionToggle={singleSelectionToggle}
+              {...others}
             />
           )}
         </div>
@@ -405,25 +405,7 @@ List.propTypes = {
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool.isRequired,
-  /**
-   * Properties passed to the ul element.
-   */
-  listProps: PropTypes.instanceOf(Object)
-};
-
-List.defaultProps = {
-  values: [],
-  multiSelect: false,
-  showSearch: false,
-  onChange() {},
-  selectDefault: true,
-  notifyChangesOnFirstRender: false,
-  hasTooltips: false,
-  disablePortal: true,
-  isOpen: false,
-  anchorEl: null,
-  listProps: {}
+  singleSelectionToggle: PropTypes.bool.isRequired
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

@@ -1,9 +1,9 @@
 import * as React from "react";
-import { StandardProps } from "@material-ui/core";
+import { StandardProps, IconButtonProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
 
 export interface HvDropDownMenuProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropDownMenuClassKey> {
+  extends StandardProps<IconButtonProps, HvDropDownMenuClassKey> {
   /**
    * Icon.
    */

@@ -22,10 +22,10 @@ describe("Dropdown A11Y", () => {
     // In real cases this value is filled if the dropdown is expanded.
     const originalError = console.error;
     console.error = jest.fn();
-
     wrapper = mount(
       <HvProvider>
         <Dropdown
+          id="dropdownA11Y"
           disablePortal
           values={mockData}
           onChange={onChangeMock}

@@ -39,7 +39,7 @@
     "publish-documentation": "npx storybook-to-ghpages -e packages/doc/dist",
     "lint": "npm-run-all --parallel lint:*",
     "lint:eslint": "npx eslint ./ --cache --ignore-pattern .gitignore",
-    "lint:prettier": "npx prettier --ignore-path .eslintignore --check \"packages/**/*.js\"",
+    "lint:prettier": "npx lerna run lint:prettier",
     "license-check": "npx lerna run license-check"
   },
   "husky": {

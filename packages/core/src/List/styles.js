@@ -22,7 +22,8 @@ const hoverActive = theme => ({
 });
 
 const styles = theme => ({
-  root: {
+  root: {},
+  list: {
     display: "block",
     padding: 0,
     margin: 0

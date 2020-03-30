@@ -19,8 +19,8 @@ const styles = theme => ({
 /**
  * We override the default maxWidth to xl
  */
-const HvContainer = ({ maxWidth = "xl", fixed, ...other }) => {
-  return <Container maxWidth={maxWidth} fixed={fixed} {...other} />;
+const HvContainer = ({ maxWidth = "xl", fixed, ...others }) => {
+  return <Container maxWidth={maxWidth} fixed={fixed} {...others} />;
 };
 
 /*
@@ -33,6 +33,7 @@ HvContainer.propTypes = {
    * Override or extend the styles applied to the component.
    * See [CSS API](#css) below for more details.
    */
+  // eslint-disable-next-line react/forbid-prop-types
   classes: PropTypes.object.isRequired,
   /**
    * @ignore

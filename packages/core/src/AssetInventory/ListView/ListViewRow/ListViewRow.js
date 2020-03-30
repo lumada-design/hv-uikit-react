@@ -10,35 +10,31 @@ import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
 
-const selectCell = (
-  classes,
-  onCheckboxSelected,
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxSemantic,
-  id
-) => (
-  <Cell
-    className={classes.selectCell}
-    semantic={checkboxSemantic}
-    id={`checkbox${id}`}
-    key={`checkbox${id}`}
-  >
-    <HvCheckbox
-      value={checkboxValue}
-      onChange={onCheckboxSelected}
-      checked={checkboxSelected}
-      indeterminate={checkboxIndeterminate}
-      id={id}
-    />
-  </Cell>
-);
+const getValue = checkboxProps =>
+  checkboxProps && checkboxProps.value ? checkboxProps.value : false;
+
+const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
+  return (
+    <Cell
+      className={classes.selectCell}
+      semantic={semantic}
+      id={`checkbox-cell-${id}`}
+      key={`checkbox${id}`}
+    >
+      <HvCheckbox
+        onChange={onCheckboxSelected}
+        checked={checked}
+        id={`checkbox-${id}`}
+        {...checkboxProps}
+      />
+    </Cell>
+  );
+};
 
 const actionsCell = (classes, id, viewConfiguration) => (
-  <Cell className={classes.actionSeparator} id={`action${id}`} key={`action${id}`}>
+  <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
     <Actions
-      id={id}
+      id={`action${id}`}
       actions={viewConfiguration.actions}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
@@ -54,11 +50,10 @@ const row = (
   id,
   isSelectable,
   onSelection,
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxSemantic,
-  other
+  checkboxProps,
+  checked,
+  semantic,
+  others
 ) => {
   const columnConfiguration =
     isNil(viewConfiguration) || isNil(viewConfiguration.columnConfiguration)
@@ -89,44 +84,35 @@ const row = (
 
   return (
     <tr
-      id={id}
-      key={id}
+      id={`row-${id}`}
+      key={`row-${id}`}
       className={clsx(className, classes.root, {
         [classes.selectable]: renderSelectCell,
-        [classes.selected]: checkboxSelected,
+        [classes.selected]: checked,
         [classes.notSelectable]: !renderSelectCell
       })}
-      {...other}
+      {...others}
     >
       {renderSelectCell &&
-        selectCell(
-          classes,
-          onCheckboxSelected,
-          checkboxValue,
-          checkboxSelected,
-          checkboxIndeterminate,
-          checkboxSemantic,
-          id
-        )}
+        selectCell(classes, onCheckboxSelected, checkboxProps, checked, semantic, id)}
       {clonedChildren}
-      {renderActionsCell && actionsCell(classes, checkboxValue || id, viewConfiguration)}
+      {renderActionsCell && actionsCell(classes, getValue(checkboxProps) || id, viewConfiguration)}
     </tr>
   );
 };
 
 const ListViewRow = ({
-  viewConfiguration = null,
+  id,
+  viewConfiguration,
   classes,
-  className = "",
-  id = undefined,
+  className,
   children,
-  isSelectable = undefined,
-  onSelection = () => {},
-  checkboxValue = "",
-  checkboxSelected = undefined,
-  checkboxIndeterminate = undefined,
-  checkboxSemantic = undefined,
-  ...other
+  isSelectable,
+  onSelection,
+  checkboxProps,
+  checked,
+  semantic,
+  ...others
 }) => (
   <ListViewContextConsumer>
     {contextConfiguration => {
@@ -139,11 +125,10 @@ const ListViewRow = ({
           id,
           isSelectable,
           onSelection,
-          checkboxValue,
-          checkboxSelected,
-          checkboxIndeterminate,
-          checkboxSemantic,
-          other
+          checkboxProps,
+          checked,
+          semantic,
+          others
         );
       }
       return row(
@@ -154,11 +139,10 @@ const ListViewRow = ({
         id,
         isSelectable,
         onSelection,
-        checkboxValue,
-        checkboxSelected,
-        checkboxIndeterminate,
-        checkboxSemantic,
-        other
+        checkboxProps,
+        checked,
+        semantic,
+        others
       );
     }}
   </ListViewContextConsumer>
@@ -199,23 +183,19 @@ ListViewRow.propTypes = {
    */
   isSelectable: PropTypes.bool,
   /**
-   *  The value the checkbox in the in the left part of the row will return when selected.
+   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
+   * note: if this value is specified the state of the checkbox must be managed
    */
-  checkboxValue: PropTypes.string,
+  checked: PropTypes.bool,
   /**
-   *  ´true´ if the checkbox is selected or ´false´ if not selected.
-   *
-   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
    */
-  checkboxSelected: PropTypes.bool,
-  /**
-   *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
-   */
-  checkboxIndeterminate: PropTypes.bool,
+  checkboxProps: PropTypes.instanceOf(Object),
   /**
    *  The border to the right of the checkbox
    */
-  checkboxSemantic: PropTypes.oneOf([
+  semantic: PropTypes.oneOf([
     "sema1",
     "sema2",
     "sema3",

@@ -7,13 +7,9 @@ export type Action = {
   label: string;
   iconCallback?: (params: { isDisabled?: boolean }) => React.ReactNode;
   disabled?: boolean;
-  ariaLabel?: string;
-  ariaLabelledBy?: string;
-  ariaDescribedBy?: string;
 };
 
-export interface HvActionsProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvActionsClassKey> {
+export interface HvActionsCommonProps {
   /**
    * Button category.
    */
@@ -22,16 +18,20 @@ export interface HvActionsProps
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon, disabled}´
    */
-  actions: React.ReactNode | Action[];
+  actions?: React.ReactNode | Action[];
   /**
    *  The callback function ran when an action is triggered, receiving ´action´ as param
    */
-  actionsCallback?: (id: string, action: Action) => void;
+  actionsCallback?: (event: Event, id: string, action: Action) => void;
   /**
    *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
    */
   maxVisibleActions?: number;
 }
+
+export interface HvActionsProps
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvActionsClassKey>,
+    HvActionsCommonProps {}
 
 export type HvActionsClassKey = "button" | "actionContainer" | "dropDownMenu" | "dropDownMenuIcon";
 

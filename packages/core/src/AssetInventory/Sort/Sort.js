@@ -65,7 +65,8 @@ const Sort = ({
   onSelection,
   metadata,
   onSortChange = null,
-  disablePortal = false
+  disablePortal = false,
+  ...others
 }) => {
   const innerSortValues = data => {
     onSelection(sortValues(data), data.id);
@@ -80,6 +81,7 @@ const Sort = ({
       selectDefault={false}
       singleSelectionToggle={false}
       disablePortal={disablePortal}
+      {...others}
     />
   );
 };

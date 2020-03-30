@@ -254,19 +254,19 @@ class Wrapper extends React.Component {
         secondaryActions={[
           {
             label: "Share",
-            action: value => {
+            action: (event, value) => {
               alert(`Sharing ${JSON.stringify(value)}`);
             }
           },
           {
             label: "Hide",
-            action: value => {
+            action: (event, value) => {
               alert(`Hiding ${JSON.stringify(value)}`);
             }
           },
           {
             label: "Remove",
-            action: value => {
+            action: (event, value) => {
               alert(`Removing ${JSON.stringify(value)}`);
             }
           }

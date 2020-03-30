@@ -32,6 +32,15 @@ export { default as HvEmptyState } from "./EmptyState";
 export { default as HvBarchart } from "./Barchart";
 export { default as HvLinechart } from "./Linechart";
 
+// HOCs
+export { default as withId } from "./withId";
+export { default as withLabels } from "./withLabels";
+export { default as withTooltip } from "./withTooltip";
+
+// Hooks
+export { default as useWidth } from "./utils/useWidth";
+export { default as useUniqueId } from "./useUniqueId";
+
 // theme
 export { default as hvTheme } from "./theme";
 

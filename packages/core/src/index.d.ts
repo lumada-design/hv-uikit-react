@@ -105,13 +105,44 @@ export interface HvThemePalette {
   support: HvSupportColors;
 }
 
-interface HvAccentColors extends Map<string, string> {}
+export type HvAccentColorKeys = "acce0" | "acce1" | "acce2" | "acce2h" | "acce3";
+export type HvAtmosphereColorKeys =
+  | "atmo1"
+  | "atmo2"
+  | "atmo3"
+  | "atmo4"
+  | "atmo5"
+  | "atmo6"
+  | "atmo7";
+export type HvBaseColorKeys = "base1" | "base2";
+export type HvSemanticColorKeys =
+  | "sema1"
+  | "sema2"
+  | "sema3"
+  | "sema4"
+  | "sema5"
+  | "sema6"
+  | "sema7"
+  | "sema8"
+  | "sema9"
+  | "sema10"
+  | "sema11"
+  | "sema12"
+  | "sema13"
+  | "sema14"
+  | "sema15"
+  | "sema16"
+  | "sema17"
+  | "sema18"
+  | "sema19";
 
-interface HvAtmosphereColors extends Map<string, string> {}
+interface HvAccentColors extends Map<HvAccentColorKeys, string> {}
 
-interface HvBaseColors extends Map<string, string> {}
+interface HvAtmosphereColors extends Map<HvAtmosphereColorKeys, string> {}
 
-interface HvSemanticColors extends Map<string, string> {}
+interface HvBaseColors extends Map<HvBaseColorKeys, string> {}
+
+interface HvSemanticColors extends Map<HvSemanticColorKeys, string> {}
 
 interface HvSupportColors extends Map<string, string> {}
 

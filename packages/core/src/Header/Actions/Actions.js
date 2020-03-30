@@ -1,14 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../useUniqueId";
 import styles from "./styles";
 
-const Actions = ({ classes, id, children }) => {
-  const uniqueId = useUniqueId(id, "hv-actions-");
-
+const Actions = props => {
+  const { classes, className, children, ...others } = props;
   return (
-    <div id={uniqueId} className={classes.root}>
+    <div className={clsx(className, classes.root)} {...others}>
       {children}
     </div>
   );
@@ -25,18 +24,13 @@ Actions.propTypes = {
     root: PropTypes.string
   }).isRequired,
   /**
-   * Id to be applied to the root node.
+   * Class names to be applied.
    */
-  id: PropTypes.string,
+  className: PropTypes.string,
   /**
    * Node to be rendered.
    */
   children: PropTypes.node
-};
-
-Actions.defaultProps = {
-  id: undefined,
-  children: null
 };
 
 export default withStyles(styles, { name: "HvHeaderActions" })(Actions);

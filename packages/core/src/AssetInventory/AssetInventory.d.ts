@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { Action } from "../Actions";
+import { HvActionsCommonProps } from "../Actions";
 import { CardViewConfiguration } from "./CardView";
 import { ListViewConfiguration } from "./ListView";
 import { ListValueProp } from "../List";
@@ -48,7 +48,8 @@ export type AssetInventoryMetadata = {
 };
 
 export interface HvAssetInventoryProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey>,
+    HvActionsCommonProps {
   /**
    * Data passed to the component.
    */
@@ -59,7 +60,18 @@ export interface HvAssetInventoryProps
    * Labels.
    */
   labels?: {
+    /**
+     * The label of the sort.
+     */
     sortBy?: string;
+    /**
+     * The label on top of the search box.
+     */
+    inputLabel?: string;
+    /**
+     * the placeholder value of the search box.
+     */
+    placeholder?: string;
   };
   /**
    * Contains the metadata for the values and the necessary configuration for the views,
@@ -72,19 +84,7 @@ export interface HvAssetInventoryProps
   /**
    * Callback evoked in the selection of the card.
    */
-  onSelection?: (event: React.FormEvent<HTMLDivElement>) => void;
-  /**
-   * List of actions to be passed to the views.
-   */
-  actions?: Action[];
-  /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
-   */
-  actionsCallback: (id: string, action: Action) => void;
-  /**
-   *  The number of maximum visible actions before they're collapsed into a ´DropDownMenu´.
-   */
-  maxVisibleActions?: number;
+  onSelection?: (event: React.FormEvent<HTMLDivElement>, payload: object) => void;
   /**
    * Extra filters
    */
@@ -93,16 +93,6 @@ export interface HvAssetInventoryProps
    * Indicates if the views are selectable.
    */
   isSelectable?: boolean;
-  /**
-   * An Object containing the various text associated with the search box.
-   *
-   * - inputLabel: the label on top of the search box.
-   * - placeholder: the placeholder value of the search box.
-   */
-  searchBoxLabels?: {
-    inputLabel?: string;
-    placeholder?: string;
-  };
   /**
    * Values selected. The list can be maintain internally or it can be passed (overwriting the internal).
    */
@@ -162,7 +152,7 @@ export interface HvAssetInventoryProps
   /**
    * View change callback.
    */
-  onViewChange?: (value: MultiButtonData[]) => void;
+  onViewChange?: (event: React.FormEvent<HTMLDivElement>, value: MultiButtonData[]) => void;
   /**
    * Visual indication of the sort applied. The id is given by the metadata.id+Asc or metadata.id+Desc.
    */
@@ -178,6 +168,7 @@ export interface HvAssetInventoryProps
 }
 
 export type ClassKey =
+  | "root"
   | "controlsContainer"
   | "search"
   | "rightControls"

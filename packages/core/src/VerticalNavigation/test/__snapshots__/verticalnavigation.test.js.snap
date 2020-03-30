@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<VerticalNavigation /> collapsable closed vertical navigation should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -796,7 +792,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
         >
           <WithStyles(VerticalContainer)
             closeOnExit={false}
-            id="hv-verticalnavigation1-container"
             isAnchorBarVisible={true}
             isOpen={false}
             position="fixed"
@@ -819,7 +814,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                 }
               }
               closeOnExit={false}
-              id="hv-verticalnavigation1-container"
               isAnchorBarVisible={true}
               isOpen={false}
               position="fixed"
@@ -833,11 +827,9 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                 >
                   <div
                     className="HvVerticalNavigationVerticalContainer-verticalContainer"
-                    id="hv-verticalnavigation1-container"
                   >
                     <div
                       className="HvVerticalNavigationVerticalContainer-anchorBar"
-                      id="hv-verticalnavigation1-container-anchor-bar"
                     >
                       <WithStyles(HvButton)
                         aria-label="open"
@@ -846,7 +838,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             "current": <button
                               aria-label="open"
                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                              id="hv-verticalnavigation1-container-hamburger-button"
                               tabindex="0"
                               type="button"
                             >
@@ -876,7 +867,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                         }
                         category="icon"
                         className="HvVerticalNavigationVerticalContainer-button"
-                        id="hv-verticalnavigation1-container-hamburger-button"
                         onClick={[Function]}
                       >
                         <HvButton
@@ -886,7 +876,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               "current": <button
                                 aria-label="open"
                                 class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                id="hv-verticalnavigation1-container-hamburger-button"
                                 tabindex="0"
                                 type="button"
                               >
@@ -933,7 +922,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               "startIcon": "HvButton-startIcon",
                             }
                           }
-                          id="hv-verticalnavigation1-container-hamburger-button"
                           onClick={[Function]}
                         >
                           <WithStyles(ForwardRef(Button))
@@ -943,7 +931,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 "current": <button
                                   aria-label="open"
                                   class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                  id="hv-verticalnavigation1-container-hamburger-button"
                                   tabindex="0"
                                   type="button"
                                 >
@@ -984,7 +971,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             }
                             color="primary"
                             disableRipple={true}
-                            id="hv-verticalnavigation1-container-hamburger-button"
                             onClick={[Function]}
                             variant="text"
                           >
@@ -995,7 +981,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   "current": <button
                                     aria-label="open"
                                     class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                    id="hv-verticalnavigation1-container-hamburger-button"
                                     tabindex="0"
                                     type="button"
                                   >
@@ -1059,7 +1044,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               }
                               color="primary"
                               disableRipple={true}
-                              id="hv-verticalnavigation1-container-hamburger-button"
                               onClick={[Function]}
                               variant="text"
                             >
@@ -1070,7 +1054,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                     "current": <button
                                       aria-label="open"
                                       class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                      id="hv-verticalnavigation1-container-hamburger-button"
                                       tabindex="0"
                                       type="button"
                                     >
@@ -1104,7 +1087,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 disabled={false}
                                 focusRipple={true}
                                 focusVisibleClassName="Mui-focusVisible"
-                                id="hv-verticalnavigation1-container-hamburger-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -1115,7 +1097,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       "current": <button
                                         aria-label="open"
                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                        id="hv-verticalnavigation1-container-hamburger-button"
                                         tabindex="0"
                                         type="button"
                                       >
@@ -1156,7 +1137,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   disabled={false}
                                   focusRipple={true}
                                   focusVisibleClassName="Mui-focusVisible"
-                                  id="hv-verticalnavigation1-container-hamburger-button"
                                   onClick={[Function]}
                                   type="button"
                                 >
@@ -1164,7 +1144,6 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                     aria-label="open"
                                     className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
                                     disabled={false}
-                                    id="hv-verticalnavigation1-container-hamburger-button"
                                     onBlur={[Function]}
                                     onClick={[Function]}
                                     onDragLeave={[Function]}
@@ -1237,11 +1216,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
 `;
 
 exports[`<VerticalNavigation /> collapsable open vertical navigation should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -2032,7 +2007,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
         >
           <WithStyles(VerticalContainer)
             closeOnExit={false}
-            id="hv-verticalnavigation2-container"
             isAnchorBarVisible={true}
             isOpen={true}
             position="fixed"
@@ -2055,7 +2029,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                 }
               }
               closeOnExit={false}
-              id="hv-verticalnavigation2-container"
               isAnchorBarVisible={true}
               isOpen={true}
               position="fixed"
@@ -2069,11 +2042,9 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                 >
                   <div
                     className="HvVerticalNavigationVerticalContainer-verticalContainer"
-                    id="hv-verticalnavigation2-container"
                   >
                     <div
                       className="HvVerticalNavigationVerticalContainer-anchorBar"
-                      id="hv-verticalnavigation2-container-anchor-bar"
                     >
                       <WithStyles(HvButton)
                         aria-label="close"
@@ -2082,7 +2053,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             "current": <button
                               aria-label="close"
                               class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                              id="hv-verticalnavigation2-container-hamburger-button"
                               tabindex="0"
                               type="button"
                             >
@@ -2112,7 +2082,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                         }
                         category="icon"
                         className="HvVerticalNavigationVerticalContainer-button"
-                        id="hv-verticalnavigation2-container-hamburger-button"
                         onClick={[Function]}
                       >
                         <HvButton
@@ -2122,7 +2091,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                               "current": <button
                                 aria-label="close"
                                 class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                id="hv-verticalnavigation2-container-hamburger-button"
                                 tabindex="0"
                                 type="button"
                               >
@@ -2169,7 +2137,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                               "startIcon": "HvButton-startIcon",
                             }
                           }
-                          id="hv-verticalnavigation2-container-hamburger-button"
                           onClick={[Function]}
                         >
                           <WithStyles(ForwardRef(Button))
@@ -2179,7 +2146,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                 "current": <button
                                   aria-label="close"
                                   class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                  id="hv-verticalnavigation2-container-hamburger-button"
                                   tabindex="0"
                                   type="button"
                                 >
@@ -2220,7 +2186,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             }
                             color="primary"
                             disableRipple={true}
-                            id="hv-verticalnavigation2-container-hamburger-button"
                             onClick={[Function]}
                             variant="text"
                           >
@@ -2231,7 +2196,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   "current": <button
                                     aria-label="close"
                                     class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                    id="hv-verticalnavigation2-container-hamburger-button"
                                     tabindex="0"
                                     type="button"
                                   >
@@ -2295,7 +2259,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                               }
                               color="primary"
                               disableRipple={true}
-                              id="hv-verticalnavigation2-container-hamburger-button"
                               onClick={[Function]}
                               variant="text"
                             >
@@ -2306,7 +2269,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                     "current": <button
                                       aria-label="close"
                                       class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                      id="hv-verticalnavigation2-container-hamburger-button"
                                       tabindex="0"
                                       type="button"
                                     >
@@ -2340,7 +2302,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                 disabled={false}
                                 focusRipple={true}
                                 focusVisibleClassName="Mui-focusVisible"
-                                id="hv-verticalnavigation2-container-hamburger-button"
                                 onClick={[Function]}
                                 type="button"
                               >
@@ -2351,7 +2312,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                       "current": <button
                                         aria-label="close"
                                         class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
-                                        id="hv-verticalnavigation2-container-hamburger-button"
                                         tabindex="0"
                                         type="button"
                                       >
@@ -2392,7 +2352,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   disabled={false}
                                   focusRipple={true}
                                   focusVisibleClassName="Mui-focusVisible"
-                                  id="hv-verticalnavigation2-container-hamburger-button"
                                   onClick={[Function]}
                                   type="button"
                                 >
@@ -2400,7 +2359,6 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                     aria-label="close"
                                     className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvVerticalNavigationVerticalContainer-button HvButton-rootIcon MuiButton-textPrimary HvButton-ghost"
                                     disabled={false}
-                                    id="hv-verticalnavigation2-container-hamburger-button"
                                     onBlur={[Function]}
                                     onClick={[Function]}
                                     onDragLeave={[Function]}
@@ -2465,12 +2423,10 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                     />
                     <div
                       className="HvVerticalNavigationVerticalContainer-contentContainer"
-                      id="hv-verticalnavigation2-container-container"
                       onKeyDown={[Function]}
                     >
                       <div
                         className="HvVerticalNavigation-root"
-                        id="hv-verticalnavigation2"
                       >
                         <div>
                           1
@@ -2493,11 +2449,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
 `;
 
 exports[`<VerticalNavigation /> non-collapsable open vertical navigation should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -3288,7 +3240,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
         >
           <WithStyles(VerticalContainer)
             closeOnExit={false}
-            id="hv-verticalnavigation3-container"
             isAnchorBarVisible={false}
             isOpen={true}
             position="fixed"
@@ -3311,7 +3262,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
                 }
               }
               closeOnExit={false}
-              id="hv-verticalnavigation3-container"
               isAnchorBarVisible={false}
               isOpen={true}
               position="fixed"
@@ -3325,16 +3275,13 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
                 >
                   <div
                     className="HvVerticalNavigationVerticalContainer-verticalContainer"
-                    id="hv-verticalnavigation3-container"
                   >
                     <div
                       className="HvVerticalNavigationVerticalContainer-contentContainer"
-                      id="hv-verticalnavigation3-container-container"
                       onKeyDown={[Function]}
                     >
                       <div
                         className="HvVerticalNavigation-root"
-                        id="hv-verticalnavigation3"
                       >
                         <div>
                           1
@@ -3357,11 +3304,7 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
 `;
 
 exports[`<VerticalNavigation /> non-collapsable open vertical navigation should render correctly 2`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -4152,7 +4095,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
         >
           <WithStyles(VerticalContainer)
             closeOnExit={false}
-            id="hv-verticalnavigation4-container"
             isAnchorBarVisible={false}
             isOpen={false}
             position="fixed"
@@ -4175,7 +4117,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
                 }
               }
               closeOnExit={false}
-              id="hv-verticalnavigation4-container"
               isAnchorBarVisible={false}
               isOpen={false}
               position="fixed"
@@ -4189,7 +4130,6 @@ exports[`<VerticalNavigation /> non-collapsable open vertical navigation should 
                 >
                   <div
                     className="HvVerticalNavigationVerticalContainer-verticalContainer"
-                    id="hv-verticalnavigation4-container"
                   />
                 </ForwardRef(ClickAwayListener)>
               </div>

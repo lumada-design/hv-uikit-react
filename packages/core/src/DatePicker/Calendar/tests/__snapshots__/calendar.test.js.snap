@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Calendar /> with configurations should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -854,7 +850,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "baseFontFamily": "HvTypography-baseFontFamily",
                             "disabledButtonText": "HvTypography-disabledButtonText",
                             "highlightText": "HvTypography-highlightText",
                             "infoText": "HvTypography-infoText",
@@ -862,9 +857,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                             "lTitle": "HvTypography-lTitle",
                             "labelText": "HvTypography-labelText",
                             "mTitle": "HvTypography-mTitle",
-                            "margin": "HvTypography-margin",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
                             "sLink": "HvTypography-sLink",
                             "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
@@ -880,7 +875,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         variant="normalText"
                       >
                         <p
-                          className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                          className="HvTypography-root HvTypography-normalText"
                         >
                           Thu
                         </p>
@@ -1005,7 +1000,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle",
                                 "4xlTitle": "HvTypography-4xlTitle",
                                 "5xlTitle": "HvTypography-5xlTitle",
-                                "baseFontFamily": "HvTypography-baseFontFamily",
                                 "disabledButtonText": "HvTypography-disabledButtonText",
                                 "highlightText": "HvTypography-highlightText",
                                 "infoText": "HvTypography-infoText",
@@ -1013,9 +1007,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                                 "lTitle": "HvTypography-lTitle",
                                 "labelText": "HvTypography-labelText",
                                 "mTitle": "HvTypography-mTitle",
-                                "margin": "HvTypography-margin",
                                 "normalText": "HvTypography-normalText",
                                 "placeholderText": "HvTypography-placeholderText",
+                                "root": "HvTypography-root",
                                 "sLink": "HvTypography-sLink",
                                 "sText": "HvTypography-sText",
                                 "sTitle": "HvTypography-sTitle",
@@ -1031,7 +1025,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                             variant="normalText"
                           >
                             <p
-                              className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                              className="HvTypography-root HvTypography-normalText"
                             >
                               January
                             </p>
@@ -1177,7 +1171,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "baseFontFamily": "HvTypography-baseFontFamily",
                               "disabledButtonText": "HvTypography-disabledButtonText",
                               "highlightText": "HvTypography-highlightText",
                               "infoText": "HvTypography-infoText",
@@ -1185,9 +1178,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                               "lTitle": "HvTypography-lTitle",
                               "labelText": "HvTypography-labelText",
                               "mTitle": "HvTypography-mTitle",
-                              "margin": "HvTypography-margin",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
+                              "root": "HvTypography-root",
                               "sLink": "HvTypography-sLink",
                               "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
@@ -1203,7 +1196,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           variant="normalText"
                         >
                           <p
-                            className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                            className="HvTypography-root HvTypography-normalText"
                           >
                             1970
                           </p>
@@ -1276,7 +1269,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1284,9 +1276,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1303,7 +1295,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={0}
                   >
                     S
@@ -1323,7 +1315,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1331,9 +1322,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1350,7 +1341,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={1}
                   >
                     M
@@ -1370,7 +1361,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1378,9 +1368,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1397,7 +1387,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={2}
                   >
                     T
@@ -1417,7 +1407,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1425,9 +1414,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1444,7 +1433,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={3}
                   >
                     W
@@ -1464,7 +1453,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1472,9 +1460,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1491,7 +1479,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={4}
                   >
                     T
@@ -1511,7 +1499,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1519,9 +1506,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1538,7 +1525,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={5}
                   >
                     F
@@ -1558,7 +1545,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -1566,9 +1552,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -1585,7 +1571,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={6}
                   >
                     S
@@ -1611,7 +1597,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1619,9 +1604,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1637,7 +1622,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       28
                     </p>
@@ -1663,7 +1648,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1671,9 +1655,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1689,7 +1673,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       29
                     </p>
@@ -1715,7 +1699,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1723,9 +1706,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1741,7 +1724,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       30
                     </p>
@@ -1767,7 +1750,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1775,9 +1757,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1793,7 +1775,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       31
                     </p>
@@ -1819,7 +1801,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1827,9 +1808,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1845,7 +1826,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected HvTypography-root HvTypography-normalText"
                     >
                       1
                     </p>
@@ -1871,7 +1852,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1879,9 +1859,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1897,7 +1877,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       2
                     </p>
@@ -1923,7 +1903,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1931,9 +1910,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1949,7 +1928,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       3
                     </p>
@@ -1975,7 +1954,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1983,9 +1961,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2001,7 +1979,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       4
                     </p>
@@ -2027,7 +2005,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2035,9 +2012,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2053,7 +2030,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       5
                     </p>
@@ -2079,7 +2056,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2087,9 +2063,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2105,7 +2081,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       6
                     </p>
@@ -2131,7 +2107,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2139,9 +2114,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2157,7 +2132,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       7
                     </p>
@@ -2183,7 +2158,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2191,9 +2165,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2209,7 +2183,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       8
                     </p>
@@ -2235,7 +2209,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2243,9 +2216,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2261,7 +2234,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       9
                     </p>
@@ -2287,7 +2260,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2295,9 +2267,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2313,7 +2285,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       10
                     </p>
@@ -2339,7 +2311,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2347,9 +2318,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2365,7 +2336,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       11
                     </p>
@@ -2391,7 +2362,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2399,9 +2369,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2417,7 +2387,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       12
                     </p>
@@ -2443,7 +2413,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2451,9 +2420,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2469,7 +2438,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       13
                     </p>
@@ -2495,7 +2464,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2503,9 +2471,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2521,7 +2489,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       14
                     </p>
@@ -2547,7 +2515,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2555,9 +2522,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2573,7 +2540,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       15
                     </p>
@@ -2599,7 +2566,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2607,9 +2573,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2625,7 +2591,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       16
                     </p>
@@ -2651,7 +2617,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2659,9 +2624,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2677,7 +2642,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       17
                     </p>
@@ -2703,7 +2668,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2711,9 +2675,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2729,7 +2693,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       18
                     </p>
@@ -2755,7 +2719,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2763,9 +2726,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2781,7 +2744,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       19
                     </p>
@@ -2807,7 +2770,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2815,9 +2777,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2833,7 +2795,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       20
                     </p>
@@ -2859,7 +2821,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2867,9 +2828,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2885,7 +2846,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       21
                     </p>
@@ -2911,7 +2872,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2919,9 +2879,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2937,7 +2897,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       22
                     </p>
@@ -2963,7 +2923,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -2971,9 +2930,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -2989,7 +2948,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       23
                     </p>
@@ -3015,7 +2974,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3023,9 +2981,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3041,7 +2999,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       24
                     </p>
@@ -3067,7 +3025,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3075,9 +3032,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3093,7 +3050,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       25
                     </p>
@@ -3119,7 +3076,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3127,9 +3083,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3145,7 +3101,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       26
                     </p>
@@ -3171,7 +3127,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3179,9 +3134,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3197,7 +3152,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       27
                     </p>
@@ -3223,7 +3178,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3231,9 +3185,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3249,7 +3203,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       28
                     </p>
@@ -3275,7 +3229,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3283,9 +3236,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3301,7 +3254,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       29
                     </p>
@@ -3327,7 +3280,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3335,9 +3287,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3353,7 +3305,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       30
                     </p>
@@ -3379,7 +3331,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3387,9 +3338,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3405,7 +3356,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       31
                     </p>
@@ -3431,7 +3382,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3439,9 +3389,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3457,7 +3407,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       1
                     </p>
@@ -3483,7 +3433,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3491,9 +3440,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3509,7 +3458,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       2
                     </p>
@@ -3535,7 +3484,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3543,9 +3491,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3561,7 +3509,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       3
                     </p>
@@ -3587,7 +3535,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3595,9 +3542,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3613,7 +3560,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       4
                     </p>
@@ -3639,7 +3586,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3647,9 +3593,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3665,7 +3611,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       5
                     </p>
@@ -3691,7 +3637,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3699,9 +3644,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3717,7 +3662,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       6
                     </p>
@@ -3743,7 +3688,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -3751,9 +3695,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -3769,7 +3713,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       7
                     </p>
@@ -3786,11 +3730,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
 `;
 
 exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -4637,7 +4577,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "baseFontFamily": "HvTypography-baseFontFamily",
                             "disabledButtonText": "HvTypography-disabledButtonText",
                             "highlightText": "HvTypography-highlightText",
                             "infoText": "HvTypography-infoText",
@@ -4645,9 +4584,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                             "lTitle": "HvTypography-lTitle",
                             "labelText": "HvTypography-labelText",
                             "mTitle": "HvTypography-mTitle",
-                            "margin": "HvTypography-margin",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
                             "sLink": "HvTypography-sLink",
                             "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
@@ -4663,7 +4602,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         variant="normalText"
                       >
                         <p
-                          className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                          className="HvTypography-root HvTypography-normalText"
                         >
                           Thu
                         </p>
@@ -4788,7 +4727,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle",
                                 "4xlTitle": "HvTypography-4xlTitle",
                                 "5xlTitle": "HvTypography-5xlTitle",
-                                "baseFontFamily": "HvTypography-baseFontFamily",
                                 "disabledButtonText": "HvTypography-disabledButtonText",
                                 "highlightText": "HvTypography-highlightText",
                                 "infoText": "HvTypography-infoText",
@@ -4796,9 +4734,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                                 "lTitle": "HvTypography-lTitle",
                                 "labelText": "HvTypography-labelText",
                                 "mTitle": "HvTypography-mTitle",
-                                "margin": "HvTypography-margin",
                                 "normalText": "HvTypography-normalText",
                                 "placeholderText": "HvTypography-placeholderText",
+                                "root": "HvTypography-root",
                                 "sLink": "HvTypography-sLink",
                                 "sText": "HvTypography-sText",
                                 "sTitle": "HvTypography-sTitle",
@@ -4814,7 +4752,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                             variant="normalText"
                           >
                             <p
-                              className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                              className="HvTypography-root HvTypography-normalText"
                             >
                               January
                             </p>
@@ -4960,7 +4898,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "baseFontFamily": "HvTypography-baseFontFamily",
                               "disabledButtonText": "HvTypography-disabledButtonText",
                               "highlightText": "HvTypography-highlightText",
                               "infoText": "HvTypography-infoText",
@@ -4968,9 +4905,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                               "lTitle": "HvTypography-lTitle",
                               "labelText": "HvTypography-labelText",
                               "mTitle": "HvTypography-mTitle",
-                              "margin": "HvTypography-margin",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
+                              "root": "HvTypography-root",
                               "sLink": "HvTypography-sLink",
                               "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
@@ -4986,7 +4923,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           variant="normalText"
                         >
                           <p
-                            className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                            className="HvTypography-root HvTypography-normalText"
                           >
                             1970
                           </p>
@@ -5059,7 +4996,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5067,9 +5003,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5086,7 +5022,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={0}
                   >
                     S
@@ -5106,7 +5042,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5114,9 +5049,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5133,7 +5068,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={1}
                   >
                     M
@@ -5153,7 +5088,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5161,9 +5095,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5180,7 +5114,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={2}
                   >
                     T
@@ -5200,7 +5134,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5208,9 +5141,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5227,7 +5160,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={3}
                   >
                     W
@@ -5247,7 +5180,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5255,9 +5187,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5274,7 +5206,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={4}
                   >
                     T
@@ -5294,7 +5226,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5302,9 +5233,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5321,7 +5252,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={5}
                   >
                     F
@@ -5341,7 +5272,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -5349,9 +5279,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -5368,7 +5298,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   variant="highlightText"
                 >
                   <p
-                    className="HvTypography-highlightText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDay"
+                    className="HvDatePickerCalendar-calendarDay HvTypography-root HvTypography-highlightText"
                     index={6}
                   >
                     S
@@ -5394,7 +5324,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5402,9 +5331,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5420,7 +5349,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       28
                     </p>
@@ -5446,7 +5375,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5454,9 +5382,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5472,7 +5400,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       29
                     </p>
@@ -5498,7 +5426,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5506,9 +5433,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5524,7 +5451,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       30
                     </p>
@@ -5550,7 +5477,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5558,9 +5484,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5576,7 +5502,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       31
                     </p>
@@ -5602,7 +5528,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5610,9 +5535,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5628,7 +5553,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected HvTypography-root HvTypography-normalText"
                     >
                       1
                     </p>
@@ -5654,7 +5579,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5662,9 +5586,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5680,7 +5604,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       2
                     </p>
@@ -5706,7 +5630,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5714,9 +5637,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5732,7 +5655,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       3
                     </p>
@@ -5758,7 +5681,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5766,9 +5688,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5784,7 +5706,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       4
                     </p>
@@ -5810,7 +5732,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5818,9 +5739,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5836,7 +5757,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       5
                     </p>
@@ -5862,7 +5783,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5870,9 +5790,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5888,7 +5808,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       6
                     </p>
@@ -5914,7 +5834,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5922,9 +5841,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5940,7 +5859,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       7
                     </p>
@@ -5966,7 +5885,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -5974,9 +5892,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -5992,7 +5910,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       8
                     </p>
@@ -6018,7 +5936,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6026,9 +5943,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6044,7 +5961,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       9
                     </p>
@@ -6070,7 +5987,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6078,9 +5994,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6096,7 +6012,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       10
                     </p>
@@ -6122,7 +6038,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6130,9 +6045,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6148,7 +6063,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       11
                     </p>
@@ -6174,7 +6089,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6182,9 +6096,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6200,7 +6114,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       12
                     </p>
@@ -6226,7 +6140,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6234,9 +6147,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6252,7 +6165,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       13
                     </p>
@@ -6278,7 +6191,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6286,9 +6198,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6304,7 +6216,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       14
                     </p>
@@ -6330,7 +6242,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6338,9 +6249,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6356,7 +6267,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       15
                     </p>
@@ -6382,7 +6293,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6390,9 +6300,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6408,7 +6318,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       16
                     </p>
@@ -6434,7 +6344,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6442,9 +6351,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6460,7 +6369,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       17
                     </p>
@@ -6486,7 +6395,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6494,9 +6402,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6512,7 +6420,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       18
                     </p>
@@ -6538,7 +6446,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6546,9 +6453,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6564,7 +6471,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       19
                     </p>
@@ -6590,7 +6497,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6598,9 +6504,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6616,7 +6522,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       20
                     </p>
@@ -6642,7 +6548,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6650,9 +6555,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6668,7 +6573,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       21
                     </p>
@@ -6694,7 +6599,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6702,9 +6606,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6720,7 +6624,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       22
                     </p>
@@ -6746,7 +6650,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6754,9 +6657,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6772,7 +6675,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       23
                     </p>
@@ -6798,7 +6701,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6806,9 +6708,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6824,7 +6726,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       24
                     </p>
@@ -6850,7 +6752,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6858,9 +6759,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6876,7 +6777,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       25
                     </p>
@@ -6902,7 +6803,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6910,9 +6810,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6928,7 +6828,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       26
                     </p>
@@ -6954,7 +6854,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -6962,9 +6861,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -6980,7 +6879,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       27
                     </p>
@@ -7006,7 +6905,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7014,9 +6912,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7032,7 +6930,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       28
                     </p>
@@ -7058,7 +6956,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7066,9 +6963,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7084,7 +6981,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       29
                     </p>
@@ -7110,7 +7007,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7118,9 +7014,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7136,7 +7032,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       30
                     </p>
@@ -7162,7 +7058,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7170,9 +7065,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7188,7 +7083,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate"
+                      className="HvDatePickerCalendar-calendarDate HvTypography-root HvTypography-normalText"
                     >
                       31
                     </p>
@@ -7214,7 +7109,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7222,9 +7116,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7240,7 +7134,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       1
                     </p>
@@ -7266,7 +7160,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7274,9 +7167,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7292,7 +7185,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       2
                     </p>
@@ -7318,7 +7211,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7326,9 +7218,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7344,7 +7236,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       3
                     </p>
@@ -7370,7 +7262,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7378,9 +7269,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7396,7 +7287,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       4
                     </p>
@@ -7422,7 +7313,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7430,9 +7320,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7448,7 +7338,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       5
                     </p>
@@ -7474,7 +7364,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7482,9 +7371,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7500,7 +7389,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       6
                     </p>
@@ -7526,7 +7415,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -7534,9 +7422,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -7552,7 +7440,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     variant="normalText"
                   >
                     <p
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
+                      className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth HvTypography-root HvTypography-normalText"
                     >
                       7
                     </p>

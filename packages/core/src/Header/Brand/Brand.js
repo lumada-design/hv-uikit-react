@@ -1,18 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../../Typography";
-import useUniqueId from "../../useUniqueId";
 import styles from "./styles";
 
-const Brand = ({ classes, id, logo, name }) => {
-  const uniqueId = useUniqueId(id, "hv-brand-");
-
+const Brand = ({ classes, className, logo, name, ...others }) => {
   return (
-    <div id={uniqueId} className={classes.root}>
+    <div className={clsx(className, classes.root)} {...others}>
       {logo}
-      {logo && name && <div className={classes.separator} />}
-      {name && <HvTypography variant="highlightText">{name}</HvTypography>}
+      {logo ?? name ?? <div className={classes.separator} />}
+      {name ?? <HvTypography variant="highlightText">{name}</HvTypography>}
     </div>
   );
 };
@@ -32,9 +30,9 @@ Brand.propTypes = {
     separator: PropTypes.string
   }).isRequired,
   /**
-   * Id to be applied to the root node.
+   * Class names to be applied.
    */
-  id: PropTypes.string,
+  className: PropTypes.string,
   /**
    * The brand image node.
    */
@@ -43,12 +41,6 @@ Brand.propTypes = {
    * The brand name string.
    */
   name: PropTypes.string
-};
-
-Brand.defaultProps = {
-  id: undefined,
-  logo: null,
-  name: null
 };
 
 export default withStyles(styles, { name: "HvHeaderBrand" })(Brand);

@@ -56,14 +56,24 @@ export default (
       subheader="Compressor"
       id="test"
       innerCardContent={<SingleContent classes={styles} />}
-      defaultCardAriaLabel="Asset Avatar L90 press enter or space to use this card main action"
-      onClickAction={() => {
+      onClick={() => {
         alert("Action activated");
       }}
       isSelectable
       mediaPath={compressor}
       mediaHeight={186}
-      mediaAriaLabel="Compressor"
+      mediaProps={{
+        "aria-label": "Compressor"
+      }}
+      cardButtonProps={{
+        "aria-label": "Asset Avatar L90 press enter or space to use this card main action"
+      }}
+      headerProps={{
+        "aria-label": "Compressor"
+      }}
+      footerProps={{
+        "aria-label": "Compressor"
+      }}
     />
   </div>
 );

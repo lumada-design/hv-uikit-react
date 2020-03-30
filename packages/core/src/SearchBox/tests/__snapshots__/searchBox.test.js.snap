@@ -777,26 +777,8 @@ exports[`<SearchBox /> renders correctly 1`] = `
         }
       }
     >
-      <WithStyles(HvSearchBox)
-        ariaLabel="search"
-        autoFocus={false}
-        className=""
-        disabled={false}
-        id=""
-        initialValue=""
-        labels={
-          Object {
-            "inputLabel": "",
-            "placeholder": "Search",
-          }
-        }
-        onBlur={[Function]}
+      <WithStyles(Component)
         onChange={[MockFunction]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onSubmit={[Function]}
-        suggestionListCallback={[Function]}
-        suggestionSelectedCallback={[Function]}
       />
     </ContextProvider>
   </ThemeProvider>
@@ -1580,26 +1562,9 @@ exports[`<SearchBox /> renders disabled correctly 1`] = `
         }
       }
     >
-      <WithStyles(HvSearchBox)
-        ariaLabel="search"
-        autoFocus={false}
-        className=""
+      <WithStyles(Component)
         disabled={true}
-        id=""
-        initialValue=""
-        labels={
-          Object {
-            "inputLabel": "",
-            "placeholder": "Search",
-          }
-        }
-        onBlur={[Function]}
         onChange={[MockFunction]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onSubmit={[Function]}
-        suggestionListCallback={[Function]}
-        suggestionSelectedCallback={[Function]}
       />
     </ContextProvider>
   </ThemeProvider>

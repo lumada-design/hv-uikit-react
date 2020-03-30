@@ -35,7 +35,7 @@ describe("ListA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <ListWithStyles values={data} selectDefault hasTooltips listProps={ariaProps} />
+        <ListWithStyles values={data} selectDefault hasTooltips {...ariaProps} />
       </HvProvider>
     );
 
@@ -67,7 +67,7 @@ describe("ListA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <ListWithStyles values={data} selectable={false} listProps={ariaProps} />
+        <ListWithStyles values={data} selectable={false} {...ariaProps} />
       </HvProvider>
     );
 
@@ -99,7 +99,7 @@ describe("ListA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <ListWithStyles values={data} selectable={false} listProps={ariaProps} />
+        <ListWithStyles values={data} selectable={false} {...ariaProps} />
       </HvProvider>
     );
 
@@ -136,7 +136,7 @@ describe("ListA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <ListWithStyles values={data} multiSelect useSelector listProps={ariaProps} />
+        <ListWithStyles values={data} multiSelect useSelector {...ariaProps} />
       </HvProvider>
     );
 

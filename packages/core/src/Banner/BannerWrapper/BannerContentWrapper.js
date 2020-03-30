@@ -11,16 +11,18 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
   const {
     id,
     classes,
-    showIcon,
+    showIcon = false,
     customIcon,
     variant,
     onClose,
     actions,
     actionsCallback,
-    actionsPosition,
+    actionsPosition = "auto",
     content,
-    ...other
+    actionProps,
+    ...others
   } = props;
+
   const icon = customIcon || (showIcon && severityIcon(mapSeverityToVariant(variant)));
 
   let effectiveActionsPosition = actionsPosition;
@@ -62,9 +64,10 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
               action: actions,
               actionCallback: actionsCallback
             })}
+            {...actionProps}
           />
         }
-        {...other}
+        {...others}
       />
     </div>
   );
@@ -120,18 +123,11 @@ HvBannerContentWrapper.propTypes = {
   /**
    * The position property of the header.
    */
-  actionsPosition: PropTypes.PropTypes.oneOf(["auto", "inline", "bottom-right"])
-};
-
-HvBannerContentWrapper.defaultProps = {
-  id: null,
-  classes: null,
-  content: "",
-  showIcon: false,
-  customIcon: null,
-  actions: null,
-  actionsCallback: () => {},
-  actionsPosition: "auto"
+  actionsPosition: PropTypes.PropTypes.oneOf(["auto", "inline", "bottom-right"]),
+  /**
+   * The props to pass down to the Action Container.
+   */
+  actionProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvBannerContentWrapper" })(HvBannerContentWrapper);

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { StandardProps, SnackbarProps } from "@material-ui/core";
-import { Action } from "../Actions";
+import { StandardProps, SnackbarProps, SnackbarContentProps } from "@material-ui/core";
+import { HvActionsCommonProps } from "../Actions";
 
 export type TransitionDirectionProp = "up" | "down" | "left" | "right";
 
@@ -8,7 +8,9 @@ export type ActionsPositionProp = "auto" | "inline" | "bottom-right";
 
 export type SemanticVariantTypes = "success" | "warning" | "error" | "info" | "default";
 
-export interface HvBannerProps extends StandardProps<SnackbarProps, HvBannerClassKey> {
+export interface HvBannerProps
+  extends StandardProps<SnackbarProps, HvBannerClassKey>,
+    HvActionsCommonProps {
   /**
    * The message to display.
    */
@@ -27,15 +29,6 @@ export interface HvBannerProps extends StandardProps<SnackbarProps, HvBannerClas
   showIcon?: boolean;
 
   /**
-   * Actions to display on the right side.
-   */
-  actions?: React.ReactNode | Action[];
-  /**
-   *  The callback function ran when an action is triggered, receiving ´action´ as param
-   */
-  actionsCallback?: (id: string, action: Action) => void;
-
-  /**
    * The position property of the header.
    */
   actionsPosition?: ActionsPositionProp;
@@ -51,6 +44,10 @@ export interface HvBannerProps extends StandardProps<SnackbarProps, HvBannerClas
    * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
   offset?: number;
+  /**
+   * Props to pass down to the Banner Wrapper.
+   */
+  bannerContentProps?: SnackbarContentProps;
 }
 
 export type HvBannerClassKey =

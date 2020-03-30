@@ -21,7 +21,7 @@ export default (
     <DropDownMenu
       id="dpmKeepOpenedFalse"
       dataList={menuOptions}
-      onClick={e => console.log(e.label)}
+      onClick={(e, item) => console.log(item.label)}
       keepOpened={false}
     />
     <Button id="button2">button2</Button>

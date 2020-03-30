@@ -22,7 +22,7 @@ export default (
     <DropDownMenu
       dataList={menuOptions}
       placement="right"
-      onClick={e => alert(e.label)}
+      onClick={(e, item) => console.log(item.label)}
       aria-label="dropdownMenu-3"
     />
   </div>

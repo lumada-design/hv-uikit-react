@@ -8,7 +8,7 @@ import styles from "./styles";
 
 const ModalTitle = ({
   classes,
-  className = "",
+  className,
   children,
   variant = "default",
   showIcon = true,

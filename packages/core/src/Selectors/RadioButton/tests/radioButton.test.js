@@ -1,6 +1,5 @@
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { shallow, mount } from "enzyme";
 
@@ -14,11 +13,6 @@ import theme from "../../../theme";
 
 describe("RadioButton withStyles", () => {
   let wrapper;
-
-  const getLabelPositionClassNames = ParentElement =>
-    ParentElement.children()
-      .children()
-      .props().className;
 
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
@@ -87,8 +81,8 @@ describe("RadioButton withStyles", () => {
         <RadioWithStyles label="test" labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(RadioButton);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(true);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelStartClassName)).toBe(true);
+    expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
 
   it("should apply the correct class name when there is a label at the end", () => {
@@ -97,8 +91,8 @@ describe("RadioButton withStyles", () => {
         <RadioWithStyles label="test" labelPlacement={labelPositions.end} />
       </HvProvider>
     ).find(RadioButton);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(false);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(true);
+    expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelEndClassName)).toBe(true);
   });
 
   it("should not apply any class name when there is no label specified", () => {
@@ -107,7 +101,7 @@ describe("RadioButton withStyles", () => {
         <RadioWithStyles labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(RadioButton);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(false);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
 });

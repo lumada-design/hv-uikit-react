@@ -47,7 +47,7 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
 
 const Search = ({
   id = undefined,
-  searchBoxLabels,
+  labels,
   searchString = undefined,
   onFilter,
   onSearch = null,
@@ -56,7 +56,7 @@ const Search = ({
 }) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
-  const handler = value => {
+  const handler = (event, value) => {
     const filteredResults = searchOperation(value, values, searchableCriteria);
     onFilter(filteredResults, value);
     return value;
@@ -65,7 +65,7 @@ const Search = ({
   return (
     <SearchBox
       id={`search_${id}`}
-      labels={searchBoxLabels}
+      labels={labels}
       value={searchString}
       onChange={onSearch || handler}
     />
@@ -88,7 +88,7 @@ Search.propTypes = {
   /**
    * Labels.
    */
-  searchBoxLabels: PropTypes.shape({
+  labels: PropTypes.shape({
     sortBy: PropTypes.string
   }).isRequired,
   /**

@@ -30,7 +30,7 @@ const styles = {
 };
 
 const mediaStyle = theme => ({
-  mediaContainer: {
+  root: {
     width: "100%",
     paddingBottom: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
@@ -80,7 +80,7 @@ const Cards = ({ classes, containers }) =>
               sourceCode: container.sourceCodeUrl
             }
           ]}
-          actionsCallback={(id, a) => window.open(a.sourceCode, "_blank")}
+          actionsCallback={(e, id, a) => window.open(a.sourceCode, "_blank")}
         />
       </Card>
     </Grid>

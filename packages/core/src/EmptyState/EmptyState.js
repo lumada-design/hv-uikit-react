@@ -6,30 +6,38 @@ import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import styles from "./styles";
 
-const renderNode = (className, node, variant) => (
-  <div className={className}>
-    {isString(node) ? <HvTypography variant={variant}>{node}</HvTypography> : node}
-  </div>
-);
+const renderNode = (node, className, variant) =>
+  node && (
+    <div className={className}>
+      {isString(node) ? <HvTypography variant={variant}>{node}</HvTypography> : node}
+    </div>
+  );
 
-const EmptyState = ({ classes, title = null, message = null, action = null, icon }) => (
-  <div className={classes.root}>
-    <div
-      className={clsx(classes.container, {
-        [classes.containerMessageOnly]: message && !title && !action
-      })}
-    >
-      <div className={classes.iconContainer}>{icon}</div>
-      <div className={classes.textContainer}>
-        {title && renderNode(classes.titleContainer, title, "sTitle")}
-        {message && renderNode(classes.messageContainer, message, "normalText")}
-        {action && renderNode(classes.actionContainer, action, "normalText")}
+const EmptyState = props => {
+  const { classes, className, title, message, action, icon, ...others } = props;
+  return (
+    <div className={clsx(className, classes.root)} {...others}>
+      <div
+        className={clsx(classes.container, {
+          [classes.containerMessageOnly]: message && !title && !action
+        })}
+      >
+        <div className={classes.iconContainer}>{icon}</div>
+        <div className={classes.textContainer}>
+          {renderNode(title, classes.titleContainer, "sTitle")}
+          {renderNode(message, classes.messageContainer, "normalText")}
+          {renderNode(action, classes.actionContainer, "normalText")}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 EmptyState.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the empty state component.
    */

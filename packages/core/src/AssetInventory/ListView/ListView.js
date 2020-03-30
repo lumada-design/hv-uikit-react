@@ -16,23 +16,27 @@ const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata })
     return renderer(value, index, viewConfiguration, metadata);
   });
 
-// TODO: review...others and className
 const ListView = ({
-  className = "",
-  id = "",
+  className,
+  id,
   icon,
-  viewConfiguration = null,
+  viewConfiguration,
   classes,
   renderer,
   values,
-  selectedValues = null,
+  selectedValues,
   cellSpacing = "0",
-  metadata = undefined,
-  ...other
+  metadata,
+  ...others
 }) => (
   <Grid container justify="center" alignContent="stretch">
     <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-      <table className={clsx(className, classes.root)} cellSpacing={cellSpacing} id={id} {...other}>
+      <table
+        className={clsx(className, classes.root)}
+        cellSpacing={cellSpacing}
+        id={id}
+        {...others}
+      >
         {!isNil(viewConfiguration) &&
           !isNil(viewConfiguration.columnConfiguration) &&
           viewConfiguration.columnConfiguration.length > 0 &&

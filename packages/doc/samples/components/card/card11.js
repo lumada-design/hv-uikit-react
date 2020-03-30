@@ -55,13 +55,22 @@ export default (
       subheader="Compressor"
       id="test"
       innerCardContent={<SingleContent classes={styles} />}
-      onClickAction={() => {
+      onClick={() => {
         console.log("CLICK");
       }}
       noFooter
       isSelectable
       selectOnClickAction
       semantic="sema4"
+      cardButtonProps={{
+        "aria-label": "Compressor"
+      }}
+      headerProps={{
+        "aria-label": "Compressor"
+      }}
+      footerProps={{
+        "aria-label": "Compressor"
+      }}
     />
   </div>
 );

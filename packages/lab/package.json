@@ -26,6 +26,7 @@
     "test:clean": "npx del-cli dist/**/tests",
     "prepare": "npm run build",
     "link": "npm link",
+    "lint:prettier": "npx prettier --check \"src/**/*.js\"",
     "license-check": "node ../../scripts/license-check.cjs ../../config/license-check.json"
   },
   "peerDependencies": {

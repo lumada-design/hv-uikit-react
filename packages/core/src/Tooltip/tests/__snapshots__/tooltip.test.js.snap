@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Multi Line Tooltip - No Header should render multiple line tooltip correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -777,28 +773,6 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
     >
       <CssBaseline />
       <WithStyles(HvTooltip)
-        TransitionComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "propTypes": Object {
-              "children": [Function],
-              "in": [Function],
-              "onEnter": [Function],
-              "onExit": [Function],
-              "style": [Function],
-              "timeout": [Function],
-            },
-            "render": [Function],
-          }
-        }
-        TransitionProps={
-          Object {
-            "timeout": 400,
-          }
-        }
-        enterDelay={300}
-        open={null}
-        placement="top"
         tooltipAnchor={
           <button
             id="testChild"
@@ -871,25 +845,6 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
         useSingle={false}
       >
         <HvTooltip
-          TransitionComponent={
-            Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "propTypes": Object {
-                "children": [Function],
-                "in": [Function],
-                "onEnter": [Function],
-                "onExit": [Function],
-                "style": [Function],
-                "timeout": [Function],
-              },
-              "render": [Function],
-            }
-          }
-          TransitionProps={
-            Object {
-              "timeout": 400,
-            }
-          }
           classes={
             Object {
               "color": "HvTooltip-color",
@@ -905,9 +860,6 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               "valuesContainer": "HvTooltip-valuesContainer",
             }
           }
-          enterDelay={300}
-          open={null}
-          placement="top"
           tooltipAnchor={
             <button
               id="testChild"
@@ -1219,11 +1171,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
 `;
 
 exports[`Multi Line Tooltip - With Header should render multiple line tooltip with header correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -1995,28 +1943,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
     >
       <CssBaseline />
       <WithStyles(HvTooltip)
-        TransitionComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "propTypes": Object {
-              "children": [Function],
-              "in": [Function],
-              "onEnter": [Function],
-              "onExit": [Function],
-              "style": [Function],
-              "timeout": [Function],
-            },
-            "render": [Function],
-          }
-        }
-        TransitionProps={
-          Object {
-            "timeout": 400,
-          }
-        }
-        enterDelay={300}
-        open={null}
-        placement="top"
         tooltipAnchor={
           <button
             id="testChild"
@@ -2063,25 +1989,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
         useSingle={false}
       >
         <HvTooltip
-          TransitionComponent={
-            Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "propTypes": Object {
-                "children": [Function],
-                "in": [Function],
-                "onEnter": [Function],
-                "onExit": [Function],
-                "style": [Function],
-                "timeout": [Function],
-              },
-              "render": [Function],
-            }
-          }
-          TransitionProps={
-            Object {
-              "timeout": 400,
-            }
-          }
           classes={
             Object {
               "color": "HvTooltip-color",
@@ -2097,9 +2004,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               "valuesContainer": "HvTooltip-valuesContainer",
             }
           }
-          enterDelay={300}
-          open={null}
-          placement="top"
           tooltipAnchor={
             <button
               id="testChild"
@@ -2333,11 +2237,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
 `;
 
 exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -3109,28 +3009,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     >
       <CssBaseline />
       <WithStyles(HvTooltip)
-        TransitionComponent={
-          Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "propTypes": Object {
-              "children": [Function],
-              "in": [Function],
-              "onEnter": [Function],
-              "onExit": [Function],
-              "style": [Function],
-              "timeout": [Function],
-            },
-            "render": [Function],
-          }
-        }
-        TransitionProps={
-          Object {
-            "timeout": 400,
-          }
-        }
-        enterDelay={300}
-        open={null}
-        placement="top"
         tooltipAnchor={
           <button
             id="testChild"
@@ -3146,28 +3024,8 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
             Grid View
           </ForwardRef(WithStyles)>
         }
-        useSingle={true}
       >
         <HvTooltip
-          TransitionComponent={
-            Object {
-              "$$typeof": Symbol(react.forward_ref),
-              "propTypes": Object {
-                "children": [Function],
-                "in": [Function],
-                "onEnter": [Function],
-                "onExit": [Function],
-                "style": [Function],
-                "timeout": [Function],
-              },
-              "render": [Function],
-            }
-          }
-          TransitionProps={
-            Object {
-              "timeout": 400,
-            }
-          }
           classes={
             Object {
               "color": "HvTooltip-color",
@@ -3183,9 +3041,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               "valuesContainer": "HvTooltip-valuesContainer",
             }
           }
-          enterDelay={300}
-          open={null}
-          placement="top"
           tooltipAnchor={
             <button
               id="testChild"
@@ -3201,7 +3056,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               Grid View
             </ForwardRef(WithStyles)>
           }
-          useSingle={true}
         >
           <WithStyles(ForwardRef(Tooltip))
             TransitionComponent={

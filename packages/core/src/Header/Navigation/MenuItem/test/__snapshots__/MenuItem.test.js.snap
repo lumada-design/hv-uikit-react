@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MenuItem withStyles should be able to render 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -783,7 +779,6 @@ exports[`MenuItem withStyles should be able to render 1`] = `
             "label": "someLabel",
           }
         }
-        onClick={[Function]}
         type="menubar"
       >
         <MenuItem
@@ -802,12 +797,10 @@ exports[`MenuItem withStyles should be able to render 1`] = `
               "label": "someLabel",
             }
           }
-          onClick={[Function]}
           type="menubar"
         >
           <li
             className="HvHeaderMenuItem-root HvHeaderMenuItem-menubarItem"
-            id="hv-menuItem-1"
             key="someLabel"
             role="none"
           >
@@ -828,7 +821,6 @@ exports[`MenuItem withStyles should be able to render 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -836,9 +828,9 @@ exports[`MenuItem withStyles should be able to render 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -854,7 +846,7 @@ exports[`MenuItem withStyles should be able to render 1`] = `
                   variant="normalText"
                 >
                   <p
-                    className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                    className="HvTypography-root HvTypography-normalText"
                   >
                     someLabel
                   </p>

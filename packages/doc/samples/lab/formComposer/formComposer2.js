@@ -43,21 +43,21 @@ const groups = [
     title: "Group 1 - Input",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 1"
         }}
         name="input1"
-        onChange={value => value}
-        value="Some text 1"
+        onChange={(event, value) => value}
+        initialValue="Some text 1"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 2"
         }}
         name="input2"
-        value="Some text 2"
+        initialValue="Some text 2"
       />
     ]
   },

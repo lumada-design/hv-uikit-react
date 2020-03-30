@@ -12,7 +12,7 @@ export default (
     <DropDownMenu
       id="dpmDisabled"
       dataList={menuOptions}
-      onClick={e => alert(e.label)}
+      onClick={(e, item) => console.log(item.label)}
       disablePortal={false}
       aria-label="dropdownMenu-Disabled"
       disabled

@@ -7,61 +7,50 @@ import Actions from "../../Actions";
 import withConfig from "../../config/withConfig";
 import styles from "./styles";
 
-const Footer = ({
-  classes,
-  id,
-  checkboxAriaLabel,
-  checkboxAriaLabelledBy,
-  checkboxAriaDescribedBy,
-  className,
-  actions,
-  actionsCallback,
-  actionsAlignment,
-  maxVisibleActions,
-  isSelectable,
-  onChange,
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxLabel,
-  actionItemWidth,
-  ...other
-}) => (
-  <CardActions className={clsx(classes.root, className)} {...other}>
-    {isSelectable && (
-      <div className={classes.leftContainer}>
-        <HvCheckBox
-          value={checkboxValue || id}
-          onChange={onChange}
-          label={checkboxLabel}
-          checked={checkboxSelected}
-          indeterminate={checkboxIndeterminate}
-          checkboxProps={{
-            "aria-label": checkboxAriaLabel,
-            "aria-labelledby": checkboxAriaLabelledBy,
-            "aria-describedby": checkboxAriaDescribedBy
-          }}
-          inputProps={{
-            "aria-label": "card-checkbox-input"
-          }}
+const getValue = checkboxProps =>
+  checkboxProps && checkboxProps.value ? checkboxProps.value : false;
+/**
+ * The footer container contains the actions of the cards also
+ * it creates a checkbox if the card is required to be selectable positioning it to the left.
+ */
+const Footer = props => {
+  const {
+    classes,
+    id,
+    className,
+    actions,
+    actionsCallback,
+    actionsAlignment = "left",
+    maxVisibleActions = 1,
+    isSelectable = false,
+    onChange,
+    checked,
+    checkboxProps,
+    ...others
+  } = props;
+
+  return (
+    <CardActions id={id} className={clsx(classes.root, className)} {...others}>
+      {isSelectable && (
+        <div className={classes.leftContainer}>
+          <HvCheckBox onChange={onChange} checked={checked} {...checkboxProps} />
+        </div>
+      )}
+      <div
+        className={
+          classes[`${isSelectable || Array.isArray(actions) ? "right" : actionsAlignment}Container`]
+        }
+      >
+        <Actions
+          id={getValue(checkboxProps) || id}
+          actions={actions}
+          maxVisibleActions={maxVisibleActions}
+          actionsCallback={actionsCallback}
         />
       </div>
-    )}
-    <div
-      className={
-        classes[`${isSelectable || Array.isArray(actions) ? "right" : actionsAlignment}Container`]
-      }
-    >
-      <Actions
-        id={checkboxValue || id}
-        actions={actions}
-        maxVisibleActions={maxVisibleActions}
-        actionItemWidth={actionItemWidth}
-        actionsCallback={actionsCallback}
-      />
-    </div>
-  </CardActions>
-);
+    </CardActions>
+  );
+};
 
 Footer.propTypes = {
   /**
@@ -89,18 +78,6 @@ Footer.propTypes = {
    * Component identifier.
    */
   id: PropTypes.string,
-  /**
-   *  Used to define a string that labels the checkbox element.
-   */
-  checkboxAriaLabel: PropTypes.string,
-  /**
-   *  Establishes relationships between the checkbox and their label(s), and its value should be one or more element IDs.
-   */
-  checkboxAriaLabelledBy: PropTypes.string,
-  /**
-   *  Used to indicate the IDs of the elements that describe the checkbox.
-   */
-  checkboxAriaDescribedBy: PropTypes.string,
   /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon}´
@@ -140,47 +117,16 @@ Footer.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   *  The value the checkbox in the footer will return when selected.
+   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
+   * note: if this value is specified the state of the checkbox must be managed
    */
-  checkboxValue: PropTypes.string,
+  checked: PropTypes.bool,
   /**
-   *  The label for the checkbox in the footer of the card.
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
    */
-  checkboxLabel: PropTypes.string,
-  /**
-   *  ´true´ if the checkbox is selected or ´false´ if not selected.
-   *
-   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
-   */
-  checkboxSelected: PropTypes.bool,
-  /**
-   *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
-   */
-  checkboxIndeterminate: PropTypes.bool,
-  /**
-   *  Width applicable to the action container, to handle an issue Safari has when using css flex:
-   *  It resizes descendant divs, unless a width is forced
-   */
-  actionItemWidth: PropTypes.number
+  checkboxProps: PropTypes.instanceOf(Object)
 };
 
-Footer.defaultProps = {
-  className: "",
-  id: "",
-  checkboxAriaLabel: undefined,
-  checkboxAriaLabelledBy: undefined,
-  checkboxAriaDescribedBy: undefined,
-  isSelectable: false,
-  onChange: () => {},
-  checkboxValue: "",
-  checkboxLabel: "",
-  actions: undefined,
-  actionsCallback: () => {},
-  actionsAlignment: "left",
-  maxVisibleActions: 1,
-  checkboxSelected: undefined,
-  checkboxIndeterminate: undefined,
-  actionItemWidth: undefined
-};
-
+export { Footer as RawFooter }; // Required to extract documentation because withConfig hides _docgen.
 export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));

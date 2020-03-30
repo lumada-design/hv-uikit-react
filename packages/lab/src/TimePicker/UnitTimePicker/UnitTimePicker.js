@@ -27,7 +27,7 @@ class UnitTimePicker extends React.Component {
    * @param {Number} value - new unit time value
    * @memberof UnitTimePicker
    */
-  handleCurrentValueChange = value => {
+  handleCurrentValueChange = (event, value) => {
     const unitTime = value === "" ? value : Number(value);
     if ((unitTime || unitTime === "") && unitTime.toString().length <= 2) {
       this.changeTimeUnit(unitTime);
@@ -114,7 +114,7 @@ class UnitTimePicker extends React.Component {
    */
   renderTimeUnit = () => {
     const { currentValue, isFocused } = this.state;
-    return isFocused ? currentValue : padTime(currentValue);
+    return isFocused ? currentValue.toString() : padTime(currentValue).toString();
   };
 
   /**

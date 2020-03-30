@@ -78,7 +78,7 @@ function MyVerticalNavigation() {
   const [value, setValue] = React.useState("02-03-02");
 
   return (
-    <VerticalNavigation isCollapsable={false}>
+    <VerticalNavigation id="sample1" isCollapsable={false}>
       <Navigation
         label="Example 1 navigation"
         selected={value}

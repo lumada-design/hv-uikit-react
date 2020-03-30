@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import find from "lodash/find";
 import isNil from "lodash/isNil";
 import isEqual from "lodash/isEqual";
-import uniqueId from "lodash/uniqueId";
 import sort from "lodash/sortBy";
 import isEmpty from "lodash/isEmpty";
 import { withStyles } from "@material-ui/core";
+import clsx from "clsx";
 import MultiButton from "./Multibutton/Multibutton";
+import withLabels from "../withLabels";
 import Search from "./Search/Search";
 import Sort from "./Sort/Sort";
 import Grid from "../Grid";
@@ -15,6 +16,12 @@ import Pagination from "../Pagination";
 import styles from "./styles";
 
 // TODO: review event args
+
+const DEFAULT_LABELS = {
+  sortBy: "Sort by",
+  inputLabel: "",
+  placeholder: "Search"
+};
 
 /**
  * Asset inventory component.
@@ -27,7 +34,6 @@ class AssetInventory extends React.Component {
   constructor(props) {
     super(props);
     const {
-      id,
       values,
       pageSizeOptions,
       page,
@@ -43,7 +49,6 @@ class AssetInventory extends React.Component {
     const selectedViewId =
       selectedView || (Array.isArray(children) ? children[0].props.id : children.props.id);
     this.state = {
-      internalId: id || uniqueId("hv-assetinventory-"),
       selectedView: selectedViewId,
       originalSelectedView: selectedView,
       pageSize: innerPageSize,
@@ -140,7 +145,7 @@ class AssetInventory extends React.Component {
       : values;
   };
 
-  changeView = id => {
+  changeView = (event, id) => {
     const selectedId = id[0];
 
     this.setState({
@@ -166,18 +171,19 @@ class AssetInventory extends React.Component {
    * @returns {*}
    */
   renderSearch = () => {
-    const { values, classes, searchBoxLabels, configuration, onSearch } = this.props;
-    const { internalId, searchString } = this.state;
+    const { id, values, classes, labels, configuration, onSearch } = this.props;
+    const { searchString } = this.state;
+    const { inputLabel, placeholder } = labels;
     return (
       <div className={classes.searchBoxContainer}>
         <Search
-          id={internalId}
+          id={id}
           searchString={searchString}
           values={values}
           metadata={configuration.metadata}
           onFilter={this.setSearchResults}
           onSearch={onSearch}
-          searchBoxLabels={searchBoxLabels}
+          labels={{ inputLabel, placeholder }}
         />
       </div>
     );
@@ -191,17 +197,16 @@ class AssetInventory extends React.Component {
   };
 
   renderSort = () => {
-    const { labels, configuration, classes, onSortChange, disablePortal } = this.props;
-    const { internalId, selectedSort } = this.state;
+    const { id, labels, configuration, classes, onSortChange, disablePortal } = this.props;
+    const { selectedSort } = this.state;
     const dropDownLabel = {
       title: labels.sortBy
     };
 
-    // TODO: pass sortProps instead of labels.sortBy
     return (
       <div className={classes.sortContainer}>
         <Sort
-          id={internalId}
+          id={id}
           labels={dropDownLabel}
           metadata={configuration.metadata}
           selected={selectedSort}
@@ -237,6 +242,7 @@ class AssetInventory extends React.Component {
 
   renderPagination = () => {
     const {
+      id,
       paginationServerSide,
       pages,
       pageSizeOptions,
@@ -245,7 +251,7 @@ class AssetInventory extends React.Component {
       onPageSizeChange
     } = this.props;
 
-    const { internalId, pageSize, page, values } = this.state;
+    const { pageSize, page, values } = this.state;
 
     const numPages = paginationServerSide ? pages : Math.ceil(values.length / pageSize);
 
@@ -257,7 +263,7 @@ class AssetInventory extends React.Component {
 
     return (
       <Pagination
-        id={internalId}
+        id={id}
         classes={{
           root: classes.pagination
         }}
@@ -368,6 +374,7 @@ class AssetInventory extends React.Component {
 
   render() {
     const {
+      id,
       classes,
       className,
       FilterPlaceholder,
@@ -377,7 +384,7 @@ class AssetInventory extends React.Component {
       onViewChange
     } = this.props;
 
-    const { internalId, selectedView } = this.state;
+    const { selectedView } = this.state;
 
     const showButtons = children.length > 1;
     const showSort = find(configuration.metadata, element => element.sortable);
@@ -397,10 +404,8 @@ class AssetInventory extends React.Component {
 
     const pagination = this.renderPagination();
 
-    // TODO: pass others accordingly
-    // TODO: pass classes.root
     return (
-      <div id={internalId} className={className}>
+      <div id={id} className={clsx(className, classes.root)}>
         {FilterPlaceholder && this.renderFilterPlaceholder()}
         <Grid container spacing={0}>
           <Grid container justify={align} alignItems="flex-end">
@@ -413,7 +418,7 @@ class AssetInventory extends React.Component {
                     <Grid item>
                       <div className={classes.multiButtons}>
                         <MultiButton
-                          id={internalId}
+                          id={id}
                           views={views}
                           changeView={this.changeView}
                           onViewChange={onViewChange}
@@ -452,6 +457,10 @@ AssetInventory.propTypes = {
    * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to the root component.
+     */
+    root: PropTypes.string,
     /**
      * Styles applied to the controls container.
      */
@@ -501,7 +510,18 @@ AssetInventory.propTypes = {
    * Labels.
    */
   labels: PropTypes.shape({
-    sortBy: PropTypes.string
+    /**
+     * Sort label.
+     */
+    sortBy: PropTypes.string,
+    /**
+     * the label on top of the search box.
+     */
+    inputLabel: PropTypes.string,
+    /**
+     * the placeholder value of the search box.
+     */
+    placeholder: PropTypes.string
   }),
   /**
    * Contains the metadata for the values and the necessary configuration for the views,
@@ -553,16 +573,6 @@ AssetInventory.propTypes = {
    * Indicates if the views are selectable.
    */
   isSelectable: PropTypes.bool,
-  /**
-   * An Object containing the various text associated with the search box.
-   *
-   * - inputLabel: the label on top of the search box.
-   * - placeholder: the placeholder value of the search box.
-   */
-  searchBoxLabels: PropTypes.shape({
-    inputLabel: PropTypes.string,
-    placeholder: PropTypes.string
-  }),
   /**
    * Values selected. The list can be maintain internally or it can be passed (overwriting the internal).
    */
@@ -632,19 +642,13 @@ AssetInventory.propTypes = {
 AssetInventory.defaultProps = {
   className: "",
   id: undefined,
-  labels: {
-    sortBy: "Sort by"
-  },
   FilterPlaceholder: null,
   onSelection: null,
   actions: null,
   actionsCallback: null,
   maxVisibleActions: 1,
   isSelectable: false,
-  searchBoxLabels: {
-    inputLabel: "",
-    placeholder: "Search"
-  },
+
   selectedValues: [],
   selectedView: null,
   hasPagination: false,
@@ -663,4 +667,6 @@ AssetInventory.defaultProps = {
   disablePortal: false
 };
 
-export default withStyles(styles, { name: "HvAssetInventory" })(AssetInventory);
+export default withStyles(styles, { name: "HvAssetInventory" })(
+  withLabels(DEFAULT_LABELS)(AssetInventory)
+);

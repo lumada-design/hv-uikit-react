@@ -14,6 +14,7 @@ describe("Hv Table", () => {
   let wrapper;
 
   const originalWarn = console.warn;
+  const eventMock = {};
 
   describe("index", () => {
     beforeEach(async () => {
@@ -274,7 +275,7 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleAll();
+      instance.toggleAll(eventMock);
       expect(instance.state.selectAll).toBe(true);
     });
 
@@ -293,7 +294,7 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(column[0].id);
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
     });
 
@@ -312,9 +313,9 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(column[0].id);
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
-      instance.toggleSelection(column[0].id);
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).not.toEqual([column[0].id]);
       expect(instance.state.selectAll).toBe(false);
     });
@@ -334,7 +335,7 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(column[0].id);
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
     });
 

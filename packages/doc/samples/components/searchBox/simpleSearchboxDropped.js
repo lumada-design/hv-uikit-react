@@ -29,7 +29,7 @@ export default (
     initialValue="a"
     suggestionListCallback={suggestionHandler}
     suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
-    onChange={value => {
+    onChange={(event, value) => {
       console.log(`${value} submitted`);
       return value;
     }}

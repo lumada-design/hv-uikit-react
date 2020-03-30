@@ -1,11 +1,4 @@
 [
-    {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name"
-    },
-    {
-        "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name"
-    },
-    {
-        "code": "button-name"
-    }
+  "button-name",
+  "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name"
 ]

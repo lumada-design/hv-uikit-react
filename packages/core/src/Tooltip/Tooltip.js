@@ -4,36 +4,46 @@ import { Fade, Tooltip, withStyles } from "@material-ui/core";
 import isNil from "lodash/isNil";
 import styles from "./styles";
 
-const HvTooltip = ({
-  classes,
-  open,
-  enterDelay,
-  placement,
-  useSingle,
-  tooltipAnchor,
-  tooltipData,
-  TransitionComponent,
-  TransitionProps,
-  ...others
-}) => (
-  <Tooltip
-    open={(!isNil(open) && open) || undefined}
-    enterDelay={enterDelay}
-    placement={placement}
-    TransitionComponent={TransitionComponent}
-    TransitionProps={TransitionProps}
-    classes={{
-      tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
-      popper: classes.popper
-    }}
-    title={tooltipData}
-    {...others}
-  >
-    {tooltipAnchor}
-  </Tooltip>
-);
+const HvTooltip = props => {
+  const {
+    className,
+    classes,
+    open,
+    enterDelay = 300,
+    placement = "top",
+    useSingle = true,
+    tooltipAnchor,
+    tooltipData,
+    TransitionComponent = Fade,
+    TransitionProps = { timeout: 400 },
+    ...others
+  } = props;
+
+  return (
+    <Tooltip
+      open={(!isNil(open) && open) || undefined}
+      enterDelay={enterDelay}
+      placement={placement}
+      TransitionComponent={TransitionComponent}
+      TransitionProps={TransitionProps}
+      className={className}
+      classes={{
+        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+        popper: classes.popper
+      }}
+      title={tooltipData}
+      {...others}
+    >
+      {tooltipAnchor}
+    </Tooltip>
+  );
+};
 
 HvTooltip.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -118,19 +128,6 @@ HvTooltip.propTypes = {
    * Defines if should use a single or multiline tooltip.
    */
   useSingle: PropTypes.bool
-};
-
-HvTooltip.defaultProps = {
-  open: null,
-  enterDelay: 300,
-  placement: "top",
-  useSingle: true,
-  tooltipData: null,
-  tooltipAnchor: null,
-  TransitionComponent: Fade,
-  TransitionProps: {
-    timeout: 400
-  }
 };
 
 export default withStyles(styles, { name: "HvTooltip" })(HvTooltip);

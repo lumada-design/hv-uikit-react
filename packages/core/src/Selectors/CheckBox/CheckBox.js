@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck";
 import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial";
+import { setId } from "../../utils";
 import labelPositions from "../labelPositions";
 import styles from "./styles";
 
@@ -52,19 +52,17 @@ const HvCheckbox = props => {
     id,
     checked,
     indeterminate,
-    disabled,
+    disabled = false,
     onChange,
-    value,
-    label,
-    labelPlacement,
+    value = "",
+    label = "",
+    labelPlacement = "end",
     formControlLabelProps,
-    checkboxProps,
-    ...other
+    ...others
   } = props;
   const icons = prepareIcon(classes, disabled);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
-  const [internalId] = useState(id || uniqueId("hv-checkbox-"));
 
   const onLocalChange = evt => {
     const isKeyEvent =
@@ -89,14 +87,14 @@ const HvCheckbox = props => {
       className={clsx(labelClass, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
-      id={internalId}
+      id={id}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
       control={
         <Checkbox
-          id={`${internalId}-input`}
+          id={setId(id, "input")}
           className={classes.checkBox}
           icon={icons.emptyIcon}
           indeterminateIcon={icons.indeterminateIcon}
@@ -109,8 +107,7 @@ const HvCheckbox = props => {
           value={value}
           checked={checked}
           indeterminate={indeterminate}
-          {...checkboxProps}
-          {...other}
+          {...others}
         />
       }
       {...formControlLabelProps}
@@ -200,25 +197,7 @@ HvCheckbox.propTypes = {
   /**
    * Extra properties passed to the MUI FormControlLabel component.
    */
-  formControlLabelProps: PropTypes.instanceOf(Object),
-  /**
-   * Extra properties passed to the MUI Checkbox component.
-   */
-  checkboxProps: PropTypes.instanceOf(Object)
-};
-
-HvCheckbox.defaultProps = {
-  className: "",
-  id: undefined,
-  value: "",
-  label: "",
-  checked: undefined,
-  indeterminate: undefined,
-  disabled: false,
-  onChange: () => {},
-  formControlLabelProps: undefined,
-  checkboxProps: undefined,
-  labelPlacement: "end"
+  formControlLabelProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvCheckBox" })(HvCheckbox);

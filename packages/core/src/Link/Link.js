@@ -4,15 +4,24 @@ import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const HvLink = props => {
-  const { classes, children, route, Component, onClick, data, tabIndex, ...other } = props;
+  const {
+    classes,
+    children,
+    route,
+    Component = "div",
+    onClick,
+    data,
+    tabIndex = 0,
+    ...others
+  } = props;
 
   return onClick ? (
     <Component
       role="button"
       className={classes.a}
-      onClick={event => onClick(event, data)}
+      onClick={event => onClick?.(event, data)}
       tabIndex={tabIndex}
-      {...other}
+      {...others}
     >
       {children}
     </Component>
@@ -58,13 +67,6 @@ HvLink.propTypes = {
    * Either a string to use a DOM element or a component.
    */
   Component: PropTypes.elementType
-};
-
-HvLink.defaultProps = {
-  tabIndex: 0,
-  onClick: undefined,
-  data: undefined,
-  Component: "div"
 };
 
 export default withStyles(styles, { name: "HvLink" })(HvLink);

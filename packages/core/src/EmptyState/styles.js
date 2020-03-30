@@ -33,15 +33,14 @@ const styles = theme => ({
     }
   },
   titleContainer: {
-    marginTop: `${theme.hv.spacing.xs}px`,
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    margin: "5px 0",
     [theme.breakpoints.only("xs")]: {
       marginTop: `${theme.hv.spacing.sm}px`
     }
   },
   messageContainer: {},
   actionContainer: {
-    marginTop: `${theme.hv.spacing.md}px`,
+    marginTop: `${theme.hv.spacing.sm}px`,
     "& a": {
       ...theme.hv.typography.inlineLink,
       textDecoration: "none"

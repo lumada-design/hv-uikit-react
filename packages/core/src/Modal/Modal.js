@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
-import uniqueId from "lodash/uniqueId";
 import { Dialog, withStyles } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/Close";
 import Button from "../Button";
+import { setId } from "../utils";
 import styles from "./styles";
 
 const Modal = ({
   classes,
-  className = "",
+  className,
   id,
   children,
   open,
@@ -19,8 +19,6 @@ const Modal = ({
   buttonTitle = "Close",
   ...others
 }) => {
-  const [internalId] = useState(id || uniqueId("hv-modal-"));
-
   const initialFocus = firstFocusable
     ? () => {
         if (!document.getElementById(firstFocusable)) {
@@ -35,7 +33,7 @@ const Modal = ({
   return (
     <Dialog
       className={clsx(classes.root, className)}
-      id={internalId}
+      id={id}
       open={open}
       PaperProps={{
         classes: {
@@ -59,7 +57,7 @@ const Modal = ({
       >
         <div aria-modal>
           <Button
-            id={`${internalId}-close`}
+            id={setId(id, "close")}
             className={classes.closeButton}
             category="ghost"
             onClick={event => onClose(event)}

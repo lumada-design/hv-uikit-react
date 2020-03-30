@@ -6,6 +6,16 @@ import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import Input from "../Input";
 import styles from "./styles";
+import withLabels from "../withLabels";
+
+const DEFAULT_LABELS = {
+  inputLabel: "",
+  placeholder: "",
+  warningText: "",
+  maxCharQuantityWarningText: "",
+  minCharQuantityWarningText: "",
+  requiredWarningText: ""
+};
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
@@ -100,10 +110,10 @@ class HvTextArea extends React.Component {
    *
    * @param {String} value - The value provided by the HvInput
    */
-  onChangeHandler = value => {
+  onChangeHandler = (event, value) => {
     const { onChange } = this.props;
 
-    const newValue = onChange(this.limitValue(value));
+    const newValue = onChange(event, this.limitValue(value));
 
     const textAreaValue = this.limitValue(!isNil(newValue) ? newValue : value);
 
@@ -124,7 +134,10 @@ class HvTextArea extends React.Component {
       initialValue,
       value,
       disabled,
-      resizable
+      resizable,
+      autoScroll,
+      onChange,
+      ...others
     } = this.props;
 
     const { currentValueLength } = this.state;
@@ -132,7 +145,7 @@ class HvTextArea extends React.Component {
 
     return (
       <div>
-        <div className={classes.textAreaContainer}>
+        <div className={classes.root}>
           <Input
             classes={{
               root: classes.container,
@@ -157,6 +170,7 @@ class HvTextArea extends React.Component {
             validationIconVisible={false}
             disableClear
             inputRef={this.textInputRef}
+            {...others}
           />
           {maxCharQuantity ? (
             <div className={classes.characterCounter}>
@@ -194,8 +208,6 @@ class HvTextArea extends React.Component {
     );
   }
 }
-
-// [classes.currentCounter]:!disabled,[classes.disabled]:disabled
 
 HvTextArea.propTypes = {
   /**
@@ -265,7 +277,7 @@ HvTextArea.propTypes = {
     /**
      * Style applied container of the text area component.
      */
-    textAreaContainer: PropTypes.string
+    root: PropTypes.string
   }).isRequired,
   /**
    * An Object containing the various text associated with the text area.
@@ -327,22 +339,14 @@ HvTextArea.propTypes = {
 HvTextArea.defaultProps = {
   className: "",
   id: undefined,
-  labels: {
-    inputLabel: "",
-    placeholder: "",
-    warningText: "",
-    maxCharQuantityWarningText: "",
-    minCharQuantityWarningText: "",
-    requiredWarningText: ""
-  },
   rows: 1,
   disabled: false,
   value: undefined,
   initialValue: undefined,
   maxCharQuantity: undefined,
-  onChange: value => value,
+  onChange: (event, value) => value,
   autoScroll: false,
   resizable: false
 };
 
-export default withStyles(styles, { name: "HvTextArea" })(HvTextArea);
+export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));

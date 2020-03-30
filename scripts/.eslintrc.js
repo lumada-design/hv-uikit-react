@@ -3,7 +3,6 @@ module.exports = {
   plugins: ["prettier"],
   parser: "babel-eslint",
   rules: {
-    "no-underscore-dangle": ["error", { allow: ["_offset"] }],
     "no-console": "off",
     "import/no-extraneous-dependencies": [
       "error",

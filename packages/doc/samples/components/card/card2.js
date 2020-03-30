@@ -140,15 +140,32 @@ export default (
       subheader={<StyledSubheader />}
       innerCardContent={<MultipleActionsWithMediaWithStyles />}
       actions={myActions}
-      actionsCallback={(id, a) => alert(`You have pressed ${a.label}`)}
+      actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
       actionsAlignment="left"
       semantic="sema4"
       isSelectable
-      checkboxValue="value"
+      cardButtonProps={{
+        "aria-label ": "leaf"
+      }}
+      headerProps={{
+        "aria-label ": "leaf"
+      }}
+      footerProps={{
+        "aria-label ": "leaf"
+      }}
+      checkboxProps={{
+        value: "value",
+        "aria-label": "leaf checkbox",
+        inputProps: {
+          "aria-label": "leaf input"
+        }
+      }}
       mediaPath={leaf}
       mediaHeight={160}
       mediaTitle="leafy leaf"
-      mediaAriaLabel="leafy leaf"
+      mediaProps={{
+        "aria-label": "leafy leaf"
+      }}
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>

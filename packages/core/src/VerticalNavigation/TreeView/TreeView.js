@@ -1,21 +1,20 @@
-import React, { useState, useRef, useMemo, useEffect, useCallback } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../useUniqueId";
 
 import { TreeViewControlContext, TreeViewStateContext } from "./TreeViewContexts";
 
 import arrayDiff from "../../utils/arrayDiff";
 import usePropAsRef from "../../utils/usePropAsRef";
-import { NodeTreeMapUtils, NodeTreeExpandUtils, NodeTreeNavigationUtils } from "./utils";
+import { NodeTreeExpandUtils, NodeTreeMapUtils, NodeTreeNavigationUtils } from "./utils";
 
 import styles from "./styles";
 
 const TreeView = props => {
   const {
     id,
-    className = "",
+    className,
     classes,
     mode = "treeview",
     collapsible = false,
@@ -23,10 +22,8 @@ const TreeView = props => {
     selected = null,
     onChange = null,
     children = null,
-    ...other
+    ...others
   } = props;
-
-  const internalId = useUniqueId(id, "hv-verticalnavigation-treeview");
 
   const [tabable, setTabable] = useState(null);
 
@@ -311,10 +308,10 @@ const TreeView = props => {
     <TreeViewControlContext.Provider value={treeControlContext}>
       <TreeViewStateContext.Provider value={treeStateContext}>
         <ul
-          id={internalId}
+          id={id}
           role={treeviewMode ? "tree" : undefined}
           className={clsx(classes.root, className)}
-          {...other}
+          {...others}
         >
           {children}
         </ul>

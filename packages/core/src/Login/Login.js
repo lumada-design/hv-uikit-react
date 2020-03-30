@@ -4,11 +4,36 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Success from "@hv/uikit-react-icons/dist/Success";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
+import withLabels from "../withLabels";
 import HvGrid from "../Grid";
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";
 import defaultBackImage from "./resources/bg.svg";
 import styles from "./styles";
+
+const DEFAULT_LABELS = {
+  titleText: "Welcome",
+  recoveryTitle: "Recover Credentials",
+  messageToRecover: "You will receive an email with instructions to recover your credentials",
+  messageAfterRecover: "The instructions to recover your credentials were sent.",
+  recoveryInputLabel: "Email",
+  recoveryPlaceholder: "Enter text",
+  recoveryErrorMessage: "The email you've entered doesn't match any account",
+  userNameInputLabel: "Username",
+  userNamePlaceHolder: "Enter text",
+  passwordInputLabel: "Password",
+  passwordPlaceHolder: "Enter text",
+  rememberMeLabel: "Remember me",
+  loginButtonMessage: "Logging",
+  loginButtonLabel: "Log in",
+  forgotYourCredentialMessage: "Forgot your credentials?",
+  emailLabel: "Email",
+  emailPlaceholder: "Enter Email",
+  cancelButton: "Cancel",
+  recoverButton: "Recover",
+  recoveringMessage: "Recovering",
+  incorrectCredentialsMessage: "Incorrect Username and/or Password. Please try again."
+};
 
 /**
  * Main container for the Login component.
@@ -271,31 +296,8 @@ HvLogin.defaultProps = {
   allowRememberMe: true,
   okRecoveryIcon: <Success semantic="sema1" />,
   errorLoginIcon: <Fail semantic="sema4" />,
-  labels: {
-    titleText: "Welcome",
-    recoveryTitle: "Recover Credentials",
-    messageToRecover: "You will receive an email with instructions to recover your credentials",
-    messageAfterRecover: "The instructions to recover your credentials were sent.",
-    recoveryInputLabel: "Email",
-    recoveryPlaceholder: "Enter text",
-    recoveryErrorMessage: "The email you've entered doesn't match any account",
-    userNameInputLabel: "Username",
-    userNamePlaceHolder: "Enter text",
-    passwordInputLabel: "Password",
-    passwordPlaceHolder: "Enter text",
-    rememberMeLabel: "Remember me",
-    loginButtonMessage: "Logging",
-    loginButtonLabel: "Log in",
-    forgotYourCredentialMessage: "Forgot your credentials?",
-    emailLabel: "Email",
-    emailPlaceholder: "Enter Email",
-    cancelButton: "Cancel",
-    recoverButton: "Recover",
-    recoveringMessage: "Recovering",
-    incorrectCredentialsMessage: "Incorrect Username and/or Password. Please try again."
-  },
   customMessage: {},
   formClasses: null
 };
 
-export default withStyles(styles, { name: "HvLogin" })(HvLogin);
+export default withStyles(styles, { name: "HvLogin" })(withLabels(DEFAULT_LABELS)(HvLogin));

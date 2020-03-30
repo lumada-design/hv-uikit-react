@@ -1,66 +1,64 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { Slide, Snackbar, withStyles } from "@material-ui/core";
-import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
+import { setId } from "../utils";
 import HvBannerContentWrapper from "./BannerWrapper";
 import styles from "./styles";
 
 const HvBanner = props => {
   const {
+    id,
     classes,
     className,
-    id,
     open,
     onClose,
-    anchorOrigin,
-    variant,
-    transitionDuration,
-    transitionDirection,
-    showIcon,
+    anchorOrigin = "top",
+    variant = "default",
+    transitionDuration = 300,
+    transitionDirection = "down",
+    showIcon = false,
     customIcon,
     actions,
     actionsCallback,
-    actionsPosition,
+    actionsPosition = "auto",
     label,
-    offset
+    offset = 60,
+    bannerContentProps,
+    ...others
   } = props;
 
-  const anchorOriginOffset = offset && {
+  const anchorOriginOffset = {
     anchorOriginTop: {
-      top: `${offset}px`
+      top: `${offset || 0}px`
     },
     anchorOriginBottom: {
-      bottom: `${offset}px`
+      bottom: `${offset || 0}px`
     }
   };
 
-  const [bannerId] = useState(id || uniqueId("hv-banner-"));
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
   const SlideTransition = properties => <Slide {...properties} direction={transitionDirection} />;
 
-  const bannerClasses = {
-    anchorOriginTopCenter: classes.anchorOriginTopCenter,
-    anchorOriginBottomCenter: classes.anchorOriginBottomCenter
-  };
-  bannerClasses.root = open ? classes.root : classes.rootClosed;
-
   return (
     <Snackbar
-      {...(offset && {
-        style: anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]
-      })}
+      style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]}
       className={className}
-      id={bannerId}
-      classes={bannerClasses}
+      id={id}
+      classes={{
+        root: open ? classes.root : classes.rootClosed,
+        anchorOriginTopCenter: classes.anchorOriginTopCenter,
+        anchorOriginBottomCenter: classes.anchorOriginBottomCenter
+      }}
       anchorOrigin={anchorOriginBanner}
       TransitionComponent={SlideTransition}
       open={open}
       transitionDuration={transitionDuration}
+      {...others}
     >
       <HvBannerContentWrapper
-        id={`${bannerId}-content`}
+        id={setId(id, "content")}
         content={label}
         variant={variant}
         customIcon={customIcon}
@@ -69,6 +67,7 @@ const HvBanner = props => {
         actionsCallback={actionsCallback}
         actionsPosition={actionsPosition}
         onClose={onClose}
+        {...bannerContentProps}
       />
     </Snackbar>
   );
@@ -165,23 +164,11 @@ HvBanner.propTypes = {
   /**
    * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
-  offset: PropTypes.number
-};
-
-HvBanner.defaultProps = {
-  className: "",
-  id: undefined,
-  label: "",
-  anchorOrigin: "top",
-  customIcon: null,
-  showIcon: false,
-  actions: null,
-  actionsCallback: () => {},
-  actionsPosition: "auto",
-  variant: "default",
-  transitionDuration: 300,
-  transitionDirection: "down",
-  offset: 60
+  offset: PropTypes.number,
+  /**
+   * Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions.
+   */
+  bannerContentProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvBanner" })(HvBanner);

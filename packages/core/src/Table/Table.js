@@ -241,14 +241,18 @@ class Table extends React.Component {
     return {
       selectWidth: 32,
       SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
-      SelectInputComponent: props => (
-        <HvCheckBox
-          id={`${internalId}-select-${props.id}`}
-          checked={isSelected(props.id, selection)}
-          onChange={() => this.toggleSelection(props.id)}
-          onClick={event => event.stopPropagation()}
-        />
-      )
+      SelectInputComponent: props => {
+        const { checkBoxProps } = props.row;
+        return (
+          <HvCheckBox
+            id={`${internalId}-select-${props.id}`}
+            checked={isSelected(props.id, selection)}
+            onChange={event => this.toggleSelection(event, props.id)}
+            onClick={event => event.stopPropagation()}
+            {...checkBoxProps}
+          />
+        );
+      }
     };
   };
 
@@ -374,27 +378,29 @@ class Table extends React.Component {
   /**
    * Selects or unselect a row.
    *
+   * @param {object} event - the event that triggered the selection
    * @param {Number} key - the key that uniquely identifies the row.
    */
-  toggleSelection = key => {
+  toggleSelection = (event, key) => {
     // start off with the existing state
     const { selection } = this.state;
     const { onSelection } = this.props;
-
     const select = toggleSelection(key, selection);
 
     if (select.length === 0) this.setState({ selectAll: false });
 
     // update the state
     this.setState({ selection: select }, () => {
-      onSelection(select);
+      onSelection(event, select);
     });
   };
 
   /**
    * Selects all the available rows on the page.
+   *
+   * @param {object} event - the event that triggered the selection
    */
-  toggleAll = () => {
+  toggleAll = event => {
     const { idForCheckbox, onSelection } = this.props;
     const { selectAll } = this.state;
 
@@ -405,7 +411,7 @@ class Table extends React.Component {
         selection: stateToSet.selection
       },
       () => {
-        onSelection(stateToSet.selection);
+        onSelection(event, stateToSet.selection);
       }
     );
   };
@@ -449,7 +455,9 @@ class Table extends React.Component {
       labels,
       secondaryActions,
       sortable,
-      ...other
+      allCheckBoxProps,
+      dropdownMenuProps,
+      ...others
     } = this.props;
 
     const { internalId, expanded, selectAll, selection, recordQuantity } = this.state;
@@ -472,10 +480,11 @@ class Table extends React.Component {
               disablePortal={false}
               icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
               dataList={secondaryActions}
-              onClick={(item, event) => {
+              onClick={(event, item) => {
                 event.stopPropagation();
-                item.action(props.original);
+                item.action(event, props.original);
               }}
+              {...dropdownMenuProps}
             />
           )
       });
@@ -536,10 +545,11 @@ class Table extends React.Component {
             <div className={classes.checkBoxText}>
               <HvCheckBox
                 id={`${internalId}-select-all`}
-                onChange={() => this.toggleAll()}
+                onChange={event => this.toggleAll(event)}
                 checked={selectAll}
                 disabled={data.length === 0}
                 indeterminate={isIndeterminateStatus(selection, recordQuantity)}
+                {...allCheckBoxProps}
               />
               <HvTypography variant="highlightText">
                 {this.getCheckBoxHeader(data.length)}
@@ -549,7 +559,7 @@ class Table extends React.Component {
         )}
         <AugmentedTable
           id={`${internalId}-data`}
-          {...other}
+          {...others}
           {...tableStyles}
           {...this.getPaginationProps()}
           {...this.getServerSizeProps()}
@@ -704,7 +714,8 @@ Table.propTypes = {
     })
   ).isRequired,
   /**
-   * Array with the data elements to show
+   * Array with the data elements to show.
+   * It can also define the checkBoxProps property to pass extra props to the row checkbox selector.
    */
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   /**
@@ -788,7 +799,15 @@ Table.propTypes = {
   column: PropTypes.shape({
     id: PropTypes.string,
     sortable: PropTypes.bool
-  })
+  }),
+  /**
+   *  Extra properties passed to the select all checkbox props.
+   */
+  allCheckBoxProps: PropTypes.instanceOf(Object),
+  /**
+   *  Extra properties passed to the dropdown menu.
+   */
+  dropdownMenuProps: PropTypes.instanceOf(Object)
 };
 
 Table.defaultProps = {
@@ -816,7 +835,9 @@ Table.defaultProps = {
   useRouter: false,
   selections: undefined,
   onSelection: () => {},
-  secondaryActions: null
+  secondaryActions: null,
+  allCheckBoxProps: undefined,
+  dropdownMenuProps: undefined
 };
-
+export { Table as RawTable }; // Required to extract documentation because withConfig hides _docgen.
 export default withStyles(styles, { name: "HvTable" })(withConfig(Table));

@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation withStyles should be able to render 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -785,8 +781,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
             },
           ]
         }
-        onClick={[Function]}
-        selected={null}
       >
         <Navigation
           classes={
@@ -802,13 +796,10 @@ exports[`Navigation withStyles should be able to render 1`] = `
               },
             ]
           }
-          onClick={[Function]}
-          selected={null}
         >
           <FocusProvider>
             <nav
               className="HvHeaderNavigation-root"
-              id="hv-navigation-1"
             >
               <WithStyles(MenuBar)
                 data={
@@ -849,7 +840,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
                   >
                     <ul
                       className="HvHeaderMenuBar-list"
-                      id="hv-menubar-2"
                       onFocus={[Function]}
                       onMouseOver={[Function]}
                     >
@@ -885,7 +875,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
                         >
                           <li
                             className="HvHeaderMenuItem-root HvHeaderMenuItem-menubarItem"
-                            id="hv-menuItem-3"
                             key="someLabel"
                             role="none"
                           >
@@ -906,7 +895,6 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                       "3xlTitle": "HvTypography-3xlTitle",
                                       "4xlTitle": "HvTypography-4xlTitle",
                                       "5xlTitle": "HvTypography-5xlTitle",
-                                      "baseFontFamily": "HvTypography-baseFontFamily",
                                       "disabledButtonText": "HvTypography-disabledButtonText",
                                       "highlightText": "HvTypography-highlightText",
                                       "infoText": "HvTypography-infoText",
@@ -914,9 +902,9 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                       "lTitle": "HvTypography-lTitle",
                                       "labelText": "HvTypography-labelText",
                                       "mTitle": "HvTypography-mTitle",
-                                      "margin": "HvTypography-margin",
                                       "normalText": "HvTypography-normalText",
                                       "placeholderText": "HvTypography-placeholderText",
+                                      "root": "HvTypography-root",
                                       "sLink": "HvTypography-sLink",
                                       "sText": "HvTypography-sText",
                                       "sTitle": "HvTypography-sTitle",
@@ -932,7 +920,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                   variant="normalText"
                                 >
                                   <p
-                                    className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                                    className="HvTypography-root HvTypography-normalText"
                                   >
                                     someLabel
                                   </p>

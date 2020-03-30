@@ -3,20 +3,32 @@ import PropTypes from "prop-types";
 import { Tab, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvTab = ({ classes, ...others }) => (
-  <Tab
-    classes={{
-      root: classes.root,
-      selected: classes.selected,
-      disabled: classes.disabled
-    }}
-    disableRipple
-    disableTouchRipple
-    {...others}
-  />
-);
+const HvTab = props => {
+  const { classes, ...others } = props;
+
+  return (
+    <Tab
+      classes={{
+        root: classes.root,
+        selected: classes.selected,
+        disabled: classes.disabled
+      }}
+      disableRipple
+      disableTouchRipple
+      {...others}
+    />
+  );
+};
 
 HvTab.propTypes = {
+  /**
+   * Identifier.
+   */
+  id: PropTypes.string,
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
