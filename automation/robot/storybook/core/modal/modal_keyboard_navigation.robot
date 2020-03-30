@@ -2,37 +2,28 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
-Suite Setup       open storybook
+Variables         variables.yaml
+Suite Setup       open storybook     ${STORYBOOK_URL}/iframe.html?id=coremodal--modal1
+Test Setup        Run Keywords       Reload Page
+...               AND                Wait Until Element Is Enabled    ${buttonWarning}    10s
 Suite Teardown    Close Browser
 Force Tags        smoke    keyboard
 
 
 *** Test Cases ***
-First element is focused
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coremodal--modal1
-    Wait Until Element Is Enabled    Warning                   10s
+navigate to next component element when TAB is pressed
     Click Button                     Warning
-    Wait Until Element Is Visible    css:div[role='dialog']    10s
-    Element Should Be Focused        test-close
-    verify element is not focused    apply
-    
-Apply button is focused
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coremodal--modal2
-    Wait Until Element Is Enabled    modalButton               7s
-    Click Button                     modalButton
-    Wait Until Element Is Visible    css:div[role='dialog']    10s
-    Element Should Be Focused        apply
-    verify element is not focused    test-close
-    
-Focus trap works
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coremodal--modal1
-    Wait Until Element Is Enabled    Warning                   10s
-    Click Button                     Warning
-    Wait Until Element Is Visible    css:div[role='dialog']    10s
-    Element Should Be Focused        test-close
-    Press Keys                       css:div[role='dialog']    TAB     
-    Element Should Be Focused        apply
-    Press Keys                       None                      TAB     
-    Element Should Be Focused        cancel
-    Press Keys                       None                      TAB 
-    Element Should Be Focused        test-close
+    Wait Until Element Is Visible    ${dialog}               5s
+    Press Keys                       None                    TAB
+    Element Should Be Focused        ${buttonApply}
+    Press Keys                       None                    TAB
+    Element Should Be Focused        ${buttonCancel}
+    Press Keys                       None                    TAB
+    Element Should Be Focused        ${dialogCloseButton}
+
+close modal when ESCAPE is pressed
+    Click Button                                Warning
+    Wait Until Element Is Visible               ${dialog}    5s
+    Press Keys                                  None         ESCAPE
+    Wait Until Page Does Not Contain Element    ${dialog}    5s
+

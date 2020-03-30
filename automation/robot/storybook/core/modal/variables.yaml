@@ -1,0 +1,6 @@
+buttonApply:          id:apply
+buttonCancel:         id:cancel
+buttonWarning:        xpath://button[contains(.,'Warning')]
+dialog:               css:div[role='dialog']
+dialogCloseButton:    id:test-close
+input:                css:input[type='text']
