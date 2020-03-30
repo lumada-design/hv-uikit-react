@@ -67,7 +67,7 @@ jobs:
       - name: Run Robot
         shell: cmd
         run: >-
-          robot 
+          pabot --processes 3 
           --variable STORYBOOK_URL:http://localhost:9002 
           --variable BROWSER:${{ matrix.browser }} 
           --exclude pa11y 
@@ -75,7 +75,7 @@ jobs:
           --exclude bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins
           --report reports/report.html
           --log reports/log.html 
-          automation\robot\storybook\core\badge 
+          automation\robot\storybook\core
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
