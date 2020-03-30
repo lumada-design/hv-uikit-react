@@ -2,7 +2,6 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
-Library    Screenshot    
 Suite Setup       Run Keywords
 ...               open storybook    ${STORYBOOK_URL}/iframe.html?id=corebadge--badgewithicon
 ...               AND               Wait Until Page Contains    8    10s
@@ -22,6 +21,5 @@ all badges renders a text
     Page Should Contain    88
     
 to delete
-    Take Screenshot            takeScreenshot.jpg
     Capture Page Screenshot    CapturePageScreenshot.png
 
