@@ -50,7 +50,7 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxValue={value.id}>
+    <HvListViewRow checkboxProps={{ value: value.id }}>
       <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon />
       </HvListViewCell>

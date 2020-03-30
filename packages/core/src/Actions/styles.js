@@ -1,4 +1,5 @@
 const styles = theme => ({
+  root: {},
   button: {
     "&:not(:last-child)": {
       marginRight: theme.spacing("xs")
@@ -8,10 +9,7 @@ const styles = theme => ({
     display: "flex"
   },
   dropDownMenu: {},
-  dropDownMenuIcon: {
-    width: "32px",
-    height: "32px"
-  }
+  dropDownMenuIcon: {}
 });
 
 export default styles;

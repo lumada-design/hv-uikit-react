@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card withStyles should be able to render with every property defined 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -778,37 +774,28 @@ exports[`Card withStyles should be able to render with every property defined 1`
       <CssBaseline />
       <WithStyles(HvCard)
         actions="actions"
-        actionsAlignment="left"
-        actionsCallback={[Function]}
-        checkboxLabel=""
-        checkboxSelected={false}
-        checkboxValue="value"
-        className=""
+        checkBoxProps={
+          Object {
+            "value": "value",
+          }
+        }
         headerTitle="title"
         icon="icon"
         innerCardContent={<div />}
         isSelectable={true}
-        maxVisibleActions={1}
         mediaPath="path"
-        mediaTitle=""
-        noFooter={false}
-        noHeader={false}
-        onChange={[Function]}
-        onClickAction={null}
-        selectOnClickAction={false}
-        semantic="sema0"
         subheader="subtitle"
       >
         <HvCard
           actions="actions"
-          actionsAlignment="left"
-          actionsCallback={[Function]}
-          checkboxLabel=""
-          checkboxSelected={false}
-          checkboxValue="value"
-          className=""
+          checkBoxProps={
+            Object {
+              "value": "value",
+            }
+          }
           classes={
             Object {
+              "cardContainer": "HvCard-cardContainer",
               "cardOutLine": "HvCard-cardOutLine",
               "root": "HvCard-root",
               "selectable": "HvCard-selectable",
@@ -843,44 +830,53 @@ exports[`Card withStyles should be able to render with every property defined 1`
           icon="icon"
           innerCardContent={<div />}
           isSelectable={true}
-          maxVisibleActions={1}
           mediaPath="path"
-          mediaTitle=""
-          noFooter={false}
-          noHeader={false}
-          onChange={[Function]}
-          onClickAction={null}
-          selectOnClickAction={false}
-          semantic="sema0"
           subheader="subtitle"
         >
           <div
-            className="HvCard-semanticContainer"
+            className="HvCard-semanticContainer HvCard-root"
           >
             <div
               className="HvCard-sema0"
             />
           </div>
           <WithStyles(ForwardRef(Card))
-            className="HvCard-root HvCard-selectable"
-            id="hv-card-1"
+            checkBoxProps={
+              Object {
+                "value": "value",
+              }
+            }
+            className="HvCard-cardContainer HvCard-selectable"
           >
             <ForwardRef(Card)
-              className="HvCard-root HvCard-selectable"
+              checkBoxProps={
+                Object {
+                  "value": "value",
+                }
+              }
+              className="HvCard-cardContainer HvCard-selectable"
               classes={
                 Object {
                   "root": "MuiCard-root",
                 }
               }
-              id="hv-card-1"
             >
               <WithStyles(ForwardRef(Paper))
-                className="MuiCard-root HvCard-root HvCard-selectable"
+                checkBoxProps={
+                  Object {
+                    "value": "value",
+                  }
+                }
+                className="MuiCard-root HvCard-cardContainer HvCard-selectable"
                 elevation={1}
-                id="hv-card-1"
               >
                 <ForwardRef(Paper)
-                  className="MuiCard-root HvCard-root HvCard-selectable"
+                  checkBoxProps={
+                    Object {
+                      "value": "value",
+                    }
+                  }
+                  className="MuiCard-root HvCard-cardContainer HvCard-selectable"
                   classes={
                     Object {
                       "elevation0": "MuiPaper-elevation0",
@@ -914,11 +910,14 @@ exports[`Card withStyles should be able to render with every property defined 1`
                     }
                   }
                   elevation={1}
-                  id="hv-card-1"
                 >
                   <div
-                    className="MuiPaper-root MuiCard-root HvCard-root HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
-                    id="hv-card-1"
+                    checkBoxProps={
+                      Object {
+                        "value": "value",
+                      }
+                    }
+                    className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
                   >
                     <WithStyles(Focus)
                       configuration={Object {}}
@@ -963,7 +962,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                             <div
                               aria-checked={false}
                               className="Focus-root-30 Focus-focusDisabled-33"
-                              id="hv-card-1-upper-area"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -973,17 +971,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                               selected={false}
                             >
                               <WithStyles(Header)
-                                aria-label="title"
-                                className=""
                                 headerTitle="title"
                                 icon="icon"
-                                id="hv-card-1-header"
-                                onClickAction={[Function]}
                                 subheader="subtitle"
                               >
                                 <Header
-                                  aria-label="title"
-                                  className=""
                                   classes={
                                     Object {
                                       "action": "HvCardHeader-action",
@@ -996,13 +988,10 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                   }
                                   headerTitle="title"
                                   icon="icon"
-                                  id="hv-card-1-header"
-                                  onClickAction={[Function]}
                                   subheader="subtitle"
                                 >
                                   <WithStyles(ForwardRef(CardHeader))
                                     action="icon"
-                                    aria-label="title"
                                     className="HvCardHeader-root"
                                     classes={
                                       Object {
@@ -1012,14 +1001,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                         "title": "HvCardHeader-titleShort",
                                       }
                                     }
-                                    id="hv-card-1-header"
-                                    onClick={[Function]}
                                     subheader="subtitle"
                                     title="title"
                                   >
                                     <ForwardRef(CardHeader)
                                       action="icon"
-                                      aria-label="title"
                                       className="HvCardHeader-root"
                                       classes={
                                         Object {
@@ -1031,16 +1017,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                           "title": "MuiCardHeader-title HvCardHeader-titleShort",
                                         }
                                       }
-                                      id="hv-card-1-header"
-                                      onClick={[Function]}
                                       subheader="subtitle"
                                       title="title"
                                     >
                                       <div
-                                        aria-label="title"
                                         className="MuiCardHeader-root HvCardHeader-root"
-                                        id="hv-card-1-header"
-                                        onClick={[Function]}
                                       >
                                         <div
                                           className="MuiCardHeader-content HvCardHeader-content"
@@ -1165,96 +1146,61 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                 </Header>
                               </WithStyles(Header)>
                               <WithStyles(Media)
-                                aria-label="title"
-                                className=""
-                                id="hv-card-1-media"
                                 mediaPath="path"
-                                mediaTitle=""
-                                onClickAction={[Function]}
                               >
                                 <Media
-                                  aria-label="title"
-                                  className=""
                                   classes={
                                     Object {
                                       "media": "HvCardMedia-media",
-                                      "mediaContainer": "HvCardMedia-mediaContainer",
+                                      "root": "HvCardMedia-root",
                                     }
                                   }
-                                  id="hv-card-1-media"
                                   mediaPath="path"
-                                  mediaTitle=""
-                                  onClickAction={[Function]}
                                 >
-                                  <div
-                                    className="HvCardMedia-mediaContainer"
+                                  <WithStyles(ForwardRef(CardMedia))
+                                    classes={
+                                      Object {
+                                        "media": "HvCardMedia-media",
+                                        "root": "HvCardMedia-root",
+                                      }
+                                    }
+                                    image="path"
+                                    role="img"
                                   >
-                                    <WithStyles(ForwardRef(CardMedia))
-                                      aria-label="title"
-                                      className="HvCardMedia-media"
-                                      id="hv-card-1-media"
+                                    <ForwardRef(CardMedia)
+                                      classes={
+                                        Object {
+                                          "img": "MuiCardMedia-img",
+                                          "media": "MuiCardMedia-media HvCardMedia-media",
+                                          "root": "MuiCardMedia-root HvCardMedia-root",
+                                        }
+                                      }
                                       image="path"
-                                      onClick={[Function]}
                                       role="img"
-                                      title=""
                                     >
-                                      <ForwardRef(CardMedia)
-                                        aria-label="title"
-                                        className="HvCardMedia-media"
-                                        classes={
+                                      <div
+                                        className="MuiCardMedia-root HvCardMedia-root"
+                                        role="img"
+                                        style={
                                           Object {
-                                            "img": "MuiCardMedia-img",
-                                            "media": "MuiCardMedia-media",
-                                            "root": "MuiCardMedia-root",
+                                            "backgroundImage": "url(\\"path\\")",
                                           }
                                         }
-                                        id="hv-card-1-media"
-                                        image="path"
-                                        onClick={[Function]}
-                                        role="img"
-                                        title=""
-                                      >
-                                        <div
-                                          aria-label="title"
-                                          className="MuiCardMedia-root HvCardMedia-media"
-                                          id="hv-card-1-media"
-                                          onClick={[Function]}
-                                          role="img"
-                                          style={
-                                            Object {
-                                              "backgroundImage": "url(\\"path\\")",
-                                            }
-                                          }
-                                          title=""
-                                        />
-                                      </ForwardRef(CardMedia)>
-                                    </WithStyles(ForwardRef(CardMedia))>
-                                  </div>
+                                      />
+                                    </ForwardRef(CardMedia)>
+                                  </WithStyles(ForwardRef(CardMedia))>
                                 </Media>
                               </WithStyles(Media)>
-                              <WithStyles(Content)
-                                className=""
-                                id="hv-card-1-content"
-                                innerCardContent={<div />}
-                                onClickAction={[Function]}
-                              >
+                              <WithStyles(Content)>
                                 <Content
-                                  className=""
                                   classes={
                                     Object {
-                                      "bottomBorder": "HvCardContent-bottomBorder",
                                       "content": "HvCardContent-content",
-                                      "item": "HvCardContent-item",
                                     }
                                   }
-                                  id="hv-card-1-content"
-                                  innerCardContent={<div />}
-                                  onClickAction={[Function]}
                                 >
                                   <WithStyles(ForwardRef(CardContent))
                                     className="HvCardContent-content"
-                                    id="hv-card-1-content"
-                                    onClick={[Function]}
                                   >
                                     <ForwardRef(CardContent)
                                       className="HvCardContent-content"
@@ -1263,13 +1209,9 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                           "root": "MuiCardContent-root",
                                         }
                                       }
-                                      id="hv-card-1-content"
-                                      onClick={[Function]}
                                     >
                                       <div
                                         className="MuiCardContent-root HvCardContent-content"
-                                        id="hv-card-1-content"
-                                        onClick={[Function]}
                                       >
                                         <div />
                                       </div>
@@ -1285,14 +1227,8 @@ exports[`Card withStyles should be able to render with every property defined 1`
                     <WithStyles(Component)
                       actions="actions"
                       actionsAlignment="left"
-                      actionsCallback={[Function]}
-                      checkboxAriaDescribedBy="hv-card-1-header"
-                      checkboxAriaLabelledBy="hv-card-1-header"
-                      checkboxLabel=""
-                      checkboxSelected={false}
-                      checkboxValue="value"
+                      checked={false}
                       disableSpacing={true}
-                      id="hv-card-1-footer"
                       isSelectable={true}
                       maxVisibleActions={1}
                       onChange={[Function]}
@@ -1300,12 +1236,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                       <Component
                         actions="actions"
                         actionsAlignment="left"
-                        actionsCallback={[Function]}
-                        checkboxAriaDescribedBy="hv-card-1-header"
-                        checkboxAriaLabelledBy="hv-card-1-header"
-                        checkboxLabel=""
-                        checkboxSelected={false}
-                        checkboxValue="value"
+                        checked={false}
                         classes={
                           Object {
                             "leftContainer": "HvCardFooter-leftContainer",
@@ -1314,7 +1245,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                           }
                         }
                         disableSpacing={true}
-                        id="hv-card-1-footer"
                         isSelectable={true}
                         maxVisibleActions={1}
                         onChange={[Function]}
@@ -1322,13 +1252,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                         <Footer
                           actions="actions"
                           actionsAlignment="left"
-                          actionsCallback={[Function]}
-                          checkboxAriaDescribedBy="hv-card-1-header"
-                          checkboxAriaLabelledBy="hv-card-1-header"
-                          checkboxLabel=""
-                          checkboxSelected={false}
-                          checkboxValue="value"
-                          className=""
+                          checked={false}
                           classes={
                             Object {
                               "leftContainer": "HvCardFooter-leftContainer",
@@ -1342,7 +1266,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                             }
                           }
                           disableSpacing={true}
-                          id="hv-card-1-footer"
                           isSelectable={true}
                           maxVisibleActions={1}
                           onChange={[Function]}
@@ -1383,36 +1306,11 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                   className="HvCardFooter-leftContainer"
                                 >
                                   <WithStyles(HvCheckbox)
-                                    checkboxProps={
-                                      Object {
-                                        "aria-describedby": "hv-card-1-header",
-                                        "aria-label": undefined,
-                                        "aria-labelledby": "hv-card-1-header",
-                                      }
-                                    }
                                     checked={false}
-                                    className=""
-                                    disabled={false}
-                                    inputProps={
-                                      Object {
-                                        "aria-label": "card-checkbox-input",
-                                      }
-                                    }
-                                    label=""
-                                    labelPlacement="end"
                                     onChange={[Function]}
-                                    value="value"
                                   >
                                     <HvCheckbox
-                                      checkboxProps={
-                                        Object {
-                                          "aria-describedby": "hv-card-1-header",
-                                          "aria-label": undefined,
-                                          "aria-labelledby": "hv-card-1-header",
-                                        }
-                                      }
                                       checked={false}
-                                      className=""
                                       classes={
                                         Object {
                                           "checkBox": "HvCheckBox-checkBox",
@@ -1425,16 +1323,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                           "labelTypography": "HvCheckBox-labelTypography",
                                         }
                                       }
-                                      disabled={false}
-                                      inputProps={
-                                        Object {
-                                          "aria-label": "card-checkbox-input",
-                                        }
-                                      }
-                                      label=""
-                                      labelPlacement="end"
                                       onChange={[Function]}
-                                      value="value"
                                     >
                                       <WithStyles(ForwardRef(FormControlLabel))
                                         className="HvCheckBox-container"
@@ -1446,8 +1335,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                         }
                                         control={
                                           <ForwardRef(WithStyles)
-                                            aria-describedby="hv-card-1-header"
-                                            aria-labelledby="hv-card-1-header"
                                             checked={false}
                                             checkedIcon={
                                               <ForwardRef(WithStyles)
@@ -1463,24 +1350,17 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                 className="HvCheckBox-icon"
                                               />
                                             }
-                                            id="hv-checkbox-2-input"
                                             indeterminateIcon={
                                               <ForwardRef(WithStyles)
                                                 className="HvCheckBox-icon"
                                               />
                                             }
-                                            inputProps={
-                                              Object {
-                                                "aria-label": "card-checkbox-input",
-                                              }
-                                            }
                                             onBlur={[Function]}
                                             onChange={[Function]}
-                                            value="value"
+                                            value=""
                                           />
                                         }
                                         disabled={false}
-                                        id="hv-checkbox-2"
                                         label=""
                                         labelPlacement="end"
                                       >
@@ -1498,8 +1378,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                           }
                                           control={
                                             <ForwardRef(WithStyles)
-                                              aria-describedby="hv-card-1-header"
-                                              aria-labelledby="hv-card-1-header"
                                               checked={false}
                                               checkedIcon={
                                                 <ForwardRef(WithStyles)
@@ -1515,34 +1393,24 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
-                                              id="hv-checkbox-2-input"
                                               indeterminateIcon={
                                                 <ForwardRef(WithStyles)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
-                                              inputProps={
-                                                Object {
-                                                  "aria-label": "card-checkbox-input",
-                                                }
-                                              }
                                               onBlur={[Function]}
                                               onChange={[Function]}
-                                              value="value"
+                                              value=""
                                             />
                                           }
                                           disabled={false}
-                                          id="hv-checkbox-2"
                                           label=""
                                           labelPlacement="end"
                                         >
                                           <label
                                             className="MuiFormControlLabel-root HvCheckBox-container"
-                                            id="hv-checkbox-2"
                                           >
                                             <WithStyles(ForwardRef(Checkbox))
-                                              aria-describedby="hv-card-1-header"
-                                              aria-labelledby="hv-card-1-header"
                                               checked={false}
                                               checkedIcon={
                                                 <ForwardRef(WithStyles)
@@ -1558,24 +1426,16 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
-                                              id="hv-checkbox-2-input"
                                               indeterminateIcon={
                                                 <ForwardRef(WithStyles)
                                                   className="HvCheckBox-icon"
                                                 />
                                               }
-                                              inputProps={
-                                                Object {
-                                                  "aria-label": "card-checkbox-input",
-                                                }
-                                              }
                                               onBlur={[Function]}
                                               onChange={[Function]}
-                                              value="value"
+                                              value=""
                                             >
                                               <ForwardRef(Checkbox)
-                                                aria-describedby="hv-card-1-header"
-                                                aria-labelledby="hv-card-1-header"
                                                 checked={false}
                                                 checkedIcon={
                                                   <ForwardRef(WithStyles)
@@ -1601,24 +1461,16 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                     className="HvCheckBox-icon"
                                                   />
                                                 }
-                                                id="hv-checkbox-2-input"
                                                 indeterminateIcon={
                                                   <ForwardRef(WithStyles)
                                                     className="HvCheckBox-icon"
                                                   />
                                                 }
-                                                inputProps={
-                                                  Object {
-                                                    "aria-label": "card-checkbox-input",
-                                                  }
-                                                }
                                                 onBlur={[Function]}
                                                 onChange={[Function]}
-                                                value="value"
+                                                value=""
                                               >
                                                 <WithStyles(ForwardRef(SwitchBase))
-                                                  aria-describedby="hv-card-1-header"
-                                                  aria-labelledby="hv-card-1-header"
                                                   checked={false}
                                                   checkedIcon={
                                                     <ForwardRef(WithStyles)
@@ -1643,21 +1495,17 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                       fontSize="default"
                                                     />
                                                   }
-                                                  id="hv-checkbox-2-input"
                                                   inputProps={
                                                     Object {
-                                                      "aria-label": "card-checkbox-input",
                                                       "data-indeterminate": false,
                                                     }
                                                   }
                                                   onBlur={[Function]}
                                                   onChange={[Function]}
                                                   type="checkbox"
-                                                  value="value"
+                                                  value=""
                                                 >
                                                   <ForwardRef(SwitchBase)
-                                                    aria-describedby="hv-card-1-header"
-                                                    aria-labelledby="hv-card-1-header"
                                                     checked={false}
                                                     checkedIcon={
                                                       <ForwardRef(WithStyles)
@@ -1683,21 +1531,17 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                         fontSize="default"
                                                       />
                                                     }
-                                                    id="hv-checkbox-2-input"
                                                     inputProps={
                                                       Object {
-                                                        "aria-label": "card-checkbox-input",
                                                         "data-indeterminate": false,
                                                       }
                                                     }
                                                     onBlur={[Function]}
                                                     onChange={[Function]}
                                                     type="checkbox"
-                                                    value="value"
+                                                    value=""
                                                   >
                                                     <WithStyles(ForwardRef(IconButton))
-                                                      aria-describedby="hv-card-1-header"
-                                                      aria-labelledby="hv-card-1-header"
                                                       className="PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
                                                       color="default"
                                                       component="span"
@@ -1708,8 +1552,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                       tabIndex={null}
                                                     >
                                                       <ForwardRef(IconButton)
-                                                        aria-describedby="hv-card-1-header"
-                                                        aria-labelledby="hv-card-1-header"
                                                         className="PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
                                                         classes={
                                                           Object {
@@ -1733,8 +1575,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                         tabIndex={null}
                                                       >
                                                         <WithStyles(ForwardRef(ButtonBase))
-                                                          aria-describedby="hv-card-1-header"
-                                                          aria-labelledby="hv-card-1-header"
                                                           centerRipple={true}
                                                           className="MuiIconButton-root PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
                                                           component="span"
@@ -1746,8 +1586,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                           tabIndex={null}
                                                         >
                                                           <ForwardRef(ButtonBase)
-                                                            aria-describedby="hv-card-1-header"
-                                                            aria-labelledby="hv-card-1-header"
                                                             centerRipple={true}
                                                             className="MuiIconButton-root PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
                                                             classes={
@@ -1766,9 +1604,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                             tabIndex={null}
                                                           >
                                                             <span
-                                                              aria-describedby="hv-card-1-header"
                                                               aria-disabled={false}
-                                                              aria-labelledby="hv-card-1-header"
                                                               className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-91 MuiCheckbox-root HvCheckBox-checkBox"
                                                               onBlur={[Function]}
                                                               onDragLeave={[Function]}
@@ -1787,15 +1623,13 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                                 className="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  aria-label="card-checkbox-input"
                                                                   checked={false}
                                                                   className="PrivateSwitchBase-input-94"
                                                                   data-indeterminate={false}
                                                                   disabled={false}
-                                                                  id="hv-checkbox-2-input"
                                                                   onChange={[Function]}
                                                                   type="checkbox"
-                                                                  value="value"
+                                                                  value=""
                                                                 />
                                                                 <WithStyles(Checkbox)
                                                                   className="HvCheckBox-icon"
@@ -1908,22 +1742,19 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                 >
                                   <WithStyles(Actions)
                                     actions="actions"
-                                    actionsCallback={[Function]}
-                                    id="value"
                                     maxVisibleActions={1}
                                   >
                                     <Actions
                                       actions="actions"
-                                      actionsCallback={[Function]}
                                       classes={
                                         Object {
                                           "actionContainer": "HvActions-actionContainer",
                                           "button": "HvActions-button",
                                           "dropDownMenu": "HvActions-dropDownMenu",
                                           "dropDownMenuIcon": "HvActions-dropDownMenuIcon",
+                                          "root": "HvActions-root",
                                         }
                                       }
-                                      id="value"
                                       maxVisibleActions={1}
                                     />
                                   </WithStyles(Actions)>

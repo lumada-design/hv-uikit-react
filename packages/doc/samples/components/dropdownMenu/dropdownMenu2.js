@@ -19,7 +19,8 @@ export default (
       dataList={menuOptions}
       placement="right"
       aria-label="dropdownMenu-2"
-      onClick={e => console.log(e.label)}
+      keepOpened={false}
+      onClick={(e, item) => console.log(item.label)}
     />
   </div>
 );

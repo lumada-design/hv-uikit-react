@@ -1,38 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import uniqueId from "lodash/uniqueId";
 import { CardHeader, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const DEFAULT_ID = "hv-header";
+const Header = props => {
+  const { classes, className, headerTitle, subheader, icon, id, onClick, ...others } = props;
 
-const Header = ({
-  classes,
-  className,
-  headerTitle,
-  subheader,
-  icon,
-  id,
-  onClickAction,
-  ...other
-}) => (
-  <CardHeader
-    id={id || uniqueId(DEFAULT_ID)}
-    title={headerTitle}
-    className={clsx(classes.root, className)}
-    subheader={subheader}
-    action={icon}
-    classes={{
-      title: icon ? classes.titleShort : classes.title,
-      subheader: classes.subheader,
-      action: classes.action,
-      content: classes.content
-    }}
-    onClick={onClickAction}
-    {...other}
-  />
-);
+  return (
+    <CardHeader
+      id={id}
+      title={headerTitle}
+      className={clsx(classes.root, className)}
+      subheader={subheader}
+      action={icon}
+      classes={{
+        title: icon ? classes.titleShort : classes.title,
+        subheader: classes.subheader,
+        action: classes.action,
+        content: classes.content
+      }}
+      onClick={onClick}
+      {...others}
+    />
+  );
+};
 
 Header.propTypes = {
   /**
@@ -51,10 +43,6 @@ Header.propTypes = {
      * Style applied to the root of the component.
      */
     root: PropTypes.string,
-    /**
-     * Style applied to the bottom border of the component is needed.
-     */
-    bottomBorder: PropTypes.string,
     /**
      * Styles applied to the title Typography element.
      */
@@ -91,15 +79,7 @@ Header.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClickAction: PropTypes.func
-};
-
-Header.defaultProps = {
-  className: "",
-  id: undefined,
-  icon: null,
-  subheader: undefined,
-  onClickAction: () => {}
+  onClick: PropTypes.func
 };
 
 export default withStyles(styles, { name: "HvCardHeader" })(Header);

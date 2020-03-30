@@ -10,7 +10,22 @@ export default (
   <div style={{ width: "500px" }}>
     <HvCard
       headerTitle={configurationNoMedia.title}
-      checkboxValue="value"
+      checkboxProps={{
+        value: "value",
+        "aria-label": "leaf checkbox",
+        inputProps: {
+          "aria-label": "leaf input"
+        }
+      }}
+      cardButtonProps={{
+        "aria-label": "leaf"
+      }}
+      headerProps={{
+        "aria-label": "leaf"
+      }}
+      footerProps={{
+        "aria-label": "leaf"
+      }}
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>

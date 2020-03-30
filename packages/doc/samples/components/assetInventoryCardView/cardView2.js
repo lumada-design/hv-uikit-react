@@ -120,7 +120,8 @@ const viewConfiguration = {
   },
   isSelectable: true,
   actions: myActions,
-  actionsCallback: (id, action) => alert(`You have pressed card ${id} with action ${action.label}`)
+  actionsCallback: (e, id, action) =>
+    alert(`You have pressed card ${id} with action ${action.label}`)
 };
 
 export default (

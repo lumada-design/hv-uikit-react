@@ -6,4 +6,12 @@ const labels = {
   placeholder: "Enter value"
 };
 
-export default <HvTextArea label="Text Area" labels={labels} id="test" width={610} />;
+export default (
+  <HvTextArea
+    label="Text Area"
+    labels={labels}
+    id="test"
+    width={610}
+    onChange={(event, value) => console.log(value)}
+  />
+);

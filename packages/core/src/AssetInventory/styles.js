@@ -1,4 +1,5 @@
 const styles = theme => ({
+  root: {},
   controlsContainer: {
     display: "flex",
     paddingBottom: `${theme.hv.spacing.md}px`,

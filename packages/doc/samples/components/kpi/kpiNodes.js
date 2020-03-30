@@ -12,7 +12,7 @@ const kpiContainer = {
 };
 
 export default (
-  <div style={kpiContainer}>
+  <div style={kpiContainer} id="nodes">
     <HvKpi labels={labels} />
   </div>
 );

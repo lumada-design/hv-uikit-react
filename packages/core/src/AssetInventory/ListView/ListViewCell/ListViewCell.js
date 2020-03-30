@@ -15,7 +15,7 @@ const cell = (
   viewConfiguration,
   columnIndex,
   semantic,
-  other
+  others
 ) => {
   const columnConfiguration =
     isNil(viewConfiguration) || isNil(viewConfiguration.columnConfiguration)
@@ -36,7 +36,7 @@ const cell = (
       })}
       align={align || alignConf}
       id={id}
-      {...other}
+      {...others}
     >
       {children}
     </td>
@@ -45,13 +45,13 @@ const cell = (
 
 const ListViewCell = ({
   classes,
-  className = "",
+  className,
   id = "",
   children,
-  align = undefined,
-  columnIndex = undefined,
-  semantic = undefined,
-  ...other
+  align,
+  columnIndex,
+  semantic,
+  ...others
 }) => (
   <ListViewContextConsumer>
     {contextConfiguration =>
@@ -64,7 +64,7 @@ const ListViewCell = ({
         contextConfiguration,
         columnIndex,
         semantic,
-        other
+        others
       )
     }
   </ListViewContextConsumer>

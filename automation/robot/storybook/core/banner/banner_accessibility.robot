@@ -12,4 +12,4 @@ storybook sample banner against WCAG2AA standard
     ...    = ATTENTION! =
     ...    the *6 errors* expected errors on file WCAG2AA_report_banner.txt are related with: https://github.com/pentaho/hv-uikit-react/issues/678
     ...    ---
-    pa11y result should be equal as file    ${pa11y_script}    ${CURDIR}/WCAG2AA_banner8.json
+    pa11y should not find errors    ${pa11y_script}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import moment from "moment";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { isKeypress, KeyboardCodes } from "../../../utils/KeyboardUtils";
+import { setId, isKeypress, KeyboardCodes } from "../../../utils";
 import HvTypography from "../../../Typography";
 import styles from "./styles";
 
@@ -141,7 +141,7 @@ class Header extends React.Component {
           </HvTypography>
         )}
         <div
-          id={`${id}-header`}
+          id={setId(id, "header")}
           className={clsx(classes.background, {
             [classes.invalid]: isInvalid
           })}
@@ -151,7 +151,7 @@ class Header extends React.Component {
           </div>
           <div className={classes.headerDate}>
             <input
-              id={`${id}-header-input`}
+              id={setId(id, "header-input")}
               placeholder={localeFormat}
               value={showValue}
               className={classes.input}

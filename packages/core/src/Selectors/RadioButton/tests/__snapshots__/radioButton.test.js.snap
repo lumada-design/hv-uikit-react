@@ -777,14 +777,7 @@ exports[`RadioButton withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(HvRadio)
-        className=""
-        disabled={false}
-        label=""
-        labelPlacement="end"
-        onChange={[Function]}
-        value=""
-      />
+      <WithStyles(HvRadio) />
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

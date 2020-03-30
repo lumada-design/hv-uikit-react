@@ -41,13 +41,13 @@ describe("<SearchBox />", () => {
   it("submits on enter", () => {
     const wrapper = mount(
       <HvProvider>
-        <SearchBox onChange={onChangeMock} onSubmit={onSubmitMock} />
+        <SearchBox id="hv-search-box-1" onChange={onChangeMock} onSubmit={onSubmitMock} />
       </HvProvider>
     );
+
     wrapper
-      .find(SearchBox)
-      .children()
-      .children()
+      .find("#hv-search-box-1-input")
+      .at(0)
       .props()
       .onKeyDown({ keyCode: 13 }, "value");
     expect(onSubmitMock).toHaveBeenCalled();

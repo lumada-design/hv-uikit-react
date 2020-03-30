@@ -2,12 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
-const HvFooter = ({ classes, labelLeftName, labelRightName }) => (
-  <div className={classes.root}>
-    <HvTypography className={classes.labelLeft}>{labelLeftName}</HvTypography>
-    <HvTypography className={classes.labelRight}>{labelRightName}</HvTypography>
-  </div>
-);
+const HvFooter = props => {
+  const { classes, labelLeftName, labelRightName } = props;
+
+  return (
+    <div className={classes.root}>
+      <HvTypography className={classes.labelLeft}>{labelLeftName}</HvTypography>
+      <HvTypography className={classes.labelRight}>{labelRightName}</HvTypography>
+    </div>
+  );
+};
 
 HvFooter.propTypes = {
   /**

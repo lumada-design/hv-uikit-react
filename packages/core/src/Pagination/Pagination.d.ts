@@ -55,6 +55,14 @@ export interface HvPaginationProps
    * An object containing all the labels for the component.
    */
   labels?: PaginationLabelsProp;
+  /**
+   * Other props to show page component.
+   */
+  showPageProps: Object;
+  /**
+   * Other props to pagination component.
+   */
+  navigationProps: Object;
 }
 
 export type HvPaginationClassKey =

@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb withStyles should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -776,15 +772,8 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(BreadCrumb)
-        className=""
-        component="div"
-        listRoute={Array []}
-        maxVisible={9999}
-        url={null}
-      >
+      <WithStyles(BreadCrumb)>
         <BreadCrumb
-          className=""
           classes={
             Object {
               "centerContainer": "HvBreadCrumb-centerContainer",
@@ -795,14 +784,9 @@ exports[`Breadcrumb withStyles should render correctly 1`] = `
               "separatorContainer": "HvBreadCrumb-separatorContainer",
             }
           }
-          component="div"
-          listRoute={Array []}
-          maxVisible={9999}
-          url={null}
         >
           <nav
             className="HvBreadCrumb-root"
-            id="hv-breadcrumb-1"
           >
             <ol
               className="HvBreadCrumb-orderedList"

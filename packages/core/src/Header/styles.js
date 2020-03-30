@@ -6,18 +6,14 @@ export const boxShadow = color => ({
 
 const styles = theme => ({
   root: {
-    display: "flex",
-    width: "100%"
+    height: 50
   },
   header: {
-    zIndex: theme.zIndex.appBar,
     display: "flex",
     alignItems: "center",
     width: "100%",
-    height: 50,
+    height: "100%",
     padding: `0 ${theme.hv.spacing.sm}px`,
-    borderTop: `4px solid ${theme.hv.palette.accent.acce3}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     ...boxShadow(theme.hv.palette.accent.acce1),
     "& > *:not(nav)": {
       zIndex: 2

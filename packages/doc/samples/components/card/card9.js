@@ -41,11 +41,25 @@ export default (
       subheader={configurationNoMedia.subtitle}
       isSelectable
       actions={myActions}
-      actionsCallback={(id, a) => alert(`You have pressed ${a.label}`)}
+      actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
       actionsAlignment="left"
-      checkboxValue="value"
+      checkboxProps={{
+        value: "value",
+        "aria-label": "Composed card",
+        inputProps: {
+          "aria-label": "composed input"
+        }
+      }}
+      cardButtonProps={{
+        "aria-label": "composed"
+      }}
+      headerProps={{
+        "aria-label": "composed"
+      }}
+      footerProps={{
+        "aria-label": "composed"
+      }}
       onChange={event => console.log(`my value is ${event.target.value}`)}
-      actionItemWidth={110}
       id="card"
     />
   </div>

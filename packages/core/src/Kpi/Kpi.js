@@ -4,6 +4,14 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import styles from "./styles";
+import withLabels from "../withLabels";
+
+const DEFAULT_LABELS = {
+  title: "",
+  indicator: undefined,
+  unit: undefined,
+  comparisonIndicatorInfo: undefined
+};
 
 const HvKpi = props => {
   const {
@@ -11,18 +19,18 @@ const HvKpi = props => {
     className,
     id,
     labels,
-    visualIndicator,
-    visualComparison,
-    trendIndicator,
-    indicatorUnitTextVariant,
-    indicatorTextVariant,
-    ...other
+    visualIndicator = null,
+    visualComparison = null,
+    trendIndicator = null,
+    indicatorUnitTextVariant = "sTitle",
+    indicatorTextVariant = "lTitle",
+    ...others
   } = props;
 
   const InternalVisualComparison = typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
-    <div id={id} className={clsx(classes.kpiContainer, className)} {...other}>
+    <div id={id} className={clsx(classes.root, className)} {...others}>
       <div>
         <HvTypography variant="highlightText">{labels.title}</HvTypography>
       </div>
@@ -32,15 +40,19 @@ const HvKpi = props => {
             {visualIndicator}
           </div>
         )}
-        <HvTypography
-          className={clsx(classes.spacingToTheRight, classes.indicatorText)}
-          variant={indicatorTextVariant}
-        >
-          {labels.indicator}
-        </HvTypography>
-        <HvTypography className={classes.indicatorUnit} variant={indicatorUnitTextVariant}>
-          {labels.unit}
-        </HvTypography>
+        {labels.indicator && (
+          <HvTypography
+            className={clsx(classes.spacingToTheRight, classes.indicatorText)}
+            variant={indicatorTextVariant}
+          >
+            {labels.indicator}
+          </HvTypography>
+        )}
+        {labels.unit && (
+          <HvTypography className={classes.indicatorUnit} variant={indicatorUnitTextVariant}>
+            {labels.unit}
+          </HvTypography>
+        )}
       </div>
       {visualComparison != null && (
         <div className={classes.comparisonComposition}>
@@ -86,7 +98,7 @@ HvKpi.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    kpiContainer: PropTypes.string,
+    root: PropTypes.string,
     /**
      * Styles applied to the component visual indicator.
      */
@@ -160,20 +172,4 @@ HvKpi.propTypes = {
   indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "sText", "infoText"])
 };
 
-HvKpi.defaultProps = {
-  className: "",
-  id: undefined,
-  trendIndicator: null,
-  visualIndicator: null,
-  visualComparison: null,
-  labels: {
-    title: "",
-    indicator: "",
-    unit: "",
-    comparisonIndicatorInfo: ""
-  },
-  indicatorTextVariant: "lTitle",
-  indicatorUnitTextVariant: "sTitle"
-};
-
-export default withStyles(styles, { name: "HvKpi" })(HvKpi);
+export default withStyles(styles, { name: "HvKpi" })(withLabels(DEFAULT_LABELS)(HvKpi));

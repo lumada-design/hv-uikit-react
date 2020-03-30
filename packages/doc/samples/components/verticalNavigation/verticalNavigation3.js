@@ -83,7 +83,7 @@ function MyVerticalNavigation() {
 
   return (
     <div style={sampleContainerStyle}>
-      <VerticalNavigation navigationLabel="Example 2 navigation" isCollapsable>
+      <VerticalNavigation id="sample3" isCollapsable>
         <Navigation
           label="Example 2 navigation"
           selected={value}

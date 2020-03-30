@@ -6,23 +6,26 @@ import { setData, setLayout } from "./lineChartPlotlyOverrides";
 import styles from "./styles";
 
 const Linechart = ({
+  id,
   classes,
   title,
   subtitle,
   data,
   layout,
   config,
-  tooltipType,
-  type,
+  tooltipType = "multiple",
+  type = "line",
   xAxisTitle,
   yAxisTitle,
-  rangeSlider
+  rangeSlider = false,
+  ...others
 }) => {
   const newData = setData(data, type);
   const newLayout = setLayout(layout, rangeSlider);
 
   return (
     <Chart
+      id={id}
       classes={classes}
       title={title}
       subtitle={subtitle}
@@ -32,11 +35,16 @@ const Linechart = ({
       layout={newLayout}
       config={config}
       tooltipType={tooltipType}
+      {...others}
     />
   );
 };
 
 Linechart.propTypes = {
+  /**
+   * An Id passed on to the component
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -81,19 +89,6 @@ Linechart.propTypes = {
    * Defines it should present a range slider.
    */
   rangeSlider: PropTypes.bool
-};
-
-Linechart.defaultProps = {
-  classes: null,
-  layout: undefined,
-  title: "",
-  subtitle: "",
-  tooltipType: "multiple",
-  config: null,
-  type: "line",
-  xAxisTitle: undefined,
-  yAxisTitle: undefined,
-  rangeSlider: false
 };
 
 export default withStyles(styles, { name: "HvLinechart" })(Linechart);

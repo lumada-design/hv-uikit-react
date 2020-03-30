@@ -110,8 +110,19 @@ export default (
       innerCardContent={<MultipleActionsWithStyle />}
       actions={myActions}
       actionsAlignment="right"
-      checkboxValue="value"
+      checkboxProps={{
+        value: "value"
+      }}
       maxVisibleActions={2}
+      cardButtonProps={{
+        "aria-label ": "leaf"
+      }}
+      headerProps={{
+        "aria-label ": "leaf"
+      }}
+      footerProps={{
+        "aria-label ": "leaf"
+      }}
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>

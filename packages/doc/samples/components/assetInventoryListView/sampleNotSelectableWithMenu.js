@@ -50,7 +50,7 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxValue={value.id}>
+    <HvListViewRow checkboxProps={{ value: value.id }}>
       <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon semantic={status.sema} className={classes.icon} />
       </HvListViewCell>
@@ -178,7 +178,7 @@ const configuration = {
     { id: "4", label: "Eject", disabled: false }
   ],
   maxVisibleActions: 2,
-  actionsCallback: (id, action) => {
+  actionsCallback: (e, id, action) => {
     alert(`You have pressed${id}with action${action.label}`);
   }
 };

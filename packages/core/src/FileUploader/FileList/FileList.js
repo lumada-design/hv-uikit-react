@@ -1,38 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
+import { setUid } from "../..";
 import File from "../File";
 import styles from "./styles";
 
 const FileList = ({
   id,
   classes,
-  list,
+  list = [],
   progressConjunctionLabel,
   removeFileButtonLabel,
   onFileRemoved
 }) => {
-  const [fileListId] = useState(id || uniqueId("hv-filelist-"));
-
   const hasFiles = list.length > 0;
+  if (!hasFiles) return null;
 
   return (
-    hasFiles && (
-      <ul id={fileListId} className={classes.list}>
-        {list.map(data => (
-          <li key={data.id}>
-            <File
-              id={`${fileListId}-${data.id}`}
-              data={data}
-              onFileRemoved={onFileRemoved}
-              progressConjunctionLabel={progressConjunctionLabel}
-              removeFileButtonLabel={removeFileButtonLabel}
-            />
-          </li>
-        ))}
-      </ul>
-    )
+    <ul id={id} className={classes.list}>
+      {list.map(data => (
+        <li key={data.id}>
+          <File
+            id={setUid(id, data.id)}
+            data={data}
+            onFileRemoved={onFileRemoved}
+            progressConjunctionLabel={progressConjunctionLabel}
+            removeFileButtonLabel={removeFileButtonLabel}
+          />
+        </li>
+      ))}
+    </ul>
   );
 };
 
@@ -61,12 +58,6 @@ FileList.propTypes = {
    * Value of aria-label to apply to remove file button in filelist
    * */
   removeFileButtonLabel: PropTypes.string.isRequired
-};
-
-FileList.defaultProps = {
-  id: null,
-  list: [],
-  onFileRemoved: () => {}
 };
 
 export default withStyles(styles, { name: "HvFileUploaderFileList" })(FileList);

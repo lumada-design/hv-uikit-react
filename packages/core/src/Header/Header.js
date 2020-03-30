@@ -1,26 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core";
-import useUniqueId from "../useUniqueId";
+import { AppBar, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const Header = ({ id, classes, position, children }) => {
-  const uniqueId = useUniqueId(id, "hv-header-");
-
-  return (
-    <div className={classes.root}>
-      <div id={uniqueId} className={classes.header} style={{ position }}>
-        {children}
-      </div>
-    </div>
-  );
-};
+const Header = ({ classes, position = "fixed", children, ...others }) => (
+  <AppBar classes={{ root: classes.root }} position={position} {...others}>
+    <div className={classes.header}>{children}</div>
+  </AppBar>
+);
 
 Header.propTypes = {
-  /**
-   * Id to be applied to the root node.
-   */
-  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -42,11 +31,6 @@ Header.propTypes = {
    * Children to be rendered.
    */
   children: PropTypes.node.isRequired
-};
-
-Header.defaultProps = {
-  id: null,
-  position: "fixed"
 };
 
 export default withStyles(styles, { name: "HvHeader" })(Header);

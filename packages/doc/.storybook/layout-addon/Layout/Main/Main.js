@@ -11,21 +11,35 @@ import corePackage from "../../../../../core/package";
 import labPackage from "../../../../../lab/package";
 import iconsPackage from "../../../../../icons/package";
 
+const getDocgenInfo = node => {
+  const mockProps = { classes: {} };
+
+  if (node && node.type && node.type.Naked && node.type.Naked.__docgenInfo) {
+    return node.type.Naked.__docgenInfo;
+  } else if (node && node.type && node.type.__docgenInfo) {
+    return node.type.__docgenInfo;
+  } else if (node && node.type && node.type.Naked instanceof Function) {
+    const internalNode = node.type.Naked(mockProps);
+    return getDocgenInfo(internalNode);
+  } else if (node && node.type instanceof Function) {
+    const internalNode = node.type(mockProps);
+    return getDocgenInfo(internalNode);
+  }
+  return undefined;
+};
+
 const getComponentsMetadata = children => {
   const nodes = React.Children.map(children, element => {
     if (!React.isValidElement(element)) return;
     return element;
   });
 
-  if (nodes[0] && nodes[0].type && nodes[0].type.Naked && nodes[0].type.Naked.__docgenInfo) {
+  const docgenInfo = getDocgenInfo(nodes[0]);
+
+  if (docgenInfo) {
     return {
-      propsMetaData: nodes[0].type.Naked.__docgenInfo.props,
-      descriptionMetadata: nodes[0].type.Naked.__docgenInfo.description
-    };
-  } else if (nodes[0] && nodes[0].type && nodes[0].type.__docgenInfo) {
-    return {
-      propsMetaData: nodes[0].type.__docgenInfo.props,
-      descriptionMetadata: nodes[0].type.__docgenInfo.description
+      propsMetaData: docgenInfo.props,
+      descriptionMetadata: docgenInfo.description
     };
   }
 

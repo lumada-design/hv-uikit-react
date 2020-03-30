@@ -7,7 +7,7 @@ import { toHaveNoViolations } from "jest-axe";
 import axe from "../../../config/axe-config";
 
 import HvProvider from "../../Provider";
-import DropZoneWithStyles from "..";
+import FileUploader from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -46,7 +46,7 @@ const onClickCallback = jest.fn();
 const setupComponent = (props = {}) =>
   mount(
     <HvProvider>
-      <DropZoneWithStyles {...props} />
+      <FileUploader id="fup1" {...props} />
     </HvProvider>
   );
 
@@ -62,7 +62,7 @@ const compProps = {
   onDropCapture: onClickCallback
 };
 
-describe("DropzoneA11Y", () => {
+describe("FileUploaderA11Y", () => {
   it("default state", async () => {
     wrapper = setupComponent(compProps);
 

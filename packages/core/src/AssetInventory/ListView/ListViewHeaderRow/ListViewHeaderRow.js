@@ -23,18 +23,12 @@ const HeaderCells = (classes, columnConfiguration) =>
         id={index}
         key={keyIndex}
       >
-        <HvTypography variant="labelText">{configuration.title}</HvTypography>
+        <HvTypography variant="labelText">{configuration.title || ""}</HvTypography>
       </th>
     );
   });
 
-const ListViewHeaderRow = ({
-  viewConfiguration = null,
-  classes,
-  id = "",
-  className = "",
-  ...other
-}) => {
+const ListViewHeaderRow = ({ viewConfiguration, classes, id, className, ...others }) => {
   const { columnConfiguration } = viewConfiguration;
 
   return (
@@ -44,7 +38,7 @@ const ListViewHeaderRow = ({
         [classes.notSelectable]: !viewConfiguration.isSelectable
       })}
       id={id}
-      {...other}
+      {...others}
     >
       {viewConfiguration.isSelectable && <th aria-label="selectable" />}
       {HeaderCells(classes, columnConfiguration)}

@@ -13,9 +13,9 @@ const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
     })
   );
 
-  const onChangeViewHandler = (e, buttonId) => {
-    changeView(buttonId);
-    onViewChange(buttonId);
+  const onChangeViewHandler = (event, buttonId) => {
+    changeView(event, buttonId);
+    onViewChange(event, buttonId);
   };
 
   return (

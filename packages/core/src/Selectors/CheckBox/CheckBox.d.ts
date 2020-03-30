@@ -19,10 +19,6 @@ export interface HvCheckBoxProps extends StandardProps<CheckboxProps, HvCheckBox
    * Extra properties passed to the MUI FormControlLabel component.
    */
   formControlLabelProps?: FormControlProps;
-  /**
-   * Extra properties passed to the MUI Checkbox component.
-   */
-  checkboxProps?: CheckboxProps;
 }
 
 export type HvCheckBoxClassKey =

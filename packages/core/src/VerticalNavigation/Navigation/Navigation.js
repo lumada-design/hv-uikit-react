@@ -1,32 +1,39 @@
-import React, { useMemo, useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../useUniqueId";
+import clsx from "clsx";
 import TreeView, { TreeViewItem } from "../TreeView";
+import { setId } from "../../utils";
 import styles from "./styles";
 
-const createListHierarchy = items =>
+const createListHierarchy = (items, id) =>
   items.map(item => {
     const { id: itemId, label: itemLabel, icon, data: children } = item;
 
     return (
-      <TreeViewItem key={itemId} nodeId={itemId} label={itemLabel} icon={icon} payload={item}>
+      <TreeViewItem
+        id={setId(id, itemId)}
+        key={itemId}
+        nodeId={itemId}
+        label={itemLabel}
+        icon={icon}
+        payload={item}
+      >
         {children ? createListHierarchy(children) : undefined}
       </TreeViewItem>
     );
   });
 
 const Navigation = ({
+  className,
   classes,
   id,
   label = null,
   data,
   selected = null,
   onClick = null,
-  ...other
+  ...others
 }) => {
-  const internalId = useUniqueId(id, "hv-verticalnavigation-navigation");
-
   const handleChange = useCallback(
     (event, selectedId, selectedItem) => {
       if (onClick) onClick(event, selectedItem);
@@ -34,12 +41,12 @@ const Navigation = ({
     [onClick]
   );
 
-  const children = useMemo(() => data && createListHierarchy(data), [data]);
+  const children = useMemo(() => data && createListHierarchy(data, id), [data, id]);
 
   return (
-    <nav id={internalId} className={classes.root} aria-label={label} {...other}>
+    <nav id={id} className={clsx(className, classes.root)} aria-label={label} {...others}>
       <TreeView
-        id={`${internalId}-tree`}
+        id={setId(id, "tree")}
         selected={selected}
         onChange={handleChange}
         mode="navigation"
@@ -51,6 +58,10 @@ const Navigation = ({
 };
 
 Navigation.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */

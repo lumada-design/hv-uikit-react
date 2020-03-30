@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
 import { IconButton, withStyles } from "@material-ui/core";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
 import Close from "@hv/uikit-react-icons/dist/Close";
 import Success from "@hv/uikit-react-icons/dist/Success";
 import HvTypography from "../../Typography";
+import { setId } from "../../utils/setId";
 import { convertUnits } from "../utils";
 import styles from "./styles";
 
@@ -58,8 +58,6 @@ const File = ({
   onFileRemoved,
   removeFileButtonLabel
 }) => {
-  const [fileId] = useState(id || uniqueId("hv-file-"));
-
   const hasError = data.status === "fail";
   const inProgress = data.status === "progress";
   const progressText = getProgressText(classes, data, progressConjunctionLabel);
@@ -82,11 +80,11 @@ const File = ({
       <span className={classes.progressTextContainer}>{progressText}</span>
 
       <IconButton
-        id={`${fileId}-remove-button`}
+        id={setId(id, "remove-button")}
         aria-label={removeFileButtonLabel}
         className={classes.removeButton}
         category="ghost"
-        onClick={() => onFileRemoved(data)}
+        onClick={() => onFileRemoved?.(data)}
       >
         <Close iconSize="XS" />
       </IconButton>
@@ -149,10 +147,6 @@ File.propTypes = {
    * Value of aria-label to apply to remove file button in filelist
    * */
   removeFileButtonLabel: PropTypes.string.isRequired
-};
-
-File.defaultProps = {
-  id: null
 };
 
 export default withStyles(styles, { name: "HvFileUploaderFile" })(File);

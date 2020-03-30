@@ -72,14 +72,14 @@ describe("UnitTimePicker", () => {
   });
 
   it("handleCurrentValueChange - should update the currentValue in the state if the value is valid (has two or less digits)", () => {
-    unitTimePickerInstance.handleCurrentValueChange(41);
+    unitTimePickerInstance.handleCurrentValueChange(null, 41);
     expect(unitTimePickerInstance.state.currentValue).toBe(41);
-    unitTimePickerInstance.handleCurrentValueChange("42");
+    unitTimePickerInstance.handleCurrentValueChange(null, "42");
     expect(unitTimePickerInstance.state.currentValue).toBe(42);
   });
 
   it("handleCurrentValueChange - should update the currentValue to empty", () => {
-    unitTimePickerInstance.handleCurrentValueChange("");
+    unitTimePickerInstance.handleCurrentValueChange(null, "");
     expect(unitTimePickerInstance.state.currentValue).toBe("");
   });
 
@@ -129,7 +129,7 @@ describe("UnitTimePicker", () => {
   it("renderTimeUnit - should return the state currentValue if isFocused", () => {
     unitTimePickerComponent.setState({ currentValue: 20, isFocused: true });
     const timeUnitToRender = unitTimePickerInstance.renderTimeUnit();
-    expect(timeUnitToRender).toBe(20);
+    expect(timeUnitToRender).toBe("20");
   });
 
   it("renderTimeUnit - should return the state currentValue padded with zeros", () => {

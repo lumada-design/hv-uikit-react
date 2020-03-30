@@ -2,12 +2,17 @@ import React from "react";
 import { mount } from "enzyme";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
+import { toHaveNoViolations } from "jest-axe";
 import Banner from "../Banner";
 import HvBannerContentWrapper from "../BannerWrapper";
 import BannerWithStyles from "../index";
 import HvProvider from "../../Provider";
 import { mapSeverityToVariant, severityIcon, variantIcon } from "../BannerWrapper/VariantUtils";
 import Button from "../../Button";
+
+import axe from "../../../config/axe-config";
+
+expect.extend(toHaveNoViolations);
 
 describe("Banner ", () => {
   const wrapper = mount(
@@ -37,7 +42,7 @@ describe("Banner ", () => {
   it("should render the BannerContentWrapper component", () => {
     const bannerComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="default" open onClose={() => {}} />
+        <BannerWithStyles variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
     ).find(HvBannerContentWrapper);
     expect(bannerComponent.length).toBe(1);
@@ -46,7 +51,7 @@ describe("Banner ", () => {
   it("should render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="error" open showIcon onClose={() => {}} />
+        <BannerWithStyles variant="error" label="label" open showIcon onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -55,7 +60,7 @@ describe("Banner ", () => {
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="error" open showIcon={false} onClose={() => {}} />
+        <BannerWithStyles variant="error" label="label" open showIcon={false} onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(0);
@@ -64,7 +69,13 @@ describe("Banner ", () => {
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="default" open customIcon={<Fail />} onClose={() => {}} />
+        <BannerWithStyles
+          variant="default"
+          label="label"
+          open
+          customIcon={<Fail />}
+          onClose={() => {}}
+        />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -74,6 +85,7 @@ describe("Banner ", () => {
     const buttonComponent = mount(
       <HvProvider>
         <BannerWithStyles
+          label="label"
           variant="default"
           open
           actions={<Button>button</Button>}
@@ -91,6 +103,7 @@ describe("Banner ", () => {
         <BannerWithStyles
           variant="default"
           open
+          label="label"
           actions={[
             {
               id: "testButton",
@@ -111,6 +124,7 @@ describe("Banner ", () => {
         <BannerWithStyles
           variant="default"
           open
+          label="label"
           actions={<Button>button</Button>}
           actionsPosition="bottom-right"
           onClose={() => {}}
@@ -126,6 +140,7 @@ describe("Banner ", () => {
         <BannerWithStyles
           variant="default"
           open
+          label="label"
           actions={[
             {
               id: "testButton",
@@ -144,7 +159,7 @@ describe("Banner ", () => {
     const offset = 10;
     let component = mount(
       <HvProvider>
-        <BannerWithStyles open offset={offset} onClose={() => {}} />
+        <BannerWithStyles open offset={offset} onClose={() => {}} label="label" />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -152,7 +167,13 @@ describe("Banner ", () => {
 
     component = mount(
       <HvProvider>
-        <BannerWithStyles open offset={offset} anchorOrigin="bottom" onClose={() => {}} />
+        <BannerWithStyles
+          open
+          offset={offset}
+          anchorOrigin="bottom"
+          label="label"
+          onClose={() => {}}
+        />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -185,5 +206,57 @@ describe("Banner ", () => {
 
     const test = mapSeverityToVariant("test");
     expect(test).toBe("default");
+  });
+});
+
+describe("BannerA11Y", () => {
+  const bannerContentProps = {
+    actionProps: {
+      "aria-label": "Close Button Label"
+    }
+  };
+
+  it("simple banner should have no errors", async () => {
+    const wrapper = mount(
+      <HvProvider>
+        <BannerWithStyles
+          variant="default"
+          open
+          showIcon
+          label="Label"
+          onClose={() => {}}
+          bannerContentProps={bannerContentProps}
+        />
+      </HvProvider>
+    );
+
+    const results = await axe(wrapper.html());
+
+    expect(results).toHaveNoViolations();
+  });
+
+  it("banner with actions should have no errors", async () => {
+    const wrapper = mount(
+      <HvProvider>
+        <BannerWithStyles
+          variant="default"
+          open
+          actions={[
+            {
+              id: "testButton",
+              label: "test"
+            }
+          ]}
+          showIcon
+          label="Label"
+          onClose={() => {}}
+          bannerContentProps={bannerContentProps}
+        />
+      </HvProvider>
+    );
+
+    const results = await axe(wrapper.html());
+
+    expect(results).toHaveNoViolations();
   });
 });

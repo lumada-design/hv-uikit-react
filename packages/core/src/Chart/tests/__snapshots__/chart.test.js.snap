@@ -778,8 +778,6 @@ exports[`Chart withStyles should render correctly 1`] = `
       }
     >
       <WithStyles(Chart)
-        classes={null}
-        config={null}
         data={
           Array [
             Object {
@@ -801,11 +799,6 @@ exports[`Chart withStyles should render correctly 1`] = `
           ]
         }
         layout={Object {}}
-        subtitle=""
-        title=""
-        tooltipType="multiple"
-        xAxisTitle={null}
-        yAxisTitle={null}
       />
     </ContextProvider>
   </ThemeProvider>

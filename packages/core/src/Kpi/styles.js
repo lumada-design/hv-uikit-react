@@ -1,5 +1,5 @@
 const styles = theme => ({
-  kpiContainer: {
+  root: {
     width: "100%",
     height: "100%"
   },

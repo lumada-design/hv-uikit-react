@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MenuBar withStyles should be able to render 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -777,8 +773,6 @@ exports[`MenuBar withStyles should be able to render 1`] = `
     >
       <CssBaseline />
       <WithStyles(MenuBar)
-        data={Array []}
-        onClick={[Function]}
         type="menubar"
       >
         <MenuBar
@@ -792,8 +786,6 @@ exports[`MenuBar withStyles should be able to render 1`] = `
               "root": "HvHeaderMenuBar-root",
             }
           }
-          data={Array []}
-          onClick={[Function]}
           type="menubar"
         >
           <div
@@ -801,7 +793,6 @@ exports[`MenuBar withStyles should be able to render 1`] = `
           >
             <ul
               className="HvHeaderMenuBar-list"
-              id="hv-menubar-1"
               onFocus={[Function]}
               onMouseOver={[Function]}
             />

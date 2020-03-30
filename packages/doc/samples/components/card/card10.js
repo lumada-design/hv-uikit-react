@@ -55,16 +55,33 @@ export default (
       headerTitle="Asset Avatar L90"
       subheader="Compressor"
       id="test"
-      defaultCardAriaLabel="Asset Avatar L90 press enter or space to select this card"
       innerCardContent={<SingleContent classes={styles} />}
-      onClickAction={() => {
+      onClick={() => {
         console.log("CLICK");
       }}
       isSelectable
       selectOnClickAction
       mediaPath={compressor}
       mediaHeight={186}
-      mediaAriaLabel="Compressor"
+      mediaProps={{
+        "aria-label": "Compressor"
+      }}
+      checkboxProps={{
+        value: "value",
+        "aria-label": "Composed card",
+        inputProps: {
+          "aria-label": "composed input"
+        }
+      }}
+      cardButtonProps={{
+        "aria-label": "Asset Avatar L90 press enter or space to select this card"
+      }}
+      headerProps={{
+        "aria-label": "leaf"
+      }}
+      footerProps={{
+        "aria-label": "leaf"
+      }}
     />
   </div>
 );

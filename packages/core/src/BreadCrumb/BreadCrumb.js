@@ -6,9 +6,9 @@ import Separator from "@hv/uikit-react-icons/dist/DropRightXS";
 import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
 import HvTypography from "../Typography";
 import HvDropDownMenu from "../DropDownMenu";
+import { setId } from "../utils";
 import HvLink from "../Link";
 import styles from "./styles";
 
@@ -46,11 +46,6 @@ Page.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired
 };
 
-Page.defaultProps = {
-  Component: undefined,
-  onClick: undefined
-};
-
 const PathElement = ({ classes, children }) => (
   <li className={classes.centerContainer}>
     {children}
@@ -65,7 +60,7 @@ PathElement.propTypes = {
   children: PropTypes.element.isRequired
 };
 
-const pathWithSubMenu = (listRoute, maxVisible) => {
+const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
 
@@ -73,10 +68,10 @@ const pathWithSubMenu = (listRoute, maxVisible) => {
     1,
     nbrElemToSubMenu,
     <HvDropDownMenu
-      style={{ width: 32, height: 32 }}
+      id={setId(id, "submenu")}
       icon={<MoreOptions />}
       dataList={subMenuList}
-      aria-label="dropdownMenu"
+      {...dropDownMenuProps}
     />
   );
 
@@ -87,17 +82,16 @@ const BreadCrumb = ({
   classes,
   className,
   id,
-  listRoute,
-  maxVisible,
+  listRoute = [],
+  maxVisible = Infinity,
   url,
   onClick,
-  component,
-  ...other
+  component = "div",
+  dropDownMenuProps,
+  ...others
 }) => {
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
-
-  const internalId = id || uniqueId("hv-breadcrumb-");
 
   // build the listPath object list
   if (!isNil(url)) {
@@ -120,14 +114,16 @@ const BreadCrumb = ({
   }
 
   const breadcrumbPath =
-    listPath.length > maxVisibleElem ? pathWithSubMenu(listPath, maxVisibleElem) : listPath;
+    listPath.length > maxVisibleElem
+      ? pathWithSubMenu(id, listPath, maxVisibleElem, dropDownMenuProps)
+      : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
 
   const Component = onClick ? component : undefined;
 
   return (
-    <nav id={internalId} className={clsx(classes.root, className)} {...other}>
+    <nav id={id} className={clsx(classes.root, className)} {...others}>
       <ol className={classes.orderedList}>
         {listPath.map((elem, index) => {
           const key = `key_${index}`;
@@ -209,17 +205,11 @@ BreadCrumb.propTypes = {
   /**
    * Function passed to the component. If defined the component prop is used as the link node.
    */
-  onClick: PropTypes.func
-};
-
-BreadCrumb.defaultProps = {
-  className: "",
-  id: undefined,
-  maxVisible: 9999,
-  listRoute: [],
-  url: null,
-  component: "div",
-  onClick: undefined
+  onClick: PropTypes.func,
+  /**
+   * Props passed down to the DropDownMenu sub-menu component.
+   */
+  dropDownMenuProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);

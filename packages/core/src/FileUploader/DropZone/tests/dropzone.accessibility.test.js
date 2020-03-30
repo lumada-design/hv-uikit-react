@@ -7,7 +7,7 @@ import { toHaveNoViolations } from "jest-axe";
 import axe from "../../../../config/axe-config";
 
 import HvProvider from "../../../Provider";
-import DropZoneWithStyles from "..";
+import DropZone from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -44,7 +44,7 @@ const onClickCallback = jest.fn();
 const setupComponent = (props = {}) =>
   mount(
     <HvProvider>
-      <DropZoneWithStyles {...props} />
+      <DropZone id="dropzone1" {...props} />
     </HvProvider>
   );
 

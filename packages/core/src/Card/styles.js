@@ -12,7 +12,8 @@ const styles = theme => {
   }));
 
   return {
-    root: {
+    root: {},
+    cardContainer: {
       boxSizing: "content-box",
       position: "relative"
     },

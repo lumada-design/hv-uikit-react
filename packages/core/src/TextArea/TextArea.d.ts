@@ -5,19 +5,20 @@ export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaC
   /**
    * The number of rows of the text area
    */
-  rows: number;
+  rows?: number;
   /**
    * If ´true´ the component is resizable.
    */
-  resizable: boolean;
+  resizable?: boolean;
   /**
    * Auto-scroll: automatically scroll to the end on value changes.
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
-  autoScroll: boolean;
+  autoScroll?: boolean;
 }
 
 export type HvTextAreaClassKey =
+  | "root"
   | "input"
   | "resize"
   | "inputRoot"
@@ -30,7 +31,6 @@ export type HvTextAreaClassKey =
   | "maxCharacter"
   | "currentCounter"
   | "disabled"
-  | "container"
-  | "textAreaContainer";
+  | "container";
 
 export default function HvTextArea(props: HvTextAreaProps): JSX.Element | null;

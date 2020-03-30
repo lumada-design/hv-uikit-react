@@ -7,7 +7,7 @@ import leaf from "../card/resources/leaf.png";
 import compressor from "../card/resources/compressor.png";
 
 const styles = theme => ({
-  mediaContainer: {
+  root: {
     width: "100%",
     paddingBottom: "0px",
     borderLeft: `1px solid ${theme.palette.grey.plain}`,
@@ -32,7 +32,9 @@ const renderer = (value, viewConfiguration) => (
       actionsCallback={viewConfiguration.actionsCallback}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
-      checkboxValue={value.checkboxValue}
+      checkboxProps={{
+        value: value.checkboxValue
+      }}
     />
   </HvCard>
 );
@@ -109,7 +111,8 @@ const viewConfiguration = {
   },
   isSelectable: true,
   actions: myActions,
-  actionsCallback: (id, action) => alert(`You have pressed card ${id} with action ${action.label}`)
+  actionsCallback: (e, id, action) =>
+    alert(`You have pressed card ${id} with action ${action.label}`)
 };
 
 export default (

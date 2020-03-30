@@ -777,14 +777,7 @@ exports[`CheckBox withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(HvCheckbox)
-        className=""
-        disabled={false}
-        label=""
-        labelPlacement="end"
-        onChange={[Function]}
-        value=""
-      />
+      <WithStyles(HvCheckbox) />
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

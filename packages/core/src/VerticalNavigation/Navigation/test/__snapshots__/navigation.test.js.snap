@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Navigation /> navigation should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -874,11 +870,9 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
           <nav
             aria-label="Example 1 navigation"
             className="HvVerticalNavigationNavigation-root"
-            id="hv-verticalnavigation-navigation1"
             onChange={[MockFunction]}
           >
             <WithStyles(TreeView)
-              id="hv-verticalnavigation-navigation1-tree"
               mode="navigation"
               onChange={[Function]}
               selected="01-01"
@@ -901,14 +895,12 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     "withIcon": "HvVerticalNavigationTreeView-withIcon",
                   }
                 }
-                id="hv-verticalnavigation-navigation1-tree"
                 mode="navigation"
                 onChange={[Function]}
                 selected="01-01"
               >
                 <ul
                   className="HvVerticalNavigationTreeView-root"
-                  id="hv-verticalnavigation-navigation1-tree"
                 >
                   <WithStyles(TreeViewItem)
                     icon={<ForwardRef(WithStyles) />}
@@ -1017,17 +1009,14 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                       <li
                         className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
                         data-hasicon={true}
-                        id="hv-verticalnavigation-treeviewitem2"
                       >
                         <WithStyles(ForwardRef)
                           className="HvVerticalNavigationTreeViewItem-content"
                           component="div"
-                          id="hv-verticalnavigation-treeviewitem2-button"
                           innerRef={
                             Object {
                               "current": <div
-                                class="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvVerticalNavigationTreeViewItem-content"
-                                id="hv-verticalnavigation-treeviewitem2-button"
+                                class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                                 role="button"
                                 tabindex="0"
                               >
@@ -1066,7 +1055,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle",
                                 "4xlTitle": "HvTypography-4xlTitle",
                                 "5xlTitle": "HvTypography-5xlTitle",
-                                "baseFontFamily": "HvTypography-baseFontFamily",
                                 "disabledButtonText": "HvTypography-disabledButtonText",
                                 "highlightText": "HvTypography-highlightText",
                                 "infoText": "HvTypography-infoText",
@@ -1074,9 +1062,9 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                                 "lTitle": "HvTypography-lTitle",
                                 "labelText": "HvTypography-labelText",
                                 "mTitle": "HvTypography-mTitle",
-                                "margin": "HvTypography-margin",
                                 "normalText": "HvTypography-normalText",
                                 "placeholderText": "HvTypography-placeholderText",
+                                "root": "HvTypography-root",
                                 "sLink": "HvTypography-sLink",
                                 "sText": "HvTypography-sText",
                                 "sTitle": "HvTypography-sTitle",
@@ -1090,7 +1078,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                               }
                             }
                             component="div"
-                            id="hv-verticalnavigation-treeviewitem2-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="button"
@@ -1098,8 +1085,7 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                             variant="normalText"
                           >
                             <div
-                              className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvVerticalNavigationTreeViewItem-content"
-                              id="hv-verticalnavigation-treeviewitem2-button"
+                              className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
                               onClick={[Function]}
                               onKeyDown={[Function]}
                               role="button"

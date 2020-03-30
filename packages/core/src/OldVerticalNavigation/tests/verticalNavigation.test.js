@@ -93,22 +93,9 @@ describe("VerticalNavigation Component", () => {
 
     instance = verticalNavigationComponent.instance();
 
-    instance.onSelection(data.data[0]);
+    instance.onSelection(null, data.data[0]);
 
     expect(onChangeMock).toBeCalled();
-  });
-
-  it("should navigate to sub-levels", () => {
-    const verticalNavigationComponent = wrapper.find("VerticalNavigation");
-
-    instance = verticalNavigationComponent.instance();
-
-    expect(last(instance.state.list)).toBe(data);
-
-    instance.onSelection(data.data[1]);
-
-    expect(last(instance.state.list)).toBe(data.data[1].subData);
-    expect(last(instance.state.title)).toBe(data.data[1].label);
   });
 
   it("should navigate to return levels", () => {
@@ -118,7 +105,7 @@ describe("VerticalNavigation Component", () => {
 
     expect(last(instance.state.list)).toBe(data);
 
-    instance.onSelection(data.data[1]);
+    instance.onSelection(null, data.data[1]);
 
     expect(last(instance.state.list)).toBe(data.data[1].subData);
     expect(last(instance.state.title)).toBe(data.data[1].label);
@@ -134,7 +121,7 @@ describe("VerticalNavigation Component", () => {
 
     instance = verticalNavigationComponent.instance();
 
-    instance.handleSearch("1");
+    instance.handleSearch(null, "1");
 
     expect(last(instance.state.list).data[0].isHidden).toBe(false);
     expect(last(instance.state.list).data[1].isHidden).toBe(true);

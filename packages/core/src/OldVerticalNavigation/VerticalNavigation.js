@@ -91,7 +91,7 @@ class VerticalNavigation extends React.Component {
    *
    * @param elem
    */
-  onSelection = elem => {
+  onSelection = (event, elem) => {
     if (elem.subData) {
       const { list, title, showAnimation } = this.state;
       const newList = this.resetHidden(list);
@@ -140,7 +140,7 @@ class VerticalNavigation extends React.Component {
    *
    * @param str
    */
-  handleSearch = str => {
+  handleSearch = (event, str) => {
     const { list } = this.state;
     const { data } = last(list);
     const results = data
@@ -188,7 +188,7 @@ class VerticalNavigation extends React.Component {
             {currentTitle && <Title title={currentTitle} onClick={this.onReturn} />}
             {showSearchBox && (
               <div className={classes.searchBoxContainer}>
-                <SearchBox onChange={str => this.handleSearch(str)} value={searchStr} />
+                <SearchBox onChange={this.handleSearch} value={searchStr} />
               </div>
             )}
             <div

@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
 import styles from "./styles";
 
-const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata) => {
+const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
-    return data => render(data, viewConfiguration, metadata);
+    return data => render(data, viewConfiguration, metadata, cardProps);
   }
-  return (data, others) => (
+  return data => (
     <Card
       {...data}
       onChange={viewConfiguration.onSelection}
@@ -18,19 +19,19 @@ const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
       innerCardContent={innerCardContent ? innerCardContent(data) : undefined}
-      {...others}
+      {...cardProps}
     />
   );
 };
 
 const CardView = ({
   id = "",
-  className = "",
+  className,
   classes,
   icon,
   values,
   selectedValues,
-  renderer = undefined,
+  renderer,
   viewConfiguration = {
     onSelection: null,
     breakpoints: {
@@ -42,12 +43,18 @@ const CardView = ({
     },
     actions: null
   },
-  innerCardContent = undefined,
-  metadata = undefined,
+  innerCardContent,
+  metadata,
   ...others
 }) => {
   // If no custom render is passed, the render uses the standard card implementation
-  const cardRender = CardRenderChooser(viewConfiguration, renderer, innerCardContent, metadata);
+  const cardRender = CardRenderChooser(
+    viewConfiguration,
+    renderer,
+    innerCardContent,
+    metadata,
+    others
+  );
 
   const { breakpoints } = viewConfiguration;
 
@@ -78,21 +85,17 @@ const CardView = ({
     );
   });
 
-  // TODO: review...others and className
   return (
-    <div className={classes.root}>
-      <Grid
-        id={id}
-        container
-        className={className}
-        justify="flex-start"
-        alignItems="flex-start"
-        spacing={30}
-        {...others}
-      >
-        {renderCards}
-      </Grid>
-    </div>
+    <Grid
+      className={clsx(className, classes.root)}
+      id={id}
+      container
+      justify="flex-start"
+      alignItems="flex-start"
+      spacing={4}
+    >
+      {renderCards}
+    </Grid>
   );
 };
 

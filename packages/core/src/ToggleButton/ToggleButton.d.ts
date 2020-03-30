@@ -1,6 +1,17 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
+type ToggleLabels = {
+  /**
+   * Description for selected.
+   */
+  selectedTitle?: string;
+  /**
+   * Description for not selected.
+   */
+  notSelectedTitle?: string;
+};
+
 export interface HvToggleButtonProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvToggleButtonClassKey> {
   /**
@@ -15,18 +26,10 @@ export interface HvToggleButtonProps
    * Defines if the button is selected.
    */
   selected?: boolean;
-
-  // TOOD: maybeshould be labels {}
   /**
-   * Description for selected.
+   * Labels.
    */
-  selectedTitle?: string;
-  /**
-   * Description for not selected.
-   */
-  notSelectedTitle?: string;
-
-  // TODO: maybe should be node or `iconCallback`
+  labels?: ToggleLabels;
   /**
    * Icon for when selected.
    */

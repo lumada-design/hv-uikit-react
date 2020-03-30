@@ -53,7 +53,7 @@ export interface SecondaryAction extends ListValueProp {
   /**
    * Value when the action is clicked, it receives the row representation.
    */
-  action?: (row: object) => void;
+  action?: (event: React.FormEvent<HTMLDivElement>, row: object) => void;
 }
 
 export interface HvTableProps
@@ -74,7 +74,8 @@ export interface HvTableProps
    */
   columns: TableColumn[];
   /**
-   * Array with the data elements to show
+   * Array with the data elements to show.
+   * It can also define the checkBoxProps property to pass extra props to the row checkbox selector.
    */
   data: object[];
 
@@ -151,7 +152,7 @@ export interface HvTableProps
   /**
    * Callback which receives the checked state of all items in the list
    */
-  onSelection?: (selection: string[]) => void;
+  onSelection?: (event: React.FormEvent<HTMLDivElement>, selection: string[]) => void;
 
   /**
    * Ids of preselected items in the list
@@ -162,6 +163,16 @@ export interface HvTableProps
    *  Secondary actions listed in menu dropdown. Label is displayed and action is executed on click.
    */
   secondaryActions?: SecondaryAction[];
+
+  /**
+   *  Extra properties passed to the select all checkbox props.
+   */
+  allCheckBoxProps: Object;
+
+  /**
+   *  Extra properties passed to the dropdown menu.
+   */
+  dropdownMenuProps: Object;
 }
 
 export type HvTableClassKey =

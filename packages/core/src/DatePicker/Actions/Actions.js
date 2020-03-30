@@ -2,14 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import HvButton from "../../Button";
+import { setId } from "../../utils";
 import styles from "./styles";
 
 const Actions = ({ id, classes, onCancel, onApply, labels }) => (
   <div className={classes.root}>
-    <HvButton id={`${id}-apply`} className={classes.button} onClick={onApply} category="ghost">
+    <HvButton id={setId(id, "apply")} className={classes.button} onClick={onApply} category="ghost">
       {labels.applyLabel}
     </HvButton>
-    <HvButton id={`${id}-cancel`} className={classes.button} onClick={onCancel} category="ghost">
+    <HvButton
+      id={setId(id, "cancel")}
+      className={classes.button}
+      onClick={onCancel}
+      category="ghost"
+    >
       {labels.cancelLabel}
     </HvButton>
   </div>

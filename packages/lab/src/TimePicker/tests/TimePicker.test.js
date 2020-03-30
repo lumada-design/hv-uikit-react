@@ -126,7 +126,7 @@ describe("TimePicker", () => {
 
   it("setTimePopperState - should change the time popper state (anchor and open props)", () => {
     const mockAnchor = "mockAnchor";
-    const mockOpen = "mockOpen";
+    const mockOpen = true;
     timePickerInstance.setTimePopperState(mockAnchor, mockOpen);
     expect(timePickerInstance.state.timePopperAnchor).toBe(mockAnchor);
     expect(timePickerInstance.state.timePopperOpen).toBe(mockOpen);
@@ -161,7 +161,7 @@ describe("TimePicker", () => {
   });
 
   it("getTimeFormat - should return timeFormat prop if defined", () => {
-    const mockTimeFormat = "mockTimeFormat";
+    const mockTimeFormat = "12";
     const wrapperTimeFormat = mount(
       <HvProvider>
         <TimePickerWithStyles timeFormat={mockTimeFormat} />

@@ -14,10 +14,6 @@ export interface HvCardHeaderProps extends StandardProps<CardHeaderProps, HvCard
    *  The renderable content inside the icon slot of the header.
    */
   icon?: React.ReactNode;
-  /**
-   *  The function that will be executed when this section is clicked.
-   */
-  onClickAction?: (event: MouseEvent) => void;
 }
 
 export type HvCardHeaderClassKey =

@@ -5,12 +5,6 @@ const styles = theme => ({
     "&:last-child": {
       paddingBottom: `${theme.hv.spacing.sm}px` // Overrides MUI padding
     }
-  },
-  bottomBorder: {
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-  },
-  item: {
-    padding: `0 0 ${theme.hv.spacing.sm}px 0`
   }
 });
 

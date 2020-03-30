@@ -4,30 +4,32 @@ import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Doc from "@hv/uikit-react-icons/dist/Doc";
-import { KeyboardCodes, isKeypress } from "../../utils/KeyboardUtils";
+import { KeyboardCodes, isKeypress } from "../../utils";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
+import { setId } from "../..";
 import styles from "./styles";
 
 const DropZone = ({
   id,
   classes,
   labels,
-  multiple,
-  disabled,
+  multiple = true,
+  disabled = false,
   acceptedFiles,
   maxFileSize,
   onFilesAdded
 }) => {
-  const [fileDropZoneId] = useState(id || uniqueId("hv-filedropzone-"));
-
   const [dragState, setDrag] = useState(false);
+  const inputRef = useRef();
 
   const leaveDropArea = () => {
     setDrag(false);
   };
 
-  const inputRef = useRef();
+  const enterDropArea = () => {
+    setDrag(true);
+  };
 
   const onChangeHandler = evt => {
     const filesToProcess = Object.keys(evt).map(e => evt[e]);
@@ -49,26 +51,22 @@ const DropZone = ({
         newFile.status = "fail";
       }
 
+      // TODO: review ID generation
       newFile.id = uniqueId("uploaded-file-data-");
-
       newFiles.push(newFile);
     });
 
-    onFilesAdded(newFiles);
-  };
-
-  const enterDropArea = () => {
-    setDrag(true);
+    onFilesAdded?.(newFiles);
   };
 
   return (
     <>
-      <div id={fileDropZoneId} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
+      <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
         <HvTypography
           variant="labelText"
           component="label"
-          id={`${fileDropZoneId}-input-file-label`}
-          htmlFor={`${fileDropZoneId}-input-file`}
+          id={setId(id, "input-file-label")}
+          htmlFor={setId(id, "input-file")}
         >
           {labels.dropzone}
         </HvTypography>
@@ -85,7 +83,7 @@ const DropZone = ({
       </div>
 
       <div
-        id={`${fileDropZoneId}-button`}
+        id={setId(id, "button")}
         className={clsx(classes.dropZoneContainer, {
           [classes.dragAction]: dragState,
           [classes.dropZoneContainerDisabled]: disabled
@@ -122,7 +120,7 @@ const DropZone = ({
         }}
       >
         <input
-          id={`${fileDropZoneId}-input-file`}
+          id={setId(id, "input-file")}
           tabIndex={-1}
           className={classes.inputArea}
           type="file"
@@ -242,13 +240,6 @@ DropZone.propTypes = {
    * Function responsible for processing files added to the drop zone.
    */
   onFilesAdded: PropTypes.func
-};
-
-DropZone.defaultProps = {
-  id: null,
-  multiple: true,
-  disabled: false,
-  onFilesAdded: () => {}
 };
 
 export default withStyles(styles, { name: "HvFileUploaderDropZone" })(DropZone);

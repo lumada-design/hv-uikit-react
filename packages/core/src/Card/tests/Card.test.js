@@ -28,7 +28,9 @@ describe("Card withStyles", () => {
           actions={configuration.actions}
           mediaPath="path"
           isSelectable
-          checkboxValue="value"
+          checkBoxProps={{
+            value: "value"
+          }}
         />
       </HvProvider>
     );
@@ -37,7 +39,7 @@ describe("Card withStyles", () => {
   });
 
   it("should select when clicking on the card", () => {
-    const onClickActionM = jest.fn();
+    const onClickM = jest.fn();
     const onChangeM = jest.fn();
     wrapper = mount(
       <HvProvider>
@@ -50,19 +52,21 @@ describe("Card withStyles", () => {
           mediaPath="path"
           isSelectable
           selectOnClickAction
-          onClickAction={onClickActionM}
+          onClick={onClickM}
           onChange={onChangeM}
-          checkboxValue="value"
+          checkBoxProps={{
+            value: "value"
+          }}
         />
       </HvProvider>
     );
     wrapper.find({ role: "checkbox" }).simulate("click");
-    expect(onClickActionM.mock.calls.length).toBe(1);
+    expect(onClickM.mock.calls.length).toBe(1);
     expect(onChangeM.mock.calls.length).toBe(1);
   });
 
   it("should not select when clicking on the card", () => {
-    const onClickActionM = jest.fn();
+    const onClickM = jest.fn();
     const onChangeM = jest.fn();
     wrapper = mount(
       <HvProvider>
@@ -74,14 +78,16 @@ describe("Card withStyles", () => {
           actions={configuration.actions}
           mediaPath="path"
           isSelectable
-          onClickAction={onClickActionM}
+          onClick={onClickM}
           onChange={onChangeM}
-          checkboxValue="value"
+          checkBoxProps={{
+            value: "value"
+          }}
         />
       </HvProvider>
     );
     wrapper.find({ role: "checkbox" }).simulate("click");
-    expect(onClickActionM.mock.calls.length).toBe(1);
+    expect(onClickM.mock.calls.length).toBe(1);
     expect(onChangeM.mock.calls.length).toBe(0);
   });
 });

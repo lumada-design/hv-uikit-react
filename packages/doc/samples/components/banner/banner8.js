@@ -7,11 +7,14 @@ import Button from "@hv/uikit-react-core/dist/Button";
 
 const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
 
-const actionArray = [
-  { id: "action1", label: "Action 1", disabled: false },
-  { id: "action2", label: "Action 2", disabled: false }
+const actionArray = id => [
+  { id: `action${id}_1`, label: "Action 1", disabled: false },
+  { id: `action${id}_2`, label: "Action 2", disabled: false }
 ];
 
+const actionProps = {
+  "aria-label": "Close"
+};
 export default (
   <div>
     <p />
@@ -23,22 +26,25 @@ export default (
       actions={<Button category="semantic">Action</Button>}
       actionsPosition="inline"
       onClose={() => {}}
+      actionProps={actionProps}
     />
     <p />
     <BannerContentWrapper
       content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
       variant="default"
-      actions={actionArray}
+      actions={actionArray("second")}
       actionsPosition="bottom-right"
       onClose={() => {}}
+      actionProps={actionProps}
     />
     <p />
     <BannerContentWrapper
       content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
       variant="default"
-      actions={actionArray}
+      actions={actionArray("third")}
       actionsPosition="bottom-right"
       onClose={() => {}}
+      actionProps={actionProps}
     />
     <p />
     <BannerContentWrapper
@@ -48,15 +54,17 @@ export default (
       actions={<Button category="semantic">Action</Button>}
       actionsPosition="inline"
       onClose={() => {}}
+      actionProps={actionProps}
     />
     <p />
     <BannerContentWrapper
       content="This is an error banner."
       variant="error"
       showIcon
-      actions={actionArray}
+      actions={actionArray("fifth")}
       actionsPosition="inline"
       onClose={() => {}}
+      actionProps={actionProps}
     />
   </div>
 );

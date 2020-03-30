@@ -4,7 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import DropZoneWithStyles from "..";
+import DropZone from "..";
 
 let wrapper;
 
@@ -38,7 +38,7 @@ const onClickCallback = jest.fn();
 const setupComponent = (props = {}) =>
   mount(
     <HvProvider>
-      <DropZoneWithStyles {...props} />
+      <DropZone id="dropzone1" {...props} />
     </HvProvider>
   );
 

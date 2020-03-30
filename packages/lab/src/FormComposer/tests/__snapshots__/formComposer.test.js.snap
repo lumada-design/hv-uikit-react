@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormComposer withStyles should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -844,7 +840,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "baseFontFamily": "HvTypography-baseFontFamily",
                     "disabledButtonText": "HvTypography-disabledButtonText",
                     "highlightText": "HvTypography-highlightText",
                     "infoText": "HvTypography-infoText",
@@ -852,9 +847,9 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                     "lTitle": "HvTypography-lTitle",
                     "labelText": "HvTypography-labelText",
                     "mTitle": "HvTypography-mTitle",
-                    "margin": "HvTypography-margin",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
                     "sLink": "HvTypography-sLink",
                     "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
@@ -870,7 +865,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                 variant="xlTitle"
               >
                 <h1
-                  className="HvTypography-xlTitle HvTypography-baseFontFamily HvTypography-margin HvFormComposer-title"
+                  className="HvFormComposer-title HvTypography-root HvTypography-xlTitle"
                 />
               </ForwardRef>
             </WithStyles(ForwardRef)>
@@ -893,7 +888,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "baseFontFamily": "HvTypography-baseFontFamily",
                           "disabledButtonText": "HvTypography-disabledButtonText",
                           "highlightText": "HvTypography-highlightText",
                           "infoText": "HvTypography-infoText",
@@ -901,9 +895,9 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                           "lTitle": "HvTypography-lTitle",
                           "labelText": "HvTypography-labelText",
                           "mTitle": "HvTypography-mTitle",
-                          "margin": "HvTypography-margin",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
                           "sLink": "HvTypography-sLink",
                           "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
@@ -920,7 +914,7 @@ exports[`FormComposer withStyles should render correctly 1`] = `
                       variant="mTitle"
                     >
                       <h3
-                        className="HvTypography-mTitle HvTypography-baseFontFamily HvTypography-margin"
+                        className="HvTypography-root HvTypography-mTitle"
                         id="Group1"
                       >
                         Group1

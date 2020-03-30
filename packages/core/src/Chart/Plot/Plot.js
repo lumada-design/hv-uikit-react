@@ -6,7 +6,7 @@ import equals from "lodash/isEqual";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot }) => {
+const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot, ...others }) => {
   const [revision, setRevision] = useState(0);
   const [newData, setNewData] = useState(data);
 
@@ -36,10 +36,11 @@ const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot }) => {
         layout={layout}
         config={config}
         revision={revision}
-        onHover={eventData => onHover(eventData)}
-        onUnhover={eventData => onUnHover(eventData)}
+        onHover={(event, eventData) => onHover(event, eventData)}
+        onUnhover={(event, eventData) => onUnHover(event, eventData)}
         onAfterPlot={afterPlot && afterPlotInternal}
         style={{ position: "relative" }}
+        {...others}
       />
     </div>
   );
@@ -70,12 +71,6 @@ Plot.propTypes = {
    * Function to be call after plot render.
    */
   afterPlot: PropTypes.func
-};
-
-Plot.defaultProps = {
-  onHover: null,
-  onUnHover: null,
-  afterPlot: undefined
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

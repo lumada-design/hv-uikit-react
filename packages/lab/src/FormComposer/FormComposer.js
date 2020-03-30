@@ -99,7 +99,7 @@ class HvFormComposer extends React.Component {
             return (
               <div key={key}>
                 {React.cloneElement(child, {
-                  onChange: value =>
+                  onChange: (event, value) =>
                     this.childOnChangeHandler(value, child.props.name, child.props.onChange)
                 })}
               </div>

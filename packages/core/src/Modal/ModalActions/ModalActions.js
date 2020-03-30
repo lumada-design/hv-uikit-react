@@ -3,18 +3,21 @@ import PropTypes from "prop-types";
 import { DialogActions, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvModalActions = ({ classes, className = "", children, ...others }) => (
-  <DialogActions
-    classes={{
-      root: classes.root,
-      spacing: classes.spacing
-    }}
-    className={className}
-    {...others}
-  >
-    {children}
-  </DialogActions>
-);
+const HvModalActions = props => {
+  const { classes, className, children, ...others } = props;
+  return (
+    <DialogActions
+      classes={{
+        root: classes.root,
+        spacing: classes.spacing
+      }}
+      className={className}
+      {...others}
+    >
+      {children}
+    </DialogActions>
+  );
+};
 
 HvModalActions.propTypes = {
   /**

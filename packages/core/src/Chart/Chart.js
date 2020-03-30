@@ -29,16 +29,18 @@ const propsLayoutSetter = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTi
 };
 
 const Chart = ({
+  id,
   classes,
   title,
   subtitle,
   data,
   layout,
   config,
-  tooltipType,
+  tooltipType = "multiple",
   afterPlot,
   xAxisTitle,
-  yAxisTitle
+  yAxisTitle,
+  ...others
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
@@ -53,7 +55,7 @@ const Chart = ({
   const newLayout = propsLayoutSetter(layout, theme, isHorizontal, xAxisTitle, yAxisTitle);
 
   // Extract data from the plotly onHover event to be used to create the tooltip.
-  const onHover = eventData => {
+  const onHover = (event, eventData) => {
     const dataFromPoints = {
       title: isHorizontal ? eventData.points[0].y : eventData.points[0].x,
       elements: []
@@ -73,11 +75,10 @@ const Chart = ({
 
   const onUnHover = () => setIsHover(false);
 
-  // Obtains the cursor coordinates to send to the tooltip.
-  const onMouseMove = eventData => {
+  const onMouseMove = event => {
     setCoordinates({
-      x: eventData.pageX,
-      y: eventData.pageY
+      x: event.pageX,
+      y: event.pageY
     });
   };
 
@@ -86,14 +87,14 @@ const Chart = ({
   return (
     <div classes={classes}>
       {isHover && <Tooltip coordinates={coordinates} data={dataTooltip} useSingle={useSingle} />}
-      <div className={classes.root}>
+      <div id={id} className={classes.root}>
         <div className={classes.titleContainer}>
           {title && <Typography variant="mTitle">{title}</Typography>}
           <div className={classes.subtitle}>
             {subtitle && <Typography variant="sText">{subtitle}</Typography>}
           </div>
         </div>
-        <div className={clsx({ [classes.paddingTop]: title })} onMouseMove={e => onMouseMove(e)}>
+        <div className={clsx({ [classes.paddingTop]: title })} onMouseMove={onMouseMove}>
           <Plot
             title={title}
             data={data}
@@ -102,6 +103,7 @@ const Chart = ({
             onHover={onHover}
             onUnHover={onUnHover}
             afterPlot={afterPlot}
+            {...others}
           />
         </div>
       </div>
@@ -110,6 +112,10 @@ const Chart = ({
 };
 
 Chart.propTypes = {
+  /**
+   * An Id passed on to the component
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -155,17 +161,6 @@ Chart.propTypes = {
    * Defines the Y axis title.
    */
   yAxisTitle: PropTypes.string
-};
-
-Chart.defaultProps = {
-  classes: null,
-  title: "",
-  subtitle: "",
-  tooltipType: "multiple",
-  config: null,
-  afterPlot: undefined,
-  xAxisTitle: null,
-  yAxisTitle: null
 };
 
 export default withStyles(styles, { name: "HvChart" })(Chart);

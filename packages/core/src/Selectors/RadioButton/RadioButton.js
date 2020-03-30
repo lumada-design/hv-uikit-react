@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
 import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected";
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
+import { setId } from "../../utils";
 import labelPositions from "../labelPositions";
 import styles from "./styles";
 
@@ -52,17 +52,16 @@ const HvRadio = props => {
     checked,
     disabled,
     onChange,
-    value,
-    label,
-    labelPlacement,
+    value = "",
+    label = "",
+    labelPlacement = "end",
     formControlLabelProps,
-    radioProps
+    ...others
   } = props;
 
   const icons = getIcons(classes, disabled);
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
-  const [internalId] = useState(id || uniqueId("hv-radiobutton-"));
 
   const onLocalChange = evt => {
     const isKeyEvent =
@@ -83,7 +82,7 @@ const HvRadio = props => {
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
-      id={internalId}
+      id={id}
       className={clsx(labelStyles, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
@@ -93,7 +92,7 @@ const HvRadio = props => {
       }}
       control={
         <Radio
-          id={`${internalId}-input`}
+          id={setId(id, "input")}
           className={classes.radio}
           icon={icons.emptyIcon}
           checkedIcon={icons.checkedIcon}
@@ -104,7 +103,7 @@ const HvRadio = props => {
           onBlur={onBlur}
           value={value}
           checked={checked}
-          {...radioProps}
+          {...others}
         />
       }
       {...formControlLabelProps}
@@ -190,24 +189,7 @@ HvRadio.propTypes = {
   /**
    * Extra properties passed to the MUI FormControlLabel component.
    */
-  formControlLabelProps: PropTypes.instanceOf(Object),
-  /**
-   * Extra properties passed to the MUI Radio component.
-   */
-  radioProps: PropTypes.instanceOf(Object)
-};
-
-HvRadio.defaultProps = {
-  className: "",
-  id: undefined,
-  value: "",
-  label: "",
-  checked: undefined,
-  disabled: false,
-  onChange: () => {},
-  formControlLabelProps: undefined,
-  radioProps: undefined,
-  labelPlacement: labelPositions.end
+  formControlLabelProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvRadioButton" })(HvRadio);

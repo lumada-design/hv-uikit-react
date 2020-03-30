@@ -151,7 +151,7 @@ describe("Input", () => {
   it("should return the value on change and correctly update the state", () => {
     const inputText = "test2";
     const defaultInputText = "test1";
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(defaultInputText);
       return inputText;
     };
@@ -170,7 +170,7 @@ describe("Input", () => {
   it("should return the value on change and correctly update the state", () => {
     const inputText = "test2";
     const defaultInputText = "test1";
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(defaultInputText);
       return inputText;
     };
@@ -191,7 +191,7 @@ describe("Input", () => {
     const inputText = "test2";
     const defaultInputText = "test1";
     const suggestionHandler = () => suggestions;
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(defaultInputText);
       return inputText;
     };
@@ -233,7 +233,7 @@ describe("Input", () => {
   it("should showInfo numbers on blur", () => {
     const inputText = "test";
     const defaultInputText = "233";
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(inputText);
       return inputText;
     };
@@ -261,7 +261,7 @@ describe("Input", () => {
   it("should showInfo emails on blur", () => {
     const inputText = "notEmail";
     const defaultInputText = "email@example.com";
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(inputText);
       return inputText;
     };
@@ -314,7 +314,7 @@ describe("Input", () => {
     const inputText = "Very Long string";
     const defaultInputText = "short";
     const quantity = 8;
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(inputText);
       return inputText;
     };
@@ -349,7 +349,7 @@ describe("Input", () => {
     const inputText = "short";
     const defaultInputText = "very long string";
     const quantity = 8;
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(inputText);
       return inputText;
     };
@@ -385,7 +385,7 @@ describe("Input", () => {
     const inputText = "";
     const defaultInputText = "very long string";
     const quantity = 8;
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(inputText);
       return inputText;
     };
@@ -416,7 +416,7 @@ describe("Input", () => {
     const inputText = "";
     const defaultInputText = "very long string";
     const quantity = 8;
-    const onChange = value => {
+    const onChange = (event, value) => {
       expect(value).toBe(inputText);
       return inputText;
     };

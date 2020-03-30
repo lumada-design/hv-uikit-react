@@ -2,14 +2,12 @@ import React, { useContext } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import useUniqueId from "../../../useUniqueId";
 import { FocusContext } from "../utils/FocusContext";
 import SelectionContext from "../utils/SelectionContext";
 import MenuItem from "../MenuItem";
 import styles from "./styles";
 
-const MenuBar = ({ classes, id, data, onClick, type }) => {
-  const uniqueId = useUniqueId(id, "hv-menubar-");
+const MenuBar = ({ classes, id, data = [], onClick, type }) => {
   const selectionPath = useContext(SelectionContext);
   const { state } = useContext(FocusContext);
 
@@ -18,7 +16,7 @@ const MenuBar = ({ classes, id, data, onClick, type }) => {
 
   const handleMouseOver = () => {
     const { itemFocused } = state;
-    if (itemFocused) itemFocused.blur();
+    itemFocused?.blur();
   };
 
   return (
@@ -28,7 +26,7 @@ const MenuBar = ({ classes, id, data, onClick, type }) => {
         [classes.active]: isActive
       })}
     >
-      <ul id={uniqueId} className={classes.list} onMouseOver={handleMouseOver} onFocus={() => {}}>
+      <ul id={id} className={classes.list} onMouseOver={handleMouseOver} onFocus={() => {}}>
         {data.map(item => (
           <MenuItem key={item.id} item={item} type={type} onClick={onClick} />
         ))}
@@ -91,12 +89,6 @@ MenuBar.propTypes = {
    * The type of menu.
    */
   type: PropTypes.oneOf(["menubar", "menu"]).isRequired
-};
-
-MenuBar.defaultProps = {
-  id: undefined,
-  data: [],
-  onClick: () => {}
 };
 
 export default withStyles(styles, { name: "HvHeaderMenuBar" })(MenuBar);

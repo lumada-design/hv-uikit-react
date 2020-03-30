@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListViewConfiguration } from "..";
+import { HvCheckBoxProps } from "../../../Selectors/CheckBox";
 
 export interface HvListViewRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableSectionElement>, HvListViewRowClassKey> {
@@ -13,27 +14,20 @@ export interface HvListViewRowProps
    */
   onSelection?: (event: React.FormEvent<HTMLDivElement>) => void;
   /**
-   * ´true´ if the row should have a checkbox in the the left part to be selectable ´false´ if it is not required.
-   */
-  isSelectable?: boolean;
-  /**
-   *  The value the checkbox in the in the left part of the row will return when selected.
-   */
-  checkboxValue?: string;
-  /**
    *  ´true´ if the checkbox is selected or ´false´ if not selected.
    *
    *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
-  checkboxSelected?: boolean;
-  /**
-   *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
-   */
-  checkboxIndeterminate?: boolean;
+  checked?: boolean;
+  /** 
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
+  */
+ checkBoxProps?: HvCheckBoxProps;
   /**
    *  The border to the right of the checkbox
    */
-  checkboxSemantic?:
+  semantic?:
     | "sema1"
     | "sema2"
     | "sema3"

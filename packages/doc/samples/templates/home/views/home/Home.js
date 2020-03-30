@@ -17,7 +17,7 @@ const myActions = [
   { id: "dismiss", label: "Dismiss", disabled: false }
 ];
 
-const control = (id, action) => {
+const control = (e, id, action) => {
   if (action.id === "details")
     // Used only for navigation across Storybook stores.
     linkTo("Templates", "Detail")();

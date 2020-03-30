@@ -23,11 +23,11 @@ const inputLabels = {
 };
 
 function WrapperComp() {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   const [maxChar, setMaxChar] = useState(10);
 
   // to be possible to change the input value by user action
-  const setterValue = newValue => {
+  const setterValue = (event, newValue) => {
     setValue(newValue);
     return newValue;
   };
@@ -47,7 +47,7 @@ function WrapperComp() {
       <Input
         style={inpStyle}
         initialValue={maxChar.toString()}
-        onChange={newValue => setMaxChar(Number(newValue))}
+        onChange={(event, newValue) => setMaxChar(Number(newValue))}
         labels={inputLabels}
       />
 

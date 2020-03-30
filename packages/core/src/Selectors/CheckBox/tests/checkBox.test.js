@@ -15,11 +15,6 @@ import theme from "../../../theme";
 describe("CheckBox withStyles", () => {
   let wrapper;
 
-  const getLabelPositionClassNames = ParentElement =>
-    ParentElement.children()
-      .children()
-      .props().className;
-
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
 
@@ -87,8 +82,8 @@ describe("CheckBox withStyles", () => {
         <CheckBoxWithStyles label="test" labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(CheckBox);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(true);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelStartClassName)).toBe(true);
+    expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
 
   it("should apply the correct class name when there is a label at the end", () => {
@@ -97,8 +92,8 @@ describe("CheckBox withStyles", () => {
         <CheckBoxWithStyles label="test" labelPlacement={labelPositions.end} />
       </HvProvider>
     ).find(CheckBox);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(false);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(true);
+    expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelEndClassName)).toBe(true);
   });
 
   it("should not apply any class name when there is no label specified", () => {
@@ -107,7 +102,7 @@ describe("CheckBox withStyles", () => {
         <CheckBoxWithStyles labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(CheckBox);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelStartClassName)).toBe(false);
-    expect(getLabelPositionClassNames(mountWrapper).includes(labelEndClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
+    expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
 });

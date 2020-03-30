@@ -2,78 +2,92 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import clsx from "clsx";
 import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
+import { setId } from "..";
 import styles from "./styles";
 
 const Actions = ({
+  id,
   classes,
-  id = "",
+  className,
   category = "ghost",
   actions = [],
-  actionsCallback = {},
-  maxVisibleActions = Infinity
+  actionsCallback,
+  maxVisibleActions = Infinity,
+  ...others
 }) => {
-  if (!Array.isArray(actions)) {
-    return React.isValidElement(actions) ? actions : null;
-  }
+  if (!Array.isArray(actions)) return React.isValidElement(actions) ? actions : null;
 
-  const renderButton = (action, key = "") => (
-    <HvButton
-      id={key}
-      key={key}
-      category={category}
-      className={classes.button}
-      disabled={action.disabled}
-      // TODO handle `event` arg
-      onClick={() => actionsCallback(id, action)}
-      // TODO: should be ...action others instead
-      aria-label={action.ariaLabel}
-      aria-labelledby={action.ariaLabelledBy}
-      aria-describedby={action.ariaDescribedBy}
-    >
-      {action?.iconCallback?.({ isDisabled: action.disabled })}
-      {action.label}
-    </HvButton>
-  );
+  const renderButton = (action, idx) => {
+    const { disabled, iconCallback, label, ...other } = action;
+    const actionId = setId(id, idx, "action", action.id);
+    return (
+      <HvButton
+        id={actionId}
+        key={actionId}
+        category={category}
+        className={classes.button}
+        disabled={disabled}
+        onClick={event => actionsCallback?.(event, id, action)}
+        {...other}
+      >
+        {iconCallback?.({ isDisabled: disabled })}
+        {label}
+      </HvButton>
+    );
+  };
 
-  const renderActionsGrid = acts => {
-    const actsVisible = acts.slice(0, maxVisibleActions);
-    const actsDropdown = acts.slice(maxVisibleActions);
+  const renderActionsGrid = () => {
+    const actsVisible = actions.slice(0, maxVisibleActions);
+    const actsDropdown = actions.slice(maxVisibleActions);
 
     return (
-      <div className={classes.actionContainer}>
-        {actsVisible.map((action, idx) => renderButton(action, `${id}-${idx}-action-${action.id}`))}
+      <>
+        {actsVisible.map((action, idx) => renderButton(action, idx))}
         <DropDownMenu
           classes={{ root: classes.dropDownMenu }}
           icon={<MoreVert className={classes.dropDownMenuIcon} />}
           placement="left"
-          onClick={action => actionsCallback(id, action)}
-          dataList={actsDropdown.map(action => ({
-            ...action,
-            iconCallback: action.iconCallback,
-            icon: action.icon
-          }))}
-          aria-label={`${id}-more-actions`}
+          onClick={(event, action) => actionsCallback?.(event, id, action)}
+          dataList={actsDropdown}
           keepOpened={false}
           disablePortal={false}
         />
-      </div>
+      </>
     );
   };
 
-  // TODO: should have a classes.root
-  // TODO: should have ...others
-  return actions.length > maxVisibleActions
-    ? renderActionsGrid(actions)
-    : actions.map((action, idx) => renderButton(action, `${id}-${idx}-action-${action.id}`));
+  const actionOverflow = actions.length > maxVisibleActions;
+
+  return (
+    <div
+      className={clsx(className, classes.root, {
+        [classes.actionContainer]: actionOverflow
+      })}
+      {...others}
+    >
+      {actionOverflow
+        ? renderActionsGrid()
+        : actions.map((action, idx) => renderButton(action, idx))}
+    </div>
+  );
 };
 
 Actions.propTypes = {
   /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /**
    *   A Jss Object used to override or extend the styles applied to the actions.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to element root.
+     */
+    root: PropTypes.string,
     /**
      * Styles applied to the visible buttons.
      */

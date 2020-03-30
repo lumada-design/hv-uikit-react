@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Actions withStyles should be able to render 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -776,40 +772,16 @@ exports[`Actions withStyles should be able to render 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Actions)
-        data={
-          Array [
-            Object {
-              "element": <div>
-                Test 1
-              </div>,
-              "id": "1",
-              "onClick": [MockFunction],
-            },
-          ]
-        }
-      >
+      <WithStyles(Actions)>
         <Actions
           classes={
             Object {
               "root": "HvHeaderActions-root",
             }
           }
-          data={
-            Array [
-              Object {
-                "element": <div>
-                  Test 1
-                </div>,
-                "id": "1",
-                "onClick": [MockFunction],
-              },
-            ]
-          }
         >
           <div
             className="HvHeaderActions-root"
-            id="hv-actions-1"
           />
         </Actions>
       </WithStyles(Actions)>

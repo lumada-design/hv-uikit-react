@@ -4,6 +4,14 @@ import Button from "@hv/uikit-react-core/dist/Button";
 
 const find = (array, value) => array.findIndex(element => element === value);
 
+const other = {
+  bannerContentProps: {
+    actionProps: {
+      "aria-label": "Close Button Label"
+    }
+  }
+};
+
 // Simple controller for the offset of the banners.
 class Controller extends React.Component {
   constructor() {
@@ -117,6 +125,7 @@ const SimpleBanner = ({
         variant={variant}
         showIcon={showIcon}
         offset={offset}
+        {...other}
       />
     </div>
   );

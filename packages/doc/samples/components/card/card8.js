@@ -37,7 +37,13 @@ export default (
       <FooterWithStyles
         actions={<MultipleActionsWithMediaButtons />}
         isSelectable
-        checkboxAriaLabel="Composed card"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "Composed card",
+          inputProps: {
+            "aria-label": "composed input"
+          }
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
       <HeaderWithStyles headerTitle="Asset Avatar L90" subheader="Compressor" />

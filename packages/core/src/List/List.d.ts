@@ -75,10 +75,6 @@ export interface HvListProps
    * If ´true´ the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips?: boolean;
-  /**
-   * Properties passed to the ul element.
-   */
-  listProps?: object;
 }
 
 export type HvListClassKey =

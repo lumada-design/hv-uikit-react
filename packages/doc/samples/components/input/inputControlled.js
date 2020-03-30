@@ -14,7 +14,7 @@ function WrapperComp() {
       id="inputControlled"
       labels={labels}
       value={value}
-      onChange={newValue => setValue(newValue)}
+      onChange={(event, newValue) => setValue(newValue)}
     />
   );
 }

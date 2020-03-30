@@ -84,7 +84,7 @@ describe("<Dropdown />", () => {
         );
       });
 
-      dropdownComponent = wrapper.find("Dropdown");
+      dropdownComponent = wrapper.find("HvDropdown");
       instance = dropdownComponent.instance();
       instance.handleToggle();
 
@@ -128,7 +128,7 @@ describe("<Dropdown />", () => {
     });
 
     it("<Dropdown /> handleToggle should do nothing if disabled", () => {
-      dropdownComponent = wrapper.find("Dropdown");
+      dropdownComponent = wrapper.find("HvDropdown");
       instance = dropdownComponent.instance();
 
       instance.handleToggle();
@@ -137,7 +137,7 @@ describe("<Dropdown />", () => {
     });
 
     it("handleToggle should be triggered when header is clicked", () => {
-      dropdownComponent = wrapper.find("Dropdown");
+      dropdownComponent = wrapper.find("HvDropdown");
       instance = dropdownComponent.instance();
       instance.handleToggle = jest.fn();
 
@@ -155,7 +155,13 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <Dropdown multiSelect values={mockDataWithIds} onChange={onChangeMock} expanded />
+          <Dropdown
+            id="dropdown2"
+            multiSelect
+            values={mockDataWithIds}
+            onChange={onChangeMock}
+            expanded
+          />
         </HvProvider>
       );
     });

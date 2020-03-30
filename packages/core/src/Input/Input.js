@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
 import InfoS from "@hv/uikit-react-icons/dist/Info";
-import { KeyboardCodes, isKeypress } from "../utils/KeyboardUtils";
+import withId from "../withId";
+import withLabels from "../withLabels";
+import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import isBrowser from "../utils/browser";
 import InputAdornment from "./InputAdornment";
 import HvTypography from "../Typography";
@@ -15,14 +16,23 @@ import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
 import styles from "./styles";
 
+const DEFAULT_LABELS = {
+  inputLabel: "",
+  placeholder: "",
+  infoText: "",
+  warningText: "something wrong",
+  maxCharQuantityWarningText: "The value is too big",
+  minCharQuantityWarningText: "The value is too short",
+  requiredWarningText: "The value is required",
+  clearButtonLabel: "Clear the text"
+};
+
 class HvInput extends React.Component {
   constructor(props) {
     super(props);
-
-    const { id, validationState, value, initialValue, labels } = props;
+    const { validationState, value, initialValue, labels } = props;
 
     this.state = {
-      internalId: id || uniqueId("hv-input-"),
       validationState,
       value: value || initialValue,
       suggestionValues: null,
@@ -67,7 +77,7 @@ class HvInput extends React.Component {
   handleClear = () => {
     const { onChange } = this.props;
     const value = "";
-    onChange(value);
+    onChange(null, value);
     this.manageInputValueState(value, null);
     setTimeout(() => {
       this.node.children[1].children[0].focus();
@@ -121,8 +131,7 @@ class HvInput extends React.Component {
   onChangeHandler = event => {
     const { onChange } = this.props;
     const { value } = event.target;
-    // TODO review this on change does not correspond to the material on change and requires event
-    const newValue = onChange(value);
+    const newValue = onChange(event, value);
     this.suggestionHandler(value);
     this.manageInputValueState(newValue, null);
   };
@@ -277,7 +286,6 @@ class HvInput extends React.Component {
     } = this.props;
 
     const {
-      internalId,
       validationState: stateValidationState,
       value: stateValue,
       warningText,
@@ -301,7 +309,7 @@ class HvInput extends React.Component {
     const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
 
     const adornment = this.getInputAdornment(
-      `${internalId}-input`,
+      `${id}-input`,
       classes,
       showValidationIcon,
       stateValidationState,
@@ -316,7 +324,7 @@ class HvInput extends React.Component {
           this.node = node;
         }}
         className={clsx(classes.root, className)}
-        id={internalId}
+        id={id}
         onBlur={this.onContainerBlurHandler}
       >
         <div className={classes.labelContainer}>
@@ -324,8 +332,8 @@ class HvInput extends React.Component {
             <HvTypography
               variant="labelText"
               component="label"
-              id={`${internalId}-label`}
-              htmlFor={`${internalId}-input`}
+              id={`${id}-label`}
+              htmlFor={`${id}-input`}
               className={clsx(classes.label, {
                 [classes.labelDisabled]: disabled
               })}
@@ -343,8 +351,8 @@ class HvInput extends React.Component {
         </div>
 
         <Input
-          id={`${internalId}-input`}
-          aria-describedby={showInfo && labels.infoText ? `${internalId}-description` : undefined}
+          id={`${id}-input`}
+          aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
           autoFocus={autoFocus}
           onKeyDown={this.onKeyDownHandler}
           onBlur={this.onInputBlurHandler}
@@ -395,7 +403,7 @@ class HvInput extends React.Component {
 
         {showInfo && labels.infoText && (
           <HvTypography
-            id={`${internalId}-description`}
+            id={`${id}-description`}
             variant="infoText"
             className={clsx(classes.infoText)}
             style={{
@@ -414,10 +422,10 @@ class HvInput extends React.Component {
             display: stateValidationState === validationStates.invalid ? "block" : "none"
           }}
           aria-live="polite"
-          aria-controls={`${internalId}-input`}
+          aria-controls={`${id}-input`}
           aria-atomic="true"
           aria-relevant="additions text"
-          aria-labelledby={labels.inputLabel ? `${internalId}-label` : null}
+          aria-labelledby={labels.inputLabel ? `${id}-label` : null}
         >
           {stateValidationState === validationStates.invalid
             ? externalWarningTextOverride || warningText
@@ -667,16 +675,6 @@ HvInput.defaultProps = {
   className: "",
   id: undefined,
   password: false,
-  labels: {
-    inputLabel: "",
-    placeholder: "",
-    infoText: "",
-    warningText: "something wrong",
-    maxCharQuantityWarningText: "The value is too big",
-    minCharQuantityWarningText: "The value is too short",
-    requiredWarningText: "The value is required",
-    clearButtonLabel: "Clear the text"
-  },
   inputProps: {},
   inputRef: null,
   customFixedIcon: null,
@@ -697,11 +695,11 @@ HvInput.defaultProps = {
   isRequired: false,
   suggestionListCallback: () => {},
   suggestionSelectedCallback: () => {},
-  onChange: value => value,
+  onChange: (event, value) => value,
   onBlur: () => {},
   onFocus: () => {},
   onKeyDown: () => {},
   externalWarningTextOverride: null
 };
 
-export default withStyles(styles, { name: "HvInput" })(HvInput);
+export default withStyles(styles, { name: "HvInput" })(withLabels(DEFAULT_LABELS)(withId(HvInput)));

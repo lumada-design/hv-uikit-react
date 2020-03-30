@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Custom Pagination should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -776,21 +772,9 @@ exports[`Custom Pagination should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Pagination)
+      <WithStyles(Component)
         canNext={true}
         canPrevious={true}
-        className=""
-        labels={
-          Object {
-            "pageSizeEntryName": "rows",
-            "pageSizePrev": "Show",
-            "pageSizeSelectorDescription": "Select how many to display",
-            "pagesIndeterminate": "Many",
-            "pagesSeparator": "of",
-          }
-        }
-        onPageChange={[Function]}
-        onPageSizeChange={[Function]}
         page={2}
         pageSize={5}
         pageSizeOptions={
@@ -803,10 +787,9 @@ exports[`Custom Pagination should render correctly 1`] = `
         showPageJump={false}
         showPageSizeOptions={true}
       >
-        <Pagination
+        <Component
           canNext={true}
           canPrevious={true}
-          className=""
           classes={
             Object {
               "icon": "HvPagination-icon",
@@ -823,17 +806,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               "selectDownIcon": "HvPagination-selectDownIcon",
             }
           }
-          labels={
-            Object {
-              "pageSizeEntryName": "rows",
-              "pageSizePrev": "Show",
-              "pageSizeSelectorDescription": "Select how many to display",
-              "pagesIndeterminate": "Many",
-              "pagesSeparator": "of",
-            }
-          }
-          onPageChange={[Function]}
-          onPageSizeChange={[Function]}
           page={2}
           pageSize={5}
           pageSizeOptions={
@@ -846,385 +818,148 @@ exports[`Custom Pagination should render correctly 1`] = `
           showPageJump={false}
           showPageSizeOptions={true}
         >
-          <div
-            className="HvPagination-root"
-            id="hv-pagination-4"
+          <Pagination
+            canNext={true}
+            canPrevious={true}
+            classes={
+              Object {
+                "icon": "HvPagination-icon",
+                "iconContainer": "HvPagination-iconContainer",
+                "pageInfo": "HvPagination-pageInfo",
+                "pageJump": "HvPagination-pageJump",
+                "pageNavigator": "HvPagination-pageNavigator",
+                "pageSizeInput": "HvPagination-pageSizeInput",
+                "pageSizeInputContainer": "HvPagination-pageSizeInputContainer",
+                "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
+                "pageSizeOptions": "HvPagination-pageSizeOptions",
+                "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
+                "root": "HvPagination-root",
+                "selectDownIcon": "HvPagination-selectDownIcon",
+              }
+            }
+            labels={
+              Object {
+                "pageSizeEntryName": "rows",
+                "pageSizePrev": "Show",
+                "pageSizeSelectorDescription": "Select how many to display",
+                "pagesIndeterminate": "Many",
+                "pagesSeparator": "of",
+              }
+            }
+            page={2}
+            pageSize={5}
+            pageSizeOptions={
+              Array [
+                5,
+                10,
+              ]
+            }
+            pages={4}
+            showPageJump={false}
+            showPageSizeOptions={true}
           >
             <div
-              className="HvPagination-pageSizeOptions"
+              className="HvPagination-root"
             >
-              <WithStyles(ForwardRef)
-                component="span"
-                variant="sText"
+              <div
+                className="HvPagination-pageSizeOptions"
               >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
-                      "disabledButtonText": "HvTypography-disabledButtonText",
-                      "highlightText": "HvTypography-highlightText",
-                      "infoText": "HvTypography-infoText",
-                      "inlineLink": "HvTypography-inlineLink",
-                      "lTitle": "HvTypography-lTitle",
-                      "labelText": "HvTypography-labelText",
-                      "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "sLink": "HvTypography-sLink",
-                      "sText": "HvTypography-sText",
-                      "sTitle": "HvTypography-sTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "selectedText": "HvTypography-selectedText",
-                      "vizText": "HvTypography-vizText",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
-                    }
-                  }
+                <WithStyles(ForwardRef)
                   component="span"
                   variant="sText"
                 >
-                  <span
-                    className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    component="span"
+                    variant="sText"
                   >
-                    Show
-                  </span>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-              <select
-                aria-label="Select how many to display"
-                className="HvPagination-pageSizeOptionsSelect"
-                disabled={false}
-                id="hv-pagination-4-pageSize"
-                onChange={[Function]}
-                value={5}
-              >
-                <option
-                  key="5"
+                    <span
+                      className="HvTypography-root HvTypography-sText"
+                    >
+                      Show
+                    </span>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+                <select
+                  aria-label="Select how many to display"
+                  className="HvPagination-pageSizeOptionsSelect"
+                  disabled={false}
+                  onChange={[Function]}
                   value={5}
                 >
-                  5
-                </option>
-                <option
-                  key="10"
-                  value={10}
-                >
-                  10
-                </option>
-              </select>
-              <WithStyles(DropDownXS)
-                className="HvPagination-selectDownIcon"
-              >
-                <DropDownXS
+                  <option
+                    key="5"
+                    value={5}
+                  >
+                    5
+                  </option>
+                  <option
+                    key="10"
+                    value={10}
+                  >
+                    10
+                  </option>
+                </select>
+                <WithStyles(DropDownXS)
                   className="HvPagination-selectDownIcon"
-                  classes={
-                    Object {
-                      "root": "HvIconDropDownXS-root",
-                      "rootL": "HvIconDropDownXS-rootL",
-                      "rootM": "HvIconDropDownXS-rootM",
-                      "rootS": "HvIconDropDownXS-rootS",
-                      "rootXs": "HvIconDropDownXS-rootXs",
-                    }
-                  }
                 >
-                  <div
-                    className="HvPagination-selectDownIcon HvIconDropDownXS-root HvIconDropDownXS-rootXs"
-                  >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        className="color0"
-                        d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                        fill="#414141"
-                      />
-                    </svg>
-                  </div>
-                </DropDownXS>
-              </WithStyles(DropDownXS)>
-              <WithStyles(ForwardRef)
-                component="span"
-                variant="sText"
-              >
-                <ForwardRef
-                  classes={
-                    Object {
-                      "3xlTitle": "HvTypography-3xlTitle",
-                      "4xlTitle": "HvTypography-4xlTitle",
-                      "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
-                      "disabledButtonText": "HvTypography-disabledButtonText",
-                      "highlightText": "HvTypography-highlightText",
-                      "infoText": "HvTypography-infoText",
-                      "inlineLink": "HvTypography-inlineLink",
-                      "lTitle": "HvTypography-lTitle",
-                      "labelText": "HvTypography-labelText",
-                      "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
-                      "normalText": "HvTypography-normalText",
-                      "placeholderText": "HvTypography-placeholderText",
-                      "sLink": "HvTypography-sLink",
-                      "sText": "HvTypography-sText",
-                      "sTitle": "HvTypography-sTitle",
-                      "selectedNavText": "HvTypography-selectedNavText",
-                      "selectedText": "HvTypography-selectedText",
-                      "vizText": "HvTypography-vizText",
-                      "xlTitle": "HvTypography-xlTitle",
-                      "xsTitle": "HvTypography-xsTitle",
-                      "xxlTitle": "HvTypography-xxlTitle",
-                      "xxsTitle": "HvTypography-xxsTitle",
-                    }
-                  }
-                  component="span"
-                  variant="sText"
-                >
-                  <span
-                    className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
-                  >
-                    rows
-                  </span>
-                </ForwardRef>
-              </WithStyles(ForwardRef)>
-            </div>
-            <div
-              className="HvPagination-pageNavigator"
-            >
-              <WithStyles(ForwardRef(IconButton))
-                className="HvPagination-iconContainer"
-                disabled={false}
-                id="hv-pagination-4-firstPage-button"
-                onClick={[Function]}
-              >
-                <ForwardRef(IconButton)
-                  className="HvPagination-iconContainer"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiIconButton-colorInherit",
-                      "colorPrimary": "MuiIconButton-colorPrimary",
-                      "colorSecondary": "MuiIconButton-colorSecondary",
-                      "disabled": "Mui-disabled",
-                      "edgeEnd": "MuiIconButton-edgeEnd",
-                      "edgeStart": "MuiIconButton-edgeStart",
-                      "label": "MuiIconButton-label",
-                      "root": "MuiIconButton-root",
-                      "sizeSmall": "MuiIconButton-sizeSmall",
-                    }
-                  }
-                  disabled={false}
-                  id="hv-pagination-4-firstPage-button"
-                  onClick={[Function]}
-                >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer"
-                    disabled={false}
-                    focusRipple={true}
-                    id="hv-pagination-4-firstPage-button"
-                    onClick={[Function]}
-                  >
-                    <ForwardRef(ButtonBase)
-                      centerRipple={true}
-                      className="MuiIconButton-root HvPagination-iconContainer"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
+                  <DropDownXS
+                    className="HvPagination-selectDownIcon"
+                    classes={
+                      Object {
+                        "root": "HvIconDropDownXS-root",
+                        "rootL": "HvIconDropDownXS-rootL",
+                        "rootM": "HvIconDropDownXS-rootM",
+                        "rootS": "HvIconDropDownXS-rootS",
+                        "rootXs": "HvIconDropDownXS-rootXs",
                       }
-                      disableRipple={true}
-                      disabled={false}
-                      focusRipple={true}
-                      id="hv-pagination-4-firstPage-button"
-                      onClick={[Function]}
+                    }
+                  >
+                    <div
+                      className="HvPagination-selectDownIcon HvIconDropDownXS-root HvIconDropDownXS-rootXs"
                     >
-                      <button
-                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
-                        disabled={false}
-                        id="hv-pagination-4-firstPage-button"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
+                      <svg
+                        focusable={false}
+                        height="12px"
+                        viewBox="0 0 12 12"
+                        width="12px"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <span
-                          className="MuiIconButton-label"
-                        >
-                          <WithStyles(Start)
-                            className="HvPagination-icon"
-                          >
-                            <Start
-                              className="HvPagination-icon"
-                              classes={
-                                Object {
-                                  "root": "HvIconStart-root",
-                                  "rootL": "HvIconStart-rootL",
-                                  "rootM": "HvIconStart-rootM",
-                                  "rootS": "HvIconStart-rootS",
-                                  "rootXs": "HvIconStart-rootXs",
-                                }
-                              }
-                            >
-                              <div
-                                className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
-                              >
-                                <svg
-                                  focusable={false}
-                                  height="16px"
-                                  viewBox="0 0 16 16"
-                                  width="16px"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </Start>
-                          </WithStyles(Start)>
-                        </span>
-                        <NoSsr />
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(IconButton)>
-              </WithStyles(ForwardRef(IconButton))>
-              <WithStyles(ForwardRef(IconButton))
-                className="HvPagination-iconContainer"
-                disabled={false}
-                id="hv-pagination-4-previousPage-button"
-                onClick={[Function]}
-              >
-                <ForwardRef(IconButton)
-                  className="HvPagination-iconContainer"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiIconButton-colorInherit",
-                      "colorPrimary": "MuiIconButton-colorPrimary",
-                      "colorSecondary": "MuiIconButton-colorSecondary",
-                      "disabled": "Mui-disabled",
-                      "edgeEnd": "MuiIconButton-edgeEnd",
-                      "edgeStart": "MuiIconButton-edgeStart",
-                      "label": "MuiIconButton-label",
-                      "root": "MuiIconButton-root",
-                      "sizeSmall": "MuiIconButton-sizeSmall",
-                    }
-                  }
-                  disabled={false}
-                  id="hv-pagination-4-previousPage-button"
-                  onClick={[Function]}
-                >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer"
-                    disabled={false}
-                    focusRipple={true}
-                    id="hv-pagination-4-previousPage-button"
-                    onClick={[Function]}
-                  >
-                    <ForwardRef(ButtonBase)
-                      centerRipple={true}
-                      className="MuiIconButton-root HvPagination-iconContainer"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      disableRipple={true}
-                      disabled={false}
-                      focusRipple={true}
-                      id="hv-pagination-4-previousPage-button"
-                      onClick={[Function]}
-                    >
-                      <button
-                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
-                        disabled={false}
-                        id="hv-pagination-4-previousPage-button"
-                        onBlur={[Function]}
-                        onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
-                      >
-                        <span
-                          className="MuiIconButton-label"
-                        >
-                          <WithStyles(Backwards)
-                            className="HvPagination-icon"
-                          >
-                            <Backwards
-                              className="HvPagination-icon"
-                              classes={
-                                Object {
-                                  "root": "HvIconBackwards-root",
-                                  "rootL": "HvIconBackwards-rootL",
-                                  "rootM": "HvIconBackwards-rootM",
-                                  "rootS": "HvIconBackwards-rootS",
-                                  "rootXs": "HvIconBackwards-rootXs",
-                                }
-                              }
-                            >
-                              <div
-                                className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
-                              >
-                                <svg
-                                  focusable={false}
-                                  height="16px"
-                                  viewBox="0 0 16 16"
-                                  width="16px"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    className="color0"
-                                    d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </Backwards>
-                          </WithStyles(Backwards)>
-                        </span>
-                        <NoSsr />
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(IconButton)>
-              </WithStyles(ForwardRef(IconButton))>
-              <div
-                className="HvPagination-pageInfo"
-              >
+                        <path
+                          className="color0"
+                          d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                  </DropDownXS>
+                </WithStyles(DropDownXS)>
                 <WithStyles(ForwardRef)
                   component="span"
                   variant="sText"
@@ -1235,7 +970,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
                         "disabledButtonText": "HvTypography-disabledButtonText",
                         "highlightText": "HvTypography-highlightText",
                         "infoText": "HvTypography-infoText",
@@ -1243,9 +977,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                         "lTitle": "HvTypography-lTitle",
                         "labelText": "HvTypography-labelText",
                         "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
                         "sLink": "HvTypography-sLink",
                         "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
@@ -1262,330 +996,579 @@ exports[`Custom Pagination should render correctly 1`] = `
                     variant="sText"
                   >
                     <span
-                      className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
+                      className="HvTypography-root HvTypography-sText"
                     >
-                      3
-                    </span>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  component="span"
-                  variant="sText"
-                >
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
-                        "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
-                        "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
-                        "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
-                        "sTitle": "HvTypography-sTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
-                        "vizText": "HvTypography-vizText",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                    component="span"
-                    variant="sText"
-                  >
-                    <span
-                      className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
-                    >
-                       of 
-                    </span>
-                  </ForwardRef>
-                </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  component="span"
-                  id="hv-pagination-4-totalPages"
-                  variant="sText"
-                >
-                  <ForwardRef
-                    classes={
-                      Object {
-                        "3xlTitle": "HvTypography-3xlTitle",
-                        "4xlTitle": "HvTypography-4xlTitle",
-                        "5xlTitle": "HvTypography-5xlTitle",
-                        "baseFontFamily": "HvTypography-baseFontFamily",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
-                        "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
-                        "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
-                        "mTitle": "HvTypography-mTitle",
-                        "margin": "HvTypography-margin",
-                        "normalText": "HvTypography-normalText",
-                        "placeholderText": "HvTypography-placeholderText",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
-                        "sTitle": "HvTypography-sTitle",
-                        "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
-                        "vizText": "HvTypography-vizText",
-                        "xlTitle": "HvTypography-xlTitle",
-                        "xsTitle": "HvTypography-xsTitle",
-                        "xxlTitle": "HvTypography-xxlTitle",
-                        "xxsTitle": "HvTypography-xxsTitle",
-                      }
-                    }
-                    component="span"
-                    id="hv-pagination-4-totalPages"
-                    variant="sText"
-                  >
-                    <span
-                      className="HvTypography-sText HvTypography-baseFontFamily HvTypography-margin"
-                      id="hv-pagination-4-totalPages"
-                    >
-                      4
+                      rows
                     </span>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
               </div>
-              <WithStyles(ForwardRef(IconButton))
-                className="HvPagination-iconContainer"
-                disabled={false}
-                id="hv-pagination-4-nextPage-button"
-                onClick={[Function]}
+              <div
+                className="HvPagination-pageNavigator"
               >
-                <ForwardRef(IconButton)
+                <WithStyles(ForwardRef(IconButton))
                   className="HvPagination-iconContainer"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiIconButton-colorInherit",
-                      "colorPrimary": "MuiIconButton-colorPrimary",
-                      "colorSecondary": "MuiIconButton-colorSecondary",
-                      "disabled": "Mui-disabled",
-                      "edgeEnd": "MuiIconButton-edgeEnd",
-                      "edgeStart": "MuiIconButton-edgeStart",
-                      "label": "MuiIconButton-label",
-                      "root": "MuiIconButton-root",
-                      "sizeSmall": "MuiIconButton-sizeSmall",
-                    }
-                  }
                   disabled={false}
-                  id="hv-pagination-4-nextPage-button"
                   onClick={[Function]}
                 >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer"
+                  <ForwardRef(IconButton)
+                    className="HvPagination-iconContainer"
+                    classes={
+                      Object {
+                        "colorInherit": "MuiIconButton-colorInherit",
+                        "colorPrimary": "MuiIconButton-colorPrimary",
+                        "colorSecondary": "MuiIconButton-colorSecondary",
+                        "disabled": "Mui-disabled",
+                        "edgeEnd": "MuiIconButton-edgeEnd",
+                        "edgeStart": "MuiIconButton-edgeStart",
+                        "label": "MuiIconButton-label",
+                        "root": "MuiIconButton-root",
+                        "sizeSmall": "MuiIconButton-sizeSmall",
+                      }
+                    }
                     disabled={false}
-                    focusRipple={true}
-                    id="hv-pagination-4-nextPage-button"
                     onClick={[Function]}
                   >
-                    <ForwardRef(ButtonBase)
+                    <WithStyles(ForwardRef(ButtonBase))
                       centerRipple={true}
                       className="MuiIconButton-root HvPagination-iconContainer"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      id="hv-pagination-4-nextPage-button"
                       onClick={[Function]}
                     >
-                      <button
-                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                      <ForwardRef(ButtonBase)
+                        centerRipple={true}
+                        className="MuiIconButton-root HvPagination-iconContainer"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        disableRipple={true}
                         disabled={false}
-                        id="hv-pagination-4-nextPage-button"
-                        onBlur={[Function]}
+                        focusRipple={true}
                         onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
                       >
-                        <span
-                          className="MuiIconButton-label"
+                        <button
+                          className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
                         >
-                          <WithStyles(Forwards)
-                            className="HvPagination-icon"
+                          <span
+                            className="MuiIconButton-label"
                           >
-                            <Forwards
+                            <WithStyles(Start)
                               className="HvPagination-icon"
-                              classes={
-                                Object {
-                                  "root": "HvIconForwards-root",
-                                  "rootL": "HvIconForwards-rootL",
-                                  "rootM": "HvIconForwards-rootM",
-                                  "rootS": "HvIconForwards-rootS",
-                                  "rootXs": "HvIconForwards-rootXs",
-                                }
-                              }
                             >
-                              <div
-                                className="HvPagination-icon HvIconForwards-root HvIconForwards-rootS"
+                              <Start
+                                className="HvPagination-icon"
+                                classes={
+                                  Object {
+                                    "root": "HvIconStart-root",
+                                    "rootL": "HvIconStart-rootL",
+                                    "rootM": "HvIconStart-rootM",
+                                    "rootS": "HvIconStart-rootS",
+                                    "rootXs": "HvIconStart-rootXs",
+                                  }
+                                }
                               >
-                                <svg
-                                  focusable={false}
-                                  height="16px"
-                                  viewBox="0 0 16 16"
-                                  width="16px"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                <div
+                                  className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
                                 >
-                                  <path
-                                    className="color0"
-                                    d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </Forwards>
-                          </WithStyles(Forwards)>
-                        </span>
-                        <NoSsr />
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(IconButton)>
-              </WithStyles(ForwardRef(IconButton))>
-              <WithStyles(ForwardRef(IconButton))
-                className="HvPagination-iconContainer"
-                disabled={false}
-                id="hv-pagination-4-lastPage-button"
-                onClick={[Function]}
-              >
-                <ForwardRef(IconButton)
+                                  <svg
+                                    focusable={false}
+                                    height="16px"
+                                    viewBox="0 0 16 16"
+                                    width="16px"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      className="color0"
+                                      d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </Start>
+                            </WithStyles(Start)>
+                          </span>
+                          <NoSsr />
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(IconButton)>
+                </WithStyles(ForwardRef(IconButton))>
+                <WithStyles(ForwardRef(IconButton))
                   className="HvPagination-iconContainer"
-                  classes={
-                    Object {
-                      "colorInherit": "MuiIconButton-colorInherit",
-                      "colorPrimary": "MuiIconButton-colorPrimary",
-                      "colorSecondary": "MuiIconButton-colorSecondary",
-                      "disabled": "Mui-disabled",
-                      "edgeEnd": "MuiIconButton-edgeEnd",
-                      "edgeStart": "MuiIconButton-edgeStart",
-                      "label": "MuiIconButton-label",
-                      "root": "MuiIconButton-root",
-                      "sizeSmall": "MuiIconButton-sizeSmall",
-                    }
-                  }
                   disabled={false}
-                  id="hv-pagination-4-lastPage-button"
                   onClick={[Function]}
                 >
-                  <WithStyles(ForwardRef(ButtonBase))
-                    centerRipple={true}
-                    className="MuiIconButton-root HvPagination-iconContainer"
+                  <ForwardRef(IconButton)
+                    className="HvPagination-iconContainer"
+                    classes={
+                      Object {
+                        "colorInherit": "MuiIconButton-colorInherit",
+                        "colorPrimary": "MuiIconButton-colorPrimary",
+                        "colorSecondary": "MuiIconButton-colorSecondary",
+                        "disabled": "Mui-disabled",
+                        "edgeEnd": "MuiIconButton-edgeEnd",
+                        "edgeStart": "MuiIconButton-edgeStart",
+                        "label": "MuiIconButton-label",
+                        "root": "MuiIconButton-root",
+                        "sizeSmall": "MuiIconButton-sizeSmall",
+                      }
+                    }
                     disabled={false}
-                    focusRipple={true}
-                    id="hv-pagination-4-lastPage-button"
                     onClick={[Function]}
                   >
-                    <ForwardRef(ButtonBase)
+                    <WithStyles(ForwardRef(ButtonBase))
                       centerRipple={true}
                       className="MuiIconButton-root HvPagination-iconContainer"
-                      classes={
-                        Object {
-                          "disabled": "Mui-disabled",
-                          "focusVisible": "Mui-focusVisible",
-                          "root": "MuiButtonBase-root",
-                        }
-                      }
-                      disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      id="hv-pagination-4-lastPage-button"
                       onClick={[Function]}
                     >
-                      <button
-                        className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                      <ForwardRef(ButtonBase)
+                        centerRipple={true}
+                        className="MuiIconButton-root HvPagination-iconContainer"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        disableRipple={true}
                         disabled={false}
-                        id="hv-pagination-4-lastPage-button"
-                        onBlur={[Function]}
+                        focusRipple={true}
                         onClick={[Function]}
-                        onDragLeave={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        onKeyUp={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseLeave={[Function]}
-                        onMouseUp={[Function]}
-                        onTouchEnd={[Function]}
-                        onTouchMove={[Function]}
-                        onTouchStart={[Function]}
-                        tabIndex={0}
-                        type="button"
                       >
-                        <span
-                          className="MuiIconButton-label"
+                        <button
+                          className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
                         >
-                          <WithStyles(End)
-                            className="HvPagination-icon"
+                          <span
+                            className="MuiIconButton-label"
                           >
-                            <End
+                            <WithStyles(Backwards)
                               className="HvPagination-icon"
-                              classes={
-                                Object {
-                                  "root": "HvIconEnd-root",
-                                  "rootL": "HvIconEnd-rootL",
-                                  "rootM": "HvIconEnd-rootM",
-                                  "rootS": "HvIconEnd-rootS",
-                                  "rootXs": "HvIconEnd-rootXs",
-                                }
-                              }
                             >
-                              <div
-                                className="HvPagination-icon HvIconEnd-root HvIconEnd-rootS"
+                              <Backwards
+                                className="HvPagination-icon"
+                                classes={
+                                  Object {
+                                    "root": "HvIconBackwards-root",
+                                    "rootL": "HvIconBackwards-rootL",
+                                    "rootM": "HvIconBackwards-rootM",
+                                    "rootS": "HvIconBackwards-rootS",
+                                    "rootXs": "HvIconBackwards-rootXs",
+                                  }
+                                }
                               >
-                                <svg
-                                  focusable={false}
-                                  height="16px"
-                                  viewBox="0 0 16 16"
-                                  width="16px"
-                                  xmlns="http://www.w3.org/2000/svg"
+                                <div
+                                  className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
                                 >
-                                  <path
-                                    className="color0"
-                                    d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
-                                    fill="#414141"
-                                  />
-                                </svg>
-                              </div>
-                            </End>
-                          </WithStyles(End)>
-                        </span>
-                        <NoSsr />
-                      </button>
-                    </ForwardRef(ButtonBase)>
-                  </WithStyles(ForwardRef(ButtonBase))>
-                </ForwardRef(IconButton)>
-              </WithStyles(ForwardRef(IconButton))>
+                                  <svg
+                                    focusable={false}
+                                    height="16px"
+                                    viewBox="0 0 16 16"
+                                    width="16px"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      className="color0"
+                                      d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </Backwards>
+                            </WithStyles(Backwards)>
+                          </span>
+                          <NoSsr />
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(IconButton)>
+                </WithStyles(ForwardRef(IconButton))>
+                <div
+                  className="HvPagination-pageInfo"
+                >
+                  <WithStyles(ForwardRef)
+                    component="span"
+                    variant="sText"
+                  >
+                    <ForwardRef
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "highlightText": "HvTypography-highlightText",
+                          "infoText": "HvTypography-infoText",
+                          "inlineLink": "HvTypography-inlineLink",
+                          "lTitle": "HvTypography-lTitle",
+                          "labelText": "HvTypography-labelText",
+                          "mTitle": "HvTypography-mTitle",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sLink": "HvTypography-sLink",
+                          "sText": "HvTypography-sText",
+                          "sTitle": "HvTypography-sTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "selectedText": "HvTypography-selectedText",
+                          "vizText": "HvTypography-vizText",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
+                        }
+                      }
+                      component="span"
+                      variant="sText"
+                    >
+                      <span
+                        className="HvTypography-root HvTypography-sText"
+                      >
+                        3
+                      </span>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
+                  <WithStyles(ForwardRef)
+                    component="span"
+                    variant="sText"
+                  >
+                    <ForwardRef
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "highlightText": "HvTypography-highlightText",
+                          "infoText": "HvTypography-infoText",
+                          "inlineLink": "HvTypography-inlineLink",
+                          "lTitle": "HvTypography-lTitle",
+                          "labelText": "HvTypography-labelText",
+                          "mTitle": "HvTypography-mTitle",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sLink": "HvTypography-sLink",
+                          "sText": "HvTypography-sText",
+                          "sTitle": "HvTypography-sTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "selectedText": "HvTypography-selectedText",
+                          "vizText": "HvTypography-vizText",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
+                        }
+                      }
+                      component="span"
+                      variant="sText"
+                    >
+                      <span
+                        className="HvTypography-root HvTypography-sText"
+                      >
+                         of 
+                      </span>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
+                  <WithStyles(ForwardRef)
+                    component="span"
+                    variant="sText"
+                  >
+                    <ForwardRef
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "highlightText": "HvTypography-highlightText",
+                          "infoText": "HvTypography-infoText",
+                          "inlineLink": "HvTypography-inlineLink",
+                          "lTitle": "HvTypography-lTitle",
+                          "labelText": "HvTypography-labelText",
+                          "mTitle": "HvTypography-mTitle",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sLink": "HvTypography-sLink",
+                          "sText": "HvTypography-sText",
+                          "sTitle": "HvTypography-sTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "selectedText": "HvTypography-selectedText",
+                          "vizText": "HvTypography-vizText",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
+                        }
+                      }
+                      component="span"
+                      variant="sText"
+                    >
+                      <span
+                        className="HvTypography-root HvTypography-sText"
+                      >
+                        4
+                      </span>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
+                </div>
+                <WithStyles(ForwardRef(IconButton))
+                  className="HvPagination-iconContainer"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  <ForwardRef(IconButton)
+                    className="HvPagination-iconContainer"
+                    classes={
+                      Object {
+                        "colorInherit": "MuiIconButton-colorInherit",
+                        "colorPrimary": "MuiIconButton-colorPrimary",
+                        "colorSecondary": "MuiIconButton-colorSecondary",
+                        "disabled": "Mui-disabled",
+                        "edgeEnd": "MuiIconButton-edgeEnd",
+                        "edgeStart": "MuiIconButton-edgeStart",
+                        "label": "MuiIconButton-label",
+                        "root": "MuiIconButton-root",
+                        "sizeSmall": "MuiIconButton-sizeSmall",
+                      }
+                    }
+                    disabled={false}
+                    onClick={[Function]}
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      centerRipple={true}
+                      className="MuiIconButton-root HvPagination-iconContainer"
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                    >
+                      <ForwardRef(ButtonBase)
+                        centerRipple={true}
+                        className="MuiIconButton-root HvPagination-iconContainer"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        disableRipple={true}
+                        disabled={false}
+                        focusRipple={true}
+                        onClick={[Function]}
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiIconButton-label"
+                          >
+                            <WithStyles(Forwards)
+                              className="HvPagination-icon"
+                            >
+                              <Forwards
+                                className="HvPagination-icon"
+                                classes={
+                                  Object {
+                                    "root": "HvIconForwards-root",
+                                    "rootL": "HvIconForwards-rootL",
+                                    "rootM": "HvIconForwards-rootM",
+                                    "rootS": "HvIconForwards-rootS",
+                                    "rootXs": "HvIconForwards-rootXs",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="HvPagination-icon HvIconForwards-root HvIconForwards-rootS"
+                                >
+                                  <svg
+                                    focusable={false}
+                                    height="16px"
+                                    viewBox="0 0 16 16"
+                                    width="16px"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      className="color0"
+                                      d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </Forwards>
+                            </WithStyles(Forwards)>
+                          </span>
+                          <NoSsr />
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(IconButton)>
+                </WithStyles(ForwardRef(IconButton))>
+                <WithStyles(ForwardRef(IconButton))
+                  className="HvPagination-iconContainer"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  <ForwardRef(IconButton)
+                    className="HvPagination-iconContainer"
+                    classes={
+                      Object {
+                        "colorInherit": "MuiIconButton-colorInherit",
+                        "colorPrimary": "MuiIconButton-colorPrimary",
+                        "colorSecondary": "MuiIconButton-colorSecondary",
+                        "disabled": "Mui-disabled",
+                        "edgeEnd": "MuiIconButton-edgeEnd",
+                        "edgeStart": "MuiIconButton-edgeStart",
+                        "label": "MuiIconButton-label",
+                        "root": "MuiIconButton-root",
+                        "sizeSmall": "MuiIconButton-sizeSmall",
+                      }
+                    }
+                    disabled={false}
+                    onClick={[Function]}
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      centerRipple={true}
+                      className="MuiIconButton-root HvPagination-iconContainer"
+                      disabled={false}
+                      focusRipple={true}
+                      onClick={[Function]}
+                    >
+                      <ForwardRef(ButtonBase)
+                        centerRipple={true}
+                        className="MuiIconButton-root HvPagination-iconContainer"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        disableRipple={true}
+                        disabled={false}
+                        focusRipple={true}
+                        onClick={[Function]}
+                      >
+                        <button
+                          className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <span
+                            className="MuiIconButton-label"
+                          >
+                            <WithStyles(End)
+                              className="HvPagination-icon"
+                            >
+                              <End
+                                className="HvPagination-icon"
+                                classes={
+                                  Object {
+                                    "root": "HvIconEnd-root",
+                                    "rootL": "HvIconEnd-rootL",
+                                    "rootM": "HvIconEnd-rootM",
+                                    "rootS": "HvIconEnd-rootS",
+                                    "rootXs": "HvIconEnd-rootXs",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="HvPagination-icon HvIconEnd-root HvIconEnd-rootS"
+                                >
+                                  <svg
+                                    focusable={false}
+                                    height="16px"
+                                    viewBox="0 0 16 16"
+                                    width="16px"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      className="color0"
+                                      d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
+                                      fill="#414141"
+                                    />
+                                  </svg>
+                                </div>
+                              </End>
+                            </WithStyles(End)>
+                          </span>
+                          <NoSsr />
+                        </button>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(IconButton)>
+                </WithStyles(ForwardRef(IconButton))>
+              </div>
             </div>
-          </div>
-        </Pagination>
-      </WithStyles(Pagination)>
+          </Pagination>
+        </Component>
+      </WithStyles(Component)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

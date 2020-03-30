@@ -43,7 +43,7 @@ api closeOnExit true: close vertical navigation menu when is clicked any area ou
     [Setup]                              Go To            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--closeonexit
     Wait Until Element Is Visible        ${vnBurger}      10s
     Click Element                        ${vnBurger}
-    Wait Until Element Is Visible        ${vNExpanded}    4s
+    Wait Until Element Is Visible        sample4-container-container    4s
     Click Element                        css:body
     Wait Until Element Is Not Visible    ${vNExpanded}    4s
 

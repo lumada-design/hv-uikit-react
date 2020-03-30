@@ -4,7 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import ActionsWithStyles from "../index";
+import Actions from "..";
 
 window.matchMedia = jest.fn().mockImplementation(query => ({
   matches: true,
@@ -14,23 +14,13 @@ window.matchMedia = jest.fn().mockImplementation(query => ({
   removeListener: jest.fn()
 }));
 
-const mockClick = jest.fn();
-
-const data = [
-  {
-    id: "1",
-    element: <div>Test 1</div>,
-    onClick: mockClick
-  }
-];
-
 describe("Actions withStyles", () => {
   let wrapper;
 
   it("should be able to render", () => {
     wrapper = mount(
       <HvProvider>
-        <ActionsWithStyles data={data} />
+        <Actions />
       </HvProvider>
     );
 

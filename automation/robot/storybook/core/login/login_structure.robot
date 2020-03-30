@@ -27,12 +27,12 @@ show errors and keep elements enable when log button is pressed on sample login2
     
 check and uncheck remember me checkbox when her label is clicked
     Go To                              ${STORYBOOK_URL}/${login1}
-    Wait Until Element Is Enabled      ${checkbox_remenber}    15s
-    Checkbox Should Not Be Selected    ${checkbox_remenber}
-    Click Element                      ${label_remenber}
-    Checkbox Should Be Selected        ${checkbox_remenber}
-    Click Element                      ${label_remenber}
-    Checkbox Should Not Be Selected    ${checkbox_remenber}
+    Wait Until Element Is Enabled      ${checkbox_remember}    15s
+    Checkbox Should Not Be Selected    ${checkbox_remember}
+    Click Element                      ${label_remember}
+    Checkbox Should Be Selected        ${checkbox_remember}
+    Click Element                      ${label_remember}
+    Checkbox Should Not Be Selected    ${checkbox_remember}
     
 show recovery form when Forgot your credentials button is pressed
     Go To                            ${STORYBOOK_URL}/${login5}

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
 import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
 import styles from "./styles";
+import { setId } from "../utils";
 
 const transLeft = props => <Slide {...props} direction="left" />;
 const transRight = props => <Slide {...props} direction="right" />;
@@ -25,29 +25,27 @@ const snackBarDirComponent = direction => {
   }
 };
 
-const HvSnackbar = props => {
-  const {
-    classes,
-    className = "",
-    id,
-    open = false,
-    onClose = null,
-    label = "",
-    anchorOrigin = { vertical: "top", horizontal: "right" },
-    autoHideDuration = 5000,
-    variant = "default",
-    showIcon = false,
-    customIcon = null,
-    action = null,
-    actionCallback = () => {},
-    transitionDuration = 300,
-    transitionDirection = "left",
-    offset
-  } = props;
-
-  const [snackbarId] = useState(id || uniqueId("hv-snackbar-"));
-
-  const anchorOriginOffset = offset && {
+const HvSnackbar = ({
+  classes,
+  className,
+  id,
+  open = false,
+  onClose,
+  label = "",
+  anchorOrigin = { vertical: "top", horizontal: "right" },
+  autoHideDuration = 5000,
+  variant = "default",
+  showIcon = false,
+  customIcon = null,
+  action = null,
+  actionCallback,
+  transitionDuration = 300,
+  transitionDirection = "left",
+  offset = 60,
+  snackbarContentProps,
+  ...others
+}) => {
+  const anchorOriginOffset = {
     anchorOriginTop: {
       top: `${offset}px`
     },
@@ -58,27 +56,27 @@ const HvSnackbar = props => {
 
   return (
     <Snackbar
-      {...(offset && {
-        style: anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
-      })}
+      style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]}
       classes={classes}
       className={className}
-      id={snackbarId}
+      id={id}
       anchorOrigin={anchorOrigin}
       open={open}
       onClose={onClose}
       autoHideDuration={autoHideDuration}
       transitionDuration={transitionDuration}
       TransitionComponent={snackBarDirComponent(transitionDirection)}
+      {...others}
     >
       <HvSnackBarContentWrapper
-        id={`${snackbarId}-content`}
+        id={setId(id, "content")}
         label={label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
         action={action}
         actionCallback={actionCallback}
+        {...snackbarContentProps}
       />
     </Snackbar>
   );
@@ -184,7 +182,11 @@ HvSnackbar.propTypes = {
   /**
    * Custom offset from top/bottom of the page, in px.
    */
-  offset: PropTypes.number
+  offset: PropTypes.number,
+  /**
+   * Others applied to the content of the snackbar.
+   */
+  snackbarContentProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvSnackbar" })(HvSnackbar);

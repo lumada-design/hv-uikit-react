@@ -3,7 +3,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { isKeypress, KeyboardCodes } from "../../utils/KeyboardUtils";
+import { isKeypress, KeyboardCodes, setId } from "../../utils";
 import HvTypography from "../../Typography";
 import Header from "./Header";
 import Navigation from "./Navigation";
@@ -215,7 +215,7 @@ class Calendar extends React.Component {
       <div className={classes.navigationContainer}>
         <div className={classes.navigationMonth}>
           <Navigation
-            id={`${id}-navigation-month`}
+            id={setId(id, "navigation-month")}
             navigationText={monthName}
             onNavigatePrevious={() => {
               this.navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
@@ -229,7 +229,7 @@ class Calendar extends React.Component {
         </div>
 
         <Navigation
-          id={`${id}-navigation-year`}
+          id={setId(id, "navigation-year")}
           navigationText={year.toString()}
           onNavigatePrevious={() => this.navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)}
           onNavigateNext={() => this.navigateTo(NAV_OPTIONS.NEXT_YEAR)}

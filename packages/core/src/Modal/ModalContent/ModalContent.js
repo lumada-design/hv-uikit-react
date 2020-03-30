@@ -5,7 +5,7 @@ import clsx from "clsx";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 
-const ModalContent = ({ classes, className = "", children }) => {
+const ModalContent = ({ classes, className, children }) => {
   const isString = typeof children === "string";
 
   return (
@@ -19,6 +19,7 @@ const ModalContent = ({ classes, className = "", children }) => {
     </DialogContent>
   );
 };
+
 ModalContent.propTypes = {
   /**
    * Class names to be applied.

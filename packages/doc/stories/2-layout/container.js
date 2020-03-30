@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import HvContainer from "@hv/uikit-react-core/dist/Container";
+import { HvContainer } from "@hv/uikit-react-core/dist";
 
 storiesOf("Layout", module).add("Container", () => <HvContainer />, {
   title: "Container",

@@ -42,7 +42,7 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
-const HvProvider = ({ children, theme, uiKitTheme, changeTheme }) => {
+const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme = () => {} }) => {
   const pConfig = { changeTheme };
 
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
@@ -73,12 +73,6 @@ HvProvider.propTypes = {
    * Which of design system default themes to use.
    */
   changeTheme: PropTypes.func
-};
-
-HvProvider.defaultProps = {
-  theme: null,
-  uiKitTheme: "dawn",
-  changeTheme: () => {}
 };
 
 export default HvProvider;

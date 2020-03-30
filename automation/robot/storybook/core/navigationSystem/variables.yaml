@@ -1,6 +1,6 @@
-header:            css:div[id^=hv-header]
-hBrand:            css:div[id^=hv-brand]
-hNavigation:       css:div[id^=hv-navigation]
+header:            css:div[class=HvHeader-header]
+hBrand:            css:div[class=HvHeaderBrand-root]
+hNavigation:       css:nav[class*=Navigation]
 hItems:            css:li[class*=menubarItem]
 hItem1:            css:li[class*=menubarItem]:nth-child(1)
 hItem1.1:          css:li[class*=menubarItem]:nth-child(1) li:nth-child(1)
@@ -15,12 +15,12 @@ hItem5.1:          css:li[class*=menubarItem]:nth-child(5) li:nth-child(1)
 hItem5.2:          css:li[class*=menubarItem]:nth-child(5) li:nth-child(2)
 hChildItems:       css:ul[class*=MenuBar-active] li
 hActions:          css:[id^=hv-actions]
-hAction1:          css:[id^=hv-actions]>button:nth-child(1)
-hAction2:          css:[id^=hv-actions]>button:nth-child(2)
+hAction1:          css:div[class='HvHeaderActions-root']>button:nth-child(1)
+hAction2:          css:div[class='HvHeaderActions-root']>button:nth-child(2)
 vNavigation:       css:nav
-vNExpanded:        hv-verticalnavigation1-container-container
+vNExpanded:        sample3-container-container
 vnAnchorBar:       css:div[class*=VerticalContainer-anchorBar]
-vnBurger:          css:button[id*=hamburger-button]
+vnBurger:          css:button[id*=hamburger-button]     #css:button[aria-label='open']
 vnItems:           css:nav>ul>li
 vnItem1:           css:nav>ul>li:nth-child(1)
 vnItem1Items:      css:nav>ul>li:nth-child(1)ul>li

@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Header /> should render correctly 1`] = `
-<HvProvider
-  changeTheme={[Function]}
-  theme={null}
-  uiKitTheme="dawn"
->
+<HvProvider>
   <StylesProvider
     generateClassName={[Function]}
     injectFirst={true}
@@ -811,7 +807,6 @@ exports[`<Header /> should render correctly 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "baseFontFamily": "HvTypography-baseFontFamily",
                   "disabledButtonText": "HvTypography-disabledButtonText",
                   "highlightText": "HvTypography-highlightText",
                   "infoText": "HvTypography-infoText",
@@ -819,9 +814,9 @@ exports[`<Header /> should render correctly 1`] = `
                   "lTitle": "HvTypography-lTitle",
                   "labelText": "HvTypography-labelText",
                   "mTitle": "HvTypography-mTitle",
-                  "margin": "HvTypography-margin",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
                   "sLink": "HvTypography-sLink",
                   "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
@@ -837,7 +832,7 @@ exports[`<Header /> should render correctly 1`] = `
               variant="labelText"
             >
               <p
-                className="HvTypography-labelText HvTypography-baseFontFamily HvTypography-margin HvDatePickerHeader-rangeLabel"
+                className="HvDatePickerHeader-rangeLabel HvTypography-root HvTypography-labelText"
               >
                 Mock text for the top text
               </p>
@@ -859,7 +854,6 @@ exports[`<Header /> should render correctly 1`] = `
                       "3xlTitle": "HvTypography-3xlTitle",
                       "4xlTitle": "HvTypography-4xlTitle",
                       "5xlTitle": "HvTypography-5xlTitle",
-                      "baseFontFamily": "HvTypography-baseFontFamily",
                       "disabledButtonText": "HvTypography-disabledButtonText",
                       "highlightText": "HvTypography-highlightText",
                       "infoText": "HvTypography-infoText",
@@ -867,9 +861,9 @@ exports[`<Header /> should render correctly 1`] = `
                       "lTitle": "HvTypography-lTitle",
                       "labelText": "HvTypography-labelText",
                       "mTitle": "HvTypography-mTitle",
-                      "margin": "HvTypography-margin",
                       "normalText": "HvTypography-normalText",
                       "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
                       "sLink": "HvTypography-sLink",
                       "sText": "HvTypography-sText",
                       "sTitle": "HvTypography-sTitle",
@@ -885,7 +879,7 @@ exports[`<Header /> should render correctly 1`] = `
                   variant="normalText"
                 >
                   <p
-                    className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin"
+                    className="HvTypography-root HvTypography-normalText"
                   >
                     Wed
                   </p>
