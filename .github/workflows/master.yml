@@ -68,7 +68,7 @@ jobs:
         shell: cmd
         run: >-
           robot 
-          --variable STORYBOOK_URL:http://localhost:9002 
+          --variable STORYBOOK_URL:http://172.20.42.225:9002 
           --variable BROWSER:${{ matrix.browser }} 
           --exclude pa11y 
           --exclude issueORissue-${{ matrix.browser }}ORimage 
