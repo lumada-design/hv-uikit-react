@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
+import Ungroup from "@hv/uikit-react-icons/dist/Generic/Ungroup";
 
 import {
   HvModal,
@@ -28,20 +28,19 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         open={open}
         onClose={() => setOpen(false)}
         id="test"
-        firstFocusable="switchAnyway"
       >
         {title}
         {content ? (
           content
         ) : (
-          <HvModalContent>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
-          </HvModalContent>
-        )}
+            <HvModalContent>
+              Switching to model view will clear all the fields in your
+              visualization. You will need to re-select your fields.
+            </HvModalContent>
+          )}
         <HvModalActions>
-          <HvButton id="switchAnyway" category="ghost">
-            Switch anyway
+          <HvButton id="apply" category="ghost">
+            Apply
           </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
@@ -56,8 +55,8 @@ export default (
   <SimpleModal
     buttonMessage="Custom icon"
     title={
-      <HvModalTitle customIcon={<Unlock iconSize="M" />}>
-        Are you sure?
+      <HvModalTitle customIcon={<Ungroup iconSize="M" />}>
+        Switch model view?
       </HvModalTitle>
     }
   />

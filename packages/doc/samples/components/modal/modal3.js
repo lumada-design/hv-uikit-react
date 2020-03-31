@@ -39,14 +39,14 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         {content ? (
           content
         ) : (
-          <HvModalContent>
-            Switching to model view will clear all the fields in your
-            visualization. You will need to re-select your fields.
-          </HvModalContent>
-        )}
+            <HvModalContent>
+              Switching to model view will clear all the fields in your
+              visualization. You will need to re-select your fields.
+            </HvModalContent>
+          )}
         <HvModalActions>
-          <HvButton category="ghost">Apply</HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="apply" category="ghost">Apply</HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvModalActions>
@@ -119,7 +119,7 @@ const containerStyle = {
 
 const styles = () => ({
   container: {
-    width: 555
+    width: "100%"
   },
   label: {
     paddingTop: 0,
@@ -132,17 +132,15 @@ const styles = () => ({
 });
 
 const textAreaStyles = () => ({
-  container: {
-    width: 555
-  },
   textAreaContainer: {
-    paddingTop: 30
+    paddingTop: 30,
+    width: "100%"
   }
 });
 
 const contentStyles = () => ({
   paper: {
-    width: 555
+    width: "100%"
   }
 });
 
@@ -189,15 +187,13 @@ export default (
             validate={false}
           />
           <TextAreaWithStyles
-            disabled
             id="outlined-with-placeholder"
             inputTextConfiguration={{
-              placeholder: "Enter work Order Description",
+              placeholder: "Enter text",
               inputLabel: "Description"
             }}
             multiline
             rows="3"
-            value="This is an example"
           />
         </HvModalContent>
       }
