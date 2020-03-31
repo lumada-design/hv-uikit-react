@@ -23,7 +23,8 @@ const styles = theme => ({
     width: "100%",
     whiteSpace: "normal",
     textOverflow: "ellipsis",
-    overflow: "hidden"
+    overflow: "hidden",
+    maxHeight: 42
   },
   headerTextContainer: {
     minWidth: 0,
@@ -49,7 +50,10 @@ const styles = theme => ({
   },
   rtSortIcon: {
     width: "32px",
-    height: "32px"
+    height: "32px",
+    "&:focus": {
+      outline: 0
+    },
   },
   rtSortIconNumeric: {
     marginLeft: "auto"

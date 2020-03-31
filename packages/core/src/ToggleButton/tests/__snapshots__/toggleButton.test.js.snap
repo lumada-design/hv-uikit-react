@@ -5066,9 +5066,6 @@ body {
 .ToggleButton-root-1 {
   display: inline-flex;
 }
-.ToggleButton-icon-2 {
-  display: inline-table;
-}
 .ToggleButton-icon-2:hover {
   cursor: pointer;
   background-color: #F0F0F0;
@@ -5098,9 +5095,7 @@ body {
                   Object {
                     "display": "inline-flex",
                   },
-                  Object {
-                    "display": "inline-table",
-                  },
+                  Object {},
                   Object {
                     "background-color": "#F0F0F0",
                     "cursor": "pointer",
@@ -5115,9 +5110,7 @@ body {
                     "background-color": "#F0F0F0",
                     "pointer-events": "none",
                   },
-                  ".ToggleButton-icon-2": Object {
-                    "display": "inline-table",
-                  },
+                  ".ToggleButton-icon-2": Object {},
                   ".ToggleButton-icon-2:hover": Object {
                     "background-color": "#F0F0F0",
                     "cursor": "pointer",
@@ -5129,9 +5122,7 @@ body {
                     "background-color": "#F0F0F0",
                     "pointer-events": "none",
                   },
-                  "icon": Object {
-                    "display": "inline-table",
-                  },
+                  "icon": Object {},
                   "root": Object {
                     "display": "inline-flex",
                   },
@@ -5638,7 +5629,6 @@ body {
                       "backgroundColor": "#F0F0F0",
                       "cursor": "pointer",
                     },
-                    "display": "inline-table",
                   },
                   "root": Object {
                     "display": "inline-flex",

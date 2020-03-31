@@ -19,6 +19,7 @@ const styles = theme => ({
     height: "32px",
     marginRight: 0,
     marginLeft: 0,
+    display: "flex",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
@@ -46,10 +47,10 @@ const styles = theme => ({
     }
   },
   labelEnd: {
-    paddingRight: "8px"
+    margingRight: "8px"
   },
   labelStart: {
-    paddingLeft: "8px"
+    marginLeft: "8px"
   },
   checkBox: {
     padding: 0
@@ -57,6 +58,11 @@ const styles = theme => ({
   icon: {
     width: "32px",
     height: "32px"
+  },
+  truncate: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
   }
 });
 

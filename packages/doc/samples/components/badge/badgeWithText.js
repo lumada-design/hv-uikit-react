@@ -3,7 +3,9 @@ import HvBadge from "@hv/uikit-react-core/dist/Badge";
 
 const exampleStyles = {
   display: "flex",
-  width: "800px",
+  flexWrap: "wrap",
+  maxWidth: "800px",
+  padding: "0 30px 0 0",
   justifyContent: "space-between"
 };
 
@@ -13,9 +15,9 @@ export default (
 
     <HvBadge count={1} text="Events" textVariant="sTitle" />
 
-    <HvBadge showCount count={8} text="Events" textVariant="sTitle" />
+    <HvBadge showCount count={2} text="Events" textVariant="sTitle" />
 
-    <HvBadge showCount count={88} text="Events" textVariant="sTitle" />
+    <HvBadge showCount count={18} maxCount={9} text="Events" textVariant="sTitle" />
 
     <HvBadge showCount count={888} text="Events" textVariant="sTitle" />
   </div>

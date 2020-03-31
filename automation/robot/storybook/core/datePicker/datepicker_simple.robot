@@ -125,3 +125,9 @@ Change year by using the arrows icons
     Wait Until Element Is Visible        ${calendar}                 2s
     Element Attribute Value Should Be    ${input}                    value         9 Jan 1971
 
+Change date externally
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluechange
+    Wait Until Element Is Visible        DatePicker                  10s
+    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 2020
+    Click Element                        AddButton
+    Element Attribute Value Should Be    ${labelInputDate}           value         2 Jan 2020

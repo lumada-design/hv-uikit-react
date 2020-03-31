@@ -17,4 +17,4 @@
 import React from "react";
 import CheckboxCheck from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
 
-export default <CheckboxCheck iconSize="L" />;
+export default <CheckboxCheck iconSize="M" />;

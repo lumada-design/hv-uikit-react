@@ -110,7 +110,7 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, className, {
+      className={classNames(labelClass, classes.truncate, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       id={internalId}
@@ -184,7 +184,7 @@ HvCheckbox.propTypes = {
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.string,
+    icon: PropTypes.string
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.

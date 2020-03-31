@@ -65,6 +65,7 @@ const List = ({
    */
   useEffect(() => {
     setList(values);
+    setPrevList(values);
     if (notifyChangesOnFirstRender) {
       onChange(values, false, false, true);
     }

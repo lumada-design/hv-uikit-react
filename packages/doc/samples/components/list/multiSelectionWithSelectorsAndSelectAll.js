@@ -53,6 +53,7 @@ export default (
       showSelectAll
       useSelector
       listProps={ariaProps}
+      hasTooltips
     />
   </ListWrapper>
 );

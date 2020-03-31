@@ -23,8 +23,8 @@ import Unlock from "@hv/uikit-react-icons/dist/Generic/Unlock";
 
 const styles = () => ({
   rootS: {
-    width: "30px",
-    height: "30px",
+    width: 32,
+    height: 32,
     display: "flex",
     alignItems: "center",
     "&>svg": {

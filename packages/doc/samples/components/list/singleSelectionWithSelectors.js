@@ -10,7 +10,7 @@ const data = [
     label: "98002, Store Manager"
   },
   {
-    label: "98003, Store Manager"
+    label: "98003, Store Manager Executive"
   },
   {
     label: "98004, Store Manager",
@@ -29,9 +29,11 @@ const styles = theme => ({
   }
 });
 
-const ListWrapper = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
-);
+const ListWrapper = withStyles(styles, {
+  withTheme: true
+})(({ classes, children }) => (
+  <div className={classes.wrapper}>{children}</div>
+));
 
 // Passing the aria-label to the component is necessary in order for the component
 // to meet accessibility requirements
@@ -40,7 +42,13 @@ const ariaProps = {
 };
 
 export default (
-    <ListWrapper>
-      <List values={data} selectDefault useSelector listProps={ariaProps} />
-    </ListWrapper>
+  <ListWrapper>
+    <List
+      values={data}
+      selectDefault
+      useSelector
+      listProps={ariaProps}
+      hasTooltips
+    />
+  </ListWrapper>
 );
