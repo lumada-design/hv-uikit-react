@@ -110,7 +110,7 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, className, {
+      className={classNames(labelClass, classes.truncate, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       id={internalId}
