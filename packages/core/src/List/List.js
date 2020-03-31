@@ -175,62 +175,43 @@ class List extends React.Component {
     );
   };
 
-  renderSelectable = (Component, label) => {
-    const { hasTooltips } = this.props;
-
-    const Selectable = hasTooltips
-      ? withTooltip(Component, label, evt => {
-          const labelComponent = evt.currentTarget.firstChild.lastChild;
-          return labelComponent.scrollWidth > labelComponent.clientWidth;
-        })
-      : Component;
-
-    return <Selectable />;
-  };
-
   renderMultiSelectItem = (item, itemId) => {
     const { classes, useSelector } = this.props;
 
-    return useSelector
-      ? this.renderSelectable(
-          () => (
-            <HvCheckBox
-              id={`${itemId}-selector`}
-              label={item.label}
-              checked={item.selected}
-              disabled={item.disabled}
-              onChange={evt => this.handleSelect(evt, item)}
-              classes={{
-                container: classes.selectorContainer,
-                labelTypography: classes.truncate
-              }}
-            />
-          ),
-          item.label
-        )
-      : this.renderItemText(item);
+    return useSelector ? (
+      <HvCheckBox
+        id={`${itemId}-selector`}
+        label={item.label}
+        checked={item.selected}
+        disabled={item.disabled}
+        onChange={evt => this.handleSelect(evt, item)}
+        classes={{
+          container: classes.selectorContainer,
+          labelTypography: classes.truncate
+        }}
+      />
+    ) : (
+      this.renderItemText(item)
+    );
   };
 
   renderSingleSelectItem = (item, itemId) => {
     const { classes, useSelector } = this.props;
 
-    return useSelector
-      ? this.renderSelectable(
-          () => (
-            <HvRadioButton
-              id={`${itemId}-selector`}
-              label={item.label}
-              checked={item.selected}
-              disabled={item.disabled}
-              classes={{
-                container: classes.selectorContainer,
-                labelTypography: classes.truncate
-              }}
-            />
-          ),
-          item.label
-        )
-      : this.renderItemText(item);
+    return useSelector ? (
+      <HvRadioButton
+        id={`${itemId}-selector`}
+        label={item.label}
+        checked={item.selected}
+        disabled={item.disabled}
+        classes={{
+          container: classes.selectorContainer,
+          labelTypography: classes.truncate
+        }}
+      />
+    ) : (
+      this.renderItemText(item)
+    );
   };
 
   renderItemText = item => {
