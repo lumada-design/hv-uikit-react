@@ -16,8 +16,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 import CardMedia from "@material-ui/core/CardMedia";
+import styles from "./styles";
 
 /**
  * The media container.
@@ -57,15 +59,15 @@ Media.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    *  Used to define a string that labels the current element.
    */
   mediaAriaLabel: PropTypes.string,
-  /** 
+  /**
    *  Establishes relationships between objects and their label(s), and its value should be one or more element IDs.
    */
   mediaAriaLabelledBy: PropTypes.string,
-  /** 
+  /**
    *  Used to indicate the IDs of the elements that describe the object.
    */
   mediaAriaDescribedBy: PropTypes.string,
@@ -97,7 +99,7 @@ Media.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClickAction: PropTypes.func,
+  onClickAction: PropTypes.func
 };
 
 Media.defaultProps = {
@@ -111,4 +113,4 @@ Media.defaultProps = {
   onClickAction: () => {}
 };
 
-export default Media;
+export default withStyles(styles, { name: "HvCardMedia" })(Media);

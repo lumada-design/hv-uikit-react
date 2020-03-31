@@ -16,12 +16,15 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
 import { KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";
 import isBrowser from "../utils/browser";
+
+import styles from "./styles";
 
 /* eslint-disable no-param-reassign */
 const Focus = props => {
@@ -288,4 +291,4 @@ Focus.defaultProps = {
   disabled: false
 };
 
-export default Focus;
+export default withStyles(styles, { name: "HvFocus" })(Focus);

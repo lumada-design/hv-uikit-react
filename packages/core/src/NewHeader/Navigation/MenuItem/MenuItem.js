@@ -17,12 +17,15 @@
 import React, { useContext } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../../Typography";
 import useUniqueId from "../../../useUniqueId";
 import SelectionContext from "../utils/SelectionContext";
 import { FocusContext } from "../utils/FocusContext";
 import MenuBar from "../MenuBar";
+
+import styles from "./styles";
 
 const MenuItem = ({ classes, id, item, type, onClick }) => {
   const uniqueId = useUniqueId(id, "hv-menuItem-");
@@ -123,4 +126,4 @@ MenuItem.defaultProps = {
   onClick: () => {}
 };
 
-export default MenuItem;
+export default withStyles(styles, { name: "HvNewHeaderMenuItem" })(MenuItem);

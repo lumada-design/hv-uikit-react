@@ -16,9 +16,12 @@
 
 import React from "react";
 import classNames from "classnames";
+import { withStyles } from "@material-ui/core/styles";
 import isString from "lodash/isString";
 import PropTypes from "prop-types";
 import HvTypography from "../Typography";
+
+import styles from "./styles";
 
 const renderNode = (className, node, variant) => (
   <div className={className}>
@@ -110,4 +113,4 @@ HvEmptyState.propTypes = {
   icon: PropTypes.element.isRequired
 };
 
-export default HvEmptyState;
+export default withStyles(styles, { name: "HvEmptyState" })(HvEmptyState);

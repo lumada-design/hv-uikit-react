@@ -19,6 +19,9 @@ import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import Fade from "@material-ui/core/Fade";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 const HvTooltip = ({
   theme,
   classes,
@@ -147,4 +150,4 @@ HvTooltip.defaultProps = {
   }
 };
 
-export default HvTooltip;
+export default withStyles(styles, { name: "HvTooltip" })(HvTooltip);

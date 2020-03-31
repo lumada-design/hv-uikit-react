@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import uniqueId from "lodash/uniqueId";
 import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -24,6 +25,8 @@ import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButto
 import Radio from "@material-ui/core/Radio";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
+
+import styles from "./styles";
 
 /**
  * Returns the correct label styles to be applied based on label position.
@@ -251,4 +254,4 @@ HvRadio.defaultProps = {
   theme: null
 };
 
-export default HvRadio;
+export default withStyles(styles, { name: "HvRadio" })(HvRadio);

@@ -16,8 +16,11 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import Chart from "../Chart";
 import { setData, setLayout } from "./lineChartPlotlyOverrides";
+
+import styles from "./styles";
 
 /**
  * Component responsible for the presentation of the barchart component.
@@ -122,4 +125,4 @@ Linechart.defaultProps = {
   rangeSlider: false
 };
 
-export default Linechart;
+export default withStyles(styles, { name: "HvLineChart" })(Linechart);

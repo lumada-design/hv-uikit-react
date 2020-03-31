@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classnames from "classnames";
 import isNil from "lodash/isNil";
 import ListItem from "@material-ui/core/ListItem";
@@ -24,6 +25,8 @@ import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import Slide from "react-reveal/Slide"; // Importing Zoom effect
 import HvTypography from "../../Typography";
 import HvLink from "../../Link";
+
+import styles from "./styles";
 
 /**
  * Check if the index is the passed select header.
@@ -318,4 +321,4 @@ Navigation.defaultProps = {
   onKeyDown: () => {}
 };
 
-export default Navigation;
+export default withStyles(styles, { name: "HvHeaderNavigation" })(Navigation);

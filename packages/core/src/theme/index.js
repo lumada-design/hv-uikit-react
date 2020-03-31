@@ -25,7 +25,6 @@ import palette from "./palette";
 let theme = null;
 
 const muiTheme = uiKitTheme => {
-
   switch (uiKitTheme) {
     case "dawn":
       theme = dawnTheme;
@@ -80,12 +79,14 @@ const muiTheme = uiKitTheme => {
     }
   });
 
-  muiCreatedTheme.spacing = { ...muiCreatedTheme.spacing, ...theme.spacing};
+  muiCreatedTheme.spacing = { ...muiCreatedTheme.spacing, ...theme.spacing };
 
   return Object.assign({}, muiCreatedTheme, { hv: theme });
 };
 
 const defaultTheme = muiTheme();
+
+export { default as generateClassName } from "./generateClassName";
 
 export { muiTheme as themeBuilder };
 export default defaultTheme;

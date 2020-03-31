@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import Input from "@material-ui/core/Input";
@@ -28,6 +29,8 @@ import HvList from "../List";
 import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
+
+import styles from "./styles";
 
 import InputAdornment from "./InputAdornment";
 
@@ -841,4 +844,4 @@ HvInput.defaultProps = {
   theme: null
 };
 
-export default HvInput;
+export default withStyles(styles, { name: "HvInput" })(HvInput);

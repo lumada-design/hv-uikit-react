@@ -16,6 +16,7 @@
 
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classnames from "classnames";
 import uniqueId from "lodash/uniqueId";
 import IconButton from "@material-ui/core/IconButton";
@@ -30,6 +31,8 @@ import {
 } from "@hv/uikit-common-utils/dist/KeyboardUtils";
 import HvTypography from "../Typography";
 import HvInput from "../Input";
+
+import styles from "./styles";
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/label-has-for */
@@ -364,4 +367,4 @@ Pagination.defaultProps = {
   }
 };
 
-export default Pagination;
+export default withStyles(styles, { name: "HvPagination" })(Pagination);

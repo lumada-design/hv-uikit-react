@@ -22,12 +22,15 @@ import React, {
   useState
 } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import isNil from "lodash/isNil";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import classNames from "classnames";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import Menu from "@hv/uikit-react-icons/dist/Generic/Menu";
 import Button from "../../Button";
+
+import styles from "./styles";
 
 import useUniqueId from "../../useUniqueId";
 
@@ -101,16 +104,18 @@ const VerticalContainer = ({
    */
   const handlerKeyContainer = useCallback(
     event => {
-      if(closeOnExit) {
+      if (closeOnExit) {
         if (
           isKeypress(event, KeyboardCodes.Tab) &&
           !isNil(event.target) &&
-          !isNil(focusableList.current) && !isNil(focusableList.current.first)
+          !isNil(focusableList.current) &&
+          !isNil(focusableList.current.first)
         ) {
           if (
             (event.shiftKey &&
               event.target.id === focusableList.current.first.id) ||
-            (!event.shiftKey && event.target.id === focusableList.current.last.id)
+            (!event.shiftKey &&
+              event.target.id === focusableList.current.last.id)
           ) {
             toggleOpen(false);
           }
@@ -260,12 +265,7 @@ VerticalContainer.propTypes = {
   /**
    * Position of the component.
    */
-  position: PropTypes.oneOf([
-    "static",
-    "relative",
-    "fixed",
-    "absolute"
-  ]),
+  position: PropTypes.oneOf(["static", "relative", "fixed", "absolute"]),
 
   /**
    * Defines if a anchor bar is visible,
@@ -304,4 +304,6 @@ VerticalContainer.defaultProps = {
   closeOnExit: true
 };
 
-export default VerticalContainer;
+export default withStyles(styles, { name: "HvVerticalContainer" })(
+  VerticalContainer
+);

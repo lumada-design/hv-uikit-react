@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import uniqueId from "lodash/uniqueId";
 import isNil from "lodash/isNil";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
@@ -27,6 +28,8 @@ import Popper from "../utils/Popper";
 import Calendar from "./Calendar";
 import Actions from "./Actions";
 
+import styles from "./styles";
+
 import {
   convertISOStringDateToDate,
   DEFAULT_LOCALE,
@@ -37,9 +40,25 @@ import {
 } from "./Calendar/utils";
 
 class HvDatePicker extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const { id, locale } = this.props;
+
+    this.state = {
+      created: false,
+      internalId: id || uniqueId("hv-datepicker-"),
+      ...this.resolveStateFromProps(),
+      calendarOpen: false,
+      calendarAnchorElement: null,
+      locale: isValidLocale(locale) ? locale : DEFAULT_LOCALE
+    };
+  }
+
   /**
    * Triggered right before the Render() function of the components.
    * Here we can update the state when a prop is changed.
+   * Currently we only want to update the locale. In the future we might want to be able to update other props.
    *
    * @static
    * @param {Object} props - The new props object.
@@ -49,35 +68,13 @@ class HvDatePicker extends React.Component {
    * @memberOf HvDatePicker
    */
   static getDerivedStateFromProps(props, state) {
-    const { rangeMode, locale, value, startValue, endValue } = props;
-
-    const {
-      originalValue,
-      originalStartValue,
-      originalEndValue,
-      locale: stateLocale
-    } = state;
-
-    if (locale !== stateLocale) {
-      const validLocale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
+    if (props.locale !== state.locale) {
+      const validLocale = isValidLocale(props.locale)
+        ? props.locale
+        : DEFAULT_LOCALE;
       return {
         ...state,
         locale: validLocale
-      };
-    }
-    if (
-      value !== originalValue ||
-      startValue !== originalStartValue ||
-      endValue !== originalEndValue
-    ) {
-      return {
-        ...state,
-        ...HvDatePicker.resolveStateFromProps(
-          value,
-          startValue,
-          endValue,
-          rangeMode
-        )
       };
     }
     return null;
@@ -88,7 +85,9 @@ class HvDatePicker extends React.Component {
    *
    * @memberOf HvDatePicker
    */
-  static resolveStateFromProps = (value, startValue, endValue, rangeMode) => {
+  resolveStateFromProps = () => {
+    const { value, startValue, endValue, rangeMode } = this.props;
+
     if (rangeMode) {
       const startSelectedDate =
         startValue !== "" ? convertISOStringDateToDate(startValue) : null;
@@ -100,8 +99,6 @@ class HvDatePicker extends React.Component {
         endSelectedDate,
         tempStartSelectedDate: startSelectedDate,
         tempEndSelectedDate: endSelectedDate,
-        originalStartValue: startValue,
-        originalEndValue: endValue,
         startVisibleDate: null,
         endVisibleDate: null
       };
@@ -113,30 +110,9 @@ class HvDatePicker extends React.Component {
 
     return {
       selectedDate,
-      tempSelectedDate: selectedDate,
-      originalValue: value
+      tempSelectedDate: selectedDate
     };
   };
-
-  constructor(props) {
-    super(props);
-
-    const { id, locale, value, startValue, endValue, rangeMode } = this.props;
-
-    this.state = {
-      created: false,
-      internalId: id || uniqueId("hv-datepicker-"),
-      ...HvDatePicker.resolveStateFromProps(
-        value,
-        startValue,
-        endValue,
-        rangeMode
-      ),
-      calendarOpen: false,
-      calendarAnchorElement: null,
-      locale: isValidLocale(locale) ? locale : DEFAULT_LOCALE
-    };
-  }
 
   /**
    * Changes the calendar open state according to the received flag.
@@ -791,9 +767,9 @@ HvDatePicker.defaultProps = {
   },
   rangeMode: false,
   horizontalPlacement: "left",
-  value: undefined,
-  startValue: undefined,
-  endValue: undefined,
+  value: "",
+  startValue: "",
+  endValue: "",
   locale: DEFAULT_LOCALE,
   showActions: false,
   onChange: undefined,
@@ -801,4 +777,4 @@ HvDatePicker.defaultProps = {
   escapeWithReference: true
 };
 
-export default HvDatePicker;
+export default withStyles(styles, { name: "HvDatePicker" })(HvDatePicker);

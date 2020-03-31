@@ -16,10 +16,13 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import classNames from "classnames";
 import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+
+import styles from "./styles";
 
 /**
  * Title component of the modal.
@@ -130,4 +133,4 @@ ModalTitle.defaultProps = {
   theme: undefined
 };
 
-export default ModalTitle;
+export default withStyles(styles, { name: "HvModalTitle" })(ModalTitle);

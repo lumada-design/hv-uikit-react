@@ -16,11 +16,14 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import isNil from "lodash/isNil";
 import classnames from "classnames";
 import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";
+
+import styles from "./styles";
 
 const Rows = ({
   renderer,
@@ -175,4 +178,4 @@ ListView.defaultProps = {
   selectedValues: null
 };
 
-export default ListView;
+export default withStyles(styles, { name: "HvListView" })(ListView);

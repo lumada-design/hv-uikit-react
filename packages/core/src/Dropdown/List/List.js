@@ -16,6 +16,7 @@
 
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import classNames from "classnames";
@@ -28,6 +29,8 @@ import Actions from "../Actions";
 import Popper from "../../utils/Popper";
 import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
+
+import styles from "./styles";
 
 const List = ({
   id,
@@ -65,7 +68,6 @@ const List = ({
    */
   useEffect(() => {
     setList(values);
-    setPrevList(values);
     if (notifyChangesOnFirstRender) {
       onChange(values, false, false, true);
     }
@@ -444,4 +446,4 @@ List.defaultProps = {
   anchorEl: null
 };
 
-export default List;
+export default withStyles(styles, { name: "HvDropDownList" })(List);

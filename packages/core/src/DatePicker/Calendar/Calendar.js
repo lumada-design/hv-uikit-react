@@ -18,10 +18,13 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../../Typography";
 import Header from "./Header";
 import Navigation from "./Navigation";
+
+import styles from "./styles";
 
 import { NAV_OPTIONS, REPRESENTATION_VALUES, VIEW_MODE } from "./enums";
 import {
@@ -565,4 +568,4 @@ Calendar.defaultProps = {
   label: null
 };
 
-export default Calendar;
+export default withStyles(styles, { name: "HvDatePickerCalendar" })(Calendar);

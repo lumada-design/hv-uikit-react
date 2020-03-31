@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import find from "lodash/find";
 import isNil from "lodash/isNil";
 import isEqual from "lodash/isEqual";
@@ -27,6 +28,8 @@ import Search from "./Search/Search";
 import Sort from "./Sort/Sort";
 import Grid from "../Grid";
 import Pagination from "../Pagination";
+
+import styles from "./styles";
 
 /**
  * Asset inventory component.
@@ -53,9 +56,8 @@ class AssetInventory extends React.Component {
     const innerPageSize = pageSize || pageSizeOptions[0];
     const viewValues = this.getPaginationData(values, innerPageSize, page);
     const selectedViewId =
-      selectedView || (Array.isArray(children)
-        ? children[0].props.id
-        : children.props.id);
+      selectedView ||
+      (Array.isArray(children) ? children[0].props.id : children.props.id);
     this.state = {
       internalId: id || uniqueId("hv-assetinventory-"),
       selectedView: selectedViewId,
@@ -256,7 +258,13 @@ class AssetInventory extends React.Component {
    * @returns {*}
    */
   renderSort = () => {
-    const { labels, configuration, classes, onSortChange, disablePortal } = this.props;
+    const {
+      labels,
+      configuration,
+      classes,
+      onSortChange,
+      disablePortal
+    } = this.props;
     const { internalId, selectedSort } = this.state;
     const dropDownLabel = {
       title: labels.sortBy
@@ -762,4 +770,4 @@ AssetInventory.defaultProps = {
   disablePortal: false
 };
 
-export default AssetInventory;
+export default withStyles(styles, { name: "HvAssetInventory" })(AssetInventory);

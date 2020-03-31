@@ -17,11 +17,7 @@
 import React, { useState } from "react";
 import Tooltip from "@material-ui/core/Tooltip";
 
-const withTooltip = (
-  Component,
-  label = "",
-  evaluationExpression = evt => evt.target.scrollWidth > evt.target.clientWidth
-) => props => {
+const withTooltip = (Component, label = "") => props => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const styles = {
@@ -33,7 +29,7 @@ const withTooltip = (
   };
 
   const handleMouseEnter = evt => {
-    setShowTooltip(evaluationExpression(evt));
+    setShowTooltip(evt.target.scrollWidth > evt.target.clientWidth);
   };
 
   const handleMouseLeave = () => {

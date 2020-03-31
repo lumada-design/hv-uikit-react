@@ -1,37 +1,19 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { shallow } from "enzyme";
 
 import HvProvider from "../../../Provider";
-
-import ModalActionsWithStyles from "../index";
-import ModalActions from "../ModalActions";
+import ModalActions from "..";
 
 describe("ModalActions withStyles", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = shallow(
-      <HvProvider>
-        <ModalActionsWithStyles>Modal Content</ModalActionsWithStyles>
-      </HvProvider>
+        <HvProvider>
+          <ModalActions>Modal Content</ModalActions>
+        </HvProvider>
     );
   });
 
@@ -45,9 +27,9 @@ describe("ModalActions Component", () => {
 
   beforeEach(async () => {
     wrapper = shallow(
-      <ModalActions classes={{}}>
-        Modal Content
-      </ModalActions>
+        <HvProvider>
+          <ModalActions>Modal Content</ModalActions>
+        </HvProvider>
     );
   });
 
@@ -57,26 +39,25 @@ describe("ModalActions Component", () => {
 
   it("allows external props to be added", () => {
     wrapper = shallow(
-      <ModalActions
-        classes={{}}
-        disableActionSpacing
-      >
-        Modal Content
-      </ModalActions>
+        <HvProvider>
+          <ModalActions disableActionSpacing>Modal Content</ModalActions>
+        </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it("allows external styles to be added", () => {
     wrapper = shallow(
-      <ModalActions
-        classes={{
-          root: "testClassRoot",
-          action: "testClassAction"
-        }}
-      >
-        Modal Content
-      </ModalActions>
+        <HvProvider>
+          <ModalActions
+              classes={{
+                root: "testClassRoot",
+                action: "testClassAction"
+              }}
+          >
+            Modal Content
+          </ModalActions>
+        </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
   });

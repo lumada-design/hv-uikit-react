@@ -18,6 +18,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import MuiDialogActions from "@material-ui/core/DialogActions";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 /**
  * Actions of the modal.
  *
@@ -68,4 +71,4 @@ ModalActions.defaultProps = {
   className: ""
 };
 
-export default ModalActions;
+export default withStyles(styles, { name: "HvModalActions" })(ModalActions);

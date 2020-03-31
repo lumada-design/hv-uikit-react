@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import _ from "lodash";
 import uniqueId from "lodash/uniqueId";
 import classNames from "classnames";
@@ -46,7 +47,7 @@ import {
 import Pagination from "../Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
-import { tableStyleOverrides } from "./styles";
+import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
@@ -905,4 +906,4 @@ Table.defaultProps = {
   rowCount: undefined
 };
 
-export default Table;
+export default withStyles(styles, { name: "HvTable" })(Table);

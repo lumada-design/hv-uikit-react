@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import IconButton from "@material-ui/core/IconButton";
@@ -26,6 +27,7 @@ import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
 import Popper from "../utils/Popper";
 import List from "../List";
 import getPrevNextFocus from "../utils/focusableElementFinder";
+import styles from "./styles";
 
 /**
  * Dropdown component with a menu.
@@ -103,7 +105,11 @@ const DropDownMenu = ({
   const IconRender = icon || (
     <MoreVert
       boxStyles={{ width: "32px", height: "32px" }}
-      color={[disabled ? theme.hv.palette.atmosphere.atmo7 : theme.hv.palette.accent.acce1]}
+      color={[
+        disabled
+          ? theme.hv.palette.atmosphere.atmo7
+          : theme.hv.palette.accent.acce1
+      ]}
     />
   );
 
@@ -252,4 +258,4 @@ DropDownMenu.defaultProps = {
   expanded: false
 };
 
-export default DropDownMenu;
+export default withStyles(styles, { name: "HvDropDownMenu" })(DropDownMenu);

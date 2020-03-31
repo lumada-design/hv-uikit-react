@@ -16,6 +16,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 import Separator from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
 import MoreOptions from "@hv/uikit-react-icons/dist/Generic/MoreOptionsHorizontal";
@@ -25,6 +26,7 @@ import uniqueId from "lodash/uniqueId";
 import HvTypography from "../Typography";
 import HvDropDownMenu from "../DropDownMenu";
 import HvLink from "../Link";
+import styles from "./styles";
 
 /**
  * Removes the extension of the label.
@@ -273,4 +275,4 @@ BreadCrumb.defaultProps = {
   url: null
 };
 
-export default BreadCrumb;
+export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);

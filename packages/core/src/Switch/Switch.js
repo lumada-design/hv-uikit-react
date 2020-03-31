@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import BaseSwitch from "@material-ui/core/Switch";
 
 import classnames from "classnames";
@@ -24,6 +25,8 @@ import CheckMark from "@hv/uikit-react-icons/dist/Generic/CompletedStep";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
+
+import styles from "./styles";
 
 const Switch = props => {
   const {
@@ -111,13 +114,11 @@ const Switch = props => {
             onChange={handleChange}
             disabled={disabled}
             value={value}
-            inputProps={
-              {
-                // dummy aria-label this component is not tabbable and it is just presentational.
-                // the accesibility test were always failing because of the missing aria label.
-                "aria-label": "base switch"
-              }
-            }
+            inputProps={{
+              // dummy aria-label this component is not tabbable and it is just presentational.
+              // the accesibility test were always failing because of the missing aria label.
+              "aria-label": "base switch"
+            }}
             classes={{
               root: classes.switchRoot,
               switchBase: classes.switchBase,
@@ -227,4 +228,4 @@ Switch.defaultProps = {
   displayIconChecked: false
 };
 
-export default Switch;
+export default withStyles(styles, { name: "HvSwitch" })(Switch);

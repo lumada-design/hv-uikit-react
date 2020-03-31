@@ -17,6 +17,7 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import PropTypes, { oneOfType } from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import isNil from "lodash/isNil";
 import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import uniqueId from "lodash/uniqueId";
@@ -26,6 +27,8 @@ import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
 import Media from "./Media";
+
+import styles from "./styles";
 
 const DEFAULT_ID_PREFIX = "hv-card-";
 /**
@@ -54,7 +57,7 @@ const DEFAULT_ID_PREFIX = "hv-card-";
  * }
  * @returns
  */
-const Main = ({
+const HvCard = ({
   classes,
   className,
   id,
@@ -102,7 +105,7 @@ const Main = ({
   const defaultHeaderId = `${internalId}-header`;
   const defaultContentId = `${internalId}-content`;
   const defaultMediaId = `${internalId}-media`;
-  
+
   const isFunction = value => typeof value === "function";
 
   const clickActionHandler = evt => {
@@ -110,7 +113,7 @@ const Main = ({
       onChange(evt);
       setSelected(!selected);
     }
-    if(isFunction(onClickAction)) onClickAction(evt, !selected);
+    if (isFunction(onClickAction)) onClickAction(evt, !selected);
   };
 
   const getRole = (fSelectable, fselectOnClickAction) => {
@@ -127,23 +130,22 @@ const Main = ({
 
   const KeyUpHandler = evt => {
     if (
-      (isKeypress(evt, KeyboardCodes.Enter) && getRole(isSelectable, selectOnClickAction) !== "checkbox") ||
+      (isKeypress(evt, KeyboardCodes.Enter) &&
+        getRole(isSelectable, selectOnClickAction) !== "checkbox") ||
       isKeypress(evt, KeyboardCodes.SpaceBar)
     ) {
       if (isSelectable && selectOnClickAction) {
         onChange(evt);
         setSelected(!selected);
       }
-      if(isFunction(onClickAction)) onClickAction(evt, !selected);
+      if (isFunction(onClickAction)) onClickAction(evt, !selected);
     }
   };
 
   const cardButtonProps = {
     id: `${internalId}-upper-area`,
     role: getRole(isSelectable, selectOnClickAction),
-    tabIndex: getRole(isSelectable, selectOnClickAction)
-      ? "0"
-      : undefined,
+    tabIndex: getRole(isSelectable, selectOnClickAction) ? "0" : undefined,
     onClick: clickActionHandler,
     onKeyUp: KeyUpHandler,
     "aria-label": defaultCardAriaLabel,
@@ -245,7 +247,7 @@ const Main = ({
   );
 };
 
-Main.propTypes = {
+HvCard.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -437,7 +439,7 @@ Main.propTypes = {
   actionItemWidth: PropTypes.number
 };
 
-Main.defaultProps = {
+HvCard.defaultProps = {
   className: "",
   id: undefined,
   defaultCardAriaLabel: undefined,
@@ -476,4 +478,4 @@ Main.defaultProps = {
   actionItemWidth: undefined
 };
 
-export default Main;
+export default withStyles(styles, { name: "HvCard" })(HvCard);

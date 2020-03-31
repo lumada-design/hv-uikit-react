@@ -40,10 +40,10 @@ describe("<DatePicker /> with minimum configuration", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <DatePickerWithStyles />
+        <DatePickerWithStyles  />
       </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -97,24 +97,7 @@ describe("<DatePicker /> with minimum configuration", () => {
     expect(wrapper.find(Actions).length).toBe(0);
   });
 
-  it("should apply the default properties", () => {
-    expect(DatePickerInstance.props.rangeMode).toBe(
-      DatePicker.defaultProps.rangeMode
-    );
-    expect(DatePickerInstance.props.horizontalPlacement).toBe(
-      DatePicker.defaultProps.horizontalPlacement
-    );
-    expect(DatePickerInstance.props.value).toBe(DatePicker.defaultProps.value);
-    expect(DatePickerInstance.props.locale).toBe(
-      DatePicker.defaultProps.locale
-    );
-    expect(DatePickerInstance.props.showActions).toBe(
-      DatePicker.defaultProps.showActions
-    );
-    expect(DatePickerInstance.props.onChange).toBe(
-      DatePicker.defaultProps.onChange
-    );
-  });
+
 });
 
 describe("<DatePicker /> with Single Calendar mode", () => {

@@ -19,6 +19,9 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import isNil from "lodash/isNil";
 
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+
 /**
  * Action container. The component receives (itemAction) an array of components to be render.
  * The recommended number of components is 3. Above that, the actions should be a dropdown component
@@ -72,4 +75,4 @@ Actions.defaultProps = {
   userExists: false
 };
 
-export default Actions;
+export default withStyles(styles, { name: "HvHeaderActions" })(Actions);

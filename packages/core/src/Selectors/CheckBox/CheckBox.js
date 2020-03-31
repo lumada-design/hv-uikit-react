@@ -16,6 +16,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
 import uniqueId from "lodash/uniqueId";
 import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
 import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
@@ -25,6 +26,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import classNames from "classnames";
 import labelPositions from "../labelPositions";
+
+import styles from "./styles";
 
 /**
  * Chooses the correct label styling to applied based on position.
@@ -110,7 +113,7 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, classes.truncate, className, {
+      className={classNames(labelClass, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       id={internalId}
@@ -264,4 +267,4 @@ HvCheckbox.defaultProps = {
   theme: null
 };
 
-export default HvCheckbox;
+export default withStyles(styles, { name: "HvCheckbox" })(HvCheckbox);

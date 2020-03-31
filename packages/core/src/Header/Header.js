@@ -40,15 +40,17 @@ import Navigation from "./Navigation";
 import User from "./User";
 import Actions from "./Actions";
 
-const styles = {
+import styles from "./styles";
+
+const menuStyles = {
   root: {
     width: "32px",
     height: "32px"
   }
 };
 
-const StyledMenu = withStyles(styles, { withTheme: true })(Menu);
-const StyledClose = withStyles(styles, { withTheme: true })(Close);
+const StyledMenu = withStyles(menuStyles, { withTheme: true })(Menu);
+const StyledClose = withStyles(menuStyles, { withTheme: true })(Close);
 
 /**
  *
@@ -68,7 +70,7 @@ const StyledClose = withStyles(styles, { withTheme: true })(Close);
  * @returns {*}
  * @constructor
  */
-const Main = ({
+const HvHeader = ({
   theme,
   classes,
   className,
@@ -281,7 +283,7 @@ const Main = ({
   );
 };
 
-Main.propTypes = {
+HvHeader.propTypes = {
   /**
    * The theme passed by the provider.
    */
@@ -472,7 +474,7 @@ Main.propTypes = {
   fixVerticalNavigation: PropTypes.bool
 };
 
-Main.defaultProps = {
+HvHeader.defaultProps = {
   className: "",
   id: undefined,
   position: "fixed",
@@ -532,4 +534,4 @@ Main.defaultProps = {
   fixVerticalNavigation: false
 };
 
-export default Main;
+export default withStyles(styles, { name: "HvHeader" })(HvHeader);

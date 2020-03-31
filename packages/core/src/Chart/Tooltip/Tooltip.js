@@ -16,6 +16,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
 import SingleTooltip from "./SingleTooltip";
 import MultipleTooltip from "./MultiTooltip";
 
@@ -119,4 +121,4 @@ MainToolTip.defaultProps = {
   useSingle: false
 };
 
-export default MainToolTip;
+export default withStyles(styles, { name: "HvChartTooltip" })(MainToolTip);
