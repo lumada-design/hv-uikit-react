@@ -10471,7 +10471,6 @@ body {
             },
           }
         }
-        value=""
       >
         <div
           className="HvDatePicker-datePickerContainer-1977"
@@ -21023,7 +21022,6 @@ body {
           }
         }
         disablePortal={true}
-        endValue=""
         escapeWithReference={true}
         horizontalPlacement="left"
         labels={
@@ -21039,7 +21037,6 @@ body {
         locale="en-US"
         rangeMode={false}
         showActions={false}
-        startValue=""
         theme={
           Object {
             "breakpoints": Object {
@@ -35419,7 +35416,6 @@ body {
           }
         }
         disablePortal={true}
-        endValue=""
         escapeWithReference={true}
         horizontalPlacement="left"
         id="testingDatePicker"
@@ -35434,7 +35430,6 @@ body {
         locale="en-US"
         rangeMode={false}
         showActions={true}
-        startValue=""
         theme={
           Object {
             "breakpoints": Object {
@@ -48815,7 +48810,6 @@ body {
           }
         }
         disablePortal={true}
-        endValue=""
         escapeWithReference={true}
         horizontalPlacement="left"
         labels={
@@ -48831,7 +48825,6 @@ body {
         locale="en"
         rangeMode={false}
         showActions={false}
-        startValue=""
         theme={
           Object {
             "breakpoints": Object {
@@ -49761,7 +49754,6 @@ body {
             },
           }
         }
-        value=""
       >
         <div
           className="HvDatePicker-datePickerContainer-41"
