@@ -16,12 +16,14 @@
 
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import CheckboxCheck from '@hv/uikit-react-icons/dist/Generic/CheckboxCheck';
+import CheckboxCheck from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
 
 storiesOf("Components", module).add("Generic Icon", () => <CheckboxCheck />, {
   title: "Generic Icons",
-  description: "Usage of Generic Icons that can be altered to standard or custom sizes and colors",
-  usage: "import CheckboxCheck from '@hv/uikit-react-icons/dist/Generic/CheckboxCheck'",
+  description:
+    "Usage of Generic Icons that can be altered to standard or custom sizes and colors",
+  usage:
+    "import CheckboxCheck from '@hv/uikit-react-icons/dist/Generic/CheckboxCheck'",
   examples: [
     {
       title: "Basic usage of the generic icon component",
@@ -37,6 +39,17 @@ storiesOf("Components", module).add("Generic Icon", () => <CheckboxCheck />, {
       title: "Icon with different standard size",
       description: "Overrides Generic Icon size using standard sizes",
       src: "components/genericIcon/standardSizes.js"
+    },
+    {
+      title: "Accessible Icon with decorative meaning",
+      description: "Icon with decorative meaning using the hidden",
+      src: "components/genericIcon/accessibilityDecorative.js"
+    },
+    {
+      title: "Accessible Icon with semantic meaning",
+      description:
+        "Icon with semantic meaning using the title and role tags for accessibility",
+      src: "components/genericIcon/accessibilitySemantic.js"
     },
     {
       title: "Icon with custom size",
