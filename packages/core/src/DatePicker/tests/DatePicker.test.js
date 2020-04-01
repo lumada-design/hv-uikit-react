@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import React from "react";
 import { mount } from "enzyme";
 
@@ -21,16 +22,12 @@ import CalendarIcon from "@hv/uikit-react-icons/dist/Generic/Calendar";
 import HvProvider from "../../Provider";
 import Typography from "../../Typography";
 
-import {
-  convertISOStringDateToDate,
-  getFormattedDate
-} from "../Calendar/utils";
+import { convertISOStringDateToDate, getFormattedDate } from "../Calendar/utils";
 
 import Actions from "../Actions";
 import Calendar from "../Calendar";
 
-import DatePickerWithStyles from "../index";
-import DatePicker from "../DatePicker";
+import DatePicker from "../index";
 
 describe("<DatePicker /> with minimum configuration", () => {
   let wrapper;
@@ -39,9 +36,9 @@ describe("<DatePicker /> with minimum configuration", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles  />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker />
+        </HvProvider>
     );
     DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
@@ -96,8 +93,6 @@ describe("<DatePicker /> with minimum configuration", () => {
 
     expect(wrapper.find(Actions).length).toBe(0);
   });
-
-
 });
 
 describe("<DatePicker /> with Single Calendar mode", () => {
@@ -107,15 +102,11 @@ describe("<DatePicker /> with Single Calendar mode", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles
-          rangeMode={false}
-          value="2019-01-01"
-          locale="en-US"
-        />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker rangeMode={false} value="2019-01-01" locale="en-US" />
+        </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -133,10 +124,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
 
   it("should have the value showing on the input with the correct format", () => {
     expect(DatePickerComponent.find("input").instance().value).toBe(
-      getFormattedDate(
-        convertISOStringDateToDate("2019-01-01"),
-        DatePickerInstance.props.locale
-      )
+        getFormattedDate(convertISOStringDateToDate("2019-01-01"), DatePickerInstance.props.locale)
     );
   });
 
@@ -145,9 +133,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
   });
 
   it("should have the state property `selectedDate` defined with the correct value", () => {
-    expect(DatePickerInstance.state.selectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-01")
-    );
+    expect(DatePickerInstance.state.selectedDate).toEqual(convertISOStringDateToDate("2019-01-01"));
   });
 
   it("should open the calendar when clicking the calendar icon", () => {
@@ -185,7 +171,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
     wrapper.update();
 
     expect(DatePickerComponent.find("input").instance().value).toBe(
-      getFormattedDate(dummyDate, DatePickerInstance.props.locale)
+        getFormattedDate(dummyDate, DatePickerInstance.props.locale)
     );
   });
 
@@ -204,11 +190,9 @@ describe("<DatePicker /> with Single Calendar mode", () => {
 
   it("should have the Calendar component with the same selected date as the received value property", () => {
     wrapper.find(CalendarIcon).simulate("click");
-    const calendarInstance = wrapper.find(Calendar).instance();
+    const calendarInstance = wrapper.find(Calendar);
 
-    expect(calendarInstance.props.selectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-01")
-    );
+    expect(calendarInstance.prop("selectedDate")).toEqual(convertISOStringDateToDate("2019-01-01"));
   });
 });
 
@@ -220,16 +204,11 @@ describe("<DatePicker /> with simple Calendar with actions ", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles
-          rangeMode={false}
-          value={originalDateString}
-          locale="en-US"
-          showActions
-        />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker rangeMode={false} value={originalDateString} locale="en-US" showActions />
+        </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -259,7 +238,7 @@ describe("<DatePicker /> with simple Calendar with actions ", () => {
     DatePickerInstance.handleCancelAction();
 
     expect(DatePickerInstance.state.selectedDate).toMatchObject(
-      convertISOStringDateToDate(originalDateString)
+        convertISOStringDateToDate(originalDateString)
     );
   });
 });
@@ -278,17 +257,17 @@ describe("<DatePicker /> with range Calendar with actions ", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles
-          rangeMode
-          locale="en-US"
-          startValue={originalStartDateString}
-          endValue={originalEndDateString}
-          showActions
-        />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker
+              rangeMode
+              locale="en-US"
+              startValue={originalStartDateString}
+              endValue={originalEndDateString}
+              showActions
+          />
+        </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -304,13 +283,9 @@ describe("<DatePicker /> with range Calendar with actions ", () => {
     DatePickerInstance.handleApplyAction();
     wrapper.update();
 
-    expect(DatePickerInstance.state.startSelectedDate).toMatchObject(
-      dummyStartDate
-    );
+    expect(DatePickerInstance.state.startSelectedDate).toMatchObject(dummyStartDate);
 
-    expect(DatePickerInstance.state.endSelectedDate).toMatchObject(
-      dummyEndDate
-    );
+    expect(DatePickerInstance.state.endSelectedDate).toMatchObject(dummyEndDate);
   });
 
   it("should maintain the old dates using the cancel action", () => {
@@ -323,11 +298,11 @@ describe("<DatePicker /> with range Calendar with actions ", () => {
     wrapper.update();
 
     expect(DatePickerInstance.state.startSelectedDate).toMatchObject(
-      convertISOStringDateToDate(originalStartDateString)
+        convertISOStringDateToDate(originalStartDateString)
     );
 
     expect(DatePickerInstance.state.endSelectedDate).toMatchObject(
-      convertISOStringDateToDate(originalEndDateString)
+        convertISOStringDateToDate(originalEndDateString)
     );
   });
 });
@@ -339,16 +314,11 @@ describe("<DatePicker /> with Range Calendar mode", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles
-          rangeMode
-          locale="en-US"
-          startValue="2019-01-05"
-          endValue="2019-01-10"
-        />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker rangeMode locale="en-US" startValue="2019-01-05" endValue="2019-01-10" />
+        </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -366,13 +336,13 @@ describe("<DatePicker /> with Range Calendar mode", () => {
 
   it("should have the values showing on the input with the correct format", () => {
     expect(DatePickerComponent.find("input").instance().value).toBe(
-      `${getFormattedDate(
-        convertISOStringDateToDate("2019-01-05"),
-        DatePickerInstance.props.locale
-      )} - ${getFormattedDate(
-        convertISOStringDateToDate("2019-01-10"),
-        DatePickerInstance.props.locale
-      )}`
+        `${getFormattedDate(
+            convertISOStringDateToDate("2019-01-05"),
+            DatePickerInstance.props.locale
+        )} - ${getFormattedDate(
+            convertISOStringDateToDate("2019-01-10"),
+            DatePickerInstance.props.locale
+        )}`
     );
   });
 
@@ -386,25 +356,25 @@ describe("<DatePicker /> with Range Calendar mode", () => {
 
   it("should have the state property `startSelectedDate` defined with the correct date", () => {
     expect(DatePickerInstance.state.startSelectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-05")
+        convertISOStringDateToDate("2019-01-05")
     );
   });
 
   it("should have the state property `endSelectedDate` defined with the correct date", () => {
     expect(DatePickerInstance.state.endSelectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-10")
+        convertISOStringDateToDate("2019-01-10")
     );
   });
 
   it("should have the state property `tempStartSelectedDate` defined with the correct date", () => {
     expect(DatePickerInstance.state.tempStartSelectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-05")
+        convertISOStringDateToDate("2019-01-05")
     );
   });
 
   it("should have the state property `tempEndSelectedDate` defined with the correct date", () => {
     expect(DatePickerInstance.state.tempEndSelectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-10")
+        convertISOStringDateToDate("2019-01-10")
     );
   });
 
@@ -438,18 +408,18 @@ describe("<DatePicker /> with custom properties", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles
-          locale="en-US"
-          value="2019-01-05"
-          labels={labels}
-          horizontalPlacement="left"
-          showActions
-          id="testingDatePicker"
-        />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker
+              locale="en-US"
+              value="2019-01-05"
+              labels={labels}
+              horizontalPlacement="left"
+              showActions
+              id="testingDatePicker"
+          />
+        </HvProvider>
     );
-    DatePickerComponent = wrapper.find(DatePicker);
+    DatePickerComponent = wrapper.find("HvDatePicker");
     DatePickerInstance = DatePickerComponent.instance();
   });
 
@@ -468,9 +438,7 @@ describe("<DatePicker /> with custom properties", () => {
   });
 
   it("should add the correct placeholder to the input", () => {
-    expect(wrapper.find("input").instance().placeholder).toBe(
-      labels.placeholder
-    );
+    expect(wrapper.find("input").instance().placeholder).toBe(labels.placeholder);
   });
 
   it("should not hide the calendar when selecting a new date on the calendar", () => {
@@ -495,9 +463,7 @@ describe("<DatePicker /> with custom properties", () => {
     DatePickerInstance.handleSingleCalendarDateChange(dummyDate);
     DatePickerInstance.handleCancelAction();
 
-    expect(DatePickerInstance.state.selectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-05")
-    );
+    expect(DatePickerInstance.state.selectedDate).toEqual(convertISOStringDateToDate("2019-01-05"));
   });
 
   it("should have a Typography component if the `title` props is passed inside the labels object", () => {
@@ -506,19 +472,30 @@ describe("<DatePicker /> with custom properties", () => {
 
   it("should have the Typography component with the same text as the one passed on the `title` prop", () => {
     const typographyElement = wrapper.find(Typography);
-    expect(typographyElement.props().children).toBe(labels.title);
+    expect(typographyElement.prop("children")).toBe(labels.title);
   });
 
   it("should call the onChange callback if defined", () => {
     const handleOnchange = jest.fn();
+
+    // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
+    // In real cases this value is filled if the dropdown is expanded.
+    // eslint-disable-next-line no-console
+    const originalError = console.error;
+    // eslint-disable-next-line no-console
+    console.error = jest.fn();
+
     wrapper = mount(
-      <HvProvider>
-        <DatePickerWithStyles onChange={handleOnchange} />
-      </HvProvider>
+        <HvProvider>
+          <DatePicker onChange={handleOnchange} />
+        </HvProvider>
     );
-    DatePickerInstance = wrapper.find(DatePicker).instance();
+    DatePickerInstance = wrapper.find("HvDatePicker").instance();
     DatePickerInstance.setSingleDate(convertISOStringDateToDate("2018-11-10"));
     expect(handleOnchange.mock.calls.length).toBe(1);
+
+    // eslint-disable-next-line no-console
+    console.error = originalError;
   });
 
   it("should close the calendar and keep the same date when the `handleCalendarClickAway` is triggered", () => {
@@ -537,9 +514,7 @@ describe("<DatePicker /> with custom properties", () => {
 
     DatePickerInstance.handleCalendarClickAway(dummyEvent);
 
-    expect(DatePickerInstance.state.selectedDate).toEqual(
-      convertISOStringDateToDate("2019-01-05")
-    );
+    expect(DatePickerInstance.state.selectedDate).toEqual(convertISOStringDateToDate("2019-01-05"));
     expect(DatePickerInstance.state.calendarOpen).toBe(false);
   });
 });
