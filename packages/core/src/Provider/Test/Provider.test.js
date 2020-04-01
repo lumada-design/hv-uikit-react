@@ -68,15 +68,20 @@ describe("Provider", () => {
   });
 
   it("should override the hv-theme with the app-theme", () => {
-    expect(wrapper.props().theme.typography.h1.fontSize).toEqual(
-      mockOverriden.typography.h1.fontSize
+    const muiThemeProvider = wrapper.find(MuiThemeProvider);
+    expect(muiThemeProvider.props().theme.typography.h1.fontSize).toEqual(
+        mockOverriden.typography.h1.fontSize
     );
+
   });
 
   it("should not override the hv-theme if there is no app theme defined", () => {
+
     const wrapperNotOverriden = shallow(<HvProvider> Mock </HvProvider>);
-    expect(
-      wrapperNotOverriden.props().theme.typography.h1.fontSize
-    ).not.toEqual(mockOverriden.typography.h1.fontSize);
+    const muiThemeProvider = wrapperNotOverriden.find(MuiThemeProvider);
+    expect(muiThemeProvider.props().theme.typography.h1.fontSize).not.toEqual(
+        mockOverriden.typography.h1.fontSize
+    );
+
   });
 });
