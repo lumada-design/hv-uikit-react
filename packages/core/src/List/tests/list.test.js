@@ -22,7 +22,6 @@ import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox";
 import ListWithStyles from "../index";
-import List from "../List";
 
 const mockDataSingleSelection = [
   {
@@ -120,7 +119,7 @@ describe("<List />", () => {
     });
 
     it("default value is selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
 
       expect(instance.state.list).toEqual([
@@ -131,7 +130,7 @@ describe("<List />", () => {
     });
 
     it("onChange is triggered on selection and first is selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
 
       instance.handleToggle = jest.fn();
@@ -148,7 +147,7 @@ describe("<List />", () => {
     });
 
     it("handleSelect updates state accordingly", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
 
       instance.handleSelect(mockEvt, { label: "Value 2" });
@@ -171,7 +170,7 @@ describe("<List />", () => {
       );
     });
     it("handleSelect updates state accordingly", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect(mockEvt, { id: "id-1" });
       expect(instance.state.list).toEqual([
@@ -231,7 +230,7 @@ describe("<List />", () => {
     });
 
     it("default values are selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: true },
@@ -241,7 +240,7 @@ describe("<List />", () => {
     });
 
     it("onChange is triggered on selection and first is selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleToggle = jest.fn();
       instance.handleSelect(mockEvt, { label: "Value 2" });
@@ -255,7 +254,7 @@ describe("<List />", () => {
     });
 
     it("handleSelect updates state accordingly", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect(mockEvt, { label: "Value 1" });
       jest.runAllTimers();
@@ -267,13 +266,13 @@ describe("<List />", () => {
     });
 
     it("handleSelectAll should unselect all if any selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance.handleSelectAll();
       expect(instance.state.list.some(el => el.selected)).toEqual(false);
     });
 
     it("handleSelect should be triggered when a single select item is clicked ", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect = jest.fn();
       listComponent
@@ -304,7 +303,7 @@ describe("<List />", () => {
     });
 
     it("handleSelectAll should be triggered when All checkbox is selected ", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelectAll = jest.fn();
       listComponent
