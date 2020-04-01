@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.19.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.2...@hv/uikit-react-lab@1.19.3) (2020-04-01)
+
+
+### Bug Fixes
+
+* **textinput:** change counter text color to acce1 [#1286](https://github.com/pentaho/hv-uikit-react/issues/1286) ([74e6b13](https://github.com/pentaho/hv-uikit-react/commit/74e6b13fb6d6d7bc7f2dba764341f28a2a8829f4))
+
+
+
+
+
 ## [1.19.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.1...@hv/uikit-react-lab@1.19.2) (2020-03-17)
 
 

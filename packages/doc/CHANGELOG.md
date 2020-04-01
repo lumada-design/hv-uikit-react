@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.21.0...@hv/uikit-react-doc@1.22.0) (2020-04-01)
+
+
+### Bug Fixes
+
+* **assetinventory:** incorrect width in checkbox. [#1216](https://github.com/pentaho/hv-uikit-react/issues/1216) ([848b489](https://github.com/pentaho/hv-uikit-react/commit/848b4899ffd0a6734353f27a594bbe0872d75ce6))
+* **badge:** alignments and styling. [#1273](https://github.com/pentaho/hv-uikit-react/issues/1273) ([68950b7](https://github.com/pentaho/hv-uikit-react/commit/68950b73ce869eb0b94dad643c7ab00012e7f204))
+* **dropdown:** list tooltips in multiselect mode. [#1276](https://github.com/pentaho/hv-uikit-react/issues/1276) ([766b746](https://github.com/pentaho/hv-uikit-react/commit/766b746d72af8381b0d968720acf51b130423804))
+* **modal:** styling and copy alignments. [#1285](https://github.com/pentaho/hv-uikit-react/issues/1285) ([15eb7fb](https://github.com/pentaho/hv-uikit-react/commit/15eb7fbd228121e3f799a777b6c0b002e6891251))
+* **table:** styling alignments. [#1263](https://github.com/pentaho/hv-uikit-react/issues/1263) ([3f56cad](https://github.com/pentaho/hv-uikit-react/commit/3f56cad2536b6562cbaf00169da1cd5bcd29bf7d))
+* **togglebutton:** align sizes. [#1205](https://github.com/pentaho/hv-uikit-react/issues/1205) ([cc74cd5](https://github.com/pentaho/hv-uikit-react/commit/cc74cd533aff4220cac00efc1406086456b3d87b))
+
+
+### Features
+
+* **datepicker:** acknowledge change value. [#1321](https://github.com/pentaho/hv-uikit-react/issues/1321) ([2b432af](https://github.com/pentaho/hv-uikit-react/commit/2b432afa006ff2b07f10ac5ee31da312b450dd85))
+
+
+
+
+
 # [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.20.2...@hv/uikit-react-doc@1.21.0) (2020-03-17)
 
 
