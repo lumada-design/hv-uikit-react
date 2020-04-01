@@ -1,8 +1,12 @@
-name: CI
-on: [push, pull_request]
+name: CI (pull request)
+on:
+  pull_request:
+    branches-ignore:
+      - alpha
+      - master
 
 env:
-  RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
+  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
 jobs:
   Build:

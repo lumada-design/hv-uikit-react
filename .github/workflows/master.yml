@@ -1,13 +1,13 @@
-name: Robot
+name: CI (master)
 on:
   schedule:
-    - cron: "0 3 * * *" # daily at 03:00
+    - cron: '0 5 * * *' # daily at 05:00
   pull_request:
     branches:
       - master
 
 env:
-  RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
+  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
 jobs:
   Build:
@@ -49,7 +49,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [firefox, ie, chrome]
+        browser: [ie, chrome]
 
     steps:
       - name: Checkout
@@ -67,7 +67,7 @@ jobs:
       - name: Run Robot
         shell: cmd
         run: >-
-          robot 
+          pabot --processes 4 
           --variable STORYBOOK_URL:http://localhost:9002 
           --variable BROWSER:${{ matrix.browser }} 
           --exclude pa11y 
@@ -79,7 +79,42 @@ jobs:
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
-        if: failure()
+        if: always()
         with:
           name: ${{ matrix.browser }}-reports
           path: reports
+
+  Release:
+    if: github.event_name == 'schedule'
+    needs: Robot
+    runs-on: [self-hosted, Linux]
+    steps:
+      - name: Trigger Release
+        uses: actions/github-script@0.8.0
+        env:
+          RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
+        with:
+          # repo scope token is required to generate a dispatch event
+          github-token: ${{ secrets.BUILD_TOKEN }}
+          script: |
+            const commit = await github.repos.getCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha
+            })
+
+            const message = commit.data.commit.message
+
+            if(!message.includes('${{ env.RELEASE_COMMIT_MESSAGE }}')){
+              console.log('Last commit not released, triggering a new release.')
+
+              await github.repos.createDispatchEvent({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                event_type: 'release'
+              })
+            } else {
+              console.log('Last commit already released.')
+            }
+
+            
