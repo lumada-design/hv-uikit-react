@@ -146,7 +146,7 @@ describe("VerticalContainerA11Y", () => {
 
   it("default state", async () => {
     wrapper = setupComponent();
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
 
     expect(results).toHaveNoViolations();
   });
@@ -155,7 +155,7 @@ describe("VerticalContainerA11Y", () => {
     wrapper = setupComponent({
       isOpen: true
     });
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
 
     expect(results).toHaveNoViolations();
   });
