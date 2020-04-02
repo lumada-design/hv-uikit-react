@@ -7,12 +7,12 @@ exports[`Header withStyles should render correctly 1`] = `
   className=""
   classes={
     Object {
-      "navButton": "Main-navButton-2",
-      "shadowPadding": "Main-shadowPadding-1",
-      "verticalNavigationContainer": "Main-verticalNavigationContainer-4",
-      "verticalNavigationContainerAbsolute": "Main-verticalNavigationContainerAbsolute-6",
-      "verticalNavigationContainerFixed": "Main-verticalNavigationContainerFixed-5",
-      "verticalNavigationSeparation": "Main-verticalNavigationSeparation-3",
+      "navButton": "HvHeaderWithStyles-navButton-2",
+      "shadowPadding": "HvHeaderWithStyles-shadowPadding-1",
+      "verticalNavigationContainer": "HvHeaderWithStyles-verticalNavigationContainer-4",
+      "verticalNavigationContainerAbsolute": "HvHeaderWithStyles-verticalNavigationContainerAbsolute-6",
+      "verticalNavigationContainerFixed": "HvHeaderWithStyles-verticalNavigationContainerFixed-5",
+      "verticalNavigationSeparation": "HvHeaderWithStyles-verticalNavigationSeparation-3",
     }
   }
   companyLogo={null}

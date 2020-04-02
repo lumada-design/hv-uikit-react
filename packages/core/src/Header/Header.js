@@ -47,11 +47,11 @@ const styles = {
   }
 };
 
-const StyledMenu = withStyles(menuStyles, {
+const StyledMenu = withStyles(styles, {
   name: "HvHeaderStyledMenu",
   withTheme: true
 })(Menu);
-const StyledClose = withStyles(menuStyles, {
+const StyledClose = withStyles(styles, {
   name: "HvHeaderStyledClose",
   withTheme: true
 })(Close);
