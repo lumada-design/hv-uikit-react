@@ -18,4 +18,5 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import DatePickerDS from "./DatePickerDS";
 
-export default withStyles(styles, { withTheme: true })(DatePickerDS);
+export default withStyles(styles, {   name: "HvLabDatePickerDS",
+  withTheme: true })(DatePickerDS);

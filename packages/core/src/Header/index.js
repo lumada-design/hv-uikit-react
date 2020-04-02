@@ -19,7 +19,7 @@ import withDeprecate from "../withDeprecate";
 import styles from "./styles";
 import Header from "./Header";
 
-export default withStyles(styles, { withTheme: true })(
+export default withStyles(styles, { name: "HvHeader", withTheme: true })(
   withDeprecate(
     Header,
     "This component is deprecated. Please use the new Header component."
@@ -27,6 +27,9 @@ export default withStyles(styles, { withTheme: true })(
 );
 
 // export non-deprecated component for tests
-const HeaderWithStyles = withStyles(styles, { withTheme: true })(Header);
+const HeaderWithStyles = withStyles(styles, {
+  name: "HvHeaderWithStyles",
+  withTheme: true
+})(Header);
 
 export { HeaderWithStyles };

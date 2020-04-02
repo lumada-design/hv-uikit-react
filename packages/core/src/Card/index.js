@@ -18,7 +18,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import card from "./Card";
 
-export default withStyles(styles, { withTheme: true })(card);
+export default withStyles(styles, { name: "HvCard", withTheme: true })(card);
 export { default as HvCardHeader } from "./Header";
 export { default as HvCardFooter } from "./Footer";
 export { default as HvCardContent } from "./Content";

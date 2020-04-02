@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import NavigationAnchors from "./NavigationAnchors";
 
-export default withStyles(styles, { withTheme: true })(NavigationAnchors);
+export default withStyles(styles, { name: "HvLabNavigationAnchors", withTheme: true })(NavigationAnchors);

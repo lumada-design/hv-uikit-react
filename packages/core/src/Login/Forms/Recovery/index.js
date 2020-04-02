@@ -18,4 +18,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Recovery from "./Recovery";
 
-export default withStyles(styles, { withTheme: true })(Recovery);
+export default withStyles(styles, {
+  name: "HvLoginFormRecovery",
+  withTheme: true
+})(Recovery);

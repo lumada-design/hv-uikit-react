@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Linechart from "./Linechart";
 
-export default withStyles(styles, { withTheme: true })(Linechart);
+export default withStyles(styles, { name: "HvLineChart", withTheme: true })(Linechart);

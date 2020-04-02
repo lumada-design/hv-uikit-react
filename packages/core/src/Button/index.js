@@ -18,7 +18,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Button from "./Button";
 
-const exportComponent = withStyles(styles, { withTheme: true })(Button);
+const exportComponent = withStyles(styles, {
+  name: "HvButton",
+  withTheme: true
+})(Button);
 exportComponent.displayName = "HvButton";
 
 export default exportComponent;

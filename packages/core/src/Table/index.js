@@ -20,4 +20,4 @@ import withConfig from "../config/withConfig";
 
 import Main from "./Table";
 
-export default withStyles(styles, { withTheme: true })(withConfig(Main));
+export default withStyles(styles, { name: "HvTable", withTheme: true })(withConfig(Main));

@@ -47,8 +47,14 @@ const styles = {
   }
 };
 
-const StyledMenu = withStyles(styles, { withTheme: true })(Menu);
-const StyledClose = withStyles(styles, { withTheme: true })(Close);
+const StyledMenu = withStyles(menuStyles, {
+  name: "HvHeaderStyledMenu",
+  withTheme: true
+})(Menu);
+const StyledClose = withStyles(menuStyles, {
+  name: "HvHeaderStyledClose",
+  withTheme: true
+})(Close);
 
 /**
  *

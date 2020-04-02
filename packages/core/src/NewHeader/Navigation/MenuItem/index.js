@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import MenuItem from "./MenuItem";
 
-export default withStyles(styles, { withTheme: true })(MenuItem);
+export default withStyles(styles, { name: "HvNewHeaderNavigationMenuItem", withTheme: true })(MenuItem);
