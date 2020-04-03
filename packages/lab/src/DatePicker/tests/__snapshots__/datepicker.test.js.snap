@@ -4,9 +4,9 @@ exports[`DatePicker withStyles should render correctly 1`] = `
 <HvDatePicker
   classes={
     Object {
-      "label": "HvDatePicker-label-2",
-      "reset": "HvDatePicker-reset-3",
-      "wrapper": "HvDatePicker-wrapper-1",
+      "label": "HvLabDatePicker-label-2",
+      "reset": "HvLabDatePicker-reset-3",
+      "wrapper": "HvLabDatePicker-wrapper-1",
     }
   }
   disabled={false}

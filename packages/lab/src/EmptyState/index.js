@@ -20,6 +20,6 @@ import styles from "./styles";
 import EmptyState from "./EmptyState";
 
 export default withDeprecate(
-  withStyles(styles, { withTheme: true })(EmptyState),
+  withStyles(styles, { name: "HvLabEmptyState", withTheme: true })(EmptyState),
   "This component is deprecated. Please use the Empty State Component in the Core Package"
 );

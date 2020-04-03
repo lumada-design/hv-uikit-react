@@ -15,7 +15,10 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
 import Calendar from "./Calendar";
+import styles from "./styles";
 
-export default withStyles(styles, { withTheme: true })(Calendar);
+export default withStyles(styles, {
+  name: "HvDatePickerCalendar",
+  withTheme: true
+})(Calendar);

@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import AssetInventoryListView from "./ListViewCell";
 
-export default withStyles(styles, { withTheme: true })(AssetInventoryListView);
+export default withStyles(styles, { name: "HvAssetInventoryListView", withTheme: true })(AssetInventoryListView);

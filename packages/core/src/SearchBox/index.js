@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import SearchBox from "./SearchBox";
 
-export default withStyles(styles, { withTheme: true })(SearchBox);
+export default withStyles(styles, { name: "HvSearchBox", withTheme: true })(
+  SearchBox
+);

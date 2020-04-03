@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import User from "./User";
 
-export default withStyles(styles, { withTheme: true })(User);
+export default withStyles(styles, { name: "HvHeaderUser", withTheme: true })(User);

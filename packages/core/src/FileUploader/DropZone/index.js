@@ -18,4 +18,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import DropZone from "./DropZone";
 
-export default withStyles(styles, { withTheme: true })(DropZone);
+export default withStyles(styles, {
+  name: "HvFileUploaderDropZone",
+  withTheme: true
+})(DropZone);

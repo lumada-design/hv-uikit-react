@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-/* eslint-env jest */
 
 import React from "react";
 import { shallow, mount } from "enzyme";
@@ -31,10 +29,7 @@ describe("<SearchBox />", () => {
         <SearchBox onChange={onChangeMock} />
       </HvProvider>
     );
-    const props = wrapper
-      .children()
-      .childAt(1)
-      .props();
+    const props = wrapper.find(SearchBox).props();
     expect(props.value).toEqual(undefined);
     expect(props.onChange).toBe(onChangeMock);
   });
@@ -60,10 +55,15 @@ describe("<SearchBox />", () => {
   it("submits on enter", () => {
     const wrapper = mount(
       <HvProvider>
-        <SearchBox onChange={onChangeMock} onSubmit={onSubmitMock} />
+        <SearchBox id="hv-search-box-1" onChange={onChangeMock} onSubmit={onSubmitMock} />
       </HvProvider>
     );
-    wrapper.children().childAt(1).children().children().props().onKeyDown({keyCode: 13} , "value");
+
+    wrapper
+      .find("#hv-search-box-1-input")
+      .at(0)
+      .props()
+      .onKeyDown({ keyCode: 13 }, "value");
     expect(onSubmitMock).toHaveBeenCalled();
   });
 
@@ -74,10 +74,7 @@ describe("<SearchBox />", () => {
         <SearchBox onChange={onChangeMock} value={testSearchInput} />
       </HvProvider>
     );
-    const props = wrapper
-      .children()
-      .childAt(1)
-      .props();
+    const props = wrapper.find(SearchBox).props();
     expect(props.value).toEqual(testSearchInput);
   });
 });

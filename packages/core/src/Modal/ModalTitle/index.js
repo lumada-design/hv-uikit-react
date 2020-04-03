@@ -18,4 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import ModalTitle from "./ModalTitle";
 
-export default withStyles(styles, { withTheme: true })(ModalTitle);
+export default withStyles(styles, { name: "HvModalTitle", withTheme: true })(
+  ModalTitle
+);
