@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
 const data = [
   {
-    label: "value 1"
+    label: "value 1",
+    selected: false
   },
   {
-    label: "value 2"
+    label: "value 2",
+    selected: false
   },
   {
     label: "value 3",
     selected: true
   },
   {
-    label: "value 4"
+    label: "value 4",
+    selected: false
   },
   {
-    label: "value 5 value 5 value 5 555555555555 value value 5"
+    label: "value 5 value 5 value 5 555555555555 value value 5",
+    selected: false
   },
   {
     label: "value 6"
@@ -25,10 +31,12 @@ const data = [
     label: "value 7"
   },
   {
-    label: "value 8"
+    label: "value 8",
+    selected: true
   },
   {
-    label: "value 9"
+    label: "value 9",
+    selected: true
   },
   {
     label: "value 10"
@@ -41,13 +49,48 @@ const data = [
   }
 ];
 
+const labels = {
+  title: "some label",
+  select: "some select",
+  selectAll: "some select all",
+  cancelLabel: "Cancel",
+  applyLabel: "Apply",
+  multiSelectionAction: "multi",
+  multiSelectionConjunction: "and-l"
+};
+
+const styles = () => ({
+  rootList: {
+    width: "520px"
+  },
+  list: {
+    maxWidth: "unset"
+  }
+});
+
+const Dropdown = withStyles(styles)(HvDropdown);
+
 export default (
-  <HvDropdown
-    id="dropdown3"
-    values={data}
-    multiSelect={false}
-    showSearch
-    notifyChangesOnFirstRender
-    aria-label="title"
-  />
+  <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div>
+      <Dropdown
+        id="dropdown1"
+        values={data}
+        multiSelect
+        showSearch
+        labels={labels}
+        placement="right"
+      />
+    </div>
+    <div>
+      <Dropdown
+        id="dropdown2"
+        values={data}
+        multiSelect
+        showSearch
+        labels={labels}
+        placement="left"
+      />
+    </div>
+  </div>
 );

@@ -47,13 +47,23 @@ const data = [
   }
 ];
 
+const labels = {
+  title: "some label",
+  select: "some select",
+  selectAll: "some select all",
+  cancelLabel: "L-cancel",
+  applyLabel: "L-apply",
+  multiSelectionAction: "multi",
+  multiSelectionConjunction: "and-l"
+};
+
 export default (
   <HvDropdown
-    id="dropdown10"
+    id="dropdown12"
+    expanded
     values={data}
     multiSelect
-    showSearch={false}
-    disabled
-    aria-label="text"
+    showSearch
+    labels={labels}
   />
 );
