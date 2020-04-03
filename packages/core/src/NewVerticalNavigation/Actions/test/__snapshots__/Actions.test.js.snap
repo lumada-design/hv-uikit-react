@@ -4566,19 +4566,19 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "action": "NewVerticalNavigationActions-action-2",
-                  "noIcon": "NewVerticalNavigationActions-noIcon-3",
-                  "root": "NewVerticalNavigationActions-root-1",
+                  "action": "HvNewVerticalNavigationActions-action",
+                  "noIcon": "HvNewVerticalNavigationActions-noIcon",
+                  "root": "HvNewVerticalNavigationActions-root",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "NewVerticalNavigationActions",
+                  "classNamePrefix": "HvNewVerticalNavigationActions",
                   "classes": Object {
-                    "action": "NewVerticalNavigationActions-action-2",
-                    "noIcon": "NewVerticalNavigationActions-noIcon-3",
-                    "root": "NewVerticalNavigationActions-root-1",
+                    "action": "HvNewVerticalNavigationActions-action",
+                    "noIcon": "HvNewVerticalNavigationActions-noIcon",
+                    "root": "HvNewVerticalNavigationActions-root",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5055,25 +5055,25 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "NewVerticalNavigationActions",
-                  "name": "NewVerticalNavigationActions",
+                  "meta": "HvNewVerticalNavigationActions",
+                  "name": "HvNewVerticalNavigationActions",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="NewVerticalNavigationActions"
+                    data-meta="HvNewVerticalNavigationActions"
                   >
                     
-.NewVerticalNavigationActions-root-1 {
+.HvNewVerticalNavigationActions-root {
   display: block;
   background: #FFFFFF;
 }
-.NewVerticalNavigationActions-root-1 :not(:last-child) {
+.HvNewVerticalNavigationActions-root :not(:last-child) {
   margin-bottom: 8px;
 }
-.NewVerticalNavigationActions-action-2 {
+.HvNewVerticalNavigationActions-action {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -5081,16 +5081,16 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.NewVerticalNavigationActions-action-2:hover {
+.HvNewVerticalNavigationActions-action:hover {
   background: #F0F0F0;
 }
-.NewVerticalNavigationActions-action-2 * {
+.HvNewVerticalNavigationActions-action * {
   cursor: pointer;
 }
-.NewVerticalNavigationActions-action-2:hover * {
+.HvNewVerticalNavigationActions-action:hover * {
   background: #F0F0F0;
 }
-.NewVerticalNavigationActions-noIcon-3 {
+.HvNewVerticalNavigationActions-noIcon {
   padding-left: 10px;
 }
 
@@ -5106,9 +5106,9 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "action": "NewVerticalNavigationActions-action-2",
-                    "noIcon": "NewVerticalNavigationActions-noIcon-3",
-                    "root": "NewVerticalNavigationActions-root-1",
+                    "action": "HvNewVerticalNavigationActions-action",
+                    "noIcon": "HvNewVerticalNavigationActions-noIcon",
+                    "root": "HvNewVerticalNavigationActions-root",
                   },
                   "index": Array [
                     Object {
@@ -5141,7 +5141,7 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".NewVerticalNavigationActions-action-2": Object {
+                    ".HvNewVerticalNavigationActions-action": Object {
                       "align-items": "center",
                       "color": undefined,
                       "cursor": "pointer",
@@ -5150,23 +5150,23 @@ body {
                       "justify-content": "flex-start",
                       "width": "100%",
                     },
-                    ".NewVerticalNavigationActions-action-2 *": Object {
+                    ".HvNewVerticalNavigationActions-action *": Object {
                       "cursor": "pointer",
                     },
-                    ".NewVerticalNavigationActions-action-2:hover": Object {
+                    ".HvNewVerticalNavigationActions-action:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationActions-action-2:hover *": Object {
+                    ".HvNewVerticalNavigationActions-action:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationActions-noIcon-3": Object {
+                    ".HvNewVerticalNavigationActions-noIcon": Object {
                       "padding-left": "10px",
                     },
-                    ".NewVerticalNavigationActions-root-1": Object {
+                    ".HvNewVerticalNavigationActions-root": Object {
                       "background": "#FFFFFF",
                       "display": "block",
                     },
-                    ".NewVerticalNavigationActions-root-1 :not(:last-child)": Object {
+                    ".HvNewVerticalNavigationActions-root :not(:last-child)": Object {
                       "margin-bottom": "8px",
                     },
                     "action": Object {
@@ -5188,11 +5188,11 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "NewVerticalNavigationActions",
+                    "classNamePrefix": "HvNewVerticalNavigationActions",
                     "classes": Object {
-                      "action": "NewVerticalNavigationActions-action-2",
-                      "noIcon": "NewVerticalNavigationActions-noIcon-3",
-                      "root": "NewVerticalNavigationActions-root-1",
+                      "action": "HvNewVerticalNavigationActions-action",
+                      "noIcon": "HvNewVerticalNavigationActions-noIcon",
+                      "root": "HvNewVerticalNavigationActions-root",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -5669,25 +5669,25 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "NewVerticalNavigationActions",
-                    "name": "NewVerticalNavigationActions",
+                    "meta": "HvNewVerticalNavigationActions",
+                    "name": "HvNewVerticalNavigationActions",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".NewVerticalNavigationActions-action-2 *": Object {
+                    ".HvNewVerticalNavigationActions-action *": Object {
                       "cursor": "pointer",
                     },
-                    ".NewVerticalNavigationActions-action-2:hover": Object {
+                    ".HvNewVerticalNavigationActions-action:hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationActions-action-2:hover *": Object {
+                    ".HvNewVerticalNavigationActions-action:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationActions-root-1 :not(:last-child)": Object {
+                    ".HvNewVerticalNavigationActions-root :not(:last-child)": Object {
                       "marginBottom": "8px",
                     },
                     "action": Object {
@@ -6663,19 +6663,19 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "action": "NewVerticalNavigationAction-action-5",
-                  "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                  "root": "NewVerticalNavigationAction-root-4",
+                  "action": "HvNewVerticalNavigationAction-action",
+                  "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                  "root": "HvNewVerticalNavigationAction-root",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "NewVerticalNavigationAction",
+                  "classNamePrefix": "HvNewVerticalNavigationAction",
                   "classes": Object {
-                    "action": "NewVerticalNavigationAction-action-5",
-                    "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                    "root": "NewVerticalNavigationAction-root-4",
+                    "action": "HvNewVerticalNavigationAction-action",
+                    "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                    "root": "HvNewVerticalNavigationAction-root",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7152,25 +7152,25 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "NewVerticalNavigationAction",
-                  "name": "NewVerticalNavigationAction",
+                  "meta": "HvNewVerticalNavigationAction",
+                  "name": "HvNewVerticalNavigationAction",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="NewVerticalNavigationAction"
+                    data-meta="HvNewVerticalNavigationAction"
                   >
                     
-.NewVerticalNavigationAction-root-4 {
+.HvNewVerticalNavigationAction-root {
   display: block;
   background: #FFFFFF;
 }
-.NewVerticalNavigationAction-root-4 :not(:last-child) {
+.HvNewVerticalNavigationAction-root :not(:last-child) {
   margin-bottom: 8px;
 }
-.NewVerticalNavigationAction-action-5 {
+.HvNewVerticalNavigationAction-action {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -7178,16 +7178,16 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
-.NewVerticalNavigationAction-action-5:hover {
+.HvNewVerticalNavigationAction-action:hover {
   background: #F0F0F0;
 }
-.NewVerticalNavigationAction-action-5 * {
+.HvNewVerticalNavigationAction-action * {
   cursor: pointer;
 }
-.NewVerticalNavigationAction-action-5:hover * {
+.HvNewVerticalNavigationAction-action:hover * {
   background: #F0F0F0;
 }
-.NewVerticalNavigationAction-noIcon-6 {
+.HvNewVerticalNavigationAction-noIcon {
   padding-left: 10px;
 }
 
@@ -7203,9 +7203,9 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "action": "NewVerticalNavigationAction-action-5",
-                    "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                    "root": "NewVerticalNavigationAction-root-4",
+                    "action": "HvNewVerticalNavigationAction-action",
+                    "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                    "root": "HvNewVerticalNavigationAction-root",
                   },
                   "index": Array [
                     Object {
@@ -7238,7 +7238,7 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".NewVerticalNavigationAction-action-5": Object {
+                    ".HvNewVerticalNavigationAction-action": Object {
                       "align-items": "center",
                       "color": undefined,
                       "cursor": "pointer",
@@ -7247,23 +7247,23 @@ body {
                       "justify-content": "flex-start",
                       "width": "100%",
                     },
-                    ".NewVerticalNavigationAction-action-5 *": Object {
+                    ".HvNewVerticalNavigationAction-action *": Object {
                       "cursor": "pointer",
                     },
-                    ".NewVerticalNavigationAction-action-5:hover": Object {
+                    ".HvNewVerticalNavigationAction-action:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationAction-action-5:hover *": Object {
+                    ".HvNewVerticalNavigationAction-action:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationAction-noIcon-6": Object {
+                    ".HvNewVerticalNavigationAction-noIcon": Object {
                       "padding-left": "10px",
                     },
-                    ".NewVerticalNavigationAction-root-4": Object {
+                    ".HvNewVerticalNavigationAction-root": Object {
                       "background": "#FFFFFF",
                       "display": "block",
                     },
-                    ".NewVerticalNavigationAction-root-4 :not(:last-child)": Object {
+                    ".HvNewVerticalNavigationAction-root :not(:last-child)": Object {
                       "margin-bottom": "8px",
                     },
                     "action": Object {
@@ -7285,11 +7285,11 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "NewVerticalNavigationAction",
+                    "classNamePrefix": "HvNewVerticalNavigationAction",
                     "classes": Object {
-                      "action": "NewVerticalNavigationAction-action-5",
-                      "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                      "root": "NewVerticalNavigationAction-root-4",
+                      "action": "HvNewVerticalNavigationAction-action",
+                      "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                      "root": "HvNewVerticalNavigationAction-root",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -7766,25 +7766,25 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "NewVerticalNavigationAction",
-                    "name": "NewVerticalNavigationAction",
+                    "meta": "HvNewVerticalNavigationAction",
+                    "name": "HvNewVerticalNavigationAction",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".NewVerticalNavigationAction-action-5 *": Object {
+                    ".HvNewVerticalNavigationAction-action *": Object {
                       "cursor": "pointer",
                     },
-                    ".NewVerticalNavigationAction-action-5:hover": Object {
+                    ".HvNewVerticalNavigationAction-action:hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationAction-action-5:hover *": Object {
+                    ".HvNewVerticalNavigationAction-action:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".NewVerticalNavigationAction-root-4 :not(:last-child)": Object {
+                    ".HvNewVerticalNavigationAction-root :not(:last-child)": Object {
                       "marginBottom": "8px",
                     },
                     "action": Object {
@@ -15797,9 +15797,9 @@ body {
         <Actions
           classes={
             Object {
-              "action": "NewVerticalNavigationActions-action-2",
-              "noIcon": "NewVerticalNavigationActions-noIcon-3",
-              "root": "NewVerticalNavigationActions-root-1",
+              "action": "HvNewVerticalNavigationActions-action",
+              "noIcon": "HvNewVerticalNavigationActions-noIcon",
+              "root": "HvNewVerticalNavigationActions-root",
             }
           }
           theme={
@@ -16733,7 +16733,7 @@ body {
           }
         >
           <div
-            className="NewVerticalNavigationActions-root-1"
+            className="HvNewVerticalNavigationActions-root"
             id="hv-verticalnavigation-actions-1"
           >
             <WithStyles(Action)
@@ -16743,9 +16743,9 @@ body {
               <Action
                 classes={
                   Object {
-                    "action": "NewVerticalNavigationAction-action-5",
-                    "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                    "root": "NewVerticalNavigationAction-root-4",
+                    "action": "HvNewVerticalNavigationAction-action",
+                    "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                    "root": "HvNewVerticalNavigationAction-root",
                   }
                 }
                 icon={<WithStyles(Play) />}
@@ -17681,7 +17681,7 @@ body {
                 }
               >
                 <WithStyles(Component)
-                  className="NewVerticalNavigationAction-action-5"
+                  className="HvNewVerticalNavigationAction-action"
                   component="div"
                   id="hv-verticalnavigation-action-2-button"
                   onKeyDown={[Function]}
@@ -17690,7 +17690,7 @@ body {
                   variant="normalText"
                 >
                   <ForwardRef
-                    className="NewVerticalNavigationAction-action-5"
+                    className="HvNewVerticalNavigationAction-action"
                     classes={
                       Object {
                         "3xlTitle": "HvTypography-3xlTitle",
@@ -18658,7 +18658,7 @@ body {
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin NewVerticalNavigationAction-action-5"
+                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvNewVerticalNavigationAction-action"
                       id="hv-verticalnavigation-action-2-button"
                       onKeyDown={[Function]}
                       role="button"
@@ -20584,9 +20584,9 @@ body {
               <Action
                 classes={
                   Object {
-                    "action": "NewVerticalNavigationAction-action-5",
-                    "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                    "root": "NewVerticalNavigationAction-root-4",
+                    "action": "HvNewVerticalNavigationAction-action",
+                    "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                    "root": "HvNewVerticalNavigationAction-root",
                   }
                 }
                 label="Action 2"
@@ -21521,7 +21521,7 @@ body {
                 }
               >
                 <WithStyles(Component)
-                  className="NewVerticalNavigationAction-action-5 NewVerticalNavigationAction-noIcon-6"
+                  className="HvNewVerticalNavigationAction-action HvNewVerticalNavigationAction-noIcon"
                   component="div"
                   id="hv-verticalnavigation-action-3-button"
                   onKeyDown={[Function]}
@@ -21530,7 +21530,7 @@ body {
                   variant="normalText"
                 >
                   <ForwardRef
-                    className="NewVerticalNavigationAction-action-5 NewVerticalNavigationAction-noIcon-6"
+                    className="HvNewVerticalNavigationAction-action HvNewVerticalNavigationAction-noIcon"
                     classes={
                       Object {
                         "3xlTitle": "HvTypography-3xlTitle",
@@ -22498,7 +22498,7 @@ body {
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin NewVerticalNavigationAction-action-5 NewVerticalNavigationAction-noIcon-6"
+                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvNewVerticalNavigationAction-action HvNewVerticalNavigationAction-noIcon"
                       id="hv-verticalnavigation-action-3-button"
                       onKeyDown={[Function]}
                       role="button"
@@ -23446,9 +23446,9 @@ body {
               <Action
                 classes={
                   Object {
-                    "action": "NewVerticalNavigationAction-action-5",
-                    "noIcon": "NewVerticalNavigationAction-noIcon-6",
-                    "root": "NewVerticalNavigationAction-root-4",
+                    "action": "HvNewVerticalNavigationAction-action",
+                    "noIcon": "HvNewVerticalNavigationAction-noIcon",
+                    "root": "HvNewVerticalNavigationAction-root",
                   }
                 }
                 icon={<WithStyles(Stop) />}
@@ -24384,7 +24384,7 @@ body {
                 }
               >
                 <WithStyles(Component)
-                  className="NewVerticalNavigationAction-action-5"
+                  className="HvNewVerticalNavigationAction-action"
                   component="div"
                   id="hv-verticalnavigation-action-4-button"
                   onKeyDown={[Function]}
@@ -24393,7 +24393,7 @@ body {
                   variant="normalText"
                 >
                   <ForwardRef
-                    className="NewVerticalNavigationAction-action-5"
+                    className="HvNewVerticalNavigationAction-action"
                     classes={
                       Object {
                         "3xlTitle": "HvTypography-3xlTitle",
@@ -25361,7 +25361,7 @@ body {
                     variant="normalText"
                   >
                     <div
-                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin NewVerticalNavigationAction-action-5"
+                      className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin HvNewVerticalNavigationAction-action"
                       id="hv-verticalnavigation-action-4-button"
                       onKeyDown={[Function]}
                       role="button"
