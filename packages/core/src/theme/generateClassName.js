@@ -13,9 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { createGenerateClassName } from "@material-ui/core/styles";
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
-import Media from "./Media";
+const generateClassName = createGenerateClassName({
+  productionPrefix: "jss-uikit",
+  disableGlobal: true
+});
 
-export default withStyles(styles, { name: "HvCardMedia", withTheme: true })(Media);
+export default (rule, styleSheet) => {
+  const { name } = styleSheet.options;
+
+  if (name && name.startsWith("Hv")) {
+    return `${name}-${rule.key}`;
+  }
+
+  return generateClassName(rule, styleSheet);
+};

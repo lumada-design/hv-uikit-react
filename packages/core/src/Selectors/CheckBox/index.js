@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import CheckBox from "./CheckBox";
 
-export default withStyles(styles, { withTheme: true })(CheckBox);
+export default withStyles(styles, { name: "HvCheckbox", withTheme: true })(CheckBox);

@@ -56,8 +56,14 @@ const styles = {
   }
 };
 
-const StyledArrowUp = withStyles(styles, { withTheme: true })(ArrowUp);
-const StyledArrowDown = withStyles(styles, { withTheme: true })(ArrowDown);
+const StyledArrowUp = withStyles(styles, {
+  name: "HvDropdownStyledArrowUp",
+  withTheme: true
+})(ArrowUp);
+const StyledArrowDown = withStyles(styles, {
+  name: "HvDropdownStyledArrowDown",
+  withTheme: true
+})(ArrowDown);
 
 class Dropdown extends React.Component {
   constructor(props) {

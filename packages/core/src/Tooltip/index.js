@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
+import { withStyles } from "@material-ui/core/styles";
 import Tooltip from "./Tooltip";
+import styles from "./styles";
 
-export default withStyles(styles, { withTheme: true })(Tooltip);
+export default withStyles(styles, { name: "HvTooltip", withTheme: true })(
+  Tooltip
+);

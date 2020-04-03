@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import BannerContentWrapper from "./BannerContentWrapper";
 
-export default withStyles(styles, { withTheme: true })(BannerContentWrapper);
+export default withStyles(styles, { name: "HvBannerWrapper", withTheme: true })(BannerContentWrapper);

@@ -24,8 +24,10 @@
  *  under which the software has been supplied.
  */
 
-import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
+import { withStyles } from "@material-ui/core/styles";
 import ToggleButton from "./ToggleButton";
+import styles from "./styles";
 
-export default withStyles(styles, { withTheme: true })(ToggleButton);
+export default withStyles(styles, { name: "HvToggleButton", withTheme: true })(
+  ToggleButton
+);

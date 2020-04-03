@@ -18,4 +18,5 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import RightContent from "./RightContent";
 
-export default withStyles(styles, { withTheme: true })(RightContent);
+export default withStyles(styles, {   name: "HvLabListViewRightContent",
+  withTheme: true })(RightContent);

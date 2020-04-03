@@ -27,7 +27,10 @@ const styles = {
   }
 };
 
-const StyledFail = withStyles(styles, { withTheme: true })(Fail);
+const StyledFail = withStyles(styles, {
+  name: "HvTableNoDataFail",
+  withTheme: true
+})(Fail);
 
 const NoData = ({ classes, noDataMessage = " No data to display." }) => (
   <div className={classes.root}>

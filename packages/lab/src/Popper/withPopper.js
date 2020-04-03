@@ -64,7 +64,7 @@ const withPopper = (Component, content) => {
   };
 
   return withDeprecate(
-    withStyles(styles, { withTheme: true })(Popper),
+    withStyles(styles, { name: "HvLabPopper", withTheme: true })(Popper),
     "This component is deprecated. Please use the Tooltip Component in the Core Package"
   );
 };

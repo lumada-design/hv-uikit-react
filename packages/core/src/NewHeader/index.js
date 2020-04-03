@@ -18,7 +18,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Header from "./Header";
 
-export default withStyles(styles, { withTheme: true })(Header);
+export default withStyles(styles, { name: "HvNewHeader", withTheme: true })(Header);
 
 export { default as HvHeaderBrand } from "./Brand";
 export { default as HvHeaderActions } from "./Actions";

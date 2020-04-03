@@ -26,8 +26,8 @@ const styles = {
   }
 };
 
-const StyledSuccess = withStyles(styles, { withTheme: true })(Success);
-const StyledError = withStyles(styles, { withTheme: true })(Error);
+const StyledSuccess = withStyles(styles, { name: "StyledSuccess", withTheme: true })(Success);
+const StyledError = withStyles(styles, { name: "StyledError", withTheme: true })(Error);
 const variantIcon = variant => {
   switch (variant) {
     case "success":
