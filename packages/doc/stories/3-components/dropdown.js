@@ -34,42 +34,47 @@ storiesOf("Components", module).add("Dropdown", () => <HvDropdown />, {
       src: "components/dropdown/dropdown2"
     },
     {
-      title: "3. Complete simple selection dropdown",
-      description: "Drop down with more than 10 elements",
+      title: "3. Complete multi-selection dropdown with different width",
+      description: "Different width and placement",
       src: "components/dropdown/dropdown3"
     },
     {
-      title: "4. Incomplete multi-selection dropdown",
-      description: "Drop down with less than 10 elements",
+      title: "4. Complete simple selection dropdown",
+      description: "Drop down with more than 10 elements",
       src: "components/dropdown/dropdown4"
     },
     {
-      title: "5. Multi-selection dropdown without search",
-      description: "Supports equal labels and uses ids to manage selection",
+      title: "5. Incomplete multi-selection dropdown",
+      description: "Drop down with less than 10 elements",
       src: "components/dropdown/dropdown5"
     },
     {
-      title: "6. Single selection dropdown with search",
-      description: "Drop down with less than 10 elements",
+      title: "6. Multi-selection dropdown without search",
+      description: "Supports equal labels and uses ids to manage selection",
       src: "components/dropdown/dropdown6"
     },
     {
-      title: "7. Single selection dropdown",
-      description: "Support ids to manage selection",
+      title: "7. Single selection dropdown with search",
+      description: "Drop down with less than 10 elements",
       src: "components/dropdown/dropdown7"
     },
     {
       title: "8. Single selection dropdown",
-      description: "With no default selected",
+      description: "Support ids to manage selection",
       src: "components/dropdown/dropdown8"
     },
     {
-      title: "9. Disabled multi-select dropdown",
+      title: "9. Single selection dropdown",
+      description: "With no default selected",
       src: "components/dropdown/dropdown9"
     },
     {
-      title: "10. Disabled dropdown",
+      title: "10. Disabled multi-select dropdown",
       src: "components/dropdown/dropdown10"
+    },
+    {
+      title: "11. Disabled dropdown",
+      src: "components/dropdown/dropdown11"
     }
   ]
 });

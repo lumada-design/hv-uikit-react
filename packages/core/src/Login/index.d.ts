@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvLogin extends React.Component<HvLoginProps, any> {}
+declare module '@hv/uikit-react-core/dist/Login' {
+  import React from 'react'
+
+  class HvLogin extends React.Component<HvLoginProps, any> {}
+
+  export default HvLogin
 
   export interface LoginInfo {
     username: string
@@ -22,11 +26,11 @@ declare module '@hv/uikit-react-core/dist' {
     loginButtonMessage?: string
     loginButtonLabel?: string
     forgotYourCredentialMessage?: string
-    emailLabel: string
-    emailPlaceholder: string
-    cancelButton: string
-    recoverButton: string
-    recoveringMessage: string
+    emailLabel?: string
+    emailPlaceholder?: string
+    cancelButton?: string
+    recoverButton?: string
+    recoveringMessage?: string
     incorrectCredentialsMessage?: string
   }
 

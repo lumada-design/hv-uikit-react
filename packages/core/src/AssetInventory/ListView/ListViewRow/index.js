@@ -15,7 +15,9 @@
  */
 
 import withStyles from "@material-ui/core/styles/withStyles";
-import styles from "./styles";
 import ListViewRow from "./ListViewRow";
+import styles from "./styles";
 
-export default withStyles(styles, { withTheme: true })(ListViewRow);
+export default withStyles(styles, { name: "HvListViewRow", withTheme: true })(
+  ListViewRow
+);

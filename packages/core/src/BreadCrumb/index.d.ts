@@ -1,12 +1,16 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvBreadcrumb extends React.Component<HvBreadCrumbProps, any> {}
+declare module '@hv/uikit-react-core/dist/BreadCrumb' {
+  import React from 'react'
+
+  class HvBreadCrumb extends React.Component<HvBreadCrumbProps, any> {}
+
+  export default HvBreadCrumb
 
   export interface BreadCrumbPathElement {
     label: string
     path: string
   }
 
-  export interface HvBreadCrumbProps extends React.HTMLAttributes<HvInput> {
+  export interface HvBreadCrumbProps extends React.HTMLAttributes<HvBreadCrumb> {
     /**
      * Class names to be applied.
      */
@@ -40,7 +44,7 @@ declare module '@hv/uikit-react-core/dist' {
     /**
      * Should use the router.
      */
-    useRouter?: bool
+    useRouter?: boolean
 
     /**
      * List of breadcrumb.

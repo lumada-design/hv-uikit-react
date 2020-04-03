@@ -3,6 +3,88 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.27.0...@hv/uikit-react-core@1.28.0) (2020-04-01)
+
+
+### Bug Fixes
+
+* **assetinventory:** fix wrong background color. [#1306](https://github.com/pentaho/hv-uikit-react/issues/1306) ([8fa4bf7](https://github.com/pentaho/hv-uikit-react/commit/8fa4bf7101ba9a559eee8a2542834c4e46cc5a18))
+* **assetinventory:** incorrect width in checkbox. [#1216](https://github.com/pentaho/hv-uikit-react/issues/1216) ([848b489](https://github.com/pentaho/hv-uikit-react/commit/848b4899ffd0a6734353f27a594bbe0872d75ce6))
+* **badge:** alignments and styling. [#1273](https://github.com/pentaho/hv-uikit-react/issues/1273) ([68950b7](https://github.com/pentaho/hv-uikit-react/commit/68950b73ce869eb0b94dad643c7ab00012e7f204))
+* **checkbox:** incorrect positioning of listview items using checkbox. [#1314](https://github.com/pentaho/hv-uikit-react/issues/1314) ([57c32e0](https://github.com/pentaho/hv-uikit-react/commit/57c32e0b4d5021d91034c67d62bd36d226b91d5b))
+* **dropdown:** list tooltips in multiselect mode. [#1276](https://github.com/pentaho/hv-uikit-react/issues/1276) ([766b746](https://github.com/pentaho/hv-uikit-react/commit/766b746d72af8381b0d968720acf51b130423804))
+* **dropdownmenu:** alignment on icon color. [#1264](https://github.com/pentaho/hv-uikit-react/issues/1264) ([b8ac110](https://github.com/pentaho/hv-uikit-react/commit/b8ac110dcd8624e6a1cb4380629e9638ed9ddff5))
+* **modal:** styling and copy alignments. [#1285](https://github.com/pentaho/hv-uikit-react/issues/1285) ([15eb7fb](https://github.com/pentaho/hv-uikit-react/commit/15eb7fbd228121e3f799a777b6c0b002e6891251))
+* **switch:** added package-lock. [#1189](https://github.com/pentaho/hv-uikit-react/issues/1189) ([3df4308](https://github.com/pentaho/hv-uikit-react/commit/3df43087ca54b2ba56cdc56d4e20e8e997157471))
+* **switch:** alignments and icon change. [#1189](https://github.com/pentaho/hv-uikit-react/issues/1189) ([2c8c726](https://github.com/pentaho/hv-uikit-react/commit/2c8c726ebb0cb4f621f77a348344cf0543c78d15))
+* **switch:** removed important property. [#1189](https://github.com/pentaho/hv-uikit-react/issues/1189) ([b98a43f](https://github.com/pentaho/hv-uikit-react/commit/b98a43f13baf34ea165cb483858078375ad90d26))
+* **switch:** updated tests. [#1189](https://github.com/pentaho/hv-uikit-react/issues/1189) ([815afcd](https://github.com/pentaho/hv-uikit-react/commit/815afcdd9f9c98339f32108efb60f8e7ae9173dd))
+* **table:** removed commented line. [#1263](https://github.com/pentaho/hv-uikit-react/issues/1263) ([742f7c0](https://github.com/pentaho/hv-uikit-react/commit/742f7c054c244bf56ffca9ec016b38858fa8a617))
+* **table:** styling alignments. [#1263](https://github.com/pentaho/hv-uikit-react/issues/1263) ([3f56cad](https://github.com/pentaho/hv-uikit-react/commit/3f56cad2536b6562cbaf00169da1cd5bcd29bf7d))
+* **textinput:** change counter text color to acce1 [#1286](https://github.com/pentaho/hv-uikit-react/issues/1286) ([74e6b13](https://github.com/pentaho/hv-uikit-react/commit/74e6b13fb6d6d7bc7f2dba764341f28a2a8829f4))
+* **togglebutton:** align sizes. [#1205](https://github.com/pentaho/hv-uikit-react/issues/1205) ([cc74cd5](https://github.com/pentaho/hv-uikit-react/commit/cc74cd533aff4220cac00efc1406086456b3d87b))
+
+
+### Features
+
+* **datepicker:** acknowledge change value. [#1321](https://github.com/pentaho/hv-uikit-react/issues/1321) ([2b432af](https://github.com/pentaho/hv-uikit-react/commit/2b432afa006ff2b07f10ac5ee31da312b450dd85))
+
+
+
+
+
+# [1.27.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.26.0...@hv/uikit-react-core@1.27.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **datepicker:** adjust according to ds pattern 1.2.1. [#1094](https://github.com/pentaho/hv-uikit-react/issues/1094) ([5ef1526](https://github.com/pentaho/hv-uikit-react/commit/5ef15260c6a33134807d53a0465dca4c5d880950))
+* **datepicker:** adjust according to ds pattern 1.2.1. [#1094](https://github.com/pentaho/hv-uikit-react/issues/1094) ([6c41b79](https://github.com/pentaho/hv-uikit-react/commit/6c41b797f739a85a25a17e368e434c3c8726ffb9))
+* **emptystate:** alignment on text margins [#1095](https://github.com/pentaho/hv-uikit-react/issues/1095) ([93e1d6c](https://github.com/pentaho/hv-uikit-react/commit/93e1d6cde95f2638c9bc07a5f33a6657a96cb57a))
+* **login:** recovery message not showing. [#1224](https://github.com/pentaho/hv-uikit-react/issues/1224) ([51a5c69](https://github.com/pentaho/hv-uikit-react/commit/51a5c693a5bd1e79e01339d30dfc10a71a586003))
+
+
+### Features
+
+* **multibutton:** reviewing accesibility. [#1079](https://github.com/pentaho/hv-uikit-react/issues/1079) ([0341ff1](https://github.com/pentaho/hv-uikit-react/commit/0341ff1b4aeb4e179a43fb2f7b276082760a53fc))
+* **table:** aria roles a11y review. [#1076](https://github.com/pentaho/hv-uikit-react/issues/1076) ([d38d242](https://github.com/pentaho/hv-uikit-react/commit/d38d242e3410191efb4c67dad09c60dfab28a37b))
+* **table:** reviewing keyboard accessibility ([bc8b084](https://github.com/pentaho/hv-uikit-react/commit/bc8b08405982bfb87aae9f51be5dee8fb3f2774c))
+
+
+
+
+
+# [1.26.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.25.0...@hv/uikit-react-core@1.26.0) (2020-03-07)
+
+
+### Features
+
+* **typescript:** support new component and restructure files ([e51b411](https://github.com/pentaho/hv-uikit-react/commit/e51b411962a1cc10a80fbc1f0d42cbc379618ef0))
+
+
+
+
+
+# [1.25.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.24.0...@hv/uikit-react-core@1.25.0) (2020-02-28)
+
+
+### Bug Fixes
+
+* **breadcrumb:** accessibility review. [#1082](https://github.com/pentaho/hv-uikit-react/issues/1082) ([5d94d79](https://github.com/pentaho/hv-uikit-react/commit/5d94d79951b37f12b16226c9afa2b33fd7d1acb2))
+* **card:** inject accessibility rules for actions and dropdown menu [#922](https://github.com/pentaho/hv-uikit-react/issues/922) ([78e3d30](https://github.com/pentaho/hv-uikit-react/commit/78e3d3040fc84c85f689a699966a91d53b4d7ada))
+* **fileuploader:** change icon color. [#1091](https://github.com/pentaho/hv-uikit-react/issues/1091) ([6660295](https://github.com/pentaho/hv-uikit-react/commit/6660295aa768ee92848aeb9959e8adf42abc1944))
+* **templates:** alignment and colors. [#1174](https://github.com/pentaho/hv-uikit-react/issues/1174) ([024138e](https://github.com/pentaho/hv-uikit-react/commit/024138e8c163d9d80dbc463ff448c431e3a7152e))
+* **verticalnavigation:** overwrite box style. [#1170](https://github.com/pentaho/hv-uikit-react/issues/1170) ([2b0adfc](https://github.com/pentaho/hv-uikit-react/commit/2b0adfcf4627f211a1d16084d68b91761e82acf3))
+
+
+### Features
+
+* **tabs:** implement the component according to 1.2.1 DS version. [#245](https://github.com/pentaho/hv-uikit-react/issues/245) ([d7d5653](https://github.com/pentaho/hv-uikit-react/commit/d7d5653a52e230fa2f0d871468fa4c06947e42c9))
+
+
+
+
+
 # [1.24.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.23.1...@hv/uikit-react-core@1.24.0) (2020-02-20)
 
 

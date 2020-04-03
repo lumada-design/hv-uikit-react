@@ -26,4 +26,7 @@ export * from "./TreeView";
 export { default as Actions } from "./Actions";
 export * from "./Actions";
 
-export default withStyles(styles, { withTheme: true })(VerticalNavigation);
+export default withStyles(styles, {
+  name: "HvVerticalNavigation",
+  withTheme: true
+})(VerticalNavigation);

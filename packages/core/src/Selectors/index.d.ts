@@ -1,4 +1,6 @@
-declare module '@hv/uikit-react-core/dist' {
+declare module '@hv/uikit-react-core/dist/Selectors' {
+  import React from 'react'
+
   export class HvCheckBox extends React.Component<HvCheckBoxProps, any> {}
 
   export interface HvCheckBoxProps extends React.HTMLAttributes<HvCheckBox> {

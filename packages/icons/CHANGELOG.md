@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.1...@hv/uikit-react-icons@1.10.2) (2020-04-01)
+
+
+### Bug Fixes
+
+* **switch:** added package-lock. [#1189](https://github.com/pentaho/hv-uikit-react/issues/1189) ([3df4308](https://github.com/pentaho/hv-uikit-react/commit/3df43087ca54b2ba56cdc56d4e20e8e997157471))
+
+
+
+
+
+## [1.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.0...@hv/uikit-react-icons@1.10.1) (2020-03-17)
+
+
+### Bug Fixes
+
+* **login:** recovery message not showing. [#1224](https://github.com/pentaho/hv-uikit-react/issues/1224) ([51a5c69](https://github.com/pentaho/hv-uikit-react/commit/51a5c693a5bd1e79e01339d30dfc10a71a586003))
+
+
+
+
+
 # [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.9.0...@hv/uikit-react-icons@1.10.0) (2020-02-15)
 
 

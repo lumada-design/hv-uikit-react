@@ -17,11 +17,16 @@
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import ListView from "./ListView";
-import ListViewContext, { ListViewContextProvider, ListViewContextConsumer } from "./ListViewContext/ListViewContext";
+import ListViewContext, {
+  ListViewContextProvider,
+  ListViewContextConsumer
+} from "./ListViewContext/ListViewContext";
 
-export default withStyles(styles, { withTheme: true })(ListView);
+export default withStyles(styles, { name: "HvListView", withTheme: true })(
+  ListView
+);
 export { default as HvListViewRow } from "./ListViewRow";
 export { default as HvListViewCell } from "./ListViewCell";
-export { ListViewContext as HvListViewContext};
-export { ListViewContextProvider as HvListViewContextProvider};
-export { ListViewContextConsumer as HvListViewContextConsumer};
+export { ListViewContext as HvListViewContext };
+export { ListViewContextProvider as HvListViewContextProvider };
+export { ListViewContextConsumer as HvListViewContextConsumer };

@@ -1,17 +1,45 @@
-import "./@types/HvBanner"
-import "./@types/HvBreadCrumb"
-import "./@types/HvButton"
-import "./@types/HvCheckBox"
-import "./@types/HvHeader"
-import "./@types/HvInput"
-import "./@types/HvKpi"
-import "./@types/HvLogin"
-import "./@types/HvModalActions"
-import "./@types/HvModalContent"
-import "./@types/HvModal"
-import "./@types/HvModalTitle"
-import "./@types/HvProvider"
-import "./@types/HvSearchBox"
-import "./@types/HvTable"
-import "./@types/HvTab"
-import "./@types/HvTabs"
+import './Badge'
+import './Banner'
+import './BreadCrumb'
+import './Button'
+import './Card'
+import './Header'
+import './Input'
+import './Kpi'
+import './Login'
+import './Modal'
+import './Modal/ModalActions'
+import './Modal/ModalContent'
+import './Modal/ModalTitle'
+import './Provider'
+import './SearchBox'
+import './Selectors'
+import './Table'
+import './Tab'
+import './Tabs'
+import './Typography'
+import './NewHeader'
+import './NewVerticalNavigation'
+
+declare module '@hv/uikit-react-core/dist' {
+  export { default as HvBadge, HvBadgeProps } from '@hv/uikit-react-core/dist/Badge'
+  export { default as HvBanner, HvBannerProps, BannerAction } from '@hv/uikit-react-core/dist/Banner'
+  export { default as HvBreadcrumb, HvBreadCrumbProps, BreadCrumbPathElement } from '@hv/uikit-react-core/dist/BreadCrumb'
+  export { default as HvButton, HvButtonProps } from '@hv/uikit-react-core/dist/Button'
+  export { default as HvCard, HvCardProps, CardAction } from '@hv/uikit-react-core/dist/Card'
+  export { HvCheckBox, HvCheckBoxProps } from '@hv/uikit-react-core/dist/Selectors'
+  export { default as HvHeader, HvHeaderProps, HeaderLabel} from '@hv/uikit-react-core/dist/Header'
+  export { default as HvInput, HvInputProps, InputLabels, InputTextConfiguration } from '@hv/uikit-react-core/dist/Input'
+  export { default as HvKpi, HvKpiProps, KpiLabels, KpiTextConfiguration } from '@hv/uikit-react-core/dist/Kpi'
+  export { default as HvLogin, HvLoginProps, LoginInfo, LoginLabel } from '@hv/uikit-react-core/dist/Login'
+  export { default as HvModal, HvModalProps } from '@hv/uikit-react-core/dist/Modal'
+  export { default as HvModalActions, HvModalActionsProps } from '@hv/uikit-react-core/dist/Modal/ModalActions'
+  export { default as HvModalContent, HvModalContentProps } from '@hv/uikit-react-core/dist/Modal/ModalContent'
+  export { default as HvModalTitle, HvModalTitleProps } from '@hv/uikit-react-core/dist/Modal/ModalTitle'
+  export { default as HvProvider, HvProviderProps } from '@hv/uikit-react-core/dist/Provider'
+  export { default as HvSearchBox, HvSearchBoxProps, SearchBoxLabel } from '@hv/uikit-react-core/dist/SearchBox'
+  export { default as HvTab, HvTabProps } from '@hv/uikit-react-core/dist/Tab'
+  export { default as HvTable, HvTableProps, SecondaryAction, TableColumn, TableLabel } from '@hv/uikit-react-core/dist/Table'
+  export { default as HvTabs, HvTabsProps } from '@hv/uikit-react-core/dist/Tabs'
+  export { default as HvTypography, HvTypographyProps } from '@hv/uikit-react-core/dist/Typography'
+}

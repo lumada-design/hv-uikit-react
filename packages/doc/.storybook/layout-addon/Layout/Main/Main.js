@@ -115,7 +115,7 @@ const Main = ({ classes, children, context, config }) => {
             (story === "Typography" && `v${corePackage.version}`) ||
             ""}`}
           <span className={classes.name}>
-            {story === "Icons" ? "" : `- ${story}`}
+            {story === "Icons" ? "" : ` - ${story}`}
           </span>
         </div>
         {isComponent && (

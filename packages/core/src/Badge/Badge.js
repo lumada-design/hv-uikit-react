@@ -20,9 +20,24 @@ import classNames from "classnames";
 import Typography from "../Typography";
 
 const Badge = props => {
-  const { classes, showCount, count, maxCount, icon, text, textVariant } = props;
+  const {
+    classes,
+    showCount,
+    count,
+    maxCount,
+    icon,
+    text,
+    textVariant,
+    ...others
+  } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
-  const Component = icon || text && <Typography variant={textVariant}>{text}</Typography>;
+  const Component =
+    icon ||
+    (text && (
+      <Typography variant={textVariant}>
+        {text}
+      </Typography>
+    ));
 
   const badgeClasses = classNames(classes.badgePosition, {
     [classes.badge]: count > 0,
@@ -32,7 +47,7 @@ const Badge = props => {
   });
 
   return (
-    <div className={classes.root}>
+    <div aria-label={renderedCount} className={classes.root} {...others}>
       {Component}
       <div className={Component ? classes.badgeContainer : null}>
         <div className={badgeClasses}>{showCount && renderedCount}</div>

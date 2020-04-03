@@ -26,8 +26,10 @@ const styles = {
   }
 };
 
-const StyledSuccess = withStyles(styles)(Success);
-const StyledError = withStyles(styles)(Error);
+const StyledSuccess = withStyles(styles, { name: "HvBannerStyledSuccess" })(
+  Success
+);
+const StyledError = withStyles(styles, { name: "HvBannerStyledError" })(Error);
 
 export const variantIcon = Object.freeze({
   success: () => <StyledSuccess iconSize="S" semantic="sema1" />,

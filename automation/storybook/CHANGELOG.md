@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.10.2...@hv/uikit-react-automation-storybook@1.11.0) (2020-04-01)
+
+
+### Features
+
+* **datepicker:** acknowledge change value. [#1321](https://github.com/pentaho/hv-uikit-react/issues/1321) ([2b432af](https://github.com/pentaho/hv-uikit-react/commit/2b432afa006ff2b07f10ac5ee31da312b450dd85))
+
+
+
+
+
+## [1.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.10.1...@hv/uikit-react-automation-storybook@1.10.2) (2020-03-17)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-storybook
+
+
+
+
+
+## [1.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.10.0...@hv/uikit-react-automation-storybook@1.10.1) (2020-03-07)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-storybook
+
+
+
+
+
+# [1.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.9.0...@hv/uikit-react-automation-storybook@1.10.0) (2020-02-28)
+
+
+### Features
+
+* **tabs:** implement the component according to 1.2.1 DS version. [#245](https://github.com/pentaho/hv-uikit-react/issues/245) ([d7d5653](https://github.com/pentaho/hv-uikit-react/commit/d7d5653a52e230fa2f0d871468fa4c06947e42c9))
+
+
+
+
+
 # [1.9.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.8.9...@hv/uikit-react-automation-storybook@1.9.0) (2020-02-20)
 
 

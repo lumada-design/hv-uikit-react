@@ -44,7 +44,8 @@ const List = ({
   disablePortal,
   isOpen,
   anchorEl,
-  singleSelectionToggle
+  singleSelectionToggle,
+  placement
 }) => {
   const [searchStr, setSearchStr] = useState();
   const [list, setList] = useState(clone(values));
@@ -294,51 +295,73 @@ const List = ({
   const showList = !isNil(values);
 
   const renderInnerRender = () => (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div
-      className={classNames([
-        classes.list,
-        classes.listClosed,
-        {
-          [classes.listOpenDown]: isOpen && !positionUp,
-          [classes.listOpenUp]: isOpen && positionUp
-        }
-      ])}
-      onKeyDown={handleKeyDown}
-    >
-      {!positionUp && <div className={classes.listBorderDown} />}
-
+    <div>
+      {!positionUp && (
+        <div
+          className={classNames(classes.inputExtensionOpen, {
+            [classes.inputExtensionLeftPosition]: placement === "left"
+          })}
+        />
+      )}
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
-        className={classNames(classes.rootList, {
-          [classes.marginTop]: positionUp && showList
-        })}
+        className={classNames([
+          classes.list,
+          classes.listClosed,
+          {
+            [classes.listOpenDown]: isOpen && !positionUp,
+            [classes.listOpenUp]: isOpen && positionUp
+          }
+        ])}
+        onKeyDown={handleKeyDown}
       >
-        {showSearch && renderSearch()}
-        {showList && multiSelect && renderSelectAll()}
-        <div className={classes.listContainer}>
-          {showList && (
-            <InnerList
-              id={`${id}-list`}
-              values={list}
-              multiSelect={multiSelect}
-              useSelector={multiSelect}
-              showSelectAll={false}
-              onChange={onSelection}
-              labels={newLabels}
-              selectDefault={selectDefault}
-              hasTooltips={hasTooltips}
-              selectable
-              condensed
-              singleSelectionToggle={singleSelectionToggle}
-            />
-          )}
-        </div>
-      </div>
-      {showList && multiSelect ? renderActions() : null}
+        {!positionUp && <div className={classes.listBorderDown} />}
 
-      {positionUp && <div className={classes.listBorderUp} />}
+        <div
+          className={classNames(classes.rootList, {
+            [classes.marginTop]: positionUp && showList
+          })}
+        >
+          {showSearch && renderSearch()}
+          {showList && multiSelect && renderSelectAll()}
+          <div className={classes.listContainer}>
+            {showList && (
+              <InnerList
+                id={`${id}-list`}
+                values={list}
+                multiSelect={multiSelect}
+                useSelector={multiSelect}
+                showSelectAll={false}
+                onChange={onSelection}
+                labels={newLabels}
+                selectDefault={selectDefault}
+                hasTooltips={hasTooltips}
+                selectable
+                condensed
+                singleSelectionToggle={singleSelectionToggle}
+              />
+            )}
+          </div>
+        </div>
+        {showList && multiSelect ? renderActions() : null}
+      </div>
+      {positionUp && (
+        <div
+          className={classNames(
+            classes.inputExtensionOpen,
+            classes.inputExtensionOpenShadow,
+            {
+              [classes.inputExtensionFloatRight]: placement === "right",
+              [classes.inputExtensionFloatLeft]: placement === "left"
+            }
+          )}
+        />
+      )}
     </div>
   );
+
+  const bottom =
+    placement && `bottom-${placement === "right" ? "start" : "end"}`;
 
   return (
     <Popper
@@ -346,7 +369,7 @@ const List = ({
       disablePortal={disablePortal}
       open={isOpen}
       anchorEl={anchorEl}
-      placement="bottom"
+      placement={bottom}
       popperOptions={{
         onUpdate: data => handleListFlip(data),
         onCreate: data => handleListCreate(data)
@@ -428,7 +451,11 @@ List.propTypes = {
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool.isRequired
+  singleSelectionToggle: PropTypes.bool.isRequired,
+  /**
+   * Placement of the dropdown.
+   */
+  placement: PropTypes.oneOf(["left", "right"])
 };
 
 List.defaultProps = {
@@ -441,7 +468,8 @@ List.defaultProps = {
   hasTooltips: false,
   disablePortal: true,
   isOpen: false,
-  anchorEl: null
+  anchorEl: null,
+  placement: undefined
 };
 
 export default List;

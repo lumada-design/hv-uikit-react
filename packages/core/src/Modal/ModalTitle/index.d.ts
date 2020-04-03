@@ -1,5 +1,9 @@
-declare module '@hv/uikit-react-core/dist' {
-  export class HvModalTitle extends React.Component<HvModalTitleProps, any> {}
+declare module '@hv/uikit-react-core/dist/Modal/ModalTitle' {
+  import React from 'react'
+  
+  class HvModalTitle extends React.Component<HvModalTitleProps, any> {}
+
+  export default HvModalTitle
 
   export interface HvModalTitleProps
     extends React.HTMLAttributes<HvModalTitle> {
