@@ -9,10 +9,10 @@ const exampleStyles = {
   flexWrap: "wrap",
   maxWidth: "800px",
   padding: "0 30px 0 0",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
 };
 
-const StyledTab = withStyles(theme => ({
+const StyledTab = withStyles((theme) => ({
   root: {
     fontSize: theme.hv.typography.sTitle.fontSize,
     minHeight: "inherit",
@@ -23,12 +23,11 @@ const StyledTab = withStyles(theme => ({
     maxWidth: "unset",
     width: 265,
     justifyContent: "center",
-    display: "flex"
-  }
-}
-))(props => <HvTab {...props} />);
+    display: "flex",
+  },
+}))((props) => <HvTab {...props} />);
 
-function Sample() {
+const Sample = () => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -37,10 +36,14 @@ function Sample() {
 
   return (
     <HvTabs value={value} onChange={handleChange}>
-      <StyledTab label={<HvBadge showCount count={2} text="Track events" />}></StyledTab>
-      <StyledTab label={<HvBadge count={1} text="Vehicle events" />}></StyledTab>
+      <StyledTab
+        label={<HvBadge showCount count={2} text="Track events" />}
+      ></StyledTab>
+      <StyledTab
+        label={<HvBadge count={1} text="Vehicle events" />}
+      ></StyledTab>
     </HvTabs>
   );
-}
+};
 
-export default <Sample />
+export default <Sample />;
