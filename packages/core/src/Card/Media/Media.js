@@ -18,6 +18,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import CardMedia from "@material-ui/core/CardMedia";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 
 /**
  * The media container.
@@ -28,12 +29,17 @@ const Media = ({
   classes,
   className,
   mediaPath,
-  mediaTitle,
+  title,
   mediaHeight,
+  onClick,
+
+  // deprecated
+  mediaTitle,
+  onClickAction,
   mediaAriaLabel,
   mediaAriaLabelledBy,
   mediaAriaDescribedBy,
-  onClickAction,
+
   ...other
 }) => (
   <div className={classNames(classes.mediaContainer, className)}>
@@ -42,11 +48,11 @@ const Media = ({
       role="img"
       image={mediaPath}
       style={mediaHeight ? { height: `${mediaHeight}px` } : undefined}
-      title={mediaTitle}
+      title={title || mediaTitle}
       aria-label={mediaAriaLabel}
       aria-labelledby={mediaAriaLabelledBy}
       aria-describedby={mediaAriaDescribedBy}
-      onClick={onClickAction}
+      onClick={onClick || onClickAction}
       {...other}
     />
   </div>
@@ -57,18 +63,27 @@ Media.propTypes = {
    * Class names to be applied.
    */
   className: PropTypes.string,
-  /** 
+  /**
    *  Used to define a string that labels the current element.
    */
-  mediaAriaLabel: PropTypes.string,
-  /** 
+  mediaAriaLabel: deprecatedPropType(
+    PropTypes.string,
+    "pass aria-label directly instead"
+  ),
+  /**
    *  Establishes relationships between objects and their label(s), and its value should be one or more element IDs.
    */
-  mediaAriaLabelledBy: PropTypes.string,
-  /** 
+  mediaAriaLabelledBy: deprecatedPropType(
+    PropTypes.string,
+    "pass aria-labelledby directly instead"
+  ),
+  /**
    *  Used to indicate the IDs of the elements that describe the object.
    */
-  mediaAriaDescribedBy: PropTypes.string,
+  mediaAriaDescribedBy: deprecatedPropType(
+    PropTypes.string,
+    "pass aria-describedby directly instead"
+  ),
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -85,7 +100,7 @@ Media.propTypes = {
   /**
    *  The title of the media.
    */
-  mediaTitle: PropTypes.string,
+  mediaTitle: deprecatedPropType(PropTypes.string, "use title instead"),
   /**
    *  The path to the image to show in the media slot.
    */
@@ -97,7 +112,15 @@ Media.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClickAction: PropTypes.func,
+  onClickAction: deprecatedPropType(PropTypes.func, "use onClick instead"),
+  /**
+   *  The function that will be executed when this section is clicked.
+   */
+  onClick: PropTypes.func,
+  /**
+   *  The title of the media.
+   */
+  title: PropTypes.string
 };
 
 Media.defaultProps = {
@@ -108,7 +131,9 @@ Media.defaultProps = {
   mediaTitle: "",
   mediaPath: "",
   mediaHeight: undefined,
-  onClickAction: () => {}
+  onClickAction: () => {},
+  onClick: () => {},
+  title: ""
 };
 
 export default Media;

@@ -33,16 +33,18 @@ const Content = ({
   className,
   innerCardContent,
   needsBorder,
+  onClick,
   onClickAction,
+  children,
   ...others
 }) => (
   <CardContent
     id={id || uniqueId(DEFAULT_ID)}
     className={classNames(classes.content, className)}
-    onClick={onClickAction}
+    onClick={onClick || onClickAction}
     {...others}
   >
-    {innerCardContent}
+    {children || innerCardContent}
   </CardContent>
 );
 
@@ -71,7 +73,10 @@ Content.propTypes = {
   /**
    *  The renderable content inside the body of the card.
    */
-  innerCardContent: PropTypes.node,
+  innerCardContent: deprecatedPropType(
+    PropTypes.node,
+    "pass children directly instead"
+  ),
   /**
    * If the content requires a bottom border
    * @deprecated
@@ -81,7 +86,12 @@ Content.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClickAction: PropTypes.func
+  onClickAction: deprecatedPropType(PropTypes.func, "use onClick instead"),
+  /**
+   *  The function that will be executed when this section is clicked.
+   */
+  onClick: PropTypes.func,
+  children: PropTypes.node
 };
 
 Content.defaultProps = {
@@ -89,7 +99,9 @@ Content.defaultProps = {
   id: undefined,
   innerCardContent: undefined,
   needsBorder: undefined,
-  onClickAction: () => {}
+  onClickAction: () => {},
+  onClick: () => {},
+  children: undefined
 };
 
 export default Content;

@@ -30,13 +30,16 @@ const DEFAULT_ID = "hv-header";
  *
  * @param {*} { classes, headerTitle, subheader, icon }
  */
-const Header = ({ 
-  classes, 
-  className, 
-  headerTitle, 
-  subheader, 
-  icon, 
+const Header = ({
+  classes,
+  className,
+  headerTitle,
+  subheader,
+  icon,
   id,
+  onClick,
+
+  // deprecated
   onClickAction,
   ...other
 }) => (
@@ -52,7 +55,7 @@ const Header = ({
       action: classes.action,
       content: classes.content
     }}
-    onClick={onClickAction}
+    onClick={onClick || onClickAction}
     {...other}
   />
 );
@@ -116,7 +119,11 @@ Header.propTypes = {
   /**
    *  The function that will be executed when this section is clicked.
    */
-  onClickAction: PropTypes.func
+  onClickAction: deprecatedPropType(PropTypes.func, "use onClick instead"),
+  /**
+   *  The function that will be executed when this section is clicked.
+   */
+  onClick: PropTypes.func
 };
 
 Header.defaultProps = {
@@ -125,7 +132,8 @@ Header.defaultProps = {
   needsBorder: undefined,
   icon: null,
   subheader: undefined,
-  onClickAction: () => {}
+  onClickAction: () => {},
+  onClick: () => {}
 };
 
 export default Header;
