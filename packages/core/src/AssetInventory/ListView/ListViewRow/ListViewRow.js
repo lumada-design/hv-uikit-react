@@ -20,6 +20,7 @@ import classNames from "classnames";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
@@ -147,10 +148,16 @@ const ListViewRow = ({
   children,
   isSelectable,
   onSelection,
+  checked,
+  semantic,
+  checkboxProps,
+
+  // deprecated:
   checkboxValue,
   checkboxSelected,
   checkboxIndeterminate,
   checkboxSemantic,
+
   ...other
 }) => (
   <ListViewContextConsumer>
@@ -164,10 +171,10 @@ const ListViewRow = ({
           id,
           isSelectable,
           onSelection,
-          checkboxValue,
-          checkboxSelected,
-          checkboxIndeterminate,
-          checkboxSemantic,
+          checkboxProps.value || checkboxValue,
+          checked || checkboxSelected,
+          checkboxProps.indeterminate || checkboxIndeterminate,
+          semantic || checkboxSemantic,
           other
         );
       }
@@ -179,15 +186,43 @@ const ListViewRow = ({
         id,
         isSelectable,
         onSelection,
-        checkboxValue,
-        checkboxSelected,
-        checkboxIndeterminate,
-        checkboxSemantic,
+        checkboxProps.value || checkboxValue,
+        checked || checkboxSelected,
+        checkboxProps.indeterminate || checkboxIndeterminate,
+        semantic || checkboxSemantic,
         other
       );
     }}
   </ListViewContextConsumer>
 );
+
+const semanticOptions = [
+  "sema1",
+  "sema2",
+  "sema3",
+  "sema4",
+  "sema5",
+  "sema6",
+  "sema7",
+  "sema8",
+  "sema9",
+  "sema10",
+  "sema11",
+  "sema12",
+  "sema13",
+  "sema14",
+  "sema15",
+  "sema16",
+  "sema17",
+  "sema18",
+  "sema19",
+  "atmo1",
+  "atmo2",
+  "atmo3",
+  "atmo4",
+  "atmo5",
+  "atmo6"
+];
 
 ListViewRow.propTypes = {
   /**
@@ -226,47 +261,44 @@ ListViewRow.propTypes = {
   /**
    *  The value the checkbox in the in the left part of the row will return when selected.
    */
-  checkboxValue: PropTypes.string,
+  checkboxValue: deprecatedPropType(
+    PropTypes.string,
+    "use checkboxProps.value instead"
+  ),
   /**
    *  ´true´ if the checkbox is selected or ´false´ if not selected.
    *
    *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
-  checkboxSelected: PropTypes.bool,
+  checkboxSelected: deprecatedPropType(PropTypes.bool, "use checked instead"),
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool,
+  checkboxIndeterminate: deprecatedPropType(
+    PropTypes.bool,
+    "use checkboxProps.indeterminate instead"
+  ),
   /**
    *  The border to the right of the checkbox
    */
-  checkboxSemantic: PropTypes.oneOf([
-    "sema1",
-    "sema2",
-    "sema3",
-    "sema4",
-    "sema5",
-    "sema6",
-    "sema7",
-    "sema8",
-    "sema9",
-    "sema10",
-    "sema11",
-    "sema12",
-    "sema13",
-    "sema14",
-    "sema15",
-    "sema16",
-    "sema17",
-    "sema18",
-    "sema19",
-    "atmo1",
-    "atmo2",
-    "atmo3",
-    "atmo4",
-    "atmo5",
-    "atmo6"
-  ])
+  checkboxSemantic: deprecatedPropType(
+    PropTypes.oneOf(semanticOptions),
+    "use semantic instead"
+  ),
+  /**
+   *  Object of values passed down to the CheckBox component.
+   */
+  checkboxProps: PropTypes.instanceOf(Object),
+  /**
+   *  ´true´ if the checkbox is selected or ´false´ if not selected.
+   *
+   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
+   */
+  checked: PropTypes.bool,
+  /**
+   *  The border to the right of the checkbox
+   */
+  semantic: PropTypes.oneOf(semanticOptions)
 };
 
 ListViewRow.defaultProps = {
@@ -274,11 +306,16 @@ ListViewRow.defaultProps = {
   isSelectable: undefined,
   id: undefined,
   viewConfiguration: null,
+  onSelection: () => {},
+  checked: undefined,
+  semantic: undefined,
+  checkboxProps: {},
+
+  // deprecated
   checkboxValue: "",
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
-  checkboxSemantic: undefined,
-  onSelection: () => {}
+  checkboxSemantic: undefined
 };
 
 export default ListViewRow;

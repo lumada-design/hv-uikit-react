@@ -22,6 +22,9 @@ import CardActions from "@material-ui/core/CardActions";
 import HvCheckBox from "../../Selectors/CheckBox";
 import Actions from "../../Actions";
 
+const getValue = checkboxProps =>
+  (checkboxProps && checkboxProps.value) || false;
+
 /**
  * The footer container contains the actions of the cards also
  * it creates a checkbox if the card is required to be selectable positioning it to the left.
@@ -41,9 +44,6 @@ import Actions from "../../Actions";
 const Footer = ({
   classes,
   id,
-  checkboxAriaLabel,
-  checkboxAriaLabelledBy,
-  checkboxAriaDescribedBy,
   className,
   actions,
   actionsCallback,
@@ -51,33 +51,39 @@ const Footer = ({
   maxVisibleActions,
   isSelectable,
   onChange,
+  actionItemWidth,
+  checked,
+  checkboxProps,
+
+  // deprecated
+  checkboxAriaLabel,
+  checkboxAriaLabelledBy,
+  checkboxAriaDescribedBy,
   checkboxValue,
   checkboxSelected,
   checkboxIndeterminate,
   checkboxLabel,
-  actionItemWidth,
+
   ...other
 }) => (
-  <CardActions 
-    className={classNames(classes.root, className)} 
-    {...other}
-  >
+  <CardActions className={classNames(classes.root, className)} {...other}>
     {isSelectable && (
       <div className={classes.leftContainer}>
         <HvCheckBox
-          value={checkboxValue || id}
+          value={getValue(checkboxProps) || checkboxValue || id}
           onChange={onChange}
           label={checkboxLabel}
-          checked={checkboxSelected}
+          checked={checked || checkboxSelected}
           indeterminate={checkboxIndeterminate}
           checkboxProps={{
             "aria-label": checkboxAriaLabel,
             "aria-labelledby": checkboxAriaLabelledBy,
-            "aria-describedby": checkboxAriaDescribedBy,
+            "aria-describedby": checkboxAriaDescribedBy
           }}
           inputProps={{
-            "aria-label": "card-checkbox-input",
+            "aria-label": "card-checkbox-input"
           }}
+          {...checkboxProps}
         />
       </div>
     )}
@@ -91,7 +97,7 @@ const Footer = ({
       }
     >
       <Actions
-        id={checkboxValue || id}
+        id={getValue(checkboxProps) || checkboxValue || id}
         actions={actions}
         maxVisibleActions={maxVisibleActions}
         actionItemWidth={actionItemWidth}
@@ -127,18 +133,27 @@ Footer.propTypes = {
    * Component identifier.
    */
   id: PropTypes.string,
-  /** 
+  /**
    *  Used to define a string that labels the checkbox element.
    */
-  checkboxAriaLabel: PropTypes.string,
-  /** 
+  checkboxAriaLabel: deprecatedPropType(
+    PropTypes.string,
+    "use checkboxProps object instead"
+  ),
+  /**
    *  Establishes relationships between the checkbox and their label(s), and its value should be one or more element IDs.
    */
-  checkboxAriaLabelledBy: PropTypes.string,
-  /** 
+  checkboxAriaLabelledBy: deprecatedPropType(
+    PropTypes.string,
+    "use checkboxProps object instead"
+  ),
+  /**
    *  Used to indicate the IDs of the elements that describe the checkbox.
    */
-  checkboxAriaDescribedBy: PropTypes.string,
+  checkboxAriaDescribedBy: deprecatedPropType(
+    PropTypes.string,
+    "use checkboxProps object instead"
+  ),
   /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon}´
@@ -154,7 +169,7 @@ Footer.propTypes = {
         disabled: PropTypes.bool,
         ariaLabel: PropTypes.string,
         ariaLabelledBy: PropTypes.string,
-        ariaDescribedBy: PropTypes.string,
+        ariaDescribedBy: PropTypes.string
       })
     )
   ]),
@@ -181,45 +196,68 @@ Footer.propTypes = {
   /**
    *  The value the checkbox in the footer will return when selected.
    */
-  checkboxValue: PropTypes.string,
+  checkboxValue: deprecatedPropType(
+    PropTypes.string,
+    "use checkboxProps.value instead"
+  ),
   /**
    *  The label for the checkbox in the footer of the card.
    */
-  checkboxLabel: PropTypes.string,
+  checkboxLabel: deprecatedPropType(
+    PropTypes.string,
+    "use checkboxProps.label instead"
+  ),
   /**
    *  ´true´ if the checkbox is selected or ´false´ if not selected.
    *
    *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
-  checkboxSelected: PropTypes.bool,
+  checkboxSelected: deprecatedPropType(PropTypes.bool, "use checked instead"),
   /**
    *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
    */
-  checkboxIndeterminate: PropTypes.bool,
+  checkboxIndeterminate: deprecatedPropType(
+    PropTypes.bool,
+    "use checkboxProps.indeterminate instead"
+  ),
   /**
    *  Width applicable to the action container, to handle an issue Safari has when using css flex:
    *  It resizes descendant divs, unless a width is forced
    */
-  actionItemWidth: PropTypes.number
+  actionItemWidth: PropTypes.number,
+  /**
+   *  Object of values passed down to the CheckBox component.
+   */
+  checkboxProps: PropTypes.instanceOf(Object),
+  /**
+   *  ´true´ if the checkbox is selected or ´false´ if not selected.
+   *
+   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
+   */
+  checked: PropTypes.bool
 };
 
 Footer.defaultProps = {
   className: "",
   id: "",
-  checkboxAriaLabel: undefined,
-  checkboxAriaLabelledBy: undefined,
-  checkboxAriaDescribedBy: undefined,
   isSelectable: false,
   onChange: () => {},
-  checkboxValue: "",
-  checkboxLabel: "",
   actions: undefined,
   actionsCallback: () => {},
   actionsAlignment: "left",
   maxVisibleActions: 1,
+  actionItemWidth: undefined,
+  checkboxProps: {},
+  checked: undefined,
+
+  // deprecated
+  checkboxValue: "",
+  checkboxLabel: "",
   checkboxSelected: undefined,
   checkboxIndeterminate: undefined,
-  actionItemWidth: undefined
+  checkboxAriaLabel: undefined,
+  checkboxAriaLabelledBy: undefined,
+  checkboxAriaDescribedBy: undefined
 };
 
 export default Footer;
