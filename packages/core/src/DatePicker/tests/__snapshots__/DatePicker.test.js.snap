@@ -7416,23 +7416,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Calendar-root-402",
-                  "rootL": "Calendar-rootL-406",
-                  "rootM": "Calendar-rootM-405",
-                  "rootS": "Calendar-rootS-404",
-                  "rootXs": "Calendar-rootXs-403",
+                  "root": "HvCalendarIcon-root",
+                  "rootL": "HvCalendarIcon-rootL",
+                  "rootM": "HvCalendarIcon-rootM",
+                  "rootS": "HvCalendarIcon-rootS",
+                  "rootXs": "HvCalendarIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Calendar",
+                  "classNamePrefix": "HvCalendarIcon",
                   "classes": Object {
-                    "root": "Calendar-root-402",
-                    "rootL": "Calendar-rootL-406",
-                    "rootM": "Calendar-rootM-405",
-                    "rootS": "Calendar-rootS-404",
-                    "rootXs": "Calendar-rootXs-403",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7909,36 +7909,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Calendar",
-                  "name": undefined,
+                  "meta": "HvCalendarIcon",
+                  "name": "HvCalendarIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Calendar"
+                    data-meta="HvCalendarIcon"
                   >
                     
-.Calendar-root-402 {
+.HvCalendarIcon-root {
   display: flex;
 }
-.Calendar-root-402 svg {
+.HvCalendarIcon-root svg {
   margin: auto;
 }
-.Calendar-rootXs-403 {
+.HvCalendarIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Calendar-rootS-404 {
+.HvCalendarIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Calendar-rootM-405 {
+.HvCalendarIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Calendar-rootL-406 {
+.HvCalendarIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -7955,11 +7955,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Calendar-root-402",
-                    "rootL": "Calendar-rootL-406",
-                    "rootM": "Calendar-rootM-405",
-                    "rootS": "Calendar-rootS-404",
-                    "rootXs": "Calendar-rootXs-403",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -7986,25 +7986,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Calendar-root-402": Object {
+                    ".HvCalendarIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Calendar-root-402 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Calendar-rootL-406": Object {
+                    ".HvCalendarIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Calendar-rootM-405": Object {
+                    ".HvCalendarIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Calendar-rootS-404": Object {
+                    ".HvCalendarIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Calendar-rootXs-403": Object {
+                    ".HvCalendarIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -8030,13 +8030,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Calendar",
+                    "classNamePrefix": "HvCalendarIcon",
                     "classes": Object {
-                      "root": "Calendar-root-402",
-                      "rootL": "Calendar-rootL-406",
-                      "rootM": "Calendar-rootM-405",
-                      "rootS": "Calendar-rootS-404",
-                      "rootXs": "Calendar-rootXs-403",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -8513,13 +8513,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Calendar",
-                    "name": undefined,
+                    "meta": "HvCalendarIcon",
+                    "name": "HvCalendarIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Calendar-root-402 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -10503,11 +10503,11 @@ body {
                   className="HvDatePicker-icon"
                   classes={
                     Object {
-                      "root": "Calendar-root-402",
-                      "rootL": "Calendar-rootL-406",
-                      "rootM": "Calendar-rootM-405",
-                      "rootS": "Calendar-rootS-404",
-                      "rootXs": "Calendar-rootXs-403",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     }
                   }
                   tabIndex={-1}
@@ -11442,7 +11442,7 @@ body {
                   }
                 >
                   <div
-                    className="HvDatePicker-icon Calendar-root-402 Calendar-rootS-404"
+                    className="HvDatePicker-icon HvCalendarIcon-root HvCalendarIcon-rootS"
                     tabIndex={-1}
                   >
                     <svg
@@ -18918,23 +18918,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Calendar-root-106",
-                  "rootL": "Calendar-rootL-110",
-                  "rootM": "Calendar-rootM-109",
-                  "rootS": "Calendar-rootS-108",
-                  "rootXs": "Calendar-rootXs-107",
+                  "root": "HvCalendarIcon-root",
+                  "rootL": "HvCalendarIcon-rootL",
+                  "rootM": "HvCalendarIcon-rootM",
+                  "rootS": "HvCalendarIcon-rootS",
+                  "rootXs": "HvCalendarIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Calendar",
+                  "classNamePrefix": "HvCalendarIcon",
                   "classes": Object {
-                    "root": "Calendar-root-106",
-                    "rootL": "Calendar-rootL-110",
-                    "rootM": "Calendar-rootM-109",
-                    "rootS": "Calendar-rootS-108",
-                    "rootXs": "Calendar-rootXs-107",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -19411,36 +19411,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Calendar",
-                  "name": undefined,
+                  "meta": "HvCalendarIcon",
+                  "name": "HvCalendarIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Calendar"
+                    data-meta="HvCalendarIcon"
                   >
                     
-.Calendar-root-106 {
+.HvCalendarIcon-root {
   display: flex;
 }
-.Calendar-root-106 svg {
+.HvCalendarIcon-root svg {
   margin: auto;
 }
-.Calendar-rootXs-107 {
+.HvCalendarIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Calendar-rootS-108 {
+.HvCalendarIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Calendar-rootM-109 {
+.HvCalendarIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Calendar-rootL-110 {
+.HvCalendarIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -19457,11 +19457,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Calendar-root-106",
-                    "rootL": "Calendar-rootL-110",
-                    "rootM": "Calendar-rootM-109",
-                    "rootS": "Calendar-rootS-108",
-                    "rootXs": "Calendar-rootXs-107",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -19488,25 +19488,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Calendar-root-106": Object {
+                    ".HvCalendarIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Calendar-root-106 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Calendar-rootL-110": Object {
+                    ".HvCalendarIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Calendar-rootM-109": Object {
+                    ".HvCalendarIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Calendar-rootS-108": Object {
+                    ".HvCalendarIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Calendar-rootXs-107": Object {
+                    ".HvCalendarIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -19532,13 +19532,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Calendar",
+                    "classNamePrefix": "HvCalendarIcon",
                     "classes": Object {
-                      "root": "Calendar-root-106",
-                      "rootL": "Calendar-rootL-110",
-                      "rootM": "Calendar-rootM-109",
-                      "rootS": "Calendar-rootS-108",
-                      "rootXs": "Calendar-rootXs-107",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -20015,13 +20015,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Calendar",
-                    "name": undefined,
+                    "meta": "HvCalendarIcon",
+                    "name": "HvCalendarIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Calendar-root-106 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -22003,11 +22003,11 @@ body {
                   className="HvDatePicker-icon"
                   classes={
                     Object {
-                      "root": "Calendar-root-106",
-                      "rootL": "Calendar-rootL-110",
-                      "rootM": "Calendar-rootM-109",
-                      "rootS": "Calendar-rootS-108",
-                      "rootXs": "Calendar-rootXs-107",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     }
                   }
                   tabIndex={-1}
@@ -22942,7 +22942,7 @@ body {
                   }
                 >
                   <div
-                    className="HvDatePicker-icon Calendar-root-106 Calendar-rootS-108"
+                    className="HvDatePicker-icon HvCalendarIcon-root HvCalendarIcon-rootS"
                     tabIndex={-1}
                   >
                     <svg
@@ -33306,23 +33306,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Calendar-root-545",
-                  "rootL": "Calendar-rootL-549",
-                  "rootM": "Calendar-rootM-548",
-                  "rootS": "Calendar-rootS-547",
-                  "rootXs": "Calendar-rootXs-546",
+                  "root": "HvCalendarIcon-root",
+                  "rootL": "HvCalendarIcon-rootL",
+                  "rootM": "HvCalendarIcon-rootM",
+                  "rootS": "HvCalendarIcon-rootS",
+                  "rootXs": "HvCalendarIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Calendar",
+                  "classNamePrefix": "HvCalendarIcon",
                   "classes": Object {
-                    "root": "Calendar-root-545",
-                    "rootL": "Calendar-rootL-549",
-                    "rootM": "Calendar-rootM-548",
-                    "rootS": "Calendar-rootS-547",
-                    "rootXs": "Calendar-rootXs-546",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -33799,36 +33799,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Calendar",
-                  "name": undefined,
+                  "meta": "HvCalendarIcon",
+                  "name": "HvCalendarIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Calendar"
+                    data-meta="HvCalendarIcon"
                   >
                     
-.Calendar-root-545 {
+.HvCalendarIcon-root {
   display: flex;
 }
-.Calendar-root-545 svg {
+.HvCalendarIcon-root svg {
   margin: auto;
 }
-.Calendar-rootXs-546 {
+.HvCalendarIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Calendar-rootS-547 {
+.HvCalendarIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Calendar-rootM-548 {
+.HvCalendarIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Calendar-rootL-549 {
+.HvCalendarIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -33845,11 +33845,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Calendar-root-545",
-                    "rootL": "Calendar-rootL-549",
-                    "rootM": "Calendar-rootM-548",
-                    "rootS": "Calendar-rootS-547",
-                    "rootXs": "Calendar-rootXs-546",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -33876,25 +33876,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Calendar-root-545": Object {
+                    ".HvCalendarIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Calendar-root-545 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Calendar-rootL-549": Object {
+                    ".HvCalendarIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Calendar-rootM-548": Object {
+                    ".HvCalendarIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Calendar-rootS-547": Object {
+                    ".HvCalendarIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Calendar-rootXs-546": Object {
+                    ".HvCalendarIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -33920,13 +33920,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Calendar",
+                    "classNamePrefix": "HvCalendarIcon",
                     "classes": Object {
-                      "root": "Calendar-root-545",
-                      "rootL": "Calendar-rootL-549",
-                      "rootM": "Calendar-rootM-548",
-                      "rootS": "Calendar-rootS-547",
-                      "rootXs": "Calendar-rootXs-546",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -34403,13 +34403,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Calendar",
-                    "name": undefined,
+                    "meta": "HvCalendarIcon",
+                    "name": "HvCalendarIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Calendar-root-545 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -38303,11 +38303,11 @@ body {
                   className="HvDatePicker-icon"
                   classes={
                     Object {
-                      "root": "Calendar-root-545",
-                      "rootL": "Calendar-rootL-549",
-                      "rootM": "Calendar-rootM-548",
-                      "rootS": "Calendar-rootS-547",
-                      "rootXs": "Calendar-rootXs-546",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     }
                   }
                   tabIndex={-1}
@@ -39242,7 +39242,7 @@ body {
                   }
                 >
                   <div
-                    className="HvDatePicker-icon Calendar-root-545 Calendar-rootS-547"
+                    className="HvDatePicker-icon HvCalendarIcon-root HvCalendarIcon-rootS"
                     tabIndex={-1}
                   >
                     <svg
@@ -46718,23 +46718,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Calendar-root-6",
-                  "rootL": "Calendar-rootL-10",
-                  "rootM": "Calendar-rootM-9",
-                  "rootS": "Calendar-rootS-8",
-                  "rootXs": "Calendar-rootXs-7",
+                  "root": "HvCalendarIcon-root",
+                  "rootL": "HvCalendarIcon-rootL",
+                  "rootM": "HvCalendarIcon-rootM",
+                  "rootS": "HvCalendarIcon-rootS",
+                  "rootXs": "HvCalendarIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Calendar",
+                  "classNamePrefix": "HvCalendarIcon",
                   "classes": Object {
-                    "root": "Calendar-root-6",
-                    "rootL": "Calendar-rootL-10",
-                    "rootM": "Calendar-rootM-9",
-                    "rootS": "Calendar-rootS-8",
-                    "rootXs": "Calendar-rootXs-7",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -47211,36 +47211,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Calendar",
-                  "name": undefined,
+                  "meta": "HvCalendarIcon",
+                  "name": "HvCalendarIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Calendar"
+                    data-meta="HvCalendarIcon"
                   >
                     
-.Calendar-root-6 {
+.HvCalendarIcon-root {
   display: flex;
 }
-.Calendar-root-6 svg {
+.HvCalendarIcon-root svg {
   margin: auto;
 }
-.Calendar-rootXs-7 {
+.HvCalendarIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Calendar-rootS-8 {
+.HvCalendarIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Calendar-rootM-9 {
+.HvCalendarIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Calendar-rootL-10 {
+.HvCalendarIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -47257,11 +47257,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Calendar-root-6",
-                    "rootL": "Calendar-rootL-10",
-                    "rootM": "Calendar-rootM-9",
-                    "rootS": "Calendar-rootS-8",
-                    "rootXs": "Calendar-rootXs-7",
+                    "root": "HvCalendarIcon-root",
+                    "rootL": "HvCalendarIcon-rootL",
+                    "rootM": "HvCalendarIcon-rootM",
+                    "rootS": "HvCalendarIcon-rootS",
+                    "rootXs": "HvCalendarIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -47288,25 +47288,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Calendar-root-6": Object {
+                    ".HvCalendarIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Calendar-root-6 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Calendar-rootL-10": Object {
+                    ".HvCalendarIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Calendar-rootM-9": Object {
+                    ".HvCalendarIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Calendar-rootS-8": Object {
+                    ".HvCalendarIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Calendar-rootXs-7": Object {
+                    ".HvCalendarIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -47332,13 +47332,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Calendar",
+                    "classNamePrefix": "HvCalendarIcon",
                     "classes": Object {
-                      "root": "Calendar-root-6",
-                      "rootL": "Calendar-rootL-10",
-                      "rootM": "Calendar-rootM-9",
-                      "rootS": "Calendar-rootS-8",
-                      "rootXs": "Calendar-rootXs-7",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -47815,13 +47815,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Calendar",
-                    "name": undefined,
+                    "meta": "HvCalendarIcon",
+                    "name": "HvCalendarIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Calendar-root-6 svg": Object {
+                    ".HvCalendarIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -49798,11 +49798,11 @@ body {
                   className="HvDatePicker-icon"
                   classes={
                     Object {
-                      "root": "Calendar-root-6",
-                      "rootL": "Calendar-rootL-10",
-                      "rootM": "Calendar-rootM-9",
-                      "rootS": "Calendar-rootS-8",
-                      "rootXs": "Calendar-rootXs-7",
+                      "root": "HvCalendarIcon-root",
+                      "rootL": "HvCalendarIcon-rootL",
+                      "rootM": "HvCalendarIcon-rootM",
+                      "rootS": "HvCalendarIcon-rootS",
+                      "rootXs": "HvCalendarIcon-rootXs",
                     }
                   }
                   tabIndex={-1}
@@ -50737,7 +50737,7 @@ body {
                   }
                 >
                   <div
-                    className="HvDatePicker-icon Calendar-root-6 Calendar-rootS-8"
+                    className="HvDatePicker-icon HvCalendarIcon-root HvCalendarIcon-rootS"
                     tabIndex={-1}
                   >
                     <svg

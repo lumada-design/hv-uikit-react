@@ -220,5 +220,5 @@ ${componentName}.propTypes = {
   boxStyles: PropTypes.instanceOf(Object)
 };
 
-export default withStyles(styles, { withTheme: true })(${componentName});`;
+export default withStyles(styles, { name: "Hv${componentName}Icon", withTheme: true })(${componentName});`;
 };

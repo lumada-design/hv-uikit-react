@@ -14370,23 +14370,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Play-root-2",
-                  "rootL": "Play-rootL-6",
-                  "rootM": "Play-rootM-5",
-                  "rootS": "Play-rootS-4",
-                  "rootXs": "Play-rootXs-3",
+                  "root": "HvPlayIcon-root",
+                  "rootL": "HvPlayIcon-rootL",
+                  "rootM": "HvPlayIcon-rootM",
+                  "rootS": "HvPlayIcon-rootS",
+                  "rootXs": "HvPlayIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Play",
+                  "classNamePrefix": "HvPlayIcon",
                   "classes": Object {
-                    "root": "Play-root-2",
-                    "rootL": "Play-rootL-6",
-                    "rootM": "Play-rootM-5",
-                    "rootS": "Play-rootS-4",
-                    "rootXs": "Play-rootXs-3",
+                    "root": "HvPlayIcon-root",
+                    "rootL": "HvPlayIcon-rootL",
+                    "rootM": "HvPlayIcon-rootM",
+                    "rootS": "HvPlayIcon-rootS",
+                    "rootXs": "HvPlayIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -14863,36 +14863,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Play",
-                  "name": undefined,
+                  "meta": "HvPlayIcon",
+                  "name": "HvPlayIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Play"
+                    data-meta="HvPlayIcon"
                   >
                     
-.Play-root-2 {
+.HvPlayIcon-root {
   display: flex;
 }
-.Play-root-2 svg {
+.HvPlayIcon-root svg {
   margin: auto;
 }
-.Play-rootXs-3 {
+.HvPlayIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Play-rootS-4 {
+.HvPlayIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Play-rootM-5 {
+.HvPlayIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Play-rootL-6 {
+.HvPlayIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -14909,11 +14909,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Play-root-2",
-                    "rootL": "Play-rootL-6",
-                    "rootM": "Play-rootM-5",
-                    "rootS": "Play-rootS-4",
-                    "rootXs": "Play-rootXs-3",
+                    "root": "HvPlayIcon-root",
+                    "rootL": "HvPlayIcon-rootL",
+                    "rootM": "HvPlayIcon-rootM",
+                    "rootS": "HvPlayIcon-rootS",
+                    "rootXs": "HvPlayIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -14940,25 +14940,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Play-root-2": Object {
+                    ".HvPlayIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Play-root-2 svg": Object {
+                    ".HvPlayIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Play-rootL-6": Object {
+                    ".HvPlayIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Play-rootM-5": Object {
+                    ".HvPlayIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Play-rootS-4": Object {
+                    ".HvPlayIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Play-rootXs-3": Object {
+                    ".HvPlayIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -14984,13 +14984,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Play",
+                    "classNamePrefix": "HvPlayIcon",
                     "classes": Object {
-                      "root": "Play-root-2",
-                      "rootL": "Play-rootL-6",
-                      "rootM": "Play-rootM-5",
-                      "rootS": "Play-rootS-4",
-                      "rootXs": "Play-rootXs-3",
+                      "root": "HvPlayIcon-root",
+                      "rootL": "HvPlayIcon-rootL",
+                      "rootM": "HvPlayIcon-rootM",
+                      "rootS": "HvPlayIcon-rootS",
+                      "rootXs": "HvPlayIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -15467,13 +15467,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Play",
-                    "name": undefined,
+                    "meta": "HvPlayIcon",
+                    "name": "HvPlayIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Play-root-2 svg": Object {
+                    ".HvPlayIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -19496,7 +19496,7 @@ body {
                                 theme="[object Object]"
                               >
                                 <div
-                                  class="Play-root-2 Play-rootS-4"
+                                  class="HvPlayIcon-root HvPlayIcon-rootS"
                                   style="width: 32px; height: 32px;"
                                 >
                                   <svg
@@ -21446,11 +21446,11 @@ body {
                                   }
                                   classes={
                                     Object {
-                                      "root": "Play-root-2",
-                                      "rootL": "Play-rootL-6",
-                                      "rootM": "Play-rootM-5",
-                                      "rootS": "Play-rootS-4",
-                                      "rootXs": "Play-rootXs-3",
+                                      "root": "HvPlayIcon-root",
+                                      "rootL": "HvPlayIcon-rootL",
+                                      "rootM": "HvPlayIcon-rootM",
+                                      "rootS": "HvPlayIcon-rootS",
+                                      "rootXs": "HvPlayIcon-rootXs",
                                     }
                                   }
                                   theme={
@@ -22384,7 +22384,7 @@ body {
                                   }
                                 >
                                   <div
-                                    className="Play-root-2 Play-rootS-4"
+                                    className="HvPlayIcon-root HvPlayIcon-rootS"
                                     style={
                                       Object {
                                         "height": "32px",

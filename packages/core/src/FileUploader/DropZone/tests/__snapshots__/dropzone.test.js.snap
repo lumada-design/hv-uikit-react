@@ -9860,23 +9860,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Doc-root-6",
-                  "rootL": "Doc-rootL-10",
-                  "rootM": "Doc-rootM-9",
-                  "rootS": "Doc-rootS-8",
-                  "rootXs": "Doc-rootXs-7",
+                  "root": "HvDocIcon-root",
+                  "rootL": "HvDocIcon-rootL",
+                  "rootM": "HvDocIcon-rootM",
+                  "rootS": "HvDocIcon-rootS",
+                  "rootXs": "HvDocIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Doc",
+                  "classNamePrefix": "HvDocIcon",
                   "classes": Object {
-                    "root": "Doc-root-6",
-                    "rootL": "Doc-rootL-10",
-                    "rootM": "Doc-rootM-9",
-                    "rootS": "Doc-rootS-8",
-                    "rootXs": "Doc-rootXs-7",
+                    "root": "HvDocIcon-root",
+                    "rootL": "HvDocIcon-rootL",
+                    "rootM": "HvDocIcon-rootM",
+                    "rootS": "HvDocIcon-rootS",
+                    "rootXs": "HvDocIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10353,36 +10353,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Doc",
-                  "name": undefined,
+                  "meta": "HvDocIcon",
+                  "name": "HvDocIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Doc"
+                    data-meta="HvDocIcon"
                   >
                     
-.Doc-root-6 {
+.HvDocIcon-root {
   display: flex;
 }
-.Doc-root-6 svg {
+.HvDocIcon-root svg {
   margin: auto;
 }
-.Doc-rootXs-7 {
+.HvDocIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Doc-rootS-8 {
+.HvDocIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Doc-rootM-9 {
+.HvDocIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Doc-rootL-10 {
+.HvDocIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -10399,11 +10399,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Doc-root-6",
-                    "rootL": "Doc-rootL-10",
-                    "rootM": "Doc-rootM-9",
-                    "rootS": "Doc-rootS-8",
-                    "rootXs": "Doc-rootXs-7",
+                    "root": "HvDocIcon-root",
+                    "rootL": "HvDocIcon-rootL",
+                    "rootM": "HvDocIcon-rootM",
+                    "rootS": "HvDocIcon-rootS",
+                    "rootXs": "HvDocIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -10430,25 +10430,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Doc-root-6": Object {
+                    ".HvDocIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Doc-root-6 svg": Object {
+                    ".HvDocIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Doc-rootL-10": Object {
+                    ".HvDocIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Doc-rootM-9": Object {
+                    ".HvDocIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Doc-rootS-8": Object {
+                    ".HvDocIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Doc-rootXs-7": Object {
+                    ".HvDocIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -10474,13 +10474,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Doc",
+                    "classNamePrefix": "HvDocIcon",
                     "classes": Object {
-                      "root": "Doc-root-6",
-                      "rootL": "Doc-rootL-10",
-                      "rootM": "Doc-rootM-9",
-                      "rootS": "Doc-rootS-8",
-                      "rootXs": "Doc-rootXs-7",
+                      "root": "HvDocIcon-root",
+                      "rootL": "HvDocIcon-rootL",
+                      "rootM": "HvDocIcon-rootM",
+                      "rootS": "HvDocIcon-rootS",
+                      "rootXs": "HvDocIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -10957,13 +10957,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Doc",
-                    "name": undefined,
+                    "meta": "HvDocIcon",
+                    "name": "HvDocIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Doc-root-6 svg": Object {
+                    ".HvDocIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -16805,11 +16805,11 @@ body {
                   className="HvFileUploaderDropZone-dropzoneAreaIcon"
                   classes={
                     Object {
-                      "root": "Doc-root-6",
-                      "rootL": "Doc-rootL-10",
-                      "rootM": "Doc-rootM-9",
-                      "rootS": "Doc-rootS-8",
-                      "rootXs": "Doc-rootXs-7",
+                      "root": "HvDocIcon-root",
+                      "rootL": "HvDocIcon-rootL",
+                      "rootM": "HvDocIcon-rootM",
+                      "rootS": "HvDocIcon-rootS",
+                      "rootXs": "HvDocIcon-rootXs",
                     }
                   }
                   color={
@@ -17749,7 +17749,7 @@ body {
                   }
                 >
                   <div
-                    className="HvFileUploaderDropZone-dropzoneAreaIcon Doc-root-6 Doc-rootM-9"
+                    className="HvFileUploaderDropZone-dropzoneAreaIcon HvDocIcon-root HvDocIcon-rootM"
                   >
                     <svg
                       focusable={false}
@@ -29547,23 +29547,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Doc-root-16",
-                  "rootL": "Doc-rootL-20",
-                  "rootM": "Doc-rootM-19",
-                  "rootS": "Doc-rootS-18",
-                  "rootXs": "Doc-rootXs-17",
+                  "root": "HvDocIcon-root",
+                  "rootL": "HvDocIcon-rootL",
+                  "rootM": "HvDocIcon-rootM",
+                  "rootS": "HvDocIcon-rootS",
+                  "rootXs": "HvDocIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Doc",
+                  "classNamePrefix": "HvDocIcon",
                   "classes": Object {
-                    "root": "Doc-root-16",
-                    "rootL": "Doc-rootL-20",
-                    "rootM": "Doc-rootM-19",
-                    "rootS": "Doc-rootS-18",
-                    "rootXs": "Doc-rootXs-17",
+                    "root": "HvDocIcon-root",
+                    "rootL": "HvDocIcon-rootL",
+                    "rootM": "HvDocIcon-rootM",
+                    "rootS": "HvDocIcon-rootS",
+                    "rootXs": "HvDocIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -30040,36 +30040,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Doc",
-                  "name": undefined,
+                  "meta": "HvDocIcon",
+                  "name": "HvDocIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Doc"
+                    data-meta="HvDocIcon"
                   >
                     
-.Doc-root-16 {
+.HvDocIcon-root {
   display: flex;
 }
-.Doc-root-16 svg {
+.HvDocIcon-root svg {
   margin: auto;
 }
-.Doc-rootXs-17 {
+.HvDocIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Doc-rootS-18 {
+.HvDocIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Doc-rootM-19 {
+.HvDocIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Doc-rootL-20 {
+.HvDocIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -30086,11 +30086,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Doc-root-16",
-                    "rootL": "Doc-rootL-20",
-                    "rootM": "Doc-rootM-19",
-                    "rootS": "Doc-rootS-18",
-                    "rootXs": "Doc-rootXs-17",
+                    "root": "HvDocIcon-root",
+                    "rootL": "HvDocIcon-rootL",
+                    "rootM": "HvDocIcon-rootM",
+                    "rootS": "HvDocIcon-rootS",
+                    "rootXs": "HvDocIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -30117,25 +30117,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Doc-root-16": Object {
+                    ".HvDocIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Doc-root-16 svg": Object {
+                    ".HvDocIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Doc-rootL-20": Object {
+                    ".HvDocIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Doc-rootM-19": Object {
+                    ".HvDocIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Doc-rootS-18": Object {
+                    ".HvDocIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Doc-rootXs-17": Object {
+                    ".HvDocIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -30161,13 +30161,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Doc",
+                    "classNamePrefix": "HvDocIcon",
                     "classes": Object {
-                      "root": "Doc-root-16",
-                      "rootL": "Doc-rootL-20",
-                      "rootM": "Doc-rootM-19",
-                      "rootS": "Doc-rootS-18",
-                      "rootXs": "Doc-rootXs-17",
+                      "root": "HvDocIcon-root",
+                      "rootL": "HvDocIcon-rootL",
+                      "rootM": "HvDocIcon-rootM",
+                      "rootS": "HvDocIcon-rootS",
+                      "rootXs": "HvDocIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -30644,13 +30644,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Doc",
-                    "name": undefined,
+                    "meta": "HvDocIcon",
+                    "name": "HvDocIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Doc-root-16 svg": Object {
+                    ".HvDocIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -36494,11 +36494,11 @@ body {
                   className="HvFileUploaderDropZone-dropzoneAreaIcon"
                   classes={
                     Object {
-                      "root": "Doc-root-16",
-                      "rootL": "Doc-rootL-20",
-                      "rootM": "Doc-rootM-19",
-                      "rootS": "Doc-rootS-18",
-                      "rootXs": "Doc-rootXs-17",
+                      "root": "HvDocIcon-root",
+                      "rootL": "HvDocIcon-rootL",
+                      "rootM": "HvDocIcon-rootM",
+                      "rootS": "HvDocIcon-rootS",
+                      "rootXs": "HvDocIcon-rootXs",
                     }
                   }
                   color={
@@ -37438,7 +37438,7 @@ body {
                   }
                 >
                   <div
-                    className="HvFileUploaderDropZone-dropzoneAreaIcon Doc-root-16 Doc-rootM-19"
+                    className="HvFileUploaderDropZone-dropzoneAreaIcon HvDocIcon-root HvDocIcon-rootM"
                   >
                     <svg
                       focusable={false}

@@ -18,6 +18,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import DropDownMenu from "./DropDownMenu";
 
-export default withStyles(styles, { name: "HvDropdownMenu", withTheme: true })(
+export default withStyles(styles, { name: "HvDropDownMenu", withTheme: true })(
   DropDownMenu
 );
