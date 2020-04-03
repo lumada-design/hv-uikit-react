@@ -21,12 +21,12 @@ import RawTreeView from "./TreeView";
 import RawTreeViewItem from "./TreeViewItem";
 
 const TreeViewItem = withStyles(styles, {
-  name: "HvNewVerticalNavigationTreeView",
+  name: "HvNewVerticalNavigationTreeViewItem",
   withTheme: true
 })(RawTreeViewItem);
 export { TreeViewItem };
 
 export default withStyles(styles, {
-  name: "HvNewVerticalNavigationRawTreeView",
+  name: "HvNewVerticalNavigationTreeView",
   withTheme: true
 })(RawTreeView);

@@ -20,7 +20,13 @@ import styles from "./styles";
 import Actions from "./Actions";
 import RawAction from "./Action";
 
-const Action = withStyles(styles, { name: "NewVerticalNavigationAction", withTheme: true })(RawAction);
+const Action = withStyles(styles, {
+  name: "HvNewVerticalNavigationAction",
+  withTheme: true
+})(RawAction);
 export { Action };
 
-export default withStyles(styles, { name: "NewVerticalNavigationActions", withTheme: true })(Actions);
+export default withStyles(styles, {
+  name: "HvNewVerticalNavigationActions",
+  withTheme: true
+})(Actions);
