@@ -4,7 +4,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 Documentation
 ...    We are using Material UI component and they do not support it according to w3c, which uses arrows
 ...    Issue on Material UI submitted already https://github.com/mui-org/material-ui/issues/6955 that we should follow up

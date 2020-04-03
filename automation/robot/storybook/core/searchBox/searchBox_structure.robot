@@ -8,6 +8,7 @@ Force Tags        smoke
 
 *** Test Cases ***
 submit a search
+    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coresearchbox--simplesearchbox
     Wait Until Element Is Enabled    css:input[type='text']                     10s
     Input Text                       css:input[type='text']                     B

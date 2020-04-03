@@ -9,9 +9,9 @@ Documentation                                         https://github.com/pentaho
 
 
 *** Variable ***
-${navButton}                                          css:div[class|='DeprecatedComponent-navButton']
-
-
+${navButton}                                          css:[role=button]
+${subMenuTiteP}                                       css:div[class|='HvVerticalNavigationTitle-titleContainer']>p
+${subMenuTiteDiv}                                     css:div[class|='HvVerticalNavigationTitle-titleContainer']>div
 
 
 *** Test Cases ***
@@ -44,10 +44,10 @@ navigate to submenu clicking on item label
     Wait Until Page Contains                                Model Effectiveness                                    2s
 
 navigate back from submenu clicking on title label
-    navigate back from submenu clicking on                  css:div[class|='Title-titleContainer']>p
+    navigate back from submenu clicking on                  ${subMenuTiteP}
 
 navigate back from submenu clicking on title icon
-    navigate back from submenu clicking on                  css:div[class|='Title-titleContainer']>div
+    navigate back from submenu clicking on                  ${subMenuTiteDiv}
 
 *** Keywords ***
 open storybook on small size

@@ -5,7 +5,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 

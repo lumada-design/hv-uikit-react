@@ -7,5 +7,5 @@ option4:            hv-list-1-item-3
 option5:            hv-list-1-item-4
 selectedItems:      css:li[aria-selected='true']
 headerItem:         hv-checkbox-2
-headerItemLabel:    css:#hv-checkbox-2>span[class*='MuiFormControlLabel']
-iconChecked:        css:div[class*='CheckboxCheck']
+headerItemLabel:    css:#hv-checkbox-2>span[class*='HvCheckbox-labelTypography']
+iconChecked:        css:div[class*='HvCheckboxCheck']

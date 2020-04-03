@@ -6,7 +6,7 @@ Suite Setup       open storybook
 Suite Teardown    Close Browser
 Test Template     Verify selectable card behavior
 Variables         variables.yaml
-Force Tags        smoke    keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 
 
 *** Keywords ***

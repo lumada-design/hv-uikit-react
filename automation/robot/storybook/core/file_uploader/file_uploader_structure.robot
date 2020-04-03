@@ -15,6 +15,7 @@ ${fileLine}              //ul[contains(@id,'fileuploader1-filelist')]/li
 
 *** Test Cases ***
 dropZone is clickable
+    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea
     Wait Until Element Is Enabled    ${dropZone-inputArea}    10s
     Choose File                      ${dropZone-inputArea}   ${file_location}
