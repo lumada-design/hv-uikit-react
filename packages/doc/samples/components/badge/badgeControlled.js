@@ -6,12 +6,19 @@ const ControlledBadges = () => {
   const [count, setCount] = useState(1);
   const addCount = () => setCount(count * 2);
 
+  const exampleStyles = {
+    display: "flex"
+  }
+
+  const buttonStyles = {
+    marginRight: 30
+  };
+
   return (
-    <>
-      <HvButton onClick={addCount}>Double Value</HvButton>
-      <p />
+    <div style={exampleStyles}>
+      <HvButton onClick={addCount} style={buttonStyles}>Double value</HvButton>
       <HvBadge showCount count={count} text="Events" textVariant="sTitle" />
-    </>
+    </div>
   );
 };
 
