@@ -6651,23 +6651,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "CloseXS-root-4",
-                  "rootL": "CloseXS-rootL-8",
-                  "rootM": "CloseXS-rootM-7",
-                  "rootS": "CloseXS-rootS-6",
-                  "rootXs": "CloseXS-rootXs-5",
+                  "root": "HvCloseXSIcon-root",
+                  "rootL": "HvCloseXSIcon-rootL",
+                  "rootM": "HvCloseXSIcon-rootM",
+                  "rootS": "HvCloseXSIcon-rootS",
+                  "rootXs": "HvCloseXSIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "CloseXS",
+                  "classNamePrefix": "HvCloseXSIcon",
                   "classes": Object {
-                    "root": "CloseXS-root-4",
-                    "rootL": "CloseXS-rootL-8",
-                    "rootM": "CloseXS-rootM-7",
-                    "rootS": "CloseXS-rootS-6",
-                    "rootXs": "CloseXS-rootXs-5",
+                    "root": "HvCloseXSIcon-root",
+                    "rootL": "HvCloseXSIcon-rootL",
+                    "rootM": "HvCloseXSIcon-rootM",
+                    "rootS": "HvCloseXSIcon-rootS",
+                    "rootXs": "HvCloseXSIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7144,36 +7144,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "CloseXS",
-                  "name": undefined,
+                  "meta": "HvCloseXSIcon",
+                  "name": "HvCloseXSIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="CloseXS"
+                    data-meta="HvCloseXSIcon"
                   >
                     
-.CloseXS-root-4 {
+.HvCloseXSIcon-root {
   display: flex;
 }
-.CloseXS-root-4 svg {
+.HvCloseXSIcon-root svg {
   margin: auto;
 }
-.CloseXS-rootXs-5 {
+.HvCloseXSIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.CloseXS-rootS-6 {
+.HvCloseXSIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.CloseXS-rootM-7 {
+.HvCloseXSIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.CloseXS-rootL-8 {
+.HvCloseXSIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -7190,11 +7190,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "CloseXS-root-4",
-                    "rootL": "CloseXS-rootL-8",
-                    "rootM": "CloseXS-rootM-7",
-                    "rootS": "CloseXS-rootS-6",
-                    "rootXs": "CloseXS-rootXs-5",
+                    "root": "HvCloseXSIcon-root",
+                    "rootL": "HvCloseXSIcon-rootL",
+                    "rootM": "HvCloseXSIcon-rootM",
+                    "rootS": "HvCloseXSIcon-rootS",
+                    "rootXs": "HvCloseXSIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -7221,25 +7221,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".CloseXS-root-4": Object {
+                    ".HvCloseXSIcon-root": Object {
                       "display": "flex",
                     },
-                    ".CloseXS-root-4 svg": Object {
+                    ".HvCloseXSIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".CloseXS-rootL-8": Object {
+                    ".HvCloseXSIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".CloseXS-rootM-7": Object {
+                    ".HvCloseXSIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".CloseXS-rootS-6": Object {
+                    ".HvCloseXSIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".CloseXS-rootXs-5": Object {
+                    ".HvCloseXSIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -7265,13 +7265,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "CloseXS",
+                    "classNamePrefix": "HvCloseXSIcon",
                     "classes": Object {
-                      "root": "CloseXS-root-4",
-                      "rootL": "CloseXS-rootL-8",
-                      "rootM": "CloseXS-rootM-7",
-                      "rootS": "CloseXS-rootS-6",
-                      "rootXs": "CloseXS-rootXs-5",
+                      "root": "HvCloseXSIcon-root",
+                      "rootL": "HvCloseXSIcon-rootL",
+                      "rootM": "HvCloseXSIcon-rootM",
+                      "rootS": "HvCloseXSIcon-rootS",
+                      "rootXs": "HvCloseXSIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -7748,13 +7748,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "CloseXS",
-                    "name": undefined,
+                    "meta": "HvCloseXSIcon",
+                    "name": "HvCloseXSIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".CloseXS-root-4 svg": Object {
+                    ".HvCloseXSIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -8794,11 +8794,11 @@ body {
                   className="InputAdornment-icon-3"
                   classes={
                     Object {
-                      "root": "CloseXS-root-4",
-                      "rootL": "CloseXS-rootL-8",
-                      "rootM": "CloseXS-rootM-7",
-                      "rootS": "CloseXS-rootS-6",
-                      "rootXs": "CloseXS-rootXs-5",
+                      "root": "HvCloseXSIcon-root",
+                      "rootL": "HvCloseXSIcon-rootL",
+                      "rootM": "HvCloseXSIcon-rootM",
+                      "rootS": "HvCloseXSIcon-rootS",
+                      "rootXs": "HvCloseXSIcon-rootXs",
                     }
                   }
                   theme={
@@ -9732,7 +9732,7 @@ body {
                   }
                 >
                   <div
-                    className="InputAdornment-icon-3 CloseXS-root-4 CloseXS-rootXs-5"
+                    className="InputAdornment-icon-3 HvCloseXSIcon-root HvCloseXSIcon-rootXs"
                   >
                     <svg
                       focusable={false}

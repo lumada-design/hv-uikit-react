@@ -9898,23 +9898,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Time-root-6",
-                  "rootL": "Time-rootL-10",
-                  "rootM": "Time-rootM-9",
-                  "rootS": "Time-rootS-8",
-                  "rootXs": "Time-rootXs-7",
+                  "root": "HvTimeIcon-root",
+                  "rootL": "HvTimeIcon-rootL",
+                  "rootM": "HvTimeIcon-rootM",
+                  "rootS": "HvTimeIcon-rootS",
+                  "rootXs": "HvTimeIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Time",
+                  "classNamePrefix": "HvTimeIcon",
                   "classes": Object {
-                    "root": "Time-root-6",
-                    "rootL": "Time-rootL-10",
-                    "rootM": "Time-rootM-9",
-                    "rootS": "Time-rootS-8",
-                    "rootXs": "Time-rootXs-7",
+                    "root": "HvTimeIcon-root",
+                    "rootL": "HvTimeIcon-rootL",
+                    "rootM": "HvTimeIcon-rootM",
+                    "rootS": "HvTimeIcon-rootS",
+                    "rootXs": "HvTimeIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -10391,36 +10391,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Time",
-                  "name": undefined,
+                  "meta": "HvTimeIcon",
+                  "name": "HvTimeIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Time"
+                    data-meta="HvTimeIcon"
                   >
                     
-.Time-root-6 {
+.HvTimeIcon-root {
   display: flex;
 }
-.Time-root-6 svg {
+.HvTimeIcon-root svg {
   margin: auto;
 }
-.Time-rootXs-7 {
+.HvTimeIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Time-rootS-8 {
+.HvTimeIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Time-rootM-9 {
+.HvTimeIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Time-rootL-10 {
+.HvTimeIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -10437,11 +10437,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Time-root-6",
-                    "rootL": "Time-rootL-10",
-                    "rootM": "Time-rootM-9",
-                    "rootS": "Time-rootS-8",
-                    "rootXs": "Time-rootXs-7",
+                    "root": "HvTimeIcon-root",
+                    "rootL": "HvTimeIcon-rootL",
+                    "rootM": "HvTimeIcon-rootM",
+                    "rootS": "HvTimeIcon-rootS",
+                    "rootXs": "HvTimeIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -10468,25 +10468,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Time-root-6": Object {
+                    ".HvTimeIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Time-root-6 svg": Object {
+                    ".HvTimeIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Time-rootL-10": Object {
+                    ".HvTimeIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Time-rootM-9": Object {
+                    ".HvTimeIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Time-rootS-8": Object {
+                    ".HvTimeIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Time-rootXs-7": Object {
+                    ".HvTimeIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -10512,13 +10512,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Time",
+                    "classNamePrefix": "HvTimeIcon",
                     "classes": Object {
-                      "root": "Time-root-6",
-                      "rootL": "Time-rootL-10",
-                      "rootM": "Time-rootM-9",
-                      "rootS": "Time-rootS-8",
-                      "rootXs": "Time-rootXs-7",
+                      "root": "HvTimeIcon-root",
+                      "rootL": "HvTimeIcon-rootL",
+                      "rootM": "HvTimeIcon-rootM",
+                      "rootS": "HvTimeIcon-rootS",
+                      "rootXs": "HvTimeIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -10995,13 +10995,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Time",
-                    "name": undefined,
+                    "meta": "HvTimeIcon",
+                    "name": "HvTimeIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Time-root-6 svg": Object {
+                    ".HvTimeIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -14899,11 +14899,11 @@ body {
                     className="HvLabTimePicker-icon"
                     classes={
                       Object {
-                        "root": "Time-root-6",
-                        "rootL": "Time-rootL-10",
-                        "rootM": "Time-rootM-9",
-                        "rootS": "Time-rootS-8",
-                        "rootXs": "Time-rootXs-7",
+                        "root": "HvTimeIcon-root",
+                        "rootL": "HvTimeIcon-rootL",
+                        "rootM": "HvTimeIcon-rootM",
+                        "rootS": "HvTimeIcon-rootS",
+                        "rootXs": "HvTimeIcon-rootXs",
                       }
                     }
                     onClick={[Function]}
@@ -15838,7 +15838,7 @@ body {
                     }
                   >
                     <div
-                      className="HvLabTimePicker-icon Time-root-6 Time-rootS-8"
+                      className="HvLabTimePicker-icon HvTimeIcon-root HvTimeIcon-rootS"
                       onClick={[Function]}
                     >
                       <svg

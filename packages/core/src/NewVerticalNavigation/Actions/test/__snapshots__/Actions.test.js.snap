@@ -11648,23 +11648,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Play-root-7",
-                  "rootL": "Play-rootL-11",
-                  "rootM": "Play-rootM-10",
-                  "rootS": "Play-rootS-9",
-                  "rootXs": "Play-rootXs-8",
+                  "root": "HvPlayIcon-root",
+                  "rootL": "HvPlayIcon-rootL",
+                  "rootM": "HvPlayIcon-rootM",
+                  "rootS": "HvPlayIcon-rootS",
+                  "rootXs": "HvPlayIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Play",
+                  "classNamePrefix": "HvPlayIcon",
                   "classes": Object {
-                    "root": "Play-root-7",
-                    "rootL": "Play-rootL-11",
-                    "rootM": "Play-rootM-10",
-                    "rootS": "Play-rootS-9",
-                    "rootXs": "Play-rootXs-8",
+                    "root": "HvPlayIcon-root",
+                    "rootL": "HvPlayIcon-rootL",
+                    "rootM": "HvPlayIcon-rootM",
+                    "rootS": "HvPlayIcon-rootS",
+                    "rootXs": "HvPlayIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -12141,36 +12141,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Play",
-                  "name": undefined,
+                  "meta": "HvPlayIcon",
+                  "name": "HvPlayIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Play"
+                    data-meta="HvPlayIcon"
                   >
                     
-.Play-root-7 {
+.HvPlayIcon-root {
   display: flex;
 }
-.Play-root-7 svg {
+.HvPlayIcon-root svg {
   margin: auto;
 }
-.Play-rootXs-8 {
+.HvPlayIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Play-rootS-9 {
+.HvPlayIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Play-rootM-10 {
+.HvPlayIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Play-rootL-11 {
+.HvPlayIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -12187,11 +12187,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Play-root-7",
-                    "rootL": "Play-rootL-11",
-                    "rootM": "Play-rootM-10",
-                    "rootS": "Play-rootS-9",
-                    "rootXs": "Play-rootXs-8",
+                    "root": "HvPlayIcon-root",
+                    "rootL": "HvPlayIcon-rootL",
+                    "rootM": "HvPlayIcon-rootM",
+                    "rootS": "HvPlayIcon-rootS",
+                    "rootXs": "HvPlayIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -12218,25 +12218,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Play-root-7": Object {
+                    ".HvPlayIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Play-root-7 svg": Object {
+                    ".HvPlayIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Play-rootL-11": Object {
+                    ".HvPlayIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Play-rootM-10": Object {
+                    ".HvPlayIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Play-rootS-9": Object {
+                    ".HvPlayIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Play-rootXs-8": Object {
+                    ".HvPlayIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -12262,13 +12262,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Play",
+                    "classNamePrefix": "HvPlayIcon",
                     "classes": Object {
-                      "root": "Play-root-7",
-                      "rootL": "Play-rootL-11",
-                      "rootM": "Play-rootM-10",
-                      "rootS": "Play-rootS-9",
-                      "rootXs": "Play-rootXs-8",
+                      "root": "HvPlayIcon-root",
+                      "rootL": "HvPlayIcon-rootL",
+                      "rootM": "HvPlayIcon-rootM",
+                      "rootS": "HvPlayIcon-rootS",
+                      "rootXs": "HvPlayIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -12745,13 +12745,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Play",
-                    "name": undefined,
+                    "meta": "HvPlayIcon",
+                    "name": "HvPlayIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Play-root-7 svg": Object {
+                    ".HvPlayIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -13721,23 +13721,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Stop-root-12",
-                  "rootL": "Stop-rootL-16",
-                  "rootM": "Stop-rootM-15",
-                  "rootS": "Stop-rootS-14",
-                  "rootXs": "Stop-rootXs-13",
+                  "root": "HvStopIcon-root",
+                  "rootL": "HvStopIcon-rootL",
+                  "rootM": "HvStopIcon-rootM",
+                  "rootS": "HvStopIcon-rootS",
+                  "rootXs": "HvStopIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Stop",
+                  "classNamePrefix": "HvStopIcon",
                   "classes": Object {
-                    "root": "Stop-root-12",
-                    "rootL": "Stop-rootL-16",
-                    "rootM": "Stop-rootM-15",
-                    "rootS": "Stop-rootS-14",
-                    "rootXs": "Stop-rootXs-13",
+                    "root": "HvStopIcon-root",
+                    "rootL": "HvStopIcon-rootL",
+                    "rootM": "HvStopIcon-rootM",
+                    "rootS": "HvStopIcon-rootS",
+                    "rootXs": "HvStopIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -14214,36 +14214,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Stop",
-                  "name": undefined,
+                  "meta": "HvStopIcon",
+                  "name": "HvStopIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Stop"
+                    data-meta="HvStopIcon"
                   >
                     
-.Stop-root-12 {
+.HvStopIcon-root {
   display: flex;
 }
-.Stop-root-12 svg {
+.HvStopIcon-root svg {
   margin: auto;
 }
-.Stop-rootXs-13 {
+.HvStopIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Stop-rootS-14 {
+.HvStopIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Stop-rootM-15 {
+.HvStopIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Stop-rootL-16 {
+.HvStopIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -14260,11 +14260,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Stop-root-12",
-                    "rootL": "Stop-rootL-16",
-                    "rootM": "Stop-rootM-15",
-                    "rootS": "Stop-rootS-14",
-                    "rootXs": "Stop-rootXs-13",
+                    "root": "HvStopIcon-root",
+                    "rootL": "HvStopIcon-rootL",
+                    "rootM": "HvStopIcon-rootM",
+                    "rootS": "HvStopIcon-rootS",
+                    "rootXs": "HvStopIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -14291,25 +14291,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Stop-root-12": Object {
+                    ".HvStopIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Stop-root-12 svg": Object {
+                    ".HvStopIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Stop-rootL-16": Object {
+                    ".HvStopIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Stop-rootM-15": Object {
+                    ".HvStopIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Stop-rootS-14": Object {
+                    ".HvStopIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Stop-rootXs-13": Object {
+                    ".HvStopIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -14335,13 +14335,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Stop",
+                    "classNamePrefix": "HvStopIcon",
                     "classes": Object {
-                      "root": "Stop-root-12",
-                      "rootL": "Stop-rootL-16",
-                      "rootM": "Stop-rootM-15",
-                      "rootS": "Stop-rootS-14",
-                      "rootXs": "Stop-rootXs-13",
+                      "root": "HvStopIcon-root",
+                      "rootL": "HvStopIcon-rootL",
+                      "rootM": "HvStopIcon-rootM",
+                      "rootS": "HvStopIcon-rootS",
+                      "rootXs": "HvStopIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -14818,13 +14818,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Stop",
-                    "name": undefined,
+                    "meta": "HvStopIcon",
+                    "name": "HvStopIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Stop-root-12 svg": Object {
+                    ".HvStopIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -19610,11 +19610,11 @@ body {
                           }
                           classes={
                             Object {
-                              "root": "Play-root-7",
-                              "rootL": "Play-rootL-11",
-                              "rootM": "Play-rootM-10",
-                              "rootS": "Play-rootS-9",
-                              "rootXs": "Play-rootXs-8",
+                              "root": "HvPlayIcon-root",
+                              "rootL": "HvPlayIcon-rootL",
+                              "rootM": "HvPlayIcon-rootM",
+                              "rootS": "HvPlayIcon-rootS",
+                              "rootXs": "HvPlayIcon-rootXs",
                             }
                           }
                           theme={
@@ -20548,7 +20548,7 @@ body {
                           }
                         >
                           <div
-                            className="Play-root-7 Play-rootS-9"
+                            className="HvPlayIcon-root HvPlayIcon-rootS"
                             style={
                               Object {
                                 "height": "32px",
@@ -26313,11 +26313,11 @@ body {
                           }
                           classes={
                             Object {
-                              "root": "Stop-root-12",
-                              "rootL": "Stop-rootL-16",
-                              "rootM": "Stop-rootM-15",
-                              "rootS": "Stop-rootS-14",
-                              "rootXs": "Stop-rootXs-13",
+                              "root": "HvStopIcon-root",
+                              "rootL": "HvStopIcon-rootL",
+                              "rootM": "HvStopIcon-rootM",
+                              "rootS": "HvStopIcon-rootS",
+                              "rootXs": "HvStopIcon-rootXs",
                             }
                           }
                           theme={
@@ -27251,7 +27251,7 @@ body {
                           }
                         >
                           <div
-                            className="Stop-root-12 Stop-rootS-14"
+                            className="HvStopIcon-root HvStopIcon-rootS"
                             style={
                               Object {
                                 "height": "32px",

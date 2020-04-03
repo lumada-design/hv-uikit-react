@@ -6666,23 +6666,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "DropUpXS-root-11",
-                  "rootL": "DropUpXS-rootL-15",
-                  "rootM": "DropUpXS-rootM-14",
-                  "rootS": "DropUpXS-rootS-13",
-                  "rootXs": "DropUpXS-rootXs-12",
+                  "root": "HvDropUpXSIcon-root",
+                  "rootL": "HvDropUpXSIcon-rootL",
+                  "rootM": "HvDropUpXSIcon-rootM",
+                  "rootS": "HvDropUpXSIcon-rootS",
+                  "rootXs": "HvDropUpXSIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "DropUpXS",
+                  "classNamePrefix": "HvDropUpXSIcon",
                   "classes": Object {
-                    "root": "DropUpXS-root-11",
-                    "rootL": "DropUpXS-rootL-15",
-                    "rootM": "DropUpXS-rootM-14",
-                    "rootS": "DropUpXS-rootS-13",
-                    "rootXs": "DropUpXS-rootXs-12",
+                    "root": "HvDropUpXSIcon-root",
+                    "rootL": "HvDropUpXSIcon-rootL",
+                    "rootM": "HvDropUpXSIcon-rootM",
+                    "rootS": "HvDropUpXSIcon-rootS",
+                    "rootXs": "HvDropUpXSIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7159,36 +7159,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "DropUpXS",
-                  "name": undefined,
+                  "meta": "HvDropUpXSIcon",
+                  "name": "HvDropUpXSIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="DropUpXS"
+                    data-meta="HvDropUpXSIcon"
                   >
                     
-.DropUpXS-root-11 {
+.HvDropUpXSIcon-root {
   display: flex;
 }
-.DropUpXS-root-11 svg {
+.HvDropUpXSIcon-root svg {
   margin: auto;
 }
-.DropUpXS-rootXs-12 {
+.HvDropUpXSIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.DropUpXS-rootS-13 {
+.HvDropUpXSIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.DropUpXS-rootM-14 {
+.HvDropUpXSIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.DropUpXS-rootL-15 {
+.HvDropUpXSIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -7205,11 +7205,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "DropUpXS-root-11",
-                    "rootL": "DropUpXS-rootL-15",
-                    "rootM": "DropUpXS-rootM-14",
-                    "rootS": "DropUpXS-rootS-13",
-                    "rootXs": "DropUpXS-rootXs-12",
+                    "root": "HvDropUpXSIcon-root",
+                    "rootL": "HvDropUpXSIcon-rootL",
+                    "rootM": "HvDropUpXSIcon-rootM",
+                    "rootS": "HvDropUpXSIcon-rootS",
+                    "rootXs": "HvDropUpXSIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -7236,25 +7236,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".DropUpXS-root-11": Object {
+                    ".HvDropUpXSIcon-root": Object {
                       "display": "flex",
                     },
-                    ".DropUpXS-root-11 svg": Object {
+                    ".HvDropUpXSIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".DropUpXS-rootL-15": Object {
+                    ".HvDropUpXSIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".DropUpXS-rootM-14": Object {
+                    ".HvDropUpXSIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".DropUpXS-rootS-13": Object {
+                    ".HvDropUpXSIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".DropUpXS-rootXs-12": Object {
+                    ".HvDropUpXSIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -7280,13 +7280,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "DropUpXS",
+                    "classNamePrefix": "HvDropUpXSIcon",
                     "classes": Object {
-                      "root": "DropUpXS-root-11",
-                      "rootL": "DropUpXS-rootL-15",
-                      "rootM": "DropUpXS-rootM-14",
-                      "rootS": "DropUpXS-rootS-13",
-                      "rootXs": "DropUpXS-rootXs-12",
+                      "root": "HvDropUpXSIcon-root",
+                      "rootL": "HvDropUpXSIcon-rootL",
+                      "rootM": "HvDropUpXSIcon-rootM",
+                      "rootS": "HvDropUpXSIcon-rootS",
+                      "rootXs": "HvDropUpXSIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -7763,13 +7763,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "DropUpXS",
-                    "name": undefined,
+                    "meta": "HvDropUpXSIcon",
+                    "name": "HvDropUpXSIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".DropUpXS-root-11 svg": Object {
+                    ".HvDropUpXSIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -11627,23 +11627,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "DropDownXS-root-16",
-                  "rootL": "DropDownXS-rootL-20",
-                  "rootM": "DropDownXS-rootM-19",
-                  "rootS": "DropDownXS-rootS-18",
-                  "rootXs": "DropDownXS-rootXs-17",
+                  "root": "HvDropDownXSIcon-root",
+                  "rootL": "HvDropDownXSIcon-rootL",
+                  "rootM": "HvDropDownXSIcon-rootM",
+                  "rootS": "HvDropDownXSIcon-rootS",
+                  "rootXs": "HvDropDownXSIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "DropDownXS",
+                  "classNamePrefix": "HvDropDownXSIcon",
                   "classes": Object {
-                    "root": "DropDownXS-root-16",
-                    "rootL": "DropDownXS-rootL-20",
-                    "rootM": "DropDownXS-rootM-19",
-                    "rootS": "DropDownXS-rootS-18",
-                    "rootXs": "DropDownXS-rootXs-17",
+                    "root": "HvDropDownXSIcon-root",
+                    "rootL": "HvDropDownXSIcon-rootL",
+                    "rootM": "HvDropDownXSIcon-rootM",
+                    "rootS": "HvDropDownXSIcon-rootS",
+                    "rootXs": "HvDropDownXSIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -12120,36 +12120,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "DropDownXS",
-                  "name": undefined,
+                  "meta": "HvDropDownXSIcon",
+                  "name": "HvDropDownXSIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="DropDownXS"
+                    data-meta="HvDropDownXSIcon"
                   >
                     
-.DropDownXS-root-16 {
+.HvDropDownXSIcon-root {
   display: flex;
 }
-.DropDownXS-root-16 svg {
+.HvDropDownXSIcon-root svg {
   margin: auto;
 }
-.DropDownXS-rootXs-17 {
+.HvDropDownXSIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.DropDownXS-rootS-18 {
+.HvDropDownXSIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.DropDownXS-rootM-19 {
+.HvDropDownXSIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.DropDownXS-rootL-20 {
+.HvDropDownXSIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -12166,11 +12166,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "DropDownXS-root-16",
-                    "rootL": "DropDownXS-rootL-20",
-                    "rootM": "DropDownXS-rootM-19",
-                    "rootS": "DropDownXS-rootS-18",
-                    "rootXs": "DropDownXS-rootXs-17",
+                    "root": "HvDropDownXSIcon-root",
+                    "rootL": "HvDropDownXSIcon-rootL",
+                    "rootM": "HvDropDownXSIcon-rootM",
+                    "rootS": "HvDropDownXSIcon-rootS",
+                    "rootXs": "HvDropDownXSIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -12197,25 +12197,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".DropDownXS-root-16": Object {
+                    ".HvDropDownXSIcon-root": Object {
                       "display": "flex",
                     },
-                    ".DropDownXS-root-16 svg": Object {
+                    ".HvDropDownXSIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".DropDownXS-rootL-20": Object {
+                    ".HvDropDownXSIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".DropDownXS-rootM-19": Object {
+                    ".HvDropDownXSIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".DropDownXS-rootS-18": Object {
+                    ".HvDropDownXSIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".DropDownXS-rootXs-17": Object {
+                    ".HvDropDownXSIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -12241,13 +12241,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "DropDownXS",
+                    "classNamePrefix": "HvDropDownXSIcon",
                     "classes": Object {
-                      "root": "DropDownXS-root-16",
-                      "rootL": "DropDownXS-rootL-20",
-                      "rootM": "DropDownXS-rootM-19",
-                      "rootS": "DropDownXS-rootS-18",
-                      "rootXs": "DropDownXS-rootXs-17",
+                      "root": "HvDropDownXSIcon-root",
+                      "rootL": "HvDropDownXSIcon-rootL",
+                      "rootM": "HvDropDownXSIcon-rootM",
+                      "rootS": "HvDropDownXSIcon-rootS",
+                      "rootXs": "HvDropDownXSIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -12724,13 +12724,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "DropDownXS",
-                    "name": undefined,
+                    "meta": "HvDropDownXSIcon",
+                    "name": "HvDropDownXSIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".DropDownXS-root-16 svg": Object {
+                    ".HvDropDownXSIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -14654,11 +14654,11 @@ body {
                 className="HvLabTimePickerPeriod-icon"
                 classes={
                   Object {
-                    "root": "DropUpXS-root-11",
-                    "rootL": "DropUpXS-rootL-15",
-                    "rootM": "DropUpXS-rootM-14",
-                    "rootS": "DropUpXS-rootS-13",
-                    "rootXs": "DropUpXS-rootXs-12",
+                    "root": "HvDropUpXSIcon-root",
+                    "rootL": "HvDropUpXSIcon-rootL",
+                    "rootM": "HvDropUpXSIcon-rootM",
+                    "rootS": "HvDropUpXSIcon-rootS",
+                    "rootXs": "HvDropUpXSIcon-rootXs",
                   }
                 }
                 onClick={[Function]}
@@ -15593,7 +15593,7 @@ body {
                 }
               >
                 <div
-                  className="HvLabTimePickerPeriod-icon DropUpXS-root-11 DropUpXS-rootXs-12"
+                  className="HvLabTimePickerPeriod-icon HvDropUpXSIcon-root HvDropUpXSIcon-rootXs"
                   onClick={[Function]}
                 >
                   <svg
@@ -17524,11 +17524,11 @@ body {
                 className="HvLabTimePickerPeriod-icon"
                 classes={
                   Object {
-                    "root": "DropDownXS-root-16",
-                    "rootL": "DropDownXS-rootL-20",
-                    "rootM": "DropDownXS-rootM-19",
-                    "rootS": "DropDownXS-rootS-18",
-                    "rootXs": "DropDownXS-rootXs-17",
+                    "root": "HvDropDownXSIcon-root",
+                    "rootL": "HvDropDownXSIcon-rootL",
+                    "rootM": "HvDropDownXSIcon-rootM",
+                    "rootS": "HvDropDownXSIcon-rootS",
+                    "rootXs": "HvDropDownXSIcon-rootXs",
                   }
                 }
                 onClick={[Function]}
@@ -18463,7 +18463,7 @@ body {
                 }
               >
                 <div
-                  className="HvLabTimePickerPeriod-icon DropDownXS-root-16 DropDownXS-rootXs-17"
+                  className="HvLabTimePickerPeriod-icon HvDropDownXSIcon-root HvDropDownXSIcon-rootXs"
                   onClick={[Function]}
                 >
                   <svg

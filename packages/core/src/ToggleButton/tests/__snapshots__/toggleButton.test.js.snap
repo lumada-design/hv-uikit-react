@@ -6581,23 +6581,23 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "root": "Unlock-root-1",
-                  "rootL": "Unlock-rootL-5",
-                  "rootM": "Unlock-rootM-4",
-                  "rootS": "Unlock-rootS-3",
-                  "rootXs": "Unlock-rootXs-2",
+                  "root": "HvUnlockIcon-root",
+                  "rootL": "HvUnlockIcon-rootL",
+                  "rootM": "HvUnlockIcon-rootM",
+                  "rootS": "HvUnlockIcon-rootS",
+                  "rootXs": "HvUnlockIcon-rootXs",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
-                  "classNamePrefix": "Unlock",
+                  "classNamePrefix": "HvUnlockIcon",
                   "classes": Object {
-                    "root": "Unlock-root-1",
-                    "rootL": "Unlock-rootL-5",
-                    "rootM": "Unlock-rootM-4",
-                    "rootS": "Unlock-rootS-3",
-                    "rootXs": "Unlock-rootXs-2",
+                    "root": "HvUnlockIcon-root",
+                    "rootL": "HvUnlockIcon-rootL",
+                    "rootM": "HvUnlockIcon-rootM",
+                    "rootS": "HvUnlockIcon-rootS",
+                    "rootXs": "HvUnlockIcon-rootXs",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7074,36 +7074,36 @@ body {
                     "version": "9.8.7",
                   },
                   "link": false,
-                  "meta": "Unlock",
-                  "name": undefined,
+                  "meta": "HvUnlockIcon",
+                  "name": "HvUnlockIcon",
                   "parent": [Circular],
                   "sheet": [Circular],
                 },
                 "renderer": DomRenderer {
                   "element": <style
                     data-jss=""
-                    data-meta="Unlock"
+                    data-meta="HvUnlockIcon"
                   >
                     
-.Unlock-root-1 {
+.HvUnlockIcon-root {
   display: flex;
 }
-.Unlock-root-1 svg {
+.HvUnlockIcon-root svg {
   margin: auto;
 }
-.Unlock-rootXs-2 {
+.HvUnlockIcon-rootXs {
   width: 12px;
   height: 12px;
 }
-.Unlock-rootS-3 {
+.HvUnlockIcon-rootS {
   width: 16px;
   height: 16px;
 }
-.Unlock-rootM-4 {
+.HvUnlockIcon-rootM {
   width: 32px;
   height: 32px;
 }
-.Unlock-rootL-5 {
+.HvUnlockIcon-rootL {
   width: 96px;
   height: 96px;
 }
@@ -7120,11 +7120,11 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "root": "Unlock-root-1",
-                    "rootL": "Unlock-rootL-5",
-                    "rootM": "Unlock-rootM-4",
-                    "rootS": "Unlock-rootS-3",
-                    "rootXs": "Unlock-rootXs-2",
+                    "root": "HvUnlockIcon-root",
+                    "rootL": "HvUnlockIcon-rootL",
+                    "rootM": "HvUnlockIcon-rootM",
+                    "rootS": "HvUnlockIcon-rootS",
+                    "rootXs": "HvUnlockIcon-rootXs",
                   },
                   "index": Array [
                     Object {
@@ -7151,25 +7151,25 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Unlock-root-1": Object {
+                    ".HvUnlockIcon-root": Object {
                       "display": "flex",
                     },
-                    ".Unlock-root-1 svg": Object {
+                    ".HvUnlockIcon-root svg": Object {
                       "margin": "auto",
                     },
-                    ".Unlock-rootL-5": Object {
+                    ".HvUnlockIcon-rootL": Object {
                       "height": "96px",
                       "width": "96px",
                     },
-                    ".Unlock-rootM-4": Object {
+                    ".HvUnlockIcon-rootM": Object {
                       "height": "32px",
                       "width": "32px",
                     },
-                    ".Unlock-rootS-3": Object {
+                    ".HvUnlockIcon-rootS": Object {
                       "height": "16px",
                       "width": "16px",
                     },
-                    ".Unlock-rootXs-2": Object {
+                    ".HvUnlockIcon-rootXs": Object {
                       "height": "12px",
                       "width": "12px",
                     },
@@ -7195,13 +7195,13 @@ body {
                   },
                   "options": Object {
                     "Renderer": [Function],
-                    "classNamePrefix": "Unlock",
+                    "classNamePrefix": "HvUnlockIcon",
                     "classes": Object {
-                      "root": "Unlock-root-1",
-                      "rootL": "Unlock-rootL-5",
-                      "rootM": "Unlock-rootM-4",
-                      "rootS": "Unlock-rootS-3",
-                      "rootXs": "Unlock-rootXs-2",
+                      "root": "HvUnlockIcon-root",
+                      "rootL": "HvUnlockIcon-rootL",
+                      "rootM": "HvUnlockIcon-rootM",
+                      "rootS": "HvUnlockIcon-rootS",
+                      "rootXs": "HvUnlockIcon-rootXs",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -7678,13 +7678,13 @@ body {
                       "version": "9.8.7",
                     },
                     "link": false,
-                    "meta": "Unlock",
-                    "name": undefined,
+                    "meta": "HvUnlockIcon",
+                    "name": "HvUnlockIcon",
                     "parent": [Circular],
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Unlock-root-1 svg": Object {
+                    ".HvUnlockIcon-root svg": Object {
                       "margin": "auto",
                     },
                     "root": Object {
@@ -10549,11 +10549,11 @@ body {
                 className="HvToggleButton-icon"
                 classes={
                   Object {
-                    "root": "Unlock-root-1",
-                    "rootL": "Unlock-rootL-5",
-                    "rootM": "Unlock-rootM-4",
-                    "rootS": "Unlock-rootS-3",
-                    "rootXs": "Unlock-rootXs-2",
+                    "root": "HvUnlockIcon-root",
+                    "rootL": "HvUnlockIcon-rootL",
+                    "rootM": "HvUnlockIcon-rootM",
+                    "rootS": "HvUnlockIcon-rootS",
+                    "rootXs": "HvUnlockIcon-rootXs",
                   }
                 }
                 theme={
@@ -11487,7 +11487,7 @@ body {
                 }
               >
                 <div
-                  className="HvToggleButton-icon Unlock-root-1 Unlock-rootS-3"
+                  className="HvToggleButton-icon HvUnlockIcon-root HvUnlockIcon-rootS"
                 >
                   <svg
                     focusable={false}
