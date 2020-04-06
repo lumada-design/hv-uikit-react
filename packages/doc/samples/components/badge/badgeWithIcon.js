@@ -25,28 +25,31 @@ export default (
   <div style={exampleStyles}>
     <HvBadge
       count={0}
-      icon={
-        <Alert boxStyles={boxStyles} style={svgStyles} role="presentation" />
-      }
+      icon={<Alert boxStyles={boxStyles} style={svgStyles} />}
     />
 
     <HvBadge
       count={1}
-      icon={
-        <Alert boxStyles={boxStyles} style={svgStyles} role="presentation" />
-      }
+      icon={<Alert boxStyles={boxStyles} style={svgStyles} />}
     />
 
-    <HvBadge showCount count={2} icon={<Alert boxStyles={boxStyles} style={svgStyles} role="presentation" />} />
+    <HvBadge
+      showCount
+      count={2}
+      icon={<Alert boxStyles={boxStyles} style={svgStyles} />}
+    />
 
-    <HvBadge showCount count={88} maxCount={9} icon={<Alert boxStyles={boxStyles} style={svgStyles} role="presentation" />} />
+    <HvBadge
+      showCount
+      count={88}
+      maxCount={9}
+      icon={<Alert boxStyles={boxStyles} style={svgStyles} />}
+    />
 
     <HvBadge
       showCount
       count={888}
-      icon={
-        <Alert boxStyles={boxStyles} style={svgStyles} role="presentation" />
-      }
+      icon={<Alert boxStyles={boxStyles} style={svgStyles} />}
     />
   </div>
 );
