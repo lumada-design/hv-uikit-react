@@ -2,24 +2,30 @@
 Variables         ../../_resources/storybook_variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
-Suite Setup       open storybook
+Suite Setup       open storybook   ${STORYBOOK_URL}/iframe.html?id=corebanner--banner6
+Test Setup        Run Keywords
+...               Reload Page                 AND
+...               Wait Until Page Contains    Click me    7s
 Suite Teardown    Close Browser
 Force Tags        smoke
 
+
+*** Variables ***
+${closeIconButton}    css:[role=button][class*=closeAction]
+${banner}             id:banner6-content
+${messageActions}     id:banner6-content-message-actions    #button actions
+${messageText}        id:banner6-content-message-text
+    
+
 *** Test Cases ***
 banner structure with svg, text and action
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corebanner--banner6
-    Wait Until Element Is Visible    banner6-open-button                                    7s
-    Click Button                     banner6-open-button
-    Wait Until Element Is Visible    banner6-content                                        2s
-    Element Text Should Be           banner6-content-message-text                           This is a success banner.
-    Page Should Contain Element      //div[contains(@class,'Success')]/*[name()='svg']
-    Element Should Be Visible        //div[@id='banner6-content-message-actions']/button    # Action Button
+    Click Button                     Click me
+    Wait Until Element Is Visible    ${banner}            2s
+    Element Text Should Be           ${messageText}       This is a success banner.
+    Element Should Be Visible        ${messageActions}
 
 banner close it
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=corebanner--banner6
-    Wait Until Element Is Visible        banner6-open-button                                    7s
-    Click Button                         banner6-open-button
-    Wait Until Element Is Visible        banner6-content                                        2s
-    Click Element                        css:div[role='button']
-    Wait Until Element Is Not Visible    banner6-content                                        2s
+    Click Button                         Click me
+    Wait Until Element Is Visible        ${banner}             2s
+    Click Element                        ${closeIconButton}
+    Wait Until Element Is Not Visible    ${banner}             2s
