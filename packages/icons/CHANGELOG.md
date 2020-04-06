@@ -9,6 +9,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+## [1.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.1...@hv/uikit-react-icons@1.10.2) (2020-04-01)
+
+
+### Bug Fixes
+
+* **switch:** added package-lock. [#1189](https://github.com/pentaho/hv-uikit-react/issues/1189) ([3df4308](https://github.com/pentaho/hv-uikit-react/commit/3df43087ca54b2ba56cdc56d4e20e8e997157471))
 
 
 
@@ -22,6 +28,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
 * **icons:** export icons as es module. [#1200](https://github.com/pentaho/hv-uikit-react/issues/1200) ([3819a27](https://github.com/pentaho/hv-uikit-react/commit/3819a27a64eddff7d382054cf339476c345f73f7))
 * **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+## [1.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.0...@hv/uikit-react-icons@1.10.1) (2020-03-17)
+
+
+### Bug Fixes
+
+* **login:** recovery message not showing. [#1224](https://github.com/pentaho/hv-uikit-react/issues/1224) ([51a5c69](https://github.com/pentaho/hv-uikit-react/commit/51a5c693a5bd1e79e01339d30dfc10a71a586003))
 
 
 

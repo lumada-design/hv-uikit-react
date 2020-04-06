@@ -49,6 +49,10 @@ storiesOf("Components", module).add("DatePicker", () => <HvDatePicker onValidate
       title: "8. Near invalid dates",
       description: "Near invalid dates",
       src: "components/datePicker/datePickerNearInvalidDates.js"
+    },
+    {
+      title: "9. Input value change",
+      src: "components/datePicker/datePickerWithValueChange.js"
     }
   ]
 });

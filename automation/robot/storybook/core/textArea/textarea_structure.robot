@@ -17,6 +17,7 @@ change input content with another component
     Element Text Should Be           css:textarea      Second value
 
 change input limit with another component
+    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coretextarea--textareauncontrolledvaluelimit
     Wait Until Element Is Enabled    css:textarea                  7s
     Run Keyword If                   '${BROWSER.lower()}'=='ie'    Press Keys    css:input                 CTRL+A+DELETE    #IE11 vs chrome keyboards case incompatible

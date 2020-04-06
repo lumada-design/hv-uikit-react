@@ -93,7 +93,7 @@ const Main = ({ classes, children, context, config }) => {
             (story === "Icons" && `v${iconsPackage.version}`) ||
             (story === "Typography" && `v${corePackage.version}`) ||
             ""}`}
-          <span className={classes.name}>{story === "Icons" ? "" : `- ${story}`}</span>
+          <span className={classes.name}>{story === "Icons" ? "" : ` - ${story}`}</span>
         </div>
         {isComponent && <Button onClick={config.changeTheme}>Toggle theme</Button>}
       </div>

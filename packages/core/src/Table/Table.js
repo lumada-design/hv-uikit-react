@@ -7,15 +7,11 @@ import isNil from "lodash/isNil";
 import uniqueId from "lodash/uniqueId";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
-import checkboxHOC from "react-table/lib/hoc/selectTable";
 
 import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
-import SortAsc from "@hv/uikit-react-icons/dist/SortAscendingXS";
-import SortDesc from "@hv/uikit-react-icons/dist/SortDescendingXS";
-import Sort from "@hv/uikit-react-icons/dist/SortXS";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
@@ -24,6 +20,7 @@ import { isIndeterminateStatus, isSelected, toggleAll, toggleSelection } from ".
 import Pagination from "./Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
+import checkboxHOC from "./selectTable";
 import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
@@ -130,31 +127,6 @@ class Table extends React.Component {
   };
 
   /**
-   *
-   * Returns the corresponding icon for the type of sorting (ascending or descending).
-   *
-   * @param id - the used to find the column.
-   * @returns {*} - 'false' if the column doesn't exist.
-   */
-  getSortedComponent = id => {
-    const { sorted } = this.state;
-    const { columns, sortable } = this.props;
-
-    const sortInfo = sorted.filter(item => item.id === id);
-
-    if (sortInfo.length) {
-      return sortInfo[0].desc === true ? <SortDesc /> : <SortAsc />;
-    }
-
-    const columnDef = columns.filter(item => item.id === id || item.accessor === id);
-    if ((columnDef.length && isNil(columnDef[0].sortable) && sortable) || columnDef[0].sortable) {
-      return <Sort />;
-    }
-
-    return false;
-  };
-
-  /**
    * Pagination customizations.
    *
    * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
@@ -183,10 +155,8 @@ class Table extends React.Component {
         }
       }),
       ...(showPagination && pages && { pages }),
-
       ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
         (pageSize && { defaultPageSize: pageSize })),
-
       ...{ showPageSizeOptions: showPageSize }
     };
   };
@@ -211,11 +181,8 @@ class Table extends React.Component {
    * Add the class "sorted" to the selected column.
    *
    * @param sortedColumn - the column representation from the user.
-   * @param col - column representation from react tables that is going to be modified.
    */
-  onSortChange = (sortedColumn, col) => {
-    const column = col;
-    column.className = "sorted";
+  onSortChange = sortedColumn => {
     this.setState({ sorted: sortedColumn, expanded: {} });
   };
 
@@ -246,13 +213,18 @@ class Table extends React.Component {
         return (
           <HvCheckBox
             id={`${internalId}-select-${props.id}`}
+            aria-label="blah"
             checked={isSelected(props.id, selection)}
             onChange={event => this.toggleSelection(event, props.id)}
             onClick={event => event.stopPropagation()}
             {...checkBoxProps}
           />
         );
-      }
+      },
+      toggleSelection: (id, shiftkey, row) => {
+        this.toggleSelection(row.id);
+      },
+      internalId
     };
   };
 
@@ -296,10 +268,23 @@ class Table extends React.Component {
       isSortable = null;
     }
 
+    let ariaSort;
+
+    if (sorted.length > 0) {
+      if (column.id === sorted[0].id) {
+        const sortDirection = sorted[0].desc === true ? "descending" : "ascending";
+        ariaSort = {
+          "aria-sort": sortDirection
+        };
+      } else ariaSort = { "aria-sort": undefined };
+    }
+
     appendClassnames(column, sorted, classes, sortable);
 
     return {
       id: column.id ? `${internalId}-column-${column.id}` : undefined,
+      scope: "col",
+      ...ariaSort,
       className:
         column.id !== "secondaryActions"
           ? setHeaderSortableClass(isSortable, classes.theadTh)
@@ -314,12 +299,40 @@ class Table extends React.Component {
    */
   getTBodyProps = () => {
     const { classes, data } = this.props;
-
     return {
+      role: "rowgroup",
       className: clsx(classes.tbody, {
         [classes.tBodyEmpty]: data.length === 0
       })
     };
+  };
+
+  /**
+   * A getter for the row provided by the React table
+   * used to correct the role definition for the row element.
+   *
+   * @returns {Object} - The object that contains the correct role to be applied to the table rows.
+   */
+  getTrGroupProps = () => {
+    const { classes } = this.props;
+    const baseTrGroupProps = {
+      role: undefined,
+      className: classes.trGroups
+    };
+
+    return baseTrGroupProps;
+  };
+
+  /**
+   * Open and closes the expander of a row.
+   *
+   * @param {numeric} rowIndex - The index of the row to toggle.
+   */
+  toggleExpand = rowIndex => {
+    const { expanded } = this.state;
+    this.setState({
+      expanded: { [rowIndex]: !expanded[rowIndex] }
+    });
   };
 
   /**
@@ -332,21 +345,28 @@ class Table extends React.Component {
    */
   getTrProps = (state, rowInfo) => {
     const { classes, subElementTemplate } = this.props;
-    const { expanded, selection } = this.state;
+    const { selection, expanded } = this.state;
+
+    const expandedProps =
+      rowInfo !== undefined &&
+      expanded[0] &&
+      Object.keys(expanded).toString() === rowInfo.nestingPath.toString()
+        ? { "aria-expanded": true }
+        : undefined;
+
+    const ariaRowIndex = rowInfo !== undefined ? { "aria-rowindex": rowInfo.index } : undefined;
 
     const baseTrProps = {
       id: this.computeRowElementId(rowInfo),
-      className: classes.tr
+      className: classes.tr,
+      role: "row",
+      "aria-selected": "false",
+      ...expandedProps,
+      ...ariaRowIndex
     };
-
     if (subElementTemplate && rowInfo && rowInfo.row) {
       return {
         ...baseTrProps,
-        onClick: () => {
-          this.setState({
-            expanded: { [rowInfo.viewIndex]: !expanded[rowInfo.viewIndex] }
-          });
-        },
         className: clsx(classes.tr, classes.pointer)
       };
     }
@@ -356,11 +376,31 @@ class Table extends React.Component {
     if (rowId && selection.includes(rowId)) {
       return {
         ...baseTrProps,
-        className: clsx(classes.tr, "selected")
+        className: clsx(classes.tr, "selected"),
+        "aria-selected": "true"
       };
     }
 
     return baseTrProps;
+  };
+
+  getTableProps = () => {
+    const { classes, tableProps, rowCount } = this.props;
+
+    const baseTableProps = {
+      role: "table",
+      className: classes.table
+    };
+
+    if (tableProps) {
+      return {
+        ...baseTableProps,
+        caption: tableProps.tableCaption,
+        "aria-rowcount": rowCount
+      };
+    }
+
+    return baseTableProps;
   };
 
   getTdProps = (state, rowInfo, column) => {
@@ -370,7 +410,8 @@ class Table extends React.Component {
 
     return {
       id: rowElementId && column.id ? `${rowElementId}-column-${column.id}` : undefined,
-      className: classes.td
+      className: classes.td,
+      role: "cell"
     };
   };
 
@@ -452,11 +493,13 @@ class Table extends React.Component {
       idForCheckbox,
       useRouter,
       getTrProps,
+      getTableProps,
       labels,
       secondaryActions,
       sortable,
       allCheckBoxProps,
       dropdownMenuProps,
+      rowCount,
       ...others
     } = this.props;
 
@@ -504,6 +547,7 @@ class Table extends React.Component {
             column={column}
             sort={sorted}
             tableSortable={sortable}
+            onSortChange={this.onSortChange}
           />
         );
       }
@@ -514,7 +558,7 @@ class Table extends React.Component {
     });
 
     // add expander button
-    const newColumn = createExpanderButton(columns, subElementTemplate, classes);
+    const newColumn = createExpanderButton(columns, subElementTemplate, classes, this.toggleExpand);
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
 
@@ -546,6 +590,7 @@ class Table extends React.Component {
               <HvCheckBox
                 id={`${internalId}-select-all`}
                 onChange={event => this.toggleAll(event)}
+                aria-label="blah"
                 checked={selectAll}
                 disabled={data.length === 0}
                 indeterminate={isIndeterminateStatus(selection, recordQuantity)}
@@ -567,6 +612,7 @@ class Table extends React.Component {
           {...this.getCheckboxProps()}
           /* eslint no-return-assign: 0 */
           ref={r => (this.checkboxTable = r)}
+          getTableProps={this.getTableProps}
           getTheadThProps={this.getTheadThProps}
           getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
           getTdProps={this.getTdProps}
@@ -580,6 +626,7 @@ class Table extends React.Component {
           keyField={idForCheckbox}
           isSelected={key => isSelected(key, selection)}
           NoDataComponent={NoData}
+          getTrGroupProps={this.getTrGroupProps}
         />
       </div>
     );
@@ -807,7 +854,13 @@ Table.propTypes = {
   /**
    *  Extra properties passed to the dropdown menu.
    */
-  dropdownMenuProps: PropTypes.instanceOf(Object)
+  dropdownMenuProps: PropTypes.instanceOf(Object),
+  getTableProps: PropTypes.func,
+  tableProps: PropTypes.shape({}),
+  /**
+   * Number of rows available in table to display in aria-rowcount
+   */
+  rowCount: PropTypes.number
 };
 
 Table.defaultProps = {
@@ -837,7 +890,10 @@ Table.defaultProps = {
   onSelection: () => {},
   secondaryActions: null,
   allCheckBoxProps: undefined,
-  dropdownMenuProps: undefined
+  dropdownMenuProps: undefined,
+  getTableProps: undefined,
+  tableProps: { tableCaption: "Table Caption" },
+  rowCount: undefined
 };
 export { Table as RawTable }; // Required to extract documentation because withConfig hides _docgen.
 export default withStyles(styles, { name: "HvTable" })(withConfig(Table));

@@ -67,7 +67,7 @@ const HvSwitch = props => {
     </div>
   );
 
-  const checkedIcon = <CheckMark iconSize="XS" className={classes.checkedIcon} />;
+  const checkedIcon = <CheckMark width="12px" height="12px" className={classes.checkedIcon} />;
 
   return (
     <div className={clsx(classes.root, className)}>

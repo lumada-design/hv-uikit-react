@@ -281,6 +281,7 @@ class Wrapper extends React.Component {
         defaultSorted={sorted}
         labels={labels}
         subElementTemplate={this.subElementTemplate}
+        rowCount={data.length}
       />
     );
   }

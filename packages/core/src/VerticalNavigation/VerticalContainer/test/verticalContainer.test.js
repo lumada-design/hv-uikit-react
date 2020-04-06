@@ -141,7 +141,6 @@ describe("VerticalContainerA11Y", () => {
       isOpen: true
     });
     const results = await axe(wrapper.html());
-
     expect(results).toHaveNoViolations();
   });
 });

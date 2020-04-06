@@ -44,7 +44,7 @@ const styles = theme => ({
     position: "relative",
     display: "inherit",
     alignItems: "center",
-    marginTop: "4px"
+    marginTop: "28px"
   },
   showOkMessage: {
     backgroundColor: theme.hv.palette.semantic.sema8,

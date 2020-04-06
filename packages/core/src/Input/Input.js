@@ -6,7 +6,7 @@ import { Input, withStyles } from "@material-ui/core";
 import InfoS from "@hv/uikit-react-icons/dist/Info";
 import withId from "../withId";
 import withLabels from "../withLabels";
-import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
+import { isKeypress, KeyboardCodes } from "../utils";
 import isBrowser from "../utils/browser";
 import InputAdornment from "./InputAdornment";
 import HvTypography from "../Typography";
@@ -34,6 +34,7 @@ class HvInput extends React.Component {
 
     this.state = {
       validationState,
+      currentValidationStateProps: validationState,
       value: value || initialValue,
       suggestionValues: null,
       warningText: validationState === validationStates.invalid ? labels.warningText : null
@@ -42,12 +43,17 @@ class HvInput extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { value: nextValue, validationState } = nextProps;
-    const { value: oldValue } = prevState;
+    const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
 
-    if (nextValue !== undefined && nextValue !== oldValue) {
+    if (
+      (nextValue !== undefined && nextValue !== oldValue) ||
+      (validationState !== undefined && validationState !== validationStateProp)
+    ) {
       return {
         value: nextValue,
-        validationState
+        validationState,
+        currentValidationStateProps:
+          validationState !== validationStateProp ? validationStateProp : validationState
       };
     }
     return null;

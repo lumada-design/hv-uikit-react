@@ -1,13 +1,13 @@
-name: Robot
+name: CI (alpha)
 on:
   schedule:
-    - cron: "0 3 * * *" # daily at 03:00
+    - cron: '0 3 * * *' # daily at 03:00
   pull_request:
     branches:
-      - master
+      - alpha
 
 env:
-  RESOLVE_REGISTRY: https://nexus.pentaho.org/repository/group-npm/
+  RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
 jobs:
   Build:
@@ -18,6 +18,13 @@ jobs:
 
     steps:
       - name: Checkout
+        if: github.event_name == 'schedule'
+        uses: actions/checkout@v2
+        with:
+          ref: alpha
+
+      - name: Checkout
+        if: github.event_name == 'pull_request'
         uses: actions/checkout@v2
 
       - name: Install
@@ -35,15 +42,18 @@ jobs:
         run: npm run test
 
       - name: Generate Storybook
+        if: github.event_name == 'schedule'
         run: npm run automation:package
 
       - name: Archive Storybook
+        if: github.event_name == 'schedule'
         uses: actions/upload-artifact@v1
         with:
           name: storybook
           path: automation/storybook/dist
 
   Robot:
+    if: github.event_name == 'schedule'
     needs: Build
     runs-on: [self-hosted, Windows]
     strategy:
@@ -54,6 +64,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: alpha
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -79,7 +91,7 @@ jobs:
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
-        if: failure()
+        if: always()
         with:
           name: ${{ matrix.browser }}-reports
           path: reports

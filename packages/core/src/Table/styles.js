@@ -39,7 +39,7 @@ const styles = theme => ({
       "& $thead": {
         background: theme.hv.palette.atmosphere.atmo1,
         textAlign: `right`,
-        borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+        borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
         boxShadow: `none`,
         // Needed because of the HOC for the fixed columns
         top: "0 !important",
@@ -56,7 +56,6 @@ const styles = theme => ({
           boxShadow: "none",
           "& > div": {
             width: "100%",
-            margin: "1px 0px",
             alignSelf: "baseline"
           },
           "& > div.rt-resizer": {
@@ -95,7 +94,8 @@ const styles = theme => ({
             "&:hover > div > div > div ": {
               visibility: "visible"
             },
-            "&:hover": {
+            "&:hover, &:focus-within": {
+              // hover and focus in table header
               background: theme.hv.palette.atmosphere.atmo4
             }
           }
@@ -104,19 +104,23 @@ const styles = theme => ({
       "& $tbody": {
         "-ms-overflow-y": "hidden",
         "& $trGroups": {
-          borderBottom: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
+          borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
           "& $tr > div ": {
-            background: theme.hv.palette.atmosphere.atmo2
+            background: theme.hv.palette.atmosphere.atmo3
           },
           "& $tr:hover > div ": {
-            background: theme.hv.palette.atmosphere.atmo1
+            background: theme.hv.palette.atmosphere.atmo4
           },
           "& $tr.selected > div": {
             background: theme.hv.palette.atmosphere.atmo1
+          },
+          "& $tr.selected:hover > div": {
+            background: theme.hv.palette.atmosphere.atmo4
           }
         },
         "& $td": {
-          border: "1px solid transparent",
+          background: theme.hv.palette.atmosphere.atmo2,
+          border: "0 solid transparent",
           padding: `0px ${theme.hv.spacing.xs}px`,
           minWidth: "72px",
           "&.sortable": {
@@ -152,14 +156,11 @@ const styles = theme => ({
             borderLeft: `solid 1px ${theme.hv.palette.atmosphere.atmo5}`
           },
           "&$expand": {
-            paddingLeft: "2px"
+            paddingLeft: "0"
           }
         },
         "& .firstExpandable": {
           paddingLeft: "0px"
-        },
-        "& $td.sorted": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo1
         },
         "& .checkBox": {
           minWidth: "31px",
@@ -262,13 +263,17 @@ const styles = theme => ({
   subComponentContainer: {
     width: "100%",
     height: "100%",
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
     background: theme.hv.palette.atmosphere.atmo1,
     padding: `${theme.hv.spacing.md}px 32px`
   },
   iconContainer: {
-    width: "30px",
-    height: "30px"
+    width: "32px",
+    height: "32px",
+    "&:focus": {
+      background: theme.hv.palette.atmosphere.atmo4,
+      outline: 0
+    }
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"
@@ -305,8 +310,8 @@ const styles = theme => ({
   },
   expand: {},
   separatorContainer: {
-    width: "30px",
-    height: "30px",
+    width: "32px",
+    height: "32px",
     display: "flex",
     alignItems: "center",
     "&>svg": {

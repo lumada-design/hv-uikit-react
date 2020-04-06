@@ -5,7 +5,7 @@ Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke    bug-infrastructure-ie
 Documentation     please look complementary Test Cases on dropdown_keyboard_navigation.robot
 
  

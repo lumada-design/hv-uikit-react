@@ -7,7 +7,7 @@ import { setId, isKeypress, KeyboardCodes } from "../../../utils";
 import HvTypography from "../../../Typography";
 import styles from "./styles";
 
-const format = date => date.format("D MMM, YYYY");
+const format = date => date.format("D MMM YYYY");
 
 class Header extends React.Component {
   constructor(props) {

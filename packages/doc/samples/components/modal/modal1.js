@@ -30,8 +30,8 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
           </HvModalContent>
         )}
         <HvModalActions>
-          <HvButton id="switchAnyway" category="ghost">
-            Switch anyway
+          <HvButton id="apply" category="ghost">
+            Apply
           </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel

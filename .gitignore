@@ -45,10 +45,10 @@ eslint.xml
 **/*/bin
 
 .prettierrc*
-
 .npmrc
 .idea
 *.iml
 .history
 .vscode
 *.pyc
+report.*

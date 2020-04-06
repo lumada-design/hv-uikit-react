@@ -4,7 +4,9 @@ import { Alert } from "@hv/uikit-react-icons/dist";
 
 const exampleStyles = {
   display: "flex",
-  width: "800px",
+  flexWrap: "wrap",
+  maxWidth: "800px",
+  padding: "0 30px 0 0",
   justifyContent: "space-between"
 };
 

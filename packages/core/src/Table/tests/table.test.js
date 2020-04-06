@@ -133,25 +133,6 @@ describe("Hv Table", () => {
       expect(wrapper.find(HvPagination).exists()).toBe(false);
     });
 
-    it("should mark the sorted column ", () => {
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            columns={column}
-            data={data}
-            defaultSorted={defaultSorted}
-            pageSize={5}
-          />
-        </HvProvider>
-      );
-
-      const instance = wrapper.find("Table").instance();
-      instance.setState({ sorted: [column[0]] });
-      instance.getTheadThProps("state", "rowInfo", column[0]);
-      expect(column[0].className).toContain("sorted");
-    });
-
     it("should set column alignment ", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
@@ -181,78 +162,6 @@ describe("Hv Table", () => {
       instance.getTheadThProps("state", "rowInfo", column[2]);
       expect(column[2].className).toContain(classesToApply.alphaNumeric);
       expect(column[2].className).toContain("link");
-    });
-
-    it("should highlight the sorted column", () => {
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            columns={column}
-            data={data}
-            defaultSorted={defaultSorted}
-            pageSize={5}
-          />
-        </HvProvider>
-      );
-      const internalColumnRepresentation = {
-        className: "something"
-      };
-
-      const instance = wrapper.find("Table").instance();
-      instance.onSortChange([column[0]], internalColumnRepresentation);
-      expect(internalColumnRepresentation.className).toBe("sorted");
-    });
-
-    it("should return an icon when sorted column in descending order", () => {
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            columns={column}
-            data={data}
-            defaultSorted={defaultSorted}
-            pageSize={5}
-          />
-        </HvProvider>
-      );
-      const internalColumnRepresentation = {
-        className: "something"
-      };
-
-      const instance = wrapper.find("Table").instance();
-      instance.onSortChange([column[0]], internalColumnRepresentation);
-      expect(internalColumnRepresentation.className).toBe("sorted");
-      const sortedIcon = instance.getSortedComponent(1);
-      expect(sortedIcon).toBeDefined();
-    });
-
-    it("should return an icon when sorted column ascending order", () => {
-      const columns = [
-        { id: 1, Header: "column 1", desc: false },
-        { id: 2, Header: "column 2" },
-        { id: 3, Header: "column 3" }
-      ];
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            columns={columns}
-            defaultSorted={[{ id: 1, desc: false }]}
-            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            pageSize={5}
-          />
-        </HvProvider>
-      );
-      const internalColumnRepresentation = {
-        className: "something"
-      };
-
-      const instance = wrapper.find("Table").instance();
-      instance.onSortChange([columns[0]], internalColumnRepresentation);
-      expect(internalColumnRepresentation.className).toBe("sorted");
-      const sortedIcon = instance.getSortedComponent(1);
-      expect(sortedIcon).toBeDefined();
     });
 
     it("should select all values", () => {
@@ -341,10 +250,6 @@ describe("Hv Table", () => {
 
     it("should add an expander if the subElementTemplate is defined", () => {
       const subElementTemplate = () => <div />;
-      const rowInfo = {
-        row: "row",
-        viewIndex: 1
-      };
       wrapper = mount(
         <HvProvider>
           <HvTable
@@ -359,9 +264,8 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find("Table").instance();
-      const row = instance.getTrProps("state", rowInfo);
-      expect(row.onClick).toBeInstanceOf(Function);
+      const expander = wrapper.find({ role: "button" });
+      expect(expander.length).toEqual(3);
     });
 
     it("should fetch data", () => {

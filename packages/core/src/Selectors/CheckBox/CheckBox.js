@@ -13,7 +13,7 @@ import styles from "./styles";
  * Chooses the correct label styling to applied based on position.
  *
  * @param {String} classes - The classes object containing the classes names needed to be applied.
- * @param {Object} labelPosition - an Object containing the avaible label positions.
+ * @param {Object} labelPosition - an Object containing the available label positions.
  * @returns {Object} - an Object with the name of the class for the required styling.
  */
 const prepareLabelStyles = (classes, labelPosition, label) => {
@@ -84,7 +84,7 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={clsx(labelClass, className, {
+      className={clsx(labelClass, className, classes.truncate, {
         [classes.disableFocus]: isFocusDisabled
       })}
       id={id}

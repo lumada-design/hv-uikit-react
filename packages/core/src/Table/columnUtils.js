@@ -4,6 +4,7 @@ import isNil from "lodash/isNil";
 
 import AngleDown from "@hv/uikit-react-icons/dist/Down";
 import AngleUp from "@hv/uikit-react-icons/dist/Up";
+import { KeyboardCodes, isKeypress } from "../utils";
 
 import { buildLink } from "./addins";
 
@@ -17,27 +18,6 @@ import { buildLink } from "./addins";
  * @param {Array} colSortedSelected - An array containing the columns to be sorted.
  * @returns {String} - The classname to apply.
  */
-const markSorted = (column, colSortedSelected) => {
-  let columnSorted = column.className;
-
-  if (!columnSorted) {
-    columnSorted = "";
-  }
-
-  if (isNil(colSortedSelected) || colSortedSelected.length < 1) {
-    return columnSorted;
-  }
-
-  if (column.id === colSortedSelected[0].id) {
-    columnSorted = clsx(columnSorted, "sorted");
-  }
-
-  if (!isNil(colSortedSelected) && column.id !== colSortedSelected[0].id) {
-    columnSorted = columnSorted.replace("sorted", "");
-  }
-
-  return columnSorted;
-};
 
 /**
  * A function used to wrap the cell data into a div to contain it adding the ellipsis functionality.
@@ -101,16 +81,33 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) => {
  * @param {Object} column - a reference to the React table column object.
  * @param {JSX} subElementTemplate - the expander content that the user wants to add to the table
  * @param {Object} classes - contains the classes to apply to the column.
+ * @param {function} toggleExpand - contains the classes to apply to the column.
  * @returns {Object} a modified column.
  */
-const createExpanderButton = (columns, subElementTemplate, classes) => {
+const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand) => {
   const newColumns = columns;
+
+  const onKeyHandler = (event, rowIndex, toggleExpandCallback) => {
+    if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.SpaceBar)) {
+      event.preventDefault();
+      toggleExpandCallback(rowIndex);
+    }
+  };
+
   if (subElementTemplate) {
     newColumns[0].className = clsx(newColumns[0].className, classes.expand);
     // eslint-disable-next-line react/prop-types
     newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
-        <div className={clsx(classes.iconContainer)}>
+        <div
+          className={clsx(classes.iconContainer)}
+          aria-label="row expander button"
+          role="button"
+          tabIndex="0"
+          onKeyDown={event => onKeyHandler(event, rest.row._viewIndex, toggleExpand)}
+          onClick={() => toggleExpand(rest.row._viewIndex)}
+          aria-expanded={isExpanded}
+        >
           {isExpanded ? (
             <AngleUp className={classes.separatorContainer} width="10px" height="10px" />
           ) : (
@@ -146,13 +143,10 @@ const appendClassnames = (column, colSortedSelected, classes, tableSortable) => 
   // build the link component if the cell has cellType "link"
   buildLink(col);
 
-  // mark the sorted and clean the unsorted
-  const columnSorted = markSorted(col, colSortedSelected);
-
   // set the cell content alignment
   const cellTypeClass = setColumnAlignment(col.cellType, classes);
 
-  col.className = clsx(columnSorted, cellTypeClass);
+  col.className = clsx(col.className, cellTypeClass);
 
   // setting the className for the column with the expander
   if (col.expander) {
@@ -180,7 +174,6 @@ const appendClassnames = (column, colSortedSelected, classes, tableSortable) => 
 };
 
 export {
-  markSorted,
   wrapper,
   setColumnAlignment,
   setHeaderSortableClass,

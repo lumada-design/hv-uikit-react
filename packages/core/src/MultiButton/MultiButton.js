@@ -176,25 +176,29 @@ MultiButton.propTypes = {
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       /**
-       * he button id
+       * the button id.
        */
       id: PropTypes.string.isRequired,
       /**
-       * the button label
+       * the button label.
        */
       value: PropTypes.string,
       /**
-       * icon in button
+       * icon in button.
        */
       icon: PropTypes.node,
       /**
-       * If the button is selected
+       * If the button is selected.
        */
       selected: PropTypes.bool,
       /**
-       * Specify if item can be toggled or not
+       * Specify if item can be toggled or not.
        */
-      enforced: PropTypes.bool
+      enforced: PropTypes.bool,
+      /**
+       * Values to be passed onto the button.
+       */
+      buttonProps: PropTypes.object
     })
   ).isRequired,
   /**

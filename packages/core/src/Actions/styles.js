@@ -6,7 +6,8 @@ const styles = theme => ({
     }
   },
   actionContainer: {
-    display: "flex"
+    display: "flex",
+    float: "right"
   },
   dropDownMenu: {},
   dropDownMenuIcon: {}

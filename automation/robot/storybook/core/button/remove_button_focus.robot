@@ -5,8 +5,7 @@ Library           SeleniumLibrary
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
 Test Template     Test button state transition between focus-default
-Force Tags        smoke
-
+Force Tags        smoke    bug-edge-webdriver    bug-infrastructure-ie
 
 *** Keywords ***
 Test button state transition between focus-default

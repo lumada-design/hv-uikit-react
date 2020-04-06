@@ -23,6 +23,16 @@ storiesOf("Components", module).add("Generic Icon", () => <CheckboxCheck />, {
       src: "components/genericIcon/standardSizes.js"
     },
     {
+      title: "Accessible Icon with decorative meaning",
+      description: "Icon with decorative meaning using the hidden",
+      src: "components/genericIcon/accessibilityDecorative.js"
+    },
+    {
+      title: "Accessible Icon with semantic meaning",
+      description: "Icon with semantic meaning using the title and role tags for accessibility",
+      src: "components/genericIcon/accessibilitySemantic.js"
+    },
+    {
       title: "Icon with custom size",
       description: "Overrides Generic Icon size using non standard sizes",
       src: "components/genericIcon/nonStandardSizes.js"

@@ -29,24 +29,9 @@ const DEFAULT_LABELS = {
 };
 
 class HvDatePicker extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const { locale } = this.props;
-
-    this.state = {
-      created: false,
-      ...this.resolveStateFromProps(),
-      calendarOpen: false,
-      calendarAnchorElement: null,
-      locale: isValidLocale(locale) ? locale : DEFAULT_LOCALE
-    };
-  }
-
   /**
    * Triggered right before the Render() function of the components.
    * Here we can update the state when a prop is changed.
-   * Currently we only want to update the locale. In the future we might want to be able to update other props.
    *
    * @static
    * @param {Object} props - The new props object.
@@ -56,11 +41,25 @@ class HvDatePicker extends React.Component {
    * @memberOf HvDatePicker
    */
   static getDerivedStateFromProps(props, state) {
-    if (props.locale !== state.locale) {
-      const validLocale = isValidLocale(props.locale) ? props.locale : DEFAULT_LOCALE;
+    const { rangeMode, locale, value, startValue, endValue } = props;
+
+    const { originalValue, originalStartValue, originalEndValue, locale: stateLocale } = state;
+
+    if (locale !== stateLocale) {
+      const validLocale = isValidLocale(locale) ? locale : DEFAULT_LOCALE;
       return {
         ...state,
         locale: validLocale
+      };
+    }
+    if (
+      value !== originalValue ||
+      startValue !== originalStartValue ||
+      endValue !== originalEndValue
+    ) {
+      return {
+        ...state,
+        ...HvDatePicker.resolveStateFromProps(value, startValue, endValue, rangeMode)
       };
     }
     return null;
@@ -71,9 +70,7 @@ class HvDatePicker extends React.Component {
    *
    * @memberOf HvDatePicker
    */
-  resolveStateFromProps = () => {
-    const { value, startValue, endValue, rangeMode } = this.props;
-
+  static resolveStateFromProps = (value, startValue, endValue, rangeMode) => {
     if (rangeMode) {
       const startSelectedDate = startValue !== "" ? convertISOStringDateToDate(startValue) : null;
       const endSelectedDate = endValue !== "" ? convertISOStringDateToDate(endValue) : null;
@@ -83,6 +80,8 @@ class HvDatePicker extends React.Component {
         endSelectedDate,
         tempStartSelectedDate: startSelectedDate,
         tempEndSelectedDate: endSelectedDate,
+        originalStartValue: startValue,
+        originalEndValue: endValue,
         startVisibleDate: null,
         endVisibleDate: null
       };
@@ -93,9 +92,24 @@ class HvDatePicker extends React.Component {
 
     return {
       selectedDate,
-      tempSelectedDate: selectedDate
+      tempSelectedDate: selectedDate,
+      originalValue: value
     };
   };
+
+  constructor(props) {
+    super(props);
+
+    const { locale } = this.props;
+
+    this.state = {
+      created: false,
+      ...HvDatePicker.resolveStateFromProps(),
+      calendarOpen: false,
+      calendarAnchorElement: null,
+      locale: isValidLocale(locale) ? locale : DEFAULT_LOCALE
+    };
+  }
 
   /**
    * Changes the calendar open state according to the received flag.
@@ -705,9 +719,9 @@ HvDatePicker.defaultProps = {
   id: undefined,
   rangeMode: false,
   horizontalPlacement: "left",
-  value: "",
-  startValue: "",
-  endValue: "",
+  value: undefined,
+  startValue: undefined,
+  endValue: undefined,
   locale: DEFAULT_LOCALE,
   showActions: false,
   onChange: undefined,

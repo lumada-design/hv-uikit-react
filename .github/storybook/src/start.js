@@ -16,16 +16,7 @@ async function main() {
   await exec.exec("docker", ["build", "--rm", "-t", image, context]);
 
   // run
-  await exec.exec("docker", [
-    "run",
-    "-d",
-    "--rm",
-    "-p",
-    "9002:9002",
-    "--name",
-    container,
-    image
-  ]);
+  await exec.exec("docker", ["run", "-d", "--rm", "-p", "9002:9002", "--name", container, image]);
 
   await waitOn({
     resources: ["http://localhost:9002"],

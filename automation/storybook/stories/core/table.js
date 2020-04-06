@@ -9,6 +9,7 @@ import TableScrollingExpander from "../../../../packages/doc/samples/components/
 import TableSecondary from "../../../../packages/doc/samples/components/table/tableSecondary";
 import TableSimple from "../../../../packages/doc/samples/components/table/tableSimple";
 import TableTypical from "../../../../packages/doc/samples/components/table/tableTypical";
+import TableServerSide  from "../../../../packages/doc/samples/components/table/customTableSample";
 
 // sample scenarios
 const samples = {};
@@ -20,6 +21,7 @@ samples.TableScrollingExpander = TableScrollingExpander;
 samples.TableSecondary = TableSecondary;
 samples.TableSimple = TableSimple;
 samples.TableTypical = TableTypical;
+samples.TableServerSide = TableServerSide;
 
 // create CoreTextArea for each sample
 Object.keys(samples).forEach(key =>

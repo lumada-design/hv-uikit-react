@@ -99,6 +99,7 @@ const styles = theme => ({
     }
   },
   infoText: {
+    color: theme.hv.palette.accent.acce1,
     paddingTop: "8px",
     display: "block"
   },

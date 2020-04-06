@@ -19,7 +19,12 @@ const DEFAULT_LABELS = {
   pageSizeEntryName: "rows",
   pageSizeSelectorDescription: "Select how many to display",
   pagesSeparator: "of",
-  pagesIndeterminate: "Many"
+  pagesIndeterminate: "Many",
+  paginationFirstPageTitle: "First page",
+  paginationPreviousPageTitle: "Previous page",
+  paginationNextPageTitle: "Next page",
+  paginationLastPageTitle: "Last page",
+  paginationInputLabel: "Page input"
 };
 
 const Pagination = ({
@@ -96,6 +101,8 @@ const Pagination = ({
       <div className={classes.pageNavigator} {...navigationProps}>
         <IconButton
           id={setId(id, "firstPage-button")}
+          aria-label={setId(id, "firstPage-button")}
+          title={labels.paginationFirstPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
@@ -104,6 +111,8 @@ const Pagination = ({
         </IconButton>
         <IconButton
           id={setId(id, "previousPage-button")}
+          aria-label={setId(id, "previousPage-button")}
+          title={labels.paginationPreviousPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
@@ -116,6 +125,7 @@ const Pagination = ({
               <HvInput
                 id={setId(id, "currentPage")}
                 labels={labels}
+                inputProps={{ "aria-label": labels.paginationInputLabel }}
                 classes={{
                   root: classes.pageSizeInputContainer,
                   input: classes.pageSizeInput,
@@ -146,6 +156,7 @@ const Pagination = ({
         </div>
         <IconButton
           id={setId(id, "nextPage-button")}
+          title={labels.paginationNextPageTitle}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
@@ -154,6 +165,7 @@ const Pagination = ({
         </IconButton>
         <IconButton
           id={setId(id, "lastPage-button")}
+          title={labels.paginationLastPageTitle}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}

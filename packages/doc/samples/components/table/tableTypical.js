@@ -142,6 +142,7 @@ class Wrapper extends React.Component {
         defaultSorted={sorted}
         labels={labels}
         idForCheckbox="id"
+        rowCount={data.length}
       />
     );
   }

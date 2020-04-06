@@ -22,7 +22,6 @@ const DEFAULT_LABELS = {
 };
 
 const DEFAULT_STATE = {
-  isOpen: false,
   selectionLabel: null,
   anchorEl: null,
   values: []
@@ -34,7 +33,10 @@ class HvDropdown extends React.Component {
 
     this.ref = React.createRef();
 
+    const { expanded } = props;
+
     this.state = {
+      isOpen: expanded,
       ...DEFAULT_STATE
     };
   }
@@ -77,7 +79,7 @@ class HvDropdown extends React.Component {
     )
       return;
 
-    const anchor = evt ? evt.currentTarget : null;
+    const anchor = evt ? evt.currentTarget.parentElement : null;
 
     this.setState({
       isOpen: !isOpen,
@@ -179,13 +181,19 @@ class HvDropdown extends React.Component {
       disablePortal,
       hasTooltips,
       labels,
-      singleSelectionToggle
+      singleSelectionToggle,
+      classes,
+      placement
     } = this.props;
     const { isOpen, values, anchorEl } = this.state;
 
     return (
       <List
         id={setId(id, "values")}
+        classes={{
+          rootList: classes.rootList,
+          list: classes.list
+        }}
         values={values}
         multiSelect={multiSelect}
         showSearch={showSearch}
@@ -201,6 +209,7 @@ class HvDropdown extends React.Component {
         anchorEl={anchorEl}
         singleSelectionToggle={singleSelectionToggle}
         aria-labelledby={labels.title ? setId(id, "label") : undefined}
+        placement={placement}
       />
     );
   }
@@ -373,7 +382,11 @@ HvDropdown.propTypes = {
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool
+  singleSelectionToggle: PropTypes.bool,
+  /**
+   * Placement of the dropdown.
+   */
+  placement: PropTypes.oneOf(["left", "right"])
 };
 
 HvDropdown.defaultProps = {
@@ -390,7 +403,8 @@ HvDropdown.defaultProps = {
   selectDefault: true,
   disablePortal: false,
   hasTooltips: false,
-  singleSelectionToggle: true
+  singleSelectionToggle: true,
+  placement: undefined
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(

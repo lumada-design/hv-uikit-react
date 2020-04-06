@@ -12,8 +12,8 @@ const Eye = props => {
       id="previewOff"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 14.71"
-      height={30}
-      width={30}
+      height={16}
+      width={16}
       className={className}
       {...other}
     >

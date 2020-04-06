@@ -16,10 +16,12 @@
 <div style="background: #cccccc">
 
 ## Next Major Release (Early Second Quarter 2020)
-We are actively planning and starting to work on the next major release. This development will happen in the branch called `next` and we will provide builds as soon as possible. 
-For more information about the schedule please check the Release Schedule section under Discover More. 
+
+We are actively planning and starting to work on the next major release. This development will happen in the branch called `next` and we will provide builds as soon as possible.
+For more information about the schedule please check the Release Schedule section under Discover More.
 
 #### These are features planned for the next release:
+
 - upgrade our main dependency Material UI to its latest version 4.x.
 - api cleanup, removing deprecated properties of our components.
 - remove deprecated components (core and lab).
@@ -30,6 +32,7 @@ If you want to keep up to date with the progress on these topics, please feel fr
 </div>
 
 #### npm registry
+
 Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
 
 ```
@@ -39,16 +42,19 @@ If you want to use it for UI-KIT dependencies
 Or if you want to use it for all dependencies
 registry=https://nexus.pentaho.org/repository/group-npm/
 ```
+
 Please check that your npmrc has this by running `npm config ls -l`, otherwise you can add it to the config by running `npm config edit`, otherwise the installation step below will not work.
 
 ### Installation
-  - core - ```npm install @hv/uikit-react-core```
-  - lab - ```npm install @hv/uikit-react-lab```
-  - icons - ```npm install @hv/uikit-react-icons```
+
+- core - `npm install @hv/uikit-react-core`
+- lab - `npm install @hv/uikit-react-lab`
+- icons - `npm install @hv/uikit-react-icons`
 
 To always have the latest development version of the UIkit, even before a release, you may want to use npm with the `latest` tag.
 
 #### global link
+
 If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
 
 ```bash
@@ -58,6 +64,7 @@ npm run link
 It will create a symlink in the global folder {prefix}/lib/node_modules/<package> for each package.
 
 ### Getting Started
+
 Install root dependencies.
 
 ```bash
@@ -81,13 +88,16 @@ npm run doc
 ```
 
 #### documentation
-Interested in running our documentation just to explore what we have, but don't want to bootstrap the project? 
-Please download our latest [documentation package](https://nexus.pentaho.org/#browse/search/npm=name.raw%3Duikit-react-doc) and open its index.html file.   
+
+Interested in running our documentation just to explore what we have, but don't want to bootstrap the project?
+Please download our latest [documentation package](https://nexus.pentaho.org/#browse/search/npm=name.raw%3Duikit-react-doc) and open its index.html file.
 
 ## Changelog
+
 Recently Updated? Please read the packages changelog: [core](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/core/CHANGELOG.md), [lab](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/lab/CHANGELOG.md), [icons](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/icons/CHANGELOG.md), [doc](https://github.com/pentaho/hv-uikit-react/blob/alpha/packages/doc/CHANGELOG.md).
 
 ## Contributing
+
 You need to ask to be added as a project member, to be able to contribute:
 
 - **#ui-kit** slack channel on the [hitachivantara-eng](https://hitachivantara-eng.slack.com/messages/CFY74GK6G) workspace.
@@ -100,12 +110,14 @@ Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uik
 We provide some [examples](https://github.com/pentaho/hv-uikit-react/tree/alpha/examples) supporting several platforms.
 
 ## License
+
 This project is licensed under the terms of the [Apache 2.0 license](https://github.com/pentaho/hv-uikit-react/blob/alpha/LICENSE.md).
 
 ## Team
+
 An overview of the founding team and core contributors to Hitachi Vantara UI-KIT.
 
-UI-KIT is maintained by a small group of invaluable core contributors, with the massive support and involvement of the community. 😄 
+UI-KIT is maintained by a small group of invaluable core contributors, with the massive support and involvement of the community. 😄
 
 - Diogo Mariano ([@diogofscmariano](https://github.com/diogofscmariano))
 - Tiago Santos ([@tiago-ssantos](https://github.com/tiago-ssantos))

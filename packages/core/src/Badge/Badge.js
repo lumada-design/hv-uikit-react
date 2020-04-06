@@ -13,7 +13,8 @@ const Badge = props => {
     maxCount = 99,
     icon = null,
     text = null,
-    textVariant = null
+    textVariant = null,
+    ...others
   } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
   const Component = icon || (text && <Typography variant={textVariant}>{text}</Typography>);
@@ -26,7 +27,7 @@ const Badge = props => {
   });
 
   return (
-    <div className={classes.root}>
+    <div aria-label={renderedCount} className={classes.root} {...others}>
       {Component}
       <div className={Component ? classes.badgeContainer : null}>
         <div className={badgeClasses}>{showCount && renderedCount}</div>

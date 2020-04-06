@@ -14,12 +14,13 @@ const styles = theme => ({
   switch: {
     padding: 0,
     width: switchWidth,
-    height: `${theme.hv.spacing.sm}px`,
+    height: 22,
     cursor: "pointer"
   },
+
   switchBase: {
     width: switchWidth,
-    height: `${theme.hv.spacing.sm}px`,
+    height: 22,
     padding: 0,
     // increase CSS specificity
     "&:hover": {

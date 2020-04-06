@@ -31,8 +31,10 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
           </HvModalContent>
         )}
         <HvModalActions>
-          <HvButton category="ghost">Apply</HvButton>
-          <HvButton category="ghost" onClick={() => setOpen(false)}>
+          <HvButton id="apply" category="ghost">
+            Apply
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
         </HvModalActions>
@@ -96,7 +98,7 @@ const containerStyle = {
 
 const styles = {
   container: {
-    width: 555
+    width: "100%"
   },
   label: {
     paddingTop: 0,
@@ -113,13 +115,14 @@ const textAreaStyles = {
     width: 555
   },
   textAreaContainer: {
-    paddingTop: 30
+    paddingTop: 30,
+    width: "100%"
   }
 };
 
 const contentStyles = {
   paper: {
-    width: 555
+    width: "100%"
   }
 };
 
@@ -160,10 +163,9 @@ export default (
             showInfo={false}
           />
           <TextAreaWithStyles
-            disabled
             id="outlined-with-placeholder"
             labels={{
-              placeholder: "Enter work Order Description",
+              placeholder: "Enter text",
               inputLabel: "Description"
             }}
             multiline

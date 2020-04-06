@@ -43,7 +43,14 @@ const styles = theme => ({
       position: "absolute",
       top: 0,
       left: 0
+    },
+    "& > button": {
+      float: "right"
     }
+  },
+  checkboxPlacement: {
+    display: "flex",
+    justifyContent: "center"
   }
 });
 

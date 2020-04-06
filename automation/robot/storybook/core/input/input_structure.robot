@@ -9,11 +9,11 @@ Force Tags        smoke
 *** Variables ***
 ${input}          css:input[type=text]
 ${inputClear}     css:button[class*="HvInput-iconClear"]
-${label}          input-simple-sample-label
-${description}    input-simple-sample-description
+${label}          id:input-simple-sample-label
+${description}    id:input-simple-sample-description
 ${iconInfo}       css:div[class*="HvInput-infoIconContainer"]
-${iconSuccess}    css:#test div[class*="Success-root"]
-${iconMap}        css:#test div[class*="Map-root"]
+${iconSuccess}    css:#test div[class*="HvSuccessIcon-root"]
+${iconMap}        css:#test div[class*="HvMapIcon-root"]
 
 *** Test Cases ***
 clean text when click on input clear button
@@ -40,6 +40,7 @@ show clear button when input has a text and is focused
     Wait Until Element Is Visible    ${inputClear}    2s
 
 don't show clear button when input cleaned/empty and is focused
+    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreinput--inputsimple
     Wait Until Element Is Enabled    ${input}         10s
     Click Element                    ${input}

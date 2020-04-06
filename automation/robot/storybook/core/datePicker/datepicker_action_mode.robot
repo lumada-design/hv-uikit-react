@@ -30,7 +30,7 @@ Maintain input date format clicking inside calendar
     Wait Until Element Is Visible        ${calendar}          2s
     Force input                          ${input}             01/02/1975
     Click element                        ${calendar}
-    Element Attribute Value Should Be    ${input}             value         2 Jan, 1975
+    Element Attribute Value Should Be    ${input}             value         2 Jan 1975
 
 Change date with clicks and apply
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
@@ -40,10 +40,10 @@ Change date with clicks and apply
     Click Element                        ${day9}
     Click Button                         Apply
     Element Should Not Be Visible        ${calendar}
-    Element Attribute Value Should Be    ${labelInputDate}    value         9 Jan, 1970
+    Element Attribute Value Should Be    ${labelInputDate}    value         9 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
-    Element Attribute Value Should Be    ${input}             value         9 Jan, 1970
+    Element Attribute Value Should Be    ${input}             value         9 Jan 1970
 
 Don't change date with clicks and clicking outside
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
@@ -55,7 +55,7 @@ Don't change date with clicks and clicking outside
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
-    Element Attribute Value Should Be    ${input}             value         2 Jan, 1970
+    Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 Don't change date with clicking in a date and clicking cancel
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
@@ -67,7 +67,7 @@ Don't change date with clicking in a date and clicking cancel
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
-    Element Attribute Value Should Be    ${input}             value         2 Jan, 1970
+    Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 Don't change date with input clicking enter and cancel
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
@@ -79,7 +79,7 @@ Don't change date with input clicking enter and cancel
     Click Button                         Cancel
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
-    Element Attribute Value Should Be    ${input}             value         2 Jan, 1970
+    Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 Don't change date with input more enter and clicking outside
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
@@ -91,7 +91,7 @@ Don't change date with input more enter and clicking outside
     Click Element                        ${outside}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
-    Element Attribute Value Should Be    ${input}             value         2 Jan, 1970
+    Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 
 

@@ -58,10 +58,10 @@ const Row = ({ classes, status, value, id }) => {
       <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
           <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-          <HvTypography className={classes.timestamp} variant="infoText">
+          <HvTypography className={classes.timestamp} variant="labelText">
             {value.event.timestamp}
           </HvTypography>
-          <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+          <HvTypography style={{ paddingTop: "2px" }} variant="labelText">
             {value.event.schedule}
           </HvTypography>
         </div>
@@ -86,7 +86,7 @@ const styles = theme => ({
   timestamp: {
     padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
     marginRight: "10px",
-    borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
+    borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
   },
   icon: {
     paddingLeft: "3px"

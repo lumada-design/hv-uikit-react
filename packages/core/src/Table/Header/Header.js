@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core";
 import Sort from "@hv/uikit-react-icons/dist/SortXS";
 import SortDesc from "@hv/uikit-react-icons/dist/SortDescendingXS";
 import SortAsc from "@hv/uikit-react-icons/dist/SortAscendingXS";
+import { KeyboardCodes, isKeypress } from "../../utils/KeyboardUtils";
 import HvTypography from "../../Typography";
 import styles from "./styles";
 
@@ -19,11 +20,9 @@ import styles from "./styles";
  * @param classes - a JSS object that contains the classes to apply
  * @returns {*} - 'false' if the column doesn't exist.
  */
-const getSortedComponent = (id, columnSortable, sort, classes) => {
-  const sortInfo = sort.filter(item => item.id === id);
-
-  if (sortInfo.length) {
-    return sortInfo[0].desc === true ? (
+const getSortedComponent = (sortType, columnSortable, classes) => {
+  if (sortType) {
+    return sortType === "descending" ? (
       <SortDesc className={classes.box} />
     ) : (
       <SortAsc className={classes.box} />
@@ -37,15 +36,35 @@ const getSortedComponent = (id, columnSortable, sort, classes) => {
   return false;
 };
 
+const getSortType = (id, sort) => {
+  const sortInfo = sort.filter(item => item.id === id);
+  if (sortInfo.length) {
+    return sortInfo[0].desc === true ? "descending" : "ascending";
+  }
+
+  return undefined;
+};
+
+const onKeyHandler = (event, id, onSortChange, currentSortedState) => {
+  if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.SpaceBar)) {
+    event.preventDefault();
+    // The table only supports one sorted column
+    const newState = [...currentSortedState];
+    newState[0].id = id;
+    newState[0].desc = !newState[0].desc;
+    onSortChange(newState);
+  }
+};
+
 const Header = React.memo(
-  ({
-    tableInternalId,
-    classes,
-    column: { id, sortable, cellType, headerText },
-    tableSortable,
-    sort
-  }) => {
+  ({ tableInternalId, classes, column, tableSortable, sort, onSortChange }) => {
+    const { id, sortable, cellType, headerText } = column;
+
     const columnSortable = (isNil(sortable) && tableSortable) || sortable;
+
+    const sortType = getSortType(id, sort);
+
+    const sortElem = getSortedComponent(sortType, columnSortable, classes);
 
     return (
       <div className={clsx(classes.headerContainer)}>
@@ -55,8 +74,12 @@ const Header = React.memo(
             className={clsx(classes.rtSortIcon, {
               [classes.rtSortIconNumeric]: cellType === "numeric"
             })}
+            aria-label={id != null ? `${tableInternalId}-column-${id}-sort-button` : undefined}
+            role="button"
+            tabIndex="0"
+            onKeyDown={event => onKeyHandler(event, id, onSortChange, sort)}
           >
-            {getSortedComponent(id, columnSortable, sort, classes)}
+            {sortElem}
           </div>
         )}
         {/* Setter of the styles for the header */}

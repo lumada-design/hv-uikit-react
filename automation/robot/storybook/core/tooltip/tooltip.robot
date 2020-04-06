@@ -9,11 +9,12 @@ Force Tags        smoke
 
 
 *** Variables ***
-${tooltipPlaceholder}    css:button>p
+${tooltipPlaceholder}    xpath://p[contains(.,'Hover here')]
+${tooltip}               css:div[id|='mui-tooltip']
+*** Test Cases ***
 
 
-*** Keywords ***
-open tooltip sample
+tooltip is triggered when mouse hover item
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
     Wait Until Element Is Visible    ${tooltipPlaceholder}    10s
    
@@ -25,21 +26,21 @@ tooltip is triggered and when mouse hover item
     Wait Until Page Contains    Tooltips can showcase    3s
 
 tooltip is triggered when item is focused
-    [Tags]    keyboard
-    Page Should Not Contain     Tooltips can showcase
-    Press Keys                  css:body                 TAB
-    Wait Until Page Contains    Tooltips can showcase    5s
-
-tooltip is dismissed when mouse leaves touch target
-    # verified firefox webdriver error if this test case is precedent of first Test case
-    Mouse Over                          ${tooltipPlaceholder}
-    Wait Until Page Contains            Tooltips can showcase    3s
-    Mouse Out                           ${tooltipPlaceholder}
-    Wait Until Page Does Not Contain    Tooltips can showcase    3s
+    [Tags]    keyboard    bug-infrastructure-ie
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
+    Wait Until Element Is Enabled        ${tooltipPlaceholder}    10s
+    Element Should Not Be Visible        ${tooltip}
+    Press Keys                           css:button               TAB
+    Wait Until Element Is Visible        ${tooltip}               5s
+    Press Keys                           ${tooltip}               TAB
+    Wait Until Element Is Not Visible    ${tooltip}               2s
 
 tooltip is dismissed when is removed the item focus
-    [Tags]    keyboard
-    Mouse Over                          ${tooltipPlaceholder}
-    Wait Until Page Contains            Tooltips can showcase    5s
-    Press Keys                          ${tooltipPlaceholder}    TAB
-    Wait Until Page Does Not Contain    Tooltips can showcase    3s
+    [Tags]    keyboard    bug-infrastructure-ie
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
+    Wait Until Element Is Enabled        ${tooltipPlaceholder}    10s
+    Element Should Not Be Visible        ${tooltip}               2s
+    Mouse Over                           ${tooltipPlaceholder}
+    Wait Until Element Is Visible        ${tooltip}               5s
+    Press Keys                           ${tooltipPlaceholder}    TAB
+    Wait Until Element Is Not Visible    ${tooltip}               2s

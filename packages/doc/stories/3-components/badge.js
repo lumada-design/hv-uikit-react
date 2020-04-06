@@ -26,6 +26,11 @@ storiesOf("Components", module).add("Badge", () => <HvBadge />, {
       title: "4. With Button controller",
       description: "Badges update and grow according to their content.",
       src: "components/badge/badgeControlled.js"
+    },
+    {
+      title: "5. With tabs",
+      description: "Badges applied to Tabs component.",
+      src: "components/badge/badgeWithTabs.js"
     }
   ]
 });

@@ -247,8 +247,8 @@ class Wrapper extends React.Component {
     const { pageSize, sorted } = this.state;
 
     const labels = {
-      titleText: "This is a Title",
-      subtitleText: "This is a Subtitle"
+      titleText: "This is a title",
+      subtitleText: "This is a subtitle"
     };
 
     return (
@@ -262,6 +262,7 @@ class Wrapper extends React.Component {
         labels={labels}
         subElementTemplate={this.subElementTemplate}
         onPageSizeChange={this.onPageSizeChange}
+        rowCount={data.length}
       />
     );
   }

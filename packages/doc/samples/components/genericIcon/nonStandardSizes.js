@@ -1,23 +1,11 @@
 import React from "react";
-import { CheckboxCheck } from "@hv/uikit-react-icons/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
-import classnames from "classnames";
+import CheckboxCheck from "@hv/uikit-react-icons/dist/CheckboxCheck";
 
-const styles = {
-  containerSize: {
-    "&.override": {
-      height: "210px",
-      width: "210px"
-    }
-  }
-};
-
-const StyledIcon = withStyles(styles)(({ classes }) => (
+export default (
   <CheckboxCheck
-    className={classnames(classes.containerSize, "override")}
     height="200"
     width="200"
+    role="presentation"
+    boxStyles={{ width: 240, height: 240 }}
   />
-));
-
-export default <StyledIcon />;
+);

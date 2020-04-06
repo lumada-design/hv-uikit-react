@@ -844,6 +844,11 @@ exports[`Custom Pagination should render correctly 1`] = `
                 "pageSizeSelectorDescription": "Select how many to display",
                 "pagesIndeterminate": "Many",
                 "pagesSeparator": "of",
+                "paginationFirstPageTitle": "First page",
+                "paginationInputLabel": "Page input",
+                "paginationLastPageTitle": "Last page",
+                "paginationNextPageTitle": "Next page",
+                "paginationPreviousPageTitle": "Previous page",
               }
             }
             page={2}
@@ -1010,6 +1015,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   className="HvPagination-iconContainer"
                   disabled={false}
                   onClick={[Function]}
+                  title="First page"
                 >
                   <ForwardRef(IconButton)
                     className="HvPagination-iconContainer"
@@ -1028,6 +1034,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                     disabled={false}
                     onClick={[Function]}
+                    title="First page"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
                       centerRipple={true}
@@ -1035,6 +1042,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       disabled={false}
                       focusRipple={true}
                       onClick={[Function]}
+                      title="First page"
                     >
                       <ForwardRef(ButtonBase)
                         centerRipple={true}
@@ -1050,6 +1058,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        title="First page"
                       >
                         <button
                           className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -1067,6 +1076,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           onTouchMove={[Function]}
                           onTouchStart={[Function]}
                           tabIndex={0}
+                          title="First page"
                           type="button"
                         >
                           <span
@@ -1117,6 +1127,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   className="HvPagination-iconContainer"
                   disabled={false}
                   onClick={[Function]}
+                  title="Previous page"
                 >
                   <ForwardRef(IconButton)
                     className="HvPagination-iconContainer"
@@ -1135,6 +1146,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                     disabled={false}
                     onClick={[Function]}
+                    title="Previous page"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
                       centerRipple={true}
@@ -1142,6 +1154,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       disabled={false}
                       focusRipple={true}
                       onClick={[Function]}
+                      title="Previous page"
                     >
                       <ForwardRef(ButtonBase)
                         centerRipple={true}
@@ -1157,6 +1170,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        title="Previous page"
                       >
                         <button
                           className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -1174,6 +1188,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           onTouchMove={[Function]}
                           onTouchStart={[Function]}
                           tabIndex={0}
+                          title="Previous page"
                           type="button"
                         >
                           <span
@@ -1354,6 +1369,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   className="HvPagination-iconContainer"
                   disabled={false}
                   onClick={[Function]}
+                  title="Next page"
                 >
                   <ForwardRef(IconButton)
                     className="HvPagination-iconContainer"
@@ -1372,6 +1388,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                     disabled={false}
                     onClick={[Function]}
+                    title="Next page"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
                       centerRipple={true}
@@ -1379,6 +1396,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       disabled={false}
                       focusRipple={true}
                       onClick={[Function]}
+                      title="Next page"
                     >
                       <ForwardRef(ButtonBase)
                         centerRipple={true}
@@ -1394,6 +1412,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        title="Next page"
                       >
                         <button
                           className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -1411,6 +1430,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           onTouchMove={[Function]}
                           onTouchStart={[Function]}
                           tabIndex={0}
+                          title="Next page"
                           type="button"
                         >
                           <span
@@ -1461,6 +1481,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   className="HvPagination-iconContainer"
                   disabled={false}
                   onClick={[Function]}
+                  title="Last page"
                 >
                   <ForwardRef(IconButton)
                     className="HvPagination-iconContainer"
@@ -1479,6 +1500,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                     disabled={false}
                     onClick={[Function]}
+                    title="Last page"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
                       centerRipple={true}
@@ -1486,6 +1508,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       disabled={false}
                       focusRipple={true}
                       onClick={[Function]}
+                      title="Last page"
                     >
                       <ForwardRef(ButtonBase)
                         centerRipple={true}
@@ -1501,6 +1524,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        title="Last page"
                       >
                         <button
                           className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -1518,6 +1542,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           onTouchMove={[Function]}
                           onTouchStart={[Function]}
                           tabIndex={0}
+                          title="Last page"
                           type="button"
                         >
                           <span

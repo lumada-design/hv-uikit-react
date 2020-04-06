@@ -2393,7 +2393,6 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 Symbol(mui.nested): false,
               }
             }
-            value=""
           >
             <div
               className="HvDatePicker-datePickerContainer"
@@ -2412,7 +2411,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                   readOnly={true}
                   tabIndex={-1}
                   type="text"
-                  value="5 Jan, 2019 - 10 Jan, 2019"
+                  value="5 Jan 2019 - 10 Jan 2019"
                 />
                 <WithStyles(Calendar)
                   className="HvDatePicker-icon"
@@ -4102,7 +4101,6 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               }
             }
             disablePortal={true}
-            endValue=""
             escapeWithReference={true}
             horizontalPlacement="left"
             labels={
@@ -4118,7 +4116,6 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             locale="en-US"
             rangeMode={false}
             showActions={false}
-            startValue=""
             theme={
               Object {
                 "breakpoints": Object {
@@ -4901,7 +4898,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                   readOnly={true}
                   tabIndex={-1}
                   type="text"
-                  value="1 Jan, 2019"
+                  value="1 Jan 2019"
                 />
                 <WithStyles(Calendar)
                   className="HvDatePicker-icon"
@@ -6611,7 +6608,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               }
             }
             disablePortal={true}
-            endValue=""
             escapeWithReference={true}
             horizontalPlacement="left"
             id="testingDatePicker"
@@ -6628,7 +6624,6 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             locale="en-US"
             rangeMode={false}
             showActions={true}
-            startValue=""
             theme={
               Object {
                 "breakpoints": Object {
@@ -7453,7 +7448,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                   readOnly={true}
                   tabIndex={-1}
                   type="text"
-                  value="5 Jan, 2019"
+                  value="5 Jan 2019"
                 />
                 <WithStyles(Calendar)
                   className="HvDatePicker-icon"
@@ -9137,7 +9132,6 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               }
             }
             disablePortal={true}
-            endValue=""
             escapeWithReference={true}
             horizontalPlacement="left"
             labels={
@@ -9153,7 +9147,6 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             locale="en"
             rangeMode={false}
             showActions={false}
-            startValue=""
             theme={
               Object {
                 "breakpoints": Object {
@@ -9917,7 +9910,6 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 Symbol(mui.nested): false,
               }
             }
-            value=""
           >
             <div
               className="HvDatePicker-datePickerContainer"
