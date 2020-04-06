@@ -50,7 +50,7 @@ does not switch when is clicked any label of disabled element
     Checkbox Should Be Selected         ${switch} input
 
 switch to Off when checkbox is focused and is pressed SPACE
-    [Tags]    keyboard
+    [Tags]    keyboard    bug-infrastructure-ie
     Go To                              ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--default
     Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input

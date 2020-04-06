@@ -7,12 +7,12 @@ Suite Teardown    Close Browser
 Force Tags        smoke
 
 *** Variables ***
-${cardsSelector}      css:div[id*='Card_id'][class*='MuiCard-root']
+${cardsSelector}      css:div[id*='Card_id'][class*='HvCard-root']
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
-${dropdownHeader}     sort_hv-assetinventory-header
-${sortTitleDesc}      sort_hv-assetinventory-values-list-item-1
-${nextPage}           hv-assetinventory-nextPage-button
-${prevPage}           hv-assetinventory-previousPage-button
+${dropdownHeader}     id:sort_hv-assetinventory-header
+${sortTitleDesc}      id:sort_hv-assetinventory-values-list-item-1
+${nextPage}           id:hv-assetinventory-nextPage-button
+${prevPage}           id:hv-assetinventory-previousPage-button
 ${pageSizeChange}     css:select[id|='hv-assetinventory-pageSize']
 ${firstCheckbox}      css:input[value='id_0']
 ${searchBox}          css:input[type='text']

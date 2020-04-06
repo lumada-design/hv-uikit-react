@@ -15,16 +15,19 @@ don't was possible use selenium keywords for table because this component don't 
 
 *** Test Cases ***
 sort column by ascending when header is clicked and column is not sorted
+    [Tags]    bug-infrastructure-ie
     elements text should be              ${priority_cells}    Priority,Critical,Critical,High,Critical,Medium,Critical,High,Critical,Low,Medium
     Click Element                        ${column7_header}
     elements text should be              ${priority_cells}    Priority,Critical,Critical,Critical,Critical,Critical,Critical,Critical,High,High,High
 
 sort column by ascending when header is clicked and column is sorted by descending
+    [Tags]    bug-infrastructure-ie
     elements text should be              ${title_cells}       Title,Event 12,Event 11,Event 10,Event 9,Event 8,Event 7,Event 6,Event 5,Event 4,Event 3
     Click Element                        ${column1_header}
     elements text should be              ${title_cells}       Title,Event 1,Event 1,Event 2,Event 3,Event 4,Event 5,Event 6,Event 7,Event 8,Event 9
 
 sort column by descending when header is clicked and column is sorted by ascending
+    [Tags]    bug-infrastructure-ie
     Click Element                        ${column1_header}
     elements text should be              ${title_cells}       Title,Event 1,Event 1,Event 2,Event 3,Event 4,Event 5,Event 6,Event 7,Event 8,Event 9
     Click Element                        ${column1_header}
@@ -61,6 +64,7 @@ keep same data sort when pagination is moved to previous page
     elements text should be      ${title_cells}       Title,Event 1,Event 1,Event 2,Event 3,Event 4
     
 do not sort a column when column is not sortable
+    [Tags]    bug-infrastructure-ie
     elements text should be    ${priority_cells}    Priority,Critical,Critical,High,Critical,Medium,Critical,High,Critical,Low,Medium
     Click Element              ${column8_header}
     elements text should be    ${priority_cells}    Priority,Critical,Critical,High,Critical,Medium,Critical,High,Critical,Low,Medium

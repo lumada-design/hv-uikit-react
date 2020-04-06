@@ -4,15 +4,15 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke    bug-infrastructure-ie
 
 *** Variables ***
 ${input}        css:input
 ${select}       css:select
-${first}        //button[span/div[contains(@class,'Start')]]
-${previous}     //button[span/div[contains(@class,'Backwards')]]
-${next}         //button[span/div[contains(@class,'Forwards')]]
-${last}         //button[span/div[contains(@class,'End')]]
+${first}        //button[span/div[contains(@class,'HvStartIcon')]]
+${previous}     //button[span/div[contains(@class,'HvBackwardsIcon')]]
+${next}         //button[span/div[contains(@class,'HvForwardsIcon')]]
+${last}         //button[span/div[contains(@class,'HvEndIcon')]]
 
 *** Test Cases ***
 check default disabled previous/first page

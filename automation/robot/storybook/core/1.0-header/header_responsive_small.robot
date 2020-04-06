@@ -1,17 +1,17 @@
 *** Setting ***
-Variables                                             ../../_resources/storybook_variables.yaml
-Resource                                              ../../_resources/storybook_keywords.robot
-Library                                               SeleniumLibrary
-Suite Setup                                           open storybook on small size
-Suite Teardown                                        Close Browser
-Force Tags                                            smoke
-Documentation                                         https://github.com/pentaho/hv-uikit-react/issues/831
+Variables          ../../_resources/storybook_variables.yaml
+Resource           ../../_resources/storybook_keywords.robot
+Library            SeleniumLibrary
+Suite Setup        open storybook on small size
+Suite Teardown     Close Browser
+Force Tags         smoke
+Documentation      https://github.com/pentaho/hv-uikit-react/issues/831
 
 
 *** Variable ***
-${navButton}                                          css:div[class|='DeprecatedComponent-navButton']
-
-
+${navButton}          css:[role=button]
+${optionAnalytics}    xpath:(//li[contains(.,'Analytics')]/div)[1]
+${navBackIcon}        css:div[class='HvVerticalNavigationTitle-navIcon']
 
 
 *** Test Cases ***
@@ -28,9 +28,9 @@ navigate to submenu and then close
     Go To                                                   ${STORYBOOK_URL}/iframe.html?id=coreheader--header1
     Wait Until Element Is Enabled                           ${navButton}                                           7s
     Click Element                                           ${navButton}
-    Wait Until Element Is Enabled                           (//li[contains(.,'Analytics')]/div)[1]                 2s
+    Wait Until Element Is Enabled                           ${optionAnalytics}                                     2s
     Page Should Not Contain                                 Model Effectiveness
-    Click Element                                           (//li[contains(.,'Analytics')]/div)[1]
+    Click Element                                           ${optionAnalytics}
     Wait Until Page Contains                                Model Effectiveness                                    2s
     Click Element                                           ${navButton}
     Wait Until Page Does Not Contain                        Analytics                                              2s
@@ -39,15 +39,15 @@ navigate to submenu clicking on item label
     Go To                                                   ${STORYBOOK_URL}/iframe.html?id=coreheader--header1
     Wait Until Element Is Enabled                           ${navButton}                                           7s
     Click Element                                           ${navButton}
-    Wait Until Element Is Enabled                           //p[text()='Analytics']                                2s
-    Click Element                                           //p[text()='Analytics']
+    Wait Until Element Is Enabled                           xpath://p[text()='Analytics']                          2s
+    Click Element                                           xpath://p[text()='Analytics']
     Wait Until Page Contains                                Model Effectiveness                                    2s
 
 navigate back from submenu clicking on title label
-    navigate back from submenu clicking on                  css:div[class|='Title-titleContainer']>p
+    navigate back from submenu clicking on                  xpath://p[text()='Analytics']
 
 navigate back from submenu clicking on title icon
-    navigate back from submenu clicking on                  css:div[class|='Title-titleContainer']>div
+    navigate back from submenu clicking on                  ${navBackIcon}
 
 *** Keywords ***
 open storybook on small size
@@ -59,8 +59,8 @@ navigate back from submenu clicking on
     Go To                                                   ${STORYBOOK_URL}/iframe.html?id=coreheader--header1
     Wait Until Element Is Enabled                           ${navButton}                                           7s
     Click Element                                           ${navButton}
-    Wait Until Element Is Enabled                           (//li[contains(.,'Analytics')]/div)[1]                 2s
-    Click Element                                           (//li[contains(.,'Analytics')]/div)[1]
+    Wait Until Element Is Enabled                           ${optionAnalytics}                                     2s
+    Click Element                                           ${optionAnalytics}
     Wait Until Element Is Enabled                           ${locator}                                             2s
     Click Element                                           ${locator}
     Wait Until Page Contains                                Overview                                               2s

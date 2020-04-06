@@ -1,6 +1,6 @@
 dropdown:        css:[role=combobox]
 listBox:         css:ul[role='listbox']
-searchInput:     css:input[id$='search-input']
+searchInput:     css:div[class*='HvDropdownList-searchContainer'] input
 selectAll:       css:input[id*='select-all']
 buttonApply:     css:button[id*=apply]
 buttonCancel:    css:button[id*=cancel]

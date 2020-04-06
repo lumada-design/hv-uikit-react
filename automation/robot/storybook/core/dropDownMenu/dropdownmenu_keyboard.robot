@@ -1,12 +1,12 @@
 *** Setting ***
-Resource                                                                      ../../_resources/storybook_keywords.robot
-Resource                                                                      keywords.robot
-Library                                                                       SeleniumLibrary
-Variables                                                                     ../../_resources/storybook_variables.yaml
-Variables                                                                     variables.yaml
-Suite Setup                                                                   open storybook
-Suite Teardown                                                                Close Browser
-Force Tags                                                                    smoke                                        keyboard
+Resource          ../../_resources/storybook_keywords.robot
+Resource          keywords.robot
+Library           SeleniumLibrary
+Variables         ../../_resources/storybook_variables.yaml
+Variables         variables.yaml
+Suite Setup       open storybook
+Suite Teardown    Close Browser
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 
 
 *** Test Cases ***
