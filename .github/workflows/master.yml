@@ -64,7 +64,17 @@ jobs:
       - name: Run Storybook
         uses: ./.github/storybook
 
-      - name: Run Robot
+      - name: Run PA11Y Robot
+        shell: cmd
+        run: >-
+          robot 
+          --variable STORYBOOK_URL:http://localhost:9002 
+          --include pa11y 
+          --report reports/report.html
+          --log reports/log.html 
+          automation\robot\storybook\core
+
+      - name: Run SELENIUM Robot
         shell: cmd
         run: >-
           robot 
