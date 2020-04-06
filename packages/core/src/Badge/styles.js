@@ -17,7 +17,6 @@
 const styles = theme => ({
   root: {
     position: "relative",
-    height: `${theme.hv.spacing.md}px`,
     "&>*": { float: "left" }
   },
   badgeContainer: {
