@@ -4,7 +4,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke       bug-infrastructure-ie
 
 *** Variables ***
 ${input}          css:input[type=text]
@@ -40,7 +40,6 @@ show clear button when input has a text and is focused
     Wait Until Element Is Visible    ${inputClear}    2s
 
 don't show clear button when input cleaned/empty and is focused
-    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreinput--inputsimple
     Wait Until Element Is Enabled    ${input}         10s
     Click Element                    ${input}
