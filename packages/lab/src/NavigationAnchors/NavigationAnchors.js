@@ -1,11 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-
-import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import { Drawer, List, ListItem, ListItemText, withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 const RETRY_MAX = 5;
 
@@ -215,4 +212,4 @@ NavigationAnchors.defaultProps = {
   scrollElementId: ""
 };
 
-export default NavigationAnchors;
+export default withStyles(styles, { name: "HvNavigationAnchors" })(NavigationAnchors);

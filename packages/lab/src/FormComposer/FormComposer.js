@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes, { shape } from "prop-types";
-
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import { withStyles } from "@material-ui/core";
+import { HvTypography } from "@hv/uikit-react-core/dist";
 import HvNavigationAnchors from "../NavigationAnchors";
+import styles from "./styles";
 
 class HvFormComposer extends React.Component {
   constructor(props) {
@@ -170,4 +171,4 @@ HvFormComposer.defaultProps = {
   footerContent: []
 };
 
-export default HvFormComposer;
+export default withStyles(styles, { name: "HvFormComposer" })(HvFormComposer);

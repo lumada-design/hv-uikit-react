@@ -2,8 +2,7 @@ import React from "react";
 import { mount } from "enzyme/build";
 import moment from "moment-timezone";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import HvNotificationPanelWithStyles from "../index";
-import HvNotificationPanel from "../NotificationPanel";
+import HvNotificationPanel from "..";
 import Notification from "../Notification";
 
 Date.now = jest.fn(() => 1561396490043);
@@ -47,7 +46,7 @@ describe("Hv NotificationPanel", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <HvNotificationPanelWithStyles {...baseProps} />
+          <HvNotificationPanel {...baseProps} />
         </HvProvider>
       );
     });
@@ -58,7 +57,7 @@ describe("Hv NotificationPanel", () => {
 
     it("mandatory and default properties are defined and received by child components", () => {
       const { open, icon, header, notifications, footer } = wrapper
-        .find(HvNotificationPanel)
+        .find("HvNotificationPanel")
         .instance().props;
 
       expect(open).toBe(false);
@@ -82,7 +81,7 @@ describe("Hv NotificationPanel", () => {
     });
 
     it("should open and close panel correctly", () => {
-      const notificationPanel = wrapper.find(HvNotificationPanel);
+      const notificationPanel = wrapper.find("HvNotificationPanel");
       const instance = notificationPanel.instance();
 
       expect(instance.state.open).toBe(false);
@@ -97,7 +96,7 @@ describe("Hv NotificationPanel", () => {
     });
 
     it("should close panel correctly", () => {
-      const notificationPanel = wrapper.find(HvNotificationPanel);
+      const notificationPanel = wrapper.find("HvNotificationPanel");
       const instance = notificationPanel.instance();
 
       expect(instance.state.open).toBe(false);

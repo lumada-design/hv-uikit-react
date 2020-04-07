@@ -1,9 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import { HvTypography } from "@hv/uikit-react-core/dist";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
 const HvFooter = props => {
-  const { classes, labelLeftName, labelRightName } = props;
+  const {
+    classes,
+    labelLeftName = "Hitachi Vantara",
+    labelRightName = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`
+  } = props;
 
   return (
     <div className={classes.root}>
@@ -35,9 +41,4 @@ HvFooter.propTypes = {
   labelRightName: PropTypes.string
 };
 
-HvFooter.defaultProps = {
-  labelLeftName: "Hitachi Vantara",
-  labelRightName: `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`
-};
-
-export default HvFooter;
+export default withStyles(styles, { name: "HvFooter" })(HvFooter);

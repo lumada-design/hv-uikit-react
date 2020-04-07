@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import _ from "lodash";
-import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import map from "lodash/map";
+import { withStyles } from "@material-ui/core";
+import { HvBadge } from "@hv/uikit-react-core/dist";
 import Panel from "./Panel";
 import Notification from "./Notification";
+import styles from "./styles";
 
-export default class NotificationPanel extends Component {
+class HvNotificationPanel extends Component {
   constructor(props) {
     super(props);
 
@@ -38,7 +40,7 @@ export default class NotificationPanel extends Component {
     const { classes, icon, header, footer, notifications } = this.props;
     const { open } = this.state;
 
-    const n = _.map(notifications, notification => (
+    const n = map(notifications, notification => (
       <Notification key={notification.id} notification={notification} />
     ));
 
@@ -75,7 +77,7 @@ export default class NotificationPanel extends Component {
   }
 }
 
-NotificationPanel.propTypes = {
+HvNotificationPanel.propTypes = {
   /**
    * 'true' if panel is open or 'false' if the panel is not open
    */
@@ -127,6 +129,8 @@ NotificationPanel.propTypes = {
   footer: PropTypes.element.isRequired
 };
 
-NotificationPanel.defaultProps = {
+HvNotificationPanel.defaultProps = {
   open: false
 };
+
+export default withStyles(styles, { name: "HvHvNotificationPanel" })(HvNotificationPanel);
