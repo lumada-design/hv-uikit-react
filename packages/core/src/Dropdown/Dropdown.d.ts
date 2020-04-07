@@ -71,12 +71,18 @@ export interface HvDropdownProps
    * If ´true´, selection can be toggled when single selection.
    */
   singleSelectionToggle?: boolean;
+  /**
+   * Placement of the dropdown.
+   */
+  placement: "left" | "right";
 }
 
 export type HvDropdownClassKey =
   | "root"
   | "rootOpen"
   | "rootDisabled"
+  | "rootList"
+  | "list"
   | "label"
   | "header"
   | "selection"

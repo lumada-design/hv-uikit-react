@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { Switch, withStyles } from "@material-ui/core";
-import CheckMark from "@hv/uikit-react-icons/dist/Good";
+import CheckMark from "@hv/uikit-react-icons/dist/CompletedStep";
 import { setId, isKeypress, KeyboardCodes } from "../utils";
 import withLabels from "../withLabels";
 import HvTypography from "../Typography";
@@ -67,7 +67,7 @@ const HvSwitch = props => {
     </div>
   );
 
-  const checkedIcon = <CheckMark width="12px" height="12px" className={classes.checkedIcon} />;
+  const checkedIcon = <CheckMark width="14px" height="14px" className={classes.checkedIcon} />;
 
   return (
     <div className={clsx(classes.root, className)}>

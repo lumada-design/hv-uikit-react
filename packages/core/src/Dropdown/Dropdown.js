@@ -301,7 +301,15 @@ HvDropdown.propTypes = {
     /**
      * Styles applied when the selection is disabled.
      */
-    selectionDisabled: PropTypes.string
+    selectionDisabled: PropTypes.string,
+    /**
+     * Styles applied when the selection is disabled.
+     */
+    list: PropTypes.string,
+    /**
+     * Styles applied when the selection is disabled.
+     */
+    rootList: PropTypes.string
   }).isRequired,
   /**
    * The list to be rendered by the dropdown.

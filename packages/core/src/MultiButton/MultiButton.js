@@ -74,27 +74,27 @@ const MultiButton = ({
   };
 
   const renderButton = (button, idx) => {
-    const isSelected = checkedItems.indexOf(button.id) !== -1;
+    const { id: bId, icon, selected, value, ...other } = button;
+    const isSelected = checkedItems.indexOf(bId) !== -1;
 
-    const icon =
-      button.icon && type === "mixed"
-        ? React.cloneElement(button.icon, { className: classes.icon })
-        : button.icon;
+    const iconButton =
+      icon && type === "mixed" ? React.cloneElement(icon, { className: classes.icon }) : icon;
 
     return (
       <HvButton
         key={`btnkey_${idx + 1}`}
-        id={button.id}
+        id={bId}
         onClick={event => handleClick(event, idx)}
         className={clsx(classes.button, {
           [classes.isSelected]: isSelected,
           [classes.isUnselected]: !isSelected
         })}
-        category={button.selected ? "secondary" : "ghost"}
-        aria-label={button.value}
+        category={selected ? "secondary" : "ghost"}
+        aria-label={value}
+        {...other}
       >
-        {type !== "text" && icon}
-        <div className={classes.labelText}>{button.value}</div>
+        {type !== "text" && iconButton}
+        <div className={classes.labelText}>{value}</div>
       </HvButton>
     );
   };
@@ -194,11 +194,7 @@ MultiButton.propTypes = {
       /**
        * Specify if item can be toggled or not.
        */
-      enforced: PropTypes.bool,
-      /**
-       * Values to be passed onto the button.
-       */
-      buttonProps: PropTypes.object
+      enforced: PropTypes.bool
     })
   ).isRequired,
   /**

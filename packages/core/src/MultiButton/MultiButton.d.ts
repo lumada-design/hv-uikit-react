@@ -1,7 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvButtonProps } from "../Button";
 
-export interface MultiButtonData {
+export interface MultiButtonData extends HvButtonProps {
   id: string;
   value?: string;
   icon?: React.ReactNode;

@@ -20,7 +20,7 @@ export interface NavigationData {
   data?: NavigationData[];
 }
 
-export interface HvVerticalNavigationProps
+export interface HvVerticalNavigationNavigationProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvNavigationClassKey, "onClick"> {
   /**
    * Label.
@@ -49,5 +49,5 @@ export interface HvVerticalNavigationProps
 export type HvNavigationClassKey = "root";
 
 export default function HvVerticalNavigationNavigation(
-  props: HvVerticalNavigationProps
+  props: HvVerticalNavigationNavigationProps
 ): JSX.Element | null;
