@@ -10,9 +10,9 @@ Default Tags                          smoke
 *** Variables ***
 ${1stRadioButton}         id:hv-radiobutton-1-input
 ${2ndRadioButton}         id:hv-radiobutton-2-input
-${radioSelected}          css:div[class*='HvRadioButtonSelected']
-${radioNotSelected}       css:div[class*='HvRadioButtonUnselected']
-${1stRadioButtonLabel}    css:#hv-radiobutton-1>span:nth-of-type(2)
+${radioSelected}          css:div[class^='HvRadioButtonSelectedIcon']
+${radioNotSelected}       css:div[class^='HvRadioButtonUnselectedIcon']
+${1stRadioButtonLabel}    css:span[class='HvRadio-labelTypography']
 
 
 *** Test Cases ***

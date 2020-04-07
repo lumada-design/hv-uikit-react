@@ -44,52 +44,13 @@ jobs:
           name: storybook
           path: automation/storybook/dist
 
-  Robot pa11y:
-    needs: Build
-    runs-on: [self-hosted, Windows]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: install pa11y
-        working-directory: ./automation/robot
-        run: npm i
-
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v1
-        with:
-          name: storybook
-          path: .github/storybook/www
-
-      - name: Run Storybook
-        uses: ./.github/storybook
-
-      - name: Run SELENIUM Robot
-        shell: cmd
-        run: >-
-          robot
-          --variable STORYBOOK_URL:http://localhost:9002
-          --include pa11y
-          --outputdir reports
-          --report report.html
-          --log log.html
-          storybook\core
-
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: pa11y-reports
-          path: reports
-
   Robot:
     needs: Build
     runs-on: [self-hosted, Windows]
     strategy:
       fail-fast: false
       matrix:
-        browser: [firefox, ie, chrome]
+        browser: [ie]
 
     steps:
       - name: Checkout
