@@ -7,6 +7,11 @@ export interface PaginationLabelsProp {
   pageSizeSelectorDescription: string;
   pagesSeparator: string;
   pagesIndeterminate: string;
+  paginationFirstPageTitle: string;
+  paginationPreviousPageTitle: string;
+  paginationNextPageTitle: string;
+  paginationLastPageTitle: string;
+  paginationInputLabel: string;
 }
 
 export interface HvPaginationProps

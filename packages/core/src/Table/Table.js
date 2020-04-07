@@ -734,7 +734,15 @@ Table.propTypes = {
     /**
      * Styles applied to the component checkbox text.
      */
-    checkBoxText: PropTypes.string
+    checkBoxText: PropTypes.string,
+    /**
+     * Styles applied to the component table header groups.
+     */
+    trGroups: PropTypes.string,
+    /**
+     * Styles applied to the component table.
+     */
+    table: PropTypes.string
   }).isRequired,
   /**
    * The labels inside the table.
@@ -856,7 +864,7 @@ Table.propTypes = {
    */
   dropdownMenuProps: PropTypes.instanceOf(Object),
   getTableProps: PropTypes.func,
-  tableProps: PropTypes.shape({}),
+  tableProps: PropTypes.instanceOf(Object),
   /**
    * Number of rows available in table to display in aria-rowcount
    */

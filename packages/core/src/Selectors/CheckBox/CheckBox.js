@@ -159,7 +159,8 @@ HvCheckbox.propTypes = {
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    truncate: PropTypes.string
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.

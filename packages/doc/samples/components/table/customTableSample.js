@@ -3,6 +3,8 @@ import moment from "moment";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import orderBy from "lodash/orderBy";
 
+/* eslint-disable */
+
 const start = new Date(2001, 0, 1);
 const end = new Date();
 function randomDate() {

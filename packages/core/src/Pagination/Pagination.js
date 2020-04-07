@@ -287,7 +287,12 @@ Pagination.propTypes = {
     pageSizeEntryName: PropTypes.string,
     pageSizeSelectorDescription: PropTypes.string,
     pagesSeparator: PropTypes.string,
-    pagesIndeterminate: PropTypes.string
+    pagesIndeterminate: PropTypes.string,
+    paginationFirstPageTitle: PropTypes.string,
+    paginationPreviousPageTitle: PropTypes.string,
+    paginationNextPageTitle: PropTypes.string,
+    paginationLastPageTitle: PropTypes.string,
+    paginationInputLabel: PropTypes.string
   }),
   /**
    * Other props to show page component.
