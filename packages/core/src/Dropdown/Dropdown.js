@@ -37,7 +37,6 @@ const DEFAULT_LABELS = {
 };
 
 const DEFAULT_STATE = {
-  isOpen: false,
   selectionLabel: null,
   anchorEl: null,
   values: [],
@@ -56,8 +55,14 @@ const styles = {
   }
 };
 
-const StyledArrowUp = withStyles(styles, { withTheme: true })(ArrowUp);
-const StyledArrowDown = withStyles(styles, { withTheme: true })(ArrowDown);
+const StyledArrowUp = withStyles(styles, {
+  name: "HvDropdownStyledArrowUp",
+  withTheme: true
+})(ArrowUp);
+const StyledArrowDown = withStyles(styles, {
+  name: "HvDropdownStyledArrowDown",
+  withTheme: true
+})(ArrowDown);
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -65,10 +70,11 @@ class Dropdown extends React.Component {
 
     this.ref = React.createRef();
 
-    const { id } = props;
+    const { id, expanded } = props;
 
     this.state = {
       internalId: id || uniqueId("hv-dropdown-"),
+      isOpen: expanded,
       ...DEFAULT_STATE
     };
   }
@@ -121,7 +127,7 @@ class Dropdown extends React.Component {
     )
       return;
 
-    const anchor = evt ? evt.currentTarget : null;
+    const anchor = evt ? evt.currentTarget.parentElement : null;
 
     this.setState({
       isOpen: !isOpen,
@@ -246,13 +252,19 @@ class Dropdown extends React.Component {
       notifyChangesOnFirstRender,
       disablePortal,
       hasTooltips,
-      singleSelectionToggle
+      singleSelectionToggle,
+      classes,
+      placement
     } = this.props;
     const { isOpen, values, labels, anchorEl, internalId } = this.state;
 
     return (
       <List
         id={`${internalId}-values`}
+        classes={{
+          rootList: classes.rootList,
+          list: classes.list
+        }}
         values={values}
         multiSelect={multiSelect}
         showSearch={showSearch}
@@ -267,6 +279,7 @@ class Dropdown extends React.Component {
         isOpen={isOpen}
         anchorEl={anchorEl}
         singleSelectionToggle={singleSelectionToggle}
+        placement={placement}
       />
     );
   }
@@ -449,7 +462,11 @@ Dropdown.propTypes = {
   /**
    * If ´true´, selection can be toggled when single selection.
    */
-  singleSelectionToggle: PropTypes.bool
+  singleSelectionToggle: PropTypes.bool,
+  /**
+   * Placement of the dropdown.
+   */
+  placement: PropTypes.oneOf(["left", "right"])
 };
 
 Dropdown.defaultProps = {
@@ -468,7 +485,8 @@ Dropdown.defaultProps = {
   theme: null,
   disablePortal: false,
   hasTooltips: false,
-  singleSelectionToggle: true
+  singleSelectionToggle: true,
+  placement: undefined
 };
 
 export default Dropdown;

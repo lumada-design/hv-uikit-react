@@ -20,6 +20,7 @@ unable to select a disabled option when click on it
     Page Should Contain Element            ${iconChecked}         limit=1
 
 select all options when clicking in header option 'all'
+    [Tags]    bug-infrastructure-ie
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
@@ -44,6 +45,7 @@ show 'all' in header option when is selected all options one by one
     Element Text Should Be                 ${headerItemLabel}     5 of 5
 
 remove list indeterminate state when click in header option 'all' and list is in indeterminate state
+    [Tags]    bug-infrastructure-ie
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1

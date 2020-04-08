@@ -9,6 +9,7 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
+
 jobs:
   Build:
     runs-on: [self-hosted, Linux]
@@ -49,7 +50,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [firefox, ie, chrome]
+        browser: [ie]
 
     steps:
       - name: Checkout
@@ -64,18 +65,18 @@ jobs:
       - name: Run Storybook
         uses: ./.github/storybook
 
-      - name: Run Robot
+      - name: Run SELENIUM Robot
         shell: cmd
-        run: >-
-          robot 
-          --variable STORYBOOK_URL:http://localhost:9002 
-          --variable BROWSER:${{ matrix.browser }} 
-          --exclude pa11y 
-          --exclude issueORissue-${{ matrix.browser }}ORimage 
-          --exclude bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins
-          --report reports/report.html
-          --log reports/log.html 
-          automation\robot\storybook\core
+        run: |
+          robot --variable STORYBOOK_URL:http://localhost:9002  --variable BROWSER:${{ matrix.browser }} --exclude classORbug-infrastructure-${{ matrix.browser }} --exclude pa11y --exclude issueORissue-${{ matrix.browser }}ORimage --exclude bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins --outputdir reports --output firstRun.xml --report NONE --log NONE automation\robot\storybook\core
+          rebot --outputdir reports --output output.xml reports\firstRun.xml
+
+      - name: ReRun SELENIUM Robot Failed
+        if: failure()
+        shell: cmd
+        run: |
+          robot --rerunfailed reports\firstRun.xml --variable STORYBOOK_URL:http://localhost:9002 --variable BROWSER:${{ matrix.browser }} --outputdir reports --output secondRun.xml --report NONE --log NONE automation\robot\storybook\core
+          rebot --outputdir reports --output output.xml --merge reports\firstRun.xml reports\secondRun.xml
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
@@ -116,5 +117,3 @@ jobs:
             } else {
               console.log('Last commit already released.')
             }
-
-            

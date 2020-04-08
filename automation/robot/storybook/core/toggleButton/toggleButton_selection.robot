@@ -21,7 +21,7 @@ change the state to closed and opened when toggle button is clicked 2 times
     Element Attribute Value Should Be    ${toggleButton}    title           Open       
 
 change state when toggle button is focused and is pressed ENTER
-    [Tags]    Keyboard
+    [Tags]    Keyboard    bug-infrastructure-ie
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coretogglebutton--sample1
     Wait Until Element Is Visible        ${toggleButton}    10s
     Element Attribute Value Should Be    ${toggleButton}    title    Open
@@ -31,7 +31,7 @@ change state when toggle button is focused and is pressed ENTER
     Element Attribute Value Should Be    ${toggleButton}    title    Open
 
 change state when toggle button is focused and is pressed SPACE
-    [Tags]    Keyboard
+    [Tags]    Keyboard    bug-infrastructure-ie
     Go To                                ${STORYBOOK_URL}/iframe.html?id=coretogglebutton--sample1
     Wait Until Element Is Visible        ${toggleButton}    10s
     Element Attribute Value Should Be    ${toggleButton}    title    Open
@@ -42,4 +42,4 @@ change state when toggle button is focused and is pressed SPACE
 
 
 *** Variables *** 
-${toggleButton}     css:[class^=ToggleButton-root][role=button]
+${toggleButton}     css:[class^=HvToggleButton-root][role=button]

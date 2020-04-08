@@ -36,7 +36,8 @@ const DEFAULT_LABELS = {
   selectFilesText: "Select files",
   dropFilesText: "Drop files here",
   fileSizeError: "The file exceeds the maximum upload size",
-  fileTypeError: "File type not allowed for upload"
+  fileTypeError: "File type not allowed for upload",
+  removeFileButtonLabel: "removeFileButtonLabel"
 };
 
 const fileList = [
@@ -77,7 +78,7 @@ const compProps = {
 describe("DropzoneA11Y", () => {
   it("default state", async () => {
     wrapper = setupComponent(compProps);
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
 
     expect(results).toHaveNoViolations();
   });

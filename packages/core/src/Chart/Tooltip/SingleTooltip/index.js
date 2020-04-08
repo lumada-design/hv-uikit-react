@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import SingleTooltip from "./SingleTooltip";
 
-export default withStyles(styles, { withTheme: true })(SingleTooltip);
+export default withStyles(styles, { name: "HvChartSingleTooltip", withTheme: true })(SingleTooltip);

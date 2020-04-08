@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Suite Setup       open storybook button page
 Suite Teardown    Close Browser
 Test Template     Test there is no state transition on click a focused button
-Force Tags        smoke    bug-edge-webdriver
+Force Tags        smoke    bug-edge-webdriver    bug-infrastructure-ie
 
 *** Comments ***
 bug-edge-webdriver  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16448300/

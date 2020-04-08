@@ -27,10 +27,22 @@ const styles = () => ({
   }
 });
 
-const StyledLevel0 = withStyles(styles, { withTheme: true })(Level0);
-const StyledLevel3 = withStyles(styles, { withTheme: true })(Level3);
-const StyledLevel4 = withStyles(styles, { withTheme: true })(Level4);
-const StyledLevel5 = withStyles(styles, { withTheme: true })(Level5);
+const StyledLevel0 = withStyles(styles, {
+  name: "HvModalTitleLevel0",
+  withTheme: true
+})(Level0);
+const StyledLevel3 = withStyles(styles, {
+  name: "HvModalTitleLevel3",
+  withTheme: true
+})(Level3);
+const StyledLevel4 = withStyles(styles, {
+  name: "HvModalTitleLevel4",
+  withTheme: true
+})(Level4);
+const StyledLevel5 = withStyles(styles, {
+  name: "HvModalTitleLevel5",
+  withTheme: true
+})(Level5);
 
 /**
  * Icon mapping.
@@ -41,7 +53,7 @@ export const variantIcon = Object.freeze({
   success: () => <StyledLevel0 iconSize="M" semantic="sema1" />,
   warning: () => <StyledLevel4 iconSize="M" semantic="sema5" />,
   error: () => <StyledLevel5 iconSize="M" semantic="sema6" />,
-  info: () => <StyledLevel3 iconSize="M" semantic="sema4"  />
+  info: () => <StyledLevel3 iconSize="M" semantic="sema4" />
 });
 
 export const severityIcon = (severity, theme) => {

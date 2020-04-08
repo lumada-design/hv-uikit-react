@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import Brand from "./Brand";
 
-export default withStyles(styles, { withTheme: true })(Brand);
+export default withStyles(styles, { name: "HvNewHeaderBrand", withTheme: true })(Brand);

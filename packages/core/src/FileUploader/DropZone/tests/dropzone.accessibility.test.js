@@ -77,7 +77,7 @@ const compProps = {
 describe("DropzoneA11Y", () => {
   it("default state", async () => {
     wrapper = setupComponent(compProps);
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
 
     expect(results).toHaveNoViolations();
   });
@@ -88,7 +88,7 @@ describe("DropzoneA11Y", () => {
       disabled: true,
       multiple: false
     });
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
 
     expect(results).toHaveNoViolations();
   })

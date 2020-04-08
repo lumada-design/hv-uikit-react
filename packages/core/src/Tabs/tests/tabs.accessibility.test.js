@@ -44,7 +44,8 @@ describe("Tabs A11Y", () => {
   });
 
   it("should render correctly", async () => {
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
+
     expect(results).toHaveNoViolations();
   });
 });

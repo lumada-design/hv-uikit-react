@@ -5,13 +5,12 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 
 *** Test Cases ***
 focus next option when pressing DOWN on option
-    [Tags]    bug-ie-webdriver
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible               ${list}       10s
     set focus and press keys                    ${option1}    DOWN
@@ -21,7 +20,6 @@ focus next option when pressing DOWN on option
     wait until element attribute not contain    ${option2}    class    focused
 
 focus the previous option when pressing UP on option
-    [Tags]    bug-ie-webdriver    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible               ${list}       10s
     set focus and press keys                    ${option5}    UP
@@ -43,7 +41,6 @@ focus the last option when pressing UP on first option
     element attribute value should contain    ${option5}    class    focused
 
 exit focus from list when pressing TAB on option
-    [Tags]    bug-ie-webdriver    
     Go To                                       ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
     Wait Until Element Is Visible               ${list}       10s
     set focus and press keys                    ${option1}    TAB

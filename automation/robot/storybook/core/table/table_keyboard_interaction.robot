@@ -9,12 +9,13 @@ Test Setup        go to url and wait until element is visible
 ...               ${STORYBOOK_URL}/iframe.html?id=coretable--tablecheckbox    ${table}             10s
 Test Teardown     Run Keyword If Test Failed
 ...               Capture Page Screenshot       ${SUITE_NAME}.png
-Force Tags        keyboard
+Force Tags        keyboard    bug-infrastructure-ie
 Documentation     https://www.w3.org/TR/wai-aria-practices/#table
 
 
 *** Test Cases ***
 header tab: change focus to next sortable column header when pressed TAB on column header
+    [Tags]    bug-infrastructure-ie
     set focus and press keys             ${column1_header}                  TAB
     Element Should Be Focused            ${column2_header} [role=button]
     Element Attribute Value Should Be    ${column2_header} [role=button]    tabindex    0

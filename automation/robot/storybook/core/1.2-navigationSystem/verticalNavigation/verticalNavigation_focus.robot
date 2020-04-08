@@ -8,7 +8,7 @@ Suite Setup       open storybook
 Suite Teardown    Close Browser
 Test Setup        go to url and wait until element is visible     ${STORYBOOK_URL}/iframe.html?id=core-new-vertical-navigation--collapsable    ${vnBurger}     10s
 Test Teardown     Run Keyword If Test Failed                      Capture Page Screenshot    ${SUITE_NAME}.png
-Force Tags        smoke
+Force Tags        smoke    bug-infrastructure-ie
 Documentation     Test Cases based on Design System Version 1.2.0
 
 

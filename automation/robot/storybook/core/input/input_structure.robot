@@ -4,16 +4,16 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke       bug-infrastructure-ie
 
 *** Variables ***
 ${input}          css:input[type=text]
 ${inputClear}     css:button[class*="HvInput-iconClear"]
-${label}          input-simple-sample-label
-${description}    input-simple-sample-description
+${label}          id:input-simple-sample-label
+${description}    id:input-simple-sample-description
 ${iconInfo}       css:div[class*="HvInput-infoIconContainer"]
-${iconSuccess}    css:#test div[class*="Success-root"]
-${iconMap}        css:#test div[class*="Map-root"]
+${iconSuccess}    css:#test div[class*="HvSuccessIcon-root"]
+${iconMap}        css:#test div[class*="HvMapIcon-root"]
 
 *** Test Cases ***
 clean text when click on input clear button

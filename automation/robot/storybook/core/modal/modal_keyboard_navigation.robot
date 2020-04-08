@@ -7,7 +7,7 @@ Suite Setup       open storybook     ${STORYBOOK_URL}/iframe.html?id=coremodal--
 Test Setup        Run Keywords       Reload Page
 ...               AND                Wait Until Element Is Enabled    ${buttonWarning}    10s
 Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 
 
 *** Test Cases ***

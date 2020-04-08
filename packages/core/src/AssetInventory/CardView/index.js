@@ -18,4 +18,4 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import CardView from "./CardView";
 
-export default withStyles(styles, { withTheme: true })(CardView);
+export default withStyles(styles, { name: "HvAssetInventoryCardView", withTheme: true })(CardView);

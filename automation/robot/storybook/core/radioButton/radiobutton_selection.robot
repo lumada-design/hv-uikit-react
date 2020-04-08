@@ -4,14 +4,14 @@ Resource                              ../../_resources/storybook_keywords.robot
 Library                               SeleniumLibrary
 Suite Setup                           open storybook
 Suite Teardown                        Close Browser
-Default Tags                          smoke                                
+Default Tags                          smoke
 
 
 *** Variables ***
-${1stRadioButton}         hv-radiobutton-1-input
-${2ndRadioButton}         hv-radiobutton-2-input
-${radioSelected}          css:div[class*='RadioButtonSelected']
-${radioNotSelected}       css:div[class*='RadioButtonUnselected']
+${1stRadioButton}         id:hv-radiobutton-1-input
+${2ndRadioButton}         id:hv-radiobutton-2-input
+${radioSelected}          css:div[class*='HvRadioButtonSelected']
+${radioNotSelected}       css:div[class*='HvRadioButtonUnselected']
 ${1stRadioButtonLabel}    css:#hv-radiobutton-1>span:nth-of-type(2)
 
 
@@ -26,6 +26,7 @@ select radio button by clicking in input
     Element Should not Be Visible        ${radioNotSelected}
 
 select radio button by clicking in label
+    [Tags]    bug-infrastructure-ie
     go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttonlabel
     Wait Until Page Contains Element     ${1stRadioButton}         10s
     Element Should not Be Visible        ${radioSelected}

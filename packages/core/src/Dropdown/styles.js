@@ -85,7 +85,9 @@ const styles = theme => ({
   selectionDisabled: {
     ...theme.hv.typography.placeholderText,
     lineHeight: `${theme.hv.spacing.md}px`
-  }
+  },
+  rootList: {},
+  list: {}
 });
 
 export default styles;

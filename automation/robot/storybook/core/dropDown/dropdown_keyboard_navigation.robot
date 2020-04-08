@@ -4,9 +4,9 @@ Library           SeleniumLibrary
 Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
 Suite Setup       open storybook
-Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4    ${dropdown}    10s
+Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown5    ${dropdown}    10s
 Suite Teardown    Close Browser
-Force Tags        smoke            keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 
  
 *** Test Cases ***

@@ -8,6 +8,7 @@ Force Tags        smoke
 
 *** Test Cases ***
 navigate between levels
+    [Tags]    class    bug-infrastructure-ie
     Go To                               ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled       css:ul[role='listbox']               7s
     Click Element                       //li[contains(.,'Advanced server DS530')]
@@ -24,6 +25,7 @@ navigate between levels
     Wait Until Keyword Succeeds         3    1s    Page Should Contain Element    (//ul[@role='listbox'])[1]/li    limit=4
 
 search on first level
+    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled    css:ul[role='listbox']             7s
     Click Element                    //li[contains(.,'Advanced server DS530')]
@@ -33,6 +35,7 @@ search on first level
     Wait Until Keyword Succeeds      3                                  1     Element Text Should Be    css:ul[role='listbox']>li          Variant X-335
 
 search on 2nd level
+    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
     Wait Until Element Is Enabled    css:ul[role='listbox']               7s
     Click Element                    //li[contains(.,'Advanced server DS530')]

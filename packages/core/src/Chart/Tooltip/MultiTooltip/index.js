@@ -18,4 +18,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "./styles";
 import MultiTooltip from "./MultiTooltip";
 
-export default withStyles(styles, { withTheme: true })(MultiTooltip);
+export default withStyles(styles, {
+  name: "HvChartMultiTooltip",
+  withTheme: true
+})(MultiTooltip);

@@ -77,7 +77,7 @@ describe("BreadcrumbsA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
     expect(results).toHaveNoViolations();
   });
 
@@ -93,7 +93,7 @@ describe("BreadcrumbsA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
     expect(results).toHaveNoViolations();
   });
 
@@ -109,7 +109,7 @@ describe("BreadcrumbsA11Y", () => {
       </HvProvider>
     );
 
-    const results = await axe(wrapper.getDOMNode()[1]);
+    const results = await axe(wrapper.getDOMNode());
     expect(results).toHaveNoViolations();
   });
 });

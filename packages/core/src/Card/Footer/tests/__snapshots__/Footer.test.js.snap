@@ -2,11 +2,11 @@
 
 exports[`Footer should render the actions and the dropdown accordingly 1`] = `
 <div
-  className="Actions-actionContainer-2"
+  className="HvActions-actionContainer-2"
 >
   <HvButton
     category="ghost"
-    className="Actions-button-1"
+    className="HvActions-button-1"
     id="footer1-0-action-view"
     key="footer1-0-action-view"
     onClick={[Function]}
@@ -17,7 +17,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
     aria-label="footer1-more-actions"
     classes={
       Object {
-        "root": "Actions-dropDownMenu-3",
+        "root": "HvActions-dropDownMenu-3",
       }
     }
     dataList={
@@ -40,7 +40,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
     disablePortal={false}
     icon={
       <WithStyles(MoreOptionsVertical)
-        className="Actions-dropDownMenuIcon-4"
+        className="HvActions-dropDownMenuIcon-4"
       />
     }
     keepOpened={false}
@@ -52,13 +52,13 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
 
 exports[`Footer should render the actions and the dropdown accordingly 2`] = `
 <div
-  className="Actions-actionContainer-2"
+  className="HvActions-actionContainer-2"
 >
   <WithStyles(DropDownMenu)
     aria-label="footer2-more-actions"
     classes={
       Object {
-        "root": "Actions-dropDownMenu-3",
+        "root": "HvActions-dropDownMenu-3",
       }
     }
     dataList={
@@ -87,7 +87,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
     disablePortal={false}
     icon={
       <WithStyles(MoreOptionsVertical)
-        className="Actions-dropDownMenuIcon-4"
+        className="HvActions-dropDownMenuIcon-4"
       />
     }
     keepOpened={false}
@@ -99,11 +99,11 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
 
 exports[`Footer should render the actions and the dropdown accordingly 3`] = `
 <div
-  className="Actions-actionContainer-2"
+  className="HvActions-actionContainer-2"
 >
   <HvButton
     category="ghost"
-    className="Actions-button-1"
+    className="HvActions-button-1"
     id="footer3-0-action-view"
     key="footer3-0-action-view"
     onClick={[Function]}
@@ -112,7 +112,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
   </HvButton>
   <HvButton
     category="ghost"
-    className="Actions-button-1"
+    className="HvActions-button-1"
     id="footer3-1-action-delete"
     key="footer3-1-action-delete"
     onClick={[Function]}
@@ -123,7 +123,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     aria-label="footer3-more-actions"
     classes={
       Object {
-        "root": "Actions-dropDownMenu-3",
+        "root": "HvActions-dropDownMenu-3",
       }
     }
     dataList={
@@ -140,7 +140,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
     disablePortal={false}
     icon={
       <WithStyles(MoreOptionsVertical)
-        className="Actions-dropDownMenuIcon-4"
+        className="HvActions-dropDownMenuIcon-4"
       />
     }
     keepOpened={false}
