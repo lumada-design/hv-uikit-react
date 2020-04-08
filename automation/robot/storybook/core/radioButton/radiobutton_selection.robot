@@ -26,6 +26,7 @@ select radio button by clicking in input
     Element Should not Be Visible        ${radioNotSelected}
 
 select radio button by clicking in label
+    [Tags]    bug-infrastructure-ie
     go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttonlabel
     Wait Until Page Contains Element     ${1stRadioButton}         10s
     Element Should not Be Visible        ${radioSelected}
