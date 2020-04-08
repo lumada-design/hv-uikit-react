@@ -51,6 +51,10 @@ storiesOf("Components", module).add("Login", () => <HvLogin />, {
     {
       title: "7. Tenant brand",
       src: "components/login/login7"
+    },
+    {
+      title: "8. Additional form props",
+      src: "components/login/login8"
     }
   ]
 });

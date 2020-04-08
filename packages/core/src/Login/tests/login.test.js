@@ -18,6 +18,7 @@
 
 // import { mount } from "enzyme";
 import React from "react";
+import PropTypes from "prop-types";
 import { mount } from "enzyme";
 import LoginWithStyles from "../index";
 import HvProvider from "../../Provider";
@@ -27,6 +28,16 @@ import Recovery from "../Forms/Recovery";
 import HvButton from "../../Button";
 import Title from "../Forms/Login/Title/Title";
 import MessageElement from "../Forms/MessageElement";
+
+const MyProvider = ({ children }) => (
+  <HvProvider>
+    {children}
+  </HvProvider>
+);
+
+MyProvider.propTypes = {
+  children: PropTypes.element.isRequired
+};
 
 describe("Login ", () => {
   let loginMock;
@@ -39,13 +50,13 @@ describe("Login ", () => {
     loginMock = jest.fn();
     recoverMock = jest.fn();
     wrapper = mount(
-      <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          recovery={recoverMock}
-          allowRecover
-        />
-      </HvProvider>
+      <LoginWithStyles
+        login={loginMock}
+        recovery={recoverMock}
+        allowRecover
+      />, {
+        wrappingComponent: MyProvider
+      }
     );
   });
 
@@ -173,5 +184,21 @@ describe("Login ", () => {
       .first();
 
     expect(foundMsg.text()).toBe(msg.text);
+  });
+
+  it("should render the additional formProps in form element", () => {
+    let loginFormProps = wrapper.find(LoginForm).props();
+    expect(loginFormProps.formProps).toEqual({});
+    
+    wrapper.setProps({
+      formProps: { autoComplete: "off", className: "foo" }
+    });
+
+    loginFormProps = wrapper.find(LoginForm).props();
+    expect(loginFormProps.formProps).toEqual({ autoComplete: "off", className: "foo" });
+    
+    const formProps = wrapper.find("form").props();
+    expect(formProps.autoComplete).toBe("off");
+    expect(formProps.className.includes("foo")).toBe(true);
   });
 });
