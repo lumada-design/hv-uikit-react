@@ -85,6 +85,50 @@ jobs:
           name: ${{ matrix.browser }}-reports
           path: reports
 
+  Robot_pa11y:
+    needs: Build
+    runs-on: [self-hosted, Windows]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: install pa11y
+        working-directory: ./automation/robot
+        shell: cmd
+        run: npm ci
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: storybook
+          path: .github/storybook/www
+
+      - name: Run Storybook
+        uses: ./.github/storybook
+
+      - name: Run SELENIUM Robot
+        shell: cmd
+        run: >-
+          robot
+          --variable STORYBOOK_URL:http://localhost:9002
+          --include pa11y
+          --outputdir reports
+          --report report.html
+          --log log.html
+          automation\robot\storybook\core
+          
+      - name: Save Reports
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: pa11y-reports
+          path: reports
+          
   Release:
     if: github.event_name == 'schedule'
     needs: Robot
