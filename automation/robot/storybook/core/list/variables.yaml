@@ -1,10 +1,10 @@
 list:               css:ul[role='listbox']
 menubar:            css:ul[role='menu']
-option1:            id:hv-list-1-item-0
-option2:            id:hv-list-1-item-1
-option3:            id:hv-list-1-item-2
-option4:            id:hv-list-1-item-3
-option5:            id:hv-list-1-item-4
+option1:            css:#hv-list-1-item-0     # will be part of other css locators it is why not used prefix id: 
+option2:            css:#hv-list-1-item-1     # will be part of other css locators it is why not used prefix id: 
+option3:            css:#hv-list-1-item-2     # will be part of other css locators it is why not used prefix id: 
+option4:            css:#hv-list-1-item-3     # will be part of other css locators it is why not used prefix id: 
+option5:            css:#hv-list-1-item-4     # will be part of other css locators it is why not used prefix id: 
 selectedItems:      css:li[aria-selected='true']
 headerItem:         id:hv-checkbox-2
 headerItemLabel:    css:#hv-checkbox-2>span[class*='HvCheckbox-labelTypography']
