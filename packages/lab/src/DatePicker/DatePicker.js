@@ -20,7 +20,7 @@ import classNames from "classnames";
 import moment from "moment";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import DayPickerInput from "react-day-picker/DayPickerInput";
-import { DateUtils } from "react-day-picker";
+import { DateUtils } from "react-day-picker";// version should be fixed to 7.3.2 due to https://github.com/gpbl/react-day-picker/pull/990
 import { getDayStart, getDayEnd } from "./utils";
 
 import "react-day-picker/lib/style.css";
