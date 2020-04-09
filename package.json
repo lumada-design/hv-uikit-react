@@ -34,7 +34,7 @@
     "publish-minor": "npx lerna publish minor --yes",
     "publish-premajor": "npx lerna publish premajor --yes",
     "publish-major": "npx lerna publish major --yes",
-    "publish-documentation": "npx storybook-to-ghpages -e packages/doc/dist",
+    "publish-documentation": "npx lerna run publish-documentation -- -- ",
     "lint": "npx eslint ./ --cache --ignore-pattern .gitignore",
     "lint:fix": "npx eslint ./ --cache --ignore-pattern .gitignore --fix"
   },
@@ -44,14 +44,9 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "storybook-deployer": {
-    "gitUsername": "buildguy",
-    "gitEmail": "buildguy.pentaho@hitachivantara.com"
-  },
   "devDependencies": {
     "@commitlint/cli": "^8.3.3",
     "@commitlint/config-conventional": "^7.6.0",
-    "@storybook/storybook-deployer": "^2.8.1",
     "babel-eslint": "^10.0.3",
     "chalk": "^2.4.2",
     "eslint": "^5.16.0",
