@@ -2,6 +2,7 @@
 
 exports[`Banner  should render correctly 1`] = `
 <WithStyles(HvBanner)
+  id="banner"
   onClose={[Function]}
   open={false}
   variant="default"
@@ -15,6 +16,7 @@ exports[`Banner  should render correctly 1`] = `
         "rootClosed": "HvBanner-rootClosed",
       }
     }
+    id="banner"
     onClose={[Function]}
     open={false}
     variant="default"
@@ -34,6 +36,7 @@ exports[`Banner  should render correctly 1`] = `
           "root": "HvBanner-rootClosed",
         }
       }
+      id="banner"
       open={false}
       style={
         Object {
@@ -42,7 +45,6 @@ exports[`Banner  should render correctly 1`] = `
       }
       transitionDuration={300}
     >
-<<<<<<< HEAD
       <ForwardRef(Snackbar)
         TransitionComponent={[Function]}
         anchorOrigin={
@@ -62,87 +64,16 @@ exports[`Banner  should render correctly 1`] = `
             "root": "MuiSnackbar-root HvBanner-rootClosed",
           }
         }
-=======
-      <CssBaseline />
-      <WithStyles(HvBanner)
         id="banner"
-        onClose={[Function]}
->>>>>>> 7ae4653... chore(tests): remove warnings
         open={false}
         style={
           Object {
             "top": "60px",
           }
-<<<<<<< HEAD
         }
         transitionDuration={300}
       />
     </WithStyles(ForwardRef(Snackbar))>
   </HvBanner>
 </WithStyles(HvBanner)>
-=======
-          id="banner"
-          onClose={[Function]}
-          open={false}
-          variant="default"
-        >
-          <WithStyles(ForwardRef(Snackbar))
-            TransitionComponent={[Function]}
-            anchorOrigin={
-              Object {
-                "horizontal": "center",
-                "vertical": "top",
-              }
-            }
-            classes={
-              Object {
-                "anchorOriginBottomCenter": "HvBanner-anchorOriginBottomCenter",
-                "anchorOriginTopCenter": "HvBanner-anchorOriginTopCenter",
-                "root": "HvBanner-rootClosed",
-              }
-            }
-            id="banner"
-            open={false}
-            style={
-              Object {
-                "top": "60px",
-              }
-            }
-            transitionDuration={300}
-          >
-            <ForwardRef(Snackbar)
-              TransitionComponent={[Function]}
-              anchorOrigin={
-                Object {
-                  "horizontal": "center",
-                  "vertical": "top",
-                }
-              }
-              classes={
-                Object {
-                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter HvBanner-anchorOriginBottomCenter",
-                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft",
-                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight",
-                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter HvBanner-anchorOriginTopCenter",
-                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft",
-                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight",
-                  "root": "MuiSnackbar-root HvBanner-rootClosed",
-                }
-              }
-              id="banner"
-              open={false}
-              style={
-                Object {
-                  "top": "60px",
-                }
-              }
-              transitionDuration={300}
-            />
-          </WithStyles(ForwardRef(Snackbar))>
-        </HvBanner>
-      </WithStyles(HvBanner)>
-    </ThemeProvider>
-  </StylesProvider>
-</HvProvider>
->>>>>>> 7ae4653... chore(tests): remove warnings
 `;

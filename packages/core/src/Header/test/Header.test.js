@@ -2,8 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-import HeaderWithStyles from "../index";
-import { LocationPin } from "@hv/uikit-react-icons";
+import Header from "../Header";
 import Brand from "../Brand";
 
 describe("Header withStyles", () => {
@@ -12,9 +11,9 @@ describe("Header withStyles", () => {
   it("should be able to render", () => {
     wrapper = mount(
       <HvProvider>
-        <HeaderWithStyles>
-          <Brand name="test"/>
-        </HeaderWithStyles>
+        <Header>
+          <Brand name="test" />
+        </Header>
       </HvProvider>
     );
 

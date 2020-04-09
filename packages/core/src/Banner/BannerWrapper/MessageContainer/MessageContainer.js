@@ -21,7 +21,7 @@ const MessageContainer = ({
     </HvTypography>
     {actionsOnMessage && (
       <div id={setId(id, "message-actions")} className={classes.actionMessageContainer}>
-        <Actions actions={actionsOnMessage} actionsCallback={actionsOnMessageCallback} />
+        <Actions id={id} actions={actionsOnMessage} actionsCallback={actionsOnMessageCallback} />
       </div>
     )}
   </>

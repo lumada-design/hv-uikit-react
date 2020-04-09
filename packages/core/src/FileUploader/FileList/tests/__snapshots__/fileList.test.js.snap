@@ -26,6 +26,7 @@ exports[`FileList withStyles should render correctly 1`] = `
       },
     ]
   }
+  onFileRemoved={[Function]}
   progressConjunctionLabel="progressConjunctionLabel"
   removeFileButtonLabel="removeFileButtonLabel"
 >
@@ -59,6 +60,7 @@ exports[`FileList withStyles should render correctly 1`] = `
         },
       ]
     }
+    onFileRemoved={[Function]}
     progressConjunctionLabel="progressConjunctionLabel"
     removeFileButtonLabel="removeFileButtonLabel"
   >
@@ -79,32 +81,9 @@ exports[`FileList withStyles should render correctly 1`] = `
               "status": "fail",
               "type": "image/png",
               "webkitRelativePath": "",
-<<<<<<< HEAD
-=======
-            },
-            Object {
-              "errorMessage": "File type not allowed for upload",
-              "id": "2",
-              "lastModified": 1575547399043,
-              "name": "Screenshot 2019-12-05 at 12.03.13.png",
-              "size": 875,
-              "status": "fail",
-              "type": "image/png",
-              "webkitRelativePath": "",
-            },
-          ]
-        }
-        onFileRemoved={[Function]}
-        progressConjunctionLabel="progressConjunctionLabel"
-        removeFileButtonLabel="removeFileButtonLabel"
-      >
-        <FileList
-          classes={
-            Object {
-              "list": "HvFileUploaderFileList-list",
->>>>>>> 7ae4653... chore(tests): remove warnings
             }
           }
+          onFileRemoved={[Function]}
           progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
         >
@@ -130,32 +109,11 @@ exports[`FileList withStyles should render correctly 1`] = `
                 "status": "fail",
                 "type": "image/png",
                 "webkitRelativePath": "",
-<<<<<<< HEAD
               }
             }
+            onFileRemoved={[Function]}
             progressConjunctionLabel="progressConjunctionLabel"
             removeFileButtonLabel="removeFileButtonLabel"
-=======
-              },
-              Object {
-                "errorMessage": "File type not allowed for upload",
-                "id": "2",
-                "lastModified": 1575547399043,
-                "name": "Screenshot 2019-12-05 at 12.03.13.png",
-                "size": 875,
-                "status": "fail",
-                "type": "image/png",
-                "webkitRelativePath": "",
-              },
-            ]
-          }
-          onFileRemoved={[Function]}
-          progressConjunctionLabel="progressConjunctionLabel"
-          removeFileButtonLabel="removeFileButtonLabel"
-        >
-          <ul
-            className="HvFileUploaderFileList-list"
->>>>>>> 7ae4653... chore(tests): remove warnings
           >
             <WithStyles(Fail)
               className="HvFileUploaderFile-icon"
@@ -172,13 +130,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "rootXs": "HvIconFail-rootXs",
                   }
                 }
-<<<<<<< HEAD
                 color="sema4"
-=======
-                onFileRemoved={[Function]}
-                progressConjunctionLabel="progressConjunctionLabel"
-                removeFileButtonLabel="removeFileButtonLabel"
->>>>>>> 7ae4653... chore(tests): remove warnings
               >
                 <div
                   className="HvFileUploaderFile-icon HvIconFail-root HvIconFail-rootS"
@@ -282,13 +234,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-<<<<<<< HEAD
                   variant="sText"
-=======
-                  onFileRemoved={[Function]}
-                  progressConjunctionLabel="progressConjunctionLabel"
-                  removeFileButtonLabel="removeFileButtonLabel"
->>>>>>> 7ae4653... chore(tests): remove warnings
                 >
                   <p
                     className="HvFileUploaderFile-fail HvTypography-root HvTypography-sText"
@@ -432,6 +378,7 @@ exports[`FileList withStyles should render correctly 1`] = `
               "webkitRelativePath": "",
             }
           }
+          onFileRemoved={[Function]}
           progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
         >
@@ -459,6 +406,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                 "webkitRelativePath": "",
               }
             }
+            onFileRemoved={[Function]}
             progressConjunctionLabel="progressConjunctionLabel"
             removeFileButtonLabel="removeFileButtonLabel"
           >
@@ -477,13 +425,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "rootXs": "HvIconFail-rootXs",
                   }
                 }
-<<<<<<< HEAD
                 color="sema4"
-=======
-                onFileRemoved={[Function]}
-                progressConjunctionLabel="progressConjunctionLabel"
-                removeFileButtonLabel="removeFileButtonLabel"
->>>>>>> 7ae4653... chore(tests): remove warnings
               >
                 <div
                   className="HvFileUploaderFile-icon HvIconFail-root HvIconFail-rootS"
@@ -587,13 +529,7 @@ exports[`FileList withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-<<<<<<< HEAD
                   variant="sText"
-=======
-                  onFileRemoved={[Function]}
-                  progressConjunctionLabel="progressConjunctionLabel"
-                  removeFileButtonLabel="removeFileButtonLabel"
->>>>>>> 7ae4653... chore(tests): remove warnings
                 >
                   <p
                     className="HvFileUploaderFile-fail HvTypography-root HvTypography-sText"
