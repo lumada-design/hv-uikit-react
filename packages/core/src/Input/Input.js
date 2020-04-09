@@ -124,7 +124,7 @@ class HvInput extends React.Component {
   /**
    * Executes the user callback adds the selection to the state and clears the suggestions.
    */
-  suggestionSelectedHandler = item => {
+  suggestionSelectedHandler = (event, item) => {
     const { suggestionSelectedCallback } = this.props;
     suggestionSelectedCallback(item);
     this.manageInputValueState(item.label);
