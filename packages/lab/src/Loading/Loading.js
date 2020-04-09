@@ -2,16 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isEmpty from "lodash/isEmpty";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@material-ui/core";
+import { HvTypography } from "@hv/uikit-react-core/dist";
 import styles from "./styles";
-
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
 
 /**
  * A loading component. It can be customized through a series of parameters.
- *
- * @class Loading
- * @extends {React.Component}
  */
 const Loading = ({ classes, size, position, text }) => {
   return (

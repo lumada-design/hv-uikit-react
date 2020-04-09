@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Loading from "./Loading";
 
-const LoadingWithDelay = ({ delay, ...loadingProps }) => {
+const LoadingWithDelay = ({ delay = 0, ...loadingProps }) => {
   const [shouldDisplay, setShouldDisplay] = useState(false);
 
   useEffect(() => {
@@ -67,10 +67,6 @@ LoadingWithDelay.propTypes = {
    * The amount of milliseconds that the component should wait before showing the Loading
    */
   delay: PropTypes.number
-};
-
-LoadingWithDelay.defaultProps = {
-  delay: 0
 };
 
 export default LoadingWithDelay;

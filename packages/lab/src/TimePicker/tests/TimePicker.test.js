@@ -3,8 +3,7 @@ import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import TimeIcon from "@hv/uikit-react-icons/dist/Time";
 import { ClickAwayListener, Popper } from "@material-ui/core";
-import TimePickerWithStyles from "../index";
-import TimePicker from "../TimePicker";
+import TimePicker from "..";
 import { PeriodPickerOptions, TimeFormat } from "../enums";
 import * as converters from "../timePickerConverter";
 import * as formatters from "../timePickerFormatter";
@@ -40,7 +39,7 @@ describe("TimePicker", () => {
     mockOnChange = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <TimePickerWithStyles
+        <TimePicker
           hours={defaultSelectedTime.hours}
           minutes={defaultSelectedTime.minutes}
           seconds={defaultSelectedTime.seconds}
@@ -52,7 +51,7 @@ describe("TimePicker", () => {
         />
       </HvProvider>
     );
-    timePickerComponent = wrapper.find(TimePicker);
+    timePickerComponent = wrapper.find("HvTimePicker");
     timePickerInstance = timePickerComponent.instance();
   });
 
@@ -164,10 +163,10 @@ describe("TimePicker", () => {
     const mockTimeFormat = "12";
     const wrapperTimeFormat = mount(
       <HvProvider>
-        <TimePickerWithStyles timeFormat={mockTimeFormat} />
+        <TimePicker timeFormat={mockTimeFormat} />
       </HvProvider>
     );
-    const instanceTimeFormat = wrapperTimeFormat.find(TimePicker).instance();
+    const instanceTimeFormat = wrapperTimeFormat.find("HvTimePicker").instance();
     expect(instanceTimeFormat.getTimeFormat()).toBe(mockTimeFormat);
   });
 

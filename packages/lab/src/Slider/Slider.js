@@ -7,9 +7,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Range, Handle } from "rc-slider";
 import Tooltip from "rc-tooltip";
-import styleCreator from "./styles";
+import { withStyles } from "@material-ui/core";
 import KnobRing from "./KnobRing";
 import "rc-slider/assets/index.css";
+import styleCreator from "./styles";
 
 /**
  * Transform the scaled values into knobs positions.
@@ -583,4 +584,4 @@ HvSlider.defaultProps = {
   onAfterChange: () => {}
 };
 
-export default HvSlider;
+export default withStyles(styleCreator, { name: "HvSlider", withTheme: true })(HvSlider);
