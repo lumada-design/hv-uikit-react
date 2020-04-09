@@ -202,7 +202,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           </WithStyles(ForwardRef(Button))>
         </HvButton>
       </WithStyles(HvButton)>
-      <WithStyles(Component)
+      <WithStyles(WithId)
         classes={
           Object {
             "root": "HvActions-dropDownMenu",
@@ -231,7 +231,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         onClick={[Function]}
         placement="left"
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -576,8 +576,8 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </div>
   </Actions>
 </WithStyles(Actions)>
@@ -636,7 +636,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
     <div
       className="HvActions-root HvActions-actionContainer"
     >
-      <WithStyles(Component)
+      <WithStyles(WithId)
         classes={
           Object {
             "root": "HvActions-dropDownMenu",
@@ -669,7 +669,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         onClick={[Function]}
         placement="left"
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -1022,8 +1022,8 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </div>
   </Actions>
 </WithStyles(Actions)>
@@ -1380,7 +1380,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           </WithStyles(ForwardRef(Button))>
         </HvButton>
       </WithStyles(HvButton)>
-      <WithStyles(Component)
+      <WithStyles(WithId)
         classes={
           Object {
             "root": "HvActions-dropDownMenu",
@@ -1405,7 +1405,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         onClick={[Function]}
         placement="left"
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -1742,8 +1742,8 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </div>
   </Actions>
 </WithStyles(Actions)>

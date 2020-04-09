@@ -41,6 +41,7 @@ eslint.xml
 **/*/coverage
 
 # build folder
+dist
 **/*/dist
 **/*/bin
 

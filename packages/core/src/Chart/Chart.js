@@ -55,12 +55,12 @@ const Chart = ({
   const newLayout = propsLayoutSetter(layout, theme, isHorizontal, xAxisTitle, yAxisTitle);
 
   // Extract data from the plotly onHover event to be used to create the tooltip.
-  const onHover = (event, eventData) => {
+  const onHover = event => {
     const dataFromPoints = {
-      title: isHorizontal ? eventData.points[0].y : eventData.points[0].x,
+      title: isHorizontal ? event.points[0].y : event.points[0].x,
       elements: []
     };
-    eventData.points.forEach(p => {
+    event.points.forEach(p => {
       dataFromPoints.elements.push({
         color: p.fullData.marker ? p.fullData.marker.color : p.fullData.line.color,
         name: p.fullData.name,

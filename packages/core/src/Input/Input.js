@@ -27,6 +27,9 @@ const DEFAULT_LABELS = {
   clearButtonLabel: "Clear the text"
 };
 
+/**
+ * An input is a graphicl control element that allows the user to write text.
+ */
 class HvInput extends React.Component {
   constructor(props) {
     super(props);
@@ -541,25 +544,40 @@ HvInput.propTypes = {
     "@global": PropTypes.string
   }).isRequired,
   /**
-   * An Object containing the various text associated with the input.
-   *
-   * - inputLabel: the label on top of the input.
-   * - placeholder: the placeholder value of the input.
-   * - infoText: the default value of the info text below the input.
-   * - warningText: the value when a validation fails.
-   * - maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * - minCharQuantityWarningText: the message that appears when there are too few characters.
-   * - requiredWarningText: the message that appears when the input is empty and required.
-   * - clearButtonLabel: the label of the clear button.
+   * An Object containing the various texts associated with the input.
    */
   labels: PropTypes.shape({
+    /**
+     * The label on top of the input.
+     */
     inputLabel: PropTypes.string,
+    /**
+     * The placeholder value of the input.
+     */
     placeholder: PropTypes.string,
+    /**
+     * The default value of the info text below the input.
+     */
     infoText: PropTypes.string,
+    /**
+     * The value when a validation fails.
+     */
     warningText: PropTypes.string,
+    /**
+     * The message that appears when there are too many characters.
+     */
     maxCharQuantityWarningText: PropTypes.string,
+    /**
+     * The message that appears when there are too few characters.
+     */
     minCharQuantityWarningText: PropTypes.string,
+    /**
+     * The message that appears when the input is empty and required.
+     */
     requiredWarningText: PropTypes.string,
+    /**
+     * The label of the clear button.
+     */
     clearButtonLabel: PropTypes.string
   }),
   /**

@@ -903,5 +903,5 @@ Table.defaultProps = {
   tableProps: { tableCaption: "Table Caption" },
   rowCount: undefined
 };
-export { Table as RawTable }; // Required to extract documentation because withConfig hides _docgen.
+
 export default withStyles(styles, { name: "HvTable" })(withConfig(Table));

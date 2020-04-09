@@ -96,26 +96,29 @@ const onBlurHandler = (contextValues, value) => {
   onBlur?.(value);
 };
 
-const HvSearchBox = ({
-  classes,
-  id,
-  className,
-  labels,
-  initialValue = "",
-  value,
-  onChange = (event, payload) => payload,
-  disabled = false,
-  suggestionListCallback,
-  suggestionSelectedCallback,
-  onBlur,
-  onFocus,
-  onKeyDown,
-  onSubmit,
-  autoFocus = false,
-  ariaLabel = "search",
-  ...others
-}) => {
+const HvSearchBox = props => {
+  const {
+    classes,
+    id,
+    className,
+    labels,
+    initialValue = "",
+    value,
+    onChange = (event, payload) => payload,
+    disabled = false,
+    suggestionListCallback,
+    suggestionSelectedCallback,
+    onBlur,
+    onFocus,
+    onKeyDown,
+    onSubmit,
+    autoFocus = false,
+    ariaLabel = "search",
+    ...others
+  } = props;
+
   const [lensIcon, setIcon] = useState(changeIconColor(disabled));
+
   return (
     <>
       <HvInput

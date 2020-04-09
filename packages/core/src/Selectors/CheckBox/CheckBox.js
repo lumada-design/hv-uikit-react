@@ -45,6 +45,9 @@ const prepareIcon = (classes, disabled) => {
   };
 };
 
+/**
+ * A Checkbox is a mechanism that allows user to select one or more options.
+ */
 const HvCheckbox = props => {
   const {
     classes,

@@ -105,10 +105,6 @@ You need to ask to be added as a project member, to be able to contribute:
 
 Please check out our [Contribution Guidelines](https://github.com/pentaho/hv-uikit-react/blob/alpha/CONTRIBUTING.md) for detailed information.
 
-## Examples
-
-We provide some [examples](https://github.com/pentaho/hv-uikit-react/tree/alpha/examples) supporting several platforms.
-
 ## License
 
 This project is licensed under the terms of the [Apache 2.0 license](https://github.com/pentaho/hv-uikit-react/blob/alpha/LICENSE.md).

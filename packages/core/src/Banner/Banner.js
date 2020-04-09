@@ -6,6 +6,10 @@ import { setId } from "../utils";
 import HvBannerContentWrapper from "./BannerWrapper";
 import styles from "./styles";
 
+/**
+ * A Banner displays an important, succinct message. The banner provides actions for users to address (or dismiss the banner).
+ * It requires an user action to close. Banners should appear at the top of the screen, below a top app bar.
+ */
 const HvBanner = props => {
   const {
     id,

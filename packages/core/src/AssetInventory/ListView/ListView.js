@@ -28,39 +28,41 @@ const ListView = ({
   cellSpacing = "0",
   metadata,
   ...others
-}) => (
-  <Grid container justify="center" alignContent="stretch">
-    <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-      <table
-        className={clsx(className, classes.root)}
-        cellSpacing={cellSpacing}
-        id={id}
-        {...others}
-      >
-        {!isNil(viewConfiguration) &&
-          !isNil(viewConfiguration.columnConfiguration) &&
-          viewConfiguration.columnConfiguration.length > 0 &&
-          values.length > 0 && (
-            <thead className={classes.tableHead}>
-              <ListViewHeaderRow viewConfiguration={viewConfiguration} />
-            </thead>
-          )}
-        <tbody className={classes.tableBody}>
-          <ListViewContextProvider value={viewConfiguration}>
-            <Rows
-              classes={classes}
-              renderer={renderer}
-              values={values}
-              selectedValues={selectedValues}
-              metadata={metadata}
-              viewConfiguration={viewConfiguration}
-            />
-          </ListViewContextProvider>
-        </tbody>
-      </table>
+}) => {
+  return (
+    <Grid container justify="center" alignContent="stretch">
+      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+        <table
+          className={clsx(className, classes.root)}
+          cellSpacing={cellSpacing}
+          id={id}
+          {...others}
+        >
+          {!isNil(viewConfiguration) &&
+            !isNil(viewConfiguration.columnConfiguration) &&
+            viewConfiguration.columnConfiguration.length > 0 &&
+            values.length > 0 && (
+              <thead className={classes.tableHead}>
+                <ListViewHeaderRow viewConfiguration={viewConfiguration} />
+              </thead>
+            )}
+          <tbody className={classes.tableBody}>
+            <ListViewContextProvider value={viewConfiguration}>
+              <Rows
+                classes={classes}
+                renderer={renderer}
+                values={values}
+                selectedValues={selectedValues}
+                metadata={metadata}
+                viewConfiguration={viewConfiguration}
+              />
+            </ListViewContextProvider>
+          </tbody>
+        </table>
+      </Grid>
     </Grid>
-  </Grid>
-);
+  );
+};
 
 ListView.propTypes = {
   /**

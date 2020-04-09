@@ -30,6 +30,10 @@ const styles = theme => ({
     overflow: "hidden",
     [theme.breakpoints.up("sm")]: {
       marginLeft: `${theme.hv.spacing.sm}px`
+    },
+    "& a": {
+      ...theme.hv.typography.inlineLink,
+      textDecoration: "none"
     }
   },
   titleContainer: {
@@ -40,11 +44,7 @@ const styles = theme => ({
   },
   messageContainer: {},
   actionContainer: {
-    marginTop: `${theme.hv.spacing.sm}px`,
-    "& a": {
-      ...theme.hv.typography.inlineLink,
-      textDecoration: "none"
-    }
+    marginTop: `${theme.hv.spacing.sm}px`
   }
 });
 

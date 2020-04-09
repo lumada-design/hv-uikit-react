@@ -221,8 +221,8 @@ node('non-master') {
                                         #! /bin/sh -
 
                                         cd ${uikit_folder}
-                                        npm run build -- --scope @hv/uikit-react-doc
-                                        npm run publish-documentation --  --ci
+                                        npm run build-documentation
+                                        npm run publish-documentation
                                     """
                                 } else {
                                     echo '[INFO] Documentation (storybook) publishing skipped'
@@ -245,10 +245,13 @@ node('non-master') {
 
             stage('Publish Documentation') {
                 if(!params.skipPublishDoc) {
-                    // TODO: publish storybook for PR review
+                    sh label: 'npm run publish-documentation', script: """
+                        #! /bin/sh -
 
-                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
-                    echo '[INFO] Not publishing non-release documentation'
+                        cd ${uikit_folder}
+                        npm run build-documentation
+                        npm run publish-documentation
+                    """
                 } else {
                     // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                     echo '[INFO] Documentation (storybook) publishing skipped'

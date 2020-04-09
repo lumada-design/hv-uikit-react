@@ -9,6 +9,9 @@ import styles from "./styles";
 const MARGIN = 50;
 const MAX_BAR_WIDTH = 90;
 
+/**
+ * A Bar chart is a chart or graph that presents categorical data with rectangular bars.
+ */
 const Barchart = ({
   id,
   classes,

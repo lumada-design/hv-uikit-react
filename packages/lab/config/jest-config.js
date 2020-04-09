@@ -1,5 +1,11 @@
 module.exports = {
-  collectCoverageFrom: ["src/**/*.{js,jsx}", "!src/**/*.test.{js,jsx}", "!core/*"],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx}",
+    "!src/**/*.test.{js,jsx}",
+    "!src/**/stories/*",
+    "!src/**/tests/*",
+    "!core/*"
+  ],
   coverageThreshold: {
     global: {
       branches: 50,

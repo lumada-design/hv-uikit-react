@@ -27,6 +27,9 @@ const DEFAULT_STATE = {
   values: []
 };
 
+/**
+ * A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
+ */
 class HvDropdown extends React.Component {
   constructor(props) {
     super(props);

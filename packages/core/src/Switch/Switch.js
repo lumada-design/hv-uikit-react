@@ -15,6 +15,9 @@ const DEFAULT_LABELS = {
   right: "On"
 };
 
+/**
+ * A Switch is a mechanism that allows user toggle between 2 options.
+ */
 const HvSwitch = props => {
   const {
     id,

@@ -772,7 +772,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithId)
         dataList={
           Array [
             Object {
@@ -789,7 +789,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
         disablePortal={false}
         icon={<div />}
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -1023,8 +1023,8 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -1802,7 +1802,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithId)
         dataList={
           Array [
             Object {
@@ -1819,7 +1819,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
         disablePortal={false}
         icon={<div />}
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -2053,8 +2053,8 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -2832,7 +2832,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithId)
         dataList={
           Array [
             Object {
@@ -2849,7 +2849,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
         disablePortal={false}
         icon={<div />}
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -4107,8 +4107,8 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
               </ForwardRef(Popper)>
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -4886,7 +4886,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithId)
         dataList={
           Array [
             Object {
@@ -4903,7 +4903,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
         icon={<div />}
         id="dropdownMenu"
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -5136,8 +5136,8 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -5915,7 +5915,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithId)
         dataList={
           Array [
             Object {
@@ -5932,7 +5932,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
         icon={<div />}
         id="dropdownMenu"
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -6165,8 +6165,8 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
               />
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -6944,7 +6944,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithId)
         dataList={
           Array [
             Object {
@@ -6961,7 +6961,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
         icon={<div />}
         id="dropdownMenu"
       >
-        <Component
+        <WithId
           classes={
             Object {
               "icon": "HvDropDownMenu-icon",
@@ -8047,8 +8047,8 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
               </ForwardRef(Popper)>
             </div>
           </DropDownMenu>
-        </Component>
-      </WithStyles(Component)>
+        </WithId>
+      </WithStyles(WithId)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

@@ -772,7 +772,7 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         notSelectedIcon={
           Object {
             "$$typeof": Symbol(react.forward_ref),
@@ -1079,7 +1079,7 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
           }
         }
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "disabled": "HvToggleButton-disabled",
@@ -1764,8 +1764,8 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
               </WithStyles(Unlock)>
             </div>
           </ToggleButton>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

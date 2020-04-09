@@ -1,0 +1,44 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import Templates from "./Templates";
+import login from "./resources/login.png";
+import home from "./resources/home.png";
+import details from "./resources/details.png";
+
+<Meta title="Templates/About" />
+
+# Templates
+
+A selection of basic react templates to help you get started building your app.
+
+<Story name="Main">
+  <Templates
+      containers={[
+        {
+          id: "login",
+          img: login,
+          labels: { title: "Login", text: "A simple Login page." },
+          sourceCodeUrl:
+            "https://github.com/pentaho/hv-uikit-react/blob/master/packages/doc/templates/templates/login/Login.js",
+          associatedStory: "login-page"
+        },
+        {
+          id: "home",
+          img: home,
+          labels: { title: "Home", text: "A home example." },
+          sourceCodeUrl:
+            "https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/templates/templates/home",
+          associatedStory: "home-page"
+        },
+        {
+          id: "details",
+          img: details,
+          labels: { title: "Details", text: "A Details example." },
+          sourceCodeUrl:
+            "https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/templates/templates/home",
+          associatedStory: "details-page"
+        }
+      ]}
+    />
+</Story>
+
+

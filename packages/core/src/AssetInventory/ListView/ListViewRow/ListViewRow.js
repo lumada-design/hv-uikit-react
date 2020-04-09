@@ -114,12 +114,27 @@ const ListViewRow = ({
   checked,
   semantic,
   ...others
-}) => (
-  <ListViewContextConsumer>
-    {contextConfiguration => {
-      if (contextConfiguration && isNil(viewConfiguration)) {
+}) => {
+  return (
+    <ListViewContextConsumer>
+      {contextConfiguration => {
+        if (contextConfiguration && isNil(viewConfiguration)) {
+          return row(
+            contextConfiguration,
+            classes,
+            className,
+            children,
+            id,
+            isSelectable,
+            onSelection,
+            checkboxProps,
+            checked,
+            semantic,
+            others
+          );
+        }
         return row(
-          contextConfiguration,
+          viewConfiguration,
           classes,
           className,
           children,
@@ -131,23 +146,10 @@ const ListViewRow = ({
           semantic,
           others
         );
-      }
-      return row(
-        viewConfiguration,
-        classes,
-        className,
-        children,
-        id,
-        isSelectable,
-        onSelection,
-        checkboxProps,
-        checked,
-        semantic,
-        others
-      );
-    }}
-  </ListViewContextConsumer>
-);
+      }}
+    </ListViewContextConsumer>
+  );
+};
 
 ListViewRow.propTypes = {
   /**

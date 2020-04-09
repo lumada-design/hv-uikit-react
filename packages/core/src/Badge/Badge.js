@@ -5,6 +5,9 @@ import { withStyles } from "@material-ui/core";
 import Typography from "../Typography";
 import styles from "./styles";
 
+/**
+ * The badge is a component used to show the user that there is something new in the app.
+ */
 const Badge = props => {
   const {
     classes,

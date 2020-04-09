@@ -772,7 +772,7 @@ exports[`Custom Pagination should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         canNext={true}
         canPrevious={true}
         page={2}
@@ -787,7 +787,7 @@ exports[`Custom Pagination should render correctly 1`] = `
         showPageJump={false}
         showPageSizeOptions={true}
       >
-        <Component
+        <WithLabels
           canNext={true}
           canPrevious={true}
           classes={
@@ -1592,8 +1592,8 @@ exports[`Custom Pagination should render correctly 1`] = `
               </div>
             </div>
           </Pagination>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

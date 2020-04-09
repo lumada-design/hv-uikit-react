@@ -772,7 +772,7 @@ exports[`Kpi should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         labels={
           Object {
             "comparisonIndicatorInfo": "vs last 24h.",
@@ -782,7 +782,7 @@ exports[`Kpi should render correctly 1`] = `
           }
         }
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "comparisonComposition": "HvKpi-comparisonComposition",
@@ -963,8 +963,8 @@ exports[`Kpi should render correctly 1`] = `
               </div>
             </div>
           </HvKpi>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

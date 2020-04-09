@@ -4,6 +4,9 @@ import clsx from "clsx";
 import { CardContent, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
+/**
+ * The content container for the card.
+ */
 const Content = props => {
   const { id, classes, className, children, onClick, ...others } = props;
   return (

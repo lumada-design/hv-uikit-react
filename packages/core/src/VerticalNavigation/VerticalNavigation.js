@@ -6,6 +6,19 @@ import VerticalContainer from "./VerticalContainer";
 import { setId } from "../utils";
 import styles from "./styles";
 
+/**
+ * It is recommended to use vertical navigation when your application requires global navigation that is displayed on the left.
+ * While vertical navigation menus generally consume more space than their horizontal counterparts, they have become more popular as desktop monitors move to wide-screen formats.
+ *
+ * Our implementation of the vertical navigation is divided in:
+ * <ul>
+ * <li>Navigation</li>
+ * <li>Actions</li>
+ * <li>Action</li>
+ * </ul>
+ * To build the vertical navigation a composition of these elements should be used.
+ *
+ */
 const VerticalNavigation = ({
   id,
   className,

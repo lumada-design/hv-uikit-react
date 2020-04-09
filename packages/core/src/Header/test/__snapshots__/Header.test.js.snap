@@ -772,10 +772,11 @@ exports[`Header withStyles should be able to render 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Header)>
-        <Header
+      <WithStyles(HvHeader)>
+        <HvHeader
           classes={
             Object {
+              "backgroundColor": "HvHeader-backgroundColor",
               "header": "HvHeader-header",
               "root": "HvHeader-root",
             }
@@ -784,6 +785,7 @@ exports[`Header withStyles should be able to render 1`] = `
           <WithStyles(ForwardRef(AppBar))
             classes={
               Object {
+                "colorPrimary": "HvHeader-backgroundColor",
                 "root": "HvHeader-root",
               }
             }
@@ -794,7 +796,7 @@ exports[`Header withStyles should be able to render 1`] = `
                 Object {
                   "colorDefault": "MuiAppBar-colorDefault",
                   "colorInherit": "MuiAppBar-colorInherit",
-                  "colorPrimary": "MuiAppBar-colorPrimary",
+                  "colorPrimary": "MuiAppBar-colorPrimary HvHeader-backgroundColor",
                   "colorSecondary": "MuiAppBar-colorSecondary",
                   "colorTransparent": "MuiAppBar-colorTransparent",
                   "positionAbsolute": "MuiAppBar-positionAbsolute",
@@ -808,13 +810,13 @@ exports[`Header withStyles should be able to render 1`] = `
               position="fixed"
             >
               <WithStyles(ForwardRef(Paper))
-                className="MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+                className="MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary HvHeader-backgroundColor mui-fixed"
                 component="header"
                 elevation={4}
                 square={true}
               >
                 <ForwardRef(Paper)
-                  className="MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed"
+                  className="MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary HvHeader-backgroundColor mui-fixed"
                   classes={
                     Object {
                       "elevation0": "MuiPaper-elevation0",
@@ -852,7 +854,7 @@ exports[`Header withStyles should be able to render 1`] = `
                   square={true}
                 >
                   <header
-                    className="MuiPaper-root MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+                    className="MuiPaper-root MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary HvHeader-backgroundColor mui-fixed MuiPaper-elevation4"
                   >
                     <div
                       className="HvHeader-header"
@@ -868,49 +870,7 @@ exports[`Header withStyles should be able to render 1`] = `
                         >
                           <div
                             className="HvHeaderBrand-root"
-                          >
-                            <div
-                              className="HvHeaderBrand-separator"
-                            />
-                            <WithStyles(ForwardRef)
-                              variant="highlightText"
-                            >
-                              <ForwardRef
-                                classes={
-                                  Object {
-                                    "3xlTitle": "HvTypography-3xlTitle",
-                                    "4xlTitle": "HvTypography-4xlTitle",
-                                    "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
-                                    "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
-                                    "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
-                                    "mTitle": "HvTypography-mTitle",
-                                    "normalText": "HvTypography-normalText",
-                                    "placeholderText": "HvTypography-placeholderText",
-                                    "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
-                                    "sTitle": "HvTypography-sTitle",
-                                    "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
-                                    "vizText": "HvTypography-vizText",
-                                    "xlTitle": "HvTypography-xlTitle",
-                                    "xsTitle": "HvTypography-xsTitle",
-                                    "xxlTitle": "HvTypography-xxlTitle",
-                                    "xxsTitle": "HvTypography-xxsTitle",
-                                  }
-                                }
-                                variant="highlightText"
-                              >
-                                <p
-                                  className="HvTypography-root HvTypography-highlightText"
-                                />
-                              </ForwardRef>
-                            </WithStyles(ForwardRef)>
-                          </div>
+                          />
                         </Brand>
                       </WithStyles(Brand)>
                     </div>
@@ -919,8 +879,8 @@ exports[`Header withStyles should be able to render 1`] = `
               </WithStyles(ForwardRef(Paper))>
             </ForwardRef(AppBar)>
           </WithStyles(ForwardRef(AppBar))>
-        </Header>
-      </WithStyles(Header)>
+        </HvHeader>
+      </WithStyles(HvHeader)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

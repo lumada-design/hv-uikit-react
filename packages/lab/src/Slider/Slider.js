@@ -52,6 +52,9 @@ const transformKnobsPosition = (values, inverseStepValue, minPointValue) => {
 const calculateStepValue = (maxPointValue, minPointValue, divisionQuantity) =>
   Math.abs(maxPointValue - minPointValue) / divisionQuantity;
 
+/**
+ * Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters. Still in development
+ */
 class HvSlider extends React.Component {
   constructor(props) {
     super(props);

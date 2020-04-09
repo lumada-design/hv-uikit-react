@@ -4,6 +4,9 @@ import { HvTypography } from "@hv/uikit-react-core/dist";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
+/**
+ * A footer component for identification, still in development
+ */
 const HvFooter = props => {
   const {
     classes,

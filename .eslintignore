@@ -8,9 +8,10 @@
 # Dependency directories
 **/*/node_modules
 
-examples/**/*
-generator/**/*
 automation/**/*
 
 packages/icons/src/*
 packages/lab/src/*
+
+# templates directory
+doc/04-Templates/*

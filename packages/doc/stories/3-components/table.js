@@ -1,11 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { RawTable } from "@hv/uikit-react-core/dist/Table/Table";
+import HvTable from "@hv/uikit-react-core/dist/Table/Table";
 
-// We are importing the raw table because the table is wrapped inside 2 HOC
-// The Plugin generating the docs can't reach the documentation because the HOC are hiding it
-
-storiesOf("Components/Visualization", module).add("Table", () => <RawTable />, {
+storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
   title: "Table",
   description:
     "A Table visualization used to show data, based in the react-table. Please check https://react-table.js.org/#/story/readme for more info",

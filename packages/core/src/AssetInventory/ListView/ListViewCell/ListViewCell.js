@@ -52,23 +52,25 @@ const ListViewCell = ({
   columnIndex,
   semantic,
   ...others
-}) => (
-  <ListViewContextConsumer>
-    {contextConfiguration =>
-      cell(
-        classes,
-        align,
-        className,
-        id,
-        children,
-        contextConfiguration,
-        columnIndex,
-        semantic,
-        others
-      )
-    }
-  </ListViewContextConsumer>
-);
+}) => {
+  return (
+    <ListViewContextConsumer>
+      {contextConfiguration =>
+        cell(
+          classes,
+          align,
+          className,
+          id,
+          children,
+          contextConfiguration,
+          columnIndex,
+          semantic,
+          others
+        )
+      }
+    </ListViewContextConsumer>
+  );
+};
 
 ListViewCell.propTypes = {
   /**

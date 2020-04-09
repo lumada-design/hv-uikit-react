@@ -5,6 +5,9 @@ import { Button, withStyles } from "@material-ui/core";
 import getMaterialConfiguration from "./materialConfigurarion";
 import styles from "./styles";
 
+/**
+ * A button refers to a graphical control element that provides the user a simple way to trigger an event.
+ */
 const HvButton = props => {
   const {
     id,

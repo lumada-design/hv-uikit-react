@@ -1,0 +1,65 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/prop-types */
+
+import React, { useState } from "react";
+import { HvDropdown, HvTypography } from "@hv/uikit-react-core/dist";
+import * as iconComponentList from "@hv/uikit-react-icons/dist";
+
+const iconContainer = {
+  margin: "5px",
+  padding: "5px",
+  width: "140px",
+  display: "inherit",
+  flexDirection: "column",
+  alignItems: "center"
+};
+
+const dropdownSizes = [
+  { id: "0", label: "XS" },
+  { id: "1", label: "S" },
+  { id: "2", label: "M", selected: true },
+  { id: "3", label: "L" }
+];
+
+const keys = Array.from(new Set([...Object.keys(iconComponentList)])).sort();
+
+const Group = ({ iconSize }) => {
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {keys.map(icon => (
+        <Icon key={icon} name={icon} Component={iconComponentList[icon]} iconSize={iconSize} />
+      ))}
+    </div>
+  );
+};
+
+const Icon = ({ name, Component, iconSize }) => (
+  <div style={iconContainer}>
+    <Component iconSize={iconSize && iconSize.label} />
+    <HvTypography style={{ fontFamily: "monospace", margin: "6px 0" }} variant="placeholderText">
+      {name}
+    </HvTypography>
+  </div>
+);
+
+const Icons = () => {
+  const [iconSize, setIconSize] = useState(null);
+
+  return (
+    <div>
+      <div style={{ padding: "20px 0" }}>
+        <HvDropdown
+          values={dropdownSizes}
+          multiSelect={false}
+          labels={{ title: "Size selector" }}
+          onChange={item => setIconSize(item)}
+          notifyChangesOnFirstRender
+        />
+      </div>
+      <Group iconSize={iconSize} />
+    </div>
+  );
+};
+
+export default Icons;

@@ -8,6 +8,9 @@ import styles from "./styles";
 
 const DEFAULT_LABELS = { selectedTitle: "", notSelectedTitle: "" };
 
+/**
+ * A toggle button is a mechanism that allows users to change between 2 options.
+ */
 const ToggleButton = ({
   classes,
   className,

@@ -24,7 +24,7 @@ const DEFAULT_LABELS = {
 };
 
 /**
- * Asset inventory component.
+ * An Asset Inventory allows to switch between views. The Sort and Filter are defined using the metadata configuration, while the remaining configuration can be ser in the AssetInventory or in the individual views.
  */
 class AssetInventory extends React.Component {
   static areArraysEquals(a1, a2) {

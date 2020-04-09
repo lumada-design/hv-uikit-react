@@ -44,6 +44,9 @@ const getIcons = (classes, disabled) => {
   };
 };
 
+/**
+ * A Checkbox is a mechanism that allows user to select one options
+ */
 const HvRadio = props => {
   const {
     classes,

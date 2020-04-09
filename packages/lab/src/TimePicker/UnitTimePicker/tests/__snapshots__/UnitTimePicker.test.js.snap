@@ -833,7 +833,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                 </div>
               </DropUpXS>
             </WithStyles(DropUpXS)>
-            <WithStyles(Component)
+            <WithStyles(WithLabels)
               classes={
                 Object {
                   "input": "HvTimePickerUnitTimePicker-unitTimeInput",
@@ -854,7 +854,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               validationIconVisible={false}
               value="30"
             >
-              <Component
+              <WithLabels
                 classes={
                   Object {
                     "adornmentButton": "HvInput-adornmentButton",
@@ -892,7 +892,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                 validationIconVisible={false}
                 value="30"
               >
-                <Component
+                <WithId
                   classes={
                     Object {
                       "adornmentButton": "HvInput-adornmentButton",
@@ -1262,9 +1262,9 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       </WithStyles(ForwardRef)>
                     </div>
                   </HvInput>
-                </Component>
-              </Component>
-            </WithStyles(Component)>
+                </WithId>
+              </WithLabels>
+            </WithStyles(WithLabels)>
             <WithStyles(DropDownXS)
               className="HvTimePickerUnitTimePicker-subtractIcon"
               onClick={[Function]}

@@ -8,11 +8,6 @@ export interface HvTooltipProps extends StandardProps<TooltipProps, HvTooltipCla
   tooltipData?: React.ReactNode;
 
   /**
-   * Component to attach to.
-   */
-  tooltipAnchor?: React.ReactNode;
-
-  /**
    * Defines if should use a single or multiline tooltip.
    */
   useSingle?: boolean;

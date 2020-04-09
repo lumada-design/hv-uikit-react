@@ -6,6 +6,6 @@ export default (
   <HvEmptyState
     title="No data routes"
     message="After you start adding Data Routes, they will appear in here."
-    icon={<Fail iconSize="L" color="atmo7" />}
+    icon={<Fail iconSize="L" color="atmo7" role="presentation" />}
   />
 );

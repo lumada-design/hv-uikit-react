@@ -29,6 +29,6 @@ const data = (
 
 export default (
   <div style={styling.placeholder}>
-    <Tooltip tooltipData={data} tooltipAnchor={TooltipControl} />
+    <Tooltip tooltipData={data}>{TooltipControl}</Tooltip>
   </div>
 );

@@ -7,7 +7,7 @@ import { HvTypography } from "@hv/uikit-react-core/dist";
 import styles from "./styles";
 
 /**
- * A loading component. It can be customized through a series of parameters.
+ * A Loading Component component, still in development.
  */
 const Loading = ({ classes, size, position, text }) => {
   return (

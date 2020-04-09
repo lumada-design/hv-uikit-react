@@ -1,7 +1,7 @@
-import _ from "lodash";
+import mapValues from "lodash/mapValues";
 
 const styles = theme => {
-  const semantics = _.mapValues(theme.hv.palette.semantic, value => ({
+  const semantics = mapValues(theme.hv.palette.semantic, value => ({
     position: "absolute",
     backgroundColor: value,
     width: "100%",

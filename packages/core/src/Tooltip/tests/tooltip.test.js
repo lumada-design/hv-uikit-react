@@ -31,10 +31,9 @@ describe("Single Line Tooltip", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip
-          tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}
-          tooltipAnchor={Anchor}
-        />
+        <Tooltip tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}>
+          {Anchor}
+        </Tooltip>
       </HvProvider>
     );
   });
@@ -70,7 +69,9 @@ describe("Multi Line Tooltip - No Header", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip tooltipData={tooltipData} tooltipAnchor={Anchor} useSingle={false} />
+        <Tooltip tooltipData={tooltipData} useSingle={false}>
+          {Anchor}
+        </Tooltip>
       </HvProvider>
     );
   });
@@ -105,7 +106,9 @@ describe("Multi Line Tooltip - With Header", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip tooltipData={tooltipData} tooltipAnchor={Anchor} useSingle={false} />
+        <Tooltip tooltipData={tooltipData} useSingle={false}>
+          {Anchor}
+        </Tooltip>
       </HvProvider>
     );
   });

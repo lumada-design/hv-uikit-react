@@ -23,14 +23,7 @@ Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https
 When contributing with a new component, please add it to the **lab** in `packages/lab/src/<YOUR_COMPONENT>`
 
 In order to make your component available in the Storybook you also need to add:
-- A **story** in `packages/doc/stories/03-lab/<YOUR_STORY>.js`
-- A **sample** in `packages/doc/sample/lab/<YOUR_SAMPLE>.js`
-
-Too much work? We provide a generator that helps to scaffold all of this.
-
-```
-npm run generate
-```
+- A **story** in `packages/lab/src/<YOUR_COMPONENT>/stories/<YOUR_STORY>.stories.js`
 
 ## Bugs
 If you find a bug in the source code, you can help us by [submitting an issue]((#submitting-an-issue)) to this repo.

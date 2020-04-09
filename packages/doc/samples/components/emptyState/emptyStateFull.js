@@ -9,6 +9,6 @@ export default (
     title="Start building data routes"
     message="Before we create any dashboard we need to get some data."
     action={CustomAction}
-    icon={<BarChart iconSize="L" color="atmo7" />}
+    icon={<BarChart iconSize="L" color="atmo7" role="presentation" />}
   />
 );

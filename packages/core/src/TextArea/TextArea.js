@@ -20,9 +20,6 @@ const DEFAULT_LABELS = {
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
  * alongside this it can provide a validation for the max character quantity
- *
- * @class HvTextArea
- * @extends {React.Component}
  */
 class HvTextArea extends React.Component {
   constructor(props) {
