@@ -73,10 +73,9 @@ class HvDatePicker extends React.Component {
 
   render() {
     const { from, to } = this.state;
-    const { classes, label, hideReset, disabled } = this.props;
+    const { classes, label, hideReset, disabled, dateFormat } = this.props;
 
     const modifiers = { start: from, end: to };
-    const dateFormat = "MM/DD/YY";
 
     const rangeFrom = from ? moment(from).format(dateFormat) : "";
     const rangeEnd = to ? moment(to).format(dateFormat) : "";
@@ -148,7 +147,11 @@ HvDatePicker.propTypes = {
   /**
    * Prevent from opening the overlay
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /**
+   * The date format to be displayed. Default to MM/DD/YY
+   */
+  dateFormat: PropTypes.string
 };
 
 HvDatePicker.defaultProps = {
@@ -156,7 +159,8 @@ HvDatePicker.defaultProps = {
   onChange: () => {},
   label: "",
   hideReset: false,
-  disabled: false
+  disabled: false,
+  dateFormat: "MM/DD/YY"
 };
 
 export default HvDatePicker;

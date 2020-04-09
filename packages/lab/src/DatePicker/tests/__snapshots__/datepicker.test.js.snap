@@ -9,6 +9,7 @@ exports[`DatePicker withStyles should render correctly 1`] = `
       "wrapper": "HvLabDatePicker-wrapper-1",
     }
   }
+  dateFormat="MM/DD/YY"
   disabled={false}
   hideReset={false}
   label=""

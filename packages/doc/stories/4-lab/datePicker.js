@@ -28,6 +28,11 @@ storiesOf("Lab", module).add("DatePicker", () => <HvDatePicker />, {
       title: "1. Simple",
       description: "basic datepicker",
       src: "lab/datePicker/datePickerSimple.js"
+    },
+    {
+      title: "2. Custom date format",
+      description: "date in custom format",
+      src: "lab/datePicker/datePickerDateFormat.js"
     }
   ]
 });
