@@ -5,7 +5,7 @@
 #  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
 #  - type: the release type wich is used to complete the script name to call npm with, 'publish-<type>'.
 #
-# An example usin curl:
+# An example using curl:
 # curl \
 #  -H "Accept: application/vnd.github.everest-preview+json" \
 #  -H "Authorization: token <user-token>" \
@@ -62,3 +62,8 @@ jobs:
 
       - name: Publish
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
+
+      - name: Publish Documentation
+        run: |
+          npm run build -- --scope @hv/uikit-react-doc
+          npm run publish-documentation --  --ci

@@ -19,8 +19,8 @@ select an option by locator
     Click Element                        ${locator}
     Element Attribute Value Should Be    ${option}       aria-selected    true
 
-*** Test Cases ***                       sample                       option        locator                 value
-single select clicking on icon           single-selection             ${option1}    css:#${option1} div     ${None}
-single select clicking on label          single-selection             ${option1}    css:#${option1} p       ${None}
-single select clicking on radiobutton    list-radiobutton-selector    ${option3}    css:#${option3} input   ${None}
-multi select clicking on checkbox        multiselection-all           ${option5}    css:#${option5} input   false
+*** Test Cases ***                       sample                       option        locator            value
+single select clicking on icon           single-selection             ${option1}    ${option1} div     ${None}
+single select clicking on label          single-selection             ${option1}    ${option1} p       ${None}
+single select clicking on radiobutton    list-radiobutton-selector    ${option3}    ${option3} input   ${None}
+multi select clicking on checkbox        multiselection-all           ${option5}    ${option5} input   false

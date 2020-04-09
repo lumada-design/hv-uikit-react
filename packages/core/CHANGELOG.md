@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.0.0-next.1...@hv/uikit-react-core@2.0.0-next.2) (2020-03-18)
+# [1.29.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.28.0...@hv/uikit-react-core@1.29.0) (2020-04-09)
+
+
+### Bug Fixes
+
+* **checkbox:** incorrect positioning of listview items using checkbox. [#1314](https://github.com/pentaho/hv-uikit-react/issues/1314)  ([89cc480](https://github.com/pentaho/hv-uikit-react/commit/89cc480b0530076db2aaaeef033ae75ba34ed989))
+
+
+### Features
+
+* **api:** deprecate props to match 2.x. [#1318](https://github.com/pentaho/hv-uikit-react/issues/1318) ([9e402ed](https://github.com/pentaho/hv-uikit-react/commit/9e402edb9359fdf9356d7edc602288042d927c57))
+* **badge:** review accessibility. [#1234](https://github.com/pentaho/hv-uikit-react/issues/1234) ([37d032f](https://github.com/pentaho/hv-uikit-react/commit/37d032f6ba961b83353ac698e50f8ac1821d0753))
+* **classnames:** add icons componentName. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([dfa7ef1](https://github.com/pentaho/hv-uikit-react/commit/dfa7ef11c43973d7297653e57201a687990449a3))
+* **classnames:** add prefix to vertical navigation comps. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([0b689b9](https://github.com/pentaho/hv-uikit-react/commit/0b689b925f20056b1d4e91d84722451571717f18))
+* **classnames:** apply classnames backport. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([7ed3fe2](https://github.com/pentaho/hv-uikit-react/commit/7ed3fe2b0159dd1015b9f9b25331a4334ac43e5a))
+* **dropdown:** change width of container. [#1303](https://github.com/pentaho/hv-uikit-react/issues/1303) ([3c68b00](https://github.com/pentaho/hv-uikit-react/commit/3c68b0086209196eb52ff41aa90dd86467b2883f))
+
+
+
+
+
 # [1.28.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.27.0...@hv/uikit-react-core@1.28.0) (2020-04-01)
 
 

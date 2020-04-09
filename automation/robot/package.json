@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-automation-robot",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Environment for test UI components running pa11y tool.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",

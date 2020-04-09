@@ -23,6 +23,17 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
 * **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+# [1.12.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.11.0...@hv/uikit-react-automation-storybook@1.12.0) (2020-04-09)
+
+
+### Features
+
+* **dropdown:** change width of container. [#1303](https://github.com/pentaho/hv-uikit-react/issues/1303) ([3c68b00](https://github.com/pentaho/hv-uikit-react/commit/3c68b0086209196eb52ff41aa90dd86467b2883f))
+
+
+
+
+
 # [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-storybook@1.10.2...@hv/uikit-react-automation-storybook@1.11.0) (2020-04-01)
 
 

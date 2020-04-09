@@ -52,6 +52,7 @@ select a end item when item is clicked (3 level)
     vertical navigation item should be selected        ${vnItem2.3.1}
 
 doesn't select an item when the item is focused
+    [Tags]    bug-infrastructure-ie
     Click Element                                      ${vnBurger}
     Wait Until Element Is Visible                      ${vNExpanded}     4s
     set focus and press keys                           ${vNExpanded}     TAB

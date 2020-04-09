@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@2.0.0-next.1...@hv/uikit-react-doc@2.0.0-next.2) (2020-03-18)
+# [1.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.22.0...@hv/uikit-react-doc@1.23.0) (2020-04-09)
 
 
 ### Features
@@ -11,6 +12,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **deprecations:** remove searchbox from lab. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([875fb0f](https://github.com/pentaho/hv-uikit-react/commit/875fb0f3767a38e57dc1af5b182ae5598a4beb1f))
 * **dropdowmenu:** add onToggleOpen. [#1208](https://github.com/pentaho/hv-uikit-react/issues/1208) ([401219a](https://github.com/pentaho/hv-uikit-react/commit/401219a4aafb674f9f14265f85564c268c79390a))
 * **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+* **badge:** review accessibility. [#1234](https://github.com/pentaho/hv-uikit-react/issues/1234) ([37d032f](https://github.com/pentaho/hv-uikit-react/commit/37d032f6ba961b83353ac698e50f8ac1821d0753))
+* **dropdown:** change width of container. [#1303](https://github.com/pentaho/hv-uikit-react/issues/1303) ([3c68b00](https://github.com/pentaho/hv-uikit-react/commit/3c68b0086209196eb52ff41aa90dd86467b2883f))
 
 
 
