@@ -525,7 +525,9 @@ class Table extends React.Component {
               dataList={secondaryActions}
               onClick={(event, item) => {
                 event.stopPropagation();
-                item.action(event, props.original);
+                if (item) {
+                  item.action(event, props.original);
+                }
               }}
               {...dropdownMenuProps}
             />
