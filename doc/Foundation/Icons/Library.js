@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable react/prop-types */
-
 import React, { useState } from "react";
 import { HvDropdown, HvTypography } from "@hv/uikit-react-core/dist";
 import * as iconComponentList from "@hv/uikit-react-icons/dist";

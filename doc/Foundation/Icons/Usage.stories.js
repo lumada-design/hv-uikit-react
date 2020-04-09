@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable react/prop-types */
-
 import React from "react";
 import { Bookmark, CheckboxCheck, Level4, Level5, Machine } from "@hv/uikit-react-icons/dist";
 

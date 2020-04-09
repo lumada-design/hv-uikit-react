@@ -5,7 +5,7 @@ import HvGrid from "../Grid";
 import HvTypography from "../../Typography";
 
 export default {
-  title: "Foundation/Layout/Grid",
+  title: "Foundation/Grid",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvGrid } from '@hv/uikit-react-core/dist'"
@@ -64,7 +64,7 @@ export const Main = () => {
   );
 };
 
-export const BreakpointBehaviour = () => {
+export const Behaviour = () => {
   const theme = useTheme();
   const findBreakpoint = () =>
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
@@ -109,7 +109,7 @@ export const BreakpointBehaviour = () => {
   );
 };
 
-BreakpointBehaviour.story = {
+Behaviour.story = {
   parameters: {
     docs: {
       storyDescription:

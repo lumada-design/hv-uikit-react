@@ -34,16 +34,16 @@ addParameters({
     storySort: storySort({
       method: "alphabetical",
       order: [
-        "Getting Started",
+        "Get Started",
         ["Introduction", "Installation"],
         "Foundation",
+        ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
         "Components",
         "Visualizations",
         "Lab",
         "Templates",
-        ["About", "Login Page", "Home Page", "Details Page"],
         "Community",
-        "Design System"
+        ["Overview", "Release Schedule", "Contributing"]
       ]
     })
   }

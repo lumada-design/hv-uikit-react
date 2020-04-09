@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable react/prop-types */
-
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvProvider, HvButton } from "@hv/uikit-react-core/dist";

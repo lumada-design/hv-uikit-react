@@ -14,4 +14,4 @@ packages/icons/src/*
 packages/lab/src/*
 
 # templates directory
-doc/04-Templates/*
+doc/**/*

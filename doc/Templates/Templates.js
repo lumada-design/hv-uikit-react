@@ -34,12 +34,16 @@ const styles = {
   },
   sema0: {
     backgroundColor: "transparent"
+  },
+  img: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover"
   }
 };
 
 const mediaStyle = theme => ({
   root: {
-    width: "100%",
     paddingBottom: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     cursor: "pointer"
