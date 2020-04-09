@@ -34,13 +34,13 @@ import checkboxHOC from "./selectTable";
 import {
   appendClassnames,
   createExpanderButton,
-  setHeaderSortableClass
+  setHeaderSortableClass,
 } from "./columnUtils";
 import {
   toggleAll,
   isIndeterminateStatus,
   toggleSelection,
-  isSelected
+  isSelected,
 } from "./checkBoxUtils";
 
 import Pagination from "../Pagination";
@@ -85,7 +85,7 @@ class Table extends React.Component {
       // Controls which row is selected using the checkboxes.
       selection: props.selections || [],
       // Controls if the select all options has been used
-      selectAll: false
+      selectAll: false,
     };
   }
 
@@ -106,7 +106,7 @@ class Table extends React.Component {
     const { selections } = props;
     if (selections !== state.selections) {
       return {
-        selections
+        selections,
       };
     }
 
@@ -123,7 +123,7 @@ class Table extends React.Component {
     const { data } = this.props;
     const newData = [];
     let newEntry = {};
-    _.map(data, entry => {
+    _.map(data, (entry) => {
       newEntry = {};
       _.each(entry, (val, key) => {
         newEntry[key] = val === null ? `\u2014` : val;
@@ -141,7 +141,7 @@ class Table extends React.Component {
    * @param numRows - number of rows in table
    * @returns {String} number selected
    */
-  getCheckBoxHeader = numRows => {
+  getCheckBoxHeader = (numRows) => {
     const { selection } = this.state;
     if (selection.length === 0) {
       return "All";
@@ -164,7 +164,7 @@ class Table extends React.Component {
       pageSize = data.length,
       onPageSizeChange,
       onPageChange,
-      pages
+      pages,
     } = this.props;
 
     return {
@@ -175,18 +175,18 @@ class Table extends React.Component {
         onPageSizeChange: (newPageSize, page) => {
           this.setState({ expanded: {} });
           if (onPageSizeChange) onPageSizeChange(newPageSize, page);
-        }
+        },
       }),
       ...(showPagination && {
-        onPageChange: page => {
+        onPageChange: (page) => {
           this.setState({ expanded: {} });
           if (onPageChange) onPageChange(page);
-        }
+        },
       }),
       ...(showPagination && pages && { pages }),
       ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
         (pageSize && { defaultPageSize: pageSize })),
-      ...{ showPageSizeOptions: showPageSize }
+      ...{ showPageSizeOptions: showPageSize },
     };
   };
 
@@ -201,7 +201,7 @@ class Table extends React.Component {
     return {
       ...(paginationServerSide && { manual: true }),
       ...(paginationServerSide && { onFetchData: this.onFetchDataInternal }),
-      ...(paginationServerSide && { page })
+      ...(paginationServerSide && { page }),
     };
   };
 
@@ -211,7 +211,7 @@ class Table extends React.Component {
    *
    * @param sortedColumn - the column representation from the user.
    */
-  onSortChange = sortedColumn => {
+  onSortChange = (sortedColumn) => {
     this.setState({ sorted: sortedColumn, expanded: {} });
   };
 
@@ -226,7 +226,7 @@ class Table extends React.Component {
     return {
       sortable,
       ...(sortable && { defaultSorted }),
-      onSortedChange: this.onSortChange
+      onSortedChange: this.onSortChange,
     };
   };
 
@@ -242,7 +242,7 @@ class Table extends React.Component {
       toggleSelection: (id, shiftkey, row) => {
         this.toggleSelection(row.id);
       },
-      internalId
+      internalId,
     };
   };
 
@@ -251,7 +251,7 @@ class Table extends React.Component {
    *
    * @param {Object} tableState - an Object containing information about the current state of the table.
    */
-  onFetchDataInternal = tableState => {
+  onFetchDataInternal = (tableState) => {
     const { onFetchData } = this.props;
     const { initiallyLoaded, sorted: sortedFromState } = this.state;
     const { pageSize, page, sorted } = tableState;
@@ -294,7 +294,7 @@ class Table extends React.Component {
         const sortDirection =
           sorted[0].desc === true ? "descending" : "ascending";
         ariaSort = {
-          "aria-sort": sortDirection
+          "aria-sort": sortDirection,
         };
       } else ariaSort = { "aria-sort": undefined };
     }
@@ -308,7 +308,7 @@ class Table extends React.Component {
       className:
         column.id !== "secondaryActions"
           ? setHeaderSortableClass(isSortable, classes.theadTh)
-          : classNames(classes.theadTh, "secondaryAction")
+          : classNames(classes.theadTh, "secondaryAction"),
     };
   };
 
@@ -322,8 +322,8 @@ class Table extends React.Component {
     return {
       role: "rowgroup",
       className: classNames(classes.tbody, {
-        [classes.tBodyEmpty]: data.length === 0
-      })
+        [classes.tBodyEmpty]: data.length === 0,
+      }),
     };
   };
 
@@ -337,7 +337,7 @@ class Table extends React.Component {
     const { classes } = this.props;
     const baseTrGroupProps = {
       role: undefined,
-      className: classes.trGroups
+      className: classes.trGroups,
     };
 
     return baseTrGroupProps;
@@ -348,10 +348,10 @@ class Table extends React.Component {
    *
    * @param {numeric} rowIndex - The index of the row to toggle.
    */
-  toggleExpand = rowIndex => {
+  toggleExpand = (rowIndex) => {
     const { expanded } = this.state;
     this.setState({
-      expanded: { [rowIndex]: !expanded[rowIndex] }
+      expanded: { [rowIndex]: !expanded[rowIndex] },
     });
   };
 
@@ -383,12 +383,12 @@ class Table extends React.Component {
       role: "row",
       "aria-selected": "false",
       ...expandedProps,
-      ...ariaRowIndex
+      ...ariaRowIndex,
     };
     if (subElementTemplate && rowInfo && rowInfo.row) {
       return {
         ...baseTrProps,
-        className: classNames(classes.tr, classes.pointer)
+        className: classNames(classes.tr, classes.pointer),
       };
     }
 
@@ -398,7 +398,7 @@ class Table extends React.Component {
       return {
         ...baseTrProps,
         className: classNames(classes.tr, "selected"),
-        "aria-selected": "true"
+        "aria-selected": "true",
       };
     }
 
@@ -410,14 +410,14 @@ class Table extends React.Component {
 
     const baseTableProps = {
       role: "table",
-      className: classes.table
+      className: classes.table,
     };
 
     if (tableProps) {
       return {
         ...baseTableProps,
         caption: tableProps.tableCaption,
-        "aria-rowcount": rowCount
+        "aria-rowcount": rowCount,
       };
     }
 
@@ -435,7 +435,7 @@ class Table extends React.Component {
           ? `${rowElementId}-column-${column.id}`
           : undefined,
       className: classes.td,
-      role: "cell"
+      role: "cell",
     };
   };
 
@@ -445,7 +445,7 @@ class Table extends React.Component {
    *
    * @param {Number} key - the key that uniquely identifies the row.
    */
-  toggleSelection = key => {
+  toggleSelection = (key) => {
     // start off with the existing state
     const { selection } = this.state;
     const { onSelection } = this.props;
@@ -471,7 +471,7 @@ class Table extends React.Component {
     this.setState(
       {
         selectAll: stateToSet.selectAll,
-        selection: stateToSet.selection
+        selection: stateToSet.selection,
       },
       () => {
         onSelection(stateToSet.selection);
@@ -535,7 +535,7 @@ class Table extends React.Component {
       expanded,
       selectAll,
       selection,
-      recordQuantity
+      recordQuantity,
     } = this.state;
 
     const AugmentedTable = idForCheckbox
@@ -546,7 +546,7 @@ class Table extends React.Component {
     // Add dropdown menu column if secondaryActions exists in props
     if (
       !!secondaryActions &&
-      !columns.some(col => col.accessor === "secondaryActions")
+      !columns.some((col) => col.accessor === "secondaryActions")
     ) {
       columns.push({
         headerText: "",
@@ -554,7 +554,7 @@ class Table extends React.Component {
         cellType: "alpha-numeric",
         width: 31,
         sortable: false,
-        Cell: props =>
+        Cell: (props) =>
           props.original.noActions ? null : (
             <DropDownMenu
               id={`${this.computeRowElementId(props)}-secondaryActions`}
@@ -563,18 +563,20 @@ class Table extends React.Component {
               dataList={secondaryActions}
               onClick={(item, event) => {
                 event.stopPropagation();
-                item.action(props.original);
+                if (item) {
+                  item.action(props.original);
+                }
               }}
               aria-label={`${this.computeRowElementId(props)}-secondaryActions`}
             />
-          )
+          ),
       });
     }
 
     // Creates the thead with the text and the sorted icon.
     const ColumnSettings = {
       ...ReactTableDefaults.column,
-      Header: props => {
+      Header: (props) => {
         const { column } = props;
         const { sorted } = this.state;
 
@@ -588,11 +590,11 @@ class Table extends React.Component {
             onSortChange={this.onSortChange}
           />
         );
-      }
+      },
     };
     ReactTableDefaults.expanderDefaults.show = false;
     Object.assign(ReactTableDefaults, {
-      column: ColumnSettings
+      column: ColumnSettings,
     });
 
     // add expander button
@@ -656,7 +658,7 @@ class Table extends React.Component {
           {...this.getSortProps()}
           {...this.getCheckboxProps()}
           /* eslint no-return-assign: 0 */
-          ref={r => (this.checkboxTable = r)}
+          ref={(r) => (this.checkboxTable = r)}
           getTableProps={this.getTableProps}
           getTheadThProps={this.getTheadThProps}
           getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
@@ -669,7 +671,7 @@ class Table extends React.Component {
           SubComponent={newSubComponent}
           expanded={expanded}
           keyField={idForCheckbox}
-          isSelected={key => isSelected(key, selection)}
+          isSelected={(key) => isSelected(key, selection)}
           NoDataComponent={NoData}
           getTrGroupProps={this.getTrGroupProps}
         />
@@ -746,14 +748,14 @@ Table.propTypes = {
     /**
      * Styles applied to the component columns.
      */
-    firstWithNumeric: PropTypes.string
+    firstWithNumeric: PropTypes.string,
   }).isRequired,
   /**
    * The labels inside the table.
    */
   labels: PropTypes.shape({
     titleText: PropTypes.string,
-    subtitleText: PropTypes.string
+    subtitleText: PropTypes.string,
   }),
   /**
    * Title of the table.
@@ -779,7 +781,7 @@ Table.propTypes = {
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),
-      sortable: PropTypes.bool
+      sortable: PropTypes.bool,
     })
   ).isRequired,
   /**
@@ -860,7 +862,7 @@ Table.propTypes = {
   secondaryActions: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string,
-      action: PropTypes.func
+      action: PropTypes.func,
     })
   ),
 
@@ -869,7 +871,7 @@ Table.propTypes = {
   /**
    * Number of rows available in table to display in aria-rowcount
    */
-  rowCount: PropTypes.number
+  rowCount: PropTypes.number,
 };
 
 Table.defaultProps = {
@@ -880,7 +882,7 @@ Table.defaultProps = {
   subtitleText: undefined,
   labels: {
     titleText: "",
-    subtitleText: ""
+    subtitleText: "",
   },
   showPagination: true,
   onPageChange: () => {},
@@ -902,7 +904,7 @@ Table.defaultProps = {
   secondaryActions: null,
   getTableProps: undefined,
   tableProps: { tableCaption: "Table Caption" },
-  rowCount: undefined
+  rowCount: undefined,
 };
 
 export default Table;
