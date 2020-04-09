@@ -3,34 +3,15 @@ import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Button from "@hv/uikit-react-core/dist/Button";
 import Input from "@hv/uikit-react-core/dist/Input";
 
-const labels = {
-  inputLabel: "Label",
-  placeholder: "Enter value"
-};
-
 const btnStyle = {
   width: "130px",
   height: "32px",
   margin: "0 10px 30px 0"
 };
 
-const inpStyle = {
-  marginBottom: "30px"
-};
-
-const inputLabels = {
-  inputLabel: "Limit"
-};
-
 function WrapperComp() {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("Initial State");
   const [maxChar, setMaxChar] = useState(10);
-
-  // to be possible to change the input value by user action
-  const setterValue = (event, newValue) => {
-    setValue(newValue);
-    return newValue;
-  };
 
   return (
     <>
@@ -45,18 +26,17 @@ function WrapperComp() {
       </Button>
 
       <Input
-        style={inpStyle}
-        initialValue={maxChar.toString()}
-        onChange={(event, newValue) => setMaxChar(Number(newValue))}
-        labels={inputLabels}
+        style={{ marginBottom: 30 }}
+        value={String(maxChar)}
+        onChange={(e, newLimit) => setMaxChar(Number(newLimit))}
+        labels={{ inputLabel: "Limit" }}
       />
 
       <HvTextArea
-        initialValue="Initial State"
         value={value}
         rows={5}
-        labels={labels}
-        onChange={setterValue}
+        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
+        onChange={(e, newValue) => setValue(newValue)}
         maxCharQuantity={maxChar}
       />
     </>

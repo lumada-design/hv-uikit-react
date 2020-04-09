@@ -224,7 +224,7 @@ describe("Input", () => {
       </HvProvider>
     );
     const inputInstance = getInput(wrapper);
-    inputInstance.suggestionSelectedHandler({ label: "test" });
+    inputInstance.suggestionSelectedHandler(null, { label: "test" });
     expect(suggestionSelected).toHaveBeenCalled();
 
     console.error = originalError;

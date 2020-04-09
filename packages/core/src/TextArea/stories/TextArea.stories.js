@@ -72,23 +72,11 @@ Disabled.story = {
 };
 
 export const Controlled = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value"
-  };
+  const [value, setValue] = useState("Initial State");
 
   const btnStyle = {
-    width: "130px",
-    height: "32px",
-    margin: "0 10px 30px 0"
-  };
-
-  const [value, setValue] = useState();
-
-  // to be possible to change the input value by user action
-  const setterValue = newValue => {
-    setValue(newValue);
-    return newValue;
+    width: 120,
+    marginRight: 20
   };
 
   return (
@@ -103,12 +91,13 @@ export const Controlled = () => {
         Third value
       </HvButton>
 
+      <p />
+
       <HvTextArea
-        initialValue="Initial State"
         value={value}
         rows={5}
-        labels={labels}
-        onChange={setterValue}
+        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
+        onChange={(e, newValue) => setValue(newValue)}
       />
     </>
   );
@@ -123,32 +112,12 @@ Controlled.story = {
 };
 
 export const ControlledLimited = () => {
-  const labels = {
-    inputLabel: "Label",
-    placeholder: "Enter value"
-  };
-
-  const btnStyle = {
-    width: "130px",
-    height: "32px",
-    margin: "0 10px 30px 0"
-  };
-
-  const inpStyle = {
-    marginBottom: "30px"
-  };
-
-  const inputLabels = {
-    inputLabel: "Limit"
-  };
-
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("Initial State");
   const [maxChar, setMaxChar] = useState(10);
 
-  // to be possible to change the input value by user action
-  const setterValue = newValue => {
-    setValue(newValue);
-    return newValue;
+  const btnStyle = {
+    width: 120,
+    marginRight: 20
   };
 
   return (
@@ -163,19 +132,20 @@ export const ControlledLimited = () => {
         Third value
       </HvButton>
 
+      <p />
+
       <HvInput
-        style={inpStyle}
-        initialValue={maxChar.toString()}
-        onChange={newValue => setMaxChar(Number(newValue))}
-        labels={inputLabels}
+        style={{ marginBottom: 30 }}
+        value={String(maxChar)}
+        onChange={(e, newLimit) => setMaxChar(Number(newLimit))}
+        labels={{ inputLabel: "Limit" }}
       />
 
       <HvTextArea
-        initialValue="Initial State"
         value={value}
         rows={5}
-        labels={labels}
-        onChange={setterValue}
+        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
+        onChange={(e, newValue) => setValue(newValue)}
         maxCharQuantity={maxChar}
       />
     </>
