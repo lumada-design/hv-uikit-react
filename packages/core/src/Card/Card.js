@@ -10,6 +10,9 @@ import Footer from "./Footer";
 import Media from "./Media";
 import styles from "./styles";
 
+/**
+ * A card container to be used for short and related of information.
+ */
 const HvCard = ({
   classes,
   className,

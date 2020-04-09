@@ -17,6 +17,6 @@ export default (
     title="This page can't be displayed"
     message={CustomMessage}
     action={CustomAction}
-    icon={<Ghost iconSize="L" color="atmo7" />}
+    icon={<Ghost iconSize="L" color="atmo7" role="presentation" />}
   />
 );

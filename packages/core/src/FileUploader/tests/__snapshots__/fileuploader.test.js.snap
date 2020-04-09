@@ -772,7 +772,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         acceptedFiles={
           Array [
             "jpeg",
@@ -811,7 +811,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
         onFileRemoved={[MockFunction]}
         onFilesAdded={[MockFunction]}
       >
-        <Component
+        <WithLabels
           acceptedFiles={
             Array [
               "jpeg",
@@ -1805,8 +1805,8 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               </WithStyles(FileList)>
             </div>
           </FileUploader>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

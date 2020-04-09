@@ -64,7 +64,6 @@ const Sample = () => {
   return (
     <FileUploader
       id="fileuploader1"
-      multiple={false}
       acceptedFiles={["jpg", "jpeg", "png"]}
       labels={{ sizeWarning: "Maximum file size:" }}
       maxFileSize={1 * 1000 * 1000}

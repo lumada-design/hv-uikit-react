@@ -772,7 +772,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         disabled={true}
         expanded={true}
         id="test-dropdown"
@@ -792,7 +792,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
           ]
         }
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "arrow": "HvDropdown-arrow",
@@ -828,7 +828,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             ]
           }
         >
-          <Component
+          <WithId
             classes={
               Object {
                 "arrow": "HvDropdown-arrow",
@@ -2533,7 +2533,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           <div
                                             className="HvDropdownList-searchContainer"
                                           >
-                                            <WithStyles(Component)
+                                            <WithStyles(WithLabels)
                                               id="test-dropdown-values-search"
                                               onChange={[Function]}
                                               values={
@@ -2550,7 +2550,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 ]
                                               }
                                             >
-                                              <Component
+                                              <WithLabels
                                                 classes={
                                                   Object {
                                                     "root": "HvSearchBox-root",
@@ -2600,7 +2600,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     ]
                                                   }
                                                 >
-                                                  <WithStyles(Component)
+                                                  <WithStyles(WithLabels)
                                                     autoFocus={false}
                                                     className="HvSearchBox-root"
                                                     customFixedIcon={
@@ -2647,7 +2647,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       ]
                                                     }
                                                   >
-                                                    <Component
+                                                    <WithLabels
                                                       autoFocus={false}
                                                       className="HvSearchBox-root"
                                                       classes={
@@ -2718,7 +2718,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         ]
                                                       }
                                                     >
-                                                      <Component
+                                                      <WithId
                                                         autoFocus={false}
                                                         className="HvSearchBox-root"
                                                         classes={
@@ -3498,12 +3498,12 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             </WithStyles(ForwardRef)>
                                                           </div>
                                                         </HvInput>
-                                                      </Component>
-                                                    </Component>
-                                                  </WithStyles(Component)>
+                                                      </WithId>
+                                                    </WithLabels>
+                                                  </WithStyles(WithLabels)>
                                                 </HvSearchBox>
-                                              </Component>
-                                            </WithStyles(Component)>
+                                              </WithLabels>
+                                            </WithStyles(WithLabels)>
                                           </div>
                                           <div
                                             className="HvDropdownList-selectAllContainer"
@@ -7107,9 +7107,9 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                 </WithStyles(List)>
               </div>
             </HvDropdown>
-          </Component>
-        </Component>
-      </WithStyles(Component)>
+          </WithId>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -7887,7 +7887,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         expanded={true}
         selectDefault={false}
         values={
@@ -7904,7 +7904,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
           ]
         }
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "arrow": "HvDropdown-arrow",
@@ -7937,7 +7937,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
             ]
           }
         >
-          <Component
+          <WithId
             classes={
               Object {
                 "arrow": "HvDropdown-arrow",
@@ -9927,9 +9927,9 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                 </WithStyles(List)>
               </div>
             </HvDropdown>
-          </Component>
-        </Component>
-      </WithStyles(Component)>
+          </WithId>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -10707,7 +10707,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         expanded={true}
         onChange={[MockFunction]}
         selectDefault={true}
@@ -10726,7 +10726,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
           ]
         }
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "arrow": "HvDropdown-arrow",
@@ -10761,7 +10761,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
             ]
           }
         >
-          <Component
+          <WithId
             classes={
               Object {
                 "arrow": "HvDropdown-arrow",
@@ -11266,7 +11266,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                           <div
                                             className="HvDropdownList-searchContainer"
                                           >
-                                            <WithStyles(Component)
+                                            <WithStyles(WithLabels)
                                               id="hv-dropdown-1-values-search"
                                               onChange={[Function]}
                                               values={
@@ -11283,7 +11283,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 ]
                                               }
                                             >
-                                              <Component
+                                              <WithLabels
                                                 classes={
                                                   Object {
                                                     "root": "HvSearchBox-root",
@@ -11333,7 +11333,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     ]
                                                   }
                                                 >
-                                                  <WithStyles(Component)
+                                                  <WithStyles(WithLabels)
                                                     autoFocus={false}
                                                     className="HvSearchBox-root"
                                                     customFixedIcon={
@@ -11380,7 +11380,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       ]
                                                     }
                                                   >
-                                                    <Component
+                                                    <WithLabels
                                                       autoFocus={false}
                                                       className="HvSearchBox-root"
                                                       classes={
@@ -11451,7 +11451,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         ]
                                                       }
                                                     >
-                                                      <Component
+                                                      <WithId
                                                         autoFocus={false}
                                                         className="HvSearchBox-root"
                                                         classes={
@@ -12231,12 +12231,12 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </WithStyles(ForwardRef)>
                                                           </div>
                                                         </HvInput>
-                                                      </Component>
-                                                    </Component>
-                                                  </WithStyles(Component)>
+                                                      </WithId>
+                                                    </WithLabels>
+                                                  </WithStyles(WithLabels)>
                                                 </HvSearchBox>
-                                              </Component>
-                                            </WithStyles(Component)>
+                                              </WithLabels>
+                                            </WithStyles(WithLabels)>
                                           </div>
                                           <div
                                             className="HvDropdownList-listContainer"
@@ -12971,9 +12971,9 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                 </WithStyles(List)>
               </div>
             </HvDropdown>
-          </Component>
-        </Component>
-      </WithStyles(Component)>
+          </WithId>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

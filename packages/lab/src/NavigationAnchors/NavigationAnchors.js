@@ -6,6 +6,9 @@ import styles from "./styles";
 
 const RETRY_MAX = 5;
 
+/**
+ * A navigation component to help in changing views, still in development
+ */
 class NavigationAnchors extends React.Component {
   constructor(props) {
     super(props);

@@ -33,7 +33,9 @@ const data = <HvTypography variant="infoText">Grid View</HvTypography>;
 
 export default (
   <div style={styling.placeholder}>
-    <Tooltip tooltipData={data} tooltipAnchor={TooltipHover} />
-    <Tooltip tooltipData={data} tooltipAnchor={TooltipOpen} open />
+    <Tooltip tooltipData={data}>{TooltipHover}</Tooltip>
+    <Tooltip tooltipData={data} open>
+      {TooltipOpen}
+    </Tooltip>
   </div>
 );

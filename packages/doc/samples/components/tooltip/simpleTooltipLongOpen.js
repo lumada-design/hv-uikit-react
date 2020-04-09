@@ -30,6 +30,8 @@ const data = (
 
 export default (
   <div style={styling.placeholder}>
-    <Tooltip tooltipData={data} tooltipAnchor={TooltipControl} open />
+    <Tooltip tooltipData={data} open>
+      {TooltipControl}
+    </Tooltip>
   </div>
 );

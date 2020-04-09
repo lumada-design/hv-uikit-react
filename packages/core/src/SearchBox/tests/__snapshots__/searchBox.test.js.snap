@@ -777,7 +777,7 @@ exports[`<SearchBox /> renders correctly 1`] = `
         }
       }
     >
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         onChange={[MockFunction]}
       />
     </ContextProvider>
@@ -1562,7 +1562,7 @@ exports[`<SearchBox /> renders disabled correctly 1`] = `
         }
       }
     >
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         disabled={true}
         onChange={[MockFunction]}
       />

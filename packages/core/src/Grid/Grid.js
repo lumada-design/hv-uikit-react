@@ -15,7 +15,7 @@ const BREAKPOINT_GUTTERS = {
 const SPACINGS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 /**
- * We override the default spacing to "auto"
+ * The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. This component is based in a 12-column grid layout.
  */
 const HvGrid = ({ container, spacing = "auto", ...others }) => {
   const width = useWidth();

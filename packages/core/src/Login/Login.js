@@ -85,72 +85,65 @@ class HvLogin extends React.Component {
     const { inRecoveryMode, isLoading } = this.state;
     const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
 
-    let form;
-    if (inRecoveryMode) {
-      form = (
-        <Recovery
-          recovery={recovery}
-          onClick={this.switchForms}
-          okRecoveryIcon={okRecoveryIcon}
-          recoveryTitle={labels.recoveryTitle}
-          messageToRecover={labels.messageToRecover}
-          messageAfterRecover={labels.messageAfterRecover}
-          recoveryInputLabel={labels.recoveryInputLabel}
-          recoveryPlaceholder={labels.recoveryPlaceholder}
-          recoveryErrorMessage={labels.recoveryErrorMessage}
-          emailLabel={labels.emailLabel}
-          emailPlaceholder={labels.emailPlaceholder}
-          cancelButton={labels.cancelButton}
-          recoverButton={labels.recoverButton}
-          recoveringMessage={labels.recoveringMessage}
-        />
-      );
-    } else {
-      form = (
-        <Login
-          login={login}
-          titleText={labels.titleText}
-          logo={logo}
-          titleComponent={titleComponent}
-          allowRecover={allowRecover}
-          allowRememberMe={allowRememberMe}
-          onClick={this.switchForms}
-          errorLoginIcon={errorLoginIcon}
-          incorrectCredentialsMessage={labels.incorrectCredentialsMessage}
-          userNameInputLabel={labels.userNameInputLabel}
-          userNamePlaceHolder={labels.userNamePlaceHolder}
-          passwordInputLabel={labels.passwordInputLabel}
-          passwordPlaceHolder={labels.passwordPlaceHolder}
-          rememberMeLabel={labels.rememberMeLabel}
-          loginButtonMessage={labels.loginButtonMessage}
-          loginButtonLabel={labels.loginButtonLabel}
-          forgotYourCredentialMessage={labels.forgotYourCredentialMessage}
-          isLoading={isLoading}
-          customMessage={customMessage.text}
-          classes={formClasses}
-        />
-      );
-    }
+    const form = inRecoveryMode ? (
+      <Recovery
+        recovery={recovery}
+        onClick={this.switchForms}
+        okRecoveryIcon={okRecoveryIcon}
+        recoveryTitle={labels.recoveryTitle}
+        messageToRecover={labels.messageToRecover}
+        messageAfterRecover={labels.messageAfterRecover}
+        recoveryInputLabel={labels.recoveryInputLabel}
+        recoveryPlaceholder={labels.recoveryPlaceholder}
+        recoveryErrorMessage={labels.recoveryErrorMessage}
+        emailLabel={labels.emailLabel}
+        emailPlaceholder={labels.emailPlaceholder}
+        cancelButton={labels.cancelButton}
+        recoverButton={labels.recoverButton}
+        recoveringMessage={labels.recoveringMessage}
+      />
+    ) : (
+      <Login
+        login={login}
+        titleText={labels.titleText}
+        logo={logo}
+        titleComponent={titleComponent}
+        allowRecover={allowRecover}
+        allowRememberMe={allowRememberMe}
+        onClick={this.switchForms}
+        errorLoginIcon={errorLoginIcon}
+        incorrectCredentialsMessage={labels.incorrectCredentialsMessage}
+        userNameInputLabel={labels.userNameInputLabel}
+        userNamePlaceHolder={labels.userNamePlaceHolder}
+        passwordInputLabel={labels.passwordInputLabel}
+        passwordPlaceHolder={labels.passwordPlaceHolder}
+        rememberMeLabel={labels.rememberMeLabel}
+        loginButtonMessage={labels.loginButtonMessage}
+        loginButtonLabel={labels.loginButtonLabel}
+        forgotYourCredentialMessage={labels.forgotYourCredentialMessage}
+        isLoading={isLoading}
+        customMessage={customMessage.text}
+        classes={formClasses}
+      />
+    );
 
     return (
-      <>
-        <HvGrid
-          container
-          className={classes.container}
-          style={{
-            backgroundImage: `url(${backgroundLoginImg})`,
-            backgroundSize: `${backgroundImageSize}`,
-            margin: 0
-          }}
-        >
-          <HvGrid item xs={false} sm={false} md={8} lg={8} xl={8} className={classes.panelPosition}>
-            <div id={id} className={clsx(classes.root, className)} />
-          </HvGrid>
-          <HvGrid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.rightContainer}>
-            <div>{form}</div>
-          </HvGrid>
+      <HvGrid
+        container
+        className={classes.container}
+        style={{
+          backgroundImage: `url(${backgroundLoginImg})`,
+          backgroundSize: `${backgroundImageSize}`,
+          margin: 0
+        }}
+      >
+        <HvGrid item xs={false} sm={false} md={8} lg={8} xl={8} className={classes.panelPosition}>
+          <div id={id} className={clsx(classes.root, className)} />
         </HvGrid>
-      </>
+        <HvGrid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.rightContainer}>
+          <div>{form}</div>
+        </HvGrid>
+      </HvGrid>
     );
   }
 }

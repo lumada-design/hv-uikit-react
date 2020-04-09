@@ -1,0 +1,24 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+import corePackage from "../../packages/core/package.json";
+import labPackage from "../../packages/lab/package.json";
+import iconsPackage from "../../packages/icons/package.json";
+
+<Meta title="Getting Started/Introduction" />
+
+**Hitachi Design System** initiative produces reusable patterns and captures common methodologies, reducing design and implementation effort.
+
+It stands as a catalyzer for design alignment and governance across the  organization, generating a unique and characteristic design language, capable of positioning Hitachi as a worldwide design reference.
+
+### UI-Kit React
+
+This **UI Kit** provides front-end developers & engineers a collection of reusable React components to build their applications, that guarantees the alignment with the Design System specifications.
+
+It enables developers to use consistent markup, styles, and behavior in prototype and production work.
+
+The UI Kit components are divided in three groups:
+<ul>
+ <li><strong>Core</strong> - <em>v{corePackage.version}</em> - components that are fully compliant with Design system guidelines and UI Kit best practices.</li>
+ <li><strong>Lab</strong> - <em>v{labPackage.version}</em> - components contributed by external teams for specific use cases and not fully compliant with Design System guidelines, so use it carefully.</li>
+ <li><strong>Icons</strong> - <em>v{iconsPackage.version}</em> - icons provided by Design System, wrapped in React Components</li>
+</ul>

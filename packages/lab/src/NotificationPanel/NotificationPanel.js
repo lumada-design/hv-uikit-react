@@ -7,6 +7,9 @@ import Panel from "./Panel";
 import Notification from "./Notification";
 import styles from "./styles";
 
+/**
+ * Notification Panel displays all of read and unread notifications. Still in development
+ */
 class HvNotificationPanel extends Component {
   constructor(props) {
     super(props);

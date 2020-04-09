@@ -4,6 +4,9 @@ import clsx from "clsx";
 import { CardHeader, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
+/**
+ * The header container for the card.
+ */
 const Header = props => {
   const { classes, className, headerTitle, subheader, icon, id, onClick, ...others } = props;
 

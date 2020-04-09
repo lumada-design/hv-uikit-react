@@ -12,6 +12,9 @@ import { getHoursForTimeFormat, getTimeWithFormat24 } from "./timePickerConverte
 import PeriodPicker from "./PeriodPicker";
 import styles from "./styles";
 
+/**
+ * A TimePicker component with a popup used to choose the time, following specifications provided by Design System. Still in development.
+ */
 class HvTimePicker extends React.Component {
   constructor(props) {
     super(props);

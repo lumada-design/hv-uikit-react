@@ -4,21 +4,22 @@ import { Fade, Tooltip, withStyles } from "@material-ui/core";
 import isNil from "lodash/isNil";
 import styles from "./styles";
 
-const HvTooltip = props => {
-  const {
-    className,
-    classes,
-    open,
-    enterDelay = 300,
-    placement = "top",
-    useSingle = true,
-    tooltipAnchor,
-    tooltipData,
-    TransitionComponent = Fade,
-    TransitionProps = { timeout: 400 },
-    ...others
-  } = props;
-
+/**
+ * Tooltips display informative text when users hover over, focus on, or tap an element.
+ */
+const HvTooltip = ({
+  className,
+  classes,
+  open,
+  enterDelay = 300,
+  placement = "top",
+  useSingle = true,
+  children,
+  tooltipData,
+  TransitionComponent = Fade,
+  TransitionProps = { timeout: 400 },
+  ...others
+}) => {
   return (
     <Tooltip
       open={(!isNil(open) && open) || undefined}
@@ -34,11 +35,10 @@ const HvTooltip = props => {
       title={tooltipData}
       {...others}
     >
-      {tooltipAnchor}
+      {children}
     </Tooltip>
   );
 };
-
 HvTooltip.propTypes = {
   /**
    * Class names to be applied.
@@ -127,7 +127,11 @@ HvTooltip.propTypes = {
   /**
    * Defines if should use a single or multiline tooltip.
    */
-  useSingle: PropTypes.bool
+  useSingle: PropTypes.bool,
+  /**
+   * Node to apply the tooltip.
+   */
+  children: PropTypes.node.isRequired
 };
 
 export default withStyles(styles, { name: "HvTooltip" })(HvTooltip);

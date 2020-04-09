@@ -9,8 +9,8 @@ const Brand = ({ classes, className, logo, name, ...others }) => {
   return (
     <div className={clsx(className, classes.root)} {...others}>
       {logo}
-      {logo ?? name ?? <div className={classes.separator} />}
-      {name ?? <HvTypography variant="highlightText">{name}</HvTypography>}
+      {logo && name && <div className={classes.separator} />}
+      {name && <HvTypography variant="highlightText">{name}</HvTypography>}
     </div>
   );
 };

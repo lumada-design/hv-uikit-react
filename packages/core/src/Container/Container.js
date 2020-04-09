@@ -17,7 +17,7 @@ const styles = theme => ({
 });
 
 /**
- * We override the default maxWidth to xl
+ * The Container is the element responsible to create and add the margins to the page, and make them react to the current screen size. We override the default maxWidth to xl
  */
 const HvContainer = ({ maxWidth = "xl", fixed, ...others }) => {
   return <Container maxWidth={maxWidth} fixed={fixed} {...others} />;

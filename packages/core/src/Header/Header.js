@@ -3,13 +3,29 @@ import PropTypes from "prop-types";
 import { AppBar, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const Header = ({ classes, position = "fixed", children, ...others }) => (
-  <AppBar classes={{ root: classes.root }} position={position} {...others}>
-    <div className={classes.header}>{children}</div>
-  </AppBar>
-);
+/**
+ * The header should be informative and provide the most important information about the digital product so that users could scan it in split seconds.
+ *
+ * Our implementation of the Header is divided in:
+ * <ul>
+ * <li>Brand</li>
+ * <li>Navigation</li>
+ * <li>Actions</li>
+ * </ul>
+ */
+const HvHeader = ({ classes, position = "fixed", children, ...others }) => {
+  return (
+    <AppBar
+      classes={{ root: classes.root, colorPrimary: classes.backgroundColor }}
+      position={position}
+      {...others}
+    >
+      <div className={classes.header}>{children}</div>
+    </AppBar>
+  );
+};
 
-Header.propTypes = {
+HvHeader.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -21,7 +37,11 @@ Header.propTypes = {
     /**
      * Styles applied to the component header class.
      */
-    header: PropTypes.string
+    header: PropTypes.string,
+    /**
+     * Styles applied to the component background color.
+     */
+    backgroundColor: PropTypes.string
   }).isRequired,
   /**
    * Position of the component.
@@ -33,4 +53,4 @@ Header.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default withStyles(styles, { name: "HvHeader" })(Header);
+export default withStyles(styles, { name: "HvHeader" })(HvHeader);

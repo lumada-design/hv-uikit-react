@@ -23,7 +23,8 @@
     "bootstrap": "npx lerna bootstrap",
     "dev": "npx lerna run dev --parallel",
     "build": "npx lerna run build",
-    "doc": "npx lerna run doc --stream",
+    "build-documentation": "build-storybook --docs -o dist",
+    "doc": "start-storybook -p 9001 --ci --quiet",
     "test": "npx lerna run test --parallel",
     "test:update": "npx lerna run test:update --parallel",
     "link": "npx lerna run link",
@@ -36,7 +37,7 @@
     "publish-minor": "npx lerna publish minor --yes",
     "publish-premajor": "npx lerna publish premajor --yes",
     "publish-major": "npx lerna publish major --yes",
-    "publish-documentation": "npx storybook-to-ghpages -e packages/doc/dist",
+    "publish-documentation": "node ./scripts/publish-gh-pages.cjs",
     "lint": "npm-run-all --parallel lint:*",
     "lint:eslint": "npx eslint ./ --cache --ignore-pattern .gitignore",
     "lint:prettier": "npx lerna run lint:prettier",
@@ -53,6 +54,7 @@
     "gitEmail": "buildguy.pentaho@hitachivantara.com"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-transform-object-assign": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
@@ -62,9 +64,14 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@material-ui/core": "^4.8.0",
-    "@storybook/storybook-deployer": "^2.8.3",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-optimize-clsx": "^2.6.0",
     "babel-plugin-transform-dev-warning": "^0.1.1",
@@ -83,6 +90,7 @@
     "find-root": "^1.1.0",
     "fs-extra": "^8.1.0",
     "fs-readdir-recursive": "^1.1.0",
+    "gh-pages": "^2.2.0",
     "glob": "^7.1.6",
     "husky": "^4.2.3",
     "lerna": "^3.20.2",
@@ -92,6 +100,7 @@
     "prompt-input": "^3.0.0",
     "react": "^16.8.6",
     "react-docgen": "^5.3.0",
+    "react-docgen-deprecation-handler": "^1.1.1",
     "react-dom": "^16.8.6",
     "spdx-correct": "^3.1.0",
     "spdx-satisfies": "^5.0.0",
@@ -99,5 +108,9 @@
     "tslint": "5.14.0",
     "typescript": "3.2.4",
     "typescript-to-proptypes": "^1.4.0"
+  },
+  "dependencies": {
+    "acorn": "^7.1.1",
+    "moment": "^2.24.0"
   }
 }

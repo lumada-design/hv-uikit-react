@@ -772,10 +772,10 @@ exports[`Input should not have the validation section 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         showInfo={false}
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "adornmentButton": "HvInput-adornmentButton",
@@ -802,7 +802,7 @@ exports[`Input should not have the validation section 1`] = `
           }
           showInfo={false}
         >
-          <Component
+          <WithId
             classes={
               Object {
                 "adornmentButton": "HvInput-adornmentButton",
@@ -1160,9 +1160,9 @@ exports[`Input should not have the validation section 1`] = `
                 </WithStyles(ForwardRef)>
               </div>
             </HvInput>
-          </Component>
-        </Component>
-      </WithStyles(Component)>
+          </WithId>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -1940,14 +1940,14 @@ exports[`Input should pass other props to the child input component 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         inputProps={
           Object {
             "maxLength": 250,
           }
         }
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "adornmentButton": "HvInput-adornmentButton",
@@ -1978,7 +1978,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             }
           }
         >
-          <Component
+          <WithId
             classes={
               Object {
                 "adornmentButton": "HvInput-adornmentButton",
@@ -2349,9 +2349,9 @@ exports[`Input should pass other props to the child input component 1`] = `
                 </WithStyles(ForwardRef)>
               </div>
             </HvInput>
-          </Component>
-        </Component>
-      </WithStyles(Component)>
+          </WithId>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -3129,8 +3129,8 @@ exports[`Input should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)>
-        <Component
+      <WithStyles(WithLabels)>
+        <WithLabels
           classes={
             Object {
               "adornmentButton": "HvInput-adornmentButton",
@@ -3156,7 +3156,7 @@ exports[`Input should render correctly 1`] = `
             }
           }
         >
-          <Component
+          <WithId
             classes={
               Object {
                 "adornmentButton": "HvInput-adornmentButton",
@@ -3513,9 +3513,9 @@ exports[`Input should render correctly 1`] = `
                 </WithStyles(ForwardRef)>
               </div>
             </HvInput>
-          </Component>
-        </Component>
-      </WithStyles(Component)>
+          </WithId>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

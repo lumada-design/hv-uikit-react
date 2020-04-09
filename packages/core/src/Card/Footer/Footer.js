@@ -128,5 +128,4 @@ Footer.propTypes = {
   checkboxProps: PropTypes.instanceOf(Object)
 };
 
-export { Footer as RawFooter }; // Required to extract documentation because withConfig hides _docgen.
 export default withStyles(styles, { name: "HvCardFooter" })(withConfig(Footer));

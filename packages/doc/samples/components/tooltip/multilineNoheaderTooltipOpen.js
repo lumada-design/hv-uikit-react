@@ -45,11 +45,8 @@ const TooltipControl = (
 
 export default (
   <div style={styling.placeholder}>
-    <Tooltip
-      tooltipData={<TooltipContentWithStyles />}
-      useSingle={false}
-      tooltipAnchor={TooltipControl}
-      open
-    />
+    <Tooltip tooltipData={<TooltipContentWithStyles />} useSingle={false} open>
+      {TooltipControl}
+    </Tooltip>
   </div>
 );

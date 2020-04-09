@@ -26,6 +26,9 @@ const DEFAULT_LABELS = {
   selectionConjunction: "of"
 };
 
+/**
+ * Component used to show a set of related data to the user.
+ */
 class List extends React.Component {
   constructor(props) {
     super(props);
@@ -383,12 +386,15 @@ List.propTypes = {
   showSelectAll: PropTypes.bool,
   /**
    * An object containing all the labels for the dropdown.
-   *
-   * - selectAll: The label used for the All checkbox action.
-   * - selectionConjunction: The label used in the middle of the multiselection count.
    */
   labels: PropTypes.shape({
+    /**
+     * The label used for the All checkbox action.
+     */
     selectAll: PropTypes.string,
+    /**
+     * The label used in the middle of the multiselection count.
+     */
     selectionConjunction: PropTypes.string
   }),
   /**

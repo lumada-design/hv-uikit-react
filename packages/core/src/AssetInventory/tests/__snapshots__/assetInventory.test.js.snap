@@ -777,7 +777,7 @@ exports[`Asset Inventory  should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         configuration={Array []}
         values={
           Array [
@@ -805,7 +805,7 @@ exports[`Asset Inventory  should render correctly 1`] = `
         <div
           id="id0"
         />
-      </WithStyles(Component)>
+      </WithStyles(WithLabels)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

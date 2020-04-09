@@ -777,14 +777,14 @@ exports[`Modal Component allows external props to be added 1`] = `
         }
       }
     >
-      <WithStyles(Modal)
+      <WithStyles(HvModal)
         disableBackdropClick={true}
         disableEscapeKeyDown={true}
         onClose={[MockFunction]}
         open={true}
       >
         Modal Content
-      </WithStyles(Modal)>
+      </WithStyles(HvModal)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>
@@ -1567,7 +1567,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
         }
       }
     >
-      <WithStyles(Modal)
+      <WithStyles(HvModal)
         classes={
           Object {
             "background": "testClassBackground",
@@ -1579,7 +1579,7 @@ exports[`Modal Component allows external styles to be added 1`] = `
         open={true}
       >
         Modal Content
-      </WithStyles(Modal)>
+      </WithStyles(HvModal)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>
@@ -2362,12 +2362,12 @@ exports[`Modal Component should render correctly if closed 1`] = `
         }
       }
     >
-      <WithStyles(Modal)
+      <WithStyles(HvModal)
         onClose={[MockFunction]}
         open={false}
       >
         Modal Content
-      </WithStyles(Modal)>
+      </WithStyles(HvModal)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>
@@ -3150,12 +3150,12 @@ exports[`Modal Component should render correctly if opened 1`] = `
         }
       }
     >
-      <WithStyles(Modal)
+      <WithStyles(HvModal)
         onClose={[MockFunction]}
         open={true}
       >
         Modal Content
-      </WithStyles(Modal)>
+      </WithStyles(HvModal)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>
@@ -3938,9 +3938,9 @@ exports[`Modal withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(Modal)>
+      <WithStyles(HvModal)>
         Modal Content
-      </WithStyles(Modal)>
+      </WithStyles(HvModal)>
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

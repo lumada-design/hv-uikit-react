@@ -5,6 +5,9 @@ import { HvTypography } from "@hv/uikit-react-core/dist";
 import HvNavigationAnchors from "../NavigationAnchors";
 import styles from "./styles";
 
+/**
+ * A form composer component used to create a form dynamically, still in development
+ */
 class HvFormComposer extends React.Component {
   constructor(props) {
     super(props);

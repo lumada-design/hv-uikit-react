@@ -8,6 +8,9 @@ const styles = theme => ({
   root: {
     height: 50
   },
+  backgroundColor: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
+  },
   header: {
     display: "flex",
     alignItems: "center",

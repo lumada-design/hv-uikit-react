@@ -772,13 +772,13 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         endValue="2019-01-10"
         locale="en-US"
         rangeMode={true}
         startValue="2019-01-05"
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "actionsContainer": "HvDatePicker-actionsContainer",
@@ -2483,8 +2483,8 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               />
             </div>
           </HvDatePicker>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -3262,12 +3262,12 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         locale="en-US"
         rangeMode={false}
         value="2019-01-01"
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "actionsContainer": "HvDatePicker-actionsContainer",
@@ -4970,8 +4970,8 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               />
             </div>
           </HvDatePicker>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -5749,7 +5749,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         horizontalPlacement="left"
         id="testingDatePicker"
         labels={
@@ -5764,7 +5764,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
         showActions={true}
         value="2019-01-05"
       >
-        <Component
+        <WithLabels
           classes={
             Object {
               "actionsContainer": "HvDatePicker-actionsContainer",
@@ -7521,8 +7521,8 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               />
             </div>
           </HvDatePicker>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -8300,8 +8300,8 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
       }
     >
       <CssBaseline />
-      <WithStyles(Component)>
-        <Component
+      <WithStyles(WithLabels)>
+        <WithLabels
           classes={
             Object {
               "actionsContainer": "HvDatePicker-actionsContainer",
@@ -10000,8 +10000,8 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               />
             </div>
           </HvDatePicker>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

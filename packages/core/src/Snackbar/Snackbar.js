@@ -25,6 +25,10 @@ const snackBarDirComponent = direction => {
   }
 };
 
+/**
+ * A Snackbar provides a brief messages about app processes.
+ * It is dismissed automatically after an interval.
+ */
 const HvSnackbar = ({
   classes,
   className,

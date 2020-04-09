@@ -772,7 +772,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         checked={false}
         classes={Object {}}
         labels={
@@ -783,7 +783,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
         }
         showLabels={true}
       >
-        <Component
+        <WithLabels
           checked={false}
           classes={
             Object {
@@ -1216,8 +1216,8 @@ exports[`Switch input area hover input can be hovered in 1`] = `
               </div>
             </div>
           </HvSwitch>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -1995,7 +1995,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         checked={false}
         classes={Object {}}
         labels={
@@ -2006,7 +2006,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
         }
         showLabels={true}
       >
-        <Component
+        <WithLabels
           checked={false}
           classes={
             Object {
@@ -2439,8 +2439,8 @@ exports[`Switch input area hover input can be hovered out 1`] = `
               </div>
             </div>
           </HvSwitch>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -3218,7 +3218,7 @@ exports[`Switch label click label can be clicked 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         checked={false}
         classes={Object {}}
         labels={
@@ -3229,7 +3229,7 @@ exports[`Switch label click label can be clicked 1`] = `
         }
         showLabels={true}
       >
-        <Component
+        <WithLabels
           checked={false}
           classes={
             Object {
@@ -3662,8 +3662,8 @@ exports[`Switch label click label can be clicked 1`] = `
               </div>
             </div>
           </HvSwitch>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -4441,7 +4441,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         checked={false}
         classes={Object {}}
         labels={
@@ -4452,7 +4452,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
         }
         showLabels={true}
       >
-        <Component
+        <WithLabels
           checked={false}
           classes={
             Object {
@@ -4885,8 +4885,8 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
               </div>
             </div>
           </HvSwitch>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -5664,7 +5664,7 @@ exports[`Switch with no label display but with custom label configuration should
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         checked={false}
         classes={Object {}}
         labels={
@@ -5675,7 +5675,7 @@ exports[`Switch with no label display but with custom label configuration should
         }
         showLabels={true}
       >
-        <Component
+        <WithLabels
           checked={false}
           classes={
             Object {
@@ -6108,8 +6108,8 @@ exports[`Switch with no label display but with custom label configuration should
               </div>
             </div>
           </HvSwitch>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>
@@ -6887,7 +6887,7 @@ exports[`Switch withStyles should render correctly 1`] = `
       }
     >
       <CssBaseline />
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         checked={false}
         classes={Object {}}
         labels={
@@ -6898,7 +6898,7 @@ exports[`Switch withStyles should render correctly 1`] = `
         }
         showLabels={true}
       >
-        <Component
+        <WithLabels
           checked={false}
           classes={
             Object {
@@ -7331,8 +7331,8 @@ exports[`Switch withStyles should render correctly 1`] = `
               </div>
             </div>
           </HvSwitch>
-        </Component>
-      </WithStyles(Component)>
+        </WithLabels>
+      </WithStyles(WithLabels)>
     </ThemeProvider>
   </StylesProvider>
 </HvProvider>

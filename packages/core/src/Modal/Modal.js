@@ -8,7 +8,11 @@ import Button from "../Button";
 import { setId } from "../utils";
 import styles from "./styles";
 
-const Modal = ({
+/**
+ * The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, etc.
+ * It is created by the composition of ModalTitle, ModalContent and ModalActions, passed as child elements.
+ */
+const HvModal = ({
   classes,
   className,
   id,
@@ -71,7 +75,8 @@ const Modal = ({
     </Dialog>
   );
 };
-Modal.propTypes = {
+
+HvModal.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -123,4 +128,4 @@ Modal.propTypes = {
   buttonTitle: PropTypes.string
 };
 
-export default withStyles(styles, { name: "HvModal" })(Modal);
+export default withStyles(styles, { name: "HvModal" })(HvModal);

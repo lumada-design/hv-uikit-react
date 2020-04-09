@@ -78,18 +78,22 @@ const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
   return listRoute;
 };
 
-const BreadCrumb = ({
-  classes,
-  className,
-  id,
-  listRoute = [],
-  maxVisible = Infinity,
-  url,
-  onClick,
-  component = "div",
-  dropDownMenuProps,
-  ...others
-}) => {
+/**
+ * A breadcrumb is a graphical control element frequently used as a navigational aid.
+ */
+const BreadCrumb = props => {
+  const {
+    classes,
+    className,
+    id,
+    listRoute = [],
+    maxVisible,
+    url,
+    onClick,
+    component = "div",
+    dropDownMenuProps,
+    ...others
+  } = props;
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
 

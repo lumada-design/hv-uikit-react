@@ -773,14 +773,6 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
     >
       <CssBaseline />
       <WithStyles(HvTooltip)
-        tooltipAnchor={
-          <button
-            id="testChild"
-            type="submit"
-          >
-            Hello World
-          </button>
-        }
         tooltipData={
           <div>
             <ForwardRef(WithStyles)
@@ -859,14 +851,6 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
               "values": "HvTooltip-values",
               "valuesContainer": "HvTooltip-valuesContainer",
             }
-          }
-          tooltipAnchor={
-            <button
-              id="testChild"
-              type="submit"
-            >
-              Hello World
-            </button>
           }
           tooltipData={
             <div>
@@ -1943,14 +1927,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
     >
       <CssBaseline />
       <WithStyles(HvTooltip)
-        tooltipAnchor={
-          <button
-            id="testChild"
-            type="submit"
-          >
-            Hello World
-          </button>
-        }
         tooltipData={
           <div>
             <ForwardRef(WithStyles)
@@ -2003,14 +1979,6 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
               "values": "HvTooltip-values",
               "valuesContainer": "HvTooltip-valuesContainer",
             }
-          }
-          tooltipAnchor={
-            <button
-              id="testChild"
-              type="submit"
-            >
-              Hello World
-            </button>
           }
           tooltipData={
             <div>
@@ -3009,14 +2977,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     >
       <CssBaseline />
       <WithStyles(HvTooltip)
-        tooltipAnchor={
-          <button
-            id="testChild"
-            type="submit"
-          >
-            Hello World
-          </button>
-        }
         tooltipData={
           <ForwardRef(WithStyles)
             variant="labelText"
@@ -3040,14 +3000,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
               "values": "HvTooltip-values",
               "valuesContainer": "HvTooltip-valuesContainer",
             }
-          }
-          tooltipAnchor={
-            <button
-              id="testChild"
-              type="submit"
-            >
-              Hello World
-            </button>
           }
           tooltipData={
             <ForwardRef(WithStyles)

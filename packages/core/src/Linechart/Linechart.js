@@ -5,6 +5,10 @@ import Chart from "../Chart";
 import { setData, setLayout } from "./lineChartPlotlyOverrides";
 import styles from "./styles";
 
+/**
+ * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
+ * called 'markers' connected by straight line segments. It is a basic type of chart common in many fields.
+ */
 const Linechart = ({
   id,
   classes,

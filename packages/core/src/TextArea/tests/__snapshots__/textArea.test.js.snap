@@ -777,7 +777,7 @@ exports[`TextArea Component should render correctly if opened 1`] = `
         }
       }
     >
-      <WithStyles(Component)
+      <WithStyles(WithLabels)
         initialValue="test"
         onChange={[Function]}
         rows={4}
@@ -1564,7 +1564,7 @@ exports[`TextArea withStyles should render correctly 1`] = `
         }
       }
     >
-      <WithStyles(Component) />
+      <WithStyles(WithLabels) />
     </ContextProvider>
   </ThemeProvider>
 </StylesProvider>

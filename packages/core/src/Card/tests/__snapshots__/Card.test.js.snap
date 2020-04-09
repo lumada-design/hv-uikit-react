@@ -1224,7 +1224,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                         </ConditionalWrapper>
                       </Focus>
                     </WithStyles(Focus)>
-                    <WithStyles(Component)
+                    <WithStyles(WithConfig)
                       actions="actions"
                       actionsAlignment="left"
                       checked={false}
@@ -1233,7 +1233,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                       maxVisibleActions={1}
                       onChange={[Function]}
                     >
-                      <Component
+                      <WithConfig
                         actions="actions"
                         actionsAlignment="left"
                         checked={false}
@@ -1763,8 +1763,8 @@ exports[`Card withStyles should be able to render with every property defined 1`
                             </ForwardRef(CardActions)>
                           </WithStyles(ForwardRef(CardActions))>
                         </Footer>
-                      </Component>
-                    </WithStyles(Component)>
+                      </WithConfig>
+                    </WithStyles(WithConfig)>
                   </div>
                 </ForwardRef(Paper)>
               </WithStyles(ForwardRef(Paper))>

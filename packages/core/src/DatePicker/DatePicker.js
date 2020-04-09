@@ -28,6 +28,9 @@ const DEFAULT_LABELS = {
   rangeEnd: "End date"
 };
 
+/**
+ * A graphical widget which allows the user to select a date.
+ */
 class HvDatePicker extends React.Component {
   /**
    * Triggered right before the Render() function of the components.
