@@ -39,13 +39,17 @@ export const Main = () => {
       <HvSearchBox
         suggestionListCallback={suggestionHandler}
         suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
-        onChange={value => {
+        onChange={(event, value) => {
           console.log(`${value} submitted`);
           return value;
         }}
       />
     </>
   );
+};
+
+Main.story = {
+  decorators: [storyFn => <div style={{ height: "160px" }}>{storyFn()}</div>]
 };
 
 export const Disabled = () => {
@@ -76,7 +80,7 @@ export const Disabled = () => {
     <HvSearchBox
       suggestionListCallback={suggestionHandler}
       suggestionSelectedCallback={item => alert(`${item.label} selected`)}
-      onSubmit={value => alert(`${value} submitted`)}
+      onSubmit={(event, value) => alert(`${value} submitted`)}
       disabled
     />
   );
@@ -91,7 +95,7 @@ Disabled.story = {
 };
 
 export const WithoutSuggestion = () => {
-  return <HvSearchBox onSubmit={value => console.log(`${value} submitted`)} />;
+  return <HvSearchBox onSubmit={(event, value) => console.log(`${value} submitted`)} />;
 };
 
 WithoutSuggestion.story = {
