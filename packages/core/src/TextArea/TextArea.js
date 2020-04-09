@@ -157,7 +157,7 @@ class HvTextArea extends React.Component {
             className={className}
             id={id}
             labels={labels}
-            initialValue={this.limitValue(val)}
+            initialValue={val && this.limitValue(val)}
             value={this.limitValue(value)}
             onChange={this.onChangeHandler}
             multiline
