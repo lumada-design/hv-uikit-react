@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.2...@hv/uikit-react-icons@1.11.0) (2020-04-09)
+
+
+### Features
+
+* **classnames:** add icons componentName. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([dfa7ef1](https://github.com/pentaho/hv-uikit-react/commit/dfa7ef11c43973d7297653e57201a687990449a3))
+
+
+
+
+
 ## [1.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.1...@hv/uikit-react-icons@1.10.2) (2020-04-01)
 
 

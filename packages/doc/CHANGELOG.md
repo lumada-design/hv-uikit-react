@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.22.0...@hv/uikit-react-doc@1.23.0) (2020-04-09)
+
+
+### Features
+
+* **badge:** review accessibility. [#1234](https://github.com/pentaho/hv-uikit-react/issues/1234) ([37d032f](https://github.com/pentaho/hv-uikit-react/commit/37d032f6ba961b83353ac698e50f8ac1821d0753))
+* **dropdown:** change width of container. [#1303](https://github.com/pentaho/hv-uikit-react/issues/1303) ([3c68b00](https://github.com/pentaho/hv-uikit-react/commit/3c68b0086209196eb52ff41aa90dd86467b2883f))
+
+
+
+
+
 # [1.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.21.0...@hv/uikit-react-doc@1.22.0) (2020-04-01)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.3...@hv/uikit-react-lab@1.20.0) (2020-04-09)
+
+
+### Features
+
+* **classnames:** add icons componentName. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([dfa7ef1](https://github.com/pentaho/hv-uikit-react/commit/dfa7ef11c43973d7297653e57201a687990449a3))
+* **classnames:** apply classnames backport. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([7ed3fe2](https://github.com/pentaho/hv-uikit-react/commit/7ed3fe2b0159dd1015b9f9b25331a4334ac43e5a))
+
+
+
+
+
 ## [1.19.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.2...@hv/uikit-react-lab@1.19.3) (2020-04-01)
 
 
