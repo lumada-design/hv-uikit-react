@@ -54,6 +54,7 @@ jobs:
 
       - name: Install PA11Y
         working-directory: ./automation/robot
+        shell: cmd
         run: npm ci
 
       - name: Fetch Storybook
