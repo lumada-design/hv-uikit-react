@@ -141,7 +141,8 @@ class Login extends React.Component {
       forgotYourCredentialMessage,
       rememberMeLabel,
       incorrectCredentialsMessage,
-      customMessage
+      customMessage,
+      formProps
     } = this.props;
     const { isLogging, loginError } = this.state;
 
@@ -153,7 +154,7 @@ class Login extends React.Component {
         />
       ) : null;
     return (
-      <form className={classes.root} onSubmit={e => this.handleSubmit(e)}>
+      <form {...formProps} className={classNames(classes.root, formProps.className)} onSubmit={e => this.handleSubmit(e)}>
         <div className={classes.title}>
           <Title
             titleText={titleText}
@@ -386,7 +387,11 @@ Login.propTypes = {
    * A custom message to be shown in the error area.
    * Will be overridden by any error messages.
    */
-  customMessage: PropTypes.string
+  customMessage: PropTypes.string,
+  /**
+   * Additional props for form element
+   */
+  formProps: PropTypes.instanceOf(Object)
 };
 
 Login.defaultProps = {
@@ -397,7 +402,8 @@ Login.defaultProps = {
   allowRememberMe: false,
   errorLoginIcon: null,
   isLoading: false,
-  customMessage: null
+  customMessage: null,
+  formProps: {}
 };
 
 export default Login;

@@ -79,7 +79,8 @@ class HvLogin extends React.Component {
       passwordPlaceHolder,
       rememberMeLabel,
       incorrectCredentialsMessage,
-      formClasses
+      formClasses,
+      formProps
     } = this.props;
     const { inRecoveryMode, isLoading } = this.state;
     const backgroundLoginImg = !backgroundImage.length
@@ -141,6 +142,7 @@ class HvLogin extends React.Component {
           isLoading={isLoading}
           customMessage={customMessage.text}
           classes={formClasses}
+          formProps={formProps}
         />
       );
     }
@@ -317,6 +319,10 @@ HvLogin.propTypes = {
     text: PropTypes.string
   }),
   /**
+   * Additional props for form element
+   */
+  formProps: PropTypes.instanceOf(Object),
+  /**
    * Recovery title.
    * @deprecated Instead use the labels property
    */
@@ -413,6 +419,7 @@ HvLogin.defaultProps = {
   },
   customMessage: {},
   formClasses: null,
+  formProps: {},
   titleText: undefined,
   recoveryTitle: undefined,
   messageToRecover: undefined,
