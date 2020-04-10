@@ -321,8 +321,7 @@ HvLogin.propTypes = {
   /**
    * Additional props for form element
    */
-  // eslint-disable-next-line react/forbid-prop-types
-  formProps: PropTypes.object,
+  formProps: PropTypes.instanceOf(Object),
   /**
    * Recovery title.
    * @deprecated Instead use the labels property
