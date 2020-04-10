@@ -153,6 +153,21 @@ node('non-master') {
                             "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
                             "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
                         ]) {
+                            if(!params.skipPublish || !params.skipPublishDoc) {
+                                sh label: 'copy git repository', script: """
+                                    #! /bin/sh -
+
+                                    # copy the git repository
+                                    cp -R ./.git ${uikit_folder}/.git
+
+                                    cd ${uikit_folder}
+
+                                    # restore the files we didn't include in the docker image
+                                    git checkout ${env.BRANCH_NAME}
+                                    git reset --hard
+                                """
+                            }
+
                             stage('Publish Packages') {
                                 if(!params.skipPublish) {
                                     withNPM(npmrcConfig: 'hv-ui-nprc') {
@@ -163,14 +178,7 @@ node('non-master') {
                                             cp .npmrc ${uikit_folder}/../.npmrc
                                             cp .npmrc ${uikit_folder}/.npmrc
 
-                                            # copy the git repository
-                                            cp -R ./.git ${uikit_folder}/.git
-
                                             cd ${uikit_folder}
-
-                                            # restore the files we didn't include in the docker image
-                                            git checkout ${env.BRANCH_NAME}
-                                            git reset --hard
 
                                             npm run publish-${params.publishType} -- --no-git-reset
                                         """
@@ -199,7 +207,10 @@ node('non-master') {
 
                                         cd ${uikit_folder}
                                         npm run build -- --scope @hv/uikit-react-doc
-                                        npm run publish-documentation
+                                        # npm run publish-documentation
+
+                                        cd packages/doc
+                                        NODE_DEBUG=gh-pages npm run publish-documentation
                                     """
                                 } else {
                                     echo '[INFO] Documentation (storybook) publishing skipped'
@@ -222,6 +233,13 @@ node('non-master') {
 
             stage('Publish Documentation') {
                 if(!params.skipPublishDoc) {
+                    def folder = env.BRANCH_NAME;
+                    def message = "docs: storybook for branch ${env.BRANCH_NAME}";
+                    if(env.CHANGE_ID) {
+                        folder = "pr-${env.CHANGE_ID}"
+                        message = "docs: storybook for PR #${env.CHANGE_ID}";
+                    }
+
                     image.inside(containerRunOptions('uikit_publish_packages')) {
                         withCredentials([
                             string(credentialsId: 'github-api-token', variable: 'GH_TOKEN'),
@@ -243,7 +261,10 @@ node('non-master') {
                                     cd ${uikit_folder}
 
                                     npm run build -- --scope @hv/uikit-react-doc
-                                    npm run publish-documentation -- --folder pr-${env.CHANGE_ID} --message 'docs: storybook for PR #${env.CHANGE_ID}'
+                                    # npm run publish-documentation -- --folder ${folder} --message '${message}'
+
+                                    cd packages/doc
+                                    NODE_DEBUG=gh-pages npm run publish-documentation -- --folder ${folder} --message '${message}'
                                 """
                             }
                         }
