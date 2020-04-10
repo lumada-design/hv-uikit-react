@@ -4,7 +4,7 @@ properties([
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.'),
         booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.'),
         booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus.'),
-        booleanParam(name: 'skipPublishDoc', defaultValue: true, description: 'when true, skip publish documentation.'),
+        choice(name: 'skipPublishDoc', choices: ['auto', 'true', 'false'], description: 'when true, skip publish documentation.'),
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.'),
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel publish the build result.', name: 'ci_channel'),
         choice(choices: ['#ui-kit', '#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel announce a release.', name: 'release_channel')
@@ -176,55 +176,68 @@ node('non-master') {
                             "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
                             "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
                         ]) {
-                            stage('Publish Packages') {
-                                if(!params.skipPublish) {
-                                    withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                        sh label: 'npm run publish-x', script: """
-                                            #! /bin/sh -
+                            // in branches with published packages only update the documentation
+                            // when publishing or with a explicit skipPublishDoc set to false
+                            if(!params.skipPublish || params.skipPublishDoc == 'false') {
+                                sh label: 'copy git repository', script: """
+                                    #! /bin/sh -
+                                    # copy the git repository
+                                    cp -R ./.git ${uikit_folder}/.git
+                                    cd ${uikit_folder}
+                                    # restore the files we didn't include in the docker image
+                                    git checkout ${env.BRANCH_NAME}
+                                    git reset --hard
+                                """
 
-                                            # copy the npm configuration
-                                            cp .npmrc ${uikit_folder}/../.npmrc
-                                            cp .npmrc ${uikit_folder}/.npmrc
+                                stage('Publish Packages') {
+                                    if(!params.skipPublish) {
+                                        withNPM(npmrcConfig: 'hv-ui-nprc') {
+                                            sh label: 'npm run publish-x', script: """
+                                                #! /bin/sh -
+                                                # copy the npm configuration
+                                                cp .npmrc ${uikit_folder}/../.npmrc
+                                                cp .npmrc ${uikit_folder}/.npmrc
+                                                cd ${uikit_folder}
+                                                npm run publish-${params.publishType} -- --no-git-reset
+                                            """
 
-                                            # copy the git repository
-                                            cp -R ./.git ${uikit_folder}/.git
+                                            commitMessage = sh(returnStdout: true, script: """
+                                                #! /bin/sh -
+                                                cd ${uikit_folder}
+                                                git show -s --format=%B HEAD
+                                            """).trim()
 
-                                            cd ${uikit_folder}
-
-                                            # restore the files we didn't include in the docker image
-                                            git checkout ${env.BRANCH_NAME}
-                                            git reset --hard
-
-                                            npm run publish-${params.publishType} -- --no-git-reset
-                                        """
-
-                                        commitMessage = sh(returnStdout: true, script: """
-                                            #! /bin/sh -
-                                            cd ${uikit_folder}
-                                            git show -s --format=%B HEAD
-                                        """).trim()
-
-                                        commitTimestamp = sh(returnStdout: true, script: """
-                                            #! /bin/sh -
-                                            cd ${uikit_folder}
-                                            git show -s --format=%ct HEAD
-                                        """).trim()
+                                            commitTimestamp = sh(returnStdout: true, script: """
+                                                #! /bin/sh -
+                                                cd ${uikit_folder}
+                                                git show -s --format=%ct HEAD
+                                            """).trim()
+                                        }
+                                    } else {
+                                        echo '[INFO] Packages publishing skipped'
                                     }
-                                } else {
+                                }
+
+                                stage('Publish Documentation') {
+                                    if(!params.skipPublish && params.skipPublishDoc != 'true' || params.skipPublishDoc == 'false') {
+                                        sh label: 'npm run publish-documentation', script: """
+                                            #! /bin/sh -
+                                            cd ${uikit_folder}
+                                            npm run build-documentation
+                                            NODE_DEBUG=gh-pages npm run publish-documentation
+                                        """
+                                    } else {
+                                        echo '[INFO] Documentation (storybook) publishing skipped'
+                                    }
+                                }
+                            } else {
+                                stage('Publish Packages') {
+                                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                                     echo '[INFO] Packages publishing skipped'
                                 }
-                            }
 
-                            stage('Publish Documentation') {
-                                if(!params.skipPublishDoc) {
-                                    sh label: 'npm run publish-documentation', script: """
-                                        #! /bin/sh -
-
-                                        cd ${uikit_folder}
-                                        npm run build-documentation
-                                        npm run publish-documentation
-                                    """
-                                } else {
+                                stage('Publish Documentation') {
+                                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                                     echo '[INFO] Documentation (storybook) publishing skipped'
                                 }
                             }
@@ -244,14 +257,40 @@ node('non-master') {
             }
 
             stage('Publish Documentation') {
-                if(!params.skipPublishDoc) {
-                    sh label: 'npm run publish-documentation', script: """
-                        #! /bin/sh -
+                // skipPublishDoc set to auto assumes we should publish
+                // a different logic can be added later, i.e. to avoid publishing
+                // on every PR commit
+                if(params.skipPublishDoc != 'true') {
+                    def folder = env.BRANCH_NAME;
+                    def message = "docs: storybook for branch ${env.BRANCH_NAME}";
+                    if(env.CHANGE_ID) {
+                        folder = "pr-${env.CHANGE_ID}"
+                        message = "docs: storybook for PR #${env.CHANGE_ID}";
+                    }
 
-                        cd ${uikit_folder}
-                        npm run build-documentation
-                        npm run publish-documentation
-                    """
+                    image.inside(containerRunOptions('uikit_publish_packages')) {
+                        withCredentials([
+                            string(credentialsId: 'github-api-token', variable: 'GH_TOKEN'),
+                            sshUserPrivateKey(credentialsId: 'ssh-buildguy-github', usernameVariable: 'GIT_USERNAME', keyFileVariable: 'GIT_KEY')
+                        ]) {
+                            withEnv([
+                                "GIT_AUTHOR_NAME=$GIT_USERNAME",
+                                "GIT_COMMITTER_NAME=$GIT_USERNAME",
+                                "GIT_AUTHOR_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                                "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                                "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
+                            ]) {
+                                sh label: 'npm run publish-documentation', script: """
+                                    #! /bin/sh -
+                                    # copy the git repository
+                                    cp -R ./.git ${uikit_folder}/.git
+                                    cd ${uikit_folder}
+                                    npm run build-documentation
+                                    NODE_DEBUG=gh-pages npm run publish-documentation -- --folder ${folder} --message '${message}'
+                                """
+                            }
+                        }
+                    }
                 } else {
                     // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                     echo '[INFO] Documentation (storybook) publishing skipped'
