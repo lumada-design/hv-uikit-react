@@ -4,7 +4,7 @@ properties([
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.'),
         booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.'),
         booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus.'),
-        booleanParam(name: 'skipPublishDoc', defaultValue: true, description: 'when true, skip publish documentation.'),
+        booleanParam(name: 'skipPublishDoc', defaultValue: false, description: 'when true, skip publish documentation.'),
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.'),
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel publish the build result.', name: 'ci_channel'),
         choice(choices: ['#ui-kit', '#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel announce a release.', name: 'release_channel')
@@ -199,7 +199,7 @@ node('non-master') {
 
                                         cd ${uikit_folder}
                                         npm run build -- --scope @hv/uikit-react-doc
-                                        npm run publish-documentation --  --ci
+                                        npm run publish-documentation
                                     """
                                 } else {
                                     echo '[INFO] Documentation (storybook) publishing skipped'
@@ -222,10 +222,32 @@ node('non-master') {
 
             stage('Publish Documentation') {
                 if(!params.skipPublishDoc) {
-                    // TODO: publish storybook for PR review
+                    image.inside(containerRunOptions('uikit_publish_packages')) {
+                        withCredentials([
+                            string(credentialsId: 'github-api-token', variable: 'GH_TOKEN'),
+                            sshUserPrivateKey(credentialsId: 'ssh-buildguy-github', usernameVariable: 'GIT_USERNAME', keyFileVariable: 'GIT_KEY')
+                        ]) {
+                            withEnv([
+                                "GIT_AUTHOR_NAME=$GIT_USERNAME",
+                                "GIT_COMMITTER_NAME=$GIT_USERNAME",
+                                "GIT_AUTHOR_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                                "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
+                                "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
+                            ]) {
+                                sh label: 'npm run publish-documentation', script: """
+                                    #! /bin/sh -
 
-                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
-                    echo '[INFO] Not publishing non-release documentation'
+                                    # copy the git repository
+                                    cp -R ./.git ${uikit_folder}/.git
+
+                                    cd ${uikit_folder}
+
+                                    npm run build -- --scope @hv/uikit-react-doc
+                                    npm run publish-documentation -- --folder pr-${env.CHANGE_ID} --message 'docs: storybook for PR #${env.CHANGE_ID}'
+                                """
+                            }
+                        }
+                    }
                 } else {
                     // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                     echo '[INFO] Documentation (storybook) publishing skipped'
@@ -233,7 +255,14 @@ node('non-master') {
             }
         }
     } finally {
-        def githubReleasesURL = "https://github.com/pentaho/hv-uikit-react/releases"
+        def githubURL = "https://github.com/pentaho/hv-uikit-react"
+
+        def githubReleasesURL = "${githubURL}/releases"
+
+        def githubBranchURL = "${githubURL}/tree/${env.BRANCH_NAME}"
+        if(env.CHANGE_ID) {
+            githubBranchURL = "${githubURL}/pull/${env.CHANGE_ID}"
+        }
 
         def ci_slack_channel = "${params.ci_channel}"
         def releases_slack_channel = "${params.release_channel}"
@@ -241,11 +270,11 @@ node('non-master') {
         def currentResult = currentBuild.currentResult
 
         if (currentResult == 'UNSTABLE') {
-            slackSend channel: ci_slack_channel, color: "warning", message: "${env.JOB_NAME} - build ${env.BUILD_NUMBER} is unstable"
+            slackSend channel: ci_slack_channel, color: "warning", message: "<${githubBranchURL}|${env.JOB_NAME}> - build <${env.BUILD_URL}|${env.BUILD_NUMBER}> is unstable!"
         } else if (currentResult == 'FAILURE') {
-            slackSend channel: ci_slack_channel, color: "danger", message: "${env.JOB_NAME} - build ${env.BUILD_NUMBER} failed!"
+            slackSend channel: ci_slack_channel, color: "danger", message: "<${githubBranchURL}|${env.JOB_NAME}> - build <${env.BUILD_URL}|${env.BUILD_NUMBER}> failed!"
         } else if (currentResult == 'SUCCESS') {
-            slackSend channel: ci_slack_channel, color: "good", message: "${env.JOB_NAME} - build ${env.BUILD_NUMBER} was successful"
+            slackSend channel: ci_slack_channel, color: "good", message: "<${githubBranchURL}|${env.JOB_NAME}> - build <${env.BUILD_URL}|${env.BUILD_NUMBER}> was successful"
 
             if ( env.BRANCH_NAME == releases_branch ) {
                 if ( commitMessage != null && commitMessage.startsWith("chore") ) {
