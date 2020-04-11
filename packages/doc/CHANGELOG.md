@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.24.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.23.0...@hv/uikit-react-doc@1.24.0) (2020-04-11)
+
+
+### Features
+
+* **datepicker:** add dateFormat prop to lab datepicker [#1380](https://github.com/pentaho/hv-uikit-react/issues/1380) ([947af60](https://github.com/pentaho/hv-uikit-react/commit/947af605ce44fb473047d4109282e9aa1011520d))
+* **login:** add formProps to Login component. [#1363](https://github.com/pentaho/hv-uikit-react/issues/1363) ([#1382](https://github.com/pentaho/hv-uikit-react/issues/1382)) ([bdfb120](https://github.com/pentaho/hv-uikit-react/commit/bdfb1202167a197d782d394fd805b9b11bc765e2))
+
+
+
+
+
 # [1.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.22.0...@hv/uikit-react-doc@1.23.0) (2020-04-09)
 
 

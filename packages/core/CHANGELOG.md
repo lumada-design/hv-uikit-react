@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.30.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.29.0...@hv/uikit-react-core@1.30.0) (2020-04-11)
+
+
+### Features
+
+* **login:** add formProps to Login component. [#1363](https://github.com/pentaho/hv-uikit-react/issues/1363) ([#1382](https://github.com/pentaho/hv-uikit-react/issues/1382)) ([bdfb120](https://github.com/pentaho/hv-uikit-react/commit/bdfb1202167a197d782d394fd805b9b11bc765e2))
+
+
+
+
+
 # [1.29.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.28.0...@hv/uikit-react-core@1.29.0) (2020-04-09)
 
 

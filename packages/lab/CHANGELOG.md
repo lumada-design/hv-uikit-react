@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.20.0...@hv/uikit-react-lab@1.21.0) (2020-04-11)
+
+
+### Features
+
+* **datepicker:** add dateFormat prop to lab datepicker [#1380](https://github.com/pentaho/hv-uikit-react/issues/1380) ([947af60](https://github.com/pentaho/hv-uikit-react/commit/947af605ce44fb473047d4109282e9aa1011520d))
+
+
+
+
+
 # [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.3...@hv/uikit-react-lab@1.20.0) (2020-04-09)
 
 
