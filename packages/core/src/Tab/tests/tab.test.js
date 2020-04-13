@@ -4,8 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-
-import TabWidthStyles from "../index";
+import Tab from "..";
 
 describe("Tab withStyles", () => {
   let wrapper;
@@ -13,12 +12,12 @@ describe("Tab withStyles", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TabWidthStyles label="Clickable Tab" />
+        <Tab label="Clickable Tab" />
       </HvProvider>
     );
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tab)).toMatchSnapshot();
   });
 });

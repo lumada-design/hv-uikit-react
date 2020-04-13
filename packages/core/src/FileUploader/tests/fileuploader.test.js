@@ -3,8 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import FileUploaderWithStyles from "..";
-import FileUploader from "../FileUploader";
+import FileUploader from "..";
 import DropZone from "../DropZone";
 import HvProvider from "../../Provider";
 import File from "../File";
@@ -42,7 +41,7 @@ const onClickCallback = jest.fn();
 const setupComponent = (props = {}) =>
   mount(
     <HvProvider>
-      <FileUploaderWithStyles {...props} />
+      <FileUploader {...props} />
     </HvProvider>
   );
 
@@ -67,7 +66,7 @@ describe("FileUploader withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(FileUploader)).toMatchSnapshot();
   });
 
   it("should render the FileUploader", () => {

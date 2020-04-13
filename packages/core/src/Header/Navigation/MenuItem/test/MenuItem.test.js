@@ -19,6 +19,6 @@ describe("MenuItem withStyles", () => {
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(MenuItem)).toMatchSnapshot();
   });
 });

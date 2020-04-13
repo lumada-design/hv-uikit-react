@@ -99,7 +99,7 @@ describe("<List />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
 
     it("default value is selected", () => {
@@ -174,7 +174,7 @@ describe("<List />", () => {
       );
     });
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
   });
 
@@ -187,7 +187,7 @@ describe("<List />", () => {
       );
     });
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
   });
 
@@ -201,7 +201,7 @@ describe("<List />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
 
     it("default values are selected", () => {
@@ -274,7 +274,7 @@ describe("<List />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
 
     it("handleSelectAll should be triggered when All checkbox is selected ", () => {

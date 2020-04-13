@@ -18,7 +18,7 @@ describe("ModalContent withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ModalContent)).toMatchSnapshot();
   });
 });
 
@@ -34,6 +34,6 @@ describe("ModalContent Component", () => {
   });
 
   it("should render correctly if opened", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ModalContent)).toMatchSnapshot();
   });
 });

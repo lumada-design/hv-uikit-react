@@ -6,8 +6,7 @@ import "jest-canvas-mock";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 
 import AddIcon from "@hv/uikit-react-icons/dist/Add";
-import Snackbar from "../Snackbar";
-import SnackBarWithStyles from "../index";
+import Snackbar from "..";
 import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
 import HvProvider from "../../Provider";
 import Button from "../../Button";
@@ -15,7 +14,7 @@ import Button from "../../Button";
 describe("Snackbar ", () => {
   const wrapper = mount(
     <HvProvider>
-      <SnackBarWithStyles />
+      <Snackbar />
     </HvProvider>
   );
 
@@ -24,7 +23,7 @@ describe("Snackbar ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Snackbar)).toMatchSnapshot();
   });
 
   it("should render the Snackbar component", () => {
@@ -40,7 +39,7 @@ describe("Snackbar ", () => {
   it("should render the SnackbarComponent component as the snackbar is open", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open transitionDirection="right" />
+        <Snackbar open transitionDirection="right" />
       </HvProvider>
     ).find(SnackBarContent);
     expect(sliderComponent.length).toBe(1);
@@ -49,7 +48,7 @@ describe("Snackbar ", () => {
   it("shouldn't render icon when default", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open showIcon transitionDirection="up" />
+        <Snackbar open showIcon transitionDirection="up" />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -61,7 +60,7 @@ describe("Snackbar ", () => {
   it("shouldn't render the success icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open variant="success" showIcon={false} transitionDirection="down" />
+        <Snackbar open variant="success" showIcon={false} transitionDirection="down" />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -73,7 +72,7 @@ describe("Snackbar ", () => {
   it("should render the success icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open variant="success" showIcon />
+        <Snackbar open variant="success" showIcon />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -85,7 +84,7 @@ describe("Snackbar ", () => {
   it("should render the error icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open variant="error" showIcon />
+        <Snackbar open variant="error" showIcon />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -97,7 +96,7 @@ describe("Snackbar ", () => {
   it("should render the custom icon", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open customIcon={<AddIcon />} />
+        <Snackbar open customIcon={<AddIcon />} />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -109,7 +108,7 @@ describe("Snackbar ", () => {
   it("should render the action when a component is passed", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles open variant="success" action={<a href=" ">Event</a>} />
+        <Snackbar open variant="success" action={<a href=" ">Event</a>} />
       </HvProvider>
     )
       .find(SnackBarContent)
@@ -122,7 +121,7 @@ describe("Snackbar ", () => {
     const offset = 10;
     let component = mount(
       <HvProvider>
-        <SnackBarWithStyles open offset={offset} />
+        <Snackbar open offset={offset} />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -130,7 +129,7 @@ describe("Snackbar ", () => {
 
     component = mount(
       <HvProvider>
-        <SnackBarWithStyles
+        <Snackbar
           open
           offset={offset}
           anchorOrigin={{
@@ -147,7 +146,7 @@ describe("Snackbar ", () => {
   it("should render the action when a structure is passed", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <SnackBarWithStyles
+        <Snackbar
           open
           variant="success"
           action={{

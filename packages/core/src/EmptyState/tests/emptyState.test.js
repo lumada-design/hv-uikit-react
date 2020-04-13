@@ -26,7 +26,7 @@ describe("<EmptyState /> with String title/message", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(EmptyState)).toMatchSnapshot();
   });
 });
 
@@ -54,7 +54,7 @@ describe("<EmptyState /> with Element title/message/action", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(EmptyState)).toMatchSnapshot();
   });
 
   it("should contain the title Element", () => {

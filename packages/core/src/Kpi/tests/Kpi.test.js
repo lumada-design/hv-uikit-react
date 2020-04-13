@@ -29,7 +29,7 @@ describe("Kpi", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Kpi)).toMatchSnapshot();
   });
 
   it("should render the Kpi component", () => {

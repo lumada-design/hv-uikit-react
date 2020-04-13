@@ -22,6 +22,6 @@ describe("Navigation withStyles", () => {
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Navigation)).toMatchSnapshot();
   });
 });

@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import FileWithStyles from "..";
+import File from "..";
 import HvProvider from "../../../Provider";
 
 let wrapper;
@@ -31,7 +31,7 @@ const onClickCallback = jest.fn();
 describe("File withStyles - Invalid File", () => {
   wrapper = mount(
     <HvProvider>
-      <FileWithStyles
+      <File
         data={dataFail}
         onFilesAdded={() => {}}
         onFileRemoved={() => {}}
@@ -46,7 +46,7 @@ describe("File withStyles - Invalid File", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(File)).toMatchSnapshot();
   });
 
   it("should render the File", () => {
@@ -58,7 +58,7 @@ describe("File withStyles - Invalid File", () => {
 describe("File withStyles - Valid File", () => {
   wrapper = mount(
     <HvProvider>
-      <FileWithStyles
+      <File
         data={dataSuccess}
         unit="mb"
         onFilesAdded={() => {}}
@@ -74,7 +74,7 @@ describe("File withStyles - Valid File", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(File)).toMatchSnapshot();
   });
 
   it("should render the File", () => {

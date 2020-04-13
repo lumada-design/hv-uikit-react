@@ -32,7 +32,7 @@ describe("<DatePicker /> with minimum configuration", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(DatePicker)).toMatchSnapshot();
   });
 
   it("should not render an actions component", () => {
@@ -98,7 +98,7 @@ describe("<DatePicker /> with Single Calendar mode", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(DatePicker)).toMatchSnapshot();
   });
 
   it("should not render any Calendar component", () => {
@@ -310,7 +310,7 @@ describe("<DatePicker /> with Range Calendar mode", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(DatePicker)).toMatchSnapshot();
   });
 
   it("should not render any Calendar component", () => {
@@ -411,7 +411,7 @@ describe("<DatePicker /> with custom properties", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(DatePicker)).toMatchSnapshot();
   });
 
   it("should show an Actions component when opening the calendar", () => {

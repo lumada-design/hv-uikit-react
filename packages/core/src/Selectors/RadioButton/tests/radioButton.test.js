@@ -5,8 +5,7 @@ import { shallow, mount } from "enzyme";
 
 import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
 
-import RadioWithStyles from "../index";
-import RadioButton from "../RadioButton";
+import RadioButton from "..";
 import labelPositions from "../../labelPositions";
 import HvProvider from "../../../Provider";
 import theme from "../../../theme";
@@ -20,7 +19,7 @@ describe("RadioButton withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <RadioWithStyles />
+        <RadioButton />
       </HvProvider>
     );
   });
@@ -30,13 +29,13 @@ describe("RadioButton withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(RadioButton)).toMatchSnapshot();
   });
 
   it("should render the RadioButton component", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioWithStyles />
+        <RadioButton />
       </HvProvider>
     );
     const buttonComponent = mountWrapper.find(RadioButton);
@@ -46,7 +45,7 @@ describe("RadioButton withStyles", () => {
   it("should have an icon", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioWithStyles />
+        <RadioButton />
       </HvProvider>
     );
 
@@ -62,7 +61,7 @@ describe("RadioButton withStyles", () => {
   it("should have an icon when disabled", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioWithStyles disabled />
+        <RadioButton disabled />
       </HvProvider>
     );
 
@@ -78,7 +77,7 @@ describe("RadioButton withStyles", () => {
   it("should apply the correct class name when there is a label at the start", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioWithStyles label="test" labelPlacement={labelPositions.start} />
+        <RadioButton label="test" labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(RadioButton);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(true);
@@ -88,7 +87,7 @@ describe("RadioButton withStyles", () => {
   it("should apply the correct class name when there is a label at the end", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioWithStyles label="test" labelPlacement={labelPositions.end} />
+        <RadioButton label="test" labelPlacement={labelPositions.end} />
       </HvProvider>
     ).find(RadioButton);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
@@ -98,7 +97,7 @@ describe("RadioButton withStyles", () => {
   it("should not apply any class name when there is no label specified", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioWithStyles labelPlacement={labelPositions.start} />
+        <RadioButton labelPlacement={labelPositions.start} />
       </HvProvider>
     ).find(RadioButton);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);

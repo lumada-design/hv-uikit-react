@@ -18,7 +18,7 @@ describe("ModalActions withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ModalActions)).toMatchSnapshot();
   });
 });
 
@@ -34,7 +34,7 @@ describe("ModalActions Component", () => {
   });
 
   it("should render correctly if opened", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ModalActions)).toMatchSnapshot();
   });
 
   it("allows external props to be added", () => {
@@ -43,7 +43,7 @@ describe("ModalActions Component", () => {
         <ModalActions disableActionSpacing>Modal Content</ModalActions>
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ModalActions)).toMatchSnapshot();
   });
 
   it("allows external styles to be added", () => {
@@ -59,6 +59,6 @@ describe("ModalActions Component", () => {
         </ModalActions>
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ModalActions)).toMatchSnapshot();
   });
 });

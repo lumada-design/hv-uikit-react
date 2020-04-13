@@ -22,7 +22,7 @@ describe("Grid withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Grid)).toMatchSnapshot();
   });
 
   it("should render the Grid component", () => {

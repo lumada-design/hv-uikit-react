@@ -22,7 +22,7 @@ describe("TextArea withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(TextArea)).toMatchSnapshot();
   });
 });
 
@@ -38,7 +38,7 @@ describe("TextArea Component", () => {
   });
 
   it("should render correctly if opened", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(TextArea)).toMatchSnapshot();
   });
 
   it("should save the current value length on change", () => {

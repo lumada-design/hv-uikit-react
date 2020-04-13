@@ -29,7 +29,7 @@ describe("<VerticalNavigation />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
     });
   });
 
@@ -51,7 +51,7 @@ describe("<VerticalNavigation />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
     });
   });
 
@@ -73,7 +73,7 @@ describe("<VerticalNavigation />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
     });
   });
 
@@ -95,7 +95,7 @@ describe("<VerticalNavigation />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
     });
   });
 });

@@ -19,7 +19,7 @@ describe("Modal withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Modal)).toMatchSnapshot();
   });
 });
 
@@ -40,7 +40,7 @@ describe("Modal Component", () => {
   });
 
   it("should render correctly if opened", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Modal)).toMatchSnapshot();
   });
 
   it("should render correctly if closed", () => {
@@ -51,7 +51,7 @@ describe("Modal Component", () => {
         </Modal>
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Modal)).toMatchSnapshot();
   });
 
   it("allows external props to be added", () => {
@@ -62,7 +62,7 @@ describe("Modal Component", () => {
         </Modal>
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Modal)).toMatchSnapshot();
   });
 
   it("allows external styles to be added", () => {
@@ -81,7 +81,7 @@ describe("Modal Component", () => {
         </Modal>
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Modal)).toMatchSnapshot();
   });
 
   it("onClose should be called when close is triggered in the dialog", () => {

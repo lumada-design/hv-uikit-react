@@ -5,8 +5,8 @@ import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
 
-import TabsWidthStyles from "../index";
-import TabWidthStyles from "../../Tab";
+import Tabs from "..";
+import Tab from "../../Tab";
 
 describe("Tabs withStyles", () => {
   let wrapper;
@@ -14,13 +14,13 @@ describe("Tabs withStyles", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TabsWidthStyles />
+        <Tabs />
       </HvProvider>
     );
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tabs)).toMatchSnapshot();
   });
 });
 
@@ -30,17 +30,17 @@ describe("Compose Tabs withStyles", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TabsWidthStyles value={1}>
-          <TabWidthStyles label="Clickable Tab" />
-          <TabWidthStyles label="Clickable Tab" />
-          <TabWidthStyles label="Clickable Tab" />
-          <TabWidthStyles label="Clickable Tab" />
-        </TabsWidthStyles>
+        <Tabs value={1}>
+          <Tab label="Clickable Tab" />
+          <Tab label="Clickable Tab" />
+          <Tab label="Clickable Tab" />
+          <Tab label="Clickable Tab" />
+        </Tabs>
       </HvProvider>
     );
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tabs)).toMatchSnapshot();
   });
 });

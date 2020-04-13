@@ -25,7 +25,7 @@ describe("<Actions />", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Actions)).toMatchSnapshot();
   });
 
   it("onCancel is triggered", () => {

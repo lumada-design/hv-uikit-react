@@ -21,7 +21,7 @@ describe("ToggleButton withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ToggleButton)).toMatchSnapshot();
   });
 
   it("should render the unselected icon", () => {

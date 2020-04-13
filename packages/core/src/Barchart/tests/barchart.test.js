@@ -4,8 +4,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
-import BarchartWithStyles from "../index";
-import Barchart from "../Barchart";
+import Barchart from "..";
 import { setData, setLayout } from "../barchartPlotlyOverrides";
 
 describe("Barchart withStyles", () => {
@@ -23,7 +22,7 @@ describe("Barchart withStyles", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <BarchartWithStyles data={data} layout={layout} />
+        <Barchart data={data} layout={layout} />
       </HvProvider>
     );
   });
@@ -33,13 +32,13 @@ describe("Barchart withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Barchart)).toMatchSnapshot();
   });
 
   it("should render the Barchart", () => {
     wrapper = mount(
       <HvProvider>
-        <BarchartWithStyles data={data} layout={layout} />
+        <Barchart data={data} layout={layout} />
       </HvProvider>
     );
     const barchart = wrapper.find(Barchart);

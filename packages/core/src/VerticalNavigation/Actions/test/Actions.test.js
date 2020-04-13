@@ -23,6 +23,6 @@ describe("Actions", () => {
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Actions)).toMatchSnapshot();
   });
 });

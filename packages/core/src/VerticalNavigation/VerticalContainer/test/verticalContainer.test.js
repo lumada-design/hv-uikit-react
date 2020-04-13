@@ -5,8 +5,7 @@ import { mount, shallow } from "enzyme";
 import { toHaveNoViolations } from "jest-axe";
 import axe from "../../../../config/axe-config";
 import HvProvider from "../../../Provider";
-import VerticalContainerWithStyles from "../index";
-import VerticalContainer from "../VerticalContainer";
+import VerticalContainer from "..";
 
 expect.extend(toHaveNoViolations);
 
@@ -15,9 +14,9 @@ const Content = <div id="test_div" />;
 const setupComponent = (props = {}) =>
   mount(
     <HvProvider>
-      <VerticalContainerWithStyles id="test" {...props}>
+      <VerticalContainer id="test" {...props}>
         {Content}
-      </VerticalContainerWithStyles>
+      </VerticalContainer>
     </HvProvider>
   );
 
@@ -27,7 +26,7 @@ describe("VerticalContainer withStyles", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <VerticalContainerWithStyles>{Content}</VerticalContainerWithStyles>
+        <VerticalContainer>{Content}</VerticalContainer>
       </HvProvider>
     );
   });
@@ -37,7 +36,7 @@ describe("VerticalContainer withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(VerticalContainer)).toMatchSnapshot();
   });
 });
 

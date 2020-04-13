@@ -14,6 +14,6 @@ describe("MenuBar withStyles", () => {
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(MenuBar)).toMatchSnapshot();
   });
 });

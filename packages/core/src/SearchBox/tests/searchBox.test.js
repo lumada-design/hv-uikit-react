@@ -26,7 +26,7 @@ describe("<SearchBox />", () => {
         <SearchBox onChange={onChangeMock} />
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(SearchBox)).toMatchSnapshot();
   });
 
   it("renders disabled correctly", () => {
@@ -35,7 +35,7 @@ describe("<SearchBox />", () => {
         <SearchBox onChange={onChangeMock} disabled />
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(SearchBox)).toMatchSnapshot();
   });
 
   it("submits on enter", () => {

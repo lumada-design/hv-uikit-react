@@ -28,7 +28,7 @@ describe("Button", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(HvButton)).toMatchSnapshot();
   });
 
   it("should render the Button component", () => {

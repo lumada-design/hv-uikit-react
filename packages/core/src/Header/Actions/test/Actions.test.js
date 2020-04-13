@@ -24,6 +24,6 @@ describe("Actions withStyles", () => {
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Actions)).toMatchSnapshot();
   });
 });
