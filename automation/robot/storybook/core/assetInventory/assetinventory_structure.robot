@@ -7,7 +7,7 @@ Suite Teardown    Close Browser
 Force Tags        smoke    bug-infrastructure-ie
 
 *** Variables ***
-${cardsSelector}      css:div[id*='Card_id'][class*='HvCard-root']
+${cardsSelector}      css:div[class*='HvCard-root']
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${dropdownHeader}     id:sort_hv-assetinventory-header
 ${sortTitleDesc}      id:sort_hv-assetinventory-values-list-item-1
