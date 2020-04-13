@@ -4,7 +4,7 @@ properties([
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.'),
         booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.'),
         booleanParam(name: 'skipPublish', defaultValue: true, description: 'when true, skip publish to nexus.'),
-        booleanParam(name: 'skipPublishDoc', defaultValue: false, description: 'when true, skip publish documentation.'),
+        choice(name: 'skipPublishDoc', choices: ['auto', 'true', 'false'], description: 'when true, skip publish documentation.'),
         choice(name: 'publishType', choices: ['', 'prerelease', 'prepatch', 'patch', 'preminor', 'minor', 'premajor', 'major'], description: 'when true, skip publish to nexus and documentation.'),
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel publish the build result.', name: 'ci_channel'),
         choice(choices: ['#ui-kit', '#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel announce a release.', name: 'release_channel')
@@ -153,7 +153,9 @@ node('non-master') {
                             "GIT_COMMITTER_EMAIL=$GIT_USERNAME@hitachivantara.com",
                             "GIT_SSH_COMMAND=ssh -i $GIT_KEY -o IdentitiesOnly=yes -o StrictHostKeyChecking=no"
                         ]) {
-                            if(!params.skipPublish || !params.skipPublishDoc) {
+                            // in branches with published packages only update the documentation
+                            // when publishing or with a explicit skipPublishDoc set to false
+                            if(!params.skipPublish || params.skipPublishDoc == 'false') {
                                 sh label: 'copy git repository', script: """
                                     #! /bin/sh -
 
@@ -166,53 +168,63 @@ node('non-master') {
                                     git checkout ${env.BRANCH_NAME}
                                     git reset --hard
                                 """
-                            }
 
-                            stage('Publish Packages') {
-                                if(!params.skipPublish) {
-                                    withNPM(npmrcConfig: 'hv-ui-nprc') {
-                                        sh label: 'npm run publish-x', script: """
-                                            #! /bin/sh -
+                                stage('Publish Packages') {
+                                    if(!params.skipPublish) {
+                                        withNPM(npmrcConfig: 'hv-ui-nprc') {
+                                            sh label: 'npm run publish-x', script: """
+                                                #! /bin/sh -
 
-                                            # copy the npm configuration
-                                            cp .npmrc ${uikit_folder}/../.npmrc
-                                            cp .npmrc ${uikit_folder}/.npmrc
+                                                # copy the npm configuration
+                                                cp .npmrc ${uikit_folder}/../.npmrc
+                                                cp .npmrc ${uikit_folder}/.npmrc
 
-                                            cd ${uikit_folder}
+                                                cd ${uikit_folder}
 
-                                            npm run publish-${params.publishType} -- --no-git-reset
-                                        """
+                                                npm run publish-${params.publishType} -- --no-git-reset
+                                            """
 
-                                        commitMessage = sh(returnStdout: true, script: """
-                                            #! /bin/sh -
-                                            cd ${uikit_folder}
-                                            git show -s --format=%B HEAD
-                                        """).trim()
+                                            commitMessage = sh(returnStdout: true, script: """
+                                                #! /bin/sh -
+                                                cd ${uikit_folder}
+                                                git show -s --format=%B HEAD
+                                            """).trim()
 
-                                        commitTimestamp = sh(returnStdout: true, script: """
-                                            #! /bin/sh -
-                                            cd ${uikit_folder}
-                                            git show -s --format=%ct HEAD
-                                        """).trim()
+                                            commitTimestamp = sh(returnStdout: true, script: """
+                                                #! /bin/sh -
+                                                cd ${uikit_folder}
+                                                git show -s --format=%ct HEAD
+                                            """).trim()
+                                        }
+                                    } else {
+                                        echo '[INFO] Packages publishing skipped'
                                     }
-                                } else {
+                                }
+
+                                stage('Publish Documentation') {
+                                    if(!params.skipPublish && params.skipPublishDoc != 'true' || params.skipPublishDoc == 'false') {
+                                        sh label: 'npm run publish-documentation', script: """
+                                            #! /bin/sh -
+
+                                            cd ${uikit_folder}
+                                            npm run build -- --scope @hv/uikit-react-doc
+                                            # npm run publish-documentation
+
+                                            cd packages/doc
+                                            NODE_DEBUG=gh-pages npm run publish-documentation
+                                        """
+                                    } else {
+                                        echo '[INFO] Documentation (storybook) publishing skipped'
+                                    }
+                                }
+                            } else {
+                                stage('Publish Packages') {
+                                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                                     echo '[INFO] Packages publishing skipped'
                                 }
-                            }
 
-                            stage('Publish Documentation') {
-                                if(!params.skipPublishDoc) {
-                                    sh label: 'npm run publish-documentation', script: """
-                                        #! /bin/sh -
-
-                                        cd ${uikit_folder}
-                                        npm run build -- --scope @hv/uikit-react-doc
-                                        # npm run publish-documentation
-
-                                        cd packages/doc
-                                        NODE_DEBUG=gh-pages npm run publish-documentation
-                                    """
-                                } else {
+                                stage('Publish Documentation') {
+                                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
                                     echo '[INFO] Documentation (storybook) publishing skipped'
                                 }
                             }
@@ -232,7 +244,10 @@ node('non-master') {
             }
 
             stage('Publish Documentation') {
-                if(!params.skipPublishDoc) {
+                // skipPublishDoc set to auto assumes we should publish
+                // a different logic can be added later, i.e. to avoid publishing
+                // on every PR commit
+                if(params.skipPublishDoc != 'true') {
                     def folder = env.BRANCH_NAME;
                     def message = "docs: storybook for branch ${env.BRANCH_NAME}";
                     if(env.CHANGE_ID) {
