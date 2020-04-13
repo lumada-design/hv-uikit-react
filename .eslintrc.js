@@ -16,6 +16,15 @@ module.exports = {
     // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
     "no-unused-expressions": "off"
   },
+  overrides: [
+    {
+      files: ["*.stories.js"],
+      rules: {
+        "no-console": "off",
+        "no-alert": "off"
+      }
+    }
+  ],
   settings: {
     react: {
       pragma: "React",
