@@ -16,7 +16,7 @@ select an option by locator
     Go To                                ${STORYBOOK_URL}/iframe.html?id=corelist--${sample}
     Wait Until Element Is Visible        ${list}       10s
     Element Attribute Value Should Be    ${option}       aria-selected    ${value}
-    Click Element                        ${locator}
+    Click Element                        css:#${locator}
     Element Attribute Value Should Be    ${option}       aria-selected    true
 
 *** Test Cases ***                       sample                       option        locator            value
