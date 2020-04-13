@@ -77,9 +77,6 @@ export const Main = () => {
       paddingRight: `${theme.hv.spacing.xs}px`,
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    },
-    container: {
-      marginLeft: "-15px"
     }
   });
 
@@ -349,9 +346,6 @@ export const Configuration = () => {
       paddingRight: `${theme.hv.spacing.xs}px`,
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    },
-    container: {
-      marginLeft: "-15px"
     }
   });
 
@@ -646,9 +640,6 @@ export const ThreeViews = () => {
       paddingRight: `${theme.hv.spacing.xs}px`,
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    },
-    container: {
-      marginLeft: "-15px"
     }
   });
 
@@ -946,9 +937,6 @@ export const ServerSidePagination = () => {
       paddingRight: `${theme.hv.spacing.xs}px`,
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    },
-    container: {
-      marginLeft: "-15px"
     }
   });
 

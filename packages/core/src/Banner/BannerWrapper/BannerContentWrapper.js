@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import { SnackbarContent, withStyles } from "@material-ui/core";
-import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+import iconVariants from "../../utils/iconVariants";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
 import styles from "./styles";
@@ -23,16 +23,13 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     ...others
   } = props;
 
-  const icon = customIcon || (showIcon && severityIcon(mapSeverityToVariant(variant)));
+  const icon = customIcon || (showIcon && iconVariants(variant));
 
-  let effectiveActionsPosition = actionsPosition;
-  if (actionsPosition === "auto") {
-    // default to inline
-    // this might try to be more inteligent in the future,
-    // taking into account the content lenght, available space,
-    // number of actions, etc..
-    effectiveActionsPosition = "inline";
-  }
+  // default to inline
+  // this might try to be more intelligent in the future,
+  // taking into account the content length, available space,
+  // number of actions, etc..
+  const effectiveActionsPosition = actionsPosition === "auto" ? "inline" : actionsPosition;
 
   return (
     <div className={classes.outContainer}>

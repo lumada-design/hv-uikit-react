@@ -3,7 +3,6 @@ const styles = theme => ({
     height: "32px",
     marginRight: 0,
     marginLeft: 0,
-    display: "flex",
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },

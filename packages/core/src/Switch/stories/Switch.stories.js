@@ -46,7 +46,7 @@ export const Label = () => {
     right: "Connect"
   };
 
-  return <HvSwitch checked={false} disabled={false} labels={labels} aria-label="Server online" />;
+  return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
 };
 
 Label.story = {
@@ -57,12 +57,12 @@ Label.story = {
   }
 };
 
-export const Disable = () => <HvSwitch checked={false} disabled />;
+export const Disabled = () => <HvSwitch disabled checked={false} />;
 
-Disable.story = {
+Disabled.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a disable switch that does not allows interaction."
+      storyDescription: "A sample showcasing a disabled switch that does not allow interaction."
     }
   }
 };

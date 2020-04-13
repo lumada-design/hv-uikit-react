@@ -1,25 +1,29 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Get Started/Installation" />
 
 ## HV UIkit - React
 
 #### npm registry
+
 Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
 
 ```
 @hv:registry=https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 ```
+
 Please check that your npmrc has this by running `npm config ls -l`, otherwise you can add it to the config by running `npm config edit`, otherwise the installation step below will not work.
 
 ### Installation
-  - core - ```npm install @hv/uikit-react-core```
-  - lab - ```npm install @hv/uikit-react-lab```
-  - icons - ```npm install @hv/uikit-react-icons```
+
+- core - `npm install @hv/uikit-react-core`
+- lab - `npm install @hv/uikit-react-lab`
+- icons - `npm install @hv/uikit-react-icons`
 
 To always have the latest development version of the UIkit, even before a release, you may want to use npm with the `latest` tag.
 
 #### global link
+
 If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
 
 ```bash
@@ -29,6 +33,7 @@ npm run link
 It will create a symlink in the global folder {prefix}/lib/node_modules/{package} for each package.
 
 ### Getting Started
+
 Install root dependencies.
 
 ```bash
@@ -48,7 +53,7 @@ npm run bootstrap
 It will startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
 
 ```bash
-npm run storybook
+npm run doc
 ```
 
 ### Supported Components
@@ -85,7 +90,7 @@ npm run storybook
 | [File Uploader](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/FileUploader)                |         1.2.1         |
 | [Multi Button](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/MultiButton)                  |         1.2.1         |
 | [Pagination](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Pagination)                     |         1.2.1         |
-| [Tabs](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Tabs)                          |         1.2.1         |
+| [Tabs](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Tabs)                                 |         1.2.1         |
 
 #### Lab
 

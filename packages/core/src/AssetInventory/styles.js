@@ -17,7 +17,7 @@ const styles = theme => ({
     paddingLeft: `${theme.hv.spacing.md}px`
   },
   viewContainer: {
-    overflow: "auto",
+    // overflow: "auto",
     padding: `${theme.hv.spacing.md}px 0`,
     width: "100%"
   },

@@ -51,6 +51,11 @@ const hvTheme = uiKitTheme => {
       }
     },
     overrides: {
+      MuiPaper: {
+        root: {
+          backgroundColor: theme.palette.atmosphere.atmo1
+        }
+      },
       MuiAppBar: {
         ...muiAppBarOverrides(theme)
       },

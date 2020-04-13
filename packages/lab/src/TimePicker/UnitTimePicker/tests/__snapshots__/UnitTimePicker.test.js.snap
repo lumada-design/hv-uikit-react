@@ -375,6 +375,11 @@ exports[`UnitTimePicker should render correctly 1`] = `
                 "padding": 0,
               },
             },
+            "MuiPaper": Object {
+              "root": Object {
+                "backgroundColor": "#FFFFFF",
+              },
+            },
             "MuiToolbar": Object {
               "dense": Object {
                 "minHeight": "46px",
