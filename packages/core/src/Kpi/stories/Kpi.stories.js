@@ -50,7 +50,7 @@ export const AverageService = () => {
 
   const KpiVisualAverage = () => (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <ArrowUp boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
+      <ArrowUp title="Up" boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
@@ -66,7 +66,7 @@ export const AverageService = () => {
     <div style={kpiContainer}>
       <HvKpi
         labels={labels}
-        visualIndicator={<Success semantic="sema1" />}
+        visualIndicator={<Success title="Good" semantic="sema1" />}
         visualComparison={<KpiVisualAverage />}
       />
     </div>
@@ -92,7 +92,7 @@ export const Iops = () => {
 
   const IopsComparisonVisualAverage = () => (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <ArrowDown boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
+      <ArrowDown title="Down" boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
@@ -157,7 +157,7 @@ export const Iops = () => {
     <div style={kpiContainer}>
       <HvKpi
         labels={labels}
-        visualIndicator={<Average semantic="sema4" />}
+        visualIndicator={<Average title="Bad" semantic="sema4" />}
         trendIndicator={<TrendIndicator />}
         visualComparison={<IopsComparisonVisualAverage />}
       />
@@ -184,7 +184,7 @@ export const TotalThroughput = () => {
 
   const ThroughputComparisonVisual = () => (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <ArrowUp boxStyles={{ width: "20px", height: "20px" }} semantic="sema1" />
+      <ArrowUp title="Up" boxStyles={{ width: "20px", height: "20px" }} semantic="sema1" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
@@ -200,7 +200,7 @@ export const TotalThroughput = () => {
     <div style={kpiContainer}>
       <HvKpi
         labels={labels}
-        visualIndicator={<Success semantic="sema1" />}
+        visualIndicator={<Success title="Good" semantic="sema1" />}
         visualComparison={<ThroughputComparisonVisual />}
       />
     </div>
@@ -281,7 +281,7 @@ export const Selectable = () => {
 
   const IopsComparisonVisualAverage = () => (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <ArrowUp boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
+      <ArrowUp title="Up" boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
@@ -386,7 +386,7 @@ export const SelectableNoSemantic = () => {
 
   const IopsComparisonVisualAverage = () => (
     <div style={{ display: "flex", alignItems: "center" }}>
-      <ArrowDown boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
+      <ArrowDown title="Down" boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
@@ -450,7 +450,7 @@ export const SelectableNoSemantic = () => {
     <div style={kpiContainer}>
       <HvKpi
         labels={labels}
-        visualIndicator={<Average semantic="sema4" />}
+        visualIndicator={<Average title="Bad" semantic="sema4" />}
         trendIndicator={<TrendIndicator />}
         visualComparison={<IopsComparisonVisualAverage />}
       />
@@ -554,7 +554,7 @@ export const SelectableNoTrendIcon = () => {
     <div style={kpiContainer}>
       <HvKpi
         labels={labels}
-        visualIndicator={<Level3Bad semantic="sema13" />}
+        visualIndicator={<Level3Bad title="Warning" semantic="sema13" />}
         trendIndicator={<TrendIndicator />}
         visualComparison={<IopsComparisonVisualAverage />}
       />
