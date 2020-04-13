@@ -31,7 +31,7 @@ describe("<Calendar /> with minimum configuration", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Calendar)).toMatchSnapshot();
   });
 
   it("should render a header component", () => {
@@ -84,6 +84,6 @@ describe("<Calendar /> with configurations", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Calendar)).toMatchSnapshot();
   });
 });

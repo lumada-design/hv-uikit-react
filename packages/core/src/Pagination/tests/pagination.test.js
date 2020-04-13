@@ -81,6 +81,6 @@ describe("Custom Pagination", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Pagination)).toMatchSnapshot();
   });
 });

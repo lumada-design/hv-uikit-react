@@ -35,7 +35,7 @@ describe("Card withStyles", () => {
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Card)).toMatchSnapshot();
   });
 
   it("should select when clicking on the card", () => {

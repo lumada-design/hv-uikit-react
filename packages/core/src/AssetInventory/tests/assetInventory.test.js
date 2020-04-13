@@ -48,7 +48,7 @@ describe("Asset Inventory ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(AssetInventory)).toMatchSnapshot();
   });
 
   it("should render correctly sort", () => {

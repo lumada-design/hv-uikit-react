@@ -3,9 +3,8 @@ import { mount } from "enzyme";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 import { toHaveNoViolations } from "jest-axe";
-import Banner from "../Banner";
+import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
-import BannerWithStyles from "../index";
 import HvProvider from "../../Provider";
 import { mapSeverityToVariant, severityIcon, variantIcon } from "../BannerWrapper/VariantUtils";
 import Button from "../../Button";
@@ -17,7 +16,7 @@ expect.extend(toHaveNoViolations);
 describe("Banner ", () => {
   const wrapper = mount(
     <HvProvider>
-      <BannerWithStyles variant="default" open={false} onClose={() => {}} />
+      <Banner variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
 
@@ -26,7 +25,7 @@ describe("Banner ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Banner)).toMatchSnapshot();
   });
 
   it("should render the Banner component", () => {
@@ -42,7 +41,7 @@ describe("Banner ", () => {
   it("should render the BannerContentWrapper component", () => {
     const bannerComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="default" label="label" open onClose={() => {}} />
+        <Banner variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
     ).find(HvBannerContentWrapper);
     expect(bannerComponent.length).toBe(1);
@@ -51,7 +50,7 @@ describe("Banner ", () => {
   it("should render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="error" label="label" open showIcon onClose={() => {}} />
+        <Banner variant="error" label="label" open showIcon onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -60,7 +59,7 @@ describe("Banner ", () => {
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="error" label="label" open showIcon={false} onClose={() => {}} />
+        <Banner variant="error" label="label" open showIcon={false} onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(0);
@@ -69,13 +68,7 @@ describe("Banner ", () => {
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles
-          variant="default"
-          label="label"
-          open
-          customIcon={<Fail />}
-          onClose={() => {}}
-        />
+        <Banner variant="default" label="label" open customIcon={<Fail />} onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -84,7 +77,7 @@ describe("Banner ", () => {
   it("should render a action on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
           label="label"
           variant="default"
           open
@@ -100,7 +93,7 @@ describe("Banner ", () => {
   it("should render a action by passing a structure on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
           variant="default"
           open
           label="label"
@@ -121,7 +114,7 @@ describe("Banner ", () => {
   it("should render a action on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
           variant="default"
           open
           label="label"
@@ -137,7 +130,7 @@ describe("Banner ", () => {
   it("should render a action by passing a structure on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
           variant="default"
           open
           label="label"
@@ -159,7 +152,7 @@ describe("Banner ", () => {
     const offset = 10;
     let component = mount(
       <HvProvider>
-        <BannerWithStyles open offset={offset} onClose={() => {}} label="label" />
+        <Banner open offset={offset} onClose={() => {}} label="label" />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -167,13 +160,7 @@ describe("Banner ", () => {
 
     component = mount(
       <HvProvider>
-        <BannerWithStyles
-          open
-          offset={offset}
-          anchorOrigin="bottom"
-          label="label"
-          onClose={() => {}}
-        />
+        <Banner open offset={offset} anchorOrigin="bottom" label="label" onClose={() => {}} />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -219,7 +206,7 @@ describe("BannerA11Y", () => {
   it("simple banner should have no errors", async () => {
     const wrapper = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
           variant="default"
           open
           showIcon
@@ -238,7 +225,7 @@ describe("BannerA11Y", () => {
   it("banner with actions should have no errors", async () => {
     const wrapper = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
           variant="default"
           open
           actions={[

@@ -64,7 +64,7 @@ describe("Dropzone withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(DropZone)).toMatchSnapshot();
   });
 
   it("should render correctly when disabled", () => {
@@ -73,6 +73,6 @@ describe("Dropzone withStyles", () => {
       disabled: true,
       multiple: false
     });
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(DropZone)).toMatchSnapshot();
   });
 });

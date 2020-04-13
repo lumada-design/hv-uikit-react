@@ -31,7 +31,7 @@ describe("<Header />", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Header)).toMatchSnapshot();
   });
 
   it("should set the correct state", () => {

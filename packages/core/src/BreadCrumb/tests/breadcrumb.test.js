@@ -3,8 +3,7 @@ import { mount } from "enzyme";
 
 import AngleForwards12 from "@hv/uikit-react-icons/dist/DropRightXS";
 import HvProvider from "../../Provider";
-import BreadcrumbWithStyles from "../index";
-import Breadcrumb from "../BreadCrumb";
+import Breadcrumb from "..";
 
 const listRoute = [
   {
@@ -32,7 +31,7 @@ const listRoute = [
 describe("Breadcrumb withStyles", () => {
   const wrapper = mount(
     <HvProvider>
-      <BreadcrumbWithStyles />
+      <Breadcrumb />
     </HvProvider>
   );
 
@@ -41,7 +40,7 @@ describe("Breadcrumb withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Breadcrumb)).toMatchSnapshot();
   });
 
   it("should render the Breadcrumb component", () => {
@@ -52,7 +51,7 @@ describe("Breadcrumb withStyles", () => {
   it("should create a breadcrumb with 5 pages", () => {
     const separatorList = mount(
       <HvProvider>
-        <BreadcrumbWithStyles listRoute={listRoute} />
+        <Breadcrumb listRoute={listRoute} />
       </HvProvider>
     ).find(AngleForwards12);
 
@@ -62,7 +61,7 @@ describe("Breadcrumb withStyles", () => {
   it("should create a breadcrumb with submenu", () => {
     const existsDropdownMenu = mount(
       <HvProvider>
-        <BreadcrumbWithStyles listRoute={listRoute} maxVisible={2} />
+        <Breadcrumb listRoute={listRoute} maxVisible={2} />
       </HvProvider>
     ).exists("DropDownMenu");
 
@@ -72,7 +71,7 @@ describe("Breadcrumb withStyles", () => {
   it("should present always two paths", () => {
     const separatorList = mount(
       <HvProvider>
-        <BreadcrumbWithStyles listRoute={listRoute} maxVisible={0} />
+        <Breadcrumb listRoute={listRoute} maxVisible={0} />
       </HvProvider>
     ).find(AngleForwards12);
 
@@ -82,7 +81,7 @@ describe("Breadcrumb withStyles", () => {
   it("should create a breadcrumb with 4 pages from url", () => {
     const separatorList = mount(
       <HvProvider>
-        <BreadcrumbWithStyles url="http://test/a/b/c/d" />
+        <Breadcrumb url="http://test/a/b/c/d" />
       </HvProvider>
     ).find(AngleForwards12);
 

@@ -4,7 +4,7 @@ import React from "react";
 import { shallow } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import AssetInventoryListView from "..";
+import ListView from "..";
 
 describe("AssetInventoryListView", () => {
   let wrapper;
@@ -12,13 +12,13 @@ describe("AssetInventoryListView", () => {
   it("should be defined", () => {
     wrapper = shallow(
       <HvProvider>
-        <AssetInventoryListView />
+        <ListView />
       </HvProvider>
     );
     expect(wrapper).toBeDefined();
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ListView)).toMatchSnapshot();
   });
 });

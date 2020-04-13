@@ -31,7 +31,7 @@ describe("<Navigation />", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Navigation)).toMatchSnapshot();
   });
 
   it("onNavigatePrevious is triggered", () => {

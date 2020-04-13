@@ -2,7 +2,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import Menu from "@hv/uikit-react-icons/dist/Menu";
 import HvProvider from "../../../Provider";
-import CardView from "../index";
+import CardView from "..";
 import Card from "../../../Card";
 
 describe("CardView", () => {
@@ -40,7 +40,7 @@ describe("CardView", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find("CardView")).toMatchSnapshot();
   });
 
   it("should render correctly with default render", () => {

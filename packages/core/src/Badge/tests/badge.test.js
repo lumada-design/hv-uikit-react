@@ -21,7 +21,7 @@ describe("Badge ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Badge)).toMatchSnapshot();
   });
 
   it("should render correctly with showCount", () => {

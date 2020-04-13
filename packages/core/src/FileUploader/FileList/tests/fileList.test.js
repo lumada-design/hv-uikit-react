@@ -3,8 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import FileListWithStyles from "..";
-import FileList from "../FileList";
+import FileList from "..";
 import HvProvider from "../../../Provider";
 
 let wrapper;
@@ -36,7 +35,7 @@ describe("FileList withStyles", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>
-        <FileListWithStyles
+        <FileList
           list={files}
           progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
@@ -47,7 +46,7 @@ describe("FileList withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(FileList)).toMatchSnapshot();
   });
 
   it("should render the FileList", () => {

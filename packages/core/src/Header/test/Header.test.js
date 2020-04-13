@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-import HeaderWithStyles from "../index";
+import Header from "..";
 import Brand from "../Brand";
 
 describe("Header withStyles", () => {
@@ -11,12 +11,12 @@ describe("Header withStyles", () => {
   it("should be able to render", () => {
     wrapper = mount(
       <HvProvider>
-        <HeaderWithStyles>
+        <Header>
           <Brand />
-        </HeaderWithStyles>
+        </Header>
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Header)).toMatchSnapshot();
   });
 });

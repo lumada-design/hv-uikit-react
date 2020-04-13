@@ -4,8 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-
-import SwitchWithStyles from "..";
+import Switch from "..";
 
 let wrapper;
 
@@ -14,7 +13,7 @@ let wrapper;
 describe("Switch withStyles", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles />
+      <Switch />
     </HvProvider>
   );
 
@@ -23,14 +22,14 @@ describe("Switch withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 
 describe("Switch with Custom Configurations", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         checked={false}
         disabled={false}
         showLabels
@@ -47,14 +46,14 @@ describe("Switch with Custom Configurations", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 
 describe("Switch with no label display but with custom label configuration", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         checked
         disabled
         showLabels={false}
@@ -71,7 +70,7 @@ describe("Switch with no label display but with custom label configuration", () 
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 // TODO - test that labels are not clickable when not visible
@@ -79,7 +78,7 @@ describe("Switch with no label display but with custom label configuration", () 
 describe("Switch label click", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         id="hvswitch"
         checked={false}
         showLabels
@@ -99,13 +98,13 @@ describe("Switch label click", () => {
 
   it("label can be clicked", () => {
     // expect(clickableLabel).toHaveBeenCalled();
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 describe("Switch input area hover", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         checked={false}
         classes={{}}
         showLabels
@@ -121,12 +120,12 @@ describe("Switch input area hover", () => {
   inputArea.simulate("mouseover");
 
   it("input can be hovered in", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 
   inputArea.simulate("mouseout");
 
   it("input can be hovered out", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });

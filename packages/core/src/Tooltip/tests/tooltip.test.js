@@ -43,7 +43,7 @@ describe("Single Line Tooltip", () => {
   });
 
   it("should render single line tooltip correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render the single line Tooltip", () => {
@@ -81,7 +81,7 @@ describe("Multi Line Tooltip - No Header", () => {
   });
 
   it("should render multiple line tooltip correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render the multiple line Tooltip", () => {
@@ -118,7 +118,7 @@ describe("Multi Line Tooltip - With Header", () => {
   });
 
   it("should render multiple line tooltip with header correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render the multiple line Tooltip with header", () => {

@@ -49,7 +49,7 @@ describe("<Dropdown />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
 
     it("default value is selected", () => {
@@ -102,7 +102,7 @@ describe("<Dropdown />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
 
     it("no default value is selected", () => {
@@ -124,7 +124,7 @@ describe("<Dropdown />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
 
     it("<Dropdown /> handleToggle should do nothing if disabled", () => {

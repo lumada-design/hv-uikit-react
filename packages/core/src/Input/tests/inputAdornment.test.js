@@ -70,7 +70,7 @@ describe("InputAdornment", () => {
   });
 
   it("should be defined", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(StyledInputAdornment)).toMatchSnapshot();
   });
 
   it("should call handleClear when mouseDown on the clear button", () => {

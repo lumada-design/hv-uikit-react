@@ -32,7 +32,7 @@ describe("Linechart withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Linechart)).toMatchSnapshot();
   });
 
   it("should render the Linechart", () => {

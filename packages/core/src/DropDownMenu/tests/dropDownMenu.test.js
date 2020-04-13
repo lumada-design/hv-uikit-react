@@ -51,21 +51,21 @@ describe("DropDownMenu", () => {
     });
 
     it("is rendered correctly and behaves as expected", () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on click", () => {
       const button = wrapper.find("div");
       button.at(1).simulate("click");
 
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("closes on double click", () => {
       const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on Enter", () => {
@@ -129,21 +129,21 @@ describe("DropDownMenu", () => {
     });
 
     it("is rendered correctly and behaves as expected", () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on click", () => {
       const button = wrapper.find("div");
       button.at(1).simulate("click");
 
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("closes on double click", () => {
       const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on Enter", () => {

@@ -38,7 +38,7 @@ describe("Chart withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Chart)).toMatchSnapshot();
   });
 
   it("should render the Chart", () => {
@@ -100,7 +100,7 @@ describe("Tooltip withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render a singleTooltip", () => {

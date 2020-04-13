@@ -48,7 +48,7 @@ describe("Input", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Input)).toMatchSnapshot();
   });
 
   it("should render the Input component", () => {
@@ -71,7 +71,7 @@ describe("Input", () => {
         <Input showInfo={false} />
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Input)).toMatchSnapshot();
   });
 
   it("should pass other props to the child input component", () => {
@@ -84,7 +84,7 @@ describe("Input", () => {
         />
       </HvProvider>
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Input)).toMatchSnapshot();
   });
 
   it("should accept valid as a default state", () => {

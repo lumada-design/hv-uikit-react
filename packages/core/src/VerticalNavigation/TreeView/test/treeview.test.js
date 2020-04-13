@@ -42,7 +42,7 @@ describe("<TreeView />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(TreeView)).toMatchSnapshot();
     });
 
     it("should unmount without crashing", () => {
@@ -79,7 +79,7 @@ describe("<TreeView />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(TreeView)).toMatchSnapshot();
     });
   });
 });
