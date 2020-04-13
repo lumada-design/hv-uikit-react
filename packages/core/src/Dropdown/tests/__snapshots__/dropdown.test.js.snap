@@ -2185,6 +2185,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             "aria-invalid": undefined,
                                                             "aria-label": "search",
                                                             "aria-required": undefined,
+                                                            "ref": Object {
+                                                              "current": <input
+                                                                aria-label="search"
+                                                                class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                id="test-dropdown-values-search-input"
+                                                                placeholder="Search"
+                                                                type="text"
+                                                                value=""
+                                                              />,
+                                                            },
                                                             "required": false,
                                                           }
                                                         }
@@ -2283,6 +2293,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "aria-invalid": undefined,
                                                               "aria-label": "search",
                                                               "aria-required": undefined,
+                                                              "ref": Object {
+                                                                "current": <input
+                                                                  aria-label="search"
+                                                                  class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                  id="test-dropdown-values-search-input"
+                                                                  placeholder="Search"
+                                                                  type="text"
+                                                                  value=""
+                                                                />,
+                                                              },
                                                               "required": false,
                                                             }
                                                           }
@@ -2382,6 +2402,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 "aria-invalid": undefined,
                                                                 "aria-label": "search",
                                                                 "aria-required": undefined,
+                                                                "ref": Object {
+                                                                  "current": <input
+                                                                    aria-label="search"
+                                                                    class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                    id="test-dropdown-values-search-input"
+                                                                    placeholder="Search"
+                                                                    type="text"
+                                                                    value=""
+                                                                  />,
+                                                                },
                                                                 "required": false,
                                                               }
                                                             }
@@ -2486,6 +2516,16 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   "aria-invalid": undefined,
                                                                   "aria-label": "search",
                                                                   "aria-required": undefined,
+                                                                  "ref": Object {
+                                                                    "current": <input
+                                                                      aria-label="search"
+                                                                      class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                      id="test-dropdown-values-search-input"
+                                                                      placeholder="Search"
+                                                                      type="text"
+                                                                      value=""
+                                                                    />,
+                                                                  },
                                                                   "required": false,
                                                                 }
                                                               }
@@ -9370,6 +9410,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             "aria-invalid": undefined,
                                                             "aria-label": "search",
                                                             "aria-required": undefined,
+                                                            "ref": Object {
+                                                              "current": <input
+                                                                aria-label="search"
+                                                                class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                id="hv-dropdown-1-values-search-input"
+                                                                placeholder="Search"
+                                                                type="text"
+                                                                value=""
+                                                              />,
+                                                            },
                                                             "required": false,
                                                           }
                                                         }
@@ -9468,6 +9518,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                               "aria-invalid": undefined,
                                                               "aria-label": "search",
                                                               "aria-required": undefined,
+                                                              "ref": Object {
+                                                                "current": <input
+                                                                  aria-label="search"
+                                                                  class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                  id="hv-dropdown-1-values-search-input"
+                                                                  placeholder="Search"
+                                                                  type="text"
+                                                                  value=""
+                                                                />,
+                                                              },
                                                               "required": false,
                                                             }
                                                           }
@@ -9567,6 +9627,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                 "aria-invalid": undefined,
                                                                 "aria-label": "search",
                                                                 "aria-required": undefined,
+                                                                "ref": Object {
+                                                                  "current": <input
+                                                                    aria-label="search"
+                                                                    class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                    id="hv-dropdown-1-values-search-input"
+                                                                    placeholder="Search"
+                                                                    type="text"
+                                                                    value=""
+                                                                  />,
+                                                                },
                                                                 "required": false,
                                                               }
                                                             }
@@ -9671,6 +9741,16 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                   "aria-invalid": undefined,
                                                                   "aria-label": "search",
                                                                   "aria-required": undefined,
+                                                                  "ref": Object {
+                                                                    "current": <input
+                                                                      aria-label="search"
+                                                                      class="MuiInputBase-input MuiInput-input HvInput-input MuiInputBase-inputAdornedEnd"
+                                                                      id="hv-dropdown-1-values-search-input"
+                                                                      placeholder="Search"
+                                                                      type="text"
+                                                                      value=""
+                                                                    />,
+                                                                  },
                                                                   "required": false,
                                                                 }
                                                               }

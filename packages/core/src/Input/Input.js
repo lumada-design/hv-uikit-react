@@ -34,7 +34,7 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
     const { validationState, value, initialValue, labels } = props;
-
+    this.materialInputRef = React.createRef();
     this.state = {
       validationState,
       currentValidationStateProps: validationState,
@@ -77,6 +77,13 @@ class HvInput extends React.Component {
   };
 
   /**
+   * Looks for the node that represent the input inside the material tree and focus it.
+   */
+  focusInput = () => {
+    this.materialInputRef.current.focus();
+  };
+
+  /**
    * Clears the input value from the state and refocus the input.
    *
    * Note: given than the input component from material doesn't offer any api to focus
@@ -89,7 +96,7 @@ class HvInput extends React.Component {
     onChange(null, value);
     this.manageInputValueState(value, null);
     setTimeout(() => {
-      this.node.children[1].children[0].focus();
+      this.focusInput();
     });
   };
 
@@ -126,9 +133,10 @@ class HvInput extends React.Component {
    */
   suggestionSelectedHandler = (event, item) => {
     const { suggestionSelectedCallback } = this.props;
-    suggestionSelectedCallback(item);
     this.manageInputValueState(item.label);
+    this.focusInput();
     this.suggestionClearHandler();
+    suggestionSelectedCallback(item);
   };
 
   /**
@@ -383,6 +391,7 @@ class HvInput extends React.Component {
           onChange={this.onChangeHandler}
           inputProps={{
             required: isRequired,
+            ref: this.materialInputRef,
             "aria-required": isRequired || undefined,
             "aria-invalid": stateValidationState === validationStates.invalid || undefined,
             ...inputProps
