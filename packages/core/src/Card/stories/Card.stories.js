@@ -32,48 +32,25 @@ export default {
 };
 
 export const Main = () => {
-  const styles = {
-    content: {
-      padding: `0 20px 0 20px`
-    },
-    item: {
-      padding: `0 0 20px 0`
-    },
-    text: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap"
-    }
-  };
-
-  const data = {
-    firstTitle: "ID",
-    firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
-    secondTitle: "Last connected",
-    secondContent: "Aug 30, 2017 12:27:53 PM"
+  const textStyles = {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap"
   };
 
   const SingleContent = () => (
     <>
-      <div>
-        <div>
-          <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
-        </div>
-        <div>
-          <HvTypography variant="normalText" className={styles.text}>
-            {data.firstContent}
-          </HvTypography>
-        </div>
+      <div style={{ marginTop: "15px" }}>
+        <HvTypography variant="labelText">ID</HvTypography>
+        <HvTypography variant="normalText" style={textStyles}>
+          2101cad3-7cd4-1000-bdp95-d8c497176e7c
+        </HvTypography>
       </div>
       <div style={{ marginTop: "15px" }}>
-        <div>
-          <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
-        </div>
-        <div>
-          <HvTypography variant="normalText" className={styles.text}>
-            {data.secondContent}
-          </HvTypography>
-        </div>
+        <HvTypography variant="labelText">Last connected</HvTypography>
+        <HvTypography variant="normalText" style={textStyles}>
+          Aug 30, 2017 12:27:53 PM
+        </HvTypography>
       </div>
     </>
   );
@@ -84,15 +61,9 @@ export const Main = () => {
         headerTitle="Asset Avatar L90"
         subheader="Compressor"
         id="test"
-        cardButtonProps={{
-          "aria-label ": "Compressor "
-        }}
-        headerProps={{
-          "aria-label ": "Compressor "
-        }}
-        footerProps={{
-          "aria-label ": "Compressor "
-        }}
+        cardButtonProps={{ "aria-label": "Compressor" }}
+        headerProps={{ "aria-label": "Compressor" }}
+        footerProps={{ "aria-label": "Compressor" }}
         innerCardContent={<SingleContent />}
         mediaPath={compressor}
         mediaHeight={186}
@@ -240,13 +211,13 @@ export const CardAllComponents = () => {
         semantic="sema4"
         isSelectable
         cardButtonProps={{
-          "aria-label ": "leaf"
+          "aria-label": "leaf"
         }}
         headerProps={{
-          "aria-label ": "leaf"
+          "aria-label": "leaf"
         }}
         footerProps={{
-          "aria-label ": "leaf"
+          "aria-label": "leaf"
         }}
         checkboxProps={{
           value: "value",
@@ -385,13 +356,13 @@ export const MultipleActionsCard = () => {
         }}
         maxVisibleActions={2}
         cardButtonProps={{
-          "aria-label ": "leaf"
+          "aria-label": "leaf"
         }}
         headerProps={{
-          "aria-label ": "leaf"
+          "aria-label": "leaf"
         }}
         footerProps={{
-          "aria-label ": "leaf"
+          "aria-label": "leaf"
         }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
@@ -575,21 +546,21 @@ CardOnlyTitle.story = {
   }
 };
 
-export const KpiCard = () => {
+export const KPICard = () => {
   const kpiStyles = {
     content: {
-      padding: `0 20px 0 20px`
+      padding: `0 20px`
     },
     item: {
       padding: `0 0 20px 0`
     }
   };
 
-  const cardSpacing = {
-    content: {
-      padding: `0 5px 0 5px`
+  const cardSpacing = theme => ({
+    root: {
+      padding: theme.spacing(2)
     }
-  };
+  });
 
   const data = {
     firstTitle: "Related assets",
@@ -626,104 +597,71 @@ export const KpiCard = () => {
   );
 
   const ContentWithStyles = withStyles(kpiStyles)(Content);
+  const StyledCard = withStyles(cardSpacing)(HvCard);
 
   return (
     <Grid container>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <div style={cardSpacing.content}>
-          <HvCard
-            style={cardSpacing.content}
-            icon={<Tool />}
-            headerTitle="Replace contaminated oil"
-            innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
-            semantic="sema2"
-            isSelectable
-            checkboxProps={{
-              value: "value",
-              "aria-label": "leaf checkbox",
-              inputProps: {
-                "aria-label": "leaf input"
-              }
-            }}
-            cardButtonProps={{
-              "aria-label": "leaf"
-            }}
-            headerProps={{
-              "aria-label": "leaf"
-            }}
-            footerProps={{
-              "aria-label": "leaf"
-            }}
-            onChange={event => console.log(`my value is ${event.target.value}`)}
-          />
-        </div>
+        <StyledCard
+          icon={<Tool />}
+          headerTitle="Replace contaminated oil"
+          innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
+          semantic="sema2"
+          isSelectable
+          checkboxProps={{
+            value: "value",
+            "aria-label": "leaf checkbox",
+            inputProps: { "aria-label": "leaf input" }
+          }}
+          cardButtonProps={{ "aria-label": "leaf" }}
+          headerProps={{ "aria-label": "leaf" }}
+          footerProps={{ "aria-label": "leaf" }}
+          onChange={event => console.log(`my value is ${event.target.value}`)}
+        />
       </Grid>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <div style={cardSpacing.content}>
-          <HvCard
-            style={cardSpacing.content}
-            icon={<Tool />}
-            headerTitle="Replace contaminated oil"
-            innerCardContent={
-              <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
-            }
-            semantic="sema3"
-            isSelectable
-            checkboxProps={{
-              value: "value",
-              "aria-label": "leaf checkbox",
-              inputProps: {
-                "aria-label": "leaf input"
-              }
-            }}
-            cardButtonProps={{
-              "aria-label": "leaf"
-            }}
-            headerProps={{
-              "aria-label": "leaf"
-            }}
-            footerProps={{
-              "aria-label": "leaf"
-            }}
-            onChange={event => console.log(`my value is ${event.target.value}`)}
-          />
-        </div>
+        <StyledCard
+          icon={<Tool />}
+          headerTitle="Replace contaminated oil"
+          innerCardContent={
+            <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
+          }
+          semantic="sema3"
+          isSelectable
+          checkboxProps={{
+            value: "value",
+            "aria-label": "leaf checkbox",
+            inputProps: { "aria-label": "leaf input" }
+          }}
+          cardButtonProps={{ "aria-label": "leaf" }}
+          headerProps={{ "aria-label": "leaf" }}
+          footerProps={{ "aria-label": "leaf" }}
+          onChange={event => console.log(`my value is ${event.target.value}`)}
+        />
       </Grid>
       <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
-        <div style={cardSpacing.content}>
-          <HvCard
-            icon={<Tool />}
-            headerTitle="Replace contaminated oil"
-            innerCardContent={
-              <ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />
-            }
-            semantic="sema4"
-            isSelectable
-            checkboxProps={{
-              value: "value",
-              "aria-label": "leaf checkbox",
-              inputProps: {
-                "aria-label": "leaf input"
-              }
-            }}
-            cardButtonProps={{
-              "aria-label": "leaf"
-            }}
-            headerProps={{
-              "aria-label": "leaf"
-            }}
-            footerProps={{
-              "aria-label": "leaf"
-            }}
-            onChange={event => console.log(`my value is ${event.target.value}`)}
-          />
-        </div>
+        <StyledCard
+          icon={<Tool />}
+          headerTitle="Replace contaminated oil"
+          innerCardContent={<ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />}
+          semantic="sema4"
+          isSelectable
+          checkboxProps={{
+            value: "value",
+            "aria-label": "leaf checkbox",
+            inputProps: { "aria-label": "leaf input" }
+          }}
+          cardButtonProps={{ "aria-label": "leaf" }}
+          headerProps={{ "aria-label": "leaf" }}
+          footerProps={{ "aria-label": "leaf" }}
+          onChange={event => console.log(`my value is ${event.target.value}`)}
+        />
       </Grid>
     </Grid>
   );
 };
 
-KpiCard.story = {
+KPICard.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample combined with a kpi as content."
@@ -835,7 +773,7 @@ export const CardCompositionFooter = () => {
     <div style={{ width: "500px" }}>
       <HvCard>
         <HvCardFooter
-          Style={footerStyles.root}
+          style={footerStyles.root}
           actions={<MultipleActionsWithMediaButtons />}
           isSelectable
           checkboxProps={{

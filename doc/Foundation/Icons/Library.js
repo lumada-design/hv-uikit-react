@@ -13,8 +13,8 @@ const iconContainer = {
 
 const dropdownSizes = [
   { id: "0", label: "XS" },
-  { id: "1", label: "S" },
-  { id: "2", label: "M", selected: true },
+  { id: "1", label: "S", selected: true },
+  { id: "2", label: "M" },
   { id: "3", label: "L" }
 ];
 
@@ -33,7 +33,7 @@ const Group = ({ iconSize }) => {
 const Icon = ({ name, Component, iconSize }) => (
   <div style={iconContainer}>
     <Component iconSize={iconSize && iconSize.label} />
-    <HvTypography style={{ fontFamily: "monospace", margin: "6px 0" }} variant="placeholderText">
+    <HvTypography style={{ margin: "6px 0" }} variant="placeholderText">
       {name}
     </HvTypography>
   </div>

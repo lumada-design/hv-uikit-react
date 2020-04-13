@@ -31,7 +31,7 @@ const ListView = ({
 }) => {
   return (
     <Grid container justify="center" alignContent="stretch">
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <table
           className={clsx(className, classes.root)}
           cellSpacing={cellSpacing}

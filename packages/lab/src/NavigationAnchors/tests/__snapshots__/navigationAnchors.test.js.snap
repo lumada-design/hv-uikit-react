@@ -375,6 +375,11 @@ exports[`User withStyles should handle click action correctly 1`] = `
                 "padding": 0,
               },
             },
+            "MuiPaper": Object {
+              "root": Object {
+                "backgroundColor": "#FFFFFF",
+              },
+            },
             "MuiToolbar": Object {
               "dense": Object {
                 "minHeight": "46px",
@@ -1850,6 +1855,11 @@ exports[`User withStyles should render correctly 1`] = `
               "padding": 0,
             },
           },
+          "MuiPaper": Object {
+            "root": Object {
+              "backgroundColor": "#FFFFFF",
+            },
+          },
           "MuiToolbar": Object {
             "dense": Object {
               "minHeight": "46px",
@@ -2653,6 +2663,11 @@ exports[`User withStyles should render correctly with props 1`] = `
                 },
                 "borderRadius": 0,
                 "padding": 0,
+              },
+            },
+            "MuiPaper": Object {
+              "root": Object {
+                "backgroundColor": "#FFFFFF",
               },
             },
             "MuiToolbar": Object {

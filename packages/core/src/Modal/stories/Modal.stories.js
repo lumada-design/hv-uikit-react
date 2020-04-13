@@ -54,27 +54,43 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
   );
 };
 
-export const Main = () => (
-  <div style={{ display: "flex" }}>
-    <div style={{ margin: "auto" }}>
-      <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
-        Are you sure?
-      </HvModalTitle>
-      <HvModalContent>
-        Switching to model view will clear all the fields in your visualization. You will need to
-        re-select your fields.
-      </HvModalContent>
-      <HvModalActions>
-        <HvButton id="switchAnyway" category="ghost">
-          Switch anyway
+export const Main = () => {
+  const SimpleModalSample = ({ buttonMessage, title, content, classes }) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+      <div>
+        <HvButton id={buttonMessage} style={{ width: "120px" }} onClick={() => setOpen(true)}>
+          {buttonMessage}
         </HvButton>
-        <HvButton id="cancel" category="ghost">
-          Cancel
-        </HvButton>
-      </HvModalActions>
-    </div>
-  </div>
-);
+        <HvModal id="test" classes={classes} open={open} onClose={() => setOpen(false)}>
+          {title}
+          {content || (
+            <HvModalContent>
+              Switching to model view will clear all the fields in your visualization. You will need
+              to re-select your fields.
+            </HvModalContent>
+          )}
+          <HvModalActions>
+            <HvButton id="switchAnyway" category="ghost">
+              Switch anyway
+            </HvButton>
+            <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
+              Cancel
+            </HvButton>
+          </HvModalActions>
+        </HvModal>
+      </div>
+    );
+  };
+
+  return (
+    <SimpleModalSample
+      buttonMessage="Open Modal"
+      title={<HvModalTitle>Are you sure?</HvModalTitle>}
+    />
+  );
+};
 
 export const TextAndSemantic = () => (
   <>

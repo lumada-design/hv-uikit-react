@@ -9,7 +9,8 @@ const thumbPosition = {
 
 const styles = theme => ({
   root: {
-    display: "inline-flex"
+    display: "inline-flex",
+    height: 22
   },
   switch: {
     padding: 0,
@@ -59,7 +60,7 @@ const styles = theme => ({
     "& + $track": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
       border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
-      opacity: 1,
+      opacity: "1 !important",
       cursor: "no-drop"
     },
     "& $thumb": {
