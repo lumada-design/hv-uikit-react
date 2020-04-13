@@ -207,7 +207,7 @@ node('non-master') {
                                             #! /bin/sh -
 
                                             cd ${uikit_folder}
-                                            npm run build -- --scope @hv/uikit-react-doc
+                                            npm run build-documentation
                                             # npm run publish-documentation
 
                                             cd packages/doc
@@ -275,7 +275,7 @@ node('non-master') {
 
                                     cd ${uikit_folder}
 
-                                    npm run build -- --scope @hv/uikit-react-doc
+                                    npm run build-documentation
                                     # npm run publish-documentation -- --folder ${folder} --message '${message}'
 
                                     cd packages/doc

@@ -21,6 +21,7 @@
     "bootstrap": "npx lerna bootstrap",
     "dev": "npx lerna run dev --parallel",
     "build": "npx lerna run build",
+    "build-documentation": "npx lerna run build --scope @hv/uikit-react-doc",
     "doc": "npx lerna run doc --stream",
     "test": "npx lerna run test --parallel",
     "link": "npx lerna run link",

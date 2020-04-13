@@ -65,5 +65,5 @@ jobs:
 
       - name: Publish Documentation
         run: |
-          npm run build -- --scope @hv/uikit-react-doc
-          npm run publish-documentation --  --ci
+          npm run build-documentation
+          npm run publish-documentation
