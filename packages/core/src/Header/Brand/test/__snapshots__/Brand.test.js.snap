@@ -8,6 +8,7 @@ exports[`Brand withStyles should be able to render 1`] = `
         "root": "HvHeaderBrand-root",
         "separator": "HvHeaderBrand-separator",
       }
+<<<<<<< HEAD
     }
   >
     <div
@@ -15,4 +16,69 @@ exports[`Brand withStyles should be able to render 1`] = `
     />
   </Brand>
 </WithStyles(Brand)>
+=======
+    >
+      <CssBaseline />
+      <WithStyles(Brand)
+        name="test"
+      >
+        <Brand
+          classes={
+            Object {
+              "root": "HvHeaderBrand-root",
+              "separator": "HvHeaderBrand-separator",
+            }
+          }
+          name="test"
+        >
+          <div
+            className="HvHeaderBrand-root"
+          >
+            <WithStyles(ForwardRef)
+              variant="highlightText"
+            >
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                variant="highlightText"
+              >
+                <p
+                  className="HvTypography-root HvTypography-highlightText"
+                >
+                  test
+                </p>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
+        </Brand>
+      </WithStyles(Brand)>
+    </ThemeProvider>
+  </StylesProvider>
+</HvProvider>
+>>>>>>> 7ae4653... chore(tests): remove warnings
 `;

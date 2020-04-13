@@ -172,7 +172,7 @@ const getColumns = () => [
   {
     headerText: "Time",
     accessor: "createdDate",
-    format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
+    format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
     cellType: "numeric"
   },
   {

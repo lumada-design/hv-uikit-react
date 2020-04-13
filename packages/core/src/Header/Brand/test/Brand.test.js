@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import Brand from "..";
+import Brand from "../index";
 
 describe("Brand withStyles", () => {
   let wrapper;
@@ -10,7 +10,7 @@ describe("Brand withStyles", () => {
   it("should be able to render", () => {
     wrapper = mount(
       <HvProvider>
-        <Brand />
+        <Brand name="test" />
       </HvProvider>
     );
 

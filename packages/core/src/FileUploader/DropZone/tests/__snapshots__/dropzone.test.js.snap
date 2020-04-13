@@ -94,11 +94,52 @@ exports[`Dropzone withStyles should render correctly 1`] = `
       className="HvFileUploaderDropZone-dropZoneLabelsGroup"
       id="dropzone1"
     >
+<<<<<<< HEAD
       <WithStyles(ForwardRef)
         component="label"
         htmlFor="dropzone1-input-file"
         id="dropzone1-input-file-label"
         variant="labelText"
+=======
+      <CssBaseline />
+      <WithStyles(DropZone)
+        acceptedFiles={Array []}
+        fileList={
+          Array [
+            Object {
+              "name": "Screenshot 2019-12-05 at 17.15.43.png",
+              "size": 141,
+              "type": "image/png",
+            },
+            Object {
+              "name": "Screenshot 2019-12-05 at 12.03.13.png",
+              "size": 875,
+              "type": "image/png",
+            },
+          ]
+        }
+        id="dropzone1"
+        labels={
+          Object {
+            "acceptedFiles": "Accepted files:",
+            "drag": "Drag and drop or",
+            "dropFiles": "Drop files here",
+            "dropzone": "Label",
+            "fileSizeError": "The file exceeds the maximum upload size",
+            "fileTypeError": "File type not allowed for upload",
+            "progressConjunction": "of",
+            "removeFileButtonLabel": "Remove File",
+            "selectFiles": "Select files",
+            "sizeWarning": "Max. file size:",
+          }
+        }
+        maxFileSize={1}
+        onDragEnter={[MockFunction]}
+        onDragLeave={[MockFunction]}
+        onDropCapture={[MockFunction]}
+        onFileRemoved={[MockFunction]}
+        onFilesAdded={[MockFunction]}
+>>>>>>> 7ae4653... chore(tests): remove warnings
       >
         <ForwardRef
           classes={
@@ -146,6 +187,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         <ForwardRef
           classes={
             Object {
+<<<<<<< HEAD
               "3xlTitle": "HvTypography-3xlTitle",
               "4xlTitle": "HvTypography-4xlTitle",
               "5xlTitle": "HvTypography-5xlTitle",
@@ -169,6 +211,18 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               "xsTitle": "HvTypography-xsTitle",
               "xxlTitle": "HvTypography-xxlTitle",
               "xxsTitle": "HvTypography-xxsTitle",
+=======
+              "acceptedFiles": "Accepted files:",
+              "drag": "Drag and drop or",
+              "dropFiles": "Drop files here",
+              "dropzone": "Label",
+              "fileSizeError": "The file exceeds the maximum upload size",
+              "fileTypeError": "File type not allowed for upload",
+              "progressConjunction": "of",
+              "removeFileButtonLabel": "Remove File",
+              "selectFiles": "Select files",
+              "sizeWarning": "Max. file size:",
+>>>>>>> 7ae4653... chore(tests): remove warnings
             }
           }
           variant="infoText"
@@ -236,6 +290,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                 width="32px"
                 xmlns="http://www.w3.org/2000/svg"
               >
+<<<<<<< HEAD
                 <path
                   className="color0"
                   d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
@@ -280,6 +335,83 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
+=======
+                <label
+                  className="HvTypography-root HvTypography-labelText"
+                  htmlFor="dropzone1-input-file"
+                  id="dropzone1-input-file-label"
+                >
+                  Label
+                </label>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
+              variant="infoText"
+            >
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                variant="infoText"
+              >
+                <p
+                  className="HvTypography-root HvTypography-infoText"
+                >
+                  Max. file size: 1.00B
+                </p>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
+          <div
+            className="HvFileUploaderDropZone-dropZoneContainer"
+            id="dropzone1-button"
+            onDragEnter={[Function]}
+            onDragLeave={[Function]}
+            onDragOver={[Function]}
+            onDrop={[Function]}
+            onDropCapture={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <input
+              className="HvFileUploaderDropZone-inputArea"
+              disabled={false}
+              id="dropzone1-input-file"
+              multiple={true}
+              onChange={[Function]}
+              onClick={[Function]}
+              tabIndex={-1}
+              title="Drag and drop or Select files"
+              type="file"
+            />
+            <div
+              className="HvFileUploaderDropZone-dropArea"
+>>>>>>> 7ae4653... chore(tests): remove warnings
             >
               <p
                 className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
@@ -287,6 +419,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                 <span
                   className="HvFileUploaderDropZone-selectFilesText"
                 >
+<<<<<<< HEAD
                    undefined
                 </span>
               </p>
@@ -297,6 +430,58 @@ exports[`Dropzone withStyles should render correctly 1`] = `
     </div>
   </DropZone>
 </WithStyles(DropZone)>
+=======
+                  <ForwardRef
+                    className="HvFileUploaderDropZone-dragText"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                  >
+                    <p
+                      className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
+                    >
+                      Drag and drop or
+                      <span
+                        className="HvFileUploaderDropZone-selectFilesText"
+                      >
+                         Select files
+                      </span>
+                    </p>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </div>
+            </div>
+          </div>
+        </DropZone>
+      </WithStyles(DropZone)>
+    </ThemeProvider>
+  </StylesProvider>
+</HvProvider>
+>>>>>>> 7ae4653... chore(tests): remove warnings
 `;
 
 exports[`Dropzone withStyles should render correctly when disabled 1`] = `
@@ -397,11 +582,54 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
       className="HvFileUploaderDropZone-dropZoneLabelsGroup"
       id="dropzone1"
     >
+<<<<<<< HEAD
       <WithStyles(ForwardRef)
         component="label"
         htmlFor="dropzone1-input-file"
         id="dropzone1-input-file-label"
         variant="labelText"
+=======
+      <CssBaseline />
+      <WithStyles(DropZone)
+        acceptedFiles={Array []}
+        disabled={true}
+        fileList={
+          Array [
+            Object {
+              "name": "Screenshot 2019-12-05 at 17.15.43.png",
+              "size": 141,
+              "type": "image/png",
+            },
+            Object {
+              "name": "Screenshot 2019-12-05 at 12.03.13.png",
+              "size": 875,
+              "type": "image/png",
+            },
+          ]
+        }
+        id="dropzone1"
+        labels={
+          Object {
+            "acceptedFiles": "Accepted files:",
+            "drag": "Drag and drop or",
+            "dropFiles": "Drop files here",
+            "dropzone": "Label",
+            "fileSizeError": "The file exceeds the maximum upload size",
+            "fileTypeError": "File type not allowed for upload",
+            "progressConjunction": "of",
+            "removeFileButtonLabel": "Remove File",
+            "selectFiles": "Select files",
+            "sizeWarning": "Max. file size:",
+          }
+        }
+        maxFileSize={1}
+        multiple={false}
+        onDragEnter={[MockFunction]}
+        onDragLeave={[MockFunction]}
+        onDropCapture={[MockFunction]}
+        onFileRemoved={[MockFunction]}
+        onFilesAdded={[MockFunction]}
+>>>>>>> 7ae4653... chore(tests): remove warnings
       >
         <ForwardRef
           classes={
@@ -449,6 +677,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         <ForwardRef
           classes={
             Object {
+<<<<<<< HEAD
               "3xlTitle": "HvTypography-3xlTitle",
               "4xlTitle": "HvTypography-4xlTitle",
               "5xlTitle": "HvTypography-5xlTitle",
@@ -472,6 +701,18 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               "xsTitle": "HvTypography-xsTitle",
               "xxlTitle": "HvTypography-xxlTitle",
               "xxsTitle": "HvTypography-xxsTitle",
+=======
+              "acceptedFiles": "Accepted files:",
+              "drag": "Drag and drop or",
+              "dropFiles": "Drop files here",
+              "dropzone": "Label",
+              "fileSizeError": "The file exceeds the maximum upload size",
+              "fileTypeError": "File type not allowed for upload",
+              "progressConjunction": "of",
+              "removeFileButtonLabel": "Remove File",
+              "selectFiles": "Select files",
+              "sizeWarning": "Max. file size:",
+>>>>>>> 7ae4653... chore(tests): remove warnings
             }
           }
           variant="infoText"
@@ -539,6 +780,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                 width="32px"
                 xmlns="http://www.w3.org/2000/svg"
               >
+<<<<<<< HEAD
                 <path
                   className="color0"
                   d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
@@ -553,6 +795,69 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         >
           <WithStyles(ForwardRef)
             className="HvFileUploaderDropZone-dragText"
+=======
+                <label
+                  className="HvTypography-root HvTypography-labelText"
+                  htmlFor="dropzone1-input-file"
+                  id="dropzone1-input-file-label"
+                >
+                  Label
+                </label>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <WithStyles(ForwardRef)
+              variant="infoText"
+            >
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                variant="infoText"
+              >
+                <p
+                  className="HvTypography-root HvTypography-infoText"
+                >
+                  Max. file size: 1.00B
+                </p>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+          </div>
+          <div
+            className="HvFileUploaderDropZone-dropZoneContainer HvFileUploaderDropZone-dropZoneContainerDisabled"
+            id="dropzone1-button"
+            onDragEnter={[Function]}
+            onDragLeave={[Function]}
+            onDragOver={[Function]}
+            onDrop={[Function]}
+            onDropCapture={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+>>>>>>> 7ae4653... chore(tests): remove warnings
           >
             <ForwardRef
               className="HvFileUploaderDropZone-dragText"
@@ -590,6 +895,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                 <span
                   className="HvFileUploaderDropZone-selectFilesText"
                 >
+<<<<<<< HEAD
                    undefined
                 </span>
               </p>
@@ -600,4 +906,56 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
     </div>
   </DropZone>
 </WithStyles(DropZone)>
+=======
+                  <ForwardRef
+                    className="HvFileUploaderDropZone-dragText"
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                  >
+                    <p
+                      className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
+                    >
+                      Drag and drop or
+                      <span
+                        className="HvFileUploaderDropZone-selectFilesText"
+                      >
+                         Select files
+                      </span>
+                    </p>
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </div>
+            </div>
+          </div>
+        </DropZone>
+      </WithStyles(DropZone)>
+    </ThemeProvider>
+  </StylesProvider>
+</HvProvider>
+>>>>>>> 7ae4653... chore(tests): remove warnings
 `;

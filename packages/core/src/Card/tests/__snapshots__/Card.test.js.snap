@@ -77,6 +77,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
       }
       className="HvCard-cardContainer HvCard-selectable"
     >
+<<<<<<< HEAD
       <ForwardRef(Card)
         checkBoxProps={
           Object {
@@ -160,6 +161,84 @@ exports[`Card withStyles should be able to render with every property defined 1`
                 useFalseFocus={true}
               >
                 <Focus
+=======
+      <CssBaseline />
+      <WithStyles(HvCard)
+        actions="actions"
+        headerTitle="title"
+        icon="icon"
+        innerCardContent={<div />}
+        isSelectable={true}
+        mediaPath="path"
+        subheader="subtitle"
+      >
+        <HvCard
+          actions="actions"
+          classes={
+            Object {
+              "cardContainer": "HvCard-cardContainer",
+              "cardOutLine": "HvCard-cardOutLine",
+              "root": "HvCard-root",
+              "selectable": "HvCard-selectable",
+              "selected": "HvCard-selected",
+              "sema0": "HvCard-sema0",
+              "sema1": "HvCard-sema1",
+              "sema10": "HvCard-sema10",
+              "sema11": "HvCard-sema11",
+              "sema12": "HvCard-sema12",
+              "sema13": "HvCard-sema13",
+              "sema14": "HvCard-sema14",
+              "sema15": "HvCard-sema15",
+              "sema16": "HvCard-sema16",
+              "sema17": "HvCard-sema17",
+              "sema18": "HvCard-sema18",
+              "sema19": "HvCard-sema19",
+              "sema2": "HvCard-sema2",
+              "sema3": "HvCard-sema3",
+              "sema4": "HvCard-sema4",
+              "sema5": "HvCard-sema5",
+              "sema6": "HvCard-sema6",
+              "sema7": "HvCard-sema7",
+              "sema8": "HvCard-sema8",
+              "sema9": "HvCard-sema9",
+              "semanticContainer": "HvCard-semanticContainer",
+              "semanticSelected": "HvCard-semanticSelected",
+              "upperAreaReference": "HvCard-upperAreaReference",
+              "upperAreaSelectable": "HvCard-upperAreaSelectable",
+            }
+          }
+          headerTitle="title"
+          icon="icon"
+          innerCardContent={<div />}
+          isSelectable={true}
+          mediaPath="path"
+          subheader="subtitle"
+        >
+          <div
+            className="HvCard-semanticContainer HvCard-root"
+          >
+            <div
+              className="HvCard-sema0"
+            />
+          </div>
+          <WithStyles(ForwardRef(Card))
+            className="HvCard-cardContainer HvCard-selectable"
+          >
+            <ForwardRef(Card)
+              className="HvCard-cardContainer HvCard-selectable"
+              classes={
+                Object {
+                  "root": "MuiCard-root",
+                }
+              }
+            >
+              <WithStyles(ForwardRef(Paper))
+                className="MuiCard-root HvCard-cardContainer HvCard-selectable"
+                elevation={1}
+              >
+                <ForwardRef(Paper)
+                  className="MuiCard-root HvCard-cardContainer HvCard-selectable"
+>>>>>>> 7ae4653... chore(tests): remove warnings
                   classes={
                     Object {
                       "disabled": "Focus-disabled-32",
@@ -181,9 +260,14 @@ exports[`Card withStyles should be able to render with every property defined 1`
                   useArrows={true}
                   useFalseFocus={true}
                 >
+<<<<<<< HEAD
                   <ConditionalWrapper
                     condition={true}
                     wrapper={[Function]}
+=======
+                  <div
+                    className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
+>>>>>>> 7ae4653... chore(tests): remove warnings
                   >
                     <div
                       className="Focus-externalReference-35"

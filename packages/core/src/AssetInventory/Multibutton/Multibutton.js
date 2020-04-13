@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import MultiButton from "../../MultiButton";
+import { setId } from "../../utils/setId";
 
 const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
   const options = [];
@@ -20,7 +21,7 @@ const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
 
   return (
     <MultiButton
-      id={`multi_button_${id}`}
+      id={setId(id, "multi-button")}
       buttons={options}
       type="icon"
       onChange={onChangeViewHandler}
@@ -30,7 +31,7 @@ const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
 };
 
 AssetMultiButton.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   views: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,

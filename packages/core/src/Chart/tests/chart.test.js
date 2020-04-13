@@ -119,7 +119,7 @@ describe("Tooltip withStyles", () => {
 
   it("should render a multiTooltip", () => {
     const coord = { x: 1, y: 2 };
-    const singleData = { title: "title", elements: [{ name: "name" }] };
+    const singleData = { title: "title", elements: [{ name: "name", value: 22 }] };
 
     wrapper = mount(
       <HvProvider>

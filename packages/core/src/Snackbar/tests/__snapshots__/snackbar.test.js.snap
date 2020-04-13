@@ -41,6 +41,7 @@ exports[`Snackbar  should render correctly 1`] = `
       }
       transitionDuration={300}
     >
+<<<<<<< HEAD
       <ForwardRef(Snackbar)
         TransitionComponent={[Function]}
         anchorOrigin={
@@ -72,4 +73,86 @@ exports[`Snackbar  should render correctly 1`] = `
     </WithStyles(ForwardRef(Snackbar))>
   </HvSnackbar>
 </WithStyles(HvSnackbar)>
+=======
+      <CssBaseline />
+      <WithStyles(HvSnackbar)
+        id="snackbar"
+      >
+        <HvSnackbar
+          classes={
+            Object {
+              "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter",
+              "anchorOriginBottomLeft": "HvSnackbar-anchorOriginBottomLeft",
+              "anchorOriginBottomRight": "HvSnackbar-anchorOriginBottomRight",
+              "anchorOriginTopCenter": "HvSnackbar-anchorOriginTopCenter",
+              "anchorOriginTopLeft": "HvSnackbar-anchorOriginTopLeft",
+              "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
+            }
+          }
+          id="snackbar"
+        >
+          <WithStyles(ForwardRef(Snackbar))
+            TransitionComponent={[Function]}
+            anchorOrigin={
+              Object {
+                "horizontal": "right",
+                "vertical": "top",
+              }
+            }
+            autoHideDuration={5000}
+            classes={
+              Object {
+                "anchorOriginBottomCenter": "HvSnackbar-anchorOriginBottomCenter",
+                "anchorOriginBottomLeft": "HvSnackbar-anchorOriginBottomLeft",
+                "anchorOriginBottomRight": "HvSnackbar-anchorOriginBottomRight",
+                "anchorOriginTopCenter": "HvSnackbar-anchorOriginTopCenter",
+                "anchorOriginTopLeft": "HvSnackbar-anchorOriginTopLeft",
+                "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
+              }
+            }
+            id="snackbar"
+            open={false}
+            style={
+              Object {
+                "top": "60px",
+              }
+            }
+            transitionDuration={300}
+          >
+            <ForwardRef(Snackbar)
+              TransitionComponent={[Function]}
+              anchorOrigin={
+                Object {
+                  "horizontal": "right",
+                  "vertical": "top",
+                }
+              }
+              autoHideDuration={5000}
+              classes={
+                Object {
+                  "anchorOriginBottomCenter": "MuiSnackbar-anchorOriginBottomCenter HvSnackbar-anchorOriginBottomCenter",
+                  "anchorOriginBottomLeft": "MuiSnackbar-anchorOriginBottomLeft HvSnackbar-anchorOriginBottomLeft",
+                  "anchorOriginBottomRight": "MuiSnackbar-anchorOriginBottomRight HvSnackbar-anchorOriginBottomRight",
+                  "anchorOriginTopCenter": "MuiSnackbar-anchorOriginTopCenter HvSnackbar-anchorOriginTopCenter",
+                  "anchorOriginTopLeft": "MuiSnackbar-anchorOriginTopLeft HvSnackbar-anchorOriginTopLeft",
+                  "anchorOriginTopRight": "MuiSnackbar-anchorOriginTopRight HvSnackbar-anchorOriginTopRight",
+                  "root": "MuiSnackbar-root",
+                }
+              }
+              id="snackbar"
+              open={false}
+              style={
+                Object {
+                  "top": "60px",
+                }
+              }
+              transitionDuration={300}
+            />
+          </WithStyles(ForwardRef(Snackbar))>
+        </HvSnackbar>
+      </WithStyles(HvSnackbar)>
+    </ThemeProvider>
+  </StylesProvider>
+</HvProvider>
+>>>>>>> 7ae4653... chore(tests): remove warnings
 `;

@@ -16,7 +16,7 @@ expect.extend(toHaveNoViolations);
 describe("Banner ", () => {
   const wrapper = mount(
     <HvProvider>
-      <Banner variant="default" open={false} onClose={() => {}} />
+      <BannerWithStyles id="banner" variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
 
@@ -93,7 +93,8 @@ describe("Banner ", () => {
   it("should render a action by passing a structure on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <Banner
+        <BannerWithStyles
+          id="snackbar"
           variant="default"
           open
           label="label"
@@ -130,7 +131,8 @@ describe("Banner ", () => {
   it("should render a action by passing a structure on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <Banner
+        <BannerWithStyles
+          id="Snackbar"
           variant="default"
           open
           label="label"
@@ -225,7 +227,8 @@ describe("BannerA11Y", () => {
   it("banner with actions should have no errors", async () => {
     const wrapper = mount(
       <HvProvider>
-        <Banner
+        <BannerWithStyles
+          id="banner"
           variant="default"
           open
           actions={[

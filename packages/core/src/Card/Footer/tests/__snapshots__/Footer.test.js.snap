@@ -19,6 +19,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       },
     ]
   }
+  id="id"
   maxVisibleActions={1}
 >
   <Actions
@@ -48,6 +49,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         "root": "HvActions-root",
       }
     }
+    id="id"
     maxVisibleActions={1}
   >
     <div
@@ -57,6 +59,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         category="ghost"
         className="HvActions-button"
         id="view"
+        key="id-0-action-view"
         onClick={[Function]}
       >
         <HvButton
@@ -602,6 +605,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       },
     ]
   }
+  id="id"
   maxVisibleActions={0}
 >
   <Actions
@@ -631,6 +635,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         "root": "HvActions-root",
       }
     }
+    id="id"
     maxVisibleActions={0}
   >
     <div
@@ -1048,6 +1053,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       },
     ]
   }
+  id="id"
   maxVisibleActions={2}
 >
   <Actions
@@ -1077,6 +1083,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         "root": "HvActions-root",
       }
     }
+    id="id"
     maxVisibleActions={2}
   >
     <div
@@ -1086,6 +1093,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         category="ghost"
         className="HvActions-button"
         id="view"
+        key="id-0-action-view"
         onClick={[Function]}
       >
         <HvButton
@@ -1235,6 +1243,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         category="ghost"
         className="HvActions-button"
         id="delete"
+        key="id-1-action-delete"
         onClick={[Function]}
       >
         <HvButton

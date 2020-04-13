@@ -14,7 +14,7 @@ import Button from "../../Button";
 describe("Snackbar ", () => {
   const wrapper = mount(
     <HvProvider>
-      <Snackbar />
+      <SnackBarWithStyles id="snackbar" />
     </HvProvider>
   );
 
@@ -146,7 +146,8 @@ describe("Snackbar ", () => {
   it("should render the action when a structure is passed", () => {
     const sliderComponent = mount(
       <HvProvider>
-        <Snackbar
+        <SnackBarWithStyles
+          id="Snackbar"
           open
           variant="success"
           action={{

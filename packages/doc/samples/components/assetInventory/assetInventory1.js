@@ -204,8 +204,7 @@ const compressorData = id => ({
   },
   probability: 90 + id,
   timeHorizon: 8 + id,
-  relatedAssets: "Track A, Zone 15 Brake",
-  checkboxValue: `id_${id}`
+  relatedAssets: "Track A, Zone 15 Brake"
 });
 
 const machineData = id => ({
@@ -219,8 +218,7 @@ const machineData = id => ({
   },
   probability: 90 + id,
   timeHorizon: 8 + id,
-  relatedAssets: "Track B, Load 2 Brake",
-  checkboxValue: `id_${id}`
+  relatedAssets: "Track B, Load 2 Brake"
 });
 
 const values = (num = 10) =>

@@ -64,7 +64,7 @@ Navigation.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */

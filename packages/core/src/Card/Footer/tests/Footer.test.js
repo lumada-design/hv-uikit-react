@@ -29,7 +29,7 @@ describe("Footer", () => {
   it("should render the actions and the dropdown accordingly", () => {
     wrapper = mount(
       <HvProvider>
-        <Footer maxVisibleActions={1} actions={myActions} onChange={() => {}} />
+        <Footer id="id" maxVisibleActions={1} actions={myActions} onChange={() => {}} />
       </HvProvider>
     );
 
@@ -37,7 +37,7 @@ describe("Footer", () => {
 
     wrapper = mount(
       <HvProvider>
-        <Footer maxVisibleActions={0} actions={myActions} onChange={() => {}} />
+        <Footer id="id" maxVisibleActions={0} actions={myActions} onChange={() => {}} />
       </HvProvider>
     );
 
@@ -45,7 +45,7 @@ describe("Footer", () => {
 
     wrapper = mount(
       <HvProvider>
-        <Footer maxVisibleActions={2} actions={myActions} onChange={() => {}} />
+        <Footer id="id" maxVisibleActions={2} actions={myActions} onChange={() => {}} />
       </HvProvider>
     );
 

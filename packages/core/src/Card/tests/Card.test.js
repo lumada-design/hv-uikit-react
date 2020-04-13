@@ -28,9 +28,6 @@ describe("Card withStyles", () => {
           actions={configuration.actions}
           mediaPath="path"
           isSelectable
-          checkBoxProps={{
-            value: "value"
-          }}
         />
       </HvProvider>
     );
@@ -54,7 +51,7 @@ describe("Card withStyles", () => {
           selectOnClickAction
           onClick={onClickM}
           onChange={onChangeM}
-          checkBoxProps={{
+          checkboxProps={{
             value: "value"
           }}
         />
@@ -80,7 +77,7 @@ describe("Card withStyles", () => {
           isSelectable
           onClick={onClickM}
           onChange={onChangeM}
-          checkBoxProps={{
+          checkboxProps={{
             value: "value"
           }}
         />

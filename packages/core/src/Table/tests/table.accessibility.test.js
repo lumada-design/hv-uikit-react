@@ -14,6 +14,8 @@ expect.extend(toHaveNoViolations);
 
 describe("tableA11Y", () => {
   it("Simple Table", async () => {
+    const originalWarn = console.warn;
+    console.warn = jest.fn();
     const wrapper = mount(
       <HvProvider>
         <HvTableWithStyles
@@ -30,6 +32,7 @@ describe("tableA11Y", () => {
     );
 
     const results = await axe(wrapper.html());
+    console.warn = originalWarn;
     expect(results).toHaveNoViolations();
   });
 

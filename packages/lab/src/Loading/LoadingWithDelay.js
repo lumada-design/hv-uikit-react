@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 import Loading from "./Loading";
+import styles from "./styles";
 
 const LoadingWithDelay = ({ delay = 0, ...loadingProps }) => {
   const [shouldDisplay, setShouldDisplay] = useState(false);
@@ -69,4 +71,4 @@ LoadingWithDelay.propTypes = {
   delay: PropTypes.number
 };
 
-export default LoadingWithDelay;
+export default withStyles(styles)(LoadingWithDelay);
