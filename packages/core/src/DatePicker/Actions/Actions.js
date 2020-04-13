@@ -51,7 +51,7 @@ Actions.propTypes = {
 };
 
 Actions.defaultProps = {
-    id: undefined,
+  id: undefined,
   onCancel() {},
   onApply() {},
   labels: {

@@ -75,8 +75,10 @@ class HvDatePicker extends React.Component {
    */
   static resolveStateFromProps = (value, startValue, endValue, rangeMode) => {
     if (rangeMode) {
-      const startSelectedDate = startValue && startValue !== "" ? convertISOStringDateToDate(startValue) : null;
-      const endSelectedDate = endValue && endValue !== "" ? convertISOStringDateToDate(endValue) : null;
+      const startSelectedDate =
+        startValue && startValue !== "" ? convertISOStringDateToDate(startValue) : null;
+      const endSelectedDate =
+        endValue && endValue !== "" ? convertISOStringDateToDate(endValue) : null;
       // Range mode state
       return {
         startSelectedDate,
