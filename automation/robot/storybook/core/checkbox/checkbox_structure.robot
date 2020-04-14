@@ -23,7 +23,7 @@ select and unselect a checkbox with label
     Checkbox Should Be Selected        ${input}
     Unselect Checkbox                  ${input}
     Checkbox Should Not Be Selected    ${input}
-    Element Should Be Visible          //span[contains(@class,'HvCheckbox-labelTypography') and text()='Label']
+    Element Should Be Visible          //span[text()='Label']
 
 unable select checkbox when is disabled 
     Go To                               ${STORYBOOK_URL}/iframe.html?id=corecheckbox--checkboxstate

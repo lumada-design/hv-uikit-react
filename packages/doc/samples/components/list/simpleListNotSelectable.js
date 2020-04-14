@@ -3,47 +3,26 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@hv/uikit-react-core/dist/List";
 
 const data = [
-  {
-    label: "Share",
-    disabled: true
-  },
-  {
-    label: "Edit"
-  },
-  {
-    label: "Remove",
-    path: "https://www.hitachivantara.com"
-  },
-  {
-    label: "Delete"
-  },
-  {
-    label: "Update",
-    path: "https://www.hitachivantara.com"
-  }
+  { label: "Share", disabled: true },
+  { label: "Edit" },
+  { label: "Remove", path: "https://www.hitachivantara.com" },
+  { label: "Delete" },
+  { label: "Update", path: "https://www.hitachivantara.com" }
 ];
 
 const styles = theme => ({
-  wrapper: {
+  root: {
     width: 200,
     padding: `${theme.hv.spacing.sm}px`,
     backgroundColor: theme.hv.palette.atmosphere.atmo1
   }
 });
 
-const ListWrapper = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.wrapper}>{children}</div>
-);
+const StyledList = withStyles(styles)(List);
 
-// Passing the aria-label to the component is necessary in order for the component
-// to meet accessibility requirements
-const ariaProps = {
+const otherProps = {
+  id: "list",
   "aria-label": "Simple Non Selectable List Title"
 };
 
-export default (
-    <ListWrapper>
-      <List values={data} selectable={false} listProps={ariaProps} />
-    </ListWrapper>
-);
-
+export default <StyledList values={data} selectable={false} {...otherProps} />;

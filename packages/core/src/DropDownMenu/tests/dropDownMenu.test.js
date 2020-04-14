@@ -1,28 +1,12 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
+import { Popper } from "@material-ui/core";
 
-import { axe, toHaveNoViolations } from "jest-axe";
-
+import { toHaveNoViolations } from "jest-axe";
+import axe from "../../../config/axe-config";
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
-import Popper from "../../utils/Popper";
 
 expect.extend(toHaveNoViolations);
 
@@ -61,81 +45,77 @@ describe("DropDownMenu", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu
-            id="dropdownMenu"
-            dataList={menuOptions}
-            icon={<div />}
-          />
+          <DropDownMenu id="dropdownMenu" dataList={menuOptions} icon={<div />} />
         </HvProvider>
       );
     });
 
     it("is rendered correctly and behaves as expected", () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on click", () => {
       const button = wrapper.find("div");
       button.at(1).simulate("click");
 
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("closes on double click", () => {
       const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on Enter", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Enter", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens on Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens and closes mixing mouse click, Enter, and Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
   });
 
@@ -143,81 +123,77 @@ describe("DropDownMenu", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu
-            dataList={menuOptions}
-            icon={<div />}
-            disablePortal={false}
-          />
+          <DropDownMenu dataList={menuOptions} icon={<div />} disablePortal={false} />
         </HvProvider>
       );
     });
 
     it("is rendered correctly and behaves as expected", () => {
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on click", () => {
       const button = wrapper.find("div");
       button.at(1).simulate("click");
 
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("closes on double click", () => {
       const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
-      expect(toJson(wrapper)).toMatchSnapshot();
+      expect(toJson(wrapper.find(DropDownMenu))).toMatchSnapshot();
     });
 
     it("opens on Enter", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Enter", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens on Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
     });
 
     it("closes on double Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("opens and closes mixing mouse click, Enter, and Space", () => {
       const button = wrapper.find("button");
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("keydown", { key: ENTER, keyCode: 13 });
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
 
       button.simulate("keydown", { key: SPACE, keyCode: 32 });
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       button.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
 
     it("closes after selecting one option", () => {
@@ -237,11 +213,11 @@ describe("DropDownMenu", () => {
 
       button.simulate("click");
 
-      expect(wrapper.find(Popper).props().open).toBe(true);
+      expect(wrapper.find(Popper).prop("open")).toBe(true);
 
       const option = wrapper.find('li[id="test-list-item-0"]');
       option.simulate("click");
-      expect(wrapper.find(Popper).props().open).toBe(false);
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
     });
   });
 
@@ -260,7 +236,7 @@ describe("DropDownMenu", () => {
         </HvProvider>
       );
 
-      const results = await axe(wrapper.getDOMNode());
+      const results = await axe(wrapper.html());
 
       expect(results).toHaveNoViolations();
     });
@@ -284,7 +260,7 @@ describe("DropDownMenu", () => {
 
       button.simulate("click");
 
-      const results = await axe(wrapper.getDOMNode());
+      const results = await axe(wrapper.html());
 
       expect(results).toHaveNoViolations();
     });

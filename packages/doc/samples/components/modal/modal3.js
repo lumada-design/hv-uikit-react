@@ -1,19 +1,12 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import {
-  HvModal,
-  HvModalTitle,
-  HvModalContent,
-  HvModalActions
-} from "@hv/uikit-react-core/dist";
+import { Success } from "@hv/uikit-react-icons/dist";
+import { HvModal, HvModalTitle, HvModalContent, HvModalActions } from "@hv/uikit-react-core/dist";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import TextArea from "@hv/uikit-react-core/dist/TextArea";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Input from "@hv/uikit-react-core/dist/Input";
-
-const generalIconProps = { iconSize: "M" };
 
 const btnStyle = {
   width: "120px",
@@ -29,23 +22,18 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
       <HvButton style={btnStyle} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvModal
-        classes={classes}
-        open={open}
-        onClose={() => setOpen(false)}
-        id="test"
-      >
+      <HvModal classes={classes} open={open} onClose={() => setOpen(false)} id="test">
         {title}
-        {content ? (
-          content
-        ) : (
-            <HvModalContent>
-              Switching to model view will clear all the fields in your
-              visualization. You will need to re-select your fields.
-            </HvModalContent>
-          )}
+        {content || (
+          <HvModalContent>
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
+          </HvModalContent>
+        )}
         <HvModalActions>
-          <HvButton id="apply" category="ghost">Apply</HvButton>
+          <HvButton id="apply" category="ghost">
+            Apply
+          </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
@@ -53,11 +41,6 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
       </HvModal>
     </div>
   );
-};
-
-const iconWrapper = (Icon, sema, props) => {
-  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
-  return () => <GeneratedIcon semantic={sema} {...props} />;
 };
 
 const getColumns = () => [
@@ -106,18 +89,14 @@ const dataTypicalExample = [
 ];
 
 const SimpleTable = () => (
-  <HvTable
-    data={dataTypicalExample}
-    columns={getColumns()}
-    showPagination={false}
-  />
+  <HvTable data={dataTypicalExample} columns={getColumns()} showPagination={false} />
 );
 
 const containerStyle = {
   display: "flex"
 };
 
-const styles = () => ({
+const styles = {
   container: {
     width: "100%"
   },
@@ -129,37 +108,34 @@ const styles = () => ({
   infoText: {
     paddingBottom: 20
   }
-});
+};
 
-const textAreaStyles = () => ({
+const textAreaStyles = {
+  container: {
+    width: 555
+  },
   textAreaContainer: {
     paddingTop: 30,
     width: "100%"
   }
-});
+};
 
-const contentStyles = () => ({
+const contentStyles = {
   paper: {
     width: "100%"
   }
-});
+};
 
-const InputWithStyles = withStyles(styles, { withTheme: true })(Input);
-const TextAreaWithStyles = withStyles(textAreaStyles, { withTheme: true })(
-  TextArea
-);
-const ModalWithStyles = withStyles(contentStyles, { withTheme: true })(
-  SimpleModal
-);
+const InputWithStyles = withStyles(styles)(Input);
+const TextAreaWithStyles = withStyles(textAreaStyles)(TextArea);
+const ModalWithStyles = withStyles(contentStyles)(SimpleModal);
 
 export default (
   <div style={containerStyle}>
     <ModalWithStyles
       buttonMessage="Table"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Success, "sema1", generalIconProps)()}
-        >
+        <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
           <div>
             <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
             <HvTypography variant="normalText">HDI</HvTypography>
@@ -179,21 +155,22 @@ export default (
       content={
         <HvModalContent>
           <InputWithStyles
-            inputTextConfiguration={{
+            labels={{
               placeholder: "Enter text",
               inputLabel: "Title"
             }}
             fullWidth
-            validate={false}
+            showInfo={false}
           />
           <TextAreaWithStyles
             id="outlined-with-placeholder"
-            inputTextConfiguration={{
+            labels={{
               placeholder: "Enter text",
               inputLabel: "Description"
             }}
             multiline
-            rows="3"
+            rows={3}
+            value="This is an example"
           />
         </HvModalContent>
       }

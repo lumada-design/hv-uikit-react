@@ -1,52 +1,23 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import Separator from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
-import MoreOptions from "@hv/uikit-react-icons/dist/Generic/MoreOptionsHorizontal";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import Separator from "@hv/uikit-react-icons/dist/DropRightXS";
+import MoreOptions from "@hv/uikit-react-icons/dist/MoreOptionsHorizontal";
 import startCase from "lodash/startCase";
 import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
 import HvTypography from "../Typography";
 import HvDropDownMenu from "../DropDownMenu";
+import { setId } from "../utils";
 import HvLink from "../Link";
+import styles from "./styles";
 
-/**
- * Removes the extension of the label.
- *
- * @param label
- * @returns {string | *}
- */
 const removeExtension = label =>
   label.includes(".") ? label.substring(0, label.lastIndexOf(".")) : label;
 
-/**
- * Representation of last path element. This element doesn't have a link.
- *
- * @param label
- * @returns {*}
- * @constructor
- */
 const LastPathElement = ({ classes, label }) => (
   <li className={classes.centerContainer}>
-    <HvTypography variant="sText">
-      {startCase(removeExtension(label))}
-    </HvTypography>
+    <HvTypography variant="sText">{startCase(removeExtension(label))}</HvTypography>
   </li>
 );
 
@@ -55,17 +26,8 @@ LastPathElement.propTypes = {
   label: PropTypes.string.isRequired
 };
 
-/**
- * Representation of an path element. This element contains a link.
- *
- * @param useRouter
- * @param elem
- * @param classes
- * @returns {*}
- * @constructor
- */
-const Page = ({ useRouter, elem, classes }) => (
-  <HvLink route={elem.path} params={elem.params} useRouter={useRouter}>
+const Page = ({ Component, onClick, elem, classes }) => (
+  <HvLink route={elem.path} Component={Component} onClick={onClick} data={elem}>
     <div className={classes.centerContainer}>
       <HvTypography variant="sLink" className={classes.link}>
         {startCase(elem.label)}
@@ -75,23 +37,15 @@ const Page = ({ useRouter, elem, classes }) => (
 );
 
 Page.propTypes = {
-  useRouter: PropTypes.bool.isRequired,
+  Component: PropTypes.elementType,
+  onClick: PropTypes.func,
   elem: PropTypes.shape({
     path: PropTypes.string,
-    params: PropTypes.instanceOf(Object),
     label: PropTypes.string
   }).isRequired,
   classes: PropTypes.instanceOf(Object).isRequired
 };
 
-/**
- * Container of the intermediates path elements with the separator.
- *
- * @param classes
- * @param children
- * @returns {*}
- * @constructor
- */
 const PathElement = ({ classes, children }) => (
   <li className={classes.centerContainer}>
     {children}
@@ -106,15 +60,7 @@ PathElement.propTypes = {
   children: PropTypes.element.isRequired
 };
 
-/**
- * Helper function to build a new path list with one element with the list for the submenu.
- *
- * @param useRouter
- * @param listRoute
- * @param maxVisible
- * @returns {*}
- */
-const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
+const pathWithSubMenu = (id, listRoute, maxVisible, dropDownMenuProps) => {
   const nbrElemToSubMenu = listRoute.length - maxVisible;
   const subMenuList = listRoute.slice(1, nbrElemToSubMenu + 1);
 
@@ -122,10 +68,10 @@ const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
     1,
     nbrElemToSubMenu,
     <HvDropDownMenu
-      style={{ width: 32, height: 32 }}
+      id={setId(id, "submenu")}
       icon={<MoreOptions />}
       dataList={subMenuList}
-      aria-label="dropdownMenu"
+      {...dropDownMenuProps}
     />
   );
 
@@ -133,36 +79,30 @@ const pathWithSubMenu = (useRouter, listRoute, maxVisible) => {
 };
 
 /**
- * Breadcrumb element.
- *
- * @param classes
- * @param useRouter
- * @param listRoute
- * @param maxVisible
- * @returns {*}
- * @constructor
+ * A breadcrumb is a graphical control element frequently used as a navigational aid.
  */
-const BreadCrumb = ({
-  classes,
-  className,
-  id,
-  useRouter,
-  listRoute,
-  maxVisible,
-  url,
-  ...other
-}) => {
+const BreadCrumb = props => {
+  const {
+    classes,
+    className,
+    id,
+    listRoute = [],
+    maxVisible,
+    url,
+    onClick,
+    component = "div",
+    dropDownMenuProps,
+    ...others
+  } = props;
   const maxVisibleElem = maxVisible < 2 ? 2 : maxVisible;
   let listPath = listRoute.slice();
-
-  const internalId = id || uniqueId("hv-breadcrumb-");
 
   // build the listPath object list
   if (!isNil(url)) {
     listPath = [];
 
     // get the domain
-    const baseUrl = !useRouter ? url.match(/^.*\/\/[^/]+/, "") : "";
+    const baseUrl = url.match(/^.*\/\/[^/]+/, "");
 
     // get url without domain
     const urlWithoutDomain = url.replace(/^.*\/\/[^/]+/, "");
@@ -179,17 +119,15 @@ const BreadCrumb = ({
 
   const breadcrumbPath =
     listPath.length > maxVisibleElem
-      ? pathWithSubMenu(useRouter, listPath, maxVisibleElem)
+      ? pathWithSubMenu(id, listPath, maxVisibleElem, dropDownMenuProps)
       : listPath;
 
   const lastIndex = breadcrumbPath.length - 1;
 
+  const Component = onClick ? component : undefined;
+
   return (
-    <nav
-      {...other}
-      id={internalId}
-      className={classNames(classes.root, className)}
-    >
+    <nav id={id} className={clsx(classes.root, className)} {...others}>
       <ol className={classes.orderedList}>
         {listPath.map((elem, index) => {
           const key = `key_${index}`;
@@ -198,14 +136,15 @@ const BreadCrumb = ({
             <LastPathElement classes={classes} label={elem.label} key={key} />
           ) : (
             <PathElement classes={classes} key={key}>
-              {typeof elem.type === "function" ? (
-                <>{elem}</>
+              {React.isValidElement(elem) ? (
+                elem
               ) : (
                 <Page
                   key={key}
-                  useRouter={useRouter}
                   elem={elem}
                   classes={classes}
+                  Component={Component}
+                  onClick={onClick}
                 />
               )}
             </PathElement>
@@ -239,12 +178,12 @@ BreadCrumb.propTypes = {
     /**
      *  Styles applied to the separator.
      */
-    separator: PropTypes.string
+    separator: PropTypes.string,
+    /**
+     *  Styles applied to the list.
+     */
+    orderedList: PropTypes.string
   }).isRequired,
-  /**
-   * Should use the router.
-   */
-  useRouter: PropTypes.bool,
   /**
    * List of breadcrumb.
    */
@@ -261,16 +200,20 @@ BreadCrumb.propTypes = {
   /**
    * Number of pages visible.
    */
-  maxVisible: PropTypes.number
+  maxVisible: PropTypes.number,
+  /**
+   * The component used for the link node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Function passed to the component. If defined the component prop is used as the link node.
+   */
+  onClick: PropTypes.func,
+  /**
+   * Props passed down to the DropDownMenu sub-menu component.
+   */
+  dropDownMenuProps: PropTypes.instanceOf(Object)
 };
 
-BreadCrumb.defaultProps = {
-  className: "",
-  id: undefined,
-  useRouter: false,
-  maxVisible: 9999,
-  listRoute: [],
-  url: null
-};
-
-export default BreadCrumb;
+export default withStyles(styles, { name: "HvBreadCrumb" })(BreadCrumb);

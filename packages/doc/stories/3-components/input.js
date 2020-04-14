@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvInput from "@hv/uikit-react-core/dist/Input";
@@ -36,19 +20,18 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
     },
     {
       title: "3. Disabled input",
-      description:
-        "Disabled input not allowing interactions",
+      description: "Disabled input not allowing interactions",
       src: "components/input/inputSimpleDisable"
     },
     {
       title: "4. Input in invalid validation state",
-      description: "Input created in invalid validation state showing the error message and the failed validation icon",
+      description:
+        "Input created in invalid validation state showing the error message and the failed validation icon",
       src: "components/input/inputSimpleInvalid"
     },
     {
       title: "5. No validation",
-      description:
-        "Input that disables every type of validations not showing validation icons",
+      description: "Input that disables every type of validations not showing validation icons",
       src: "components/input/inputNoValidation"
     },
     {
@@ -71,8 +54,7 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
     },
     {
       title: "9. Email",
-      description:
-        "Email required input, that only accepts valid email addresses",
+      description: "Email required input, that only accepts valid email addresses",
       src: "components/input/inputEmail"
     },
     {
@@ -112,6 +94,6 @@ storiesOf("Components", module).add("Input", () => <HvInput />, {
       title: "16. Suggestions",
       description: "Simple input with suggestion list",
       src: "components/input/inputSuggestions"
-    },
+    }
   ]
 });

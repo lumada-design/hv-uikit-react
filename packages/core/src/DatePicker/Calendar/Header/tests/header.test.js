@@ -1,25 +1,8 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { mount } from "enzyme";
 import moment from "moment";
 import HvProvider from "../../../../Provider";
-import Header from "../Header";
-import HeaderWrapper from "../index";
+import Header from "..";
 
 describe("<Header />", () => {
   let wrapper;
@@ -33,7 +16,7 @@ describe("<Header />", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HeaderWrapper
+        <Header
           id="default"
           topText={topText}
           inputDate={inputDate}
@@ -43,12 +26,12 @@ describe("<Header />", () => {
       </HvProvider>
     );
 
-    HeaderComponent = wrapper.find(Header);
+    HeaderComponent = wrapper.find("Header");
     HeaderInstance = HeaderComponent.instance();
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Header)).toMatchSnapshot();
   });
 
   it("should set the correct state", () => {
@@ -62,7 +45,7 @@ describe("<Header />", () => {
   it("should set the correct state with different locale", () => {
     wrapper = mount(
       <HvProvider>
-        <HeaderWrapper
+        <Header
           id="default"
           topText={topText}
           inputDate={inputDate}
@@ -72,7 +55,7 @@ describe("<Header />", () => {
       </HvProvider>
     );
 
-    HeaderComponent = wrapper.find(Header);
+    HeaderComponent = wrapper.find("Header");
     HeaderInstance = HeaderComponent.instance();
 
     HeaderInstance.checkInputData();
@@ -85,7 +68,7 @@ describe("<Header />", () => {
   it("should set as invalid a wrong date", () => {
     wrapper = mount(
       <HvProvider>
-        <HeaderWrapper
+        <Header
           id="default"
           topText={topText}
           inputDate={inputDate}
@@ -95,7 +78,7 @@ describe("<Header />", () => {
       </HvProvider>
     );
 
-    HeaderComponent = wrapper.find(Header);
+    HeaderComponent = wrapper.find("Header");
     HeaderInstance = HeaderComponent.instance();
 
     const mockEvent = {

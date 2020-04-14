@@ -1,46 +1,18 @@
 import React from "react";
-import HvCard, {
-  HvCardFooter,
-  HvCardHeader
-} from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Generic/Upload";
+import HvCard, { HvCardFooter, HvCardHeader } from "@hv/uikit-react-core/dist/Card";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import MoreOptionsIcon from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import { Upload, MoreOptionsVertical } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const moreOptionsStyles = theme => ({
-  root: {
-    width: "32px",
-    minWidth: "32px",
-    padding: 0,
-    color: theme.palette.grey.inspire,
-    "& span": {
-      color: theme.palette.grey.inspire
-    }
-  }
-});
-
-const stylesMediaButton = () => ({
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-})
-
-const MoreOptionsIconButton = withStyles(moreOptionsStyles, {
-  withTheme: true
-})(HvButton);
-
-const MultipleActionsWithMediaButtons = ({classes}) => (
+const MultipleActionsWithMediaButtons = () => (
   <>
-    <HvButton category="primary">
-      <Icon className={classes.box} />
+    <HvButton category="ghost">
+      <Upload />
       Update
     </HvButton>
-    <MoreOptionsIconButton category="primary">
-      <MoreOptionsIcon aria-label="more options" />
-    </MoreOptionsIconButton>
+    <HvButton category="icon">
+      <MoreOptionsVertical aria-label="more options" />
+    </HvButton>
   </>
 );
 
@@ -50,31 +22,28 @@ const headerStyles = theme => ({
   }
 });
 
-const footerStyles = () => ({
+const footerStyles = {
   root: {
     borderTop: "none"
   }
-});
+};
 
-const HeaderWithStyles = withStyles(headerStyles, {
-  withTheme: true
-})(HvCardHeader);
-
-const FooterWithStyles = withStyles(footerStyles, {
-  withTheme: true
-})(HvCardFooter);
-
-const MultipleActionsWithMediaButtonsWithStyles = withStyles(stylesMediaButton, {
-  withTheme: true
-})(MultipleActionsWithMediaButtons);
+const HeaderWithStyles = withStyles(headerStyles)(HvCardHeader);
+const FooterWithStyles = withStyles(footerStyles)(HvCardFooter);
 
 export default (
   <div style={{ width: "500px" }}>
     <HvCard>
       <FooterWithStyles
-        actions={<MultipleActionsWithMediaButtonsWithStyles />}
+        actions={<MultipleActionsWithMediaButtons />}
         isSelectable
-        checkboxAriaLabel="Composed card"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "Composed card",
+          inputProps: {
+            "aria-label": "composed input"
+          }
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
       <HeaderWithStyles headerTitle="Asset Avatar L90" subheader="Compressor" />

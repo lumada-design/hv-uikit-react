@@ -1,31 +1,16 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import uniqueId from "lodash/uniqueId";
-import withStyles from "@material-ui/core/styles/withStyles";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import ArrowUp from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
-import ArrowDown from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import ArrowUp from "@hv/uikit-react-icons/dist/DropUpXS";
+import ArrowDown from "@hv/uikit-react-icons/dist/DropDownXS";
+import { setId, isKeypress, KeyboardCodes } from "../utils";
 import HvTypography from "../Typography";
+import withLabels from "../withLabels";
+import withId from "../withId";
 import List from "./List";
 import { getSelected, getSelectionLabel } from "./utils";
+import styles from "./styles";
 
 const DEFAULT_LABELS = {
   select: "Select...",
@@ -39,41 +24,21 @@ const DEFAULT_LABELS = {
 const DEFAULT_STATE = {
   selectionLabel: null,
   anchorEl: null,
-  values: [],
-  labels: DEFAULT_LABELS
+  values: []
 };
 
-const styles = {
-  rootXs: {
-    width: "30px",
-    height: "30px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
-  }
-};
-
-const StyledArrowUp = withStyles(styles, {
-  name: "HvDropdownStyledArrowUp",
-  withTheme: true
-})(ArrowUp);
-const StyledArrowDown = withStyles(styles, {
-  name: "HvDropdownStyledArrowDown",
-  withTheme: true
-})(ArrowDown);
-
-class Dropdown extends React.Component {
+/**
+ * A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
+ */
+class HvDropdown extends React.Component {
   constructor(props) {
     super(props);
 
     this.ref = React.createRef();
 
-    const { id, expanded } = props;
+    const { expanded } = props;
 
     this.state = {
-      internalId: id || uniqueId("hv-dropdown-"),
       isOpen: expanded,
       ...DEFAULT_STATE
     };
@@ -81,21 +46,11 @@ class Dropdown extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.values !== state.values) {
-      const labels = {
-        ...DEFAULT_LABELS,
-        ...props.labels
-      };
-
       return {
         isOpen: props.expanded,
-        selectionLabel: getSelectionLabel(
-          props.values,
-          labels,
-          props.multiSelect
-        ),
+        selectionLabel: getSelectionLabel(props.values, props.labels, props.multiSelect),
         anchorEl: null,
-        values: props.values,
-        labels
+        values: props.values
       };
     }
 
@@ -145,8 +100,7 @@ class Dropdown extends React.Component {
    * @memberof Dropdown
    */
   handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
-    const { multiSelect, onChange } = this.props;
-    const { labels } = this.state;
+    const { multiSelect, onChange, labels } = this.props;
     const selected = getSelected(selection);
 
     if (commitChanges) {
@@ -158,16 +112,10 @@ class Dropdown extends React.Component {
   }
 
   renderLabel() {
-    const { internalId } = this.state;
-    const { classes, label, labels } = this.props;
+    const { id, classes, labels } = this.props;
     return (
-      // eslint-disable-next-line jsx-a11y/label-has-for
-      <label
-        id={`${internalId}-label`}
-        className={classes.label}
-        htmlFor={`${internalId}-header`}
-      >
-        {labels.title || label}
+      <label id={setId(id, "label")} className={classes.label} htmlFor={setId(id, "header")}>
+        {labels.title}
       </label>
     );
   }
@@ -176,11 +124,9 @@ class Dropdown extends React.Component {
     const {
       classes,
       disabled,
-      theme,
-      label,
       values,
       id,
-      labels: propLabels,
+      labels,
       multiSelect,
       showSearch,
       expanded,
@@ -193,52 +139,36 @@ class Dropdown extends React.Component {
       ...others
     } = this.props;
 
-    const { isOpen, labels, selectionLabel, internalId } = this.state;
+    const { isOpen, selectionLabel } = this.state;
 
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
+    const color = disabled ? "atmo7" : undefined;
 
     return (
       <div
-        id={`${internalId}-header`}
-        aria-expanded={isOpen}
-        aria-labelledby={
-          labels.title || label ? `${internalId}-label` : undefined
-        }
-        className={classNames([
-          classes.header,
-          {
-            [classes.headerDisabled]: disabled
-          }
-        ])}
+        id={setId(id, "header")}
+        aria-labelledby={labels.title ? setId(id, "label") : undefined}
+        className={clsx(classes.header, {
+          [classes.headerDisabled]: disabled
+        })}
         onKeyDown={evt => this.handleToggle(evt)}
         onClick={evt => this.handleToggle(evt)}
-        role="combobox"
-        aria-controls={isOpen ? `${internalId}-values` : undefined}
-        aria-owns={isOpen ? `${internalId}-values` : undefined}
+        role="textbox"
         ref={this.ref}
         tabIndex={0}
         {...others}
       >
         <HvTypography
           variant="normalText"
-          className={classNames([
-            classes.selection,
-            classes.truncate,
-            {
-              [classes.selectionDisabled]: disabled
-            }
-          ])}
+          className={clsx(classes.selection, classes.truncate, {
+            [classes.selectionDisabled]: disabled
+          })}
         >
           {selectionLabel}
         </HvTypography>
         {isOpen ? (
-          <StyledArrowUp iconSize="XS" className={classes.arrow} />
+          <ArrowUp iconSize="XS" className={classes.arrow} />
         ) : (
-          <StyledArrowDown
-            iconSize="XS"
-            className={classes.arrow}
-            color={color}
-          />
+          <ArrowDown iconSize="XS" className={classes.arrow} color={color} />
         )}
       </div>
     );
@@ -246,21 +176,23 @@ class Dropdown extends React.Component {
 
   renderList() {
     const {
+      id,
       multiSelect,
       showSearch,
       selectDefault,
       notifyChangesOnFirstRender,
       disablePortal,
       hasTooltips,
+      labels,
       singleSelectionToggle,
       classes,
       placement
     } = this.props;
-    const { isOpen, values, labels, anchorEl, internalId } = this.state;
+    const { isOpen, values, anchorEl } = this.state;
 
     return (
       <List
-        id={`${internalId}-values`}
+        id={setId(id, "values")}
         classes={{
           rootList: classes.rootList,
           list: classes.list
@@ -279,31 +211,34 @@ class Dropdown extends React.Component {
         isOpen={isOpen}
         anchorEl={anchorEl}
         singleSelectionToggle={singleSelectionToggle}
+        aria-labelledby={labels.title ? setId(id, "label") : undefined}
         placement={placement}
       />
     );
   }
 
   render() {
-    const { classes, className, label, labels, disabled } = this.props;
-    const { isOpen, internalId } = this.state;
+    const { id, classes, className, labels, disabled } = this.props;
+    const { isOpen } = this.state;
 
     return (
       <>
-        {label || labels.title ? this.renderLabel() : null}
+        {/* TODO: remove label? use composition */}
+        {labels.title ? this.renderLabel() : null}
         <div
-          id={internalId}
+          id={id}
+          role="combobox"
+          aria-expanded={isOpen}
+          aria-owns={isOpen ? setId(id, "values") : undefined}
+          aria-controls={isOpen ? setId(id, "values") : undefined}
+          aria-labelledby={labels.title ? setId(id, "label") : undefined}
           ref={el => {
             this.node = el;
           }}
-          className={classNames([
-            classes.root,
-            {
-              [classes.rootDisabled]: disabled,
-              [classes.rootActive]: isOpen
-            },
-            className
-          ])}
+          className={clsx(classes.root, className, {
+            [classes.rootDisabled]: disabled,
+            [classes.rootOpen]: isOpen
+          })}
         >
           {this.renderHeader()}
           {this.renderList()}
@@ -313,7 +248,7 @@ class Dropdown extends React.Component {
   }
 }
 
-Dropdown.propTypes = {
+HvDropdown.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -333,7 +268,7 @@ Dropdown.propTypes = {
     /**
      * Styles applied to the component when is open.
      */
-    rootActive: PropTypes.string,
+    rootOpen: PropTypes.string,
     /**
      * Styles applied to the component when is disable.
      */
@@ -369,16 +304,16 @@ Dropdown.propTypes = {
     /**
      * Styles applied when the selection is disabled.
      */
-    selectionDisabled: PropTypes.string
+    selectionDisabled: PropTypes.string,
+    /**
+     * Styles applied when the selection is disabled.
+     */
+    list: PropTypes.string,
+    /**
+     * Styles applied when the selection is disabled.
+     */
+    rootList: PropTypes.string
   }).isRequired,
-  /**
-   * Label to display
-   * @deprecated Instead use the labels property
-   */
-  label: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the labels title property"
-  ),
   /**
    * The list to be rendered by the dropdown.
    */
@@ -447,10 +382,6 @@ Dropdown.propTypes = {
    */
   selectDefault: PropTypes.bool,
   /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object),
-  /**
    * If ´true´ the dropdown will show tooltips when user mouseenter text in list
    */
   hasTooltips: PropTypes.bool,
@@ -469,10 +400,9 @@ Dropdown.propTypes = {
   placement: PropTypes.oneOf(["left", "right"])
 };
 
-Dropdown.defaultProps = {
+HvDropdown.defaultProps = {
   className: "",
   id: undefined,
-  label: undefined,
   values: null,
   multiSelect: false,
   showSearch: false,
@@ -482,11 +412,12 @@ Dropdown.defaultProps = {
   notifyChangesOnFirstRender: false,
   labels: {},
   selectDefault: true,
-  theme: null,
   disablePortal: false,
   hasTooltips: false,
   singleSelectionToggle: true,
   placement: undefined
 };
 
-export default Dropdown;
+export default withStyles(styles, { name: "HvDropdown" })(
+  withLabels(DEFAULT_LABELS)(withId(HvDropdown))
+);

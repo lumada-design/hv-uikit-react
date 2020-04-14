@@ -14,11 +14,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.0.0-next.1...@hv/uikit-react-lab@2.0.0-next.2) (2020-03-18)
 # [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.3...@hv/uikit-react-lab@1.20.0) (2020-04-09)
 
 
 ### Features
 
+* **deprecations:** remove searchbox from lab. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([875fb0f](https://github.com/pentaho/hv-uikit-react/commit/875fb0f3767a38e57dc1af5b182ae5598a4beb1f))
+* **styles:** generate stable class names [#1257](https://github.com/pentaho/hv-uikit-react/issues/1257) ([a52b22c](https://github.com/pentaho/hv-uikit-react/commit/a52b22c878bf6aabbc30113cc0a1605ebcebb6f6))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
 * **classnames:** add icons componentName. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([dfa7ef1](https://github.com/pentaho/hv-uikit-react/commit/dfa7ef11c43973d7297653e57201a687990449a3))
 * **classnames:** apply classnames backport. [#1319](https://github.com/pentaho/hv-uikit-react/issues/1319) ([7ed3fe2](https://github.com/pentaho/hv-uikit-react/commit/7ed3fe2b0159dd1015b9f9b25331a4334ac43e5a))
 
@@ -47,12 +51,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.1...@hv/uikit-react-lab@2.0.0-next.1) (2020-03-04)
 
 ## [1.19.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.19.0...@hv/uikit-react-lab@1.19.1) (2020-03-13)
 
 
 ### Bug Fixes
 
+* **material:** fix test with material not found ([4c004ac](https://github.com/pentaho/hv-uikit-react/commit/4c004ac20ece5936a22269a07d64340322a6e19a))
+* **material4:** tests. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([40f4bed](https://github.com/pentaho/hv-uikit-react/commit/40f4bedc090a7a1392d1eb2ac9441fd5adffe3d9))
 * **slider:** set correct dependency. [#1230](https://github.com/pentaho/hv-uikit-react/issues/1230) ([f2ab2ce](https://github.com/pentaho/hv-uikit-react/commit/f2ab2ce0e92e1cc5d1ef612a2f47b0911194d407))
 
 
@@ -64,12 +71,19 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* **deprecations:** remove deprecated lab components. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([410cf5b](https://github.com/pentaho/hv-uikit-react/commit/410cf5be65e72d201d08235e5f93ee2f46af68e0))
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **input:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([178d84e](https://github.com/pentaho/hv-uikit-react/commit/178d84e0a1fe70f48e39257ed43166f3662c2cb7))
+* **list:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([daca806](https://github.com/pentaho/hv-uikit-react/commit/daca806da382c9bc81139207d3ba4fd30d4d7ae1))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+* **theme:** rename components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([1995ab0](https://github.com/pentaho/hv-uikit-react/commit/1995ab01c7dc7c78cb55a6726acae4f0d7effd56))
 * **typescript:** support new component and restructure files ([e51b411](https://github.com/pentaho/hv-uikit-react/commit/e51b411962a1cc10a80fbc1f0d42cbc379618ef0))
 
 
 
 
 
+# [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.17.5...@hv/uikit-react-lab@2.0.0-next.0) (2020-02-14)
 ## [1.18.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.18.0...@hv/uikit-react-lab@1.18.1) (2020-02-28)
 
 

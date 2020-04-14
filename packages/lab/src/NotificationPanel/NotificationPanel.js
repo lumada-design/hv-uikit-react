@@ -1,27 +1,16 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import _ from "lodash";
-import HvBadge from "@hv/uikit-react-core/dist/Badge";
+import map from "lodash/map";
+import { withStyles } from "@material-ui/core";
+import { HvBadge } from "@hv/uikit-react-core/dist";
 import Panel from "./Panel";
 import Notification from "./Notification";
+import styles from "./styles";
 
-export default class NotificationPanel extends Component {
+/**
+ * Notification Panel displays all of read and unread notifications. Still in development
+ */
+class HvNotificationPanel extends Component {
   constructor(props) {
     super(props);
 
@@ -54,7 +43,7 @@ export default class NotificationPanel extends Component {
     const { classes, icon, header, footer, notifications } = this.props;
     const { open } = this.state;
 
-    const n = _.map(notifications, notification => (
+    const n = map(notifications, notification => (
       <Notification key={notification.id} notification={notification} />
     ));
 
@@ -82,7 +71,7 @@ export default class NotificationPanel extends Component {
             icon={icon}
             showCount
             count={notifications.length}
-            classes={{ badgeBorder: classes.badgeBorder }}
+            classes={{ root: classes.badgeBorder }}
           />
         </div>
         <Panel {...panelProps}>{n}</Panel>
@@ -91,7 +80,7 @@ export default class NotificationPanel extends Component {
   }
 }
 
-NotificationPanel.propTypes = {
+HvNotificationPanel.propTypes = {
   /**
    * 'true' if panel is open or 'false' if the panel is not open
    */
@@ -143,6 +132,8 @@ NotificationPanel.propTypes = {
   footer: PropTypes.element.isRequired
 };
 
-NotificationPanel.defaultProps = {
+HvNotificationPanel.defaultProps = {
   open: false
 };
+
+export default withStyles(styles, { name: "HvHvNotificationPanel" })(HvNotificationPanel);

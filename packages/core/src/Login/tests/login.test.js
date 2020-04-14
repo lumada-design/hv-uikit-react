@@ -1,39 +1,17 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import PropTypes from "prop-types";
 import { mount } from "enzyme";
-import LoginWithStyles from "../index";
 import HvProvider from "../../Provider";
-import HvLogin from "../Login";
 import LoginForm from "../Forms/Login";
 import Recovery from "../Forms/Recovery";
 import HvButton from "../../Button";
 import Title from "../Forms/Login/Title/Title";
 import MessageElement from "../Forms/MessageElement";
+import Login from "..";
 
-const MyProvider = ({ children }) => (
-  <HvProvider>
-    {children}
-  </HvProvider>
-);
+const MyProvider = ({ children }) => <HvProvider>{children}</HvProvider>;
 
 MyProvider.propTypes = {
   children: PropTypes.element.isRequired
@@ -50,11 +28,10 @@ describe("Login ", () => {
     loginMock = jest.fn();
     recoverMock = jest.fn();
     wrapper = mount(
-      <LoginWithStyles
-        login={loginMock}
-        recovery={recoverMock}
-        allowRecover
-      />, {
+      <HvProvider>
+        <Login login={loginMock} recovery={recoverMock} allowRecover />
+      </HvProvider>,
+      {
         wrappingComponent: MyProvider
       }
     );
@@ -65,7 +42,7 @@ describe("Login ", () => {
   });
 
   it("should render the Login component", () => {
-    const loginComponent = wrapper.find(HvLogin);
+    const loginComponent = wrapper.find(Login);
 
     expect(loginComponent.length).toBe(1);
   });
@@ -80,9 +57,9 @@ describe("Login ", () => {
     const loginComponent = wrapper.find(LoginForm);
 
     expect(loginComponent.length).toBe(1);
-    expect(loginComponent.find('input[name="username"]').prop('disabled')).toBe(false);
-    expect(loginComponent.find('input[name="password"]').prop('disabled')).toBe(false);
-    expect(loginComponent.find('button[type="submit"]').prop('disabled')).toBe(false);
+    expect(loginComponent.find('input[name="username"]').prop("disabled")).toBe(false);
+    expect(loginComponent.find('input[name="password"]').prop("disabled")).toBe(false);
+    expect(loginComponent.find('button[type="submit"]').prop("disabled")).toBe(false);
   });
 
   it("shouldn't render the Recovery form", () => {
@@ -133,11 +110,7 @@ describe("Login ", () => {
 
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          recovery={recoverMock}
-          titleComponent={<TitleComponentProp />}
-        />
+        <Login login={loginMock} recovery={recoverMock} titleComponent={<TitleComponentProp />} />
       </HvProvider>
     );
 
@@ -149,16 +122,13 @@ describe("Login ", () => {
   it("it should render a logo in the title", () => {
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          recovery={recoverMock}
-          logo="/test)"
-        />
+        <Login login={loginMock} recovery={recoverMock} logo="/test)" />
       </HvProvider>
     );
 
     const foundTitleComponent = wrapper2
       .find(Title)
+      .children()
       .children()
       .children()
       .first();
@@ -167,13 +137,10 @@ describe("Login ", () => {
   });
 
   it("should render initial custom message", () => {
-    const msg = { text: 'some message.' };
+    const msg = { text: "some message." };
     const wrapper2 = mount(
       <HvProvider>
-        <LoginWithStyles
-          login={loginMock}
-          customMessage={msg}
-        />
+        <Login login={loginMock} customMessage={msg} />
       </HvProvider>
     );
 
@@ -184,21 +151,5 @@ describe("Login ", () => {
       .first();
 
     expect(foundMsg.text()).toBe(msg.text);
-  });
-
-  it("should render the additional formProps in form element", () => {
-    let loginFormProps = wrapper.find(LoginForm).props();
-    expect(loginFormProps.formProps).toEqual({});
-    
-    wrapper.setProps({
-      formProps: { autoComplete: "off", className: "foo" }
-    });
-
-    loginFormProps = wrapper.find(LoginForm).props();
-    expect(loginFormProps.formProps).toEqual({ autoComplete: "off", className: "foo" });
-    
-    const formProps = wrapper.find("form").props();
-    expect(formProps.autoComplete).toBe("off");
-    expect(formProps.className.includes("foo")).toBe(true);
   });
 });

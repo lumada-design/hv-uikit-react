@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { mount, shallow } from "enzyme";
 import HvProvider from "../../Provider";
@@ -22,6 +6,11 @@ import Search from "../Search/Search";
 
 describe("Asset Inventory ", () => {
   let wrapper;
+
+  // eslint-disable-next-line no-unused-vars
+  const MockView = (id, selectedValues) => <div id={id} />;
+
+  const mockConfiguration = { metadata: [] };
 
   const values = [
     {
@@ -59,7 +48,7 @@ describe("Asset Inventory ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(AssetInventory)).toMatchSnapshot();
   });
 
   it("should render correctly sort", () => {
@@ -79,7 +68,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -103,7 +92,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -128,7 +117,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -152,7 +141,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -177,7 +166,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -210,7 +199,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -220,7 +209,7 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues.length).toBe(3);
 
     const search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: 2 } });
+    search.simulate("change", { target: { value: "2" } });
 
     instance = wrapper.find("AssetInventory").instance();
 
@@ -243,7 +232,7 @@ describe("Asset Inventory ", () => {
     wrapper = mount(
       <HvProvider>
         <AssetInventory values={values} configuration={configuration}>
-          <div id="id" />
+          <MockView id="id" />
         </AssetInventory>
       </HvProvider>
     );
@@ -253,21 +242,21 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues.length).toBe(3);
 
     let search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: 0 } });
+    search.simulate("change", { target: { value: "0" } });
 
     instance = wrapper.find("AssetInventory").instance();
 
     expect(instance.state.viewValues.length).toBe(3);
 
     search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: 10 } });
+    search.simulate("change", { target: { value: "10" } });
 
     instance = wrapper.find("AssetInventory").instance();
 
     expect(instance.state.viewValues.length).toBe(2);
 
     search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: 50 } });
+    search.simulate("change", { target: { value: "50" } });
 
     instance = wrapper.find("AssetInventory").instance();
 
@@ -277,38 +266,28 @@ describe("Asset Inventory ", () => {
   it("should correctly switch views", () => {
     wrapper = mount(
       <HvProvider>
-        <AssetInventory values={values} configuration={[]}>
-          <div id="view1">test1</div>
-          <div id="view2" />
+        <AssetInventory values={values} configuration={mockConfiguration}>
+          <MockView id="view1">test1</MockView>
+          <MockView id="view2" />
         </AssetInventory>
       </HvProvider>
     );
 
-    let view = wrapper.findWhere(
-      n => n.type() === "div" && n.prop("id") === "view1"
-    );
+    let view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
 
     expect(view.exists()).toBe(true);
 
-    view = wrapper.findWhere(
-      n => n.type() === "div" && n.prop("id") === "view2"
-    );
+    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
 
     expect(view.exists()).toBe(false);
 
-    wrapper
-      .findWhere(n => n.type() === "button" && n.prop("id") === "view2")
-      .simulate("click");
+    wrapper.findWhere(n => n.type() === "button" && n.prop("id") === "view2").simulate("click");
 
-    view = wrapper.findWhere(
-      n => n.type() === "div" && n.prop("id") === "view2"
-    );
+    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
 
     expect(view.exists()).toBe(true);
 
-    view = wrapper.findWhere(
-      n => n.type() === "div" && n.prop("id") === "view1"
-    );
+    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
 
     expect(view.exists()).toBe(false);
   });
@@ -316,8 +295,8 @@ describe("Asset Inventory ", () => {
   it("should render pagination", () => {
     wrapper = mount(
       <HvProvider>
-        <AssetInventory values={values} configuration={{}} hasPagination>
-          <div id="view1">test1</div>
+        <AssetInventory values={values} configuration={{ metadata: [] }} hasPagination>
+          <MockView id="view1">test1</MockView>
         </AssetInventory>
       </HvProvider>
     );
@@ -360,11 +339,11 @@ describe("Asset Inventory ", () => {
         <AssetInventory
           id="hv-pagination"
           values={val}
-          configuration={{}}
+          configuration={mockConfiguration}
           hasPagination
           pageSize={2}
         >
-          <div id="view1">test1</div>
+          <MockView id="view1">test1</MockView>
         </AssetInventory>
       </HvProvider>
     );
@@ -413,11 +392,11 @@ describe("Asset Inventory ", () => {
         <AssetInventory
           id="hv-pagination"
           values={val}
-          configuration={{}}
+          configuration={mockConfiguration}
           hasPagination
           pageSize={2}
         >
-          <div id="view1">test1</div>
+          <MockView id="view1">test1</MockView>
         </AssetInventory>
       </HvProvider>
     );
@@ -428,11 +407,7 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues[1].id).toBe("2");
 
     wrapper
-      .findWhere(
-        n =>
-          n.type() === "button" &&
-          n.prop("id") === "hv-pagination-nextPage-button"
-      )
+      .findWhere(n => n.type() === "button" && n.prop("id") === "hv-pagination-nextPage-button")
       .simulate("click");
 
     expect(instance.state.viewValues.length).toBe(2);

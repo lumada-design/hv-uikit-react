@@ -1,59 +1,49 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import Tooltip from "@material-ui/core/Tooltip";
-import Fade from "@material-ui/core/Fade";
+import { Fade, Tooltip, withStyles } from "@material-ui/core";
+import isNil from "lodash/isNil";
+import styles from "./styles";
 
+/**
+ * Tooltips display informative text when users hover over, focus on, or tap an element.
+ */
 const HvTooltip = ({
-  theme,
+  className,
   classes,
   open,
-  enterDelay,
-  placement,
-  useSingle,
-  tooltipAnchor,
+  enterDelay = 300,
+  placement = "top",
+  useSingle = true,
+  children,
   tooltipData,
-  TransitionComponent,
-  TransitionProps,
+  TransitionComponent = Fade,
+  TransitionProps = { timeout: 400 },
   ...others
-}) => (
-  <Tooltip
-    open={open}
-    enterDelay={enterDelay}
-    placement={placement}
-    TransitionComponent={TransitionComponent}
-    TransitionProps={TransitionProps}
-    classes={{
-      tooltip: useSingle ? classes.tooltip : classes.multitooltip,
-      popper: classes.popper
-    }}
-    title={tooltipData}
-    {...others}
-  >
-    {tooltipAnchor}
-  </Tooltip>
-);
-
+}) => {
+  return (
+    <Tooltip
+      open={(!isNil(open) && open) || undefined}
+      enterDelay={enterDelay}
+      placement={placement}
+      TransitionComponent={TransitionComponent}
+      TransitionProps={TransitionProps}
+      className={className}
+      classes={{
+        tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
+        popper: classes.popper
+      }}
+      title={tooltipData}
+      {...others}
+    >
+      {children}
+    </Tooltip>
+  );
+};
 HvTooltip.propTypes = {
   /**
-   * The object created by material to apply to the component.
+   * Class names to be applied.
    */
-  theme: PropTypes.instanceOf(Object),
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -63,9 +53,17 @@ HvTooltip.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the tooltip class
+     * Styles applied to the tooltip class when it is single
      *  */
     tooltip: PropTypes.string,
+    /**
+     * Styles applied to the tooltip class when it is multi
+     *  */
+    tooltipMulti: PropTypes.string,
+    /**
+     * Styles applied to the popper component
+     *  */
+    popper: PropTypes.string,
     /**
      * Styles applied to the title.
      */
@@ -94,7 +92,7 @@ HvTooltip.propTypes = {
      * Styles applied to the values wrapper.
      */
     valueWrapper: PropTypes.string
-  }),
+  }).isRequired,
   /**
    * Values to display in tooltip.
    */
@@ -129,22 +127,11 @@ HvTooltip.propTypes = {
   /**
    * Defines if should use a single or multiline tooltip.
    */
-  useSingle: PropTypes.bool
+  useSingle: PropTypes.bool,
+  /**
+   * Node to apply the tooltip.
+   */
+  children: PropTypes.node.isRequired
 };
 
-HvTooltip.defaultProps = {
-  theme: null,
-  classes: {},
-  open: null,
-  enterDelay: 300,
-  placement: "top",
-  useSingle: true,
-  tooltipData: null,
-  tooltipAnchor: null,
-  TransitionComponent: Fade,
-  TransitionProps: {
-    timeout: 400
-  }
-};
-
-export default HvTooltip;
+export default withStyles(styles, { name: "HvTooltip" })(HvTooltip);

@@ -8,8 +8,7 @@ const callSimulation = () =>
     }, 2000);
   });
 
-const labels = 
-{
+const labels = {
   titleText: "Title text",
   recoveryTitle: "Recovery title",
   messageToRecover: "Message to recover",
@@ -18,7 +17,7 @@ const labels =
   recoveryPlaceholder: "Recovery placeholder",
   recoveryErrorMessage: "Error message",
   userNameInputLabel: "Username label",
-  userNamePlaceHolder: "Uplaceholder",
+  userNamePlaceHolder: "User placeholder",
   passwordInputLabel: "Password input label",
   passwordPlaceHolder: "Password placeholder",
   rememberMeLabel: "Remember me label",
@@ -31,8 +30,7 @@ const labels =
   recoverButton: "Recover label",
   recoveringMessage: "Recovering label",
   incorrectCredentialsMessage: "Incorrect credentials message label"
-
-}
+};
 
 export default (
   <div
@@ -44,8 +42,8 @@ export default (
     <HvLogin
       login={callSimulation}
       recovery={callSimulation}
-      allowRecover={true}
-      allowRememberMe={true}
+      allowRecover
+      allowRememberMe
       labels={labels}
     />
   </div>

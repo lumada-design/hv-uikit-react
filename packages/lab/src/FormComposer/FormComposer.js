@@ -1,25 +1,13 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes, { shape } from "prop-types";
-
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import { withStyles } from "@material-ui/core";
+import { HvTypography } from "@hv/uikit-react-core/dist";
 import HvNavigationAnchors from "../NavigationAnchors";
+import styles from "./styles";
 
+/**
+ * A form composer component used to create a form dynamically, still in development
+ */
 class HvFormComposer extends React.Component {
   constructor(props) {
     super(props);
@@ -62,10 +50,7 @@ class HvFormComposer extends React.Component {
    * @param {Function} originalHandler - The handler that was originally triggered.
    */
   getValuesHandler = originalHandler => {
-    if (
-      originalHandler !== undefined &&
-      typeof originalHandler === "function"
-    ) {
+    if (originalHandler !== undefined && typeof originalHandler === "function") {
       originalHandler(this.getValues());
     }
   };
@@ -93,14 +78,7 @@ class HvFormComposer extends React.Component {
   };
 
   render() {
-    const {
-      classes,
-      mainTitle,
-      groups,
-      hasNavigation,
-      hasFooter,
-      footerContent
-    } = this.props;
+    const { classes, mainTitle, groups, hasNavigation, hasFooter, footerContent } = this.props;
 
     const footerElements = footerContent.map((child, i) => {
       const key = `fc-${i}`;
@@ -125,12 +103,8 @@ class HvFormComposer extends React.Component {
             return (
               <div key={key}>
                 {React.cloneElement(child, {
-                  onChange: value =>
-                    this.childOnChangeHandler(
-                      value,
-                      child.props.name,
-                      child.props.onChange
-                    )
+                  onChange: (event, value) =>
+                    this.childOnChangeHandler(value, child.props.name, child.props.onChange)
                 })}
               </div>
             );
@@ -147,10 +121,7 @@ class HvFormComposer extends React.Component {
         <div className={classes.mainContainer}>
           {hasNavigation && (
             <div className={classes.navContainer}>
-              <HvNavigationAnchors
-                options={navigationOptions}
-                floating={false}
-              />
+              <HvNavigationAnchors options={navigationOptions} floating={false} />
             </div>
           )}
           <div className={classes.componentContainer}>{groupedComponents}</div>
@@ -203,4 +174,4 @@ HvFormComposer.defaultProps = {
   footerContent: []
 };
 
-export default HvFormComposer;
+export default withStyles(styles, { name: "HvFormComposer" })(HvFormComposer);

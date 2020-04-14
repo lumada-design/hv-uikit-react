@@ -15,8 +15,8 @@
 | [Checkbox](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Selectors/CheckBox)               |         1.2.1         |
 | [Radio button](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Selectors/RadioButton)        |         1.2.1         |
 | [Dropdown](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Dropdown)                         |         1.2.1         |
-| [Header](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/NewHeader)                          |         1.2.1         |
-| [Vertical Navigation](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/NewVerticalNavigation) |         1.2.1         |
+| [Header](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Header)                          |         1.2.1         |
+| [Vertical Navigation](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/VerticalNavigation) |         1.2.1         |
 | [Input](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Input)                               |         1.2.1         |
 | [List](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/List)                                 |         1.2.1         |
 | [Login](https://github.com/pentaho/hv-uikit-react/tree/master/packages/core/src/Login)                               |         1.2.1         |
@@ -36,16 +36,9 @@
 
 | Components                                                                                                     | Design System Version |
 | -------------------------------------------------------------------------------------------------------------- | :-------------------: |
-| [Asset Inventory](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/AssetInventory)       |           -           |
-| [List View](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/ListView)                   |           -           |
-| [DatePicker](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/DatePicker)                |           -           |
-| [DatePickerDS](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/DatePickerDS)            |           -           |
-| [Empty State](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/EmptyState)               |           -           |
 | [Footer](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Footer)                        |           -           |
 | [FormComposer](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/FormComposer)            |           -           |
 | [Navigation Anchors](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/NavigationAnchors) |           -           |
-| [Popper](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Popper)                        |           -           |
-| [Search box](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/SearchBox)                 |           -           |
 | [Slider](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Slider)                        |           -           |
 | [Toggle Switch](https://github.com/pentaho/hv-uikit-react/tree/master/packages/lab/src/Switch)                 |           -           |
 

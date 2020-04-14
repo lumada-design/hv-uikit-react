@@ -8,9 +8,4 @@ const labels = {
   warningText: "You didn't write 'hello'"
 };
 
-export default (
-  <HvInput
-    labels={labels} infoIcon
-    validation={value => value.includes("hello")}
-  />
-);
+export default <HvInput labels={labels} infoIcon validation={value => value.includes("hello")} />;

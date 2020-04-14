@@ -2,12 +2,11 @@ import React from "react";
 import HvTabs from "@hv/uikit-react-core/dist/Tabs";
 import HvTab from "@hv/uikit-react-core/dist/Tab";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
 
-function TabContainer(props) {
+function TabContainer({ id, children }) {
   return (
-    <HvTypography id={props.id} component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
+    <HvTypography id={id} component="div" style={{ padding: 8 * 3 }}>
+      {children}
     </HvTypography>
   );
 }
@@ -22,9 +21,9 @@ function Sample4() {
   return (
     <>
       <HvTabs id="tabs" value={value} onChange={handleChange}>
-        <HvTab id="tabs-tab1" label="Clicable tab 1"></HvTab>
-        <HvTab id="tabs-tab2" label="Clicable tab 2"></HvTab>
-        <HvTab id="tabs-tab3" label="Clicable tab 3"></HvTab>
+        <HvTab id="tabs-tab1" label="Clickable tab 1" />
+        <HvTab id="tabs-tab2" label="Clickable tab 2" />
+        <HvTab id="tabs-tab3" label="Clickable tab 3" />
       </HvTabs>
       {value === 0 && <TabContainer id="container1">Page One</TabContainer>}
       {value === 1 && <TabContainer id="container2">Page Two</TabContainer>}

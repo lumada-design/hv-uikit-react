@@ -1,27 +1,12 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
-import { KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { withStyles } from "@material-ui/core";
+import { KeyboardCodes, isBrowser } from "../utils";
 import ConditionalWrapper from "../utils/ConditionalWrapper";
 import { isKey, isOneOfKeys, setFocusTo, getFocusableChildren } from "./utils";
-import isBrowser from "../utils/browser";
+import styles from "./styles";
 
 /* eslint-disable no-param-reassign */
 const Focus = props => {
@@ -43,9 +28,8 @@ const Focus = props => {
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
   const getFocuses = () =>
-    rootRef.current
-      ? Array.from(rootRef.current.getElementsByClassName(classes.root))
-      : [];
+    rootRef.current ? Array.from(rootRef.current.getElementsByClassName(classes.root)) : [];
+
   const setTabIndex = (el, tabIndex = 0) => {
     const elChildFocus = getFocusableChildren(el)[0];
     if (elChildFocus) {
@@ -58,9 +42,7 @@ const Focus = props => {
 
   const setSelectedTabIndex = () => {
     const focuses = getFocuses();
-    const firstSelected = focuses.find(focus =>
-      focus.classList.contains(classes.selected)
-    );
+    const firstSelected = focuses.find(focus => focus.classList.contains(classes.selected));
 
     if (!firstSelected) return;
     focuses.forEach(focus => setTabIndex(focus, -1));
@@ -200,7 +182,7 @@ const Focus = props => {
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
       {React.cloneElement(children, {
-        className: classNames(children.props.className, classes.root, {
+        className: clsx(children.props.className, classes.root, {
           [classes.selected]: selected,
           [classes.disabled]: disabled,
           [classes.focusDisabled]: focusDisabled
@@ -223,6 +205,26 @@ Focus.propTypes = {
    */
   classes: PropTypes.shape({
     /**
+     * Styles applied to the root.
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied when component is selected.
+     */
+    selected: PropTypes.string,
+    /**
+     * Styles applied when component is disabled.
+     */
+    disabled: PropTypes.string,
+    /**
+     * Styles applied to external reference.
+     */
+    externalReference: PropTypes.string,
+    /**
+     * Styles applied when using the false focus.
+     */
+    falseFocus: PropTypes.string,
+    /**
      * Styles applied when focus disabled.
      */
     focusDisabled: PropTypes.string,
@@ -234,10 +236,7 @@ Focus.propTypes = {
   /**
    * The reference to the root element to hold all Focus' context.
    */
-  rootRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.any })
-  ]),
+  rootRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any })]),
   /**
    * Extra configuration for the child element.
    */
@@ -288,4 +287,4 @@ Focus.defaultProps = {
   disabled: false
 };
 
-export default Focus;
+export default withStyles(styles)(Focus);

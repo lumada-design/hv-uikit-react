@@ -1,0 +1,2404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TreeView /> navigation tree should render correctly 1`] = `
+<WithStyles(TreeView)
+  mode="navigation"
+  onChange={[MockFunction]}
+  selected="4"
+>
+  <TreeView
+    classes={
+      Object {
+        "collapsed": "HvVerticalNavigationTreeView-collapsed",
+        "content": "HvVerticalNavigationTreeView-content",
+        "disabled": "HvVerticalNavigationTreeView-disabled",
+        "expanded": "HvVerticalNavigationTreeView-expanded",
+        "group": "HvVerticalNavigationTreeView-group",
+        "noIcon": "HvVerticalNavigationTreeView-noIcon",
+        "node": "HvVerticalNavigationTreeView-node",
+        "root": "HvVerticalNavigationTreeView-root",
+        "selectable": "HvVerticalNavigationTreeView-selectable",
+        "selected": "HvVerticalNavigationTreeView-selected",
+        "unselectable": "HvVerticalNavigationTreeView-unselectable",
+        "unselected": "HvVerticalNavigationTreeView-unselected",
+        "withIcon": "HvVerticalNavigationTreeView-withIcon",
+      }
+    }
+    mode="navigation"
+    onChange={[MockFunction]}
+    selected="4"
+  >
+    <ul
+      className="HvVerticalNavigationTreeView-root"
+    >
+      <WithStyles(TreeViewItem)
+        icon={<ForwardRef(WithStyles) />}
+        label="System"
+        nodeId="1"
+      >
+        <TreeViewItem
+          classes={
+            Object {
+              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+              "content": "HvVerticalNavigationTreeViewItem-content",
+              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+              "group": "HvVerticalNavigationTreeViewItem-group",
+              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+              "node": "HvVerticalNavigationTreeViewItem-node",
+              "root": "HvVerticalNavigationTreeViewItem-root",
+              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+              "selected": "HvVerticalNavigationTreeViewItem-selected",
+              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+            }
+          }
+          icon={<ForwardRef(WithStyles) />}
+          label="System"
+          nodeId="1"
+        >
+          <li
+            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
+            data-hasicon={true}
+          >
+            <WithStyles(ForwardRef)
+              className="HvVerticalNavigationTreeViewItem-content"
+              component="div"
+              innerRef={
+                Object {
+                  "current": <div
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <div
+                      class="HvIconPlay-root HvIconPlay-rootS"
+                      style="width: 32px; height: 32px;"
+                    >
+                      <svg
+                        focusable="false"
+                        height="16px"
+                        viewBox="0 0 16 16"
+                        width="16px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                    System
+                  </div>,
+                }
+              }
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              variant="normalText"
+            >
+              <ForwardRef
+                className="HvVerticalNavigationTreeViewItem-content"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="div"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+                variant="normalText"
+              >
+                <div
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <WithStyles(Play)
+                    boxStyles={
+                      Object {
+                        "height": "32px",
+                        "width": "32px",
+                      }
+                    }
+                  >
+                    <Play
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
+                      classes={
+                        Object {
+                          "root": "HvIconPlay-root",
+                          "rootL": "HvIconPlay-rootL",
+                          "rootM": "HvIconPlay-rootM",
+                          "rootS": "HvIconPlay-rootS",
+                          "rootXs": "HvIconPlay-rootXs",
+                        }
+                      }
+                    >
+                      <div
+                        className="HvIconPlay-root HvIconPlay-rootS"
+                        style={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
+                      >
+                        <svg
+                          focusable={false}
+                          height="16px"
+                          viewBox="0 0 16 16"
+                          width="16px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </Play>
+                  </WithStyles(Play)>
+                  System
+                </div>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <ul
+              className="HvVerticalNavigationTreeViewItem-group"
+            >
+              <WithStyles(TreeViewItem)
+                label="SCPodF"
+                nodeId="2"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="SCPodF"
+                  nodeId="2"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="0"
+                          >
+                            SCPodF
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          SCPodF
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                    <ul
+                      className="HvVerticalNavigationTreeViewItem-group"
+                    >
+                      <WithStyles(TreeViewItem)
+                        disabled={true}
+                        label="Compute"
+                        nodeId="3"
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          disabled={true}
+                          label="Compute"
+                          nodeId="3"
+                        >
+                          <li
+                            aria-disabled={true}
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-disabled"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                    role="button"
+                                    tabindex="0"
+                                  >
+                                    Compute
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={0}
+                                variant="normalText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={0}
+                                >
+                                  Compute
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                      <WithStyles(TreeViewItem)
+                        label="Storage"
+                        nodeId="4"
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          label="Storage"
+                          nodeId="4"
+                        >
+                          <li
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected"
+                          >
+                            <WithStyles(ForwardRef)
+                              aria-current="page"
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    aria-current="page"
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-selectedText"
+                                    role="button"
+                                    tabindex="0"
+                                  >
+                                    Storage
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
+                              variant="selectedText"
+                            >
+                              <ForwardRef
+                                aria-current="page"
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={0}
+                                variant="selectedText"
+                              >
+                                <div
+                                  aria-current="page"
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-selectedText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={0}
+                                >
+                                  Storage
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                      <WithStyles(TreeViewItem)
+                        label="Ethernet"
+                        nodeId="5"
+                        selectable={false}
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          label="Ethernet"
+                          nodeId="5"
+                          selectable={false}
+                        >
+                          <li
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-unselectable"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                    role="button"
+                                    tabindex="0"
+                                  >
+                                    Ethernet
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={0}
+                                variant="normalText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={0}
+                                >
+                                  Ethernet
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                      <WithStyles(TreeViewItem)
+                        label="Fiber Channel"
+                        nodeId="6"
+                        payload={
+                          Object {
+                            "params": Object {
+                              "a": 2,
+                              "b": "3",
+                            },
+                            "path": "/hello/world",
+                          }
+                        }
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          label="Fiber Channel"
+                          nodeId="6"
+                          payload={
+                            Object {
+                              "params": Object {
+                                "a": 2,
+                                "b": "3",
+                              },
+                              "path": "/hello/world",
+                            }
+                          }
+                        >
+                          <li
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                    role="button"
+                                    tabindex="0"
+                                  >
+                                    Fiber Channel
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={0}
+                                variant="normalText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={0}
+                                >
+                                  Fiber Channel
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                    </ul>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+            </ul>
+          </li>
+        </TreeViewItem>
+      </WithStyles(TreeViewItem)>
+      <WithStyles(TreeViewItem)
+        icon={<ForwardRef(WithStyles) />}
+        label="Administration"
+        nodeId="7"
+      >
+        <TreeViewItem
+          classes={
+            Object {
+              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+              "content": "HvVerticalNavigationTreeViewItem-content",
+              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+              "group": "HvVerticalNavigationTreeViewItem-group",
+              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+              "node": "HvVerticalNavigationTreeViewItem-node",
+              "root": "HvVerticalNavigationTreeViewItem-root",
+              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+              "selected": "HvVerticalNavigationTreeViewItem-selected",
+              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+            }
+          }
+          icon={<ForwardRef(WithStyles) />}
+          label="Administration"
+          nodeId="7"
+        >
+          <li
+            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
+            data-hasicon={true}
+          >
+            <WithStyles(ForwardRef)
+              className="HvVerticalNavigationTreeViewItem-content"
+              component="div"
+              innerRef={
+                Object {
+                  "current": <div
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <div
+                      class="HvIconStop-root HvIconStop-rootS"
+                      style="width: 32px; height: 32px;"
+                    >
+                      <svg
+                        focusable="false"
+                        height="16px"
+                        viewBox="0 0 16 16"
+                        width="16px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M14 14H2V2h12zM3 13h10V3H3z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                    Administration
+                  </div>,
+                }
+              }
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              variant="normalText"
+            >
+              <ForwardRef
+                className="HvVerticalNavigationTreeViewItem-content"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="div"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={0}
+                variant="normalText"
+              >
+                <div
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <WithStyles(Stop)
+                    boxStyles={
+                      Object {
+                        "height": "32px",
+                        "width": "32px",
+                      }
+                    }
+                  >
+                    <Stop
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
+                      classes={
+                        Object {
+                          "root": "HvIconStop-root",
+                          "rootL": "HvIconStop-rootL",
+                          "rootM": "HvIconStop-rootM",
+                          "rootS": "HvIconStop-rootS",
+                          "rootXs": "HvIconStop-rootXs",
+                        }
+                      }
+                    >
+                      <div
+                        className="HvIconStop-root HvIconStop-rootS"
+                        style={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
+                      >
+                        <svg
+                          focusable={false}
+                          height="16px"
+                          viewBox="0 0 16 16"
+                          width="16px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M14 14H2V2h12zM3 13h10V3H3z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </Stop>
+                  </WithStyles(Stop)>
+                  Administration
+                </div>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <ul
+              className="HvVerticalNavigationTreeViewItem-group"
+            >
+              <WithStyles(TreeViewItem)
+                label="Rest API"
+                nodeId="8"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="Rest API"
+                  nodeId="8"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="0"
+                          >
+                            Rest API
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          Rest API
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+              <WithStyles(TreeViewItem)
+                label="License"
+                nodeId="9"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="License"
+                  nodeId="9"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="0"
+                          >
+                            License
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          License
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+              <WithStyles(TreeViewItem)
+                label="Log Bundle"
+                nodeId="10"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="Log Bundle"
+                  nodeId="10"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="0"
+                          >
+                            Log Bundle
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={0}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          Log Bundle
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+            </ul>
+          </li>
+        </TreeViewItem>
+      </WithStyles(TreeViewItem)>
+    </ul>
+  </TreeView>
+</WithStyles(TreeView)>
+`;
+
+exports[`<TreeView /> treeview should render correctly 1`] = `
+<WithStyles(TreeView)
+  onChange={[MockFunction]}
+  selected="4"
+>
+  <TreeView
+    classes={
+      Object {
+        "collapsed": "HvVerticalNavigationTreeView-collapsed",
+        "content": "HvVerticalNavigationTreeView-content",
+        "disabled": "HvVerticalNavigationTreeView-disabled",
+        "expanded": "HvVerticalNavigationTreeView-expanded",
+        "group": "HvVerticalNavigationTreeView-group",
+        "noIcon": "HvVerticalNavigationTreeView-noIcon",
+        "node": "HvVerticalNavigationTreeView-node",
+        "root": "HvVerticalNavigationTreeView-root",
+        "selectable": "HvVerticalNavigationTreeView-selectable",
+        "selected": "HvVerticalNavigationTreeView-selected",
+        "unselectable": "HvVerticalNavigationTreeView-unselectable",
+        "unselected": "HvVerticalNavigationTreeView-unselected",
+        "withIcon": "HvVerticalNavigationTreeView-withIcon",
+      }
+    }
+    onChange={[MockFunction]}
+    selected="4"
+  >
+    <ul
+      className="HvVerticalNavigationTreeView-root"
+      role="tree"
+    >
+      <WithStyles(TreeViewItem)
+        icon={<ForwardRef(WithStyles) />}
+        label="System"
+        nodeId="1"
+      >
+        <TreeViewItem
+          classes={
+            Object {
+              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+              "content": "HvVerticalNavigationTreeViewItem-content",
+              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+              "group": "HvVerticalNavigationTreeViewItem-group",
+              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+              "node": "HvVerticalNavigationTreeViewItem-node",
+              "root": "HvVerticalNavigationTreeViewItem-root",
+              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+              "selected": "HvVerticalNavigationTreeViewItem-selected",
+              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+            }
+          }
+          icon={<ForwardRef(WithStyles) />}
+          label="System"
+          nodeId="1"
+        >
+          <li
+            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
+            data-hasicon={true}
+            role="treeitem"
+          >
+            <WithStyles(ForwardRef)
+              className="HvVerticalNavigationTreeViewItem-content"
+              component="div"
+              innerRef={
+                Object {
+                  "current": <div
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="HvIconPlay-root HvIconPlay-rootS"
+                      style="width: 32px; height: 32px;"
+                    >
+                      <svg
+                        focusable="false"
+                        height="16px"
+                        viewBox="0 0 16 16"
+                        width="16px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                    System
+                  </div>,
+                }
+              }
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+              variant="normalText"
+            >
+              <ForwardRef
+                className="HvVerticalNavigationTreeViewItem-content"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="div"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={-1}
+                variant="normalText"
+              >
+                <div
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={-1}
+                >
+                  <WithStyles(Play)
+                    boxStyles={
+                      Object {
+                        "height": "32px",
+                        "width": "32px",
+                      }
+                    }
+                  >
+                    <Play
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
+                      classes={
+                        Object {
+                          "root": "HvIconPlay-root",
+                          "rootL": "HvIconPlay-rootL",
+                          "rootM": "HvIconPlay-rootM",
+                          "rootS": "HvIconPlay-rootS",
+                          "rootXs": "HvIconPlay-rootXs",
+                        }
+                      }
+                    >
+                      <div
+                        className="HvIconPlay-root HvIconPlay-rootS"
+                        style={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
+                      >
+                        <svg
+                          focusable={false}
+                          height="16px"
+                          viewBox="0 0 16 16"
+                          width="16px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </Play>
+                  </WithStyles(Play)>
+                  System
+                </div>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <ul
+              className="HvVerticalNavigationTreeViewItem-group"
+              role="group"
+            >
+              <WithStyles(TreeViewItem)
+                label="SCPodF"
+                nodeId="2"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="SCPodF"
+                  nodeId="2"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
+                    role="treeitem"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="-1"
+                          >
+                            SCPodF
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={-1}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={-1}
+                        >
+                          SCPodF
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                    <ul
+                      className="HvVerticalNavigationTreeViewItem-group"
+                      role="group"
+                    >
+                      <WithStyles(TreeViewItem)
+                        disabled={true}
+                        label="Compute"
+                        nodeId="3"
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          disabled={true}
+                          label="Compute"
+                          nodeId="3"
+                        >
+                          <li
+                            aria-disabled={true}
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-disabled"
+                            role="treeitem"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                    role="button"
+                                    tabindex="-1"
+                                  >
+                                    Compute
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={-1}
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={-1}
+                                variant="normalText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={-1}
+                                >
+                                  Compute
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                      <WithStyles(TreeViewItem)
+                        label="Storage"
+                        nodeId="4"
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          label="Storage"
+                          nodeId="4"
+                        >
+                          <li
+                            aria-selected={true}
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-selected"
+                            role="treeitem"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-selectedText"
+                                    role="button"
+                                    tabindex="0"
+                                  >
+                                    Storage
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={0}
+                              variant="selectedText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={0}
+                                variant="selectedText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-selectedText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={0}
+                                >
+                                  Storage
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                      <WithStyles(TreeViewItem)
+                        label="Ethernet"
+                        nodeId="5"
+                        selectable={false}
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          label="Ethernet"
+                          nodeId="5"
+                          selectable={false}
+                        >
+                          <li
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-unselectable"
+                            role="treeitem"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                    role="button"
+                                    tabindex="-1"
+                                  >
+                                    Ethernet
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={-1}
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={-1}
+                                variant="normalText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={-1}
+                                >
+                                  Ethernet
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                      <WithStyles(TreeViewItem)
+                        label="Fiber Channel"
+                        nodeId="6"
+                        payload={
+                          Object {
+                            "params": Object {
+                              "a": 2,
+                              "b": "3",
+                            },
+                            "path": "/hello/world",
+                          }
+                        }
+                      >
+                        <TreeViewItem
+                          classes={
+                            Object {
+                              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                              "content": "HvVerticalNavigationTreeViewItem-content",
+                              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                              "group": "HvVerticalNavigationTreeViewItem-group",
+                              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                              "node": "HvVerticalNavigationTreeViewItem-node",
+                              "root": "HvVerticalNavigationTreeViewItem-root",
+                              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                              "selected": "HvVerticalNavigationTreeViewItem-selected",
+                              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                            }
+                          }
+                          label="Fiber Channel"
+                          nodeId="6"
+                          payload={
+                            Object {
+                              "params": Object {
+                                "a": 2,
+                                "b": "3",
+                              },
+                              "path": "/hello/world",
+                            }
+                          }
+                        >
+                          <li
+                            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                            role="treeitem"
+                          >
+                            <WithStyles(ForwardRef)
+                              className="HvVerticalNavigationTreeViewItem-content"
+                              component="div"
+                              innerRef={
+                                Object {
+                                  "current": <div
+                                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                    role="button"
+                                    tabindex="-1"
+                                  >
+                                    Fiber Channel
+                                  </div>,
+                                }
+                              }
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                              tabIndex={-1}
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                className="HvVerticalNavigationTreeViewItem-content"
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="div"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                tabIndex={-1}
+                                variant="normalText"
+                              >
+                                <div
+                                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  tabIndex={-1}
+                                >
+                                  Fiber Channel
+                                </div>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </li>
+                        </TreeViewItem>
+                      </WithStyles(TreeViewItem)>
+                    </ul>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+            </ul>
+          </li>
+        </TreeViewItem>
+      </WithStyles(TreeViewItem)>
+      <WithStyles(TreeViewItem)
+        icon={<ForwardRef(WithStyles) />}
+        label="Administration"
+        nodeId="7"
+      >
+        <TreeViewItem
+          classes={
+            Object {
+              "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+              "content": "HvVerticalNavigationTreeViewItem-content",
+              "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+              "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+              "group": "HvVerticalNavigationTreeViewItem-group",
+              "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+              "node": "HvVerticalNavigationTreeViewItem-node",
+              "root": "HvVerticalNavigationTreeViewItem-root",
+              "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+              "selected": "HvVerticalNavigationTreeViewItem-selected",
+              "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+              "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+              "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+            }
+          }
+          icon={<ForwardRef(WithStyles) />}
+          label="Administration"
+          nodeId="7"
+        >
+          <li
+            className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected HvVerticalNavigationTreeViewItem-expanded"
+            data-hasicon={true}
+            role="treeitem"
+          >
+            <WithStyles(ForwardRef)
+              className="HvVerticalNavigationTreeViewItem-content"
+              component="div"
+              innerRef={
+                Object {
+                  "current": <div
+                    class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="HvIconStop-root HvIconStop-rootS"
+                      style="width: 32px; height: 32px;"
+                    >
+                      <svg
+                        focusable="false"
+                        height="16px"
+                        viewBox="0 0 16 16"
+                        width="16px"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="color0"
+                          d="M14 14H2V2h12zM3 13h10V3H3z"
+                          fill="#414141"
+                        />
+                      </svg>
+                    </div>
+                    Administration
+                  </div>,
+                }
+              }
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={-1}
+              variant="normalText"
+            >
+              <ForwardRef
+                className="HvVerticalNavigationTreeViewItem-content"
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                component="div"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={-1}
+                variant="normalText"
+              >
+                <div
+                  className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={-1}
+                >
+                  <WithStyles(Stop)
+                    boxStyles={
+                      Object {
+                        "height": "32px",
+                        "width": "32px",
+                      }
+                    }
+                  >
+                    <Stop
+                      boxStyles={
+                        Object {
+                          "height": "32px",
+                          "width": "32px",
+                        }
+                      }
+                      classes={
+                        Object {
+                          "root": "HvIconStop-root",
+                          "rootL": "HvIconStop-rootL",
+                          "rootM": "HvIconStop-rootM",
+                          "rootS": "HvIconStop-rootS",
+                          "rootXs": "HvIconStop-rootXs",
+                        }
+                      }
+                    >
+                      <div
+                        className="HvIconStop-root HvIconStop-rootS"
+                        style={
+                          Object {
+                            "height": "32px",
+                            "width": "32px",
+                          }
+                        }
+                      >
+                        <svg
+                          focusable={false}
+                          height="16px"
+                          viewBox="0 0 16 16"
+                          width="16px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            className="color0"
+                            d="M14 14H2V2h12zM3 13h10V3H3z"
+                            fill="#414141"
+                          />
+                        </svg>
+                      </div>
+                    </Stop>
+                  </WithStyles(Stop)>
+                  Administration
+                </div>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
+            <ul
+              className="HvVerticalNavigationTreeViewItem-group"
+              role="group"
+            >
+              <WithStyles(TreeViewItem)
+                label="Rest API"
+                nodeId="8"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="Rest API"
+                  nodeId="8"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                    role="treeitem"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="-1"
+                          >
+                            Rest API
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={-1}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={-1}
+                        >
+                          Rest API
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+              <WithStyles(TreeViewItem)
+                label="License"
+                nodeId="9"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="License"
+                  nodeId="9"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                    role="treeitem"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="-1"
+                          >
+                            License
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={-1}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={-1}
+                        >
+                          License
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+              <WithStyles(TreeViewItem)
+                label="Log Bundle"
+                nodeId="10"
+              >
+                <TreeViewItem
+                  classes={
+                    Object {
+                      "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                      "content": "HvVerticalNavigationTreeViewItem-content",
+                      "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                      "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                      "group": "HvVerticalNavigationTreeViewItem-group",
+                      "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                      "node": "HvVerticalNavigationTreeViewItem-node",
+                      "root": "HvVerticalNavigationTreeViewItem-root",
+                      "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                      "selected": "HvVerticalNavigationTreeViewItem-selected",
+                      "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                      "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                      "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                    }
+                  }
+                  label="Log Bundle"
+                  nodeId="10"
+                >
+                  <li
+                    className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                    role="treeitem"
+                  >
+                    <WithStyles(ForwardRef)
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      component="div"
+                      innerRef={
+                        Object {
+                          "current": <div
+                            class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                            role="button"
+                            tabindex="-1"
+                          >
+                            Log Bundle
+                          </div>,
+                        }
+                      }
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={-1}
+                      variant="normalText"
+                    >
+                      <ForwardRef
+                        className="HvVerticalNavigationTreeViewItem-content"
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "highlightText": "HvTypography-highlightText",
+                            "infoText": "HvTypography-infoText",
+                            "inlineLink": "HvTypography-inlineLink",
+                            "lTitle": "HvTypography-lTitle",
+                            "labelText": "HvTypography-labelText",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sLink": "HvTypography-sLink",
+                            "sText": "HvTypography-sText",
+                            "sTitle": "HvTypography-sTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "selectedText": "HvTypography-selectedText",
+                            "vizText": "HvTypography-vizText",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        component="div"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={-1}
+                        variant="normalText"
+                      >
+                        <div
+                          className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="button"
+                          tabIndex={-1}
+                        >
+                          Log Bundle
+                        </div>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </li>
+                </TreeViewItem>
+              </WithStyles(TreeViewItem)>
+            </ul>
+          </li>
+        </TreeViewItem>
+      </WithStyles(TreeViewItem)>
+    </ul>
+  </TreeView>
+</WithStyles(TreeView)>
+`;

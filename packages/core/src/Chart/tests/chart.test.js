@@ -1,29 +1,12 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
-import ChartWithStyles from "../index";
-import Chart from "../Chart";
+import Chart from "..";
 import Plot from "../Plot";
-import Tooltip from "../Tooltip/index";
+import Tooltip from "../Tooltip";
 import SingleTooltip from "../Tooltip/SingleTooltip";
 import MultiTooltip from "../Tooltip/MultiTooltip";
 
@@ -45,7 +28,7 @@ describe("Chart withStyles", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} />
+        <Chart data={data} layout={layout} />
       </HvProvider>
     );
   });
@@ -55,13 +38,13 @@ describe("Chart withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Chart)).toMatchSnapshot();
   });
 
   it("should render the Chart", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} />
+        <Chart data={data} layout={layout} />
       </HvProvider>
     );
     const chart = wrapper.find(Chart);
@@ -71,7 +54,7 @@ describe("Chart withStyles", () => {
   it("should render the Plot", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} />
+        <Chart data={data} layout={layout} />
       </HvProvider>
     );
     const plot = wrapper.find(Plot);
@@ -81,7 +64,7 @@ describe("Chart withStyles", () => {
   it("should render a title", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles data={data} layout={layout} title="This is a title" />
+        <Chart data={data} layout={layout} title="This is a title" />
       </HvProvider>
     );
     const title = wrapper.find("h3");
@@ -91,12 +74,7 @@ describe("Chart withStyles", () => {
   it("should render a subtitle", () => {
     wrapper = mount(
       <HvProvider>
-        <ChartWithStyles
-          data={data}
-          layout={layout}
-          title="This is a title"
-          subtitle="This is a subtitle"
-        />
+        <Chart data={data} layout={layout} title="This is a title" subtitle="This is a subtitle" />
       </HvProvider>
     );
     const subTitle = wrapper.find("p");
@@ -122,7 +100,7 @@ describe("Tooltip withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render a singleTooltip", () => {
@@ -141,7 +119,7 @@ describe("Tooltip withStyles", () => {
 
   it("should render a multiTooltip", () => {
     const coord = { x: 1, y: 2 };
-    const singleData = { title: "title", elements: [{ name: "name" }] };
+    const singleData = { title: "title", elements: [{ name: "name", value: 22 }] };
 
     wrapper = mount(
       <HvProvider>

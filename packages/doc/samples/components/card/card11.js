@@ -1,7 +1,6 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import compressor from "./resources/compressor.png";
 
 const styles = theme => ({
   content: {
@@ -55,12 +54,23 @@ export default (
       headerTitle="Asset Avatar L90"
       subheader="Compressor"
       id="test"
-      innerCardContent={<SingleContent classes={styles}/>}
-      onClickAction={()=>{console.log("CLICK")}}
+      innerCardContent={<SingleContent classes={styles} />}
+      onClick={() => {
+        console.log("CLICK");
+      }}
       noFooter
       isSelectable
       selectOnClickAction
       semantic="sema4"
+      cardButtonProps={{
+        "aria-label": "Compressor"
+      }}
+      headerProps={{
+        "aria-label": "Compressor"
+      }}
+      footerProps={{
+        "aria-label": "Compressor"
+      }}
     />
   </div>
 );

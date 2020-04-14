@@ -1,13 +1,14 @@
 import React from "react";
 import moment from "moment";
 import HvTable from "@hv/uikit-react-core/dist/Table";
-import _ from "lodash";
+import orderBy from "lodash/orderBy";
+
+/* eslint-disable */
+
 const start = new Date(2001, 0, 1);
 const end = new Date();
 function randomDate() {
-  return new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
-  );
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 const range = len => {
   const arr = [];
@@ -33,21 +34,10 @@ const newEvent = () => {
     id: eventNumber,
     name: `Event ${eventNumber}`,
     createdDate: randomDate(),
-    status:
-      statusChance > 0.66 ? "Open" : statusChance > 0.33 ? "Pending" : "Closed",
+    status: statusChance > 0.66 ? "Open" : statusChance > 0.33 ? "Pending" : "Closed",
     riskScore: `${Math.floor(Math.random() * 100)}`,
-    severity:
-      severityChance > 0.66
-        ? "Critical"
-        : severityChance > 0.33
-        ? "Moderate"
-        : "Low",
-    priority:
-      priorityChance > 0.66
-        ? "Critical"
-        : priorityChance > 0.33
-        ? "Moderate"
-        : "Low"
+    severity: severityChance > 0.66 ? "Critical" : severityChance > 0.33 ? "Moderate" : "Low",
+    priority: priorityChance > 0.66 ? "Critical" : priorityChance > 0.33 ? "Moderate" : "Low"
   };
 };
 const rawData = makeData();
@@ -59,16 +49,14 @@ const requestData = (pageSize, cursor, sorted) => {
     // You can retrieve your data however you want, in this case, we will just use some local data.
     let filteredData = rawData;
     // You can also use the sorting in your request, but again, you are responsible for applying it.
-    const sortedData = _.orderBy(
+    const sortedData = orderBy(
       filteredData,
       sorted.map(sort => {
         return row => {
           if (row[sort.id] === null || row[sort.id] === undefined) {
             return -Infinity;
           }
-          return typeof row[sort.id] === "string"
-            ? row[sort.id].toLowerCase()
-            : row[sort.id];
+          return typeof row[sort.id] === "string" ? row[sort.id].toLowerCase() : row[sort.id];
         };
       }),
       sorted.map(d => (d.desc ? "desc" : "asc"))
@@ -164,14 +152,7 @@ class Wrapper extends React.Component {
     });
   };
   render() {
-    const {
-      pages,
-      pageSize,
-      sorted,
-      data,
-      titleText,
-      subtitleText
-    } = this.state;
+    const { pages, pageSize, sorted, data, titleText, subtitleText } = this.state;
     const labels = {
       titleText: "This is a title",
       subtitleText: "This is a subtitle"

@@ -16,6 +16,7 @@ const styling = {
 };
 
 const TooltipControl = (
+  // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
   <div tabIndex="0" style={styling.outerDiv}>
     <HvTypography variant="normalText">Tooltip open</HvTypography>
   </div>
@@ -23,13 +24,14 @@ const TooltipControl = (
 
 const data = (
   <HvTypography variant="infoText">
-    Tooltips can showcase truncated text. The text should be concise and not
-    redundant.
+    Tooltips can showcase truncated text. The text should be concise and not redundant.
   </HvTypography>
 );
 
 export default (
   <div style={styling.placeholder}>
-    <Tooltip tooltipData={data} tooltipAnchor={TooltipControl} open />
+    <Tooltip tooltipData={data} open>
+      {TooltipControl}
+    </Tooltip>
   </div>
 );

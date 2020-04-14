@@ -1,0 +1,36 @@
+{
+  "name": "@hv/uikit-common-themes",
+  "version": "2.0.0-next.1",
+  "description": "A collection of themes for use with Hitachi Vantara Components.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Hitachi Vantara UI Kit Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pentaho/hv-uikit-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pentaho/hv-uikit-react/issues"
+  },
+  "scripts": {
+    "dev": "npm-run-all clean -p dev:*",
+    "dev:watch": "npx watch \"npm run build\" ./src/",
+    "build": "npm-run-all clean build:*",
+    "build:to-scss": "json-to-scss \"src/*.*\" dist",
+    "build:to-json": "npx cp -f src/*.json dist",
+    "clean": "npx del-cli dist",
+    "prepare": "npm run build",
+    "link": "npm link"
+  },
+  "devDependencies": {
+    "cash-cp": "^0.2.0",
+    "del-cli": "^3.0.0",
+    "json-to-scss": "file:lib/json-to-scss.tgz",
+    "npm-run-all": "^4.1.5",
+    "watch": "^1.0.2"
+  },
+  "files": [
+    "dist"
+  ]
+}

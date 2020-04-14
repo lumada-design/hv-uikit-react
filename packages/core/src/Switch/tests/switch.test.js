@@ -1,27 +1,10 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-
-import SwitchWithStyles from "..";
+import Switch from "..";
 
 let wrapper;
 
@@ -30,7 +13,7 @@ let wrapper;
 describe("Switch withStyles", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles />
+      <Switch />
     </HvProvider>
   );
 
@@ -39,14 +22,14 @@ describe("Switch withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 
 describe("Switch with Custom Configurations", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         checked={false}
         disabled={false}
         showLabels
@@ -63,14 +46,14 @@ describe("Switch with Custom Configurations", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 
 describe("Switch with no label display but with custom label configuration", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         checked
         disabled
         showLabels={false}
@@ -87,7 +70,7 @@ describe("Switch with no label display but with custom label configuration", () 
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 // TODO - test that labels are not clickable when not visible
@@ -95,7 +78,7 @@ describe("Switch with no label display but with custom label configuration", () 
 describe("Switch label click", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         id="hvswitch"
         checked={false}
         showLabels
@@ -108,21 +91,22 @@ describe("Switch label click", () => {
     </HvProvider>
   );
 
-  const clickableLabel = wrapper.find("#hvswitch_leftButton");
+  const clickableLabel = wrapper.find("#hvswitch-left-button");
   clickableLabel.simulate("click", {
     target: { classname: "labelDeselected" }
   });
 
   it("label can be clicked", () => {
     // expect(clickableLabel).toHaveBeenCalled();
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });
 describe("Switch input area hover", () => {
   wrapper = mount(
     <HvProvider>
-      <SwitchWithStyles
+      <Switch
         checked={false}
+        classes={{}}
         showLabels
         labels={{
           left: "Left",
@@ -136,12 +120,12 @@ describe("Switch input area hover", () => {
   inputArea.simulate("mouseover");
 
   it("input can be hovered in", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 
   inputArea.simulate("mouseout");
 
   it("input can be hovered out", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Switch)).toMatchSnapshot();
   });
 });

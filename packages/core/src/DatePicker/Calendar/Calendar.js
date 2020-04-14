@@ -1,27 +1,13 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 
 import React from "react";
 import PropTypes from "prop-types";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { withStyles } from "@material-ui/core";
+import { isKeypress, KeyboardCodes, setId } from "../../utils";
 import HvTypography from "../../Typography";
 import Header from "./Header";
 import Navigation from "./Navigation";
+import styles from "./styles";
 
 import { NAV_OPTIONS, REPRESENTATION_VALUES, VIEW_MODE } from "./enums";
 import {
@@ -65,10 +51,7 @@ class Calendar extends React.Component {
    * @memberOf Calendar
    */
   static getDerivedStateFromProps(props, state) {
-    if (
-      isDate(props.selectedDate) &&
-      !isSameDay(props.selectedDate, state.selectedDate)
-    ) {
+    if (isDate(props.selectedDate) && !isSameDay(props.selectedDate, state.selectedDate)) {
       const newState = {};
       newState.selectedDate = props.selectedDate;
 
@@ -98,22 +81,10 @@ class Calendar extends React.Component {
   initLocalizedLabels = () => {
     const { locale } = this.state;
 
-    this.listMonthNamesLong = getMonthNamesList(
-      locale,
-      REPRESENTATION_VALUES.LONG
-    );
-    this.listMonthNamesShort = getMonthNamesList(
-      locale,
-      REPRESENTATION_VALUES.SHORT
-    );
-    this.listWeekdayNamesNarrow = getWeekdayNamesList(
-      locale,
-      REPRESENTATION_VALUES.NARROW
-    );
-    this.listWeekdayNamesLong = getWeekdayNamesList(
-      locale,
-      REPRESENTATION_VALUES.LONG
-    );
+    this.listMonthNamesLong = getMonthNamesList(locale, REPRESENTATION_VALUES.LONG);
+    this.listMonthNamesShort = getMonthNamesList(locale, REPRESENTATION_VALUES.SHORT);
+    this.listWeekdayNamesNarrow = getWeekdayNamesList(locale, REPRESENTATION_VALUES.NARROW);
+    this.listWeekdayNamesLong = getWeekdayNamesList(locale, REPRESENTATION_VALUES.LONG);
   };
 
   changeSelectedDateHeader = (date, shouldCloseCalendar) =>
@@ -176,11 +147,7 @@ class Calendar extends React.Component {
     const { handleVisibleDateChange } = this.props;
 
     if (typeof handleVisibleDateChange === "function") {
-      const visibleDate = makeUTCDate(
-        calendarModel.year,
-        calendarModel.month,
-        1
-      );
+      const visibleDate = makeUTCDate(calendarModel.year, calendarModel.month, 1);
       handleVisibleDateChange(visibleDate);
     }
   };
@@ -202,9 +169,7 @@ class Calendar extends React.Component {
 
     const isDateObject = isDate(selectedDate);
     const validSelectedDate = isDateObject ? selectedDate : makeUTCToday();
-    const validVisibleDate = isDate(visibleDate)
-      ? visibleDate
-      : validSelectedDate;
+    const validVisibleDate = isDate(visibleDate) ? visibleDate : validSelectedDate;
 
     const visibleMonth = validVisibleDate.getUTCMonth() + 1;
     const visibleYear = validVisibleDate.getUTCFullYear();
@@ -250,11 +215,11 @@ class Calendar extends React.Component {
       <div className={classes.navigationContainer}>
         <div className={classes.navigationMonth}>
           <Navigation
-            id={`${id}-navigation-month`}
+            id={setId(id, "navigation-month")}
             navigationText={monthName}
-            onNavigatePrevious={() =>
-              this.navigateTo(NAV_OPTIONS.PREVIOUS_MONTH)
-            }
+            onNavigatePrevious={() => {
+              this.navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
+            }}
             onNavigateNext={() => this.navigateTo(NAV_OPTIONS.NEXT_MONTH)}
             onTextClick={() => this.setState({ viewMode: VIEW_MODE.MONTHLY })}
             className={classes.navigationMonth}
@@ -264,7 +229,7 @@ class Calendar extends React.Component {
         </div>
 
         <Navigation
-          id={`${id}-navigation-year`}
+          id={setId(id, "navigation-year")}
           navigationText={year.toString()}
           onNavigatePrevious={() => this.navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)}
           onNavigateNext={() => this.navigateTo(NAV_OPTIONS.NEXT_YEAR)}
@@ -348,10 +313,7 @@ class Calendar extends React.Component {
     const inMonth =
       calendarModel.month &&
       calendarModel.year &&
-      isSameMonth(
-        currentDate,
-        makeUTCDate(calendarModel.year, calendarModel.month, 1)
-      );
+      isSameMonth(currentDate, makeUTCDate(calendarModel.year, calendarModel.month, 1));
 
     // Checks if the date is in a valid range
     const dateInValidRange = isDateInValidRange(currentDate);
@@ -368,9 +330,7 @@ class Calendar extends React.Component {
       className += ` ${classes.calendarDateNotInMonth}`;
     }
 
-    const onClickFunc = dateInValidRange
-      ? this.selectDate(currentDate)
-      : undefined;
+    const onClickFunc = dateInValidRange ? this.selectDate(currentDate) : undefined;
 
     return (
       <div
@@ -383,9 +343,7 @@ class Calendar extends React.Component {
       >
         <HvTypography
           variant={typographyVariant}
-          className={`${className} ${
-            dateInValidRange ? "" : classes.calendarDateInvalid
-          }`}
+          className={`${className} ${dateInValidRange ? "" : classes.calendarDateInvalid}`}
         >
           {currentDate.getUTCDate()}
         </HvTypography>
@@ -523,7 +481,7 @@ Calendar.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * Locale to be used by the calendar.
    */
@@ -556,6 +514,7 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
+  id: undefined,
   locale: DEFAULT_LOCALE,
   selectedDate: undefined,
   visibleDate: undefined,
@@ -565,4 +524,4 @@ Calendar.defaultProps = {
   label: null
 };
 
-export default Calendar;
+export default withStyles(styles, { name: "HvDatePickerCalendar" })(Calendar);

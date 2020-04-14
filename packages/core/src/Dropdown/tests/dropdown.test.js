@@ -1,59 +1,20 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
-import { axe, toHaveNoViolations } from "jest-axe";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
-import DropdownWithStyles from "../index";
-import Dropdown from "../Dropdown";
-import List from "../List/List";
 import Typography from "../../Typography";
+import List from "../List";
+import Dropdown from "..";
 
-expect.extend(toHaveNoViolations);
-
-const mockData = [
-  {
-    label: "Value 1"
-  },
-  {
-    label: "Value 2"
-  },
-  {
-    label: "Value 3"
-  }
-];
+const mockData = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];
 
 const mockDataWithIds = [
-  {
-    id: "id-1",
-    label: "Value 1"
-  },
-  {
-    id: "id-2",
-    label: "Value 2"
-  },
-  {
-    id: "id-3",
-    label: "Value 3"
-  }
+  { id: "id-1", label: "Value 1" },
+  { id: "id-2", label: "Value 2" },
+  { id: "id-3", label: "Value 3" }
 ];
 
 describe("<Dropdown />", () => {
@@ -70,21 +31,25 @@ describe("<Dropdown />", () => {
     const onChangeMock = jest.fn();
 
     beforeEach(async () => {
+      // Hide console error: "Failed prop type: Material-UI: the `anchorEl` prop provided to the component is invalid."
+      // In real cases this value is filled if the dropdown is expanded.
+      // eslint-disable-next-line no-console
+      const originalError = console.error;
+      // eslint-disable-next-line no-console
+      console.error = jest.fn();
+
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
-            values={mockData}
-            onChange={onChangeMock}
-            showSearch
-            selectDefault
-            expanded
-          />
+          <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault expanded />
         </HvProvider>
       );
+
+      // eslint-disable-next-line no-console
+      console.error = originalError;
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
 
     it("default value is selected", () => {
@@ -97,7 +62,7 @@ describe("<Dropdown />", () => {
       onChangeMock.mockReset();
       mount(
         <HvProvider>
-          <DropdownWithStyles
+          <Dropdown
             values={mockData}
             onChange={onChangeMock}
             notifyChangesOnFirstRender
@@ -114,17 +79,12 @@ describe("<Dropdown />", () => {
       act(() => {
         wrapper = mount(
           <HvProvider>
-            <DropdownWithStyles
-              values={mockData}
-              onChange={onChangeMock}
-              showSearch
-              selectDefault
-            />
+            <Dropdown values={mockData} onChange={onChangeMock} showSearch selectDefault />
           </HvProvider>
         );
       });
 
-      dropdownComponent = wrapper.find(Dropdown);
+      dropdownComponent = wrapper.find("HvDropdown");
       instance = dropdownComponent.instance();
       instance.handleToggle();
 
@@ -136,17 +96,13 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
-            values={mockData}
-            selectDefault={false}
-            expanded
-          />
+          <Dropdown values={mockData} selectDefault={false} expanded />
         </HvProvider>
       );
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
 
     it("no default value is selected", () => {
@@ -162,24 +118,17 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
-            id="test-dropdown"
-            values={mockData}
-            multiSelect
-            showSearch
-            disabled
-            expanded
-          />
+          <Dropdown id="test-dropdown" values={mockData} multiSelect showSearch disabled expanded />
         </HvProvider>
       );
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(Dropdown)).toMatchSnapshot();
     });
 
     it("<Dropdown /> handleToggle should do nothing if disabled", () => {
-      dropdownComponent = wrapper.find(Dropdown);
+      dropdownComponent = wrapper.find("HvDropdown");
       instance = dropdownComponent.instance();
 
       instance.handleToggle();
@@ -188,7 +137,7 @@ describe("<Dropdown />", () => {
     });
 
     it("handleToggle should be triggered when header is clicked", () => {
-      dropdownComponent = wrapper.find(Dropdown);
+      dropdownComponent = wrapper.find("HvDropdown");
       instance = dropdownComponent.instance();
       instance.handleToggle = jest.fn();
 
@@ -206,7 +155,8 @@ describe("<Dropdown />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <DropdownWithStyles
+          <Dropdown
+            id="dropdown2"
             multiSelect
             values={mockDataWithIds}
             onChange={onChangeMock}
@@ -247,32 +197,12 @@ describe("<Dropdown />", () => {
       dropdownComponent
         .find("Actions")
         .find("HvButton")
-        .at(1)
+        .at(0)
         .simulate("click", {
           preventDefault() {}
         });
 
       expect(onChangeMock).toBeCalled();
-    });
-  });
-
-  describe("Dropdown A11Y", () => {
-    const onChangeMock = jest.fn();
-
-    it("with title", async () => {
-      wrapper = mount(
-        <HvProvider>
-          <DropdownWithStyles
-            values={mockData}
-            onChange={onChangeMock}
-            labels={{ title: "title" }}
-            expanded
-          />
-        </HvProvider>
-      );
-
-      const results = await axe(wrapper.getDOMNode());
-      expect(results).toHaveNoViolations();
     });
   });
 });

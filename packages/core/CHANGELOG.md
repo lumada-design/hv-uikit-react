@@ -14,6 +14,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.0.0-next.1...@hv/uikit-react-core@2.0.0-next.2) (2020-03-18)
 # [1.29.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.28.0...@hv/uikit-react-core@1.29.0) (2020-04-09)
 
 
@@ -59,17 +60,29 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* **dropdowmenu:** add onToggleOpen. [#1208](https://github.com/pentaho/hv-uikit-react/issues/1208) ([401219a](https://github.com/pentaho/hv-uikit-react/commit/401219a4aafb674f9f14265f85564c268c79390a))
+* **styles:** generate stable class names [#1257](https://github.com/pentaho/hv-uikit-react/issues/1257) ([a52b22c](https://github.com/pentaho/hv-uikit-react/commit/a52b22c878bf6aabbc30113cc0a1605ebcebb6f6))
+* **typescript:** add type definitions. [#533](https://github.com/pentaho/hv-uikit-react/issues/533) ([e5e9f3f](https://github.com/pentaho/hv-uikit-react/commit/e5e9f3f0c29ad14906a8c5cd090cb54c484d896c))
+* **typescript:** add typescript definitions for Badge ([9025f25](https://github.com/pentaho/hv-uikit-react/commit/9025f25ca31a4456b32a9f4c957cc406815b2d30))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
 * **datepicker:** acknowledge change value. [#1321](https://github.com/pentaho/hv-uikit-react/issues/1321) ([2b432af](https://github.com/pentaho/hv-uikit-react/commit/2b432afa006ff2b07f10ac5ee31da312b450dd85))
 
 
 
 
 
+# [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.25.0...@hv/uikit-react-core@2.0.0-next.1) (2020-03-04)
 # [1.27.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.26.0...@hv/uikit-react-core@1.27.0) (2020-03-17)
 
 
 ### Bug Fixes
 
+* **button:** icon category background and startIcon prop. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([0b2599d](https://github.com/pentaho/hv-uikit-react/commit/0b2599d9ac1378631c52d7856e4fa46e4625aa3b))
+* **dropdown:** change clickawaylistener to outsideclickhandler ([1ed521a](https://github.com/pentaho/hv-uikit-react/commit/1ed521a4eb9ca86f9faa2d8d597b37e6190f3eb4))
+* **focus:** ref and refactor strategy. [#1111](https://github.com/pentaho/hv-uikit-react/issues/1111) ([9c88bcc](https://github.com/pentaho/hv-uikit-react/commit/9c88bcca986971d8b6b4171a9f61e106de284063))
+* **material:** fix test with material not found ([4c004ac](https://github.com/pentaho/hv-uikit-react/commit/4c004ac20ece5936a22269a07d64340322a6e19a))
+* **material4:** tests. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([40f4bed](https://github.com/pentaho/hv-uikit-react/commit/40f4bedc090a7a1392d1eb2ac9441fd5adffe3d9))
+* **tooltip:** working with material 4. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([5f27b00](https://github.com/pentaho/hv-uikit-react/commit/5f27b00637d35399e483171b8478d578839db3b6))
 * **datepicker:** adjust according to ds pattern 1.2.1. [#1094](https://github.com/pentaho/hv-uikit-react/issues/1094) ([5ef1526](https://github.com/pentaho/hv-uikit-react/commit/5ef15260c6a33134807d53a0465dca4c5d880950))
 * **datepicker:** adjust according to ds pattern 1.2.1. [#1094](https://github.com/pentaho/hv-uikit-react/issues/1094) ([6c41b79](https://github.com/pentaho/hv-uikit-react/commit/6c41b797f739a85a25a17e368e434c3c8726ffb9))
 * **emptystate:** alignment on text margins [#1095](https://github.com/pentaho/hv-uikit-react/issues/1095) ([93e1d6c](https://github.com/pentaho/hv-uikit-react/commit/93e1d6cde95f2638c9bc07a5f33a6657a96cb57a))
@@ -91,12 +104,33 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* **button:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([58aaf73](https://github.com/pentaho/hv-uikit-react/commit/58aaf7302d3c59852f0f753b88866a9672307dad))
+* **card:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([2de6258](https://github.com/pentaho/hv-uikit-react/commit/2de6258eb0d6a669c5907899232acca57f3de45c))
+* **checkbox:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([93b3cd2](https://github.com/pentaho/hv-uikit-react/commit/93b3cd2258ef6a2abea58e6de1dd41e1266bb7f5))
+* **deprecation:** remove old navigation system ([3c31bef](https://github.com/pentaho/hv-uikit-react/commit/3c31bef20ab8f492eab3e7762f07ffe87655eca1))
+* **deprecations:** remove deprecated lab components. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([410cf5b](https://github.com/pentaho/hv-uikit-react/commit/410cf5be65e72d201d08235e5f93ee2f46af68e0))
+* **dropdown:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([8affb0c](https://github.com/pentaho/hv-uikit-react/commit/8affb0c505fc12140b6bc2f242cf036c88ac8508))
+* **exports:** move export from index to component. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([652485a](https://github.com/pentaho/hv-uikit-react/commit/652485a3665111430450bf03562abb1dc48915bb))
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **input:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([178d84e](https://github.com/pentaho/hv-uikit-react/commit/178d84e0a1fe70f48e39257ed43166f3662c2cb7))
+* **kpi:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([4827f9f](https://github.com/pentaho/hv-uikit-react/commit/4827f9fbf843e2351dbb936845f5f18da4300f77))
+* **list:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([daca806](https://github.com/pentaho/hv-uikit-react/commit/daca806da382c9bc81139207d3ba4fd30d4d7ae1))
+* **login:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([faed180](https://github.com/pentaho/hv-uikit-react/commit/faed180ecaf5b071dd96a8aa608f3425a43ba13d))
+* **material4:** fix bugs across components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([3e5b605](https://github.com/pentaho/hv-uikit-react/commit/3e5b605b31d413eb4f2d356c6921932debf2ce1c))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+* **modal:** working with material 4. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([15eac1b](https://github.com/pentaho/hv-uikit-react/commit/15eac1b573e9ebcddbff34b828d3f2dc91eadc36))
+* **radiobutton:** receive deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([2bb37ff](https://github.com/pentaho/hv-uikit-react/commit/2bb37ff8e792dfb6a610215f5f4b4015df307b56))
+* **snackbar:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([15fdf07](https://github.com/pentaho/hv-uikit-react/commit/15fdf0743d79dcec79e89baa74e4ebb2f0bebc97))
+* **table:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([029d7db](https://github.com/pentaho/hv-uikit-react/commit/029d7db08613d7f58978fcf2824cb9e8da5d33a0))
+* **textarea:** remove depracted props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([c141530](https://github.com/pentaho/hv-uikit-react/commit/c14153064eb031c393d8d795dae1243df3a8940d))
+* **theme:** rename components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([1995ab0](https://github.com/pentaho/hv-uikit-react/commit/1995ab01c7dc7c78cb55a6726acae4f0d7effd56))
 * **typescript:** support new component and restructure files ([e51b411](https://github.com/pentaho/hv-uikit-react/commit/e51b411962a1cc10a80fbc1f0d42cbc379618ef0))
 
 
 
 
 
+# [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.23.0...@hv/uikit-react-core@2.0.0-next.0) (2020-02-14)
 # [1.25.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.24.0...@hv/uikit-react-core@1.25.0) (2020-02-28)
 
 

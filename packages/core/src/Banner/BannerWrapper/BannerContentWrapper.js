@@ -1,71 +1,47 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import classNames from "classnames";
-import SnackbarContent from "@material-ui/core/SnackbarContent";
-import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+import clsx from "clsx";
+import { SnackbarContent, withStyles } from "@material-ui/core";
+import iconVariants from "../../utils/iconVariants";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
+import styles from "./styles";
 
-/**
- * Container of banner.
- *
- * @param props
- * @returns {*}
- * @constructor
- */
-function HvBannerContentWrapper({
-  id,
-  classes,
-  showIcon,
-  customIcon,
-  variant,
-  onClose,
-  actions,
-  actionsCallback,
-  actionsPosition,
-  theme,
-  content,
-  ...other
-}) {
-  const icon =
-    customIcon ||
-    (showIcon && severityIcon(mapSeverityToVariant(variant), theme));
+const HvBannerContentWrapper = React.forwardRef((props, ref) => {
+  const {
+    id,
+    classes,
+    showIcon = false,
+    customIcon,
+    variant,
+    onClose,
+    actions,
+    actionsCallback,
+    actionsPosition = "auto",
+    content,
+    actionProps,
+    ...others
+  } = props;
 
-  let effectiveActionsPosition = actionsPosition;
-  if (actionsPosition === "auto") {
-    // default to inline
-    // this might try to be more inteligent in the future,
-    // taking into account the content lenght, available space,
-    // number of actions, etc..
-    effectiveActionsPosition = "inline";
-  }
+  const icon = customIcon || (showIcon && iconVariants(variant));
+
+  // default to inline
+  // this might try to be more intelligent in the future,
+  // taking into account the content length, available space,
+  // number of actions, etc..
+  const effectiveActionsPosition = actionsPosition === "auto" ? "inline" : actionsPosition;
 
   return (
     <div className={classes.outContainer}>
       <SnackbarContent
+        ref={ref}
         id={id}
         classes={{
           root: classes.root,
           message: classes.message,
           action: classes.action
         }}
-        className={classNames(classes[variant], classes.baseVariant)}
+        className={clsx(classes[variant], classes.baseVariant)}
         message={
           <MessageContainer
             id={id}
@@ -85,13 +61,14 @@ function HvBannerContentWrapper({
               action: actions,
               actionCallback: actionsCallback
             })}
+            {...actionProps}
           />
         }
-        {...other}
+        {...others}
       />
     </div>
   );
-}
+});
 
 HvBannerContentWrapper.propTypes = {
   /**
@@ -109,8 +86,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"])
-    .isRequired,
+  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"]).isRequired,
   /**
    * Controls if the associated icon to the variant should be shown.
    */
@@ -144,27 +120,11 @@ HvBannerContentWrapper.propTypes = {
   /**
    * The position property of the header.
    */
-  actionsPosition: PropTypes.PropTypes.oneOf([
-    "auto",
-    "inline",
-    "bottom-right"
-  ]),
+  actionsPosition: PropTypes.PropTypes.oneOf(["auto", "inline", "bottom-right"]),
   /**
-   * The theme passed by the provider.
+   * The props to pass down to the Action Container.
    */
-  theme: PropTypes.instanceOf(Object)
+  actionProps: PropTypes.instanceOf(Object)
 };
 
-HvBannerContentWrapper.defaultProps = {
-  id: null,
-  classes: "",
-  content: "",
-  showIcon: false,
-  customIcon: null,
-  actions: null,
-  actionsCallback: () => {},
-  actionsPosition: "auto",
-  theme: undefined
-};
-
-export default HvBannerContentWrapper;
+export default withStyles(styles, { name: "HvBannerContentWrapper" })(HvBannerContentWrapper);

@@ -2,6 +2,8 @@ import React from "react";
 import Chart from "react-google-charts";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 
+/* eslint-disable no-underscore-dangle */
+
 const data = [
   {
     id: 1,
@@ -129,7 +131,6 @@ class Wrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageSize: 5,
       sorted: [{ id: "dataCenter", desc: true }]
     };
   }
@@ -158,11 +159,7 @@ class Wrapper extends React.Component {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          [
-            " ",
-            Number(cellData.row._original.allocateVsCapability),
-            "color:black"
-          ]
+          [" ", Number(cellData.row._original.allocateVsCapability), "color:black"]
         ];
         return (
           <div style={{ display: "flex" }}>
@@ -207,8 +204,7 @@ class Wrapper extends React.Component {
       accessor: "totalThroughput",
       minWidth: 130,
       cellType: "numeric",
-      Cell: cellData =>
-        `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
+      Cell: cellData => `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
     },
     {
       headerText: "Average service time",
@@ -268,18 +264,12 @@ class Wrapper extends React.Component {
     </div>
   );
 
-  onPageSizeChange = newPageSize => {
-    this.setState({
-      pageSize: newPageSize
-    });
-  };
-
   render() {
-    const { sorted, pageSize } = this.state;
+    const { sorted } = this.state;
 
     const labels = {
       titleText: "Storage arrays",
-      subtitleText: "Click data centers or storage arrays to drill down."
+      subtitleText: "Click data centers or storage arrays to drill down"
     };
 
     return (

@@ -1,29 +1,12 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import RadioButtonSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonSelected";
-import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/Generic/RadioButtonUnselected";
-import Radio from "@material-ui/core/Radio";
-import classNames from "classnames";
+import clsx from "clsx";
+import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
+import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected";
+import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
+import { setId } from "../../utils";
 import labelPositions from "../labelPositions";
+import styles from "./styles";
 
 /**
  * Returns the correct label styles to be applied based on label position.
@@ -37,9 +20,9 @@ const getLabelStyles = (classes, labelPosition, label) => {
     switch (labelPosition) {
       default:
       case labelPositions.end:
-        return classNames(classes.container, classes.labelEnd);
+        return clsx(classes.container, classes.labelEnd);
       case labelPositions.start:
-        return classNames(classes.container, classes.labelStart);
+        return clsx(classes.container, classes.labelStart);
     }
   }
   return classes.container;
@@ -52,10 +35,8 @@ const getLabelStyles = (classes, labelPosition, label) => {
  * @param {Boolean} disabled - `true` if the disabled icon is required.
  * @returns {Object} - an Object with the selected icons.
  */
-const getIcons = ({ classes, disabled, theme }) => {
-  const color = disabled
-    ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
-    : null;
+const getIcons = (classes, disabled) => {
+  const color = disabled ? ["atmo4", "atmo6"] : undefined;
 
   return {
     emptyIcon: <RadioButtonUnSelected color={color} className={classes.icon} />,
@@ -63,6 +44,9 @@ const getIcons = ({ classes, disabled, theme }) => {
   };
 };
 
+/**
+ * A Checkbox is a mechanism that allows user to select one options
+ */
 const HvRadio = props => {
   const {
     classes,
@@ -71,20 +55,16 @@ const HvRadio = props => {
     checked,
     disabled,
     onChange,
-    value,
-    label,
-    labelPlacement,
+    value = "",
+    label = "",
+    labelPlacement = "end",
     formControlLabelProps,
-    propsLabel,
-    radioProps,
-    propsIcons
+    ...others
   } = props;
 
-  const icons = getIcons(props);
+  const icons = getIcons(classes, disabled);
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
-  const materialPrimaryColor = "primary";
   const [isFocusDisabled, disableFocus] = useState(false);
-  const [internalId] = useState(id || uniqueId("hv-radiobutton-"));
 
   const onLocalChange = evt => {
     const isKeyEvent =
@@ -105,8 +85,8 @@ const HvRadio = props => {
     <FormControlLabel
       label={label}
       labelPlacement={labelPlacement}
-      id={internalId}
-      className={classNames(labelStyles, className, {
+      id={id}
+      className={clsx(labelStyles, className, {
         [classes.disableFocus]: isFocusDisabled
       })}
       classes={{
@@ -115,23 +95,21 @@ const HvRadio = props => {
       }}
       control={
         <Radio
-          id={`${internalId}-input`}
+          id={setId(id, "input")}
           className={classes.radio}
           icon={icons.emptyIcon}
           checkedIcon={icons.checkedIcon}
-          color={materialPrimaryColor}
+          color="default"
           disabled={disabled}
           disableRipple
           onChange={onLocalChange}
           onBlur={onBlur}
           value={value}
           checked={checked}
-          {...radioProps}
-          {...propsIcons}
+          {...others}
         />
       }
       {...formControlLabelProps}
-      {...propsLabel}
     />
   );
 };
@@ -174,6 +152,10 @@ HvRadio.propTypes = {
      */
     radio: PropTypes.string,
     /**
+     * Styles applied to the focus when it is disabled.
+     */
+    disableFocus: PropTypes.string,
+    /**
      * Styles applied to the icon.
      */
     icon: PropTypes.string
@@ -196,7 +178,7 @@ HvRadio.propTypes = {
    */
   value: PropTypes.string,
   /**
-   * The label to be added to the checkbox.
+   * The label to be added to the radio button.
    */
   label: PropTypes.string,
   /**
@@ -210,45 +192,7 @@ HvRadio.propTypes = {
   /**
    * Extra properties passed to the MUI FormControlLabel component.
    */
-  formControlLabelProps: PropTypes.instanceOf(Object),
-  /**
-   * @deprecated Instead use the formControlLabelProps property
-   */
-  propsLabel: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the formControlLabelProps property"
-  ),
-  /**
-   * Extra properties passed to the MUI Radio component.
-   */
-  radioProps: PropTypes.instanceOf(Object),
-  /**
-   * @deprecated Instead use the radioProps property
-   */
-  propsIcons: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the radioProps property"
-  ),
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  formControlLabelProps: PropTypes.instanceOf(Object)
 };
 
-HvRadio.defaultProps = {
-  className: "",
-  id: undefined,
-  value: "",
-  label: "",
-  checked: undefined,
-  disabled: false,
-  onChange: () => {},
-  formControlLabelProps: undefined,
-  propsLabel: undefined,
-  radioProps: undefined,
-  propsIcons: undefined,
-  labelPlacement: labelPositions.end,
-  theme: null
-};
-
-export default HvRadio;
+export default withStyles(styles, { name: "HvRadioButton" })(HvRadio);

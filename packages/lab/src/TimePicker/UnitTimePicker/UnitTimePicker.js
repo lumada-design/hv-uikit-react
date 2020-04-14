@@ -1,25 +1,9 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import Input from "@hv/uikit-react-core/dist/Input";
-import AddTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropUpXS";
-import SubtractTimeIcon from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
+import AddTimeIcon from "@hv/uikit-react-icons/dist/DropUpXS";
+import SubtractTimeIcon from "@hv/uikit-react-icons/dist/DropDownXS";
 import { isUnitTimeInValidRange } from "../timePickerUtils";
 import { padTime } from "../timePickerFormatter";
 import { TimePickerUnits } from "../enums";
@@ -43,7 +27,7 @@ class UnitTimePicker extends React.Component {
    * @param {Number} value - new unit time value
    * @memberof UnitTimePicker
    */
-  handleCurrentValueChange = value => {
+  handleCurrentValueChange = (event, value) => {
     const unitTime = value === "" ? value : Number(value);
     if ((unitTime || unitTime === "") && unitTime.toString().length <= 2) {
       this.changeTimeUnit(unitTime);
@@ -130,7 +114,7 @@ class UnitTimePicker extends React.Component {
    */
   renderTimeUnit = () => {
     const { currentValue, isFocused } = this.state;
-    return isFocused ? currentValue : padTime(currentValue);
+    return isFocused ? currentValue.toString() : padTime(currentValue).toString();
   };
 
   /**
@@ -144,15 +128,16 @@ class UnitTimePicker extends React.Component {
       <div className={classes.unitTimeContainer}>
         <AddTimeIcon className={classes.addIcon} onClick={this.handleAddTime} />
         <Input
+          disableClear
           className={classes.unitTime}
           classes={{
             input: classes.unitTimeInput,
-            container: classes.inputContainer,
-            inputRoot: classNames(classes.unitTimeInputRoot, {
+            root: classes.inputContainer,
+            inputRoot: clsx(classes.unitTimeInputRoot, {
               [classes.unitTimeInputRootInvalid]: !isValid
             })
           }}
-          inputValue={this.renderTimeUnit()}
+          value={this.renderTimeUnit()}
           onChange={this.handleCurrentValueChange}
           onFocus={this.handleFocusChange}
           onBlur={this.handleFocusChange}
@@ -163,10 +148,7 @@ class UnitTimePicker extends React.Component {
             placeholder: ""
           }}
         />
-        <SubtractTimeIcon
-          className={classes.subtractIcon}
-          onClick={this.handleSubtractTime}
-        />
+        <SubtractTimeIcon className={classes.subtractIcon} onClick={this.handleSubtractTime} />
       </div>
     );
   }

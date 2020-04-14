@@ -1,9 +1,14 @@
-import './Footer'
-import './Loading'
-import './Slider'
+export { default as HvFooter } from "./Footer";
+export * from "./Footer";
 
-declare module '@hv/uikit-react-lab/dist' {
-  export { default as HvFooter, HvFooterProps } from '@hv/uikit-react-lab/dist/Footer'
-  export { default as HvLoading, HvLoadingProps } from '@hv/uikit-react-lab/dist/Loading'
-  export { default as HvSlider, HvSliderProps } from '@hv/uikit-react-lab/dist/Slider'
-}
+export { default as HvFormComposer } from "./FormComposer";
+export * from "./FormComposer";
+
+export { default as HvLoading } from "./Loading";
+export * from "./Loading";
+
+export { default as HvNavigationAnchors } from "./NavigationAnchors";
+export * from "./NavigationAnchors";
+
+export { default as HvSlider } from "./Slider";
+export * from "./Slider";

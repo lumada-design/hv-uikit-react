@@ -1,79 +1,55 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import { map, filter } from "lodash";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvButton from "../Button";
+import styles from "./styles";
 
-class MultiButton extends React.Component {
-  constructor(props) {
-    super(props);
+/**
+ * parse button properties and if any buttons are preset as selected
+ * set the state with their ids
+ * */
+const getInitialState = buttons => buttons.filter(item => item.selected).map(item => item.id);
 
-    const { buttons } = this.props;
+const MultiButton = ({
+  id,
+  className,
+  classes,
+  type,
+  onChange,
+  multi = false,
+  minSelection = 0,
+  maxSelection = Infinity,
+  buttons,
+  vertical = false,
+  ...others
+}) => {
+  /**
+   * set state; if button properties are mismatched set hasError prop
+   * in order to throw error in component and alert for the need to correctly
+   * set the button props
+   */
+  const [checkedItems, setCheckedItems] = useState(getInitialState(buttons));
 
-    /**
-     * parse button properties and if any buttons are preset as selected
-     * set the state with their ids
-     * */
-    const initialCompState = filter(
-      map(buttons, item => (item.selected !== undefined ? item.id : null)),
-      item => item !== null
-    );
-    /**
-     * set state; if button properties are mismatched set hasError prop
-     * in order to throw error in component and alert for the need to correctly
-     * set the button props
-     */
-    this.state = {
-      checkedItems: initialCompState
-    };
-  }
-
-  handleClick(e, idx) {
-    const { checkedItems } = this.state;
-    const { onChange, multi, minSelection, maxSelection, buttons } = this.props;
-
+  const handleClick = (event, idx) => {
     let newState;
 
     const clickedBtnDefs = buttons[idx];
-    const btnClickable =
-      clickedBtnDefs.enforced !== undefined ? clickedBtnDefs : false;
+    const btnClickable = clickedBtnDefs.enforced !== undefined ? clickedBtnDefs : false;
+
+    if (btnClickable) return;
 
     const clickedBtnId = buttons[idx].id;
+
+    if (checkedItems.length === minSelection && checkedItems.includes(clickedBtnId)) {
+      return;
+    }
+
+    if (checkedItems.length === maxSelection && !checkedItems.includes(clickedBtnId)) {
+      return;
+    }
+
     const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
-
-    if (btnClickable) {
-      return;
-    }
-
-    if (
-      checkedItems.length === minSelection &&
-      checkedItems.indexOf(clickedBtnId) !== -1
-    ) {
-      return;
-    }
-
-    if (
-      checkedItems.length === maxSelection &&
-      checkedItems.indexOf(clickedBtnId) === -1
-    ) {
-      return;
-    }
 
     if (multi) {
       // check if item has not been clicked
@@ -93,85 +69,54 @@ class MultiButton extends React.Component {
       return;
     }
 
-    this.setState({
-      checkedItems: newState
-    });
-    onChange(newState);
-  }
+    setCheckedItems(newState);
+    onChange?.(event, newState);
+  };
 
-  render() {
-    const { className, classes, vertical, type, buttons, ...other } = this.props;
+  const renderButton = (button, idx) => {
+    const { id: bId, icon, selected, value, ...other } = button;
+    const isSelected = checkedItems.indexOf(bId) !== -1;
 
-    /**
-     * Generate button content elements to render the component itself
-     */
-
-    const generateBtnContents = (btnType, button) => {
-      let btnStruct;
-      if (btnType === "icon") {
-        btnStruct = <>{button.icon}</>;
-      } else if (btnType === "text") {
-        btnStruct = (
-          <>
-            <div className={classes.labelText}>{button.value}</div>
-          </>
-        );
-      } else {
-        btnStruct = (
-          <>
-            {button.icon}
-            <div
-              className={classNames(classes.labelText, classes.labelPadding)}
-            >
-              {button.value}
-            </div>
-          </>
-        );
-      }
-
-      return btnStruct;
-    };
-
-    const buttonList = buttons.map((button, idx) => {
-      const { checkedItems } = this.state;
-      return (
-        <HvButton
-          key={`btnkey_${idx + 1}`}
-          id={button.id}
-          onClick={e => this.handleClick(e, idx)}
-          aria-pressed={checkedItems.indexOf(button.id) !== -1}
-          className={classNames(
-            classes.btnBase,
-            classes.btnSecondary,
-            {
-              [classes.iconWidth]: type === "icon",
-              [classes.isSelected]: checkedItems.indexOf(button.id) !== -1,
-              [classes.isUnselected]: !(checkedItems.indexOf(button.id) !== -1)
-            },
-            className
-          )}
-          category={button.selected ? "secondary" : "ghost"}
-          {...button.buttonProps}
-        >
-          {generateBtnContents(type, button)}
-        </HvButton>
-      );
-    });
+    const iconButton =
+      icon && type === "mixed" ? React.cloneElement(icon, { className: classes.icon }) : icon;
 
     return (
-      <div
-        className={classNames(classes.root, {
-          [classes.rootVertical]: vertical
+      <HvButton
+        key={`btnkey_${idx + 1}`}
+        id={bId}
+        onClick={event => handleClick(event, idx)}
+        className={clsx(classes.button, {
+          [classes.isSelected]: isSelected,
+          [classes.isUnselected]: !isSelected
         })}
+        category={selected ? "secondary" : "ghost"}
+        aria-label={value}
         {...other}
       >
-        {buttonList}
-      </div>
+        {type !== "text" && iconButton}
+        <div className={classes.labelText}>{value}</div>
+      </HvButton>
     );
-  }
-}
+  };
+
+  return (
+    <div
+      id={id}
+      className={clsx(className, classes.root, {
+        [classes.vertical]: vertical
+      })}
+      {...others}
+    >
+      {buttons.map((button, idx) => renderButton(button, idx))}
+    </div>
+  );
+};
 
 MultiButton.propTypes = {
+  /**
+   * Identifier
+   */
+  id: PropTypes.string,
   /**
    * Class names to be applied.
    */
@@ -183,7 +128,31 @@ MultiButton.propTypes = {
     /**
      * Styles applied to the multibutton root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Styles applied to the multibutton when it's vertical.
+     */
+    vertical: PropTypes.string,
+    /**
+     * Styles applied to the button label.
+     */
+    labelText: PropTypes.string,
+    /**
+     * Styles applied to the each button.
+     */
+    button: PropTypes.string,
+    /**
+     * Styles applied to the each button's icon.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied to the button when it's selected.
+     */
+    isSelected: PropTypes.string,
+    /**
+     * Styles applied to the button when it's not selected.
+     */
+    isUnselected: PropTypes.string
   }).isRequired,
   /**
    * If the multibutton is to be displayed vertically.
@@ -225,11 +194,7 @@ MultiButton.propTypes = {
       /**
        * Specify if item can be toggled or not.
        */
-      enforced: PropTypes.bool,
-      /**
-       * Values to be passed onto the button.
-       */
-      buttonProps: PropTypes.object
+      enforced: PropTypes.bool
     })
   ).isRequired,
   /**
@@ -246,13 +211,4 @@ MultiButton.propTypes = {
   maxSelection: PropTypes.number
 };
 
-MultiButton.defaultProps = {
-  className: "",
-  vertical: false,
-  multi: false,
-  onChange: () => {},
-  minSelection: 0,
-  maxSelection: null
-};
-
-export default MultiButton;
+export default withStyles(styles, { name: "HvMultiButton" })(MultiButton);

@@ -43,9 +43,7 @@ const TooltipContent = ({ classes }) => (
   </div>
 );
 
-const TooltipContentWithStyles = withStyles(tooltipStyling, {
-  withTheme: true
-})(TooltipContent);
+const TooltipContentWithStyles = withStyles(tooltipStyling)(TooltipContent);
 
 const TooltipControl = (
   <HvTypography tabIndex="0" variant="normalText">
@@ -55,11 +53,8 @@ const TooltipControl = (
 
 export default (
   <div style={styling.placeholder}>
-    <Tooltip
-      tooltipData={<TooltipContentWithStyles />}
-      useSingle={false}
-      tooltipAnchor={TooltipControl}
-      open
-    />
+    <Tooltip tooltipData={<TooltipContentWithStyles />} useSingle={false} open>
+      {TooltipControl}
+    </Tooltip>
   </div>
 );

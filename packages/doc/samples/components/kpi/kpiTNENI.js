@@ -1,9 +1,7 @@
 import React from "react";
 import Chart from "react-google-charts";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import HvCard from "@hv/uikit-react-core/dist/Card";
-import ArrowDown from "@hv/uikit-react-icons/dist/Generic/BottomXS";
+import { HvCard, HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
+import { UpXS as ArrowUp } from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Total number of events",
@@ -14,26 +12,9 @@ const labels = {
 };
 
 const IopsComparisonVisualAverage = () => (
-  <div
-    style={{
-      position: "relative"
-    }}
-  >
-    <ArrowDown
-      style={{
-        position: "absolute",
-        top: "16px",
-        left: "-1px"
-      }}
-      semantic="sema1"
-    />
-    <HvTypography
-      style={{
-        position: "relative",
-        paddingLeft: "16px"
-      }}
-      variant="highlightText"
-    >
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <ArrowUp boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
+    <HvTypography component="span" variant="highlightText">
       {labels.comparisonIndicator}
     </HvTypography>
   </div>
@@ -51,8 +32,8 @@ const trend = () => (
     }}
   >
     <Chart
-      width={"50px"}
-      height={"32px"}
+      width="50px"
+      height="32px"
       chartType="AreaChart"
       loader={<div>Loading Chart</div>}
       data={[

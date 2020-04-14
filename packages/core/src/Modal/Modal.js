@@ -1,41 +1,18 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState } from "react";
-import classNames from "classnames";
+import React from "react";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import FocusTrap from "focus-trap-react";
-import uniqueId from "lodash/uniqueId";
-import Dialog from "@material-ui/core/Dialog";
-
-import Close from "@hv/uikit-react-icons/dist/Generic/Close";
+import { Dialog, withStyles } from "@material-ui/core";
+import Close from "@hv/uikit-react-icons/dist/Close";
 import Button from "../Button";
+import { setId } from "../utils";
+import styles from "./styles";
 
 /**
- * Modal component.
- *
- * @param classes
- * @param children
- * @param open
- * @param onClose
- * @param others
- * @returns {*}
- * @constructor
+ * The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, etc.
+ * It is created by the composition of ModalTitle, ModalContent and ModalActions, passed as child elements.
  */
-const Main = ({
+const HvModal = ({
   classes,
   className,
   id,
@@ -43,11 +20,9 @@ const Main = ({
   open,
   onClose,
   firstFocusable,
-  buttonTitle,
+  buttonTitle = "Close",
   ...others
 }) => {
-  const [internalId] = useState(id || uniqueId("hv-modal-"));
-
   const initialFocus = firstFocusable
     ? () => {
         if (!document.getElementById(firstFocusable)) {
@@ -61,8 +36,8 @@ const Main = ({
 
   return (
     <Dialog
-      className={classNames(classes.root, className)}
-      id={internalId}
+      className={clsx(classes.root, className)}
+      id={id}
       open={open}
       PaperProps={{
         classes: {
@@ -86,13 +61,13 @@ const Main = ({
       >
         <div aria-modal>
           <Button
-            id={`${internalId}-close`}
+            id={setId(id, "close")}
             className={classes.closeButton}
             category="ghost"
             onClick={event => onClose(event)}
             title={buttonTitle}
           >
-            <Close className={classes.iconContainer} />
+            <Close />
           </Button>
           {children}
         </div>
@@ -100,7 +75,8 @@ const Main = ({
     </Dialog>
   );
 };
-Main.propTypes = {
+
+HvModal.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -113,6 +89,10 @@ Main.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * Style applied to the root of the component.
+     */
+    root: PropTypes.string,
     /**
      * Style applied to the background (outside) of the component.
      */
@@ -148,11 +128,4 @@ Main.propTypes = {
   buttonTitle: PropTypes.string
 };
 
-Main.defaultProps = {
-  className: "",
-  id: undefined,
-  firstFocusable: undefined,
-  buttonTitle: "Close"
-};
-
-export default Main;
+export default withStyles(styles, { name: "HvModal" })(HvModal);

@@ -1,35 +1,17 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import HvButton from "../../Button";
+import { setId } from "../../utils";
+import styles from "./styles";
 
 const Actions = ({ id, classes, onCancel, onApply, labels }) => (
   <div className={classes.root}>
-    <HvButton
-      id={`${id}-apply`}
-      className={classes.button}
-      onClick={onApply}
-      category="ghost"
-    >
+    <HvButton id={setId(id, "apply")} className={classes.button} onClick={onApply} category="ghost">
       {labels.applyLabel}
     </HvButton>
     <HvButton
-      id={`${id}-cancel`}
+      id={setId(id, "cancel")}
       className={classes.button}
       onClick={onCancel}
       category="ghost"
@@ -43,7 +25,7 @@ Actions.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -69,6 +51,7 @@ Actions.propTypes = {
 };
 
 Actions.defaultProps = {
+  id: undefined,
   onCancel() {},
   onApply() {},
   labels: {
@@ -77,4 +60,4 @@ Actions.defaultProps = {
   }
 };
 
-export default Actions;
+export default withStyles(styles, { name: "HvDatePickerActions" })(Actions);

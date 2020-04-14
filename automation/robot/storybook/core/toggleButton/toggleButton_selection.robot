@@ -42,4 +42,4 @@ change state when toggle button is focused and is pressed SPACE
 
 
 *** Variables *** 
-${toggleButton}     css:[class^=HvToggleButton-root][role=button]
+${toggleButton}     css:[class*=HvToggleButton-root]

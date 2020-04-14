@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import HvSlider from "@hv/uikit-react-lab/dist/Slider";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 
@@ -27,9 +27,7 @@ const ExtendedHvSlider = ({ knobPropertiesDefault, knobProperties }) => {
 
   return (
     <>
-      <HvButton onClick={() => setKnobValues(knobPropertiesDefault)}>
-        Reset
-      </HvButton>
+      <HvButton onClick={() => setKnobValues(knobPropertiesDefault)}>Reset</HvButton>
       <HvSlider
         markStep={10}
         knobProperties={knobProperties}

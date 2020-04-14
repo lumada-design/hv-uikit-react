@@ -1,45 +1,28 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Typography from "../Typography";
+import styles from "./styles";
 
+/**
+ * The badge is a component used to show the user that there is something new in the app.
+ */
 const Badge = props => {
   const {
     classes,
-    showCount,
+    showCount = false,
     count,
-    maxCount,
-    icon,
-    text,
-    textVariant,
+    maxCount = 99,
+    icon = null,
+    text = null,
+    textVariant = null,
     ...others
   } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
-  const Component =
-    icon ||
-    (text && (
-      <Typography variant={textVariant}>
-        {text}
-      </Typography>
-    ));
+  const Component = icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
-  const badgeClasses = classNames(classes.badgePosition, {
+  const badgeClasses = clsx(classes.badgePosition, {
     [classes.badge]: count > 0,
     [classes.showCount]: showCount,
     [classes.badgeIcon]: icon,
@@ -74,13 +57,21 @@ Badge.propTypes = {
      */
     badge: PropTypes.string,
     /**
-     * Styles applied to the component badge count.
+     * Styles applied to the component badge icon.
      */
-    count: PropTypes.string,
+    badgeIcon: PropTypes.string,
     /**
-     * Styles applied to the component badge when count greater than 9.
+     * Styles applied to the component when shows count.
      */
-    badgeTwoDigits: PropTypes.string
+    showCount: PropTypes.string,
+    /**
+     * Styles applied to the component when count has one digit.
+     */
+    badgeOneDigit: PropTypes.string,
+    /**
+     * Styles applied to the component badge container.
+     */
+    badgeContainer: PropTypes.string
   }).isRequired,
   /**
    * Count is the number of unread notifications
@@ -108,12 +99,4 @@ Badge.propTypes = {
   textVariant: PropTypes.string
 };
 
-Badge.defaultProps = {
-  showCount: false,
-  maxCount: 99,
-  icon: null,
-  text: null,
-  textVariant: null
-};
-
-export default Badge;
+export default withStyles(styles, { name: "HvBadge" })(Badge);

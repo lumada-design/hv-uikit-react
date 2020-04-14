@@ -1,0 +1,386 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigation /> navigation should render correctly 1`] = `
+<WithStyles(Navigation)
+  data={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "id": "01-01-01",
+                "label": "Compute",
+              },
+              Object {
+                "id": "01-01-02",
+                "label": "Storage",
+              },
+              Object {
+                "id": "01-01-03",
+                "label": "Ethernet",
+              },
+              Object {
+                "id": "01-01-04",
+                "label": "Fiber Channel",
+                "payload": Object {
+                  "params": Object {
+                    "a": 2,
+                    "b": "3",
+                  },
+                  "path": "/hello/world",
+                },
+              },
+            ],
+            "id": "01-01",
+            "label": "SCPodF",
+          },
+        ],
+        "icon": <ForwardRef(WithStyles) />,
+        "id": "01",
+        "label": "System",
+      },
+    ]
+  }
+  label="Example 1 navigation"
+  onChange={[MockFunction]}
+  selected="01-01"
+>
+  <Navigation
+    classes={
+      Object {
+        "root": "HvVerticalNavigationNavigation-root",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "children": Array [
+            Object {
+              "children": Array [
+                Object {
+                  "id": "01-01-01",
+                  "label": "Compute",
+                },
+                Object {
+                  "id": "01-01-02",
+                  "label": "Storage",
+                },
+                Object {
+                  "id": "01-01-03",
+                  "label": "Ethernet",
+                },
+                Object {
+                  "id": "01-01-04",
+                  "label": "Fiber Channel",
+                  "payload": Object {
+                    "params": Object {
+                      "a": 2,
+                      "b": "3",
+                    },
+                    "path": "/hello/world",
+                  },
+                },
+              ],
+              "id": "01-01",
+              "label": "SCPodF",
+            },
+          ],
+          "icon": <ForwardRef(WithStyles) />,
+          "id": "01",
+          "label": "System",
+        },
+      ]
+    }
+    label="Example 1 navigation"
+    onChange={[MockFunction]}
+    selected="01-01"
+  >
+    <nav
+      aria-label="Example 1 navigation"
+      className="HvVerticalNavigationNavigation-root"
+      onChange={[MockFunction]}
+    >
+      <WithStyles(TreeView)
+        mode="navigation"
+        onChange={[Function]}
+        selected="01-01"
+      >
+        <TreeView
+          classes={
+            Object {
+              "collapsed": "HvVerticalNavigationTreeView-collapsed",
+              "content": "HvVerticalNavigationTreeView-content",
+              "disabled": "HvVerticalNavigationTreeView-disabled",
+              "expanded": "HvVerticalNavigationTreeView-expanded",
+              "group": "HvVerticalNavigationTreeView-group",
+              "noIcon": "HvVerticalNavigationTreeView-noIcon",
+              "node": "HvVerticalNavigationTreeView-node",
+              "root": "HvVerticalNavigationTreeView-root",
+              "selectable": "HvVerticalNavigationTreeView-selectable",
+              "selected": "HvVerticalNavigationTreeView-selected",
+              "unselectable": "HvVerticalNavigationTreeView-unselectable",
+              "unselected": "HvVerticalNavigationTreeView-unselected",
+              "withIcon": "HvVerticalNavigationTreeView-withIcon",
+            }
+          }
+          mode="navigation"
+          onChange={[Function]}
+          selected="01-01"
+        >
+          <ul
+            className="HvVerticalNavigationTreeView-root"
+          >
+            <WithStyles(TreeViewItem)
+              icon={<ForwardRef(WithStyles) />}
+              key="01"
+              label="System"
+              nodeId="01"
+              payload={
+                Object {
+                  "children": Array [
+                    Object {
+                      "children": Array [
+                        Object {
+                          "id": "01-01-01",
+                          "label": "Compute",
+                        },
+                        Object {
+                          "id": "01-01-02",
+                          "label": "Storage",
+                        },
+                        Object {
+                          "id": "01-01-03",
+                          "label": "Ethernet",
+                        },
+                        Object {
+                          "id": "01-01-04",
+                          "label": "Fiber Channel",
+                          "payload": Object {
+                            "params": Object {
+                              "a": 2,
+                              "b": "3",
+                            },
+                            "path": "/hello/world",
+                          },
+                        },
+                      ],
+                      "id": "01-01",
+                      "label": "SCPodF",
+                    },
+                  ],
+                  "icon": <ForwardRef(WithStyles) />,
+                  "id": "01",
+                  "label": "System",
+                }
+              }
+            >
+              <TreeViewItem
+                classes={
+                  Object {
+                    "collapsed": "HvVerticalNavigationTreeViewItem-collapsed",
+                    "content": "HvVerticalNavigationTreeViewItem-content",
+                    "disabled": "HvVerticalNavigationTreeViewItem-disabled",
+                    "expanded": "HvVerticalNavigationTreeViewItem-expanded",
+                    "group": "HvVerticalNavigationTreeViewItem-group",
+                    "noIcon": "HvVerticalNavigationTreeViewItem-noIcon",
+                    "node": "HvVerticalNavigationTreeViewItem-node",
+                    "root": "HvVerticalNavigationTreeViewItem-root",
+                    "selectable": "HvVerticalNavigationTreeViewItem-selectable",
+                    "selected": "HvVerticalNavigationTreeViewItem-selected",
+                    "unselectable": "HvVerticalNavigationTreeViewItem-unselectable",
+                    "unselected": "HvVerticalNavigationTreeViewItem-unselected",
+                    "withIcon": "HvVerticalNavigationTreeViewItem-withIcon",
+                  }
+                }
+                icon={<ForwardRef(WithStyles) />}
+                label="System"
+                nodeId="01"
+                payload={
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [
+                          Object {
+                            "id": "01-01-01",
+                            "label": "Compute",
+                          },
+                          Object {
+                            "id": "01-01-02",
+                            "label": "Storage",
+                          },
+                          Object {
+                            "id": "01-01-03",
+                            "label": "Ethernet",
+                          },
+                          Object {
+                            "id": "01-01-04",
+                            "label": "Fiber Channel",
+                            "payload": Object {
+                              "params": Object {
+                                "a": 2,
+                                "b": "3",
+                              },
+                              "path": "/hello/world",
+                            },
+                          },
+                        ],
+                        "id": "01-01",
+                        "label": "SCPodF",
+                      },
+                    ],
+                    "icon": <ForwardRef(WithStyles) />,
+                    "id": "01",
+                    "label": "System",
+                  }
+                }
+              >
+                <li
+                  className="HvVerticalNavigationTreeViewItem-node HvVerticalNavigationTreeViewItem-selectable HvVerticalNavigationTreeViewItem-unselected"
+                  data-hasicon={true}
+                >
+                  <WithStyles(ForwardRef)
+                    className="HvVerticalNavigationTreeViewItem-content"
+                    component="div"
+                    innerRef={
+                      Object {
+                        "current": <div
+                          class="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                          role="button"
+                          tabindex="0"
+                        >
+                          <div
+                            class="HvIconPlay-root HvIconPlay-rootS"
+                            style="width: 32px; height: 32px;"
+                          >
+                            <svg
+                              focusable="false"
+                              height="16px"
+                              viewBox="0 0 16 16"
+                              width="16px"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                class="color0"
+                                d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                                fill="#414141"
+                              />
+                            </svg>
+                          </div>
+                          System
+                        </div>,
+                      }
+                    }
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                    variant="normalText"
+                  >
+                    <ForwardRef
+                      className="HvVerticalNavigationTreeViewItem-content"
+                      classes={
+                        Object {
+                          "3xlTitle": "HvTypography-3xlTitle",
+                          "4xlTitle": "HvTypography-4xlTitle",
+                          "5xlTitle": "HvTypography-5xlTitle",
+                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "highlightText": "HvTypography-highlightText",
+                          "infoText": "HvTypography-infoText",
+                          "inlineLink": "HvTypography-inlineLink",
+                          "lTitle": "HvTypography-lTitle",
+                          "labelText": "HvTypography-labelText",
+                          "mTitle": "HvTypography-mTitle",
+                          "normalText": "HvTypography-normalText",
+                          "placeholderText": "HvTypography-placeholderText",
+                          "root": "HvTypography-root",
+                          "sLink": "HvTypography-sLink",
+                          "sText": "HvTypography-sText",
+                          "sTitle": "HvTypography-sTitle",
+                          "selectedNavText": "HvTypography-selectedNavText",
+                          "selectedText": "HvTypography-selectedText",
+                          "vizText": "HvTypography-vizText",
+                          "xlTitle": "HvTypography-xlTitle",
+                          "xsTitle": "HvTypography-xsTitle",
+                          "xxlTitle": "HvTypography-xxlTitle",
+                          "xxsTitle": "HvTypography-xxsTitle",
+                        }
+                      }
+                      component="div"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      variant="normalText"
+                    >
+                      <div
+                        className="HvVerticalNavigationTreeViewItem-content HvTypography-root HvTypography-normalText"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <WithStyles(Play)
+                          boxStyles={
+                            Object {
+                              "height": "32px",
+                              "width": "32px",
+                            }
+                          }
+                        >
+                          <Play
+                            boxStyles={
+                              Object {
+                                "height": "32px",
+                                "width": "32px",
+                              }
+                            }
+                            classes={
+                              Object {
+                                "root": "HvIconPlay-root",
+                                "rootL": "HvIconPlay-rootL",
+                                "rootM": "HvIconPlay-rootM",
+                                "rootS": "HvIconPlay-rootS",
+                                "rootXs": "HvIconPlay-rootXs",
+                              }
+                            }
+                          >
+                            <div
+                              className="HvIconPlay-root HvIconPlay-rootS"
+                              style={
+                                Object {
+                                  "height": "32px",
+                                  "width": "32px",
+                                }
+                              }
+                            >
+                              <svg
+                                focusable={false}
+                                height="16px"
+                                viewBox="0 0 16 16"
+                                width="16px"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  className="color0"
+                                  d="M12.984 8L2 1.723v12.554L12.984 8M15 8L1 16V0z"
+                                  fill="#414141"
+                                />
+                              </svg>
+                            </div>
+                          </Play>
+                        </WithStyles(Play)>
+                        System
+                      </div>
+                    </ForwardRef>
+                  </WithStyles(ForwardRef)>
+                </li>
+              </TreeViewItem>
+            </WithStyles(TreeViewItem)>
+          </ul>
+        </TreeView>
+      </WithStyles(TreeView)>
+    </nav>
+  </Navigation>
+</WithStyles(Navigation)>
+`;

@@ -12,13 +12,10 @@ const labels = {
 const kpiContainer = {
   minWidth: "190px",
   padding: "20px"
-}
+};
 
 export default (
   <div style={kpiContainer}>
-    <HvKpi
-      labels={labels}
-      visualComparison={labels.comparisonIndicator}
-    />
+    <HvKpi labels={labels} visualComparison={labels.comparisonIndicator} />
   </div>
 );

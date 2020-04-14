@@ -2,11 +2,6 @@ import React, { useState } from "react";
 import HvTextArea from "@hv/uikit-react-core/dist/TextArea";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-const labels = {
-  inputLabel: "Label",
-  placeholder: "Enter value"
-};
-
 const btnStyle = {
   width: "130px",
   height: "32px",
@@ -14,13 +9,7 @@ const btnStyle = {
 };
 
 function WrapperComp() {
-  const [value, setValue] = useState();
-
-  // to be possible to change the input value by user action
-  const setterValue = value => {
-    setValue(value);
-    return value;
-  };
+  const [value, setValue] = useState("Initial State");
 
   return (
     <>
@@ -35,11 +24,10 @@ function WrapperComp() {
       </Button>
 
       <HvTextArea
-        initialValue="Initial State"
-        inputValue={value}
+        value={value}
         rows={5}
-        labels={labels}
-        onChange={setterValue}
+        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
+        onChange={(e, newValue) => setValue(newValue)}
       />
     </>
   );

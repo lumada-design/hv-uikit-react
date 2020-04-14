@@ -1,65 +1,41 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import map from "lodash/map";
 import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import { withStyles } from "@material-ui/core";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
+import styles from "./styles";
 
-const selectCell = (
-  classes,
-  onCheckboxSelected,
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxSemantic,
-  checkboxId
-) => (
-  <Cell
-    className={classes.selectCell}
-    semantic={checkboxSemantic}
-    id={`checkbox${checkboxId}`}
-    key={`checkbox${checkboxId}`}
-  >
-    <HvCheckbox
-      className={classes.checkboxPlacement}
-      value={checkboxValue}
-      onChange={onCheckboxSelected}
-      checked={checkboxSelected}
-      indeterminate={checkboxIndeterminate}
-      id={`checkbox${checkboxId}`}
-    />
-  </Cell>
-);
+const getValue = checkboxProps =>
+  checkboxProps && checkboxProps.value ? checkboxProps.value : false;
+
+const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
+  return (
+    <Cell
+      className={classes.selectCell}
+      semantic={semantic}
+      id={`checkbox-cell-${id}`}
+      key={`checkbox${id}`}
+    >
+      <HvCheckbox
+        className={classes.checkboxPlacement}
+        onChange={onCheckboxSelected}
+        checked={checked}
+        id={`checkbox-${id}`}
+        {...checkboxProps}
+      />
+    </Cell>
+  );
+};
 
 const actionsCell = (classes, id, viewConfiguration) => (
-  <Cell
-    className={classes.actionSeparator}
-    id={`action${id}`}
-    key={`action${id}`}
-  >
+  <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
     <Actions
-      id={id}
+      id={`action${id}`}
       actions={viewConfiguration.actions}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
@@ -75,11 +51,10 @@ const row = (
   id,
   isSelectable,
   onSelection,
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxSemantic,
-  other
+  checkboxProps,
+  checked,
+  semantic,
+  others
 ) => {
   const columnConfiguration =
     isNil(viewConfiguration) || isNil(viewConfiguration.columnConfiguration)
@@ -94,9 +69,7 @@ const row = (
     isNil(viewConfiguration) || isNil(viewConfiguration.isSelectable)
       ? renderSelectCell
       : viewConfiguration.isSelectable;
-  const renderActionsCell = !(
-    isNil(viewConfiguration) || isNil(viewConfiguration.actions)
-  );
+  const renderActionsCell = !(isNil(viewConfiguration) || isNil(viewConfiguration.actions));
   const clonedChildren = map(children, (child, index) => {
     if (!isNil(columnConfiguration)) {
       return React.cloneElement(child, {
@@ -110,119 +83,73 @@ const row = (
     return child;
   });
 
-  const checkboxId = id || uniqueId("hv-checkbox-");
-
   return (
     <tr
-      id={id}
-      key={id}
-      className={classNames(className, classes.root, {
+      id={`row-${id}`}
+      key={`row-${id}`}
+      className={clsx(className, classes.root, {
         [classes.selectable]: renderSelectCell,
-        [classes.selected]: checkboxSelected,
+        [classes.selected]: checked,
         [classes.notSelectable]: !renderSelectCell
       })}
-      {...other}
+      {...others}
     >
       {renderSelectCell &&
-        selectCell(
-          classes,
-          onCheckboxSelected,
-          checkboxValue,
-          checkboxSelected,
-          checkboxIndeterminate,
-          checkboxSemantic,
-          checkboxId
-        )}
+        selectCell(classes, onCheckboxSelected, checkboxProps, checked, semantic, id)}
       {clonedChildren}
-      {renderActionsCell &&
-        actionsCell(classes, checkboxValue || id, viewConfiguration)}
+      {renderActionsCell && actionsCell(classes, getValue(checkboxProps) || id, viewConfiguration)}
     </tr>
   );
 };
 
 const ListViewRow = ({
+  id,
   viewConfiguration,
   classes,
   className,
-  id,
   children,
   isSelectable,
   onSelection,
+  checkboxProps,
   checked,
   semantic,
-  checkboxProps,
-
-  // deprecated:
-  checkboxValue,
-  checkboxSelected,
-  checkboxIndeterminate,
-  checkboxSemantic,
-
-  ...other
-}) => (
-  <ListViewContextConsumer>
-    {contextConfiguration => {
-      if (contextConfiguration && isNil(viewConfiguration)) {
+  ...others
+}) => {
+  return (
+    <ListViewContextConsumer>
+      {contextConfiguration => {
+        if (contextConfiguration && isNil(viewConfiguration)) {
+          return row(
+            contextConfiguration,
+            classes,
+            className,
+            children,
+            id,
+            isSelectable,
+            onSelection,
+            checkboxProps,
+            checked,
+            semantic,
+            others
+          );
+        }
         return row(
-          contextConfiguration,
+          viewConfiguration,
           classes,
           className,
           children,
           id,
           isSelectable,
           onSelection,
-          checkboxProps.value || checkboxValue,
-          checked || checkboxSelected,
-          checkboxProps.indeterminate || checkboxIndeterminate,
-          semantic || checkboxSemantic,
-          other
+          checkboxProps,
+          checked,
+          semantic,
+          others
         );
-      }
-      return row(
-        viewConfiguration,
-        classes,
-        className,
-        children,
-        id,
-        isSelectable,
-        onSelection,
-        checkboxProps.value || checkboxValue,
-        checked || checkboxSelected,
-        checkboxProps.indeterminate || checkboxIndeterminate,
-        semantic || checkboxSemantic,
-        other
-      );
-    }}
-  </ListViewContextConsumer>
-);
-
-const semanticOptions = [
-  "sema1",
-  "sema2",
-  "sema3",
-  "sema4",
-  "sema5",
-  "sema6",
-  "sema7",
-  "sema8",
-  "sema9",
-  "sema10",
-  "sema11",
-  "sema12",
-  "sema13",
-  "sema14",
-  "sema15",
-  "sema16",
-  "sema17",
-  "sema18",
-  "sema19",
-  "atmo1",
-  "atmo2",
-  "atmo3",
-  "atmo4",
-  "atmo5",
-  "atmo6"
-];
+      }}
+    </ListViewContextConsumer>
+  );
+};
 
 ListViewRow.propTypes = {
   /**
@@ -259,63 +186,45 @@ ListViewRow.propTypes = {
    */
   isSelectable: PropTypes.bool,
   /**
-   *  The value the checkbox in the in the left part of the row will return when selected.
-   */
-  checkboxValue: deprecatedPropType(
-    PropTypes.string,
-    "use checkboxProps.value instead"
-  ),
-  /**
-   *  ´true´ if the checkbox is selected or ´false´ if not selected.
-   *
-   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
-   */
-  checkboxSelected: deprecatedPropType(PropTypes.bool, "use checked instead"),
-  /**
-   *  ´true´ if the checkbox should use the intermediate state when selected ´false´ if not.
-   */
-  checkboxIndeterminate: deprecatedPropType(
-    PropTypes.bool,
-    "use checkboxProps.indeterminate instead"
-  ),
-  /**
-   *  The border to the right of the checkbox
-   */
-  checkboxSemantic: deprecatedPropType(
-    PropTypes.oneOf(semanticOptions),
-    "use semantic instead"
-  ),
-  /**
-   *  Object of values passed down to the CheckBox component.
-   */
-  checkboxProps: PropTypes.instanceOf(Object),
-  /**
-   *  ´true´ if the checkbox is selected or ´false´ if not selected.
-   *
-   *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
+   * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
+   * note: if this value is specified the state of the checkbox must be managed
    */
   checked: PropTypes.bool,
   /**
+   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * HvCheckbox API.
+   */
+  checkboxProps: PropTypes.instanceOf(Object),
+  /**
    *  The border to the right of the checkbox
    */
-  semantic: PropTypes.oneOf(semanticOptions)
+  semantic: PropTypes.oneOf([
+    "sema1",
+    "sema2",
+    "sema3",
+    "sema4",
+    "sema5",
+    "sema6",
+    "sema7",
+    "sema8",
+    "sema9",
+    "sema10",
+    "sema11",
+    "sema12",
+    "sema13",
+    "sema14",
+    "sema15",
+    "sema16",
+    "sema17",
+    "sema18",
+    "sema19",
+    "atmo1",
+    "atmo2",
+    "atmo3",
+    "atmo4",
+    "atmo5",
+    "atmo6"
+  ])
 };
 
-ListViewRow.defaultProps = {
-  className: "",
-  isSelectable: undefined,
-  id: undefined,
-  viewConfiguration: null,
-  onSelection: () => {},
-  checked: undefined,
-  semantic: undefined,
-  checkboxProps: {},
-
-  // deprecated
-  checkboxValue: "",
-  checkboxSelected: undefined,
-  checkboxIndeterminate: undefined,
-  checkboxSemantic: undefined
-};
-
-export default ListViewRow;
+export default withStyles(styles, { name: "HvListViewRow" })(ListViewRow);

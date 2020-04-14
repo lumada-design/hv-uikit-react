@@ -1,7 +1,7 @@
 import React from "react";
 import isEmpty from "lodash/isEmpty";
 import HvInput from "@hv/uikit-react-core/dist/Input";
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
+import { Map } from "@hv/uikit-react-icons/dist";
 
 const labels = {
   placeholder: "Country",
@@ -230,7 +230,7 @@ export default (
     id="test"
     validation={value => value.includes("a")}
     suggestionListCallback={suggestionHandler}
-    suggestionSelectedCallback={item => console.log(item.label + " selected")}
+    suggestionSelectedCallback={item => console.log(`${item.label} selected`)}
     customFixedIcon={<Map />}
   />
 );

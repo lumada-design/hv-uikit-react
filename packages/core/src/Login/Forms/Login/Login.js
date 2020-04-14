@@ -1,68 +1,32 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Input from "../../../Input";
 import HvButton from "../../../Button";
 import HvCheckbox from "../../../Selectors/CheckBox";
 import Title from "./Title";
 import MessageElement from "../MessageElement";
-
-/**
- * Error link button element.
- *
- * @param props
- * @returns {*}
- * @constructor
- */
-// eslint-disable-next-line react/prop-types
-function RecoveryLinkButton({ onClick, classes, forgotYourCredentialMessage }) {
-  return (
-    <div className={classes.forgotCredentials}>
-      <HvButton
-        category="ghost"
-        onClick={onClick}
-        className={classes.sentenceCase}
-      >
-        {forgotYourCredentialMessage}
-      </HvButton>
-    </div>
-  );
-}
+import styles from "./styles";
 
 /**
  * Login main form.
  */
 class Login extends React.Component {
-  state = {
-    password: "",
-    username: "",
-    isLogging: false,
-    rememberMe: false,
-    loginError: false
-  };
+  constructor() {
+    super();
+    this.state = {
+      password: "",
+      username: "",
+      isLogging: false,
+      rememberMe: false,
+      loginError: false
+    };
+  }
 
   componentDidMount() {
     this.setState({
-      username:
-        localStorage.getItem("username") != null
-          ? localStorage.getItem("username")
-          : ""
+      username: localStorage.getItem("username") != null ? localStorage.getItem("username") : ""
     });
   }
 
@@ -148,19 +112,16 @@ class Login extends React.Component {
 
     const customMessageElement =
       !loginError && customMessage != null ? (
-        <MessageElement
-          showMessage={classes.showCustomMessage}
-          message={customMessage}
-        />
+        <MessageElement showMessage={classes.showCustomMessage} message={customMessage} />
       ) : null;
     return (
-      <form {...formProps} className={classNames(classes.root, formProps.className)} onSubmit={e => this.handleSubmit(e)}>
+      <form
+        {...formProps}
+        className={clsx(classes.root, formProps.className)}
+        onSubmit={e => this.handleSubmit(e)}
+      >
         <div className={classes.title}>
-          <Title
-            titleText={titleText}
-            logo={logo}
-            titleComponent={titleComponent}
-          />
+          <Title titleText={titleText} logo={logo} titleComponent={titleComponent} />
         </div>
 
         <div className={classes.errorMessageContainer}>
@@ -205,7 +166,7 @@ class Login extends React.Component {
         </div>
 
         <div
-          className={classNames({
+          className={clsx({
             [classes.buttonsContainerWithRemember]: allowRememberMe,
             [classes.buttonsContainer]: !allowRememberMe
           })}
@@ -220,7 +181,7 @@ class Login extends React.Component {
           <HvButton
             type="submit"
             category="primary"
-            className={classNames(classes.button, classes.sentenceCase)}
+            className={clsx(classes.button, classes.sentenceCase)}
             disabled={isLoading || isLogging}
           >
             {isLogging ? loginButtonMessage : loginButtonLabel}
@@ -228,11 +189,11 @@ class Login extends React.Component {
         </div>
 
         {allowRecover ? (
-          <RecoveryLinkButton
-            onClick={onClick}
-            classes={classes}
-            forgotYourCredentialMessage={forgotYourCredentialMessage}
-          />
+          <div className={classes.forgotCredentials}>
+            <HvButton category="ghost" onClick={onClick} className={classes.sentenceCase}>
+              {forgotYourCredentialMessage}
+            </HvButton>
+          </div>
         ) : null}
       </form>
     );
@@ -406,4 +367,4 @@ Login.defaultProps = {
   formProps: {}
 };
 
-export default Login;
+export default withStyles(styles, { name: "HvLoginLogin" })(Login);

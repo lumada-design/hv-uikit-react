@@ -4,8 +4,9 @@ import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import Collapse from "@material-ui/core/Collapse";
-import Code from "@hv/uikit-react-icons/dist/Generic/Code";
+import { Code } from "@hv/uikit-react-icons/dist";
 import IconButton from "@material-ui/core/IconButton";
+import { useTheme } from "@material-ui/core";
 
 const styles = theme => ({
   group: {
@@ -32,11 +33,11 @@ const styles = theme => ({
     paddingBottom: "5px"
   },
   iconCode: {
-    marginLeft: "auto",
-    padding: 0,
-    "&:hover": {
-      backgroundColor: "transparent"
-    }
+    marginLeft: "auto"
+  },
+  icon: {
+    width: 32,
+    height: 32
   }
 });
 
@@ -44,27 +45,22 @@ const text =
   "ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
 
 const CodeButton = ({ classes, onClick }) => (
-  <IconButton
-    className={classes.iconCode}
-    aria-label="Delete"
-    onClick={onClick}
-  >
-    <Code />
+  <IconButton className={classes.iconCode} aria-label="Delete" onClick={onClick}>
+    <Code className={classes.icon} />
   </IconButton>
 );
 
-const Group = ({ classes, name, typography, theme }) => {
+const Group = ({ classes, name, typography }) => {
+  const theme = useTheme();
   const [snippetIsOpen, setSnippetIsOpen] = useState(false);
-  let nameTypography = `${name} ${theme.deprecated.typography[name] ? "(deprecated)" : ""}`;
+
+  const toggleSnippet = () => setSnippetIsOpen(!snippetIsOpen);
 
   return (
     <div className={classes.group}>
       <div className={classes.container}>
-        <HvTypography variant="mTitle">{nameTypography}</HvTypography>
-        <CodeButton
-          classes={classes}
-          onClick={() => setSnippetIsOpen(!snippetIsOpen)}
-        />
+        <HvTypography variant="mTitle">{name}</HvTypography>
+        <CodeButton classes={classes} onClick={toggleSnippet} />
       </div>
       <div className={classes.sentenceContainer}>
         <HvTypography variant={name}>{text}</HvTypography>
@@ -72,7 +68,7 @@ const Group = ({ classes, name, typography, theme }) => {
       <Collapse in={snippetIsOpen}>
         <SyntaxHighlighter
           language="css"
-          style={theme.type === "dark" ? darcula : prism}
+          style={theme.hv.type === "dark" ? darcula : prism}
           customStyle={{
             margin: 0,
             borderRadius: 0,
@@ -86,25 +82,25 @@ const Group = ({ classes, name, typography, theme }) => {
   );
 };
 
-const Typographies = ({ classes, theme }) => {
+const Typographies = ({ classes }) => {
+  const theme = useTheme();
   const { typography } = theme.hv;
   const keys = Object.keys(typography);
 
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys
-        .filter(item => !(Array.isArray(typography[item])))
-        .map((group, idx) => (
+        .filter(item => !Array.isArray(typography[item]))
+        .map(group => (
           <Group
-            key={idx}
+            key={`group_${group}`}
             classes={classes}
             name={group}
             typography={typography[group]}
-            theme={theme.hv}
           />
         ))}
     </div>
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Typographies);
+export default withStyles(styles)(Typographies);

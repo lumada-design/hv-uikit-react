@@ -1,12 +1,23 @@
-import React, { useState, memo } from "react";
+import React, { memo } from "react";
 import HvBanner from "@hv/uikit-react-core/dist/Banner";
 import Button from "@hv/uikit-react-core/dist/Button";
 
 const find = (array, value) => array.findIndex(element => element === value);
 
+const other = {
+  bannerContentProps: {
+    actionProps: {
+      "aria-label": "Close Button Label"
+    }
+  }
+};
+
 // Simple controller for the offset of the banners.
 class Controller extends React.Component {
-  state = { banners: [] };
+  constructor() {
+    super();
+    this.state = { banners: [] };
+  }
 
   openCallback = id => {
     const { banners } = this.state;
@@ -20,15 +31,21 @@ class Controller extends React.Component {
     this.setState({ banners });
   };
 
-  calculateOffset = id => 60 * (find(this.state.banners, id) + 1);
+  calculateOffset = id => {
+    const { banners } = this.state;
+    return 60 * (find(banners, id) + 1);
+  };
 
-  isOpen = id => find(this.state.banners, id) !== -1;
+  isOpen = id => {
+    const { banners } = this.state;
+    return find(banners, id) !== -1;
+  };
 
   render() {
     return (
       <div>
         <SimpleBanner
-          id={"0"}
+          id="0"
           label="This is a default banner."
           variant="default"
           offset={this.calculateOffset("0")}
@@ -38,7 +55,7 @@ class Controller extends React.Component {
         />
         <p />
         <SimpleBanner
-          id={"1"}
+          id="1"
           label="This is a success banner."
           variant="success"
           showIcon
@@ -49,7 +66,7 @@ class Controller extends React.Component {
         />
         <p />
         <SimpleBanner
-          id={"2"}
+          id="2"
           label="This is an error banner."
           variant="error"
           showIcon
@@ -108,6 +125,7 @@ const SimpleBanner = ({
         variant={variant}
         showIcon={showIcon}
         offset={offset}
+        {...other}
       />
     </div>
   );

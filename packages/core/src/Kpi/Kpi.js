@@ -1,98 +1,70 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
+import styles from "./styles";
+import withLabels from "../withLabels";
+
+const DEFAULT_LABELS = {
+  title: "",
+  indicator: undefined,
+  unit: undefined,
+  comparisonIndicatorInfo: undefined
+};
 
 const HvKpi = props => {
   const {
     classes,
     className,
     id,
-    kpiTextConfiguration,
     labels,
-    visualIndicator,
-    visualComparison,
-    trendIndicator,
-    indicatorUnitTextVariant,
-    indicatorTextVariant,
-    ...other
+    visualIndicator = null,
+    visualComparison = null,
+    trendIndicator = null,
+    indicatorUnitTextVariant = "sTitle",
+    indicatorTextVariant = "lTitle",
+    ...others
   } = props;
 
-  const definedLabels = kpiTextConfiguration || labels;
-
-  const InternalVisualComparison =
-    typeof visualComparison === "string" ? HvTypography : "div";
+  const InternalVisualComparison = typeof visualComparison === "string" ? HvTypography : "div";
 
   return (
-    <div id={id} className={classNames(classes.kpiContainer, className)} {...other}>
+    <div id={id} className={clsx(classes.root, className)} {...others}>
       <div>
-        <HvTypography variant="highlightText">
-          {definedLabels.title}
-        </HvTypography>
+        <HvTypography variant="highlightText">{labels.title}</HvTypography>
       </div>
       <div className={classes.indicatorsContainer}>
         {visualIndicator != null && (
-          <div
-            className={classNames(
-              classes.visualIndicatorContainer,
-              classes.spacingToTheRight
-            )}
-          >
+          <div className={clsx(classes.visualIndicatorContainer, classes.spacingToTheRight)}>
             {visualIndicator}
           </div>
         )}
-        <HvTypography
-          className={classNames(
-            classes.spacingToTheRight,
-            classes.indicatorText
-          )}
-          variant={indicatorTextVariant}
-        >
-          {definedLabels.indicator}
-        </HvTypography>
-        <HvTypography
-          className={classes.indicatorUnit}
-          variant={indicatorUnitTextVariant}
-        >
-          {definedLabels.unit}
-        </HvTypography>
+        {labels.indicator && (
+          <HvTypography
+            className={clsx(classes.spacingToTheRight, classes.indicatorText)}
+            variant={indicatorTextVariant}
+          >
+            {labels.indicator}
+          </HvTypography>
+        )}
+        {labels.unit && (
+          <HvTypography className={classes.indicatorUnit} variant={indicatorUnitTextVariant}>
+            {labels.unit}
+          </HvTypography>
+        )}
       </div>
       {visualComparison != null && (
         <div className={classes.comparisonComposition}>
           {trendIndicator != null && (
-            <div
-              className={classNames(
-                classes.trendLine,
-                classes.spacingToTheRight
-              )}
-            >
+            <div className={clsx(classes.trendLine, classes.spacingToTheRight)}>
               {trendIndicator}
             </div>
           )}
           <div>
             <div className={classes.comparisonContainer}>
               <InternalVisualComparison
-                className={classNames(
-                  classes.comparisons,
-                  classes.spacingToTheRight
-                )}
+                className={clsx(classes.comparisons, classes.spacingToTheRight)}
                 variant="highlightText"
               >
                 {visualComparison}
@@ -100,7 +72,7 @@ const HvKpi = props => {
             </div>
             <div className={classes.comparisonContainer}>
               <HvTypography className={classes.comparisons} variant="vizText">
-                {definedLabels.comparisonIndicatorInfo}
+                {labels.comparisonIndicatorInfo}
               </HvTypography>
             </div>
           </div>
@@ -126,7 +98,7 @@ HvKpi.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    kpiContainer: PropTypes.string,
+    root: PropTypes.string,
     /**
      * Styles applied to the component visual indicator.
      */
@@ -134,7 +106,15 @@ HvKpi.propTypes = {
     /**
      * Styles applied to the component comparison.
      */
+    comparisons: PropTypes.string,
+    /**
+     * Styles applied to the component comparison container.
+     */
     comparisonContainer: PropTypes.string,
+    /**
+     * Styles applied to the component comparison composition wrapper.
+     */
+    comparisonComposition: PropTypes.string,
     /**
      * Styles applied to the component indicators.
      */
@@ -152,9 +132,9 @@ HvKpi.propTypes = {
      */
     spacingToTheRight: PropTypes.string,
     /**
-     * Styles applied to the component visual comparison.
+     * Styles applied to the component trend line.
      */
-    comparisons: PropTypes.string
+    trendLine: PropTypes.string
   }).isRequired,
   /**
    * An Element that will be rendered to the left of the kpi indicator text.
@@ -175,24 +155,6 @@ HvKpi.propTypes = {
    * - Indicator: The text in the middle of the kpi.
    * - Unit: The text to the right of the indicator.
    * - comparisonIndicatorInfo: the text to the right of the visual comparison.
-   * @deprecated Instead use the labels property
-   */
-  kpiTextConfiguration: deprecatedPropType(
-    PropTypes.shape({
-      title: PropTypes.string,
-      indicator: PropTypes.string,
-      unit: PropTypes.string,
-      comparisonIndicatorInfo: PropTypes.string
-    }),
-    "Instead use the labels property"
-  ),
-  /**
-   * The object that contains the different labels inside the kpi.
-   *
-   * - Title: The text at the top of the kpi.
-   * - Indicator: The text in the middle of the kpi.
-   * - Unit: The text to the right of the indicator.
-   * - comparisonIndicatorInfo: the text to the right of the visual comparison.
    */
   labels: PropTypes.shape({
     title: PropTypes.string,
@@ -203,33 +165,11 @@ HvKpi.propTypes = {
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorTextVariant: PropTypes.oneOf([
-    "5xlTitle",
-    "xxlTitle",
-    "lTitle",
-    "sTitle"
-  ]),
+  indicatorTextVariant: PropTypes.oneOf(["5xlTitle", "xxlTitle", "lTitle", "sTitle"]),
   /**
    *  The typography variant used in the main text indicator of the KPI
    */
-  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle","sText", "infoText"])
+  indicatorUnitTextVariant: PropTypes.oneOf(["sTitle", "sText", "infoText"])
 };
 
-HvKpi.defaultProps = {
-  className: "",
-  id: undefined,
-  trendIndicator: null,
-  visualIndicator: null,
-  visualComparison: null,
-  labels: {
-    title: "",
-    indicator: "",
-    unit: "",
-    comparisonIndicatorInfo: ""
-  },
-  indicatorTextVariant: "lTitle",
-  indicatorUnitTextVariant: "sTitle",
-  kpiTextConfiguration: undefined
-};
-
-export default HvKpi;
+export default withStyles(styles, { name: "HvKpi" })(withLabels(DEFAULT_LABELS)(HvKpi));

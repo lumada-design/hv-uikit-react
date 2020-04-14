@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import Button from "@hv/uikit-react-core/dist/Button";
-
 import MultiButton from "@hv/uikit-react-core/dist/MultiButton";
-
-import Map from "@hv/uikit-react-icons/dist/Generic/Map";
-import LocationPin from "@hv/uikit-react-icons/dist/Generic/LocationPin";
+import { LocationPin, Map } from "@hv/uikit-react-icons/dist";
 
 const btnStyle = {
   width: "120px",
@@ -36,7 +33,7 @@ function WrapperComp() {
         New Props
       </Button>
       <div style={{ width: "400px" }}>
-        <MultiButton buttons={value} type={"mixed"} multi />
+        <MultiButton buttons={value} type="mixed" multi />
       </div>
     </>
   );

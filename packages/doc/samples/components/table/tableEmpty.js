@@ -21,7 +21,7 @@ class Wrapper extends React.Component {
     {
       headerText: "Time",
       accessor: "createdDate",
-      format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
+      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
       cellType: "numeric",
       fixed: "left"
     },
@@ -78,7 +78,7 @@ class Wrapper extends React.Component {
     const labels = {
       titleText: "This is a title",
       subtitleText: "This is a subtitle"
-    }
+    };
 
     return (
       <HvTable

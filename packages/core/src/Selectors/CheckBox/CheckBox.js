@@ -1,36 +1,19 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
-import CheckBoxIcon from "@hv/uikit-react-icons/dist/Generic/Checkbox";
-import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxCheck";
-import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/Generic/CheckboxPartial";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import classNames from "classnames";
+import clsx from "clsx";
+import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
+import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox";
+import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck";
+import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial";
+import { setId } from "../../utils";
 import labelPositions from "../labelPositions";
+import styles from "./styles";
 
 /**
  * Chooses the correct label styling to applied based on position.
  *
  * @param {String} classes - The classes object containing the classes names needed to be applied.
- * @param {Object} labelPosition - an Object containing the avaible label positions.
+ * @param {Object} labelPosition - an Object containing the available label positions.
  * @returns {Object} - an Object with the name of the class for the required styling.
  */
 const prepareLabelStyles = (classes, labelPosition, label) => {
@@ -38,9 +21,9 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
     switch (labelPosition) {
       default:
       case labelPositions.end:
-        return classNames(classes.container, classes.labelEnd);
+        return clsx(classes.container, classes.labelEnd);
       case labelPositions.start:
-        return classNames(classes.container, classes.labelStart);
+        return clsx(classes.container, classes.labelStart);
     }
   }
   return classes.container;
@@ -52,20 +35,19 @@ const prepareLabelStyles = (classes, labelPosition, label) => {
  * @param {Object} props - HvCheckbox props.
  * @returns {Object} - an Object with the selected icons.
  */
-const prepareIcon = ({ classes, theme, disabled }) => {
-  const color = disabled
-    ? [theme.hv.palette.atmosphere.atmo4, theme.hv.palette.atmosphere.atmo6]
-    : null;
+const prepareIcon = (classes, disabled) => {
+  const color = disabled ? ["atmo4", "atmo6"] : undefined;
 
   return {
     emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
     checkedIcon: <CheckBoxCheckedIcon color={color} className={classes.icon} />,
-    indeterminateIcon: (
-      <CheckBoxPartialIcon color={color} className={classes.icon} />
-    )
+    indeterminateIcon: <CheckBoxPartialIcon color={color} className={classes.icon} />
   };
 };
 
+/**
+ * A Checkbox is a mechanism that allows user to select one or more options.
+ */
 const HvCheckbox = props => {
   const {
     classes,
@@ -73,22 +55,17 @@ const HvCheckbox = props => {
     id,
     checked,
     indeterminate,
-    disabled,
+    disabled = false,
     onChange,
-    value,
-    label,
-    labelPlacement,
+    value = "",
+    label = "",
+    labelPlacement = "end",
     formControlLabelProps,
-    propsIcon,
-    checkboxProps,
-    propsLabel,
-    ...other
+    ...others
   } = props;
-  const materialPrimaryColor = "primary";
-  const icons = prepareIcon(props);
+  const icons = prepareIcon(classes, disabled);
   const labelClass = prepareLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
-  const [internalId] = useState(id || uniqueId("hv-checkbox-"));
 
   const onLocalChange = evt => {
     const isKeyEvent =
@@ -110,22 +87,22 @@ const HvCheckbox = props => {
       label={label}
       labelPlacement={labelPlacement}
       disabled={disabled}
-      className={classNames(labelClass, classes.truncate, className, {
+      className={clsx(labelClass, className, classes.truncate, {
         [classes.disableFocus]: isFocusDisabled
       })}
-      id={internalId}
+      id={id}
       classes={{
         disabled: classes.labelDisabled,
         label: classes.labelTypography
       }}
       control={
         <Checkbox
-          id={`${internalId}-input`}
+          id={setId(id, "input")}
           className={classes.checkBox}
           icon={icons.emptyIcon}
           indeterminateIcon={icons.indeterminateIcon}
           checkedIcon={icons.checkedIcon}
-          color={materialPrimaryColor}
+          color="default"
           disabled={disabled}
           disableRipple
           onChange={onLocalChange}
@@ -133,13 +110,10 @@ const HvCheckbox = props => {
           value={value}
           checked={checked}
           indeterminate={indeterminate}
-          {...checkboxProps}
-          {...propsLabel}
-          {...other}
+          {...others}
         />
       }
       {...formControlLabelProps}
-      {...propsIcon}
     />
   );
 };
@@ -161,6 +135,10 @@ HvCheckbox.propTypes = {
      * Styles applied to the component.
      */
     container: PropTypes.string,
+    /**
+     * Style applied when focus is disabled.
+     */
+    disableFocus: PropTypes.string,
     /**
      * Styles applied to the label typography.
      */
@@ -184,7 +162,8 @@ HvCheckbox.propTypes = {
     /**
      * Styles applied to the icon.
      */
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    truncate: PropTypes.string
   }).isRequired,
   /**
    * If `true` the checkbox is disabled and the onClick function will not be called.
@@ -222,46 +201,7 @@ HvCheckbox.propTypes = {
   /**
    * Extra properties passed to the MUI FormControlLabel component.
    */
-  formControlLabelProps: PropTypes.instanceOf(Object),
-  /**
-   * @deprecated Instead use the formControlLabelProps property
-   */
-  propsIcon: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the formControlLabelProps property"
-  ),
-  /**
-   * Extra properties passed to the MUI Checkbox component.
-   */
-  checkboxProps: PropTypes.instanceOf(Object),
-  /**
-   * @deprecated Instead use the checkboxProps property
-   */
-  propsLabel: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the checkboxProps property"
-  ),
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  formControlLabelProps: PropTypes.instanceOf(Object)
 };
 
-HvCheckbox.defaultProps = {
-  className: "",
-  id: undefined,
-  value: "",
-  label: "",
-  checked: undefined,
-  indeterminate: undefined,
-  disabled: false,
-  onChange: () => {},
-  formControlLabelProps: undefined,
-  propsIcon: undefined,
-  checkboxProps: undefined,
-  propsLabel: undefined,
-  labelPlacement: "end",
-  theme: null
-};
-
-export default HvCheckbox;
+export default withStyles(styles, { name: "HvCheckBox" })(HvCheckbox);

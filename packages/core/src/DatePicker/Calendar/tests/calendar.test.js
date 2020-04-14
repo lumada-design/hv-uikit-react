@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
@@ -24,8 +8,7 @@ import Navigation from "../Navigation";
 import { VIEW_MODE } from "../enums";
 import { makeUTCDate } from "../utils";
 
-import CalendarWithStyles from "../index";
-import Calendar from "../Calendar";
+import Calendar from "..";
 
 describe("<Calendar /> with minimum configuration", () => {
   let wrapper;
@@ -36,10 +19,10 @@ describe("<Calendar /> with minimum configuration", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <CalendarWithStyles id="default" selectedDate={selectedDate} />
+        <Calendar id="default" selectedDate={selectedDate} />
       </HvProvider>
     );
-    calendarComponent = wrapper.find(Calendar);
+    calendarComponent = wrapper.find("Calendar");
     calendarInstance = calendarComponent.instance();
   });
 
@@ -48,7 +31,7 @@ describe("<Calendar /> with minimum configuration", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Calendar)).toMatchSnapshot();
   });
 
   it("should render a header component", () => {
@@ -64,15 +47,11 @@ describe("<Calendar /> with minimum configuration", () => {
   });
 
   it("should have the month in the state be the same as the one set in the selectedDate", () => {
-    expect(calendarInstance.state.calendarModel.month).toBe(
-      selectedDate.getUTCMonth() + 1
-    );
+    expect(calendarInstance.state.calendarModel.month).toBe(selectedDate.getUTCMonth() + 1);
   });
 
   it("should have the year in the state be the same as the one set in the selectedDate", () => {
-    expect(calendarInstance.state.calendarModel.year).toBe(
-      selectedDate.getUTCFullYear()
-    );
+    expect(calendarInstance.state.calendarModel.year).toBe(selectedDate.getUTCFullYear());
   });
 
   it("should have the viewMode in the state set to Calendar", () => {
@@ -90,7 +69,7 @@ describe("<Calendar /> with configurations", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <CalendarWithStyles
+        <Calendar
           id="default"
           selectedDate={selectedDate}
           locale="en-US"
@@ -105,6 +84,6 @@ describe("<Calendar /> with configurations", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Calendar)).toMatchSnapshot();
   });
 });

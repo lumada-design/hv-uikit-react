@@ -1,36 +1,20 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import uniqueId from "lodash/uniqueId";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
-import Close from "@hv/uikit-react-icons/dist/Generic/Close";
+import { IconButton, withStyles } from "@material-ui/core";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
+import Close from "@hv/uikit-react-icons/dist/Close";
+import Success from "@hv/uikit-react-icons/dist/Success";
 import HvTypography from "../../Typography";
-import Button from "../../Button";
+import { setId } from "../../utils/setId";
 import { convertUnits } from "../utils";
+import styles from "./styles";
 
-const getStatusIcon = (classes, theme, status) => {
-  const { sema1, sema4 } = theme.hv.palette.semantic;
+const getStatusIcon = (classes, status) => {
   switch (status) {
     case "success":
-      return <Success iconSize="S" className={classes.icon} color={[sema1]} />;
+      return <Success className={classes.icon} color="sema1" />;
     case "fail":
-      return <Fail iconSize="S" className={classes.icon} color={[sema4]} />;
+      return <Fail className={classes.icon} color="sema4" />;
     default:
       return <div className={classes.icon} />;
   }
@@ -48,9 +32,7 @@ const getProgressText = (classes, data, progressConjunctionLabel) => {
       )}
 
       {!hasFailed && data.size && (
-        <HvTypography variant="sText">
-          {`\xa0${convertUnits(data.size)}`}
-        </HvTypography>
+        <HvTypography variant="sText">{`\xa0${convertUnits(data.size)}`}</HvTypography>
       )}
 
       {hasFailed && data.errorMessage && (
@@ -70,48 +52,42 @@ const getProgressBarWith = ({ size, progress }) => {
 
 const File = ({
   id,
-  theme,
   classes,
   data,
   progressConjunctionLabel,
   onFileRemoved,
   removeFileButtonLabel
 }) => {
-  const [fileId] = useState(id || uniqueId("hv-file-"));
-
   const hasError = data.status === "fail";
   const inProgress = data.status === "progress";
   const progressText = getProgressText(classes, data, progressConjunctionLabel);
-  const statusIcon = getStatusIcon(classes, theme, data.status);
+  const statusIcon = getStatusIcon(classes, data.status);
 
   return (
     <>
       {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
-        <span
-          className={classes.progressbar}
-          style={{ width: getProgressBarWith(data) }}
-        />
+        <span className={classes.progressbar} style={{ width: getProgressBarWith(data) }} />
       )}
 
       {statusIcon}
 
-      <HvTypography className={classes.textTruncation} variant="sText">
+      <HvTypography className={classes.nameText} variant="sText">
         {data.name}
       </HvTypography>
 
-      <span className={classes.progressText}>{progressText}</span>
+      <span className={classes.progressTextContainer}>{progressText}</span>
 
-      <Button
-        id={`${fileId}-remove-button`}
+      <IconButton
+        id={setId(id, "remove-button")}
         aria-label={removeFileButtonLabel}
         className={classes.removeButton}
         category="ghost"
-        onClick={() => onFileRemoved(data)}
+        onClick={() => onFileRemoved?.(data)}
       >
-        <Close iconSize="XS" className={classes.iconContainer} />
-      </Button>
+        <Close iconSize="XS" />
+      </IconButton>
     </>
   );
 };
@@ -122,17 +98,43 @@ File.propTypes = {
    */
   id: PropTypes.string,
   /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
-  /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
-  classes: PropTypes.shape({}).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Style applied to the progress bar.
+     */
+    progressbar: PropTypes.string,
+    /**
+     * Style applied to the progress bar background.
+     */
+    progressbarBack: PropTypes.string,
+    /**
+     * Style applied to the file name.
+     */
+    nameText: PropTypes.string,
+    /**
+     * Style applied to the container of the progress bar.
+     */
+    progressTextContainer: PropTypes.string,
+    /**
+     * Style applied to the remove button.
+     */
+    removeButton: PropTypes.string
+  }).isRequired,
   /**
    * File information to be displayed
    */
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    /**
+     * The file name.
+     */
+    name: PropTypes.string,
+    /**
+     * The upload status.
+     */
+    status: PropTypes.oneOf(["progress", "success", "fail"])
+  }).isRequired,
   /**
    * Callback fired when file is removed from list.
    */
@@ -147,8 +149,4 @@ File.propTypes = {
   removeFileButtonLabel: PropTypes.string.isRequired
 };
 
-File.defaultProps = {
-  id: null
-};
-
-export default File;
+export default withStyles(styles, { name: "HvFileUploaderFile" })(File);

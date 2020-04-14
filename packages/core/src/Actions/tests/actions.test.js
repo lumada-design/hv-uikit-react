@@ -1,33 +1,16 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { mount } from "enzyme";
 
-import {
-  Add,
-  Upload,
-  Delete,
-  Preview
-} from "@hv/uikit-react-icons/dist/Generic";
+import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
 
+import { toHaveNoViolations } from "jest-axe";
+import axe from "../../../config/axe-config";
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";
 import HvDropDownMenu from "../../DropDownMenu";
-import ActionsWithStyles from "../index";
+import Actions from "..";
+
+expect.extend(toHaveNoViolations);
 
 const actions = [
   { id: "post", label: "Add", iconCallback: () => <Add />, disabled: true },
@@ -43,7 +26,8 @@ describe("Actions with array", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <ActionsWithStyles
+        <Actions
+          id="actions"
           actions={actions}
           maxVisibleActions={2}
           actionsCallback={actionsCallbackMock}
@@ -91,11 +75,25 @@ describe("Actions with custom actions", () => {
     const label = "Test";
     wrapper = mount(
       <HvProvider>
-        <ActionsWithStyles actions={<HvButton>{label}</HvButton>} />
+        <Actions actions={<HvButton>{label}</HvButton>} />
       </HvProvider>
     );
 
     const element = wrapper.find(HvButton);
     expect(element.text()).toEqual(label);
+  });
+});
+
+describe("ActionsA11Y", () => {
+  let wrapper;
+  it("should find no errors", async () => {
+    wrapper = mount(
+      <HvProvider>
+        <Actions id="actions" actions={actions} />
+      </HvProvider>
+    );
+
+    const results = await axe(wrapper.html());
+    expect(results).toHaveNoViolations();
   });
 });

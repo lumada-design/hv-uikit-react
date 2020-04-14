@@ -1,38 +1,22 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { mount } from "enzyme";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
-import Banner from "../Banner";
+import { toHaveNoViolations } from "jest-axe";
+import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
-import BannerWithStyles from "../index";
 import HvProvider from "../../Provider";
-import {
-  mapSeverityToVariant,
-  severityIcon,
-  variantIcon
-} from "../BannerWrapper/VariantUtils";
+import iconVariants from "../../utils/iconVariants";
 import Button from "../../Button";
+
+import axe from "../../../config/axe-config";
+
+expect.extend(toHaveNoViolations);
 
 describe("Banner ", () => {
   const wrapper = mount(
     <HvProvider>
-      <BannerWithStyles variant="default" open={false} onClose={() => {}} />
+      <Banner id="banner" variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
 
@@ -41,7 +25,7 @@ describe("Banner ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Banner)).toMatchSnapshot();
   });
 
   it("should render the Banner component", () => {
@@ -57,7 +41,7 @@ describe("Banner ", () => {
   it("should render the BannerContentWrapper component", () => {
     const bannerComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="default" open onClose={() => {}} />
+        <Banner id="banner" variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
     ).find(HvBannerContentWrapper);
     expect(bannerComponent.length).toBe(1);
@@ -66,7 +50,7 @@ describe("Banner ", () => {
   it("should render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles variant="error" open showIcon onClose={() => {}} />
+        <Banner id="banner" variant="error" label="label" open showIcon onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -75,8 +59,10 @@ describe("Banner ", () => {
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
+          id="banner"
           variant="error"
+          label="label"
           open
           showIcon={false}
           onClose={() => {}}
@@ -89,8 +75,10 @@ describe("Banner ", () => {
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
+          id="banner"
           variant="default"
+          label="label"
           open
           customIcon={<Fail />}
           onClose={() => {}}
@@ -103,7 +91,9 @@ describe("Banner ", () => {
   it("should render a action on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
+          id="banner"
+          label="label"
           variant="default"
           open
           actions={<Button>button</Button>}
@@ -118,9 +108,11 @@ describe("Banner ", () => {
   it("should render a action by passing a structure on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
+          id="banner1"
           variant="default"
           open
+          label="label"
           actions={[
             {
               id: "testButton",
@@ -138,9 +130,11 @@ describe("Banner ", () => {
   it("should render a action on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
+          id="banner"
           variant="default"
           open
+          label="label"
           actions={<Button>button</Button>}
           actionsPosition="bottom-right"
           onClose={() => {}}
@@ -153,9 +147,11 @@ describe("Banner ", () => {
   it("should render a action by passing a structure on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <BannerWithStyles
+        <Banner
+          id="Snackbar"
           variant="default"
           open
+          label="label"
           actions={[
             {
               id: "testButton",
@@ -174,7 +170,7 @@ describe("Banner ", () => {
     const offset = 10;
     let component = mount(
       <HvProvider>
-        <BannerWithStyles open offset={offset} onClose={() => {}} />
+        <Banner open offset={offset} onClose={() => {}} label="label" />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -182,43 +178,69 @@ describe("Banner ", () => {
 
     component = mount(
       <HvProvider>
-        <BannerWithStyles
-          open
-          offset={offset}
-          anchorOrigin="bottom"
-          onClose={() => {}}
-        />
+        <Banner open offset={offset} anchorOrigin="bottom" label="label" onClose={() => {}} />
       </HvProvider>
     ).find(MaterialSnackbar);
 
     expect(component.get(0).props.style).toEqual({ bottom: `${offset}px` });
   });
 
-  it("should return the right severity icon", () => {
-    const theme = {
-      hv: {
-        palette: {
-          semantic: {
-            sema1: "#FFFFF",
-            sema5: "#FFFFF",
-            sema6: "#FFFFF"
-          }
-        }
-      }
-    };
+  it("should return the severity variant", () => {
+    const error = mount(iconVariants("error")).find("Fail");
+    expect(error.length).toBe(1);
+    expect(iconVariants("test")).toBe(null);
+  });
+});
 
-    const error = severityIcon("error", theme);
-    expect(error).toEqual(variantIcon.error(theme));
+describe("BannerA11Y", () => {
+  const bannerContentProps = {
+    actionProps: {
+      "aria-label": "Close Button Label"
+    }
+  };
 
-    const test = severityIcon("test", theme);
-    expect(test).toEqual(variantIcon.success(theme));
+  it("simple banner should have no errors", async () => {
+    const wrapper = mount(
+      <HvProvider>
+        <Banner
+          variant="default"
+          open
+          showIcon
+          label="Label"
+          onClose={() => {}}
+          bannerContentProps={bannerContentProps}
+        />
+      </HvProvider>
+    );
+
+    const results = await axe(wrapper.html());
+
+    expect(results).toHaveNoViolations();
   });
 
-  it("should return the severity variant", () => {
-    const error = mapSeverityToVariant("error");
-    expect(error).toBe("error");
+  it("banner with actions should have no errors", async () => {
+    const wrapper = mount(
+      <HvProvider>
+        <Banner
+          id="banner"
+          variant="default"
+          open
+          actions={[
+            {
+              id: "testButton",
+              label: "test"
+            }
+          ]}
+          showIcon
+          label="Label"
+          onClose={() => {}}
+          bannerContentProps={bannerContentProps}
+        />
+      </HvProvider>
+    );
 
-    const test = mapSeverityToVariant("test");
-    expect(test).toBe("default");
+    const results = await axe(wrapper.html());
+
+    expect(results).toHaveNoViolations();
   });
 });

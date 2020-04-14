@@ -1,8 +1,7 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
 import HvGrid from "@hv/uikit-react-core/dist/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 
 const Box = ({ text }) => (
   <div
@@ -26,16 +25,18 @@ const Box = ({ text }) => (
   </div>
 );
 
-const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
+const GridExample = () => {
+  const theme = useTheme();
   const findBreakpoint = () =>
     [...theme.breakpoints.keys].reverse().reduce((output, key) => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const matches = useMediaQuery(theme.breakpoints.only(key));
 
       return !output && matches ? key : output;
     }, null) || "xs";
 
-  let breakpoint = findBreakpoint();
-  let title = `breakpoint: ${breakpoint}`;
+  const breakpoint = findBreakpoint();
+  const title = `breakpoint: ${breakpoint}`;
 
   return (
     <div>
@@ -67,6 +68,6 @@ const GridExample = withStyles({}, { withTheme: true })(({ theme }) => {
       </div>
     </div>
   );
-});
+};
 
 export default <GridExample />;

@@ -1,52 +1,31 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import { clone, fill } from "lodash";
+import { withStyles } from "@material-ui/core";
 import Chart from "../Chart";
 import { setData, setLayout } from "./barchartPlotlyOverrides";
+import styles from "./styles";
 
 const MARGIN = 50;
 const MAX_BAR_WIDTH = 90;
 
 /**
- * Component responsible for the presentation of the barchart component.
- *
- * @param title
- * @param subtitle
- * @param data
- * @param layout
- * @param config
- * @param tooltipType
- * @returns {*}
- * @constructor
+ * A Bar chart is a chart or graph that presents categorical data with rectangular bars.
  */
 const Barchart = ({
+  id,
   classes,
   title,
   subtitle,
   data,
   layout,
   config,
-  tooltipType,
-  stack,
-  horizontal,
+  tooltipType = "multiple",
+  stack = false,
+  horizontal = false,
   xAxisTitle,
-  yAxisTitle
+  yAxisTitle,
+  ...others
 }) => {
   const newLayout = setLayout(layout, stack);
   const newData = setData(data, horizontal);
@@ -64,8 +43,7 @@ const Barchart = ({
     const { width } = ref.current.getBoundingClientRect();
     const plotWidth = width - MARGIN;
     const groupWidth = plotWidth / numberOfGroup;
-    const colWidth =
-      groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
+    const colWidth = groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
 
     const greaterThan90 = colWidth / numberOfBarsByGroup > MAX_BAR_WIDTH;
     const isAlreadyGreaterThan90 = plotData[0].width !== undefined;
@@ -96,6 +74,7 @@ const Barchart = ({
 
   return (
     <Chart
+      id={id}
       classes={classes}
       title={title}
       subtitle={subtitle}
@@ -106,10 +85,15 @@ const Barchart = ({
       config={config}
       tooltipType={tooltipType}
       afterPlot={recalculateBarWidth}
+      {...others}
     />
   );
 };
 Barchart.propTypes = {
+  /**
+   * An Id passed on to the component
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -156,17 +140,4 @@ Barchart.propTypes = {
   yAxisTitle: PropTypes.string
 };
 
-Barchart.defaultProps = {
-  classes: null,
-  layout: undefined,
-  title: "",
-  subtitle: "",
-  tooltipType: "multiple",
-  config: null,
-  stack: false,
-  horizontal: false,
-  xAxisTitle: undefined,
-  yAxisTitle: undefined
-};
-
-export default Barchart;
+export default withStyles(styles, { name: "HvBarchart" })(Barchart);

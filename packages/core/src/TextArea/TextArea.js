@@ -1,53 +1,44 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
 import Input from "../Input";
+import styles from "./styles";
+import withLabels from "../withLabels";
+
+const DEFAULT_LABELS = {
+  inputLabel: "",
+  placeholder: "",
+  warningText: "",
+  maxCharQuantityWarningText: "",
+  minCharQuantityWarningText: "",
+  requiredWarningText: ""
+};
 
 /**
  * A text area component wrapping the input box, it allows the input of paragraph of text.
  * alongside this it can provide a validation for the max character quantity
- *
- * @class HvTextArea
- * @extends {React.Component}
  */
 class HvTextArea extends React.Component {
   constructor(props) {
     super(props);
-    const { value, initialValue, autoScroll } = this.props;
-    const val = value || initialValue;
+    const { initialValue, autoScroll } = this.props;
+
     this.state = {
-      currentValueLength: val !== undefined ? this.limitValue(val).length : 0,
+      currentValueLength: initialValue !== undefined ? this.limitValue(initialValue).length : 0,
       autoScrolling: autoScroll
     };
     this.textInputRef = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { inputValue: nextValue, maxCharQuantity } = nextProps;
+    const { value: nextValue, maxCharQuantity } = nextProps;
     const { currentValueLength: oldLength } = prevState;
 
     if (nextValue !== undefined) {
-      const nextLength =
-        nextValue.length > maxCharQuantity ? maxCharQuantity : nextValue.length;
+      const nextLength = nextValue.length > maxCharQuantity ? maxCharQuantity : nextValue.length;
 
       if (nextLength !== oldLength) {
         return {
@@ -116,10 +107,10 @@ class HvTextArea extends React.Component {
    *
    * @param {String} value - The value provided by the HvInput
    */
-  onChangeHandler = value => {
+  onChangeHandler = (event, value) => {
     const { onChange } = this.props;
 
-    const newValue = onChange(this.limitValue(value));
+    const newValue = onChange(event, this.limitValue(value));
 
     const textAreaValue = this.limitValue(!isNil(newValue) ? newValue : value);
 
@@ -134,27 +125,28 @@ class HvTextArea extends React.Component {
       classes,
       className,
       id,
-      inputTextConfiguration,
       labels,
       maxCharQuantity,
       rows,
-      value,
       initialValue,
-      inputValue,
+      value,
       disabled,
-      resizable
+      resizable,
+      autoScroll,
+      onChange,
+      ...others
     } = this.props;
 
     const { currentValueLength } = this.state;
-    const val = value || initialValue;
+    const val = initialValue;
 
     return (
       <div>
-        <div className={classes.textAreaContainer}>
+        <div className={classes.root}>
           <Input
             classes={{
-              container: classes.container,
-              input: classNames(classes.input, {
+              root: classes.container,
+              input: clsx(classes.input, {
                 [classes.resize]: !disabled && resizable,
                 [classes.defaultWith]: !resizable
               }),
@@ -164,9 +156,9 @@ class HvTextArea extends React.Component {
             }}
             className={className}
             id={id}
-            labels={inputTextConfiguration || labels}
-            initialValue={this.limitValue(val)}
-            inputValue={this.limitValue(inputValue)}
+            labels={labels}
+            initialValue={val && this.limitValue(val)}
+            value={this.limitValue(value)}
             onChange={this.onChangeHandler}
             multiline
             rows={rows}
@@ -175,11 +167,12 @@ class HvTextArea extends React.Component {
             validationIconVisible={false}
             disableClear
             inputRef={this.textInputRef}
+            {...others}
           />
           {maxCharQuantity ? (
             <div className={classes.characterCounter}>
               <HvTypography
-                className={classNames(classes.inline, {
+                className={clsx(classes.inline, {
                   [classes.currentCounter]: !disabled,
                   [classes.disabled]: disabled
                 })}
@@ -188,7 +181,7 @@ class HvTextArea extends React.Component {
                 {currentValueLength}
               </HvTypography>
               <HvTypography
-                className={classNames(classes.inline, classes.separator, {
+                className={clsx(classes.inline, classes.separator, {
                   [classes.maxCharacter]: !disabled,
                   [classes.disabled]: disabled
                 })}
@@ -197,7 +190,7 @@ class HvTextArea extends React.Component {
                 /
               </HvTypography>
               <HvTypography
-                className={classNames(classes.inline, {
+                className={clsx(classes.inline, {
                   [classes.maxCharacter]: !disabled,
                   [classes.disabled]: disabled
                 })}
@@ -212,8 +205,6 @@ class HvTextArea extends React.Component {
     );
   }
 }
-
-// [classes.currentCounter]:!disabled,[classes.disabled]:disabled
 
 HvTextArea.propTypes = {
   /**
@@ -283,31 +274,8 @@ HvTextArea.propTypes = {
     /**
      * Style applied container of the text area component.
      */
-    textAreaContainer: PropTypes.string
+    root: PropTypes.string
   }).isRequired,
-  /**
-   * An Object containing the various text associated with the text area.
-   *
-   * -inputLabel: the label on top of the input.
-   * -placeholder: the placeholder value of the input.
-   * -infoText: the default value of the info text below the input.
-   * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * -minCharQuantityWarningText: the message that appears when there are too few characters.
-   * -requiredWarningText: the message that appears when the input is empty and required.
-   *  @deprecated Instead use the labels property
-   */
-  inputTextConfiguration: deprecatedPropType(
-    PropTypes.shape({
-      inputLabel: PropTypes.string,
-      placeholder: PropTypes.string,
-      infoText: PropTypes.string,
-      warningText: PropTypes.string,
-      maxCharQuantityWarningText: PropTypes.string,
-      minCharQuantityWarningText: PropTypes.string,
-      requiredWarningText: PropTypes.string
-    })
-  ),
   /**
    * An Object containing the various text associated with the text area.
    *
@@ -338,19 +306,13 @@ HvTextArea.propTypes = {
    */
   rows: PropTypes.number,
   /**
-   * The initial value of the input.
-   * @deprecated will be replace by initialValue
+   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
    */
   value: PropTypes.string,
   /**
    * The initial value of the input.
    */
   initialValue: PropTypes.string,
-  /**
-   * The input value to be set. If used it is the responsibility of the caller to maintain the state.
-   * @deprecated will be replaced by value
-   */
-  inputValue: PropTypes.string,
   /**
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it.
@@ -365,7 +327,7 @@ HvTextArea.propTypes = {
    */
   resizable: PropTypes.bool,
   /**
-   * Auto-scroll: automatically scroll to the end on inputValue changes.
+   * Auto-scroll: automatically scroll to the end on value changes.
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
   autoScroll: PropTypes.bool
@@ -374,24 +336,14 @@ HvTextArea.propTypes = {
 HvTextArea.defaultProps = {
   className: "",
   id: undefined,
-  inputTextConfiguration: undefined,
-  labels: {
-    inputLabel: "",
-    placeholder: "",
-    warningText: "",
-    maxCharQuantityWarningText: "",
-    minCharQuantityWarningText: "",
-    requiredWarningText: ""
-  },
   rows: 1,
   disabled: false,
-  value: "",
-  initialValue: "",
-  inputValue: undefined,
+  value: undefined,
+  initialValue: undefined,
   maxCharQuantity: undefined,
-  onChange: value => value,
+  onChange: (event, value) => value,
   autoScroll: false,
   resizable: false
 };
 
-export default HvTextArea;
+export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));

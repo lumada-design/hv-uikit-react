@@ -1,123 +1,68 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
+import clsx from "clsx";
+import { useTheme, withStyles } from "@material-ui/core";
 import Tooltip from "./Tooltip";
-import {
-  setLayout,
-  setLegend,
-  setXaxis,
-  setYaxis
-} from "./chartPlotlyOverrides";
-import styleCreator from "./styles";
+import { setLayout, setLegend, setXaxis, setYaxis } from "./chartPlotlyOverrides";
 import Typography from "../Typography";
 import Plot from "./Plot";
+import styles from "./styles";
 
-/**
- * Setter of default layout properties.
- *
- * @param inputLayout
- * @param theme
- * @returns {*}
- */
-const propsLayoutSetter = (
-  inputLayout,
-  theme,
-  isHorizontal,
-  xAxisTitle,
-  yAxisTitle
-) => {
-  const styles = styleCreator(theme);
+const propsLayoutSetter = (inputLayout, theme, isHorizontal, xAxisTitle, yAxisTitle) => {
+  const layoutStyles = styles(theme);
   const layout = inputLayout === undefined ? {} : inputLayout;
 
   // Layout
-  setLayout(layout, styles);
+  setLayout(layout, layoutStyles);
 
   // Legend
-  setLegend(layout, styles);
+  setLegend(layout, layoutStyles);
 
   // Xaxis
-  setXaxis(layout, styles, xAxisTitle, isHorizontal);
+  setXaxis(layout, layoutStyles, xAxisTitle, isHorizontal);
 
   // Yaxis
-  setYaxis(layout, styles, yAxisTitle, isHorizontal);
+  setYaxis(layout, layoutStyles, yAxisTitle, isHorizontal);
 
   return layout;
 };
 
-/**
- * Component responsible for the presentation of the barchart component.
- *
- * @param title
- * @param subtitle
- * @param data
- * @param layout
- * @param config
- * @param tooltipType
- * @returns {*}
- * @constructor
- */
 const Chart = ({
+  id,
   classes,
-  theme,
   title,
   subtitle,
   data,
   layout,
   config,
-  tooltipType,
+  tooltipType = "multiple",
   afterPlot,
   xAxisTitle,
-  yAxisTitle
+  yAxisTitle,
+  ...others
 }) => {
   const [isHover, setIsHover] = useState(false);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [dataTooltip, setDataTooltip] = useState();
+  const theme = useTheme();
 
   // Check if the barchart is horizontal or vertical.
   const isHorizontal = !isNil(data[0].orientation)
     ? data[0].orientation.toUpperCase() === "H"
     : false;
 
-  const newLayout = propsLayoutSetter(
-    layout,
-    theme,
-    isHorizontal,
-    xAxisTitle,
-    yAxisTitle
-  );
+  const newLayout = propsLayoutSetter(layout, theme, isHorizontal, xAxisTitle, yAxisTitle);
 
-  /**
-   * Extract data from the plotly onHover event to be used to create the tooltip.
-   *
-   * @param eventData
-   */
-  const onHover = eventData => {
+  // Extract data from the plotly onHover event to be used to create the tooltip.
+  const onHover = event => {
     const dataFromPoints = {
-      title: isHorizontal ? eventData.points[0].y : eventData.points[0].x,
+      title: isHorizontal ? event.points[0].y : event.points[0].x,
       elements: []
     };
-    eventData.points.forEach(p => {
+    event.points.forEach(p => {
       dataFromPoints.elements.push({
-        color: p.fullData.marker
-          ? p.fullData.marker.color
-          : p.fullData.line.color,
+        color: p.fullData.marker ? p.fullData.marker.color : p.fullData.line.color,
         name: p.fullData.name,
         value: isHorizontal ? p.x : p.y
       });
@@ -130,14 +75,10 @@ const Chart = ({
 
   const onUnHover = () => setIsHover(false);
 
-  /**
-   * Obtains the cursor coordinates to send to the tooltip.
-   * @param eventData
-   */
-  const onMouseMove = eventData => {
+  const onMouseMove = event => {
     setCoordinates({
-      x: eventData.pageX,
-      y: eventData.pageY
+      x: event.pageX,
+      y: event.pageY
     });
   };
 
@@ -145,24 +86,15 @@ const Chart = ({
 
   return (
     <div classes={classes}>
-      {isHover && (
-        <Tooltip
-          coordinates={coordinates}
-          data={dataTooltip}
-          useSingle={useSingle}
-        />
-      )}
-      <div className={classes.root}>
+      {isHover && <Tooltip coordinates={coordinates} data={dataTooltip} useSingle={useSingle} />}
+      <div id={id} className={classes.root}>
         <div className={classes.titleContainer}>
           {title && <Typography variant="mTitle">{title}</Typography>}
           <div className={classes.subtitle}>
             {subtitle && <Typography variant="sText">{subtitle}</Typography>}
           </div>
         </div>
-        <div
-          className={classNames({ [classes.paddingTop]: title })}
-          onMouseMove={e => onMouseMove(e)}
-        >
+        <div className={clsx({ [classes.paddingTop]: title })} onMouseMove={onMouseMove}>
           <Plot
             title={title}
             data={data}
@@ -171,6 +103,7 @@ const Chart = ({
             onHover={onHover}
             onUnHover={onUnHover}
             afterPlot={afterPlot}
+            {...others}
           />
         </div>
       </div>
@@ -180,13 +113,18 @@ const Chart = ({
 
 Chart.propTypes = {
   /**
+   * An Id passed on to the component
+   */
+  id: PropTypes.string,
+  /**
    * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object),
-  /**
-   * Theme.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    titleContainer: PropTypes.string,
+    subtitle: PropTypes.string,
+    paddingTop: PropTypes.string
+  }),
   /**
    * Title of the chart.
    */
@@ -225,15 +163,4 @@ Chart.propTypes = {
   yAxisTitle: PropTypes.string
 };
 
-Chart.defaultProps = {
-  classes: null,
-  title: "",
-  subtitle: "",
-  tooltipType: "multiple",
-  config: null,
-  afterPlot: undefined,
-  xAxisTitle: null,
-  yAxisTitle: null
-};
-
-export default Chart;
+export default withStyles(styles, { name: "HvChart" })(Chart);

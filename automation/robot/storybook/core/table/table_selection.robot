@@ -51,14 +51,12 @@ unselect all rows when All is unchecked and pagination have more than 1 page
 keep selection when pagination is moved to next page
     Select Checkbox                    ${checkbox_row_10}
     Select From List By Value          ${page_size}          5
-    Checkbox Should Not Be Selected    ${checkbox_row_5}
     Click Element                      ${next_page}
-    Checkbox Should Be Selected        ${checkbox_row_5}
+    Checkbox Should Be Selected        ${checkbox_row_10}
        
 keep selection when pagination is moved to previous page
     Select Checkbox                    ${checkbox_row_1}
     Click Element                      ${next_page}
-    Checkbox Should Not Be Selected    ${checkbox_row_1}     
     Click Element                      ${previous_page}
     Checkbox Should Be Selected        ${checkbox_row_1}
 

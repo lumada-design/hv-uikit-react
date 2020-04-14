@@ -21,9 +21,9 @@ const styles = theme => ({
   }
 });
 
-const Container = withStyles(styles, { withTheme: true })(
-  ({ classes, children }) => <div className={classes.root}>{children}</div>
-);
+const Container = withStyles(styles)(({ classes, children }) => (
+  <div className={classes.root}>{children}</div>
+));
 
 const ControlledPagination = () => {
   const [page, setPage] = useState(0);
@@ -36,7 +36,7 @@ const ControlledPagination = () => {
       <Container>
         {data.slice(pageSize * page, pageSize * (page + 1)).map(i => (
           <Typography key={i} component="span">
-            {"Item " + (i + 1)}
+            {`Item ${i + 1}`}
           </Typography>
         ))}
       </Container>
@@ -48,8 +48,8 @@ const ControlledPagination = () => {
         canNext={page < numPages - 1}
         pageSize={pageSize}
         pageSizeOptions={pageSizeOptions}
-        onPageChange={page => setPage(page)}
-        onPageSizeChange={pageSize => setPageSize(pageSize)}
+        onPageChange={value => setPage(value)}
+        onPageSizeChange={value => setPageSize(value)}
         labels={{ pageSizeEntryName: "items" }}
       />
     </>

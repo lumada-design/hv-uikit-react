@@ -1,51 +1,37 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
-import classNames from "classnames";
+import clsx from "clsx";
 import FocusTrap from "focus-trap-react";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import { Popper, useTheme, withStyles } from "@material-ui/core";
+import OutsideClickHandler from "react-outside-click-handler";
+import { setId, isKeypress, KeyboardCodes } from "../../utils";
 import InnerList from "../../List";
 import Search from "../../SearchBox";
 import Actions from "../Actions";
-import Popper from "../../utils/Popper";
 import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
+import ConditionalWrapper from "../../utils/ConditionalWrapper";
+import styles from "./styles";
 
 const List = ({
   id,
-  theme,
   classes,
-  values,
-  multiSelect,
-  showSearch,
+  values = [],
+  multiSelect = false,
+  showSearch = false,
   onChange,
   labels,
-  selectDefault,
-  notifyChangesOnFirstRender,
-  hasTooltips,
-  disablePortal,
-  isOpen,
-  anchorEl,
+  selectDefault = true,
+  notifyChangesOnFirstRender = false,
+  hasTooltips = false,
+  disablePortal = true,
+  isOpen = false,
+  anchorEl = null,
   singleSelectionToggle,
-  placement
+  placement,
+  ...others
 }) => {
   const [searchStr, setSearchStr] = useState();
   const [list, setList] = useState(clone(values));
@@ -55,6 +41,7 @@ const List = ({
   const [allSelected, setAllSelected] = useState(false);
   const [anySelected, setAnySelected] = useState(false);
   const [selectionLabel, setSelectionLabel] = useState(labels.selectAll);
+  const theme = useTheme();
 
   const newLabels = {
     selectAll: labels.selectAll,
@@ -68,7 +55,7 @@ const List = ({
     setList(values);
     setPrevList(values);
     if (notifyChangesOnFirstRender) {
-      onChange(values, false, false, true);
+      onChange?.(values, false, false, true);
     }
     if (list) {
       // eslint-disable-next-line no-use-before-define
@@ -112,10 +99,10 @@ const List = ({
   const renderSearch = () => (
     <div className={classes.searchContainer}>
       <Search
-        id={`${id}-search`}
+        id={setId(id, "search")}
         value={searchStr}
         values={values}
-        onChange={str => handleSearch(str)}
+        onChange={(event, str) => handleSearch(str)}
       />
     </div>
   );
@@ -144,7 +131,7 @@ const List = ({
    * @param notifyChanges
    */
   const sendOnChange = (selection, commitChanges, toggle, notifyChanges) => {
-    onChange(selection, commitChanges, toggle, notifyChanges);
+    onChange?.(selection, commitChanges, toggle, notifyChanges);
     updateSelectionLabel(selection);
   };
 
@@ -178,11 +165,11 @@ const List = ({
   const renderSelectAll = () => (
     <div className={classes.selectAllContainer}>
       <HvCheckBox
-        id={`${id}-select-all`}
+        id={setId(id, "select-all")}
         label={selectionLabel}
         onChange={() => handleSelectAll()}
         classes={{ container: classes.selection }}
-        className={classNames([classes.selectAll])}
+        className={classes.selectAll}
         indeterminate={anySelected && !allSelected}
         checked={allSelected}
       />
@@ -261,7 +248,7 @@ const List = ({
   const renderActions = () => (
     <div className={classes.actions}>
       <Actions
-        id={`${id}-actions`}
+        id={setId(id, "actions")}
         onCancel={() => handleCancel()}
         onApply={() => handleApply()}
         labels={labels}
@@ -294,31 +281,27 @@ const List = ({
 
   const showList = !isNil(values);
 
-  const renderInnerRender = () => (
+  const renderInnerList = () => (
     <div>
       {!positionUp && (
         <div
-          className={classNames(classes.inputExtensionOpen, {
+          className={clsx(classes.inputExtensionOpen, {
             [classes.inputExtensionLeftPosition]: placement === "left"
           })}
         />
       )}
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
-        className={classNames([
-          classes.list,
-          classes.listClosed,
-          {
-            [classes.listOpenDown]: isOpen && !positionUp,
-            [classes.listOpenUp]: isOpen && positionUp
-          }
-        ])}
+        className={clsx(classes.list, classes.listClosed, {
+          [classes.listOpenDown]: isOpen && !positionUp,
+          [classes.listOpenUp]: isOpen && positionUp
+        })}
         onKeyDown={handleKeyDown}
       >
         {!positionUp && <div className={classes.listBorderDown} />}
 
         <div
-          className={classNames(classes.rootList, {
+          className={clsx(classes.rootList, {
             [classes.marginTop]: positionUp && showList
           })}
         >
@@ -327,7 +310,7 @@ const List = ({
           <div className={classes.listContainer}>
             {showList && (
               <InnerList
-                id={`${id}-list`}
+                id={setId(id, "list")}
                 values={list}
                 multiSelect={multiSelect}
                 useSelector={multiSelect}
@@ -339,6 +322,7 @@ const List = ({
                 selectable
                 condensed
                 singleSelectionToggle={singleSelectionToggle}
+                {...others}
               />
             )}
           </div>
@@ -347,21 +331,16 @@ const List = ({
       </div>
       {positionUp && (
         <div
-          className={classNames(
-            classes.inputExtensionOpen,
-            classes.inputExtensionOpenShadow,
-            {
-              [classes.inputExtensionFloatRight]: placement === "right",
-              [classes.inputExtensionFloatLeft]: placement === "left"
-            }
-          )}
+          className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
+            [classes.inputExtensionFloatRight]: placement === "right",
+            [classes.inputExtensionFloatLeft]: placement === "left"
+          })}
         />
       )}
     </div>
   );
 
-  const bottom =
-    placement && `bottom-${placement === "right" ? "start" : "end"}`;
+  const bottom = placement && `bottom-${placement === "right" ? "start" : "end"}`;
 
   return (
     <Popper
@@ -376,13 +355,11 @@ const List = ({
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
     >
-      <ClickAwayListener onClickAway={e => handleCancel(e)}>
-        {showList ? (
-          <FocusTrap>{renderInnerRender()}</FocusTrap>
-        ) : (
-          renderInnerRender()
-        )}
-      </ClickAwayListener>
+      <OutsideClickHandler onOutsideClick={e => handleCancel(e)}>
+        <ConditionalWrapper condition={showList} wrapper={c => <FocusTrap>{c}</FocusTrap>}>
+          {renderInnerList()}
+        </ConditionalWrapper>
+      </OutsideClickHandler>
     </Popper>
   );
 };
@@ -392,10 +369,6 @@ List.propTypes = {
    * Id to be applied to the root node.
    */
   id: PropTypes.string.isRequired,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -458,18 +431,4 @@ List.propTypes = {
   placement: PropTypes.oneOf(["left", "right"])
 };
 
-List.defaultProps = {
-  values: [],
-  multiSelect: false,
-  showSearch: false,
-  onChange() {},
-  selectDefault: true,
-  notifyChangesOnFirstRender: false,
-  hasTooltips: false,
-  disablePortal: true,
-  isOpen: false,
-  anchorEl: null,
-  placement: undefined
-};
-
-export default List;
+export default withStyles(styles, { name: "HvDropdownList" })(List);

@@ -25,13 +25,20 @@ RUN npm config set @hv:registry https://nexus.pentaho.org/repository/group-npm/
 # copy miscellaneous resources (first because they're less likely to change)
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./.eslint* ./.gitignore ./CONTRIBUTING.md ./ROADMAP.md ./
 
+# copy build scripts
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./scripts ./scripts
+
+# copy configs
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./config ./config
+
 # copy the top orchestrator package's files
-COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./package.json ./package-lock.json ./lerna.json ./
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./package.json ./package-lock.json ./lerna.json ./babel.config.js ./prettier.config.js ./LICENSE.txt ./
 
 # bootstrap the top orchestrator package
 RUN npm ci
 
 # copy the project's packages (from the least to the most likely to change)
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/themes ./packages/themes
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/icons ./packages/icons
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/lab ./packages/lab
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/doc ./packages/doc

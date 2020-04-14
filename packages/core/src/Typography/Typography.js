@@ -1,27 +1,9 @@
-/*
- * Copyright 2019-2020 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
-/**
- * Mapping of typography with HTML elements.
- * @type {{infoText: string, xxsTitle: string, disabledButtonText: string, xsTitle: string, labelText: string, "5xlTitle": string, sTitle: string, xlTitle: string, highlightText: string, inlineLink: string, lTitle: string, normalText: string, "4xlTitle": string, "3xlTitle": string, sLink: string, xxlTitle: string, mTitle: string, disabledText: string, vizText: string}}
- */
 const defaultVariantMapping = {
   "5xlTitle": "h1",
   "4xlTitle": "h1",
@@ -44,56 +26,135 @@ const defaultVariantMapping = {
   infoText: "p",
   sLink: "p",
   sText: "p",
-  vizText: "p",
-  disabledText: "p"
+  vizText: "p"
 };
 
-/**
- * Typography element. It uses the define typography set in the theme, selected by the variant.
- *
- * @param theme
- * @param children
- * @param variant
- * @returns {*}
- * @constructor
- */
-const Typography = React.forwardRef(({
-  variant,
-  classes,
-  paragraph,
-  className,
-  component,
-  id,
-  children,
-  ...other
-}, ref) => {
-  const Component = component ||
-    (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
+const HvTypography = React.forwardRef((props, ref) => {
+  const {
+    id,
+    variant = "normalText",
+    classes,
+    paragraph = false,
+    className,
+    component,
+    children,
+    ...others
+  } = props;
+  const Component = component || (paragraph ? "p" : defaultVariantMapping[variant]) || "span";
 
   return (
     <Component
       id={id}
       ref={ref}
-      className={classNames(
-        classes[variant],
-        classes.baseFontFamily,
-        classes.margin,
-        className
-      )}
-      {...other}
+      className={clsx(className, classes.root, classes[variant])}
+      {...others}
     >
       {children}
     </Component>
   );
 });
 
-Typography.propTypes = {
+HvTypography.propTypes = {
   /**
-   * Styles applied to the Drawer Paper element.
+   * The text to be set.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  children: PropTypes.node.isRequired,
   /**
-   * ClassName passed as prop.
+   * Override or extend the styles applied to the component.
+   * See CSS API tab for more details.
+   */
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root element
+     */
+    root: PropTypes.string,
+    /**
+     * Styles applied to the 3xlTitle variant
+     */
+    "3xlTitle": PropTypes.string,
+    /**
+     * Styles applied to the 4xlTitle variant
+     */
+    "4xlTitle": PropTypes.string,
+    /**
+     * Styles applied to the 5xlTitle variant.
+     */
+    "5xlTitle": PropTypes.string,
+    /**
+     * Styles applied to the disabledButtonText variant
+     */
+    disabledButtonText: PropTypes.string,
+    /**
+     * Styles applied to the disabledText variant
+     */
+    disabledText: PropTypes.string,
+    /**
+     * Styles applied to the highlightText variant
+     */
+    highlightText: PropTypes.string,
+    /**
+     * Styles applied to the infoText variant
+     */
+    infoText: PropTypes.string,
+    /**
+     * Styles applied to the inlineLink variant
+     */
+    inlineLink: PropTypes.string,
+    /**
+     * Styles applied to the labelText variant
+     */
+    labelText: PropTypes.string,
+    /**
+     * Styles applied to the lTitle variant
+     */
+    lTitle: PropTypes.string,
+    /**
+     * Styles applied to the mTitle variant
+     */
+    mTitle: PropTypes.string,
+    /**
+     * Styles applied to the normalText variant
+     */
+    normalText: PropTypes.string,
+    /**
+     * Styles applied to the placeholderText variant
+     */
+    placeholderText: PropTypes.string,
+    /**
+     * Styles applied to the selectedNavText variant
+     */
+    selectedNavText: PropTypes.string,
+    /**
+     * Styles applied to the sLink variant
+     */
+    sLink: PropTypes.string,
+    /**
+     * Styles applied to the sText variant
+     */
+    sText: PropTypes.string,
+    /**
+     * Styles applied to the sTitle variant
+     */
+    sTitle: PropTypes.string,
+    /**
+     * Styles applied to the vizText variant
+     */
+    vizText: PropTypes.string,
+    /**
+     * Styles applied to the xlTitle variant
+     */
+    xlTitle: PropTypes.string,
+    /**
+     * Styles applied to the xsTitle variant
+     */
+    xsTitle: PropTypes.string,
+    /**
+     * Styles applied to the xxlTitle variant
+     */
+    xxlTitle: PropTypes.string
+  }),
+  /**
+   * @ignore
    */
   className: PropTypes.string,
   /**
@@ -111,46 +172,33 @@ Typography.propTypes = {
    */
   paragraph: PropTypes.bool,
   /**
-   * The text to be set.
-   */
-  children: PropTypes.node,
-  /**
    * The selected typography.
    */
   variant: PropTypes.oneOf([
-    "5xlTitle",
-    "4xlTitle",
     "3xlTitle",
-    "xxlTitle",
-    "xlTitle",
+    "4xlTitle",
+    "5xlTitle",
+    "disabledButtonText",
+    "disabledText",
+    "highlightText",
+    "infoText",
+    "inlineLink",
+    "labelText",
     "lTitle",
     "mTitle",
-    "sTitle",
-    "xsTitle",
-    "xxsTitle",
-    "highlightText",
     "normalText",
-    "selectedText",
-    "disabledButtonText",
     "placeholderText",
-    "inlineLink",
     "selectedNavText",
-    "labelText",
-    "infoText",
+    "selectedText",
     "sLink",
     "sText",
+    "sTitle",
     "vizText",
-    "disabledText"
+    "xlTitle",
+    "xsTitle",
+    "xxlTitle",
+    "xxsTitle"
   ])
 };
 
-Typography.defaultProps = {
-  variant: "normalText",
-  className: undefined,
-  id: undefined,
-  component: null,
-  paragraph: false,
-  children: ""
-};
-
-export default Typography;
+export default withStyles(styles, { name: "HvTypography" })(HvTypography);

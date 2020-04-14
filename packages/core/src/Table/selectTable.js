@@ -51,11 +51,7 @@ export default (Component, options) => {
       const { selectType } = this.props;
       if (selectType === "radio") return null;
 
-      const {
-        toggleAll,
-        selectAll: checked,
-        SelectAllInputComponent
-      } = this.props;
+      const { toggleAll, selectAll: checked, SelectAllInputComponent } = this.props;
       const inputProps = {
         checked,
         onClick: toggleAll,
@@ -68,10 +64,8 @@ export default (Component, options) => {
 
     // this is so we can expose the underlying ReactTable to get at the sortedData for selectAll
     getWrappedInstance() {
-      if (!this.wrappedInstance)
-        console.warn("RTSelectTable - No wrapped instance");
-      if (this.wrappedInstance.getWrappedInstance)
-        return this.wrappedInstance.getWrappedInstance();
+      if (!this.wrappedInstance) console.warn("RTSelectTable - No wrapped instance");
+      if (this.wrappedInstance.getWrappedInstance) return this.wrappedInstance.getWrappedInstance();
       else return this.wrappedInstance;
     }
 
@@ -110,9 +104,7 @@ export default (Component, options) => {
       const extra = {
         columns
       };
-      return (
-        <Component {...rest} {...extra} ref={r => (this.wrappedInstance = r)} />
-      );
+      return <Component {...rest} {...extra} ref={r => (this.wrappedInstance = r)} />;
     }
   };
 

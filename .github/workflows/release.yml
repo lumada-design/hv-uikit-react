@@ -1,5 +1,5 @@
 # See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-# 
+#
 # A few optional parameters that can be passed to this workflow:
 #  - ref: specific branch to perform the release, defaults to 'master'.
 #  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
@@ -14,7 +14,7 @@
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
 name: CI (release)
-on: 
+on:
   repository_dispatch:
     types: [release]
 
@@ -25,7 +25,7 @@ env:
 jobs:
   Release:
     runs-on: [self-hosted, Linux]
-    container: 
+    container:
       image: node:12.14.1-buster
       options: -u 1000
     env:

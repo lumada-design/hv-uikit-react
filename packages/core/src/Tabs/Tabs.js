@@ -1,39 +1,38 @@
-/*
- * Copyright 2020 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import Tabs from "@material-ui/core/Tabs";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { Tabs, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const HvTabs = ({ classes, ...others }) => (
-  <Tabs
-    classes={{
-      root: classes.root,
-      flexContainer: classes.flexContainer,
-      indicator: classes.indicator,
-      scroller: classes.scroller
-    }}
-    {...others}
-    TabIndicatorProps={{ children: <div /> }}
-  />
-);
+/**
+ * Tab is a graphical control element that allows multiple documents or panels to be contained within a single window,
+ * using tabs as a navigational widget for switching between sets of documents.
+ */
+const HvTabs = props => {
+  const { classes, ...others } = props;
+
+  return (
+    <Tabs
+      classes={{
+        root: classes.root,
+        flexContainer: classes.flexContainer,
+        indicator: classes.indicator,
+        scroller: classes.scroller
+      }}
+      {...others}
+      TabIndicatorProps={{ children: <div /> }}
+    />
+  );
+};
 
 HvTabs.propTypes = {
+  /**
+   * Identifier.
+   */
+  id: PropTypes.string,
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * The content of the component.
    */
@@ -57,7 +56,7 @@ HvTabs.propTypes = {
     /**
      * Styles applied to the `TabIndicator` component.
      */
-    scroller: PropTypes.string,
+    scroller: PropTypes.string
   }).isRequired,
   /**
    * Callback fired when the value changes.
@@ -71,12 +70,6 @@ HvTabs.propTypes = {
    */
   // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.any
-};
-
-HvTabs.defaultProps = {
-  children: null,
-  onChange: undefined,
-  value: undefined
 };
 
 export default withStyles(styles, { name: "HvTabs" })(HvTabs);

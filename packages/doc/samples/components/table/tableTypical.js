@@ -2,6 +2,8 @@ import React from "react";
 import HvTable from "@hv/uikit-react-core/dist/Table";
 import Chart from "react-google-charts";
 
+/* eslint-disable no-underscore-dangle */
+
 const data = [
   {
     id: 1,
@@ -82,17 +84,11 @@ class Wrapper extends React.Component {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          [
-            " ",
-            Number(cellData.row._original.salesGrowth),
-            `color:${cellData.row._original.color}`
-          ]
+          [" ", Number(cellData.row._original.salesGrowth), `color:${cellData.row._original.color}`]
         ];
         return (
           <div style={{ display: "flex" }}>
-            <div style={{ alignSelf: "center" }}>
-              {cellData.row._original.salesGrowth}€
-            </div>
+            <div style={{ alignSelf: "center" }}>{`${cellData.row._original.salesGrowth}€`}</div>
             <div style={{ alignSelf: "center" }}>
               <Chart
                 width="55px"

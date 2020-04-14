@@ -1,9 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import HvNotificationPanel from "@hv/uikit-react-lab/dist/NotificationPanel";
-
-import Alert from "@hv/uikit-react-icons/dist/Generic/Alert";
-import Close from "@hv/uikit-react-icons/dist/Generic/Close";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import { Alert, Close, Level5 } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = {
@@ -20,50 +17,44 @@ const styles = {
   }
 };
 
-class SimpleNotificationPanel extends Component {
-  render() {
-    const { classes } = this.props;
-
-    const npProps = {
-      icon: <Alert iconSize="S" />,
-      open: true,
-      classes: {
-        panel: classes.panel,
-        badgeBorder: classes.badgeBorder
+const SimpleNotificationPanel = ({ classes }) => {
+  const npProps = {
+    icon: <Alert />,
+    open: true,
+    classes: {
+      panel: classes.panel,
+      badgeBorder: classes.badgeBorder
+    },
+    header: {
+      headerTitle: "Notifications",
+      headerCloseImg: <Close iconSize="XS" />
+    },
+    notifications: [
+      {
+        id: "1",
+        title: "Test",
+        isRead: false,
+        date: new Date(),
+        icon: <Level5 semantic="sema6" />
       },
-      header: {
-        headerTitle: "Notifications",
-        headerCloseImg: <Close iconSize="XS" />
-      },
-      notifications: [
-        {
-          id: "1",
-          title: "Test",
-          isRead: false,
-          date: new Date(),
-          icon: <Level5 iconSize="S" semantic="sema6" />
-        },
-        {
-          id: "2",
-          title: "Test 2",
-          isRead: true,
-          date: new Date("6/19/2019")
-        }
-      ],
-      footer: <div className={classes.footer}>Mark All Read</div>
-    };
+      {
+        id: "2",
+        title: "Test 2",
+        isRead: true,
+        date: new Date("6/19/2019")
+      }
+    ],
+    footer: <div className={classes.footer}>Mark All Read</div>
+  };
 
-    return (
-      <div>
-        <HvNotificationPanel {...npProps} />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <HvNotificationPanel {...npProps} />
+    </div>
+  );
+};
 
-const SimpleNotificationPanelWithStyles = withStyles(styles, {
-  withTheme: true
-})(SimpleNotificationPanel);
+const SimpleNotificationPanelWithStyles = withStyles(styles)(SimpleNotificationPanel);
 
 export default (
   <div

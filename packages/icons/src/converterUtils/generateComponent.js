@@ -9,10 +9,7 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
       paletteArray.forEach(defaultColor => {
         const themeColor = `"${categoryObject[themeColorName]}"`;
         if (themeColor === defaultColor.toUpperCase()) {
-          result = defaultPalette.replace(
-            `${defaultColor}`,
-            `theme.hv.palette.${categoryName}.${themeColorName}`
-          );
+          result = defaultPalette.replace(`${defaultColor}`, `theme.palette.${themeColorName}`);
         }
       });
     });
@@ -24,22 +21,22 @@ const replaceColorsWithTheme = (defaultPalette, themePalette) => {
  * Creates a full component string based upon provided svg data and a component name
  * @param  string svgOutput -The svg data, preformatted
  * @param  string componentName - The name of the component without extension
- * @param  string colorArrayDefaultValues - The defaults value of colors to add to the component
+ * @param  string colors - The defaults value of colors to add to the component
  * @return string The parsed component string
  */
-module.exports = ({ svgOutput, componentName, colorArrayDefaultValues, defaultSizes }) => {
+module.exports = ({ svgOutput, componentName, colors, defaultSizes }) => {
   const themePalette = dawnTheme.palette;
 
   const selectors = ["Checkbox", "RadioButton"];
   const isSelector = selectors.some(el => componentName.startsWith(el));
   const hasSpecialSize = /^Level(\d)/g.test(componentName);
-  const specialCaseXS = componentName.includes("XS");
+  const specialCaseXS = componentName.endsWith("XS");
   const calcSize = size => (hasSpecialSize ? size + 8 : size);
-  const USE_DS_SPECS = false;
+  const USE_DS_SPECS = true;
 
-  const themedPalette = colorArrayDefaultValues
-    .replace(/"#414141"/g, "theme.hv.palette.accent.acce1")
-    .replace(/"#fff"/g, `theme.hv.palette.${isSelector ? "atmosphere.atmo1" : "accent.acce0"}`);
+  const themedPalette = colors
+    .replace(/"#414141"/g, "theme.palette.acce1")
+    .replace(/"#fff"/g, `theme.palette.${isSelector ? "atmo1" : "acce0"}`);
   const palette = replaceColorsWithTheme(themedPalette, themePalette);
 
   return `
@@ -47,6 +44,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import withStyles from "@material-ui/core/styles/withStyles";
+import useTheme from "@material-ui/core/styles/useTheme";
 
 const X_SMALL = "${calcSize(12)}px";
 const X_SMALL_BOX = "${USE_DS_SPECS ? 32 : calcSize(12)}px";
@@ -96,7 +94,6 @@ const ${componentName} = ({
   viewbox = "${defaultSizes.viewBoxRegexp.join(" ")}",
   height,
   width,
-  theme,
   semantic,
   inverted = false,
   className = "",
@@ -104,20 +101,24 @@ const ${componentName} = ({
   style,
   ...other
 }) => {
-  const flatColors = Object.assign({}, ...Object.values(theme.hv.palette));
-  let colorArray = Array.isArray(color) && color.map(c => flatColors[c] || c);
+  const theme = useTheme();
+  let colorArray;
 
-  if (!colorArray || colorArray.length < 1) {
+  if (typeof color == "string" && theme.palette[color]) {
+    colorArray = [theme.palette[color]];
+  } else if (Array.isArray(color)) {
+    colorArray = color.map(c => theme.palette[c] || c);
+  } else {
     colorArray = [${palette}];
 
     if (semantic) {
-      colorArray[0] = theme.hv.palette.semantic[semantic];
+      colorArray[0] = theme.palette[semantic];
     }
+  }
 
-    if (inverted && colorArray[1]) {
-      colorArray[1] = colorArray[0];
-      colorArray[0] = "none";
-    }
+  if (inverted && colorArray[1]) {
+    colorArray[1] = colorArray[0];
+    colorArray[0] = "none";
   }
 
   const size = sizeSelector(iconSize, height, width);
@@ -130,7 +131,7 @@ const ${componentName} = ({
   );
 };
 
-const styles = () => ({
+const styles = {
   root: {
     display: "flex",
     "& svg": {
@@ -153,7 +154,7 @@ const styles = () => ({
     width: LARGE_BOX,
     height: LARGE_BOX
   }
-});
+};
 
 ${componentName}.propTypes = {
   /**
@@ -186,10 +187,14 @@ ${componentName}.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * An array of strings representing the colors to override in the icon.
+   * A String or Array of strings representing the colors to override in the icon.
    * Each element inside the array will override a diferent color.
+   * You can use either an HEX or color name from the palette.
    */
-  color: PropTypes.arrayOf(PropTypes.string),
+  color: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string)
+  ]),
   /**
    * A string that will override the viewbox of the svg
    */
@@ -220,5 +225,5 @@ ${componentName}.propTypes = {
   boxStyles: PropTypes.instanceOf(Object)
 };
 
-export default withStyles(styles, { name: "Hv${componentName}Icon", withTheme: true })(${componentName});`;
+export default withStyles(styles, { name: "HvIcon${componentName}" })(${componentName});`;
 };

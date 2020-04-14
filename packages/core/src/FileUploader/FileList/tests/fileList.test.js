@@ -1,32 +1,16 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 
-import FileListWithStyles from "..";
-import FileList from "../FileList";
+import FileList from "..";
 import HvProvider from "../../../Provider";
 
 let wrapper;
 
 const files = [
   {
+    id: "1",
     errorMessage: "File type not allowed for upload",
     status: "fail",
     lastModified: 1575566155192,
@@ -36,6 +20,7 @@ const files = [
     webkitRelativePath: ""
   },
   {
+    id: "2",
     errorMessage: "File type not allowed for upload",
     status: "fail",
     lastModified: 1575547399043,
@@ -50,14 +35,19 @@ describe("FileList withStyles", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>
-        <FileListWithStyles list={files} />
+        <FileList
+          list={files}
+          progressConjunctionLabel="progressConjunctionLabel"
+          removeFileButtonLabel="removeFileButtonLabel"
+          onFileRemoved={() => {}}
+        />
       </HvProvider>
     );
     expect(wrapper).toBeDefined();
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(FileList)).toMatchSnapshot();
   });
 
   it("should render the FileList", () => {

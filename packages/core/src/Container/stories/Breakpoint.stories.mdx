@@ -1,0 +1,94 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Hidden, Paper, withStyles } from "@material-ui/core";
+import { addDecorator } from "@storybook/react";
+import { DocsContainer } from "@storybook/addon-docs/blocks";
+import { HvContainer, HvGrid, HvProvider } from "../..";
+import useWidth from "../../utils/useWidth";
+
+<Meta title="Foundation/Grid" />
+
+# Breakpoints Example
+
+Examples of the Grid System proposed by Design System using our Container and Grid components. The implemented Grid is based in the [Material UI](https://v3.material-ui.com/layout/grid/#grid) implementation.
+
+The definitions where set following the design system directives:
+
+| Breakpoint | Width (in px) | Gutters (in px) | Number of columns |
+| ---------- | ------------- | --------------- | ----------------- |
+| xs         | [0-600[       | 15              | 4                 |
+| sm         | [600-960[     | 15              | 8                 |
+| md         | [960-1270[    | 30              | 12                |
+| lg         | [1270-1920[   | 30              | 12                |
+| xl         | [1920-...[    | 30              | 12                |
+
+<Preview>
+  <Story name="Example">
+    {() => {
+      const styles = theme => ({
+        root: {
+          border: "1px solid",
+          backgroundColor: theme.hv.palette.base.base1
+        },
+        paper: {
+          padding: theme.spacing(2),
+          textAlign: "center",
+          backgroundColor: theme.hv.palette.atmosphere.atmo3,
+          height: 125
+        }
+      });
+      const width = useWidth();
+      const Example = withStyles(styles)(({ classes }) => (
+        <div>
+          <HvTypography>{`Current Width: ${width}`}</HvTypography>
+          <div className={classes.root}>
+            <HvContainer>
+              <HvGrid container>
+                <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
+                  <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+                </HvGrid>
+                <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
+                  <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+                </HvGrid>
+                <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
+                  <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+                </HvGrid>
+                <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
+                  <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+                </HvGrid>
+                <Hidden smDown>
+                  <HvGrid item xl={1} lg={1} md>
+                    <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  </HvGrid>
+                  <HvGrid item xl={1} lg={1} md>
+                    <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  </HvGrid>
+                  <HvGrid item xl={1} lg={1} md>
+                    <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  </HvGrid>
+                  <HvGrid item xl={1} lg={1} md>
+                    <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  </HvGrid>
+                  <Hidden mdDown>
+                    <HvGrid item xl={1} lg={1}>
+                      <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                    </HvGrid>
+                    <HvGrid item xl={1} lg={1}>
+                      <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                    </HvGrid>
+                    <HvGrid item xl={1} lg={1}>
+                      <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                    </HvGrid>
+                    <HvGrid item xl={1} lg={1}>
+                      <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                    </HvGrid>
+                  </Hidden>
+                </Hidden>
+              </HvGrid>
+            </HvContainer>
+          </div>
+        </div>
+      ));
+      return <Example />;
+    }}
+  </Story>
+</Preview>

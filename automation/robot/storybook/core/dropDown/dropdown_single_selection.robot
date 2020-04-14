@@ -66,4 +66,3 @@ show an empty dropdown when is activated
     Wait Until Element Is Enabled      ${dropdown}    10s
     Click Element                      ${dropdown}
     Page Should Not Contain Element    ${options}
-

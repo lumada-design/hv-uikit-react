@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import HvButton from "@hv/uikit-react-core/dist/Button";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import Warning from "@hv/uikit-react-icons/dist/Generic/Caution";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
-import {
-  HvModal,
-  HvModalActions,
-  HvModalContent,
-  HvModalTitle
-} from "@hv/uikit-react-core/dist";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { Caution, Fail, Success } from "@hv/uikit-react-icons/dist";
+import { HvModal, HvModalActions, HvModalContent, HvModalTitle } from "@hv/uikit-react-core/dist";
 
 const containerStyle = {
   display: "flex"
@@ -26,30 +18,21 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
 
   return (
     <div>
-      <HvButton
-        id={buttonMessage}
-        style={btnStyle}
-        onClick={() => setOpen(true)}
-      >
+      <HvButton id={buttonMessage} style={btnStyle} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvModal
-        classes={classes}
-        open={open}
-        onClose={() => setOpen(false)}
-        id="test"
-      >
+      <HvModal classes={classes} open={open} onClose={() => setOpen(false)} id="test">
         {title}
-        {content ? (
-          content
-        ) : (
-            <HvModalContent>
-              Switching to model view will clear all the fields in your
-              visualization. You will need to re-select your fields.
-            </HvModalContent>
-          )}
+        {content || (
+          <HvModalContent>
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
+          </HvModalContent>
+        )}
         <HvModalActions>
-          <HvButton id="apply" category="ghost">Apply</HvButton>
+          <HvButton id="apply" category="ghost">
+            Apply
+          </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
           </HvButton>
@@ -59,22 +42,22 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
   );
 };
 
-const iconWrapper = (Icon, sema, props) => {
-  const GeneratedIcon = withStyles({}, { withTheme: true })(Icon);
-  return () => <GeneratedIcon semantic={sema} {...props} />;
-};
-
-const generalIconProps = { iconSize: "M" };
-
 export default (
   <div style={containerStyle}>
     <SimpleModal
+      buttonMessage="Success"
+      title={
+        <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
+          Are you sure?
+        </HvModalTitle>
+      }
+    />
+    <p />
+    <SimpleModal
       buttonMessage="Warning"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Warning, "sema3", generalIconProps)()}
-        >
-          Switch model view?
+        <HvModalTitle customIcon={<Caution semantic="sema3" iconSize="M" />}>
+          Are you sure?
         </HvModalTitle>
       }
     />
@@ -82,10 +65,8 @@ export default (
     <SimpleModal
       buttonMessage="Error"
       title={
-        <HvModalTitle
-          customIcon={iconWrapper(Fail, "sema4", generalIconProps)()}
-        >
-          Switch model view?
+        <HvModalTitle customIcon={<Fail semantic="sema4" iconSize="M" />}>
+          Are you sure?
         </HvModalTitle>
       }
     />

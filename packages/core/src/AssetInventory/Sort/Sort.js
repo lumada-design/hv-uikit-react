@@ -1,30 +1,8 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import DropDown from "../../Dropdown";
 
-/**
- * Filter the metadata that has searchable definitions.
- *
- * @param metadata
- * @returns {[]}
- */
 const sortOperationSetup = (metadata, selectedSort) => {
   const sortableCriteria = [];
 
@@ -54,12 +32,6 @@ const sortOperationSetup = (metadata, selectedSort) => {
   return sortableCriteria;
 };
 
-/**
- * Get the sort function according the type.
- *
- * @param type
- * @returns {(function(*=, *=): boolean)|(function(*, *): boolean)}
- */
 const sortByType = type => {
   switch (type.toUpperCase()) {
     case "NUMERIC":
@@ -72,50 +44,29 @@ const sortByType = type => {
   }
 };
 
-/**
- * Calls the passed onSelection passing the sort function.
- *
- * @param sort
- */
-const sortValues = ({
-  accessor,
-  sortFunction: externalSortFunction,
-  type,
-  cellType
-}) => {
+const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellType }) => {
   let selectedSortFunc;
 
   const sortFunction = externalSortFunction || sortByType(cellType);
 
   if (type === "asc") {
-    selectedSortFunc = (a, b) =>
-      sortFunction(get(a, accessor), get(b, accessor)) ? -1 : 1;
+    selectedSortFunc = (a, b) => (sortFunction(get(a, accessor), get(b, accessor)) ? -1 : 1);
   }
   if (type === "desc") {
-    selectedSortFunc = (a, b) =>
-      sortFunction(get(a, accessor), get(b, accessor)) ? 1 : -1;
+    selectedSortFunc = (a, b) => (sortFunction(get(a, accessor), get(b, accessor)) ? 1 : -1);
   }
   return selectedSortFunc;
 };
 
-/**
- * Sort component.
- *
- * @param id
- * @param labels
- * @param onSelection
- * @param metadata
- * @returns {*}
- * @constructor
- */
 const Sort = ({
-  id,
+  id = undefined,
   labels,
-  selected,
+  selected = undefined,
   onSelection,
   metadata,
-  onSortChange,
-  disablePortal
+  onSortChange = null,
+  disablePortal = false,
+  ...others
 }) => {
   const innerSortValues = data => {
     onSelection(sortValues(data), data.id);
@@ -130,6 +81,7 @@ const Sort = ({
       selectDefault={false}
       singleSelectionToggle={false}
       disablePortal={disablePortal}
+      {...others}
     />
   );
 };
@@ -171,17 +123,11 @@ Sort.propTypes = {
   /**
    * Selected id
    */
-  selected: PropTypes.string.isRequired,
+  selected: PropTypes.string,
   /**
    * Disable portal on the dropdown
    */
   disablePortal: PropTypes.bool
-};
-
-Sort.defaultProps = {
-  id: undefined,
-  onSortChange: null,
-  disablePortal: false
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import AssetInventory from "@hv/uikit-react-core/dist/AssetInventory";
-import Cards from "@hv/uikit-react-icons/dist/Generic/Cards";
-import List from "@hv/uikit-react-icons/dist/Generic/List";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import ListView, {
@@ -11,62 +9,31 @@ import ListView, {
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import RawUploadIcon from "@hv/uikit-react-icons/dist/Generic/Upload";
-import RawAddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import RawPreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
-import RawDeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import {
+  Add,
+  Cards,
+  Delete,
+  Level1,
+  Level2Average,
+  Level3Bad,
+  Level4,
+  Level5,
+  List,
+  Preview,
+  Upload
+} from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 // https://github.com/pentaho/hv-uikit-react/tree/master/packages/doc/samples/components/assetInventory/ServerSideTester.js
 import { getPages, fetchData, doSearch, doSort } from "./ServerSideTester";
-
-const boxStyles = { width: "30px", height: "30px" };
-const styles = () => ({
-  box: {
-    ...boxStyles
-  }
-});
-
-const AddIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawAddIcon className={classes.box} color={color} />;
-  }
-);
-
-const PreviewIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawPreviewIcon className={classes.box} color={color} />;
-  }
-);
-
-const UploadIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawUploadIcon className={classes.box} color={color} />;
-  }
-);
-
-const DeleteIcon = withStyles(styles, { withTheme: true })(
-  ({ classes, disabled, theme }) => {
-    const color = disabled ? [theme.hv.palette.atmosphere.atmo7] : undefined;
-    return <RawDeleteIcon className={classes.box} color={color} />;
-  }
-);
 
 const getStatus = statusNumber => {
   switch (statusNumber) {
     case 1:
       return { Icon: Level1, sema: "sema10" };
     case 2:
-      return { Icon: Level2, sema: "sema11" };
+      return { Icon: Level2Average, sema: "sema11" };
     case 3:
-      return { Icon: Level3, sema: "sema12" };
+      return { Icon: Level3Bad, sema: "sema12" };
     case 4:
       return { Icon: Level4, sema: "sema13" };
     case 5:
@@ -76,7 +43,7 @@ const getStatus = statusNumber => {
   }
 };
 
-//----------------------- CardView Render -----------------------------
+// ----------------------- CardView Render -----------------------------
 const kpiStyles = theme => ({
   content: {
     padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
@@ -140,13 +107,11 @@ const Content = ({ classes, values }) => (
   </Grid>
 );
 
-const ContentWithStyles = withStyles(kpiStyles, {
-  withTheme: true
-})(Content);
+const ContentWithStyles = withStyles(kpiStyles)(Content);
 
-const cardRenderer = (data, viewConfiguration, metadata) => {
+const cardRenderer = (data, viewConfiguration) => {
   const { Icon, sema } = getStatus(data.status);
-  const StyledIcon = <Icon semantic={sema} boxStyles={boxStyles} />;
+  const StyledIcon = <Icon semantic={sema} />;
 
   return (
     <HvCard
@@ -154,8 +119,10 @@ const cardRenderer = (data, viewConfiguration, metadata) => {
       headerTitle={data.headerTitle}
       innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
       semantic={sema}
-      checkboxValue={data.id}
-      checkboxSelected={data.checkboxSelected}
+      checkboxProps={{
+        value: data.id
+      }}
+      checked={data.checkboxSelected}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
       actions={viewConfiguration.actions}
@@ -165,25 +132,20 @@ const cardRenderer = (data, viewConfiguration, metadata) => {
   );
 };
 
-//----------------------- ListView Render -----------------------------
+// ----------------------- ListView Render -----------------------------
 
 const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow
-      checkboxValue={value.id}
-      checkboxSelected={value.checkboxSelected}
-    >
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+    <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checkboxSelected}>
+      <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon className={classes.icon} semantic={status.sema} />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
-          <HvTypography variant="highlightText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
           <HvTypography className={classes.timestamp} variant="sText">
             {value.event.timestamp}
           </HvTypography>
@@ -193,15 +155,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
-        <HvTypography variant="normalText">{value.probability}%</HvTypography>
+      <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
+        <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
-        <HvTypography variant="normalText">{value.timeHorizon}h</HvTypography>
+      <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
+        <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
         <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>
@@ -215,14 +177,13 @@ const stylesRow = theme => ({
     borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
   },
   icon: {
-    display: "block",
     margin: `0 ${theme.hv.spacing.xs}px`
   }
 });
 
-const StyledRow = withStyles(stylesRow, { withTheme: true })(Row);
+const StyledRow = withStyles(stylesRow)(Row);
 
-const rowRenderer = (value, index, viewConfiguration, metadata) => (
+const rowRenderer = (value, index) => (
   <StyledRow
     status={getStatus(value.status)}
     value={value}
@@ -231,31 +192,31 @@ const rowRenderer = (value, index, viewConfiguration, metadata) => (
   />
 );
 
-//----------------------- Configuration ------------------------------
+// ----------------------- Configuration ------------------------------
 
 const myActions = [
   {
     id: "post",
     label: "Add",
-    iconCallback: () => <AddIcon />,
+    iconCallback: () => <Add />,
     disabled: false
   },
   {
     id: "get",
     label: "Preview",
-    iconCallback: () => <PreviewIcon disabled />,
+    iconCallback: () => <Preview color="atmo7" />,
     disabled: true
   },
   {
     id: "put",
     label: "Upload",
-    iconCallback: () => <UploadIcon disabled />,
+    iconCallback: () => <Upload color="atmo7" />,
     disabled: true
   },
   {
     id: "delete",
     label: "Delete",
-    iconCallback: () => <DeleteIcon />,
+    iconCallback: () => <Delete />,
     disabled: false
   }
 ];
@@ -293,19 +254,19 @@ class ServerSideAssetInventory extends React.Component {
 
   onPageChange = page => {
     this.setState(prevState => ({
-      page: page,
+      page,
       values: fetchData(prevState.pageSize, page)
     }));
   };
 
   onPageSizeChange = pageSize => {
     this.setState(prevState => ({
-      pageSize: pageSize,
+      pageSize,
       values: fetchData(pageSize, prevState.page)
     }));
   };
 
-  onSearch = search => {
+  onSearch = (event, search) => {
     this.setState(prevState => ({
       page: 0,
       values: doSearch(search, prevState.pageSize),
@@ -324,7 +285,7 @@ class ServerSideAssetInventory extends React.Component {
         onSelection={event => console.log(event.target.value)}
         isSelectable
         actions={myActions}
-        actionsCallback={(id, action) =>
+        actionsCallback={(e, id, action) =>
           console.log(`You have pressed card ${id} with action ${action.label}`)
         }
         // Pagination
@@ -340,7 +301,7 @@ class ServerSideAssetInventory extends React.Component {
         onSearch={this.onSearch}
         // Sort
         onSortChange={this.onSort}
-        sortOptionId={"id1Asc"}
+        sortOptionId="id1Asc"
         searchString={searchString}
       >
         <CardView
@@ -349,8 +310,8 @@ class ServerSideAssetInventory extends React.Component {
           renderer={cardRenderer}
           viewConfiguration={{
             breakpoints: {
-              xs: "false",
-              sm: "false",
+              xs: false,
+              sm: false,
               md: 4,
               lg: 3,
               xl: 3

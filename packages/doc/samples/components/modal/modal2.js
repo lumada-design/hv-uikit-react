@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import Ungroup from "@hv/uikit-react-icons/dist/Generic/Ungroup";
-
-import {
-  HvModal,
-  HvModalActions,
-  HvModalContent,
-  HvModalTitle
-} from "@hv/uikit-react-core/dist";
+import { Ungroup } from "@hv/uikit-react-icons/dist";
+import { HvModal, HvModalActions, HvModalContent, HvModalTitle } from "@hv/uikit-react-core/dist";
 import HvButton from "@hv/uikit-react-core/dist/Button";
 
 const btnStyle = {
@@ -23,21 +17,14 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
       <HvButton id="modalButton" style={btnStyle} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvModal
-        classes={classes}
-        open={open}
-        onClose={() => setOpen(false)}
-        id="test"
-      >
+      <HvModal classes={classes} open={open} onClose={() => setOpen(false)} id="test">
         {title}
-        {content ? (
-          content
-        ) : (
-            <HvModalContent>
-              Switching to model view will clear all the fields in your
-              visualization. You will need to re-select your fields.
-            </HvModalContent>
-          )}
+        {content || (
+          <HvModalContent>
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
+          </HvModalContent>
+        )}
         <HvModalActions>
           <HvButton id="apply" category="ghost">
             Apply
@@ -54,10 +41,6 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
 export default (
   <SimpleModal
     buttonMessage="Custom icon"
-    title={
-      <HvModalTitle customIcon={<Ungroup iconSize="M" />}>
-        Switch model view?
-      </HvModalTitle>
-    }
+    title={<HvModalTitle customIcon={<Ungroup iconSize="M" />}>Switch model view?</HvModalTitle>}
   />
 );

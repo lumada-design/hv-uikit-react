@@ -1,5 +1,5 @@
 import React from "react";
-import Info from "@hv/uikit-react-icons/dist/Generic/Info";
+import { Info } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 import styles from "@hv/uikit-react-core/dist/Banner/BannerWrapper/styles";
 import HvBannerContentWrapper from "@hv/uikit-react-core/dist/Banner/BannerWrapper";
@@ -7,15 +7,6 @@ import Typography from "@hv/uikit-react-core/dist/Typography";
 import Button from "@hv/uikit-react-core/dist/Button";
 
 const BannerContentWrapper = withStyles(styles)(HvBannerContentWrapper);
-
-const boxStyles = {
-  width: "32px",
-  height: "32px"
-};
-
-const CustomIcon = <Info boxStyles={boxStyles} color={["#414141"]} />;
-
-const ActionButton = () => <Button category="semantic">Action</Button>;
 
 const actionArray = [
   { id: "action1", label: "Action 1", disabled: false },
@@ -52,7 +43,7 @@ export default (
     <BannerContentWrapper
       content="This is a default banner."
       variant="default"
-      actions={<ActionButton />}
+      actions={<Button category="semantic">Action</Button>}
       actionsPosition="inline"
       onClose={() => {}}
     />
@@ -77,7 +68,7 @@ export default (
       content="This is a success banner."
       variant="success"
       showIcon
-      actions={<ActionButton />}
+      actions={<Button category="semantic">Action</Button>}
       actionsPosition="inline"
       onClose={() => {}}
     />
@@ -97,28 +88,28 @@ export default (
     <BannerContentWrapper
       content="This is a default banner."
       variant="default"
-      customIcon={CustomIcon}
+      customIcon={<Info color="acce1" />}
       onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
       variant="default"
-      customIcon={CustomIcon}
+      customIcon={<Info color="acce1" />}
       onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       content="This is a success banner."
       variant="success"
-      customIcon={CustomIcon}
+      customIcon={<Info color="acce1" />}
       onClose={() => {}}
     />
     <p />
     <BannerContentWrapper
       content="This is an error banner."
       variant="error"
-      customIcon={CustomIcon}
+      customIcon={<Info color="acce1" />}
       onClose={() => {}}
     />
   </div>

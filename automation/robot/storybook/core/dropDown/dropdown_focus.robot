@@ -11,7 +11,7 @@ Documentation     please look complementary Test Cases on dropdown_keyboard_navi
  
 *** Test Cases ***
 Focus on input when open dropdown with input
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown5
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown4
     Wait Until Element Is Visible    ${dropdown}        10s
     Click Element                    ${dropdown}
     Wait Until Element Is Visible    ${searchInput}     2s

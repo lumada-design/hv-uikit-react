@@ -1,37 +1,51 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import Success from "@hv/uikit-react-icons/dist/Generic/Success";
-import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
-
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import Success from "@hv/uikit-react-icons/dist/Success";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
+import withLabels from "../withLabels";
 import HvGrid from "../Grid";
-
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";
 import defaultBackImage from "./resources/bg.svg";
+import styles from "./styles";
+
+const DEFAULT_LABELS = {
+  titleText: "Welcome",
+  recoveryTitle: "Recover Credentials",
+  messageToRecover: "You will receive an email with instructions to recover your credentials",
+  messageAfterRecover: "The instructions to recover your credentials were sent.",
+  recoveryInputLabel: "Email",
+  recoveryPlaceholder: "Enter text",
+  recoveryErrorMessage: "The email you've entered doesn't match any account",
+  userNameInputLabel: "Username",
+  userNamePlaceHolder: "Enter text",
+  passwordInputLabel: "Password",
+  passwordPlaceHolder: "Enter text",
+  rememberMeLabel: "Remember me",
+  loginButtonMessage: "Logging",
+  loginButtonLabel: "Log in",
+  forgotYourCredentialMessage: "Forgot your credentials?",
+  emailLabel: "Email",
+  emailPlaceholder: "Enter Email",
+  cancelButton: "Cancel",
+  recoverButton: "Recover",
+  recoveringMessage: "Recovering",
+  incorrectCredentialsMessage: "Incorrect Username and/or Password. Please try again."
+};
 
 /**
  * Main container for the Login component.
  */
 class HvLogin extends React.Component {
-  state = { inRecoveryMode: false, isLoading: true };
+  constructor() {
+    super();
+    this.state = {
+      inRecoveryMode: false,
+      isLoading: true
+    };
+  }
 
   /**
    * When the component is fully loaded the state is changed
@@ -58,7 +72,6 @@ class HvLogin extends React.Component {
       recovery,
       backgroundImage,
       backgroundImageSize,
-      titleText,
       logo,
       titleComponent,
       allowRecover,
@@ -67,121 +80,72 @@ class HvLogin extends React.Component {
       errorLoginIcon,
       labels,
       customMessage,
-      recoveryTitle,
-      messageToRecover,
-      messageAfterRecover,
-      recoveryInputLabel,
-      recoveryPlaceholder,
-      recoveryErrorMessage,
-      userNameInputLabel,
-      userNamePlaceHolder,
-      passwordInputLabel,
-      passwordPlaceHolder,
-      rememberMeLabel,
-      incorrectCredentialsMessage,
       formClasses,
       formProps
     } = this.props;
     const { inRecoveryMode, isLoading } = this.state;
-    const backgroundLoginImg = !backgroundImage.length
-      ? defaultBackImage
-      : backgroundImage;
+    const backgroundLoginImg = !backgroundImage.length ? defaultBackImage : backgroundImage;
 
-    let form;
-    if (inRecoveryMode) {
-      form = (
-        <Recovery
-          recovery={recovery}
-          onClick={this.switchForms}
-          okRecoveryIcon={okRecoveryIcon}
-          recoveryTitle={recoveryTitle || labels.recoveryTitle}
-          messageToRecover={messageToRecover || labels.messageToRecover}
-          messageAfterRecover={
-            messageAfterRecover || labels.messageAfterRecover
-          }
-          recoveryInputLabel={recoveryInputLabel || labels.recoveryInputLabel}
-          recoveryPlaceholder={
-            recoveryPlaceholder || labels.recoveryPlaceholder
-          }
-          recoveryErrorMessage={
-            recoveryErrorMessage || labels.recoveryErrorMessage
-          }
-          emailLabel={labels.emailLabel}
-          emailPlaceholder={labels.emailPlaceholder}
-          cancelButton={labels.cancelButton}
-          recoverButton={labels.recoverButton}
-          recoveringMessage={labels.recoveringMessage}
-        />
-      );
-    } else {
-      form = (
-        <Login
-          login={login}
-          titleText={labels.titleText || titleText}
-          logo={logo}
-          titleComponent={titleComponent}
-          allowRecover={allowRecover}
-          allowRememberMe={allowRememberMe}
-          onClick={this.switchForms}
-          errorLoginIcon={errorLoginIcon}
-          incorrectCredentialsMessage={
-            incorrectCredentialsMessage || labels.incorrectCredentialsMessage
-          }
-          userNameInputLabel={userNameInputLabel || labels.userNameInputLabel}
-          userNamePlaceHolder={
-            userNamePlaceHolder || labels.userNamePlaceHolder
-          }
-          passwordInputLabel={passwordInputLabel || labels.passwordInputLabel}
-          passwordPlaceHolder={
-            passwordPlaceHolder || labels.passwordPlaceHolder
-          }
-          rememberMeLabel={rememberMeLabel || labels.rememberMeLabel}
-          loginButtonMessage={labels.loginButtonMessage}
-          loginButtonLabel={labels.loginButtonLabel}
-          forgotYourCredentialMessage={labels.forgotYourCredentialMessage}
-          isLoading={isLoading}
-          customMessage={customMessage.text}
-          classes={formClasses}
-          formProps={formProps}
-        />
-      );
-    }
+    const form = inRecoveryMode ? (
+      <Recovery
+        recovery={recovery}
+        onClick={this.switchForms}
+        okRecoveryIcon={okRecoveryIcon}
+        recoveryTitle={labels.recoveryTitle}
+        messageToRecover={labels.messageToRecover}
+        messageAfterRecover={labels.messageAfterRecover}
+        recoveryInputLabel={labels.recoveryInputLabel}
+        recoveryPlaceholder={labels.recoveryPlaceholder}
+        recoveryErrorMessage={labels.recoveryErrorMessage}
+        emailLabel={labels.emailLabel}
+        emailPlaceholder={labels.emailPlaceholder}
+        cancelButton={labels.cancelButton}
+        recoverButton={labels.recoverButton}
+        recoveringMessage={labels.recoveringMessage}
+      />
+    ) : (
+      <Login
+        login={login}
+        titleText={labels.titleText}
+        logo={logo}
+        titleComponent={titleComponent}
+        allowRecover={allowRecover}
+        allowRememberMe={allowRememberMe}
+        onClick={this.switchForms}
+        errorLoginIcon={errorLoginIcon}
+        incorrectCredentialsMessage={labels.incorrectCredentialsMessage}
+        userNameInputLabel={labels.userNameInputLabel}
+        userNamePlaceHolder={labels.userNamePlaceHolder}
+        passwordInputLabel={labels.passwordInputLabel}
+        passwordPlaceHolder={labels.passwordPlaceHolder}
+        rememberMeLabel={labels.rememberMeLabel}
+        loginButtonMessage={labels.loginButtonMessage}
+        loginButtonLabel={labels.loginButtonLabel}
+        forgotYourCredentialMessage={labels.forgotYourCredentialMessage}
+        isLoading={isLoading}
+        customMessage={customMessage.text}
+        classes={formClasses}
+        formProps={formProps}
+      />
+    );
 
     return (
-      <>
-        <HvGrid
-          container
-          className={classes.container}
-          style={{
-            backgroundImage: `url(${backgroundLoginImg})`,
-            backgroundSize: `${backgroundImageSize}`,
-            margin: 0
-          }}
-        >
-          <HvGrid
-            item
-            xs="false"
-            sm="false"
-            md={8}
-            lg={8}
-            xl={8}
-            className={classes.panelPosition}
-          >
-            <div id={id} className={classNames(classes.root, className)} />
-          </HvGrid>
-          <HvGrid
-            item
-            xs={12}
-            sm={12}
-            md={5}
-            lg={5}
-            xl={5}
-            className={classes.rightContainer}
-          >
-            <div>{form}</div>
-          </HvGrid>
+      <HvGrid
+        container
+        className={classes.container}
+        style={{
+          backgroundImage: `url(${backgroundLoginImg})`,
+          backgroundSize: `${backgroundImageSize}`,
+          margin: 0
+        }}
+      >
+        <HvGrid item xs={false} sm={false} md={8} lg={8} xl={8} className={classes.panelPosition}>
+          <div id={id} className={clsx(classes.root, className)} />
         </HvGrid>
-      </>
+        <HvGrid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.rightContainer}>
+          <div>{form}</div>
+        </HvGrid>
+      </HvGrid>
     );
   }
 }
@@ -204,13 +168,17 @@ HvLogin.propTypes = {
      */
     root: PropTypes.string,
     /**
+     * Styles applied to the component container class.
+     */
+    container: PropTypes.string,
+    /**
      * Styles applied to the right container.
      */
     rightContainer: PropTypes.string,
     /**
-     * Styles applied to the form, inside the right container.
+     * Styles applied to the grid.
      */
-    formContainer: PropTypes.string
+    panelPosition: PropTypes.string
   }).isRequired,
 
   /**
@@ -239,11 +207,6 @@ HvLogin.propTypes = {
    */
   backgroundImageSize: PropTypes.string,
   /**
-   * the welcome message.
-   * @deprecated Instead use the labels property
-   */
-  titleText: deprecatedPropType(PropTypes.string),
-  /**
    * the url for the logo in the welcome message.
    */
   logo: PropTypes.string,
@@ -267,10 +230,6 @@ HvLogin.propTypes = {
    * Icon to be presented when an error occurs in the login.
    */
   errorLoginIcon: PropTypes.element,
-  /**
-   *  Incorrect Credentials Message.
-   */
-  incorrectCredentialsMessage: PropTypes.string,
   /**
    * The object that contains the different labels inside the kpi.
    *
@@ -321,62 +280,7 @@ HvLogin.propTypes = {
   /**
    * Additional props for form element
    */
-  formProps: PropTypes.instanceOf(Object),
-  /**
-   * Recovery title.
-   * @deprecated Instead use the labels property
-   */
-  recoveryTitle: deprecatedPropType(PropTypes.string),
-  /**
-   * Message to recover.
-   * @deprecated Instead use the labels property
-   */
-  messageToRecover: deprecatedPropType(PropTypes.string),
-  /**
-   * Message shown after recover.
-   * @deprecated Instead use the labels property
-   */
-  messageAfterRecover: deprecatedPropType(PropTypes.string),
-  /**
-   * Recovery input label.
-   * @deprecated Instead use the labels property
-   */
-  recoveryInputLabel: deprecatedPropType(PropTypes.string),
-  /**
-   * Recovery placeholder.
-   * @deprecated Instead use the labels property
-   */
-  recoveryPlaceholder: deprecatedPropType(PropTypes.string),
-  /**
-   * Message shown when an error occurs.
-   * @deprecated Instead use the labels property
-   */
-  recoveryErrorMessage: deprecatedPropType(PropTypes.string),
-  /**
-   * Input user name label.
-   * @deprecated Instead use the labels property
-   */
-  userNameInputLabel: deprecatedPropType(PropTypes.string),
-  /**
-   * Input user name placeholder.
-   * @deprecated Instead use the labels property
-   */
-  userNamePlaceHolder: deprecatedPropType(PropTypes.string),
-  /**
-   * Password label.
-   * @deprecated Instead use the labels property
-   */
-  passwordInputLabel: deprecatedPropType(PropTypes.string),
-  /**
-   * Password placeholder.
-   * @deprecated Instead use the labels property
-   */
-  passwordPlaceHolder: deprecatedPropType(PropTypes.string),
-  /**
-   * Remember me label.
-   * @deprecated Instead use the labels property
-   */
-  rememberMeLabel: deprecatedPropType(PropTypes.string)
+  formProps: PropTypes.instanceOf(Object)
 };
 
 HvLogin.defaultProps = {
@@ -391,48 +295,9 @@ HvLogin.defaultProps = {
   allowRememberMe: true,
   okRecoveryIcon: <Success semantic="sema1" />,
   errorLoginIcon: <Fail semantic="sema4" />,
-  labels: {
-    titleText: "Welcome",
-    recoveryTitle: "Recover Credentials",
-    messageToRecover:
-      "You will receive an email with instructions to recover your credentials",
-    messageAfterRecover:
-      "The instructions to recover your credentials were sent.",
-    recoveryInputLabel: "Email",
-    recoveryPlaceholder: "Enter text",
-    recoveryErrorMessage: "The email you've entered doesn't match any account",
-    userNameInputLabel: "Username",
-    userNamePlaceHolder: "Enter text",
-    passwordInputLabel: "Password",
-    passwordPlaceHolder: "Enter text",
-    rememberMeLabel: "Remember me",
-    loginButtonMessage: "Logging",
-    loginButtonLabel: "Log in",
-    forgotYourCredentialMessage: "Forgot your credentials?",
-    emailLabel: "Email",
-    emailPlaceholder: "Enter Email",
-    cancelButton: "Cancel",
-    recoverButton: "Recover",
-    recoveringMessage: "Recovering",
-    incorrectCredentialsMessage:
-      "Incorrect Username and/or Password. Please try again."
-  },
   customMessage: {},
   formClasses: null,
-  formProps: {},
-  titleText: undefined,
-  recoveryTitle: undefined,
-  messageToRecover: undefined,
-  messageAfterRecover: undefined,
-  recoveryInputLabel: undefined,
-  recoveryPlaceholder: undefined,
-  recoveryErrorMessage: undefined,
-  userNameInputLabel: undefined,
-  userNamePlaceHolder: undefined,
-  passwordInputLabel: undefined,
-  passwordPlaceHolder: undefined,
-  rememberMeLabel: undefined,
-  incorrectCredentialsMessage: undefined
+  formProps: {}
 };
 
-export default HvLogin;
+export default withStyles(styles, { name: "HvLogin" })(withLabels(DEFAULT_LABELS)(HvLogin));

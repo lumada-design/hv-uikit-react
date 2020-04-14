@@ -1,10 +1,7 @@
 import React from "react";
 import Chart from "react-google-charts";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import HvKpi from "@hv/uikit-react-core/dist/Kpi";
-import Average from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import ArrowDown from "@hv/uikit-react-icons/dist/Generic/BottomXS";
-import withStyles from "@material-ui/core/styles/withStyles";
+import { HvKpi, HvTypography } from "@hv/uikit-react-core/dist";
+import { Level2Average as Average, BottomXS as ArrowDown } from "@hv/uikit-react-icons/dist";
 
 const labels = {
   title: "Total IOPS",
@@ -15,101 +12,75 @@ const labels = {
 };
 
 const IopsComparisonVisualAverage = () => (
-  <div
-    style={{
-      position: "relative"
-    }}
-  >
-    <ArrowDown
-      style={{
-        position: "absolute",
-        top: "16px",
-        left: "-1px"
-      }}
-      semantic="sema4"
-    />
-    <HvTypography
-      style={{
-        position: "relative",
-        paddingLeft: "16px"
-      }}
-      variant="highlightText"
-    >
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <ArrowDown boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
+    <HvTypography component="span" variant="highlightText">
       {labels.comparisonIndicator}
     </HvTypography>
   </div>
 );
 
-const trend = () => 
-<div 
-  style={{
-    width: "32px",
-    height: "32px",
-    position: "relative",
-    left: "-8px",
-    top: "10px",
-    pointerEvents:"none"
-}}>
-  <Chart
-    width={'50px'}
-    height={'32px'}
-    chartType="AreaChart"
-    loader={<div>Loading Chart</div>}
-    data={[
-      ['Year', 'Sales'],
-      ['2013', 3000],
-      ['2014', 2170],
-      ['2015', 760],
-      ['2016', 630],
-    ]}
-    options={{
-      legend: "none",
-      colors: ['red'],
-      tooltip: {
-        trigger: 'none'
-      },
-      hAxis: {
-        minValue: 0,
-        maxValue: 10,
-        gridlines: {
-          color: 'transparent'
-        },
-        baselineColor: 'transparent'
-      },
-      backgroundColor: "transparent",
-      vAxis: {
-        gridlines: {
-            color: 'transparent'
-        },
-        baselineColor: 'transparent'
-      }
+const TrendIndicator = () => (
+  <div
+    style={{
+      width: "32px",
+      height: "32px",
+      position: "relative",
+      left: "-8px",
+      top: "10px",
+      pointerEvents: "none"
     }}
-  />
-</div>;
-
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
+  >
+    <Chart
+      width="50px"
+      height="32px"
+      chartType="AreaChart"
+      loader={<div>Loading Chart</div>}
+      data={[
+        ["Year", "Sales"],
+        ["2013", 3000],
+        ["2014", 2170],
+        ["2015", 760],
+        ["2016", 630]
+      ]}
+      options={{
+        legend: "none",
+        colors: ["red"],
+        tooltip: {
+          trigger: "none"
+        },
+        hAxis: {
+          minValue: 0,
+          maxValue: 10,
+          gridlines: {
+            color: "transparent"
+          },
+          baselineColor: "transparent"
+        },
+        backgroundColor: "transparent",
+        vAxis: {
+          gridlines: {
+            color: "transparent"
+          },
+          baselineColor: "transparent"
+        }
+      }}
+    />
+  </div>
+);
 
 const kpiContainer = {
   minWidth: "190px",
   padding: "20px"
-}
-
-const StyledFailureIcon = withStyles(iconStyles, {
-  withTheme: true
-})(() => <Average semantic="sema4" />);
-
-const icon = () => <StyledFailureIcon />;
+};
 
 export default (
   <div style={kpiContainer}>
     <HvKpi
       labels={labels}
-      visualIndicator={icon()}
-      trendIndicator={trend()}
-      visualComparison={IopsComparisonVisualAverage()}
+      visualIndicator={<Average semantic="sema4" />}
+      trendIndicator={<TrendIndicator />}
+      visualComparison={<IopsComparisonVisualAverage />}
     />
   </div>
 );

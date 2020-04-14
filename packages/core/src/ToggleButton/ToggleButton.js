@@ -1,53 +1,28 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
-import classNames from "classnames";
-import uniqueId from "lodash/uniqueId";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import withLabels from "../withLabels";
+import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
+import styles from "./styles";
 
-const DEFAULT_ID_PREFIX = "hv-toggle-button-";
+const DEFAULT_LABELS = { selectedTitle: "", notSelectedTitle: "" };
 
 /**
- * Toggle Button.
- *
- * @param classes
- * @param selected
- * @param notSelectedTitle
- * @param notSelectedIcon
- * @param selectedIcon
- * @param selectedTitle
- * @param onClick
- * @returns {*}
- * @constructor
+ * A toggle button is a mechanism that allows users to change between 2 options.
  */
 const ToggleButton = ({
   classes,
   className,
   id,
-  selected,
-  notSelectedTitle,
+  selected = false,
+  labels,
   notSelectedIcon,
-  selectedIcon,
-  selectedTitle,
-  animated,
+  selectedIcon = null,
+  animated = false,
   onClick,
-  disabled,
-  ...other
+  disabled = false,
+  ...others
 }) => {
   const [isSelected, setIsSelected] = useState(selected);
   const [classSvg, setClassSvg] = useState("default");
@@ -65,6 +40,8 @@ const ToggleButton = ({
   } else {
     Icon = isSelected ? selectedIcon : notSelectedIcon;
   }
+
+  const { selectedTitle, notSelectedTitle } = labels;
   const title = isSelected ? selectedTitle : notSelectedTitle;
 
   /**
@@ -84,15 +61,13 @@ const ToggleButton = ({
     if (isKeypress(e, KeyboardCodes.Tab)) return;
     setIsSelected(!isSelected);
     if (animated) toggleClass();
-    if (onClick) onClick(isSelected);
+    if (onClick) onClick(e, isSelected);
   };
-
-  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
 
   return (
     <div
-      id={internalId}
-      className={classNames(className, classes.root, {
+      id={id}
+      className={clsx(className, classes.root, {
         [classes.disabled]: disabled
       })}
       role="button"
@@ -101,9 +76,9 @@ const ToggleButton = ({
       onClick={toggle}
       onKeyDown={toggle}
       title={title}
-      {...other}
+      {...others}
     >
-      <Icon className={classNames(classes.icon, { [classSvg]: animated })} />
+      <Icon className={clsx(classes.icon, { [classSvg]: animated })} />
     </div>
   );
 };
@@ -141,19 +116,24 @@ ToggleButton.propTypes = {
   /**
    * Icon for when not selected.
    */
-  notSelectedIcon: PropTypes.func.isRequired,
-  /**
-   * Description for not selected.
-   */
-  notSelectedTitle: PropTypes.string,
+  notSelectedIcon: PropTypes.instanceOf(Object).isRequired,
   /**
    * Icon for when selected.
    */
-  selectedIcon: PropTypes.func,
+  selectedIcon: PropTypes.instanceOf(Object),
   /**
-   * Description for selected.
+   *
    */
-  selectedTitle: PropTypes.string,
+  labels: PropTypes.shape({
+    /**
+     * Description for selected.
+     */
+    selectedTitle: PropTypes.string,
+    /**
+     * Description for not selected.
+     */
+    notSelectedTitle: PropTypes.string
+  }),
   /**
    * Function called when icon is clicked.
    */
@@ -168,16 +148,6 @@ ToggleButton.propTypes = {
   disabled: PropTypes.bool
 };
 
-ToggleButton.defaultProps = {
-  className: "",
-  id: null,
-  selected: false,
-  selectedIcon: null,
-  onClick: undefined,
-  notSelectedTitle: "",
-  selectedTitle: "",
-  animated: false,
-  disabled: false
-};
-
-export default ToggleButton;
+export default withStyles(styles, { name: "HvToggleButton" })(
+  withLabels(DEFAULT_LABELS)(ToggleButton)
+);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardView from "@hv/uikit-react-core/dist/AssetInventory/CardView";
 import Pagination from "@hv/uikit-react-core/dist/Pagination";
-import ToolIcon from "@hv/uikit-react-icons/dist/Generic/Tool";
+import { Tool } from "@hv/uikit-react-icons/dist";
 import compressorImage from "../card/resources/compressor.png";
 import leafImage from "../card/resources/leaf.png";
 
@@ -13,8 +13,8 @@ const createData = num => {
   ];
 
   return [...Array(num).keys()].map(id => ({
-    id: "id_" + id,
-    headerTitle: "Asset Avatar " + (id + 1),
+    id: `id_${id}`,
+    headerTitle: `Asset Avatar ${id + 1}`,
     mediaHeight: 186,
     selected: false,
     ...variations[id % variations.length]
@@ -29,7 +29,7 @@ const ControlledPagination = () => {
   const numPages = Math.ceil(data.length / pageSize);
 
   const handleSelection = id => {
-    const el = data.find(el => el.id === id);
+    const el = data.find(element => element.id === id);
     el.selected = !el.selected;
     el.checkboxSelected = el.selected;
     setData(data);
@@ -40,12 +40,12 @@ const ControlledPagination = () => {
   return (
     <>
       <CardView
-        icon={<ToolIcon />}
+        icon={<Tool />}
         values={pageData}
         viewConfiguration={{
           onSelection: event => handleSelection(event.target.value),
           isSelectable: true,
-          breakpoints: { xs: "false", sm: "false", md: 4, lg: 3, xl: 3 }
+          breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 }
         }}
       />
       <p />
@@ -56,8 +56,8 @@ const ControlledPagination = () => {
         canNext={page < numPages - 1}
         pageSize={pageSize}
         pageSizeOptions={pageSizeOptions}
-        onPageChange={page => setPage(page)}
-        onPageSizeChange={pageSize => setPageSize(pageSize)}
+        onPageChange={value => setPage(value)}
+        onPageSizeChange={value => setPageSize(value)}
         labels={{ pageSizeEntryName: "assets" }}
       />
     </>

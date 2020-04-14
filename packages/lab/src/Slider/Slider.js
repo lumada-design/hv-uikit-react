@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /**
  * Note: https://github.com/react-component/slider/issues/504
  * Version must remain in "8.6.3" until this bug is fixed
@@ -23,9 +7,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Range, Handle } from "rc-slider";
 import Tooltip from "rc-tooltip";
-import styleCreator from "./styles";
+import { withStyles } from "@material-ui/core";
 import KnobRing from "./KnobRing";
 import "rc-slider/assets/index.css";
+import styleCreator from "./styles";
 
 /**
  * Transform the scaled values into knobs positions.
@@ -36,11 +21,8 @@ import "rc-slider/assets/index.css";
  * @param {*} inverseStepValue - The inverse of calculated separation between
  * the value of the points that compose the slider.
  */
-const scaledValueToKnobsPositionValue = (
-  scaledValue,
-  minPointValue,
-  inverseStepValue
-) => Math.floor((scaledValue - minPointValue) * inverseStepValue);
+const scaledValueToKnobsPositionValue = (scaledValue, minPointValue, inverseStepValue) =>
+  Math.floor((scaledValue - minPointValue) * inverseStepValue);
 
 /**
  * Transform the received knobs values into knob positions
@@ -55,11 +37,7 @@ const scaledValueToKnobsPositionValue = (
 const transformKnobsPosition = (values, inverseStepValue, minPointValue) => {
   const knobsPositions = [];
   values.forEach((value, index) => {
-    knobsPositions[index] = scaledValueToKnobsPositionValue(
-      value,
-      minPointValue,
-      inverseStepValue
-    );
+    knobsPositions[index] = scaledValueToKnobsPositionValue(value, minPointValue, inverseStepValue);
   });
   return knobsPositions;
 };
@@ -74,6 +52,9 @@ const transformKnobsPosition = (values, inverseStepValue, minPointValue) => {
 const calculateStepValue = (maxPointValue, minPointValue, divisionQuantity) =>
   Math.abs(maxPointValue - minPointValue) / divisionQuantity;
 
+/**
+ * Sliders reflect a range of values along a bar, from which users may select a single value. They are ideal for adjusting settings such as volume, brightness, or applying image filters. Still in development
+ */
 class HvSlider extends React.Component {
   constructor(props) {
     super(props);
@@ -93,11 +74,7 @@ class HvSlider extends React.Component {
     } = props;
 
     const styles = styleCreator(theme);
-    const stepValue = calculateStepValue(
-      maxPointValue,
-      minPointValue,
-      divisionQuantity
-    );
+    const stepValue = calculateStepValue(maxPointValue, minPointValue, divisionQuantity);
     const inverseStepValue = 1 / stepValue;
 
     this.state = {
@@ -119,11 +96,7 @@ class HvSlider extends React.Component {
         formatMark,
         styles
       ),
-      defaultKnobsPositions: transformKnobsPosition(
-        defaultValues,
-        inverseStepValue,
-        minPointValue
-      ),
+      defaultKnobsPositions: transformKnobsPosition(defaultValues, inverseStepValue, minPointValue),
       styles,
       stepValue,
       inverseStepValue
@@ -200,11 +173,9 @@ class HvSlider extends React.Component {
     } else {
       const roundedMarkStep = Math.floor(markstep);
       for (let index = 0; index <= divisionQuantity; index += roundedMarkStep) {
-        let labelValue = this.knobsPositionToScaledValue(
-          index,
-          minPointValue,
-          stepValue
-        ).toFixed(markDigits);
+        let labelValue = this.knobsPositionToScaledValue(index, minPointValue, stepValue).toFixed(
+          markDigits
+        );
         labelValue = formatMark(labelValue);
         marks[index] = {
           label: `${labelValue}`,
@@ -315,11 +286,7 @@ class HvSlider extends React.Component {
         }
       }
 
-      knobsValues[index] = this.knobsPositionToScaledValue(
-        newPosition,
-        minPointValue,
-        stepValue
-      );
+      knobsValues[index] = this.knobsPositionToScaledValue(newPosition, minPointValue, stepValue);
     }, this);
 
     return {
@@ -339,12 +306,7 @@ class HvSlider extends React.Component {
    */
   onChangeHandler = knobsPosition => {
     const knobs = this.generateKnobsPositionAndValues(knobsPosition);
-    const {
-      knobProperties,
-      onChange,
-      minPointValue,
-      defaultValues
-    } = this.props;
+    const { knobProperties, onChange, minPointValue, defaultValues } = this.props;
     const { inverseStepValue } = this.state;
     knobProperties.forEach((knobProperty, index) => {
       if (knobProperty.fixed) {
@@ -402,21 +364,13 @@ class HvSlider extends React.Component {
    * @memberof HvSlider
    */
   createKnob = props => {
-    const {
-      minPointValue,
-      markDigits,
-      knobProperties,
-      formatTooltip,
-      classes
-    } = this.props;
+    const { minPointValue, markDigits, knobProperties, formatTooltip, classes } = this.props;
     const { stepValue } = this.state;
     const { value, dragging, index, style, ...restProps } = props;
 
-    const knobValue = this.knobsPositionToScaledValue(
-      value,
-      minPointValue,
-      stepValue
-    ).toFixed(markDigits);
+    const knobValue = this.knobsPositionToScaledValue(value, minPointValue, stepValue).toFixed(
+      markDigits
+    );
     if (dragging) {
       style.backgroundColor = knobProperties[index].dragColor;
     } else {
@@ -433,10 +387,7 @@ class HvSlider extends React.Component {
         overlayClassName={classes.sliderTooltip}
       >
         <Handle value={value} style={style} {...restProps}>
-          <KnobRing
-            hoverColor={knobProperties[index].hoverColor}
-            dragging={dragging}
-          />
+          <KnobRing hoverColor={knobProperties[index].hoverColor} dragging={dragging} />
         </Handle>
       </Tooltip>
     );
@@ -480,10 +431,6 @@ class HvSlider extends React.Component {
 }
 
 HvSlider.propTypes = {
-  /**
-   * The object created by material to apply to the component.
-   */
-  theme: PropTypes.instanceOf(Object),
   /**
    * The values array to apply to the component
    */
@@ -637,8 +584,7 @@ HvSlider.defaultProps = {
   maxPointValue: 100,
   onBeforeChange: () => {},
   onChange: () => {},
-  onAfterChange: () => {},
-  theme: null
+  onAfterChange: () => {}
 };
 
-export default HvSlider;
+export default withStyles(styleCreator, { name: "HvSlider", withTheme: true })(HvSlider);

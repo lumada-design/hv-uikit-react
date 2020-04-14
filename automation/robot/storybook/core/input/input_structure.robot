@@ -12,8 +12,8 @@ ${inputClear}     css:button[class*="HvInput-iconClear"]
 ${label}          id:input-simple-sample-label
 ${description}    id:input-simple-sample-description
 ${iconInfo}       css:div[class*="HvInput-infoIconContainer"]
-${iconSuccess}    css:#test div[class*="HvSuccessIcon-root"]
-${iconMap}        css:#test div[class*="HvMapIcon-root"]
+${iconSuccess}    css:#test div[class*="HvIconSuccess-root"]
+${iconMap}        css:#test div[class*="HvIconMap-root"]
 
 *** Test Cases ***
 clean text when click on input clear button

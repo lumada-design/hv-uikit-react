@@ -1,22 +1,5 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 const styles = theme => ({
-  root: {},
-  dropzoneContainer: {
+  dropZoneContainer: {
     position: "relative",
     width: "100%",
     display: "flex",
@@ -28,8 +11,8 @@ const styles = theme => ({
       border: `1px dotted ${theme.hv.palette.accent.acce1}`
     }
   },
-  dropzoneContainerDisabled: {
-    "&$dropzoneContainer": {
+  dropZoneContainerDisabled: {
+    "&$dropZoneContainer": {
       background: `${theme.hv.palette.atmosphere.atmo4}`,
       border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
       cursor: "not-allowed",
@@ -65,7 +48,7 @@ const styles = theme => ({
     margin: `${theme.hv.spacing.md}px auto`,
     minHeight: 40
   },
-  dropzoneLabelsGroup: {
+  dropZoneLabelsGroup: {
     display: "flex",
     marginBottom: 5,
     "& label:nth-child(1)": {
@@ -76,12 +59,12 @@ const styles = theme => ({
       marginLeft: "auto"
     }
   },
-  dropzoneAreaLabels: {
+  dropZoneAreaLabels: {
     display: "flex",
     width: 115,
     margin: "auto"
   },
-  dropzoneAreaIcon: {
+  dropZoneAreaIcon: {
     margin: "auto",
     marginRight: `${theme.hv.spacing.sm}px`
   },

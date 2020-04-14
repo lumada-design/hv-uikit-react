@@ -1,46 +1,36 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 import ReactTable from "react-table";
 import HvProvider from "../../Provider";
-import HvTableWithStyles from "../index";
-import HvTable from "../Table";
 import HvPagination from "../Pagination";
 import DropDownMenu from "../../DropDownMenu";
-import theme from "../../theme";
+import HvTable from "..";
+
+/* eslint-disable no-console */
 
 describe("Hv Table", () => {
   let wrapper;
 
+  const originalWarn = console.warn;
+  const eventMock = {};
+
   describe("index", () => {
     beforeEach(async () => {
+      // Expected warning "Please update the following components: ReactTable"
+      console.warn = jest.fn();
+
       wrapper = mount(
         <HvProvider>
-          <HvTableWithStyles
-            classes={{}}
+          <HvTable
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={theme}
           />
         </HvProvider>
       );
+
+      console.warn = originalWarn;
     });
 
     it("should be defined", () => {
@@ -76,10 +66,8 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
-            theme={theme}
           />
         </HvProvider>
       );
@@ -92,8 +80,6 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
-            theme={theme}
             columns={[
               { id: 1, Header: "column 1" },
               { id: 2, Header: "column 2" },
@@ -104,9 +90,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const headers = wrapper
-        .find(".ReactTable .rt-table .rt-thead.-header .rt-tr")
-        .children();
+      const headers = wrapper.find(".ReactTable .rt-table .rt-thead.-header .rt-tr").children();
       expect(headers).toHaveLength(3);
     });
 
@@ -114,8 +98,6 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
-            theme={theme}
             columns={[{ id: 1, headerText: "test 1", accessor: "t1" }]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
           />
@@ -130,8 +112,6 @@ describe("Hv Table", () => {
       wrapper = mount(
         <HvProvider>
           <HvTable
-            classes={{}}
-            theme={theme}
             columns={[]}
             data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3" }]}
             pageSize={5}
@@ -146,13 +126,7 @@ describe("Hv Table", () => {
     it("and if 'data' is empty, don't render pagination", () => {
       wrapper = mount(
         <HvProvider>
-          <HvTable
-            classes={{}}
-            theme={theme}
-            columns={[]}
-            data={[]}
-            pageSize={5}
-          />
+          <HvTable columns={[]} data={[]} pageSize={5} />
         </HvProvider>
       );
 
@@ -176,7 +150,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.setState({ sorted: [column[0]] });
       instance.getTheadThProps("state", "rowInfo", column[0]);
       expect(column[0].className).toContain(classesToApply.alphaNumeric);
@@ -209,8 +183,8 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
-      instance.toggleAll();
+      const instance = wrapper.find("Table").instance();
+      instance.toggleAll(eventMock);
       expect(instance.state.selectAll).toBe(true);
     });
 
@@ -228,8 +202,8 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
-      instance.toggleSelection(column[0].id);
+      const instance = wrapper.find("Table").instance();
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
     });
 
@@ -247,10 +221,10 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
-      instance.toggleSelection(column[0].id);
+      const instance = wrapper.find("Table").instance();
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
-      instance.toggleSelection(column[0].id);
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).not.toEqual([column[0].id]);
       expect(instance.state.selectAll).toBe(false);
     });
@@ -269,8 +243,8 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
-      instance.toggleSelection(column[0].id);
+      const instance = wrapper.find("Table").instance();
+      instance.toggleSelection(eventMock, column[0].id);
       expect(instance.state.selection).toEqual([column[0].id]);
     });
 
@@ -310,7 +284,7 @@ describe("Hv Table", () => {
         </HvProvider>
       );
 
-      const instance = wrapper.find(HvTable).instance();
+      const instance = wrapper.find("Table").instance();
       instance.state.initiallyLoaded = true;
       instance.onFetchDataInternal(instance.state);
       expect(fetchDataMock).toHaveBeenCalled();
@@ -319,8 +293,7 @@ describe("Hv Table", () => {
     it("should render extra column for secondary actions", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
-        numeric: "numeric-random",
-        secondaryAction: "secondaryAction-random"
+        numeric: "numeric-random"
       };
       const columns = [
         { id: 1, Header: "column 1", desc: false },
@@ -356,8 +329,7 @@ describe("Hv Table", () => {
     it("should not render secondary actions when noActions set", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
-        numeric: "numeric-random",
-        secondaryAction: "secondaryAction-random"
+        numeric: "numeric-random"
       };
       const columns = [
         { id: 1, Header: "column 1", desc: false },
@@ -369,11 +341,7 @@ describe("Hv Table", () => {
           <HvTable
             classes={classesToApply}
             columns={columns}
-            data={[
-              { t1: "test1" },
-              { t1: "test2" },
-              { t1: "test3", noActions: true }
-            ]}
+            data={[{ t1: "test1" }, { t1: "test2" }, { t1: "test3", noActions: true }]}
             pageSize={5}
             secondaryActions={[
               {

@@ -8,12 +8,11 @@ Default Tags                          smoke
 
 
 *** Variables ***
-${1stRadioButton}         id:hv-radiobutton-1-input
-${2ndRadioButton}         id:hv-radiobutton-2-input
-${radioSelected}          css:div[class*='HvRadioButtonSelected']
-${radioNotSelected}       css:div[class*='HvRadioButtonUnselected']
-${1stRadioButtonLabel}    css:#hv-radiobutton-1>span:nth-of-type(2)
-
+${1stRadioButton}         radio1-input
+${2ndRadioButton}         radio2-input
+${radioSelected}          css:div[class*='RadioButtonSelected']
+${radioNotSelected}       css:div[class*='RadioButtonUnselected']
+${1stRadioButtonLabel}    xpath://span[text()='label']
 
 *** Test Cases ***
 select radio button by clicking in input

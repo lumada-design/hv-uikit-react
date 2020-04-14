@@ -1,52 +1,35 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core";
 import dawnTheme from "@hv/uikit-common-themes/dist/dawn";
 import wickedTheme from "@hv/uikit-common-themes/dist/wicked";
-import muiAppBarFunc from "./overrides/muiAppBar";
-import muiToolbarFunc from "./overrides/muiToolbar";
-import typography from "./typography";
-import palette from "./palette";
+import muiAppBarOverrides from "./overrides/muiAppBar";
+import muiToolbarOverrides from "./overrides/muiToolbar";
+import muiIconButtonOverrides from "./overrides/muiIconButton";
+import createTypography from "./typography";
+import createPalette from "./palette";
+import createSpacing from "./spacing";
 
-let theme = null;
-
-const muiTheme = uiKitTheme => {
-
+const getTheme = uiKitTheme => {
   switch (uiKitTheme) {
-    case "dawn":
-      theme = dawnTheme;
-      break;
-    case "wicked":
-      theme = wickedTheme;
-      break;
     default:
-      theme = dawnTheme;
-      break;
+    case "dawn":
+      return dawnTheme;
+    case "wicked":
+      return wickedTheme;
   }
+};
 
-  const paletteTheme = palette(theme);
-  const typographyTheme = typography(paletteTheme, theme);
-  const muiAppBar = muiAppBarFunc(theme);
-  const muiToolbar = muiToolbarFunc(theme);
+const hvTheme = uiKitTheme => {
+  const theme = getTheme(uiKitTheme);
 
-  const muiCreatedTheme = createMuiTheme({
+  const themeSpacing = createSpacing(theme);
+  const themePalette = createPalette(theme);
+  const themeTypography = createTypography(themePalette, theme);
+
+  return createMuiTheme({
     shadows: Array(25).fill("none"),
-    palette: paletteTheme,
-    typography: typographyTheme,
+    spacing: themeSpacing,
+    palette: themePalette,
+    typography: themeTypography,
     shape: {
       borderRadius: 0
     },
@@ -68,25 +51,29 @@ const muiTheme = uiKitTheme => {
       }
     },
     overrides: {
+      MuiPaper: {
+        root: {
+          backgroundColor: theme.palette.atmosphere.atmo1
+        }
+      },
       MuiAppBar: {
-        root: muiAppBar.root,
-        colorDefault: muiAppBar.colorDefault
+        ...muiAppBarOverrides(theme)
       },
       MuiToolbar: {
-        root: muiToolbar.root,
-        gutters: muiToolbar.gutters,
-        dense: muiToolbar.dense
+        ...muiToolbarOverrides(theme)
+      },
+      MuiIconButton: {
+        ...muiIconButtonOverrides(theme)
       }
-    }
+    },
+    hv: theme
   });
-
-  muiCreatedTheme.spacing = { ...muiCreatedTheme.spacing, ...theme.spacing};
-
-  return Object.assign({}, muiCreatedTheme, { hv: theme });
 };
 
-const defaultTheme = muiTheme();
-export { default as generateClassName } from "./generateClassName";
+const defaultTheme = hvTheme();
 
-export { muiTheme as themeBuilder };
+export { default as generateClassName } from "./generateClassName";
+export { default as CssBaseline } from "./CssBaseline";
+
+export { hvTheme as themeBuilder };
 export default defaultTheme;

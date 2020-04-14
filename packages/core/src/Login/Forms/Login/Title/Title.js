@@ -1,54 +1,33 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../../Typography";
+import styles from "./styles";
 
 /**
  * Builds the title component. This component can be render by the props:
- *  - titletext - overrides the default "Welcome" text.
- *  - logo - an url for a icon to be used in junction with the titletext.
- *  - titleComponent - a component to be render, overriding the titletext.
+ *  - titleText - overrides the default "Welcome" text.
+ *  - logo - an url for a icon to be used in junction with the titleText.
+ *  - titleComponent - a component to be render, overriding the titleText.
  *
  * @param props
  * @returns {*}
  * @constructor
  */
 const Title = ({ classes, logo, titleText, titleComponent }) => {
-  let logoComponent = null;
-
   if (titleComponent !== null) {
-    return <div className={classes.logoContainer}>{titleComponent}</div>;
+    return <div className={classes.root}>{titleComponent}</div>;
   }
 
-  if (logo != null) {
-    logoComponent = (
-      <img src={logo} className={classes.logoImage} alt="Company logo" />
-    );
-  }
   return (
-    <div className={classes.logoContainer}>
-      {logoComponent}
+    <div className={classes.root}>
+      {logo != null && <img src={logo} className={classes.logoImage} alt="Company logo" />}
 
       <HvTypography
         variant="mTitle"
-        className={classNames(classes.root, {
-          [classes.titleNoLogoComponent]: !logoComponent
+        className={clsx(classes.titleContainer, {
+          [classes.titleNoLogoComponent]: !logo
         })}
       >
         {titleText}
@@ -65,7 +44,11 @@ Title.propTypes = {
     /**
      * Styles applied to the component root class.
      */
-    logoContainer: PropTypes.string,
+    root: PropTypes.string,
+    /**
+     * Styles applied to the component title class.
+     */
+    titleContainer: PropTypes.string,
     /**
      * Styles applied to the component logo image.
      */
@@ -94,9 +77,9 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-  logo: "",
+  logo: null,
   titleText: "Welcome",
   titleComponent: null
 };
 
-export default Title;
+export default withStyles(styles, { name: "HvLoginTitle" })(Title);

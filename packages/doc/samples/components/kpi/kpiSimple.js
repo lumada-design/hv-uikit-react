@@ -12,10 +12,10 @@ const AverageKpiTextConfiguration = {
 const kpiContainer = {
   minWidth: "190px",
   padding: "20px"
-}
+};
 
 export default (
   <div style={kpiContainer}>
-    <HvKpi labels={AverageKpiTextConfiguration} id="test"/>
+    <HvKpi labels={AverageKpiTextConfiguration} id="test" />
   </div>
 );

@@ -3,11 +3,11 @@ import HvTabs from "@hv/uikit-react-core/dist/Tabs";
 import HvTab from "@hv/uikit-react-core/dist/Tab";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-const StyledTabs = withStyles(theme => ({
+const StyledTabs = withStyles({
   flexContainer: {
-    justifyContent: "center",
+    justifyContent: "center"
   }
-}))(props => <HvTabs {...props} />);
+})(props => <HvTabs {...props} />);
 
 function Sample5() {
   const [value, setValue] = React.useState(0);
@@ -18,11 +18,11 @@ function Sample5() {
 
   return (
     <StyledTabs value={value} onChange={handleChange}>
-      <HvTab label="Clicable tab"></HvTab>
-      <HvTab label="Clicable tab"></HvTab>
-      <HvTab label="Clicable tab"></HvTab>
+      <HvTab label="Clickable tab" />
+      <HvTab label="Clickable tab" />
+      <HvTab label="Clickable tab" />
     </StyledTabs>
   );
 }
 
-export default <Sample5/>
+export default <Sample5 />;

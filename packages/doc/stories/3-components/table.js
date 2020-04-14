@@ -1,25 +1,6 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvTable from "@hv/uikit-react-core/dist/Table/Table";
-
-// We are importing the raw table because the table is wrapped inside 2 HOC
-// The Plugin generating the docs can't reach the documentation because the HOC are hiding it
 
 storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
   title: "Table",
@@ -55,8 +36,7 @@ storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
     },
     {
       title: "6. With checkbox and custom content",
-      description:
-        "Each row can be checked to be selected and some cells contain custom content.",
+      description: "Each row can be checked to be selected and some cells contain custom content.",
       src: "components/table/tableTypical"
     },
     {
@@ -67,8 +47,7 @@ storiesOf("Components/Visualization", module).add("Table", () => <HvTable />, {
     },
     {
       title: "8. With null data values",
-      description:
-        "Eome rows have null data values which should be replaced by emdashes.",
+      description: "Some rows have null data values which should be replaced by emdashes.",
       src: "components/table/tableNulls"
     },
     {

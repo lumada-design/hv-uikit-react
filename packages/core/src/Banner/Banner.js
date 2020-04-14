@@ -1,124 +1,77 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState } from "react";
+import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import Snackbar from "@material-ui/core/Snackbar";
-import Slide from "@material-ui/core/Slide";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import uniqueId from "lodash/uniqueId";
+import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import capitalize from "lodash/capitalize";
+import { setId } from "../utils";
 import HvBannerContentWrapper from "./BannerWrapper";
+import styles from "./styles";
 
 /**
- * Banner component. This component has as base the snackbar, as the functionalities are identical. The main logic is
- * set in the HvBannerContentWrapper.
- *
- * @param props
- * @returns {*}
- * @constructor
+ * A Banner displays an important, succinct message. The banner provides actions for users to address (or dismiss the banner).
+ * It requires an user action to close. Banners should appear at the top of the screen, below a top app bar.
  */
 const HvBanner = props => {
   const {
+    id,
     classes,
     className,
-    id,
     open,
     onClose,
-    anchorOrigin,
-    variant,
-    transitionDuration,
-    transitionDirection,
-    showIcon,
+    anchorOrigin = "top",
+    variant = "default",
+    transitionDuration = 300,
+    transitionDirection = "down",
+    showIcon = false,
     customIcon,
     actions,
     actionsCallback,
-    actionsPosition,
+    actionsPosition = "auto",
     label,
-    offset,
-
-    // deprecated:
-    message,
-    action,
-    actionsOnMessage
+    offset = 60,
+    bannerContentProps,
+    ...others
   } = props;
 
-  const anchorOriginOffset = offset && {
+  const anchorOriginOffset = {
     anchorOriginTop: {
-      top: `${offset}px`
+      top: `${offset || 0}px`
     },
     anchorOriginBottom: {
-      bottom: `${offset}px`
+      bottom: `${offset || 0}px`
     }
   };
 
-  const [bannerId] = useState(id || uniqueId("hv-banner-"));
   const anchorOriginBanner = { horizontal: "center", vertical: anchorOrigin };
 
-  const SlideTransition = properties => (
-    <Slide {...properties} direction={transitionDirection} />
-  );
-
-  const bannerClasses = {
-    anchorOriginTopCenter: classes.anchorOriginTopCenter,
-    anchorOriginBottomCenter: classes.anchorOriginBottomCenter
-  };
-  bannerClasses.root = open ? classes.root : classes.rootClosed;
-
-  // deprecated properties fallbacks (start):
-  let effectiveActions = actions;
-  if (actionsOnMessage != null) {
-    effectiveActions = actionsOnMessage;
-  } else if (action != null) {
-    effectiveActions = action;
-  }
-
-  let effectiveActionsPosition = actionsPosition;
-  if (actionsPosition === "auto") {
-    if (actionsOnMessage != null) {
-      effectiveActionsPosition = "inline";
-    } else if (action != null) {
-      effectiveActionsPosition = "bottom-right";
-    }
-  }
-  // deprecated properties fallbacks (end)
+  const SlideTransition = properties => <Slide {...properties} direction={transitionDirection} />;
 
   return (
     <Snackbar
-      {...(offset && {
-        style: anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]
-      })}
+      style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin)}`]}
       className={className}
-      id={bannerId}
-      classes={bannerClasses}
+      id={id}
+      classes={{
+        root: open ? classes.root : classes.rootClosed,
+        anchorOriginTopCenter: classes.anchorOriginTopCenter,
+        anchorOriginBottomCenter: classes.anchorOriginBottomCenter
+      }}
       anchorOrigin={anchorOriginBanner}
       TransitionComponent={SlideTransition}
       open={open}
       transitionDuration={transitionDuration}
+      {...others}
     >
       <HvBannerContentWrapper
-        id={`${bannerId}-content`}
-        content={message || label}
+        id={setId(id, "content")}
+        content={label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
-        actions={effectiveActions}
+        actions={actions}
         actionsCallback={actionsCallback}
-        actionsPosition={effectiveActionsPosition}
+        actionsPosition={actionsPosition}
         onClose={onClose}
+        {...bannerContentProps}
       />
     </Snackbar>
   );
@@ -141,6 +94,10 @@ HvBanner.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the component root class when the component is closed.
+     */
+    rootClosed: PropTypes.string,
     /**
      * Styles applied to the component when define as top.
      */
@@ -199,11 +156,7 @@ HvBanner.propTypes = {
   /**
    * The position property of the header.
    */
-  actionsPosition: PropTypes.PropTypes.oneOf([
-    "auto",
-    "inline",
-    "bottom-right"
-  ]),
+  actionsPosition: PropTypes.PropTypes.oneOf(["auto", "inline", "bottom-right"]),
   /**
    * How much the transition animation last in milliseconds, if 0 no animation is played.
    */
@@ -216,53 +169,10 @@ HvBanner.propTypes = {
    * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
   offset: PropTypes.number,
-
-  // deprecated:
   /**
-   * The message to display.
-   * @deprecated. Instead use the label property
+   * Props to pass down to the Banner Wrapper. An object `actionProps` can be included to be passed as others to actions.
    */
-  message: deprecatedPropType(
-    PropTypes.string,
-    "Instead use the label property"
-  ),
-  /**
-   * Actions to display on the right side.
-   * @deprecated. Instead use the actions property
-   */
-  action: deprecatedPropType(
-    PropTypes.node,
-    "Instead use the actions property"
-  ),
-  /**
-   * Actions to display on message.
-   * @deprecated. Instead use the actions property together with actionsPosition="inline"
-   */
-  actionsOnMessage: deprecatedPropType(
-    PropTypes.node,
-    'Instead use the actions property together with actionsPosition="inline"'
-  )
+  bannerContentProps: PropTypes.instanceOf(Object)
 };
 
-HvBanner.defaultProps = {
-  className: "",
-  id: undefined,
-  label: "",
-  anchorOrigin: "top",
-  customIcon: null,
-  showIcon: false,
-  actions: null,
-  actionsCallback: () => {},
-  actionsPosition: "auto",
-  variant: "default",
-  transitionDuration: 300,
-  transitionDirection: "down",
-  offset: 60,
-
-  // deprecated:
-  message: undefined,
-  action: undefined,
-  actionsOnMessage: undefined
-};
-
-export default HvBanner;
+export default withStyles(styles, { name: "HvBanner" })(HvBanner);

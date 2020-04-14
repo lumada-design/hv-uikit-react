@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import HvSlider from "@hv/uikit-react-lab/dist/Slider";
@@ -32,8 +16,7 @@ storiesOf("Lab", module).add("Slider", () => <HvSlider />, {
     },
     {
       title: "2. Three knobs",
-      description:
-        "Shows the possibility of manipulating N quantity of knobs and a range",
+      description: "Shows the possibility of manipulating N quantity of knobs and a range",
       src: "lab/slider/slider2"
     },
     {
@@ -49,8 +32,7 @@ storiesOf("Lab", module).add("Slider", () => <HvSlider />, {
     },
     {
       title: "5. Three knobs with different range",
-      description:
-        "Shows the possibility of manipulating N quantity of knobs and a range",
+      description: "Shows the possibility of manipulating N quantity of knobs and a range",
       src: "lab/slider/slider5"
     }
   ]

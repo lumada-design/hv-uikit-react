@@ -15,11 +15,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@2.0.0-next.1...@hv/uikit-react-doc@2.0.0-next.2) (2020-03-18)
 # [1.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.22.0...@hv/uikit-react-doc@1.23.0) (2020-04-09)
 
 
 ### Features
 
+* **deprecations:** remove searchbox from lab. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([875fb0f](https://github.com/pentaho/hv-uikit-react/commit/875fb0f3767a38e57dc1af5b182ae5598a4beb1f))
+* **dropdowmenu:** add onToggleOpen. [#1208](https://github.com/pentaho/hv-uikit-react/issues/1208) ([401219a](https://github.com/pentaho/hv-uikit-react/commit/401219a4aafb674f9f14265f85564c268c79390a))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
 * **badge:** review accessibility. [#1234](https://github.com/pentaho/hv-uikit-react/issues/1234) ([37d032f](https://github.com/pentaho/hv-uikit-react/commit/37d032f6ba961b83353ac698e50f8ac1821d0753))
 * **dropdown:** change width of container. [#1303](https://github.com/pentaho/hv-uikit-react/issues/1303) ([3c68b00](https://github.com/pentaho/hv-uikit-react/commit/3c68b0086209196eb52ff41aa90dd86467b2883f))
 
@@ -27,6 +31,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [2.0.0-next.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.20.0...@hv/uikit-react-doc@2.0.0-next.1) (2020-03-04)
+
+
+### Bug Fixes
+
+* **icons:** review component doc errors. [#1111](https://github.com/pentaho/hv-uikit-react/issues/1111) ([db05f50](https://github.com/pentaho/hv-uikit-react/commit/db05f5029c2b51a43f34dd874f0893d60b2b66fa))
+* **material:** fixing error of palette not found ([#1177](https://github.com/pentaho/hv-uikit-react/issues/1177)) ([3eca230](https://github.com/pentaho/hv-uikit-react/commit/3eca230b1873a1133406d4f4cae2da304ddf74ef))
 # [1.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.21.0...@hv/uikit-react-doc@1.22.0) (2020-04-01)
 
 
@@ -53,6 +64,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* **deprecation:** remove old navigation system ([3c31bef](https://github.com/pentaho/hv-uikit-react/commit/3c31bef20ab8f492eab3e7762f07ffe87655eca1))
+* **deprecations:** remove deprecated lab components. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([410cf5b](https://github.com/pentaho/hv-uikit-react/commit/410cf5be65e72d201d08235e5f93ee2f46af68e0))
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **input:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([178d84e](https://github.com/pentaho/hv-uikit-react/commit/178d84e0a1fe70f48e39257ed43166f3662c2cb7))
+* **login:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([faed180](https://github.com/pentaho/hv-uikit-react/commit/faed180ecaf5b071dd96a8aa608f3425a43ba13d))
+* **material4:** fix bugs across components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([3e5b605](https://github.com/pentaho/hv-uikit-react/commit/3e5b605b31d413eb4f2d356c6921932debf2ce1c))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+* **modal:** working with material 4. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([15eac1b](https://github.com/pentaho/hv-uikit-react/commit/15eac1b573e9ebcddbff34b828d3f2dc91eadc36))
+* **table:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([029d7db](https://github.com/pentaho/hv-uikit-react/commit/029d7db08613d7f58978fcf2824cb9e8da5d33a0))
+* **textarea:** remove depracted props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([c141530](https://github.com/pentaho/hv-uikit-react/commit/c14153064eb031c393d8d795dae1243df3a8940d))
 * **multibutton:** reviewing accesibility. [#1079](https://github.com/pentaho/hv-uikit-react/issues/1079) ([0341ff1](https://github.com/pentaho/hv-uikit-react/commit/0341ff1b4aeb4e179a43fb2f7b276082760a53fc))
 * **table:** aria roles a11y review. [#1076](https://github.com/pentaho/hv-uikit-react/issues/1076) ([d38d242](https://github.com/pentaho/hv-uikit-react/commit/d38d242e3410191efb4c67dad09c60dfab28a37b))
 
@@ -76,6 +97,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [2.0.0-next.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.18.1...@hv/uikit-react-doc@2.0.0-next.0) (2020-02-14)
 # [1.20.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.19.0...@hv/uikit-react-doc@1.20.0) (2020-02-28)
 
 

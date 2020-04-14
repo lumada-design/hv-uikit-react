@@ -1,59 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
 
-class SimpleSnackbar extends React.Component {
-  state = {
-    open: false
+const SimpleSnackbar = props => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
   };
 
-  handleClick = () => {
-    this.setState({ open: true });
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
   };
 
-  handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
+  return (
+    <div>
+      <Button onClick={handleClick} variant="contained" color="primary" style={{ width: "150px" }}>
+        Click me
+      </Button>
+      <HvSnackbar open={open} onClose={handleClose} offset={60} {...props} />
+    </div>
+  );
+};
 
-    this.setState({ open: false });
-  };
-
-  render() {
-    const {
-      label,
-      variant,
-      showIcon,
-      anchorOrigin,
-      action,
-      customIcon
-    } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <Button
-          onClick={this.handleClick}
-          variant="contained"
-          color="primary"
-          style={{ width: "150px" }}
-        >
-          Click me
-        </Button>
-        <HvSnackbar
-          open={open}
-          label={label}
-          onClose={this.handleClose}
-          anchorOrigin={anchorOrigin}
-          variant={variant}
-          customIcon={customIcon}
-          showIcon={showIcon}
-          action={action}
-          offset={60}
-        />
-      </div>
-    );
-  }
-}
-export default (
-  <SimpleSnackbar label="This is a snackbar without icon" variant="default" />
-);
+export default <SimpleSnackbar label="This is a snackbar without icon" variant="default" />;

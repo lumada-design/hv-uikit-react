@@ -1,26 +1,9 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
-import Slider from "../Slider";
-import SliderWithStyles from "../index";
+import HvSlider from "..";
 
 describe("Slider ", () => {
   const knobProperties = [
@@ -77,10 +60,7 @@ describe("Slider ", () => {
 
   const wrapper = mount(
     <HvProvider>
-      <SliderWithStyles
-        knobProperties={knobProperties}
-        defaultValues={knobPropertiesDefaults}
-      />
+      <HvSlider knobProperties={knobProperties} defaultValues={knobPropertiesDefaults} />
     </HvProvider>
   );
 
@@ -99,14 +79,14 @@ describe("Slider ", () => {
   });
 
   it("should render the Slider component", () => {
-    const sliderComponent = wrapper.find(Slider);
+    const sliderComponent = wrapper.find(HvSlider);
     expect(sliderComponent.length).toBe(1);
   });
 
   it("should call the format mark function", () => {
     mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
           formatMark={myMock}
@@ -121,7 +101,7 @@ describe("Slider ", () => {
   it("shouldn't call the format mark function more than one time for each knob when the markProps exist", () => {
     mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           markProperties={[{ position: 2, label: "asd" }]}
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -136,7 +116,7 @@ describe("Slider ", () => {
   it("should define the start of the range with the passed value", () => {
     mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           minPointValue={15}
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -151,7 +131,7 @@ describe("Slider ", () => {
   it("should define the end of the range with the passed value", () => {
     mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           maxPointValue={87}
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -166,7 +146,7 @@ describe("Slider ", () => {
   it("should define the end of the range with the passed value", () => {
     mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -182,7 +162,7 @@ describe("Slider ", () => {
   it("should call onBefore method just once", () => {
     const myMount = mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -191,7 +171,7 @@ describe("Slider ", () => {
       </HvProvider>
     );
 
-    const instance = myMount.find(Slider).instance();
+    const instance = myMount.find("HvSlider").instance();
 
     instance.onBeforeChangeHandler(["10", "20", "30", "40", "50"]);
 
@@ -201,7 +181,7 @@ describe("Slider ", () => {
   it("should call onAfter method just once", () => {
     const myMount = mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           divisionQuantity={87}
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
@@ -210,7 +190,7 @@ describe("Slider ", () => {
       </HvProvider>
     );
 
-    const instance = myMount.find(Slider).instance();
+    const instance = myMount.find("HvSlider").instance();
 
     instance.onAfterChangeHandler(["10", "20", "30", "40", "50"]);
 
@@ -227,7 +207,7 @@ describe("Slider ", () => {
 
     const myMount = mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           maxPointValue={1}
           knobProperties={knobPropertiesScaled}
           defaultValues={knobPropertiesScaledDefaults}
@@ -237,7 +217,7 @@ describe("Slider ", () => {
       </HvProvider>
     );
 
-    const instance = myMount.find(Slider).instance();
+    const instance = myMount.find("HvSlider").instance();
 
     instance.onChangeHandler([11, 25, 37, 48, 70]);
   });
@@ -247,7 +227,7 @@ describe("Slider ", () => {
 
     const myMount = mount(
       <HvProvider>
-        <SliderWithStyles
+        <HvSlider
           knobProperties={knobProperties}
           defaultValues={knobPropertiesDefaults}
           onChange={onChangeMock}
@@ -255,7 +235,7 @@ describe("Slider ", () => {
       </HvProvider>
     );
 
-    const instance = myMount.find(Slider).instance();
+    const instance = myMount.find("HvSlider").instance();
 
     instance.onChangeHandler([10, 20, 40, 100, 100]);
 

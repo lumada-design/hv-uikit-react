@@ -1,14 +1,10 @@
 import React from "react";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import FailureIcon from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import Upload from "@hv/uikit-react-icons/dist/Generic/Upload";
-import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
+import { Add, Delete, Level3Bad as FailureIcon, Preview, Upload } from "@hv/uikit-react-icons/dist";
 import Grid from "@material-ui/core/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import leaf from "./resources/leaf.png";
 import withStyles from "@material-ui/core/styles/withStyles";
+import leaf from "./resources/leaf.png";
 
 const configuration = {
   title: "Leaves Appear wilted and scorched",
@@ -27,7 +23,7 @@ const strings = {
   cellDContent: "30-60 days"
 };
 
-const MultipleActionsWithMediaStyles = theme => ({
+const mediaStyles = theme => ({
   content: {
     padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
   },
@@ -90,34 +86,14 @@ const MultipleActionsWithMedia = ({ classes }) => {
   );
 };
 
-const MultipleActionsWithMediaWithStyles = withStyles(
-  MultipleActionsWithMediaStyles,
-  {
-    withTheme: true
-  }
-)(MultipleActionsWithMedia);
+const MultipleActionsWithMediaWithStyles = withStyles(mediaStyles)(MultipleActionsWithMedia);
 
-const iconStyles = {
-  width: "30px",
-  height: "30px"
-};
-
-const StyledFailureIcon = () => (
-  <FailureIcon
-    semantic="sema4"
-    boxStyles={iconStyles}
-    style={{ display: "block", margin: "auto" }}
-  />
+const SubHeader = ({ classes }) => (
+  <div>
+    <span className={classes.subtitleLeft}>{configuration.subtitleLeft}</span>
+    <span>{configuration.subtitleRight}</span>
+  </div>
 );
-
-const SubHeader = ({ classes }) => {
-  return (
-    <div>
-      <span className={classes.subtitleLeft} >{configuration.subtitleLeft}</span>
-      <span>{configuration.subtitleRight}</span>
-    </div>
-  )
-}
 
 const SubHeaderStyle = theme => ({
   subtitleLeft: {
@@ -127,49 +103,69 @@ const SubHeaderStyle = theme => ({
   }
 });
 
-const styles = () => ({
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-})
-
-const StyledSubheader = withStyles(SubHeaderStyle, {
-  withTheme: true
-})(SubHeader);
-
-const StyledUploadIcon = withStyles(styles, { withTheme: true })(({classes}) => <Upload className={classes.box} />);
-const StyledPreviewIcon = withStyles(styles, { withTheme: true })(({classes}) => <PreviewIcon className={classes.box} />);
-const StyledAddIcon = withStyles(styles, { withTheme: true })(({classes}) => <AddIcon className={classes.box} />);
-const StyledDeleteIcon = withStyles(styles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
+const StyledSubheader = withStyles(SubHeaderStyle)(SubHeader);
 
 const myActions = [
-  { id: "post", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
-  { id: "put", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Upload",
+    iconCallback: () => <Upload />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <Preview color="atmo7" />,
+    disabled: true
+  },
+  {
+    id: "put",
+    label: "Add",
+    iconCallback: () => <Add color="atmo7" />,
+    disabled: true
+  },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <Delete />,
+    disabled: false
+  }
 ];
 
 export default (
   <div style={{ width: "360px" }}>
     <HvCard
-      icon={<StyledFailureIcon />}
+      icon={<FailureIcon semantic="sema4" />}
       headerTitle={configuration.title}
-      subheader={
-        <StyledSubheader />
-      }
+      subheader={<StyledSubheader />}
       innerCardContent={<MultipleActionsWithMediaWithStyles />}
       actions={myActions}
-      actionsCallback={(id, a) => alert("You have pressed " + a.label)}
+      actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
       actionsAlignment="left"
       semantic="sema4"
       isSelectable
-      checkboxValue="value"
+      cardButtonProps={{
+        "aria-label ": "leaf"
+      }}
+      headerProps={{
+        "aria-label ": "leaf"
+      }}
+      footerProps={{
+        "aria-label ": "leaf"
+      }}
+      checkboxProps={{
+        value: "value",
+        "aria-label": "leaf checkbox",
+        inputProps: {
+          "aria-label": "leaf input"
+        }
+      }}
       mediaPath={leaf}
       mediaHeight={160}
       mediaTitle="leafy leaf"
-      mediaAriaLabel="leafy leaf"
+      mediaProps={{
+        "aria-label": "leafy leaf"
+      }}
       onChange={event => console.log(`my value is ${event.target.value}`)}
     />
   </div>

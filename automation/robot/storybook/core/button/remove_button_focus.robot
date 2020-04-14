@@ -7,21 +7,17 @@ Suite Teardown    Close Browser
 Test Template     Test button state transition between focus-default
 Force Tags        smoke    bug-edge-webdriver    bug-infrastructure-ie
 
-*** Comments ***
-bug-edge-webdriver  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16448300/
-
 *** Keywords ***
 Test button state transition between focus-default
     [Arguments]        ${button_locator}
     [Documentation]
     ...                verify button lost the focus state when is clicked other element
-    ...
-    Click Button                     ${button_locator}
-    Alert Should Be Present
+    Set Focus To Element             ${button_locator}
     Element Should Be Focused        ${button_locator}
-    remove focus
+    Press Keys                       NONE                 TAB
     Element Should Be Enabled        ${button_locator}
     verify element is not focused    ${button_locator}
+
 
 *** Test Cases ***                               button_locator
 remove focus on default button                   default

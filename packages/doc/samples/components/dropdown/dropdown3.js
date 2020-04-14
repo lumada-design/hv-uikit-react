@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
-import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
 const data = [

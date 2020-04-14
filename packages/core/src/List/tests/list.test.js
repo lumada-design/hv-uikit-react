@@ -1,28 +1,11 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
-import LineChartIcon from "@hv/uikit-react-icons/dist/Generic/LineChart";
+import LineChartIcon from "@hv/uikit-react-icons/dist/LineChart";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox";
-import ListWithStyles from "../index";
-import List from "../List";
+import List from "..";
 
 const mockDataSingleSelection = [
   {
@@ -54,7 +37,7 @@ const mockDataSingleSelectionWithIds = [
 const mockDataSingleSelectionWithIcons = [
   {
     label: "Value 1",
-    leftIcon: props => <LineChartIcon {...props} />
+    iconCallback: () => <LineChartIcon />
   },
   {
     label: "Value 2"
@@ -104,7 +87,7 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles
+          <List
             values={mockDataSingleSelection}
             onChange={onChangeMock}
             onClick={onClickMock}
@@ -116,11 +99,11 @@ describe("<List />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
 
     it("default value is selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
 
       expect(instance.state.list).toEqual([
@@ -131,7 +114,7 @@ describe("<List />", () => {
     });
 
     it("onChange is triggered on selection and first is selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
 
       instance.handleToggle = jest.fn();
@@ -139,7 +122,7 @@ describe("<List />", () => {
       jest.runAllTimers();
 
       expect(instance.state.selectionLabel).toBe("1 of 3");
-      expect(onClickMock).toBeCalledWith({ label: "Value 1" }, mockEvt);
+      expect(onClickMock).toBeCalledWith(mockEvt, { label: "Value 1" });
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
         { label: "Value 2", selected: false },
@@ -148,7 +131,7 @@ describe("<List />", () => {
     });
 
     it("handleSelect updates state accordingly", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
 
       instance.handleSelect(mockEvt, { label: "Value 2" });
@@ -166,12 +149,12 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles values={mockDataSingleSelectionWithIds} />
+          <List values={mockDataSingleSelectionWithIds} />
         </HvProvider>
       );
     });
     it("handleSelect updates state accordingly", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect(mockEvt, { id: "id-1" });
       expect(instance.state.list).toEqual([
@@ -186,16 +169,12 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles
-            values={mockDataSingleSelection}
-            selectDefault
-            useSelector
-          />
+          <List values={mockDataSingleSelection} selectDefault useSelector />
         </HvProvider>
       );
     });
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
   });
 
@@ -203,12 +182,12 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles values={mockDataSingleSelectionWithIcons} />
+          <List values={mockDataSingleSelectionWithIcons} />
         </HvProvider>
       );
     });
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
   });
 
@@ -216,22 +195,17 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles
-            values={mockDataMultiSelection}
-            onChange={onChangeMock}
-            multiSelect
-            showSelectAll
-          />
+          <List values={mockDataMultiSelection} onChange={onChangeMock} multiSelect showSelectAll />
         </HvProvider>
       );
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
 
     it("default values are selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       expect(instance.state.list).toEqual([
         { label: "Value 1", selected: true },
@@ -241,7 +215,7 @@ describe("<List />", () => {
     });
 
     it("onChange is triggered on selection and first is selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleToggle = jest.fn();
       instance.handleSelect(mockEvt, { label: "Value 2" });
@@ -255,7 +229,7 @@ describe("<List />", () => {
     });
 
     it("handleSelect updates state accordingly", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect(mockEvt, { label: "Value 1" });
       jest.runAllTimers();
@@ -267,13 +241,13 @@ describe("<List />", () => {
     });
 
     it("handleSelectAll should unselect all if any selected", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance.handleSelectAll();
       expect(instance.state.list.some(el => el.selected)).toEqual(false);
     });
 
     it("handleSelect should be triggered when a single select item is clicked ", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelect = jest.fn();
       listComponent
@@ -288,7 +262,7 @@ describe("<List />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <ListWithStyles
+          <List
             values={mockDataMultiSelection}
             onChange={onChangeMock}
             multiSelect
@@ -300,11 +274,11 @@ describe("<List />", () => {
     });
 
     it("should render correctly", () => {
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.find(List)).toMatchSnapshot();
     });
 
     it("handleSelectAll should be triggered when All checkbox is selected ", () => {
-      listComponent = wrapper.find(List);
+      listComponent = wrapper.find("List");
       instance = listComponent.instance();
       instance.handleSelectAll = jest.fn();
       listComponent

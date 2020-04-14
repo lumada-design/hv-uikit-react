@@ -7,5 +7,11 @@ const labels = {
 };
 
 export default (
-  <HvTextArea label="Text Area" labels={labels} id="test" width={610} />
+  <HvTextArea
+    label="Text Area"
+    labels={labels}
+    id="test"
+    width={610}
+    onChange={(event, value) => console.log(value)}
+  />
 );

@@ -1,19 +1,3 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import AssetInventoryListView, {
   HvListViewRow,
@@ -21,11 +5,7 @@ import AssetInventoryListView, {
 } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
-import Level4 from "@hv/uikit-react-icons/dist/Generic/Level4";
-import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
 
 const values = [
   {
@@ -70,16 +50,14 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxValue={value.id}>
-      <HvListViewCell semantic={status.sema} id={"icon" + id} key={"icon" + id}>
+    <HvListViewRow checkboxProps={{ value: value.id }}>
+      <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon semantic={status.sema} className={classes.icon} />
       </HvListViewCell>
 
-      <HvListViewCell id={"description" + id} key={"description" + id}>
+      <HvListViewCell id={`description${id}`} key={`description${id}`}>
         <div style={{ display: "inline-flex" }}>
-          <HvTypography variant="highlightText">
-            {value.event.description}
-          </HvTypography>
+          <HvTypography variant="highlightText">{value.event.description}</HvTypography>
           <HvTypography className={classes.timestamp} variant="infoText">
             {value.event.timestamp}
           </HvTypography>
@@ -89,15 +67,15 @@ const Row = ({ classes, status, value, id }) => {
         </div>
       </HvListViewCell>
 
-      <HvListViewCell id={"probability" + id} key={"probability" + id}>
+      <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
         <HvTypography variant="normalText">{value.probability}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"timeHorizon" + id} key={"timeHorizon" + id}>
+      <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
         <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
       </HvListViewCell>
 
-      <HvListViewCell id={"relatedAssets" + id} key={"relatedAssets" + id}>
+      <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
         <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
       </HvListViewCell>
     </HvListViewRow>
@@ -111,12 +89,11 @@ const styles = theme => ({
     borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
   },
   icon: {
-    display: "block",
     marginLeft: "3px"
   }
 });
 
-const StyledRow = withStyles(styles, { withTheme: true })(Row);
+const StyledRow = withStyles(styles)(Row);
 
 const rowRenderer = (value, index) => {
   const status = {
@@ -130,11 +107,11 @@ const rowRenderer = (value, index) => {
       status.sema = "sema10";
       break;
     case 2:
-      status.Icon = Level2;
+      status.Icon = Level2Average;
       status.sema = "sema11";
       break;
     case 3:
-      status.Icon = Level3;
+      status.Icon = Level3Bad;
       status.sema = "sema12";
       break;
     case 4:
@@ -147,19 +124,12 @@ const rowRenderer = (value, index) => {
       break;
   }
 
-  return (
-    <StyledRow
-      status={status}
-      value={value}
-      key={value.id + index}
-      id={value.id + index}
-    />
-  );
+  return <StyledRow status={status} value={value} key={value.id + index} id={value.id + index} />;
 };
 
 const configuration = {
   onSelection: event => {
-    alert("this " + event.target.value);
+    alert(`this ${event.target.value}`);
   },
   isSelectable: false,
   columnConfiguration: [
@@ -202,13 +172,14 @@ const configuration = {
     }
   ],
   actions: [{ id: "1", label: "Dismiss", disabled: false }],
-  actionsCallback: (id, action) => {
-    alert("You have pressed" + id + "with action" + action.label);
+  actionsCallback: (e, id, action) => {
+    alert(`You have pressed${id}with action${action.label}`);
   }
 };
 
 export default (
   <AssetInventoryListView
+    icon={<Level1 />}
     values={values}
     renderer={rowRenderer}
     viewConfiguration={configuration}

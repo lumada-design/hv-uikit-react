@@ -1,40 +1,24 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import { basename } from "path";
 import PropTypes from "prop-types";
-import MUITabs from "@material-ui/core/Tabs";
-import MUITab from "@material-ui/core/Tab";
 import isNil from "lodash/isNil";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Tab as MUITab, Tabs as MUITabs, useTheme } from "@material-ui/core";
 import TableAPI from "../TableAPI";
 import TableCSS from "../TableCSS";
 import Accessibility from "../Accessibility";
 
-const TabUsage = ({ parameters, theme }) => {
+const TabUsage = ({ parameters }) => {
   const { usage } = parameters;
+  const theme = useTheme();
 
   return (
     <SyntaxHighlighter
       language="javascript"
-      style={theme.type === "dark" ? darcula : prism}
+      style={theme.hv.type === "dark" ? darcula : prism}
       customStyle={{
-        backgroundColor: theme.palette.atmosphere.atmo3,
+        backgroundColor: theme.palette.atmo3,
         margin: 0,
         borderRadius: 0,
         fontSize: 14
@@ -45,9 +29,7 @@ const TabUsage = ({ parameters, theme }) => {
   );
 };
 
-const TabAPI = ({ propsMetaData }) => (
-  <TableAPI propsMetaData={propsMetaData} />
-);
+const TabAPI = ({ propsMetaData }) => <TableAPI propsMetaData={propsMetaData} />;
 
 const TabCSS = ({ propsMetaData }) => (
   <TableCSS propsMetaData={propsMetaData["classes"].type.value} />
@@ -108,7 +90,7 @@ class Tabs extends React.Component {
           )}
         </MUITabs>
         <div className={classes.props}>
-          {value === 0 && <TabUsage parameters={parameters} theme={theme.hv} />}
+          {value === 0 && <TabUsage parameters={parameters} />}
           {value === 1 && <TabAPI propsMetaData={propsMetaData} />}
           {value === 2 && <TabCSS propsMetaData={propsMetaData} />}
           {value === 3 && <Accessibility pageData={accessPage.default} />}

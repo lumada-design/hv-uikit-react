@@ -1,37 +1,11 @@
-declare module '@hv/uikit-react-core/dist/Modal' {
-  import React from 'react'
+export { default } from "./Modal";
+export * from "./Modal";
 
-  class HvModal extends React.Component<HvModalProps, any> {}
+export { default as HvModalTitle } from "./ModalTitle";
+export * from "./ModalTitle";
 
-  export default HvModal
+export { default as HvModalContent } from "./ModalContent";
+export * from "./ModalContent";
 
-  export interface HvModalProps extends React.HTMLAttributes<HvModal> {
-    /**
-     * A Jss Object used to override or extend the styles applied.
-     */
-    classes?: {
-      /**
-       * Style applied to the background (outside) of the component.
-       */
-      background?: string
-      /**
-       * Style applied to the component (root).
-       */
-      paper?: string
-      /**
-       * Style applied to the close button.
-       */
-      closeButton?: string
-    }
-
-    /**
-     * Current state of the modal.
-     */
-    open: boolean
-
-    /**
-     * Function executed on close.
-     */
-    onClose: (...args: any[]) => any
-  }
-}
+export { default as HvModalActions } from "./ModalActions";
+export * from "./ModalActions";

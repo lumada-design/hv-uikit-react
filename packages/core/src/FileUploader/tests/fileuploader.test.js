@@ -1,26 +1,9 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 
-import FileUploaderWithStyles from "..";
-import FileUploader from "../FileUploader";
+import FileUploader from "..";
 import DropZone from "../DropZone";
 import HvProvider from "../../Provider";
 import File from "../File";
@@ -40,11 +23,13 @@ const DEFAULT_LABELS = {
 
 const fileList = [
   {
+    id: "1",
     name: "Screenshot 2019-12-05 at 17.15.43.png",
     size: 14100000,
     type: "image/png"
   },
   {
+    id: "2",
     name: "Screenshot 2019-12-05 at 12.03.13.png",
     size: 875000,
     type: "image/png"
@@ -56,7 +41,7 @@ const onClickCallback = jest.fn();
 const setupComponent = (props = {}) =>
   mount(
     <HvProvider>
-      <FileUploaderWithStyles {...props} />
+      <FileUploader {...props} />
     </HvProvider>
   );
 
@@ -81,7 +66,7 @@ describe("FileUploader withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(FileUploader)).toMatchSnapshot();
   });
 
   it("should render the FileUploader", () => {
@@ -117,6 +102,7 @@ describe("FileUploader validations", () => {
     const faultyCompProps = {
       fileList: [
         {
+          id: "3",
           status: "fail",
           errorMessage: "File type not allowed for upload",
           name: "somefile.jpeg",
@@ -145,6 +131,7 @@ describe("FileUploader validations", () => {
     const faultyCompProps = {
       fileList: [
         {
+          id: "4",
           status: "fail",
           errorMessage: "The file exceeds the maximum upload size",
           name: "somefile.jpeg",

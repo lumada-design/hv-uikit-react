@@ -5,18 +5,13 @@
 **/*/dist
 **/*/bin
 
-# doc folder
-doc
-
 # Dependency directories
 **/*/node_modules
 
-examples/**/*
-generator/**/*
 automation/**/*
-
-resources/license-header.js
-commitlint.config.js
 
 packages/icons/src/*
 packages/lab/src/*
+
+# templates directory
+doc/**/*

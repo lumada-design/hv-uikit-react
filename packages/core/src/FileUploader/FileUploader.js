@@ -1,24 +1,11 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
+import { withStyles } from "@material-ui/core";
+import withLabels from "../withLabels";
+import { setId } from "../utils/setId";
 import DropZone from "./DropZone";
 import FileList from "./FileList";
+import styles from "./styles";
 
 const DEFAULT_LABELS = {
   dropzone: "Label",
@@ -35,21 +22,21 @@ const DEFAULT_LABELS = {
 
 const FileUploader = ({
   id,
+  className,
   labels,
   fileList,
-  multiple,
-  disabled,
-  maxFileSize,
-  acceptedFiles,
+  multiple = true,
+  disabled = false,
+  maxFileSize = Infinity,
+  acceptedFiles = [],
   onFilesAdded,
-  onFileRemoved
+  onFileRemoved,
+  ...others
 }) => {
-  const [fileUploaderId] = useState(id || uniqueId("hv-fileuploader-"));
-
   return (
-    <>
+    <div id={id} className={className} {...others}>
       <DropZone
-        id={`${fileUploaderId}-dropzone`}
+        id={setId(id, "dropzone")}
         labels={labels}
         multiple={multiple}
         disabled={disabled}
@@ -58,13 +45,13 @@ const FileUploader = ({
         onFilesAdded={onFilesAdded}
       />
       <FileList
-        id={`${fileUploaderId}-filelist`}
+        id={setId(id, "filelist")}
         list={fileList}
         progressConjunctionLabel={labels.progressConjunction}
         onFileRemoved={onFileRemoved}
         removeFileButtonLabel={labels.removeFileButtonLabel}
       />
-    </>
+    </div>
   );
 };
 
@@ -74,11 +61,22 @@ FileUploader.propTypes = {
    */
   id: PropTypes.string,
   /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /**
    * An object containing all the labels.
    *
    * - progressConjunction: The label used in the middle of the progress message.
    */
   labels: PropTypes.shape({
+    /**
+     *
+     */
+    acceptedFiles: PropTypes.string,
+    /**
+     *
+     */
     progressConjunction: PropTypes.string,
     /**
      * Dropzone area label.
@@ -162,15 +160,6 @@ FileUploader.propTypes = {
   onFileRemoved: PropTypes.func
 };
 
-FileUploader.defaultProps = {
-  id: null,
-  labels: DEFAULT_LABELS,
-  multiple: true,
-  disabled: false,
-  maxFileSize: Infinity,
-  acceptedFiles: [],
-  onFilesAdded: () => {},
-  onFileRemoved: () => {}
-};
-
-export default FileUploader;
+export default withStyles(styles, { name: "HvFileUploader" })(
+  withLabels(DEFAULT_LABELS)(FileUploader)
+);

@@ -2,6 +2,7 @@
 Library     SeleniumLibrary
 Resource    ../../../_resources/storybook_keywords.robot
 
+
 *** Keywords ***
 open storybook button page
     open storybook

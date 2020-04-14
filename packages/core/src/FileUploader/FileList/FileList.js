@@ -1,51 +1,35 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import uniqueId from "lodash/uniqueId";
+import { withStyles } from "@material-ui/core";
+import { setUid } from "../..";
 import File from "../File";
+import styles from "./styles";
 
 const FileList = ({
   id,
   classes,
-  list,
+  list = [],
   progressConjunctionLabel,
   removeFileButtonLabel,
   onFileRemoved
 }) => {
-  const [fileListId] = useState(id || uniqueId("hv-filelist-"));
-
   const hasFiles = list.length > 0;
+  if (!hasFiles) return null;
 
   return (
-    hasFiles && (
-      <ul id={fileListId} className={classes.list}>
-        {list.map(data => (
-          <li key={data.id}>
-            <File
-              id={`${fileListId}-${data.id}`}
-              data={data}
-              onFileRemoved={onFileRemoved}
-              progressConjunctionLabel={progressConjunctionLabel}
-              removeFileButtonLabel={removeFileButtonLabel}
-            />
-          </li>))}
-      </ul>
-    )
+    <ul id={id} className={classes.list}>
+      {list.map(data => (
+        <li key={data.id}>
+          <File
+            id={setUid(id, data.id)}
+            data={data}
+            onFileRemoved={onFileRemoved}
+            progressConjunctionLabel={progressConjunctionLabel}
+            removeFileButtonLabel={removeFileButtonLabel}
+          />
+        </li>
+      ))}
+    </ul>
   );
 };
 
@@ -61,7 +45,7 @@ FileList.propTypes = {
   /**
    * The files to upload.
    */
-  list: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  list: PropTypes.arrayOf(PropTypes.shape({})),
   /**
    * Callback fired when file is removed from list.
    */
@@ -76,10 +60,4 @@ FileList.propTypes = {
   removeFileButtonLabel: PropTypes.string.isRequired
 };
 
-FileList.defaultProps = {
-  id: null,
-  list: [],
-  onFileRemoved: () => {}
-};
-
-export default FileList;
+export default withStyles(styles, { name: "HvFileUploaderFileList" })(FileList);

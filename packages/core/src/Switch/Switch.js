@@ -1,98 +1,80 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import BaseSwitch from "@material-ui/core/Switch";
-
-import classnames from "classnames";
-import uniqueId from "lodash/uniqueId";
-import CheckMark from "@hv/uikit-react-icons/dist/Generic/CompletedStep";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import clsx from "clsx";
+import isNil from "lodash/isNil";
+import { Switch, withStyles } from "@material-ui/core";
+import CheckMark from "@hv/uikit-react-icons/dist/CompletedStep";
+import { setId, isKeypress, KeyboardCodes } from "../utils";
+import withLabels from "../withLabels";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
+import styles from "./styles";
 
-const Switch = props => {
+const DEFAULT_LABELS = {
+  left: "Off",
+  right: "On"
+};
+
+/**
+ * A Switch is a mechanism that allows user toggle between 2 options.
+ */
+const HvSwitch = props => {
   const {
+    id,
+    className,
     classes,
-    checked,
-    disabled,
+    checked = true,
+    disabled = false,
     onChange,
     labels,
-    id,
-    showLabels,
-    value,
-    displayIconChecked,
-    ...other
+    showLabels = true,
+    value = "",
+    displayIconChecked = false,
+    ...others
   } = props;
 
   const [clickState, setClicked] = useState(checked);
-  const DEFAULT_ID_PREFIX = "hv-switch-";
-  const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
 
   const handleChange = event => {
     setClicked(event.target.checked);
-    onChange(event);
-  };
-
-  const createLabel = (
-    label,
-    right,
-    labelId,
-    labelDisabled,
-    onClickHandler
-  ) => {
-    const internalLabelId = right
-      ? `${labelId}_rightButton`
-      : `${labelId}_leftButton`;
-    return (
-      <div id={internalLabelId}>
-        <HvTypography
-          className={classnames({
-            [classes.disabledLabel]: labelDisabled,
-            [classes.labelRightPositioning]: right,
-            [classes.labelLeftPositioning]: !right
-          })}
-          onClick={labelDisabled ? undefined : onClickHandler}
-          aria-disabled={disabled}
-        >
-          {label}
-        </HvTypography>
-      </div>
-    );
+    onChange?.(event);
   };
 
   const onKeyDownHandler = event => {
     if (isKeypress(event, KeyboardCodes.SpaceBar)) {
       const newState = !clickState;
       setClicked(newState);
-      onChange(event, newState);
+      onChange?.(event, newState);
     }
   };
 
   const onClickHandler = event => {
     const newState = !clickState;
     setClicked(newState);
-    onChange(event, newState);
+    onChange?.(event, newState);
   };
 
+  const renderLabel = position => (
+    <div id={!isNil(id) ? setId(id, position, "button") : undefined}>
+      <HvTypography
+        className={clsx(classes[`${position}Label`], {
+          [classes.disabledLabel]: disabled,
+          [classes.labelSelected]: !disabled && !clickState,
+          [classes.labelDeselected]: !disabled && clickState
+        })}
+        onClick={disabled ? undefined : onClickHandler}
+        aria-disabled={disabled}
+      >
+        {labels[position]}
+      </HvTypography>
+    </div>
+  );
+
+  const checkedIcon = <CheckMark width="14px" height="14px" className={classes.checkedIcon} />;
+
   return (
-    <div className={classes.root} id={`${internalId}_root`}>
-      {showLabels &&
-        createLabel(labels.left, false, internalId, disabled, onClickHandler)}
+    <div className={clsx(classes.root, className)}>
+      {showLabels && renderLabel("left")}
       <Focus strategy="card" useFalseFocus>
         <div
           className={classes.root}
@@ -102,48 +84,42 @@ const Switch = props => {
           aria-checked={clickState}
           onKeyDown={disabled ? undefined : onKeyDownHandler}
           aria-disabled={disabled}
-          id={internalId}
-          {...other}
+          id={id}
+          {...others}
         >
-          <BaseSwitch
+          <Switch
             tabIndex="-1"
             checked={clickState}
             onChange={handleChange}
             disabled={disabled}
             value={value}
-            inputProps={
-              {
-                // dummy aria-label this component is not tabbable and it is just presentational.
-                // the accesibility test were always failing because of the missing aria label.
-                "aria-label": "base switch"
-              }
-            }
+            inputProps={{
+              // dummy aria-label this component is not tabbable and it is just presentational.
+              // the accessibility test were always failing because of the missing aria label.
+              "aria-label": "base switch"
+            }}
             classes={{
-              root: classes.switchRoot,
+              root: classes.switch,
               switchBase: classes.switchBase,
               checked: classes.checked,
-              bar: classes.bar,
-              icon: classes.icon,
-              disabled: classes.disabled,
-              iconChecked: classes.iconChecked
+              track: classes.track,
+              thumb: classes.thumb,
+              disabled: classes.disabled
             }}
-            {...(displayIconChecked && {
-              checkedIcon: (
-                <div className={classes.checkedIcon}>
-                  <CheckMark width="14px" height="14px" color={["acce1"]} />
-                </div>
-              )
-            })}
+            {...(displayIconChecked && { checkedIcon })}
           />
         </div>
       </Focus>
-      {showLabels &&
-        createLabel(labels.right, true, internalId, disabled, onClickHandler)}
+      {showLabels && renderLabel("right")}
     </div>
   );
 };
 
-Switch.propTypes = {
+HvSwitch.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied to the Switch Component.
    */
@@ -153,21 +129,41 @@ Switch.propTypes = {
      */
     root: PropTypes.string,
     /**
+     * Styles applied to the internal Switch component's root class.
+     */
+    switch: PropTypes.string,
+    /**
      * Styles applied to the internal SwitchBase component's root class.
      */
     switchBase: PropTypes.string,
+    /**
+     * Styles applied to the labels when they are disabled.
+     */
+    disabledLabel: PropTypes.string,
+    /**
+     * Styles applied to the labels when they are selected.
+     */
+    labelSelected: PropTypes.string,
+    /**
+     * Styles applied to the labels when they are disabled.
+     */
+    labelDeselected: PropTypes.string,
+    /**
+     * Styles applied to the checked icon.
+     */
+    checkedIcon: PropTypes.string,
     /**
      * Pseudo-class applied to the internal SwitchBase component's checked class.
      */
     checked: PropTypes.string,
     /**
-     * Styles applied to the bar element.
+     * Styles applied to the track element.
      */
-    bar: PropTypes.string,
+    track: PropTypes.string,
     /**
-     * Styles used to create the icon passed to the internal SwitchBase component icon prop.
+     * Styles used to create the thumb passed to the internal SwitchBase component icon prop.
      */
-    icon: PropTypes.string,
+    thumb: PropTypes.string,
     /**
      * Styles applied to the internal SwitchBase component's disabled class.
      */
@@ -213,18 +209,4 @@ Switch.propTypes = {
   displayIconChecked: PropTypes.bool
 };
 
-Switch.defaultProps = {
-  checked: true,
-  disabled: false,
-  onChange: () => {},
-  labels: {
-    left: "Off",
-    right: "On"
-  },
-  id: undefined,
-  value: "",
-  showLabels: true,
-  displayIconChecked: false
-};
-
-export default Switch;
+export default withStyles(styles, { name: "HvSwitch" })(withLabels(DEFAULT_LABELS)(HvSwitch));

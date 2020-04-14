@@ -17,8 +17,8 @@ function WrapperComp() {
   const [value, setValue] = useState("Initial value");
 
   // to be possible to change the input value by user action
-  const setterValue = value => {
-    setValue(value);
+  const setterValue = newValue => {
+    setValue(newValue);
   };
 
   return (
@@ -35,7 +35,7 @@ function WrapperComp() {
       <Button style={btnStyle} onClick={() => setValue("")}>
         Clear value
       </Button>
-      <HvInput labels={labels} inputValue={value} onChange={setterValue} />
+      <HvInput labels={labels} value={value} onChange={setterValue} />
     </>
   );
 }

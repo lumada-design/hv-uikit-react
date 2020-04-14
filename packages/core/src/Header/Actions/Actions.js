@@ -1,75 +1,36 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import isNil from "lodash/isNil";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
-/**
- * Action container. The component receives (itemAction) an array of components to be render.
- * The recommended number of components is 3. Above that, the actions should be a dropdown component
- * with the remaining actions.
- *
- * @param classes
- * @param userExists
- * @param itemActions
- * @returns {*}
- * @constructor
- */
-const Actions = ({ classes, userExists, itemActions }) => {
-  let nItemActions = itemActions;
-  if (isNil(nItemActions)) {
-    nItemActions = [];
-  }
+const Actions = props => {
+  const { classes, className, children, ...others } = props;
   return (
-    <div
-      className={classNames(classes.actionsContainer, {
-        [classes.marginLeft]: !userExists
-      })}
-    >
-      {nItemActions.map((child, i) => {
-        const key = `action_${i}`;
-        return (
-          <div className={classes.iconContainer} key={key}>
-            {child}
-          </div>
-        );
-      })}
+    <div className={clsx(className, classes.root)} {...others}>
+      {children}
     </div>
   );
 };
+
 Actions.propTypes = {
   /**
-   * A Jss Object used to override or extend the component styles.
+   * A Jss Object used to override or extend the styles applied.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.shape({
+    /**
+     * Styles applied to the component root class.
+     */
+    root: PropTypes.string
+  }).isRequired,
   /**
-   * Checks if the user container exist, to create a separation.
+   * Class names to be applied.
    */
-  userExists: PropTypes.bool,
+  className: PropTypes.string,
   /**
-   * Array with the components to be render.
+   * Node to be rendered.
    */
-  itemActions: PropTypes.arrayOf(PropTypes.element)
+  children: PropTypes.node
 };
 
-Actions.defaultProps = {
-  itemActions: [],
-  userExists: false
-};
-
-export default Actions;
+export default withStyles(styles, { name: "HvHeaderActions" })(Actions);

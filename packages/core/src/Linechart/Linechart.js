@@ -1,54 +1,35 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core";
 import Chart from "../Chart";
 import { setData, setLayout } from "./lineChartPlotlyOverrides";
+import styles from "./styles";
 
 /**
- * Component responsible for the presentation of the barchart component.
- *
- * @param title
- * @param subtitle
- * @param data
- * @param layout
- * @param config
- * @param tooltipType
- * @returns {*}
- * @constructor
+ * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
+ * called 'markers' connected by straight line segments. It is a basic type of chart common in many fields.
  */
 const Linechart = ({
+  id,
   classes,
   title,
   subtitle,
   data,
   layout,
   config,
-  tooltipType,
-  type,
+  tooltipType = "multiple",
+  type = "line",
   xAxisTitle,
   yAxisTitle,
-  rangeSlider
+  rangeSlider = false,
+  ...others
 }) => {
   const newData = setData(data, type);
   const newLayout = setLayout(layout, rangeSlider);
 
   return (
     <Chart
+      id={id}
       classes={classes}
       title={title}
       subtitle={subtitle}
@@ -58,11 +39,16 @@ const Linechart = ({
       layout={newLayout}
       config={config}
       tooltipType={tooltipType}
+      {...others}
     />
   );
 };
 
 Linechart.propTypes = {
+  /**
+   * An Id passed on to the component
+   */
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -109,17 +95,4 @@ Linechart.propTypes = {
   rangeSlider: PropTypes.bool
 };
 
-Linechart.defaultProps = {
-  classes: null,
-  layout: undefined,
-  title: "",
-  subtitle: "",
-  tooltipType: "multiple",
-  config: null,
-  type: "line",
-  xAxisTitle: undefined,
-  yAxisTitle: undefined,
-  rangeSlider: false
-};
-
-export default Linechart;
+export default withStyles(styles, { name: "HvLinechart" })(Linechart);

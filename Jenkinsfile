@@ -13,6 +13,7 @@ properties([
 
 node('non-master') {
     def releases_branch = 'master'
+    def next_branch = 'next'
 
     def commitMessage = null
     def commitTimestamp = null
@@ -25,6 +26,9 @@ node('non-master') {
         def image
 
         def is_master = env.BRANCH_NAME == releases_branch && !env.CHANGE_ID
+
+        def is_next = env.BRANCH_NAME == next_branch && !env.CHANGE_ID
+
         // failing tests in master are a critical FAILURE
         def failing_tests_result = is_master ? "FAILURE" : "UNSTABLE"
 
@@ -43,6 +47,25 @@ node('non-master') {
         }
 
         def test_stages = [:]
+
+        test_stages["license-check"] = {
+            stage('License check') {
+                if(!params.skipLint) {
+                    tryStep ({
+                        image.inside(containerRunOptions('uikit_license_check')) {
+                            sh label: 'npm run license-check', script: """
+                                #! /bin/sh -
+                                cd ${uikit_folder}
+                                npm run license-check
+                            """
+                        }
+                    }, failing_tests_result)
+                } else {
+                    // Unable to skip stages in scripted pipelines (https://issues.jenkins-ci.org/browse/JENKINS-54322)
+                    echo '[INFO] License check skipped'
+                }
+            }
+        }
 
         test_stages["lint"] = {
             stage('Lint') {
@@ -138,7 +161,7 @@ node('non-master') {
 
         parallel test_stages
 
-        if(is_master) {
+        if(is_master || is_next) {
             tryStep ({
                 // publish to npm repo
                 image.inside(containerRunOptions('uikit_publish_packages')) {
@@ -158,12 +181,9 @@ node('non-master') {
                             if(!params.skipPublish || params.skipPublishDoc == 'false') {
                                 sh label: 'copy git repository', script: """
                                     #! /bin/sh -
-
                                     # copy the git repository
                                     cp -R ./.git ${uikit_folder}/.git
-
                                     cd ${uikit_folder}
-
                                     # restore the files we didn't include in the docker image
                                     git checkout ${env.BRANCH_NAME}
                                     git reset --hard
@@ -174,13 +194,10 @@ node('non-master') {
                                         withNPM(npmrcConfig: 'hv-ui-nprc') {
                                             sh label: 'npm run publish-x', script: """
                                                 #! /bin/sh -
-
                                                 # copy the npm configuration
                                                 cp .npmrc ${uikit_folder}/../.npmrc
                                                 cp .npmrc ${uikit_folder}/.npmrc
-
                                                 cd ${uikit_folder}
-
                                                 npm run publish-${params.publishType} -- --no-git-reset
                                             """
 
@@ -205,12 +222,8 @@ node('non-master') {
                                     if(!params.skipPublish && params.skipPublishDoc != 'true' || params.skipPublishDoc == 'false') {
                                         sh label: 'npm run publish-documentation', script: """
                                             #! /bin/sh -
-
                                             cd ${uikit_folder}
                                             npm run build-documentation
-                                            # npm run publish-documentation
-
-                                            cd packages/doc
                                             NODE_DEBUG=gh-pages npm run publish-documentation
                                         """
                                     } else {
@@ -269,16 +282,10 @@ node('non-master') {
                             ]) {
                                 sh label: 'npm run publish-documentation', script: """
                                     #! /bin/sh -
-
                                     # copy the git repository
                                     cp -R ./.git ${uikit_folder}/.git
-
                                     cd ${uikit_folder}
-
                                     npm run build-documentation
-                                    # npm run publish-documentation -- --folder ${folder} --message '${message}'
-
-                                    cd packages/doc
                                     NODE_DEBUG=gh-pages npm run publish-documentation -- --folder ${folder} --message '${message}'
                                 """
                             }

@@ -1,45 +1,26 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+import { fade, hexToRgb } from "@material-ui/core";
 
-const styles = () => ({
-  shadowPadding: {
-    margin: "0 10px",
-    boxShadow: "0 0 0 #fff, 0px 6px 12px rgba(65,65,65,.12);"
+export const boxShadow = color => ({
+  boxShadow: `0 0 0 ${color}, 0 6px 12px ${fade(hexToRgb(color), 0.12)}`
+});
+
+const styles = theme => ({
+  root: {
+    height: 50
   },
-  navButton: {
-    zIndex: "3",
-    cursor: "pointer",
-    marginRight: 20,
-    width: 30
+  backgroundColor: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
-  verticalNavigationSeparation: {
-    marginTop: "5px"
-  },
-  verticalNavigationContainer: {
-    zIndex: "7"
-  },
-  verticalNavigationContainerFixed: {
-    height: "calc(100% - 50px)",
-    position: "fixed",
-    top: 55,
-    left: 0
-  },
-  verticalNavigationContainerAbsolute: {
+  header: {
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
     height: "100%",
-    position: "absolute"
+    padding: `0 ${theme.hv.spacing.sm}px`,
+    ...boxShadow(theme.hv.palette.accent.acce1),
+    "& > *:not(nav)": {
+      zIndex: 2
+    }
   }
 });
 

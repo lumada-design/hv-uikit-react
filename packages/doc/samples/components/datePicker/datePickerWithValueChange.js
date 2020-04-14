@@ -19,11 +19,7 @@ const Example = () => {
         Add a day
       </HvButton>
       <p />
-      <HvDatePicker
-        id="DatePicker"
-        value={date}
-        onChange={date => setDate(date)}
-      />
+      <HvDatePicker id="DatePicker" value={date} onChange={d => setDate(d)} />
     </>
   );
 };

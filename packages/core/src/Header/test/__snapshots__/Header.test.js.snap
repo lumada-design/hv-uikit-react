@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header withStyles should be able to render 1`] = `
+<WithStyles(HvHeader)>
+  <HvHeader
+    classes={
+      Object {
+        "backgroundColor": "HvHeader-backgroundColor",
+        "header": "HvHeader-header",
+        "root": "HvHeader-root",
+      }
+    }
+  >
+    <WithStyles(ForwardRef(AppBar))
+      classes={
+        Object {
+          "colorPrimary": "HvHeader-backgroundColor",
+          "root": "HvHeader-root",
+        }
+      }
+      position="fixed"
+    >
+      <ForwardRef(AppBar)
+        classes={
+          Object {
+            "colorDefault": "MuiAppBar-colorDefault",
+            "colorInherit": "MuiAppBar-colorInherit",
+            "colorPrimary": "MuiAppBar-colorPrimary HvHeader-backgroundColor",
+            "colorSecondary": "MuiAppBar-colorSecondary",
+            "colorTransparent": "MuiAppBar-colorTransparent",
+            "positionAbsolute": "MuiAppBar-positionAbsolute",
+            "positionFixed": "MuiAppBar-positionFixed",
+            "positionRelative": "MuiAppBar-positionRelative",
+            "positionStatic": "MuiAppBar-positionStatic",
+            "positionSticky": "MuiAppBar-positionSticky",
+            "root": "MuiAppBar-root HvHeader-root",
+          }
+        }
+        position="fixed"
+      >
+        <WithStyles(ForwardRef(Paper))
+          className="MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary HvHeader-backgroundColor mui-fixed"
+          component="header"
+          elevation={4}
+          square={true}
+        >
+          <ForwardRef(Paper)
+            className="MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary HvHeader-backgroundColor mui-fixed"
+            classes={
+              Object {
+                "elevation0": "MuiPaper-elevation0",
+                "elevation1": "MuiPaper-elevation1",
+                "elevation10": "MuiPaper-elevation10",
+                "elevation11": "MuiPaper-elevation11",
+                "elevation12": "MuiPaper-elevation12",
+                "elevation13": "MuiPaper-elevation13",
+                "elevation14": "MuiPaper-elevation14",
+                "elevation15": "MuiPaper-elevation15",
+                "elevation16": "MuiPaper-elevation16",
+                "elevation17": "MuiPaper-elevation17",
+                "elevation18": "MuiPaper-elevation18",
+                "elevation19": "MuiPaper-elevation19",
+                "elevation2": "MuiPaper-elevation2",
+                "elevation20": "MuiPaper-elevation20",
+                "elevation21": "MuiPaper-elevation21",
+                "elevation22": "MuiPaper-elevation22",
+                "elevation23": "MuiPaper-elevation23",
+                "elevation24": "MuiPaper-elevation24",
+                "elevation3": "MuiPaper-elevation3",
+                "elevation4": "MuiPaper-elevation4",
+                "elevation5": "MuiPaper-elevation5",
+                "elevation6": "MuiPaper-elevation6",
+                "elevation7": "MuiPaper-elevation7",
+                "elevation8": "MuiPaper-elevation8",
+                "elevation9": "MuiPaper-elevation9",
+                "outlined": "MuiPaper-outlined",
+                "root": "MuiPaper-root",
+                "rounded": "MuiPaper-rounded",
+              }
+            }
+            component="header"
+            elevation={4}
+            square={true}
+          >
+            <header
+              className="MuiPaper-root MuiAppBar-root HvHeader-root MuiAppBar-positionFixed MuiAppBar-colorPrimary HvHeader-backgroundColor mui-fixed MuiPaper-elevation4"
+            >
+              <div
+                className="HvHeader-header"
+              >
+                <WithStyles(Brand)
+                  name="test"
+                >
+                  <Brand
+                    classes={
+                      Object {
+                        "root": "HvHeaderBrand-root",
+                        "separator": "HvHeaderBrand-separator",
+                      }
+                    }
+                    name="test"
+                  >
+                    <div
+                      className="HvHeaderBrand-root"
+                    >
+                      <WithStyles(ForwardRef)
+                        variant="highlightText"
+                      >
+                        <ForwardRef
+                          classes={
+                            Object {
+                              "3xlTitle": "HvTypography-3xlTitle",
+                              "4xlTitle": "HvTypography-4xlTitle",
+                              "5xlTitle": "HvTypography-5xlTitle",
+                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "highlightText": "HvTypography-highlightText",
+                              "infoText": "HvTypography-infoText",
+                              "inlineLink": "HvTypography-inlineLink",
+                              "lTitle": "HvTypography-lTitle",
+                              "labelText": "HvTypography-labelText",
+                              "mTitle": "HvTypography-mTitle",
+                              "normalText": "HvTypography-normalText",
+                              "placeholderText": "HvTypography-placeholderText",
+                              "root": "HvTypography-root",
+                              "sLink": "HvTypography-sLink",
+                              "sText": "HvTypography-sText",
+                              "sTitle": "HvTypography-sTitle",
+                              "selectedNavText": "HvTypography-selectedNavText",
+                              "selectedText": "HvTypography-selectedText",
+                              "vizText": "HvTypography-vizText",
+                              "xlTitle": "HvTypography-xlTitle",
+                              "xsTitle": "HvTypography-xsTitle",
+                              "xxlTitle": "HvTypography-xxlTitle",
+                              "xxsTitle": "HvTypography-xxsTitle",
+                            }
+                          }
+                          variant="highlightText"
+                        >
+                          <p
+                            className="HvTypography-root HvTypography-highlightText"
+                          >
+                            test
+                          </p>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
+                    </div>
+                  </Brand>
+                </WithStyles(Brand)>
+              </div>
+            </header>
+          </ForwardRef(Paper)>
+        </WithStyles(ForwardRef(Paper))>
+      </ForwardRef(AppBar)>
+    </WithStyles(ForwardRef(AppBar))>
+  </HvHeader>
+</WithStyles(HvHeader)>
+`;

@@ -1,79 +1,42 @@
-import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import React, { useState } from "react";
 import HvSnackbar from "@hv/uikit-react-core/dist/Snackbar";
 import Button from "@hv/uikit-react-core/dist/Button";
-import Info from "@hv/uikit-react-icons/dist/Generic/Info";
+import { Info } from "@hv/uikit-react-icons/dist";
 
-const styles = {
-  root: {
-    width: "32px",
-    height: "32px"
-  }
+const SimpleSnackbar = props => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") return;
+    setOpen(false);
+  };
+
+  const { id, ...other } = props;
+  return (
+    <div>
+      <Button
+        id={id ? `${id}-open-button` : undefined}
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        style={{ width: "150px" }}
+      >
+        Click me
+      </Button>
+      <HvSnackbar open={open} onClose={handleClose} offset={60} {...other} />
+    </div>
+  );
 };
-
-const StyledInfo = withStyles(styles, { withTheme: true })(Info);
-
-class SimpleSnackbar extends React.Component {
-  state = {
-    open: false
-  };
-
-  handleClick = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    this.setState({ open: false });
-  };
-
-  render() {
-    const {
-      id,
-      label,
-      variant,
-      showIcon,
-      anchorOrigin,
-      action,
-      customIcon
-    } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <Button
-          id={id ? `${id}-open-button` : undefined}
-          onClick={this.handleClick}
-          variant="contained"
-          color="primary"
-          style={{ width: "150px" }}
-        >
-          Click me
-        </Button>
-        <HvSnackbar
-          id={id}
-          open={open}
-          label={label}
-          onClose={this.handleClose}
-          anchorOrigin={anchorOrigin}
-          variant={variant}
-          customIcon={customIcon}
-          showIcon={showIcon}
-          action={action}
-          offset={60}
-        />
-      </div>
-    );
-  }
-}
 
 export default (
   <SimpleSnackbar
     id="snackbar2"
     label="This is a snackbar with a custom icon."
     variant="default"
-    customIcon={<StyledInfo iconSize="S" />}
+    customIcon={<Info />}
   />
 );

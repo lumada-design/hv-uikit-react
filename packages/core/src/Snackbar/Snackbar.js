@@ -1,27 +1,10 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState } from "react";
+import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import Snackbar from "@material-ui/core/Snackbar";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import Slide from "@material-ui/core/Slide";
-import uniqueId from "lodash/uniqueId";
 import capitalize from "lodash/capitalize";
+import { Slide, Snackbar, withStyles } from "@material-ui/core";
 import HvSnackBarContentWrapper from "./SnackbarContentWrapper";
+import styles from "./styles";
+import { setId } from "../utils";
 
 const transLeft = props => <Slide {...props} direction="left" />;
 const transRight = props => <Slide {...props} direction="right" />;
@@ -42,30 +25,31 @@ const snackBarDirComponent = direction => {
   }
 };
 
-const HvSnackbar = props => {
-  const {
-    classes,
-    className,
-    id,
-    open,
-    onClose,
-    label,
-    message,
-    anchorOrigin,
-    autoHideDuration,
-    variant,
-    showIcon,
-    customIcon,
-    action,
-    actionCallback,
-    transitionDuration,
-    transitionDirection,
-    offset
-  } = props;
-
-  const [snackbarId] = useState(id || uniqueId("hv-snackbar-"));
-
-  const anchorOriginOffset = offset && {
+/**
+ * A Snackbar provides a brief messages about app processes.
+ * It is dismissed automatically after an interval.
+ */
+const HvSnackbar = ({
+  classes,
+  className,
+  id,
+  open = false,
+  onClose,
+  label = "",
+  anchorOrigin = { vertical: "top", horizontal: "right" },
+  autoHideDuration = 5000,
+  variant = "default",
+  showIcon = false,
+  customIcon = null,
+  action = null,
+  actionCallback,
+  transitionDuration = 300,
+  transitionDirection = "left",
+  offset = 60,
+  snackbarContentProps,
+  ...others
+}) => {
+  const anchorOriginOffset = {
     anchorOriginTop: {
       top: `${offset}px`
     },
@@ -76,28 +60,27 @@ const HvSnackbar = props => {
 
   return (
     <Snackbar
-      {...(offset && {
-        style:
-          anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]
-      })}
+      style={anchorOriginOffset[`anchorOrigin${capitalize(anchorOrigin.vertical)}`]}
       classes={classes}
       className={className}
-      id={snackbarId}
+      id={id}
       anchorOrigin={anchorOrigin}
       open={open}
       onClose={onClose}
       autoHideDuration={autoHideDuration}
       transitionDuration={transitionDuration}
       TransitionComponent={snackBarDirComponent(transitionDirection)}
+      {...others}
     >
       <HvSnackBarContentWrapper
-        id={`${snackbarId}-content`}
-        label={label || message}
+        id={setId(id, "content")}
+        label={label}
         variant={variant}
         customIcon={customIcon}
         showIcon={showIcon}
         action={action}
         actionCallback={actionCallback}
+        {...snackbarContentProps}
       />
     </Snackbar>
   );
@@ -204,34 +187,10 @@ HvSnackbar.propTypes = {
    * Custom offset from top/bottom of the page, in px.
    */
   offset: PropTypes.number,
-
-  // deprecated:
   /**
-   * The message to display.
-   * @deprecated Instead use the label property
+   * Others applied to the content of the snackbar.
    */
-  message: deprecatedPropType(PropTypes.node)
+  snackbarContentProps: PropTypes.instanceOf(Object)
 };
 
-HvSnackbar.defaultProps = {
-  className: "",
-  id: null,
-  label: "",
-  open: false,
-  anchorOrigin: { vertical: "top", horizontal: "right" },
-  onClose: null,
-  autoHideDuration: 5000,
-  customIcon: null,
-  showIcon: false,
-  action: null,
-  actionCallback: () => {},
-  variant: "default",
-  transitionDuration: 300,
-  transitionDirection: "left",
-  offset: undefined,
-
-  // deprecated:
-  message: undefined
-};
-
-export default HvSnackbar;
+export default withStyles(styles, { name: "HvSnackbar" })(HvSnackbar);

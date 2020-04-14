@@ -19,16 +19,16 @@ const HvLoginWrapper = withStyles(styles, {
   withTheme: true
 })(({ classes }) => (
   <HvLogin
-      login={callSimulation}
-      recovery={callSimulation}
-      id="test"
-      allowRecover
-      formProps={{
-        autoComplete: "off",
-        id: "login8-form",
-        className: classes.login
-      }}
-    />
+    login={callSimulation}
+    recovery={callSimulation}
+    id="test"
+    allowRecover
+    formProps={{
+      autoComplete: "off",
+      id: "login8-form",
+      className: classes.login
+    }}
+  />
 ));
 
 export default (

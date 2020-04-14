@@ -1,45 +1,18 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import MuiDialogTitle from "@material-ui/core/DialogTitle";
-import classNames from "classnames";
+import clsx from "clsx";
+import { DialogTitle, withStyles } from "@material-ui/core";
 import HvTypography from "../../Typography";
 import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
-
-/**
- * Title component of the modal.
- *
- * @param classes
- * @param children
- * @param disableTypography
- * @param others
- * @returns {*}
- * @constructor
- */
+import styles from "./styles";
 
 const ModalTitle = ({
   classes,
   className,
   children,
-  variant,
-  showIcon,
-  customIcon,
-  theme,
+  variant = "default",
+  showIcon = true,
+  customIcon = null,
   ...others
 }) => {
   const isString = typeof children === "string";
@@ -49,28 +22,21 @@ const ModalTitle = ({
   if (customIcon) {
     icon = React.cloneElement(customIcon, { className: classes.icon });
   } else if (showIcon) {
-    icon = React.cloneElement(
-      severityIcon(mapSeverityToVariant(variant), theme),
-      {
-        className: classes.icon
-      }
-    );
+    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
+      className: classes.icon
+    });
   }
 
   return (
-    <MuiDialogTitle
-      className={classNames(classes.root, className)}
-      disableTypography
-      {...others}
-    >
+    <DialogTitle className={clsx(classes.root, className)} disableTypography {...others}>
       <div className={classes.messageContainer}>
         {icon}
-        <div className={classNames({ [classes.textWithIcon]: icon })}>
+        <div className={clsx({ [classes.textWithIcon]: icon })}>
           {!isString && children}
           {isString && <HvTypography variant="sTitle">{children}</HvTypography>}
         </div>
       </div>
-    </MuiDialogTitle>
+    </DialogTitle>
   );
 };
 
@@ -115,19 +81,7 @@ ModalTitle.propTypes = {
   /**
    * Node to be render.
    */
-  children: PropTypes.node.isRequired,
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object)
+  children: PropTypes.node.isRequired
 };
 
-ModalTitle.defaultProps = {
-  className: "",
-  variant: "default",
-  customIcon: null,
-  showIcon: true,
-  theme: undefined
-};
-
-export default ModalTitle;
+export default withStyles(styles, { name: "HvModalTitle" })(ModalTitle);

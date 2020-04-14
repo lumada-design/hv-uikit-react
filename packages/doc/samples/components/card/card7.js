@@ -1,15 +1,11 @@
 import React from "react";
-import HvCard from "@hv/uikit-react-core/dist/Card";
-import Upload from "@hv/uikit-react-icons/dist/Generic/Upload";
-import AddIcon from "@hv/uikit-react-icons/dist/Generic/Add";
-import DeleteIcon from "@hv/uikit-react-icons/dist/Generic/Delete";
-import PreviewIcon from "@hv/uikit-react-icons/dist/Generic/Preview";
+import HvCard, { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
+import { Add, Delete, Preview, Upload } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { HvCardFooter, HvCardMedia } from "@hv/uikit-react-core/dist/Card";
 import leaf from "./resources/leaf.png";
 
 const styles = theme => ({
-  mediaContainer: {
+  root: {
     width: "100%",
     paddingBottom: "0px",
     borderLeft: `1px solid ${theme.palette.grey.plain}`,
@@ -21,34 +17,48 @@ const styles = theme => ({
   }
 });
 
-const CustomMedia = withStyles(styles, { withTheme: true })(HvCardMedia);
-
-const iconStyles = () => ({
-  box: {
-    padding: "7px",
-    width: "30px",
-    height: "30px"
-  }
-})
-
-const StyledUploadIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <Upload className={classes.box} />);
-const StyledPreviewIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <PreviewIcon className={classes.box} />);
-const StyledAddIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <AddIcon className={classes.box} />);
-const StyledDeleteIcon = withStyles(iconStyles, { withTheme: true })(({classes}) => <DeleteIcon className={classes.box} />);
+const CustomMedia = withStyles(styles)(HvCardMedia);
 
 const myActions = [
-  { id: "post", label: "Upload", iconCallback: () => <StyledUploadIcon />, disabled: false },
-  { id: "get", label: "Preview", iconCallback: () => <StyledPreviewIcon />, disabled: true },
-  { id: "put", label: "Add", iconCallback: () => <StyledAddIcon />, disabled: true },
-  { id: "delete", label: "Delete", iconCallback: ()=> <StyledDeleteIcon />, disabled: false }
+  {
+    id: "post",
+    label: "Upload",
+    iconCallback: () => <Upload />,
+    disabled: false
+  },
+  {
+    id: "get",
+    label: "Preview",
+    iconCallback: () => <Preview />,
+    disabled: true
+  },
+  {
+    id: "put",
+    label: "Add",
+    iconCallback: () => <Add />,
+    disabled: true
+  },
+  {
+    id: "delete",
+    label: "Delete",
+    iconCallback: () => <Delete />,
+    disabled: false
+  }
 ];
 
 export default (
   <div style={{ width: "500px" }}>
-    <HvCard variant="error">
-      <CustomMedia mediaPath={leaf} mediaHeight={160} />
+    <HvCard>
+      <CustomMedia mediaPath={leaf} mediaHeight={160} aria-label="leafy leaf" />
       <HvCardFooter
-        checkboxAriaLabel="Composed card"
+        aria-label="Composed card"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "Composed card",
+          inputProps: {
+            "aria-label": "composed input"
+          }
+        }}
         actions={myActions}
         isSelectable
         onChange={event => console.log(`my value is ${event.target.value}`)}

@@ -5,7 +5,6 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-
 const inputTextConfiguration = {
   inputLabel: "Default",
   placeholder: "Placeholder value",
@@ -37,28 +36,28 @@ const inputStyles = theme => ({
   }
 });
 
-const CustomInput = withStyles(inputStyles, { withTheme: true })(HvInput);
+const CustomInput = withStyles(inputStyles)(HvInput);
 
 const groups = [
   {
     title: "Group 1 - Input",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 1"
         }}
         name="input1"
-        onChange={value => value}
-        value="Some text 1"
+        onChange={(event, value) => value}
+        initialValue="Some text 1"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 2"
         }}
         name="input2"
-        value="Some text 2"
+        initialValue="Some text 2"
       />
     ]
   },
@@ -77,12 +76,12 @@ const buttonStyles = theme => ({
   }
 });
 
-const CustomButton = withStyles(buttonStyles, { withTheme: true })(HvButton);
+const CustomButton = withStyles(buttonStyles)(HvButton);
 
 const footerContent = [
   <CustomButton
     colorType="secondary"
-    onClick={componentValues => {
+    onClick={() => {
       console.log("ACTION CANCELLED!!!!!!");
     }}
   >

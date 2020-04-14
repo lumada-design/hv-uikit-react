@@ -6,16 +6,9 @@ import withLayout from "./layout-addon";
 
 const req = require.context("../stories", true, /\.js$/);
 
-const routerWrapper = {
-  push: (route, params, options) => {},
-  prefetch: (route, params) => {}
-};
-
 const loadStories = () => {
   req.keys().forEach(filename => req(filename));
 };
-
-let appTheme = "dawn";
 
 addParameters({
   options: {
@@ -30,26 +23,21 @@ addParameters({
 
 addDecorator(withLayout());
 
-const App = ({ story, initialTheme }) => {
+const App = ({ story, initialTheme = "dawn" }) => {
   const [theme, setTheme] = useState(initialTheme);
 
   const switchTheme = () => {
-    let newTheme = theme === "dawn" ? "wicked" : "dawn";
+    const newTheme = theme === "dawn" ? "wicked" : "dawn";
     setTheme(newTheme);
-    appTheme = newTheme;
   };
 
   return (
-    <HvProvider
-      router={routerWrapper}
-      uiKitTheme={theme}
-      changeTheme={() => switchTheme()}
-    >
+    <HvProvider uiKitTheme={theme} changeTheme={switchTheme}>
       {story()}
     </HvProvider>
   );
 };
 
-addDecorator(story => <App story={story} initialTheme={appTheme} />);
+addDecorator(story => <App story={story} />);
 
 configure(loadStories, module);

@@ -1,27 +1,13 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 
 import React from "react";
 import PropTypes from "prop-types";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
-import DropLeftIcon from "@hv/uikit-react-icons/dist/Generic/DropLeftXS";
-import DropRightIcon from "@hv/uikit-react-icons/dist/Generic/DropRightXS";
+import { withStyles } from "@material-ui/core";
+import DropLeftIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
+import DropRightIcon from "@hv/uikit-react-icons/dist/DropRightXS";
+import { KeyboardCodes, isKeypress, setId } from "../../../utils";
 import HvTypography from "../../../Typography";
+import styles from "./styles";
 
 const Navigation = ({
   id,
@@ -34,10 +20,7 @@ const Navigation = ({
   isNextEnabled
 }) => {
   const onkeyDownHandler = (event, funcAction) => {
-    if (
-      isKeypress(event, KeyboardCodes.Enter) ||
-      isKeypress(event, KeyboardCodes.Space)
-    ) {
+    if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
       event.preventDefault();
       funcAction(event);
     }
@@ -46,43 +29,31 @@ const Navigation = ({
   return (
     <div className={classes.root}>
       <DropLeftIcon
-        id={`${id}-left`}
-        className={`${classes.icon} ${
-          isPreviousEnabled ? "" : classes.disabled
-        }`}
+        id={setId(id, "left")}
+        className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
         onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
         onKeyDown={event =>
-          isNextEnabled
-            ? onkeyDownHandler(event, onNavigatePrevious)
-            : undefined
+          isNextEnabled ? onkeyDownHandler(event, onNavigatePrevious) : undefined
         }
         tabIndex={0}
       />
 
       <div
         id={id}
-        className={`${
-          typeof onTextClick === "function"
-            ? classes.text
-            : classes.textWithoutHover
-        }`}
+        className={`${typeof onTextClick === "function" ? classes.text : classes.textWithoutHover}`}
         role="presentation"
         onClick={onTextClick}
-        onKeyDown={
-          onTextClick && (event => onkeyDownHandler(event, onTextClick))
-        }
+        onKeyDown={onTextClick && (event => onkeyDownHandler(event, onTextClick))}
         tabIndex={onTextClick ? 0 : -1}
       >
         <HvTypography variant="normalText">{navigationText}</HvTypography>
       </div>
 
       <DropRightIcon
-        id={`${id}-right`}
+        id={setId(id, "right")}
         className={`${classes.icon} ${isNextEnabled ? "" : classes.disabled}`}
         onClick={isNextEnabled ? onNavigateNext : undefined}
-        onKeyDown={event =>
-          isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined
-        }
+        onKeyDown={event => (isNextEnabled ? onkeyDownHandler(event, onNavigateNext) : undefined)}
         tabIndex={0}
       />
     </div>
@@ -93,7 +64,7 @@ Navigation.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -133,4 +104,4 @@ Navigation.defaultProps = {
   isNextEnabled: true
 };
 
-export default Navigation;
+export default withStyles(styles, { name: "HvDatePickerNavigation" })(Navigation);

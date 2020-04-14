@@ -1,31 +1,15 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-import CardWithStyles from "../index";
+import Card from "..";
 
 const configuration = {
   title: "title",
   subtitle: "subtitle",
-  content: (<div />),
+  content: <div />,
   actions: "actions",
   icon: "icon"
 };
@@ -36,7 +20,7 @@ describe("Card withStyles", () => {
   it("should be able to render with every property defined", () => {
     wrapper = mount(
       <HvProvider>
-        <CardWithStyles
+        <Card
           icon={configuration.icon}
           headerTitle={configuration.title}
           subheader={configuration.subtitle}
@@ -44,20 +28,19 @@ describe("Card withStyles", () => {
           actions={configuration.actions}
           mediaPath="path"
           isSelectable
-          checkboxValue="value"
         />
       </HvProvider>
     );
 
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Card)).toMatchSnapshot();
   });
 
   it("should select when clicking on the card", () => {
-    const onClickActionM = jest.fn();
+    const onClickM = jest.fn();
     const onChangeM = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <CardWithStyles
+        <Card
           icon={configuration.icon}
           headerTitle={configuration.title}
           subheader={configuration.subtitle}
@@ -66,23 +49,25 @@ describe("Card withStyles", () => {
           mediaPath="path"
           isSelectable
           selectOnClickAction
-          onClickAction={onClickActionM}
+          onClick={onClickM}
           onChange={onChangeM}
-          checkboxValue="value"
+          checkboxProps={{
+            value: "value"
+          }}
         />
       </HvProvider>
     );
-    wrapper.find({ role: "checkbox" }).simulate('click')
-    expect(onClickActionM.mock.calls.length).toBe(1);
+    wrapper.find({ role: "checkbox" }).simulate("click");
+    expect(onClickM.mock.calls.length).toBe(1);
     expect(onChangeM.mock.calls.length).toBe(1);
-  })
+  });
 
   it("should not select when clicking on the card", () => {
-    const onClickActionM = jest.fn();
+    const onClickM = jest.fn();
     const onChangeM = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <CardWithStyles
+        <Card
           icon={configuration.icon}
           headerTitle={configuration.title}
           subheader={configuration.subtitle}
@@ -90,14 +75,16 @@ describe("Card withStyles", () => {
           actions={configuration.actions}
           mediaPath="path"
           isSelectable
-          onClickAction={onClickActionM}
+          onClick={onClickM}
           onChange={onChangeM}
-          checkboxValue="value"
+          checkboxProps={{
+            value: "value"
+          }}
         />
       </HvProvider>
     );
-    wrapper.find({ role: "checkbox" }).simulate('click')
-    expect(onClickActionM.mock.calls.length).toBe(1);
+    wrapper.find({ role: "checkbox" }).simulate("click");
+    expect(onClickM.mock.calls.length).toBe(1);
     expect(onChangeM.mock.calls.length).toBe(0);
-  })
+  });
 });

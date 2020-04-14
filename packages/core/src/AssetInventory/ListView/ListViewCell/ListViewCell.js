@@ -1,24 +1,10 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
+import { withStyles } from "@material-ui/core";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
+import styles from "./styles";
 
 const cell = (
   classes,
@@ -29,7 +15,7 @@ const cell = (
   viewConfiguration,
   columnIndex,
   semantic,
-  other
+  others
 ) => {
   const columnConfiguration =
     isNil(viewConfiguration) || isNil(viewConfiguration.columnConfiguration)
@@ -44,13 +30,13 @@ const cell = (
       : undefined;
   return (
     <td
-      className={classNames(className, classes.root, {
+      className={clsx(className, classes.root, {
         [classes.semanticBar]: semantic,
         [classes[semantic]]: semantic
       })}
       align={align || alignConf}
       id={id}
-      {...other}
+      {...others}
     >
       {children}
     </td>
@@ -60,29 +46,31 @@ const cell = (
 const ListViewCell = ({
   classes,
   className,
-  id,
+  id = "",
   children,
   align,
   columnIndex,
   semantic,
-  ...other
-}) => (
-  <ListViewContextConsumer>
-    {contextConfiguration =>
-      cell(
-        classes,
-        align,
-        className,
-        id,
-        children,
-        contextConfiguration,
-        columnIndex,
-        semantic,
-        other
-      )
-    }
-  </ListViewContextConsumer>
-);
+  ...others
+}) => {
+  return (
+    <ListViewContextConsumer>
+      {contextConfiguration =>
+        cell(
+          classes,
+          align,
+          className,
+          id,
+          children,
+          contextConfiguration,
+          columnIndex,
+          semantic,
+          others
+        )
+      }
+    </ListViewContextConsumer>
+  );
+};
 
 ListViewCell.propTypes = {
   /**
@@ -144,12 +132,4 @@ ListViewCell.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-ListViewCell.defaultProps = {
-  id: "",
-  semantic: undefined,
-  align: undefined,
-  columnIndex: undefined,
-  className: ""
-};
-
-export default ListViewCell;
+export default withStyles(styles, { name: "HvListViewCell" })(ListViewCell);

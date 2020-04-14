@@ -1,34 +1,11 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
+import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../Typography";
 import Actions from "../../../Actions";
+import { setId } from "../../../utils";
+import styles from "./styles";
 
-/**
- * Container for the message of the banner. This message may include:
- * - Icon (variant or custom)
- * - Text
- * - Actions
- *
- * @param props
- * @returns {*}
- * @constructor
- */
 const MessageContainer = ({
   id,
   classes,
@@ -39,19 +16,14 @@ const MessageContainer = ({
 }) => (
   <>
     {icon && <div className={classes.iconContainer}>{icon}</div>}
-    <HvTypography
-      variant="normalText"
-      {...(id && { id: `${id}-message-text` })}
-      className={classes.message}
-    >
+    <HvTypography id={setId(id, "message-text")} variant="normalText" className={classes.message}>
       {message}
     </HvTypography>
     {actionsOnMessage && (
-      <div
-        {...(id && { id: `${id}-message-actions` })}
-        className={classes.actionMessageContainer}
-      >
+      <div id={setId(id, "message-actions")} className={classes.actionMessageContainer}>
         <Actions
+          id={id}
+          category="semantic"
           actions={actionsOnMessage}
           actionsCallback={actionsOnMessageCallback}
         />
@@ -97,13 +69,4 @@ MessageContainer.propTypes = {
   actionsOnMessageCallback: PropTypes.func
 };
 
-MessageContainer.defaultProps = {
-  id: null,
-  classes: "",
-  icon: null,
-  message: "",
-  actionsOnMessage: undefined,
-  actionsOnMessageCallback: () => {}
-};
-
-export default MessageContainer;
+export default withStyles(styles, { name: "HvMessageContainer" })(MessageContainer);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
-import * as genericIconComponentList from "@hv/uikit-react-icons/dist/Generic/index";
+import * as genericIconComponentList from "@hv/uikit-react-icons/dist";
 import HvDropdown from "@hv/uikit-react-core/dist/Dropdown";
 
-const styles = theme => ({
+const styles = {
   groupContainer: {
     paddingBottom: "30px"
   },
@@ -23,14 +23,13 @@ const styles = theme => ({
     flexDirection: "column",
     alignItems: "center"
   }
-});
+};
 
 const dropdownSizes = [
   { id: "0", label: "XS" },
-  { id: "1", label: "S" },
+  { id: "1", label: "S", selected: true },
   { id: "2", label: "M" },
-  { id: "3", label: "L" },
-  { id: "4", label: "default", selected: true }
+  { id: "3", label: "L" }
 ];
 
 const dropdownLabels = {
@@ -43,9 +42,7 @@ const dropdownLabels = {
   multiSelectionConjunction: ""
 };
 
-const keys = Array.from(
-  new Set([...Object.keys(genericIconComponentList)])
-).sort();
+const keys = Array.from(new Set([...Object.keys(genericIconComponentList)])).sort();
 
 const Group = ({ groupLabel, classes, iconSize, colorArray = [] }) => {
   return (
@@ -88,14 +85,14 @@ const Icon = ({ name, Component, classes, iconSize, colorArray = [] }) => (
       </span>
     )}
     <div>
-      <HvTypography style={{ margin: "6px 0" }} variant={"infoText"}>
+      <HvTypography style={{ margin: "6px 0" }} variant="infoText">
         {name}
       </HvTypography>
     </div>
   </div>
 );
 
-const Icons = ({ classes, theme }) => {
+const Icons = ({ classes }) => {
   const [iconSize, setIconSize] = useState({
     id: 2,
     label: "M",
@@ -113,14 +110,9 @@ const Icons = ({ classes, theme }) => {
           notifyChangesOnFirstRender
         />
       </div>
-      <Group
-        groupLabel={"Generic"}
-        classes={classes}
-        theme={theme}
-        iconSize={iconSize}
-      />
+      <Group groupLabel="Generic" classes={classes} iconSize={iconSize} />
     </div>
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Icons);
+export default withStyles(styles)(Icons);

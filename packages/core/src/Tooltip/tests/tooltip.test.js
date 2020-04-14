@@ -1,54 +1,23 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
 import React from "react";
 import { mount } from "enzyme";
-import withStyles from "@material-ui/core/styles/withStyles";
-
-import TooltipWithStyles from "..";
-import Tooltip from "../Tooltip";
+import Tooltip from "..";
 import HvProvider from "../../Provider";
 import HvTypography from "../../Typography";
-import tooltipStyling from "../styles";
 
-const createTooltipData = data => {
-  // eslint-disable-next-line react/prop-types
-  const TooltipContent = ({ classes }) => (
-    <div>
-      <div className={classes.title}>
-        <HvTypography variant="labelText">{data.title || ""}</HvTypography>
+const createTooltipData = data => (
+  <div>
+    <HvTypography variant="labelText">{data.title || ""}</HvTypography>
+    {data.elements.map(element => (
+      <div key={element.name}>
+        <HvTypography variant="labelText">{element.name}</HvTypography>
+        <div />
+        <HvTypography variant="sText">{element.value}</HvTypography>
       </div>
-      <div className={classes.valueWrapper}>
-        {data.elements.map(element => (
-          <div key={element.name} className={classes.values}>
-            <HvTypography variant="labelText">{element.name}</HvTypography>
-            <div className={classes.separator} />
-            <HvTypography variant="sText">{element.value}</HvTypography>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  return withStyles(tooltipStyling, {
-    withTheme: true
-  })(TooltipContent);
-};
+    ))}
+  </div>
+);
 
 const Anchor = (
   <button id="testChild" type="submit">
@@ -61,10 +30,11 @@ describe("Single Line Tooltip", () => {
 
   beforeEach(async () => {
     wrapper = mount(
-      <Tooltip
-        tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}
-        tooltipAnchor={Anchor}
-      />
+      <HvProvider>
+        <Tooltip tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}>
+          {Anchor}
+        </Tooltip>
+      </HvProvider>
     );
   });
 
@@ -73,7 +43,7 @@ describe("Single Line Tooltip", () => {
   });
 
   it("should render single line tooltip correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render the single line Tooltip", () => {
@@ -94,16 +64,14 @@ describe("Multi Line Tooltip - No Header", () => {
     ]
   };
 
-  const TooltipData = createTooltipData(data);
+  const tooltipData = createTooltipData(data);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TooltipWithStyles
-          tooltipData={<TooltipData />}
-          tooltipAnchor={Anchor}
-          useSingle={false}
-        />
+        <Tooltip tooltipData={tooltipData} useSingle={false}>
+          {Anchor}
+        </Tooltip>
       </HvProvider>
     );
   });
@@ -112,8 +80,8 @@ describe("Multi Line Tooltip - No Header", () => {
     expect(wrapper).toBeDefined();
   });
 
-  it("should render mmultiple line tooltip correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+  it("should render multiple line tooltip correctly", () => {
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render the multiple line Tooltip", () => {
@@ -133,16 +101,14 @@ describe("Multi Line Tooltip - With Header", () => {
     ]
   };
 
-  const TooltipData = createTooltipData(data);
+  const tooltipData = createTooltipData(data);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <TooltipWithStyles
-          tooltipData={<TooltipData />}
-          tooltipAnchor={Anchor}
-          useSingle={false}
-        />
+        <Tooltip tooltipData={tooltipData} useSingle={false}>
+          {Anchor}
+        </Tooltip>
       </HvProvider>
     );
   });
@@ -152,7 +118,7 @@ describe("Multi Line Tooltip - With Header", () => {
   });
 
   it("should render multiple line tooltip with header correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(Tooltip)).toMatchSnapshot();
   });
 
   it("should render the multiple line Tooltip with header", () => {

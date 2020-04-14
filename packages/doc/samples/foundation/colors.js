@@ -1,6 +1,5 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import Typography from "@hv/uikit-react-core/dist/Typography";
+import { useTheme, withStyles } from "@material-ui/core";
 
 const styles = theme => ({
   colorGroup: {
@@ -34,22 +33,18 @@ const styles = theme => ({
   }
 });
 
-const Group = ({ classes, name, deprecated, colors }) => {
+const Group = ({ classes, name, colors }) => {
   const keys = Object.keys(colors);
   return (
     <div>
       <div className={classes.groupName}>{name}</div>
       <div className={classes.colors}>
         {keys.map((color, idx) => (
+          // eslint-disable-next-line react/no-array-index-key
           <div key={idx} className={classes.colorContainer}>
-            <div className={classes.colorName}>{`${color} ${
-              deprecated[color] ? "(deprecated)" : ""
-            }`}</div>
+            <div className={classes.colorName}>{color}</div>
             <div className={classes.colorCode}>{colors[color]}</div>
-            <div
-              className={classes.colorSquare}
-              style={{ backgroundColor: colors[color] }}
-            />
+            <div className={classes.colorSquare} style={{ backgroundColor: colors[color] }} />
           </div>
         ))}
       </div>
@@ -57,38 +52,24 @@ const Group = ({ classes, name, deprecated, colors }) => {
   );
 };
 
-const ColorsGroup = ({ classes, title, keys, deprecated, colors }) => (
+const ColorsGroup = ({ classes, keys, colors }) => (
   <div className={classes.colorGroup}>
     {keys.map((group, idx) => (
-      <Group
-        key={idx}
-        classes={classes}
-        name={group}
-        deprecated={deprecated[group]}
-        colors={colors[group]}
-      />
+      // eslint-disable-next-line react/no-array-index-key
+      <Group key={idx} classes={classes} name={group} colors={colors[group]} />
     ))}
   </div>
 );
 
-const Colors = ({ classes, theme, palettePath, deprecatedPath }) => {
-  const palette = palettePath
-    ? theme.hv[palettePath].palette
-    : theme.hv.palette;
-  const deprecate = deprecatedPath
-    ? theme.hv.deprecated[deprecatedPath].palette
-    : theme.hv.deprecated.palette;
+const Colors = ({ classes, palettePath }) => {
+  const theme = useTheme();
+  const palette = palettePath ? theme.hv[palettePath].palette : theme.hv.palette;
   const keys = Object.keys(palette);
   return (
     <div>
-      <ColorsGroup
-        keys={keys}
-        deprecated={deprecate}
-        colors={palette}
-        classes={classes}
-      />
+      <ColorsGroup keys={keys} colors={palette} classes={classes} />
     </div>
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Colors);
+export default withStyles(styles)(Colors);

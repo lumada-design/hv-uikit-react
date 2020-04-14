@@ -41,15 +41,15 @@ eslint.xml
 **/*/coverage
 
 # build folder
+dist
 **/*/dist
 **/*/bin
 
 .prettierrc*
-
 .npmrc
 .idea
 *.iml
 .history
 .vscode
-
+*.pyc
 report.*

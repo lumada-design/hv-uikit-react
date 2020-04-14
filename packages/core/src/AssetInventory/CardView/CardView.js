@@ -1,42 +1,16 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
+import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
+import styles from "./styles";
 
-/**
- * Definition of which render should be used.
- *
- * @param viewConfiguration
- * @param Render
- * @returns {function(*, *): *}
- * @constructor
- */
-const CardRenderChooser = (
-  viewConfiguration,
-  render,
-  innerCardContent,
-  metadata
-) => {
+const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
-    return data => render(data, viewConfiguration, metadata);
+    return data => render(data, viewConfiguration, metadata, cardProps);
   }
-  return (data, others) => (
+  return data => (
     <Card
       {...data}
       onChange={viewConfiguration.onSelection}
@@ -45,33 +19,30 @@ const CardRenderChooser = (
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
       innerCardContent={innerCardContent ? innerCardContent(data) : undefined}
-      {...others}
+      {...cardProps}
     />
   );
 };
 
-/**
- * Card container component.
- *
- * @param id
- * @param className
- * @param classes
- * @param values
- * @param render
- * @param viewConfiguration
- * @param others
- * @returns {*}
- * @constructor
- */
 const CardView = ({
-  id,
+  id = "",
   className,
   classes,
   icon,
   values,
   selectedValues,
   renderer,
-  viewConfiguration,
+  viewConfiguration = {
+    onSelection: null,
+    breakpoints: {
+      xs: false,
+      sm: false,
+      md: false,
+      lg: false,
+      xl: false
+    },
+    actions: null
+  },
   innerCardContent,
   metadata,
   ...others
@@ -81,7 +52,8 @@ const CardView = ({
     viewConfiguration,
     renderer,
     innerCardContent,
-    metadata
+    metadata,
+    others
   );
 
   const { breakpoints } = viewConfiguration;
@@ -92,10 +64,10 @@ const CardView = ({
   const renderCards = values.map(value => {
     if (selectedValues && selectedValues.indexOf(value.id) > -1) {
       // eslint-disable-next-line no-param-reassign
-      value.checkboxSelected = true;
+      value.checked = true;
     } else {
       // eslint-disable-next-line no-param-reassign
-      value.checkboxSelected = false;
+      value.checked = false;
     }
     return (
       <Grid
@@ -114,21 +86,20 @@ const CardView = ({
   });
 
   return (
-    <div className={classes.root}>
-      <Grid
-        id={id}
-        container
-        className={className}
-        justify="flex-start"
-        alignItems="flex-start"
-        spacing={30}
-        {...others}
-      >
-        {renderCards}
-      </Grid>
-    </div>
+    <Grid
+      className={clsx(className, classes.root)}
+      id={id}
+      container
+      justify="flex-start"
+      alignItems="flex-start"
+      spacing={4}
+    >
+      {renderCards}
+    </Grid>
   );
 };
+
+const sizeProps = [true, false, "auto", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 CardView.propTypes = {
   /**
@@ -143,7 +114,10 @@ CardView.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
-    gridContainer: PropTypes.string
+    /**
+     * Styles applied to the root.
+     */
+    root: PropTypes.string
   }).isRequired,
   /**
    * Icon used in the multi button in the assert inventory.
@@ -209,113 +183,13 @@ CardView.propTypes = {
      * Grid component for possible values
      */
     breakpoints: PropTypes.shape({
-      xs: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      sm: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      md: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      lg: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ]),
-      xl: PropTypes.oneOf([
-        "false",
-        "auto",
-        "true",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ])
+      xs: PropTypes.oneOf(sizeProps),
+      sm: PropTypes.oneOf(sizeProps),
+      md: PropTypes.oneOf(sizeProps),
+      lg: PropTypes.oneOf(sizeProps),
+      xl: PropTypes.oneOf(sizeProps)
     })
   })
 };
 
-CardView.defaultProps = {
-  className: "",
-  id: "",
-  selectedValues: null,
-  renderer: undefined,
-  innerCardContent: undefined,
-  metadata: undefined,
-  viewConfiguration: {
-    onSelection: null,
-    breakpoints: {
-      xs: "false",
-      sm: "false",
-      md: "false",
-      lg: "false",
-      xl: "false"
-    },
-    actions: null
-  }
-};
-
-export default CardView;
+export default withStyles(styles, { name: "HvCardView" })(CardView);

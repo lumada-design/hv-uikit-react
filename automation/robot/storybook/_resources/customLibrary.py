@@ -4,24 +4,21 @@ import os
 import filecmp
 
 
-def extractCodes (inputFile, outputFile):
+def extractCodes(inputFile, outputFile):
     """ Extract to an outputFile only the json elements that include 'code' string
     - inputFile: string for location of json data
     - outputFile: string for output json file
     """
+    outData = set()
     with open(inputFile) as data_file:
         data = json.load(data_file)
 
     for element in data:
-        delete = []
-        for key in element.keys():
-            if str(key) != 'code':
-                delete.append(key)
-        for i in delete:
-            del element[i]
+        outData.add(element["code"])
 
     with open(outputFile, 'w') as data_output:
-        json.dump(data, data_output, sort_keys=True, indent=4)
+        json.dump(list(outData), data_output, sort_keys=True,
+                  separators=(',', ': '), indent=4)
 
 
 def filesShouldBeEqual(file1, file2):

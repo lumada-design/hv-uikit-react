@@ -1,9 +1,9 @@
 all_checkbox:       css:[id$=select-all-input]
 cell_1_1:           xpath:(//div[@aria-rowindex])[1]/div[1]
 cell:               css:[role=table] [role=row] [role=cell]
-checkbox_row_1:     css:[id$=select-1-input]
-checkbox_row_10:    css:[id$=select-11-input]
-checkbox_row_5:     css:[id$=select-5-input]
+checkbox_row_1:     css:[id*=select-1-input]
+checkbox_row_10:    css:[id*=select-10-input]
+checkbox_row_5:     css:[id*=select-5-input]
 column1_header:     css:[role=columnheader]:nth-child(1)
 column2_header:     css:[role=columnheader]:nth-child(2)
 column7_header:     css:[role=columnheader]:nth-child(7)

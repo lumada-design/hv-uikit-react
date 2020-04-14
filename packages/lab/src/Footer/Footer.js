@@ -1,31 +1,26 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import HvTypography from "@hv/uikit-react-core/dist/Typography";
+import { HvTypography } from "@hv/uikit-react-core/dist";
+import { withStyles } from "@material-ui/core";
+import styles from "./styles";
 
-const HvFooter = ({ classes, labelLeftName, labelRightName }) => (
-  <div className={classes.root}>
-    <HvTypography className={classes.labelLeft}>{labelLeftName}</HvTypography>
-    <HvTypography className={classes.labelRight}>
-      {labelRightName}
-    </HvTypography>
-  </div>
-);
+/**
+ * A footer component for identification, still in development
+ */
+const HvFooter = props => {
+  const {
+    classes,
+    labelLeftName = "Hitachi Vantara",
+    labelRightName = `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`
+  } = props;
+
+  return (
+    <div className={classes.root}>
+      <HvTypography className={classes.labelLeft}>{labelLeftName}</HvTypography>
+      <HvTypography className={classes.labelRight}>{labelRightName}</HvTypography>
+    </div>
+  );
+};
 
 HvFooter.propTypes = {
   /**
@@ -46,12 +41,7 @@ HvFooter.propTypes = {
     labelRight: PropTypes.string
   }).isRequired,
   labelLeftName: PropTypes.string,
-  labelRightName: PropTypes.string,
+  labelRightName: PropTypes.string
 };
 
-HvFooter.defaultProps = {
-  labelLeftName: "Hitachi Vantara",
-  labelRightName: `© Hitachi Vantara Corporation ${new Date().getFullYear()}. All Rights Reserved.`
-};
-
-export default HvFooter;
+export default withStyles(styles, { name: "HvFooter" })(HvFooter);

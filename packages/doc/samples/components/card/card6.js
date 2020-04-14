@@ -1,10 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import HvCard from "@hv/uikit-react-core/dist/Card";
-import Icon from "@hv/uikit-react-icons/dist/Generic/Tool";
-import Level1 from "@hv/uikit-react-icons/dist/Generic/Level1";
-import Level2 from "@hv/uikit-react-icons/dist/Generic/Level2.Average";
-import Level3 from "@hv/uikit-react-icons/dist/Generic/Level3.Bad";
+import { Tool, Level1, Level2Average, Level3Bad } from "@hv/uikit-react-icons/dist";
 import HvKpi from "@hv/uikit-react-core/dist/Kpi";
 import Grid from "@hv/uikit-react-core/dist/Grid";
 import HvTypography from "@hv/uikit-react-core/dist/Typography";
@@ -35,10 +32,7 @@ const ThroughputKpiTextConfiguration = score => ({
 const Content = ({ classes, value, icon }) => (
   <>
     <Grid container>
-      <HvKpi
-        labels={ThroughputKpiTextConfiguration(value)}
-        visualIndicator={icon}
-      />
+      <HvKpi labels={ThroughputKpiTextConfiguration(value)} visualIndicator={icon} />
     </Grid>
     <Grid container>
       <Grid item className={classes.item} xs={4} sm={8} md={12} lg={12} xl={12}>
@@ -55,95 +49,87 @@ const Content = ({ classes, value, icon }) => (
   </>
 );
 
-const ContentWithStyles = withStyles(kpiStyles, {
-  withTheme: true
-})(Content);
-
-const iconStyles = {
-  paddingTop: "7px",
-  width: "30px",
-  height: "30px"
-};
-
-const StyledIcon = () => (
-  <Icon boxStyles={iconStyles} style={{ display: "block", margin: "auto" }} />
-);
-
-const levelStyles = {
-  width: "30px"
-};
-
-const StyledLevel1 = () => (
-  <Level1
-    boxStyles={levelStyles}
-    semantic="sema2"
-    style={{ display: "block", margin: "auto" }}
-  />
-);
-
-const StyledLevel2 = () => (
-  <Level2
-    boxStyles={levelStyles}
-    semantic="sema3"
-    style={{ display: "block", margin: "auto" }}
-  />
-);
-
-const StyledLevel3 = () => (
-  <Level3
-    boxStyles={levelStyles}
-    semantic="sema4"
-    style={{ display: "block", margin: "auto" }}
-  />
-);
+const ContentWithStyles = withStyles(kpiStyles)(Content);
 
 export default (
   <Grid container>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<StyledIcon />}
+        icon={<Tool />}
         headerTitle="Replace contaminated oil"
-        innerCardContent={
-          <ContentWithStyles
-            value="85"
-            icon={<StyledLevel1 semantic="sema2" iconSize="S" />}
-          />
-        }
+        innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
         semantic="sema2"
         isSelectable
-        checkboxValue="value"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "leaf checkbox",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
+        cardButtonProps={{
+          "aria-label": "leaf"
+        }}
+        headerProps={{
+          "aria-label": "leaf"
+        }}
+        footerProps={{
+          "aria-label": "leaf"
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </Grid>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<StyledIcon />}
+        icon={<Tool />}
         headerTitle="Replace contaminated oil"
         innerCardContent={
-          <ContentWithStyles
-            value="45"
-            icon={<StyledLevel2 semantic="sema3" iconSize="S" />}
-          />
+          <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
         }
         semantic="sema3"
         isSelectable
-        checkboxValue="value"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "leaf checkbox",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
+        cardButtonProps={{
+          "aria-label": "leaf"
+        }}
+        headerProps={{
+          "aria-label": "leaf"
+        }}
+        footerProps={{
+          "aria-label": "leaf"
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </Grid>
     <Grid item xs={2} sm={3} md={4} lg={4} xl={4}>
       <HvCard
-        icon={<StyledIcon />}
+        icon={<Tool />}
         headerTitle="Replace contaminated oil"
-        innerCardContent={
-          <ContentWithStyles
-            value="19"
-            icon={<StyledLevel3 semantic="sema4" iconSize="S" />}
-          />
-        }
+        innerCardContent={<ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />}
         semantic="sema4"
         isSelectable
-        checkboxValue="value"
+        checkboxProps={{
+          value: "value",
+          "aria-label": "leaf checkbox",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
+        cardButtonProps={{
+          "aria-label": "leaf"
+        }}
+        headerProps={{
+          "aria-label": "leaf"
+        }}
+        footerProps={{
+          "aria-label": "leaf"
+        }}
         onChange={event => console.log(`my value is ${event.target.value}`)}
       />
     </Grid>

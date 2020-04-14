@@ -1,30 +1,8 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
 import SearchBox from "../../SearchBox";
 
-/**
- * Filter the metadata that has searchable definitions.
- *
- * @param metadata
- * @returns {[]}
- */
 const searchOperationSetup = metadata => {
   const searchableCriteria = [];
 
@@ -37,19 +15,10 @@ const searchOperationSetup = metadata => {
   return searchableCriteria;
 };
 
-/**
- * Filter the search string, based in the criteria, using the value.
- *
- * @param value
- * @param criteria
- * @param searchValue
- * @returns {boolean|*}
- */
 const filter = (value, criteria, searchValue) => {
   const evalValue = get(value, criteria.accessor);
 
-  if (criteria.searchFunction)
-    return criteria.searchFunction(evalValue, searchValue);
+  if (criteria.searchFunction) return criteria.searchFunction(evalValue, searchValue);
 
   switch (criteria.cellType.toUpperCase()) {
     case "NUMERIC":
@@ -63,23 +32,12 @@ const filter = (value, criteria, searchValue) => {
   }
 };
 
-/**
- * For each criteria the value is evaluated, returning a list of filtered results.
- *
- * @param searchValue
- * @param values
- * @param searchableCriteria
- * @returns {[]}
- */
 const searchOperation = (searchValue, values, searchableCriteria) => {
   const filteredValues = [];
 
   searchableCriteria.forEach(criteria => {
     values.forEach(value => {
-      if (
-        filter(value, criteria, searchValue) &&
-        !filteredValues.includes(value)
-      )
+      if (filter(value, criteria, searchValue) && !filteredValues.includes(value))
         filteredValues.push(value);
     });
   });
@@ -87,29 +45,18 @@ const searchOperation = (searchValue, values, searchableCriteria) => {
   return filteredValues;
 };
 
-/**
- * Search component.
- *
- * @param id
- * @param labels
- * @param onFilter
- * @param values
- * @param metadata
- * @returns {*}
- * @constructor
- */
 const Search = ({
-  id,
-  searchBoxLabels,
-  searchString,
+  id = undefined,
+  labels,
+  searchString = undefined,
   onFilter,
-  onSearch,
+  onSearch = null,
   values,
   metadata
 }) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
-  const handler = value => {
+  const handler = (event, value) => {
     const filteredResults = searchOperation(value, values, searchableCriteria);
     onFilter(filteredResults, value);
     return value;
@@ -118,7 +65,7 @@ const Search = ({
   return (
     <SearchBox
       id={`search_${id}`}
-      labels={searchBoxLabels}
+      labels={labels}
       value={searchString}
       onChange={onSearch || handler}
     />
@@ -141,7 +88,7 @@ Search.propTypes = {
   /**
    * Labels.
    */
-  searchBoxLabels: PropTypes.shape({
+  labels: PropTypes.shape({
     sortBy: PropTypes.string
   }).isRequired,
   /**
@@ -170,12 +117,7 @@ Search.propTypes = {
   /**
    * Search string
    */
-  searchString: PropTypes.string.isRequired
-};
-
-Search.defaultProps = {
-  id: undefined,
-  onSearch: null
+  searchString: PropTypes.string
 };
 
 export default Search;

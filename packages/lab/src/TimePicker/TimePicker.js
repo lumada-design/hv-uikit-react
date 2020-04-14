@@ -1,39 +1,20 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import classNames from "classnames";
+import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
+import clsx from "clsx";
 import Typography from "@hv/uikit-react-core/dist/Typography";
-import TimeIcon from "@hv/uikit-react-icons/dist/Generic/Time";
-import Popper from "../DatePickerDS/Popper";
+import TimeIcon from "@hv/uikit-react-icons/dist/Time";
 import UnitTimePicker from "./UnitTimePicker";
 import { TimePickerUnits, TimeFormat } from "./enums";
 import { getPeriodForDate } from "./timePickerUtils";
-import {
-  getFormattedTime,
-  getTimeFormatForLocale
-} from "./timePickerFormatter";
-import {
-  getHoursForTimeFormat,
-  getTimeWithFormat24
-} from "./timePickerConverter";
+import { getFormattedTime, getTimeFormatForLocale } from "./timePickerFormatter";
+import { getHoursForTimeFormat, getTimeWithFormat24 } from "./timePickerConverter";
 import PeriodPicker from "./PeriodPicker";
+import styles from "./styles";
 
+/**
+ * A TimePicker component with a popup used to choose the time, following specifications provided by Design System. Still in development.
+ */
 class HvTimePicker extends React.Component {
   constructor(props) {
     super(props);
@@ -184,10 +165,7 @@ class HvTimePicker extends React.Component {
     this.setState({
       selectedTime
     });
-    const selectedTimeIn24Format = getTimeWithFormat24(
-      selectedTime,
-      timeFormat
-    );
+    const selectedTimeIn24Format = getTimeWithFormat24(selectedTime, timeFormat);
     onChange(selectedTimeIn24Format);
   };
 
@@ -243,7 +221,7 @@ class HvTimePicker extends React.Component {
       <>
         {labels && labels.title && this.renderLabel()}
         <div
-          className={classNames(classes.inputContainer, {
+          className={clsx(classes.inputContainer, {
             [classes.inputPopperOpenedBelow]: timePopperOpen && isPopperBelow,
             [classes.inputPopperOpenedAbove]: timePopperOpen && !isPopperBelow,
             [classes.inputPopperClosed]: !timePopperOpen
@@ -259,10 +237,7 @@ class HvTimePicker extends React.Component {
             type="text"
             readOnly
           />
-          <TimeIcon
-            className={classes.icon}
-            onClick={this.handleTimeIconClick}
-          />
+          <TimeIcon className={classes.icon} onClick={this.handleTimeIconClick} />
         </div>
       </>
     );
@@ -280,7 +255,7 @@ class HvTimePicker extends React.Component {
 
     return (
       <Popper
-        className={classNames(classes.popper, {
+        className={clsx(classes.popper, {
           [classes.popperBelow]: isPopperBelow,
           [classes.popperAbove]: !isPopperBelow
         })}
@@ -338,10 +313,7 @@ class HvTimePicker extends React.Component {
         />
         {timeFormat === TimeFormat.H12 && (
           <div className={classes.periodContainer}>
-            <PeriodPicker
-              onChangePeriod={this.handleChangePeriod}
-              period={selectedTime.period}
-            />
+            <PeriodPicker onChangePeriod={this.handleChangePeriod} period={selectedTime.period} />
           </div>
         )}
       </div>
@@ -437,4 +409,4 @@ HvTimePicker.defaultProps = {
   onChange: () => {}
 };
 
-export default HvTimePicker;
+export default withStyles(styles, { name: "HvTimePicker" })(HvTimePicker);

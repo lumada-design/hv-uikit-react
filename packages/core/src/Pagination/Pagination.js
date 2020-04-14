@@ -1,60 +1,51 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import classnames from "classnames";
-import uniqueId from "lodash/uniqueId";
-import IconButton from "@material-ui/core/IconButton";
-import Down from "@hv/uikit-react-icons/dist/Generic/DropDownXS";
-import ArrowFirst from "@hv/uikit-react-icons/dist/Generic/Start";
-import ArrowLeft from "@hv/uikit-react-icons/dist/Generic/Backwards";
-import ArrowRight from "@hv/uikit-react-icons/dist/Generic/Forwards";
-import ArrowLast from "@hv/uikit-react-icons/dist/Generic/End";
-import {
-  KeyboardCodes as Codes,
-  isKeypress
-} from "@hv/uikit-common-utils/dist/KeyboardUtils";
+import clsx from "clsx";
+import { IconButton, withStyles } from "@material-ui/core";
+import Down from "@hv/uikit-react-icons/dist/DropDownXS";
+import ArrowFirst from "@hv/uikit-react-icons/dist/Start";
+import ArrowLeft from "@hv/uikit-react-icons/dist/Backwards";
+import ArrowRight from "@hv/uikit-react-icons/dist/Forwards";
+import ArrowLast from "@hv/uikit-react-icons/dist/End";
+import { isKeypress, KeyboardCodes as Codes } from "../utils/KeyboardUtils";
 import HvTypography from "../Typography";
 import HvInput from "../Input";
+import withLabels from "../withLabels";
+import { setId } from "../utils";
+import styles from "./styles";
 
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/label-has-for */
+const DEFAULT_LABELS = {
+  pageSizePrev: "Show",
+  pageSizeEntryName: "rows",
+  pageSizeSelectorDescription: "Select how many to display",
+  pagesSeparator: "of",
+  pagesIndeterminate: "Many",
+  paginationFirstPageTitle: "First page",
+  paginationPreviousPageTitle: "Previous page",
+  paginationNextPageTitle: "Next page",
+  paginationLastPageTitle: "Last page",
+  paginationInputLabel: "Page input"
+};
 
 const Pagination = ({
-  theme,
   classes,
   className,
   id,
-  pages,
-  page,
-  showPageSizeOptions,
-  pageSizeOptions,
-  pageSize,
-  showPageJump,
-  canPrevious,
-  canNext,
+  pages = 1,
+  page = 0,
+  showPageSizeOptions = true,
+  pageSizeOptions = [5, 10, 20, 25, 50, 100],
+  pageSize = 1,
+  showPageJump = true,
+  canPrevious = false,
+  canNext = false,
   onPageChange,
   onPageSizeChange,
-  labels
+  labels,
+  showPageProps,
+  navigationProps
 }) => {
   const [statePage, setStatePage] = useState(page);
-  const computedLabels = { ...Pagination.defaultProps.labels, ...labels };
-
-  const [internalId] = useState(id || uniqueId("hv-pagination-"));
 
   const getSafePage = inPage =>
     Number.isNaN(inPage) ? page : Math.min(Math.max(inPage, 0), pages - 1);
@@ -78,93 +69,78 @@ const Pagination = ({
     }
   }, [page, pageSize]);
 
-  const disabledColors = [theme.hv.palette.atmosphere.atmo7];
-
   return (
-    <div id={internalId} className={classnames(className, classes.root)}>
-      <div className={classes.pageSizeOptions}>
+    <div id={id} className={clsx(className, classes.root)}>
+      <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
             <HvTypography component="span" variant="sText">
-              {computedLabels.pageSizePrev}
+              {labels.pageSizePrev}
             </HvTypography>
-            <label>
-              <select
-                id={`${internalId}-pageSize`}
-                title={computedLabels.paginationTitle}
-                disabled={pageSize === 0}
-                className={classes.pageSizeOptionsSelect}
-                aria-label={computedLabels.pageSizeSelectorDescription}
-                onChange={e => onPageSizeChange(Number(e.target.value))}
-                value={pageSize}
-              >
-                {pageSizeOptions.map(option => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <select
+              id={setId(id, "pageSize")}
+              disabled={pageSize === 0}
+              className={classes.pageSizeOptionsSelect}
+              aria-label={labels.pageSizeSelectorDescription}
+              onChange={e => onPageSizeChange(Number(e.target.value))}
+              value={pageSize}
+            >
+              {pageSizeOptions.map(option => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
             <Down className={classes.selectDownIcon} />
             <HvTypography component="span" variant="sText">
-              {computedLabels.pageSizeEntryName}
+              {labels.pageSizeEntryName}
             </HvTypography>
           </>
         )}
       </div>
-      <div className={classes.pageNavigator}>
+      <div className={classes.pageNavigator} {...navigationProps}>
         <IconButton
-          aria-label={`${internalId}-firstPage-button`}
-          title={computedLabels.paginationFirstPageTitle}
-          id={`${internalId}-firstPage-button`}
+          id={setId(id, "firstPage-button")}
+          aria-label={setId(id, "firstPage-button")}
+          title={labels.paginationFirstPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
         >
-          <ArrowFirst
-            className={classes.icon}
-            color={!canPrevious ? disabledColors : null}
-          />
+          <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
         </IconButton>
         <IconButton
-          arial-label={`${internalId}-previousPage-button`}
-          title={computedLabels.paginationPreviousPageTitle}
-          id={`${internalId}-previousPage-button`}
+          id={setId(id, "previousPage-button")}
+          aria-label={setId(id, "previousPage-button")}
+          title={labels.paginationPreviousPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
         >
-          <ArrowLeft
-            className={classes.icon}
-            color={!canPrevious ? disabledColors : null}
-          />
+          <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
         </IconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
             <div className={classes.pageJump}>
-              <label>
-                <HvInput
-                  id={`${internalId}-currentPage`}
-                  aria-label={`${internalId}-currentPage`}
-                  labels={computedLabels}
-                  classes={{
-                    input: classes.pageSizeInput,
-                    inputRoot: classes.pageSizeInputRoot,
-                    container: classes.pageSizeInputContainer
-                  }}
-                  onChange={val => setStatePage(val - 1)}
-                  initialValue={`${statePage + 1}`}
-                  inputValue={`${
-                    statePage === "" ? "" : Number(statePage) + 1
-                  }`}
-                  onBlur={applyPage}
-                  onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
-                  validationIconVisible={false}
-                  disabled={pageSize === 0}
-                  disableClear
-                  type="number"
-                />
-              </label>
+              <HvInput
+                id={setId(id, "currentPage")}
+                labels={labels}
+                inputProps={{ "aria-label": labels.paginationInputLabel }}
+                classes={{
+                  root: classes.pageSizeInputContainer,
+                  input: classes.pageSizeInput,
+                  inputRoot: classes.pageSizeInputRoot
+                }}
+                onChange={(event, val) => setStatePage(val - 1)}
+                initialValue={`${statePage + 1}`}
+                value={`${statePage === "" ? "" : Number(statePage) + 1}`}
+                onBlur={applyPage}
+                onKeyDown={e => isKeypress(e, Codes.Enter) && applyPage()}
+                validationIconVisible={false}
+                disabled={pageSize === 0}
+                disableClear
+                type="number"
+              />
             </div>
           ) : (
             <HvTypography component="span" variant="sText">
@@ -172,41 +148,29 @@ const Pagination = ({
             </HvTypography>
           )}
           <HvTypography component="span" variant="sText">
-            {` ${computedLabels.pagesSeparator} `}
+            {` ${labels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography
-            id={`${internalId}-totalPages`}
-            component="span"
-            variant="sText"
-          >
+          <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
             {pages || 1}
           </HvTypography>
         </div>
         <IconButton
-          arial-label={`${internalId}-nextPage-button`}
-          title={computedLabels.paginationNextPageTitle}
-          id={`${internalId}-nextPage-button`}
+          id={setId(id, "nextPage-button")}
+          title={labels.paginationNextPageTitle}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
         >
-          <ArrowRight
-            className={classes.icon}
-            color={!canNext ? disabledColors : null}
-          />
+          <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
         </IconButton>
         <IconButton
-          aria-label={`${internalId}-lastPage-button`}
-          title={computedLabels.paginationLastPageTitle}
-          id={`${internalId}-lastPage-button`}
+          id={setId(id, "lastPage-button")}
+          title={labels.paginationLastPageTitle}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
         >
-          <ArrowLast
-            className={classes.icon}
-            color={!canNext ? disabledColors : null}
-          />
+          <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
         </IconButton>
       </div>
     </div>
@@ -214,10 +178,6 @@ const Pagination = ({
 };
 
 Pagination.propTypes = {
-  /**
-   * The theme passed by the provider.
-   */
-  theme: PropTypes.instanceOf(Object).isRequired,
   /**
    * A JSS Object used to override or extend the styles applied.
    */
@@ -321,7 +281,6 @@ Pagination.propTypes = {
   id: PropTypes.string,
   /**
    * An object containing all the labels for the component.
-   *
    */
   labels: PropTypes.shape({
     pageSizePrev: PropTypes.string,
@@ -329,39 +288,20 @@ Pagination.propTypes = {
     pageSizeSelectorDescription: PropTypes.string,
     pagesSeparator: PropTypes.string,
     pagesIndeterminate: PropTypes.string,
-    paginationTitle: PropTypes.string,
     paginationFirstPageTitle: PropTypes.string,
     paginationPreviousPageTitle: PropTypes.string,
     paginationNextPageTitle: PropTypes.string,
-    paginationLastPageTitle: PropTypes.string
-  })
+    paginationLastPageTitle: PropTypes.string,
+    paginationInputLabel: PropTypes.string
+  }),
+  /**
+   * Other props to show page component.
+   */
+  showPageProps: PropTypes.instanceOf(Object),
+  /**
+   * Other props to pagination component.
+   */
+  navigationProps: PropTypes.instanceOf(Object)
 };
 
-Pagination.defaultProps = {
-  pages: 1,
-  page: 0,
-  showPageSizeOptions: true,
-  pageSizeOptions: [5, 10, 20, 25, 50, 100],
-  pageSize: 1,
-  showPageJump: true,
-  canPrevious: false,
-  canNext: false,
-  onPageChange() {},
-  onPageSizeChange() {},
-  className: "",
-  id: undefined,
-  labels: {
-    pageSizePrev: "Show",
-    pageSizeEntryName: "rows",
-    pageSizeSelectorDescription: "Select how many to display",
-    pagesSeparator: "of",
-    pagesIndeterminate: "Many",
-    paginationTitle: "Select Page",
-    paginationFirstPageTitle: "Go To First Page",
-    paginationPreviousPageTitle: "Go To Previous Page",
-    paginationNextPageTitle: "Go To Next Page",
-    paginationLastPageTitle: "Go To Last Page"
-  }
-};
-
-export default Pagination;
+export default withStyles(styles, { name: "HvPagination" })(withLabels(DEFAULT_LABELS)(Pagination));

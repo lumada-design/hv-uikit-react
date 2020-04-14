@@ -1,26 +1,10 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
-import classNames from "classnames";
+import clsx from "clsx";
 import isNil from "lodash/isNil";
 
-import AngleDown from "@hv/uikit-react-icons/dist/Generic/Down";
-import AngleUp from "@hv/uikit-react-icons/dist/Generic/Up";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
+import AngleDown from "@hv/uikit-react-icons/dist/Down";
+import AngleUp from "@hv/uikit-react-icons/dist/Up";
+import { KeyboardCodes, isKeypress } from "../utils";
 
 import { buildLink } from "./addins";
 
@@ -48,9 +32,7 @@ const wrapper = (format, id, classes) => {
     return data => <div className={classes.textContainer}>{format(data)}</div>;
   }
   /* eslint no-underscore-dangle: 0 */
-  return data => (
-    <div className={classes.textContainer}>{data.row._original[id]}</div>
-  );
+  return data => <div className={classes.textContainer}>{data.row._original[id]}</div>;
 };
 
 /**
@@ -65,10 +47,10 @@ const setColumnAlignment = (cellType, classes) => {
   let classToApply;
   switch (cellType) {
     case "alpha-numeric":
-      classToApply = classNames(classes.alphaNumeric, "alphaNumeric");
+      classToApply = clsx(classes.alphaNumeric, "alphaNumeric");
       break;
     case "link":
-      classToApply = classNames(classes.alphaNumeric, "link");
+      classToApply = clsx(classes.alphaNumeric, "link");
       break;
     case "numeric":
       classToApply = classes.numeric;
@@ -88,7 +70,7 @@ const setColumnAlignment = (cellType, classes) => {
  */
 const setHeaderSortableClass = (sortableProp, existingClassNames) => {
   if (!isNil(sortableProp) && sortableProp) {
-    return classNames(existingClassNames, "sortable");
+    return clsx(existingClassNames, "sortable");
   }
   return existingClassNames;
 };
@@ -102,60 +84,39 @@ const setHeaderSortableClass = (sortableProp, existingClassNames) => {
  * @param {function} toggleExpand - contains the classes to apply to the column.
  * @returns {Object} a modified column.
  */
-const createExpanderButton = (
-  columns,
-  subElementTemplate,
-  classes,
-  toggleExpand
-) => {
+const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand) => {
   const newColumns = columns;
+
+  const onKeyHandler = (event, rowIndex, toggleExpandCallback) => {
+    if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.SpaceBar)) {
+      event.preventDefault();
+      toggleExpandCallback(rowIndex);
+    }
+  };
+
   if (subElementTemplate) {
-    newColumns[0].className = classNames(
-      newColumns[0].className,
-      classes.expand
-    );
-
-    const onKeyHandler = (event, rowIndex, toggleExpandCallback) => {
-      if (
-        isKeypress(event, KeyboardCodes.Enter) ||
-        isKeypress(event, KeyboardCodes.SpaceBar)
-      ) {
-        event.preventDefault();
-        toggleExpandCallback(rowIndex);
-      }
-    };
-
+    newColumns[0].className = clsx(newColumns[0].className, classes.expand);
     // eslint-disable-next-line react/prop-types
     newColumns[0].Cell = ({ isExpanded, ...rest }) => (
       <>
         <div
-          className={classNames(classes.iconContainer)}
+          className={clsx(classes.iconContainer)}
           aria-label="row expander button"
           role="button"
           tabIndex="0"
-          onKeyDown={event =>
-            onKeyHandler(event, rest.row._viewIndex, toggleExpand)
-          }
+          onKeyDown={event => onKeyHandler(event, rest.row._viewIndex, toggleExpand)}
           onClick={() => toggleExpand(rest.row._viewIndex)}
           aria-expanded={isExpanded}
         >
           {isExpanded ? (
-            <AngleUp
-              className={classes.separatorContainer}
-              width="10px"
-              height="10px"
-            />
+            <AngleUp className={classes.separatorContainer} width="10px" height="10px" />
           ) : (
-            <AngleDown
-              className={classes.separatorContainer}
-              width="10px"
-              height="10px"
-            />
+            <AngleDown className={classes.separatorContainer} width="10px" height="10px" />
           )}
         </div>
 
         <div
-          className={classNames({
+          className={clsx({
             [classes.textContainer]: rest.column.cellType === "alpha-numeric",
             [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"
@@ -177,12 +138,7 @@ const createExpanderButton = (
  * @param {Array} colSortedSelected - An array containing the columns to be sorted.
  * @param {Object} classes - contains the classes to apply to the column.
  */
-const appendClassnames = (
-  column,
-  colSortedSelected,
-  classes,
-  tableSortable
-) => {
+const appendClassnames = (column, colSortedSelected, classes, tableSortable) => {
   const col = column;
   // build the link component if the cell has cellType "link"
   buildLink(col);
@@ -190,26 +146,26 @@ const appendClassnames = (
   // set the cell content alignment
   const cellTypeClass = setColumnAlignment(col.cellType, classes);
 
-  col.className = classNames(col.className, cellTypeClass);
+  col.className = clsx(col.className, cellTypeClass);
 
   // setting the className for the column with the expander
   if (col.expander) {
-    col.className = classNames(col.className, "firstExpandable");
+    col.className = clsx(col.className, "firstExpandable");
   }
 
   if ((isNil(column.sortable) && tableSortable) || column.sortable) {
-    col.className = classNames(col.className, "sortable");
+    col.className = clsx(col.className, "sortable");
   }
 
   // checkbox column
   if (col.id === "_selector") {
     const headerClassNames = col.headerClassName;
-    col.headerClassName = classNames("checkBox", headerClassNames);
-    col.className = classNames(col.className, "checkBox");
+    col.headerClassName = clsx("checkBox", headerClassNames);
+    col.className = clsx(col.className, "checkBox");
   } else if (col.id === "secondaryActions") {
     const headerClassNames = col.headerClassName;
-    col.headerClassName = classNames("secondaryAction", headerClassNames);
-    col.className = classNames(col.className, "secondaryAction");
+    col.headerClassName = clsx("secondaryAction", headerClassNames);
+    col.className = clsx(col.className, "secondaryAction");
   }
   // If the cell isn't checkbox and wasn't overwritten a text container should be introduced to the cell
   else if (!col.Cell) {

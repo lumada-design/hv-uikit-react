@@ -1,31 +1,13 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 /* eslint-env jest */
 
-// import { mount } from "enzyme";
 import React from "react";
 import { mount } from "enzyme";
-import Download from "@hv/uikit-react-icons/dist/Generic/Download";
+import Download from "@hv/uikit-react-icons/dist/Download";
 import HvProvider from "../../Provider";
-import ButtonWithStyles from "../index";
-import HvButton from "../Button";
 import materialButtonConfiguration from "../materialButtonConfiguration";
+import HvButton from "..";
 
-describe("Button withStyles", () => {
+describe("Button", () => {
   let wrapper;
 
   const getMaterialButtonProps = ParentElement =>
@@ -36,7 +18,7 @@ describe("Button withStyles", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ButtonWithStyles>Click!</ButtonWithStyles>
+        <HvButton>Click!</HvButton>
       </HvProvider>
     );
   });
@@ -46,7 +28,7 @@ describe("Button withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(HvButton)).toMatchSnapshot();
   });
 
   it("should render the Button component", () => {
@@ -57,7 +39,7 @@ describe("Button withStyles", () => {
   it("should correctly map the primary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="primary">Click!</ButtonWithStyles>
+        <HvButton category="primary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
 
@@ -72,7 +54,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="secondary">Click!</ButtonWithStyles>
+        <HvButton category="secondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -86,7 +68,7 @@ describe("Button withStyles", () => {
   it("should correctly map the link type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="ghost">Click!</ButtonWithStyles>
+        <HvButton category="ghost">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -100,7 +82,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary category to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="secondary">Click!</ButtonWithStyles>
+        <HvButton category="secondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -114,7 +96,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="ghost">Click!</ButtonWithStyles>
+        <HvButton category="ghost">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -128,7 +110,7 @@ describe("Button withStyles", () => {
   it("should correctly map the secondary type to the material ui configurations", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="ghostSecondary">Click!</ButtonWithStyles>
+        <HvButton category="ghostSecondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(
@@ -146,9 +128,9 @@ describe("Button with Icon", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ButtonWithStyles category="primary" startIcon={<Download />}>
+        <HvButton category="primary" startIcon={<Download />}>
           Click!
-        </ButtonWithStyles>
+        </HvButton>
       </HvProvider>
     );
   });

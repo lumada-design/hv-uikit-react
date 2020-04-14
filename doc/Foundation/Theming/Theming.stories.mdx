@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundation/Theming/Main" />
+
+## Theming
+
+UI-Kit components come with two themes - **Wicked** and **Dawn**.  
+In order to have those themes available to the components you need to setup the **HvProvider** component at the root level of your app.  
+**HvProvider** relies on the context feature of React to pass the theme down to the components, so every component or subcomponent enclosed by the **HvProvider** will be injected with a theme prop that contains the theme specs.
+
+```
+<HvProvider>
+  <MyApp />
+<HvProvider/>
+````
+
+If you wish to customize the theme, you need to pass your custom theme to the HvProvider component.  
+This theme value is a material-ui-like object that contains the definition of the various colors and spaces defined by design system. 
+
+```
+<HvProvider theme={mycustomTheme}>
+  <MyApp>
+<HvProvider/>
+```

@@ -1,95 +1,93 @@
-/*
- * Copyright 2019 Hitachi Vantara Corporation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
-import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
-import MoreVert from "@hv/uikit-react-icons/dist/Generic/MoreOptionsVertical";
+import { withStyles } from "@material-ui/core";
+import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import clsx from "clsx";
 import HvButton from "../Button";
 import DropDownMenu from "../DropDownMenu";
+import { setId } from "..";
+import styles from "./styles";
 
 const Actions = ({
-  classes,
   id,
-  category,
-  actions,
+  classes,
+  className,
+  category = "ghost",
+  actions = [],
   actionsCallback,
-  maxVisibleActions
+  maxVisibleActions = Infinity,
+  ...others
 }) => {
-  if (!Array.isArray(actions)) {
-    return React.isValidElement(actions) ? actions : null;
-  }
+  if (!Array.isArray(actions)) return React.isValidElement(actions) ? actions : null;
 
-  const renderButton = (action, key = "") => (
-    <HvButton
-      id={key}
-      key={key}
-      category={category}
-      className={classes.button}
-      disabled={action.disabled}
-      onClick={() => actionsCallback(id, action)}
-      aria-label={action.ariaLabel}
-      aria-labelledby={action.ariaLabelledBy}
-      aria-describedby={action.ariaDescribedBy}
-    >
-      {(action.iconCallback && action.iconCallback()) ||
-        (action.icon && action.icon())}
-      {action.label}
-    </HvButton>
-  );
+  const renderButton = (action, idx) => {
+    const { disabled, iconCallback, label, ...other } = action;
+    const actionId = setId(id, idx, "action", action.id);
+    return (
+      <HvButton
+        id={actionId}
+        key={actionId}
+        category={category}
+        className={classes.button}
+        disabled={disabled}
+        onClick={event => actionsCallback?.(event, id, action)}
+        {...other}
+      >
+        {iconCallback?.({ isDisabled: disabled })}
+        {label}
+      </HvButton>
+    );
+  };
 
-  const renderActionsGrid = acts => {
-    const actsVisible = acts.slice(0, maxVisibleActions);
-    const actsDropdown = acts.slice(maxVisibleActions);
+  const renderActionsGrid = () => {
+    const actsVisible = actions.slice(0, maxVisibleActions);
+    const actsDropdown = actions.slice(maxVisibleActions);
 
     return (
-      <div className={classes.actionContainer}>
-        {actsVisible.map((action, idx) =>
-          renderButton(action, `${id}-${idx}-action-${action.id}`)
-        )}
+      <>
+        {actsVisible.map((action, idx) => renderButton(action, idx))}
         <DropDownMenu
           classes={{ root: classes.dropDownMenu }}
           icon={<MoreVert className={classes.dropDownMenuIcon} />}
           placement="left"
-          onClick={action => actionsCallback(id, action)}
-          dataList={actsDropdown.map(action => ({
-            ...action,
-            iconCallback: action.iconCallback,
-            icon: action.icon
-          }))}
-          aria-label={`${id}-more-actions`}
+          onClick={(event, action) => actionsCallback?.(event, id, action)}
+          dataList={actsDropdown}
           keepOpened={false}
           disablePortal={false}
         />
-      </div>
+      </>
     );
   };
 
-  return actions.length > maxVisibleActions
-    ? renderActionsGrid(actions)
-    : actions.map((action, idx) =>
-        renderButton(action, `${id}-${idx}-action-${action.id}`)
-      );
+  const actionOverflow = actions.length > maxVisibleActions;
+
+  return (
+    <div
+      className={clsx(className, classes.root, {
+        [classes.actionContainer]: actionOverflow
+      })}
+      {...others}
+    >
+      {actionOverflow
+        ? renderActionsGrid()
+        : actions.map((action, idx) => renderButton(action, idx))}
+    </div>
+  );
 };
 
 Actions.propTypes = {
   /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
+  /**
    *   A Jss Object used to override or extend the styles applied to the actions.
    */
   classes: PropTypes.shape({
+    /**
+     * Styles applied to element root.
+     */
+    root: PropTypes.string,
     /**
      * Styles applied to the visible buttons.
      */
@@ -114,13 +112,7 @@ Actions.propTypes = {
   /**
    * Button category.
    */
-  category: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "ghost",
-    "ghostSecondary",
-    "semantic"
-  ]),
+  category: PropTypes.oneOf(["primary", "secondary", "ghost", "ghostSecondary", "semantic"]),
   /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon, disabled}´
@@ -131,12 +123,11 @@ Actions.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
-        icon: deprecatedPropType(PropTypes.func, "use iconCallback instead"),
         iconCallback: PropTypes.func,
         disabled: PropTypes.bool,
         ariaLabel: PropTypes.string,
         ariaLabelledBy: PropTypes.string,
-        ariaDescribedBy: PropTypes.string,
+        ariaDescribedBy: PropTypes.string
       })
     )
   ]),
@@ -150,12 +141,4 @@ Actions.propTypes = {
   maxVisibleActions: PropTypes.number
 };
 
-Actions.defaultProps = {
-  id: "",
-  category: "ghost",
-  actions: [],
-  actionsCallback() {},
-  maxVisibleActions: Infinity
-};
-
-export default Actions;
+export default withStyles(styles, { name: "HvActions" })(Actions);

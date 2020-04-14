@@ -5,7 +5,6 @@ import HvButton from "@hv/uikit-react-core/dist/Button";
 import HvInput from "@hv/uikit-react-core/dist/Input";
 import HvFormComposer from "@hv/uikit-react-lab/dist/FormComposer";
 
-
 const inputTextConfiguration = {
   inputLabel: "Default",
   placeholder: "Placeholder value",
@@ -13,33 +12,33 @@ const inputTextConfiguration = {
 };
 
 const inputStyles = theme => ({
-  container: {
+  root: {
     padding: `${theme.hv.spacing.xs}px 0`
   }
 });
 
-const CustomInput = withStyles(inputStyles, { withTheme: true })(HvInput);
+const CustomInput = withStyles(inputStyles)(HvInput);
 
 const groups = [
   {
     title: "Group1",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 1"
         }}
         name="input1"
-        onChange={value => value}
-        value="Some text 1"
+        onChange={(event, value) => value}
+        initialValue="Some text 1"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 2"
         }}
         name="input2"
-        value="Some text 2"
+        initialValue="Some text 2"
       />
     ]
   },
@@ -47,15 +46,15 @@ const groups = [
     title: "Group2",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 3"
         }}
         name="input3"
-        value="Some text 3"
+        initialValue="Some text 3"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 4"
         }}
@@ -67,14 +66,14 @@ const groups = [
     title: "Group3",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 5"
         }}
         name="input5"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 6"
         }}
@@ -86,14 +85,14 @@ const groups = [
     title: "Group4",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 7"
         }}
         name="input7"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 8"
         }}
@@ -105,14 +104,14 @@ const groups = [
     title: "Group5",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 9"
         }}
         name="input9"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 10"
         }}
@@ -124,14 +123,14 @@ const groups = [
     title: "Group6",
     children: [
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 11"
         }}
         name="input11"
       />,
       <CustomInput
-        inputTextConfiguration={{
+        labels={{
           ...inputTextConfiguration,
           inputLabel: "Input 12"
         }}
@@ -147,12 +146,12 @@ const buttonStyles = theme => ({
   }
 });
 
-const CustomButton = withStyles(buttonStyles, { withTheme: true })(HvButton);
+const CustomButton = withStyles(buttonStyles)(HvButton);
 
 const footerContent = [
   <CustomButton
-    colorType="secondary"
-    onClick={componentValues => {
+    category="secondary"
+    onClick={() => {
       console.log("ACTION CANCELLED!!!!!!");
     }}
   >
