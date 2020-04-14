@@ -50,7 +50,7 @@ const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme =
   window.hvTheme = customTheme;
 
   return (
-    <MuiStylesProvider injectFirst generateClassName={generateClassName}>
+    <MuiStylesProvider generateClassName={generateClassName}>
       <MuiThemeProvider theme={customTheme}>
         <CssBaseline />
         <ConfigProvider value={pConfig}>{children}</ConfigProvider>
