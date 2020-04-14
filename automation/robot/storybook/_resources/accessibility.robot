@@ -1,9 +1,9 @@
 *** Setting ***
-Library    Process
-Library    OperatingSystem
-Library    String
-Library    customLibrary.py
-Variables  accessibility_variables.py
+Library      Process
+Library      OperatingSystem
+Library      String
+Library      customLibrary.py
+Variables    accessibility_variables.py
 
 
 *** Keywords ***

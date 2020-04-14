@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Variables         variables.yaml
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke    bug-infrastructure-ie
 
 
 *** Test Cases ***

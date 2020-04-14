@@ -26,6 +26,7 @@ tab: change focus to next item and keep item selection when is pressed TAB
     header item should be selected    ${hItem3.2}
 
 shift + tab: change focus to previous item and keep item selection when is pressed SHIFT + TAB
+    [Tags]    bug-infrastructure-ie
     header item should be selected    ${hItem3}
     header item should be selected    ${hItem3.2}
     Click Element                     ${hBrand}

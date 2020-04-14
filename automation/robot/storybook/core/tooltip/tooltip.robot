@@ -25,7 +25,7 @@ tooltip is triggered and when mouse hover item
     Wait Until Page Contains    Tooltips can showcase    3s
 
 tooltip is triggered when item is focused
-    [Tags]    keyboard
+    [Tags]    keyboard    bug-infrastructure-ie
     Page Should Not Contain     Tooltips can showcase
     Press Keys                  ${contextDiv}            TAB
     Wait Until Page Contains    Tooltips can showcase    5s

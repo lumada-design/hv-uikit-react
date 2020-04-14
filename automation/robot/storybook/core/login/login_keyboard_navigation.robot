@@ -6,7 +6,7 @@ Variables         variables.yaml
 Suite Setup       open storybook
 Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/${login1}    ${button_login}    15s
 Suite Teardown    Close Browser
-Force Tags        smoke            keyboard
+Force Tags        smoke    keyboard    bug-infrastructure-ie
 
 
 *** Keywords ***
