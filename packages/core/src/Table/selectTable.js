@@ -42,7 +42,7 @@ export default (Component, options) => {
         onClick: toggleSelection,
         selectType,
         row,
-        id: `select-${row[keyField]}`
+        id: row[keyField]
       };
       return React.createElement(this.props.SelectInputComponent, inputProps);
     }

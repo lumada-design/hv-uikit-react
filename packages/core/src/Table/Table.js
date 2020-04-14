@@ -222,7 +222,7 @@ class Table extends React.Component {
         );
       },
       toggleSelection: (id, shiftkey, row) => {
-        this.toggleSelection(row.id);
+        this.toggleSelection(null, row.id);
       },
       internalId
     };
@@ -432,7 +432,7 @@ class Table extends React.Component {
 
     // update the state
     this.setState({ selection: select }, () => {
-      onSelection(event, select);
+      onSelection?.(event, select);
     });
   };
 
@@ -446,15 +446,9 @@ class Table extends React.Component {
     const { selectAll } = this.state;
 
     const stateToSet = toggleAll(idForCheckbox, selectAll, this.checkboxTable);
-    this.setState(
-      {
-        selectAll: stateToSet.selectAll,
-        selection: stateToSet.selection
-      },
-      () => {
-        onSelection(event, stateToSet.selection);
-      }
-    );
+    this.setState({ ...stateToSet }, () => {
+      onSelection?.(event, stateToSet.selection);
+    });
   };
 
   computeRowElementId(rowInfo) {
@@ -525,7 +519,7 @@ class Table extends React.Component {
               dataList={secondaryActions}
               onClick={(event, item) => {
                 event.stopPropagation();
-                item.action(event, props.original);
+                item?.action?.(event, props.original);
               }}
               {...dropdownMenuProps}
             />
@@ -589,7 +583,7 @@ class Table extends React.Component {
             <div className={classes.checkBoxText}>
               <HvCheckBox
                 id={`${internalId}-select-all`}
-                onChange={event => this.toggleAll(event)}
+                onChange={this.toggleAll}
                 aria-label="blah"
                 checked={selectAll}
                 disabled={data.length === 0}
