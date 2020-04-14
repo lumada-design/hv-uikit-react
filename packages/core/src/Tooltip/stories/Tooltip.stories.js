@@ -68,9 +68,7 @@ const LongTextContainer = ({ children }) => (
 );
 
 LongText.story = {
-  parameters: {
-    decorators: [storyFn => <LongTextContainer>{storyFn()}</LongTextContainer>]
-  }
+  decorators: [storyFn => <LongTextContainer>{storyFn()}</LongTextContainer>]
 };
 
 export const Multiline = () => {
@@ -123,9 +121,7 @@ const MultilineContainer = ({ children }) => (
 );
 
 Multiline.story = {
-  parameters: {
-    decorators: [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>]
-  }
+  decorators: [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>]
 };
 
 export const MultilineWithoutHeader = () => {
@@ -158,7 +154,5 @@ export const MultilineWithoutHeader = () => {
 };
 
 MultilineWithoutHeader.story = {
-  parameters: {
-    decorators: [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>]
-  }
+  decorators: [storyFn => <MultilineContainer>{storyFn()}</MultilineContainer>]
 };

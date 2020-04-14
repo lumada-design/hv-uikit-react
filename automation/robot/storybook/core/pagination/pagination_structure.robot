@@ -9,10 +9,10 @@ Force Tags        smoke    bug-infrastructure-ie
 *** Variables ***
 ${input}        css:input
 ${select}       css:select
-${first}        //button[span/div[contains(@class,'HvStartIcon')]]
-${previous}     //button[span/div[contains(@class,'HvBackwardsIcon')]]
-${next}         //button[span/div[contains(@class,'HvForwardsIcon')]]
-${last}         //button[span/div[contains(@class,'HvEndIcon')]]
+${first}        css:button[title*='First']
+${previous}     css:button[title*='Previous']
+${next}         css:button[title*='Next']
+${last}         css:button[title*='Last']
 
 *** Test Cases ***
 check default disabled previous/first page

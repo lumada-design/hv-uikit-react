@@ -44,14 +44,14 @@ const HvSwitch = props => {
     if (isKeypress(event, KeyboardCodes.SpaceBar)) {
       const newState = !clickState;
       setClicked(newState);
-      onChange(event, newState);
+      onChange?.(event, newState);
     }
   };
 
   const onClickHandler = event => {
     const newState = !clickState;
     setClicked(newState);
-    onChange(event, newState);
+    onChange?.(event, newState);
   };
 
   const renderLabel = position => (

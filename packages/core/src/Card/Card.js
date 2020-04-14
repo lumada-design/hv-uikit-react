@@ -143,15 +143,13 @@ const HvCard = ({
   );
 
   return (
-    <>
-      <div className={clsx(classes.semanticContainer, classes.root)}>
-        <div
-          className={clsx({
-            [classes[semantic]]: semantic,
-            [classes.semanticSelected]: selected
-          })}
-        />
-      </div>
+    <div className={clsx(classes.root)}>
+      <div
+        className={clsx(classes.semanticContainer, {
+          [classes[semantic]]: semantic,
+          [classes.semanticSelected]: selected
+        })}
+      />
       <Card
         id={id}
         className={clsx(classes.cardContainer, className, {
@@ -163,7 +161,7 @@ const HvCard = ({
       >
         {children || defaultContent}
       </Card>
-    </>
+    </div>
   );
 };
 

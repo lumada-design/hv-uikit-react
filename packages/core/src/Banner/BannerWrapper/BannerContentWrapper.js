@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import { SnackbarContent, withStyles } from "@material-ui/core";
-import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+import iconVariants from "../../utils/iconVariants";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
 import styles from "./styles";
@@ -23,7 +23,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     ...others
   } = props;
 
-  const icon = customIcon || (showIcon && severityIcon(mapSeverityToVariant(variant)));
+  const icon = customIcon || (showIcon && iconVariants(variant));
 
   // default to inline
   // this might try to be more intelligent in the future,

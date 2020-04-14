@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvRadio } from "../../..";
 
 export default {
-  title: "Components/Selectors/RadioButton",
+  title: "Components/Selectors/Radio",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvRadio } from '@hv/uikit-react-core/dist'"

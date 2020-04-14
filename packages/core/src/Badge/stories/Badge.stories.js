@@ -27,9 +27,7 @@ export const Main = () => (
 );
 
 Main.story = {
-  parameters: {
-    decorators: [storyFn => <div style={container}>{storyFn()}</div>]
-  }
+  decorators: [storyFn => <div style={container}>{storyFn()}</div>]
 };
 
 export const WithIcon = () => (
@@ -43,11 +41,11 @@ export const WithIcon = () => (
 );
 
 WithIcon.story = {
+  decorators: [storyFn => <div style={container}>{storyFn()}</div>],
   parameters: {
     docs: {
       storyDescription: "Badge sample that uses a custom icon."
-    },
-    decorators: [storyFn => <div style={container}>{storyFn()}</div>]
+    }
   }
 };
 
@@ -62,11 +60,11 @@ export const WithText = () => (
 );
 
 WithText.story = {
+  decorators: [storyFn => <div style={{ ...container, width: 800 }}>{storyFn()}</div>],
   parameters: {
     docs: {
       storyDescription: "Badge sample using only text."
-    },
-    decorators: [storyFn => <div style={{ ...container, width: 800 }}>{storyFn()}</div>]
+    }
   }
 };
 

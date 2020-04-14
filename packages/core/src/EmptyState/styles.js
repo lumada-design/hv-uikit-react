@@ -28,6 +28,7 @@ const styles = theme => ({
     background: "transparent",
     maxWidth: "510px",
     overflow: "hidden",
+    fontFamily: theme.hv.typography.fontFamily,
     [theme.breakpoints.up("sm")]: {
       marginLeft: `${theme.hv.spacing.sm}px`
     },

@@ -21,7 +21,7 @@ const styles = {
 
 export const Main = () => (
   <>
-    <HvBanner open showIcon style={styles} label="This is a banner." />
+    <HvBanner open variant="default" style={styles} label="This is a banner." />
     <HvBanner open variant="success" showIcon style={styles} label="This is a success message." />
     <HvBanner open variant="error" showIcon style={styles} label="This is an error message." />
     <HvBanner
@@ -29,7 +29,7 @@ export const Main = () => (
       style={styles}
       label="This is a banner with action."
       actions={[{ id: "post", label: "Action" }]}
-      actionsCallback={(id, action) => console.log(`Clicked ${action.label}`)}
+      actionsCallback={(e, id, action) => console.log(`Clicked ${action.label}`)}
     />
   </>
 );
@@ -102,7 +102,7 @@ export const CustomAction = () => (
     label="This is a banner."
     showIcon
     actions={[{ id: "post", label: "Action", disabled: false }]}
-    actionsCallback={(id, action) => alert(`clicked ${id} with ${action.label}`)}
+    actionsCallback={(e, id, action) => alert(`clicked ${id} with ${action.label}`)}
   />
 );
 
@@ -144,14 +144,14 @@ export const BannerVariations = () => {
       <HvBannerContent
         content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
         variant="default"
-        actions={actionArray}
+        actions={actionArray("banner1")}
         actionsPosition="bottom-right"
       />
       <p />
       <HvBannerContent
         content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
         variant="default"
-        actions={actionArray}
+        actions={actionArray("banner2")}
         actionsPosition="bottom-right"
       />
       <p />
@@ -168,7 +168,7 @@ export const BannerVariations = () => {
         content="This is an error banner."
         variant="error"
         showIcon
-        actions={actionArray}
+        actions={actionArray("banner3")}
         actionsPosition="inline"
         onClose={() => {}}
       />

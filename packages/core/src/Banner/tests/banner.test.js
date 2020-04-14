@@ -6,7 +6,7 @@ import { toHaveNoViolations } from "jest-axe";
 import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
 import HvProvider from "../../Provider";
-import { mapSeverityToVariant, severityIcon, variantIcon } from "../BannerWrapper/VariantUtils";
+import iconVariants from "../../utils/iconVariants";
 import Button from "../../Button";
 
 import axe from "../../../config/axe-config";
@@ -185,32 +185,10 @@ describe("Banner ", () => {
     expect(component.get(0).props.style).toEqual({ bottom: `${offset}px` });
   });
 
-  it("should return the right severity icon", () => {
-    const theme = {
-      hv: {
-        palette: {
-          semantic: {
-            sema1: "#FFFFF",
-            sema5: "#FFFFF",
-            sema6: "#FFFFF"
-          }
-        }
-      }
-    };
-
-    const error = severityIcon("error", theme);
-    expect(error).toEqual(variantIcon.error(theme));
-
-    const test = severityIcon("test", theme);
-    expect(test).toEqual(variantIcon.success(theme));
-  });
-
   it("should return the severity variant", () => {
-    const error = mapSeverityToVariant("error");
-    expect(error).toBe("error");
-
-    const test = mapSeverityToVariant("test");
-    expect(test).toBe("default");
+    const error = mount(iconVariants("error")).find("Fail");
+    expect(error.length).toBe(1);
+    expect(iconVariants("test")).toBe(null);
   });
 });
 
