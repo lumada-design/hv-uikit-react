@@ -28,7 +28,7 @@ const styles = theme => ({
       backgroundColor: "transparent"
     },
     "&$checked": {
-      transform: "translateX(32px)",
+      transform: "translateX(30px)",
       "& + $track": {
         opacity: 1
       },
@@ -39,7 +39,9 @@ const styles = theme => ({
   },
 
   track: {
-    borderRadius: 16,
+    borderRadius: 15,
+    left: 17,
+    top: 8,
     border: `solid 1px ${theme.hv.palette.accent.acce1}`,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
     opacity: "unset"
@@ -48,7 +50,9 @@ const styles = theme => ({
   thumb: {
     ...thumbPosition,
     border: `solid 1px ${theme.hv.palette.accent.acce1}`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo2
+    backgroundColor: theme.hv.palette.atmosphere.atmo2,
+    marginLeft: 2,
+    marginTop: 0
   },
 
   checked: {},
