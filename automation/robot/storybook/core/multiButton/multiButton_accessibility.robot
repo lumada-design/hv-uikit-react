@@ -22,4 +22,3 @@ storybook sample labelOnlyVerticalMultipleSelection against standard            
 storybook sample labelOnlyVerticalSingleSelection against standard               ${url}labelonlyverticalsingleselection
 storybook sample labelWithIconVerticalMultipleSelection against standard         ${url}labelwithiconverticalmultipleselection
 storybook sample labelWithIconVerticalSingleSelection against standard           ${url}labelwithiconverticalsingleselection
-storybook sample iconOnlyHorizontalMultipleSelection against standard            ${url}icononlyhorizontalmultipleselection
