@@ -5,7 +5,7 @@ Force Tags    pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=corebanner--
+${url}    ${STORYBOOK_URL}/iframe.html?id=corebanner--banner8
 
 
 *** Test Cases ***

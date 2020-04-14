@@ -18,14 +18,14 @@ Focus on input when open dropdown with input
     Element Should Be Focused        ${searchInput}
 
 Focus on Select All when open dropdown without input
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown5
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown6
     Wait Until Element Is Visible    ${dropdown}        10s
     Click Element                    ${dropdown}
     Wait Until Element Is Enabled    ${selectAll}       2s
     Element Should Be Focused        ${selectAll}
 
 Focus on first element when open simple dropdown
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown7
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=coredropdown--dropdown8
     Wait Until Element Is Visible    ${dropdown}        10s
     Click Element                    ${dropdown}
     Wait Until Element Is Enabled    ${option1}         2s

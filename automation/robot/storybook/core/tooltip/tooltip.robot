@@ -10,6 +10,7 @@ Force Tags        smoke
 
 *** Variables ***
 ${tooltipPlaceholder}    css:button>p
+${contextDiv}            xpath://div[button/p]
 
 *** Keywords ***
 open tooltip sample
@@ -26,7 +27,7 @@ tooltip is triggered and when mouse hover item
 tooltip is triggered when item is focused
     [Tags]    keyboard
     Page Should Not Contain     Tooltips can showcase
-    Press Keys                  css:body                 TAB
+    Press Keys                  ${contextDiv}            TAB
     Wait Until Page Contains    Tooltips can showcase    5s
 
 tooltip is dismissed when mouse leaves touch target
