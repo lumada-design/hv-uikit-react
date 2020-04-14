@@ -75,8 +75,10 @@ class HvDatePicker extends React.Component {
    */
   static resolveStateFromProps = (value, startValue, endValue, rangeMode) => {
     if (rangeMode) {
-      const startSelectedDate = startValue !== "" ? convertISOStringDateToDate(startValue) : null;
-      const endSelectedDate = endValue !== "" ? convertISOStringDateToDate(endValue) : null;
+      const startSelectedDate =
+        startValue && startValue !== "" ? convertISOStringDateToDate(startValue) : null;
+      const endSelectedDate =
+        endValue && endValue !== "" ? convertISOStringDateToDate(endValue) : null;
       // Range mode state
       return {
         startSelectedDate,
@@ -91,7 +93,7 @@ class HvDatePicker extends React.Component {
     }
 
     // Single calendar mode state
-    const selectedDate = value !== "" ? convertISOStringDateToDate(value) : null;
+    const selectedDate = value && value !== "" ? convertISOStringDateToDate(value) : null;
 
     return {
       selectedDate,

@@ -175,7 +175,7 @@ Header.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * The text to be shown on the main part of the header.
    */
@@ -195,6 +195,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
+  id: undefined,
   inputDate: null,
   topText: null
 };

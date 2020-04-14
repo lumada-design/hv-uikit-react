@@ -75,7 +75,7 @@ describe("TimePicker", () => {
         parentElement: "mockParentElement"
       }
     };
-    timePickerComponent.setState({ timePopperOpen: false });
+    timePickerComponent.setState({ timePopperOpen: false, mockEvent });
     const spy = jest.spyOn(timePickerInstance, "setTimePopperState");
     timePickerInstance.handleTimeIconClick(mockEvent);
     expect(spy).toHaveBeenCalledWith("mockParentElement", true);
@@ -160,7 +160,7 @@ describe("TimePicker", () => {
   });
 
   it("getTimeFormat - should return timeFormat prop if defined", () => {
-    const mockTimeFormat = "12";
+    const mockTimeFormat = 12;
     const wrapperTimeFormat = mount(
       <HvProvider>
         <TimePicker timeFormat={mockTimeFormat} />

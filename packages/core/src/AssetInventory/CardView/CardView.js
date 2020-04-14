@@ -64,10 +64,10 @@ const CardView = ({
   const renderCards = values.map(value => {
     if (selectedValues && selectedValues.indexOf(value.id) > -1) {
       // eslint-disable-next-line no-param-reassign
-      value.checkboxSelected = true;
+      value.checked = true;
     } else {
       // eslint-disable-next-line no-param-reassign
-      value.checkboxSelected = false;
+      value.checked = false;
     }
     return (
       <Grid

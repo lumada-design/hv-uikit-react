@@ -7,14 +7,14 @@ import { Snackbar as MaterialSnackbar } from "@material-ui/core";
 
 import AddIcon from "@hv/uikit-react-icons/dist/Add";
 import Snackbar from "..";
-import SnackBarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
+import SnackbarContent from "../SnackbarContentWrapper/SnackbarContentWrapper";
 import HvProvider from "../../Provider";
 import Button from "../../Button";
 
 describe("Snackbar ", () => {
   const wrapper = mount(
     <HvProvider>
-      <Snackbar />
+      <Snackbar id="Snackbar" />
     </HvProvider>
   );
 
@@ -31,17 +31,17 @@ describe("Snackbar ", () => {
     expect(sliderComponent.length).toBe(1);
   });
 
-  it("shouldn't render the SnackbarComponent component as the snackbar isn't open", () => {
-    const sliderComponent = wrapper.find(SnackBarContent);
+  it("shouldn't render the SnackbarComponent component as the Snackbar isn't open", () => {
+    const sliderComponent = wrapper.find(SnackbarContent);
     expect(sliderComponent.length).toBe(0);
   });
 
-  it("should render the SnackbarComponent component as the snackbar is open", () => {
+  it("should render the SnackbarComponent component as the Snackbar is open", () => {
     const sliderComponent = mount(
       <HvProvider>
         <Snackbar open transitionDirection="right" />
       </HvProvider>
-    ).find(SnackBarContent);
+    ).find(SnackbarContent);
     expect(sliderComponent.length).toBe(1);
   });
 
@@ -51,7 +51,7 @@ describe("Snackbar ", () => {
         <Snackbar open showIcon transitionDirection="up" />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find("svg");
 
     expect(sliderComponent.length).toBe(0);
@@ -63,7 +63,7 @@ describe("Snackbar ", () => {
         <Snackbar open variant="success" showIcon={false} transitionDirection="down" />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find("svg");
 
     expect(sliderComponent.length).toBe(0);
@@ -75,7 +75,7 @@ describe("Snackbar ", () => {
         <Snackbar open variant="success" showIcon />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find("svg");
 
     expect(sliderComponent.length).toBe(1);
@@ -87,7 +87,7 @@ describe("Snackbar ", () => {
         <Snackbar open variant="error" showIcon />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find("svg");
 
     expect(sliderComponent.length).toBe(1);
@@ -99,7 +99,7 @@ describe("Snackbar ", () => {
         <Snackbar open customIcon={<AddIcon />} />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find("svg");
 
     expect(sliderComponent.length).toBe(1);
@@ -111,7 +111,7 @@ describe("Snackbar ", () => {
         <Snackbar open variant="success" action={<a href=" ">Event</a>} />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find("a");
 
     expect(sliderComponent.length).toBe(1);
@@ -147,6 +147,7 @@ describe("Snackbar ", () => {
     const sliderComponent = mount(
       <HvProvider>
         <Snackbar
+          id="Snackbar"
           open
           variant="success"
           action={{
@@ -156,7 +157,7 @@ describe("Snackbar ", () => {
         />
       </HvProvider>
     )
-      .find(SnackBarContent)
+      .find(SnackbarContent)
       .find(Button);
 
     expect(sliderComponent.length).toBe(1);

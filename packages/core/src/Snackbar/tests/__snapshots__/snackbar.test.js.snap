@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snackbar  should render correctly 1`] = `
-<WithStyles(HvSnackbar)>
+<WithStyles(HvSnackbar)
+  id="Snackbar"
+>
   <HvSnackbar
     classes={
       Object {
@@ -13,6 +15,7 @@ exports[`Snackbar  should render correctly 1`] = `
         "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
       }
     }
+    id="Snackbar"
   >
     <WithStyles(ForwardRef(Snackbar))
       TransitionComponent={[Function]}
@@ -33,6 +36,7 @@ exports[`Snackbar  should render correctly 1`] = `
           "anchorOriginTopRight": "HvSnackbar-anchorOriginTopRight",
         }
       }
+      id="Snackbar"
       open={false}
       style={
         Object {
@@ -61,6 +65,7 @@ exports[`Snackbar  should render correctly 1`] = `
             "root": "MuiSnackbar-root",
           }
         }
+        id="Snackbar"
         open={false}
         style={
           Object {

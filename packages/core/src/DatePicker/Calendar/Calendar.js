@@ -481,7 +481,7 @@ Calendar.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * Locale to be used by the calendar.
    */
@@ -514,6 +514,7 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
+  id: undefined,
   locale: DEFAULT_LOCALE,
   selectedDate: undefined,
   visibleDate: undefined,

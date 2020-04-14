@@ -20,15 +20,16 @@ exports[`Dropzone withStyles should render correctly 1`] = `
   id="dropzone1"
   labels={
     Object {
-      "dragText": "Drag and drop or ",
-      "dropFilesText": "Drop files here",
-      "dropzoneLabel": "My Label",
+      "acceptedFiles": "Accepted files:",
+      "drag": "Drag and drop or",
+      "dropFiles": "Drop files here",
+      "dropzone": "Label",
       "fileSizeError": "The file exceeds the maximum upload size",
       "fileTypeError": "File type not allowed for upload",
       "progressConjunction": "of",
       "removeFileButtonLabel": "Remove File",
-      "selectFilesText": "Select files",
-      "sizeWarningLabel": "Max. file size:",
+      "selectFiles": "Select files",
+      "sizeWarning": "Max. file size:",
     }
   }
   maxFileSize={1}
@@ -71,15 +72,16 @@ exports[`Dropzone withStyles should render correctly 1`] = `
     id="dropzone1"
     labels={
       Object {
-        "dragText": "Drag and drop or ",
-        "dropFilesText": "Drop files here",
-        "dropzoneLabel": "My Label",
+        "acceptedFiles": "Accepted files:",
+        "drag": "Drag and drop or",
+        "dropFiles": "Drop files here",
+        "dropzone": "Label",
         "fileSizeError": "The file exceeds the maximum upload size",
         "fileTypeError": "File type not allowed for upload",
         "progressConjunction": "of",
         "removeFileButtonLabel": "Remove File",
-        "selectFilesText": "Select files",
-        "sizeWarningLabel": "Max. file size:",
+        "selectFiles": "Select files",
+        "sizeWarning": "Max. file size:",
       }
     }
     maxFileSize={1}
@@ -137,7 +139,9 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             className="HvTypography-root HvTypography-labelText"
             htmlFor="dropzone1-input-file"
             id="dropzone1-input-file-label"
-          />
+          >
+            Label
+          </label>
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <WithStyles(ForwardRef)
@@ -176,7 +180,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           <p
             className="HvTypography-root HvTypography-infoText"
           >
-            undefined 1.00B
+            Max. file size: 1.00B
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
@@ -201,7 +205,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         onChange={[Function]}
         onClick={[Function]}
         tabIndex={-1}
-        title="undefined undefined"
+        title="Drag and drop or Select files"
         type="file"
       />
       <div
@@ -284,10 +288,11 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               <p
                 className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
               >
+                Drag and drop or
                 <span
                   className="HvFileUploaderDropZone-selectFilesText"
                 >
-                   undefined
+                   Select files
                 </span>
               </p>
             </ForwardRef>
@@ -320,15 +325,16 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
   id="dropzone1"
   labels={
     Object {
-      "dragText": "Drag and drop or ",
-      "dropFilesText": "Drop files here",
-      "dropzoneLabel": "My Label",
+      "acceptedFiles": "Accepted files:",
+      "drag": "Drag and drop or",
+      "dropFiles": "Drop files here",
+      "dropzone": "Label",
       "fileSizeError": "The file exceeds the maximum upload size",
       "fileTypeError": "File type not allowed for upload",
       "progressConjunction": "of",
       "removeFileButtonLabel": "Remove File",
-      "selectFilesText": "Select files",
-      "sizeWarningLabel": "Max. file size:",
+      "selectFiles": "Select files",
+      "sizeWarning": "Max. file size:",
     }
   }
   maxFileSize={1}
@@ -373,15 +379,16 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
     id="dropzone1"
     labels={
       Object {
-        "dragText": "Drag and drop or ",
-        "dropFilesText": "Drop files here",
-        "dropzoneLabel": "My Label",
+        "acceptedFiles": "Accepted files:",
+        "drag": "Drag and drop or",
+        "dropFiles": "Drop files here",
+        "dropzone": "Label",
         "fileSizeError": "The file exceeds the maximum upload size",
         "fileTypeError": "File type not allowed for upload",
         "progressConjunction": "of",
         "removeFileButtonLabel": "Remove File",
-        "selectFilesText": "Select files",
-        "sizeWarningLabel": "Max. file size:",
+        "selectFiles": "Select files",
+        "sizeWarning": "Max. file size:",
       }
     }
     maxFileSize={1}
@@ -440,7 +447,9 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             className="HvTypography-root HvTypography-labelText"
             htmlFor="dropzone1-input-file"
             id="dropzone1-input-file-label"
-          />
+          >
+            Label
+          </label>
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <WithStyles(ForwardRef)
@@ -479,7 +488,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
           <p
             className="HvTypography-root HvTypography-infoText"
           >
-            undefined 1.00B
+            Max. file size: 1.00B
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
@@ -587,10 +596,11 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               <p
                 className="HvFileUploaderDropZone-dragText HvTypography-root HvTypography-normalText"
               >
+                Drag and drop or
                 <span
                   className="HvFileUploaderDropZone-selectFilesText"
                 >
-                   undefined
+                   Select files
                 </span>
               </p>
             </ForwardRef>

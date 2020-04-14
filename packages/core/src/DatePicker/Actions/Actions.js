@@ -25,7 +25,7 @@ Actions.propTypes = {
   /**
    * Identifier.
    */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   /**
    * A Jss Object used to override or extend the component styles.
    */
@@ -51,6 +51,7 @@ Actions.propTypes = {
 };
 
 Actions.defaultProps = {
+  id: undefined,
   onCancel() {},
   onApply() {},
   labels: {

@@ -14,16 +14,14 @@ describe("CardView", () => {
       subheader: "Compressor",
       id: "id_1",
       semantic: "sema2",
-      isSelectable: true,
-      checkboxValue: "id_1"
+      isSelectable: true
     },
     {
       headerTitle: "Asset Avatar 2",
       subheader: "Compressor",
       id: "id_2",
       semantic: "sema2",
-      isSelectable: true,
-      checkboxValue: "id_2"
+      isSelectable: true
     }
   ];
 

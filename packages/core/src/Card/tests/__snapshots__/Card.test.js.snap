@@ -3,11 +3,6 @@
 exports[`Card withStyles should be able to render with every property defined 1`] = `
 <WithStyles(HvCard)
   actions="actions"
-  checkBoxProps={
-    Object {
-      "value": "value",
-    }
-  }
   headerTitle="title"
   icon="icon"
   innerCardContent={<div />}
@@ -17,11 +12,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
 >
   <HvCard
     actions="actions"
-    checkBoxProps={
-      Object {
-        "value": "value",
-      }
-    }
     classes={
       Object {
         "cardContainer": "HvCard-cardContainer",
@@ -70,19 +60,9 @@ exports[`Card withStyles should be able to render with every property defined 1`
       />
     </div>
     <WithStyles(ForwardRef(Card))
-      checkBoxProps={
-        Object {
-          "value": "value",
-        }
-      }
       className="HvCard-cardContainer HvCard-selectable"
     >
       <ForwardRef(Card)
-        checkBoxProps={
-          Object {
-            "value": "value",
-          }
-        }
         className="HvCard-cardContainer HvCard-selectable"
         classes={
           Object {
@@ -91,20 +71,10 @@ exports[`Card withStyles should be able to render with every property defined 1`
         }
       >
         <WithStyles(ForwardRef(Paper))
-          checkBoxProps={
-            Object {
-              "value": "value",
-            }
-          }
           className="MuiCard-root HvCard-cardContainer HvCard-selectable"
           elevation={1}
         >
           <ForwardRef(Paper)
-            checkBoxProps={
-              Object {
-                "value": "value",
-              }
-            }
             className="MuiCard-root HvCard-cardContainer HvCard-selectable"
             classes={
               Object {
@@ -141,11 +111,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
             elevation={1}
           >
             <div
-              checkBoxProps={
-                Object {
-                  "value": "value",
-                }
-              }
               className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
             >
               <WithStyles(Focus)

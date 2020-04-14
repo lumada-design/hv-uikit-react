@@ -2,7 +2,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
-import Header from "..";
+import Header from "../Header";
 import Brand from "../Brand";
 
 describe("Header withStyles", () => {
@@ -12,7 +12,7 @@ describe("Header withStyles", () => {
     wrapper = mount(
       <HvProvider>
         <Header>
-          <Brand />
+          <Brand name="test" />
         </Header>
       </HvProvider>
     );

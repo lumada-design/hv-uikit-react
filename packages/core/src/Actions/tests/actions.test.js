@@ -26,7 +26,12 @@ describe("Actions with array", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <Actions actions={actions} maxVisibleActions={2} actionsCallback={actionsCallbackMock} />
+        <Actions
+          id="actions"
+          actions={actions}
+          maxVisibleActions={2}
+          actionsCallback={actionsCallbackMock}
+        />
       </HvProvider>
     );
   });
@@ -84,7 +89,7 @@ describe("ActionsA11Y", () => {
   it("should find no errors", async () => {
     wrapper = mount(
       <HvProvider>
-        <Actions actions={actions} />
+        <Actions id="actions" actions={actions} />
       </HvProvider>
     );
 

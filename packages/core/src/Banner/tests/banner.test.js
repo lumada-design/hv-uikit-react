@@ -16,7 +16,7 @@ expect.extend(toHaveNoViolations);
 describe("Banner ", () => {
   const wrapper = mount(
     <HvProvider>
-      <Banner variant="default" open={false} onClose={() => {}} />
+      <Banner id="banner" variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
 
@@ -41,7 +41,7 @@ describe("Banner ", () => {
   it("should render the BannerContentWrapper component", () => {
     const bannerComponent = mount(
       <HvProvider>
-        <Banner variant="default" label="label" open onClose={() => {}} />
+        <Banner id="banner" variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
     ).find(HvBannerContentWrapper);
     expect(bannerComponent.length).toBe(1);
@@ -50,7 +50,7 @@ describe("Banner ", () => {
   it("should render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <Banner variant="error" label="label" open showIcon onClose={() => {}} />
+        <Banner id="banner" variant="error" label="label" open showIcon onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -59,7 +59,14 @@ describe("Banner ", () => {
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <Banner variant="error" label="label" open showIcon={false} onClose={() => {}} />
+        <Banner
+          id="banner"
+          variant="error"
+          label="label"
+          open
+          showIcon={false}
+          onClose={() => {}}
+        />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(0);
@@ -68,7 +75,14 @@ describe("Banner ", () => {
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <Banner variant="default" label="label" open customIcon={<Fail />} onClose={() => {}} />
+        <Banner
+          id="banner"
+          variant="default"
+          label="label"
+          open
+          customIcon={<Fail />}
+          onClose={() => {}}
+        />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -78,6 +92,7 @@ describe("Banner ", () => {
     const buttonComponent = mount(
       <HvProvider>
         <Banner
+          id="banner"
           label="label"
           variant="default"
           open
@@ -94,6 +109,7 @@ describe("Banner ", () => {
     const buttonComponent = mount(
       <HvProvider>
         <Banner
+          id="banner1"
           variant="default"
           open
           label="label"
@@ -115,6 +131,7 @@ describe("Banner ", () => {
     const buttonComponent = mount(
       <HvProvider>
         <Banner
+          id="banner"
           variant="default"
           open
           label="label"
@@ -131,6 +148,7 @@ describe("Banner ", () => {
     const buttonComponent = mount(
       <HvProvider>
         <Banner
+          id="Snackbar"
           variant="default"
           open
           label="label"
@@ -226,6 +244,7 @@ describe("BannerA11Y", () => {
     const wrapper = mount(
       <HvProvider>
         <Banner
+          id="banner"
           variant="default"
           open
           actions={[

@@ -1,8 +1,8 @@
 import React from "react";
 import { mount } from "enzyme";
+import { act } from "react-dom/test-utils";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import LoadingWithDelay from "../LoadingWithDelay";
-import Loading from "../index";
 
 jest.useFakeTimers();
 
@@ -13,8 +13,9 @@ describe("LoadingWithDelay", () => {
         <LoadingWithDelay delay={1000} />
       </HvProvider>
     );
-    jest.runAllTimers();
-    wrapper.update();
-    expect(wrapper.find(Loading).length).toEqual(1);
+    act(() => {
+      jest.runAllTimers();
+    });
+    expect(wrapper.find(LoadingWithDelay).length).toEqual(1);
   });
 });

@@ -71,7 +71,7 @@ class HvNotificationPanel extends Component {
             icon={icon}
             showCount
             count={notifications.length}
-            classes={{ badgeBorder: classes.badgeBorder }}
+            classes={{ root: classes.badgeBorder }}
           />
         </div>
         <Panel {...panelProps}>{n}</Panel>

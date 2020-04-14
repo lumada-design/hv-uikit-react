@@ -40,7 +40,12 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
           />
           {action && (
             <div id={setId(id, "action")} className={classes.action}>
-              <Actions category="semantic" actions={innerAction} actionsCallback={actionCallback} />
+              <Actions
+                id={id}
+                category="semantic"
+                actions={innerAction}
+                actionsCallback={actionCallback}
+              />
             </div>
           )}
         </div>
