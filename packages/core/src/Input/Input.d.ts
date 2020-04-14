@@ -144,6 +144,7 @@ export type HvInputClassKey =
   | "text"
   | "textInfo"
   | "textWarning"
+  | "showText"
   | "icon"
   | "iconClear";
 

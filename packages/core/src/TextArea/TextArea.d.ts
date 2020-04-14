@@ -1,7 +1,26 @@
 import { StandardProps } from "@material-ui/core";
-import { HvInputProps } from "../Input";
+import { HvInputLabelsProp, HvInputProps } from "../Input";
 
-export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaClassKey> {
+export interface HvTextAreaLabelsProp extends HvInputLabelsProp {
+  /**
+   * Text before the current char counter.
+   */
+  startCount: string;
+  /**
+   * Text between the current char counter and max value.
+   */
+  middleCount: string;
+  /**
+   * Text after the max value.
+   */
+  endCount: string;
+}
+
+export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaClassKey, "labels"> {
+  /**
+   * An Object containing the various text associated with the input.
+   */
+  labels?: HvTextAreaLabelsProp;
   /**
    * The number of rows of the text area
    */
@@ -15,6 +34,14 @@ export interface HvTextAreaProps extends StandardProps<HvInputProps, HvTextAreaC
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
   autoScroll?: boolean;
+  /**
+   * If true it isn't possible to pass the `maxCharQuantity`
+   */
+  blockMax?: boolean;
+  /**
+   * Props passed to the char count.
+   */
+  countCharProps?: object;
 }
 
 export type HvTextAreaClassKey =

@@ -24,6 +24,7 @@ exports[`Input should not have the validation section 1`] = `
         "labelDisabled": "HvInput-labelDisabled",
         "multiLine": "HvInput-multiLine",
         "root": "HvInput-root",
+        "showText": "HvInput-showText",
         "suggestionList": "HvInput-suggestionList",
         "suggestionsContainer": "HvInput-suggestionsContainer",
         "textWarning": "HvInput-textWarning",
@@ -51,6 +52,7 @@ exports[`Input should not have the validation section 1`] = `
           "labelDisabled": "HvInput-labelDisabled",
           "multiLine": "HvInput-multiLine",
           "root": "HvInput-root",
+          "showText": "HvInput-showText",
           "suggestionList": "HvInput-suggestionList",
           "suggestionsContainer": "HvInput-suggestionsContainer",
           "textWarning": "HvInput-textWarning",
@@ -92,6 +94,7 @@ exports[`Input should not have the validation section 1`] = `
             "labelDisabled": "HvInput-labelDisabled",
             "multiLine": "HvInput-multiLine",
             "root": "HvInput-root",
+            "showText": "HvInput-showText",
             "suggestionList": "HvInput-suggestionList",
             "suggestionsContainer": "HvInput-suggestionsContainer",
             "textWarning": "HvInput-textWarning",
@@ -356,11 +359,6 @@ exports[`Input should not have the validation section 1`] = `
             aria-live="polite"
             aria-relevant="additions text"
             className="HvInput-textWarning HvInput-infoText"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
             variant="sText"
           >
             <ForwardRef
@@ -397,11 +395,6 @@ exports[`Input should not have the validation section 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
               variant="sText"
             >
               <p
@@ -411,11 +404,6 @@ exports[`Input should not have the validation section 1`] = `
                 aria-live="polite"
                 aria-relevant="additions text"
                 className="HvInput-textWarning HvInput-infoText HvTypography-root HvTypography-sText"
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
               />
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -454,6 +442,7 @@ exports[`Input should pass other props to the child input component 1`] = `
         "labelDisabled": "HvInput-labelDisabled",
         "multiLine": "HvInput-multiLine",
         "root": "HvInput-root",
+        "showText": "HvInput-showText",
         "suggestionList": "HvInput-suggestionList",
         "suggestionsContainer": "HvInput-suggestionsContainer",
         "textWarning": "HvInput-textWarning",
@@ -485,6 +474,7 @@ exports[`Input should pass other props to the child input component 1`] = `
           "labelDisabled": "HvInput-labelDisabled",
           "multiLine": "HvInput-multiLine",
           "root": "HvInput-root",
+          "showText": "HvInput-showText",
           "suggestionList": "HvInput-suggestionList",
           "suggestionsContainer": "HvInput-suggestionsContainer",
           "textWarning": "HvInput-textWarning",
@@ -530,6 +520,7 @@ exports[`Input should pass other props to the child input component 1`] = `
             "labelDisabled": "HvInput-labelDisabled",
             "multiLine": "HvInput-multiLine",
             "root": "HvInput-root",
+            "showText": "HvInput-showText",
             "suggestionList": "HvInput-suggestionList",
             "suggestionsContainer": "HvInput-suggestionsContainer",
             "textWarning": "HvInput-textWarning",
@@ -807,11 +798,6 @@ exports[`Input should pass other props to the child input component 1`] = `
             aria-live="polite"
             aria-relevant="additions text"
             className="HvInput-textWarning HvInput-infoText"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
             variant="sText"
           >
             <ForwardRef
@@ -848,11 +834,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
               variant="sText"
             >
               <p
@@ -862,11 +843,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                 aria-live="polite"
                 aria-relevant="additions text"
                 className="HvInput-textWarning HvInput-infoText HvTypography-root HvTypography-sText"
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
               />
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -899,6 +875,7 @@ exports[`Input should render correctly 1`] = `
         "labelDisabled": "HvInput-labelDisabled",
         "multiLine": "HvInput-multiLine",
         "root": "HvInput-root",
+        "showText": "HvInput-showText",
         "suggestionList": "HvInput-suggestionList",
         "suggestionsContainer": "HvInput-suggestionsContainer",
         "textWarning": "HvInput-textWarning",
@@ -925,6 +902,7 @@ exports[`Input should render correctly 1`] = `
           "labelDisabled": "HvInput-labelDisabled",
           "multiLine": "HvInput-multiLine",
           "root": "HvInput-root",
+          "showText": "HvInput-showText",
           "suggestionList": "HvInput-suggestionList",
           "suggestionsContainer": "HvInput-suggestionsContainer",
           "textWarning": "HvInput-textWarning",
@@ -965,6 +943,7 @@ exports[`Input should render correctly 1`] = `
             "labelDisabled": "HvInput-labelDisabled",
             "multiLine": "HvInput-multiLine",
             "root": "HvInput-root",
+            "showText": "HvInput-showText",
             "suggestionList": "HvInput-suggestionList",
             "suggestionsContainer": "HvInput-suggestionsContainer",
             "textWarning": "HvInput-textWarning",
@@ -1229,11 +1208,6 @@ exports[`Input should render correctly 1`] = `
             aria-live="polite"
             aria-relevant="additions text"
             className="HvInput-textWarning HvInput-infoText"
-            style={
-              Object {
-                "display": "none",
-              }
-            }
             variant="sText"
           >
             <ForwardRef
@@ -1270,11 +1244,6 @@ exports[`Input should render correctly 1`] = `
                   "xxsTitle": "HvTypography-xxsTitle",
                 }
               }
-              style={
-                Object {
-                  "display": "none",
-                }
-              }
               variant="sText"
             >
               <p
@@ -1284,11 +1253,6 @@ exports[`Input should render correctly 1`] = `
                 aria-live="polite"
                 aria-relevant="additions text"
                 className="HvInput-textWarning HvInput-infoText HvTypography-root HvTypography-sText"
-                style={
-                  Object {
-                    "display": "none",
-                  }
-                }
               />
             </ForwardRef>
           </WithStyles(ForwardRef)>

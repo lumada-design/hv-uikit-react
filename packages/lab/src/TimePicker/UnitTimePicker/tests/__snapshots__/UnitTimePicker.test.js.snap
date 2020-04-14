@@ -103,6 +103,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
               "labelDisabled": "HvInput-labelDisabled",
               "multiLine": "HvInput-multiLine",
               "root": "HvInput-root HvTimePickerUnitTimePicker-inputContainer",
+              "showText": "HvInput-showText",
               "suggestionList": "HvInput-suggestionList",
               "suggestionsContainer": "HvInput-suggestionsContainer",
               "textWarning": "HvInput-textWarning",
@@ -141,6 +142,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                 "labelDisabled": "HvInput-labelDisabled",
                 "multiLine": "HvInput-multiLine",
                 "root": "HvInput-root HvTimePickerUnitTimePicker-inputContainer",
+                "showText": "HvInput-showText",
                 "suggestionList": "HvInput-suggestionList",
                 "suggestionsContainer": "HvInput-suggestionsContainer",
                 "textWarning": "HvInput-textWarning",
@@ -188,6 +190,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   "labelDisabled": "HvInput-labelDisabled",
                   "multiLine": "HvInput-multiLine",
                   "root": "HvInput-root HvTimePickerUnitTimePicker-inputContainer",
+                  "showText": "HvInput-showText",
                   "suggestionList": "HvInput-suggestionList",
                   "suggestionsContainer": "HvInput-suggestionsContainer",
                   "textWarning": "HvInput-textWarning",
@@ -458,11 +461,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                   aria-live="polite"
                   aria-relevant="additions text"
                   className="HvInput-textWarning HvInput-infoText"
-                  style={
-                    Object {
-                      "display": "none",
-                    }
-                  }
                   variant="sText"
                 >
                   <ForwardRef
@@ -499,11 +497,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    style={
-                      Object {
-                        "display": "none",
-                      }
-                    }
                     variant="sText"
                   >
                     <p
@@ -513,11 +506,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       aria-live="polite"
                       aria-relevant="additions text"
                       className="HvInput-textWarning HvInput-infoText HvTypography-root HvTypography-sText"
-                      style={
-                        Object {
-                          "display": "none",
-                        }
-                      }
                     />
                   </ForwardRef>
                 </WithStyles(ForwardRef)>

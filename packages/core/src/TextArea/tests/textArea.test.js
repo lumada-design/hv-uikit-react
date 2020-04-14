@@ -50,7 +50,7 @@ describe("TextArea Component", () => {
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
-    instance.onChangeHandler(value);
+    instance.onChangeHandler(null, value);
     expect(onChangeMock).toHaveBeenCalled();
     expect(instance.state.currentValueLength).toBe(5);
   });
@@ -60,13 +60,55 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea rows={4} initialValue="test" onChange={onChangeMock} maxCharQuantity={5} />
+        <TextArea
+          rows={4}
+          initialValue="test"
+          onChange={onChangeMock}
+          maxCharQuantity={5}
+          blockMax
+        />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
-    instance.onChangeHandler(value);
+    instance.onChangeHandler(null, value);
     expect(onChangeMock).toHaveBeenCalled();
     expect(instance.state.currentValueLength).toBe(5);
+  });
+
+  it("shouldn't limit the current value length on change", () => {
+    const value = "value value value";
+    const onChangeMock = jest.fn(() => value);
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextArea initialValue="test" onChange={onChangeMock} maxCharQuantity={5} />
+      </HvProvider>
+    );
+    const instance = wrapperMount.find("HvTextArea").instance();
+    instance.onChangeHandler(null, value);
+    expect(onChangeMock).toHaveBeenCalled();
+    expect(instance.state.currentValueLength).toBe(17);
+  });
+
+  it("should render the count label correctly", () => {
+    const wrapperMount = mount(
+      <HvProvider>
+        <TextArea
+          rows={4}
+          initialValue="test"
+          labels={{
+            startCount: "Inserted",
+            middleCount: "of",
+            endCount: "available"
+          }}
+          maxCharQuantity={10}
+        />
+      </HvProvider>
+    );
+    const label = wrapperMount.find("HvTextArea").find("p");
+    expect(label.at(1).text()).toBe("Inserted ");
+    expect(label.at(2).text()).toBe("4");
+    expect(label.at(3).text()).toBe("of");
+    expect(label.at(4).text()).toBe("10 available");
   });
 
   //--------------------------
@@ -82,6 +124,7 @@ describe("TextArea Component", () => {
               initialValue={props.value}
               onChange={props.onChangeMock}
               maxCharQuantity={props.maxCharQuantity}
+              blockMax={props.blockMax}
             />
           </HvProvider>
         ),
@@ -108,10 +151,19 @@ describe("TextArea Component", () => {
   it("should limit the current value length on change of value", () => {
     const defaultProps = {
       initialValue: "four",
-      maxCharQuantity: 5
+      maxCharQuantity: 5,
+      blockMax: true
     };
     const instance = getInputInstance(defaultProps, "onethousand");
     expect(instance.state.currentValueLength).toBe(5);
+  });
+
+  it("shouldn't limit the current value length on change of value", () => {
+    const defaultProps = {
+      initialValue: "four"
+    };
+    const instance = getInputInstance(defaultProps, "onethousand");
+    expect(instance.state.currentValueLength).toBe(11);
   });
 
   it("should scroll down on update when autoScroll", () => {
@@ -161,7 +213,10 @@ describe("TextAreaA11Y", () => {
     const onChangeMock = jest.fn();
     const labels = {
       inputLabel: "Label",
-      placeholder: "Enter value"
+      placeholder: "Enter value",
+      startCount: "Inserted",
+      middleCount: "of",
+      endCount: "available"
     };
 
     const wrapper = mount(
