@@ -4,7 +4,6 @@ exports[`FormComposer withStyles should render correctly 1`] = `
 <HvProvider>
   <StylesProvider
     generateClassName={[Function]}
-    injectFirst={true}
   >
     <ThemeProvider
       theme={

@@ -4,7 +4,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 <HvProvider>
   <StylesProvider
     generateClassName={[Function]}
-    injectFirst={true}
   >
     <ThemeProvider
       theme={
@@ -1484,7 +1483,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
 exports[`User withStyles should render correctly 1`] = `
 <StylesProvider
   generateClassName={[Function]}
-  injectFirst={true}
 >
   <ThemeProvider
     theme={
@@ -2294,7 +2292,6 @@ exports[`User withStyles should render correctly with props 1`] = `
 <HvProvider>
   <StylesProvider
     generateClassName={[Function]}
-    injectFirst={true}
   >
     <ThemeProvider
       theme={
