@@ -4,7 +4,7 @@ on:
     - cron: '0 5 * * *' # daily at 05:00
   pull_request:
     branches:
-      - master
+      - next
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/

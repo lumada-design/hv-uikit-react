@@ -8,6 +8,6 @@ PA11Y_CONSOLE = ["node", pa11y_path,\
                        "--runner", "htmlcs",\
                        "--runner", "axe",\
                        "--standard", "WCAG2AA",\
-                       "--root-element", "div[class|='Component-content']"]
-
+                        "--root-element", "div[id=root]>:nth-child(2)"]
+                        
 PA11Y_JSON = PA11Y_CONSOLE + ["--reporter","json"]
