@@ -203,24 +203,11 @@ class Table extends React.Component {
 
   getCheckboxProps = () => {
     const { classes } = this.props;
-    const { selection, internalId } = this.state;
+    const { internalId } = this.state;
 
     return {
       selectWidth: 32,
       SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
-      SelectInputComponent: props => {
-        const { checkBoxProps } = props.row;
-        return (
-          <HvCheckBox
-            id={`${internalId}-select-${props.id}`}
-            aria-label="blah"
-            checked={isSelected(props.id, selection)}
-            onChange={event => this.toggleSelection(event, props.id)}
-            onClick={event => event.stopPropagation()}
-            {...checkBoxProps}
-          />
-        );
-      },
       toggleSelection: (id, shiftkey, row) => {
         this.toggleSelection(null, row.id);
       },
