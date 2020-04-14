@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/";
-import { Caution, Fail, Success, Unlock } from "@hv/uikit-react-icons/dist";
+import { Unlock } from "@hv/uikit-react-icons/dist";
 import {
   HvButton,
   HvInput,
@@ -43,7 +43,7 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
         )}
         <HvModalActions>
           <HvButton id="switchAnyway" category="ghost">
-            Switch anyway
+            Apply
           </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
             Cancel
@@ -55,70 +55,52 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
 };
 
 export const Main = () => {
-  const SimpleModalSample = ({ buttonMessage, title, content, classes }) => {
-    const [open, setOpen] = useState(false);
-
-    return (
-      <div>
-        <HvButton id={buttonMessage} style={{ width: "120px" }} onClick={() => setOpen(true)}>
-          {buttonMessage}
-        </HvButton>
-        <HvModal id="test" classes={classes} open={open} onClose={() => setOpen(false)}>
-          {title}
-          {content || (
-            <HvModalContent>
-              Switching to model view will clear all the fields in your visualization. You will need
-              to re-select your fields.
-            </HvModalContent>
-          )}
-          <HvModalActions>
-            <HvButton id="switchAnyway" category="ghost">
-              Switch anyway
-            </HvButton>
-            <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
-              Cancel
-            </HvButton>
-          </HvModalActions>
-        </HvModal>
-      </div>
-    );
-  };
+  const [open, setOpen] = useState(false);
 
   return (
-    <SimpleModalSample
-      buttonMessage="Open Modal"
-      title={<HvModalTitle>Are you sure?</HvModalTitle>}
-    />
+    <div>
+      <HvButton id="openModal" style={{ width: "120px" }} onClick={() => setOpen(true)}>
+        Open Modal
+      </HvButton>
+      <HvModal id="test" open={open} onClose={() => setOpen(false)}>
+        <HvModalTitle variant="warning">Switch model view?</HvModalTitle>
+        <HvModalContent>
+          Switching to model view will clear all the fields in your visualization. You will need to
+          re-select your fields.
+        </HvModalContent>
+        <HvModalActions>
+          <HvButton id="switchAnyway" category="ghost">
+            Apply
+          </HvButton>
+          <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvModalActions>
+      </HvModal>
+    </div>
   );
 };
 
 export const TextAndSemantic = () => (
   <>
     <SimpleModal
-      buttonMessage="Success"
-      title={
-        <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
-          Are you sure?
-        </HvModalTitle>
-      }
+      buttonMessage="No Icon"
+      title={<HvModalTitle showIcon={false}>Are you sure?</HvModalTitle>}
     />
     <p />
     <SimpleModal
       buttonMessage="Warning"
-      title={
-        <HvModalTitle customIcon={<Caution semantic="sema3" iconSize="M" />}>
-          Are you sure?
-        </HvModalTitle>
-      }
+      title={<HvModalTitle variant="warning">Are you sure?</HvModalTitle>}
+    />
+    <p />
+    <SimpleModal
+      buttonMessage="Info"
+      title={<HvModalTitle variant="info">Are you sure?</HvModalTitle>}
     />
     <p />
     <SimpleModal
       buttonMessage="Error"
-      title={
-        <HvModalTitle customIcon={<Fail semantic="sema4" iconSize="M" />}>
-          Are you sure?
-        </HvModalTitle>
-      }
+      title={<HvModalTitle variant="error">Are you sure?</HvModalTitle>}
     />
   </>
 );
@@ -150,7 +132,7 @@ CustomIcon.story = {
 
 export const CustomContent = () => {
   const inputStyles = {
-    container: {
+    root: {
       width: 555
     },
     label: {
@@ -164,17 +146,15 @@ export const CustomContent = () => {
   };
 
   const textAreaStyles = {
-    container: {
+    root: {
+      paddingTop: 30,
       width: 555
-    },
-    textAreaContainer: {
-      paddingTop: 30
     }
   };
 
   const contentStyles = {
     paper: {
-      width: 555
+      width: "100%"
     }
   };
 
@@ -187,7 +167,7 @@ export const CustomContent = () => {
       <ModalWithStyles
         buttonMessage="Table"
         title={
-          <HvModalTitle customIcon={<Success semantic="sema1" iconSize="M" />}>
+          <HvModalTitle>
             <div>
               <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
               <HvTypography variant="normalText">HDI</HvTypography>
@@ -240,15 +220,13 @@ export const CustomContent = () => {
               showInfo={false}
             />
             <TextAreaWithStyles
-              disabled
               id="outlined-with-placeholder"
               labels={{
-                placeholder: "Enter work Order Description",
+                placeholder: "Enter text",
                 inputLabel: "Description"
               }}
               multiline
               rows={3}
-              value="This is an example"
             />
           </HvModalContent>
         }
