@@ -390,7 +390,7 @@ export const Configuration = () => {
         innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
         semantic={sema}
         checkboxProps={{ value: data.id }}
-        checked={data.checkboxSelected}
+        checked={data.checked}
         isSelectable={viewConfiguration.isSelectable}
         onChange={viewConfiguration.onSelection}
         actions={viewConfiguration.actions}
@@ -406,7 +406,7 @@ export const Configuration = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checkboxSelected}>
+      <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon className={classes.icon} semantic={status.sema} />
         </HvListViewCell>
@@ -687,6 +687,7 @@ export const ThreeViews = () => {
           value: data.id
         }}
         onChange={onSelection}
+        checked={data.checked}
         {...others}
       />
     );
@@ -698,7 +699,7 @@ export const ThreeViews = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }}>
+        <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
@@ -980,7 +981,7 @@ export const ServerSidePagination = () => {
         innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
         semantic={sema}
         checkboxProps={{ value: data.id }}
-        checked={data.checkboxSelected}
+        checked={data.checked}
         isSelectable={viewConfiguration.isSelectable}
         onChange={viewConfiguration.onSelection}
         actions={viewConfiguration.actions}
@@ -996,7 +997,7 @@ export const ServerSidePagination = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checkboxSelected}>
+      <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon className={classes.icon} semantic={status.sema} />
         </HvListViewCell>

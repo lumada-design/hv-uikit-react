@@ -122,7 +122,7 @@ const cardRenderer = (data, viewConfiguration) => {
       checkboxProps={{
         value: data.id
       }}
-      checked={data.checkboxSelected}
+      checked={data.checked}
       isSelectable={viewConfiguration.isSelectable}
       onChange={viewConfiguration.onSelection}
       actions={viewConfiguration.actions}
@@ -138,7 +138,7 @@ const Row = ({ classes, status, value, id }) => {
   const { Icon } = status;
 
   return (
-    <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checkboxSelected}>
+    <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
       <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
         <Icon className={classes.icon} semantic={status.sema} />
       </HvListViewCell>

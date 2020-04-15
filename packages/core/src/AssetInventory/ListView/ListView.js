@@ -11,7 +11,7 @@ import styles from "./styles";
 const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata }) =>
   values.map((value, index) => {
     // eslint-disable-next-line no-param-reassign
-    value.checkboxSelected = selectedValues && selectedValues.includes(value.id);
+    value.checked = selectedValues && selectedValues.includes(value.id);
 
     return renderer(value, index, viewConfiguration, metadata);
   });
