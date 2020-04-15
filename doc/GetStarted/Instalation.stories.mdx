@@ -1,0 +1,57 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Get Started/Installation" />
+
+## HV UIkit - React
+
+#### npm registry
+
+Our packages are being published to an Hitachi Vantara npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
+
+```
+@hv:registry=https://nexus.pentaho.org/repository/group-npm/
+```
+
+Please check that your npmrc has this by running `npm config ls -l`; otherwise you can add it to the config by running `npm config edit`, or the installation step below will not work.
+
+### Installation
+
+- core - `npm install @hv/uikit-react-core`
+- lab - `npm install @hv/uikit-react-lab`
+- icons - `npm install @hv/uikit-react-icons`
+
+To always have the latest development version of the UIkit, even before a release, you may want to use npm with the `latest` tag.
+
+#### global link
+
+If you need to work on a component and watch the changes reflected on your application at the same time, you can [link](https://docs.npmjs.com/cli/link.html) your packages globally:
+
+```sh
+npm run link
+```
+
+It will create a symlink in the global folder {prefix}/lib/node_modules/{package} for each package.
+
+### Getting Started
+
+Install root dependencies.
+
+```sh
+npm i
+```
+
+#### bootstrap
+
+Bootstrap the packages in the current repo. Installs all their dependencies and links any cross-dependencies.
+
+```sh
+npm run bootstrap
+```
+
+#### storybook
+
+It will startup the UI Development Environment [Storybook](https://storybook.js.org/). There you can see a list of the available components.
+
+```sh
+npm run doc
+```

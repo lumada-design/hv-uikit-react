@@ -699,7 +699,7 @@ export const ThreeViews = () => {
     const { Icon } = status;
 
     return (
-        <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
+      <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
