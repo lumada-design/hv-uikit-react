@@ -19,7 +19,8 @@ change background color when mouse hover on button secondary category          s
 change background color when mouse hover on button ghost category              ghost
     
 change background color when mouse hover on button ghost Secondary category    ghostSecondary
-    
+    [Tags]    bug-ie-webdriver
+
 change background color when mouse hover on button semantic category           semantic
     [Tags]    bug-firefox-webdriver    #suspects firefox is putting mouse over on element when is used keyword mouse over css:body
     
