@@ -13,37 +13,15 @@
 
 </div>
 
-<div style="background: #cccccc">
-
-## Next Major Release (Early Second Quarter 2020)
-
-We are actively planning and starting to work on the next major release. This development will happen in the branch called `next` and we will provide builds as soon as possible.
-For more information about the schedule please check the Release Schedule section under Discover More.
-
-#### These are features planned for the next release:
-
-- upgrade our main dependency Material UI to its latest version 4.x.
-- api cleanup, removing deprecated properties of our components.
-- remove deprecated components (core and lab).
-- better support for Typescript.
-
-If you want to keep up to date with the progress on these topics, please feel free to check the [2.0.0 Milestone](https://github.com/pentaho/hv-uikit-react/milestone/13).
-
-</div>
-
 #### npm registry
 
-Our packages are being published to a public npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
+Our packages are being published to an Hitachi Vantara npm registry. If you want to use this project please make sure you have _.npmrc_ config file with one of the following lines:
 
 ```
-If you want to use it for UI-KIT dependencies
 @hv:registry=https://nexus.pentaho.org/repository/group-npm/
-
-Or if you want to use it for all dependencies
-registry=https://nexus.pentaho.org/repository/group-npm/
 ```
 
-Please check that your npmrc has this by running `npm config ls -l`, otherwise you can add it to the config by running `npm config edit`, otherwise the installation step below will not work.
+Please check that your npmrc has this by running `npm config ls -l`; otherwise you can add it to the config by running `npm config edit`, or the installation step below will not work.
 
 ### Installation
 

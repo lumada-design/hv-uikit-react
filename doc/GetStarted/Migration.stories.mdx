@@ -7,6 +7,7 @@ import { Meta } from "@storybook/addon-docs/blocks";
 **Table of Contents**
 
 - [Package Changes](#package-changes)
+- [Material-UI v4](#material-ui-v4)
 - [Provider Changes](#provider-changes)
 - [Layout Changes](#layout-changes)
 - [Icons Changes](#icons-changes)
@@ -39,8 +40,13 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 - Packages `@hv/uikit-common-icons` and `@hv/uikit-common-utils` are now deprecated, are will no longer receive updates. You can still use the other releases if you need them. As for their contents:
 
-  - Package `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
-  - Package `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
+  - `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
+  - `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
+
+## Material-UI v4
+
+Material UI was upgraded from v3 to v4, and is now a peer-depencency of our packages.
+You have to install it in your project, or upgrade if you're already using it and follow their [migration guide](https://material-ui.com/guides/migration-v3/).
 
 ## Provider Changes
 
@@ -55,10 +61,11 @@ The greater change is our layout component (the Grid) is the definition of spaci
 - Removed all deprecated icons. Generic Icons were moved up a directory (to `dist/`).
 - Added the icons index to the module for allowing the ES6 import usage (destructuring).
 
-To import an icon you should use:
+To import an icon you should use (using `Checkbox` as an example):
 
-```js
-import { <IconName> } from "@hv/uikit-react-icons/dist";
+```diff
+-import { Checkbox } from "@hv/uikit-react-icons/dist/Generic";
++import { Checkbox } from "@hv/uikit-react-icons/dist";
 ```
 
 - Icon box dimensions are now according to Design System specifications by default.
@@ -66,6 +73,18 @@ import { <IconName> } from "@hv/uikit-react-icons/dist";
 ## Component Changes
 
 With our first major release several components where reviewed in order to remove properties already marked as deprecated. The following list lists all breaking changes that you must fix.
+
+- Component's event function props now always pass `event` as first parameter (`onClick`, `onChange`, etc.)
+
+```diff
+-<HvList onClick={(data, event)} />
++<HvList onClick={(event, data)} />
+```
+
+```diff
+-<HvMultiButton onChange={(data)} />
++<HvMultiButton onChange={(event, data)} />
+```
 
 ### Asset Inventory
 
@@ -236,27 +255,3 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
 
 - Renamed `multitooltip` class to `tooltipMulti`.
 - `tooltipAnchor` removes, now uses composition.
-
-## _Other Changes_
-
-Banner
-
-- Added `bannerContentProps` to pass props to the content wrapper.
-
-Pagination
-
-- Added `showPageProps` to pass props directly to show page component
-- Added `navigationProps` to pass props directly to the pagination component.
-
-Snackbar
-
-- Added `snackbarContentProps` to pass props to the content wrapper.
-
-Table
-
-- added `allCheckBoxProps`.
-- added `dropdownMenuProps`
-
-Typography
-
-- added `root` class
