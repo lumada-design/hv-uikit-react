@@ -74,6 +74,7 @@
     "babel-plugin-typescript-to-proptypes": "^1.2.1",
     "cash-cp": "^0.2.0",
     "cross-env": "^7.0.0",
+    "del-cli": "^1.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
