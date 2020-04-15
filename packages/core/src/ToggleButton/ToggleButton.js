@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
+import withTooltip from "../withTooltip";
 import withLabels from "../withLabels";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import styles from "./styles";
@@ -64,6 +65,9 @@ const ToggleButton = ({
     if (onClick) onClick(e, isSelected);
   };
 
+  const IconDisplay = () => <Icon className={clsx(classes.icon, { [classSvg]: animated })} />;
+  const IconTooltipWrapper = title ? withTooltip(IconDisplay, title) : IconDisplay;
+
   return (
     <div
       id={id}
@@ -75,10 +79,9 @@ const ToggleButton = ({
       tabIndex={0}
       onClick={toggle}
       onKeyDown={toggle}
-      title={title}
       {...others}
     >
-      <Icon className={clsx(classes.icon, { [classSvg]: animated })} />
+      <IconTooltipWrapper />
     </div>
   );
 };

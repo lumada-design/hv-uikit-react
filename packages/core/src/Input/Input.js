@@ -15,6 +15,7 @@ import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
 import styles from "./styles";
+import withTooltips from "../withTooltip";
 
 const DEFAULT_LABELS = {
   inputLabel: "",
@@ -327,6 +328,13 @@ class HvInput extends React.Component {
       customFixedIcon
     );
 
+    const IconDisplay = () => (
+      <div aria-hidden="true" className={classes.infoIconContainer}>
+        <InfoS />
+      </div>
+    );
+    const InfoIcon = withTooltips(IconDisplay, labels.infoText);
+
     return (
       <div
         ref={node => {
@@ -352,11 +360,7 @@ class HvInput extends React.Component {
             </HvTypography>
           )}
 
-          {showInfo && infoIcon && labels.infoText && (
-            <div aria-hidden="true" title={labels.infoText} className={classes.infoIconContainer}>
-              <InfoS />
-            </div>
-          )}
+          {showInfo && infoIcon && labels.infoText && <InfoIcon />}
         </div>
 
         <Input
