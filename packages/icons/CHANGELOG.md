@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.11.0...@hv/uikit-react-icons@2.0.0) (2020-04-15)
+
+
+### Features
+
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **icons:** export icons as es module. [#1200](https://github.com/pentaho/hv-uikit-react/issues/1200) ([3819a27](https://github.com/pentaho/hv-uikit-react/commit/3819a27a64eddff7d382054cf339476c345f73f7))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+
+
+
+
+
 # [2.0.0-next.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.0.0-next.1...@hv/uikit-react-icons@2.0.0-next.2) (2020-03-18)
 # [1.11.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@1.10.2...@hv/uikit-react-icons@1.11.0) (2020-04-09)
 

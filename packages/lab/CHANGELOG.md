@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.21.0...@hv/uikit-react-lab@2.0.0) (2020-04-15)
+
+
+### Bug Fixes
+
+* **docs:** problems detected on next. [#1383](https://github.com/pentaho/hv-uikit-react/issues/1383) ([65496d2](https://github.com/pentaho/hv-uikit-react/commit/65496d2377803f6b08c00586bcc164aa701c5862))
+* **material:** fix test with material not found ([4c004ac](https://github.com/pentaho/hv-uikit-react/commit/4c004ac20ece5936a22269a07d64340322a6e19a))
+* **material4:** tests. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([40f4bed](https://github.com/pentaho/hv-uikit-react/commit/40f4bedc090a7a1392d1eb2ac9441fd5adffe3d9))
+
+
+### Features
+
+* **api:** uniformize components api. [#821](https://github.com/pentaho/hv-uikit-react/issues/821) ([f253499](https://github.com/pentaho/hv-uikit-react/commit/f2534993d1b21435133c240eddb949d4f27c3b28))
+* **deprecations:** remove deprecated lab components. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([410cf5b](https://github.com/pentaho/hv-uikit-react/commit/410cf5be65e72d201d08235e5f93ee2f46af68e0))
+* **deprecations:** remove searchbox from lab. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([875fb0f](https://github.com/pentaho/hv-uikit-react/commit/875fb0f3767a38e57dc1af5b182ae5598a4beb1f))
+* **icon:** remove old icons. [#1193](https://github.com/pentaho/hv-uikit-react/issues/1193) ([a288ce3](https://github.com/pentaho/hv-uikit-react/commit/a288ce3467e4d9c0ba2d9dd266d971fe7a1e3038))
+* **input:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([178d84e](https://github.com/pentaho/hv-uikit-react/commit/178d84e0a1fe70f48e39257ed43166f3662c2cb7))
+* **list:** remove deprecated props. [#820](https://github.com/pentaho/hv-uikit-react/issues/820) ([daca806](https://github.com/pentaho/hv-uikit-react/commit/daca806da382c9bc81139207d3ba4fd30d4d7ae1))
+* **material4:** migration and spacing. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([c6ce4c5](https://github.com/pentaho/hv-uikit-react/commit/c6ce4c5ae8541b28adbf8f1b83f1673bae1156de))
+* **styles:** generate stable class names [#1257](https://github.com/pentaho/hv-uikit-react/issues/1257) ([a52b22c](https://github.com/pentaho/hv-uikit-react/commit/a52b22c878bf6aabbc30113cc0a1605ebcebb6f6))
+* **theme:** rename components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([1995ab0](https://github.com/pentaho/hv-uikit-react/commit/1995ab01c7dc7c78cb55a6726acae4f0d7effd56))
+* **typescript:** move proptypes to typescript. [#999](https://github.com/pentaho/hv-uikit-react/issues/999) ([628b71f](https://github.com/pentaho/hv-uikit-react/commit/628b71ff55444c927c17b22b5d1402b4f2374650))
+* **typescript:** ts and withstyles for lab components. [#533](https://github.com/pentaho/hv-uikit-react/issues/533) ([519d8de](https://github.com/pentaho/hv-uikit-react/commit/519d8de5b86f49142041afbcf1592b3dea2549b5))
+
+
+
+
+
 # [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.20.0...@hv/uikit-react-lab@1.21.0) (2020-04-11)
 
 

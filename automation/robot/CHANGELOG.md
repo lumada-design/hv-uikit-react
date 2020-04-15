@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-robot@1.2.0...@hv/uikit-react-automation-robot@2.0.0) (2020-04-15)
+
+
+### Features
+
+* **api:** uniformize components api. [#821](https://github.com/pentaho/hv-uikit-react/issues/821) ([f253499](https://github.com/pentaho/hv-uikit-react/commit/f2534993d1b21435133c240eddb949d4f27c3b28))
+* **material4:** fix bugs across components. [#819](https://github.com/pentaho/hv-uikit-react/issues/819) ([3e5b605](https://github.com/pentaho/hv-uikit-react/commit/3e5b605b31d413eb4f2d356c6921932debf2ce1c))
+
+
+
+
+
 # [1.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-robot@1.1.0...@hv/uikit-react-automation-robot@1.2.0) (2020-04-09)
 
 
