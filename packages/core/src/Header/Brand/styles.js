@@ -2,6 +2,8 @@ const styles = theme => ({
   root: {
     display: "flex",
     alignItems: "center",
+    position: "absolute",
+    top: 10,
     [theme.breakpoints.down("sm")]: {
       position: "absolute",
       left: "50%",

@@ -30,12 +30,21 @@ const styles = theme => {
     },
     menu: {
       position: "absolute",
-      height: 40,
+      height: 2 * theme.hv.spacing.sm,
       zIndex: -1,
       backgroundColor: theme.hv.palette.atmosphere.atmo3
     },
     hidden: {
-      ...hide
+      ...hide,
+      "& li": {
+        marginTop: -2
+      },
+      "& li > div": {
+        height: 2 * theme.hv.spacing.sm,
+        "& p": {
+          marginTop: 3
+        }
+      }
     },
     active: {
       ...show
