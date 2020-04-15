@@ -4,7 +4,7 @@ pipeline {
     agent { label 'non-master' }
     tools {nodejs "node-js-12.14-auto"}
     triggers {
-        cron('@midnight')
+        cron('0 18 * * *')
     }
     options { 
         timestamps () 
@@ -31,7 +31,7 @@ pipeline {
             }
 
             steps {
-                build job: "ui-kit/react/master", parameters: [
+                build job: "ui-kit/react/v1.x", parameters: [
                     booleanParam(name: 'skipLint', value: false),
                     booleanParam(name: 'skipJavascriptTest', value: false),
                     booleanParam(name: 'skipAutomationTest', value: false),
