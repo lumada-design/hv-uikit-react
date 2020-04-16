@@ -40,7 +40,7 @@ describe("User withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.find(NavigationAnchors)).toMatchSnapshot();
   });
 
   it("should render correctly with props", () => {
@@ -49,7 +49,7 @@ describe("User withStyles", () => {
         <NavigationAnchors options={options} />
       </HvProvider>
     );
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.find(NavigationAnchors)).toMatchSnapshot();
   });
 
   it("should handle click action correctly", () => {
@@ -62,7 +62,7 @@ describe("User withStyles", () => {
         <NavigationAnchors options={options} onClick={onClickCallback} />
       </HvProvider>
     );
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.find(NavigationAnchors)).toMatchSnapshot();
 
     listItems = wrapper.find(ListItem);
     listItems.first().simulate("click");

@@ -3,11 +3,9 @@
 import React from "react";
 import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
+import FormComposer from "..";
 
-import FormComposerWithStyles from "../index";
-import FormComposer from "../FormComposer";
-
-describe("FormComposer withStyles", () => {
+describe("FormComposer", () => {
   let wrapper;
 
   const groups = [
@@ -20,7 +18,7 @@ describe("FormComposer withStyles", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <FormComposerWithStyles groups={groups} />
+        <FormComposer groups={groups} />
       </HvProvider>
     );
   });
@@ -30,7 +28,7 @@ describe("FormComposer withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(FormComposer)).toMatchSnapshot();
   });
 
   it("should render the Button component", () => {
