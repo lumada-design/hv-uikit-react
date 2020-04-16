@@ -14,7 +14,37 @@
  * limitations under the License.
  */
 
-const styles = (theme) => ({
+const selected = theme => ({
+  background: theme.hv.palette.accent.acce1,
+  color: theme.hv.palette.atmosphere.atmo1,
+  cursor: "default",
+  "& *": {
+    background: theme.hv.palette.accent.acce1,
+    color: theme.hv.palette.atmosphere.atmo1,
+    cursor: "default"
+  },
+  "& svg *.color0": {
+    fill: theme.hv.palette.atmosphere.atmo1
+  },
+  // hover
+  "&:hover": {
+    background: theme.hv.palette.accent.acce1,
+    color: theme.hv.palette.atmosphere.atmo1,
+    "& *": {
+      background: theme.hv.palette.accent.acce1,
+      color: theme.hv.palette.atmosphere.atmo1
+    }
+  }
+});
+
+const hover = theme => ({
+  background: theme.hv.palette.atmosphere.atmo4,
+  "& *": {
+    background: theme.hv.palette.atmosphere.atmo4
+  }
+});
+
+const styles = theme => ({
   container: {
     display: "flex",
     background: theme.hv.palette.atmosphere.atmo1,
@@ -26,12 +56,7 @@ const styles = (theme) => ({
     marginBottom: "8px",
 
     // hover
-    "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo4,
-      "& *": {
-        background: theme.hv.palette.atmosphere.atmo4
-      },
-    },
+    "&:hover": hover(theme),
 
     // cursor
     cursor: "pointer",
@@ -39,7 +64,7 @@ const styles = (theme) => ({
       cursor: "pointer"
     },
 
-    "& a":{
+    "& a": {
       color: "inherit",
       textDecoration: "inherit",
       overflow: "hidden",
@@ -49,6 +74,7 @@ const styles = (theme) => ({
       marginLeft: "8px"
     }
   },
+  selected: selected(theme),
 
   iconInfo: {
     width: "32px",
@@ -60,7 +86,7 @@ const styles = (theme) => ({
     width: "16px",
     height: "16px",
     margin: "8px"
-  },
+  }
 });
 
 export default styles;

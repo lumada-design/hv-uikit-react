@@ -41,19 +41,30 @@ export default class Action extends Component {
       }
     };
 
+    /**
+     * Checks if the current url starts with the url received in the props.
+     */
+    const isSelected = window.location.href.startsWith(url);
+
     return (
       <HvTypography
         component="div"
-        variant="normalText"
+        variant={isSelected ? "selectedText" : "normalText"}
         role="button"
-        className={classes.container}
+        className={`${classes.container} ${
+          isSelected ? classes.selected : ""
+        }`}
         tabIndex={0}
       >
         {renderApplicationIcon()}
 
-        <a href={url} target={target || "_top"} title={name}>
-          {name}
-        </a>
+        {isSelected ? (
+          name
+        ) : (
+          <a href={url} target={target || "_top"} title={name}>
+            {name}
+          </a>
+        )}
 
         {description && (
           <Info className={classes.iconInfo} title={description} />
@@ -91,14 +102,14 @@ Action.propTypes = {
     /**
      * Defines if the application should be opened in the same tab or in a new one.
      */
-    target: PropTypes.oneOf(["_top", "_blank"]),
+    target: PropTypes.oneOf(["_top", "_blank"])
   }).isRequired,
   /**
    * A Jss object used to override or extend the component styles.
    */
-  classes: PropTypes.instanceOf(Object).isRequired,
+  classes: PropTypes.instanceOf(Object).isRequired
 };
 
 Action.defaultProps = {
-  target: "_top",
+  target: "_top"
 };
