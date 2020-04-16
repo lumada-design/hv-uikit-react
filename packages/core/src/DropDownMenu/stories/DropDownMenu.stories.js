@@ -85,6 +85,14 @@ export const Disabled = () => (
   />
 );
 
+export const DisabledItems = () => (
+  <HvDropDownMenu
+    id="dpmDisabledItems"
+    aria-label="dropdownMenu-DisabledItems"
+    dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
+  />
+);
+
 export const Controlled = () => {
   const ControlledDropdownMenu = () => {
     const [open, setOpen] = useState(false);
@@ -118,3 +126,16 @@ Controlled.story = {
     }
   }
 };
+
+export const KeyboardNavigation = () => (
+  <>
+    <HvButton id="button1">button1</HvButton>
+    <HvDropDownMenu
+      id="dpmKeepOpenedFalse"
+      dataList={[{ label: "Label 1" }, { label: "Label 2", disabled: true }, { label: "Label 3" }]}
+      onClick={(e, item) => console.log(item.label)}
+      keepOpened={false}
+    />
+    <HvButton id="button2">button2</HvButton>
+  </>
+);

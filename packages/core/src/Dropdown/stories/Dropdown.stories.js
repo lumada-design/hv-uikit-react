@@ -1,32 +1,6 @@
 import React from "react";
 import { HvDropdown } from "../..";
 
-const countries = [
-  { label: "Afghanistan", selected: true },
-  { label: "Albania", selected: false },
-  { label: "Algeria", selected: false },
-  { label: "Andorra", selected: false },
-  { label: "Angola", selected: false },
-  { label: "Antigua & Deps", selected: true },
-  { label: "Argentina", selected: false },
-  { label: "Armenia", selected: false },
-  { label: "Australia", selected: true },
-  { label: "Austria", selected: false },
-  { label: "Azerbaijan", selected: true },
-  { label: "Bahamas", selected: false },
-  { label: "Bahrain", selected: false },
-  { label: "Bangladesh", selected: false },
-  { label: "Bosnia Herzegovina", selected: false },
-  { label: "Botswana", selected: false },
-  { label: "Vanuatu", selected: false },
-  { label: "Vatican City", selected: true },
-  { label: "Venezuela", selected: false },
-  { label: "Vietnam", selected: false },
-  { label: "Yemen", selected: false },
-  { label: "Zambia", selected: false },
-  { label: "Zimbabwe", selected: false }
-];
-
 export default {
   title: "Components/Dropdown",
   parameters: {
@@ -37,16 +11,19 @@ export default {
 };
 
 export const Main = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown multiSelect showSearch values={countries} />
-  </div>
+  <HvDropdown
+    multiSelect
+    showSearch
+    values={[
+      { label: "value 1" },
+      { label: "value 2", selected: true },
+      { label: "value 3" },
+      { label: "value 4" }
+    ]}
+  />
 );
 
-export const Empty = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown id="dropdown1" />
-  </div>
-);
+export const Empty = () => <HvDropdown id="dropdown1" />;
 
 Empty.story = {
   parameters: {
@@ -57,19 +34,18 @@ Empty.story = {
 };
 
 export const SingleSelection = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown
-      id="dropdown7"
-      onChange={item => console.log(item)}
-      values={[
-        { id: "id-1", label: "Afghanistan" },
-        { id: "id-2", label: "Albania" },
-        { id: "id-3", label: "Algeria" },
-        { id: "id-4", label: "Andorra" }
-      ]}
-    />
-  </div>
+  <HvDropdown
+    id="dropdown7"
+    onChange={item => console.log(item)}
+    values={[
+      { id: "id-1", label: "value 1" },
+      { id: "id-2", label: "value 2" },
+      { id: "id-3", label: "value 3" },
+      { id: "id-4", label: "value 4" }
+    ]}
+  />
 );
+
 SingleSelection.story = {
   parameters: {
     docs: {
@@ -79,53 +55,45 @@ SingleSelection.story = {
 };
 
 export const MultiSelection = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown
-      id="dropdown2"
-      multiSelect
-      showSearch
-      labels={{ title: "Dropdown Title" }}
-      values={countries}
-    />
-  </div>
+  <HvDropdown
+    id="dropdown2"
+    multiSelect
+    showSearch
+    labels={{ title: "Dropdown Title" }}
+    values={[
+      { label: "value 1" },
+      { label: "value 2", selected: true },
+      { label: "value 3" },
+      { label: "value 4" }
+    ]}
+  />
 );
-
-MultiSelection.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Multi-section Dropdown with more than 10 elements"
-    }
-  }
-};
 
 export const MultiSelectionNoSearch = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown
-      id="dropdown5"
-      onChange={item => console.log(item)}
-      multiSelect
-      values={[
-        { id: "id-1", label: "Afghanistan", selected: false },
-        { id: "id-2", label: "Albania", selected: true },
-        { id: "id-3", label: "Algeria", selected: false },
-        { id: "id-4", label: "Andorra", selected: false }
-      ]}
-    />
-  </div>
+  <HvDropdown
+    id="dropdown5"
+    onChange={item => console.log(item)}
+    multiSelect
+    values={[
+      { id: "id-1", label: "value 1" },
+      { id: "id-2", label: "value 1", selected: true },
+      { id: "id-3", label: "value 3" },
+      { id: "id-4", label: "value 4" }
+    ]}
+  />
 );
 
-MultiSelectionNoSearch.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Supports equal labels and uses ids to manage selection"
-    }
-  }
-};
-
 export const SingleSelectionWithSearch = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown id="dropdown6" showSearch values={countries} />
-  </div>
+  <HvDropdown
+    id="dropdown6"
+    showSearch
+    values={[
+      { label: "value 1" },
+      { label: "value 2", selected: true },
+      { label: "value 3" },
+      { label: "value 4" }
+    ]}
+  />
 );
 
 SingleSelectionWithSearch.story = {
@@ -137,13 +105,62 @@ SingleSelectionWithSearch.story = {
 };
 
 export const SingleSelectionNoDefault = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown id="dropdown8" selectDefault={false} hasTooltips values={countries} />
-  </div>
+  <HvDropdown
+    id="dropdown8"
+    selectDefault={false}
+    hasTooltips
+    values={[
+      { label: "value 1" },
+      { label: "value 2" },
+      { label: "value 3" },
+      { label: "value 4" },
+      { label: "value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5 value 5" }
+    ]}
+  />
 );
 
 export const Disabled = () => (
-  <div style={{ padding: "10px" }}>
-    <HvDropdown id="dropdown9" disabled multiSelect aria-label="text" values={countries} />
-  </div>
+  <HvDropdown
+    id="dropdown9"
+    disabled
+    multiSelect
+    aria-label="text"
+    values={[
+      { label: "value 1", selected: false },
+      { label: "value 2", selected: false },
+      { label: "value 3", selected: true },
+      { label: "value 4", selected: false },
+      { label: "value 5 value 5 value 5 555555555555 value value 5", selected: false },
+      { label: "value 6" },
+      { label: "value 7" },
+      { label: "value 8", selected: true },
+      { label: "value 9", selected: true },
+      { label: "value 10" },
+      { label: "value 11" },
+      { label: "value 12" }
+    ]}
+  />
+);
+
+export const Expanded = () => (
+  <HvDropdown
+    id="dropdown12"
+    expanded
+    multiSelect
+    showSearch
+    values={[
+      { label: "value 1" },
+      { label: "value 2" },
+      { label: "value 3", selected: true },
+      { label: "value 4" },
+      { label: "value 5 value 5 value 5 555555555555 value value 5" },
+      { label: "value 6" },
+      { label: "value 7" },
+      { label: "value 8", selected: true },
+      { label: "value 9", selected: true },
+      { label: "value 10" },
+      { label: "value 11" },
+      { label: "value 12" }
+    ]}
+  />
 );

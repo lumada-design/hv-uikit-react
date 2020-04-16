@@ -6,7 +6,7 @@ Resource          ../keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Test Setup        go to url and wait until element is visible     ${STORYBOOK_URL}/iframe.html?id=coreheader--twolevels    ${hItem3}            10s
+Test Setup        Go To URL And Wait Until Element Is Visible     ${STORYBOOK_URL}/iframe.html?id=components-navigation-system-horizontal-navigation--main    ${hItem3}            10s
 Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot        TearDown.png
 Force Tags        smoke    keyboard    bug-infrastructure-ie
 Documentation    Test Cases based on Design System Version 1.2.0

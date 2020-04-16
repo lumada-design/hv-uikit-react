@@ -10,7 +10,7 @@ Force Tags        smoke
 
 *** Test Cases ***
 switch to off,on,off when checkbox is clicked 3 times
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--default
+    Go To                              ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--main
     Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input
     Click Element                      ${switch}
@@ -21,7 +21,7 @@ switch to off,on,off when checkbox is clicked 3 times
     Checkbox Should not Be Selected    ${switch} input
 
 switch to different state when any label is clicked
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--default
+    Go To                              ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--main
     Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input
     Click Element                      ${leftLabel}
@@ -34,14 +34,14 @@ switch to different state when any label is clicked
     Checkbox Should Be Selected        ${switch} input
 
 does not switch when disabled element is clicked
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--disabled
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--disabled
     Wait Until Page Contains Element    ${switch}          10s
     Checkbox Should Be Selected         ${switch} input
     Run Keyword And Ignore Error        Click Element      ${switch}
     Checkbox Should Be Selected         ${switch} input
 
 does not switch when is clicked any label of disabled element
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--disabled
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--disabled
     Wait Until Page Contains Element    ${switch}          10s
     Checkbox Should Be Selected         ${switch} input
     Run Keyword And Ignore Error        Click Element      ${rightLabel}
@@ -51,7 +51,7 @@ does not switch when is clicked any label of disabled element
 
 switch to Off when checkbox is focused and is pressed SPACE
     [Tags]    keyboard    bug-infrastructure-ie
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--default
+    Go To                              ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--main
     Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input
     set focus and press keys           ${switch}          SPACE

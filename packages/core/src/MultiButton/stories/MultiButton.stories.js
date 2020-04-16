@@ -45,11 +45,12 @@ export const OnlyLabels = () => (
 
 export const OnlyIcons = () => (
   <HvMultiButton
+    multi
     type="icon"
     style={{ width: "64px" }}
     buttons={[
       { id: "map", icon: <Map />, selected: true },
-      { id: "satellite", icon: <LocationPin /> }
+      { id: "location", icon: <LocationPin /> }
     ]}
   />
 );

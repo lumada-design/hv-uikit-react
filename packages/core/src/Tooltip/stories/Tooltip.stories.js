@@ -49,7 +49,9 @@ export const LongText = () => {
 
   return (
     <HvTooltip tooltipData={data}>
-      <HvTypography>Hover here</HvTypography>
+      <HvTypography id="placeholder" tabIndex="0">
+        Hover here
+      </HvTypography>
     </HvTooltip>
   );
 };

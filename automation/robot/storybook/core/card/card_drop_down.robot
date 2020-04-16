@@ -8,13 +8,13 @@ Force Tags        smoke
 
 *** Test Cases ***
 click on button Add on card
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--card9
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-card--automatic-actions
     Wait Until Element Is Enabled    css:button                10s
     Click Button                     Add
     Alert Should Be Present          You have pressed Add
 
 click on button ... Delete on 9. Automatic action creation from list
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--card9
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-card--automatic-actions
     Wait Until Element Is Enabled    css:button[class*='HvDropDownMenu']      10s
     Click Element                    css:button[class*='HvDropDownMenu']
     Wait Until Element Is Enabled    css:ul[role='menu']       2s
@@ -22,7 +22,7 @@ click on button ... Delete on 9. Automatic action creation from list
     Alert Should Be Present          You have pressed Delete
 
 unable click on preview and upload button
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--card9
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-card--automatic-actions
     Wait Until Element Is Enabled    css:button[class*='HvDropDownMenu']    10s
     Click Element                    css:button[class*='HvDropDownMenu']
     Wait Until Element Is Enabled    css:ul[role='menu']     2s

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import {
   Level2Average,
@@ -72,7 +72,7 @@ export const Main = () => {
   );
 };
 
-export const CardAllComponents = () => {
+export const AllComponents = () => {
   const configuration = {
     title: "Leaves Appear wilted and scorched",
     subtitleLeft: "Just now",
@@ -238,7 +238,7 @@ export const CardAllComponents = () => {
   );
 };
 
-CardAllComponents.story = {
+AllComponents.story = {
   parameters: {
     docs: {
       storyDescription: "A card that has all it's component defined."
@@ -246,7 +246,7 @@ CardAllComponents.story = {
   }
 };
 
-export const MultipleActionsCard = () => {
+export const MultipleActions = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
     subtitle: "QTFCR27520007"
@@ -370,7 +370,7 @@ export const MultipleActionsCard = () => {
   );
 };
 
-MultipleActionsCard.story = {
+MultipleActions.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample that shows how to use multiple actions."
@@ -378,7 +378,7 @@ MultipleActionsCard.story = {
   }
 };
 
-export const NoActionsCard = () => {
+export const NoActions = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
     subtitle: "QTFCR27520007"
@@ -498,7 +498,7 @@ export const NoActionsCard = () => {
   );
 };
 
-NoActionsCard.story = {
+NoActions.story = {
   parameters: {
     docs: {
       storyDescription: "A Card without any actions."
@@ -506,7 +506,7 @@ NoActionsCard.story = {
   }
 };
 
-export const CardOnlyTitle = () => {
+export const OnlyTitle = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
     subtitle: "QTFCR27520007"
@@ -538,7 +538,7 @@ export const CardOnlyTitle = () => {
   );
 };
 
-CardOnlyTitle.story = {
+OnlyTitle.story = {
   parameters: {
     docs: {
       storyDescription: "A Card that only has a title."
@@ -669,7 +669,7 @@ KPICard.story = {
   }
 };
 
-export const CardComposition = () => {
+export const WithComposition = () => {
   const styles = theme => ({
     root: {
       width: "100%",
@@ -734,7 +734,7 @@ export const CardComposition = () => {
   );
 };
 
-CardComposition.story = {
+WithComposition.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample that shows how to compose card with subcomponents."
@@ -742,7 +742,7 @@ CardComposition.story = {
   }
 };
 
-export const CardCompositionFooter = () => {
+export const WithFooterComposition = () => {
   const MultipleActionsWithMediaButtons = () => (
     <>
       <HvButton category="ghost">
@@ -791,7 +791,7 @@ export const CardCompositionFooter = () => {
   );
 };
 
-CardCompositionFooter.story = {
+WithFooterComposition.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample that shows how to compose card with subcomponents."
@@ -799,7 +799,7 @@ CardCompositionFooter.story = {
   }
 };
 
-export const CardActionsAutomatic = () => {
+export const AutomaticActions = () => {
   const configurationNoMedia = {
     title: "Advanced Server DS120",
     subtitle: "QTFCR27520007"
@@ -864,7 +864,7 @@ export const CardActionsAutomatic = () => {
   );
 };
 
-CardActionsAutomatic.story = {
+AutomaticActions.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample that shows how to construct the options of the footer."
@@ -872,7 +872,7 @@ CardActionsAutomatic.story = {
   }
 };
 
-export const CardSelectable = () => {
+export const Selectable = () => {
   const styles = {
     text: {
       overflow: "hidden",
@@ -951,7 +951,7 @@ export const CardSelectable = () => {
   );
 };
 
-CardSelectable.story = {
+Selectable.story = {
   parameters: {
     docs: {
       storyDescription:
@@ -960,7 +960,7 @@ CardSelectable.story = {
   }
 };
 
-export const CardSelectableNoFooter = () => {
+export const SelectableNoFooter = () => {
   const styles = {
     content: {
       padding: `0 20px 0 20px`
@@ -1035,7 +1035,7 @@ export const CardSelectableNoFooter = () => {
   );
 };
 
-CardSelectableNoFooter.story = {
+SelectableNoFooter.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample showcasing the ability to select in the content."
@@ -1043,7 +1043,7 @@ CardSelectableNoFooter.story = {
   }
 };
 
-export const CardClickAction = () => {
+export const WithClickAction = () => {
   const styles = {
     content: {
       padding: `0 20px 0 20px`
@@ -1120,10 +1120,111 @@ export const CardClickAction = () => {
   );
 };
 
-CardClickAction.story = {
+WithClickAction.story = {
   parameters: {
     docs: {
       storyDescription: "A card sample showcasing the ability to click the content."
     }
   }
+};
+
+const SingleContent = ({ classes }) => {
+  const data = {
+    firstTitle: "ID",
+    firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
+    secondTitle: "Last connected",
+    secondContent: "Aug 30, 2017 12:27:53 PM"
+  };
+
+  return (
+    <>
+      <div>
+        <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
+        <HvTypography variant="normalText" className={classes.text}>
+          {data.firstContent}
+        </HvTypography>
+      </div>
+      <div style={{ marginTop: "15px" }}>
+        <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
+        <HvTypography variant="normalText" className={classes.text}>
+          {data.secondContent}
+        </HvTypography>
+      </div>
+    </>
+  );
+};
+
+export const CustomActionsSelectable = () => {
+  const styles = theme => ({
+    content: {
+      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
+    },
+    item: {
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+    },
+    text: {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap"
+    }
+  });
+
+  const CustomSample = () => {
+    const [toggleA, setToggleA] = useState(true);
+    const [toggleB, setToggleB] = useState(true);
+    return (
+      <div style={{ width: "360px" }}>
+        <HvCard
+          headerTitle={toggleA ? "Asset Avatar L90" : "onClickAction()"}
+          subheader={toggleB ? "Compressor" : "onChange()"}
+          id="cardId"
+          aria-label="Asset Avatar L90 press enter or space to select this card"
+          innerCardContent={<SingleContent classes={styles} />}
+          onClick={() => setToggleA(!toggleA)}
+          onChange={() => setToggleB(!toggleB)}
+          isSelectable
+          selectOnClickAction
+        />
+      </div>
+    );
+  };
+
+  return <CustomSample />;
+};
+
+export const CustomActionsNotSelectable = () => {
+  const styles = theme => ({
+    content: {
+      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
+    },
+    item: {
+      padding: `0 0 ${theme.hv.spacing.sm}px 0`
+    },
+    text: {
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap"
+    }
+  });
+
+  const CustomSample = () => {
+    const [toggleA, setToggleA] = useState(true);
+    const [toggleB, setToggleB] = useState(true);
+    return (
+      <div style={{ width: "360px" }}>
+        <HvCard
+          headerTitle={toggleA ? "Asset Avatar L90" : "onClickAction()"}
+          subheader={toggleB ? "Compressor" : "onChange()"}
+          id="cardId"
+          innerCardContent={<SingleContent classes={styles} />}
+          aria-label="Asset Avatar L90 press enter or space to use this card main action"
+          onClick={() => setToggleA(!toggleA)}
+          onChange={() => setToggleB(!toggleB)}
+          isSelectable
+        />
+      </div>
+    );
+  };
+
+  return <CustomSample />;
 };

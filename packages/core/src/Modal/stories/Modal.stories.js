@@ -42,7 +42,7 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
           </HvModalContent>
         )}
         <HvModalActions>
-          <HvButton id="switchAnyway" category="ghost">
+          <HvButton id="apply" category="ghost">
             Apply
           </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>
@@ -69,7 +69,7 @@ export const Main = () => {
           re-select your fields.
         </HvModalContent>
         <HvModalActions>
-          <HvButton id="switchAnyway" category="ghost">
+          <HvButton id="apply" category="ghost">
             Apply
           </HvButton>
           <HvButton id="cancel" category="ghost" onClick={() => setOpen(false)}>

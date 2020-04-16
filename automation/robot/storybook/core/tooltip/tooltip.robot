@@ -9,12 +9,12 @@ Force Tags        smoke
 
 
 *** Variables ***
-${tooltipPlaceholder}    css:button>p
-${contextDiv}            xpath://div[button/p]
+${tooltipPlaceholder}   css:p[class*=HvTypography-root]
+${placeholder}          css:body
 
 *** Keywords ***
 open tooltip sample
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coretooltip--tooltip2
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-tooltip--long-text
     Wait Until Element Is Visible    ${tooltipPlaceholder}    10s
    
 
@@ -27,8 +27,8 @@ tooltip is triggered and when mouse hover item
 tooltip is triggered when item is focused
     [Tags]    keyboard    bug-infrastructure-ie
     Page Should Not Contain     Tooltips can showcase
-    Press Keys                  ${contextDiv}            TAB
-    Wait Until Page Contains    Tooltips can showcase    5s
+    Press Keys                  ${placeholder}          TAB
+    Wait Until Page Contains    Tooltips can showcase   5s
 
 tooltip is dismissed when mouse leaves touch target
     # verified firefox webdriver error if this test case is precedent of first Test case

@@ -4,6 +4,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
+Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-asset-inventory--configuration    hv-assetinventory    10s
 Force Tags        smoke    bug-infrastructure-ie
 
 *** Variables ***
@@ -21,16 +22,12 @@ ${cardView}           cardView
 
 *** Test Cases ***
 Filtering from 4 to 1 card
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory    10s
     Page Should Contain Element      ${cardsSelector}     limit=4
     Input Text                       ${searchBox}         1 trac
     Wait Until Element Is Visible    ${cardView}          2s
     Page Should Contain Element      ${cardsSelector}     limit=1
 
 Sort by title
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory     10s
     Page Should Contain Element      ${cardsSelector}      limit=4
     Element Text Should Be           ${firstCardHeader}    0 Risk of downtime 1
     Click Element                    ${dropdownHeader}
@@ -40,8 +37,6 @@ Sort by title
     Element Text Should Be           ${firstCardHeader}    9 Track severe 10
 
 Filter and then sort
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory     10s
     Page Should Contain Element      ${cardsSelector}      limit=4
     Input Text                       ${searchBox}          2
     Wait Until Element Is Visible    ${cardView}           2s
@@ -54,8 +49,6 @@ Filter and then sort
     Element Text Should Be           ${firstCardHeader}    2 Risk of downtime 3
 
 Change from cardView to listView
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory                  10s
     Element Should not Be Visible    css:table[id=listView]>tbody>tr
     Page Should Contain Element      ${cardsSelector}                   limit=4
     Click Button                     listView
@@ -63,8 +56,6 @@ Change from cardView to listView
     Page Should Contain Element      css:table[id=listView]>tbody>tr    limit=4
 
 Using pagination to navigate through 3 pages
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory     10s
     Page Should Contain Element      ${cardsSelector}      limit=4
     Element Text Should Be           ${firstCardHeader}    0 Risk of downtime 1
     Click Button                     ${nextPage}
@@ -80,8 +71,6 @@ Using pagination to navigate through 3 pages
     Element Text Should Be           ${firstCardHeader}    4 Risk of downtime 5
 
 Using navigation with filtered results
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory     10s
     Page Should Contain Element      ${cardsSelector}      limit=4
     Input Text                       ${searchBox}          track
     Wait Until Element Is Visible    ${cardView}           2s
@@ -96,8 +85,6 @@ Using navigation with filtered results
     Element Text Should Be           ${firstCardHeader}    1 Track severe 2
 
 Sort when in page two
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory     10s
     Click Button                     ${nextPage}
     Wait Until Element Is Visible    ${dropdownHeader}     2s
     Click Element                    ${dropdownHeader}
@@ -110,8 +97,6 @@ Sort when in page two
     Element Text Should Be           ${firstCardHeader}    9 Track severe 10
 
 Change page size from 4 to 6
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible    hv-assetinventory                      10s
     Page Should Contain Element      ${cardsSelector}                       limit=4
     Click Element                    ${pageSizeChange}>option[value='6']
     Wait Until Element Is Visible    ${cardView}                            2s
@@ -119,8 +104,6 @@ Change page size from 4 to 6
     Element Text Should Be           hv-assetinventory-totalPages           2
 
 Change page size when in page two
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible        hv-assetinventory                      10s
     Click Button                         ${nextPage}
     Wait Until Element Is Visible        ${cardView}                            2s
     Page Should Contain Element          ${cardsSelector}                       limit=4
@@ -131,8 +114,6 @@ Change page size when in page two
     Element Text Should Be               hv-assetinventory-totalPages           2
 
 Change page size when in page two changing to page one
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible        hv-assetinventory                       10s
     Click Button                         ${nextPage}
     Wait Until Element Is Visible        ${cardView}                             2s
     Page Should Contain Element          ${cardsSelector}                        limit=4
@@ -143,8 +124,6 @@ Change page size when in page two changing to page one
     Element Text Should Be               hv-assetinventory-totalPages            1
 
 Maintain selection between search's
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible      hv-assetinventory                     10s
     Checkbox Should Not Be Selected    ${firstCheckbox}
     Select Checkbox                    ${firstCheckbox}
     Input Text                         ${searchBox}                          trac
@@ -154,8 +133,6 @@ Maintain selection between search's
     Checkbox Should Be Selected        ${firstCheckbox}
 
 Maintain selection between pages
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=coreassetinventory--simple
-    Wait Until Element Is Visible      hv-assetinventory    10s
     Checkbox Should Not Be Selected    ${firstCheckbox}
     Select Checkbox                    ${firstCheckbox}
     Click Button                       ${nextPage}

@@ -3,7 +3,7 @@
 Resource          keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
-Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=coretable--tableserverside    ${input_page}    10s
+Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=visualizations-table--server-side-pagination    ${input_page}    10s
 Test Teardown     Run Keyword If Test Failed                     Capture Page Screenshot    ${SUITE_NAME}.png
 Suite Teardown    Close Browser
 Force Tags        smoke

@@ -34,9 +34,7 @@ export const LimitedToFivePaths = () => {
     { label: "Label 4", path: "route4" },
     { label: "Label 5", path: "route5" },
     { label: "Label 6", path: "route6" },
-    { label: "Label 7", path: "route7" },
-    { label: "Label 8", path: "route8" },
-    { label: "Label 9", path: "route9" }
+    { label: "Label 7", path: "route7" }
   ];
 
   return <HvBreadCrumb listRoute={data} maxVisible={5} id="breadcrumb2" aria-label="Breadcrumb" />;
@@ -59,8 +57,7 @@ export const LimitedToTwoPaths = () => {
     { label: "Label 5", path: "route5" },
     { label: "Label 6", path: "route6" },
     { label: "Label 7", path: "route7" },
-    { label: "Label 8", path: "route8" },
-    { label: "Label 9", path: "route9" }
+    { label: "Label 8", path: "route8" }
   ];
 
   return <HvBreadCrumb listRoute={data} maxVisible={2} id="breadcrumb3" aria-label="Breadcrumb" />;

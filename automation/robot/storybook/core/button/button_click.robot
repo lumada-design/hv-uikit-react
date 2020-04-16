@@ -2,7 +2,7 @@
 Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
 Suite Setup       Run Keywords
-...               open storybook    ${STORYBOOK_URL}/iframe.html?id=corebutton--smoke
+...               open storybook    ${STORYBOOK_URL}/iframe.html?id=components-button--smoke-tests
 ...               AND               Wait Until Element Is Visible    css:button    10s
 Suite Teardown    Close Browser
 Test Template     Activate and focus button when it is clicked
@@ -24,7 +24,7 @@ Activate and focus button when it is clicked
     Element Should Be Focused    ${button_locator}
 
 
-*** Test Cases ***                                                    button         
+*** Test Cases ***                                                    button
 activate and focus button when is clicked a default button            default
     
 activate and focus button when is clicked a secondary button          secondary
@@ -35,7 +35,7 @@ activate and focus button when is clicked a ghost Secondary button    ghostSecon
     
 activate and focus button when is clicked a semantic button           semantic
     
-unable Activate and focus a disabled button when it is clicked
+unable to activate and focus a disabled button when it is clicked
     [Template]                       NONE
     Element Should Be Disabled       disabledPrimary
     Click Button                     disabledPrimary    

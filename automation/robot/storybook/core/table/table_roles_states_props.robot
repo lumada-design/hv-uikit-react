@@ -4,7 +4,7 @@ Variables         variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
-Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=coretable--tablesimple    ${table}    10s
+Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=visualizations-table--main    ${table}    10s
 Test Teardown     Run Keyword If Test Failed                     Capture Page Screenshot    ${SUITE_NAME}.png
 Suite Teardown    Close Browser
 Force Tags        wai-aria-practices
@@ -17,7 +17,7 @@ DOM contain only 1 role=table on correct tag when table is rendered
     Page Should Contain Element          css:[role=table]    limit=1
 
 DOM contain only 1 caption=string on correct tag when table is rendered
-    Element Attribute Value Should Be    ${table}               caption    A Custom Table Caption
+    Element Attribute Value Should Be    ${table}               caption     Table Caption
     Page Should Contain Element          css:[aria-rowcount]    limit=1
 
 DOM contains role=columnheader on correct tags when table is rendered
@@ -55,8 +55,8 @@ DOM contains aria-sort ascending or descending when a column is order by
 
 DOM contains aria-selected=boolean when a row is selected and unselected
     [Setup]    NONE    
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretable--tablecheckbox
-    Wait Until Page Contains             This is a title              10s
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-checkbox
+    Wait Until Page Contains             This is a Title              10s
     Page Should Contain Element          css:[aria-selected=false]    limit=10
     Click Element                        ${checkbox_row_1}
     Element Attribute Value Should Be    ${row_1}                     aria-selected    true
@@ -64,14 +64,14 @@ DOM contains aria-selected=boolean when a row is selected and unselected
     Element Attribute Value Should Be    ${row_1}                     aria-selected    false
     Select Checkbox                      ${all_checkbox}
     Page Should Contain Element          css:[aria-selected=true]     limit=10
-    
+
 DOM contains aria-expanded=boolean when a row is expanded and shrink
     [Setup]    NONE
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coretable--tableexpander
-    Wait Until Page Contains             This is a title             10s
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-expander
+    Wait Until Page Contains             This is a Title             10s
     Page Should Not Contain Element      css:[aria-expanded=true]
     Click Element                        ${expander_button}
     Element Attribute Value Should Be    ${row_1}                    aria-expanded    true
     Click Element                        ${expander_button}
     Element Attribute Value Should Be    ${row_1}                    aria-expanded    ${None}
-          
+

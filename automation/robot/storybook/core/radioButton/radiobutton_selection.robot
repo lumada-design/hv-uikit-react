@@ -12,11 +12,11 @@ ${1stRadioButton}         radio1-input
 ${2ndRadioButton}         radio2-input
 ${radioSelected}          css:div[class*='RadioButtonSelected']
 ${radioNotSelected}       css:div[class*='RadioButtonUnselected']
-${1stRadioButtonLabel}    xpath://span[text()='label']
+${1stRadioButtonLabel}    xpath://span[text()='Label']
 
 *** Test Cases ***
 select radio button by clicking in input
-    go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttonlabel
+    go to                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-radio--label
     Wait Until Page Contains Element     ${1stRadioButton}         10s
     Element Should not Be Visible        ${radioSelected}
     Element Should Be Visible            ${radioNotSelected}
@@ -26,7 +26,7 @@ select radio button by clicking in input
 
 select radio button by clicking in label
     [Tags]    bug-infrastructure-ie
-    go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttonlabel
+    go to                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-radio--label
     Wait Until Page Contains Element     ${1stRadioButton}         10s
     Element Should not Be Visible        ${radioSelected}
     Element Should Be Visible            ${radioNotSelected}
@@ -35,7 +35,7 @@ select radio button by clicking in label
     Element Should not Be Visible        ${radioNotSelected}
 
 unable select radio button when is disabled
-    go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttondisabled
+    go to                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-radio--disabled
     Wait Until Page Contains Element     ${1stRadioButton}         10s
     Run Keyword And Ignore Error         Click Element             ${1stRadioButton}
     Element Should Be Disabled           ${1stRadioButton}
@@ -43,7 +43,7 @@ unable select radio button when is disabled
     Element Should not Be Visible        ${radioSelected}
 
 unable unselect checked radio button when is disabled
-    go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttoncheckeddisabled
+    go to                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-radio--checked-disabled
     Wait Until Page Contains Element     ${1stRadioButton}         10s
     Run Keyword And Ignore Error         Click Element             ${1stRadioButton}
     Element Should Be Disabled           ${1stRadioButton}
@@ -51,7 +51,7 @@ unable unselect checked radio button when is disabled
     Element Should not Be Visible        ${radioNotSelected}
 
 radio button with state management
-    go to                                ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--radiobuttonstate
+    go to                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-radio--with-state
     Wait Until Element Is Enabled        ${1stRadioButton}         10s
     Element Attribute Value Should Be    ${1stRadioButton}         checked              true
     Element Attribute Value Should Be    ${2ndRadioButton}         checked              ${None}
