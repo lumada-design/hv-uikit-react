@@ -130,6 +130,47 @@ CustomIcon.story = {
   }
 };
 
+export const Accessibility = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
+        Open Modal
+      </HvButton>
+      <HvModal
+        open={open}
+        onClose={() => setOpen(false)}
+        aria-labelledby="hv-modal-title"
+        aria-describedby="hv-modal-description"
+      >
+        <HvModalTitle id="hv-modal-title" variant="warning">
+          Switch model view?
+        </HvModalTitle>
+        <HvModalContent id="hv-modal-description">
+          Switching to model view will clear all the fields in your visualization. You will need to
+          re-select your fields.
+        </HvModalContent>
+        <HvModalActions>
+          <HvButton category="ghost">Apply</HvButton>
+          <HvButton category="ghost" onClick={() => setOpen(false)}>
+            Cancel
+          </HvButton>
+        </HvModalActions>
+      </HvModal>
+    </div>
+  );
+};
+
+Accessibility.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "Modals should have an `aria-labelledby` linking to the most appropriate element, as well as an optional `aria-describedby` pointing to the main content."
+    }
+  }
+};
+
 export const CustomContent = () => {
   const inputStyles = {
     root: {
