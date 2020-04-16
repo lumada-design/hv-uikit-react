@@ -39,9 +39,7 @@ exports[`Provider should render correctly 1`] = `
                 "semantic": Object {},
                 "support": Object {},
               },
-              "typography": Object {
-                "disabledText": Object {},
-              },
+              "typography": Object {},
               "viz": Object {
                 "palette": Object {
                   "categorical": Object {},
@@ -138,13 +136,6 @@ exports[`Provider should render correctly 1`] = `
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "20px",
-              },
-              "disabledText": Object {
-                "color": "#999999",
-                "fontSize": "12px",
-                "fontWeight": 400,
-                "letterSpacing": "0.02em",
-                "lineHeight": "16px",
               },
               "fontFamily": Array [
                 "'Open Sans'",
