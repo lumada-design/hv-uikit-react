@@ -58,6 +58,8 @@ class Table extends React.Component {
       initiallyLoaded: false,
       // Controls which row is expanded.
       expanded: {},
+      // what is the curently displayed age
+      currentPage: 0,
       // Controls which row is selected using the checkboxes.
       selection: props.selections || [],
       // Controls if the select all options has been used
@@ -132,25 +134,29 @@ class Table extends React.Component {
    * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
    */
   getPaginationProps = () => {
-    const { internalId } = this.state;
+    const { internalId, currentPage } = this.state;
 
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
     const { pageSize = data.length, onPageSizeChange, onPageChange, pages } = this.props;
 
+    const PaginationComponent = paginationProps => (
+      <Pagination {...paginationProps} page={currentPage} />
+    );
+
     return {
       id: `${internalId}-pagination`,
       showPagination: data.length > 0 && showPagination,
-      ...(showPagination && { PaginationComponent: Pagination }),
+      ...(showPagination && { PaginationComponent }),
       ...(showPagination && {
         onPageSizeChange: (newPageSize, page) => {
-          this.setState({ expanded: {} });
+          this.setState({ expanded: {}, currentPage: page });
           if (onPageSizeChange) onPageSizeChange(newPageSize, page);
         }
       }),
       ...(showPagination && {
         onPageChange: page => {
-          this.setState({ expanded: {} });
+          this.setState({ expanded: {}, currentPage: page });
           if (onPageChange) onPageChange(page);
         }
       }),
