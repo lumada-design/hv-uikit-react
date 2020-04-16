@@ -36,7 +36,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@hv/uikit-common-themes": "^1.5.2",
+    "@hv/uikit-common-themes": "^2.0.0",
     "@hv/uikit-react-icons": "^2.0.0",
     "clsx": "^1.1.0",
     "deep-diff": "^1.0.2",

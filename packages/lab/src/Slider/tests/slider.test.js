@@ -75,7 +75,7 @@ describe("Slider ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(HvSlider)).toMatchSnapshot();
   });
 
   it("should render the Slider component", () => {

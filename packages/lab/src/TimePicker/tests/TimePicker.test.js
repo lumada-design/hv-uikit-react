@@ -60,7 +60,7 @@ describe("TimePicker", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(TimePicker)).toMatchSnapshot();
   });
 
   it("handleTimePopperClickAway - should cancel the time selection", () => {
