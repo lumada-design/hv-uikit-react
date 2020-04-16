@@ -6,7 +6,7 @@ const styles = theme => ({
     borderBottomColor: theme.hv.palette.atmosphere.atmo5,
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
-    boxShadow: "0 2px 12px rgba(65,65,65,0.12)",
+    boxShadow: theme.hv.shadows[1],
     fontSize: 14,
     display: "flex",
     justifyContent: "space-between",

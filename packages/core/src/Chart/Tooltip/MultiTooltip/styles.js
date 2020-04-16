@@ -2,7 +2,7 @@ const styles = theme => ({
   root: {
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     width: "fit-content",
-    boxShadow: "0 2px 12px rgba(65,65,65,.12)",
+    boxShadow: theme.hv.shadows[1],
     zIndex: 100
   },
   title: {

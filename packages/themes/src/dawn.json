@@ -236,6 +236,11 @@
     "xl": 90
   },
 
+  "shadows": [
+    "none",
+    "0 2px 12px rgba(65,65,65,0.12)"
+  ],
+
   "viz": {
     "palette": {
       "categorical": {
