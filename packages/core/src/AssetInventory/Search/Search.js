@@ -52,7 +52,8 @@ const Search = ({
   onFilter,
   onSearch = null,
   values,
-  metadata
+  metadata,
+  ...others
 }) => {
   const searchableCriteria = searchOperationSetup(metadata);
 
@@ -68,6 +69,8 @@ const Search = ({
       labels={labels}
       value={searchString}
       onChange={onSearch || handler}
+      role="search"
+      {...others}
     />
   );
 };
