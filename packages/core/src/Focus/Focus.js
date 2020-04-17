@@ -287,4 +287,4 @@ Focus.defaultProps = {
   disabled: false
 };
 
-export default withStyles(styles)(Focus);
+export default withStyles(styles, { name: "HvFocus" })(Focus);

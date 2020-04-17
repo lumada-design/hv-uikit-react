@@ -471,7 +471,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -483,7 +483,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -495,7 +495,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -609,7 +609,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-72 Focus-selected-73 Focus-focusDisabled-75"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-2-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -621,7 +621,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-72 Focus-focusDisabled-75"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-2-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -633,7 +633,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-72 Focus-focusDisabled-75"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-2-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -747,7 +747,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-111 Focus-selected-112 Focus-focusDisabled-114"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-3-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -759,7 +759,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-111 Focus-focusDisabled-114"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-3-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -771,7 +771,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-111 Focus-focusDisabled-114"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-3-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -885,7 +885,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-150 Focus-selected-151 Focus-focusDisabled-153"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-4-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -897,7 +897,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-150 Focus-focusDisabled-153"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-4-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -909,7 +909,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-150 Focus-focusDisabled-153"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-4-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -1023,7 +1023,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-189 Focus-selected-190 Focus-focusDisabled-192"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-5-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -1035,7 +1035,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-189 Focus-focusDisabled-192"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-5-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -1047,7 +1047,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-189 Focus-focusDisabled-192"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-5-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -1161,7 +1161,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-228 Focus-selected-229 Focus-focusDisabled-231"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-6-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -1173,7 +1173,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-228 Focus-focusDisabled-231"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-6-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -1185,7 +1185,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-228 Focus-focusDisabled-231"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-6-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -1235,7 +1235,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         role="listbox"
                                       >
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-7-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -1247,7 +1247,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-7-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -1259,7 +1259,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-7-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -1309,7 +1309,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         role="listbox"
                                       >
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-242 Focus-focusDisabled-245"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-8-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -1321,7 +1321,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-242 Focus-focusDisabled-245"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-8-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -1333,7 +1333,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-242 Focus-focusDisabled-245"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-8-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -1443,13 +1443,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <span
                                         aria-disabled="false"
-                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                       >
                                         <span
                                           class="MuiIconButton-label"
                                         >
                                           <input
-                                            class="PrivateSwitchBase-input-296"
+                                            class="PrivateSwitchBase-input-240"
                                             data-indeterminate="false"
                                             id="test-dropdown-values-select-all-input"
                                             type="checkbox"
@@ -1501,7 +1501,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="false"
-                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="test-dropdown-values-list-item-0"
                                           role="option"
                                           tabindex="-1"
@@ -1512,13 +1512,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           >
                                             <span
                                               aria-disabled="false"
-                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                             >
                                               <span
                                                 class="MuiIconButton-label"
                                               >
                                                 <input
-                                                  class="PrivateSwitchBase-input-296"
+                                                  class="PrivateSwitchBase-input-240"
                                                   data-indeterminate="false"
                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                   tabindex="0"
@@ -1559,7 +1559,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         </li>
                                         <li
                                           aria-selected="false"
-                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="test-dropdown-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -1570,13 +1570,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           >
                                             <span
                                               aria-disabled="false"
-                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                             >
                                               <span
                                                 class="MuiIconButton-label"
                                               >
                                                 <input
-                                                  class="PrivateSwitchBase-input-296"
+                                                  class="PrivateSwitchBase-input-240"
                                                   data-indeterminate="false"
                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                   tabindex="-1"
@@ -1617,7 +1617,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         </li>
                                         <li
                                           aria-selected="false"
-                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="test-dropdown-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -1628,13 +1628,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           >
                                             <span
                                               aria-disabled="false"
-                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                             >
                                               <span
                                                 class="MuiIconButton-label"
                                               >
                                                 <input
-                                                  class="PrivateSwitchBase-input-296"
+                                                  class="PrivateSwitchBase-input-240"
                                                   data-indeterminate="false"
                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                   tabindex="-1"
@@ -3013,10 +3013,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         className="HvCheckBox-checkBox"
                                                         classes={
                                                           Object {
-                                                            "checked": "PrivateSwitchBase-checked-294 Mui-checked",
-                                                            "disabled": "PrivateSwitchBase-disabled-295 Mui-disabled",
-                                                            "input": "PrivateSwitchBase-input-296",
-                                                            "root": "PrivateSwitchBase-root-293 MuiCheckbox-root",
+                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                            "input": "PrivateSwitchBase-input-240",
+                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                           }
                                                         }
                                                         color="default"
@@ -3040,7 +3040,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         value=""
                                                       >
                                                         <WithStyles(ForwardRef(IconButton))
-                                                          className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                           color="default"
                                                           component="span"
                                                           disableRipple={true}
@@ -3050,7 +3050,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           tabIndex={null}
                                                         >
                                                           <ForwardRef(IconButton)
-                                                            className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             classes={
                                                               Object {
                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -3074,7 +3074,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <WithStyles(ForwardRef(ButtonBase))
                                                               centerRipple={true}
-                                                              className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               component="span"
                                                               disableRipple={true}
                                                               disabled={false}
@@ -3085,7 +3085,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <ForwardRef(ButtonBase)
                                                                 centerRipple={true}
-                                                                className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                 classes={
                                                                   Object {
                                                                     "disabled": "Mui-disabled",
@@ -3103,7 +3103,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               >
                                                                 <span
                                                                   aria-disabled={false}
-                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                   onBlur={[Function]}
                                                                   onDragLeave={[Function]}
                                                                   onFocus={[Function]}
@@ -3122,7 +3122,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   >
                                                                     <input
                                                                       checked={false}
-                                                                      className="PrivateSwitchBase-input-296"
+                                                                      className="PrivateSwitchBase-input-240"
                                                                       data-indeterminate={false}
                                                                       disabled={false}
                                                                       id="test-dropdown-values-select-all-input"
@@ -3356,7 +3356,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-0"
                                                           role="option"
                                                           tabindex="-1"
@@ -3367,13 +3367,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   tabindex="0"
@@ -3414,7 +3414,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -3425,13 +3425,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   tabindex="-1"
@@ -3472,7 +3472,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -3483,13 +3483,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   tabindex="-1"
@@ -3540,13 +3540,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-341",
-                                                      "externalReference": "Focus-externalReference-344",
-                                                      "falseFocus": "Focus-falseFocus-345",
-                                                      "focusDisabled": "Focus-focusDisabled-342",
-                                                      "focused": "Focus-focused-343",
-                                                      "root": "Focus-root-339",
-                                                      "selected": "Focus-selected-340",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -3570,7 +3570,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         >
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-0"
                                                             role="option"
                                                             tabindex="-1"
@@ -3581,13 +3581,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     tabindex="0"
@@ -3628,7 +3628,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           </li>
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -3639,13 +3639,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     tabindex="-1"
@@ -3686,7 +3686,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           </li>
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -3697,13 +3697,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     tabindex="-1"
@@ -3757,7 +3757,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   >
                                                     <li
                                                       aria-selected={false}
-                                                      className="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                      className="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="test-dropdown-values-list-item-0"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -3997,10 +3997,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-294 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-295 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-296",
-                                                                            "root": "PrivateSwitchBase-root-293 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-240",
+                                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -4024,7 +4024,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         value=""
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -4034,7 +4034,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -4058,7 +4058,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -4069,7 +4069,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -4087,7 +4087,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -4106,7 +4106,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                   >
                                                                                     <input
                                                                                       checked={false}
-                                                                                      className="PrivateSwitchBase-input-296"
+                                                                                      className="PrivateSwitchBase-input-240"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="test-dropdown-values-list-item-0-selector-input"
@@ -4248,7 +4248,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-0"
                                                           role="option"
                                                           tabindex="-1"
@@ -4259,13 +4259,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   tabindex="0"
@@ -4306,7 +4306,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -4317,13 +4317,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   tabindex="-1"
@@ -4364,7 +4364,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -4375,13 +4375,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   tabindex="-1"
@@ -4432,13 +4432,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-341",
-                                                      "externalReference": "Focus-externalReference-344",
-                                                      "falseFocus": "Focus-falseFocus-345",
-                                                      "focusDisabled": "Focus-focusDisabled-342",
-                                                      "focused": "Focus-focused-343",
-                                                      "root": "Focus-root-339",
-                                                      "selected": "Focus-selected-340",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -4462,7 +4462,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         >
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-0"
                                                             role="option"
                                                             tabindex="-1"
@@ -4473,13 +4473,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     tabindex="0"
@@ -4520,7 +4520,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           </li>
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -4531,13 +4531,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     tabindex="-1"
@@ -4578,7 +4578,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           </li>
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -4589,13 +4589,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     tabindex="-1"
@@ -4649,7 +4649,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   >
                                                     <li
                                                       aria-selected={false}
-                                                      className="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                      className="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="test-dropdown-values-list-item-1"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -4889,10 +4889,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-294 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-295 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-296",
-                                                                            "root": "PrivateSwitchBase-root-293 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-240",
+                                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -4916,7 +4916,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         value=""
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -4926,7 +4926,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -4950,7 +4950,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -4961,7 +4961,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -4979,7 +4979,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -4998,7 +4998,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                   >
                                                                                     <input
                                                                                       checked={false}
-                                                                                      className="PrivateSwitchBase-input-296"
+                                                                                      className="PrivateSwitchBase-input-240"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="test-dropdown-values-list-item-1-selector-input"
@@ -5140,7 +5140,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       >
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-0"
                                                           role="option"
                                                           tabindex="-1"
@@ -5151,13 +5151,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   tabindex="0"
@@ -5198,7 +5198,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -5209,13 +5209,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   tabindex="-1"
@@ -5256,7 +5256,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         </li>
                                                         <li
                                                           aria-selected="false"
-                                                          class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                          class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="test-dropdown-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -5267,13 +5267,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-296"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   tabindex="-1"
@@ -5324,13 +5324,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-341",
-                                                      "externalReference": "Focus-externalReference-344",
-                                                      "falseFocus": "Focus-falseFocus-345",
-                                                      "focusDisabled": "Focus-focusDisabled-342",
-                                                      "focused": "Focus-focused-343",
-                                                      "root": "Focus-root-339",
-                                                      "selected": "Focus-selected-340",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -5354,7 +5354,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         >
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-0"
                                                             role="option"
                                                             tabindex="-1"
@@ -5365,13 +5365,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     tabindex="0"
@@ -5412,7 +5412,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           </li>
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -5423,13 +5423,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     tabindex="-1"
@@ -5470,7 +5470,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           </li>
                                                           <li
                                                             aria-selected="false"
-                                                            class="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                            class="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="test-dropdown-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -5481,13 +5481,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-296"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     tabindex="-1"
@@ -5541,7 +5541,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   >
                                                     <li
                                                       aria-selected={false}
-                                                      className="HvList-listItem HvList-selector HvList-condensed Focus-root-339 Focus-focusDisabled-342"
+                                                      className="HvList-listItem HvList-selector HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="test-dropdown-values-list-item-2"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -5781,10 +5781,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-294 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-295 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-296",
-                                                                            "root": "PrivateSwitchBase-root-293 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-240",
+                                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -5808,7 +5808,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         value=""
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -5818,7 +5818,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -5842,7 +5842,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -5853,7 +5853,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -5871,7 +5871,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-293 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -5890,7 +5890,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                   >
                                                                                     <input
                                                                                       checked={false}
-                                                                                      className="PrivateSwitchBase-input-296"
+                                                                                      className="PrivateSwitchBase-input-240"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="test-dropdown-values-list-item-2-selector-input"
@@ -6843,7 +6843,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -6855,7 +6855,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -6867,7 +6867,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -6981,7 +6981,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-72 Focus-selected-73 Focus-focusDisabled-75"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-2-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -6993,7 +6993,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-72 Focus-focusDisabled-75"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-2-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -7005,7 +7005,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-72 Focus-focusDisabled-75"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-2-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -7119,7 +7119,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-111 Focus-selected-112 Focus-focusDisabled-114"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-3-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7131,7 +7131,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-111 Focus-focusDisabled-114"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-3-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -7143,7 +7143,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-111 Focus-focusDisabled-114"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-3-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -7257,7 +7257,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-150 Focus-selected-151 Focus-focusDisabled-153"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-4-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7269,7 +7269,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-150 Focus-focusDisabled-153"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-4-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -7281,7 +7281,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-150 Focus-focusDisabled-153"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-4-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -7395,7 +7395,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-189 Focus-selected-190 Focus-focusDisabled-192"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-5-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7407,7 +7407,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-189 Focus-focusDisabled-192"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-5-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -7419,7 +7419,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-189 Focus-focusDisabled-192"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-5-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -7533,7 +7533,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-228 Focus-selected-229 Focus-focusDisabled-231"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-6-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7545,7 +7545,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-228 Focus-focusDisabled-231"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-6-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -7557,7 +7557,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-228 Focus-focusDisabled-231"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-6-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -7607,7 +7607,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                         role="listbox"
                                       >
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-7-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7619,7 +7619,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-7-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -7631,7 +7631,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-7-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -7811,7 +7811,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                         role="listbox"
                                                       >
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -7823,7 +7823,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -7835,7 +7835,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -7858,13 +7858,13 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-237",
-                                                      "externalReference": "Focus-externalReference-240",
-                                                      "falseFocus": "Focus-falseFocus-241",
-                                                      "focusDisabled": "Focus-focusDisabled-238",
-                                                      "focused": "Focus-focused-239",
-                                                      "root": "Focus-root-235",
-                                                      "selected": "Focus-selected-236",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -7886,7 +7886,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           role="listbox"
                                                         >
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -7898,7 +7898,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -7910,7 +7910,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -7935,7 +7935,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     wrapper={[Function]}
                                                   >
                                                     <li
-                                                      className="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                      className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="hv-dropdown-7-values-list-item-0"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -8015,7 +8015,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                         role="listbox"
                                                       >
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -8027,7 +8027,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -8039,7 +8039,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -8062,13 +8062,13 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-237",
-                                                      "externalReference": "Focus-externalReference-240",
-                                                      "falseFocus": "Focus-falseFocus-241",
-                                                      "focusDisabled": "Focus-focusDisabled-238",
-                                                      "focused": "Focus-focused-239",
-                                                      "root": "Focus-root-235",
-                                                      "selected": "Focus-selected-236",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -8090,7 +8090,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           role="listbox"
                                                         >
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -8102,7 +8102,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -8114,7 +8114,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -8139,7 +8139,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     wrapper={[Function]}
                                                   >
                                                     <li
-                                                      className="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                      className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="hv-dropdown-7-values-list-item-1"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -8219,7 +8219,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                         role="listbox"
                                                       >
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -8231,7 +8231,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -8243,7 +8243,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-7-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -8266,13 +8266,13 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-237",
-                                                      "externalReference": "Focus-externalReference-240",
-                                                      "falseFocus": "Focus-falseFocus-241",
-                                                      "focusDisabled": "Focus-focusDisabled-238",
-                                                      "focused": "Focus-focused-239",
-                                                      "root": "Focus-root-235",
-                                                      "selected": "Focus-selected-236",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -8294,7 +8294,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                           role="listbox"
                                                         >
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -8306,7 +8306,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -8318,7 +8318,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-7-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -8343,7 +8343,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     wrapper={[Function]}
                                                   >
                                                     <li
-                                                      className="HvList-listItem HvList-condensed Focus-root-235 Focus-focusDisabled-238"
+                                                      className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="hv-dropdown-7-values-list-item-2"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -8895,7 +8895,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -8907,7 +8907,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-1"
                                           role="option"
                                           tabindex="-1"
@@ -8919,7 +8919,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                           </p>
                                         </li>
                                         <li
-                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                           id="hv-dropdown-1-values-list-item-2"
                                           role="option"
                                           tabindex="-1"
@@ -10115,7 +10115,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       >
                                                         <li
                                                           aria-selected="true"
-                                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -10127,7 +10127,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -10139,7 +10139,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -10162,13 +10162,13 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-35",
-                                                      "externalReference": "Focus-externalReference-38",
-                                                      "falseFocus": "Focus-falseFocus-39",
-                                                      "focusDisabled": "Focus-focusDisabled-36",
-                                                      "focused": "Focus-focused-37",
-                                                      "root": "Focus-root-33",
-                                                      "selected": "Focus-selected-34",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -10191,7 +10191,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         >
                                                           <li
                                                             aria-selected="true"
-                                                            class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -10203,7 +10203,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -10215,7 +10215,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -10241,7 +10241,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   >
                                                     <li
                                                       aria-selected={true}
-                                                      className="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                      className="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                       id="hv-dropdown-1-values-list-item-0"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -10322,7 +10322,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       >
                                                         <li
                                                           aria-selected="true"
-                                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -10334,7 +10334,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -10346,7 +10346,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -10369,13 +10369,13 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-35",
-                                                      "externalReference": "Focus-externalReference-38",
-                                                      "falseFocus": "Focus-falseFocus-39",
-                                                      "focusDisabled": "Focus-focusDisabled-36",
-                                                      "focused": "Focus-focused-37",
-                                                      "root": "Focus-root-33",
-                                                      "selected": "Focus-selected-34",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -10398,7 +10398,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         >
                                                           <li
                                                             aria-selected="true"
-                                                            class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -10410,7 +10410,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -10422,7 +10422,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -10447,7 +10447,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     wrapper={[Function]}
                                                   >
                                                     <li
-                                                      className="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                      className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="hv-dropdown-1-values-list-item-1"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -10528,7 +10528,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       >
                                                         <li
                                                           aria-selected="true"
-                                                          class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -10540,7 +10540,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-1"
                                                           role="option"
                                                           tabindex="-1"
@@ -10552,7 +10552,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                           </p>
                                                         </li>
                                                         <li
-                                                          class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                          class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                           id="hv-dropdown-1-values-list-item-2"
                                                           role="option"
                                                           tabindex="-1"
@@ -10575,13 +10575,13 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 <Focus
                                                   classes={
                                                     Object {
-                                                      "disabled": "Focus-disabled-35",
-                                                      "externalReference": "Focus-externalReference-38",
-                                                      "falseFocus": "Focus-falseFocus-39",
-                                                      "focusDisabled": "Focus-focusDisabled-36",
-                                                      "focused": "Focus-focused-37",
-                                                      "root": "Focus-root-33",
-                                                      "selected": "Focus-selected-34",
+                                                      "disabled": "HvFocus-disabled",
+                                                      "externalReference": "HvFocus-externalReference",
+                                                      "falseFocus": "HvFocus-falseFocus",
+                                                      "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focused": "HvFocus-focused",
+                                                      "root": "HvFocus-root",
+                                                      "selected": "HvFocus-selected",
                                                     }
                                                   }
                                                   configuration={
@@ -10604,7 +10604,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         >
                                                           <li
                                                             aria-selected="true"
-                                                            class="HvList-listItem HvList-selected HvList-condensed Focus-root-33 Focus-selected-34 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -10616,7 +10616,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-1"
                                                             role="option"
                                                             tabindex="-1"
@@ -10628,7 +10628,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                             </p>
                                                           </li>
                                                           <li
-                                                            class="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                            class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                             id="hv-dropdown-1-values-list-item-2"
                                                             role="option"
                                                             tabindex="-1"
@@ -10653,7 +10653,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     wrapper={[Function]}
                                                   >
                                                     <li
-                                                      className="HvList-listItem HvList-condensed Focus-root-33 Focus-focusDisabled-36"
+                                                      className="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
                                                       id="hv-dropdown-1-values-list-item-2"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}

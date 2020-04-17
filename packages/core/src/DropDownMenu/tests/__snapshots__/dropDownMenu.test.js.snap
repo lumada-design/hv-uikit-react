@@ -822,7 +822,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             role="menu"
                           >
                             <li
-                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-0"
                               role="menuitem"
                               tabindex="0"
@@ -834,7 +834,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-1"
                               role="menuitem"
                               tabindex="-1"
@@ -846,7 +846,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-2"
                               role="menuitem"
                               tabindex="-1"
@@ -879,7 +879,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             role="menu"
                           >
                             <li
-                              class="HvList-listItem Focus-root-56 Focus-focusDisabled-59"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-0"
                               role="menuitem"
                               tabindex="0"
@@ -891,7 +891,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-56 Focus-focusDisabled-59"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-1"
                               role="menuitem"
                               tabindex="-1"
@@ -903,7 +903,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-56 Focus-focusDisabled-59"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-2"
                               role="menuitem"
                               tabindex="-1"
@@ -936,7 +936,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             role="menu"
                           >
                             <li
-                              class="HvList-listItem Focus-root-94 Focus-focusDisabled-97"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-0"
                               role="menuitem"
                               tabindex="0"
@@ -948,7 +948,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-94 Focus-focusDisabled-97"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-1"
                               role="menuitem"
                               tabindex="-1"
@@ -960,7 +960,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-94 Focus-focusDisabled-97"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-2"
                               role="menuitem"
                               tabindex="-1"
@@ -993,7 +993,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                             role="menu"
                           >
                             <li
-                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="drop-down-menu-2-list-item-0"
                               role="menuitem"
                               tabindex="0"
@@ -1005,7 +1005,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="drop-down-menu-2-list-item-1"
                               role="menuitem"
                               tabindex="-1"
@@ -1017,7 +1017,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="drop-down-menu-2-list-item-2"
                               role="menuitem"
                               tabindex="-1"
@@ -1183,7 +1183,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           role="menu"
                                         >
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-0"
                                             role="menuitem"
                                             tabindex="0"
@@ -1195,7 +1195,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-1"
                                             role="menuitem"
                                             tabindex="-1"
@@ -1207,7 +1207,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-2"
                                             role="menuitem"
                                             tabindex="-1"
@@ -1230,13 +1230,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   <Focus
                                     classes={
                                       Object {
-                                        "disabled": "Focus-disabled-172",
-                                        "externalReference": "Focus-externalReference-175",
-                                        "falseFocus": "Focus-falseFocus-176",
-                                        "focusDisabled": "Focus-focusDisabled-173",
-                                        "focused": "Focus-focused-174",
-                                        "root": "Focus-root-170",
-                                        "selected": "Focus-selected-171",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -1258,7 +1258,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
@@ -1270,7 +1270,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
@@ -1282,7 +1282,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
@@ -1307,7 +1307,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       wrapper={[Function]}
                                     >
                                       <li
-                                        className="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                        className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                         id="drop-down-menu-2-list-item-0"
                                         onBlur={[Function]}
                                         onClick={[Function]}
@@ -1387,7 +1387,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           role="menu"
                                         >
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-0"
                                             role="menuitem"
                                             tabindex="0"
@@ -1399,7 +1399,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-1"
                                             role="menuitem"
                                             tabindex="-1"
@@ -1411,7 +1411,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-2"
                                             role="menuitem"
                                             tabindex="-1"
@@ -1434,13 +1434,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   <Focus
                                     classes={
                                       Object {
-                                        "disabled": "Focus-disabled-172",
-                                        "externalReference": "Focus-externalReference-175",
-                                        "falseFocus": "Focus-falseFocus-176",
-                                        "focusDisabled": "Focus-focusDisabled-173",
-                                        "focused": "Focus-focused-174",
-                                        "root": "Focus-root-170",
-                                        "selected": "Focus-selected-171",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -1462,7 +1462,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
@@ -1474,7 +1474,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
@@ -1486,7 +1486,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
@@ -1511,7 +1511,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       wrapper={[Function]}
                                     >
                                       <li
-                                        className="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                        className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                         id="drop-down-menu-2-list-item-1"
                                         onBlur={[Function]}
                                         onClick={[Function]}
@@ -1591,7 +1591,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           role="menu"
                                         >
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-0"
                                             role="menuitem"
                                             tabindex="0"
@@ -1603,7 +1603,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-1"
                                             role="menuitem"
                                             tabindex="-1"
@@ -1615,7 +1615,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="drop-down-menu-2-list-item-2"
                                             role="menuitem"
                                             tabindex="-1"
@@ -1638,13 +1638,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   <Focus
                                     classes={
                                       Object {
-                                        "disabled": "Focus-disabled-172",
-                                        "externalReference": "Focus-externalReference-175",
-                                        "falseFocus": "Focus-falseFocus-176",
-                                        "focusDisabled": "Focus-focusDisabled-173",
-                                        "focused": "Focus-focused-174",
-                                        "root": "Focus-root-170",
-                                        "selected": "Focus-selected-171",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -1666,7 +1666,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
@@ -1678,7 +1678,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
@@ -1690,7 +1690,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="drop-down-menu-2-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
@@ -1715,7 +1715,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       wrapper={[Function]}
                                     >
                                       <li
-                                        className="HvList-listItem Focus-root-170 Focus-focusDisabled-173"
+                                        className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                         id="drop-down-menu-2-list-item-2"
                                         onBlur={[Function]}
                                         onClick={[Function]}
@@ -2611,7 +2611,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                             role="menu"
                           >
                             <li
-                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-0"
                               role="menuitem"
                               tabindex="0"
@@ -2623,7 +2623,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-1"
                               role="menuitem"
                               tabindex="-1"
@@ -2635,7 +2635,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                               </p>
                             </li>
                             <li
-                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                               id="dropdownMenu-list-item-2"
                               role="menuitem"
                               tabindex="-1"
@@ -2801,7 +2801,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           role="menu"
                                         >
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-0"
                                             role="menuitem"
                                             tabindex="0"
@@ -2813,7 +2813,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-1"
                                             role="menuitem"
                                             tabindex="-1"
@@ -2825,7 +2825,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-2"
                                             role="menuitem"
                                             tabindex="-1"
@@ -2848,13 +2848,13 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   <Focus
                                     classes={
                                       Object {
-                                        "disabled": "Focus-disabled-27",
-                                        "externalReference": "Focus-externalReference-30",
-                                        "falseFocus": "Focus-falseFocus-31",
-                                        "focusDisabled": "Focus-focusDisabled-28",
-                                        "focused": "Focus-focused-29",
-                                        "root": "Focus-root-25",
-                                        "selected": "Focus-selected-26",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -2876,7 +2876,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
@@ -2888,7 +2888,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
@@ -2900,7 +2900,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
@@ -2925,7 +2925,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       wrapper={[Function]}
                                     >
                                       <li
-                                        className="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                        className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                         id="dropdownMenu-list-item-0"
                                         onBlur={[Function]}
                                         onClick={[Function]}
@@ -3005,7 +3005,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           role="menu"
                                         >
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-0"
                                             role="menuitem"
                                             tabindex="0"
@@ -3017,7 +3017,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-1"
                                             role="menuitem"
                                             tabindex="-1"
@@ -3029,7 +3029,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-2"
                                             role="menuitem"
                                             tabindex="-1"
@@ -3052,13 +3052,13 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   <Focus
                                     classes={
                                       Object {
-                                        "disabled": "Focus-disabled-27",
-                                        "externalReference": "Focus-externalReference-30",
-                                        "falseFocus": "Focus-falseFocus-31",
-                                        "focusDisabled": "Focus-focusDisabled-28",
-                                        "focused": "Focus-focused-29",
-                                        "root": "Focus-root-25",
-                                        "selected": "Focus-selected-26",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -3080,7 +3080,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
@@ -3092,7 +3092,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
@@ -3104,7 +3104,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
@@ -3129,7 +3129,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       wrapper={[Function]}
                                     >
                                       <li
-                                        className="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                        className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                         id="dropdownMenu-list-item-1"
                                         onBlur={[Function]}
                                         onClick={[Function]}
@@ -3209,7 +3209,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           role="menu"
                                         >
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-0"
                                             role="menuitem"
                                             tabindex="0"
@@ -3221,7 +3221,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-1"
                                             role="menuitem"
                                             tabindex="-1"
@@ -3233,7 +3233,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             </p>
                                           </li>
                                           <li
-                                            class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                            class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                             id="dropdownMenu-list-item-2"
                                             role="menuitem"
                                             tabindex="-1"
@@ -3256,13 +3256,13 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   <Focus
                                     classes={
                                       Object {
-                                        "disabled": "Focus-disabled-27",
-                                        "externalReference": "Focus-externalReference-30",
-                                        "falseFocus": "Focus-falseFocus-31",
-                                        "focusDisabled": "Focus-focusDisabled-28",
-                                        "focused": "Focus-focused-29",
-                                        "root": "Focus-root-25",
-                                        "selected": "Focus-selected-26",
+                                        "disabled": "HvFocus-disabled",
+                                        "externalReference": "HvFocus-externalReference",
+                                        "falseFocus": "HvFocus-falseFocus",
+                                        "focusDisabled": "HvFocus-focusDisabled",
+                                        "focused": "HvFocus-focused",
+                                        "root": "HvFocus-root",
+                                        "selected": "HvFocus-selected",
                                       }
                                     }
                                     configuration={
@@ -3284,7 +3284,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                             role="menu"
                                           >
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-0"
                                               role="menuitem"
                                               tabindex="0"
@@ -3296,7 +3296,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-1"
                                               role="menuitem"
                                               tabindex="-1"
@@ -3308,7 +3308,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                               </p>
                                             </li>
                                             <li
-                                              class="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                              class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                               id="dropdownMenu-list-item-2"
                                               role="menuitem"
                                               tabindex="-1"
@@ -3333,7 +3333,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       wrapper={[Function]}
                                     >
                                       <li
-                                        className="HvList-listItem Focus-root-25 Focus-focusDisabled-28"
+                                        className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                                         id="dropdownMenu-list-item-2"
                                         onBlur={[Function]}
                                         onClick={[Function]}
