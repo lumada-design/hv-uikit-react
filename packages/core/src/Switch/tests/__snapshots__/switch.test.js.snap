@@ -131,13 +131,13 @@ exports[`Switch input area hover input can be hovered in 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-143",
-                "externalReference": "Focus-externalReference-146",
-                "falseFocus": "Focus-falseFocus-147",
-                "focusDisabled": "Focus-focusDisabled-144",
-                "focused": "Focus-focused-145",
-                "root": "Focus-root-141",
-                "selected": "Focus-selected-142",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={Object {}}
@@ -155,12 +155,12 @@ exports[`Switch input area hover input can be hovered in 1`] = `
               wrapper={[Function]}
             >
               <div
-                className="Focus-externalReference-146"
+                className="HvFocus-externalReference"
               >
                 <div
                   aria-checked={false}
                   aria-disabled={false}
-                  className="HvSwitch-root Focus-root-141 Focus-focusDisabled-144"
+                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -264,10 +264,10 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                             }
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-161 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-162 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-163 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                                "checked": "PrivateSwitchBase-checked-126 Mui-checked HvSwitch-checked",
+                                "disabled": "PrivateSwitchBase-disabled-127 Mui-disabled HvSwitch-disabled",
+                                "input": "PrivateSwitchBase-input-128 MuiSwitch-input",
+                                "root": "PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                               }
                             }
                             disabled={false}
@@ -287,7 +287,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
@@ -295,7 +295,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -317,7 +317,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                   component="span"
                                   disabled={false}
                                   focusRipple={true}
@@ -327,7 +327,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -345,7 +345,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -365,7 +365,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                                         <input
                                           aria-label="base switch"
                                           checked={false}
-                                          className="PrivateSwitchBase-input-163 MuiSwitch-input"
+                                          className="PrivateSwitchBase-input-128 MuiSwitch-input"
                                           disabled={false}
                                           onChange={[Function]}
                                           tabIndex="-1"
@@ -580,13 +580,13 @@ exports[`Switch input area hover input can be hovered out 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-143",
-                "externalReference": "Focus-externalReference-146",
-                "falseFocus": "Focus-falseFocus-147",
-                "focusDisabled": "Focus-focusDisabled-144",
-                "focused": "Focus-focused-145",
-                "root": "Focus-root-141",
-                "selected": "Focus-selected-142",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={Object {}}
@@ -604,12 +604,12 @@ exports[`Switch input area hover input can be hovered out 1`] = `
               wrapper={[Function]}
             >
               <div
-                className="Focus-externalReference-146"
+                className="HvFocus-externalReference"
               >
                 <div
                   aria-checked={false}
                   aria-disabled={false}
-                  className="HvSwitch-root Focus-root-141 Focus-focusDisabled-144"
+                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -713,10 +713,10 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                             }
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-161 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-162 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-163 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                                "checked": "PrivateSwitchBase-checked-126 Mui-checked HvSwitch-checked",
+                                "disabled": "PrivateSwitchBase-disabled-127 Mui-disabled HvSwitch-disabled",
+                                "input": "PrivateSwitchBase-input-128 MuiSwitch-input",
+                                "root": "PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                               }
                             }
                             disabled={false}
@@ -736,7 +736,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
@@ -744,7 +744,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -766,7 +766,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                   component="span"
                                   disabled={false}
                                   focusRipple={true}
@@ -776,7 +776,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -794,7 +794,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -814,7 +814,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                                         <input
                                           aria-label="base switch"
                                           checked={false}
-                                          className="PrivateSwitchBase-input-163 MuiSwitch-input"
+                                          className="PrivateSwitchBase-input-128 MuiSwitch-input"
                                           disabled={false}
                                           onChange={[Function]}
                                           tabIndex="-1"
@@ -1029,13 +1029,13 @@ exports[`Switch label click label can be clicked 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-143",
-                "externalReference": "Focus-externalReference-146",
-                "falseFocus": "Focus-falseFocus-147",
-                "focusDisabled": "Focus-focusDisabled-144",
-                "focused": "Focus-focused-145",
-                "root": "Focus-root-141",
-                "selected": "Focus-selected-142",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={Object {}}
@@ -1053,12 +1053,12 @@ exports[`Switch label click label can be clicked 1`] = `
               wrapper={[Function]}
             >
               <div
-                className="Focus-externalReference-146"
+                className="HvFocus-externalReference"
               >
                 <div
                   aria-checked={false}
                   aria-disabled={false}
-                  className="HvSwitch-root Focus-root-141 Focus-focusDisabled-144"
+                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -1162,10 +1162,10 @@ exports[`Switch label click label can be clicked 1`] = `
                             }
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-161 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-162 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-163 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                                "checked": "PrivateSwitchBase-checked-126 Mui-checked HvSwitch-checked",
+                                "disabled": "PrivateSwitchBase-disabled-127 Mui-disabled HvSwitch-disabled",
+                                "input": "PrivateSwitchBase-input-128 MuiSwitch-input",
+                                "root": "PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                               }
                             }
                             disabled={false}
@@ -1185,7 +1185,7 @@ exports[`Switch label click label can be clicked 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
@@ -1193,7 +1193,7 @@ exports[`Switch label click label can be clicked 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1215,7 +1215,7 @@ exports[`Switch label click label can be clicked 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                   component="span"
                                   disabled={false}
                                   focusRipple={true}
@@ -1225,7 +1225,7 @@ exports[`Switch label click label can be clicked 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -1243,7 +1243,7 @@ exports[`Switch label click label can be clicked 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -1263,7 +1263,7 @@ exports[`Switch label click label can be clicked 1`] = `
                                         <input
                                           aria-label="base switch"
                                           checked={false}
-                                          className="PrivateSwitchBase-input-163 MuiSwitch-input"
+                                          className="PrivateSwitchBase-input-128 MuiSwitch-input"
                                           disabled={false}
                                           onChange={[Function]}
                                           tabIndex="-1"
@@ -1478,13 +1478,13 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-143",
-                "externalReference": "Focus-externalReference-146",
-                "falseFocus": "Focus-falseFocus-147",
-                "focusDisabled": "Focus-focusDisabled-144",
-                "focused": "Focus-focused-145",
-                "root": "Focus-root-141",
-                "selected": "Focus-selected-142",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={Object {}}
@@ -1502,12 +1502,12 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
               wrapper={[Function]}
             >
               <div
-                className="Focus-externalReference-146"
+                className="HvFocus-externalReference"
               >
                 <div
                   aria-checked={false}
                   aria-disabled={false}
-                  className="HvSwitch-root Focus-root-141 Focus-focusDisabled-144"
+                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -1611,10 +1611,10 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                             }
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-161 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-162 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-163 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                                "checked": "PrivateSwitchBase-checked-126 Mui-checked HvSwitch-checked",
+                                "disabled": "PrivateSwitchBase-disabled-127 Mui-disabled HvSwitch-disabled",
+                                "input": "PrivateSwitchBase-input-128 MuiSwitch-input",
+                                "root": "PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                               }
                             }
                             disabled={false}
@@ -1634,7 +1634,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
@@ -1642,7 +1642,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -1664,7 +1664,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                   component="span"
                                   disabled={false}
                                   focusRipple={true}
@@ -1674,7 +1674,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -1692,7 +1692,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -1712,7 +1712,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                                         <input
                                           aria-label="base switch"
                                           checked={false}
-                                          className="PrivateSwitchBase-input-163 MuiSwitch-input"
+                                          className="PrivateSwitchBase-input-128 MuiSwitch-input"
                                           disabled={false}
                                           onChange={[Function]}
                                           tabIndex="-1"
@@ -1927,13 +1927,13 @@ exports[`Switch with no label display but with custom label configuration should
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-143",
-                "externalReference": "Focus-externalReference-146",
-                "falseFocus": "Focus-falseFocus-147",
-                "focusDisabled": "Focus-focusDisabled-144",
-                "focused": "Focus-focused-145",
-                "root": "Focus-root-141",
-                "selected": "Focus-selected-142",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={Object {}}
@@ -1951,12 +1951,12 @@ exports[`Switch with no label display but with custom label configuration should
               wrapper={[Function]}
             >
               <div
-                className="Focus-externalReference-146"
+                className="HvFocus-externalReference"
               >
                 <div
                   aria-checked={false}
                   aria-disabled={false}
-                  className="HvSwitch-root Focus-root-141 Focus-focusDisabled-144"
+                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -2060,10 +2060,10 @@ exports[`Switch with no label display but with custom label configuration should
                             }
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-161 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-162 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-163 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                                "checked": "PrivateSwitchBase-checked-126 Mui-checked HvSwitch-checked",
+                                "disabled": "PrivateSwitchBase-disabled-127 Mui-disabled HvSwitch-disabled",
+                                "input": "PrivateSwitchBase-input-128 MuiSwitch-input",
+                                "root": "PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                               }
                             }
                             disabled={false}
@@ -2083,7 +2083,7 @@ exports[`Switch with no label display but with custom label configuration should
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
@@ -2091,7 +2091,7 @@ exports[`Switch with no label display but with custom label configuration should
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -2113,7 +2113,7 @@ exports[`Switch with no label display but with custom label configuration should
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                   component="span"
                                   disabled={false}
                                   focusRipple={true}
@@ -2123,7 +2123,7 @@ exports[`Switch with no label display but with custom label configuration should
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -2141,7 +2141,7 @@ exports[`Switch with no label display but with custom label configuration should
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -2161,7 +2161,7 @@ exports[`Switch with no label display but with custom label configuration should
                                         <input
                                           aria-label="base switch"
                                           checked={false}
-                                          className="PrivateSwitchBase-input-163 MuiSwitch-input"
+                                          className="PrivateSwitchBase-input-128 MuiSwitch-input"
                                           disabled={false}
                                           onChange={[Function]}
                                           tabIndex="-1"
@@ -2376,13 +2376,13 @@ exports[`Switch withStyles should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-143",
-                "externalReference": "Focus-externalReference-146",
-                "falseFocus": "Focus-falseFocus-147",
-                "focusDisabled": "Focus-focusDisabled-144",
-                "focused": "Focus-focused-145",
-                "root": "Focus-root-141",
-                "selected": "Focus-selected-142",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={Object {}}
@@ -2400,12 +2400,12 @@ exports[`Switch withStyles should render correctly 1`] = `
               wrapper={[Function]}
             >
               <div
-                className="Focus-externalReference-146"
+                className="HvFocus-externalReference"
               >
                 <div
                   aria-checked={false}
                   aria-disabled={false}
-                  className="HvSwitch-root Focus-root-141 Focus-focusDisabled-144"
+                  className="HvSwitch-root HvFocus-root HvFocus-focusDisabled"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -2509,10 +2509,10 @@ exports[`Switch withStyles should render correctly 1`] = `
                             }
                             classes={
                               Object {
-                                "checked": "PrivateSwitchBase-checked-161 Mui-checked HvSwitch-checked",
-                                "disabled": "PrivateSwitchBase-disabled-162 Mui-disabled HvSwitch-disabled",
-                                "input": "PrivateSwitchBase-input-163 MuiSwitch-input",
-                                "root": "PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
+                                "checked": "PrivateSwitchBase-checked-126 Mui-checked HvSwitch-checked",
+                                "disabled": "PrivateSwitchBase-disabled-127 Mui-disabled HvSwitch-disabled",
+                                "input": "PrivateSwitchBase-input-128 MuiSwitch-input",
+                                "root": "PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary",
                               }
                             }
                             disabled={false}
@@ -2532,7 +2532,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                             value=""
                           >
                             <WithStyles(ForwardRef(IconButton))
-                              className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                              className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                               component="span"
                               disabled={false}
                               onBlur={[Function]}
@@ -2540,7 +2540,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                               tabIndex={null}
                             >
                               <ForwardRef(IconButton)
-                                className="PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                className="PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiIconButton-colorInherit",
@@ -2562,7 +2562,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
                                   centerRipple={true}
-                                  className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                  className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                   component="span"
                                   disabled={false}
                                   focusRipple={true}
@@ -2572,7 +2572,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                                 >
                                   <ForwardRef(ButtonBase)
                                     centerRipple={true}
-                                    className="MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                    className="MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -2590,7 +2590,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                                   >
                                     <span
                                       aria-disabled={false}
-                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-160 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
+                                      className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-125 MuiSwitch-switchBase HvSwitch-switchBase MuiSwitch-colorSecondary"
                                       onBlur={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
@@ -2610,7 +2610,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                                         <input
                                           aria-label="base switch"
                                           checked={false}
-                                          className="PrivateSwitchBase-input-163 MuiSwitch-input"
+                                          className="PrivateSwitchBase-input-128 MuiSwitch-input"
                                           disabled={false}
                                           onChange={[Function]}
                                           tabIndex="-1"

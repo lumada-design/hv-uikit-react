@@ -210,7 +210,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -222,7 +222,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -234,7 +234,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -256,13 +256,13 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-109",
-                "externalReference": "Focus-externalReference-112",
-                "falseFocus": "Focus-falseFocus-113",
-                "focusDisabled": "Focus-focusDisabled-110",
-                "focused": "Focus-focused-111",
-                "root": "Focus-root-107",
-                "selected": "Focus-selected-108",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -285,7 +285,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -297,7 +297,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -309,7 +309,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -334,7 +334,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                className="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -414,7 +414,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -426,7 +426,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -438,7 +438,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -460,13 +460,13 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-109",
-                "externalReference": "Focus-externalReference-112",
-                "falseFocus": "Focus-falseFocus-113",
-                "focusDisabled": "Focus-focusDisabled-110",
-                "focused": "Focus-focused-111",
-                "root": "Focus-root-107",
-                "selected": "Focus-selected-108",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -489,7 +489,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -501,7 +501,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -513,7 +513,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -538,7 +538,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             >
               <li
                 aria-selected={false}
-                className="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -618,7 +618,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -630,7 +630,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -642,7 +642,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -664,13 +664,13 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-109",
-                "externalReference": "Focus-externalReference-112",
-                "falseFocus": "Focus-falseFocus-113",
-                "focusDisabled": "Focus-focusDisabled-110",
-                "focused": "Focus-focused-111",
-                "root": "Focus-root-107",
-                "selected": "Focus-selected-108",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -693,7 +693,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -705,7 +705,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="HvList-listItem Focus-root-107 Focus-focusDisabled-110"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -717,7 +717,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -742,7 +742,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selected Focus-root-107 Focus-selected-108 Focus-focusDisabled-110"
+                className="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1335,10 +1335,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         className="HvCheckBox-checkBox"
                         classes={
                           Object {
-                            "checked": "PrivateSwitchBase-checked-162 Mui-checked",
-                            "disabled": "PrivateSwitchBase-disabled-163 Mui-disabled",
-                            "input": "PrivateSwitchBase-input-164",
-                            "root": "PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate",
+                            "checked": "PrivateSwitchBase-checked-71 Mui-checked",
+                            "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
+                            "input": "PrivateSwitchBase-input-73",
+                            "root": "PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate",
                           }
                         }
                         color="default"
@@ -1361,7 +1361,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         value=""
                       >
                         <WithStyles(ForwardRef(IconButton))
-                          className="PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                          className="PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                           color="default"
                           component="span"
                           disableRipple={true}
@@ -1371,7 +1371,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           tabIndex={null}
                         >
                           <ForwardRef(IconButton)
-                            className="PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                            className="PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                             classes={
                               Object {
                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -1395,7 +1395,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           >
                             <WithStyles(ForwardRef(ButtonBase))
                               centerRipple={true}
-                              className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                              className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                               component="span"
                               disableRipple={true}
                               disabled={false}
@@ -1406,7 +1406,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             >
                               <ForwardRef(ButtonBase)
                                 centerRipple={true}
-                                className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                                className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                                 classes={
                                   Object {
                                     "disabled": "Mui-disabled",
@@ -1424,7 +1424,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               >
                                 <span
                                   aria-disabled={false}
-                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                                   onBlur={[Function]}
                                   onDragLeave={[Function]}
                                   onFocus={[Function]}
@@ -1443,7 +1443,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   >
                                     <input
                                       checked={false}
-                                      className="PrivateSwitchBase-input-164"
+                                      className="PrivateSwitchBase-input-73"
                                       data-indeterminate={true}
                                       disabled={false}
                                       onChange={[Function]}
@@ -1588,13 +1588,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-164"
+                        class="PrivateSwitchBase-input-73"
                         data-indeterminate="true"
                         type="checkbox"
                         value=""
@@ -1643,7 +1643,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -1652,14 +1652,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="0"
                             type="checkbox"
@@ -1699,7 +1699,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -1708,13 +1708,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -1754,7 +1754,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -1763,14 +1763,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -1820,13 +1820,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-209",
-                "externalReference": "Focus-externalReference-212",
-                "falseFocus": "Focus-falseFocus-213",
-                "focusDisabled": "Focus-focusDisabled-210",
-                "focused": "Focus-focused-211",
-                "root": "Focus-root-207",
-                "selected": "Focus-selected-208",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -1847,13 +1847,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-164"
+                          class="PrivateSwitchBase-input-73"
                           data-indeterminate="true"
                           type="checkbox"
                           value=""
@@ -1902,7 +1902,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -1911,14 +1911,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="0"
                               type="checkbox"
@@ -1958,7 +1958,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -1967,13 +1967,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -2013,7 +2013,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -2022,14 +2022,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -2082,7 +2082,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2311,10 +2311,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   className="HvCheckBox-checkBox"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-162 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-163 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-164",
-                                      "root": "PrivateSwitchBase-root-161 MuiCheckbox-root",
+                                      "checked": "PrivateSwitchBase-checked-71 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-73",
+                                      "root": "PrivateSwitchBase-root-70 MuiCheckbox-root",
                                     }
                                   }
                                   color="default"
@@ -2337,7 +2337,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                    className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -2347,7 +2347,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                      className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -2371,7 +2371,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -2382,7 +2382,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -2400,7 +2400,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -2419,7 +2419,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             >
                                               <input
                                                 checked={true}
-                                                className="PrivateSwitchBase-input-164"
+                                                className="PrivateSwitchBase-input-73"
                                                 data-indeterminate={false}
                                                 disabled={false}
                                                 onChange={[Function]}
@@ -2557,13 +2557,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-164"
+                        class="PrivateSwitchBase-input-73"
                         data-indeterminate="true"
                         type="checkbox"
                         value=""
@@ -2612,7 +2612,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -2621,14 +2621,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="0"
                             type="checkbox"
@@ -2668,7 +2668,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -2677,13 +2677,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -2723,7 +2723,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -2732,14 +2732,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -2789,13 +2789,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-209",
-                "externalReference": "Focus-externalReference-212",
-                "falseFocus": "Focus-falseFocus-213",
-                "focusDisabled": "Focus-focusDisabled-210",
-                "focused": "Focus-focused-211",
-                "root": "Focus-root-207",
-                "selected": "Focus-selected-208",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -2816,13 +2816,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-164"
+                          class="PrivateSwitchBase-input-73"
                           data-indeterminate="true"
                           type="checkbox"
                           value=""
@@ -2871,7 +2871,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -2880,14 +2880,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="0"
                               type="checkbox"
@@ -2927,7 +2927,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -2936,13 +2936,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -2982,7 +2982,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -2991,14 +2991,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -3051,7 +3051,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             >
               <li
                 aria-selected={false}
-                className="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -3280,10 +3280,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   className="HvCheckBox-checkBox"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-162 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-163 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-164",
-                                      "root": "PrivateSwitchBase-root-161 MuiCheckbox-root",
+                                      "checked": "PrivateSwitchBase-checked-71 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-73",
+                                      "root": "PrivateSwitchBase-root-70 MuiCheckbox-root",
                                     }
                                   }
                                   color="default"
@@ -3306,7 +3306,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                                    className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -3316,7 +3316,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                                      className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -3340,7 +3340,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -3351,7 +3351,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -3369,7 +3369,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -3388,7 +3388,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             >
                                               <input
                                                 checked={false}
-                                                className="PrivateSwitchBase-input-164"
+                                                className="PrivateSwitchBase-input-73"
                                                 data-indeterminate={false}
                                                 disabled={false}
                                                 onChange={[Function]}
@@ -3526,13 +3526,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-164"
+                        class="PrivateSwitchBase-input-73"
                         data-indeterminate="true"
                         type="checkbox"
                         value=""
@@ -3581,7 +3581,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -3590,14 +3590,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="0"
                             type="checkbox"
@@ -3637,7 +3637,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="false"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -3646,13 +3646,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -3692,7 +3692,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -3701,14 +3701,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-164"
+                            class="PrivateSwitchBase-input-73"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -3758,13 +3758,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-209",
-                "externalReference": "Focus-externalReference-212",
-                "falseFocus": "Focus-falseFocus-213",
-                "focusDisabled": "Focus-focusDisabled-210",
-                "focused": "Focus-focused-211",
-                "root": "Focus-root-207",
-                "selected": "Focus-selected-208",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -3785,13 +3785,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-164"
+                          class="PrivateSwitchBase-input-73"
                           data-indeterminate="true"
                           type="checkbox"
                           value=""
@@ -3840,7 +3840,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -3849,14 +3849,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="0"
                               type="checkbox"
@@ -3896,7 +3896,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -3905,13 +3905,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -3951,7 +3951,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -3960,14 +3960,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-164"
+                              class="PrivateSwitchBase-input-73"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -4020,7 +4020,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selector Focus-root-207 Focus-selected-208 Focus-focusDisabled-210"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4249,10 +4249,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   className="HvCheckBox-checkBox"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-162 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-163 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-164",
-                                      "root": "PrivateSwitchBase-root-161 MuiCheckbox-root",
+                                      "checked": "PrivateSwitchBase-checked-71 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-73",
+                                      "root": "PrivateSwitchBase-root-70 MuiCheckbox-root",
                                     }
                                   }
                                   color="default"
@@ -4275,7 +4275,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                    className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -4285,7 +4285,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                      className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -4309,7 +4309,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -4320,7 +4320,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -4338,7 +4338,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-161 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-162 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -4357,7 +4357,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             >
                                               <input
                                                 checked={true}
-                                                className="PrivateSwitchBase-input-164"
+                                                className="PrivateSwitchBase-input-73"
                                                 data-indeterminate={false}
                                                 disabled={false}
                                                 onChange={[Function]}
@@ -4591,7 +4591,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -4602,7 +4602,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -4613,7 +4613,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -4635,13 +4635,13 @@ exports[`<List /> Single selection should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-3",
-                "externalReference": "Focus-externalReference-6",
-                "falseFocus": "Focus-falseFocus-7",
-                "focusDisabled": "Focus-focusDisabled-4",
-                "focused": "Focus-focused-5",
-                "root": "Focus-root-1",
-                "selected": "Focus-selected-2",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -4663,7 +4663,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -4674,7 +4674,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -4685,7 +4685,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -4710,7 +4710,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                className="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4789,7 +4789,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -4800,7 +4800,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -4811,7 +4811,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -4833,13 +4833,13 @@ exports[`<List /> Single selection should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-3",
-                "externalReference": "Focus-externalReference-6",
-                "falseFocus": "Focus-falseFocus-7",
-                "focusDisabled": "Focus-focusDisabled-4",
-                "focused": "Focus-focused-5",
-                "root": "Focus-root-1",
-                "selected": "Focus-selected-2",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -4861,7 +4861,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -4872,7 +4872,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -4883,7 +4883,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -4907,7 +4907,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4986,7 +4986,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -4997,7 +4997,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5008,7 +5008,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5030,13 +5030,13 @@ exports[`<List /> Single selection should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-3",
-                "externalReference": "Focus-externalReference-6",
-                "falseFocus": "Focus-falseFocus-7",
-                "focusDisabled": "Focus-focusDisabled-4",
-                "focused": "Focus-focused-5",
-                "root": "Focus-root-1",
-                "selected": "Focus-selected-2",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -5058,7 +5058,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected Focus-root-1 Focus-selected-2 Focus-focusDisabled-4"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -5069,7 +5069,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5080,7 +5080,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5104,7 +5104,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem Focus-root-1 Focus-focusDisabled-4"
+                className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5281,7 +5281,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                   role="listbox"
                 >
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -5309,7 +5309,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5320,7 +5320,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5359,13 +5359,13 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-102",
-                "externalReference": "Focus-externalReference-105",
-                "falseFocus": "Focus-falseFocus-106",
-                "focusDisabled": "Focus-focusDisabled-103",
-                "focused": "Focus-focused-104",
-                "root": "Focus-root-100",
-                "selected": "Focus-selected-101",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -5386,7 +5386,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -5414,7 +5414,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5425,7 +5425,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5466,7 +5466,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5575,7 +5575,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                   role="listbox"
                 >
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -5603,7 +5603,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5614,7 +5614,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5653,13 +5653,13 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-102",
-                "externalReference": "Focus-externalReference-105",
-                "falseFocus": "Focus-falseFocus-106",
-                "focusDisabled": "Focus-focusDisabled-103",
-                "focused": "Focus-focused-104",
-                "root": "Focus-root-100",
-                "selected": "Focus-selected-101",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -5680,7 +5680,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -5708,7 +5708,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5719,7 +5719,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5760,7 +5760,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -5838,7 +5838,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                   role="listbox"
                 >
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="0"
                   >
@@ -5866,7 +5866,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5877,7 +5877,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     </p>
                   </li>
                   <li
-                    class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                    class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -5916,13 +5916,13 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-102",
-                "externalReference": "Focus-externalReference-105",
-                "falseFocus": "Focus-falseFocus-106",
-                "focusDisabled": "Focus-focusDisabled-103",
-                "focused": "Focus-focused-104",
-                "root": "Focus-root-100",
-                "selected": "Focus-selected-101",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -5943,7 +5943,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                     role="listbox"
                   >
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="0"
                     >
@@ -5971,7 +5971,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -5982,7 +5982,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       </p>
                     </li>
                     <li
-                      class="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                      class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -6023,7 +6023,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem Focus-root-100 Focus-focusDisabled-103"
+                className="HvList-listItem HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -6233,7 +6233,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -6242,14 +6242,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="0"
                             type="radio"
                             value=""
@@ -6286,7 +6286,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     </label>
                   </li>
                   <li
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -6295,13 +6295,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -6338,7 +6338,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     </label>
                   </li>
                   <li
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -6347,13 +6347,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -6401,13 +6401,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-38",
-                "externalReference": "Focus-externalReference-41",
-                "falseFocus": "Focus-falseFocus-42",
-                "focusDisabled": "Focus-focusDisabled-39",
-                "focused": "Focus-focused-40",
-                "root": "Focus-root-36",
-                "selected": "Focus-selected-37",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -6429,7 +6429,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -6438,14 +6438,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="0"
                               type="radio"
                               value=""
@@ -6482,7 +6482,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       </label>
                     </li>
                     <li
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -6491,13 +6491,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -6534,7 +6534,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       </label>
                     </li>
                     <li
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -6543,13 +6543,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -6600,7 +6600,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -6791,10 +6791,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   className="HvRadioButton-radio"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-55 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-56 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-57",
-                                      "root": "PrivateSwitchBase-root-54 MuiRadio-root",
+                                      "checked": "PrivateSwitchBase-checked-13 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-14 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-15",
+                                      "root": "PrivateSwitchBase-root-12 MuiRadio-root",
                                     }
                                   }
                                   color="default"
@@ -6810,7 +6810,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                                    className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -6819,7 +6819,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                                      className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -6842,7 +6842,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -6853,7 +6853,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -6871,7 +6871,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -6890,7 +6890,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <input
                                                 checked={true}
-                                                className="PrivateSwitchBase-input-57"
+                                                className="PrivateSwitchBase-input-15"
                                                 onChange={[Function]}
                                                 type="radio"
                                                 value=""
@@ -7024,7 +7024,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -7033,14 +7033,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="0"
                             type="radio"
                             value=""
@@ -7077,7 +7077,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     </label>
                   </li>
                   <li
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -7086,13 +7086,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -7129,7 +7129,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     </label>
                   </li>
                   <li
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -7138,13 +7138,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -7192,13 +7192,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-38",
-                "externalReference": "Focus-externalReference-41",
-                "falseFocus": "Focus-falseFocus-42",
-                "focusDisabled": "Focus-focusDisabled-39",
-                "focused": "Focus-focused-40",
-                "root": "Focus-root-36",
-                "selected": "Focus-selected-37",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -7220,7 +7220,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -7229,14 +7229,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="0"
                               type="radio"
                               value=""
@@ -7273,7 +7273,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       </label>
                     </li>
                     <li
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -7282,13 +7282,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -7325,7 +7325,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       </label>
                     </li>
                     <li
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -7334,13 +7334,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -7390,7 +7390,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -7581,10 +7581,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   className="HvRadioButton-radio"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-55 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-56 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-57",
-                                      "root": "PrivateSwitchBase-root-54 MuiRadio-root",
+                                      "checked": "PrivateSwitchBase-checked-13 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-14 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-15",
+                                      "root": "PrivateSwitchBase-root-12 MuiRadio-root",
                                     }
                                   }
                                   color="default"
@@ -7600,7 +7600,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                    className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -7609,7 +7609,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                      className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -7632,7 +7632,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -7643,7 +7643,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -7661,7 +7661,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -7680,7 +7680,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <input
                                                 checked={false}
-                                                className="PrivateSwitchBase-input-57"
+                                                className="PrivateSwitchBase-input-15"
                                                 onChange={[Function]}
                                                 type="radio"
                                                 value=""
@@ -7814,7 +7814,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -7823,14 +7823,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="0"
                             type="radio"
                             value=""
@@ -7867,7 +7867,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     </label>
                   </li>
                   <li
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -7876,13 +7876,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -7919,7 +7919,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     </label>
                   </li>
                   <li
-                    class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                     role="option"
                     tabindex="-1"
                   >
@@ -7928,13 +7928,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-57"
+                            class="PrivateSwitchBase-input-15"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -7982,13 +7982,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           <Focus
             classes={
               Object {
-                "disabled": "Focus-disabled-38",
-                "externalReference": "Focus-externalReference-41",
-                "falseFocus": "Focus-falseFocus-42",
-                "focusDisabled": "Focus-focusDisabled-39",
-                "focused": "Focus-focused-40",
-                "root": "Focus-root-36",
-                "selected": "Focus-selected-37",
+                "disabled": "HvFocus-disabled",
+                "externalReference": "HvFocus-externalReference",
+                "falseFocus": "HvFocus-falseFocus",
+                "focusDisabled": "HvFocus-focusDisabled",
+                "focused": "HvFocus-focused",
+                "root": "HvFocus-root",
+                "selected": "HvFocus-selected",
               }
             }
             configuration={
@@ -8010,7 +8010,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-selected-37 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -8019,14 +8019,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-55 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="0"
                               type="radio"
                               value=""
@@ -8063,7 +8063,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       </label>
                     </li>
                     <li
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -8072,13 +8072,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -8115,7 +8115,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       </label>
                     </li>
                     <li
-                      class="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                       role="option"
                       tabindex="-1"
                     >
@@ -8124,13 +8124,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-57"
+                              class="PrivateSwitchBase-input-15"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -8180,7 +8180,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               wrapper={[Function]}
             >
               <li
-                className="HvList-listItem HvList-selector Focus-root-36 Focus-focusDisabled-39"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -8371,10 +8371,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   className="HvRadioButton-radio"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-55 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-56 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-57",
-                                      "root": "PrivateSwitchBase-root-54 MuiRadio-root",
+                                      "checked": "PrivateSwitchBase-checked-13 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-14 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-15",
+                                      "root": "PrivateSwitchBase-root-12 MuiRadio-root",
                                     }
                                   }
                                   color="default"
@@ -8390,7 +8390,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                    className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -8399,7 +8399,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                      className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -8422,7 +8422,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -8433,7 +8433,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -8451,7 +8451,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-54 MuiRadio-root HvRadioButton-radio"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -8470,7 +8470,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <input
                                                 checked={false}
-                                                className="PrivateSwitchBase-input-57"
+                                                className="PrivateSwitchBase-input-15"
                                                 onChange={[Function]}
                                                 type="radio"
                                                 value=""
