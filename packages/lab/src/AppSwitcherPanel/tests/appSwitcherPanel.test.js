@@ -70,7 +70,7 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
   });
 
   it("should render 3 action components", () => {
@@ -135,7 +135,7 @@ describe("<AppSwitcherPanel /> Applications without a name or url should not be 
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(AppSwitcherPanelWithStyles)).toMatchSnapshot();
   });
 
   it("should render 2 action components", () => {

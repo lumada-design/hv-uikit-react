@@ -42,7 +42,7 @@ describe("<Action /> with description", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ActionWrapper)).toMatchSnapshot();
   });
 
   it("should render an HvTypography component", () => {
@@ -81,7 +81,7 @@ describe("<Action /> without description", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ActionWrapper)).toMatchSnapshot();
   });
 
   it("should render an HvTypography component", () => {
@@ -120,7 +120,7 @@ describe("<Action /> with an element icon", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(ActionWrapper)).toMatchSnapshot();
   });
 
   it("should render an HvTypography component", () => {
