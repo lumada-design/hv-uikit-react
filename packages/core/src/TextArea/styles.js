@@ -58,6 +58,9 @@ const styles = theme => ({
   currentCounter: {
     ...theme.hv.typography.labelText
   },
+  invalid: {
+    color: theme.hv.palette.accent.acce3
+  },
   root: {
     display: "inline-block"
   }

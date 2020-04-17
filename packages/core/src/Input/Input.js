@@ -48,18 +48,21 @@ class HvInput extends React.Component {
     const { value: nextValue, validationState } = nextProps;
     const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
 
-    if (
-      (nextValue !== undefined && nextValue !== oldValue) ||
-      (validationState !== undefined && validationState !== validationStateProp)
-    ) {
-      return {
-        value: nextValue,
+    let returnState = null;
+
+    if (nextValue !== undefined && nextValue !== oldValue) {
+      returnState = {
+        value: nextValue
+      };
+    }
+    if (validationState !== undefined && validationState !== validationStateProp) {
+      returnState = {
         validationState,
         currentValidationStateProps:
           validationState !== validationStateProp ? validationStateProp : validationState
       };
     }
-    return null;
+    return returnState;
   }
 
   /**
@@ -435,19 +438,18 @@ class HvInput extends React.Component {
 
         <HvTypography
           variant="sText"
-          className={clsx(classes.textWarning, classes.infoText)}
-          style={{
-            display: stateValidationState === validationStates.invalid ? "block" : "none"
-          }}
+          className={clsx(classes.textWarning, classes.infoText, {
+            [classes.showText]:
+              stateValidationState === validationStates.invalid &&
+              (externalWarningTextOverride || warningText)
+          })}
           aria-live="polite"
           aria-controls={`${id}-input`}
           aria-atomic="true"
           aria-relevant="additions text"
           aria-labelledby={labels.inputLabel ? `${id}-label` : null}
         >
-          {stateValidationState === validationStates.invalid
-            ? externalWarningTextOverride || warningText
-            : ""}
+          {externalWarningTextOverride || warningText || ""}
         </HvTypography>
       </div>
     );
@@ -539,6 +541,10 @@ HvInput.propTypes = {
      * Styles applied to the description when it is showing a warning.
      */
     textWarning: PropTypes.string,
+    /**
+     * Styles applied when the text should be shown.
+     */
+    showText: PropTypes.string,
     /**
      * Styles applied to the input adornment icons.
      */

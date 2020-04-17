@@ -14,7 +14,10 @@ const DEFAULT_LABELS = {
   warningText: "",
   maxCharQuantityWarningText: "",
   minCharQuantityWarningText: "",
-  requiredWarningText: ""
+  requiredWarningText: "",
+  startCount: "",
+  middleCount: "/",
+  endCount: ""
 };
 
 /**
@@ -28,21 +31,25 @@ class HvTextArea extends React.Component {
 
     this.state = {
       currentValueLength: initialValue !== undefined ? this.limitValue(initialValue).length : 0,
-      autoScrolling: autoScroll
+      autoScrolling: autoScroll,
+      overflow: initialValue ? this.isOverflow(initialValue) : false
     };
     this.textInputRef = React.createRef();
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { value: nextValue, maxCharQuantity } = nextProps;
+    const { value: nextValue, maxCharQuantity, blockMax } = nextProps;
     const { currentValueLength: oldLength } = prevState;
 
     if (nextValue !== undefined) {
-      const nextLength = nextValue.length > maxCharQuantity ? maxCharQuantity : nextValue.length;
+      const isOverflow = nextValue.length > maxCharQuantity;
+
+      const nextLength = isOverflow && blockMax ? maxCharQuantity : nextValue.length;
 
       if (nextLength !== oldLength) {
         return {
-          currentValueLength: nextLength
+          currentValueLength: nextLength,
+          overflow: maxCharQuantity && isOverflow
         };
       }
     }
@@ -64,6 +71,11 @@ class HvTextArea extends React.Component {
     }
   }
 
+  isOverflow = value => {
+    const { maxCharQuantity } = this.props;
+    return isNil(maxCharQuantity) ? false : value.length > maxCharQuantity;
+  };
+
   /**
    * Limit the string to the maxCharQuantity length.
    *
@@ -71,13 +83,11 @@ class HvTextArea extends React.Component {
    * @returns {string|*} - string according the limit
    */
   limitValue = value => {
-    const { maxCharQuantity } = this.props;
+    const { maxCharQuantity, blockMax } = this.props;
 
-    if (value === undefined) return value;
+    if (value === undefined || !blockMax) return value;
 
-    return isNil(maxCharQuantity) || value.length < maxCharQuantity
-      ? value
-      : value.substring(0, maxCharQuantity);
+    return !this.isOverflow(value) ? value : value.substring(0, maxCharQuantity);
   };
 
   isScrolledDown = () => {
@@ -112,12 +122,13 @@ class HvTextArea extends React.Component {
 
     const newValue = onChange(event, this.limitValue(value));
 
-    const textAreaValue = this.limitValue(!isNil(newValue) ? newValue : value);
+    const textAreaValue = this.limitValue(newValue);
 
     this.setState({
-      currentValueLength: textAreaValue.length
+      currentValueLength: textAreaValue.length,
+      overflow: this.isOverflow(value)
     });
-    return newValue;
+    return textAreaValue;
   };
 
   render() {
@@ -134,12 +145,26 @@ class HvTextArea extends React.Component {
       resizable,
       autoScroll,
       onChange,
+      blockMax,
+      countCharProps,
       ...others
     } = this.props;
 
-    const { currentValueLength } = this.state;
+    const { currentValueLength, overflow } = this.state;
     const val = initialValue;
 
+    const CountTypography = ({ text, countClassNames, variant = "infoText" }) =>
+      !isNil(text) && (
+        <HvTypography
+          className={clsx(classes.inline, countClassNames, {
+            [classes.disabled]: disabled,
+            [classes.invalid]: overflow
+          })}
+          variant={variant}
+        >
+          {text}
+        </HvTypography>
+      );
     return (
       <div>
         <div className={classes.root}>
@@ -167,37 +192,26 @@ class HvTextArea extends React.Component {
             validationIconVisible={false}
             disableClear
             inputRef={this.textInputRef}
+            validationState={(overflow && "invalid") || undefined}
+            aria-invalid={overflow || undefined}
             {...others}
           />
           {maxCharQuantity ? (
-            <div className={classes.characterCounter}>
-              <HvTypography
-                className={clsx(classes.inline, {
-                  [classes.currentCounter]: !disabled,
-                  [classes.disabled]: disabled
-                })}
+            <div className={classes.characterCounter} aria-live="polite" {...countCharProps}>
+              <CountTypography text={`${labels.startCount} `} />
+              <CountTypography
+                countClassNames={{ [classes.currentCounter]: !disabled }}
                 variant="labelText"
-              >
-                {currentValueLength}
-              </HvTypography>
-              <HvTypography
-                className={clsx(classes.inline, classes.separator, {
-                  [classes.maxCharacter]: !disabled,
-                  [classes.disabled]: disabled
-                })}
-                variant="infoText"
-              >
-                /
-              </HvTypography>
-              <HvTypography
-                className={clsx(classes.inline, {
-                  [classes.maxCharacter]: !disabled,
-                  [classes.disabled]: disabled
-                })}
-                variant="infoText"
-              >
-                {maxCharQuantity}
-              </HvTypography>
+                text={currentValueLength}
+              />
+              <CountTypography
+                countClassNames={[classes.separator, { [classes.maxCharacter]: !disabled }]}
+                text={labels.middleCount}
+              />
+              <CountTypography
+                countClassNames={{ [classes.maxCharacter]: !disabled }}
+                text={`${maxCharQuantity} ${labels.endCount}`}
+              />
             </div>
           ) : null}
         </div>
@@ -268,6 +282,10 @@ HvTextArea.propTypes = {
      */
     disabled: PropTypes.string,
     /**
+     * Style applied to the character counter when it the `maxCharQuantity` is reach.
+     */
+    invalid: PropTypes.string,
+    /**
      * Style applied to the input container.
      */
     container: PropTypes.string,
@@ -277,24 +295,49 @@ HvTextArea.propTypes = {
     root: PropTypes.string
   }).isRequired,
   /**
-   * An Object containing the various text associated with the text area.
-   *
-   * -inputLabel: the label on top of the input.
-   * -placeholder: the placeholder value of the input.
-   * -infoText: the default value of the info text below the input.
-   * -warningText: the value when a validation fails.
-   * -maxCharQuantityWarningText: the message that appears when there are too many characters.
-   * -minCharQuantityWarningText: the message that appears when there are too few characters.
-   * -requiredWarningText: the message that appears when the input is empty and required.
+   * An Object containing the various text associated with the input.
    */
   labels: PropTypes.shape({
+    /**
+     * The label on top of the input.
+     */
     inputLabel: PropTypes.string,
+    /**
+     * The placeholder value of the input.
+     */
     placeholder: PropTypes.string,
+    /**
+     * The default value of the info text below the input.
+     */
     infoText: PropTypes.string,
+    /**
+     * The value when a validation fails.
+     */
     warningText: PropTypes.string,
+    /**
+     * The message that appears when there are too many characters.
+     */
     maxCharQuantityWarningText: PropTypes.string,
+    /**
+     * The message that appears when there are too few characters.
+     */
     minCharQuantityWarningText: PropTypes.string,
-    requiredWarningText: PropTypes.string
+    /**
+     * The message that appears when the input is empty and required.
+     */
+    requiredWarningText: PropTypes.string,
+    /**
+     * Text before the current char counter.
+     */
+    startCount: PropTypes.string,
+    /**
+     * Text between the current char counter and max value.
+     */
+    middleCount: PropTypes.string,
+    /**
+     * Text after the max value.
+     */
+    endCount: PropTypes.string
   }),
   /**
    * The maximum allowed length of the characters, if this value is null or undefined no check
@@ -330,7 +373,15 @@ HvTextArea.propTypes = {
    * Auto-scroll: automatically scroll to the end on value changes.
    * Will stop if the user scrolls up and resume if scrolled to the bottom.
    */
-  autoScroll: PropTypes.bool
+  autoScroll: PropTypes.bool,
+  /**
+   * If true it isn't possible to pass the `maxCharQuantity`
+   */
+  blockMax: PropTypes.bool,
+  /**
+   * Props passed to the char count.
+   */
+  countCharProps: PropTypes.instanceOf(Object)
 };
 
 HvTextArea.defaultProps = {
@@ -343,7 +394,9 @@ HvTextArea.defaultProps = {
   maxCharQuantity: undefined,
   onChange: (event, value) => value,
   autoScroll: false,
-  resizable: false
+  resizable: false,
+  blockMax: false,
+  countCharProps: {}
 };
 
 export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));
