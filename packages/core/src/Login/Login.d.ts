@@ -47,7 +47,7 @@ interface LoginLabelsProp {
    */
   passwordPlaceHolder?: string;
   /**
-   * Remember Me Label Text
+   * Remember Me label
    */
   rememberMeLabel?: string;
   /**
@@ -79,11 +79,11 @@ interface LoginLabelsProp {
    */
   recoverButton: string;
   /**
-   * Password Recovery Message.
+   * Message presented while recovering the credentials
    */
   recoveringMessage: string;
   /**
-   *  Incorrect Credentials Message
+   * Message presented when an error occurs recovering the credentials.
    */
   incorrectCredentialsMessage?: string;
 }

@@ -343,12 +343,15 @@ class HvTimePicker extends React.Component {
 HvTimePicker.propTypes = {
   /**
    * An Object containing the various text associated with the time picker.
-   *
-   * - title: Time picker label (appears above the input)
-   * - placeholder: Time picker placeholder (appears in the input)
    */
   labels: PropTypes.shape({
+    /**
+     * Time picker label (appears above the input)
+     */
     title: PropTypes.string,
+    /**
+     * Time picker placeholder (appears in the input)
+     */
     placeholder: PropTypes.string
   }),
   /**
@@ -392,7 +395,22 @@ HvTimePicker.propTypes = {
   /**
    * A Jss Object used to override or extend the styles applied to the input/popper
    */
-  classes: PropTypes.instanceOf(Object).isRequired
+  classes: PropTypes.shape({
+    input: PropTypes.string,
+    inputPopperOpenedBelow: PropTypes.string,
+    inputPopperOpenedAbove: PropTypes.string,
+    inputPopperClosed: PropTypes.string,
+    inputContainer: PropTypes.string,
+    icon: PropTypes.string,
+    timePickerContainer: PropTypes.string,
+    label: PropTypes.string,
+    timePopperContainer: PropTypes.string,
+    popper: PropTypes.string,
+    popperBelow: PropTypes.string,
+    popperAbove: PropTypes.string,
+    separator: PropTypes.string,
+    periodContainer: PropTypes.string
+  }).isRequired
 };
 
 HvTimePicker.defaultProps = {

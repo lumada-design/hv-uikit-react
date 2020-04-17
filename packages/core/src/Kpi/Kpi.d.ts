@@ -2,9 +2,21 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface HvKpiLabelProps {
+  /**
+   * The text at the top of the kpi.
+   */
   title: string;
+  /**
+   * The text in the middle of the kpi.
+   */
   indicator: string;
+  /**
+   * The text to the right of the indicator.
+   */
   unit: string;
+  /**
+   * The text to the right of the visual comparison.
+   */
   comparisonIndicatorInfo: string;
 }
 
@@ -24,11 +36,6 @@ export interface HvKpiProps
   visualComparison?: React.ReactNode;
   /**
    * The object that contains the different labels inside the kpi.
-   *
-   * - Title: The text at the top of the kpi.
-   * - Indicator: The text in the middle of the kpi.
-   * - Unit: The text to the right of the indicator.
-   * - comparisonIndicatorInfo: the text to the right of the visual comparison.
    */
   labels?: HvKpiLabelProps;
   /**

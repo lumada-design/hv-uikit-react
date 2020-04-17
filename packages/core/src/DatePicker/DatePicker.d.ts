@@ -5,16 +5,31 @@ export interface HvDatePickerProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>, HvDatePickerClassKey, "onChange"> {
   /**
    * An Object containing the various text associated with the input.
-   *
-   * - applyLabel: Label for apply button.
-   * - cancelLabel: Label for cancel button.
    */
   labels?: {
+    /**
+     * Apply button label.
+     */
     applyLabel?: string;
+    /**
+     * Cancel button label.
+     */
     cancelLabel?: string;
+    /**
+     * Text above the input/dropdown.
+     */
     title?: string;
+    /**
+     * Start date label.
+     */
     rangeStart?: string;
+    /**
+     * End date label.
+     */
     rangeEnd?: string;
+    /**
+     * Text inside the input/dropdown
+     */
     placeholder?: string;
   };
   /**

@@ -2,15 +2,41 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface PaginationLabelsProp {
+  /**
+   * The show label.
+   */
   pageSizePrev: string;
+  /**
+   * Indicate the units of the page size selection.
+   */
   pageSizeEntryName: string;
+  /**
+   * Used for the aria-label of the selection of number of unit.s
+   */
   pageSizeSelectorDescription: string;
+  /**
+   * Separator of current page and total pages.
+   */
   pagesSeparator: string;
-  pagesIndeterminate: string;
+  /**
+   * Title of button `firstPage`.
+   */
   paginationFirstPageTitle: string;
+  /**
+   * Title of button `previousPage`.
+   */
   paginationPreviousPageTitle: string;
+  /**
+   * Title of button `nextPage`.
+   */
   paginationNextPageTitle: string;
+  /**
+   * Title of button `lastPage`.
+   */
   paginationLastPageTitle: string;
+  /**
+   * Aria-label passed to the page input.
+   */
   paginationInputLabel: string;
 }
 
