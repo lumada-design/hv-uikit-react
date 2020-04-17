@@ -4566,13 +4566,13 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "actionsContainer": "AppSwitcherPanel-actionsContainer-56",
-                  "footerContainer": "AppSwitcherPanel-footerContainer-57",
-                  "headerContainer": "AppSwitcherPanel-headerContainer-53",
-                  "open": "AppSwitcherPanel-open-52",
-                  "root": "AppSwitcherPanel-root-51",
-                  "title": "AppSwitcherPanel-title-55",
-                  "titleContainer": "AppSwitcherPanel-titleContainer-54",
+                  "actionsContainer": "AppSwitcherPanel-actionsContainer-61",
+                  "footerContainer": "AppSwitcherPanel-footerContainer-62",
+                  "headerContainer": "AppSwitcherPanel-headerContainer-58",
+                  "open": "AppSwitcherPanel-open-57",
+                  "root": "AppSwitcherPanel-root-56",
+                  "title": "AppSwitcherPanel-title-60",
+                  "titleContainer": "AppSwitcherPanel-titleContainer-59",
                 },
                 "deployed": true,
                 "linked": false,
@@ -4580,13 +4580,13 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "AppSwitcherPanel",
                   "classes": Object {
-                    "actionsContainer": "AppSwitcherPanel-actionsContainer-56",
-                    "footerContainer": "AppSwitcherPanel-footerContainer-57",
-                    "headerContainer": "AppSwitcherPanel-headerContainer-53",
-                    "open": "AppSwitcherPanel-open-52",
-                    "root": "AppSwitcherPanel-root-51",
-                    "title": "AppSwitcherPanel-title-55",
-                    "titleContainer": "AppSwitcherPanel-titleContainer-54",
+                    "actionsContainer": "AppSwitcherPanel-actionsContainer-61",
+                    "footerContainer": "AppSwitcherPanel-footerContainer-62",
+                    "headerContainer": "AppSwitcherPanel-headerContainer-58",
+                    "open": "AppSwitcherPanel-open-57",
+                    "root": "AppSwitcherPanel-root-56",
+                    "title": "AppSwitcherPanel-title-60",
+                    "titleContainer": "AppSwitcherPanel-titleContainer-59",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5074,13 +5074,13 @@ body {
                     data-meta="AppSwitcherPanel"
                   >
                     
-.AppSwitcherPanel-root-51 {
+.AppSwitcherPanel-root-56 {
   width: 320px;
   display: none;
   box-shadow: 0 2px 12px rgba(65, 65, 65, 0.12);
   background-color: #FFFFFF;
 }
-.AppSwitcherPanel-open-52 {
+.AppSwitcherPanel-open-57 {
   top: 50px;
   display: flex;
   z-index: 1200;
@@ -5088,7 +5088,7 @@ body {
   overflow-x: hidden;
   flex-direction: column;
 }
-.AppSwitcherPanel-headerContainer-53 {
+.AppSwitcherPanel-headerContainer-58 {
   color: #414141;
   display: flex;
   padding: 20px;
@@ -5100,22 +5100,22 @@ body {
   letter-spacing: 0.02em;
   justify-content: space-between;
 }
-.AppSwitcherPanel-titleContainer-54 {
+.AppSwitcherPanel-titleContainer-59 {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.AppSwitcherPanel-title-55 {
+.AppSwitcherPanel-title-60 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.AppSwitcherPanel-actionsContainer-56 {
+.AppSwitcherPanel-actionsContainer-61 {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
 }
-.AppSwitcherPanel-footerContainer-57 {
+.AppSwitcherPanel-footerContainer-62 {
   color: #414141;
   height: 52px;
   display: flex;
@@ -5140,13 +5140,13 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "actionsContainer": "AppSwitcherPanel-actionsContainer-56",
-                    "footerContainer": "AppSwitcherPanel-footerContainer-57",
-                    "headerContainer": "AppSwitcherPanel-headerContainer-53",
-                    "open": "AppSwitcherPanel-open-52",
-                    "root": "AppSwitcherPanel-root-51",
-                    "title": "AppSwitcherPanel-title-55",
-                    "titleContainer": "AppSwitcherPanel-titleContainer-54",
+                    "actionsContainer": "AppSwitcherPanel-actionsContainer-61",
+                    "footerContainer": "AppSwitcherPanel-footerContainer-62",
+                    "headerContainer": "AppSwitcherPanel-headerContainer-58",
+                    "open": "AppSwitcherPanel-open-57",
+                    "root": "AppSwitcherPanel-root-56",
+                    "title": "AppSwitcherPanel-title-60",
+                    "titleContainer": "AppSwitcherPanel-titleContainer-59",
                   },
                   "index": Array [
                     Object {
@@ -5204,12 +5204,12 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".AppSwitcherPanel-actionsContainer-56": Object {
+                    ".AppSwitcherPanel-actionsContainer-61": Object {
                       "flex": "1",
                       "overflow-y": "auto",
                       "padding": "20px",
                     },
-                    ".AppSwitcherPanel-footerContainer-57": Object {
+                    ".AppSwitcherPanel-footerContainer-62": Object {
                       "align-items": "center",
                       "border-top": "3px solid #F9F9F9",
                       "color": "#414141",
@@ -5221,7 +5221,7 @@ body {
                       "line-height": "20px",
                       "padding": "10px 20px",
                     },
-                    ".AppSwitcherPanel-headerContainer-53": Object {
+                    ".AppSwitcherPanel-headerContainer-58": Object {
                       "align-items": "center",
                       "border-bottom": "3px solid #F9F9F9",
                       "color": "#414141",
@@ -5233,7 +5233,7 @@ body {
                       "line-height": "20px",
                       "padding": "20px",
                     },
-                    ".AppSwitcherPanel-open-52": Object {
+                    ".AppSwitcherPanel-open-57": Object {
                       "display": "flex",
                       "flex-direction": "column",
                       "overflow-x": "hidden",
@@ -5241,18 +5241,18 @@ body {
                       "top": "50px",
                       "z-index": "1200",
                     },
-                    ".AppSwitcherPanel-root-51": Object {
+                    ".AppSwitcherPanel-root-56": Object {
                       "background-color": "#FFFFFF",
                       "box-shadow": "0 2px 12px rgba(65, 65, 65, 0.12)",
                       "display": "none",
                       "width": "320px",
                     },
-                    ".AppSwitcherPanel-title-55": Object {
+                    ".AppSwitcherPanel-title-60": Object {
                       "overflow": "hidden",
                       "text-overflow": "ellipsis",
                       "white-space": "nowrap",
                     },
-                    ".AppSwitcherPanel-titleContainer-54": Object {
+                    ".AppSwitcherPanel-titleContainer-59": Object {
                       "align-items": "center",
                       "display": "flex",
                       "width": "100%",
@@ -5315,13 +5315,13 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "AppSwitcherPanel",
                     "classes": Object {
-                      "actionsContainer": "AppSwitcherPanel-actionsContainer-56",
-                      "footerContainer": "AppSwitcherPanel-footerContainer-57",
-                      "headerContainer": "AppSwitcherPanel-headerContainer-53",
-                      "open": "AppSwitcherPanel-open-52",
-                      "root": "AppSwitcherPanel-root-51",
-                      "title": "AppSwitcherPanel-title-55",
-                      "titleContainer": "AppSwitcherPanel-titleContainer-54",
+                      "actionsContainer": "AppSwitcherPanel-actionsContainer-61",
+                      "footerContainer": "AppSwitcherPanel-footerContainer-62",
+                      "headerContainer": "AppSwitcherPanel-headerContainer-58",
+                      "open": "AppSwitcherPanel-open-57",
+                      "root": "AppSwitcherPanel-root-56",
+                      "title": "AppSwitcherPanel-title-60",
+                      "titleContainer": "AppSwitcherPanel-titleContainer-59",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -6802,9 +6802,10 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "container": "Action-container-58",
-                  "iconInfo": "Action-iconInfo-59",
-                  "iconUrl": "Action-iconUrl-60",
+                  "container": "Action-container-63",
+                  "iconInfo": "Action-iconInfo-65",
+                  "iconUrl": "Action-iconUrl-66",
+                  "selected": "Action-selected-64",
                 },
                 "deployed": true,
                 "linked": false,
@@ -6812,9 +6813,10 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Action",
                   "classes": Object {
-                    "container": "Action-container-58",
-                    "iconInfo": "Action-iconInfo-59",
-                    "iconUrl": "Action-iconUrl-60",
+                    "container": "Action-container-63",
+                    "iconInfo": "Action-iconInfo-65",
+                    "iconUrl": "Action-iconUrl-66",
+                    "selected": "Action-selected-64",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7302,7 +7304,7 @@ body {
                     data-meta="Action"
                   >
                     
-.Action-container-58 {
+.Action-container-63 {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -7312,13 +7314,13 @@ body {
   margin-bottom: 8px;
   justify-content: flex-start;
 }
-.Action-container-58:hover {
+.Action-container-63:hover {
   background: #F0F0F0;
 }
-.Action-container-58 * {
+.Action-container-63 * {
   cursor: pointer;
 }
-.Action-container-58 a {
+.Action-container-63 a {
   color: inherit;
   width: calc(100% - 84px);
   overflow: hidden;
@@ -7327,15 +7329,36 @@ body {
   text-overflow: ellipsis;
   text-decoration: inherit;
 }
-.Action-container-58:hover * {
+.Action-container-63:hover * {
   background: #F0F0F0;
 }
-.Action-iconInfo-59 {
+.Action-selected-64 {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-64 * {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-64 svg *.color0 {
+  fill: #FFFFFF;
+}
+.Action-selected-64:hover {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-selected-64:hover * {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-iconInfo-65 {
   width: 32px;
   height: 32px;
   margin-left: auto;
 }
-.Action-iconUrl-60 {
+.Action-iconUrl-66 {
   width: 16px;
   height: 16px;
   margin: 8px;
@@ -7353,9 +7376,10 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "container": "Action-container-58",
-                    "iconInfo": "Action-iconInfo-59",
-                    "iconUrl": "Action-iconUrl-60",
+                    "container": "Action-container-63",
+                    "iconInfo": "Action-iconInfo-65",
+                    "iconUrl": "Action-iconUrl-66",
+                    "selected": "Action-selected-64",
                   },
                   "index": Array [
                     Object {
@@ -7388,6 +7412,27 @@ body {
                       "background": "#F0F0F0",
                     },
                     Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "fill": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
@@ -7399,7 +7444,7 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Action-container-58": Object {
+                    ".Action-container-63": Object {
                       "align-items": "center",
                       "background": "#FFFFFF",
                       "color": undefined,
@@ -7410,10 +7455,10 @@ body {
                       "margin-bottom": "8px",
                       "width": "100%",
                     },
-                    ".Action-container-58 *": Object {
+                    ".Action-container-63 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-58 a": Object {
+                    ".Action-container-63 a": Object {
                       "color": "inherit",
                       "margin-left": "8px",
                       "overflow": "hidden",
@@ -7422,21 +7467,42 @@ body {
                       "white-space": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-58:hover": Object {
+                    ".Action-container-63:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-58:hover *": Object {
+                    ".Action-container-63:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-iconInfo-59": Object {
+                    ".Action-iconInfo-65": Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
                     },
-                    ".Action-iconUrl-60": Object {
+                    ".Action-iconUrl-66": Object {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    ".Action-selected-64": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-64 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-64 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-64:hover": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-64:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "align-items": "center",
@@ -7459,14 +7525,20 @@ body {
                       "margin": "8px",
                       "width": "16px",
                     },
+                    "selected": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
                   },
                   "options": Object {
                     "Renderer": [Function],
                     "classNamePrefix": "Action",
                     "classes": Object {
-                      "container": "Action-container-58",
-                      "iconInfo": "Action-iconInfo-59",
-                      "iconUrl": "Action-iconUrl-60",
+                      "container": "Action-container-63",
+                      "iconInfo": "Action-iconInfo-65",
+                      "iconUrl": "Action-iconUrl-66",
+                      "selected": "Action-selected-64",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -7949,10 +8021,10 @@ body {
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Action-container-58 *": Object {
+                    ".Action-container-63 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-58 a": Object {
+                    ".Action-container-63 a": Object {
                       "color": "inherit",
                       "marginLeft": "8px",
                       "overflow": "hidden",
@@ -7961,14 +8033,34 @@ body {
                       "whiteSpace": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-58:hover": Object {
+                    ".Action-container-63:hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-58:hover *": Object {
+                    ".Action-container-63:hover *": Object {
                       "background": "#F0F0F0",
+                    },
+                    ".Action-selected-64 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-64 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-64:hover": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-64:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "& *": Object {
@@ -8008,6 +8100,27 @@ body {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    "selected": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                        "cursor": "default",
+                      },
+                      "& svg *.color0": Object {
+                        "fill": "#FFFFFF",
+                      },
+                      "&:hover": Object {
+                        "& *": Object {
+                          "background": "#414141",
+                          "color": "#FFFFFF",
+                        },
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
                     },
                   },
                   "update": [Function],
@@ -13983,13 +14096,13 @@ body {
           }
           classes={
             Object {
-              "actionsContainer": "AppSwitcherPanel-actionsContainer-56",
-              "footerContainer": "AppSwitcherPanel-footerContainer-57",
-              "headerContainer": "AppSwitcherPanel-headerContainer-53",
-              "open": "AppSwitcherPanel-open-52",
-              "root": "AppSwitcherPanel-root-51",
-              "title": "AppSwitcherPanel-title-55",
-              "titleContainer": "AppSwitcherPanel-titleContainer-54",
+              "actionsContainer": "AppSwitcherPanel-actionsContainer-61",
+              "footerContainer": "AppSwitcherPanel-footerContainer-62",
+              "headerContainer": "AppSwitcherPanel-headerContainer-58",
+              "open": "AppSwitcherPanel-open-57",
+              "root": "AppSwitcherPanel-root-56",
+              "title": "AppSwitcherPanel-title-60",
+              "titleContainer": "AppSwitcherPanel-titleContainer-59",
             }
           }
           isOpen={true}
@@ -14925,16 +15038,16 @@ body {
           title="Mock title"
         >
           <div
-            className="AppSwitcherPanel-root-51 AppSwitcherPanel-open-52"
+            className="AppSwitcherPanel-root-56 AppSwitcherPanel-open-57"
           >
             <div
-              className="AppSwitcherPanel-headerContainer-53"
+              className="AppSwitcherPanel-headerContainer-58"
             >
               <div
-                className="AppSwitcherPanel-titleContainer-54"
+                className="AppSwitcherPanel-titleContainer-59"
               >
                 <div
-                  className="AppSwitcherPanel-title-55"
+                  className="AppSwitcherPanel-title-60"
                   title="Mock title"
                 >
                   Mock title
@@ -14942,7 +15055,7 @@ body {
               </div>
             </div>
             <div
-              className="AppSwitcherPanel-actionsContainer-56"
+              className="AppSwitcherPanel-actionsContainer-61"
             >
               <WithStyles(Action)
                 application={
@@ -14968,9 +15081,10 @@ body {
                   }
                   classes={
                     Object {
-                      "container": "Action-container-58",
-                      "iconInfo": "Action-iconInfo-59",
-                      "iconUrl": "Action-iconUrl-60",
+                      "container": "Action-container-63",
+                      "iconInfo": "Action-iconInfo-65",
+                      "iconUrl": "Action-iconUrl-66",
+                      "selected": "Action-selected-64",
                     }
                   }
                   target="_top"
@@ -15905,14 +16019,14 @@ body {
                   }
                 >
                   <WithStyles(Component)
-                    className="Action-container-58"
+                    className="Action-container-63"
                     component="div"
                     role="button"
                     tabIndex={0}
                     variant="normalText"
                   >
                     <ForwardRef
-                      className="Action-container-58"
+                      className="Action-container-63"
                       classes={
                         Object {
                           "3xlTitle": "HvTypography-3xlTitle",
@@ -16878,7 +16992,7 @@ body {
                       variant="normalText"
                     >
                       <div
-                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-58"
+                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-63"
                         role="button"
                         tabIndex={0}
                         theme={
@@ -17812,7 +17926,7 @@ body {
                         }
                       >
                         <img
-                          className="Action-iconUrl-60"
+                          className="Action-iconUrl-66"
                           onError={[Function]}
                           src="http://mockapp1/icon"
                         />
@@ -17824,11 +17938,11 @@ body {
                           Mock App 1 - VALID
                         </a>
                         <WithStyles(Info)
-                          className="Action-iconInfo-59"
+                          className="Action-iconInfo-65"
                           title="Mock App 1 Description"
                         >
                           <Info
-                            className="Action-iconInfo-59"
+                            className="Action-iconInfo-65"
                             classes={
                               Object {
                                 "root": "HvInfoIcon-root",
@@ -18770,7 +18884,7 @@ body {
                             title="Mock App 1 Description"
                           >
                             <div
-                              className="Action-iconInfo-59 HvInfoIcon-root HvInfoIcon-rootS"
+                              className="Action-iconInfo-65 HvInfoIcon-root HvInfoIcon-rootS"
                               title="Mock App 1 Description"
                             >
                               <svg
@@ -18819,9 +18933,10 @@ body {
                   }
                   classes={
                     Object {
-                      "container": "Action-container-58",
-                      "iconInfo": "Action-iconInfo-59",
-                      "iconUrl": "Action-iconUrl-60",
+                      "container": "Action-container-63",
+                      "iconInfo": "Action-iconInfo-65",
+                      "iconUrl": "Action-iconUrl-66",
+                      "selected": "Action-selected-64",
                     }
                   }
                   target="_top"
@@ -19756,14 +19871,14 @@ body {
                   }
                 >
                   <WithStyles(Component)
-                    className="Action-container-58"
+                    className="Action-container-63"
                     component="div"
                     role="button"
                     tabIndex={0}
                     variant="normalText"
                   >
                     <ForwardRef
-                      className="Action-container-58"
+                      className="Action-container-63"
                       classes={
                         Object {
                           "3xlTitle": "HvTypography-3xlTitle",
@@ -20729,7 +20844,7 @@ body {
                       variant="normalText"
                     >
                       <div
-                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-58"
+                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-63"
                         role="button"
                         tabIndex={0}
                         theme={
@@ -21663,7 +21778,7 @@ body {
                         }
                       >
                         <img
-                          className="Action-iconUrl-60"
+                          className="Action-iconUrl-66"
                           onError={[Function]}
                           src="http://mockapp5/icon"
                         />
@@ -26254,13 +26369,13 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "actionsContainer": "AppSwitcherPanel-actionsContainer-16",
-                  "footerContainer": "AppSwitcherPanel-footerContainer-17",
-                  "headerContainer": "AppSwitcherPanel-headerContainer-13",
-                  "open": "AppSwitcherPanel-open-12",
-                  "root": "AppSwitcherPanel-root-11",
-                  "title": "AppSwitcherPanel-title-15",
-                  "titleContainer": "AppSwitcherPanel-titleContainer-14",
+                  "actionsContainer": "AppSwitcherPanel-actionsContainer-17",
+                  "footerContainer": "AppSwitcherPanel-footerContainer-18",
+                  "headerContainer": "AppSwitcherPanel-headerContainer-14",
+                  "open": "AppSwitcherPanel-open-13",
+                  "root": "AppSwitcherPanel-root-12",
+                  "title": "AppSwitcherPanel-title-16",
+                  "titleContainer": "AppSwitcherPanel-titleContainer-15",
                 },
                 "deployed": true,
                 "linked": false,
@@ -26268,13 +26383,13 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "AppSwitcherPanel",
                   "classes": Object {
-                    "actionsContainer": "AppSwitcherPanel-actionsContainer-16",
-                    "footerContainer": "AppSwitcherPanel-footerContainer-17",
-                    "headerContainer": "AppSwitcherPanel-headerContainer-13",
-                    "open": "AppSwitcherPanel-open-12",
-                    "root": "AppSwitcherPanel-root-11",
-                    "title": "AppSwitcherPanel-title-15",
-                    "titleContainer": "AppSwitcherPanel-titleContainer-14",
+                    "actionsContainer": "AppSwitcherPanel-actionsContainer-17",
+                    "footerContainer": "AppSwitcherPanel-footerContainer-18",
+                    "headerContainer": "AppSwitcherPanel-headerContainer-14",
+                    "open": "AppSwitcherPanel-open-13",
+                    "root": "AppSwitcherPanel-root-12",
+                    "title": "AppSwitcherPanel-title-16",
+                    "titleContainer": "AppSwitcherPanel-titleContainer-15",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -26762,13 +26877,13 @@ body {
                     data-meta="AppSwitcherPanel"
                   >
                     
-.AppSwitcherPanel-root-11 {
+.AppSwitcherPanel-root-12 {
   width: 320px;
   display: none;
   box-shadow: 0 2px 12px rgba(65, 65, 65, 0.12);
   background-color: #FFFFFF;
 }
-.AppSwitcherPanel-open-12 {
+.AppSwitcherPanel-open-13 {
   top: 50px;
   display: flex;
   z-index: 1200;
@@ -26776,7 +26891,7 @@ body {
   overflow-x: hidden;
   flex-direction: column;
 }
-.AppSwitcherPanel-headerContainer-13 {
+.AppSwitcherPanel-headerContainer-14 {
   color: #414141;
   display: flex;
   padding: 20px;
@@ -26788,22 +26903,22 @@ body {
   letter-spacing: 0.02em;
   justify-content: space-between;
 }
-.AppSwitcherPanel-titleContainer-14 {
+.AppSwitcherPanel-titleContainer-15 {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.AppSwitcherPanel-title-15 {
+.AppSwitcherPanel-title-16 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.AppSwitcherPanel-actionsContainer-16 {
+.AppSwitcherPanel-actionsContainer-17 {
   flex: 1;
   padding: 20px;
   overflow-y: auto;
 }
-.AppSwitcherPanel-footerContainer-17 {
+.AppSwitcherPanel-footerContainer-18 {
   color: #414141;
   height: 52px;
   display: flex;
@@ -26828,13 +26943,13 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "actionsContainer": "AppSwitcherPanel-actionsContainer-16",
-                    "footerContainer": "AppSwitcherPanel-footerContainer-17",
-                    "headerContainer": "AppSwitcherPanel-headerContainer-13",
-                    "open": "AppSwitcherPanel-open-12",
-                    "root": "AppSwitcherPanel-root-11",
-                    "title": "AppSwitcherPanel-title-15",
-                    "titleContainer": "AppSwitcherPanel-titleContainer-14",
+                    "actionsContainer": "AppSwitcherPanel-actionsContainer-17",
+                    "footerContainer": "AppSwitcherPanel-footerContainer-18",
+                    "headerContainer": "AppSwitcherPanel-headerContainer-14",
+                    "open": "AppSwitcherPanel-open-13",
+                    "root": "AppSwitcherPanel-root-12",
+                    "title": "AppSwitcherPanel-title-16",
+                    "titleContainer": "AppSwitcherPanel-titleContainer-15",
                   },
                   "index": Array [
                     Object {
@@ -26892,12 +27007,12 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".AppSwitcherPanel-actionsContainer-16": Object {
+                    ".AppSwitcherPanel-actionsContainer-17": Object {
                       "flex": "1",
                       "overflow-y": "auto",
                       "padding": "20px",
                     },
-                    ".AppSwitcherPanel-footerContainer-17": Object {
+                    ".AppSwitcherPanel-footerContainer-18": Object {
                       "align-items": "center",
                       "border-top": "3px solid #F9F9F9",
                       "color": "#414141",
@@ -26909,7 +27024,7 @@ body {
                       "line-height": "20px",
                       "padding": "10px 20px",
                     },
-                    ".AppSwitcherPanel-headerContainer-13": Object {
+                    ".AppSwitcherPanel-headerContainer-14": Object {
                       "align-items": "center",
                       "border-bottom": "3px solid #F9F9F9",
                       "color": "#414141",
@@ -26921,7 +27036,7 @@ body {
                       "line-height": "20px",
                       "padding": "20px",
                     },
-                    ".AppSwitcherPanel-open-12": Object {
+                    ".AppSwitcherPanel-open-13": Object {
                       "display": "flex",
                       "flex-direction": "column",
                       "overflow-x": "hidden",
@@ -26929,18 +27044,18 @@ body {
                       "top": "50px",
                       "z-index": "1200",
                     },
-                    ".AppSwitcherPanel-root-11": Object {
+                    ".AppSwitcherPanel-root-12": Object {
                       "background-color": "#FFFFFF",
                       "box-shadow": "0 2px 12px rgba(65, 65, 65, 0.12)",
                       "display": "none",
                       "width": "320px",
                     },
-                    ".AppSwitcherPanel-title-15": Object {
+                    ".AppSwitcherPanel-title-16": Object {
                       "overflow": "hidden",
                       "text-overflow": "ellipsis",
                       "white-space": "nowrap",
                     },
-                    ".AppSwitcherPanel-titleContainer-14": Object {
+                    ".AppSwitcherPanel-titleContainer-15": Object {
                       "align-items": "center",
                       "display": "flex",
                       "width": "100%",
@@ -27003,13 +27118,13 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "AppSwitcherPanel",
                     "classes": Object {
-                      "actionsContainer": "AppSwitcherPanel-actionsContainer-16",
-                      "footerContainer": "AppSwitcherPanel-footerContainer-17",
-                      "headerContainer": "AppSwitcherPanel-headerContainer-13",
-                      "open": "AppSwitcherPanel-open-12",
-                      "root": "AppSwitcherPanel-root-11",
-                      "title": "AppSwitcherPanel-title-15",
-                      "titleContainer": "AppSwitcherPanel-titleContainer-14",
+                      "actionsContainer": "AppSwitcherPanel-actionsContainer-17",
+                      "footerContainer": "AppSwitcherPanel-footerContainer-18",
+                      "headerContainer": "AppSwitcherPanel-headerContainer-14",
+                      "open": "AppSwitcherPanel-open-13",
+                      "root": "AppSwitcherPanel-root-12",
+                      "title": "AppSwitcherPanel-title-16",
+                      "titleContainer": "AppSwitcherPanel-titleContainer-15",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -28490,9 +28605,10 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "container": "Action-container-18",
-                  "iconInfo": "Action-iconInfo-19",
-                  "iconUrl": "Action-iconUrl-20",
+                  "container": "Action-container-19",
+                  "iconInfo": "Action-iconInfo-21",
+                  "iconUrl": "Action-iconUrl-22",
+                  "selected": "Action-selected-20",
                 },
                 "deployed": true,
                 "linked": false,
@@ -28500,9 +28616,10 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Action",
                   "classes": Object {
-                    "container": "Action-container-18",
-                    "iconInfo": "Action-iconInfo-19",
-                    "iconUrl": "Action-iconUrl-20",
+                    "container": "Action-container-19",
+                    "iconInfo": "Action-iconInfo-21",
+                    "iconUrl": "Action-iconUrl-22",
+                    "selected": "Action-selected-20",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -28990,7 +29107,7 @@ body {
                     data-meta="Action"
                   >
                     
-.Action-container-18 {
+.Action-container-19 {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -29000,13 +29117,13 @@ body {
   margin-bottom: 8px;
   justify-content: flex-start;
 }
-.Action-container-18:hover {
+.Action-container-19:hover {
   background: #F0F0F0;
 }
-.Action-container-18 * {
+.Action-container-19 * {
   cursor: pointer;
 }
-.Action-container-18 a {
+.Action-container-19 a {
   color: inherit;
   width: calc(100% - 84px);
   overflow: hidden;
@@ -29015,15 +29132,36 @@ body {
   text-overflow: ellipsis;
   text-decoration: inherit;
 }
-.Action-container-18:hover * {
+.Action-container-19:hover * {
   background: #F0F0F0;
 }
-.Action-iconInfo-19 {
+.Action-selected-20 {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-20 * {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-20 svg *.color0 {
+  fill: #FFFFFF;
+}
+.Action-selected-20:hover {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-selected-20:hover * {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-iconInfo-21 {
   width: 32px;
   height: 32px;
   margin-left: auto;
 }
-.Action-iconUrl-20 {
+.Action-iconUrl-22 {
   width: 16px;
   height: 16px;
   margin: 8px;
@@ -29041,9 +29179,10 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "container": "Action-container-18",
-                    "iconInfo": "Action-iconInfo-19",
-                    "iconUrl": "Action-iconUrl-20",
+                    "container": "Action-container-19",
+                    "iconInfo": "Action-iconInfo-21",
+                    "iconUrl": "Action-iconUrl-22",
+                    "selected": "Action-selected-20",
                   },
                   "index": Array [
                     Object {
@@ -29076,6 +29215,27 @@ body {
                       "background": "#F0F0F0",
                     },
                     Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "fill": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
@@ -29087,7 +29247,7 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Action-container-18": Object {
+                    ".Action-container-19": Object {
                       "align-items": "center",
                       "background": "#FFFFFF",
                       "color": undefined,
@@ -29098,10 +29258,10 @@ body {
                       "margin-bottom": "8px",
                       "width": "100%",
                     },
-                    ".Action-container-18 *": Object {
+                    ".Action-container-19 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-18 a": Object {
+                    ".Action-container-19 a": Object {
                       "color": "inherit",
                       "margin-left": "8px",
                       "overflow": "hidden",
@@ -29110,21 +29270,42 @@ body {
                       "white-space": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-18:hover": Object {
+                    ".Action-container-19:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-18:hover *": Object {
+                    ".Action-container-19:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-iconInfo-19": Object {
+                    ".Action-iconInfo-21": Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
                     },
-                    ".Action-iconUrl-20": Object {
+                    ".Action-iconUrl-22": Object {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    ".Action-selected-20": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-20 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-20 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-20:hover": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-20:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "align-items": "center",
@@ -29147,14 +29328,20 @@ body {
                       "margin": "8px",
                       "width": "16px",
                     },
+                    "selected": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
                   },
                   "options": Object {
                     "Renderer": [Function],
                     "classNamePrefix": "Action",
                     "classes": Object {
-                      "container": "Action-container-18",
-                      "iconInfo": "Action-iconInfo-19",
-                      "iconUrl": "Action-iconUrl-20",
+                      "container": "Action-container-19",
+                      "iconInfo": "Action-iconInfo-21",
+                      "iconUrl": "Action-iconUrl-22",
+                      "selected": "Action-selected-20",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -29637,10 +29824,10 @@ body {
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Action-container-18 *": Object {
+                    ".Action-container-19 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-18 a": Object {
+                    ".Action-container-19 a": Object {
                       "color": "inherit",
                       "marginLeft": "8px",
                       "overflow": "hidden",
@@ -29649,14 +29836,34 @@ body {
                       "whiteSpace": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-18:hover": Object {
+                    ".Action-container-19:hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-18:hover *": Object {
+                    ".Action-container-19:hover *": Object {
                       "background": "#F0F0F0",
+                    },
+                    ".Action-selected-20 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-20 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-20:hover": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-20:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "& *": Object {
@@ -29696,6 +29903,27 @@ body {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    "selected": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                        "cursor": "default",
+                      },
+                      "& svg *.color0": Object {
+                        "fill": "#FFFFFF",
+                      },
+                      "&:hover": Object {
+                        "& *": Object {
+                          "background": "#414141",
+                          "color": "#FFFFFF",
+                        },
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
                     },
                   },
                   "update": [Function],
@@ -35655,13 +35883,13 @@ body {
           }
           classes={
             Object {
-              "actionsContainer": "AppSwitcherPanel-actionsContainer-16",
-              "footerContainer": "AppSwitcherPanel-footerContainer-17",
-              "headerContainer": "AppSwitcherPanel-headerContainer-13",
-              "open": "AppSwitcherPanel-open-12",
-              "root": "AppSwitcherPanel-root-11",
-              "title": "AppSwitcherPanel-title-15",
-              "titleContainer": "AppSwitcherPanel-titleContainer-14",
+              "actionsContainer": "AppSwitcherPanel-actionsContainer-17",
+              "footerContainer": "AppSwitcherPanel-footerContainer-18",
+              "headerContainer": "AppSwitcherPanel-headerContainer-14",
+              "open": "AppSwitcherPanel-open-13",
+              "root": "AppSwitcherPanel-root-12",
+              "title": "AppSwitcherPanel-title-16",
+              "titleContainer": "AppSwitcherPanel-titleContainer-15",
             }
           }
           isOpen={true}
@@ -36597,16 +36825,16 @@ body {
           title="Mock title"
         >
           <div
-            className="AppSwitcherPanel-root-11 AppSwitcherPanel-open-12"
+            className="AppSwitcherPanel-root-12 AppSwitcherPanel-open-13"
           >
             <div
-              className="AppSwitcherPanel-headerContainer-13"
+              className="AppSwitcherPanel-headerContainer-14"
             >
               <div
-                className="AppSwitcherPanel-titleContainer-14"
+                className="AppSwitcherPanel-titleContainer-15"
               >
                 <div
-                  className="AppSwitcherPanel-title-15"
+                  className="AppSwitcherPanel-title-16"
                   title="Mock title"
                 >
                   Mock title
@@ -36614,7 +36842,7 @@ body {
               </div>
             </div>
             <div
-              className="AppSwitcherPanel-actionsContainer-16"
+              className="AppSwitcherPanel-actionsContainer-17"
             >
               <WithStyles(Action)
                 application={
@@ -36638,9 +36866,10 @@ body {
                   }
                   classes={
                     Object {
-                      "container": "Action-container-18",
-                      "iconInfo": "Action-iconInfo-19",
-                      "iconUrl": "Action-iconUrl-20",
+                      "container": "Action-container-19",
+                      "iconInfo": "Action-iconInfo-21",
+                      "iconUrl": "Action-iconUrl-22",
+                      "selected": "Action-selected-20",
                     }
                   }
                   target="_top"
@@ -37575,14 +37804,14 @@ body {
                   }
                 >
                   <WithStyles(Component)
-                    className="Action-container-18"
+                    className="Action-container-19"
                     component="div"
                     role="button"
                     tabIndex={0}
                     variant="normalText"
                   >
                     <ForwardRef
-                      className="Action-container-18"
+                      className="Action-container-19"
                       classes={
                         Object {
                           "3xlTitle": "HvTypography-3xlTitle",
@@ -38548,7 +38777,7 @@ body {
                       variant="normalText"
                     >
                       <div
-                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-18"
+                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-19"
                         role="button"
                         tabIndex={0}
                         theme={
@@ -39482,7 +39711,7 @@ body {
                         }
                       >
                         <img
-                          className="Action-iconUrl-20"
+                          className="Action-iconUrl-22"
                           onError={[Function]}
                           src="http://mockapp1/icon"
                         />
@@ -39522,9 +39751,10 @@ body {
                   }
                   classes={
                     Object {
-                      "container": "Action-container-18",
-                      "iconInfo": "Action-iconInfo-19",
-                      "iconUrl": "Action-iconUrl-20",
+                      "container": "Action-container-19",
+                      "iconInfo": "Action-iconInfo-21",
+                      "iconUrl": "Action-iconUrl-22",
+                      "selected": "Action-selected-20",
                     }
                   }
                   target="_top"
@@ -40459,14 +40689,14 @@ body {
                   }
                 >
                   <WithStyles(Component)
-                    className="Action-container-18"
+                    className="Action-container-19"
                     component="div"
                     role="button"
                     tabIndex={0}
                     variant="normalText"
                   >
                     <ForwardRef
-                      className="Action-container-18"
+                      className="Action-container-19"
                       classes={
                         Object {
                           "3xlTitle": "HvTypography-3xlTitle",
@@ -41432,7 +41662,7 @@ body {
                       variant="normalText"
                     >
                       <div
-                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-18"
+                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-19"
                         role="button"
                         tabIndex={0}
                         theme={
@@ -42366,7 +42596,7 @@ body {
                         }
                       >
                         <img
-                          className="Action-iconUrl-20"
+                          className="Action-iconUrl-22"
                           onError={[Function]}
                           src="http://mockapp2/icon"
                         />
@@ -42378,11 +42608,11 @@ body {
                           Mock App 2
                         </a>
                         <WithStyles(Info)
-                          className="Action-iconInfo-19"
+                          className="Action-iconInfo-21"
                           title="Mock App 2 Description"
                         >
                           <Info
-                            className="Action-iconInfo-19"
+                            className="Action-iconInfo-21"
                             classes={
                               Object {
                                 "root": "HvInfoIcon-root",
@@ -43324,7 +43554,7 @@ body {
                             title="Mock App 2 Description"
                           >
                             <div
-                              className="Action-iconInfo-19 HvInfoIcon-root HvInfoIcon-rootS"
+                              className="Action-iconInfo-21 HvInfoIcon-root HvInfoIcon-rootS"
                               title="Mock App 2 Description"
                             >
                               <svg
@@ -43375,9 +43605,10 @@ body {
                   }
                   classes={
                     Object {
-                      "container": "Action-container-18",
-                      "iconInfo": "Action-iconInfo-19",
-                      "iconUrl": "Action-iconUrl-20",
+                      "container": "Action-container-19",
+                      "iconInfo": "Action-iconInfo-21",
+                      "iconUrl": "Action-iconUrl-22",
+                      "selected": "Action-selected-20",
                     }
                   }
                   target="_top"
@@ -44312,14 +44543,14 @@ body {
                   }
                 >
                   <WithStyles(Component)
-                    className="Action-container-18"
+                    className="Action-container-19"
                     component="div"
                     role="button"
                     tabIndex={0}
                     variant="normalText"
                   >
                     <ForwardRef
-                      className="Action-container-18"
+                      className="Action-container-19"
                       classes={
                         Object {
                           "3xlTitle": "HvTypography-3xlTitle",
@@ -45285,7 +45516,7 @@ body {
                       variant="normalText"
                     >
                       <div
-                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-18"
+                        className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-19"
                         role="button"
                         tabIndex={0}
                         theme={
@@ -46219,7 +46450,7 @@ body {
                         }
                       >
                         <img
-                          className="Action-iconUrl-20"
+                          className="Action-iconUrl-22"
                           onError={[Function]}
                           src="http://mockapp2/icon"
                         />
@@ -46231,11 +46462,11 @@ body {
                           Mock App 3
                         </a>
                         <WithStyles(Info)
-                          className="Action-iconInfo-19"
+                          className="Action-iconInfo-21"
                           title="Mock App 2 Description"
                         >
                           <Info
-                            className="Action-iconInfo-19"
+                            className="Action-iconInfo-21"
                             classes={
                               Object {
                                 "root": "HvInfoIcon-root",
@@ -47177,7 +47408,7 @@ body {
                             title="Mock App 2 Description"
                           >
                             <div
-                              className="Action-iconInfo-19 HvInfoIcon-root HvInfoIcon-rootS"
+                              className="Action-iconInfo-21 HvInfoIcon-root HvInfoIcon-rootS"
                               title="Mock App 2 Description"
                             >
                               <svg

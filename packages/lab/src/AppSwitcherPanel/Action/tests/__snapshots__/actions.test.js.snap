@@ -4566,9 +4566,10 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "container": "Action-container-31",
-                  "iconInfo": "Action-iconInfo-32",
-                  "iconUrl": "Action-iconUrl-33",
+                  "container": "Action-container-41",
+                  "iconInfo": "Action-iconInfo-43",
+                  "iconUrl": "Action-iconUrl-44",
+                  "selected": "Action-selected-42",
                 },
                 "deployed": true,
                 "linked": false,
@@ -4576,9 +4577,10 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Action",
                   "classes": Object {
-                    "container": "Action-container-31",
-                    "iconInfo": "Action-iconInfo-32",
-                    "iconUrl": "Action-iconUrl-33",
+                    "container": "Action-container-41",
+                    "iconInfo": "Action-iconInfo-43",
+                    "iconUrl": "Action-iconUrl-44",
+                    "selected": "Action-selected-42",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -5066,7 +5068,7 @@ body {
                     data-meta="Action"
                   >
                     
-.Action-container-31 {
+.Action-container-41 {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -5076,13 +5078,13 @@ body {
   margin-bottom: 8px;
   justify-content: flex-start;
 }
-.Action-container-31:hover {
+.Action-container-41:hover {
   background: #F0F0F0;
 }
-.Action-container-31 * {
+.Action-container-41 * {
   cursor: pointer;
 }
-.Action-container-31 a {
+.Action-container-41 a {
   color: inherit;
   width: calc(100% - 84px);
   overflow: hidden;
@@ -5091,15 +5093,36 @@ body {
   text-overflow: ellipsis;
   text-decoration: inherit;
 }
-.Action-container-31:hover * {
+.Action-container-41:hover * {
   background: #F0F0F0;
 }
-.Action-iconInfo-32 {
+.Action-selected-42 {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-42 * {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-42 svg *.color0 {
+  fill: #FFFFFF;
+}
+.Action-selected-42:hover {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-selected-42:hover * {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-iconInfo-43 {
   width: 32px;
   height: 32px;
   margin-left: auto;
 }
-.Action-iconUrl-33 {
+.Action-iconUrl-44 {
   width: 16px;
   height: 16px;
   margin: 8px;
@@ -5117,9 +5140,10 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "container": "Action-container-31",
-                    "iconInfo": "Action-iconInfo-32",
-                    "iconUrl": "Action-iconUrl-33",
+                    "container": "Action-container-41",
+                    "iconInfo": "Action-iconInfo-43",
+                    "iconUrl": "Action-iconUrl-44",
+                    "selected": "Action-selected-42",
                   },
                   "index": Array [
                     Object {
@@ -5152,6 +5176,27 @@ body {
                       "background": "#F0F0F0",
                     },
                     Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "fill": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
@@ -5163,7 +5208,7 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Action-container-31": Object {
+                    ".Action-container-41": Object {
                       "align-items": "center",
                       "background": "#FFFFFF",
                       "color": undefined,
@@ -5174,10 +5219,10 @@ body {
                       "margin-bottom": "8px",
                       "width": "100%",
                     },
-                    ".Action-container-31 *": Object {
+                    ".Action-container-41 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-31 a": Object {
+                    ".Action-container-41 a": Object {
                       "color": "inherit",
                       "margin-left": "8px",
                       "overflow": "hidden",
@@ -5186,21 +5231,42 @@ body {
                       "white-space": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-31:hover": Object {
+                    ".Action-container-41:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-31:hover *": Object {
+                    ".Action-container-41:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-iconInfo-32": Object {
+                    ".Action-iconInfo-43": Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
                     },
-                    ".Action-iconUrl-33": Object {
+                    ".Action-iconUrl-44": Object {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    ".Action-selected-42": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-42 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-42 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-42:hover": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-42:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "align-items": "center",
@@ -5223,14 +5289,20 @@ body {
                       "margin": "8px",
                       "width": "16px",
                     },
+                    "selected": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
                   },
                   "options": Object {
                     "Renderer": [Function],
                     "classNamePrefix": "Action",
                     "classes": Object {
-                      "container": "Action-container-31",
-                      "iconInfo": "Action-iconInfo-32",
-                      "iconUrl": "Action-iconUrl-33",
+                      "container": "Action-container-41",
+                      "iconInfo": "Action-iconInfo-43",
+                      "iconUrl": "Action-iconUrl-44",
+                      "selected": "Action-selected-42",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -5713,10 +5785,10 @@ body {
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Action-container-31 *": Object {
+                    ".Action-container-41 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-31 a": Object {
+                    ".Action-container-41 a": Object {
                       "color": "inherit",
                       "marginLeft": "8px",
                       "overflow": "hidden",
@@ -5725,14 +5797,34 @@ body {
                       "whiteSpace": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-31:hover": Object {
+                    ".Action-container-41:hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-31:hover *": Object {
+                    ".Action-container-41:hover *": Object {
                       "background": "#F0F0F0",
+                    },
+                    ".Action-selected-42 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-42 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-42:hover": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-42:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "& *": Object {
@@ -5772,6 +5864,27 @@ body {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    "selected": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                        "cursor": "default",
+                      },
+                      "& svg *.color0": Object {
+                        "fill": "#FFFFFF",
+                      },
+                      "&:hover": Object {
+                        "& *": Object {
+                          "background": "#414141",
+                          "color": "#FFFFFF",
+                        },
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
                     },
                   },
                   "update": [Function],
@@ -11700,9 +11813,10 @@ body {
           }
           classes={
             Object {
-              "container": "Action-container-31",
-              "iconInfo": "Action-iconInfo-32",
-              "iconUrl": "Action-iconUrl-33",
+              "container": "Action-container-41",
+              "iconInfo": "Action-iconInfo-43",
+              "iconUrl": "Action-iconUrl-44",
+              "selected": "Action-selected-42",
             }
           }
           target="_top"
@@ -12637,14 +12751,14 @@ body {
           }
         >
           <WithStyles(Component)
-            className="Action-container-31"
+            className="Action-container-41"
             component="div"
             role="button"
             tabIndex={0}
             variant="normalText"
           >
             <ForwardRef
-              className="Action-container-31"
+              className="Action-container-41"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
@@ -13610,7 +13724,7 @@ body {
               variant="normalText"
             >
               <div
-                className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-31"
+                className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-41"
                 role="button"
                 tabIndex={0}
                 theme={
@@ -20087,8 +20201,9 @@ body {
                 "attached": true,
                 "classes": Object {
                   "container": "Action-container-1",
-                  "iconInfo": "Action-iconInfo-2",
-                  "iconUrl": "Action-iconUrl-3",
+                  "iconInfo": "Action-iconInfo-3",
+                  "iconUrl": "Action-iconUrl-4",
+                  "selected": "Action-selected-2",
                 },
                 "deployed": true,
                 "linked": false,
@@ -20097,8 +20212,9 @@ body {
                   "classNamePrefix": "Action",
                   "classes": Object {
                     "container": "Action-container-1",
-                    "iconInfo": "Action-iconInfo-2",
-                    "iconUrl": "Action-iconUrl-3",
+                    "iconInfo": "Action-iconInfo-3",
+                    "iconUrl": "Action-iconUrl-4",
+                    "selected": "Action-selected-2",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -20614,12 +20730,33 @@ body {
 .Action-container-1:hover * {
   background: #F0F0F0;
 }
-.Action-iconInfo-2 {
+.Action-selected-2 {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-2 * {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-2 svg *.color0 {
+  fill: #FFFFFF;
+}
+.Action-selected-2:hover {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-selected-2:hover * {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-iconInfo-3 {
   width: 32px;
   height: 32px;
   margin-left: auto;
 }
-.Action-iconUrl-3 {
+.Action-iconUrl-4 {
   width: 16px;
   height: 16px;
   margin: 8px;
@@ -20638,8 +20775,9 @@ body {
                 "rules": RuleList {
                   "classes": Object {
                     "container": "Action-container-1",
-                    "iconInfo": "Action-iconInfo-2",
-                    "iconUrl": "Action-iconUrl-3",
+                    "iconInfo": "Action-iconInfo-3",
+                    "iconUrl": "Action-iconUrl-4",
+                    "selected": "Action-selected-2",
                   },
                   "index": Array [
                     Object {
@@ -20670,6 +20808,27 @@ body {
                     },
                     Object {
                       "background": "#F0F0F0",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "fill": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     Object {
                       "height": "32px",
@@ -20712,15 +20871,36 @@ body {
                     ".Action-container-1:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-iconInfo-2": Object {
+                    ".Action-iconInfo-3": Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
                     },
-                    ".Action-iconUrl-3": Object {
+                    ".Action-iconUrl-4": Object {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    ".Action-selected-2": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-2 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-2 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-2:hover": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-2:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "align-items": "center",
@@ -20743,14 +20923,20 @@ body {
                       "margin": "8px",
                       "width": "16px",
                     },
+                    "selected": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
                   },
                   "options": Object {
                     "Renderer": [Function],
                     "classNamePrefix": "Action",
                     "classes": Object {
                       "container": "Action-container-1",
-                      "iconInfo": "Action-iconInfo-2",
-                      "iconUrl": "Action-iconUrl-3",
+                      "iconInfo": "Action-iconInfo-3",
+                      "iconUrl": "Action-iconUrl-4",
+                      "selected": "Action-selected-2",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -21254,6 +21440,26 @@ body {
                     ".Action-container-1:hover *": Object {
                       "background": "#F0F0F0",
                     },
+                    ".Action-selected-2 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-2 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-2:hover": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-2:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
                     "container": Object {
                       "& *": Object {
                         "cursor": "pointer",
@@ -21292,6 +21498,27 @@ body {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    "selected": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                        "cursor": "default",
+                      },
+                      "& svg *.color0": Object {
+                        "fill": "#FFFFFF",
+                      },
+                      "&:hover": Object {
+                        "& *": Object {
+                          "background": "#414141",
+                          "color": "#FFFFFF",
+                        },
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
                     },
                   },
                   "update": [Function],
@@ -27223,8 +27450,9 @@ body {
           classes={
             Object {
               "container": "Action-container-1",
-              "iconInfo": "Action-iconInfo-2",
-              "iconUrl": "Action-iconUrl-3",
+              "iconInfo": "Action-iconInfo-3",
+              "iconUrl": "Action-iconUrl-4",
+              "selected": "Action-selected-2",
             }
           }
           target="_top"
@@ -30066,7 +30294,7 @@ body {
                 }
               >
                 <img
-                  className="Action-iconUrl-3"
+                  className="Action-iconUrl-4"
                   onError={[Function]}
                   src="http://mockapp1/icon"
                 />
@@ -30078,11 +30306,11 @@ body {
                   Mock App 1
                 </a>
                 <WithStyles(Info)
-                  className="Action-iconInfo-2"
+                  className="Action-iconInfo-3"
                   title="Mock App 1 Description"
                 >
                   <Info
-                    className="Action-iconInfo-2"
+                    className="Action-iconInfo-3"
                     classes={
                       Object {
                         "root": "HvInfoIcon-root",
@@ -31024,7 +31252,7 @@ body {
                     title="Mock App 1 Description"
                   >
                     <div
-                      className="Action-iconInfo-2 HvInfoIcon-root HvInfoIcon-rootS"
+                      className="Action-iconInfo-3 HvInfoIcon-root HvInfoIcon-rootS"
                       title="Mock App 1 Description"
                     >
                       <svg
@@ -35624,9 +35852,10 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "container": "Action-container-16",
-                  "iconInfo": "Action-iconInfo-17",
-                  "iconUrl": "Action-iconUrl-18",
+                  "container": "Action-container-21",
+                  "iconInfo": "Action-iconInfo-23",
+                  "iconUrl": "Action-iconUrl-24",
+                  "selected": "Action-selected-22",
                 },
                 "deployed": true,
                 "linked": false,
@@ -35634,9 +35863,10 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "Action",
                   "classes": Object {
-                    "container": "Action-container-16",
-                    "iconInfo": "Action-iconInfo-17",
-                    "iconUrl": "Action-iconUrl-18",
+                    "container": "Action-container-21",
+                    "iconInfo": "Action-iconInfo-23",
+                    "iconUrl": "Action-iconUrl-24",
+                    "selected": "Action-selected-22",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -36124,7 +36354,7 @@ body {
                     data-meta="Action"
                   >
                     
-.Action-container-16 {
+.Action-container-21 {
   width: 100%;
   height: 32px;
   cursor: pointer;
@@ -36134,13 +36364,13 @@ body {
   margin-bottom: 8px;
   justify-content: flex-start;
 }
-.Action-container-16:hover {
+.Action-container-21:hover {
   background: #F0F0F0;
 }
-.Action-container-16 * {
+.Action-container-21 * {
   cursor: pointer;
 }
-.Action-container-16 a {
+.Action-container-21 a {
   color: inherit;
   width: calc(100% - 84px);
   overflow: hidden;
@@ -36149,15 +36379,36 @@ body {
   text-overflow: ellipsis;
   text-decoration: inherit;
 }
-.Action-container-16:hover * {
+.Action-container-21:hover * {
   background: #F0F0F0;
 }
-.Action-iconInfo-17 {
+.Action-selected-22 {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-22 * {
+  color: #FFFFFF;
+  cursor: default;
+  background: #414141;
+}
+.Action-selected-22 svg *.color0 {
+  fill: #FFFFFF;
+}
+.Action-selected-22:hover {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-selected-22:hover * {
+  color: #FFFFFF;
+  background: #414141;
+}
+.Action-iconInfo-23 {
   width: 32px;
   height: 32px;
   margin-left: auto;
 }
-.Action-iconUrl-18 {
+.Action-iconUrl-24 {
   width: 16px;
   height: 16px;
   margin: 8px;
@@ -36175,9 +36426,10 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "container": "Action-container-16",
-                    "iconInfo": "Action-iconInfo-17",
-                    "iconUrl": "Action-iconUrl-18",
+                    "container": "Action-container-21",
+                    "iconInfo": "Action-iconInfo-23",
+                    "iconUrl": "Action-iconUrl-24",
+                    "selected": "Action-selected-22",
                   },
                   "index": Array [
                     Object {
@@ -36210,6 +36462,27 @@ body {
                       "background": "#F0F0F0",
                     },
                     Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    Object {
+                      "fill": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
@@ -36221,7 +36494,7 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".Action-container-16": Object {
+                    ".Action-container-21": Object {
                       "align-items": "center",
                       "background": "#FFFFFF",
                       "color": undefined,
@@ -36232,10 +36505,10 @@ body {
                       "margin-bottom": "8px",
                       "width": "100%",
                     },
-                    ".Action-container-16 *": Object {
+                    ".Action-container-21 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-16 a": Object {
+                    ".Action-container-21 a": Object {
                       "color": "inherit",
                       "margin-left": "8px",
                       "overflow": "hidden",
@@ -36244,21 +36517,42 @@ body {
                       "white-space": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-16:hover": Object {
+                    ".Action-container-21:hover": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-16:hover *": Object {
+                    ".Action-container-21:hover *": Object {
                       "background": "#F0F0F0",
                     },
-                    ".Action-iconInfo-17": Object {
+                    ".Action-iconInfo-23": Object {
                       "height": "32px",
                       "margin-left": "auto",
                       "width": "32px",
                     },
-                    ".Action-iconUrl-18": Object {
+                    ".Action-iconUrl-24": Object {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    ".Action-selected-22": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-22 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-22 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-22:hover": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-22:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "align-items": "center",
@@ -36281,14 +36575,20 @@ body {
                       "margin": "8px",
                       "width": "16px",
                     },
+                    "selected": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
                   },
                   "options": Object {
                     "Renderer": [Function],
                     "classNamePrefix": "Action",
                     "classes": Object {
-                      "container": "Action-container-16",
-                      "iconInfo": "Action-iconInfo-17",
-                      "iconUrl": "Action-iconUrl-18",
+                      "container": "Action-container-21",
+                      "iconInfo": "Action-iconInfo-23",
+                      "iconUrl": "Action-iconUrl-24",
+                      "selected": "Action-selected-22",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -36771,10 +37071,10 @@ body {
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".Action-container-16 *": Object {
+                    ".Action-container-21 *": Object {
                       "cursor": "pointer",
                     },
-                    ".Action-container-16 a": Object {
+                    ".Action-container-21 a": Object {
                       "color": "inherit",
                       "marginLeft": "8px",
                       "overflow": "hidden",
@@ -36783,14 +37083,34 @@ body {
                       "whiteSpace": "nowrap",
                       "width": "calc(100% - 84px)",
                     },
-                    ".Action-container-16:hover": Object {
+                    ".Action-container-21:hover": Object {
                       "& *": Object {
                         "background": "#F0F0F0",
                       },
                       "background": "#F0F0F0",
                     },
-                    ".Action-container-16:hover *": Object {
+                    ".Action-container-21:hover *": Object {
                       "background": "#F0F0F0",
+                    },
+                    ".Action-selected-22 *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
+                    },
+                    ".Action-selected-22 svg *.color0": Object {
+                      "fill": "#FFFFFF",
+                    },
+                    ".Action-selected-22:hover": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                    },
+                    ".Action-selected-22:hover *": Object {
+                      "background": "#414141",
+                      "color": "#FFFFFF",
                     },
                     "container": Object {
                       "& *": Object {
@@ -36830,6 +37150,27 @@ body {
                       "height": "16px",
                       "margin": "8px",
                       "width": "16px",
+                    },
+                    "selected": Object {
+                      "& *": Object {
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                        "cursor": "default",
+                      },
+                      "& svg *.color0": Object {
+                        "fill": "#FFFFFF",
+                      },
+                      "&:hover": Object {
+                        "& *": Object {
+                          "background": "#414141",
+                          "color": "#FFFFFF",
+                        },
+                        "background": "#414141",
+                        "color": "#FFFFFF",
+                      },
+                      "background": "#414141",
+                      "color": "#FFFFFF",
+                      "cursor": "default",
                     },
                   },
                   "update": [Function],
@@ -40685,9 +41026,10 @@ body {
           }
           classes={
             Object {
-              "container": "Action-container-16",
-              "iconInfo": "Action-iconInfo-17",
-              "iconUrl": "Action-iconUrl-18",
+              "container": "Action-container-21",
+              "iconInfo": "Action-iconInfo-23",
+              "iconUrl": "Action-iconUrl-24",
+              "selected": "Action-selected-22",
             }
           }
           target="_top"
@@ -41622,14 +41964,14 @@ body {
           }
         >
           <WithStyles(Component)
-            className="Action-container-16"
+            className="Action-container-21"
             component="div"
             role="button"
             tabIndex={0}
             variant="normalText"
           >
             <ForwardRef
-              className="Action-container-16"
+              className="Action-container-21"
               classes={
                 Object {
                   "3xlTitle": "HvTypography-3xlTitle",
@@ -42595,7 +42937,7 @@ body {
               variant="normalText"
             >
               <div
-                className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-16"
+                className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-21"
                 role="button"
                 tabIndex={0}
                 theme={
@@ -43529,7 +43871,7 @@ body {
                 }
               >
                 <img
-                  className="Action-iconUrl-18"
+                  className="Action-iconUrl-24"
                   onError={[Function]}
                   src="http://mockapp1/icon"
                 />
