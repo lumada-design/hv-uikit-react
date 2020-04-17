@@ -39,6 +39,9 @@ export const getManagerStylesOverrides = theme => ({
 
 export const getDocsStylesOverrides = theme => ({
   ".sbdocs": {
+    a: {
+      color: theme.hv.typography.inlineLink.color
+    },
     "&.sbdocs-wrapper": {
       backgroundColor: theme.hv.palette.atmosphere.atmo2
     },
