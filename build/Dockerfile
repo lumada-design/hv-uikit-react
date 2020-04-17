@@ -45,7 +45,6 @@ COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./doc ./doc
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/themes ./packages/themes
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/icons ./packages/icons
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/lab ./packages/lab
-COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/doc ./packages/doc
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./automation ./automation
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/core ./packages/core
 
