@@ -51,7 +51,6 @@ const DropZone = ({
         newFile.status = "fail";
       }
 
-      // TODO: review ID generation
       newFile.id = uniqueId("uploaded-file-data-");
       newFiles.push(newFile);
     });
@@ -108,9 +107,11 @@ const DropZone = ({
         }}
         onDrop={event => {
           if (!disabled) {
-            event.stopPropagation();
-            event.preventDefault();
-            onChangeHandler(event.dataTransfer.files);
+            if (multiple === false && event.dataTransfer.files.length === 1) {
+              event.stopPropagation();
+              event.preventDefault();
+              onChangeHandler(event.dataTransfer.files);
+            }
           }
         }}
         onKeyDown={e => {

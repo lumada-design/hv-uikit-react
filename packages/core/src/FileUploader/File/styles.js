@@ -9,7 +9,11 @@ const styles = theme => ({
     position: "absolute",
     top: "-1px",
     width: "80%",
-    border: `1px solid ${theme.hv.palette.accent.acce1}`
+    height: 2,
+    border: `1px solid ${theme.hv.palette.accent.acce1}`,
+    "&::-moz-progress-bar": {
+      background: theme.hv.palette.accent.acce1
+    }
   },
   progressTextContainer: {
     display: "flex",
