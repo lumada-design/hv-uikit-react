@@ -54,7 +54,8 @@ const styles = theme => ({
   },
   listOpenDown: {
     display: "block",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    boxShadow: theme.hv.shadows[1]
   },
   listOpenUp: {
     display: "block",

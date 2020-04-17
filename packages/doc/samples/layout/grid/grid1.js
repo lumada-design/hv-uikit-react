@@ -9,7 +9,7 @@ const Box = ({ text }) => (
       backgroundColor: "ivory",
       height: "150px",
       width: "100%",
-      boxShadow: "2px 2px 5px grey"
+      boxShadow: "0 2px 12px rgba(65,65,65,0.12)"
     }}
   >
     <div

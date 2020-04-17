@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   iconSelected: {
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    boxShadow: theme.hv.shadows[1],
     "&:hover": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`
     }
@@ -35,7 +35,7 @@ const styles = theme => ({
     padding: theme.spacing("sm"),
     whiteSpace: "nowrap",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+    boxShadow: theme.hv.shadows[1]
   }
 });
 

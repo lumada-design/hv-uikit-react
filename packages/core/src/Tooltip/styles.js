@@ -7,7 +7,7 @@ const styles = theme => ({
     padding: "15px 20px",
     display: "flex",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: "0 2px 12px rgba(65,65,65,.12)",
+    boxShadow: theme.hv.shadows[1],
     width: "fit-content",
     "& p": {
       display: "-webkit-box",
@@ -24,7 +24,7 @@ const styles = theme => ({
     padding: 0,
     display: "flex",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: "0 2px 12px rgba(65,65,65,.12)",
+    boxShadow: theme.hv.shadows[1],
     width: "fit-content",
     "& p": {
       display: "-webkit-box",

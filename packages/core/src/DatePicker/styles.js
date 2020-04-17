@@ -26,7 +26,7 @@ const styles = theme => ({
   },
   inputCalendarOpen: {
     ...inputRoot(theme),
-    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    boxShadow: theme.hv.shadows[1],
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`
   },
   noBorderTop: {
@@ -74,7 +74,7 @@ const styles = theme => ({
     width: "320px"
     // display: "flex",
     // flexDirection: "column",
-    // boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+    // boxShadow: theme.hv.shadows[1]`
   },
   singleCalendarFooter: {
     padding: `${theme.hv.spacing.sm}px`,
@@ -85,7 +85,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    // boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    // boxShadow: theme.hv.shadows[1],
     width: "640px"
   },
   rangeCalendarsContainer: {
@@ -142,11 +142,11 @@ const styles = theme => ({
   },
   calendarOpenDown: {
     background: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: `0 0px 0 ${theme.hv.palette.atmosphere.atmo1}, 0 1px 8px rgba(65,65,65,.12)`
+    boxShadow: theme.hv.shadows[1]
   },
   calendarOpenUp: {
     background: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: `0 0px 0 ${theme.hv.palette.atmosphere.atmo1}, 0 1px 8px rgba(65,65,65,.12)`
+    boxShadow: theme.hv.shadows[1]
   }
 });
 

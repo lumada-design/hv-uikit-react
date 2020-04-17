@@ -205,6 +205,10 @@ exports[`Slider  should render correctly 1`] = `
               "supp5": "#546B6B",
             },
           },
+          "shadows": Array [
+            "none",
+            "0 2px 12px rgba(65,65,65,0.12)",
+          ],
           "spacing": Object {
             "lg": 60,
             "md": 30,
