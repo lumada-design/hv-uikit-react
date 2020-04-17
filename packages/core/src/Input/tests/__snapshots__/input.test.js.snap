@@ -160,6 +160,14 @@ exports[`Input should not have the validation section 1`] = `
               Object {
                 "aria-invalid": undefined,
                 "aria-required": undefined,
+                "ref": Object {
+                  "current": <input
+                    class="MuiInputBase-input MuiInput-input HvInput-input"
+                    id="hv-input-7-input"
+                    type="text"
+                    value=""
+                  />,
+                },
                 "required": false,
               }
             }
@@ -199,6 +207,14 @@ exports[`Input should not have the validation section 1`] = `
                 Object {
                   "aria-invalid": undefined,
                   "aria-required": undefined,
+                  "ref": Object {
+                    "current": <input
+                      class="MuiInputBase-input MuiInput-input HvInput-input"
+                      id="hv-input-7-input"
+                      type="text"
+                      value=""
+                    />,
+                  },
                   "required": false,
                 }
               }
@@ -239,6 +255,14 @@ exports[`Input should not have the validation section 1`] = `
                   Object {
                     "aria-invalid": undefined,
                     "aria-required": undefined,
+                    "ref": Object {
+                      "current": <input
+                        class="MuiInputBase-input MuiInput-input HvInput-input"
+                        id="hv-input-7-input"
+                        type="text"
+                        value=""
+                      />,
+                    },
                     "required": false,
                   }
                 }
@@ -284,6 +308,14 @@ exports[`Input should not have the validation section 1`] = `
                     Object {
                       "aria-invalid": undefined,
                       "aria-required": undefined,
+                      "ref": Object {
+                        "current": <input
+                          class="MuiInputBase-input MuiInput-input HvInput-input"
+                          id="hv-input-7-input"
+                          type="text"
+                          value=""
+                        />,
+                      },
                       "required": false,
                     }
                   }
@@ -571,6 +603,15 @@ exports[`Input should pass other props to the child input component 1`] = `
                 "aria-invalid": undefined,
                 "aria-required": undefined,
                 "maxLength": 250,
+                "ref": Object {
+                  "current": <input
+                    class="MuiInputBase-input MuiInput-input HvInput-input"
+                    id="hv-input-9-input"
+                    maxlength="250"
+                    type="text"
+                    value=""
+                  />,
+                },
                 "required": false,
               }
             }
@@ -611,6 +652,15 @@ exports[`Input should pass other props to the child input component 1`] = `
                   "aria-invalid": undefined,
                   "aria-required": undefined,
                   "maxLength": 250,
+                  "ref": Object {
+                    "current": <input
+                      class="MuiInputBase-input MuiInput-input HvInput-input"
+                      id="hv-input-9-input"
+                      maxlength="250"
+                      type="text"
+                      value=""
+                    />,
+                  },
                   "required": false,
                 }
               }
@@ -652,6 +702,15 @@ exports[`Input should pass other props to the child input component 1`] = `
                     "aria-invalid": undefined,
                     "aria-required": undefined,
                     "maxLength": 250,
+                    "ref": Object {
+                      "current": <input
+                        class="MuiInputBase-input MuiInput-input HvInput-input"
+                        id="hv-input-9-input"
+                        maxlength="250"
+                        type="text"
+                        value=""
+                      />,
+                    },
                     "required": false,
                   }
                 }
@@ -698,6 +757,15 @@ exports[`Input should pass other props to the child input component 1`] = `
                       "aria-invalid": undefined,
                       "aria-required": undefined,
                       "maxLength": 250,
+                      "ref": Object {
+                        "current": <input
+                          class="MuiInputBase-input MuiInput-input HvInput-input"
+                          id="hv-input-9-input"
+                          maxlength="250"
+                          type="text"
+                          value=""
+                        />,
+                      },
                       "required": false,
                     }
                   }
@@ -965,6 +1033,14 @@ exports[`Input should render correctly 1`] = `
               Object {
                 "aria-invalid": undefined,
                 "aria-required": undefined,
+                "ref": Object {
+                  "current": <input
+                    class="MuiInputBase-input MuiInput-input HvInput-input"
+                    id="hv-input-2-input"
+                    type="text"
+                    value=""
+                  />,
+                },
                 "required": false,
               }
             }
@@ -1004,6 +1080,14 @@ exports[`Input should render correctly 1`] = `
                 Object {
                   "aria-invalid": undefined,
                   "aria-required": undefined,
+                  "ref": Object {
+                    "current": <input
+                      class="MuiInputBase-input MuiInput-input HvInput-input"
+                      id="hv-input-2-input"
+                      type="text"
+                      value=""
+                    />,
+                  },
                   "required": false,
                 }
               }
@@ -1044,6 +1128,14 @@ exports[`Input should render correctly 1`] = `
                   Object {
                     "aria-invalid": undefined,
                     "aria-required": undefined,
+                    "ref": Object {
+                      "current": <input
+                        class="MuiInputBase-input MuiInput-input HvInput-input"
+                        id="hv-input-2-input"
+                        type="text"
+                        value=""
+                      />,
+                    },
                     "required": false,
                   }
                 }
@@ -1089,6 +1181,14 @@ exports[`Input should render correctly 1`] = `
                     Object {
                       "aria-invalid": undefined,
                       "aria-required": undefined,
+                      "ref": Object {
+                        "current": <input
+                          class="MuiInputBase-input MuiInput-input HvInput-input"
+                          id="hv-input-2-input"
+                          type="text"
+                          value=""
+                        />,
+                      },
                       "required": false,
                     }
                   }

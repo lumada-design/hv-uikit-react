@@ -257,6 +257,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                     Object {
                       "aria-invalid": undefined,
                       "aria-required": undefined,
+                      "ref": Object {
+                        "current": <input
+                          class="MuiInputBase-input MuiInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                          id="hv-input-2-input"
+                          type="text"
+                          value="30"
+                        />,
+                      },
                       "required": false,
                     }
                   }
@@ -297,6 +305,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                       Object {
                         "aria-invalid": undefined,
                         "aria-required": undefined,
+                        "ref": Object {
+                          "current": <input
+                            class="MuiInputBase-input MuiInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                            id="hv-input-2-input"
+                            type="text"
+                            value="30"
+                          />,
+                        },
                         "required": false,
                       }
                     }
@@ -338,6 +354,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         Object {
                           "aria-invalid": undefined,
                           "aria-required": undefined,
+                          "ref": Object {
+                            "current": <input
+                              class="MuiInputBase-input MuiInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                              id="hv-input-2-input"
+                              type="text"
+                              value="30"
+                            />,
+                          },
                           "required": false,
                         }
                       }
@@ -384,6 +408,14 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           Object {
                             "aria-invalid": undefined,
                             "aria-required": undefined,
+                            "ref": Object {
+                              "current": <input
+                                class="MuiInputBase-input MuiInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
+                                id="hv-input-2-input"
+                                type="text"
+                                value="30"
+                              />,
+                            },
                             "required": false,
                           }
                         }
