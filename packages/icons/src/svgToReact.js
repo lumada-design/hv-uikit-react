@@ -31,6 +31,11 @@ const writeFile = (processedSVG, fileName) => {
   fs.mkdirSync(componentOutputFolder, { recursive: true });
 
   const file = path.resolve(componentOutputFolder, `${fileName}.js`);
+  const fileTs = path.resolve(componentOutputFolder, `${fileName}.d.ts`);
+
+  const exportName = fileName.split(".").join("");
+  const exportString = `export { default as ${exportName} } from "./${fileName}";\n`;
+  const exportStringTs = `export { default } from "./IconBase";`;
 
   fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, err => {
     if (err) {
@@ -44,11 +49,9 @@ const writeFile = (processedSVG, fileName) => {
     }
   });
 
-  fs.appendFile(
-    path.resolve(componentOutputFolder, `index.js`),
-    `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`,
-    () => {}
-  );
+  fs.writeFile(fileTs, exportStringTs, { flag: "w" }, () => {});
+
+  fs.appendFile(path.resolve(componentOutputFolder, `index.js`), exportString, () => {});
 };
 
 const runUtil = (fileToRead, fileToWrite) => {
