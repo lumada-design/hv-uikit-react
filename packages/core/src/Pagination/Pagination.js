@@ -13,6 +13,7 @@ import HvInput from "../Input";
 import withLabels from "../withLabels";
 import { setId } from "../utils";
 import styles from "./styles";
+import withTooltip from "../withTooltip";
 
 const DEFAULT_LABELS = {
   pageSizePrev: "Show",
@@ -69,6 +70,24 @@ const Pagination = ({
     }
   }, [page, pageSize]);
 
+  const FirstPage = () => (
+    <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+  );
+  const PreviousPage = () => (
+    <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+  );
+  const NextPage = () => (
+    <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+  );
+  const LastPage = () => (
+    <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+  );
+
+  const FirstPageTooltipWrapper = withTooltip(FirstPage, labels.paginationFirstPageTitle);
+  const PreviousPageTooltipWrapper = withTooltip(PreviousPage, labels.paginationPreviousPageTitle);
+  const NextPageTooltipWrapper = withTooltip(NextPage, labels.paginationNextPageTitle);
+  const LastPageTooltipWrapper = withTooltip(LastPage, labels.paginationLastPageTitle);
+
   return (
     <div id={id} className={clsx(className, classes.root)}>
       <div className={classes.pageSizeOptions} {...showPageProps}>
@@ -102,22 +121,20 @@ const Pagination = ({
         <IconButton
           id={setId(id, "firstPage-button")}
           aria-label={setId(id, "firstPage-button")}
-          title={labels.paginationFirstPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
         >
-          <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+          <FirstPageTooltipWrapper />
         </IconButton>
         <IconButton
           id={setId(id, "previousPage-button")}
           aria-label={setId(id, "previousPage-button")}
-          title={labels.paginationPreviousPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
         >
-          <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+          <PreviousPageTooltipWrapper />
         </IconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
@@ -156,21 +173,21 @@ const Pagination = ({
         </div>
         <IconButton
           id={setId(id, "nextPage-button")}
-          title={labels.paginationNextPageTitle}
+          aria-label={setId(id, "nextPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
         >
-          <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+          <NextPageTooltipWrapper />
         </IconButton>
         <IconButton
           id={setId(id, "lastPage-button")}
-          title={labels.paginationLastPageTitle}
+          aria-label={setId(id, "lastPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
         >
-          <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+          <LastPageTooltipWrapper />
         </IconButton>
       </div>
     </div>

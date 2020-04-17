@@ -7,6 +7,7 @@ import Close from "@hv/uikit-react-icons/dist/Close";
 import Button from "../Button";
 import { setId } from "../utils";
 import styles from "./styles";
+import withTooltip from "../withTooltip";
 
 /**
  * The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, etc.
@@ -33,6 +34,12 @@ const HvModal = ({
         return document.getElementById(firstFocusable);
       }
     : undefined;
+
+  const closeButtonDisplay = () => <Close role="presentation" />;
+
+  const CloseButtonTooltipWrapper = buttonTitle
+    ? withTooltip(closeButtonDisplay, buttonTitle, "right")
+    : closeButtonDisplay;
 
   return (
     <Dialog
@@ -65,9 +72,9 @@ const HvModal = ({
             className={classes.closeButton}
             category="ghost"
             onClick={event => onClose(event)}
-            title={buttonTitle}
+            aria-label={buttonTitle}
           >
-            <Close />
+            <CloseButtonTooltipWrapper />
           </Button>
           {children}
         </div>

@@ -949,48 +949,49 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
         onKeyDown={[Function]}
         role="button"
         tabIndex={0}
-        title=""
       >
-        <WithStyles(Unlock)
-          className="HvToggleButton-icon"
-        >
-          <Unlock
+        <IconDisplay>
+          <WithStyles(Unlock)
             className="HvToggleButton-icon"
-            classes={
-              Object {
-                "root": "HvIconUnlock-root",
-                "rootL": "HvIconUnlock-rootL",
-                "rootM": "HvIconUnlock-rootM",
-                "rootS": "HvIconUnlock-rootS",
-                "rootXs": "HvIconUnlock-rootXs",
-              }
-            }
           >
-            <div
-              className="HvToggleButton-icon HvIconUnlock-root HvIconUnlock-rootS"
+            <Unlock
+              className="HvToggleButton-icon"
+              classes={
+                Object {
+                  "root": "HvIconUnlock-root",
+                  "rootL": "HvIconUnlock-rootL",
+                  "rootM": "HvIconUnlock-rootM",
+                  "rootS": "HvIconUnlock-rootS",
+                  "rootXs": "HvIconUnlock-rootXs",
+                }
+              }
             >
-              <svg
-                focusable={false}
-                height="16px"
-                viewBox="0 0 16 16"
-                width="16px"
-                xmlns="http://www.w3.org/2000/svg"
+              <div
+                className="HvToggleButton-icon HvIconUnlock-root HvIconUnlock-rootS"
               >
-                <g
-                  className="color0"
-                  fill="#414141"
+                <svg
+                  focusable={false}
+                  height="16px"
+                  viewBox="0 0 16 16"
+                  width="16px"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M7.5 8h1v4h-1z"
-                  />
-                  <path
-                    d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
-                  />
-                </g>
-              </svg>
-            </div>
-          </Unlock>
-        </WithStyles(Unlock)>
+                  <g
+                    className="color0"
+                    fill="#414141"
+                  >
+                    <path
+                      d="M7.5 8h1v4h-1z"
+                    />
+                    <path
+                      d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </Unlock>
+          </WithStyles(Unlock)>
+        </IconDisplay>
       </div>
     </ToggleButton>
   </WithLabels>

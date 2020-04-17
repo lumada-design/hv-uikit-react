@@ -28,6 +28,7 @@ import {
 } from "./utils";
 
 import CalendarModel from "./model";
+import withTooltip from "../../withTooltip";
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -332,7 +333,7 @@ class Calendar extends React.Component {
 
     const onClickFunc = dateInValidRange ? this.selectDate(currentDate) : undefined;
 
-    return (
+    const DateDisplay = () => (
       <div
         key={getDateISO(currentDate)}
         onClick={onClickFunc}
@@ -349,6 +350,10 @@ class Calendar extends React.Component {
         </HvTypography>
       </div>
     );
+
+    const DateTooltipWrapper = withTooltip(DateDisplay, getFormattedDate(currentDate, locale));
+
+    return <DateTooltipWrapper />;
   };
 
   /**

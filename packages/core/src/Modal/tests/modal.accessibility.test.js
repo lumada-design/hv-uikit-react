@@ -23,7 +23,6 @@ describe("ModalA11Y", () => {
         </Modal>
       </HvProvider>
     );
-
     const results = await axe(wrapper.html(), {
       // const disable for role="none presentation"
       rules: { "aria-roles": { enabled: false } }
