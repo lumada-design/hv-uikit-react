@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.22.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.21.0...@hv/uikit-react-lab@1.22.0) (2020-04-18)
+
+
+### Features
+
+* **AppSwitcherPanel:** add app switcher panel component [#1393](https://github.com/pentaho/hv-uikit-react/issues/1393) ([17549f5](https://github.com/pentaho/hv-uikit-react/commit/17549f54d9338cca5c1ec91aeeaee0124b8fc41d))
+
+
+
+
+
 # [1.21.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.20.0...@hv/uikit-react-lab@1.21.0) (2020-04-11)
 
 
