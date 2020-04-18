@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.1 (2020-04-18)
+
+**Note:** Version bump only for package @hv/uikit-react-automation-robot
+
+
+
+
+
 # [2.0.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-automation-robot@1.2.0...@hv/uikit-react-automation-robot@2.0.0) (2020-04-15)
 
 
