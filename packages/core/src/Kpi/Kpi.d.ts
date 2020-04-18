@@ -2,10 +2,10 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface HvKpiLabelProps {
-  title: string;
-  indicator: string;
-  unit: string;
-  comparisonIndicatorInfo: string;
+  title?: string;
+  indicator?: string;
+  unit?: string;
+  comparisonIndicatorInfo?: string;
 }
 
 export interface HvKpiProps

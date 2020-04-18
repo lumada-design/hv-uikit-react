@@ -2,16 +2,16 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface PaginationLabelsProp {
-  pageSizePrev: string;
-  pageSizeEntryName: string;
-  pageSizeSelectorDescription: string;
-  pagesSeparator: string;
-  pagesIndeterminate: string;
-  paginationFirstPageTitle: string;
-  paginationPreviousPageTitle: string;
-  paginationNextPageTitle: string;
-  paginationLastPageTitle: string;
-  paginationInputLabel: string;
+  pageSizePrev?: string;
+  pageSizeEntryName?: string;
+  pageSizeSelectorDescription?: string;
+  pagesSeparator?: string;
+  pagesIndeterminate?: string;
+  paginationFirstPageTitle?: string;
+  paginationPreviousPageTitle?: string;
+  paginationNextPageTitle?: string;
+  paginationLastPageTitle?: string;
+  paginationInputLabel?: string;
 }
 
 export interface HvPaginationProps
@@ -63,11 +63,11 @@ export interface HvPaginationProps
   /**
    * Other props to show page component.
    */
-  showPageProps: Object;
+  showPageProps?: Object;
   /**
    * Other props to pagination component.
    */
-  navigationProps: Object;
+  navigationProps?: Object;
 }
 
 export type HvPaginationClassKey =

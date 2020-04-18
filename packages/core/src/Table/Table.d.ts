@@ -47,6 +47,9 @@ export interface TableColumn {
    * If `true` the column may be sorted.
    */
   sortable?: boolean;
+
+  maxWidth?: number;
+  minWidth?: number;
 }
 
 export interface SecondaryAction extends ListValueProp {
@@ -167,12 +170,12 @@ export interface HvTableProps
   /**
    *  Extra properties passed to the select all checkbox props.
    */
-  allCheckBoxProps: Object;
+  allCheckBoxProps?: Object;
 
   /**
    *  Extra properties passed to the dropdown menu.
    */
-  dropdownMenuProps: Object;
+  dropdownMenuProps?: Object;
 }
 
 export type HvTableClassKey =

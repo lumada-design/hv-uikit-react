@@ -6,14 +6,14 @@ interface InputSuggestion {
 }
 
 export interface HvInputLabelsProp {
-  inputLabel: string;
-  placeholder: string;
-  infoText: string;
-  warningText: string;
-  maxCharQuantityWarningText: string;
-  minCharQuantityWarningText: string;
-  requiredWarningText: string;
-  clearButtonLabel: string;
+  inputLabel?: string;
+  placeholder?: string;
+  infoText?: string;
+  warningText?: string;
+  maxCharQuantityWarningText?: string;
+  minCharQuantityWarningText?: string;
+  requiredWarningText?: string;
+  clearButtonLabel?: string;
 }
 
 export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey> {

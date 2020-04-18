@@ -7,7 +7,7 @@ export interface HvSearchBoxProps
    * The function that will be executed on Enter, allows checking the value state,
    * it receives the value or event+value.
    */
-  onSubmit: (event: Event, value: string) => void;
+  onSubmit?: (event: Event, value: string) => void;
 }
 
 export type HvSearchBoxClassKey = "root";

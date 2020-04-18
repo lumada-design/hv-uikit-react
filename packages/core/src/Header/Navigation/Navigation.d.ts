@@ -7,7 +7,7 @@ interface NavigationItemProp {
 }
 
 export interface HvHeaderNavigationProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvHeaderNavigationClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvHeaderNavigationClassKey, 'onClick'> {
   /**
    * An array containing the data for each menu item.
    *
@@ -19,6 +19,8 @@ export interface HvHeaderNavigationProps
    * Menu item id selected.
    */
   selected?: string;
+
+  onClick?: (e: MouseEvent, selectedItem: NavigationItemProp) => void;
 }
 
 export type HvHeaderNavigationClassKey = "root";

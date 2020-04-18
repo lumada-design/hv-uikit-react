@@ -3,20 +3,20 @@ import { StandardProps } from "@material-ui/core";
 import { ListValueProp, ListLabelsProp } from "../List";
 
 export interface DropDownLabelsProp extends ListLabelsProp {
-  title: string;
-  select: string;
-  cancelLabel: string;
-  applyLabel: string;
-  multiSelectionAction: string;
+  title?: string;
+  select?: string;
+  cancelLabel?: string;
+  applyLabel?: string;
+  multiSelectionAction?: string;
 
   // inherits: selectAll, selectionConjunction;
   //selectAll: string;
   // TODO: deprecate in favour of List's selectionConjunction ?
-  multiSelectionConjunction: string;
+  multiSelectionConjunction?: string;
 }
 
 export interface HvDropdownProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey, 'onChange'> {
   /**
    * The list to be rendered by the dropdown.
    */
@@ -75,6 +75,8 @@ export interface HvDropdownProps
    * Placement of the dropdown.
    */
   placement: "left" | "right";
+
+  onChange: (selected: ListValueProp | ListValueProp[] | undefined) => void;
 }
 
 export type HvDropdownClassKey =
