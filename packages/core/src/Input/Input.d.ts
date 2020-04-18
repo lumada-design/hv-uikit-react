@@ -33,7 +33,7 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey>
   /**
    * Attributes applied to the input element.
    */
-  inputProps?: React.HTMLAttributes<HTMLInputElement>;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
   /**
    * Allows passing a ref to the underlying input
    */
