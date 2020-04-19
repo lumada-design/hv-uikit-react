@@ -16,7 +16,7 @@ export interface HvInputLabelsProp {
   clearButtonLabel?: string;
 }
 
-export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey> {
+export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey, "onChange"> {
   /**
    * An Object containing the various text associated with the input.
    *
@@ -123,6 +123,13 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey>
    * Overrides any validation with a specific error/warning message to set in the warningText slot.
    */
   externalWarningTextOverride?: string;
+
+  /**
+   * Called back when the value is changed.
+   * Must return the new value to be accepted.
+   * The event can be undefined when the clear button is clicked.
+   */
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined, value: string) => string
 }
 
 export type HvInputClassKey =
