@@ -59,7 +59,7 @@ export default class Action extends Component {
         {renderApplicationIcon()}
 
         {isSelected ? (
-          name
+          <span>{name}</span>
         ) : (
           <a href={url} target={target || "_top"} title={name}>
             {name}
