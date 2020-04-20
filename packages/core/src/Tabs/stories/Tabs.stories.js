@@ -84,7 +84,7 @@ export const TextSize = () => {
 
   const StyledTab = withStyles(theme => ({
     root: {
-      fontSize: theme.hv.typography.sTitle.fontSize
+      ...theme.hv.typography.sTitle
     }
   }))(props => <HvTab {...props} />);
 

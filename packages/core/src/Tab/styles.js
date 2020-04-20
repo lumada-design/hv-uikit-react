@@ -9,6 +9,12 @@ const styles = theme => ({
       background: theme.hv.palette.atmosphere.atmo4
     },
     marginRight: 0,
+    "&$selected": {
+      fontWeight: 600,
+      "&:hover": {
+        background: theme.hv.palette.atmosphere.atmo4
+      }
+    },
     "&$disabled": {
       color: theme.hv.palette.atmosphere.atmo7,
       cursor: "not-allowed",
@@ -20,12 +26,7 @@ const styles = theme => ({
     },
     opacity: 1
   },
-  selected: {
-    ...theme.hv.typography.highlightText,
-    "&:hover": {
-      background: theme.hv.palette.atmosphere.atmo4
-    }
-  },
+  selected: {},
   disabled: {}
 });
 
