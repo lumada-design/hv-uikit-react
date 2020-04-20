@@ -197,6 +197,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="0"
           rootRef={
             Object {
@@ -273,6 +274,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -401,6 +403,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="1"
           rootRef={
             Object {
@@ -477,6 +480,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -605,6 +609,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="2"
           rootRef={
             Object {
@@ -681,6 +686,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -1577,6 +1583,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="0"
           rootRef={
             Object {
@@ -1837,6 +1844,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -2546,6 +2554,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="1"
           rootRef={
             Object {
@@ -2806,6 +2815,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -3515,6 +3525,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="2"
           rootRef={
             Object {
@@ -3775,6 +3786,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -4579,6 +4591,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="0"
           rootRef={
             Object {
@@ -4652,6 +4665,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -4777,6 +4791,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="1"
           rootRef={
             Object {
@@ -4850,6 +4865,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -4974,6 +4990,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="2"
           rootRef={
             Object {
@@ -5047,6 +5064,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -5270,6 +5288,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="0"
           rootRef={
             Object {
@@ -5376,6 +5395,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -5564,6 +5584,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="1"
           rootRef={
             Object {
@@ -5670,6 +5691,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -5827,6 +5849,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="2"
           rootRef={
             Object {
@@ -5933,6 +5956,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -6221,6 +6245,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="0"
           rootRef={
             Object {
@@ -6418,6 +6443,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -7012,6 +7038,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="1"
           rootRef={
             Object {
@@ -7209,6 +7236,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div
@@ -7802,6 +7830,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           disabled={false}
           focusDisabled={true}
           focusOnClick={false}
+          isDropdown={true}
           key="2"
           rootRef={
             Object {
@@ -7999,6 +8028,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             disabled={false}
             focusDisabled={true}
             focusOnClick={false}
+            isDropdown={true}
             rootRef={
               Object {
                 "current": <div

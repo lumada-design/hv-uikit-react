@@ -27,7 +27,7 @@ const styles = theme => ({
   label: {
     ...theme.hv.typography.labelText,
     fontFamily: theme.hv.typography.fontFamily,
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    marginBottom: theme.hv.spacing.xs + 1,
     display: "block"
   },
   header: {

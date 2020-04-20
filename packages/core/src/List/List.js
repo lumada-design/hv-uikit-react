@@ -117,6 +117,7 @@ class List extends React.Component {
         configuration={{
           tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
         }}
+        isDropdown
       >
         <li
           id={itemId}
