@@ -1117,8 +1117,7 @@ export const WithCheckbox = () => {
       accessor: "severity",
       format: value => value.original.severity.toLowerCase(),
       style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
-      sortable: false
+      cellType: "alpha-numeric"
     },
     {
       headerText: "Priority",

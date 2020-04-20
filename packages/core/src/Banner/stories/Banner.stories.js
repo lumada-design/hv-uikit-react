@@ -55,16 +55,24 @@ export const BannerController = () => {
         >
           {variant}
         </HvButton>
-        <HvBanner open={open} onClose={handleClose} offset={0} variant={variant} {...others} />
+        <HvBanner
+          open={open}
+          onClose={handleClose}
+          offset={0}
+          variant={variant}
+          showIcon
+          actions={<HvButton category="semantic">Action</HvButton>}
+          {...others}
+        />
       </>
     );
   };
 
   return (
     <div style={{ marginTop: 60 }}>
-      <SimpleBanner variant="default" showIcon label="This is a banner." />
-      <SimpleBanner variant="success" showIcon label="This is a success message." />
-      <SimpleBanner variant="error" showIcon label="This is an error message." />
+      <SimpleBanner id="banner1" variant="default" label="This is a banner." />
+      <SimpleBanner id="banner2" variant="success" label="This is a success banner." />
+      <SimpleBanner id="banner3" variant="error" label="This is an error banner." />
     </div>
   );
 };
@@ -72,7 +80,7 @@ export const BannerController = () => {
 BannerController.story = {
   parameters: {
     docs: {
-      storyDescription: "Different Banner variants controlled by buttons"
+      storyDescription: "Different Banner variants with actions and controlled by buttons"
     }
   }
 };

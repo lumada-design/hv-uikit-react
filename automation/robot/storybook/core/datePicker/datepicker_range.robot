@@ -1,11 +1,12 @@
 *** Setting ***
-Suite Setup                       open storybook
-Suite Teardown                    Close Browser
-Library                           SeleniumLibrary
-Resource                          ../../_resources/storybook_keywords.robot
-Variables                         ../../_resources/storybook_variables.yaml
-Variables                         variables.yaml
-Force Tags                        smoke    bug-ie-webdriver
+Suite Setup       open storybook
+Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-date-picker--range-with-values    DatePicker    10s
+Suite Teardown    Close Browser
+Library           SeleniumLibrary
+Resource          ../../_resources/storybook_keywords.robot
+Variables         ../../_resources/storybook_variables.yaml
+Variables         variables.yaml
+Force Tags        smoke    bug-ie-webdriver
 
 
 *** Variables ***
@@ -18,8 +19,6 @@ ${labelInputDate}                 css:input[placeholder='Select a range']
 
 *** Test Cases ***
 Verify default dates
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun 2019 - 10 Jun 2019
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
@@ -28,8 +27,6 @@ Verify default dates
 
 When delete date the default date is replaced
     [Tags]    bug-firefox-webdriver  
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun 2019 - 10 Jun 2019
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
@@ -39,8 +36,6 @@ When delete date the default date is replaced
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun 2019 - 10 Jun 2019
 
 Change range dates with clicks
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Click Element                               ${startDay1}
@@ -49,8 +44,6 @@ Change range dates with clicks
     Element Attribute Value Should Be           ${startInput}        value         20 Jun 2019
 
 Change range dates with inputs   
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${startInput}        01/02/2019
@@ -63,8 +56,6 @@ Change range dates with inputs
     Element Attribute Value Should Be           ${labelInputDate}    value         2 Jan 2019 - 10 Jan 2019
 
 Select end date previous to the start date
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Click Element                               ${endDay1}
@@ -72,8 +63,6 @@ Select end date previous to the start date
     Element Attribute Value Should Be           ${startInput}        value         1 Jun 2019
 
 Select end date previous to the start date with inputs
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${endInput}          01/02/2019
@@ -82,8 +71,6 @@ Select end date previous to the start date with inputs
     Element Attribute Value Should Be           ${startInput}        value         2 Jan 2019
 
 Select start date forward to the end date with inputs
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${startInput}        01/03/2022
@@ -93,8 +80,6 @@ Select start date forward to the end date with inputs
 
 Don't change dates with clicks in start date
     [Tags]    bug-chrome-webdriver
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Click Element                               ${startDay20}
@@ -106,8 +91,6 @@ Don't change dates with clicks in start date
 
 Don't change dates with clicks in end date
     [Tags]    bug-chrome-webdriver
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Click Element                               ${endDay18}
@@ -118,8 +101,6 @@ Don't change dates with clicks in end date
     Element Attribute Value Should Be           ${endInput}          value         10 Jun 2019
 
 Don't change dates with clicking in a start date and clicking cancel
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Click Element                               ${startDay20}
@@ -130,8 +111,6 @@ Don't change dates with clicking in a start date and clicking cancel
     Element Attribute Value Should Be           ${startInput}        value         5 Jun 2019
 
 Don't change dates with clicking in a end date and clicking cancel
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Click Element                               ${endDay18}
@@ -143,8 +122,6 @@ Don't change dates with clicking in a end date and clicking cancel
 
 Don't change dates with start input and clicking enter
     [Tags]    bug-chrome-webdriver    
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${startInput}        01/02/1975
@@ -157,8 +134,6 @@ Don't change dates with start input and clicking enter
 
 Don't change dates with end input and clicking enter
     [Tags]    bug-chrome-webdriver    
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${endInput}          01/02/1975
@@ -170,8 +145,6 @@ Don't change dates with end input and clicking enter
     Element Attribute Value Should Be           ${endInput}          value         10 Jun 2019
 
 Don't change dates with start input clicking enter and cancel
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${startInput}        01/02/1975
@@ -182,8 +155,6 @@ Don't change dates with start input clicking enter and cancel
     Element Attribute Value Should Be           ${startInput}        value         5 Jun 2019
 
 Don't change dates with end input clicking enter and cancel
-    Go To                                       ${STORYBOOK_URL}/iframe.html?id=coredatepicker--rangewithvaluesdatepicker
-    Wait Until Element Is Visible               DatePicker           10s
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${endInput}          01/02/1975

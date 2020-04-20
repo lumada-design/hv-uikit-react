@@ -378,18 +378,18 @@ class Table extends React.Component {
   };
 
   getTableProps = () => {
-    const { classes, tableProps, rowCount } = this.props;
+    const { classes, tableProps, data, rowCount } = this.props;
 
     const baseTableProps = {
       role: "table",
+      "aria-rowcount": rowCount || data.length,
       className: classes.table
     };
 
     if (tableProps) {
       return {
         ...baseTableProps,
-        caption: tableProps.tableCaption,
-        "aria-rowcount": rowCount
+        caption: tableProps.tableCaption
       };
     }
 

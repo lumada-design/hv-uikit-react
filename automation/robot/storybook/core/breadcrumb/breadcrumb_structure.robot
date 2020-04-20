@@ -8,7 +8,7 @@ Force Tags        smoke
 
 *** Test Cases ***
 drops links from level 2 to 7 when breadcrumb drop button is clicked
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corebreadcrumb--breadcrumb3
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-breadcrumb--limited-to-two-paths
     Wait Until Element Is Visible    ${breadcrumb}           10s
     Element Text Should Be           ${breadcrumb}           Label 1\nLabel 8
     Click Element                    ${breadcrumb} button
@@ -16,7 +16,7 @@ drops links from level 2 to 7 when breadcrumb drop button is clicked
     Element Text Should Be           ${dropDown}             Label 2\nLabel 3\nLabel 4\nLabel 5\nLabel 6\nLabel 7
 
 show all links levels when breadcrumb is rendered
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corebreadcrumb--breadcrumb4
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-breadcrumb--with-url
     Wait Until Element Is Visible    ${breadcrumb}    10s
     Element Text Should Be           ${breadcrumb}    Sites\nDesign System\nPattern Library\nHome
 

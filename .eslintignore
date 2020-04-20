@@ -1,17 +1,19 @@
+.github/
+
 # tests
 **/*/coverage
 
 # build folder
-**/*/dist
-**/*/bin
+dist/
+bin/
 
 # Dependency directories
-**/*/node_modules
+node_modules/
 
-automation/**/*
+automation/
 
-packages/icons/src/*
-packages/lab/src/*
+packages/icons/
+packages/lab/
 
 # templates directory
-doc/**/*
+doc/

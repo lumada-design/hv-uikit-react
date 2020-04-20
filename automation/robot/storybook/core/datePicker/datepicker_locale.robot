@@ -1,5 +1,6 @@
 *** Setting ***
 Suite Setup       open storybook
+Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-date-picker--localized    DatePicker    10s
 Suite Teardown    Close Browser
 Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
@@ -10,8 +11,6 @@ Force Tags        smoke    bug-ie-webdriver
 
 *** Test Cases ***
 Verify current date as default value
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplelocalizeddatepicker
-    Wait Until Element Is Visible        DatePicker     10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}    2s
     Click Element                        ${input}
@@ -20,8 +19,6 @@ Verify current date as default value
 
 When delete date is replaced with current date
     [Tags]    bug-firefox-webdriver
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplelocalizeddatepicker
-    Wait Until Element Is Visible        DatePicker     10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}    2s
     Click Element                        ${input}
@@ -35,8 +32,6 @@ When delete date is replaced with current date
     Element Attribute Value Should Be    ${input}       value         ${day}/${month}/${year}
 
 Change date in locale pt-PT
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplelocalizeddatepicker
-    Wait Until Element Is Visible        DatePicker     10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}    2s
     Force input                          ${input}       01/02/1970

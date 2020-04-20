@@ -5,9 +5,9 @@ Force Tags      pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coresnackbar--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-notification-snackbar--
 
 
 *** Test Cases ***
 storybook sample banner against WCAG2AA standard
-    pa11y should not find errors    ${url}snackbar6
+    pa11y should not find errors    ${url}snackbar-variations

@@ -1,5 +1,6 @@
 *** Setting ***
 Suite Setup       open storybook
+Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-date-picker--default-value    DatePicker    10s
 Suite Teardown    Close Browser
 Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
@@ -15,8 +16,6 @@ ${labelInputDate}    css:input[placeholder='Select a date']
 
 *** Test Cases ***
 Verify default date 
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
@@ -24,8 +23,6 @@ Verify default date
 
 When delete date the default date is replaced
     [Tags]    bug-firefox-webdriver
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${input}                    2s
@@ -34,8 +31,6 @@ When delete date the default date is replaced
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
 
 When insert invalid date the default date is replaced
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${input}                    2s
@@ -44,8 +39,6 @@ When insert invalid date the default date is replaced
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
 
 Change the date with clicks
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Click Element                        ${day9}
@@ -55,8 +48,6 @@ Change the date with clicks
     Element Attribute Value Should Be    ${input}                    value         9 Jan 1970
 
 Change the date with input and enter
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Force input                          ${input}                    01/02/1970
@@ -67,8 +58,6 @@ Change the date with input and enter
     Element Attribute Value Should Be    ${input}                    value         2 Jan 1970
 
 Change the date with input and outside
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Force input                          ${input}                    01/02/1970
@@ -79,8 +68,6 @@ Change the date with input and outside
     Element Attribute Value Should Be    ${input}                    value         2 Jan 1970
 
 Change month by using the arrows icons
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Click element                        ${navigationMonth}-right
@@ -96,8 +83,6 @@ Change month by using the arrows icons
     Element Attribute Value Should Be    ${input}                    value         9 Feb 1970
 
 Change month using the month screen
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Click element                        ${navigationMonth}
@@ -109,8 +94,6 @@ Change month using the month screen
     Element Attribute Value Should Be    ${input}                    value         9 Mar 1970
 
 Change year by using the arrows icons
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluedatepicker
-    Wait Until Element Is Visible        DatePicker                  10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Click element                        ${navigationYear}-right
@@ -124,10 +107,3 @@ Change year by using the arrows icons
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s
     Element Attribute Value Should Be    ${input}                    value         9 Jan 1971
-
-Change date externally
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithvaluechange
-    Wait Until Element Is Visible        DatePicker                  10s
-    Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 2020
-    Click Element                        AddButton
-    Element Attribute Value Should Be    ${labelInputDate}           value         2 Jan 2020

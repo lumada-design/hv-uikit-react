@@ -2,7 +2,7 @@
 Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
 Suite Setup       Run Keywords
-...               open storybook    ${STORYBOOK_URL}/iframe.html?id=corebutton--smoke
+...               open storybook    ${STORYBOOK_URL}/iframe.html?id=components-button--smoke-tests
 ...               AND               Wait Until Element Is Visible    css:button    10s
 Suite Teardown    Close Browser
 Test Template     verify element background-color change on mouse over and mouse out

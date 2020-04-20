@@ -6,23 +6,22 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coreinput--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-input--
 
 
 *** Test Cases ***
-storybook sample InputCustomValidation against standard      ${url}inputcustomvalidation
-storybook sample InputInitialState against standard          ${url}inputinitialstate
-storybook sample InputLeftIcon against standard              ${url}inputlefticon
-storybook sample InputNoValidation against standard          ${url}inputnovalidation
-storybook sample InputSimpleWithIconInfo against standard    ${url}inputsimplewithiconinfo
-storybook sample InputCustomProps against standard           ${url}inputcustomprops
-storybook sample InputDefaultValue against standard          ${url}inputdefaultvalue
-storybook sample InputEmail against standard                 ${url}inputemail
-storybook sample InputEvents against standard                ${url}inputevents
-storybook sample InputMax against standard                   ${url}inputmax
-storybook sample InputMaxNumeric against standard            ${url}inputmaxnumeric
-storybook sample InputPassword against standard              ${url}inputpassword
-storybook sample InputRequiredMaxNumeric against standard    ${url}inputrequiredmaxnumeric
-storybook sample InputSimple against standard                ${url}inputsimple
-storybook sample InputSuggestions against standard           ${url}inputsuggestions
-storybook sample InputUncontrolledValue against standard     ${url}inputuncontrolledvalue
+storybook sample InputCustomValidation against standard      ${url}custom-validation
+storybook sample InputInitialState against standard          ${url}invalid-state
+storybook sample InputNoValidation against standard          ${url}no-validation
+storybook sample InputSimpleWithIconInfo against standard    ${url}with-icon-info
+storybook sample InputCustomProps against standard           ${url}custom-props
+storybook sample InputDefaultValue against standard          ${url}default-value
+storybook sample InputEmail against standard                 ${url}email
+storybook sample InputEvents against standard                ${url}event-demostration
+storybook sample InputMax against standard                   ${url}limited
+storybook sample InputMaxNumeric against standard            ${url}numeric-limited
+storybook sample InputPassword against standard              ${url}password
+storybook sample InputRequiredMaxNumeric against standard    ${url}numeric-required
+storybook sample InputSimple against standard                ${url}main
+storybook sample InputSuggestions against standard           ${url}suggestion
+storybook sample InputUncontrolledValue against standard     ${url}controlled-with-buttons

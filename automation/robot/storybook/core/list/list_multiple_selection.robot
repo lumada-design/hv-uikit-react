@@ -11,7 +11,7 @@ Documentation     options selections just for lists with multiple selection
 
 *** Test Cases ***
 unable to select a disabled option when click on it
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-item-disabled
+    Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-selectors
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Page Should Contain Element            ${iconChecked}         limit=1
@@ -21,7 +21,7 @@ unable to select a disabled option when click on it
 
 select all options when clicking in header option 'all'
     [Tags]    bug-infrastructure-ie
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Page Should Contain Element            ${iconChecked}         limit=1
@@ -32,7 +32,7 @@ select all options when clicking in header option 'all'
     Element Text Should Be                 ${headerItemLabel}     5 of 5
 
 show 'all' in header option when is selected all options one by one
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Page Should Contain Element            ${iconChecked}         limit=1
@@ -46,7 +46,7 @@ show 'all' in header option when is selected all options one by one
 
 remove list indeterminate state when click in header option 'all' and list is in indeterminate state
     [Tags]    bug-infrastructure-ie
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Click Element                          ${headerItem}          # deselect exist one
@@ -55,7 +55,7 @@ remove list indeterminate state when click in header option 'all' and list is in
     Element Text Should Be                 ${headerItemLabel}     All
 
 remove list indeterminate state when unselect the unique selected option
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Click Element                          ${option3}
@@ -65,7 +65,7 @@ remove list indeterminate state when unselect the unique selected option
     Element Attribute Value Should Be      ${headerItem}          data-indeterminate      ${None}    
 
 verify list indeterminate state when one option is selected
-    Go To                                  ${STORYBOOK_URL}/iframe.html?id=corelist--multiselection-all
+    Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Element Attribute Value Should Be      ${headerItem}-input    data-indeterminate      true

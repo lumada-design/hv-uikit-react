@@ -6,9 +6,9 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=corelist--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-list--
 
 
 *** Test Cases ***
-multiple selection list against WCAG2AA standard     ${url}multiselection-all
-single selection list against WCAG2AA standard       ${url}single-selection
+multiple selection list against WCAG2AA standard     ${url}multi-selection-with-select-all
+single selection list against WCAG2AA standard       ${url}single-selection-with-icon

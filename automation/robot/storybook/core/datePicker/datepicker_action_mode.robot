@@ -1,5 +1,6 @@
 *** Setting ***
 Suite Setup       open storybook
+Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-date-picker--with-actions    DatePicker    10s
 Suite Teardown    Close Browser
 Library           SeleniumLibrary
 Resource          ../../_resources/storybook_keywords.robot
@@ -15,8 +16,6 @@ ${labelInputDate}    css:input[placeholder='Select a date']
 
 *** Test Cases ***
 Maintain input date format with enter
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Force input                          ${input}             01/02/1975
@@ -24,8 +23,6 @@ Maintain input date format with enter
     Element Attribute Value Should Be    ${input}             value         01/02/1975
 
 Maintain input date format clicking inside calendar
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Force input                          ${input}             01/02/1975
@@ -33,8 +30,6 @@ Maintain input date format clicking inside calendar
     Element Attribute Value Should Be    ${input}             value         2 Jan 1975
 
 Change date with clicks and apply
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Click Element                        ${day9}
@@ -46,8 +41,6 @@ Change date with clicks and apply
     Element Attribute Value Should Be    ${input}             value         9 Jan 1970
 
 Don't change date with clicks and clicking outside
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Click Element                        ${day9}
@@ -58,8 +51,6 @@ Don't change date with clicks and clicking outside
     Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 Don't change date with clicking in a date and clicking cancel
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Click Element                        ${day9}
@@ -70,8 +61,6 @@ Don't change date with clicking in a date and clicking cancel
     Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 Don't change date with input clicking enter and cancel
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Force input                          ${input}             01/02/1975
@@ -82,8 +71,6 @@ Don't change date with input clicking enter and cancel
     Element Attribute Value Should Be    ${input}             value         2 Jan 1970
 
 Don't change date with input more enter and clicking outside
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=coredatepicker--simplewithactionsdatepicker
-    Wait Until Element Is Visible        DatePicker           10s
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Force input                          ${input}             01/02/1975
@@ -92,6 +79,4 @@ Don't change date with input more enter and clicking outside
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}          2s
     Element Attribute Value Should Be    ${input}             value         2 Jan 1970
-
-
 

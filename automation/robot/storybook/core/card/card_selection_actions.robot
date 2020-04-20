@@ -30,7 +30,7 @@ Verify selectable card behavior
     ...   | isSelected      | flag if card is selected                       |
     ...   | onClickAction   | flag if onClickAction function was called      |
     ...
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--${card}
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-card--custom-${card}
     Wait Until Element Is Enabled    ${locator}                    10s
     Click Element                    ${locator}
     Run Keyword If                   '${isSelected}'=='true'       Verify card is selected
@@ -47,8 +47,8 @@ selectable actions card click on header         actions-selectable       ${heade
 selectable actions card click on content        actions-selectable       ${content}     true          true
 selectable actions card click on footer         actions-selectable       ${footer}      false         |
 selectable actions card click on checkbox       actions-selectable       ${checkbox}    true          |
-no selectable actions card click on header      actions-no-selectable    ${header}      false         true
-no selectable actions card click on content     actions-no-selectable    ${content}     false         true
-no selectable actions card click on footer      actions-no-selectable    ${footer}      false         |
-no selectable actions card click on checkbox    actions-no-selectable    ${checkbox}    true          |
+no selectable actions card click on header      actions-not-selectable    ${header}      false         true
+no selectable actions card click on content     actions-not-selectable    ${content}     false         true
+no selectable actions card click on footer      actions-not-selectable    ${footer}      false         |
+no selectable actions card click on checkbox    actions-not-selectable    ${checkbox}    true          |
     

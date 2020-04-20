@@ -15,7 +15,7 @@ export default {
 };
 
 export const Main = () => {
-  return <HvPagination id="basic-sample" />;
+  return <HvPagination />;
 };
 
 export const ControlledSample = () => {
@@ -58,7 +58,7 @@ export const ControlledSample = () => {
         </Container>
         <p />
         <HvPagination
-          id="controlled-sample"
+          id="pagination"
           pages={numPages}
           page={page}
           canPrevious={page > 0}
@@ -130,7 +130,7 @@ export const CardViewSample = () => {
         />
         <p />
         <HvPagination
-          id="card-view-basic-sample"
+          id="pagination"
           pages={numPages}
           page={page}
           canPrevious={page > 0}

@@ -6,8 +6,8 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}     ${STORYBOOK_URL}/iframe.html?id=coretextarea--
+${url}     ${STORYBOOK_URL}/iframe.html?id=components-text-area--
 
 
 *** Test Cases ***
-storybook sample textarea limited against WCAG2AA standard      ${url}textarealimit
+storybook sample textarea limited against WCAG2AA standard      ${url}limited

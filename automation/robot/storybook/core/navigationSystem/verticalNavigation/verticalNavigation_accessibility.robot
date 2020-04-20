@@ -6,9 +6,9 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-navigation-system-vertical-navigation--
 
 
 *** Test Cases ***
-Static vertical navigation against WCAG2AA standard      ${url}static
+Static vertical navigation against WCAG2AA standard      ${url}main
 Collapse vertical navigation against WCAG2AA standard    ${url}collapsable

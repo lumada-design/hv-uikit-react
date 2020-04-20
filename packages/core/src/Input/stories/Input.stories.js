@@ -341,6 +341,19 @@ CustomProps.story = {
 };
 
 export const Controlled = () => {
+  const [value, setValue] = useState("Initial value");
+
+  return (
+    <HvInput
+      id="inputControlled"
+      labels={{ inputLabel: "Label", placeholder: "Enter value" }}
+      value={value}
+      onChange={(event, newValue) => setValue(newValue)}
+    />
+  );
+};
+
+export const ControlledWithButtons = () => {
   const labels = {
     inputLabel: "Label",
     placeholder: "Enter value"
@@ -377,7 +390,7 @@ export const Controlled = () => {
   );
 };
 
-Controlled.story = {
+ControlledWithButtons.story = {
   parameters: {
     docs: {
       storyDescription: "Changing the input value from outside the input component."
@@ -415,9 +428,10 @@ export const Suggestion = () => {
   return (
     <HvInput
       labels={labels}
-      id="suggestion-input"
+      id="suggestions"
       value={value}
       onChange={(e, val) => setValue(val)}
+      validation={val => val.includes("a")}
       suggestionListCallback={suggestionHandler}
       suggestionSelectedCallback={item => setValue(item.label)}
       customFixedIcon={<Map />}
