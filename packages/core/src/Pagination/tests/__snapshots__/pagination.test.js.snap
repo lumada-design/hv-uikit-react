@@ -73,7 +73,7 @@ exports[`Custom Pagination should render correctly 1`] = `
           "pageSizeSelectorDescription": "Select how many to display",
           "pagesSeparator": "of",
           "paginationFirstPageTitle": "First page",
-          "paginationInputLabel": "Page input",
+          "paginationInputLabel": "Total pages for page input",
           "paginationLastPageTitle": "Last page",
           "paginationNextPageTitle": "Next page",
           "paginationPreviousPageTitle": "Previous page",
