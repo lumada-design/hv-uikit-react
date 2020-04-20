@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { HvInputProps } from "../Input";
 
 export interface PaginationLabelsProp {
   /**
@@ -94,6 +95,10 @@ export interface HvPaginationProps
    * Other props to pagination component.
    */
   navigationProps: Object;
+  /** 
+   * Extra properties passed to the input component representing the current pages.
+   */
+  currentPageInputProps: HvInputProps;
 }
 
 export type HvPaginationClassKey =

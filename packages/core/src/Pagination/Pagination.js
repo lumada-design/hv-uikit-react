@@ -24,7 +24,7 @@ const DEFAULT_LABELS = {
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
   paginationLastPageTitle: "Last page",
-  paginationInputLabel: "Page input"
+  paginationInputLabel: "Total pages for page input"
 };
 
 const Pagination = ({
@@ -43,7 +43,8 @@ const Pagination = ({
   onPageSizeChange,
   labels,
   showPageProps,
-  navigationProps
+  navigationProps,
+  currentPageInputProps
 }) => {
   const [statePage, setStatePage] = useState(page);
 
@@ -86,6 +87,7 @@ const Pagination = ({
   const PreviousPageTooltipWrapper = withTooltip(PreviousPage, labels.paginationPreviousPageTitle);
   const NextPageTooltipWrapper = withTooltip(NextPage, labels.paginationNextPageTitle);
   const LastPageTooltipWrapper = withTooltip(LastPage, labels.paginationLastPageTitle);
+  const totalPagesId = setId(id, "totalPages");
 
   return (
     <div id={id} className={clsx(className, classes.root)}>
@@ -141,7 +143,9 @@ const Pagination = ({
               <HvInput
                 id={setId(id, "currentPage")}
                 labels={labels}
-                inputProps={{ "aria-label": labels.paginationInputLabel }}
+                inputProps={{
+                  "aria-label": `${pages} ${labels.paginationInputLabel}`
+                }}
                 classes={{
                   root: classes.pageSizeInputContainer,
                   input: classes.pageSizeInput,
@@ -156,6 +160,7 @@ const Pagination = ({
                 disabled={pageSize === 0}
                 disableClear
                 type="number"
+                {...currentPageInputProps}
               />
             </div>
           ) : (
@@ -166,7 +171,7 @@ const Pagination = ({
           <HvTypography component="span" variant="sText">
             {` ${labels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
+          <HvTypography id={totalPagesId} component="span" variant="sText">
             {pages}
           </HvTypography>
         </div>
@@ -343,7 +348,11 @@ Pagination.propTypes = {
   /**
    * Other props to pagination component.
    */
-  navigationProps: PropTypes.instanceOf(Object)
+  navigationProps: PropTypes.instanceOf(Object),
+  /**
+   * Extra properties passed to the input component representing the current pages.
+   */
+  currentPageInputProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvPagination" })(withLabels(DEFAULT_LABELS)(Pagination));
