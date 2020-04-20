@@ -20,7 +20,6 @@ const DEFAULT_LABELS = {
   pageSizeEntryName: "rows",
   pageSizeSelectorDescription: "Select how many to display",
   pagesSeparator: "of",
-  pagesIndeterminate: "Many",
   paginationFirstPageTitle: "First page",
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
@@ -168,7 +167,7 @@ const Pagination = ({
             {` ${labels.pagesSeparator} `}
           </HvTypography>
           <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
-            {pages || 1}
+            {pages}
           </HvTypography>
         </div>
         <IconButton
@@ -300,15 +299,41 @@ Pagination.propTypes = {
    * An object containing all the labels for the component.
    */
   labels: PropTypes.shape({
+    /**
+     * The show label.
+     */
     pageSizePrev: PropTypes.string,
+    /**
+     * Indicate the units of the page size selection.
+     */
     pageSizeEntryName: PropTypes.string,
+    /**
+     * Used for the aria-label of the selection of number of unit.s
+     */
     pageSizeSelectorDescription: PropTypes.string,
+    /**
+     * Separator of current page and total pages.
+     */
     pagesSeparator: PropTypes.string,
-    pagesIndeterminate: PropTypes.string,
+    /**
+     * Title of button `firstPage`.
+     */
     paginationFirstPageTitle: PropTypes.string,
+    /**
+     * Title of button `previousPage`.
+     */
     paginationPreviousPageTitle: PropTypes.string,
+    /**
+     * Title of button `nextPage`.
+     */
     paginationNextPageTitle: PropTypes.string,
+    /**
+     * Title of button `lastPage`.
+     */
     paginationLastPageTitle: PropTypes.string,
+    /**
+     * Aria-label passed to the page input.
+     */
     paginationInputLabel: PropTypes.string
   }),
   /**

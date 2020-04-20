@@ -735,7 +735,13 @@ Table.propTypes = {
    * The labels inside the table.
    */
   labels: PropTypes.shape({
+    /**
+     * The title that identifies the title, rendered outside of the table.
+     */
     titleText: PropTypes.string,
+    /**
+     * The subtitle that identifies the title, rendered outside of the table.
+     */
     subtitleText: PropTypes.string
   }),
   /**

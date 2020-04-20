@@ -231,43 +231,92 @@ HvLogin.propTypes = {
    */
   errorLoginIcon: PropTypes.element,
   /**
-   * The object that contains the different labels inside the kpi.
-   *
-   * - titleText: The welcome message.
-   * - recoveryTitle: Recovery title.
-   * - messageToRecover: Message to recover
-   * - messageAfterRecover: Message shown after recover.
-   * - recoveryInputLabel: Recovery input label.
-   * - recoveryPlaceholder: Recovery placeholder.
-   * - recoveryErrorMessage: Message shown when an error occurs.
-   * - userNameInputLabel: Input user name label.
-   * - userNamePlaceHolder: Input user name placeholder.
-   * - passwordInputLabel: Password label.
-   * - passwordPlaceHolder: Password placeholder.
-   * - rememberMeLabel: Remember me label.
-   * - incorrectCredentialsMessage: Incorrect Credentials Message
+   * An object containing all the labels for the login.
    */
   labels: PropTypes.shape({
+    /**
+     * The welcome message.
+     */
     titleText: PropTypes.string,
+    /**
+     * Recovery title.
+     */
     recoveryTitle: PropTypes.string,
+    /**
+     * Message to recover
+     */
     messageToRecover: PropTypes.string,
+    /**
+     * Message shown after recover.
+     */
     messageAfterRecover: PropTypes.string,
+    /**
+     * Recovery input label.
+     */
     recoveryInputLabel: PropTypes.string,
+    /**
+     * Recovery placeholder.
+     */
     recoveryPlaceholder: PropTypes.string,
+    /**
+     * Message shown when an error occurs.
+     */
     recoveryErrorMessage: PropTypes.string,
+    /**
+     * Input user name label.
+     */
     userNameInputLabel: PropTypes.string,
+    /**
+     * Input user name placeholder.
+     */
     userNamePlaceHolder: PropTypes.string,
+    /**
+     * Password label.
+     */
     passwordInputLabel: PropTypes.string,
+    /**
+     * Password placeholder.
+     */
     passwordPlaceHolder: PropTypes.string,
+    /**
+     * Remember me label.
+     */
     rememberMeLabel: PropTypes.string,
+    /**
+     * Login Button message.
+     */
     loginButtonMessage: PropTypes.string,
+    /**
+     * Login button label.
+     */
     loginButtonLabel: PropTypes.string,
+    /**
+     * Forgot your credential message
+     */
     forgotYourCredentialMessage: PropTypes.string,
+    /**
+     * Email Input Label.
+     */
     emailLabel: PropTypes.string.isRequired,
+    /**
+     * Email Input Placeholder.
+     */
     emailPlaceholder: PropTypes.string.isRequired,
+    /**
+     * Cancel button label.
+     */
     cancelButton: PropTypes.string.isRequired,
+    /**
+     * Recover button label.
+     */
     recoverButton: PropTypes.string.isRequired,
+    /**
+     * Message presented while recovering the credentials.
+     */
     recoveringMessage: PropTypes.string.isRequired,
+    /**
+     * Message presented when an error occurs recovering the credentials.
+     */
     incorrectCredentialsMessage: PropTypes.string
   }),
   /**

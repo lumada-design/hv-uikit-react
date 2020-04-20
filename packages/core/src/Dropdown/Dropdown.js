@@ -358,22 +358,35 @@ HvDropdown.propTypes = {
   notifyChangesOnFirstRender: PropTypes.bool,
   /**
    * An object containing all the labels for the dropdown.
-   *
-   * - title: Label title for the dropdown.
-   * - select: The default when there are no options available.
-   * - selectAll: The label used for the All checkbox action.
-   * - cancelLabel: The label used for the cancel button.
-   * - applyLabel: The label used for the apply button.
-   * - multiSelectionAction: The label used preceding the multiselection count.
-   * - multiSelectionConjunction: The label used in the middle of the multiselection count.
    */
   labels: PropTypes.shape({
+    /**
+     * Title for the dropdown.
+     */
     title: PropTypes.string,
+    /**
+     * The default when there are no options available.
+     */
     select: PropTypes.string,
+    /**
+     * Label used for the All checkbox action.
+     */
     selectAll: PropTypes.string,
+    /**
+     * Cancel button label.
+     */
     cancelLabel: PropTypes.string,
+    /**
+     * Apply button label.
+     */
     applyLabel: PropTypes.string,
+    /**
+     * The label used preceding the multiselection count.
+     */
     multiSelectionAction: PropTypes.string,
+    /**
+     * The label used in the middle of the multiselection count.
+     */
     multiSelectionConjunction: PropTypes.string
   }),
   /**

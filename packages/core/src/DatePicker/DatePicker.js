@@ -656,17 +656,32 @@ HvDatePicker.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * An Object containing the various text associated with the input.
-   *
-   * - applyLabel: Label for apply button.
-   * - cancelLabel: Label for cancel button.
+   * An object containing all the labels for the datepicker.
    */
   labels: PropTypes.shape({
+    /**
+     * Apply button label.
+     */
     applyLabel: PropTypes.string,
+    /**
+     * Cancel button label.
+     */
     cancelLabel: PropTypes.string,
+    /**
+     * Text above the input/dropdown.
+     */
     title: PropTypes.string,
+    /**
+     * Start date label.
+     */
     rangeStart: PropTypes.string,
+    /**
+     * End date label.
+     */
     rangeEnd: PropTypes.string,
+    /**
+     * Text inside the input/dropdown
+     */
     placeholder: PropTypes.string
   }),
   /**

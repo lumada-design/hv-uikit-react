@@ -71,7 +71,6 @@ exports[`Custom Pagination should render correctly 1`] = `
           "pageSizeEntryName": "rows",
           "pageSizePrev": "Show",
           "pageSizeSelectorDescription": "Select how many to display",
-          "pagesIndeterminate": "Many",
           "pagesSeparator": "of",
           "paginationFirstPageTitle": "First page",
           "paginationInputLabel": "Page input",
