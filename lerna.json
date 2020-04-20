@@ -13,5 +13,5 @@
       "createRelease": "github"
     }
   },
-  "ignoreChanges": ["**/*.md"]
+  "ignoreChanges": ["**/*.md", ".github/**", "**/tests/**", "automation/**"]
 }
