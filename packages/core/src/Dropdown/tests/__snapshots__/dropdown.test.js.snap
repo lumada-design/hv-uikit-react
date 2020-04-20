@@ -3328,6 +3328,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="0"
                                                 rootRef={
                                                   Object {
@@ -3543,6 +3544,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -4220,6 +4222,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="1"
                                                 rootRef={
                                                   Object {
@@ -4435,6 +4438,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -5112,6 +5116,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="2"
                                                 rootRef={
                                                   Object {
@@ -5327,6 +5332,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -7779,6 +7785,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="0"
                                                 rootRef={
                                                   Object {
@@ -7855,6 +7862,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -7983,6 +7991,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="1"
                                                 rootRef={
                                                   Object {
@@ -8059,6 +8068,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -8187,6 +8197,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="2"
                                                 rootRef={
                                                   Object {
@@ -8263,6 +8274,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -10074,6 +10086,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="0"
                                                 rootRef={
                                                   Object {
@@ -10151,6 +10164,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -10281,6 +10295,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="1"
                                                 rootRef={
                                                   Object {
@@ -10358,6 +10373,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div
@@ -10487,6 +10503,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 disabled={false}
                                                 focusDisabled={true}
                                                 focusOnClick={false}
+                                                isDropdown={true}
                                                 key="2"
                                                 rootRef={
                                                   Object {
@@ -10564,6 +10581,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   disabled={false}
                                                   focusDisabled={true}
                                                   focusOnClick={false}
+                                                  isDropdown={true}
                                                   rootRef={
                                                     Object {
                                                       "current": <div

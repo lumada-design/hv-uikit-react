@@ -1056,7 +1056,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   <div>
                     <FocusTrap
                       _createFocusTrap={[Function]}
-                      active={true}
+                      active={false}
                       createOptions={
                         Object {
                           "allowOutsideClick": true,
@@ -1171,6 +1171,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   disabled={false}
                                   focusDisabled={true}
                                   focusOnClick={false}
+                                  isDropdown={true}
                                   key="0"
                                   rootRef={
                                     Object {
@@ -1247,6 +1248,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    isDropdown={true}
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -1375,6 +1377,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   disabled={false}
                                   focusDisabled={true}
                                   focusOnClick={false}
+                                  isDropdown={true}
                                   key="1"
                                   rootRef={
                                     Object {
@@ -1451,6 +1454,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    isDropdown={true}
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -1579,6 +1583,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   disabled={false}
                                   focusDisabled={true}
                                   focusOnClick={false}
+                                  isDropdown={true}
                                   key="2"
                                   rootRef={
                                     Object {
@@ -1655,6 +1660,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    isDropdown={true}
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -2674,7 +2680,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                   <div>
                     <FocusTrap
                       _createFocusTrap={[Function]}
-                      active={true}
+                      active={false}
                       createOptions={
                         Object {
                           "allowOutsideClick": true,
@@ -2789,6 +2795,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   disabled={false}
                                   focusDisabled={true}
                                   focusOnClick={false}
+                                  isDropdown={true}
                                   key="0"
                                   rootRef={
                                     Object {
@@ -2865,6 +2872,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    isDropdown={true}
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -2993,6 +3001,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   disabled={false}
                                   focusDisabled={true}
                                   focusOnClick={false}
+                                  isDropdown={true}
                                   key="1"
                                   rootRef={
                                     Object {
@@ -3069,6 +3078,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    isDropdown={true}
                                     rootRef={
                                       Object {
                                         "current": <div
@@ -3197,6 +3207,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   disabled={false}
                                   focusDisabled={true}
                                   focusOnClick={false}
+                                  isDropdown={true}
                                   key="2"
                                   rootRef={
                                     Object {
@@ -3273,6 +3284,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     disabled={false}
                                     focusDisabled={true}
                                     focusOnClick={false}
+                                    isDropdown={true}
                                     rootRef={
                                       Object {
                                         "current": <div
