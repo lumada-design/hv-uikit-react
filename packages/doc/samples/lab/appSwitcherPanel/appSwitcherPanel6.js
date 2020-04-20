@@ -20,11 +20,7 @@ import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons/
 
 import DefaultHeader from "./utils/DefaultHeader";
 import AppSwitcherToggle from "./utils/AppSwitcherToggle";
-
-const boxStyles = {
-  width: 32,
-  height: 32
-};
+import { boxStyles } from "./utils/boxStyles";
 
 const appSwitcherToggleProps = {
   applications: [
@@ -32,7 +28,7 @@ const appSwitcherToggleProps = {
       name: "App 1 - Icon Tool",
       iconElement: <Tool boxStyles={boxStyles} />,
       description: "App 1 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     },
     {
@@ -40,27 +36,27 @@ const appSwitcherToggleProps = {
       iconUrl:
         "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "App 2 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     },
     {
       name: "App 3 - Icon PingPong",
       iconElement: <PingPong boxStyles={boxStyles} />,
       description: "App 3 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     },
     {
       name: "App 4 - No icon",
       description: "App 4 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     },
     {
       name: "App 5 - Icon GameController",
       iconElement: <GameController boxStyles={boxStyles} />,
       description: "App 5 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     },
     {
@@ -68,14 +64,14 @@ const appSwitcherToggleProps = {
       iconUrl:
         "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.pn",
       description: "App 6 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     },
     {
       name: "App 7 - Icon Champion",
       iconElement: <Champion boxStyles={boxStyles} />,
       description: "App 7 description",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     }
   ],

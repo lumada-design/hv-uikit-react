@@ -64,7 +64,7 @@ const styles = theme => ({
       cursor: "pointer"
     },
 
-    "& a": {
+    "& a, & span": {
       color: "inherit",
       textDecoration: "inherit",
       overflow: "hidden",

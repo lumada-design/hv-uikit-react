@@ -16,15 +16,18 @@
 
 import React from "react";
 
+import { Tool } from "@hv/uikit-react-icons/dist/Generic";
+
 import DefaultHeader from "./utils/DefaultHeader";
 import AppSwitcherToggle from "./utils/AppSwitcherToggle";
+import { boxStyles } from "./utils/boxStyles";
 
 const appSwitcherToggleProps = {
   applications: [
     {
       iconUrl: "",
       description: "Application without a name should not appear",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top",
     },
     {
@@ -37,7 +40,7 @@ const appSwitcherToggleProps = {
       name: "",
       iconUrl: "",
       description: "Application with an empty name should not appear",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top",
     },
     {
@@ -56,59 +59,30 @@ const appSwitcherToggleProps = {
       target: "_top",
     },
     {
-      name: "UI-KIT Storybook (New Tab)",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
-      description: "This is the Storybook for the UI-KIT project",
-      url: "https://pentaho.github.io/hv-uikit-react/",
-      target: "_blank",
+      name: "UI-KIT GitHub (New Tab)",
+      iconElement: <Tool boxStyles={boxStyles} />,
+      description: "This is the UI-KIT repository on Github",
+      url: "https://github.com/pentaho/hv-uikit-react",
+      target: "_blank"
     },
     {
-      name:
-        "UI-KIT Storybook - This one has a bigger name than the others just so we can see the truncation!!!",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
-      description:
-        "This application has a bigger name than the others so we can see the truncation in action",
-      url: "https://pentaho.github.io/hv-uikit-react/",
-      target: "_top",
-    },
-    {
-      name: "Pentaho GitHub",
-      iconUrl: "https://logodix.com/logo/1960244.png",
-      description: "This is the Pentaho repository on Github",
-      url: "https://github.com/pentaho/",
-    },
-    {
-      name: "Google",
-      iconUrl:
-        "https://p7.hiclipart.com/preview/249/19/631/google-logo-g-suite-google-guava-google-plus.jpg",
-      url: "https://www.google.com/",
-      target: "_top",
+      name: "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
+      iconElement: <Tool boxStyles={boxStyles} />,
+      description: "App 1 description",
+      url: "https://github.com/pentaho/hv-uikit-react",
+      target: "_top"
     },
     {
       name: "No Icon App",
       description:
         "This is an App without an icon, URL is set to the UI-KIT storybook",
-      url: "https://pentaho.github.io/hv-uikit-react/",
+      url: "https://github.com/pentaho/hv-uikit-react",
     },
     {
       name: "No Description App",
-      url: "https://pentaho.github.io/hv-uikit-react/",
-    },
-    {
-      name: "YouTube",
-      iconUrl: "https://logodix.com/logo/2735.png",
-      description: "YouTube page",
-      url: "https://www.youtube.com/",
-    },
-    {
-      name: "GitHub",
-      iconUrl: "https://logodix.com/logo/64427.png",
-      description: "GitHub page",
-      url: "https://www.github.com/",
-    },
-  ],
+      url: "https://github.com/pentaho/hv-uikit-react",
+    }
+  ]
 };
 
 export default (
