@@ -18,13 +18,12 @@ import _ from "lodash";
 import React from "react";
 import PropTypes from "prop-types";
 import diff from "deep-diff";
-import JssProvider from "react-jss/lib/JssProvider";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
 import createTypography from "@material-ui/core/styles/createTypography";
 import createPalette from "@material-ui/core/styles/createPalette";
 import { ConfigProvider } from "../config/context";
-import { themeBuilder, generateClassName } from "../theme";
+import { themeBuilder } from "../theme";
 
 const muiDefaultPalette = createPalette({});
 const muiDefaultTypography = createTypography(muiDefaultPalette, {
@@ -72,12 +71,10 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
 
   return (
-    <JssProvider generateClassName={generateClassName}>
-      <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
-        <CssBaseline />
-        <ConfigProvider value={pConfig}>{children}</ConfigProvider>
-      </MuiThemeProvider>
-    </JssProvider>
+    <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
+      <CssBaseline />
+      <ConfigProvider value={pConfig}>{children}</ConfigProvider>
+    </MuiThemeProvider>
   );
 };
 

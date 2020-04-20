@@ -14,4 +14,17 @@
  * limitations under the License.
  */
 
-export { default } from "./Provider";
+import React from 'react';
+import JssProvider from "react-jss/lib/JssProvider";
+import Provider from './Provider';
+import { generateClassName } from "../theme";
+
+const HvProvider = props => (
+  <JssProvider generateClassName={generateClassName}>
+    <Provider {...props} />
+  </JssProvider>
+);
+
+export { default as Provider } from './Provider';
+
+export default HvProvider;
