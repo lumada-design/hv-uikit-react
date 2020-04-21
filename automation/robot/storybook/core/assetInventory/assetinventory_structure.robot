@@ -16,6 +16,7 @@ ${nextPage}           id:hv-assetinventory-nextPage-button
 ${prevPage}           id:hv-assetinventory-previousPage-button
 ${pageSizeChange}     css:select[id|='hv-assetinventory-pageSize']
 ${firstCheckbox}      css:input[value='id_0']
+${secondCheckbox}     css:input[value='id_1']
 ${searchBox}          css:input[type='text']
 ${cardView}           cardView
 
@@ -140,3 +141,16 @@ Maintain selection between pages
     Click Button                       ${prevPage}
     Wait Until Element Is Visible      ${cardView}          2s
     Checkbox Should Be Selected        ${firstCheckbox}
+
+Maintain selection between views
+
+    Select Checkbox                    ${firstCheckbox}
+    Click Button                       listView
+    Wait Until Element Is Visible      css:table[id=listView]
+    Checkbox Should Be Selected        ${firstCheckbox}
+    Checkbox Should Not Be Selected    ${secondCheckbox}
+    Select Checkbox                    ${secondCheckbox}
+    Click Button                       cardView
+    Wait Until Element Is Visible      ${cardView}          2s
+    Checkbox Should Be Selected        ${firstCheckbox}
+    Checkbox Should Be Selected        ${secondCheckbox}

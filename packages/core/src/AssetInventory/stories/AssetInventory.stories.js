@@ -125,6 +125,7 @@ export const Main = () => {
         actions={viewConfiguration.actions}
         maxVisibleActions={viewConfiguration.maxVisibleActions}
         actionsCallback={viewConfiguration.actionsCallback}
+        checked={data.checked}
       />
     );
   };
@@ -135,7 +136,7 @@ export const Main = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }}>
+      <HvListViewRow checkboxProps={{ value: value.id }} checked={value.checked}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
