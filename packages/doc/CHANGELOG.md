@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.25.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.25.0...@hv/uikit-react-doc@1.25.1) (2020-04-21)
+
+
+### Bug Fixes
+
+* **AppSwitcherPanel:** fix issues in samples [#1393](https://github.com/pentaho/hv-uikit-react/issues/1393) ([9f58871](https://github.com/pentaho/hv-uikit-react/commit/9f58871077f51f9d8287da9a4ac2f3ecd30b795e))
+
+
+
+
+
 # [1.25.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.24.0...@hv/uikit-react-doc@1.25.0) (2020-04-18)
 
 
