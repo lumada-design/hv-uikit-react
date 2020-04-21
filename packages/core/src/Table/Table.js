@@ -48,10 +48,8 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
 
-    const { id } = props;
-
     this.state = {
-      internalId: id || uniqueId("hv-table-"),
+      internalId: props.id || uniqueId("hv-table-"),
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
@@ -59,7 +57,7 @@ class Table extends React.Component {
       // Controls which row is expanded.
       expanded: {},
       // what is the curently displayed age
-      currentPage: 0,
+      currentPage: props.page || 0,
       // Controls which row is selected using the checkboxes.
       selection: props.selections || [],
       // Controls if the select all options has been used
@@ -151,13 +149,13 @@ class Table extends React.Component {
       ...(showPagination && {
         onPageSizeChange: (newPageSize, page) => {
           this.setState({ expanded: {}, currentPage: page });
-          if (onPageSizeChange) onPageSizeChange(newPageSize, page);
+          onPageSizeChange?.(newPageSize, page);
         }
       }),
       ...(showPagination && {
         onPageChange: page => {
           this.setState({ expanded: {}, currentPage: page });
-          if (onPageChange) onPageChange(page);
+          onPageChange?.(page);
         }
       }),
       ...(showPagination && pages && { pages }),
@@ -189,7 +187,7 @@ class Table extends React.Component {
    * @param sortedColumn - the column representation from the user.
    */
   onSortChange = sortedColumn => {
-    this.setState({ sorted: sortedColumn, expanded: {} });
+    this.setState({ sorted: sortedColumn, currentPage: 0, expanded: {} });
   };
 
   /**

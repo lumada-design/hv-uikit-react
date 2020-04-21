@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
@@ -1843,16 +1843,10 @@ WithNullValues.story = {
 };
 
 export const ServerSidePagination = () => {
-  const [pageSize, setPageSize] = useState(10);
-  const [data, setData] = useState([]);
-  const [pages, setPages] = useState(null);
-  const defaultSorted = [{ id: "name", desc: true }];
-
   const start = new Date(2001, 0, 1);
   const end = new Date();
-  const randomDate = () => {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-  };
+  const randomDate = () =>
+    new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
   const newEvent = () => {
     const statusChance = Math.random();
@@ -1880,6 +1874,7 @@ export const ServerSidePagination = () => {
     }
     return arr;
   };
+
   const makeData = (len = 5553) => {
     return range(len).map(() => {
       return {
@@ -1890,9 +1885,9 @@ export const ServerSidePagination = () => {
   };
 
   const rawData = makeData();
-  const requestData = (pageSizeLocal, cursor, sorted) => {
+  const requestData = (pageSize, cursor, sorted) => {
     console.log("Fetch data: sorted -> ", JSON.stringify(sorted));
-    console.log("Fetch data: pageSize -> ", JSON.stringify(pageSizeLocal));
+    console.log("Fetch data: pageSize -> ", JSON.stringify(pageSize));
     console.log("Fetch data: cursor -> ", JSON.stringify(cursor));
     return new Promise(resolve => {
       // You can retrieve your data however you want, in this case, we will just use some local data.
@@ -1912,108 +1907,128 @@ export const ServerSidePagination = () => {
       );
       // You must return an object containing the rows of the current page, and optionally the total pages number.
       const res = {
-        rows: sortedData.slice(parseInt(cursor, 10), parseInt(cursor, 10) + pageSizeLocal),
-        pages: Math.ceil(filteredData.length / pageSizeLocal)
+        rows: sortedData.slice(Number(cursor), Number(cursor) + pageSize),
+        pages: Math.ceil(filteredData.length / pageSize)
       };
       // Here we'll simulate a server response with 500ms of delay.
       setTimeout(() => resolve(res), 500);
     });
   };
 
-  const getColumns = () => [
-    {
-      headerText: "Title",
-      accessor: "name",
-      cellType: "alpha-numeric",
-      fixed: "left",
-      sortMethod: (a, b) => {
-        if (a === b) {
-          return 0;
-        }
-        const aReverse = Number(a.split(" ")[1]);
-        const bReverse = Number(b.split(" ")[1]);
-        return aReverse > bReverse ? 1 : -1;
-      }
-    },
-    {
-      headerText: "Time",
-      accessor: "createdDate",
-      format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
-      cellType: "numeric"
-    },
-    {
-      headerText: "Status",
-      accessor: "status",
-      format: value => value.original.status.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
-    },
-    {
-      headerText: "Probability",
-      accessor: "riskScore",
-      format: value => `${value.original.riskScore}%`,
-      cellType: "numeric"
-    },
-    {
-      headerText: "Severity",
-      accessor: "severity",
-      format: value => value.original.severity.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric",
-      sortable: false
-    },
-    {
-      headerText: "Priority",
-      accessor: "priority",
-      format: value => value.original.priority.toLowerCase(),
-      style: { textTransform: "capitalize" },
-      cellType: "alpha-numeric"
+  class Sample extends React.Component {
+    /* eslint-disable react/no-this-in-sfc */
+    constructor(props) {
+      super(props);
+      this.state = {
+        data: [],
+        pages: null,
+        sorted: [{ id: "name", desc: true }],
+        pageSize: 10
+      };
+      this.fetchData = this.fetchData.bind(this);
     }
-  ];
 
-  const fetchData = (cursor, localPageSize, sorted) => {
-    // Whenever the table model changes, or the user sorts or changes pages, this method gets called and passed the current table model.
-    // You can set the `loading` prop of the table to true to use the built-in one or show you're own loading bar if you want.
-    // Request the data however you want.  Here, we'll use our mocked service we created earlier
-    requestData(localPageSize, cursor, sorted).then(res => {
-      // Now just get the rows of data to your React Table (and update anything else like total pages or loading)
-      setData(res.rows);
-      setPages(res.pages);
-    });
-  };
+    componentDidMount() {
+      const { pageSize, sorted } = this.state;
+      this.fetchData(0, pageSize, sorted);
+    }
 
-  useEffect(() => {
-    fetchData(0, pageSize, defaultSorted);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    getColumns = () => [
+      {
+        headerText: "Title",
+        accessor: "name",
+        cellType: "alpha-numeric",
+        fixed: "left",
+        sortMethod: (a, b) => {
+          if (a === b) {
+            return 0;
+          }
+          const aReverse = Number(a.split(" ")[1]);
+          const bReverse = Number(b.split(" ")[1]);
+          return aReverse > bReverse ? 1 : -1;
+        }
+      },
+      {
+        headerText: "Time",
+        accessor: "createdDate",
+        format: value => moment(value.original.createdDate).format("MM/DD/YYYY"),
+        cellType: "numeric"
+      },
+      {
+        headerText: "Status",
+        accessor: "status",
+        format: value => value.original.status.toLowerCase(),
+        style: { textTransform: "capitalize" },
+        cellType: "alpha-numeric"
+      },
+      {
+        headerText: "Probability",
+        accessor: "riskScore",
+        format: value => `${value.original.riskScore}%`,
+        cellType: "numeric"
+      },
+      {
+        headerText: "Severity",
+        accessor: "severity",
+        format: value => value.original.severity.toLowerCase(),
+        style: { textTransform: "capitalize" },
+        cellType: "alpha-numeric",
+        sortable: false
+      },
+      {
+        headerText: "Priority",
+        accessor: "priority",
+        format: value => value.original.priority.toLowerCase(),
+        style: { textTransform: "capitalize" },
+        cellType: "alpha-numeric"
+      }
+    ];
 
-  const onPageSizeChange = newPageSize => {
-    setPageSize(newPageSize);
-  };
+    onPageSizeChange = newPageSize => {
+      this.setState({
+        pageSize: newPageSize
+      });
+    };
 
-  const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
-  };
+    fetchData(cursor, pageSize, sorted) {
+      // Whenever the table model changes, or the user sorts or changes pages, this method gets called and passed the current table model.
+      // You can set the `loading` prop of the table to true to use the built-in one or show you're own loading bar if you want.
+      // Request the data however you want.  Here, we'll use our mocked service we created earlier
+      requestData(pageSize, cursor, sorted).then(res => {
+        // Now just get the rows of data to your React Table (and update anything else like total pages or loading)
+        this.setState({
+          data: res.rows,
+          pages: res.pages
+        });
+      });
+    }
 
-  return (
-    <div>
-      <HvTable
-        data={data}
-        id="test"
-        columns={getColumns()}
-        defaultPageSize={10}
-        pageSize={pageSize}
-        pages={pages}
-        resizable={false}
-        defaultSorted={defaultSorted}
-        labels={labels}
-        onPageSizeChange={onPageSizeChange}
-        paginationServerSide
-        onFetchData={fetchData} // Request new data when things change
-      />
-    </div>
-  );
+    render() {
+      const { pages, pageSize, sorted, data } = this.state;
+      const labels = {
+        titleText: "This is a Title",
+        subtitleText: "This is a Subtitle"
+      };
+      return (
+        <HvTable
+          data={data}
+          id="test"
+          columns={this.getColumns()}
+          defaultPageSize={10}
+          pageSize={pageSize}
+          pages={pages}
+          resizable={false}
+          defaultSorted={sorted}
+          labels={labels}
+          onPageSizeChange={this.onPageSizeChange}
+          paginationServerSide
+          onFetchData={this.fetchData} // Request new data when things change
+        />
+      );
+    }
+  }
+
+  return <Sample />;
 };
 
 ServerSidePagination.story = {
