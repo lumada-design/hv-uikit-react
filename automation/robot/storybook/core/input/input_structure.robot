@@ -16,6 +16,16 @@ ${iconSuccess}    css:div[class*="HvIconSuccess-root"]
 ${iconMap}        css:div[class*="HvIconMap-root"]
 
 *** Test Cases ***
+keep focus when choosing auto-complete suggestion
+    [Tags]    keyboard
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=components-input--suggestion
+    Wait Until Element Is Enabled        ${input}    10s
+    Press Keys                           ${input}    Portu
+    Wait Until Page Contains             Portugal    3s
+    Press Keys                           NONE        ARROW_DOWN    ENTER
+    Element Attribute Value Should Be    ${input}    value         Portugal
+    Element Should Be Focused            ${input}
+
 clean text when click on input clear button
     Go To                               ${STORYBOOK_URL}/iframe.html?id=components-input--main
     Wait Until Element Is Enabled       ${input}         10s
