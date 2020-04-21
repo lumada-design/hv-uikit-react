@@ -40,18 +40,3 @@ focus: focus action item when action item is selected
     verify element is not focused    ${vnAction2}
     Click Element                    ${vnAction2}
     Element Should Be Focused        ${vnAction2}
-
-focus: change background color when an item is selected
-    Click Element                           ${vnBurger}
-    Wait Until Element Is Visible           ${vNExpanded}             4s
-    Click Element                           ${vnItem1.1.1}
-    ${color}                                get css property value    ${vnItem1.1.2}>div    background-color
-    Mouse Over                              ${vnItem1.1.2}
-    wait until css attribute not contain    ${vnItem1.1.2}>div        background-color      ${color}
-
-mouse hover: change background color when mouse is hover item 
-    Click Element                           ${vnBurger}
-    Wait Until Element Is Visible           ${vNExpanded}             4s
-    ${color}                                get css property value    ${vnItem1.1.1}>div    background-color
-    Mouse Over                              ${vnItem1.1.1}
-    wait until css attribute not contain    ${vnItem1.1.1}>div        background-color      ${color}

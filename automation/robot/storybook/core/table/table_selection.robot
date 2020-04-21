@@ -10,7 +10,7 @@ Force Tags        smoke
 
 
 *** Comments ***
-don't was possible use selenium keywords for table because this component don't has a table semantic. 
+not possible to use selenium keywords for table because this component don't have a table semantic.
 
 
 *** Test Cases ***
