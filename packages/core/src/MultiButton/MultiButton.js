@@ -94,7 +94,7 @@ const MultiButton = ({
         {...other}
       >
         {type !== "text" && iconButton}
-        <div className={classes.labelText}>{value}</div>
+        {type !== "icon" && <div className={classes.labelText}>{value}</div>}
       </HvButton>
     );
   };

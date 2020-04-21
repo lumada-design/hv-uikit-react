@@ -129,85 +129,50 @@ export const BannerVariations = () => {
     { id: `action${id}_2`, label: "Action 2", disabled: false }
   ];
 
+  const BannerContent = props => (
+    <>
+      <p />
+      <HvBannerContent actionProps={{ "aria-label": "Close" }} {...props} />
+    </>
+  );
+
   return (
     <div>
       <HvTypography variant="xsTitle">Semantics</HvTypography>
-      <p />
-      <HvBannerContent content="This is a default banner." variant="default" />
-      <p />
-      <HvBannerContent content="This is a success banner." variant="success" showIcon />
-      <p />
-      <HvBannerContent content="This is an error banner." variant="error" showIcon />
-
+      <BannerContent content="This is a default banner." variant="default" />
+      <BannerContent content="This is a success banner." variant="success" showIcon />
+      <BannerContent content="This is an error banner." variant="error" showIcon />
       <p />
       <HvTypography variant="xsTitle">Actions</HvTypography>
-      <p />
-      <HvBannerContent
+      <BannerContent
         content="This is a default banner."
-        variant="default"
         actions={<HvButton category="semantic">Action</HvButton>}
         actionsPosition="inline"
       />
-      <p />
-      <HvBannerContent
+      <BannerContent
+        content="This is a banner with two actions."
+        actions={actionArray("banner3")}
+        actionsPosition="inline"
+      />
+      <BannerContent
         content="This could be a one-line message text string with two actions on a tablet or on a desktop. However, this is actually is a two-lines message text string with two actions on a tablet or on a desktop."
-        variant="default"
         actions={actionArray("banner1")}
         actionsPosition="bottom-right"
       />
-      <p />
-      <HvBannerContent
+      <BannerContent
         content="This could be a one-line message text string with two actions on a tablet or on a desktop. This could be a two-lines message text string with two actions on a tablet or on a desktop. However, this is actually a three-lines message text string with two actions on a tablet or on a desktop."
-        variant="default"
         actions={actionArray("banner2")}
         actionsPosition="bottom-right"
       />
       <p />
-      <HvBannerContent
-        content="This is a success banner."
-        variant="success"
-        showIcon
-        actions={<HvButton category="semantic">Action</HvButton>}
-        actionsPosition="inline"
-        onClose={() => {}}
-      />
-      <p />
-      <HvBannerContent
-        content="This is an error banner."
-        variant="error"
-        showIcon
-        actions={actionArray("banner3")}
-        actionsPosition="inline"
-        onClose={() => {}}
-      />
-
-      <p />
       <HvTypography variant="xsTitle">Custom icon</HvTypography>
-      <p />
-      <HvBannerContent
+      <BannerContent
         content="This is a default banner."
-        variant="default"
         customIcon={<Info color="base2" />}
         onClose={() => {}}
       />
-      <p />
-      <HvBannerContent
+      <BannerContent
         content="This could be a one-line message text string with no actions on a tablet or on a desktop. This could be a two-lines message text string with no actions on a tablet or on a desktop. However, this is actually a three-lines message text string with no actions on a tablet or on a desktop."
-        variant="default"
-        customIcon={<Info color="base2" />}
-        onClose={() => {}}
-      />
-      <p />
-      <HvBannerContent
-        content="This is a success banner."
-        variant="success"
-        customIcon={<Info color="base2" />}
-        onClose={() => {}}
-      />
-      <p />
-      <HvBannerContent
-        content="This is an error banner."
-        variant="error"
         customIcon={<Info color="base2" />}
         onClose={() => {}}
       />

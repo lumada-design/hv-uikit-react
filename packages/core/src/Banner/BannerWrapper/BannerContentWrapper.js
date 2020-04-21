@@ -13,7 +13,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     classes,
     showIcon = false,
     customIcon,
-    variant,
+    variant = "default",
     onClose,
     actions,
     actionsCallback,

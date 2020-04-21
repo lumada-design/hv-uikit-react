@@ -65,6 +65,7 @@ export const Animated = () => (
   <HvToggleButton
     notSelectedIcon={Eye}
     animated
+    aria-label="Eye"
     labels={{
       notSelectedTitle: "Don't Show",
       selectedTitle: "Show"

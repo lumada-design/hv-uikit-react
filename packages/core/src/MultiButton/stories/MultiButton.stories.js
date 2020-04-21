@@ -49,8 +49,8 @@ export const OnlyIcons = () => (
     type="icon"
     style={{ width: "64px" }}
     buttons={[
-      { id: "map", icon: <Map />, selected: true },
-      { id: "location", icon: <LocationPin /> }
+      { id: "map", value: "Map", icon: <Map />, selected: true },
+      { id: "location", value: "Location", icon: <LocationPin /> }
     ]}
   />
 );
@@ -80,12 +80,12 @@ export const VerticalOrientation = () => (
       type="icon"
       style={{ margin: "10px", width: "32px" }}
       buttons={[
-        { id: "map", icon: <Map />, selected: true },
-        { id: "location", icon: <LocationPin /> },
-        { id: "map1", icon: <Map /> },
-        { id: "location1", icon: <LocationPin /> },
-        { id: "map2", icon: <Map /> },
-        { id: "location2", icon: <LocationPin /> }
+        { id: "map", value: "Map", icon: <Map />, selected: true },
+        { id: "location", value: "Location", icon: <LocationPin /> },
+        { id: "map1", value: "Map", icon: <Map /> },
+        { id: "location1", value: "Location", icon: <LocationPin /> },
+        { id: "map2", value: "Map", icon: <Map /> },
+        { id: "location2", value: "Location", icon: <LocationPin /> }
       ]}
     />
     <HvMultiButton
@@ -94,12 +94,12 @@ export const VerticalOrientation = () => (
       type="mixed"
       style={{ margin: "10px", width: "120px" }}
       buttons={[
-        { id: "map", icon: <Map />, value: "Map", selected: true },
-        { id: "location", icon: <LocationPin />, value: "Location" },
-        { id: "map1", icon: <Map />, value: "Map 1" },
-        { id: "location1", icon: <LocationPin />, value: "Location 1" },
-        { id: "map2", icon: <Map />, value: "Map 2" },
-        { id: "location2", icon: <LocationPin />, value: "Location 2" }
+        { id: "map10", icon: <Map />, value: "Map", selected: true },
+        { id: "location10", icon: <LocationPin />, value: "Location" },
+        { id: "map11", icon: <Map />, value: "Map 1" },
+        { id: "location11", icon: <LocationPin />, value: "Location 1" },
+        { id: "map12", icon: <Map />, value: "Map 2" },
+        { id: "location12", icon: <LocationPin />, value: "Location 2" }
       ]}
     />
   </div>
