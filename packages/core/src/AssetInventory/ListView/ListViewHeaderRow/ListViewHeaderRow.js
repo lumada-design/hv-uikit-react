@@ -14,7 +14,7 @@ const HeaderCells = (classes, columnConfiguration) =>
     const keyIndex = `th${index}`;
 
     return (
-      <th
+      <div
         className={clsx(classes.headCell, {
           [classes[configuration.spacing]]: configuration.spacing
         })}
@@ -24,7 +24,7 @@ const HeaderCells = (classes, columnConfiguration) =>
         key={keyIndex}
       >
         <HvTypography variant="labelText">{configuration.title || ""}</HvTypography>
-      </th>
+      </div>
     );
   });
 
@@ -32,17 +32,10 @@ const ListViewHeaderRow = ({ viewConfiguration, classes, id, className, ...other
   const { columnConfiguration } = viewConfiguration;
 
   return (
-    <tr
-      className={clsx(className, classes.root, {
-        [classes.selectable]: viewConfiguration.isSelectable,
-        [classes.notSelectable]: !viewConfiguration.isSelectable
-      })}
-      id={id}
-      {...others}
-    >
-      {viewConfiguration.isSelectable && <th aria-label="selectable" />}
+    <div className={clsx(className, classes.root)} id={id} {...others}>
+      {viewConfiguration.isSelectable && <div aria-label="selectable" />}
       {HeaderCells(classes, columnConfiguration)}
-    </tr>
+    </div>
   );
 };
 
@@ -64,21 +57,9 @@ ListViewHeaderRow.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Styles applied to the assetinventorylistview root class.
+     * Styles applied to the component.
      */
     root: PropTypes.string,
-    /**
-     * Styles applied the header when selectable.
-     */
-    selectable: PropTypes.string,
-    /**
-     * Styles applied the header when not selectable.
-     */
-    notSelectable: PropTypes.string,
-    /**
-     * TODO: add description
-     */
-    selectCell: PropTypes.string,
     /**
      * TODO: add description
      */

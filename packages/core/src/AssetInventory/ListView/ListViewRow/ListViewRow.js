@@ -15,7 +15,7 @@ const getValue = checkboxProps =>
 
 const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
   return (
-    <Cell
+    <div
       className={classes.selectCell}
       semantic={semantic}
       id={`checkbox-cell-${id}`}
@@ -28,7 +28,7 @@ const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semanti
         id={`checkbox-${id}`}
         {...checkboxProps}
       />
-    </Cell>
+    </div>
   );
 };
 
@@ -84,7 +84,7 @@ const row = (
   });
 
   return (
-    <tr
+    <li
       id={`row-${id}`}
       key={`row-${id}`}
       className={clsx(className, classes.root, {
@@ -98,7 +98,7 @@ const row = (
         selectCell(classes, onCheckboxSelected, checkboxProps, checked, semantic, id)}
       {clonedChildren}
       {renderActionsCell && actionsCell(classes, getValue(checkboxProps) || id, viewConfiguration)}
-    </tr>
+    </li>
   );
 };
 

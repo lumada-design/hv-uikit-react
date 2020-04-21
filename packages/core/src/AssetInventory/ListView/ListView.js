@@ -25,28 +25,28 @@ const ListView = ({
   renderer,
   values,
   selectedValues,
-  cellSpacing = "0",
   metadata,
   ...others
 }) => {
   return (
     <Grid container justify="center" alignContent="stretch">
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <table
-          className={clsx(className, classes.root)}
-          cellSpacing={cellSpacing}
+        <div
           id={id}
+          role="table"
+          aria-rowcount={values.length}
+          className={clsx(className, classes.root)}
           {...others}
         >
           {!isNil(viewConfiguration) &&
             !isNil(viewConfiguration.columnConfiguration) &&
             viewConfiguration.columnConfiguration.length > 0 &&
             values.length > 0 && (
-              <thead className={classes.tableHead}>
+              <div className={classes.tableHead}>
                 <ListViewHeaderRow viewConfiguration={viewConfiguration} />
-              </thead>
+              </div>
             )}
-          <tbody className={classes.tableBody}>
+          <ul className={classes.tableBody}>
             <ListViewContextProvider value={viewConfiguration}>
               <Rows
                 classes={classes}
@@ -57,8 +57,8 @@ const ListView = ({
                 viewConfiguration={viewConfiguration}
               />
             </ListViewContextProvider>
-          </tbody>
-        </table>
+          </ul>
+        </div>
       </Grid>
     </Grid>
   );
@@ -134,10 +134,6 @@ ListView.propTypes = {
    * Selected values.
    */
   selectedValues: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * The spacing between the cells correspond to the usual htlm table attribute
-   */
-  cellSpacing: PropTypes.string,
   /**
    * Metadata associated with the values.
    */

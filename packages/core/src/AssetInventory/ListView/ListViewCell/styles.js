@@ -16,7 +16,9 @@ const styles = theme => {
   return {
     root: {
       position: "relative",
-      padding: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`
+      padding: `${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px 0`,
+      display: "table-cell",
+      verticalAlign: "middle"
     },
     semanticBar: {
       "&::before": {
