@@ -289,11 +289,10 @@ export const SmokeTests = () => (
   </>
 );
 
-SemanticButton.story = {
-  name: "Semantic Button",
+SmokeTests.story = {
   parameters: {
     docs: {
-      storyDescription: "Semantic button with click action."
+      disable: true
     }
   }
 };

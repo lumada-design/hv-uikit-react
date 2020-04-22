@@ -139,3 +139,11 @@ export const KeyboardNavigation = () => (
     <HvButton id="button2">button2</HvButton>
   </>
 );
+
+KeyboardNavigation.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};

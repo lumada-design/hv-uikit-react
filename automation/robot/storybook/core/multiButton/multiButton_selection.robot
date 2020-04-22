@@ -51,7 +51,7 @@ multiButton minimum selection
 
 multiButton input controlled value
     Go To                            ${storybook_iframe}dynamic-content
-    Wait Until Element Is Visible    map                                         10s        error message: The page don't was visible in 2 seconds
+    Wait Until Element Is Visible    map                                         10s
     Page Should Contain Element      //button[contains(@class,'MultiButton')]    limit=4
     Click Button                     New Props
     Page Should Contain Element      //button[contains(@class,'MultiButton')]    limit=2

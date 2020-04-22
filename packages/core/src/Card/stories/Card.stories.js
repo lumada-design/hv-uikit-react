@@ -1192,6 +1192,14 @@ export const CustomActionsSelectable = () => {
   return <CustomSample />;
 };
 
+CustomActionsSelectable.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};
+
 export const CustomActionsNotSelectable = () => {
   const styles = theme => ({
     content: {
@@ -1227,4 +1235,12 @@ export const CustomActionsNotSelectable = () => {
   };
 
   return <CustomSample />;
+};
+
+CustomActionsNotSelectable.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
 };
