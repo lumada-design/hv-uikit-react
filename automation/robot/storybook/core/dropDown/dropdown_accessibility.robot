@@ -17,5 +17,5 @@ storybook sample dropdown disabled against WCAG2AA standard
     ...    ---
     pa11y result should be equal as file    ${url}disabled    ${CURDIR}/WCAG2AA_dropdown10.json
 
-storybook sample dropdown dropped against WCAG2AA standard
+storybook sample dropdown expanded against WCAG2AA standard
     pa11y should not find errors    ${url}expanded

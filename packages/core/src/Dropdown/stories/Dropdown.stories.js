@@ -148,6 +148,7 @@ export const Expanded = () => (
     expanded
     multiSelect
     showSearch
+    labels={{ title: "Dropdown" }}
     values={[
       { label: "value 1" },
       { label: "value 2" },
