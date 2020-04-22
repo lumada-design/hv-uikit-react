@@ -26,13 +26,13 @@ const getProgressText = (classes, data, progressConjunctionLabel) => {
   return (
     <>
       {!hasFailed && data.progress != null && (
-        <HvTypography variant="labelText">
-          {`${convertUnits(data.progress)} ${progressConjunctionLabel}`}
-        </HvTypography>
+        <HvTypography variant="labelText">{`${convertUnits(data.progress)}`}</HvTypography>
       )}
 
       {!hasFailed && data.size && (
-        <HvTypography variant="sText">{`\xa0${convertUnits(data.size)}`}</HvTypography>
+        <HvTypography variant="sText">
+          {`\xa0${progressConjunctionLabel}\xa0${convertUnits(data.size)}`}
+        </HvTypography>
       )}
 
       {hasFailed && data.errorMessage && (
