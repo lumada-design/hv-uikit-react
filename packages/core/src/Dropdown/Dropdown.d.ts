@@ -85,7 +85,7 @@ export interface HvDropdownProps
   /**
    * A function to be executed whenever a item is selected in the dropdown, the function receives the selected item(s).
    */
-  onChange: (selected: ListValueProp | ListValueProp[] | undefined) => void;
+  onChange?: (selected: ListValueProp | ListValueProp[] | undefined) => void;
 }
 
 export type HvDropdownClassKey =
