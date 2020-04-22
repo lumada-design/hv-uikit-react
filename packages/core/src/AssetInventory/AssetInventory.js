@@ -171,7 +171,7 @@ class AssetInventory extends React.Component {
    * @returns {*}
    */
   renderSearch = () => {
-    const { id, values, classes, labels, configuration, onSearch } = this.props;
+    const { id, values, classes, labels, configuration, onSearch, searchProps } = this.props;
     const { searchString } = this.state;
     const { inputLabel, placeholder } = labels;
     return (
@@ -184,6 +184,7 @@ class AssetInventory extends React.Component {
           onFilter={this.setSearchResults}
           onSearch={onSearch}
           labels={{ inputLabel, placeholder }}
+          {...searchProps}
         />
       </div>
     );
@@ -197,7 +198,15 @@ class AssetInventory extends React.Component {
   };
 
   renderSort = () => {
-    const { id, labels, configuration, classes, onSortChange, disablePortal } = this.props;
+    const {
+      id,
+      labels,
+      configuration,
+      classes,
+      onSortChange,
+      disablePortal,
+      sortProps
+    } = this.props;
     const { selectedSort } = this.state;
     const dropDownLabel = {
       title: labels.sortBy
@@ -213,6 +222,7 @@ class AssetInventory extends React.Component {
           onSelection={this.onSort}
           onSortChange={onSortChange}
           disablePortal={disablePortal}
+          {...sortProps}
         />
       </div>
     );
@@ -381,7 +391,8 @@ class AssetInventory extends React.Component {
       children,
       configuration,
       hasPagination,
-      onViewChange
+      onViewChange,
+      multibuttonProps
     } = this.props;
 
     const { selectedView } = this.state;
@@ -395,10 +406,12 @@ class AssetInventory extends React.Component {
     const align = !showSearch ? "flex-end" : "space-between";
 
     React.Children.forEach(children, child => {
+      const other = multibuttonProps.find(elem => elem.id === child.props.id);
       views.push({
         id: child.props.id,
         icon: child.props.icon,
-        selected: child.props.id === selectedView
+        selected: child.props.id === selectedView,
+        ...other
       });
     });
 
@@ -636,7 +649,25 @@ AssetInventory.propTypes = {
   /**
    * Disable portal on the Sort dropdown
    */
-  disablePortal: PropTypes.bool
+  disablePortal: PropTypes.bool,
+  /**
+   * Other props passed to the searchbox.
+   */
+  searchProps: PropTypes.instanceOf(Object),
+  /**
+   * Others props passed to the Sort. If you want to control the aria-label
+   * use the labels.sortBy, as it is mapped directly to the aria-label.
+   */
+  sortProps: PropTypes.instanceOf(Object),
+  /**
+   * Array of others prop passed to the created button. Each element must include the id of the view
+   * and other props to pe passed to each button.
+   */
+  multibuttonProps: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string
+    })
+  )
 };
 
 AssetInventory.defaultProps = {
@@ -664,7 +695,10 @@ AssetInventory.defaultProps = {
   onViewChange: () => {},
   sortOptionId: null,
   searchString: undefined,
-  disablePortal: false
+  disablePortal: false,
+  searchProps: undefined,
+  sortProps: undefined,
+  multibuttonProps: []
 };
 
 export default withStyles(styles, { name: "HvAssetInventory" })(
