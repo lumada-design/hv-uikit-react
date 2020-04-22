@@ -129,7 +129,7 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
    * Must return the new value to be accepted.
    * The event can be undefined when the clear button is clicked.
    */
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined, value: string) => string
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement> | undefined, value: string) => string
 }
 
 export type HvInputClassKey =
