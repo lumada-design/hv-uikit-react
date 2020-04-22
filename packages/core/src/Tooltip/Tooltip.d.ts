@@ -4,6 +4,7 @@ import { TooltipProps, StandardProps } from "@material-ui/core";
 export interface HvTooltipProps extends StandardProps<TooltipProps, HvTooltipClassKey> {
   /**
    * Values to display in tooltip.
+   * @deprecated
    */
   tooltipData?: React.ReactNode;
 

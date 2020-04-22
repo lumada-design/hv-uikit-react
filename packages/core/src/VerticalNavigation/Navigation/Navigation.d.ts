@@ -43,7 +43,7 @@ export interface HvVerticalNavigationNavigationProps
   /**
    * Callback triggered when any item is clicked.
    */
-  onClick?: (e: Event, selectedItem: NavigationData) => void;
+  onClick?: (e: MouseEvent, selectedItem: NavigationData) => void;
 }
 
 export type HvNavigationClassKey = "root";

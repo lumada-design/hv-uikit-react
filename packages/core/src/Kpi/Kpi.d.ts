@@ -5,19 +5,19 @@ export interface HvKpiLabelProps {
   /**
    * The text at the top of the kpi.
    */
-  title: string;
+  title?: string;
   /**
    * The text in the middle of the kpi.
    */
-  indicator: string;
+  indicator?: string;
   /**
    * The text to the right of the indicator.
    */
-  unit: string;
+  unit?: string;
   /**
    * The text to the right of the visual comparison.
    */
-  comparisonIndicatorInfo: string;
+  comparisonIndicatorInfo?: string;
 }
 
 export interface HvKpiProps

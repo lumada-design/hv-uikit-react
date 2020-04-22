@@ -6,7 +6,7 @@ export interface HvLoadingWithDelayProps extends HvLoadingProps {
   /**
    * The amount of milliseconds that the component should wait before showing the Loading
    */
-  delay: number;
+  delay?: number;
 }
 
 export default function HvLoadingWithDelay(props: HvLoadingWithDelayProps): JSX.Element | null;

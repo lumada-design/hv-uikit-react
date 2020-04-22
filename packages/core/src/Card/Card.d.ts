@@ -87,7 +87,7 @@ export interface HvCardProps
   /**
    *  The function that will be executed when the card is selected.
    */
-  onChange?: (event: FormEvent<HTMLDivElement>) => void | undefined;
+  onChange?: (event: FormEvent<HTMLInputElement>) => void | undefined;
   /**
    * If `true` the checkbox is selected, if set to `false` the checkbox is not selected.
    * note: if this value is specified the state of the checkbox must be managed

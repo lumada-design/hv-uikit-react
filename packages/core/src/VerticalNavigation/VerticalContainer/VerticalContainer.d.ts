@@ -22,7 +22,7 @@ export interface HvVerticalNavigationContainerProps
   /**
    * Aria-label for the button.
    */
-  buttonAriaLabel: string;
+  buttonAriaLabel?: string;
   /**
    * Callback when the navigation toggles between open and close.
    */

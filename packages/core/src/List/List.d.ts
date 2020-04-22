@@ -14,8 +14,8 @@ export interface ListValueProp {
 }
 
 export interface ListLabelsProp {
-  selectAll: string;
-  selectionConjunction: string;
+  selectAll?: string;
+  selectionConjunction?: string;
 }
 
 export interface HvListProps

@@ -79,7 +79,7 @@ FileUploader.propTypes = {
      */
     progressConjunction: PropTypes.string,
     /**
-     * Dropzone area label.
+     * DropZone area label.
      */
     dropzone: PropTypes.string,
     /**
@@ -135,7 +135,7 @@ FileUploader.propTypes = {
     })
   ).isRequired,
   /**
-   * Whether the Dropzone should accept multiple files at once.
+   * Whether the DropZone should accept multiple files at once.
    */
   multiple: PropTypes.bool,
   /**
@@ -151,7 +151,7 @@ FileUploader.propTypes = {
    */
   acceptedFiles: PropTypes.arrayOf(PropTypes.string),
   /**
-   * Callback fired when files are addded.
+   * Callback fired when files are added.
    */
   onFilesAdded: PropTypes.func,
   /**

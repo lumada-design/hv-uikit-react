@@ -756,7 +756,8 @@ Table.propTypes = {
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),
-      sortable: PropTypes.bool
+      sortable: PropTypes.bool,
+      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
   ).isRequired,
   /**
@@ -859,7 +860,11 @@ Table.propTypes = {
   /**
    * Number of rows available in table to display in aria-rowcount
    */
-  rowCount: PropTypes.number
+  rowCount: PropTypes.number,
+  /**
+   * Boolean describing if the table columns are rezisable or not
+   */
+  resizable: PropTypes.bool
 };
 
 Table.defaultProps = {
@@ -892,7 +897,8 @@ Table.defaultProps = {
   dropdownMenuProps: undefined,
   getTableProps: undefined,
   tableProps: { tableCaption: "Table Caption" },
-  rowCount: undefined
+  rowCount: undefined,
+  resizable: false
 };
 
 export default withStyles(styles, { name: "HvTable" })(withConfig(Table));
