@@ -317,7 +317,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               "whiteSpace": "nowrap",
                             }
                           }
-                          tooltipData={
+                          title={
                             <ForwardRef(WithStyles)
                               variant="infoText"
                             >
@@ -351,7 +351,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 "whiteSpace": "nowrap",
                               }
                             }
-                            tooltipData={
+                            title={
                               <ForwardRef(WithStyles)
                                 variant="infoText"
                               >
@@ -641,7 +641,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               "whiteSpace": "nowrap",
                             }
                           }
-                          tooltipData={
+                          title={
                             <ForwardRef(WithStyles)
                               variant="infoText"
                             >
@@ -675,7 +675,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 "whiteSpace": "nowrap",
                               }
                             }
-                            tooltipData={
+                            title={
                               <ForwardRef(WithStyles)
                                 variant="infoText"
                               >
@@ -1095,7 +1095,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               "whiteSpace": "nowrap",
                             }
                           }
-                          tooltipData={
+                          title={
                             <ForwardRef(WithStyles)
                               variant="infoText"
                             >
@@ -1129,7 +1129,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 "whiteSpace": "nowrap",
                               }
                             }
-                            tooltipData={
+                            title={
                               <ForwardRef(WithStyles)
                                 variant="infoText"
                               >
@@ -1419,7 +1419,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               "whiteSpace": "nowrap",
                             }
                           }
-                          tooltipData={
+                          title={
                             <ForwardRef(WithStyles)
                               variant="infoText"
                             >
@@ -1453,7 +1453,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 "whiteSpace": "nowrap",
                               }
                             }
-                            tooltipData={
+                            title={
                               <ForwardRef(WithStyles)
                                 variant="infoText"
                               >
