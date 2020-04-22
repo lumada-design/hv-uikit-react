@@ -1,0 +1,32 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import Typography from "./Typography";
+
+<Meta title="Foundation/Typography" />
+
+# Typography
+
+<br/>
+
+The UI-Kit uses **[Open Sans](https://fonts.google.com/specimen/Open+Sans)** as the default font, according to the Design System guidelines. Open Sans is an open source font that was designed and optimized for print, web, and mobile interfaces, and has excellent legibility characteristics in its letterforms.
+
+You will **need to ensure** that the font link is referred in your application's code, since it cannot be loaded automatically by the UI Kit.
+
+<br/><br/>
+
+### Setup
+
+Shown below is a sample link markup used to load the **Open Sans font** from a CDN:
+
+```
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600" />
+```
+
+<br/>
+
+### Font family
+
+<Preview>
+  <Story name="Main">
+    <Typography />
+  </Story>
+</Preview>

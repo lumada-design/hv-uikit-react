@@ -3,15 +3,16 @@ import { Hidden, Paper, withStyles } from "@material-ui/core";
 import { addDecorator } from "@storybook/react";
 import { DocsContainer } from "@storybook/addon-docs/blocks";
 import { HvContainer, HvGrid, HvProvider } from "../..";
+import HvTypography from "../../Typography";
 import useWidth from "../../utils/useWidth";
 
 <Meta title="Foundation/Grid" />
 
-# Breakpoints Example
+# Grid
 
 Examples of the Grid System proposed by Design System using our Container and Grid components. The implemented Grid is based in the [Material UI](https://v3.material-ui.com/layout/grid/#grid) implementation.
 
-The definitions where set following the design system directives:
+The definitions where set following the Design System directives:
 
 | Breakpoint | Width (in px) | Gutters (in px) | Number of columns |
 | ---------- | ------------- | --------------- | ----------------- |
@@ -21,25 +22,37 @@ The definitions where set following the design system directives:
 | lg         | [1270-1920[   | 30              | 12                |
 | xl         | [1920-...[    | 30              | 12                |
 
+<br/><br/>
+
+### Breakpoints example
+
 <Preview>
   <Story name="Example">
     {() => {
       const styles = theme => ({
         root: {
-          border: "1px solid",
-          backgroundColor: theme.hv.palette.base.base1
+          border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+          backgroundColor: theme.hv.palette.atmosphere.atmo2,
+          marginTop: theme.spacing(2),
+          flex: 1,
+          fontFamily: theme.hv.typography.fontFamily,
+          ...theme.hv.typography.sText
         },
         paper: {
           padding: theme.spacing(2),
+          height: 150,
           textAlign: "center",
-          backgroundColor: theme.hv.palette.atmosphere.atmo3,
-          height: 125
+          backgroundColor: theme.hv.palette.semantic.sema7,
+          ...theme.hv.typography.sText,
+          color: theme.hv.palette.base.base2,
+          display: "flex",
+          alignItems: "center"
         }
       });
       const width = useWidth();
       const Example = withStyles(styles)(({ classes }) => (
         <div>
-          <HvTypography>{`Current Width: ${width}`}</HvTypography>
+          <HvTypography variant="highlightText">{`Current width: ${width}`}</HvTypography>
           <div className={classes.root}>
             <HvContainer>
               <HvGrid container>

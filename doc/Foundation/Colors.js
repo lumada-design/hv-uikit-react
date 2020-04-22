@@ -1,31 +1,41 @@
 /* eslint-disable import/no-extraneous-dependencies,import/no-unresolved,react/prop-types */
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { useTheme } from "@material-ui/core";
-import Typography from "@hv/uikit-react-core/dist/Typography";
+import startCase from "lodash/startCase";
+import capitalize from "lodash/capitalize";
+import { withStyles } from "@material-ui/core";
+import { HvTypography } from "@hv/uikit-react-core/dist";
 
 const styles = theme => ({
   colorGroup: {
-    paddingBottom: "50px"
+    paddingBottom: theme.hv.spacing.xl,
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
   },
   title: {
-    paddingBottom: "20px"
+    paddingBottom: theme.hv.spacing.md
   },
   groupName: {
-    marginBottom: "15px"
+    marginTop: theme.hv.spacing.md,
+    marginBottom: theme.hv.spacing.sm
   },
   colors: {
     display: "flex",
     flexWrap: "wrap",
-    alignItems: "flexStart",
+    alignItems: "flex-start",
     flexDirection: "row"
   },
-  colorContainer: {},
+  colorContainer: {
+    marginRight: theme.hv.spacing.sm,
+    marginBottom: theme.hv.spacing.md
+  },
   colorSquare: {
-    width: 150,
-    height: 150,
+    width: 130,
+    height: 130,
     border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-    margin: "0 20px 20px 0"
+    marginBottom: theme.hv.spacing.xs
+  },
+  colorName: {
+    display: "flex",
+    alignItems: "baseline"
   }
 });
 
@@ -33,16 +43,19 @@ const Group = ({ classes, name, colors }) => {
   const keys = Object.keys(colors);
   return (
     <div>
-      <Typography variant="mTitle" className={classes.groupName}>
-        {name}
-      </Typography>
+      <HvTypography variant="xsTitle" className={classes.groupName}>
+        {capitalize(startCase(name))}
+      </HvTypography>
       <div className={classes.colors}>
         {keys.map((color, idx) => (
           // eslint-disable-next-line react/no-array-index-key
           <div key={idx} className={classes.colorContainer}>
-            <Typography variant="highlightText">{color}</Typography>
-            <Typography variant="infoText">{colors[color]}</Typography>
             <div className={classes.colorSquare} style={{ backgroundColor: colors[color] }} />
+            <span className={classes.colorName}>
+              <HvTypography variant="labelText">{color}</HvTypography>
+              &nbsp;
+              <HvTypography variant="infoText">({colors[color]})</HvTypography>
+            </span>
           </div>
         ))}
       </div>
@@ -59,15 +72,23 @@ const ColorsGroup = ({ classes, keys, colors }) => (
   </div>
 );
 
-const Colors = ({ classes, palettePath }) => {
-  const theme = useTheme();
-  const palette = palettePath ? theme.hv[palettePath].palette : theme.hv.palette;
-  const keys = Object.keys(palette);
+const Colors = ({ classes, theme }) => {
   return (
     <div>
-      <ColorsGroup keys={keys} colors={palette} classes={classes} />
+      <HvTypography variant="mTitle">Main Palette</HvTypography>
+      <ColorsGroup
+        keys={Object.keys(theme.hv.palette)}
+        colors={theme.hv.palette}
+        classes={classes}
+      />
+      <HvTypography variant="mTitle">Visualizations Palette</HvTypography>
+      <ColorsGroup
+        keys={Object.keys(theme.hv.viz.palette)}
+        colors={theme.hv.viz.palette}
+        classes={classes}
+      />
     </div>
   );
 };
 
-export default withStyles(styles)(Colors);
+export default withStyles(styles, { withTheme: true })(Colors);
