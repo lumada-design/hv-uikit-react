@@ -206,3 +206,11 @@ export const AutomationSample = () => {
 
   return <Sample />;
 };
+
+AutomationSample.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};

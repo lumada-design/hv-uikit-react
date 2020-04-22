@@ -164,3 +164,11 @@ export const Expanded = () => (
     ]}
   />
 );
+
+Expanded.story = {
+  parameters: {
+    docs: {
+      inlineStories: false
+    }
+  }
+};
