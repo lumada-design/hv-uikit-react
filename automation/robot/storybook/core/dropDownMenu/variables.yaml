@@ -1,10 +1,10 @@
 dropDownMenu:             css:button[class*='HvDropDownMenu']
+menuList:                 css:div[class=HvDropDownMenu-menuList]
 droppedMenu:              css:ul[role='menu']
 item1:                    css:li[id*='item-0']
 item2:                    css:li[id*='item-1']
 item3:                    css:li[id*='item-2']
 sampledDisabledItems:     iframe.html?id=components-dropdown-menu--disabled-items
 sampleDisabled:           iframe.html?id=components-dropdown-menu--disabled
-sampleDisablePortal:      iframe.html?id=components-dropdown-menu--disabled-items
 sampleKeepOpenedFalse:    iframe.html?id=components-dropdown-menu--controlled
 sampleTabs:               iframe.html?id=components-dropdown-menu--keyboard-navigation

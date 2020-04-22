@@ -4,8 +4,11 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-asset-inventory--configuration    hv-assetinventory    10s
+Test Setup        Run Keywords
+...               Go To            ${STORYBOOK_URL}/iframe.html?id=components-asset-inventory--configurations
+...               AND              Wait Until Element Is Visible    hv-assetinventory    10s
 Force Tags        smoke    bug-infrastructure-ie
+
 
 *** Variables ***
 ${cardsSelector}      css:div[class*='HvCard-root']
@@ -17,11 +20,14 @@ ${prevPage}           id:hv-assetinventory-previousPage-button
 ${pageSizeChange}     css:select[id|='hv-assetinventory-pageSize']
 ${firstCheckbox}      css:input[value='id_0']
 ${searchBox}          css:input[type='text']
-${cardView}           cardView
+${cardView}           id:cardView
 
 
 *** Test Cases ***
 Filtering from 4 to 1 card
+    Go To    ${STORYBOOK_URL}/iframe.html?id=components-asset-inventory--configurations
+    Wait Until Element Is Visible    hv-assetinventory    10s      
+
     Page Should Contain Element      ${cardsSelector}     limit=4
     Input Text                       ${searchBox}         1 trac
     Wait Until Element Is Visible    ${cardView}          2s
