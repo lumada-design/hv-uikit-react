@@ -25,7 +25,6 @@ import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
-import withConfig from "../config/withConfig";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = checkboxHOC(ReactTable);
@@ -547,8 +546,6 @@ class Table extends React.Component {
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
 
-    const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
-
     const sanitizedData = this.sanitizedData();
 
     return (
@@ -599,7 +596,7 @@ class Table extends React.Component {
           ref={r => (this.checkboxTable = r)}
           getTableProps={this.getTableProps}
           getTheadThProps={this.getTheadThProps}
-          getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
+          getTrProps={getTrProps || this.getTrProps}
           getTdProps={this.getTdProps}
           getTbodyProps={this.getTBodyProps}
           data={sanitizedData}
@@ -901,4 +898,4 @@ Table.defaultProps = {
   resizable: false
 };
 
-export default withStyles(styles, { name: "HvTable" })(withConfig(Table));
+export default withStyles(styles, { name: "HvTable" })(Table);
