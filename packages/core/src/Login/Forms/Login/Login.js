@@ -80,7 +80,8 @@ class Login extends React.Component {
    * @param name
    * @returns {function(*): *}
    */
-  handleInputChange = name => value => {
+  handleInputChange = name => event => {
+    const { target: { value } } = event;
     this.setState({ [name]: value });
     return value;
   };
