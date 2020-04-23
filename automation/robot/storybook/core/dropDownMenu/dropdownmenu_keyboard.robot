@@ -10,15 +10,12 @@ Force Tags        smoke    keyboard
 
 *** Test Cases ***
 drop menu with ENTER    drop menu when is focused and is pressed keyboard    ENTER
-drop menu with SPACE    drop menu when is focused and is pressed keyboard    SPACE
 drop menu with DOWN     drop menu when is focused and is pressed keyboard    ARROW_DOWN
 
 close menu with ENTER    close menu when is focused and is pressed keyboard    ENTER
-close menu with SPACE    close menu when is focused and is pressed keyboard    SPACE
 close menu with UP       close menu when is focused and is pressed keyboard    ARROW_UP
 
 activates item with ENTER    activates item and close menu when item is focused and is pressed keyboard    ENTER
-activates item with SPACE    activates item and close menu when item is focused and is pressed keyboard    SPACE
 
 focus next item                move focus from item to other is pressed keyboard    ${item1}    ARROW_DOWN    ${item2}
     [Documentation]    also test: Disabled menu items are focusable

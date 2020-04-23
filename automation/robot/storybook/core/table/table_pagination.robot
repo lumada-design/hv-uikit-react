@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Suite Setup       open storybook
 Test Template     Run Keyword
 Test Teardown     Run Keyword If Test Failed
-...               Capture Page Screenshot    ${SUITE_NAME} ${TEST_NAME}.png
+...               Capture Page Screenshot    ${SUITE_NAME}${TEST_NAME}.png
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -31,3 +31,5 @@ client side: page number      render specific table page number    ${clientSide}
 server side: page number      render specific table page number    ${serverSide}
 client side: column sort      render first table page when a column is sorted    ${clientSide}
 server side: column sort      render first table page when a column is sorted    ${serverSide}
+    [Tags]    bug-ie-webdriver
+    [Documentation]    ie return 'StaleElementReferenceException: Message: Error executing JavaScript'   
