@@ -23,7 +23,6 @@ show errors and keep elements enable when log button is pressed on sample login2
     Page Should Not Contain          Error!
     Click Button                     Login
     Wait Until Page Contains         Error!               3s
-    Element Should Be Enabled        ${button_login}
 
 check and uncheck remember me checkbox when her label is clicked
     Go To                              ${STORYBOOK_URL}/${login1}
