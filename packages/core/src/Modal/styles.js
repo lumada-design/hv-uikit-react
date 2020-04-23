@@ -7,8 +7,8 @@ const styles = theme => ({
   paper: {
     background: `${theme.hv.palette.atmosphere.atmo1}`,
     padding: "0px",
-    overflow: "hidden",
-    filter: `drop-shadow(0px 2px 12px ${fade(hexToRgb(theme.hv.palette.accent.acce1), 0.12)})`
+    overflow: "scroll",
+    boxShadow: theme.hv.shadows[1]
   },
   closeButton: {
     position: "absolute",
