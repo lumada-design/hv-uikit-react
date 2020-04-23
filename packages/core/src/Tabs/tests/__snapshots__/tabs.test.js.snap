@@ -3,7 +3,10 @@
 exports[`Compose Tabs withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -6608,15 +6611,15 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "centered": "MuiTabs-centered-15",
-                  "fixed": "MuiTabs-fixed-17",
-                  "flexContainer": "MuiTabs-flexContainer-14",
-                  "indicator": "MuiTabs-indicator-21",
-                  "root": "MuiTabs-root-13",
-                  "scrollButtons": "MuiTabs-scrollButtons-19",
-                  "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                  "scrollable": "MuiTabs-scrollable-18",
-                  "scroller": "MuiTabs-scroller-16",
+                  "centered": "MuiTabs-centered-3",
+                  "fixed": "MuiTabs-fixed-5",
+                  "flexContainer": "MuiTabs-flexContainer-2",
+                  "indicator": "MuiTabs-indicator-9",
+                  "root": "MuiTabs-root-1",
+                  "scrollButtons": "MuiTabs-scrollButtons-7",
+                  "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                  "scrollable": "MuiTabs-scrollable-6",
+                  "scroller": "MuiTabs-scroller-4",
                 },
                 "deployed": true,
                 "linked": false,
@@ -6624,15 +6627,15 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiTabs",
                   "classes": Object {
-                    "centered": "MuiTabs-centered-15",
-                    "fixed": "MuiTabs-fixed-17",
-                    "flexContainer": "MuiTabs-flexContainer-14",
-                    "indicator": "MuiTabs-indicator-21",
-                    "root": "MuiTabs-root-13",
-                    "scrollButtons": "MuiTabs-scrollButtons-19",
-                    "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                    "scrollable": "MuiTabs-scrollable-18",
-                    "scroller": "MuiTabs-scroller-16",
+                    "centered": "MuiTabs-centered-3",
+                    "fixed": "MuiTabs-fixed-5",
+                    "flexContainer": "MuiTabs-flexContainer-2",
+                    "indicator": "MuiTabs-indicator-9",
+                    "root": "MuiTabs-root-1",
+                    "scrollButtons": "MuiTabs-scrollButtons-7",
+                    "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                    "scrollable": "MuiTabs-scrollable-6",
+                    "scroller": "MuiTabs-scroller-4",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7120,32 +7123,32 @@ body {
                     data-meta="MuiTabs"
                   >
                     
-.MuiTabs-root-13 {
+.MuiTabs-root-1 {
   overflow: hidden;
   min-height: 48px;
   -webkit-overflow-scrolling: touch;
 }
-.MuiTabs-flexContainer-14 {
+.MuiTabs-flexContainer-2 {
   display: flex;
 }
-.MuiTabs-centered-15 {
+.MuiTabs-centered-3 {
   justify-content: center;
 }
-.MuiTabs-scroller-16 {
+.MuiTabs-scroller-4 {
   flex: 1 1 auto;
   display: inline-block;
   position: relative;
   white-space: nowrap;
 }
-.MuiTabs-fixed-17 {
+.MuiTabs-fixed-5 {
   width: 100%;
   overflow-x: hidden;
 }
-.MuiTabs-scrollable-18 {
+.MuiTabs-scrollable-6 {
   overflow-x: scroll;
 }
 @media (max-width:599.95px) {
-  .MuiTabs-scrollButtonsAuto-20 {
+  .MuiTabs-scrollButtonsAuto-8 {
     display: none;
   }
 }
@@ -7162,15 +7165,15 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "centered": "MuiTabs-centered-15",
-                    "fixed": "MuiTabs-fixed-17",
-                    "flexContainer": "MuiTabs-flexContainer-14",
-                    "indicator": "MuiTabs-indicator-21",
-                    "root": "MuiTabs-root-13",
-                    "scrollButtons": "MuiTabs-scrollButtons-19",
-                    "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                    "scrollable": "MuiTabs-scrollable-18",
-                    "scroller": "MuiTabs-scroller-16",
+                    "centered": "MuiTabs-centered-3",
+                    "fixed": "MuiTabs-fixed-5",
+                    "flexContainer": "MuiTabs-flexContainer-2",
+                    "indicator": "MuiTabs-indicator-9",
+                    "root": "MuiTabs-root-1",
+                    "scrollButtons": "MuiTabs-scrollButtons-7",
+                    "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                    "scrollable": "MuiTabs-scrollable-6",
+                    "scroller": "MuiTabs-scroller-4",
                   },
                   "index": Array [
                     Object {
@@ -7205,15 +7208,15 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "centered": "MuiTabs-centered-15",
-                          "fixed": "MuiTabs-fixed-17",
-                          "flexContainer": "MuiTabs-flexContainer-14",
-                          "indicator": "MuiTabs-indicator-21",
-                          "root": "MuiTabs-root-13",
-                          "scrollButtons": "MuiTabs-scrollButtons-19",
-                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                          "scrollable": "MuiTabs-scrollable-18",
-                          "scroller": "MuiTabs-scroller-16",
+                          "centered": "MuiTabs-centered-3",
+                          "fixed": "MuiTabs-fixed-5",
+                          "flexContainer": "MuiTabs-flexContainer-2",
+                          "indicator": "MuiTabs-indicator-9",
+                          "root": "MuiTabs-root-1",
+                          "scrollButtons": "MuiTabs-scrollButtons-7",
+                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                          "scrollable": "MuiTabs-scrollable-6",
+                          "scroller": "MuiTabs-scroller-4",
                         },
                         "generateClassName": [Function],
                         "index": 8,
@@ -7333,15 +7336,15 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "centered": "MuiTabs-centered-15",
-                          "fixed": "MuiTabs-fixed-17",
-                          "flexContainer": "MuiTabs-flexContainer-14",
-                          "indicator": "MuiTabs-indicator-21",
-                          "root": "MuiTabs-root-13",
-                          "scrollButtons": "MuiTabs-scrollButtons-19",
-                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                          "scrollable": "MuiTabs-scrollable-18",
-                          "scroller": "MuiTabs-scroller-16",
+                          "centered": "MuiTabs-centered-3",
+                          "fixed": "MuiTabs-fixed-5",
+                          "flexContainer": "MuiTabs-flexContainer-2",
+                          "indicator": "MuiTabs-indicator-9",
+                          "root": "MuiTabs-root-1",
+                          "scrollButtons": "MuiTabs-scrollButtons-7",
+                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                          "scrollable": "MuiTabs-scrollable-6",
+                          "scroller": "MuiTabs-scroller-4",
                         },
                         "index": Array [
                           Object {
@@ -7349,7 +7352,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTabs-scrollButtonsAuto-20": Object {
+                          ".MuiTabs-scrollButtonsAuto-8": Object {
                             "display": "none",
                           },
                           "scrollButtonsAuto": Object {
@@ -7359,15 +7362,15 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "centered": "MuiTabs-centered-15",
-                            "fixed": "MuiTabs-fixed-17",
-                            "flexContainer": "MuiTabs-flexContainer-14",
-                            "indicator": "MuiTabs-indicator-21",
-                            "root": "MuiTabs-root-13",
-                            "scrollButtons": "MuiTabs-scrollButtons-19",
-                            "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                            "scrollable": "MuiTabs-scrollable-18",
-                            "scroller": "MuiTabs-scroller-16",
+                            "centered": "MuiTabs-centered-3",
+                            "fixed": "MuiTabs-fixed-5",
+                            "flexContainer": "MuiTabs-flexContainer-2",
+                            "indicator": "MuiTabs-indicator-9",
+                            "root": "MuiTabs-root-1",
+                            "scrollButtons": "MuiTabs-scrollButtons-7",
+                            "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                            "scrollable": "MuiTabs-scrollable-6",
+                            "scroller": "MuiTabs-scroller-4",
                           },
                           "generateClassName": [Function],
                           "index": 8,
@@ -7497,28 +7500,28 @@ body {
                     Object {},
                   ],
                   "map": Object {
-                    ".MuiTabs-centered-15": Object {
+                    ".MuiTabs-centered-3": Object {
                       "justify-content": "center",
                     },
-                    ".MuiTabs-fixed-17": Object {
+                    ".MuiTabs-fixed-5": Object {
                       "overflow-x": "hidden",
                       "width": "100%",
                     },
-                    ".MuiTabs-flexContainer-14": Object {
+                    ".MuiTabs-flexContainer-2": Object {
                       "display": "flex",
                     },
-                    ".MuiTabs-indicator-21": Object {},
-                    ".MuiTabs-root-13": Object {
+                    ".MuiTabs-indicator-9": Object {},
+                    ".MuiTabs-root-1": Object {
                       "-webkit-overflow-scrolling": "touch",
                       "min-height": "48px",
                       "overflow": "hidden",
                     },
-                    ".MuiTabs-scrollButtons-19": Object {},
-                    ".MuiTabs-scrollButtonsAuto-20": Object {},
-                    ".MuiTabs-scrollable-18": Object {
+                    ".MuiTabs-scrollButtons-7": Object {},
+                    ".MuiTabs-scrollButtonsAuto-8": Object {},
+                    ".MuiTabs-scrollable-6": Object {
                       "overflow-x": "scroll",
                     },
-                    ".MuiTabs-scroller-16": Object {
+                    ".MuiTabs-scroller-4": Object {
                       "display": "inline-block",
                       "flex": "1 1 auto",
                       "position": "relative",
@@ -7530,15 +7533,15 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "centered": "MuiTabs-centered-15",
-                          "fixed": "MuiTabs-fixed-17",
-                          "flexContainer": "MuiTabs-flexContainer-14",
-                          "indicator": "MuiTabs-indicator-21",
-                          "root": "MuiTabs-root-13",
-                          "scrollButtons": "MuiTabs-scrollButtons-19",
-                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                          "scrollable": "MuiTabs-scrollable-18",
-                          "scroller": "MuiTabs-scroller-16",
+                          "centered": "MuiTabs-centered-3",
+                          "fixed": "MuiTabs-fixed-5",
+                          "flexContainer": "MuiTabs-flexContainer-2",
+                          "indicator": "MuiTabs-indicator-9",
+                          "root": "MuiTabs-root-1",
+                          "scrollButtons": "MuiTabs-scrollButtons-7",
+                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                          "scrollable": "MuiTabs-scrollable-6",
+                          "scroller": "MuiTabs-scroller-4",
                         },
                         "generateClassName": [Function],
                         "index": 8,
@@ -7658,15 +7661,15 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "centered": "MuiTabs-centered-15",
-                          "fixed": "MuiTabs-fixed-17",
-                          "flexContainer": "MuiTabs-flexContainer-14",
-                          "indicator": "MuiTabs-indicator-21",
-                          "root": "MuiTabs-root-13",
-                          "scrollButtons": "MuiTabs-scrollButtons-19",
-                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                          "scrollable": "MuiTabs-scrollable-18",
-                          "scroller": "MuiTabs-scroller-16",
+                          "centered": "MuiTabs-centered-3",
+                          "fixed": "MuiTabs-fixed-5",
+                          "flexContainer": "MuiTabs-flexContainer-2",
+                          "indicator": "MuiTabs-indicator-9",
+                          "root": "MuiTabs-root-1",
+                          "scrollButtons": "MuiTabs-scrollButtons-7",
+                          "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                          "scrollable": "MuiTabs-scrollable-6",
+                          "scroller": "MuiTabs-scroller-4",
                         },
                         "index": Array [
                           Object {
@@ -7674,7 +7677,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTabs-scrollButtonsAuto-20": Object {
+                          ".MuiTabs-scrollButtonsAuto-8": Object {
                             "display": "none",
                           },
                           "scrollButtonsAuto": Object {
@@ -7684,15 +7687,15 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "centered": "MuiTabs-centered-15",
-                            "fixed": "MuiTabs-fixed-17",
-                            "flexContainer": "MuiTabs-flexContainer-14",
-                            "indicator": "MuiTabs-indicator-21",
-                            "root": "MuiTabs-root-13",
-                            "scrollButtons": "MuiTabs-scrollButtons-19",
-                            "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                            "scrollable": "MuiTabs-scrollable-18",
-                            "scroller": "MuiTabs-scroller-16",
+                            "centered": "MuiTabs-centered-3",
+                            "fixed": "MuiTabs-fixed-5",
+                            "flexContainer": "MuiTabs-flexContainer-2",
+                            "indicator": "MuiTabs-indicator-9",
+                            "root": "MuiTabs-root-1",
+                            "scrollButtons": "MuiTabs-scrollButtons-7",
+                            "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                            "scrollable": "MuiTabs-scrollable-6",
+                            "scroller": "MuiTabs-scroller-4",
                           },
                           "generateClassName": [Function],
                           "index": 8,
@@ -7851,15 +7854,15 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "MuiTabs",
                     "classes": Object {
-                      "centered": "MuiTabs-centered-15",
-                      "fixed": "MuiTabs-fixed-17",
-                      "flexContainer": "MuiTabs-flexContainer-14",
-                      "indicator": "MuiTabs-indicator-21",
-                      "root": "MuiTabs-root-13",
-                      "scrollButtons": "MuiTabs-scrollButtons-19",
-                      "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                      "scrollable": "MuiTabs-scrollable-18",
-                      "scroller": "MuiTabs-scroller-16",
+                      "centered": "MuiTabs-centered-3",
+                      "fixed": "MuiTabs-fixed-5",
+                      "flexContainer": "MuiTabs-flexContainer-2",
+                      "indicator": "MuiTabs-indicator-9",
+                      "root": "MuiTabs-root-1",
+                      "scrollButtons": "MuiTabs-scrollButtons-7",
+                      "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                      "scrollable": "MuiTabs-scrollable-6",
+                      "scroller": "MuiTabs-scroller-4",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -11475,18 +11478,18 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "disabled": "MuiTab-disabled-28",
-                  "fullWidth": "MuiTab-fullWidth-29",
-                  "label": "MuiTab-label-32",
-                  "labelContainer": "MuiTab-labelContainer-31",
-                  "labelIcon": "MuiTab-labelIcon-23",
-                  "labelWrapped": "MuiTab-labelWrapped-33",
-                  "root": "MuiTab-root-22",
-                  "selected": "MuiTab-selected-27",
-                  "textColorInherit": "MuiTab-textColorInherit-24",
-                  "textColorPrimary": "MuiTab-textColorPrimary-25",
-                  "textColorSecondary": "MuiTab-textColorSecondary-26",
-                  "wrapper": "MuiTab-wrapper-30",
+                  "disabled": "MuiTab-disabled-16",
+                  "fullWidth": "MuiTab-fullWidth-17",
+                  "label": "MuiTab-label-20",
+                  "labelContainer": "MuiTab-labelContainer-19",
+                  "labelIcon": "MuiTab-labelIcon-11",
+                  "labelWrapped": "MuiTab-labelWrapped-21",
+                  "root": "MuiTab-root-10",
+                  "selected": "MuiTab-selected-15",
+                  "textColorInherit": "MuiTab-textColorInherit-12",
+                  "textColorPrimary": "MuiTab-textColorPrimary-13",
+                  "textColorSecondary": "MuiTab-textColorSecondary-14",
+                  "wrapper": "MuiTab-wrapper-18",
                 },
                 "deployed": true,
                 "linked": false,
@@ -11494,18 +11497,18 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiTab",
                   "classes": Object {
-                    "disabled": "MuiTab-disabled-28",
-                    "fullWidth": "MuiTab-fullWidth-29",
-                    "label": "MuiTab-label-32",
-                    "labelContainer": "MuiTab-labelContainer-31",
-                    "labelIcon": "MuiTab-labelIcon-23",
-                    "labelWrapped": "MuiTab-labelWrapped-33",
-                    "root": "MuiTab-root-22",
-                    "selected": "MuiTab-selected-27",
-                    "textColorInherit": "MuiTab-textColorInherit-24",
-                    "textColorPrimary": "MuiTab-textColorPrimary-25",
-                    "textColorSecondary": "MuiTab-textColorSecondary-26",
-                    "wrapper": "MuiTab-wrapper-30",
+                    "disabled": "MuiTab-disabled-16",
+                    "fullWidth": "MuiTab-fullWidth-17",
+                    "label": "MuiTab-label-20",
+                    "labelContainer": "MuiTab-labelContainer-19",
+                    "labelIcon": "MuiTab-labelIcon-11",
+                    "labelWrapped": "MuiTab-labelWrapped-21",
+                    "root": "MuiTab-root-10",
+                    "selected": "MuiTab-selected-15",
+                    "textColorInherit": "MuiTab-textColorInherit-12",
+                    "textColorPrimary": "MuiTab-textColorPrimary-13",
+                    "textColorSecondary": "MuiTab-textColorSecondary-14",
+                    "wrapper": "MuiTab-wrapper-18",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -11993,7 +11996,7 @@ body {
                     data-meta="MuiTab"
                   >
                     
-.MuiTab-root-22 {
+.MuiTab-root-10 {
   color: #414141;
   padding: 0;
   position: relative;
@@ -12013,62 +12016,62 @@ body {
   letter-spacing: 0.02em;
 }
 @media (min-width:960px) {
-  .MuiTab-root-22 {
+  .MuiTab-root-10 {
     font-size: 0.8125rem;
     min-width: 160px;
   }
 }
-.MuiTab-labelIcon-23 {
+.MuiTab-labelIcon-11 {
   min-height: 72px;
   padding-top: 9px;
 }
-.MuiTab-textColorInherit-24 {
+.MuiTab-textColorInherit-12 {
   color: inherit;
   opacity: 0.7;
 }
-.MuiTab-textColorInherit-24.MuiTab-selected-27 {
+.MuiTab-textColorInherit-12.MuiTab-selected-15 {
   opacity: 1;
 }
-.MuiTab-textColorInherit-24.MuiTab-disabled-28 {
+.MuiTab-textColorInherit-12.MuiTab-disabled-16 {
   opacity: 0.4;
 }
-.MuiTab-textColorPrimary-25 {
+.MuiTab-textColorPrimary-13 {
   color: rgba(0, 0, 0, 0.54);
 }
-.MuiTab-textColorPrimary-25.MuiTab-selected-27 {
+.MuiTab-textColorPrimary-13.MuiTab-selected-15 {
   color: #146BD2;
 }
-.MuiTab-textColorPrimary-25.MuiTab-disabled-28 {
+.MuiTab-textColorPrimary-13.MuiTab-disabled-16 {
   color: #999999;
 }
-.MuiTab-textColorSecondary-26 {
+.MuiTab-textColorSecondary-14 {
   color: rgba(0, 0, 0, 0.54);
 }
-.MuiTab-textColorSecondary-26.MuiTab-selected-27 {
+.MuiTab-textColorSecondary-14.MuiTab-selected-15 {
   color: #414141;
 }
-.MuiTab-textColorSecondary-26.MuiTab-disabled-28 {
+.MuiTab-textColorSecondary-14.MuiTab-disabled-16 {
   color: #999999;
 }
-.MuiTab-fullWidth-29 {
+.MuiTab-fullWidth-17 {
   flex-grow: 1;
   max-width: none;
   flex-shrink: 1;
 }
-.MuiTab-wrapper-30 {
+.MuiTab-wrapper-18 {
   width: 100%;
   display: inline-flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
-.MuiTab-labelContainer-31 {
+.MuiTab-labelContainer-19 {
   width: 100%;
   padding: 6px 12px;
   box-sizing: border-box;
 }
 @media (min-width:960px) {
-  .MuiTab-labelContainer-31 {
+  .MuiTab-labelContainer-19 {
     padding: 6px 24px;
   }
 }
@@ -12085,18 +12088,18 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "disabled": "MuiTab-disabled-28",
-                    "fullWidth": "MuiTab-fullWidth-29",
-                    "label": "MuiTab-label-32",
-                    "labelContainer": "MuiTab-labelContainer-31",
-                    "labelIcon": "MuiTab-labelIcon-23",
-                    "labelWrapped": "MuiTab-labelWrapped-33",
-                    "root": "MuiTab-root-22",
-                    "selected": "MuiTab-selected-27",
-                    "textColorInherit": "MuiTab-textColorInherit-24",
-                    "textColorPrimary": "MuiTab-textColorPrimary-25",
-                    "textColorSecondary": "MuiTab-textColorSecondary-26",
-                    "wrapper": "MuiTab-wrapper-30",
+                    "disabled": "MuiTab-disabled-16",
+                    "fullWidth": "MuiTab-fullWidth-17",
+                    "label": "MuiTab-label-20",
+                    "labelContainer": "MuiTab-labelContainer-19",
+                    "labelIcon": "MuiTab-labelIcon-11",
+                    "labelWrapped": "MuiTab-labelWrapped-21",
+                    "root": "MuiTab-root-10",
+                    "selected": "MuiTab-selected-15",
+                    "textColorInherit": "MuiTab-textColorInherit-12",
+                    "textColorPrimary": "MuiTab-textColorPrimary-13",
+                    "textColorSecondary": "MuiTab-textColorSecondary-14",
+                    "wrapper": "MuiTab-wrapper-18",
                   },
                   "index": Array [
                     Object {
@@ -12124,18 +12127,18 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "disabled": "MuiTab-disabled-28",
-                          "fullWidth": "MuiTab-fullWidth-29",
-                          "label": "MuiTab-label-32",
-                          "labelContainer": "MuiTab-labelContainer-31",
-                          "labelIcon": "MuiTab-labelIcon-23",
-                          "labelWrapped": "MuiTab-labelWrapped-33",
-                          "root": "MuiTab-root-22",
-                          "selected": "MuiTab-selected-27",
-                          "textColorInherit": "MuiTab-textColorInherit-24",
-                          "textColorPrimary": "MuiTab-textColorPrimary-25",
-                          "textColorSecondary": "MuiTab-textColorSecondary-26",
-                          "wrapper": "MuiTab-wrapper-30",
+                          "disabled": "MuiTab-disabled-16",
+                          "fullWidth": "MuiTab-fullWidth-17",
+                          "label": "MuiTab-label-20",
+                          "labelContainer": "MuiTab-labelContainer-19",
+                          "labelIcon": "MuiTab-labelIcon-11",
+                          "labelWrapped": "MuiTab-labelWrapped-21",
+                          "root": "MuiTab-root-10",
+                          "selected": "MuiTab-selected-15",
+                          "textColorInherit": "MuiTab-textColorInherit-12",
+                          "textColorPrimary": "MuiTab-textColorPrimary-13",
+                          "textColorSecondary": "MuiTab-textColorSecondary-14",
+                          "wrapper": "MuiTab-wrapper-18",
                         },
                         "generateClassName": [Function],
                         "index": 1,
@@ -12255,18 +12258,18 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "disabled": "MuiTab-disabled-28",
-                          "fullWidth": "MuiTab-fullWidth-29",
-                          "label": "MuiTab-label-32",
-                          "labelContainer": "MuiTab-labelContainer-31",
-                          "labelIcon": "MuiTab-labelIcon-23",
-                          "labelWrapped": "MuiTab-labelWrapped-33",
-                          "root": "MuiTab-root-22",
-                          "selected": "MuiTab-selected-27",
-                          "textColorInherit": "MuiTab-textColorInherit-24",
-                          "textColorPrimary": "MuiTab-textColorPrimary-25",
-                          "textColorSecondary": "MuiTab-textColorSecondary-26",
-                          "wrapper": "MuiTab-wrapper-30",
+                          "disabled": "MuiTab-disabled-16",
+                          "fullWidth": "MuiTab-fullWidth-17",
+                          "label": "MuiTab-label-20",
+                          "labelContainer": "MuiTab-labelContainer-19",
+                          "labelIcon": "MuiTab-labelIcon-11",
+                          "labelWrapped": "MuiTab-labelWrapped-21",
+                          "root": "MuiTab-root-10",
+                          "selected": "MuiTab-selected-15",
+                          "textColorInherit": "MuiTab-textColorInherit-12",
+                          "textColorPrimary": "MuiTab-textColorPrimary-13",
+                          "textColorSecondary": "MuiTab-textColorSecondary-14",
+                          "wrapper": "MuiTab-wrapper-18",
                         },
                         "index": Array [
                           Object {
@@ -12275,7 +12278,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTab-root-22": Object {
+                          ".MuiTab-root-10": Object {
                             "font-size": "0.8125rem",
                             "min-width": "160px",
                           },
@@ -12287,18 +12290,18 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "disabled": "MuiTab-disabled-28",
-                            "fullWidth": "MuiTab-fullWidth-29",
-                            "label": "MuiTab-label-32",
-                            "labelContainer": "MuiTab-labelContainer-31",
-                            "labelIcon": "MuiTab-labelIcon-23",
-                            "labelWrapped": "MuiTab-labelWrapped-33",
-                            "root": "MuiTab-root-22",
-                            "selected": "MuiTab-selected-27",
-                            "textColorInherit": "MuiTab-textColorInherit-24",
-                            "textColorPrimary": "MuiTab-textColorPrimary-25",
-                            "textColorSecondary": "MuiTab-textColorSecondary-26",
-                            "wrapper": "MuiTab-wrapper-30",
+                            "disabled": "MuiTab-disabled-16",
+                            "fullWidth": "MuiTab-fullWidth-17",
+                            "label": "MuiTab-label-20",
+                            "labelContainer": "MuiTab-labelContainer-19",
+                            "labelIcon": "MuiTab-labelIcon-11",
+                            "labelWrapped": "MuiTab-labelWrapped-21",
+                            "root": "MuiTab-root-10",
+                            "selected": "MuiTab-selected-15",
+                            "textColorInherit": "MuiTab-textColorInherit-12",
+                            "textColorPrimary": "MuiTab-textColorPrimary-13",
+                            "textColorSecondary": "MuiTab-textColorSecondary-14",
+                            "wrapper": "MuiTab-wrapper-18",
                           },
                           "generateClassName": [Function],
                           "index": 1,
@@ -12483,18 +12486,18 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "disabled": "MuiTab-disabled-28",
-                          "fullWidth": "MuiTab-fullWidth-29",
-                          "label": "MuiTab-label-32",
-                          "labelContainer": "MuiTab-labelContainer-31",
-                          "labelIcon": "MuiTab-labelIcon-23",
-                          "labelWrapped": "MuiTab-labelWrapped-33",
-                          "root": "MuiTab-root-22",
-                          "selected": "MuiTab-selected-27",
-                          "textColorInherit": "MuiTab-textColorInherit-24",
-                          "textColorPrimary": "MuiTab-textColorPrimary-25",
-                          "textColorSecondary": "MuiTab-textColorSecondary-26",
-                          "wrapper": "MuiTab-wrapper-30",
+                          "disabled": "MuiTab-disabled-16",
+                          "fullWidth": "MuiTab-fullWidth-17",
+                          "label": "MuiTab-label-20",
+                          "labelContainer": "MuiTab-labelContainer-19",
+                          "labelIcon": "MuiTab-labelIcon-11",
+                          "labelWrapped": "MuiTab-labelWrapped-21",
+                          "root": "MuiTab-root-10",
+                          "selected": "MuiTab-selected-15",
+                          "textColorInherit": "MuiTab-textColorInherit-12",
+                          "textColorPrimary": "MuiTab-textColorPrimary-13",
+                          "textColorSecondary": "MuiTab-textColorSecondary-14",
+                          "wrapper": "MuiTab-wrapper-18",
                         },
                         "generateClassName": [Function],
                         "index": 17,
@@ -12614,18 +12617,18 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "disabled": "MuiTab-disabled-28",
-                          "fullWidth": "MuiTab-fullWidth-29",
-                          "label": "MuiTab-label-32",
-                          "labelContainer": "MuiTab-labelContainer-31",
-                          "labelIcon": "MuiTab-labelIcon-23",
-                          "labelWrapped": "MuiTab-labelWrapped-33",
-                          "root": "MuiTab-root-22",
-                          "selected": "MuiTab-selected-27",
-                          "textColorInherit": "MuiTab-textColorInherit-24",
-                          "textColorPrimary": "MuiTab-textColorPrimary-25",
-                          "textColorSecondary": "MuiTab-textColorSecondary-26",
-                          "wrapper": "MuiTab-wrapper-30",
+                          "disabled": "MuiTab-disabled-16",
+                          "fullWidth": "MuiTab-fullWidth-17",
+                          "label": "MuiTab-label-20",
+                          "labelContainer": "MuiTab-labelContainer-19",
+                          "labelIcon": "MuiTab-labelIcon-11",
+                          "labelWrapped": "MuiTab-labelWrapped-21",
+                          "root": "MuiTab-root-10",
+                          "selected": "MuiTab-selected-15",
+                          "textColorInherit": "MuiTab-textColorInherit-12",
+                          "textColorPrimary": "MuiTab-textColorPrimary-13",
+                          "textColorSecondary": "MuiTab-textColorSecondary-14",
+                          "wrapper": "MuiTab-wrapper-18",
                         },
                         "index": Array [
                           Object {
@@ -12633,7 +12636,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTab-labelContainer-31": Object {
+                          ".MuiTab-labelContainer-19": Object {
                             "padding": "6px 24px",
                           },
                           "labelContainer": Object {
@@ -12643,18 +12646,18 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "disabled": "MuiTab-disabled-28",
-                            "fullWidth": "MuiTab-fullWidth-29",
-                            "label": "MuiTab-label-32",
-                            "labelContainer": "MuiTab-labelContainer-31",
-                            "labelIcon": "MuiTab-labelIcon-23",
-                            "labelWrapped": "MuiTab-labelWrapped-33",
-                            "root": "MuiTab-root-22",
-                            "selected": "MuiTab-selected-27",
-                            "textColorInherit": "MuiTab-textColorInherit-24",
-                            "textColorPrimary": "MuiTab-textColorPrimary-25",
-                            "textColorSecondary": "MuiTab-textColorSecondary-26",
-                            "wrapper": "MuiTab-wrapper-30",
+                            "disabled": "MuiTab-disabled-16",
+                            "fullWidth": "MuiTab-fullWidth-17",
+                            "label": "MuiTab-label-20",
+                            "labelContainer": "MuiTab-labelContainer-19",
+                            "labelIcon": "MuiTab-labelIcon-11",
+                            "labelWrapped": "MuiTab-labelWrapped-21",
+                            "root": "MuiTab-root-10",
+                            "selected": "MuiTab-selected-15",
+                            "textColorInherit": "MuiTab-textColorInherit-12",
+                            "textColorPrimary": "MuiTab-textColorPrimary-13",
+                            "textColorSecondary": "MuiTab-textColorSecondary-14",
+                            "wrapper": "MuiTab-wrapper-18",
                           },
                           "generateClassName": [Function],
                           "index": 17,
@@ -12785,24 +12788,24 @@ body {
                     Object {},
                   ],
                   "map": Object {
-                    ".MuiTab-disabled-28": Object {},
-                    ".MuiTab-fullWidth-29": Object {
+                    ".MuiTab-disabled-16": Object {},
+                    ".MuiTab-fullWidth-17": Object {
                       "flex-grow": "1",
                       "flex-shrink": "1",
                       "max-width": "none",
                     },
-                    ".MuiTab-label-32": Object {},
-                    ".MuiTab-labelContainer-31": Object {
+                    ".MuiTab-label-20": Object {},
+                    ".MuiTab-labelContainer-19": Object {
                       "box-sizing": "border-box",
                       "padding": "6px 12px",
                       "width": "100%",
                     },
-                    ".MuiTab-labelIcon-23": Object {
+                    ".MuiTab-labelIcon-11": Object {
                       "min-height": "72px",
                       "padding-top": "9px",
                     },
-                    ".MuiTab-labelWrapped-33": Object {},
-                    ".MuiTab-root-22": Object {
+                    ".MuiTab-labelWrapped-21": Object {},
+                    ".MuiTab-root-10": Object {
                       "box-sizing": "border-box",
                       "color": "#414141",
                       "flex-shrink": 0,
@@ -12821,36 +12824,36 @@ body {
                       "text-transform": "uppercase",
                       "white-space": "normal",
                     },
-                    ".MuiTab-selected-27": Object {},
-                    ".MuiTab-textColorInherit-24": Object {
+                    ".MuiTab-selected-15": Object {},
+                    ".MuiTab-textColorInherit-12": Object {
                       "color": "inherit",
                       "opacity": "0.7",
                     },
-                    ".MuiTab-textColorInherit-24.MuiTab-disabled-28": Object {
+                    ".MuiTab-textColorInherit-12.MuiTab-disabled-16": Object {
                       "opacity": "0.4",
                     },
-                    ".MuiTab-textColorInherit-24.MuiTab-selected-27": Object {
+                    ".MuiTab-textColorInherit-12.MuiTab-selected-15": Object {
                       "opacity": "1",
                     },
-                    ".MuiTab-textColorPrimary-25": Object {
+                    ".MuiTab-textColorPrimary-13": Object {
                       "color": "rgba(0, 0, 0, 0.54)",
                     },
-                    ".MuiTab-textColorPrimary-25.MuiTab-disabled-28": Object {
+                    ".MuiTab-textColorPrimary-13.MuiTab-disabled-16": Object {
                       "color": "#999999",
                     },
-                    ".MuiTab-textColorPrimary-25.MuiTab-selected-27": Object {
+                    ".MuiTab-textColorPrimary-13.MuiTab-selected-15": Object {
                       "color": "#146BD2",
                     },
-                    ".MuiTab-textColorSecondary-26": Object {
+                    ".MuiTab-textColorSecondary-14": Object {
                       "color": "rgba(0, 0, 0, 0.54)",
                     },
-                    ".MuiTab-textColorSecondary-26.MuiTab-disabled-28": Object {
+                    ".MuiTab-textColorSecondary-14.MuiTab-disabled-16": Object {
                       "color": "#999999",
                     },
-                    ".MuiTab-textColorSecondary-26.MuiTab-selected-27": Object {
+                    ".MuiTab-textColorSecondary-14.MuiTab-selected-15": Object {
                       "color": "#414141",
                     },
-                    ".MuiTab-wrapper-30": Object {
+                    ".MuiTab-wrapper-18": Object {
                       "align-items": "center",
                       "display": "inline-flex",
                       "flex-direction": "column",
@@ -12863,18 +12866,18 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "disabled": "MuiTab-disabled-28",
-                          "fullWidth": "MuiTab-fullWidth-29",
-                          "label": "MuiTab-label-32",
-                          "labelContainer": "MuiTab-labelContainer-31",
-                          "labelIcon": "MuiTab-labelIcon-23",
-                          "labelWrapped": "MuiTab-labelWrapped-33",
-                          "root": "MuiTab-root-22",
-                          "selected": "MuiTab-selected-27",
-                          "textColorInherit": "MuiTab-textColorInherit-24",
-                          "textColorPrimary": "MuiTab-textColorPrimary-25",
-                          "textColorSecondary": "MuiTab-textColorSecondary-26",
-                          "wrapper": "MuiTab-wrapper-30",
+                          "disabled": "MuiTab-disabled-16",
+                          "fullWidth": "MuiTab-fullWidth-17",
+                          "label": "MuiTab-label-20",
+                          "labelContainer": "MuiTab-labelContainer-19",
+                          "labelIcon": "MuiTab-labelIcon-11",
+                          "labelWrapped": "MuiTab-labelWrapped-21",
+                          "root": "MuiTab-root-10",
+                          "selected": "MuiTab-selected-15",
+                          "textColorInherit": "MuiTab-textColorInherit-12",
+                          "textColorPrimary": "MuiTab-textColorPrimary-13",
+                          "textColorSecondary": "MuiTab-textColorSecondary-14",
+                          "wrapper": "MuiTab-wrapper-18",
                         },
                         "generateClassName": [Function],
                         "index": 17,
@@ -12994,18 +12997,18 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "disabled": "MuiTab-disabled-28",
-                          "fullWidth": "MuiTab-fullWidth-29",
-                          "label": "MuiTab-label-32",
-                          "labelContainer": "MuiTab-labelContainer-31",
-                          "labelIcon": "MuiTab-labelIcon-23",
-                          "labelWrapped": "MuiTab-labelWrapped-33",
-                          "root": "MuiTab-root-22",
-                          "selected": "MuiTab-selected-27",
-                          "textColorInherit": "MuiTab-textColorInherit-24",
-                          "textColorPrimary": "MuiTab-textColorPrimary-25",
-                          "textColorSecondary": "MuiTab-textColorSecondary-26",
-                          "wrapper": "MuiTab-wrapper-30",
+                          "disabled": "MuiTab-disabled-16",
+                          "fullWidth": "MuiTab-fullWidth-17",
+                          "label": "MuiTab-label-20",
+                          "labelContainer": "MuiTab-labelContainer-19",
+                          "labelIcon": "MuiTab-labelIcon-11",
+                          "labelWrapped": "MuiTab-labelWrapped-21",
+                          "root": "MuiTab-root-10",
+                          "selected": "MuiTab-selected-15",
+                          "textColorInherit": "MuiTab-textColorInherit-12",
+                          "textColorPrimary": "MuiTab-textColorPrimary-13",
+                          "textColorSecondary": "MuiTab-textColorSecondary-14",
+                          "wrapper": "MuiTab-wrapper-18",
                         },
                         "index": Array [
                           Object {
@@ -13013,7 +13016,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTab-labelContainer-31": Object {
+                          ".MuiTab-labelContainer-19": Object {
                             "padding": "6px 24px",
                           },
                           "labelContainer": Object {
@@ -13023,18 +13026,18 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "disabled": "MuiTab-disabled-28",
-                            "fullWidth": "MuiTab-fullWidth-29",
-                            "label": "MuiTab-label-32",
-                            "labelContainer": "MuiTab-labelContainer-31",
-                            "labelIcon": "MuiTab-labelIcon-23",
-                            "labelWrapped": "MuiTab-labelWrapped-33",
-                            "root": "MuiTab-root-22",
-                            "selected": "MuiTab-selected-27",
-                            "textColorInherit": "MuiTab-textColorInherit-24",
-                            "textColorPrimary": "MuiTab-textColorPrimary-25",
-                            "textColorSecondary": "MuiTab-textColorSecondary-26",
-                            "wrapper": "MuiTab-wrapper-30",
+                            "disabled": "MuiTab-disabled-16",
+                            "fullWidth": "MuiTab-fullWidth-17",
+                            "label": "MuiTab-label-20",
+                            "labelContainer": "MuiTab-labelContainer-19",
+                            "labelIcon": "MuiTab-labelIcon-11",
+                            "labelWrapped": "MuiTab-labelWrapped-21",
+                            "root": "MuiTab-root-10",
+                            "selected": "MuiTab-selected-15",
+                            "textColorInherit": "MuiTab-textColorInherit-12",
+                            "textColorPrimary": "MuiTab-textColorPrimary-13",
+                            "textColorSecondary": "MuiTab-textColorSecondary-14",
+                            "wrapper": "MuiTab-wrapper-18",
                           },
                           "generateClassName": [Function],
                           "index": 17,
@@ -13220,18 +13223,18 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "MuiTab",
                     "classes": Object {
-                      "disabled": "MuiTab-disabled-28",
-                      "fullWidth": "MuiTab-fullWidth-29",
-                      "label": "MuiTab-label-32",
-                      "labelContainer": "MuiTab-labelContainer-31",
-                      "labelIcon": "MuiTab-labelIcon-23",
-                      "labelWrapped": "MuiTab-labelWrapped-33",
-                      "root": "MuiTab-root-22",
-                      "selected": "MuiTab-selected-27",
-                      "textColorInherit": "MuiTab-textColorInherit-24",
-                      "textColorPrimary": "MuiTab-textColorPrimary-25",
-                      "textColorSecondary": "MuiTab-textColorSecondary-26",
-                      "wrapper": "MuiTab-wrapper-30",
+                      "disabled": "MuiTab-disabled-16",
+                      "fullWidth": "MuiTab-fullWidth-17",
+                      "label": "MuiTab-label-20",
+                      "labelContainer": "MuiTab-labelContainer-19",
+                      "labelIcon": "MuiTab-labelIcon-11",
+                      "labelWrapped": "MuiTab-labelWrapped-21",
+                      "root": "MuiTab-root-10",
+                      "selected": "MuiTab-selected-15",
+                      "textColorInherit": "MuiTab-textColorInherit-12",
+                      "textColorPrimary": "MuiTab-textColorPrimary-13",
+                      "textColorSecondary": "MuiTab-textColorSecondary-14",
+                      "wrapper": "MuiTab-wrapper-18",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -13714,22 +13717,22 @@ body {
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".MuiTab-textColorInherit-24.MuiTab-disabled-28": Object {
+                    ".MuiTab-textColorInherit-12.MuiTab-disabled-16": Object {
                       "opacity": 0.4,
                     },
-                    ".MuiTab-textColorInherit-24.MuiTab-selected-27": Object {
+                    ".MuiTab-textColorInherit-12.MuiTab-selected-15": Object {
                       "opacity": 1,
                     },
-                    ".MuiTab-textColorPrimary-25.MuiTab-disabled-28": Object {
+                    ".MuiTab-textColorPrimary-13.MuiTab-disabled-16": Object {
                       "color": "#999999",
                     },
-                    ".MuiTab-textColorPrimary-25.MuiTab-selected-27": Object {
+                    ".MuiTab-textColorPrimary-13.MuiTab-selected-15": Object {
                       "color": "#146BD2",
                     },
-                    ".MuiTab-textColorSecondary-26.MuiTab-disabled-28": Object {
+                    ".MuiTab-textColorSecondary-14.MuiTab-disabled-16": Object {
                       "color": "#999999",
                     },
-                    ".MuiTab-textColorSecondary-26.MuiTab-selected-27": Object {
+                    ".MuiTab-textColorSecondary-14.MuiTab-selected-15": Object {
                       "color": "#414141",
                     },
                     "@media (min-width:960px)": null,
@@ -14766,9 +14769,9 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "disabled": "MuiButtonBase-disabled-35",
-                  "focusVisible": "MuiButtonBase-focusVisible-36",
-                  "root": "MuiButtonBase-root-34",
+                  "disabled": "MuiButtonBase-disabled-23",
+                  "focusVisible": "MuiButtonBase-focusVisible-24",
+                  "root": "MuiButtonBase-root-22",
                 },
                 "deployed": true,
                 "linked": false,
@@ -14776,9 +14779,9 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiButtonBase",
                   "classes": Object {
-                    "disabled": "MuiButtonBase-disabled-35",
-                    "focusVisible": "MuiButtonBase-focusVisible-36",
-                    "root": "MuiButtonBase-root-34",
+                    "disabled": "MuiButtonBase-disabled-23",
+                    "focusVisible": "MuiButtonBase-focusVisible-24",
+                    "root": "MuiButtonBase-root-22",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -15266,7 +15269,7 @@ body {
                     data-meta="MuiButtonBase"
                   >
                     
-.MuiButtonBase-root-34 {
+.MuiButtonBase-root-22 {
   color: inherit;
   border: 0;
   margin: 0;
@@ -15286,10 +15289,10 @@ body {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
-.MuiButtonBase-root-34::-moz-focus-inner {
+.MuiButtonBase-root-22::-moz-focus-inner {
   border-style: none;
 }
-.MuiButtonBase-root-34.MuiButtonBase-disabled-35 {
+.MuiButtonBase-root-22.MuiButtonBase-disabled-23 {
   cursor: default;
   pointer-events: none;
 }
@@ -15306,9 +15309,9 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "disabled": "MuiButtonBase-disabled-35",
-                    "focusVisible": "MuiButtonBase-focusVisible-36",
-                    "root": "MuiButtonBase-root-34",
+                    "disabled": "MuiButtonBase-disabled-23",
+                    "focusVisible": "MuiButtonBase-focusVisible-24",
+                    "root": "MuiButtonBase-root-22",
                   },
                   "index": Array [
                     Object {
@@ -15342,9 +15345,9 @@ body {
                     Object {},
                   ],
                   "map": Object {
-                    ".MuiButtonBase-disabled-35": Object {},
-                    ".MuiButtonBase-focusVisible-36": Object {},
-                    ".MuiButtonBase-root-34": Object {
+                    ".MuiButtonBase-disabled-23": Object {},
+                    ".MuiButtonBase-focusVisible-24": Object {},
+                    ".MuiButtonBase-root-22": Object {
                       "-moz-appearance": "none",
                       "-webkit-appearance": "none",
                       "-webkit-tap-highlight-color": "transparent",
@@ -15364,11 +15367,11 @@ body {
                       "user-select": "none",
                       "vertical-align": "middle",
                     },
-                    ".MuiButtonBase-root-34.MuiButtonBase-disabled-35": Object {
+                    ".MuiButtonBase-root-22.MuiButtonBase-disabled-23": Object {
                       "cursor": "default",
                       "pointer-events": "none",
                     },
-                    ".MuiButtonBase-root-34::-moz-focus-inner": Object {
+                    ".MuiButtonBase-root-22::-moz-focus-inner": Object {
                       "border-style": "none",
                     },
                     "disabled": Object {},
@@ -15398,9 +15401,9 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "MuiButtonBase",
                     "classes": Object {
-                      "disabled": "MuiButtonBase-disabled-35",
-                      "focusVisible": "MuiButtonBase-focusVisible-36",
-                      "root": "MuiButtonBase-root-34",
+                      "disabled": "MuiButtonBase-disabled-23",
+                      "focusVisible": "MuiButtonBase-focusVisible-24",
+                      "root": "MuiButtonBase-root-22",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -15883,11 +15886,11 @@ body {
                     "sheet": [Circular],
                   },
                   "raw": Object {
-                    ".MuiButtonBase-root-34.MuiButtonBase-disabled-35": Object {
+                    ".MuiButtonBase-root-22.MuiButtonBase-disabled-23": Object {
                       "cursor": "default",
                       "pointerEvents": "none",
                     },
-                    ".MuiButtonBase-root-34::-moz-focus-inner": Object {
+                    ".MuiButtonBase-root-22::-moz-focus-inner": Object {
                       "borderStyle": "none",
                     },
                     "disabled": Object {},
@@ -16864,9 +16867,9 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-38",
-                  "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-39",
-                  "root": "MuiPrivateTabIndicator-root-37",
+                  "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-26",
+                  "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-27",
+                  "root": "MuiPrivateTabIndicator-root-25",
                 },
                 "deployed": true,
                 "linked": false,
@@ -16874,9 +16877,9 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiPrivateTabIndicator",
                   "classes": Object {
-                    "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-38",
-                    "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-39",
-                    "root": "MuiPrivateTabIndicator-root-37",
+                    "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-26",
+                    "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-27",
+                    "root": "MuiPrivateTabIndicator-root-25",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -17364,17 +17367,17 @@ body {
                     data-meta="MuiPrivateTabIndicator"
                   >
                     
-.MuiPrivateTabIndicator-root-37 {
+.MuiPrivateTabIndicator-root-25 {
   width: 100%;
   height: 2px;
   bottom: 0;
   position: absolute;
   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-.MuiPrivateTabIndicator-colorPrimary-38 {
+.MuiPrivateTabIndicator-colorPrimary-26 {
   background-color: #146BD2;
 }
-.MuiPrivateTabIndicator-colorSecondary-39 {
+.MuiPrivateTabIndicator-colorSecondary-27 {
   background-color: #414141;
 }
 
@@ -17390,9 +17393,9 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-38",
-                    "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-39",
-                    "root": "MuiPrivateTabIndicator-root-37",
+                    "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-26",
+                    "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-27",
+                    "root": "MuiPrivateTabIndicator-root-25",
                   },
                   "index": Array [
                     Object {
@@ -17410,13 +17413,13 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".MuiPrivateTabIndicator-colorPrimary-38": Object {
+                    ".MuiPrivateTabIndicator-colorPrimary-26": Object {
                       "background-color": "#146BD2",
                     },
-                    ".MuiPrivateTabIndicator-colorSecondary-39": Object {
+                    ".MuiPrivateTabIndicator-colorSecondary-27": Object {
                       "background-color": "#414141",
                     },
-                    ".MuiPrivateTabIndicator-root-37": Object {
+                    ".MuiPrivateTabIndicator-root-25": Object {
                       "bottom": 0,
                       "height": "2px",
                       "position": "absolute",
@@ -17441,9 +17444,9 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "MuiPrivateTabIndicator",
                     "classes": Object {
-                      "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-38",
-                      "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-39",
-                      "root": "MuiPrivateTabIndicator-root-37",
+                      "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-26",
+                      "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-27",
+                      "root": "MuiPrivateTabIndicator-root-25",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -18923,15 +18926,15 @@ body {
               centered={false}
               classes={
                 Object {
-                  "centered": "MuiTabs-centered-15",
-                  "fixed": "MuiTabs-fixed-17",
-                  "flexContainer": "MuiTabs-flexContainer-14 HvTabs-flexContainer",
-                  "indicator": "MuiTabs-indicator-21 HvTabs-indicator",
-                  "root": "MuiTabs-root-13 HvTabs-root",
-                  "scrollButtons": "MuiTabs-scrollButtons-19",
-                  "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-20",
-                  "scrollable": "MuiTabs-scrollable-18",
-                  "scroller": "MuiTabs-scroller-16 HvTabs-scroller",
+                  "centered": "MuiTabs-centered-3",
+                  "fixed": "MuiTabs-fixed-5",
+                  "flexContainer": "MuiTabs-flexContainer-2 HvTabs-flexContainer",
+                  "indicator": "MuiTabs-indicator-9 HvTabs-indicator",
+                  "root": "MuiTabs-root-1 HvTabs-root",
+                  "scrollButtons": "MuiTabs-scrollButtons-7",
+                  "scrollButtonsAuto": "MuiTabs-scrollButtonsAuto-8",
+                  "scrollable": "MuiTabs-scrollable-6",
+                  "scroller": "MuiTabs-scroller-4 HvTabs-scroller",
                 }
               }
               component="div"
@@ -19871,17 +19874,17 @@ body {
               variant="standard"
             >
               <div
-                className="MuiTabs-root-13 HvTabs-root"
+                className="MuiTabs-root-1 HvTabs-root"
               >
                 <EventListener
                   onResize={[Function]}
                   target="window"
                 />
                 <div
-                  className="MuiTabs-flexContainer-14 HvTabs-flexContainer"
+                  className="MuiTabs-flexContainer-2 HvTabs-flexContainer"
                 >
                   <div
-                    className="MuiTabs-scroller-16 HvTabs-scroller MuiTabs-fixed-17"
+                    className="MuiTabs-scroller-4 HvTabs-scroller MuiTabs-fixed-5"
                     onScroll={[Function]}
                     role="tablist"
                     style={
@@ -19891,7 +19894,7 @@ body {
                     }
                   >
                     <div
-                      className="MuiTabs-flexContainer-14 HvTabs-flexContainer"
+                      className="MuiTabs-flexContainer-2 HvTabs-flexContainer"
                     >
                       <WithStyles(HvTab)
                         fullWidth={false}
@@ -19943,18 +19946,18 @@ body {
                             <Tab
                               classes={
                                 Object {
-                                  "disabled": "MuiTab-disabled-28 HvTab-disabled",
-                                  "fullWidth": "MuiTab-fullWidth-29",
-                                  "label": "MuiTab-label-32",
-                                  "labelContainer": "MuiTab-labelContainer-31 HvTab-labelContainer",
-                                  "labelIcon": "MuiTab-labelIcon-23",
-                                  "labelWrapped": "MuiTab-labelWrapped-33",
-                                  "root": "MuiTab-root-22 HvTab-root",
-                                  "selected": "MuiTab-selected-27 HvTab-selected",
-                                  "textColorInherit": "MuiTab-textColorInherit-24",
-                                  "textColorPrimary": "MuiTab-textColorPrimary-25",
-                                  "textColorSecondary": "MuiTab-textColorSecondary-26",
-                                  "wrapper": "MuiTab-wrapper-30",
+                                  "disabled": "MuiTab-disabled-16 HvTab-disabled",
+                                  "fullWidth": "MuiTab-fullWidth-17",
+                                  "label": "MuiTab-label-20",
+                                  "labelContainer": "MuiTab-labelContainer-19 HvTab-labelContainer",
+                                  "labelIcon": "MuiTab-labelIcon-11",
+                                  "labelWrapped": "MuiTab-labelWrapped-21",
+                                  "root": "MuiTab-root-10 HvTab-root",
+                                  "selected": "MuiTab-selected-15 HvTab-selected",
+                                  "textColorInherit": "MuiTab-textColorInherit-12",
+                                  "textColorPrimary": "MuiTab-textColorPrimary-13",
+                                  "textColorSecondary": "MuiTab-textColorSecondary-14",
+                                  "wrapper": "MuiTab-wrapper-18",
                                 }
                               }
                               disableRipple={true}
@@ -19970,7 +19973,7 @@ body {
                             >
                               <WithStyles(ButtonBase)
                                 aria-selected={false}
-                                className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                 disableRipple={true}
                                 disableTouchRipple={true}
                                 disabled={false}
@@ -19981,12 +19984,12 @@ body {
                                 <ButtonBase
                                   aria-selected={false}
                                   centerRipple={false}
-                                  className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                  className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                   classes={
                                     Object {
-                                      "disabled": "MuiButtonBase-disabled-35",
-                                      "focusVisible": "MuiButtonBase-focusVisible-36",
-                                      "root": "MuiButtonBase-root-34",
+                                      "disabled": "MuiButtonBase-disabled-23",
+                                      "focusVisible": "MuiButtonBase-focusVisible-24",
+                                      "root": "MuiButtonBase-root-22",
                                     }
                                   }
                                   component="button"
@@ -20001,7 +20004,7 @@ body {
                                 >
                                   <button
                                     aria-selected={false}
-                                    className="MuiButtonBase-root-34 MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                    className="MuiButtonBase-root-22 MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}
@@ -20020,13 +20023,13 @@ body {
                                     type="button"
                                   >
                                     <span
-                                      className="MuiTab-wrapper-30"
+                                      className="MuiTab-wrapper-18"
                                     >
                                       <span
-                                        className="MuiTab-labelContainer-31 HvTab-labelContainer"
+                                        className="MuiTab-labelContainer-19 HvTab-labelContainer"
                                       >
                                         <span
-                                          className="MuiTab-label-32"
+                                          className="MuiTab-label-20"
                                         >
                                           Clickable Tab
                                         </span>
@@ -20089,18 +20092,18 @@ body {
                             <Tab
                               classes={
                                 Object {
-                                  "disabled": "MuiTab-disabled-28 HvTab-disabled",
-                                  "fullWidth": "MuiTab-fullWidth-29",
-                                  "label": "MuiTab-label-32",
-                                  "labelContainer": "MuiTab-labelContainer-31 HvTab-labelContainer",
-                                  "labelIcon": "MuiTab-labelIcon-23",
-                                  "labelWrapped": "MuiTab-labelWrapped-33",
-                                  "root": "MuiTab-root-22 HvTab-root",
-                                  "selected": "MuiTab-selected-27 HvTab-selected",
-                                  "textColorInherit": "MuiTab-textColorInherit-24",
-                                  "textColorPrimary": "MuiTab-textColorPrimary-25",
-                                  "textColorSecondary": "MuiTab-textColorSecondary-26",
-                                  "wrapper": "MuiTab-wrapper-30",
+                                  "disabled": "MuiTab-disabled-16 HvTab-disabled",
+                                  "fullWidth": "MuiTab-fullWidth-17",
+                                  "label": "MuiTab-label-20",
+                                  "labelContainer": "MuiTab-labelContainer-19 HvTab-labelContainer",
+                                  "labelIcon": "MuiTab-labelIcon-11",
+                                  "labelWrapped": "MuiTab-labelWrapped-21",
+                                  "root": "MuiTab-root-10 HvTab-root",
+                                  "selected": "MuiTab-selected-15 HvTab-selected",
+                                  "textColorInherit": "MuiTab-textColorInherit-12",
+                                  "textColorPrimary": "MuiTab-textColorPrimary-13",
+                                  "textColorSecondary": "MuiTab-textColorSecondary-14",
+                                  "wrapper": "MuiTab-wrapper-18",
                                 }
                               }
                               disableRipple={true}
@@ -20116,7 +20119,7 @@ body {
                             >
                               <WithStyles(ButtonBase)
                                 aria-selected={true}
-                                className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24 MuiTab-selected-27 HvTab-selected"
+                                className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12 MuiTab-selected-15 HvTab-selected"
                                 disableRipple={true}
                                 disableTouchRipple={true}
                                 disabled={false}
@@ -20127,12 +20130,12 @@ body {
                                 <ButtonBase
                                   aria-selected={true}
                                   centerRipple={false}
-                                  className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24 MuiTab-selected-27 HvTab-selected"
+                                  className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12 MuiTab-selected-15 HvTab-selected"
                                   classes={
                                     Object {
-                                      "disabled": "MuiButtonBase-disabled-35",
-                                      "focusVisible": "MuiButtonBase-focusVisible-36",
-                                      "root": "MuiButtonBase-root-34",
+                                      "disabled": "MuiButtonBase-disabled-23",
+                                      "focusVisible": "MuiButtonBase-focusVisible-24",
+                                      "root": "MuiButtonBase-root-22",
                                     }
                                   }
                                   component="button"
@@ -20147,7 +20150,7 @@ body {
                                 >
                                   <button
                                     aria-selected={true}
-                                    className="MuiButtonBase-root-34 MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24 MuiTab-selected-27 HvTab-selected"
+                                    className="MuiButtonBase-root-22 MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12 MuiTab-selected-15 HvTab-selected"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}
@@ -20166,13 +20169,13 @@ body {
                                     type="button"
                                   >
                                     <span
-                                      className="MuiTab-wrapper-30"
+                                      className="MuiTab-wrapper-18"
                                     >
                                       <span
-                                        className="MuiTab-labelContainer-31 HvTab-labelContainer"
+                                        className="MuiTab-labelContainer-19 HvTab-labelContainer"
                                       >
                                         <span
-                                          className="MuiTab-label-32"
+                                          className="MuiTab-label-20"
                                         >
                                           Clickable Tab
                                         </span>
@@ -20235,18 +20238,18 @@ body {
                             <Tab
                               classes={
                                 Object {
-                                  "disabled": "MuiTab-disabled-28 HvTab-disabled",
-                                  "fullWidth": "MuiTab-fullWidth-29",
-                                  "label": "MuiTab-label-32",
-                                  "labelContainer": "MuiTab-labelContainer-31 HvTab-labelContainer",
-                                  "labelIcon": "MuiTab-labelIcon-23",
-                                  "labelWrapped": "MuiTab-labelWrapped-33",
-                                  "root": "MuiTab-root-22 HvTab-root",
-                                  "selected": "MuiTab-selected-27 HvTab-selected",
-                                  "textColorInherit": "MuiTab-textColorInherit-24",
-                                  "textColorPrimary": "MuiTab-textColorPrimary-25",
-                                  "textColorSecondary": "MuiTab-textColorSecondary-26",
-                                  "wrapper": "MuiTab-wrapper-30",
+                                  "disabled": "MuiTab-disabled-16 HvTab-disabled",
+                                  "fullWidth": "MuiTab-fullWidth-17",
+                                  "label": "MuiTab-label-20",
+                                  "labelContainer": "MuiTab-labelContainer-19 HvTab-labelContainer",
+                                  "labelIcon": "MuiTab-labelIcon-11",
+                                  "labelWrapped": "MuiTab-labelWrapped-21",
+                                  "root": "MuiTab-root-10 HvTab-root",
+                                  "selected": "MuiTab-selected-15 HvTab-selected",
+                                  "textColorInherit": "MuiTab-textColorInherit-12",
+                                  "textColorPrimary": "MuiTab-textColorPrimary-13",
+                                  "textColorSecondary": "MuiTab-textColorSecondary-14",
+                                  "wrapper": "MuiTab-wrapper-18",
                                 }
                               }
                               disableRipple={true}
@@ -20262,7 +20265,7 @@ body {
                             >
                               <WithStyles(ButtonBase)
                                 aria-selected={false}
-                                className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                 disableRipple={true}
                                 disableTouchRipple={true}
                                 disabled={false}
@@ -20273,12 +20276,12 @@ body {
                                 <ButtonBase
                                   aria-selected={false}
                                   centerRipple={false}
-                                  className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                  className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                   classes={
                                     Object {
-                                      "disabled": "MuiButtonBase-disabled-35",
-                                      "focusVisible": "MuiButtonBase-focusVisible-36",
-                                      "root": "MuiButtonBase-root-34",
+                                      "disabled": "MuiButtonBase-disabled-23",
+                                      "focusVisible": "MuiButtonBase-focusVisible-24",
+                                      "root": "MuiButtonBase-root-22",
                                     }
                                   }
                                   component="button"
@@ -20293,7 +20296,7 @@ body {
                                 >
                                   <button
                                     aria-selected={false}
-                                    className="MuiButtonBase-root-34 MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                    className="MuiButtonBase-root-22 MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}
@@ -20312,13 +20315,13 @@ body {
                                     type="button"
                                   >
                                     <span
-                                      className="MuiTab-wrapper-30"
+                                      className="MuiTab-wrapper-18"
                                     >
                                       <span
-                                        className="MuiTab-labelContainer-31 HvTab-labelContainer"
+                                        className="MuiTab-labelContainer-19 HvTab-labelContainer"
                                       >
                                         <span
-                                          className="MuiTab-label-32"
+                                          className="MuiTab-label-20"
                                         >
                                           Clickable Tab
                                         </span>
@@ -20381,18 +20384,18 @@ body {
                             <Tab
                               classes={
                                 Object {
-                                  "disabled": "MuiTab-disabled-28 HvTab-disabled",
-                                  "fullWidth": "MuiTab-fullWidth-29",
-                                  "label": "MuiTab-label-32",
-                                  "labelContainer": "MuiTab-labelContainer-31 HvTab-labelContainer",
-                                  "labelIcon": "MuiTab-labelIcon-23",
-                                  "labelWrapped": "MuiTab-labelWrapped-33",
-                                  "root": "MuiTab-root-22 HvTab-root",
-                                  "selected": "MuiTab-selected-27 HvTab-selected",
-                                  "textColorInherit": "MuiTab-textColorInherit-24",
-                                  "textColorPrimary": "MuiTab-textColorPrimary-25",
-                                  "textColorSecondary": "MuiTab-textColorSecondary-26",
-                                  "wrapper": "MuiTab-wrapper-30",
+                                  "disabled": "MuiTab-disabled-16 HvTab-disabled",
+                                  "fullWidth": "MuiTab-fullWidth-17",
+                                  "label": "MuiTab-label-20",
+                                  "labelContainer": "MuiTab-labelContainer-19 HvTab-labelContainer",
+                                  "labelIcon": "MuiTab-labelIcon-11",
+                                  "labelWrapped": "MuiTab-labelWrapped-21",
+                                  "root": "MuiTab-root-10 HvTab-root",
+                                  "selected": "MuiTab-selected-15 HvTab-selected",
+                                  "textColorInherit": "MuiTab-textColorInherit-12",
+                                  "textColorPrimary": "MuiTab-textColorPrimary-13",
+                                  "textColorSecondary": "MuiTab-textColorSecondary-14",
+                                  "wrapper": "MuiTab-wrapper-18",
                                 }
                               }
                               disableRipple={true}
@@ -20408,7 +20411,7 @@ body {
                             >
                               <WithStyles(ButtonBase)
                                 aria-selected={false}
-                                className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                 disableRipple={true}
                                 disableTouchRipple={true}
                                 disabled={false}
@@ -20419,12 +20422,12 @@ body {
                                 <ButtonBase
                                   aria-selected={false}
                                   centerRipple={false}
-                                  className="MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                  className="MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                   classes={
                                     Object {
-                                      "disabled": "MuiButtonBase-disabled-35",
-                                      "focusVisible": "MuiButtonBase-focusVisible-36",
-                                      "root": "MuiButtonBase-root-34",
+                                      "disabled": "MuiButtonBase-disabled-23",
+                                      "focusVisible": "MuiButtonBase-focusVisible-24",
+                                      "root": "MuiButtonBase-root-22",
                                     }
                                   }
                                   component="button"
@@ -20439,7 +20442,7 @@ body {
                                 >
                                   <button
                                     aria-selected={false}
-                                    className="MuiButtonBase-root-34 MuiTab-root-22 HvTab-root MuiTab-textColorInherit-24"
+                                    className="MuiButtonBase-root-22 MuiTab-root-10 HvTab-root MuiTab-textColorInherit-12"
                                     disabled={false}
                                     onBlur={[Function]}
                                     onClick={[Function]}
@@ -20458,13 +20461,13 @@ body {
                                     type="button"
                                   >
                                     <span
-                                      className="MuiTab-wrapper-30"
+                                      className="MuiTab-wrapper-18"
                                     >
                                       <span
-                                        className="MuiTab-labelContainer-31 HvTab-labelContainer"
+                                        className="MuiTab-labelContainer-19 HvTab-labelContainer"
                                       >
                                         <span
-                                          className="MuiTab-label-32"
+                                          className="MuiTab-label-20"
                                         >
                                           Clickable Tab
                                         </span>
@@ -20479,7 +20482,7 @@ body {
                       </WithStyles(HvTab)>
                     </div>
                     <WithStyles(TabIndicator)
-                      className="MuiTabs-indicator-21 HvTabs-indicator"
+                      className="MuiTabs-indicator-9 HvTabs-indicator"
                       color="secondary"
                       style={
                         Object {
@@ -20489,12 +20492,12 @@ body {
                       }
                     >
                       <TabIndicator
-                        className="MuiTabs-indicator-21 HvTabs-indicator"
+                        className="MuiTabs-indicator-9 HvTabs-indicator"
                         classes={
                           Object {
-                            "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-38",
-                            "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-39",
-                            "root": "MuiPrivateTabIndicator-root-37",
+                            "colorPrimary": "MuiPrivateTabIndicator-colorPrimary-26",
+                            "colorSecondary": "MuiPrivateTabIndicator-colorSecondary-27",
+                            "root": "MuiPrivateTabIndicator-root-25",
                           }
                         }
                         color="secondary"
@@ -20506,7 +20509,7 @@ body {
                         }
                       >
                         <span
-                          className="MuiPrivateTabIndicator-root-37 MuiPrivateTabIndicator-colorSecondary-39 MuiTabs-indicator-21 HvTabs-indicator"
+                          className="MuiPrivateTabIndicator-root-25 MuiPrivateTabIndicator-colorSecondary-27 MuiTabs-indicator-9 HvTabs-indicator"
                           style={
                             Object {
                               "left": 0,
@@ -20533,7 +20536,10 @@ body {
 exports[`Tabs withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >

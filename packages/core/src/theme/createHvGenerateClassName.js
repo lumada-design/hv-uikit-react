@@ -15,17 +15,21 @@
  */
 import { createGenerateClassName } from "@material-ui/core/styles";
 
-const generateClassName = createGenerateClassName({
-  productionPrefix: "jss-uikit",
-  disableGlobal: true
-});
+export default (generateClassName) => {
+  const nonHvGenerateClassName =
+    generateClassName != null
+      ? generateClassName
+      : createGenerateClassName({
+          productionPrefix: "jss-uikit",
+          disableGlobal: true
+        });
 
-export default (rule, styleSheet) => {
-  const { name } = styleSheet.options;
+  return (rule, styleSheet) => {
+    const { name } = styleSheet.options;
+    if (name && name.startsWith("Hv")) {
+      return `${name}-${rule.key}`;
+    }
 
-  if (name && name.startsWith("Hv")) {
-    return `${name}-${rule.key}`;
-  }
-
-  return generateClassName(rule, styleSheet);
+    return nonHvGenerateClassName(rule, styleSheet);
+  };
 };

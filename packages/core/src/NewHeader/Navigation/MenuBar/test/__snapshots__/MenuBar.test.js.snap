@@ -3,7 +3,10 @@
 exports[`MenuBar withStyles should be able to render 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >

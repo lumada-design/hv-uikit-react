@@ -958,7 +958,10 @@ exports[`Brand withStyles should render Brand component with Props 1`] = `
 exports[`Brand withStyles should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >

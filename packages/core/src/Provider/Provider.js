@@ -24,7 +24,7 @@ import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
 import createTypography from "@material-ui/core/styles/createTypography";
 import createPalette from "@material-ui/core/styles/createPalette";
 import { ConfigProvider } from "../config/context";
-import { themeBuilder, generateClassName } from "../theme";
+import { themeBuilder, createHvGenerateClassName } from "../theme";
 
 const muiDefaultPalette = createPalette({});
 const muiDefaultTypography = createTypography(muiDefaultPalette, {
@@ -66,14 +66,33 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
   return targetTheme;
 };
 
-const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
+const HvProvider = ({
+  children,
+  theme,
+  uiKitTheme,
+  changeTheme,
+  router,
+  generateClassName,
+  sheetsManager,
+  sheetsRegistry
+}) => {
   const pConfig = { router, changeTheme };
 
   const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
 
+  const compositeGenerateClassName = createHvGenerateClassName(
+    generateClassName
+  );
+
   return (
-    <JssProvider generateClassName={generateClassName}>
-      <MuiThemeProvider theme={customTheme} sheetsManager={new Map()}>
+    <JssProvider
+      generateClassName={compositeGenerateClassName}
+      {...(sheetsRegistry && { registry: sheetsRegistry })}
+    >
+      <MuiThemeProvider
+        theme={customTheme}
+        sheetsManager={sheetsManager != null ? sheetsManager : new Map()}
+      >
         <CssBaseline />
         <ConfigProvider value={pConfig}>{children}</ConfigProvider>
       </MuiThemeProvider>
@@ -83,29 +102,49 @@ const HvProvider = ({ children, theme, uiKitTheme, changeTheme, router }) => {
 
 HvProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  /** 
-   * The material theme object that can be used to override the defaults 
+  /**
+   * The material theme object that can be used to override the defaults
    */
   theme: PropTypes.instanceOf(Object),
-  /** 
+  /**
    * Which of design system default themes to use.
    */
   uiKitTheme: PropTypes.oneOf(["dawn", "wicked"]),
-  /** 
+  /**
    * Which of design system default themes to use.
    */
   changeTheme: PropTypes.func,
-  /** 
+  /**
    * Configuration object for routing, exposes push and prefetch
    */
-  router: PropTypes.instanceOf(Object)
+  router: PropTypes.instanceOf(Object),
+  /**
+   * JSS's class name generator. Defaults to the material-ui's generator
+   * configured with productionPrefix: "jss-uikit" and disableGlobal: true.
+   *
+   * Always wraps the generator to apply a custom rule for `Hv*` components.
+   */
+  generateClassName: PropTypes.func,
+  /**
+   * The sheetsManager is used to deduplicate style sheet injection in the page.
+   *
+   * On the server, you should provide a new instance for each request.
+   */
+  sheetsManager: PropTypes.instanceOf(Object),
+  /**
+   * Sheets registry to access them all at one place.
+   */
+  sheetsRegistry: PropTypes.instanceOf(Object)
 };
 
 HvProvider.defaultProps = {
   theme: null,
   router: null,
   uiKitTheme: "dawn",
-  changeTheme: () => {}
+  changeTheme: () => {},
+  generateClassName: null,
+  sheetsManager: null,
+  sheetsRegistry: null
 };
 
 export default HvProvider;
