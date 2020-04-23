@@ -3,7 +3,10 @@
 exports[`Multi Line Tooltip - No Header should render mmultiple line tooltip correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -6883,14 +6886,14 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "popper": "MuiTooltip-popper-9",
-                  "popperInteractive": "MuiTooltip-popperInteractive-10",
-                  "tooltip": "MuiTooltip-tooltip-11",
-                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                  "touch": "MuiTooltip-touch-12",
+                  "popper": "MuiTooltip-popper-1",
+                  "popperInteractive": "MuiTooltip-popperInteractive-2",
+                  "tooltip": "MuiTooltip-tooltip-3",
+                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                  "touch": "MuiTooltip-touch-4",
                 },
                 "deployed": true,
                 "linked": false,
@@ -6898,14 +6901,14 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiTooltip",
                   "classes": Object {
-                    "popper": "MuiTooltip-popper-9",
-                    "popperInteractive": "MuiTooltip-popperInteractive-10",
-                    "tooltip": "MuiTooltip-tooltip-11",
-                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                    "touch": "MuiTooltip-touch-12",
+                    "popper": "MuiTooltip-popper-1",
+                    "popperInteractive": "MuiTooltip-popperInteractive-2",
+                    "tooltip": "MuiTooltip-tooltip-3",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                    "touch": "MuiTooltip-touch-4",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -7393,15 +7396,15 @@ body {
                     data-meta="MuiTooltip"
                   >
                     
-.MuiTooltip-popper-9 {
+.MuiTooltip-popper-1 {
   z-index: 1500;
   opacity: 0.9;
   pointer-events: none;
 }
-.MuiTooltip-popperInteractive-10 {
+.MuiTooltip-popperInteractive-2 {
   pointer-events: auto;
 }
-.MuiTooltip-tooltip-11 {
+.MuiTooltip-tooltip-3 {
   color: #fff;
   padding: 4px 8px;
   font-size: 0.625rem;
@@ -7411,44 +7414,44 @@ body {
   border-radius: 0;
   background-color: #616161;
 }
-.MuiTooltip-touch-12 {
+.MuiTooltip-touch-4 {
   padding: 8px 16px;
   font-size: 0.875rem;
   line-height: 1.14286em;
 }
-.MuiTooltip-tooltipPlacementLeft-13 {
+.MuiTooltip-tooltipPlacementLeft-5 {
   margin: 0 24px ;
   transform-origin: right center;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementLeft-13 {
+  .MuiTooltip-tooltipPlacementLeft-5 {
     margin: 0 14px;
   }
 }
-.MuiTooltip-tooltipPlacementRight-14 {
+.MuiTooltip-tooltipPlacementRight-6 {
   margin: 0 24px;
   transform-origin: left center;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementRight-14 {
+  .MuiTooltip-tooltipPlacementRight-6 {
     margin: 0 14px;
   }
 }
-.MuiTooltip-tooltipPlacementTop-15 {
+.MuiTooltip-tooltipPlacementTop-7 {
   margin: 24px 0;
   transform-origin: center bottom;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementTop-15 {
+  .MuiTooltip-tooltipPlacementTop-7 {
     margin: 14px 0;
   }
 }
-.MuiTooltip-tooltipPlacementBottom-16 {
+.MuiTooltip-tooltipPlacementBottom-8 {
   margin: 24px 0;
   transform-origin: center top;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementBottom-16 {
+  .MuiTooltip-tooltipPlacementBottom-8 {
     margin: 14px 0;
   }
 }
@@ -7465,14 +7468,14 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "popper": "MuiTooltip-popper-9",
-                    "popperInteractive": "MuiTooltip-popperInteractive-10",
-                    "tooltip": "MuiTooltip-tooltip-11",
-                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                    "touch": "MuiTooltip-touch-12",
+                    "popper": "MuiTooltip-popper-1",
+                    "popperInteractive": "MuiTooltip-popperInteractive-2",
+                    "tooltip": "MuiTooltip-tooltip-3",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                    "touch": "MuiTooltip-touch-4",
                   },
                   "index": Array [
                     Object {
@@ -7508,14 +7511,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 5,
@@ -7635,14 +7638,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -7650,7 +7653,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementLeft-13": Object {
+                          ".MuiTooltip-tooltipPlacementLeft-5": Object {
                             "margin": "0 14px",
                           },
                           "tooltipPlacementLeft": Object {
@@ -7660,14 +7663,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-9",
-                            "popperInteractive": "MuiTooltip-popperInteractive-10",
-                            "tooltip": "MuiTooltip-tooltip-11",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                            "touch": "MuiTooltip-touch-12",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 5,
@@ -7804,14 +7807,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 7,
@@ -7931,14 +7934,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -7946,7 +7949,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementRight-14": Object {
+                          ".MuiTooltip-tooltipPlacementRight-6": Object {
                             "margin": "0 14px",
                           },
                           "tooltipPlacementRight": Object {
@@ -7956,14 +7959,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-9",
-                            "popperInteractive": "MuiTooltip-popperInteractive-10",
-                            "tooltip": "MuiTooltip-tooltip-11",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                            "touch": "MuiTooltip-touch-12",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 7,
@@ -8100,14 +8103,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 9,
@@ -8227,14 +8230,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -8242,7 +8245,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementTop-15": Object {
+                          ".MuiTooltip-tooltipPlacementTop-7": Object {
                             "margin": "14px 0",
                           },
                           "tooltipPlacementTop": Object {
@@ -8252,14 +8255,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-9",
-                            "popperInteractive": "MuiTooltip-popperInteractive-10",
-                            "tooltip": "MuiTooltip-tooltip-11",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                            "touch": "MuiTooltip-touch-12",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 9,
@@ -8396,14 +8399,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 11,
@@ -8523,14 +8526,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -8538,7 +8541,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementBottom-16": Object {
+                          ".MuiTooltip-tooltipPlacementBottom-8": Object {
                             "margin": "14px 0",
                           },
                           "tooltipPlacementBottom": Object {
@@ -8548,14 +8551,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-9",
-                            "popperInteractive": "MuiTooltip-popperInteractive-10",
-                            "tooltip": "MuiTooltip-tooltip-11",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                            "touch": "MuiTooltip-touch-12",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 11,
@@ -8684,15 +8687,15 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".MuiTooltip-popper-9": Object {
+                    ".MuiTooltip-popper-1": Object {
                       "opacity": "0.9",
                       "pointer-events": "none",
                       "z-index": "1500",
                     },
-                    ".MuiTooltip-popperInteractive-10": Object {
+                    ".MuiTooltip-popperInteractive-2": Object {
                       "pointer-events": "auto",
                     },
-                    ".MuiTooltip-tooltip-11": Object {
+                    ".MuiTooltip-tooltip-3": Object {
                       "background-color": "#616161",
                       "border-radius": 0,
                       "color": "#fff",
@@ -8702,23 +8705,23 @@ body {
                       "max-width": "300px",
                       "padding": "4px 8px",
                     },
-                    ".MuiTooltip-tooltipPlacementBottom-16": Object {
+                    ".MuiTooltip-tooltipPlacementBottom-8": Object {
                       "margin": "24px 0",
                       "transform-origin": "center top",
                     },
-                    ".MuiTooltip-tooltipPlacementLeft-13": Object {
+                    ".MuiTooltip-tooltipPlacementLeft-5": Object {
                       "margin": "0 24px ",
                       "transform-origin": "right center",
                     },
-                    ".MuiTooltip-tooltipPlacementRight-14": Object {
+                    ".MuiTooltip-tooltipPlacementRight-6": Object {
                       "margin": "0 24px",
                       "transform-origin": "left center",
                     },
-                    ".MuiTooltip-tooltipPlacementTop-15": Object {
+                    ".MuiTooltip-tooltipPlacementTop-7": Object {
                       "margin": "24px 0",
                       "transform-origin": "center bottom",
                     },
-                    ".MuiTooltip-touch-12": Object {
+                    ".MuiTooltip-touch-4": Object {
                       "font-size": "0.875rem",
                       "line-height": "1.14286em",
                       "padding": "8px 16px",
@@ -8729,14 +8732,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 11,
@@ -8856,14 +8859,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-9",
-                          "popperInteractive": "MuiTooltip-popperInteractive-10",
-                          "tooltip": "MuiTooltip-tooltip-11",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                          "touch": "MuiTooltip-touch-12",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -8871,7 +8874,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementBottom-16": Object {
+                          ".MuiTooltip-tooltipPlacementBottom-8": Object {
                             "margin": "14px 0",
                           },
                           "tooltipPlacementBottom": Object {
@@ -8881,14 +8884,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-9",
-                            "popperInteractive": "MuiTooltip-popperInteractive-10",
-                            "tooltip": "MuiTooltip-tooltip-11",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                            "touch": "MuiTooltip-touch-12",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 11,
@@ -9059,14 +9062,14 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "MuiTooltip",
                     "classes": Object {
-                      "popper": "MuiTooltip-popper-9",
-                      "popperInteractive": "MuiTooltip-popperInteractive-10",
-                      "tooltip": "MuiTooltip-tooltip-11",
-                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                      "touch": "MuiTooltip-touch-12",
+                      "popper": "MuiTooltip-popper-1",
+                      "popperInteractive": "MuiTooltip-popperInteractive-2",
+                      "tooltip": "MuiTooltip-tooltip-3",
+                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                      "touch": "MuiTooltip-touch-4",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -11554,14 +11557,14 @@ body {
               }
               classes={
                 Object {
-                  "popper": "MuiTooltip-popper-9 HvTooltip-popper",
-                  "popperInteractive": "MuiTooltip-popperInteractive-10",
-                  "tooltip": "MuiTooltip-tooltip-11 HvTooltip-multitooltip",
-                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-16",
-                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-13",
-                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-14",
-                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-15",
-                  "touch": "MuiTooltip-touch-12",
+                  "popper": "MuiTooltip-popper-1 HvTooltip-popper",
+                  "popperInteractive": "MuiTooltip-popperInteractive-2",
+                  "tooltip": "MuiTooltip-tooltip-3 HvTooltip-multitooltip",
+                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                  "touch": "MuiTooltip-touch-4",
                 }
               }
               disableFocusListener={false}
@@ -12525,7 +12528,7 @@ body {
                 </button>
               </RootRef>
               <Popper
-                className="MuiTooltip-popper-9 HvTooltip-popper"
+                className="MuiTooltip-popper-1 HvTooltip-popper"
                 disablePortal={false}
                 id={null}
                 open={false}
@@ -12544,7 +12547,10 @@ body {
 exports[`Multi Line Tooltip - With Header should render multiple line tooltip with header correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -19424,14 +19430,14 @@ body {
               "sheet": StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "popper": "MuiTooltip-popper-33",
-                  "popperInteractive": "MuiTooltip-popperInteractive-34",
-                  "tooltip": "MuiTooltip-tooltip-35",
-                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                  "touch": "MuiTooltip-touch-36",
+                  "popper": "MuiTooltip-popper-1",
+                  "popperInteractive": "MuiTooltip-popperInteractive-2",
+                  "tooltip": "MuiTooltip-tooltip-3",
+                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                  "touch": "MuiTooltip-touch-4",
                 },
                 "deployed": true,
                 "linked": false,
@@ -19439,14 +19445,14 @@ body {
                   "Renderer": [Function],
                   "classNamePrefix": "MuiTooltip",
                   "classes": Object {
-                    "popper": "MuiTooltip-popper-33",
-                    "popperInteractive": "MuiTooltip-popperInteractive-34",
-                    "tooltip": "MuiTooltip-tooltip-35",
-                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                    "touch": "MuiTooltip-touch-36",
+                    "popper": "MuiTooltip-popper-1",
+                    "popperInteractive": "MuiTooltip-popperInteractive-2",
+                    "tooltip": "MuiTooltip-tooltip-3",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                    "touch": "MuiTooltip-touch-4",
                   },
                   "defaultTheme": Object {
                     "breakpoints": Object {
@@ -19934,15 +19940,15 @@ body {
                     data-meta="MuiTooltip"
                   >
                     
-.MuiTooltip-popper-33 {
+.MuiTooltip-popper-1 {
   z-index: 1500;
   opacity: 0.9;
   pointer-events: none;
 }
-.MuiTooltip-popperInteractive-34 {
+.MuiTooltip-popperInteractive-2 {
   pointer-events: auto;
 }
-.MuiTooltip-tooltip-35 {
+.MuiTooltip-tooltip-3 {
   color: #fff;
   padding: 4px 8px;
   font-size: 0.625rem;
@@ -19952,44 +19958,44 @@ body {
   border-radius: 0;
   background-color: #616161;
 }
-.MuiTooltip-touch-36 {
+.MuiTooltip-touch-4 {
   padding: 8px 16px;
   font-size: 0.875rem;
   line-height: 1.14286em;
 }
-.MuiTooltip-tooltipPlacementLeft-37 {
+.MuiTooltip-tooltipPlacementLeft-5 {
   margin: 0 24px ;
   transform-origin: right center;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementLeft-37 {
+  .MuiTooltip-tooltipPlacementLeft-5 {
     margin: 0 14px;
   }
 }
-.MuiTooltip-tooltipPlacementRight-38 {
+.MuiTooltip-tooltipPlacementRight-6 {
   margin: 0 24px;
   transform-origin: left center;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementRight-38 {
+  .MuiTooltip-tooltipPlacementRight-6 {
     margin: 0 14px;
   }
 }
-.MuiTooltip-tooltipPlacementTop-39 {
+.MuiTooltip-tooltipPlacementTop-7 {
   margin: 24px 0;
   transform-origin: center bottom;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementTop-39 {
+  .MuiTooltip-tooltipPlacementTop-7 {
     margin: 14px 0;
   }
 }
-.MuiTooltip-tooltipPlacementBottom-40 {
+.MuiTooltip-tooltipPlacementBottom-8 {
   margin: 24px 0;
   transform-origin: center top;
 }
 @media (min-width:600px) {
-  .MuiTooltip-tooltipPlacementBottom-40 {
+  .MuiTooltip-tooltipPlacementBottom-8 {
     margin: 14px 0;
   }
 }
@@ -20006,14 +20012,14 @@ body {
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "popper": "MuiTooltip-popper-33",
-                    "popperInteractive": "MuiTooltip-popperInteractive-34",
-                    "tooltip": "MuiTooltip-tooltip-35",
-                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                    "touch": "MuiTooltip-touch-36",
+                    "popper": "MuiTooltip-popper-1",
+                    "popperInteractive": "MuiTooltip-popperInteractive-2",
+                    "tooltip": "MuiTooltip-tooltip-3",
+                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                    "touch": "MuiTooltip-touch-4",
                   },
                   "index": Array [
                     Object {
@@ -20049,14 +20055,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 5,
@@ -20176,14 +20182,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -20191,7 +20197,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementLeft-37": Object {
+                          ".MuiTooltip-tooltipPlacementLeft-5": Object {
                             "margin": "0 14px",
                           },
                           "tooltipPlacementLeft": Object {
@@ -20201,14 +20207,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-33",
-                            "popperInteractive": "MuiTooltip-popperInteractive-34",
-                            "tooltip": "MuiTooltip-tooltip-35",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                            "touch": "MuiTooltip-touch-36",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 5,
@@ -20345,14 +20351,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 7,
@@ -20472,14 +20478,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -20487,7 +20493,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementRight-38": Object {
+                          ".MuiTooltip-tooltipPlacementRight-6": Object {
                             "margin": "0 14px",
                           },
                           "tooltipPlacementRight": Object {
@@ -20497,14 +20503,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-33",
-                            "popperInteractive": "MuiTooltip-popperInteractive-34",
-                            "tooltip": "MuiTooltip-tooltip-35",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                            "touch": "MuiTooltip-touch-36",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 7,
@@ -20641,14 +20647,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 9,
@@ -20768,14 +20774,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -20783,7 +20789,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementTop-39": Object {
+                          ".MuiTooltip-tooltipPlacementTop-7": Object {
                             "margin": "14px 0",
                           },
                           "tooltipPlacementTop": Object {
@@ -20793,14 +20799,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-33",
-                            "popperInteractive": "MuiTooltip-popperInteractive-34",
-                            "tooltip": "MuiTooltip-tooltip-35",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                            "touch": "MuiTooltip-touch-36",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 9,
@@ -20937,14 +20943,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 11,
@@ -21064,14 +21070,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -21079,7 +21085,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementBottom-40": Object {
+                          ".MuiTooltip-tooltipPlacementBottom-8": Object {
                             "margin": "14px 0",
                           },
                           "tooltipPlacementBottom": Object {
@@ -21089,14 +21095,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-33",
-                            "popperInteractive": "MuiTooltip-popperInteractive-34",
-                            "tooltip": "MuiTooltip-tooltip-35",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                            "touch": "MuiTooltip-touch-36",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 11,
@@ -21225,15 +21231,15 @@ body {
                     },
                   ],
                   "map": Object {
-                    ".MuiTooltip-popper-33": Object {
+                    ".MuiTooltip-popper-1": Object {
                       "opacity": "0.9",
                       "pointer-events": "none",
                       "z-index": "1500",
                     },
-                    ".MuiTooltip-popperInteractive-34": Object {
+                    ".MuiTooltip-popperInteractive-2": Object {
                       "pointer-events": "auto",
                     },
-                    ".MuiTooltip-tooltip-35": Object {
+                    ".MuiTooltip-tooltip-3": Object {
                       "background-color": "#616161",
                       "border-radius": 0,
                       "color": "#fff",
@@ -21243,23 +21249,23 @@ body {
                       "max-width": "300px",
                       "padding": "4px 8px",
                     },
-                    ".MuiTooltip-tooltipPlacementBottom-40": Object {
+                    ".MuiTooltip-tooltipPlacementBottom-8": Object {
                       "margin": "24px 0",
                       "transform-origin": "center top",
                     },
-                    ".MuiTooltip-tooltipPlacementLeft-37": Object {
+                    ".MuiTooltip-tooltipPlacementLeft-5": Object {
                       "margin": "0 24px ",
                       "transform-origin": "right center",
                     },
-                    ".MuiTooltip-tooltipPlacementRight-38": Object {
+                    ".MuiTooltip-tooltipPlacementRight-6": Object {
                       "margin": "0 24px",
                       "transform-origin": "left center",
                     },
-                    ".MuiTooltip-tooltipPlacementTop-39": Object {
+                    ".MuiTooltip-tooltipPlacementTop-7": Object {
                       "margin": "24px 0",
                       "transform-origin": "center bottom",
                     },
-                    ".MuiTooltip-touch-36": Object {
+                    ".MuiTooltip-touch-4": Object {
                       "font-size": "0.875rem",
                       "line-height": "1.14286em",
                       "padding": "8px 16px",
@@ -21270,14 +21276,14 @@ body {
                       "options": Object {
                         "Renderer": [Function],
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "generateClassName": [Function],
                         "index": 11,
@@ -21397,14 +21403,14 @@ body {
                       },
                       "rules": RuleList {
                         "classes": Object {
-                          "popper": "MuiTooltip-popper-33",
-                          "popperInteractive": "MuiTooltip-popperInteractive-34",
-                          "tooltip": "MuiTooltip-tooltip-35",
-                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                          "touch": "MuiTooltip-touch-36",
+                          "popper": "MuiTooltip-popper-1",
+                          "popperInteractive": "MuiTooltip-popperInteractive-2",
+                          "tooltip": "MuiTooltip-tooltip-3",
+                          "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                          "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                          "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                          "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                          "touch": "MuiTooltip-touch-4",
                         },
                         "index": Array [
                           Object {
@@ -21412,7 +21418,7 @@ body {
                           },
                         ],
                         "map": Object {
-                          ".MuiTooltip-tooltipPlacementBottom-40": Object {
+                          ".MuiTooltip-tooltipPlacementBottom-8": Object {
                             "margin": "14px 0",
                           },
                           "tooltipPlacementBottom": Object {
@@ -21422,14 +21428,14 @@ body {
                         "options": Object {
                           "Renderer": [Function],
                           "classes": Object {
-                            "popper": "MuiTooltip-popper-33",
-                            "popperInteractive": "MuiTooltip-popperInteractive-34",
-                            "tooltip": "MuiTooltip-tooltip-35",
-                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                            "touch": "MuiTooltip-touch-36",
+                            "popper": "MuiTooltip-popper-1",
+                            "popperInteractive": "MuiTooltip-popperInteractive-2",
+                            "tooltip": "MuiTooltip-tooltip-3",
+                            "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                            "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                            "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                            "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                            "touch": "MuiTooltip-touch-4",
                           },
                           "generateClassName": [Function],
                           "index": 11,
@@ -21600,14 +21606,14 @@ body {
                     "Renderer": [Function],
                     "classNamePrefix": "MuiTooltip",
                     "classes": Object {
-                      "popper": "MuiTooltip-popper-33",
-                      "popperInteractive": "MuiTooltip-popperInteractive-34",
-                      "tooltip": "MuiTooltip-tooltip-35",
-                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                      "touch": "MuiTooltip-touch-36",
+                      "popper": "MuiTooltip-popper-1",
+                      "popperInteractive": "MuiTooltip-popperInteractive-2",
+                      "tooltip": "MuiTooltip-tooltip-3",
+                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                      "touch": "MuiTooltip-touch-4",
                     },
                     "defaultTheme": Object {
                       "breakpoints": Object {
@@ -24095,14 +24101,14 @@ body {
               }
               classes={
                 Object {
-                  "popper": "MuiTooltip-popper-33 HvTooltip-popper",
-                  "popperInteractive": "MuiTooltip-popperInteractive-34",
-                  "tooltip": "MuiTooltip-tooltip-35 HvTooltip-multitooltip",
-                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-40",
-                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-37",
-                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-38",
-                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-39",
-                  "touch": "MuiTooltip-touch-36",
+                  "popper": "MuiTooltip-popper-1 HvTooltip-popper",
+                  "popperInteractive": "MuiTooltip-popperInteractive-2",
+                  "tooltip": "MuiTooltip-tooltip-3 HvTooltip-multitooltip",
+                  "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom-8",
+                  "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft-5",
+                  "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight-6",
+                  "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop-7",
+                  "touch": "MuiTooltip-touch-4",
                 }
               }
               disableFocusListener={false}
@@ -25066,7 +25072,7 @@ body {
                 </button>
               </RootRef>
               <Popper
-                className="MuiTooltip-popper-33 HvTooltip-popper"
+                className="MuiTooltip-popper-1 HvTooltip-popper"
                 disablePortal={false}
                 id={null}
                 open={false}

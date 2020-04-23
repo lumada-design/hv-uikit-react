@@ -3,7 +3,10 @@
 exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -11505,7 +11508,10 @@ body {
 exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -23005,7 +23011,10 @@ body {
 exports[`<DatePicker /> with custom properties should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >
@@ -39305,7 +39314,10 @@ body {
 exports[`<DatePicker /> with minimum configuration should render correctly 1`] = `
 <HvProvider
   changeTheme={[Function]}
+  generateClassName={null}
   router={null}
+  sheetsManager={null}
+  sheetsRegistry={null}
   theme={null}
   uiKitTheme="dawn"
 >

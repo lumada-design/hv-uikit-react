@@ -23,10 +23,10 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
     }
     classes={
       Object {
-        "container": "Action-container-41",
-        "iconInfo": "Action-iconInfo-43",
-        "iconUrl": "Action-iconUrl-44",
-        "selected": "Action-selected-42",
+        "container": "Action-container-1",
+        "iconInfo": "Action-iconInfo-3",
+        "iconUrl": "Action-iconUrl-4",
+        "selected": "Action-selected-2",
       }
     }
     target="_top"
@@ -961,14 +961,14 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
     }
   >
     <WithStyles(Component)
-      className="Action-container-41"
+      className="Action-container-1"
       component="div"
       role="button"
       tabIndex={0}
       variant="normalText"
     >
       <ForwardRef
-        className="Action-container-41"
+        className="Action-container-1"
         classes={
           Object {
             "3xlTitle": "HvTypography-3xlTitle",
@@ -1934,7 +1934,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         variant="normalText"
       >
         <div
-          className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-41"
+          className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-1"
           role="button"
           tabIndex={0}
           theme={
@@ -7723,10 +7723,10 @@ exports[`<Action /> without description should render correctly 1`] = `
     }
     classes={
       Object {
-        "container": "Action-container-21",
-        "iconInfo": "Action-iconInfo-23",
-        "iconUrl": "Action-iconUrl-24",
-        "selected": "Action-selected-22",
+        "container": "Action-container-1",
+        "iconInfo": "Action-iconInfo-3",
+        "iconUrl": "Action-iconUrl-4",
+        "selected": "Action-selected-2",
       }
     }
     target="_top"
@@ -8661,14 +8661,14 @@ exports[`<Action /> without description should render correctly 1`] = `
     }
   >
     <WithStyles(Component)
-      className="Action-container-21"
+      className="Action-container-1"
       component="div"
       role="button"
       tabIndex={0}
       variant="normalText"
     >
       <ForwardRef
-        className="Action-container-21"
+        className="Action-container-1"
         classes={
           Object {
             "3xlTitle": "HvTypography-3xlTitle",
@@ -9634,7 +9634,7 @@ exports[`<Action /> without description should render correctly 1`] = `
         variant="normalText"
       >
         <div
-          className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-21"
+          className="HvTypography-normalText HvTypography-baseFontFamily HvTypography-margin Action-container-1"
           role="button"
           tabIndex={0}
           theme={
@@ -10568,7 +10568,7 @@ exports[`<Action /> without description should render correctly 1`] = `
           }
         >
           <img
-            className="Action-iconUrl-24"
+            className="Action-iconUrl-4"
             onError={[Function]}
             src="http://mockapp1/icon"
           />
