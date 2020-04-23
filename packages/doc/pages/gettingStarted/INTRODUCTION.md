@@ -13,10 +13,6 @@ Hitachi Design System initiative produces reusable patterns and captures common 
 
 It stands as a catalyzer for design alignment and governance across the  organization, generating a unique and characteristic design language, capable of positioning Hitachi as a worldwide design reference.
 
-## Next Major Release (Early Second Quarter 2020)
-We are actively planning and starting to work on the next major release. This development will happen in the branch called `next` and we will provide builds as soon as possible. 
-For more information about the schedule please check the Release Schedule section under Discover More. 
-
 #### These are features planned for the next release:
 - upgrade our main dependency Material UI to its latest version 4.x.
 - api cleanup, removing deprecated properties of our components.

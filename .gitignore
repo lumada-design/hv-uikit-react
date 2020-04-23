@@ -12,8 +12,7 @@ output.xml
 selenium-screenshot-*.png
 
 # Dependency directories
-node_modules
-**/*/node_modules
+node_modules/
 
 # cache
 .cache
@@ -41,8 +40,8 @@ eslint.xml
 **/*/coverage
 
 # build folder
-**/*/dist
-**/*/bin
+dist/
+bin/
 
 .prettierrc*
 
@@ -51,5 +50,6 @@ eslint.xml
 *.iml
 .history
 .vscode
+*.pyc
 
 report.*
