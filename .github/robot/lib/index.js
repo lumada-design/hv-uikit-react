@@ -1545,7 +1545,7 @@ async function main() {
   let command = "robot";
   if(processes !== "") {
     command = "pabot";
-    if(browser === "ie" && processes.parseInt() > 2) {
+    if(browser === "ie" && parseInt(processes) > 2) {
       firstCommandArgs.unshift("--processes", "2");
     } else {
       firstCommandArgs.unshift("--processes", processes);
