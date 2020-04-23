@@ -4,7 +4,7 @@ import { StandardProps } from "@material-ui/core";
 interface NavigationItemProp {
   id: string;
   label: string;
-  path: string;
+  path?: string;
 }
 
 export interface HvHeaderNavigationProps
