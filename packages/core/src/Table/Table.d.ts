@@ -161,7 +161,7 @@ export interface HvTableProps
   /**
    * Callback which receives the checked state of all items in the list
    */
-  onSelection?: (event: React.FormEvent<HTMLDivElement>, selection: string[]) => void;
+  onSelection?: (event: React.FormEvent<HTMLDivElement>, selection: any[]) => void;
 
   /**
    * Ids of preselected items in the list
@@ -245,4 +245,4 @@ export type HvTableClassKey =
   | "expand"
   | "separatorContainer";
 
-export default function HvBadge(props: HvTableProps): JSX.Element | null;
+export default function HvTable(props: HvTableProps): JSX.Element | null;
