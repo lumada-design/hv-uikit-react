@@ -563,7 +563,7 @@ class Table extends React.Component {
               dataList={secondaryActions}
               onClick={(item, event) => {
                 event.stopPropagation();
-                item.action(props.original);
+                if (item && item.action) item.action(props.original);
               }}
               aria-label={`${this.computeRowElementId(props)}-secondaryActions`}
             />
