@@ -86,7 +86,7 @@ const muiTheme = uiKitTheme => {
 };
 
 const defaultTheme = muiTheme();
-export { default as generateClassName } from "./generateClassName";
+export { default as createHvGenerateClassName } from "./createHvGenerateClassName";
 
 export { muiTheme as themeBuilder };
 export default defaultTheme;
