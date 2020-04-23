@@ -74,7 +74,7 @@ const ListViewCell = ({
 
 ListViewCell.propTypes = {
   /**
-   * Alignment of the cell correspond to the htlm attribute.
+   * Alignment of the cell correspond to the html attribute.
    */
   align: PropTypes.string,
   /**

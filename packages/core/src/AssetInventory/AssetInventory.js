@@ -44,6 +44,7 @@ class AssetInventory extends React.Component {
       searchString,
       sortOptionId
     } = this.props;
+
     const innerPageSize = pageSize || pageSizeOptions[0];
     const viewValues = this.getPaginationData(values, innerPageSize, page);
     const selectedViewId =
@@ -408,10 +409,10 @@ class AssetInventory extends React.Component {
     React.Children.forEach(children, child => {
       const other = multibuttonProps.find(elem => elem.id === child.props.id);
       views.push({
-        id: child.props.id,
         icon: child.props.icon,
         selected: child.props.id === selectedView,
-        ...other
+        ...other,
+        id: `${child.props.id}-button`
       });
     });
 

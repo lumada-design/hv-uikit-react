@@ -13,35 +13,46 @@ import styles from "./styles";
 const getValue = checkboxProps =>
   checkboxProps && checkboxProps.value ? checkboxProps.value : false;
 
-const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
+const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => (
+  <Cell
+    className={classes.selectCell}
+    semantic={semantic}
+    id={`checkbox-cell-${id}`}
+    key={`checkbox${id}`}
+  >
+    <HvCheckbox
+      className={classes.checkboxPlacement}
+      onChange={onCheckboxSelected}
+      checked={checked}
+      id={`checkbox-${id}`}
+      {...checkboxProps}
+    />
+  </Cell>
+);
+
+/**
+ * Sets individual ids for each action, using the action id and the data id.
+ *
+ * @param actions
+ * @param id
+ * @returns {*}
+ */
+const setActionsId = (actions, id) => {
+  return actions?.map(action => ({ ...action, id: `${action.id}-${id}` }));
+};
+
+const actionsCell = (classes, id, viewConfiguration) => {
   return (
-    <Cell
-      className={classes.selectCell}
-      semantic={semantic}
-      id={`checkbox-cell-${id}`}
-      key={`checkbox${id}`}
-    >
-      <HvCheckbox
-        className={classes.checkboxPlacement}
-        onChange={onCheckboxSelected}
-        checked={checked}
-        id={`checkbox-${id}`}
-        {...checkboxProps}
+    <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
+      <Actions
+        id={id}
+        actions={setActionsId(viewConfiguration.actions, id)}
+        actionsCallback={viewConfiguration.actionsCallback}
+        maxVisibleActions={viewConfiguration.maxVisibleActions}
       />
     </Cell>
   );
 };
-
-const actionsCell = (classes, id, viewConfiguration) => (
-  <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
-    <Actions
-      id={`action${id}`}
-      actions={viewConfiguration.actions}
-      actionsCallback={viewConfiguration.actionsCallback}
-      maxVisibleActions={viewConfiguration.maxVisibleActions}
-    />
-  </Cell>
-);
 
 const row = (
   viewConfiguration,

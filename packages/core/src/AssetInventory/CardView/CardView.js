@@ -6,15 +6,32 @@ import Card from "../../Card";
 import Grid from "../../Grid";
 import styles from "./styles";
 
+/**
+ * Sets individual ids for each action, using the action id and the data id.
+ *
+ * @param actions
+ * @param id
+ * @returns {*}
+ */
+const setActionsId = (actions, id) => {
+  return actions?.map(action => ({ ...action, id: `${action.id}-${id}` }));
+};
+
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
-    return data => render(data, viewConfiguration, metadata, cardProps);
+    return data =>
+      render(
+        data,
+        { ...viewConfiguration, actions: setActionsId(viewConfiguration.actions, data.id) },
+        metadata,
+        cardProps
+      );
   }
   return data => (
     <Card
       {...data}
       onChange={viewConfiguration.onSelection}
-      actions={viewConfiguration.actions}
+      actions={setActionsId(viewConfiguration.actions, data.id)}
       isSelectable={viewConfiguration.isSelectable}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}

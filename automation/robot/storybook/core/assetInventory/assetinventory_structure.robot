@@ -58,7 +58,7 @@ Filter and then sort
 Change from cardView to listView
     Element Should not Be Visible    css:table[id=listView]>tbody>tr
     Page Should Contain Element      ${cardsSelector}                   limit=4
-    Click Button                     listView
+    Click Button                     listView-button
     Wait Until Element Is Visible    css:table[id=listView]             5s
     Page Should Contain Element      css:table[id=listView]>tbody>tr    limit=4
 
