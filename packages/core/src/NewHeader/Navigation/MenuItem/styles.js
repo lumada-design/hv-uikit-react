@@ -13,39 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import "focus-within-polyfill";
 
-const styles = theme => ({
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("focus-within-polyfill");
+}
+
+const styles = (theme) => ({
   root: {
     display: "inline",
     "&:hover": {
       "& > [role='button']": {
-        backgroundColor: theme.hv.palette.atmosphere.atmo4
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
       },
       "&:focus-within": {
         "& > [role='button']": {
-          backgroundColor: theme.hv.palette.atmosphere.atmo4
-        }
-      }
+          backgroundColor: theme.hv.palette.atmosphere.atmo4,
+        },
+      },
     },
     // IE fallback code (using focus-within-polyfill)
     "&.focus-within": {
       "& > [role='button']": {
-        backgroundColor: theme.hv.palette.atmosphere.atmo4
-      }
-    }
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      },
+    },
   },
   menubarItem: {
     borderTop: `2px solid transparent`,
-    borderBottom: `2px solid transparent`
+    borderBottom: `2px solid transparent`,
   },
   selectedItem: {
-    borderTop: `2px solid ${theme.hv.palette.accent.acce3}`
+    borderTop: `2px solid ${theme.hv.palette.accent.acce3}`,
   },
   menuItem: {
     border: "none",
     display: "inline-flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   button: {
     border: "none",
@@ -53,9 +57,9 @@ const styles = theme => ({
     cursor: "pointer",
     padding: `6px ${theme.hv.spacing.sm}px`,
     "&:active": {
-      outline: "none"
-    }
-  }
+      outline: "none",
+    },
+  },
 });
 
 export default styles;

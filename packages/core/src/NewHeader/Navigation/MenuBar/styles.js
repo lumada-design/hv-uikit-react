@@ -15,7 +15,11 @@
  */
 
 import { boxShadow } from "../../styles";
-import "focus-within-polyfill";
+
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("focus-within-polyfill");
+}
 
 const styles = theme => {
   const show = {
