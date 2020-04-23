@@ -8,7 +8,7 @@ export default {
   title: "Foundation/Container",
   parameters: {
     componentSubtitle: null,
-    usage: "import {HvContainer} from '@hv/uikit-react-core/dist/'"
+    usage: "import {HvContainer} from '@hv/uikit-react-core/dist'"
   },
   component: HvContainer
 };

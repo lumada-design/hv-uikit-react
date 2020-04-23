@@ -1,7 +1,7 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
-import HvList from "..";
+import { HvList, HvTypography } from "../..";
 
 const styles = theme => ({
   wrapper: {
@@ -30,6 +30,7 @@ export default {
 export const Main = () => (
   <HvList
     id="list"
+    condensed
     selectable={false}
     aria-label="Simple Non Selectable List Title"
     values={[
@@ -42,35 +43,33 @@ export const Main = () => (
   />
 );
 
-export const Condensed = () => (
-  <HvList
-    id="list"
-    selectable={false}
-    condensed
-    aria-label="Simple Condensed List Title"
-    values={[
-      { label: "Share", disabled: true },
-      { label: "Edit" },
-      { label: "Remove", path: "https://www.hitachivantara.com" },
-      { label: "Delete" },
-      { label: "Update", path: "https://www.hitachivantara.com" }
-    ]}
-  />
+export const WithTitle = () => (
+  <>
+    <HvTypography variant="labelText" style={{ margin: "0 10px 10px" }}>
+      Options
+    </HvTypography>
+    <HvList
+      id="list"
+      condensed
+      selectable={false}
+      aria-label="Simple List With Title"
+      values={[
+        { label: "Share", disabled: true },
+        { label: "Edit" },
+        { label: "Remove", path: "https://www.hitachivantara.com" },
+        { label: "Delete" },
+        { label: "Update", path: "https://www.hitachivantara.com" }
+      ]}
+    />
+  </>
 );
-
-Condensed.story = {
-  parameters: {
-    docs: {
-      storyDescription: "List using the condensed property to reduce space between items."
-    }
-  }
-};
 
 export const WithNavigationIcons = () => (
   <HvList
     id="list-nav-icon"
     selectable={false}
-    aria-label="Simple Condensed List Title"
+    condensed
+    aria-label="Simple List With Navigation Icons"
     values={[
       { label: "Today", showNavIcon: true },
       { label: "Yesterday" },
@@ -86,6 +85,7 @@ export const SingleSelection = () => (
     id="list"
     selectDefault
     hasTooltips
+    condensed
     aria-label="Single Selection List Title"
     values={[
       { label: "Share" },
@@ -114,6 +114,7 @@ export const SingleSelectionWithIcon = () => {
   return (
     <HvList
       id="list"
+      style={{ marginLeft: -10 }}
       selectDefault
       aria-label="Single Selection List with Left Icons Title"
       values={data}
@@ -126,6 +127,7 @@ export const SingleSelectionWithSelectors = () => (
     id="list"
     selectDefault
     useSelector
+    condensed
     aria-label="Single Selection List with radio"
     values={[
       { label: "98001, Store Manager" },
@@ -150,6 +152,7 @@ export const MultiSelectionWithSelectors = () => (
     id="list"
     multiSelect
     useSelector
+    condensed
     aria-label="Multi Selection List with Selectors Title"
     values={[
       { id: "1", label: "Arhauss is somewhere" },
@@ -175,6 +178,7 @@ export const MultiSelectionWithSelectAll = () => (
     multiSelect
     showSelectAll
     useSelector
+    condensed
     aria-label="Multi Selection List with Selectors and Select All Title"
     values={[
       { label: "Arhauss is somewhere", selected: false },

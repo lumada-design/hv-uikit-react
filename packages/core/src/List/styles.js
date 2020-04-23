@@ -51,11 +51,7 @@ const styles = theme => ({
     width: "100%"
   },
   selected: selected(theme),
-  selectAll: {
-    "& > span": {
-      ...theme.hv.typography.highlightText
-    }
-  },
+  selectAll: {},
   disabled: {
     cursor: "not-allowed",
     "& *": {
