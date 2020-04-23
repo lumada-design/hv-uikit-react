@@ -28,46 +28,59 @@ async function main() {
     "--outputdir", outputDir,
     "--output", "firstRun.xml",
     "--report", "NONE",
-    "--log", "TRACE",
+    "--log", "NONE",
     testsPath,
   ];
 
   const secondCommandArgs = [
     "--rerunfailed", path.join(outputDir, "firstRun.xml"),
+    "--variable", `STORYBOOK_URL:${storybookURL}`,
+    "--variable", `BROWSER:${browser}`,
     "--outputdir", outputDir,
     "--output", "secondRun.xml",
     "--report", "NONE",
-    "--log", "TRACE",
+    "--log", "NONE",
+    "--loglevel", "TRACE",
     testsPath
   ];
   
-  const rebotCommandArgs = [
+  const rebotFirstCommandArgs = [
     "--outputdir", outputDir,
     "--output", "output.xml",
     path.join(outputDir, "firstRun.xml")
-  ]
+  ];
+
+  const rebotSecondCommandArgs = [
+    "--outputdir", outputDir,
+    "--output", "output.xml",
+    "--merge",
+    path.join(outputDir, "firstRun.xml"),
+    path.join(outputDir, "secondRun.xml")
+  ];
 
   let command = "robot";
   if(processes !== "") {
     command = "pabot";
-    firstCommandArgs.unshift("--processes", processes)
-    secondCommandArgs.unshift("--processes", processes);
+    if(browser === "ie" && processes.parseInt() > 2) {
+      firstCommandArgs.unshift("--processes", "2");
+    } else {
+      firstCommandArgs.unshift("--processes", processes);
+    }
   }
 
   exec
     .exec(command, firstCommandArgs)
     .then(() => {
       core.info("Compiling output");
-      exec.exec("rebot", rebotCommandArgs);
+      exec.exec("rebot", rebotFirstCommandArgs);
     })
     .catch(error => {
       core.warning("First execution failed, retrying");
-      rebotCommandArgs.push(path.join(outputDir, "secondRun.xml"));
 
       exec
         .exec(command, secondCommandArgs)
         .then(() => {
-          exec.exec("rebot", rebotCommandArgs);
+          exec.exec("rebot", rebotSecondCommandArgs);
         })
         .catch(error => {
           core.warning("Second execution failed.");
