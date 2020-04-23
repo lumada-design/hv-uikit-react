@@ -29,7 +29,7 @@ const cell = (
       ? columnConfiguration[columnIndex].align
       : undefined;
   return (
-    <td
+    <div
       className={clsx(className, classes.root, {
         [classes.semanticBar]: semantic,
         [classes[semantic]]: semantic
@@ -39,7 +39,7 @@ const cell = (
       {...others}
     >
       {children}
-    </td>
+    </div>
   );
 };
 
@@ -97,7 +97,11 @@ ListViewCell.propTypes = {
     /**
      * Styles applied to the assetinventorylistview root class.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Styles applied to the semanticBar.
+     */
+    semanticBar: PropTypes.string
   }).isRequired,
   /**
    *  The border color of the cell. Must be one of palette semantic colors.

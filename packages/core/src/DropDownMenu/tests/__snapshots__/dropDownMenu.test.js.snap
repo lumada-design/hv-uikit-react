@@ -1168,9 +1168,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       "tabIndex": 0,
                                     }
                                   }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
                                   isDropdown={true}
                                   key="0"
                                   rootRef={
@@ -1225,8 +1222,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   }
                                   selected={false}
                                   strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
                                 >
                                   <Focus
                                     classes={
@@ -1245,9 +1240,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         "tabIndex": 0,
                                       }
                                     }
-                                    disabled={false}
-                                    focusDisabled={true}
-                                    focusOnClick={false}
                                     isDropdown={true}
                                     rootRef={
                                       Object {
@@ -1301,8 +1293,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     }
                                     selected={false}
                                     strategy="menu"
-                                    useArrows={true}
-                                    useFalseFocus={false}
                                   >
                                     <ConditionalWrapper
                                       condition={false}
@@ -1374,9 +1364,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       "tabIndex": -1,
                                     }
                                   }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
                                   isDropdown={true}
                                   key="1"
                                   rootRef={
@@ -1431,8 +1418,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   }
                                   selected={false}
                                   strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
                                 >
                                   <Focus
                                     classes={
@@ -1451,9 +1436,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         "tabIndex": -1,
                                       }
                                     }
-                                    disabled={false}
-                                    focusDisabled={true}
-                                    focusOnClick={false}
                                     isDropdown={true}
                                     rootRef={
                                       Object {
@@ -1507,8 +1489,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     }
                                     selected={false}
                                     strategy="menu"
-                                    useArrows={true}
-                                    useFalseFocus={false}
                                   >
                                     <ConditionalWrapper
                                       condition={false}
@@ -1580,9 +1560,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                       "tabIndex": -1,
                                     }
                                   }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
                                   isDropdown={true}
                                   key="2"
                                   rootRef={
@@ -1637,8 +1614,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   }
                                   selected={false}
                                   strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
                                 >
                                   <Focus
                                     classes={
@@ -1657,9 +1632,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                         "tabIndex": -1,
                                       }
                                     }
-                                    disabled={false}
-                                    focusDisabled={true}
-                                    focusOnClick={false}
                                     isDropdown={true}
                                     rootRef={
                                       Object {
@@ -1713,8 +1685,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     }
                                     selected={false}
                                     strategy="menu"
-                                    useArrows={true}
-                                    useFalseFocus={false}
                                   >
                                     <ConditionalWrapper
                                       condition={false}
@@ -2792,9 +2762,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       "tabIndex": 0,
                                     }
                                   }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
                                   isDropdown={true}
                                   key="0"
                                   rootRef={
@@ -2849,8 +2816,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   }
                                   selected={false}
                                   strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
                                 >
                                   <Focus
                                     classes={
@@ -2869,9 +2834,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         "tabIndex": 0,
                                       }
                                     }
-                                    disabled={false}
-                                    focusDisabled={true}
-                                    focusOnClick={false}
                                     isDropdown={true}
                                     rootRef={
                                       Object {
@@ -2925,8 +2887,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     }
                                     selected={false}
                                     strategy="menu"
-                                    useArrows={true}
-                                    useFalseFocus={false}
                                   >
                                     <ConditionalWrapper
                                       condition={false}
@@ -2998,9 +2958,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       "tabIndex": -1,
                                     }
                                   }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
                                   isDropdown={true}
                                   key="1"
                                   rootRef={
@@ -3055,8 +3012,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   }
                                   selected={false}
                                   strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
                                 >
                                   <Focus
                                     classes={
@@ -3075,9 +3030,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         "tabIndex": -1,
                                       }
                                     }
-                                    disabled={false}
-                                    focusDisabled={true}
-                                    focusOnClick={false}
                                     isDropdown={true}
                                     rootRef={
                                       Object {
@@ -3131,8 +3083,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     }
                                     selected={false}
                                     strategy="menu"
-                                    useArrows={true}
-                                    useFalseFocus={false}
                                   >
                                     <ConditionalWrapper
                                       condition={false}
@@ -3204,9 +3154,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                       "tabIndex": -1,
                                     }
                                   }
-                                  disabled={false}
-                                  focusDisabled={true}
-                                  focusOnClick={false}
                                   isDropdown={true}
                                   key="2"
                                   rootRef={
@@ -3261,8 +3208,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   }
                                   selected={false}
                                   strategy="menu"
-                                  useArrows={true}
-                                  useFalseFocus={false}
                                 >
                                   <Focus
                                     classes={
@@ -3281,9 +3226,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                         "tabIndex": -1,
                                       }
                                     }
-                                    disabled={false}
-                                    focusDisabled={true}
-                                    focusOnClick={false}
                                     isDropdown={true}
                                     rootRef={
                                       Object {
@@ -3337,8 +3279,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     }
                                     selected={false}
                                     strategy="menu"
-                                    useArrows={true}
-                                    useFalseFocus={false}
                                   >
                                     <ConditionalWrapper
                                       condition={false}

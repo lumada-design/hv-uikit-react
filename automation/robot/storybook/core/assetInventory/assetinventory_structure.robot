@@ -56,11 +56,11 @@ Filter and then sort
     Element Text Should Be           ${firstCardHeader}    2 Risk of downtime 3
 
 Change from cardView to listView
-    Element Should not Be Visible    css:table[id=listView]>tbody>tr
-    Page Should Contain Element      ${cardsSelector}                   limit=4
+    Element Should not Be Visible    css:div[id=listView]
+    Page Should Contain Element      ${cardsSelector}              limit=4
     Click Button                     listView-button
-    Wait Until Element Is Visible    css:table[id=listView]             5s
-    Page Should Contain Element      css:table[id=listView]>tbody>tr    limit=4
+    Wait Until Element Is Visible    css:div[id=listView]          5s
+    Page Should Contain Element      css:div[id=listView]>ul>li    limit=4
 
 Using pagination to navigate through 3 pages
     Page Should Contain Element      ${cardsSelector}      limit=4
@@ -149,14 +149,13 @@ Maintain selection between pages
     Checkbox Should Be Selected        ${firstCheckbox}
 
 Maintain selection between views
-
     Select Checkbox                    ${firstCheckbox}
-    Click Button                       listView
-    Wait Until Element Is Visible      css:table[id=listView]
+    Click Button                       listView-button
+    Wait Until Element Is Visible      css:div[id=listView]
     Checkbox Should Be Selected        ${firstCheckbox}
     Checkbox Should Not Be Selected    ${secondCheckbox}
     Select Checkbox                    ${secondCheckbox}
-    Click Button                       cardView
+    Click Button                       cardView-button
     Wait Until Element Is Visible      ${cardView}          2s
     Checkbox Should Be Selected        ${firstCheckbox}
     Checkbox Should Be Selected        ${secondCheckbox}

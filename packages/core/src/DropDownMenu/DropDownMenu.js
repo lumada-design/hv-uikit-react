@@ -91,6 +91,7 @@ const DropDownMenu = ({
     ) {
       handleToggle(event, null);
       event.preventDefault();
+      event.stopPropagation();
     }
   };
 
