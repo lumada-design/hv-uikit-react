@@ -78,13 +78,13 @@ async function main() {
       core.warning("First execution failed, retrying");
 
       exec
-        .exec(command, secondCommandArgs)
+        .exec("robot", secondCommandArgs)
         .then(() => {
           exec.exec("rebot", rebotSecondCommandArgs);
         })
         .catch(error => {
-          core.warning("Second execution failed.");
-          core.setFailed(error.message);
+          exec.exec("rebot", rebotSecondCommandArgs);
+          core.setFailed("Second execution failed");
         });
     });
 }
