@@ -76,6 +76,8 @@ class Table extends React.Component {
 
     this.state = {
       internalId: id || uniqueId("hv-table-"),
+      // what is the currently displayed page
+      currentPage: 0,
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
@@ -156,7 +158,7 @@ class Table extends React.Component {
    * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
    */
   getPaginationProps = () => {
-    const { internalId } = this.state;
+    const { internalId, currentPage } = this.state;
 
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
@@ -167,19 +169,23 @@ class Table extends React.Component {
       pages
     } = this.props;
 
+    const PaginationComponent = (paginationProps) => (
+      <Pagination {...paginationProps} page={currentPage} />
+    );
+
     return {
       id: `${internalId}-pagination`,
       showPagination: data.length > 0 && showPagination,
-      ...(showPagination && { PaginationComponent: Pagination }),
+      ...(showPagination && { PaginationComponent }),
       ...(showPagination && {
         onPageSizeChange: (newPageSize, page) => {
-          this.setState({ expanded: {} });
+          this.setState({ expanded: {}, currentPage: page });
           if (onPageSizeChange) onPageSizeChange(newPageSize, page);
         }
       }),
       ...(showPagination && {
         onPageChange: page => {
-          this.setState({ expanded: {} });
+          this.setState({ expanded: {}, currentPage: page });
           if (onPageChange) onPageChange(page);
         }
       }),
@@ -212,7 +218,7 @@ class Table extends React.Component {
    * @param sortedColumn - the column representation from the user.
    */
   onSortChange = sortedColumn => {
-    this.setState({ sorted: sortedColumn, expanded: {} });
+    this.setState({ sorted: sortedColumn, currentPage: 0, expanded: {} });
   };
 
   /**
