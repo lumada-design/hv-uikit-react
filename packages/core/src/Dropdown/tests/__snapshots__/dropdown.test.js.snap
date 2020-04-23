@@ -470,7 +470,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-1-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -607,7 +607,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-2-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -744,7 +744,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-3-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -881,7 +881,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-4-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -1018,7 +1018,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-5-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -1155,7 +1155,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-6-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -3531,6 +3531,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -4425,6 +4426,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -5319,6 +5321,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -6834,7 +6837,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-1-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -6971,7 +6974,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-2-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7108,7 +7111,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-3-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7245,7 +7248,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-4-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7382,7 +7385,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-5-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7519,7 +7522,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-6-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -7849,6 +7852,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -8055,6 +8059,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -8261,6 +8266,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -8886,7 +8892,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                       >
                                         <li
                                           aria-selected="true"
-                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                           id="hv-dropdown-1-values-list-item-0"
                                           role="option"
                                           tabindex="0"
@@ -10100,7 +10106,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       >
                                                         <li
                                                           aria-selected="true"
-                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                           id="hv-dropdown-1-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -10151,6 +10157,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -10177,7 +10184,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         >
                                                           <li
                                                             aria-selected="true"
-                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                             id="hv-dropdown-1-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -10227,7 +10234,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   >
                                                     <li
                                                       aria-selected={true}
-                                                      className="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                      className="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                       id="hv-dropdown-1-values-list-item-0"
                                                       onBlur={[Function]}
                                                       onClick={[Function]}
@@ -10309,7 +10316,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       >
                                                         <li
                                                           aria-selected="true"
-                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                           id="hv-dropdown-1-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -10360,6 +10367,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -10386,7 +10394,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         >
                                                           <li
                                                             aria-selected="true"
-                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                             id="hv-dropdown-1-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"
@@ -10517,7 +10525,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       >
                                                         <li
                                                           aria-selected="true"
-                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                          class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                           id="hv-dropdown-1-values-list-item-0"
                                                           role="option"
                                                           tabindex="0"
@@ -10568,6 +10576,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
+                                                      "focusGridDisabled": "HvFocus-focusGridDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
                                                       "selected": "HvFocus-selected",
@@ -10594,7 +10603,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                         >
                                                           <li
                                                             aria-selected="true"
-                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                                                            class="HvList-listItem HvList-selected HvList-condensed HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                                                             id="hv-dropdown-1-values-list-item-0"
                                                             role="option"
                                                             tabindex="0"

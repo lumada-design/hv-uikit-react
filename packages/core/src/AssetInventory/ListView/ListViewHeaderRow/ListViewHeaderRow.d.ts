@@ -15,9 +15,6 @@ export interface HvListViewHeaderRowProps
 
 type HvListViewHeaderRowClassKey =
   | "root"
-  | "selectable"
-  | "notSelectable"
-  | "selectCell"
   | "headCell";
 
 export default function HvListViewHeaderRow(props: HvListViewHeaderRowProps): JSX.Element | null;

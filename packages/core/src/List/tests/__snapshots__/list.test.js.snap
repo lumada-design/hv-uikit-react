@@ -211,7 +211,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="0"
                   >
@@ -235,7 +235,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -261,6 +261,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -287,7 +288,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="0"
                     >
@@ -311,7 +312,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -336,7 +337,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                className="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -417,7 +418,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="0"
                   >
@@ -441,7 +442,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -467,6 +468,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -493,7 +495,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="0"
                     >
@@ -517,7 +519,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -623,7 +625,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="0"
                   >
@@ -647,7 +649,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -673,6 +675,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -699,7 +702,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="0"
                     >
@@ -723,7 +726,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -748,7 +751,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                className="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -1650,7 +1653,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -1761,7 +1764,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -1831,6 +1834,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -1910,7 +1914,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -2021,7 +2025,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -2090,7 +2094,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -2621,7 +2625,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -2732,7 +2736,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -2802,6 +2806,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -2881,7 +2886,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -2992,7 +2997,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -3592,7 +3597,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -3703,7 +3708,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   </li>
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -3773,6 +3778,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -3852,7 +3858,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -3963,7 +3969,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     </li>
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -4032,7 +4038,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4604,7 +4610,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="0"
                   >
@@ -4652,6 +4658,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -4677,7 +4684,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="0"
                     >
@@ -4724,7 +4731,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                className="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -4804,7 +4811,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="0"
                   >
@@ -4852,6 +4859,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -4877,7 +4885,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="0"
                     >
@@ -5003,7 +5011,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="0"
                   >
@@ -5051,6 +5059,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -5076,7 +5085,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selected HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="0"
                     >
@@ -5382,6 +5391,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -5678,6 +5688,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -5943,6 +5954,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -6258,7 +6270,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -6430,6 +6442,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -6455,7 +6468,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -6626,7 +6639,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             >
               <li
                 aria-selected={true}
-                className="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                className="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -7051,7 +7064,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -7223,6 +7236,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -7248,7 +7262,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >
@@ -7843,7 +7857,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 >
                   <li
                     aria-selected="true"
-                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                    class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                     role="option"
                     tabindex="-1"
                   >
@@ -8015,6 +8029,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
                 "focusDisabled": "HvFocus-focusDisabled",
+                "focusGridDisabled": "HvFocus-focusGridDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
                 "selected": "HvFocus-selected",
@@ -8040,7 +8055,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   >
                     <li
                       aria-selected="true"
-                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-selected HvFocus-focusDisabled"
+                      class="HvList-listItem HvList-selector HvFocus-root HvFocus-focusDisabled HvFocus-selected"
                       role="option"
                       tabindex="-1"
                     >

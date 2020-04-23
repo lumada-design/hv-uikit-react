@@ -1,12 +1,12 @@
 const styles = theme => ({
   selectCell: {
-    width: "32px"
+    width: "32px",
+    display: "table-cell",
+    verticalAlign: "middle"
   },
   root: {
     background: theme.hv.palette.atmosphere.atmo1,
-    width: "100%",
-    marginTop: "10px",
-    position: "relative"
+    display: "table-row"
   },
   button: {
     padding: `0 ${theme.hv.spacing.xs}px`,

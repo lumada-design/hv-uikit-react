@@ -4,7 +4,11 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
+import Focus from "../../Focus";
 import styles from "./styles";
+import GridViewContainer from "../GridViewContainer";
+
+import useWidth from "../../utils/useWidth";
 
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
@@ -58,34 +62,57 @@ const CardView = ({
 
   const { breakpoints } = viewConfiguration;
 
+  const currentBreakpoint = useWidth();
+  const cardJump = () =>
+    breakpoints[currentBreakpoint] === false ? 1 : 12 / breakpoints[currentBreakpoint];
+
   /**
    * Render of the cards for each value.
    */
-  const renderCards = values.map(value => {
-    if (selectedValues && selectedValues.indexOf(value.id) > -1) {
-      // eslint-disable-next-line no-param-reassign
-      value.checked = true;
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      value.checked = false;
-    }
-    return (
-      <Grid
-        id={value.id}
-        key={value.id}
-        item
-        xs={breakpoints.xs}
-        sm={breakpoints.sm}
-        md={breakpoints.md}
-        lg={breakpoints.lg}
-        xl={breakpoints.xl}
-      >
-        {cardRender(value, others)}
-      </Grid>
-    );
-  });
+  const renderCards = containerRef => {
+    return values.map((value, index) => {
+      if (selectedValues && selectedValues.indexOf(value.id) > -1) {
+        // eslint-disable-next-line no-param-reassign
+        value.checked = true;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        value.checked = false;
+      }
+      return (
+        <Grid
+          role="gridcell"
+          className="li"
+          id={value.id}
+          key={value.id}
+          item
+          xs={breakpoints.xs}
+          sm={breakpoints.sm}
+          md={breakpoints.md}
+          lg={breakpoints.lg}
+          xl={breakpoints.xl}
+        >
+          <Focus
+            rootRef={containerRef}
+            key={value.id}
+            strategy="grid"
+            filterClass="grid"
+            navigationJump={cardJump()}
+            focusDisabled={false}
+          >
+            <div key={value.id} tabIndex={index === 0 ? 0 : -1}>
+              {cardRender(value, others)}
+            </div>
+          </Focus>
+        </Grid>
+      );
+    });
+  };
 
-  return (
+  const cardAmount = values.length;
+  const rowCount = breakpoints[currentBreakpoint] === false ? -1 : breakpoints[currentBreakpoint];
+  const colCount = rowCount === -1 ? 1 : Math.ceil(cardAmount / rowCount);
+
+  const GridDisplay = containerRef => (
     <Grid
       className={clsx(className, classes.root)}
       id={id}
@@ -93,10 +120,15 @@ const CardView = ({
       justify="flex-start"
       alignItems="flex-start"
       spacing={4}
+      role="grid"
+      aria-rowcount={rowCount}
+      aria-colcount={colCount}
     >
-      {renderCards}
+      {renderCards(containerRef)}
     </Grid>
   );
+
+  return <GridViewContainer elements={GridDisplay} />;
 };
 
 const sizeProps = [true, false, "auto", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

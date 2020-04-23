@@ -9,13 +9,14 @@ import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
+import Focus from "../../../Focus";
 
 const getValue = checkboxProps =>
   checkboxProps && checkboxProps.value ? checkboxProps.value : false;
 
 const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
   return (
-    <Cell
+    <div
       className={classes.selectCell}
       semantic={semantic}
       id={`checkbox-cell-${id}`}
@@ -28,7 +29,7 @@ const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semanti
         id={`checkbox-${id}`}
         {...checkboxProps}
       />
-    </Cell>
+    </div>
   );
 };
 
@@ -54,6 +55,7 @@ const row = (
   checkboxProps,
   checked,
   semantic,
+  containerRef,
   others
 ) => {
   const columnConfiguration =
@@ -84,21 +86,31 @@ const row = (
   });
 
   return (
-    <tr
-      id={`row-${id}`}
+    <Focus
+      rootRef={containerRef}
       key={`row-${id}`}
-      className={clsx(className, classes.root, {
-        [classes.selectable]: renderSelectCell,
-        [classes.selected]: checked,
-        [classes.notSelectable]: !renderSelectCell
-      })}
-      {...others}
+      strategy="grid"
+      filterClass="grid"
+      navigationJump={1}
+      focusDisabled={false}
     >
-      {renderSelectCell &&
-        selectCell(classes, onCheckboxSelected, checkboxProps, checked, semantic, id)}
-      {clonedChildren}
-      {renderActionsCell && actionsCell(classes, getValue(checkboxProps) || id, viewConfiguration)}
-    </tr>
+      <li
+        id={`row-${id}`}
+        key={`row-${id}`}
+        className={clsx(className, classes.root, {
+          [classes.selectable]: renderSelectCell,
+          [classes.selected]: checked,
+          [classes.notSelectable]: !renderSelectCell
+        })}
+        {...others}
+      >
+        {renderSelectCell &&
+          selectCell(classes, onCheckboxSelected, checkboxProps, checked, semantic, id)}
+        {clonedChildren}
+        {renderActionsCell &&
+          actionsCell(classes, getValue(checkboxProps) || id, viewConfiguration)}
+      </li>
+    </Focus>
   );
 };
 
@@ -118,6 +130,7 @@ const ListViewRow = ({
   return (
     <ListViewContextConsumer>
       {contextConfiguration => {
+        const { containerRef } = contextConfiguration;
         if (contextConfiguration && isNil(viewConfiguration)) {
           return row(
             contextConfiguration,
@@ -130,6 +143,7 @@ const ListViewRow = ({
             checkboxProps,
             checked,
             semantic,
+            containerRef,
             others
           );
         }
@@ -144,6 +158,7 @@ const ListViewRow = ({
           checkboxProps,
           checked,
           semantic,
+          containerRef,
           others
         );
       }}

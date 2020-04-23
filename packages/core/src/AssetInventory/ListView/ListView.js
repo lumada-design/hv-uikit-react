@@ -7,12 +7,12 @@ import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";
 import styles from "./styles";
+import GridViewContainer from "../GridViewContainer";
 
 const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata }) =>
   values.map((value, index) => {
     // eslint-disable-next-line no-param-reassign
     value.checked = selectedValues && selectedValues.includes(value.id);
-
     return renderer(value, index, viewConfiguration, metadata);
   });
 
@@ -25,43 +25,51 @@ const ListView = ({
   renderer,
   values,
   selectedValues,
-  cellSpacing = "0",
   metadata,
   ...others
 }) => {
-  return (
-    <Grid container justify="center" alignContent="stretch">
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-        <table
-          className={clsx(className, classes.root)}
-          cellSpacing={cellSpacing}
-          id={id}
-          {...others}
-        >
-          {!isNil(viewConfiguration) &&
-            !isNil(viewConfiguration.columnConfiguration) &&
-            viewConfiguration.columnConfiguration.length > 0 &&
-            values.length > 0 && (
-              <thead className={classes.tableHead}>
-                <ListViewHeaderRow viewConfiguration={viewConfiguration} />
-              </thead>
-            )}
-          <tbody className={classes.tableBody}>
-            <ListViewContextProvider value={viewConfiguration}>
-              <Rows
-                classes={classes}
-                renderer={renderer}
-                values={values}
-                selectedValues={selectedValues}
-                metadata={metadata}
-                viewConfiguration={viewConfiguration}
-              />
-            </ListViewContextProvider>
-          </tbody>
-        </table>
+  const GridDisplay = containerRef => {
+    const enhancedViewConfiguration = {
+      containerRef,
+      ...viewConfiguration
+    };
+    return (
+      <Grid container justify="center" alignContent="stretch">
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+          <div
+            id={id}
+            role="table"
+            aria-rowcount={values.length}
+            className={clsx(className, classes.root)}
+            {...others}
+          >
+            {!isNil(viewConfiguration) &&
+              !isNil(viewConfiguration.columnConfiguration) &&
+              viewConfiguration.columnConfiguration.length > 0 &&
+              values.length > 0 && (
+                <div className={classes.tableHead}>
+                  <ListViewHeaderRow viewConfiguration={enhancedViewConfiguration} />
+                </div>
+              )}
+            <ul className={classes.tableBody}>
+              <ListViewContextProvider value={enhancedViewConfiguration}>
+                <Rows
+                  classes={classes}
+                  renderer={renderer}
+                  values={values}
+                  selectedValues={selectedValues}
+                  metadata={metadata}
+                  viewConfiguration={enhancedViewConfiguration}
+                  containerRef={containerRef}
+                />
+              </ListViewContextProvider>
+            </ul>
+          </div>
+        </Grid>
       </Grid>
-    </Grid>
-  );
+    );
+  };
+  return <GridViewContainer elements={GridDisplay} />;
 };
 
 ListView.propTypes = {
@@ -134,10 +142,6 @@ ListView.propTypes = {
    * Selected values.
    */
   selectedValues: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * The spacing between the cells correspond to the usual htlm table attribute
-   */
-  cellSpacing: PropTypes.string,
   /**
    * Metadata associated with the values.
    */
