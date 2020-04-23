@@ -25,14 +25,14 @@ const withTooltip = (
     setShowTooltip(false);
   };
 
-  const tooltipData = <Typography variant="infoText">{label}</Typography>;
+  const title = <Typography variant="infoText">{label}</Typography>;
 
   return (
     <Tooltip
       style={{ ...styles.truncate }}
       disableFocusListener
       disableTouchListener
-      tooltipData={tooltipData}
+      title={title}
       open={showTooltip}
       placement={placement}
     >

@@ -6,32 +6,32 @@ export interface DropDownLabelsProp extends ListLabelsProp {
   /**
    * Title for the dropdown.
    */
-  title: string;
+  title?: string;
   /**
    * The default when there are no options available.
    */
-  select: string;
+  select?: string;
   /**
    * Cancel button label.
    */
-  cancelLabel: string;
+  cancelLabel?: string;
   /**
    * Apply button label.
    */
-  applyLabel: string;
+  applyLabel?: string;
   /**
    * The label used preceding the multiselection count.
    */
-  multiSelectionAction: string;
+  multiSelectionAction?: string;
   // TODO: deprecate in favour of List's selectionConjunction ?
   /**
    * The label used in the middle of the multiselection count.
    */
-  multiSelectionConjunction: string;
+  multiSelectionConjunction?: string;
 }
 
 export interface HvDropdownProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvDropdownClassKey, "onChange"> {
   /**
    * The list to be rendered by the dropdown.
    */
@@ -81,7 +81,11 @@ export interface HvDropdownProps
   /**
    * Placement of the dropdown.
    */
-  placement: "left" | "right";
+  placement?: "left" | "right";
+  /**
+   * A function to be executed whenever a item is selected in the dropdown, the function receives the selected item(s).
+   */
+  onChange?: (selected: ListValueProp | ListValueProp[] | undefined) => void;
 }
 
 export type HvDropdownClassKey =

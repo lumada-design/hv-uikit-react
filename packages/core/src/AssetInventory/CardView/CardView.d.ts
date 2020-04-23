@@ -28,7 +28,7 @@ export interface HvCardViewProps
   /**
    * Metadata associated with the values.
    */
-  metadata: AssetInventoryMetadata[];
+  metadata?: AssetInventoryMetadata[];
   /**
    * Values to be passed to the card render.
    */

@@ -25,11 +25,11 @@ export interface HvBreadCrumbProps
    * The component used for the link node.
    * Either a string to use a DOM element or a component.
    */
-  component: React.ElementType<React.HTMLAttributes<HTMLElement>>;
+  component?: React.ElementType<React.HTMLAttributes<HTMLElement>>;
   /**
    * Props passed down to the DropDownMenu sub-menu component.
    */
-  dropDownMenuProps: HvDropDownMenuProps;
+  dropDownMenuProps?: HvDropDownMenuProps;
 }
 
 export type HvBreadCrumbClassKey = "root" | "link" | "separator" | "orderedList";

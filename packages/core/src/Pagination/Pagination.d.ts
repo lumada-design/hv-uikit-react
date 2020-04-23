@@ -6,39 +6,39 @@ export interface PaginationLabelsProp {
   /**
    * The show label.
    */
-  pageSizePrev: string;
+  pageSizePrev?: string;
   /**
    * Indicate the units of the page size selection.
    */
-  pageSizeEntryName: string;
+  pageSizeEntryName?: string;
   /**
    * Used for the aria-label of the selection of number of unit.s
    */
-  pageSizeSelectorDescription: string;
+  pageSizeSelectorDescription?: string;
   /**
    * Separator of current page and total pages.
    */
-  pagesSeparator: string;
+  pagesSeparator?: string;
   /**
    * Title of button `firstPage`.
    */
-  paginationFirstPageTitle: string;
+  paginationFirstPageTitle?: string;
   /**
    * Title of button `previousPage`.
    */
-  paginationPreviousPageTitle: string;
+  paginationPreviousPageTitle?: string;
   /**
    * Title of button `nextPage`.
    */
-  paginationNextPageTitle: string;
+  paginationNextPageTitle?: string;
   /**
    * Title of button `lastPage`.
    */
-  paginationLastPageTitle: string;
+  paginationLastPageTitle?: string;
   /**
    * Aria-label passed to the page input.
    */
-  paginationInputLabel: string;
+  paginationInputLabel?: string;
 }
 
 export interface HvPaginationProps
@@ -90,15 +90,15 @@ export interface HvPaginationProps
   /**
    * Other props to show page component.
    */
-  showPageProps: Object;
+  showPageProps?: Object;
   /**
    * Other props to pagination component.
    */
-  navigationProps: Object;
+  navigationProps?: Object;
   /** 
    * Extra properties passed to the input component representing the current pages.
    */
-  currentPageInputProps: HvInputProps;
+  currentPageInputProps?: HvInputProps;
 }
 
 export type HvPaginationClassKey =

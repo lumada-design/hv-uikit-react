@@ -35,7 +35,7 @@ export interface HvVerticalNavigationTreeViewItemProps
   /**
    * @ignore
    */
-  onChange: (event: any) => void;
+  onClick: (event: any) => void;
 }
 
 export default function HvVerticalNavigationTreeItemView(

@@ -30,10 +30,10 @@ export const Main = () => {
 
   return (
     <div style={styling.placeholder}>
-      <HvTooltip tooltipData={data}>
+      <HvTooltip title={data}>
         <HvTypography>Hover here</HvTypography>
       </HvTooltip>
-      <HvTooltip tooltipData={data} open>
+      <HvTooltip title={data} open>
         <HvTypography>Tooltip open</HvTypography>
       </HvTooltip>
     </div>
@@ -48,7 +48,7 @@ export const LongText = () => {
   );
 
   return (
-    <HvTooltip tooltipData={data}>
+    <HvTooltip title={data}>
       <HvTypography id="placeholder" tabIndex="0">
         Hover here
       </HvTypography>
@@ -74,7 +74,7 @@ LongText.story = {
 };
 
 export const Multiline = () => {
-  const tooltipData = {
+  const title = {
     title: "January",
     elements: [
       { name: "Sales", value: "52,000 units" },
@@ -86,11 +86,11 @@ export const Multiline = () => {
     <div>
       <div className={classes.title}>
         <div>
-          <HvTypography variant="labelText">{tooltipData.title}</HvTypography>
+          <HvTypography variant="labelText">{title.title}</HvTypography>
         </div>
       </div>
       <div className={classes.valueWrapper}>
-        {tooltipData.elements.map(element => (
+        {title.elements.map(element => (
           <div key={element.name} className={classes.values}>
             <HvTypography variant="labelText">{element.name}</HvTypography>
             <div className={classes.separator} />
@@ -104,7 +104,7 @@ export const Multiline = () => {
   const TooltipContentWithStyles = withStyles(tooltipStyling)(TooltipContent);
 
   return (
-    <HvTooltip tooltipData={<TooltipContentWithStyles />} useSingle={false}>
+    <HvTooltip title={<TooltipContentWithStyles />} useSingle={false}>
       <HvTypography>Hover here</HvTypography>
     </HvTooltip>
   );
@@ -149,7 +149,7 @@ export const MultilineWithoutHeader = () => {
   const TooltipContentWithStyles = withStyles(tooltipStyling)(TooltipContent);
 
   return (
-    <HvTooltip tooltipData={<TooltipContentWithStyles />} useSingle={false}>
+    <HvTooltip title={<TooltipContentWithStyles />} useSingle={false}>
       <HvTypography>Hover here</HvTypography>
     </HvTooltip>
   );

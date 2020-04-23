@@ -25,7 +25,6 @@ import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
-import withConfig from "../config/withConfig";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = checkboxHOC(ReactTable);
@@ -547,8 +546,6 @@ class Table extends React.Component {
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
 
-    const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
-
     const sanitizedData = this.sanitizedData();
 
     return (
@@ -599,7 +596,7 @@ class Table extends React.Component {
           ref={r => (this.checkboxTable = r)}
           getTableProps={this.getTableProps}
           getTheadThProps={this.getTheadThProps}
-          getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
+          getTrProps={getTrProps || this.getTrProps}
           getTdProps={this.getTdProps}
           getTbodyProps={this.getTBodyProps}
           data={sanitizedData}
@@ -756,7 +753,8 @@ Table.propTypes = {
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),
-      sortable: PropTypes.bool
+      sortable: PropTypes.bool,
+      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
   ).isRequired,
   /**
@@ -859,7 +857,11 @@ Table.propTypes = {
   /**
    * Number of rows available in table to display in aria-rowcount
    */
-  rowCount: PropTypes.number
+  rowCount: PropTypes.number,
+  /**
+   * Boolean describing if the table columns are rezisable or not
+   */
+  resizable: PropTypes.bool
 };
 
 Table.defaultProps = {
@@ -892,7 +894,8 @@ Table.defaultProps = {
   dropdownMenuProps: undefined,
   getTableProps: undefined,
   tableProps: { tableCaption: "Table Caption" },
-  rowCount: undefined
+  rowCount: undefined,
+  resizable: false
 };
 
-export default withStyles(styles, { name: "HvTable" })(withConfig(Table));
+export default withStyles(styles, { name: "HvTable" })(Table);

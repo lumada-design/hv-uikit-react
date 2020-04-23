@@ -6,7 +6,7 @@ import Tooltip from "..";
 import HvProvider from "../../Provider";
 import HvTypography from "../../Typography";
 
-const createTooltipData = data => (
+const createTitle = data => (
   <div>
     <HvTypography variant="labelText">{data.title || ""}</HvTypography>
     {data.elements.map(element => (
@@ -31,7 +31,7 @@ describe("Single Line Tooltip", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip tooltipData={<HvTypography variant="labelText">Grid View</HvTypography>}>
+        <Tooltip title={<HvTypography variant="labelText">Grid View</HvTypography>}>
           {Anchor}
         </Tooltip>
       </HvProvider>
@@ -64,12 +64,12 @@ describe("Multi Line Tooltip - No Header", () => {
     ]
   };
 
-  const tooltipData = createTooltipData(data);
+  const title = createTitle(data);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip tooltipData={tooltipData} useSingle={false}>
+        <Tooltip title={title} useSingle={false}>
           {Anchor}
         </Tooltip>
       </HvProvider>
@@ -101,12 +101,12 @@ describe("Multi Line Tooltip - With Header", () => {
     ]
   };
 
-  const tooltipData = createTooltipData(data);
+  const title = createTitle(data);
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip tooltipData={tooltipData} useSingle={false}>
+        <Tooltip title={title} useSingle={false}>
           {Anchor}
         </Tooltip>
       </HvProvider>
