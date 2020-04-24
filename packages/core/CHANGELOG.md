@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.30.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.30.0...@hv/uikit-react-core@1.30.1) (2020-04-24)
+
+
+### Bug Fixes
+
+* **header:** don't import focus-within-polyfill on server [#1459](https://github.com/pentaho/hv-uikit-react/issues/1459) ([ddd30a1](https://github.com/pentaho/hv-uikit-react/commit/ddd30a1e9397480f7e71a9a3623c8fae6f5ec697))
+* **hvprovider:** allow to pass parameters to jssprovider [#1424](https://github.com/pentaho/hv-uikit-react/issues/1424) ([c283ac5](https://github.com/pentaho/hv-uikit-react/commit/c283ac5bc0753d8912d2783d988c0ec9ba6fb77d))
+
+
+
+
+
 # [1.30.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.29.0...@hv/uikit-react-core@1.30.0) (2020-04-11)
 
 
