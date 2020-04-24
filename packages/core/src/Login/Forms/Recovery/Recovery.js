@@ -57,7 +57,7 @@ class Recovery extends React.Component {
    *
    * @returns {function(*=): *}
    */
-  handleInputChange = () => value => {
+  handleInputChange = () => (event, value) => {
     this.setState({ email: value });
     return value;
   };
