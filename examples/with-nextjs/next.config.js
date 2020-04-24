@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-const path = require("path");
 const resolve = require("resolve");
 const withImages = require("next-images");
-const withCSS = require("@zeit/next-css");
 
 const nextConfig = {
   webpack: (config, options) => {
@@ -60,4 +58,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withImages(withCSS(nextConfig));
+module.exports = withImages(nextConfig);

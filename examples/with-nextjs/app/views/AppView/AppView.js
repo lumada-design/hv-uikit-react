@@ -15,7 +15,7 @@
  */
 
 import React from "react";
-import Header from "@hv/uikit-react-core/dist/Header";
+import HvHeader, { HvHeaderBrand } from "@hv/uikit-react-core/dist/NewHeader";
 import Login from "@hv/uikit-react-core/dist/Login";
 import Footer from "@hv/uikit-react-lab/dist/Footer";
 
@@ -26,9 +26,15 @@ const handleLogin = () => alert("Welcome!");
 
 const AppView = ({ classes }) => (
   <div>
-    <Header companyLogo={companyLogo} />
+    <HvHeader>
+      <HvHeaderBrand logo={<img src={companyLogo} />} />
+    </HvHeader>
     <div className={classes.login}>
-      <Login login={handleLogin} backgroundImage={backgroundImage} />
+      <Login
+        login={handleLogin}
+        backgroundImage={backgroundImage}
+        backgroundImageSize="cover"
+      />
     </div>
     <Footer />
   </div>

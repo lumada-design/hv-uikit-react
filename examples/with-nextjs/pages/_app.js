@@ -15,12 +15,13 @@
  */
 
 import React from "react";
-import App, { Container } from "next/app";
+
+import App from "next/app";
 import Head from "next/head";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import JssProvider from "react-jss/lib/JssProvider";
-import getPageContext from "../src/getPageContext";
+
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
+
+import getPageContext from "../src/getPageContext";
 
 class MyApp extends App {
   constructor() {
@@ -38,27 +39,23 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
+
     return (
-      <Container>
+      <>
         <Head>
           <title>UI React - with next.js</title>
         </Head>
-        {/* Wrap every page in Jss and Theme providers */}
-        <JssProvider
-          registry={this.pageContext.sheetsRegistry}
+
+        <HvProvider
+          sheetsRegistry={this.pageContext.sheetsRegistry}
           generateClassName={this.pageContext.generateClassName}
+          sheetsManager={this.pageContext.sheetsManager}
         >
-          {/* MuiThemeProvider makes the theme available down the React
-              tree thanks to React context. */}
-          <HvProvider>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-            <CssBaseline />
-            {/* Pass pageContext to the _document though the renderPage enhancer
+          {/* Pass pageContext to the _document though the renderPage enhancer
                 to render collected styles on server-side. */}
-            <Component pageContext={this.pageContext} {...pageProps} />
-          </HvProvider>
-        </JssProvider>
-      </Container>
+          <Component pageContext={this.pageContext} {...pageProps} />
+        </HvProvider>
+      </>
     );
   }
 }
