@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-automation-storybook",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Environment for developing UI components in React for the Hitachi Vantara's Design System.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -23,7 +23,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@hv/uikit-react-core": "^2.0.1",
+    "@hv/uikit-react-core": "^2.0.2",
     "@storybook/react": "^5.2.8",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2"
