@@ -26,7 +26,6 @@ tab: change focus to next item and keep item selection when is pressed TAB
     header item should be selected    ${hItem3.2}
 
 shift + tab: change focus to previous item and keep item selection when is pressed SHIFT + TAB
-    [Tags]    bug-ie
     header item should be selected    ${hItem3}
     header item should be selected    ${hItem3.2}
     Click Element                     ${hBrand}
@@ -38,7 +37,7 @@ shift + tab: change focus to previous item and keep item selection when is press
     header item should be selected    ${hItem3.2}
 
 shift + tab: change focus to previous item when is pressed SHIFT + TAB on previous clicked item
-    [Tags]    distinct    run-any-way
+    [Tags]    bug-ie    distinct    run-any-way
     [Documentation]   = Browsers Distinct behavior, not supported by UIKIT  = \n
     ...               *https://github.com/pentaho/hv-uikit-react/issues/1124*
     ...                - *chrome* - focus the previous item
