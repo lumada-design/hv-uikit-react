@@ -7,38 +7,38 @@ Suite Teardown     Close Browser
 Default Tags       smoke
 
 *** Variables ***
-${storybook_iframe}    ${STORYBOOK_URL}/iframe.html?id=coremultibutton--
+${storybook_iframe}    ${STORYBOOK_URL}/iframe.html?id=components-multi-button--
 
 *** Test Cases ***
 multiButton when just allow single selection
-    Go To                            ${storybook_iframe}labelwithiconverticalsingleselection
+    Go To                            ${storybook_iframe}only-labels
     Wait Until Element Is Visible    //button[@id='map' and contains(@class,'isSelected')]    10s
     Click Button                     satellite
     Element Should Be Visible        //button[@id='satellite' and contains(@class,'isSelected')]
     Element Should Be Visible        //button[@id='map' and contains(@class,'isUnselected')]
 
 multiButton removing all selections
-    Go To                            ${storybook_iframe}icononlyhorizontalmultipleselection
+    Go To                            ${storybook_iframe}only-icons
     Wait Until Element Is Visible    //button[@id='map' and contains(@class,'isSelected')]    10s
     Click Button                     map
     Element Should Be Visible        //button[@id='location' and contains(@class,'isUnselected')]
     Element Should Be Visible        //button[@id='map' and contains(@class,'isUnselected')]
 
 multiButton select all buttons
-    Go To                            ${storybook_iframe}icononlyhorizontalmultipleselection
+    Go To                            ${storybook_iframe}only-icons
     Wait Until Element Is Visible    //button[@id='map' and contains(@class,'isSelected')]    10s
     Click Button                     location
     Element Should Be Visible        //button[@id='map' and contains(@class,'isSelected')]
     Element Should Be Visible        //button[@id='location' and contains(@class,'isSelected')]
 
 multiButton unable unselect a fixed selection
-    Go To                            ${storybook_iframe}fixedtogglehorizontalmultipleselection
+    Go To                            ${storybook_iframe}enforced-selection
     Wait Until Element Is Visible    //button[@id='map' and contains(@class,'isSelected')]    10s
     Click Button                     map
     Element Should Be Visible        //button[@id='map' and contains(@class,'isSelected')]
 
 multiButton minimum selection
-    Go To                            ${storybook_iframe}minimumselectionhorizontalmultipleselection
+    Go To                            ${storybook_iframe}minimum-selection
     Wait Until Element Is Visible    //button[@id='map' and contains(@class,'isUnselected')]    10s
     Element Should Be Visible        //button[@id='satellite' and contains(@class,'isSelected')]
     Element Should Be Visible        //button[@id='map1' and contains(@class,'isSelected')]
@@ -50,14 +50,14 @@ multiButton minimum selection
     Element Should Be Visible        //button[@id='map1' and contains(@class,'isUnselected')]
 
 multiButton input controlled value
-    Go To                            ${storybook_iframe}inputcontrolledvalue
-    Wait Until Element Is Visible    map                                         10s        error message: The page don't was visible in 2 seconds
+    Go To                            ${storybook_iframe}dynamic-content
+    Wait Until Element Is Visible    map                                         10s
     Page Should Contain Element      //button[contains(@class,'MultiButton')]    limit=4
     Click Button                     New Props
     Page Should Contain Element      //button[contains(@class,'MultiButton')]    limit=2
 
 multiButton maximun selection
-    Go To                            ${storybook_iframe}maximumselectionhorizontalmultipleselection
+    Go To                            ${storybook_iframe}maximum-selection
     Wait Until Element Is Visible    //button[@id='map' and contains(@class,'isUnselected')]    5s
     Click Button                     map
     Click Button                     satellite

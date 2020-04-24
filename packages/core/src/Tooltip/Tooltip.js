@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Fade, Tooltip, withStyles } from "@material-ui/core";
+import deprecatedPropType from "@material-ui/core/utils/deprecatedPropType";
 import isNil from "lodash/isNil";
 import styles from "./styles";
 
@@ -16,6 +17,7 @@ const HvTooltip = ({
   useSingle = true,
   children,
   tooltipData,
+  title,
   TransitionComponent = Fade,
   TransitionProps = { timeout: 400 },
   ...others
@@ -32,7 +34,7 @@ const HvTooltip = ({
         tooltip: useSingle ? classes.tooltip : classes.tooltipMulti,
         popper: classes.popper
       }}
-      title={tooltipData}
+      title={tooltipData || title}
       {...others}
     >
       {children}
@@ -95,8 +97,9 @@ HvTooltip.propTypes = {
   }).isRequired,
   /**
    * Values to display in tooltip.
+   * @deprecated
    */
-  tooltipData: PropTypes.node,
+  tooltipData: deprecatedPropType(PropTypes.node),
   /**
    * If true, the tooltip is shown.
    */
@@ -111,9 +114,9 @@ HvTooltip.propTypes = {
    */
   enterDelay: PropTypes.number,
   /**
-   * Component to attach to.
+   * Tooltip title. Zero-length titles string are never displayed.
    */
-  tooltipAnchor: PropTypes.node,
+  title: PropTypes.node.isRequired,
   /**
    * The component used for the transition
    */

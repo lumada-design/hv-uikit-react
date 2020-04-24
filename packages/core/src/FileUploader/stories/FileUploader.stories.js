@@ -92,7 +92,7 @@ export const Basic = () => {
         id="fileuploader1"
         acceptedFiles={["jpg", "jpeg", "png"]}
         labels={{ sizeWarning: "Maximum file size:" }}
-        maxFileSize={1 * 1000 * 1000}
+        maxFileSize={1 * 1000 ** 2}
         fileList={list}
         onFilesAdded={newFiles => {
           newFiles.forEach(newFile => addFile(newFile, setList));
@@ -129,7 +129,7 @@ export const SingleUpload = () => {
           removeFile(removedFile, setList);
         }}
         acceptedFiles={["jpg", "jpeg", "png"]}
-        maxFileSize={1 * 1000 * 1000}
+        maxFileSize={1 * 1000 ** 2}
         multiple={false}
         disabled={list.length === 1}
       />
@@ -143,6 +143,74 @@ SingleUpload.story = {
   parameters: {
     docs: {
       storyDescription: "FileUploader which permits the upload of a single file at a time"
+    }
+  }
+};
+
+export const AutomationSample = () => {
+  const files = [
+    {
+      id: "uploaded-file-1",
+      name: "file 1.png",
+      size: 141,
+      progress: 41,
+      status: "success",
+      type: "image/png"
+    },
+    {
+      id: "uploaded-file-2",
+      name: "file 2.png",
+      size: 875,
+      progress: 456,
+      status: "progress",
+      type: "image/png"
+    },
+    {
+      id: "uploaded-file-3",
+      name: "file 3.png",
+      size: 1075,
+      progress: 41,
+      status: "fail",
+      type: "image/png",
+      errorMessage: "The file exceeds the maximum upload size"
+    },
+    {
+      id: "uploaded-file-4",
+      name: "A very very very long file name.png",
+      size: 1075,
+      progress: 1075,
+      status: "fail",
+      type: "image/png",
+      errorMessage: "File type not allowed for upload"
+    }
+  ];
+
+  const Sample = () => {
+    const [list, setList] = useState(files);
+
+    return (
+      <HvFileUploader
+        id="automationfileuploader1"
+        acceptedFiles={["jpg", "jpeg", "png"]}
+        maxFileSize={2 * 1000 ** 2}
+        fileList={list}
+        onFilesAdded={newFiles => {
+          newFiles.forEach(newFile => addFile(newFile, setList));
+        }}
+        onFileRemoved={removedFile => {
+          removeFile(removedFile, setList);
+        }}
+      />
+    );
+  };
+
+  return <Sample />;
+};
+
+AutomationSample.story = {
+  parameters: {
+    docs: {
+      disable: true
     }
   }
 };

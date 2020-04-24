@@ -11,14 +11,7 @@ export default {
 };
 
 export const Main = () => {
-  return (
-    <HvSwitch
-      id="Switch-main"
-      checked={false}
-      onChange={e => alert(e.target.checked ? "On" : "Off")}
-      aria-label="Engine Control"
-    />
-  );
+  return <HvSwitch />;
 };
 
 export const NoLabels = () => (
@@ -57,7 +50,7 @@ Label.story = {
   }
 };
 
-export const Disabled = () => <HvSwitch disabled checked={false} />;
+export const Disabled = () => <HvSwitch disabled />;
 
 Disabled.story = {
   parameters: {

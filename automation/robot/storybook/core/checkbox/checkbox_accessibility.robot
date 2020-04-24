@@ -5,12 +5,12 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=corecheckbox--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-selectors-checkbox--
 
 
 *** Test Cases ***
 storybook sample simple against WCAG2AA standard
-    pa11y should not find errors    ${url}checkboxsimple
+    pa11y should not find errors    ${url}main
 
 storybook sample with label and events against WCAG2AA standard
-    pa11y should not find errors    ${url}checkboxonchange
+    pa11y should not find errors    ${url}with-click-action

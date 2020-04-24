@@ -29,7 +29,7 @@ export default {
 
 export const Main = () => (
   <HvList
-    id="simple-list"
+    id="list"
     selectable={false}
     aria-label="Simple Non Selectable List Title"
     values={[
@@ -44,7 +44,7 @@ export const Main = () => (
 
 export const Condensed = () => (
   <HvList
-    id="condensed-list"
+    id="list"
     selectable={false}
     condensed
     aria-label="Simple Condensed List Title"
@@ -83,7 +83,7 @@ export const WithNavigationIcons = () => (
 
 export const SingleSelection = () => (
   <HvList
-    id="single-selection-list"
+    id="list"
     selectDefault
     hasTooltips
     aria-label="Single Selection List Title"
@@ -113,7 +113,7 @@ export const SingleSelectionWithIcon = () => {
 
   return (
     <HvList
-      id="left-icon-list"
+      id="list"
       selectDefault
       aria-label="Single Selection List with Left Icons Title"
       values={data}
@@ -123,7 +123,7 @@ export const SingleSelectionWithIcon = () => {
 
 export const SingleSelectionWithSelectors = () => (
   <HvList
-    id="Radio-list"
+    id="list"
     selectDefault
     useSelector
     aria-label="Single Selection List with radio"
@@ -147,7 +147,7 @@ SingleSelectionWithSelectors.story = {
 
 export const MultiSelectionWithSelectors = () => (
   <HvList
-    id="multi-selection-selectors"
+    id="list"
     multiSelect
     useSelector
     aria-label="Multi Selection List with Selectors Title"
@@ -171,7 +171,7 @@ MultiSelectionWithSelectors.story = {
 
 export const MultiSelectionWithSelectAll = () => (
   <HvList
-    id="Select-all-list"
+    id="list"
     multiSelect
     showSelectAll
     useSelector
@@ -190,6 +190,88 @@ MultiSelectionWithSelectAll.story = {
   parameters: {
     docs: {
       storyDescription: "List that has multi selection with selectors and a select all checkbox."
+    }
+  }
+};
+
+export const TestListNotSelected = () => (
+  <>
+    <button type="button" id="anchorButton" tabIndex={0}>
+      Anchor
+    </button>
+    <HvList
+      id="list"
+      hasTooltips
+      values={[
+        { label: "Share" },
+        { label: "Edit" },
+        { label: "Remove" },
+        { label: "Delete" },
+        { label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
+      ]}
+    />
+  </>
+);
+
+TestListNotSelected.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};
+
+export const TestListFocusableSelection = () => (
+  <>
+    <button type="button" id="anchorButton" tabIndex={0}>
+      Anchor
+    </button>
+    <HvList
+      id="list"
+      selectDefault
+      hasTooltips
+      values={[
+        { label: "Share" },
+        { label: "Edit" },
+        { label: "Remove", selected: true },
+        { label: "Delete" },
+        { label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
+      ]}
+    />
+  </>
+);
+
+TestListFocusableSelection.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};
+
+export const TestListSelectableDisabled = () => (
+  <>
+    <button type="button" id="anchorButton" tabIndex={0}>
+      Anchor
+    </button>
+    <HvList
+      id="list"
+      selectable={false}
+      values={[
+        { label: "Share", disabled: true },
+        { label: "Edit" },
+        { label: "Remove", path: "https://www.hitachivantara.com" },
+        { label: "Delete" },
+        { label: "Update", path: "https://www.hitachivantara.com" }
+      ]}
+    />
+  </>
+);
+
+TestListSelectableDisabled.story = {
+  parameters: {
+    docs: {
+      disable: true
     }
   }
 };

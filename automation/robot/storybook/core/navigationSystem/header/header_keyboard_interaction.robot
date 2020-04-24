@@ -6,7 +6,7 @@ Resource          ../keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Test Setup        go to url and wait until element is visible     ${STORYBOOK_URL}/iframe.html?id=coreheader--twolevels    ${hItem3}            10s
+Test Setup        Go To URL And Wait Until Element Is Visible     ${STORYBOOK_URL}/iframe.html?id=components-navigation-system-horizontal-navigation--main    ${hItem3}            10s
 Test Teardown     Run Keyword If Test Failed    Capture Page Screenshot        TearDown.png
 Force Tags        smoke    keyboard    bug-infrastructure-ie
 Documentation    Test Cases based on Design System Version 1.2.0
@@ -26,7 +26,6 @@ tab: change focus to next item and keep item selection when is pressed TAB
     header item should be selected    ${hItem3.2}
 
 shift + tab: change focus to previous item and keep item selection when is pressed SHIFT + TAB
-    [Tags]    bug-infrastructure-ie
     header item should be selected    ${hItem3}
     header item should be selected    ${hItem3.2}
     Click Element                     ${hBrand}
@@ -38,7 +37,7 @@ shift + tab: change focus to previous item and keep item selection when is press
     header item should be selected    ${hItem3.2}
 
 shift + tab: change focus to previous item when is pressed SHIFT + TAB on previous clicked item
-    [Tags]    distinct    run-any-way
+    [Tags]    bug-ie    distinct    run-any-way
     [Documentation]   = Browsers Distinct behavior, not supported by UIKIT  = \n
     ...               *https://github.com/pentaho/hv-uikit-react/issues/1124*
     ...                - *chrome* - focus the previous item

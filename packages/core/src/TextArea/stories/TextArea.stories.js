@@ -36,20 +36,56 @@ Resizable.story = {
   }
 };
 
-export const Limited = () => {
+export const LimitedBlocking = () => {
+  const [textLength, setTextLength] = useState(0);
+
   const labels = {
     inputLabel: "Label",
     placeholder: "Enter value"
   };
 
-  return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />;
+  const setCounter = (event, data) => {
+    setTextLength(data.length);
+    return data;
+  };
+
+  return (
+    <HvTextArea
+      rows={5}
+      labels={labels}
+      maxCharQuantity={10}
+      blockMax
+      onChange={setCounter}
+      countCharProps={{ "aria-label": `You have inserted ${textLength} characters` }}
+    />
+  );
 };
 
-Limited.story = {
+LimitedBlocking.story = {
   parameters: {
     docs: {
       storyDescription:
         "Text area that limits the quantity of character that can be introduced in the text area."
+    }
+  }
+};
+
+export const LimitedWithCustomLabels = () => {
+  const labels = {
+    inputLabel: "Label",
+    placeholder: "Enter value",
+    startCount: "Inserted",
+    middleCount: "of",
+    endCount: "allowed"
+  };
+
+  return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />;
+};
+
+LimitedWithCustomLabels.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Text area char count with a custom labels."
     }
   }
 };
@@ -147,6 +183,7 @@ export const ControlledLimited = () => {
         labels={{ inputLabel: "Label", placeholder: "Enter value" }}
         onChange={(e, newValue) => setValue(newValue)}
         maxCharQuantity={maxChar}
+        blockMax
       />
     </>
   );

@@ -31,6 +31,10 @@ export interface HvDropDownMenuProps
    */
   onToggleOpen?: (open: boolean) => void;
   /**
+   * Function executed in each onClick. Should received the clicked element.
+   */
+  onClick?: (event: MouseEvent, item: ListValueProp) => void;
+  /**
    * Keep the Dropdown Menu opened after clicking one option
    */
   keepOpened?: boolean;

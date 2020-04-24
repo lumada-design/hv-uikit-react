@@ -11,8 +11,8 @@ import styles from "./styles";
 const Navigation = ({ classes, className, data, selected, onClick, ...others }) => {
   const selectionPath = useSelectionPath(data, selected);
 
-  const handleClick = (e, selectedItem) => {
-    onClick?.(e, selectedItem);
+  const handleClick = (event, selection) => {
+    onClick?.(event, selection);
   };
 
   return (

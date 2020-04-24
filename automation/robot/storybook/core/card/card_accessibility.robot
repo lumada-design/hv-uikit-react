@@ -6,10 +6,10 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=corecard--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-card--
 
 
 *** Test Cases ***
 selectable card against WCAG2AA standard       ${url}selectable
-no selectable card against WCAG2AA standard    ${url}no-selectable
+no selectable card against WCAG2AA standard    ${url}all-components
 

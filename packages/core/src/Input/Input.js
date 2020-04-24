@@ -15,6 +15,7 @@ import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 import { validateCharLength, validateInput } from "./validations";
 import styles from "./styles";
+import withTooltips from "../withTooltip";
 
 const DEFAULT_LABELS = {
   inputLabel: "",
@@ -34,7 +35,7 @@ class HvInput extends React.Component {
   constructor(props) {
     super(props);
     const { validationState, value, initialValue, labels } = props;
-
+    this.materialInputRef = React.createRef();
     this.state = {
       validationState,
       currentValidationStateProps: validationState,
@@ -48,18 +49,21 @@ class HvInput extends React.Component {
     const { value: nextValue, validationState } = nextProps;
     const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
 
-    if (
-      (nextValue !== undefined && nextValue !== oldValue) ||
-      (validationState !== undefined && validationState !== validationStateProp)
-    ) {
-      return {
-        value: nextValue,
+    let returnState = null;
+
+    if (nextValue !== undefined && nextValue !== oldValue) {
+      returnState = {
+        value: nextValue
+      };
+    }
+    if (validationState !== undefined && validationState !== validationStateProp) {
+      returnState = {
         validationState,
         currentValidationStateProps:
           validationState !== validationStateProp ? validationStateProp : validationState
       };
     }
-    return null;
+    return returnState;
   }
 
   /**
@@ -77,6 +81,13 @@ class HvInput extends React.Component {
   };
 
   /**
+   * Looks for the node that represent the input inside the material tree and focus it.
+   */
+  focusInput = () => {
+    this.materialInputRef.current.focus();
+  };
+
+  /**
    * Clears the input value from the state and refocus the input.
    *
    * Note: given than the input component from material doesn't offer any api to focus
@@ -89,7 +100,7 @@ class HvInput extends React.Component {
     onChange(null, value);
     this.manageInputValueState(value, null);
     setTimeout(() => {
-      this.node.children[1].children[0].focus();
+      this.focusInput();
     });
   };
 
@@ -126,9 +137,10 @@ class HvInput extends React.Component {
    */
   suggestionSelectedHandler = (event, item) => {
     const { suggestionSelectedCallback } = this.props;
-    suggestionSelectedCallback(item);
     this.manageInputValueState(item.label);
+    this.focusInput();
     this.suggestionClearHandler();
+    suggestionSelectedCallback(item);
   };
 
   /**
@@ -327,6 +339,13 @@ class HvInput extends React.Component {
       customFixedIcon
     );
 
+    const IconDisplay = () => (
+      <div aria-hidden="true" className={classes.infoIconContainer}>
+        <InfoS />
+      </div>
+    );
+    const InfoIcon = withTooltips(IconDisplay, labels.infoText);
+
     return (
       <div
         ref={node => {
@@ -352,11 +371,7 @@ class HvInput extends React.Component {
             </HvTypography>
           )}
 
-          {showInfo && infoIcon && labels.infoText && (
-            <div aria-hidden="true" title={labels.infoText} className={classes.infoIconContainer}>
-              <InfoS />
-            </div>
-          )}
+          {showInfo && infoIcon && labels.infoText && <InfoIcon />}
         </div>
 
         <Input
@@ -383,6 +398,7 @@ class HvInput extends React.Component {
           onChange={this.onChangeHandler}
           inputProps={{
             required: isRequired,
+            ref: this.materialInputRef,
             "aria-required": isRequired || undefined,
             "aria-invalid": stateValidationState === validationStates.invalid || undefined,
             ...inputProps
@@ -426,19 +442,18 @@ class HvInput extends React.Component {
 
         <HvTypography
           variant="sText"
-          className={clsx(classes.textWarning, classes.infoText)}
-          style={{
-            display: stateValidationState === validationStates.invalid ? "block" : "none"
-          }}
+          className={clsx(classes.textWarning, classes.infoText, {
+            [classes.showText]:
+              stateValidationState === validationStates.invalid &&
+              (externalWarningTextOverride || warningText)
+          })}
           aria-live="polite"
           aria-controls={`${id}-input`}
           aria-atomic="true"
           aria-relevant="additions text"
           aria-labelledby={labels.inputLabel ? `${id}-label` : null}
         >
-          {stateValidationState === validationStates.invalid
-            ? externalWarningTextOverride || warningText
-            : ""}
+          {externalWarningTextOverride || warningText || ""}
         </HvTypography>
       </div>
     );
@@ -530,6 +545,10 @@ HvInput.propTypes = {
      * Styles applied to the description when it is showing a warning.
      */
     textWarning: PropTypes.string,
+    /**
+     * Styles applied when the text should be shown.
+     */
+    showText: PropTypes.string,
     /**
      * Styles applied to the input adornment icons.
      */

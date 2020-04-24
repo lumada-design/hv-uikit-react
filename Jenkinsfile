@@ -114,14 +114,14 @@ node('non-master') {
             stage('Tests (robot)') {
                 if(!params.skipAutomationTest || env.CHANGE_TARGET == releases_branch) {
                     def hostname = sh(script: 'hostname -I', returnStdout: true).split(' ')[0]
-                    def automation_storybook_port = '9002'
+                    def port = '9001'
 
-                    image.withRun("${containerRunOptions('uikit_automation_storybook')} -p ${automation_storybook_port}:${automation_storybook_port}", 'npm run automation:run') { container ->
+                    image.withRun("${containerRunOptions('uikit_automation_storybook')} -p ${port}:${port}", "npm run doc -- -p ${port}") { container ->
                         tryStep ({
                             // TODO: Scripts not permitted to use method [...]Container port. Administrators can decide whether to approve or reject this signature.
                             // Without this we can only run one container at a time
-                            // def URL = "http://${hostname}:${container.port(automation_storybook_port)}"
-                            def URL = "http://${hostname}:${automation_storybook_port}"
+                            // def URL = "http://${hostname}:${container.port(port)}"
+                            def URL = "http://${hostname}:${port}"
 
                             waitUntilServerUp(URL)
 

@@ -1,9 +1,3 @@
-import { fade, hexToRgb } from "@material-ui/core";
-
-export const boxShadow = color => ({
-  boxShadow: `0 0 0 ${color}, 0 6px 12px ${fade(hexToRgb(color), 0.12)}`
-});
-
 const styles = theme => ({
   root: {
     height: 50
@@ -17,7 +11,7 @@ const styles = theme => ({
     width: "100%",
     height: "100%",
     padding: `0 ${theme.hv.spacing.sm}px`,
-    ...boxShadow(theme.hv.palette.accent.acce1),
+    boxShadow: theme.hv.shadows[1],
     "& > *:not(nav)": {
       zIndex: 2
     }

@@ -25,7 +25,6 @@ import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
-import withConfig from "../config/withConfig";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = checkboxHOC(ReactTable);
@@ -48,16 +47,16 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
 
-    const { id } = props;
-
     this.state = {
-      internalId: id || uniqueId("hv-table-"),
+      internalId: props.id || uniqueId("hv-table-"),
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
       initiallyLoaded: false,
       // Controls which row is expanded.
       expanded: {},
+      // what is the curently displayed age
+      currentPage: props.page || 0,
       // Controls which row is selected using the checkboxes.
       selection: props.selections || [],
       // Controls if the select all options has been used
@@ -132,26 +131,30 @@ class Table extends React.Component {
    * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
    */
   getPaginationProps = () => {
-    const { internalId } = this.state;
+    const { internalId, currentPage } = this.state;
 
     const { data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
     const { pageSize = data.length, onPageSizeChange, onPageChange, pages } = this.props;
 
+    const PaginationComponent = paginationProps => (
+      <Pagination {...paginationProps} page={currentPage} />
+    );
+
     return {
       id: `${internalId}-pagination`,
       showPagination: data.length > 0 && showPagination,
-      ...(showPagination && { PaginationComponent: Pagination }),
+      ...(showPagination && { PaginationComponent }),
       ...(showPagination && {
         onPageSizeChange: (newPageSize, page) => {
-          this.setState({ expanded: {} });
-          if (onPageSizeChange) onPageSizeChange(newPageSize, page);
+          this.setState({ expanded: {}, currentPage: page });
+          onPageSizeChange?.(newPageSize, page);
         }
       }),
       ...(showPagination && {
         onPageChange: page => {
-          this.setState({ expanded: {} });
-          if (onPageChange) onPageChange(page);
+          this.setState({ expanded: {}, currentPage: page });
+          onPageChange?.(page);
         }
       }),
       ...(showPagination && pages && { pages }),
@@ -183,7 +186,7 @@ class Table extends React.Component {
    * @param sortedColumn - the column representation from the user.
    */
   onSortChange = sortedColumn => {
-    this.setState({ sorted: sortedColumn, expanded: {} });
+    this.setState({ sorted: sortedColumn, currentPage: 0, expanded: {} });
   };
 
   /**
@@ -372,18 +375,18 @@ class Table extends React.Component {
   };
 
   getTableProps = () => {
-    const { classes, tableProps, rowCount } = this.props;
+    const { classes, tableProps, data, rowCount } = this.props;
 
     const baseTableProps = {
       role: "table",
+      "aria-rowcount": rowCount || data.length,
       className: classes.table
     };
 
     if (tableProps) {
       return {
         ...baseTableProps,
-        caption: tableProps.tableCaption,
-        "aria-rowcount": rowCount
+        caption: tableProps.tableCaption
       };
     }
 
@@ -543,8 +546,6 @@ class Table extends React.Component {
     // add expander
     const newSubComponent = expander(subElementTemplate, classes);
 
-    const checkUseRoute = useRouter ? getTrProps.bind(this.props) : getTrProps;
-
     const sanitizedData = this.sanitizedData();
 
     return (
@@ -595,7 +596,7 @@ class Table extends React.Component {
           ref={r => (this.checkboxTable = r)}
           getTableProps={this.getTableProps}
           getTheadThProps={this.getTheadThProps}
-          getTrProps={getTrProps ? checkUseRoute : this.getTrProps}
+          getTrProps={getTrProps || this.getTrProps}
           getTdProps={this.getTdProps}
           getTbodyProps={this.getTBodyProps}
           data={sanitizedData}
@@ -729,7 +730,13 @@ Table.propTypes = {
    * The labels inside the table.
    */
   labels: PropTypes.shape({
+    /**
+     * The title that identifies the title, rendered outside of the table.
+     */
     titleText: PropTypes.string,
+    /**
+     * The subtitle that identifies the title, rendered outside of the table.
+     */
     subtitleText: PropTypes.string
   }),
   /**
@@ -746,7 +753,8 @@ Table.propTypes = {
       style: PropTypes.instanceOf(Object),
       fixed: PropTypes.string,
       Cell: PropTypes.instanceOf(Object),
-      sortable: PropTypes.bool
+      sortable: PropTypes.bool,
+      width: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
   ).isRequired,
   /**
@@ -849,7 +857,11 @@ Table.propTypes = {
   /**
    * Number of rows available in table to display in aria-rowcount
    */
-  rowCount: PropTypes.number
+  rowCount: PropTypes.number,
+  /**
+   * Boolean describing if the table columns are rezisable or not
+   */
+  resizable: PropTypes.bool
 };
 
 Table.defaultProps = {
@@ -882,7 +894,8 @@ Table.defaultProps = {
   dropdownMenuProps: undefined,
   getTableProps: undefined,
   tableProps: { tableCaption: "Table Caption" },
-  rowCount: undefined
+  rowCount: undefined,
+  resizable: false
 };
 
-export default withStyles(styles, { name: "HvTable" })(withConfig(Table));
+export default withStyles(styles, { name: "HvTable" })(Table);

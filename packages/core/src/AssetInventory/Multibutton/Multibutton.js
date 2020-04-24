@@ -4,16 +4,6 @@ import MultiButton from "../../MultiButton";
 import { setId } from "../../utils/setId";
 
 const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
-  const options = [];
-
-  views.map(view =>
-    options.push({
-      id: view.id,
-      icon: view.icon,
-      selected: view.selected ? true : undefined
-    })
-  );
-
   const onChangeViewHandler = (event, buttonId) => {
     changeView(event, buttonId);
     onViewChange(event, buttonId);
@@ -22,7 +12,7 @@ const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
   return (
     <MultiButton
       id={setId(id, "multi-button")}
-      buttons={options}
+      buttons={views}
       type="icon"
       onChange={onChangeViewHandler}
       minSelection={1}

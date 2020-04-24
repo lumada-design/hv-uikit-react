@@ -5,9 +5,9 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=corebutton--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-button--
 
 
 *** Test Cases ***
 storybook button samples against WCAG2AA standard
-    pa11y should not find errors    ${url}smoke
+    pa11y should not find errors    ${url}smoke-tests

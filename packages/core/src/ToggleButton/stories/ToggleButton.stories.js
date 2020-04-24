@@ -12,17 +12,17 @@ export default {
   component: HvToggleButton
 };
 
-export const Main = () => {
-  return (
-    <HvToggleButton
-      notSelectedIcon={Unlock}
-      aria-label="Lock selection"
-      notSelectedTitle="Open"
-      selectedIcon={Lock}
-      selectedTitle="Closed"
-    />
-  );
-};
+export const Main = () => (
+  <HvToggleButton
+    notSelectedIcon={Unlock}
+    aria-label="Lock selection"
+    selectedIcon={Lock}
+    labels={{
+      notSelectedTitle: "Open",
+      selectedTitle: "Closed"
+    }}
+  />
+);
 
 export const Controlled = () => {
   const [select, setSelect] = useState(true);
@@ -40,11 +40,13 @@ export const Controlled = () => {
         <HvToggleButton
           selected={select}
           notSelectedIcon={Unlock}
-          notSelectedTitle="Open"
           selectedIcon={Lock}
-          selectedTitle="Closed"
           onClick={toggleState}
           aria-label="Lock selection"
+          labels={{
+            notSelectedTitle: "Open",
+            selectedTitle: "Closed"
+          }}
         />
       </div>
     </>
@@ -62,9 +64,12 @@ Controlled.story = {
 export const Animated = () => (
   <HvToggleButton
     notSelectedIcon={Eye}
-    notSelectedTitle="Don't Show"
-    selectedTitle="Show"
     animated
+    aria-label="Eye"
+    labels={{
+      notSelectedTitle: "Don't Show",
+      selectedTitle: "Show"
+    }}
   />
 );
 

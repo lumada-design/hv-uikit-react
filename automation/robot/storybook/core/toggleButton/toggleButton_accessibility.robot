@@ -6,9 +6,9 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coretogglebutton--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-selectors-toggle-button--
 
 
 *** Test Cases ***
-storybook sample sample1 against standard WCAG2AA     ${url}sample1
-storybook sample sample3 against standard WCAG2AA     ${url}sample3
+storybook sample sample1 against standard WCAG2AA     ${url}main
+storybook sample sample3 against standard WCAG2AA     ${url}animated

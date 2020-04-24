@@ -1,13 +1,18 @@
-import * as React from "react";
+import React, { MouseEvent } from "react";
 import { StandardProps } from "@material-ui/core";
 
 interface NavigationItemProp {
   id: string;
   label: string;
+  path?: string;
 }
 
 export interface HvHeaderNavigationProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvHeaderNavigationClassKey> {
+  extends StandardProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HvHeaderNavigationClassKey,
+    "onClick"
+  > {
   /**
    * An array containing the data for each menu item.
    *
@@ -19,6 +24,10 @@ export interface HvHeaderNavigationProps
    * Menu item id selected.
    */
   selected?: string;
+  /**
+   * Callback triggered when any item is clicked.
+   */
+  onClick?: (event: MouseEvent, selection: NavigationItemProp) => void;
 }
 
 export type HvHeaderNavigationClassKey = "root";

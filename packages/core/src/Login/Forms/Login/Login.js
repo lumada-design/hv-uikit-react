@@ -13,6 +13,8 @@ import styles from "./styles";
  * Login main form.
  */
 class Login extends React.Component {
+  isFullyMounted = false;
+
   constructor() {
     super();
     this.state = {
@@ -25,9 +27,23 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
+    this.isMounted = true;
+
     this.setState({
       username: localStorage.getItem("username") != null ? localStorage.getItem("username") : ""
     });
+  }
+
+  componentWillUnmount() {
+    this.isMounted = false;
+  }
+
+  set isMounted(status) {
+    this.isFullyMounted = status;
+  }
+
+  get isMounted() {
+    return this.isFullyMounted;
   }
 
   /**
@@ -59,10 +75,10 @@ class Login extends React.Component {
 
     try {
       await login({ username, password });
+      if (this.isMounted) this.setState({ isLogging: false });
     } catch (error) {
-      this.setState({ loginError: true });
+      if (this.isMounted) this.setState({ loginError: true });
     }
-    this.setState({ isLogging: false });
   };
 
   /**

@@ -27,7 +27,7 @@ Verify selectable card behavior
     ...   | locator       | where (area) should click on the card     |
     ...   | isSelected    | flag (true or false) if card is selected  |
 
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=corecard--${card}
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=components-card--${card}
     Wait Until Element Is Enabled        ${locator}                    10s
     Click Element                        ${locator}
     Run Keyword If                       '${isSelected}'=='true'       Verify card is selected
@@ -41,9 +41,7 @@ selectable card click on header                 selectable               ${heade
 selectable card click on content                selectable               ${content}     true       
 selectable card click on footer                 selectable               ${footer}      false      
 selectable card click on checkbox               selectable               ${checkbox}    true       
-no selectable card click on header              no-selectable            ${header}      false      
-no selectable card click on content             no-selectable            ${content}     false      
-no selectable card click on footer              no-selectable            ${footer}      false      
-no selectable card click on checkbox            no-selectable            ${checkbox}    true       
-
-    
+no selectable card click on header              all-components           ${header}      false      
+no selectable card click on content             all-components           ${content}     false      
+no selectable card click on footer              all-components           ${footer}      false      
+no selectable card click on checkbox            all-components           ${checkbox}    true       

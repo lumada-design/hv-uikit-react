@@ -1,2 +1,2 @@
-STORYBOOK_URL:    http://localhost:9002
-BROWSER:    ff
+STORYBOOK_URL:    http://localhost:9001
+BROWSER:          ff

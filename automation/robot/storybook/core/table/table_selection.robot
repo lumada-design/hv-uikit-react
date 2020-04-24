@@ -4,13 +4,13 @@ Variables         variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
-Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=coretable--tablecheckbox    ${table}    10s
+Test Setup        go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-checkbox    ${table}    10s
 Suite Teardown    Close Browser
 Force Tags        smoke    
 
 
 *** Comments ***
-don't was possible use selenium keywords for table because this component don't has a table semantic. 
+not possible to use selenium keywords for table because this component don't have a table semantic.
 
 
 *** Test Cases ***

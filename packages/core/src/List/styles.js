@@ -26,7 +26,8 @@ const styles = theme => ({
   list: {
     display: "block",
     padding: 0,
-    margin: 0
+    margin: 0,
+    marginTop: 2
   },
   listItem: {
     display: "flex",

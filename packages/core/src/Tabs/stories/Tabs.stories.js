@@ -17,10 +17,10 @@ export const Main = () => {
   const handleChange = (e, newValue) => setValue(newValue);
 
   return (
-    <HvTabs value={value} onChange={handleChange}>
-      <HvTab label="Clickable tab 1" />
-      <HvTab label="Clickable tab 2" />
-      <HvTab label="Clickable tab 3" />
+    <HvTabs id="tabs" value={value} onChange={handleChange}>
+      <HvTab id="tabs-tab1" label="Clickable tab 1" />
+      <HvTab id="tabs-tab2" label="Clickable tab 2" />
+      <HvTab id="tabs-tab3" label="Clickable tab 3" />
     </HvTabs>
   );
 };
@@ -84,7 +84,7 @@ export const TextSize = () => {
 
   const StyledTab = withStyles(theme => ({
     root: {
-      fontSize: theme.hv.typography.sTitle.fontSize
+      ...theme.hv.typography.sTitle
     }
   }))(props => <HvTab {...props} />);
 

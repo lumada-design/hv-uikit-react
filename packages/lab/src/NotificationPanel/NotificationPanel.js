@@ -136,4 +136,4 @@ HvNotificationPanel.defaultProps = {
   open: false
 };
 
-export default withStyles(styles, { name: "HvHvNotificationPanel" })(HvNotificationPanel);
+export default withStyles(styles, { name: "HvNotificationPanel" })(HvNotificationPanel);

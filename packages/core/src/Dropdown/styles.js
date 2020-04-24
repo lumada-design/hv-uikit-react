@@ -11,10 +11,10 @@ const styles = theme => ({
   },
   rootOpen: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
-    boxShadow: `0 2px 12px rgba(65,65,65,.12)`,
+    boxShadow: theme.hv.shadows[1],
     "&:hover": {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
-      boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+      boxShadow: theme.hv.shadows[1]
     }
   },
   rootDisabled: {
@@ -27,7 +27,7 @@ const styles = theme => ({
   label: {
     ...theme.hv.typography.labelText,
     fontFamily: theme.hv.typography.fontFamily,
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    marginBottom: theme.hv.spacing.xs + 1,
     display: "block"
   },
   header: {

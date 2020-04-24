@@ -9,9 +9,8 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
-
 jobs:
-  Build:
+  Lint:
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -32,20 +31,59 @@ jobs:
       - name: Lint
         run: npm run lint
 
+  Test-Jest:
+    name: Test Jest
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
       - name: Test
         run: npm run test
 
-      - name: Generate Storybook
-        run: npm run automation:package
+  Build-Documentation:
+    name: Build Documentation
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
 
-      - name: Archive Storybook
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Generate Documentation
+        run: npm run build-documentation
+
+      - name: Archive Documentation
         uses: actions/upload-artifact@v1
         with:
-          name: storybook
-          path: automation/storybook/dist
-          
+          name: documentation
+          path: dist
+
   Robot_pa11y:
-    needs: Build
+    name: Test Robot pa11y
+    needs: Build-Documentation
     runs-on: [self-hosted, Windows]
 
     steps:
@@ -60,7 +98,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: storybook
+          name: documentation
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -85,12 +123,14 @@ jobs:
           path: reports
 
   Robot:
-    needs: Build
+    name: Test Robot
+    needs: Build-Documentation
     runs-on: [self-hosted, Windows]
+    timeout-minutes: 150
     strategy:
       fail-fast: false
       matrix:
-        browser: [firefox, ie, chrome]
+        browser: [ie, chrome, firefox]
 
     steps:
       - name: Checkout
@@ -99,24 +139,28 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: storybook
+          name: documentation
           path: .github/storybook/www
 
       - name: Run Storybook
         uses: ./.github/storybook
 
       - name: Run SELENIUM Robot
-        shell: cmd
-        run: |
-          robot --variable STORYBOOK_URL:http://localhost:9002  --variable BROWSER:${{ matrix.browser }} --exclude classORbug-infrastructure-${{ matrix.browser }} --exclude pa11y --exclude issueORissue-${{ matrix.browser }}ORimage --exclude bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins --outputdir reports --output firstRun.xml --report NONE --log NONE automation\robot\storybook\core\table
-          rebot --outputdir reports --output output.xml reports\firstRun.xml
-
-      - name: ReRun SELENIUM Robot Failed
-        if: failure()
-        shell: cmd
-        run: |
-          robot --rerunfailed reports\firstRun.xml --variable STORYBOOK_URL:http://localhost:9002 --variable BROWSER:${{ matrix.browser }} --outputdir reports --output secondRun.xml --report NONE --log NONE automation\robot\storybook\core
-          rebot --outputdir reports --output output.xml --merge reports\firstRun.xml reports\secondRun.xml
+        uses: ./.github/robot
+        with:
+          storybook-url: http://localhost:9002
+          browser: ${{ matrix.browser }}
+          excludes: |
+            pa11y
+            bug-${{ matrix.browser }}
+            bug-${{ matrix.browser }}-webdriver
+            issue
+            issue-${{ matrix.browser }}
+            bug-infrastructure
+            bug-infrastructure-${{ matrix.browser }}
+          output-dir: reports
+          processes: 3
+          path: ./automation/robot/storybook/core
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
@@ -143,12 +187,12 @@ jobs:
               repo: context.repo.repo,
               branch: context.ref
             })
-            
+
             const message = branch.data.commit.commit.message
-            
+
             if(!message.includes('${{ env.RELEASE_COMMIT_MESSAGE }}')){
               console.log('Last commit not released, triggering a new release.')
-              
+
               await github.repos.createDispatchEvent({
                 owner: context.repo.owner,
                 repo: context.repo.repo,

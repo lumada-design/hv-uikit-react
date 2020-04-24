@@ -6,16 +6,16 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coretable--
+${url}    ${STORYBOOK_URL}/iframe.html?id=visualizations-table--
 
 
 *** Test Cases ***
-Storybook sample tablecheckbox against WCAG2AA standard     ${url}tablecheckbox    
-Storybook sample tableempty against WCAG2AA standard        ${url}tableempty    
-Storybook sample tableexpander against WCAG2AA standard     ${url}tableexpander
-Storybook sample tablenulls against WCAG2AA standard        ${url}tablenulls
-Storybook sample tablesecondary against WCAG2AA standard    ${url}tablesecondary
-Storybook sample tablesimple against WCAG2AA standard       ${url}tablesimple
+Storybook sample table checkbox against WCAG2AA standard     ${url}with-checkbox
+Storybook sample table empty against WCAG2AA standard        ${url}empty
+Storybook sample table expander against WCAG2AA standard     ${url}with-expander
+Storybook sample table nulls against WCAG2AA standard        ${url}with-null-values
+Storybook sample table secondary against WCAG2AA standard    ${url}with-checkbox-and-secondary-actions
+Storybook sample table simple against WCAG2AA standard       ${url}main
 
 
 *** Comments ***

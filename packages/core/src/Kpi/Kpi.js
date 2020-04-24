@@ -150,16 +150,23 @@ HvKpi.propTypes = {
   visualComparison: PropTypes.node,
   /**
    * The object that contains the different labels inside the kpi.
-   *
-   * - Title: The text at the top of the kpi.
-   * - Indicator: The text in the middle of the kpi.
-   * - Unit: The text to the right of the indicator.
-   * - comparisonIndicatorInfo: the text to the right of the visual comparison.
    */
   labels: PropTypes.shape({
+    /**
+     * The text at the top of the kpi.
+     */
     title: PropTypes.string,
+    /**
+     * The text in the middle of the kpi.
+     */
     indicator: PropTypes.string,
+    /**
+     * The text to the right of the indicator.
+     */
     unit: PropTypes.string,
+    /**
+     * the text to the right of the visual comparison.
+     */
     comparisonIndicatorInfo: PropTypes.string
   }),
   /**

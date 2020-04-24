@@ -16,12 +16,12 @@ ${fileLine}              //ul[contains(@id,'fileuploader1-filelist')]/li
 *** Test Cases ***
 dropZone is clickable
     [Tags]    bug-infrastructure-ie
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-file-uploader--automation-sample
     Wait Until Element Is Enabled    ${dropZone-inputArea}    10s
     Choose File                      ${dropZone-inputArea}   ${file_location}
 
 remove files one by one
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-file-uploader--automation-sample
     Wait Until Element Is Enabled       ${fileLine}                      10s
     ${fileName}                         Get Text                         xpath:(${fileLine})[2]/p
     Click element                       xpath:(${fileLine})[2]/button
@@ -35,16 +35,16 @@ remove files one by one
     Page Should Contain Element         ${fileLine}                      limit=0
 
 label when file exceeds the maximum size
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-file-uploader--automation-sample
     Wait Until Element Is Enabled    ${fileLine}                       10s
     Element Text Should Be           xpath:((${fileLine})[3]//p)[2]    The file exceeds the maximum upload size
 
 label when file type not allowed
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-file-uploader--automation-sample
     Wait Until Element Is Enabled    ${fileLine}                       10s
     Element Text Should Be           xpath:((${fileLine})[4]//p)[2]    File type not allowed for upload
 
 truncated label is ccs ellipsis
-    Go To                                ${STORYBOOK_URL}/iframe.html?id=corefileuploader--dropzonearea
+    Go To                                ${STORYBOOK_URL}/iframe.html?id=components-file-uploader--automation-sample
     Wait Until Element Is Enabled        ${fileLine}                       10s
     verify css element property value    xpath:((${fileLine})[4]//p)[1]    text-overflow    ellipsis

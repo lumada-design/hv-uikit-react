@@ -60,6 +60,9 @@ const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme =
 };
 
 HvProvider.propTypes = {
+  /**
+   * Your component tree.
+   */
   children: PropTypes.node.isRequired,
   /**
    * The UI-Kit theme object to be wrapped by the MUI theme.

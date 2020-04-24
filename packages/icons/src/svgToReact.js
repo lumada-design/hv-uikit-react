@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 // Vendor includes
 const fs = require("fs"); // file system
@@ -31,6 +30,7 @@ const writeFile = (processedSVG, fileName) => {
   fs.mkdirSync(componentOutputFolder, { recursive: true });
 
   const file = path.resolve(componentOutputFolder, `${fileName}.js`);
+  const fileTs = path.resolve(componentOutputFolder, `${fileName}.d.ts`);
 
   fs.writeFile(file, processedSVG, { flag: args.force ? "w" : "wx" }, err => {
     if (err) {
@@ -44,11 +44,14 @@ const writeFile = (processedSVG, fileName) => {
     }
   });
 
-  fs.appendFile(
-    path.resolve(componentOutputFolder, `index.js`),
-    `export { default as ${fileName.split(".").join("")} } from "./${fileName}";\n`,
-    () => {}
-  );
+  const exportName = fileName.split(".").join("");
+  const exportString = `export { default as ${exportName} } from "./${fileName}";\n`;
+  const exportStringTs = `export { default } from "./IconBase";`;
+
+  fs.writeFile(fileTs, exportStringTs, { flag: "w" }, () => {});
+
+  fs.appendFile(path.resolve(componentOutputFolder, `index.js`), exportString, () => {});
+  fs.appendFile(path.resolve(componentOutputFolder, `index.d.ts`), exportString, () => {});
 };
 
 const runUtil = (fileToRead, fileToWrite) => {
@@ -185,6 +188,7 @@ fs.mkdir(outputPath, { recursive: true }, err => {
 });
 
 fs.writeFile(path.resolve(process.cwd(), outputPath, `index.js`), "", () => {});
+fs.writeFile(path.resolve(process.cwd(), outputPath, `index.d.ts`), "", () => {});
 
 // Main entry point
 if (firstArg === "dir") {

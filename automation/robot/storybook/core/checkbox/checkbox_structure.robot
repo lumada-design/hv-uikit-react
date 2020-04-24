@@ -7,7 +7,7 @@ Suite Teardown    Close Browser
 Force Tags        smoke
 
 *** Variables ***
-${input}                    checkLabel-input
+${input}                    check-label-input
 ${inputUnchecked}           checkState1-input
 ${inputIndeterm}            checkState3-input
 ${inputIndetermDisabled}    checkState4-input
@@ -16,7 +16,7 @@ ${inputDisabledChecked}     checkState6-input
 
 *** Test Cases ***
 select and unselect a checkbox with label
-    Go To                              ${STORYBOOK_URL}/iframe.html?id=corecheckbox--checkboxlabel
+    Go To                              ${STORYBOOK_URL}/iframe.html?id=components-selectors-checkbox--with-label
     Wait Until Element Is Enabled      ${input}     10s
     Checkbox Should Not Be Selected    ${input}
     Select Checkbox                    ${input}
@@ -26,7 +26,7 @@ select and unselect a checkbox with label
     Element Should Be Visible          //span[text()='Label']
 
 unable select checkbox when is disabled 
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=corecheckbox--checkboxstate
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-selectors-checkbox--with-state
     Wait Until Page Contains Element    ${inputDisabled}    10s
     Element Should Be Disabled          ${inputDisabled}
     Run Keyword And Ignore Error        Click Element       ${inputDisabled}
@@ -34,14 +34,14 @@ unable select checkbox when is disabled
     Element Should Be Disabled          ${inputDisabled}
 
 unable unselect checkbox when is disabled
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=corecheckbox--checkboxstate
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-selectors-checkbox--with-state
     Wait Until Page Contains Element    ${inputDisabledChecked}     10s
     Run Keyword And Ignore Error        Click Element               ${inputDisabledChecked}
     Element Should Be Disabled          ${inputDisabledChecked}
     Checkbox Should Be Selected         ${inputDisabledChecked}
 
 toggle indeterminate checkbox
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=corecheckbox--checkboxstate
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-selectors-checkbox--with-state
     Wait Until Element Is Enabled       ${inputIndeterm}    10s
     Checkbox Should Not Be Selected     ${inputIndeterm}
     Element Attribute Value Should Be   ${inputIndeterm}    data-indeterminate  false
@@ -50,7 +50,7 @@ toggle indeterminate checkbox
     Checkbox Should Be Selected         ${inputIndeterm}
 
 unable toggle disabled indeterminate checkbox
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=corecheckbox--checkboxstate
+    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-selectors-checkbox--with-state
     Wait Until Page Contains Element    ${inputIndetermDisabled}    10s
     Element Attribute Value Should Be   ${inputIndetermDisabled}    data-indeterminate  true
     Run Keyword And Ignore Error        Click Element               ${inputIndetermDisabled}

@@ -1,11 +1,10 @@
-import { boxShadow } from "../../styles";
 import "focus-within-polyfill";
 
 const styles = theme => {
   const show = {
     top: 46,
     transition: ["top"],
-    ...boxShadow(theme.hv.palette.accent.acce1),
+    boxShadow: theme.hv.shadows[1],
     transitionDuration: 500
   };
 
@@ -30,12 +29,21 @@ const styles = theme => {
     },
     menu: {
       position: "absolute",
-      height: 40,
+      height: 2 * theme.hv.spacing.sm,
       zIndex: -1,
       backgroundColor: theme.hv.palette.atmosphere.atmo3
     },
     hidden: {
-      ...hide
+      ...hide,
+      "& li": {
+        marginTop: -2
+      },
+      "& li > div": {
+        height: 2 * theme.hv.spacing.sm,
+        "& p": {
+          marginTop: 3
+        }
+      }
     },
     active: {
       ...show

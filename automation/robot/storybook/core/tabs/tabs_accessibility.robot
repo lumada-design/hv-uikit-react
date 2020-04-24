@@ -6,9 +6,9 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coretabs--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-tabs--
 
 
 *** Test Cases ***
-Storybook sample tabs against WCAG2AA standard                   ${url}simpletabs
-Storybook sample tabs with disabled against WCAG2AA standard     ${url}biggertabs
+Storybook sample tabs against WCAG2AA standard                   ${url}main
+Storybook sample tabs with disabled against WCAG2AA standard     ${url}text-size

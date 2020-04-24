@@ -9,7 +9,7 @@ import validationStates from "../validationStates";
 import validationTypes from "../validationTypes";
 import iconPositions from "../iconPositions";
 import HvProvider from "../../Provider";
-import Input from "..";
+import Input from "../Input";
 
 /* eslint-disable no-console */
 
@@ -482,7 +482,7 @@ describe("Input", () => {
     testState(null, validationStates.empty, inputText2, inputInstance);
   });
 
-  it("should show the info icon and the info label", () => {
+  it("should show the info icon", () => {
     wrapper = mount(
       <HvProvider>
         <Input infoIcon labels={labels} />
@@ -490,11 +490,9 @@ describe("Input", () => {
     );
     const inputComponent = wrapper.find(InfoS);
     expect(inputComponent.length).toBe(1);
-    const labelParagraph = wrapper.find("p");
-    expect(labelParagraph.length).toBe(2);
   });
 
-  it("should show the custom map icon and the info label", () => {
+  it("should show the custom map icon", () => {
     wrapper = mount(
       <HvProvider>
         <Input labels={labels} customFixedIcon={<MapS />} />
@@ -502,8 +500,6 @@ describe("Input", () => {
     );
     const inputComponent = wrapper.find(MapS);
     expect(inputComponent.length).toBe(1);
-    const labelParagraph = wrapper.find("p");
-    expect(labelParagraph.length).toBe(2);
   });
 
   it("should show the info label and not the info icon", () => {
@@ -512,6 +508,7 @@ describe("Input", () => {
         <Input labels={labels} />
       </HvProvider>
     );
+
     const iconInfo = wrapper.find(InfoS);
     expect(iconInfo.length).toBe(0);
     const labelParagraph = wrapper.find("p");

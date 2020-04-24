@@ -42,7 +42,13 @@ Successful.story = {
 };
 
 export const Unsuccessful = () => (
-  <HvLogin login={callSimulationError} recovery={callSimulationError} id="test" allowRecover />
+  <HvLogin
+    login={callSimulationError}
+    recovery={callSimulationError}
+    id="test"
+    allowRecover
+    labels={{ incorrectCredentialsMessage: "Error!", loginButtonLabel: "Login" }}
+  />
 );
 
 Unsuccessful.story = {

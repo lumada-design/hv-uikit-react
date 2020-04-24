@@ -2,7 +2,13 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface HvSwitchLabelsProp {
+  /**
+   * Label placed at the left of the switch.
+   */
   left: string;
+  /**
+   * Label placed at the right of the switch.
+   */
   right: string;
 }
 
@@ -18,9 +24,6 @@ export interface HvSwitchProps
   disabled?: boolean;
   /**
    * An Object containing the various text associated with the switch.
-   *
-   * - left: Label placed at the left of the switch.
-   * - right: Label placed at the right of the switch.
    */
   labels?: HvSwitchLabelsProp;
   /**

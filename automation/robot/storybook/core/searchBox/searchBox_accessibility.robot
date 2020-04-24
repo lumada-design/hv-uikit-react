@@ -5,9 +5,9 @@ Force Tags      pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coresearchbox--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-searchbox--
 
 
-*** Test Cases ***                             
-storybook sample simple search box against WCAG2AA standard   
-    pa11y should not find errors    ${url}simplesearchbox
+*** Test Cases ***
+storybook sample simple search box against WCAG2AA standard
+    pa11y should not find errors    ${url}main

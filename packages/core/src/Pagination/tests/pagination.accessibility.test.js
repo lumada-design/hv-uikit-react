@@ -14,7 +14,7 @@ describe("PaginationA11Y", () => {
   it("normal state", async () => {
     const wrapper = mount(
       <HvProvider>
-        <PaginationWithStyles pages={1} />
+        <PaginationWithStyles id="test" pages={1} />
       </HvProvider>
     );
 
@@ -26,6 +26,7 @@ describe("PaginationA11Y", () => {
     const wrapper = mount(
       <HvProvider>
         <PaginationWithStyles
+          id="test"
           pages={4}
           page={2}
           showPageSizeOptions

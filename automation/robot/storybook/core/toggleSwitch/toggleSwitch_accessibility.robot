@@ -6,9 +6,9 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coretoggleswitch--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--
 
 
 *** Test Cases ***
-icon checked switch against WCAG2AA standard    ${url}displayiconchecked
+icon checked switch against WCAG2AA standard    ${url}no-labels
 disables switch against WCAG2AA standard        ${url}disabled

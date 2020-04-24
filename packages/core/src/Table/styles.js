@@ -1,8 +1,3 @@
-import lock from "./assets/Lock.svg";
-import lockSelected from "./assets/LockSelected.svg";
-import trash from "./assets/Trash.svg";
-import trashSelected from "./assets/TrashSelected.svg";
-
 const tableStyleOverrides = classes => ({
   getProps: () => ({ className: classes.root }),
   getTableProps: () => ({ className: classes.table }),
@@ -277,26 +272,6 @@ const styles = theme => ({
   },
   firstWithNumeric: {
     width: "calc(100% - 32px)"
-  },
-  lockIcon: {
-    background: `url(${lock}) no-repeat center`,
-    width: "32px",
-    height: "32px"
-  },
-  lockIconSelected: {
-    background: `url(${lockSelected}) no-repeat center`,
-    width: "32px",
-    height: "32px"
-  },
-  trashIcon: {
-    background: `url(${trash}) no-repeat center`,
-    width: "32px",
-    height: "32px"
-  },
-  trashIconSelected: {
-    width: "32px",
-    height: "32px",
-    background: `url(${trashSelected}) no-repeat center`
   },
   checkBoxText: {
     display: "flex",

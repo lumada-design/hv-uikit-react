@@ -71,10 +71,9 @@ exports[`Custom Pagination should render correctly 1`] = `
           "pageSizeEntryName": "rows",
           "pageSizePrev": "Show",
           "pageSizeSelectorDescription": "Select how many to display",
-          "pagesIndeterminate": "Many",
           "pagesSeparator": "of",
           "paginationFirstPageTitle": "First page",
-          "paginationInputLabel": "Page input",
+          "paginationInputLabel": "Total pages for page input",
           "paginationLastPageTitle": "Last page",
           "paginationNextPageTitle": "Next page",
           "paginationPreviousPageTitle": "Previous page",
@@ -244,7 +243,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
-            title="First page"
           >
             <ForwardRef(IconButton)
               className="HvPagination-iconContainer"
@@ -263,7 +261,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               }
               disabled={false}
               onClick={[Function]}
-              title="First page"
             >
               <WithStyles(ForwardRef(ButtonBase))
                 centerRipple={true}
@@ -271,7 +268,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
-                title="First page"
               >
                 <ForwardRef(ButtonBase)
                   centerRipple={true}
@@ -287,7 +283,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   disabled={false}
                   focusRipple={true}
                   onClick={[Function]}
-                  title="First page"
                 >
                   <button
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -305,46 +300,262 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    title="First page"
                     type="button"
                   >
                     <span
                       className="MuiIconButton-label"
                     >
-                      <WithStyles(Start)
-                        className="HvPagination-icon"
-                      >
-                        <Start
-                          className="HvPagination-icon"
-                          classes={
+                      <Component>
+                        <WithStyles(HvTooltip)
+                          disableFocusListener={true}
+                          disableTouchListener={true}
+                          open={false}
+                          style={
                             Object {
-                              "root": "HvIconStart-root",
-                              "rootL": "HvIconStart-rootL",
-                              "rootM": "HvIconStart-rootM",
-                              "rootS": "HvIconStart-rootS",
-                              "rootXs": "HvIconStart-rootXs",
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
                             }
                           }
-                        >
-                          <div
-                            className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
-                          >
-                            <svg
-                              focusable={false}
-                              height="16px"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                              xmlns="http://www.w3.org/2000/svg"
+                          title={
+                            <ForwardRef(WithStyles)
+                              variant="infoText"
                             >
-                              <path
-                                className="color0"
-                                d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                        </Start>
-                      </WithStyles(Start)>
+                              First page
+                            </ForwardRef(WithStyles)>
+                          }
+                        >
+                          <HvTooltip
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableTouchListener={true}
+                            open={false}
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <ForwardRef(WithStyles)
+                                variant="infoText"
+                              >
+                                First page
+                              </ForwardRef(WithStyles)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onExit": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <ForwardRef(WithStyles)
+                                  variant="infoText"
+                                >
+                                  First page
+                                </ForwardRef(WithStyles)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onExit": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <ForwardRef(WithStyles)
+                                    variant="infoText"
+                                  >
+                                    First page
+                                  </ForwardRef(WithStyles)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <FirstPage>
+                                    <WithStyles(Start)
+                                      className="HvPagination-icon"
+                                    >
+                                      <Start
+                                        className="HvPagination-icon"
+                                        classes={
+                                          Object {
+                                            "root": "HvIconStart-root",
+                                            "rootL": "HvIconStart-rootL",
+                                            "rootM": "HvIconStart-rootM",
+                                            "rootS": "HvIconStart-rootS",
+                                            "rootXs": "HvIconStart-rootXs",
+                                          }
+                                        }
+                                      >
+                                        <div
+                                          className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
+                                        >
+                                          <svg
+                                            focusable={false}
+                                            height="16px"
+                                            viewBox="0 0 16 16"
+                                            width="16px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              className="color0"
+                                              d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
+                                              fill="#414141"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </Start>
+                                    </WithStyles(Start)>
+                                  </FirstPage>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      <div
+                                        class="HvPagination-icon HvIconStart-root HvIconStart-rootS"
+                                      >
+                                        <svg
+                                          focusable="false"
+                                          height="16px"
+                                          viewBox="0 0 16 16"
+                                          width="16px"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            class="color0"
+                                            d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </HvTooltip>
+                        </WithStyles(HvTooltip)>
+                      </Component>
                     </span>
                     <NoSsr />
                   </button>
@@ -356,7 +567,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
-            title="Previous page"
           >
             <ForwardRef(IconButton)
               className="HvPagination-iconContainer"
@@ -375,7 +585,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               }
               disabled={false}
               onClick={[Function]}
-              title="Previous page"
             >
               <WithStyles(ForwardRef(ButtonBase))
                 centerRipple={true}
@@ -383,7 +592,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
-                title="Previous page"
               >
                 <ForwardRef(ButtonBase)
                   centerRipple={true}
@@ -399,7 +607,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   disabled={false}
                   focusRipple={true}
                   onClick={[Function]}
-                  title="Previous page"
                 >
                   <button
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -417,46 +624,262 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    title="Previous page"
                     type="button"
                   >
                     <span
                       className="MuiIconButton-label"
                     >
-                      <WithStyles(Backwards)
-                        className="HvPagination-icon"
-                      >
-                        <Backwards
-                          className="HvPagination-icon"
-                          classes={
+                      <Component>
+                        <WithStyles(HvTooltip)
+                          disableFocusListener={true}
+                          disableTouchListener={true}
+                          open={false}
+                          style={
                             Object {
-                              "root": "HvIconBackwards-root",
-                              "rootL": "HvIconBackwards-rootL",
-                              "rootM": "HvIconBackwards-rootM",
-                              "rootS": "HvIconBackwards-rootS",
-                              "rootXs": "HvIconBackwards-rootXs",
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
                             }
                           }
-                        >
-                          <div
-                            className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
-                          >
-                            <svg
-                              focusable={false}
-                              height="16px"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                              xmlns="http://www.w3.org/2000/svg"
+                          title={
+                            <ForwardRef(WithStyles)
+                              variant="infoText"
                             >
-                              <path
-                                className="color0"
-                                d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                        </Backwards>
-                      </WithStyles(Backwards)>
+                              Previous page
+                            </ForwardRef(WithStyles)>
+                          }
+                        >
+                          <HvTooltip
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableTouchListener={true}
+                            open={false}
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <ForwardRef(WithStyles)
+                                variant="infoText"
+                              >
+                                Previous page
+                              </ForwardRef(WithStyles)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onExit": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <ForwardRef(WithStyles)
+                                  variant="infoText"
+                                >
+                                  Previous page
+                                </ForwardRef(WithStyles)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onExit": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <ForwardRef(WithStyles)
+                                    variant="infoText"
+                                  >
+                                    Previous page
+                                  </ForwardRef(WithStyles)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <PreviousPage>
+                                    <WithStyles(Backwards)
+                                      className="HvPagination-icon"
+                                    >
+                                      <Backwards
+                                        className="HvPagination-icon"
+                                        classes={
+                                          Object {
+                                            "root": "HvIconBackwards-root",
+                                            "rootL": "HvIconBackwards-rootL",
+                                            "rootM": "HvIconBackwards-rootM",
+                                            "rootS": "HvIconBackwards-rootS",
+                                            "rootXs": "HvIconBackwards-rootXs",
+                                          }
+                                        }
+                                      >
+                                        <div
+                                          className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
+                                        >
+                                          <svg
+                                            focusable={false}
+                                            height="16px"
+                                            viewBox="0 0 16 16"
+                                            width="16px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              className="color0"
+                                              d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
+                                              fill="#414141"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </Backwards>
+                                    </WithStyles(Backwards)>
+                                  </PreviousPage>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      <div
+                                        class="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
+                                      >
+                                        <svg
+                                          focusable="false"
+                                          height="16px"
+                                          viewBox="0 0 16 16"
+                                          width="16px"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            class="color0"
+                                            d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </HvTooltip>
+                        </WithStyles(HvTooltip)>
+                      </Component>
                     </span>
                     <NoSsr />
                   </button>
@@ -598,7 +1021,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
-            title="Next page"
           >
             <ForwardRef(IconButton)
               className="HvPagination-iconContainer"
@@ -617,7 +1039,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               }
               disabled={false}
               onClick={[Function]}
-              title="Next page"
             >
               <WithStyles(ForwardRef(ButtonBase))
                 centerRipple={true}
@@ -625,7 +1046,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
-                title="Next page"
               >
                 <ForwardRef(ButtonBase)
                   centerRipple={true}
@@ -641,7 +1061,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   disabled={false}
                   focusRipple={true}
                   onClick={[Function]}
-                  title="Next page"
                 >
                   <button
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -659,46 +1078,262 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    title="Next page"
                     type="button"
                   >
                     <span
                       className="MuiIconButton-label"
                     >
-                      <WithStyles(Forwards)
-                        className="HvPagination-icon"
-                      >
-                        <Forwards
-                          className="HvPagination-icon"
-                          classes={
+                      <Component>
+                        <WithStyles(HvTooltip)
+                          disableFocusListener={true}
+                          disableTouchListener={true}
+                          open={false}
+                          style={
                             Object {
-                              "root": "HvIconForwards-root",
-                              "rootL": "HvIconForwards-rootL",
-                              "rootM": "HvIconForwards-rootM",
-                              "rootS": "HvIconForwards-rootS",
-                              "rootXs": "HvIconForwards-rootXs",
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
                             }
                           }
-                        >
-                          <div
-                            className="HvPagination-icon HvIconForwards-root HvIconForwards-rootS"
-                          >
-                            <svg
-                              focusable={false}
-                              height="16px"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                              xmlns="http://www.w3.org/2000/svg"
+                          title={
+                            <ForwardRef(WithStyles)
+                              variant="infoText"
                             >
-                              <path
-                                className="color0"
-                                d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                        </Forwards>
-                      </WithStyles(Forwards)>
+                              Next page
+                            </ForwardRef(WithStyles)>
+                          }
+                        >
+                          <HvTooltip
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableTouchListener={true}
+                            open={false}
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <ForwardRef(WithStyles)
+                                variant="infoText"
+                              >
+                                Next page
+                              </ForwardRef(WithStyles)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onExit": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <ForwardRef(WithStyles)
+                                  variant="infoText"
+                                >
+                                  Next page
+                                </ForwardRef(WithStyles)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onExit": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <ForwardRef(WithStyles)
+                                    variant="infoText"
+                                  >
+                                    Next page
+                                  </ForwardRef(WithStyles)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <NextPage>
+                                    <WithStyles(Forwards)
+                                      className="HvPagination-icon"
+                                    >
+                                      <Forwards
+                                        className="HvPagination-icon"
+                                        classes={
+                                          Object {
+                                            "root": "HvIconForwards-root",
+                                            "rootL": "HvIconForwards-rootL",
+                                            "rootM": "HvIconForwards-rootM",
+                                            "rootS": "HvIconForwards-rootS",
+                                            "rootXs": "HvIconForwards-rootXs",
+                                          }
+                                        }
+                                      >
+                                        <div
+                                          className="HvPagination-icon HvIconForwards-root HvIconForwards-rootS"
+                                        >
+                                          <svg
+                                            focusable={false}
+                                            height="16px"
+                                            viewBox="0 0 16 16"
+                                            width="16px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              className="color0"
+                                              d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
+                                              fill="#414141"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </Forwards>
+                                    </WithStyles(Forwards)>
+                                  </NextPage>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      <div
+                                        class="HvPagination-icon HvIconForwards-root HvIconForwards-rootS"
+                                      >
+                                        <svg
+                                          focusable="false"
+                                          height="16px"
+                                          viewBox="0 0 16 16"
+                                          width="16px"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            class="color0"
+                                            d="M4.7 15.45l-.8-.7 6.8-6.7-6.8-6.7.8-.8 7.4 7.5z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </HvTooltip>
+                        </WithStyles(HvTooltip)>
+                      </Component>
                     </span>
                     <NoSsr />
                   </button>
@@ -710,7 +1345,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
-            title="Last page"
           >
             <ForwardRef(IconButton)
               className="HvPagination-iconContainer"
@@ -729,7 +1363,6 @@ exports[`Custom Pagination should render correctly 1`] = `
               }
               disabled={false}
               onClick={[Function]}
-              title="Last page"
             >
               <WithStyles(ForwardRef(ButtonBase))
                 centerRipple={true}
@@ -737,7 +1370,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                 disabled={false}
                 focusRipple={true}
                 onClick={[Function]}
-                title="Last page"
               >
                 <ForwardRef(ButtonBase)
                   centerRipple={true}
@@ -753,7 +1385,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                   disabled={false}
                   focusRipple={true}
                   onClick={[Function]}
-                  title="Last page"
                 >
                   <button
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
@@ -771,46 +1402,262 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
                     tabIndex={0}
-                    title="Last page"
                     type="button"
                   >
                     <span
                       className="MuiIconButton-label"
                     >
-                      <WithStyles(End)
-                        className="HvPagination-icon"
-                      >
-                        <End
-                          className="HvPagination-icon"
-                          classes={
+                      <Component>
+                        <WithStyles(HvTooltip)
+                          disableFocusListener={true}
+                          disableTouchListener={true}
+                          open={false}
+                          style={
                             Object {
-                              "root": "HvIconEnd-root",
-                              "rootL": "HvIconEnd-rootL",
-                              "rootM": "HvIconEnd-rootM",
-                              "rootS": "HvIconEnd-rootS",
-                              "rootXs": "HvIconEnd-rootXs",
+                              "overflow": "hidden",
+                              "textOverflow": "ellipsis",
+                              "whiteSpace": "nowrap",
                             }
                           }
-                        >
-                          <div
-                            className="HvPagination-icon HvIconEnd-root HvIconEnd-rootS"
-                          >
-                            <svg
-                              focusable={false}
-                              height="16px"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                              xmlns="http://www.w3.org/2000/svg"
+                          title={
+                            <ForwardRef(WithStyles)
+                              variant="infoText"
                             >
-                              <path
-                                className="color0"
-                                d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
-                                fill="#414141"
-                              />
-                            </svg>
-                          </div>
-                        </End>
-                      </WithStyles(End)>
+                              Last page
+                            </ForwardRef(WithStyles)>
+                          }
+                        >
+                          <HvTooltip
+                            classes={
+                              Object {
+                                "color": "HvTooltip-color",
+                                "popper": "HvTooltip-popper",
+                                "root": "HvTooltip-root",
+                                "separator": "HvTooltip-separator",
+                                "separatorColor": "HvTooltip-separatorColor",
+                                "title": "HvTooltip-title",
+                                "tooltip": "HvTooltip-tooltip",
+                                "tooltipMulti": "HvTooltip-tooltipMulti",
+                                "valueWrapper": "HvTooltip-valueWrapper",
+                                "values": "HvTooltip-values",
+                                "valuesContainer": "HvTooltip-valuesContainer",
+                              }
+                            }
+                            disableFocusListener={true}
+                            disableTouchListener={true}
+                            open={false}
+                            style={
+                              Object {
+                                "overflow": "hidden",
+                                "textOverflow": "ellipsis",
+                                "whiteSpace": "nowrap",
+                              }
+                            }
+                            title={
+                              <ForwardRef(WithStyles)
+                                variant="infoText"
+                              >
+                                Last page
+                              </ForwardRef(WithStyles)>
+                            }
+                          >
+                            <WithStyles(ForwardRef(Tooltip))
+                              TransitionComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "propTypes": Object {
+                                    "children": [Function],
+                                    "in": [Function],
+                                    "onEnter": [Function],
+                                    "onExit": [Function],
+                                    "style": [Function],
+                                    "timeout": [Function],
+                                  },
+                                  "render": [Function],
+                                }
+                              }
+                              TransitionProps={
+                                Object {
+                                  "timeout": 400,
+                                }
+                              }
+                              classes={
+                                Object {
+                                  "popper": "HvTooltip-popper",
+                                  "tooltip": "HvTooltip-tooltip",
+                                }
+                              }
+                              disableFocusListener={true}
+                              disableTouchListener={true}
+                              enterDelay={300}
+                              placement="top"
+                              style={
+                                Object {
+                                  "overflow": "hidden",
+                                  "textOverflow": "ellipsis",
+                                  "whiteSpace": "nowrap",
+                                }
+                              }
+                              title={
+                                <ForwardRef(WithStyles)
+                                  variant="infoText"
+                                >
+                                  Last page
+                                </ForwardRef(WithStyles)>
+                              }
+                            >
+                              <ForwardRef(Tooltip)
+                                TransitionComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "propTypes": Object {
+                                      "children": [Function],
+                                      "in": [Function],
+                                      "onEnter": [Function],
+                                      "onExit": [Function],
+                                      "style": [Function],
+                                      "timeout": [Function],
+                                    },
+                                    "render": [Function],
+                                  }
+                                }
+                                TransitionProps={
+                                  Object {
+                                    "timeout": 400,
+                                  }
+                                }
+                                classes={
+                                  Object {
+                                    "arrow": "MuiTooltip-arrow",
+                                    "popper": "MuiTooltip-popper HvTooltip-popper",
+                                    "popperArrow": "MuiTooltip-popperArrow",
+                                    "popperInteractive": "MuiTooltip-popperInteractive",
+                                    "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                                    "tooltipArrow": "MuiTooltip-tooltipArrow",
+                                    "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                                    "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                                    "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                                    "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                                    "touch": "MuiTooltip-touch",
+                                  }
+                                }
+                                disableFocusListener={true}
+                                disableTouchListener={true}
+                                enterDelay={300}
+                                placement="top"
+                                style={
+                                  Object {
+                                    "overflow": "hidden",
+                                    "textOverflow": "ellipsis",
+                                    "whiteSpace": "nowrap",
+                                  }
+                                }
+                                title={
+                                  <ForwardRef(WithStyles)
+                                    variant="infoText"
+                                  >
+                                    Last page
+                                  </ForwardRef(WithStyles)>
+                                }
+                              >
+                                <div
+                                  aria-describedby={null}
+                                  className=""
+                                  onMouseEnter={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseOver={[Function]}
+                                  style={
+                                    Object {
+                                      "overflow": "hidden",
+                                      "textOverflow": "ellipsis",
+                                      "whiteSpace": "nowrap",
+                                    }
+                                  }
+                                  title={null}
+                                >
+                                  <LastPage>
+                                    <WithStyles(End)
+                                      className="HvPagination-icon"
+                                    >
+                                      <End
+                                        className="HvPagination-icon"
+                                        classes={
+                                          Object {
+                                            "root": "HvIconEnd-root",
+                                            "rootL": "HvIconEnd-rootL",
+                                            "rootM": "HvIconEnd-rootM",
+                                            "rootS": "HvIconEnd-rootS",
+                                            "rootXs": "HvIconEnd-rootXs",
+                                          }
+                                        }
+                                      >
+                                        <div
+                                          className="HvPagination-icon HvIconEnd-root HvIconEnd-rootS"
+                                        >
+                                          <svg
+                                            focusable={false}
+                                            height="16px"
+                                            viewBox="0 0 16 16"
+                                            width="16px"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                          >
+                                            <path
+                                              className="color0"
+                                              d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
+                                              fill="#414141"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </End>
+                                    </WithStyles(End)>
+                                  </LastPage>
+                                </div>
+                                <ForwardRef(Popper)
+                                  anchorEl={
+                                    <div
+                                      class=""
+                                      style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                                    >
+                                      <div
+                                        class="HvPagination-icon HvIconEnd-root HvIconEnd-rootS"
+                                      >
+                                        <svg
+                                          focusable="false"
+                                          height="16px"
+                                          viewBox="0 0 16 16"
+                                          width="16px"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            class="color0"
+                                            d="M3.70227 15.4056l-.8-.80005 6.8-6.69995-6.8-6.69995.8-.7 7.4 7.3999zM12.1 0h1v16h-1z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  }
+                                  className="MuiTooltip-popper HvTooltip-popper"
+                                  id={null}
+                                  open={false}
+                                  placement="top"
+                                  popperOptions={
+                                    Object {
+                                      "modifiers": Object {
+                                        "arrow": Object {
+                                          "element": null,
+                                          "enabled": false,
+                                        },
+                                      },
+                                    }
+                                  }
+                                  transition={true}
+                                />
+                              </ForwardRef(Tooltip)>
+                            </WithStyles(ForwardRef(Tooltip))>
+                          </HvTooltip>
+                        </WithStyles(HvTooltip)>
+                      </Component>
                     </span>
                     <NoSsr />
                   </button>

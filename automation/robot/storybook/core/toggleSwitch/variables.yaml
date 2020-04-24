@@ -1,3 +1,3 @@
 switch:        css:[role=checkbox]
-leftLabel:     css:[id$=default-left-button]
-rightLabel:    css:[id$=default-right-button]
+leftLabel:     css:[class*=leftLabel]
+rightLabel:    css:[class*=rightLabel]

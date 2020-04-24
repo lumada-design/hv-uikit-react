@@ -20,7 +20,7 @@ Verify card is not selected
 
 Verify selectable card behavior
     [Arguments]    ${locator}    ${keyBoards}    ${selected}
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=corecard--selectable
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-card--selectable
     Wait Until Element Is Enabled    ${locator}               10s
     set focus and press keys         ${locator}               ${keyBoards}
     Run Keyword If                   '${selected}'=='true'    Verify card is selected
@@ -36,7 +36,7 @@ do not select card with keys ALT+ENTER on checkbox    ${checkbox}       ALT+RETU
 select card with keys SPACE on checkbox               ${checkbox}       SPACE         true
 focus checkbox with keys TAB on content/header
     [Template]                                   NONE
-    Go To                                        ${STORYBOOK_URL}/iframe.html?id=corecard--selectable
+    Go To                                        ${STORYBOOK_URL}/iframe.html?id=components-card--selectable
     Wait Until Element Is Enabled                ${aboveFooter}                                          10s
     set focus and press keys                     ${aboveFooter}                                          TAB
     Element Should Be Focused                    ${Checkbox}

@@ -32,6 +32,7 @@ const DropDownMenu = ({
 }) => {
   const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
+  const [applyFocus, setApplyFocus] = useState(false);
   const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
   const theme = useTheme();
@@ -51,6 +52,12 @@ const DropDownMenu = ({
   const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
 
   const handleToggle = (event, status = null) => {
+    if (event.keycode !== undefined) {
+      setApplyFocus(true);
+    } else {
+      setApplyFocus(false);
+    }
+
     if (isNil(status) && status) setOpen(status);
     else setOpen(prevOpen => !prevOpen);
   };
@@ -82,7 +89,7 @@ const DropDownMenu = ({
       (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
       (isKeypress(event, KeyboardCodes.ArrowUp) && open)
     ) {
-      handleToggle(event);
+      handleToggle(event, null);
       event.preventDefault();
     }
   };
@@ -116,6 +123,7 @@ const DropDownMenu = ({
       >
         <OutsideClickHandler onOutsideClick={handleClose}>
           <FocusTrap
+            active={applyFocus}
             createOptions={{
               escapeDeactivates: false,
               allowOutsideClick: true,

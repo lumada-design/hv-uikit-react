@@ -58,6 +58,7 @@ export const ControlledSample = () => {
         </Container>
         <p />
         <HvPagination
+          id="pagination"
           pages={numPages}
           page={page}
           canPrevious={page > 0}
@@ -129,6 +130,7 @@ export const CardViewSample = () => {
         />
         <p />
         <HvPagination
+          id="pagination"
           pages={numPages}
           page={page}
           canPrevious={page > 0}

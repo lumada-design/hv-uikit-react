@@ -165,12 +165,15 @@ HvSearchBox.propTypes = {
   id: PropTypes.string,
   /**
    * An Object containing the various text associated with the searchbox.
-   *
-   * - inputLabel: the label on top of the searchbox.
-   * - placeholder: the placeholder value of the searchbox.
    */
   labels: PropTypes.shape({
+    /**
+     * Label on top of the searchbox.
+     */
     inputLabel: PropTypes.string,
+    /**
+     * Placeholder value.
+     */
     placeholder: PropTypes.string
   }),
   /**

@@ -47,6 +47,15 @@ export interface TableColumn {
    * If `true` the column may be sorted.
    */
   sortable?: boolean;
+  /**
+   * The width of the column
+   */
+  width?: string | number
+  /**
+   * The max-width of the column
+   */
+  maxWidth?: string | number
+
 }
 
 export interface SecondaryAction extends ListValueProp {
@@ -145,14 +154,14 @@ export interface HvTableProps
   getTrProps?: (state: object, rowInfo: object, column: object, instance: object) => any;
 
   /**
-   * Boolean to bind config back to function or not
+   * Number of rows available in table to display in aria-rowcount
    */
-  useRouter?: boolean;
+  rowCount?: number,
 
   /**
    * Callback which receives the checked state of all items in the list
    */
-  onSelection?: (event: React.FormEvent<HTMLDivElement>, selection: string[]) => void;
+  onSelection?: (event: React.FormEvent<HTMLDivElement>, selection: any[]) => void;
 
   /**
    * Ids of preselected items in the list
@@ -167,12 +176,24 @@ export interface HvTableProps
   /**
    *  Extra properties passed to the select all checkbox props.
    */
-  allCheckBoxProps: Object;
+  allCheckBoxProps?: Object;
 
   /**
    *  Extra properties passed to the dropdown menu.
    */
-  dropdownMenuProps: Object;
+  dropdownMenuProps?: Object;
+
+  tableProps?: object,
+
+  /**
+   * Boolean describing if the table columns are rezisable or not
+   */
+  resizable?: boolean,
+
+  /**
+   * The default page size in the page size selector
+   */
+  defaultPageSize?: number
 }
 
 export type HvTableClassKey =
@@ -224,4 +245,4 @@ export type HvTableClassKey =
   | "expand"
   | "separatorContainer";
 
-export default function HvBadge(props: HvTableProps): JSX.Element | null;
+export default function HvTable(props: HvTableProps): JSX.Element | null;

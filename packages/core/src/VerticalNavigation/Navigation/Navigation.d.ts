@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { MouseEvent } from "react";
 import { StandardProps } from "@material-ui/core";
 
 export interface NavigationData {
@@ -43,7 +43,7 @@ export interface HvVerticalNavigationNavigationProps
   /**
    * Callback triggered when any item is clicked.
    */
-  onClick?: (e: Event, selectedItem: NavigationData) => void;
+  onClick?: (e: MouseEvent, selectedItem: NavigationData) => void;
 }
 
 export type HvNavigationClassKey = "root";

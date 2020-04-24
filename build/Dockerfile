@@ -4,7 +4,7 @@ RUN apk update && \
     apk upgrade && \
     apk --no-cache add git openssh-client
 
-EXPOSE 9002
+EXPOSE 9001
 
 ENV UIKIT_FOLDER /home/node/hv-uikit-react
 
@@ -37,11 +37,14 @@ COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./package.json ./package-lock.json ./lerna
 # bootstrap the top orchestrator package
 RUN npm ci
 
+# copy the storybook files
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./.storybook ./.storybook
+COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./doc ./doc
+
 # copy the project's packages (from the least to the most likely to change)
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/themes ./packages/themes
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/icons ./packages/icons
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/lab ./packages/lab
-COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/doc ./packages/doc
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./automation ./automation
 COPY --chown=$UIKIT_USER:$UIKIT_GROUP ./packages/core ./packages/core
 

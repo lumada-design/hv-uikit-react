@@ -3,8 +3,7 @@ import { mount } from "enzyme";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import AddIcon from "@hv/uikit-react-icons/dist/DropUpXS";
 import SubIcon from "@hv/uikit-react-icons/dist/DropDownXS";
-import PeriodPickerWithStyles from "../index";
-import PeriodPicker from "../PeriodPicker";
+import PeriodPicker from "..";
 import { PeriodPickerOptions } from "../../enums";
 
 describe("PeriodPicker", () => {
@@ -18,10 +17,10 @@ describe("PeriodPicker", () => {
     mockOnChangePeriod = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <PeriodPickerWithStyles period={defaultPeriod} onChangePeriod={mockOnChangePeriod} />
+        <PeriodPicker period={defaultPeriod} onChangePeriod={mockOnChangePeriod} />
       </HvProvider>
     );
-    periodPickerComponent = wrapper.find(PeriodPicker);
+    periodPickerComponent = wrapper.find("PeriodPicker");
     periodPickerInstance = periodPickerComponent.instance();
   });
 
@@ -30,7 +29,7 @@ describe("PeriodPicker", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(PeriodPicker)).toMatchSnapshot();
   });
 
   it("handleChangePeriod - should call selectDifferentPeriod and onChangePeriod with the new value", () => {

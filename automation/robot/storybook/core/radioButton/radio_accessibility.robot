@@ -6,8 +6,8 @@ Force Tags       pa11y
 
 
 *** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=coreradiobutton--
+${url}    ${STORYBOOK_URL}/iframe.html?id=components-selectors-radio--
 
 
 *** Test Cases ***
-radio button with state management against WCAG2AA standard    ${url}radiobuttonstate
+radio button with state management against WCAG2AA standard    ${url}with-state

@@ -4,8 +4,7 @@ import HvProvider from "@hv/uikit-react-core/dist/Provider";
 import AddTimeIcon from "@hv/uikit-react-icons/dist/DropUpXS";
 import SubtractTimeIcon from "@hv/uikit-react-icons/dist/DropDownXS";
 import HvInput from "@hv/uikit-react-core/dist/Input";
-import UnitTimePickerWithStyles from "../index";
-import UnitTimePicker from "../UnitTimePicker";
+import UnitTimePicker from "..";
 import { TimePickerUnits } from "../../enums";
 
 describe("UnitTimePicker", () => {
@@ -19,14 +18,14 @@ describe("UnitTimePicker", () => {
     mockOnChangeUnitTimeValue = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <UnitTimePickerWithStyles
+        <UnitTimePicker
           unit={TimePickerUnits.MINUTE.type}
           unitValue={defaultUnitValue}
           onChangeUnitTimeValue={mockOnChangeUnitTimeValue}
         />
       </HvProvider>
     );
-    unitTimePickerComponent = wrapper.find(UnitTimePicker);
+    unitTimePickerComponent = wrapper.find("UnitTimePicker");
     unitTimePickerInstance = unitTimePickerComponent.instance();
   });
 
@@ -35,7 +34,7 @@ describe("UnitTimePicker", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(UnitTimePicker)).toMatchSnapshot();
   });
 
   it("isUnitTimeValid - should set the state isValid to true when the value is correct", () => {

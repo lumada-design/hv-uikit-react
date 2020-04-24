@@ -13,18 +13,18 @@ import HvInput from "../Input";
 import withLabels from "../withLabels";
 import { setId } from "../utils";
 import styles from "./styles";
+import withTooltip from "../withTooltip";
 
 const DEFAULT_LABELS = {
   pageSizePrev: "Show",
   pageSizeEntryName: "rows",
   pageSizeSelectorDescription: "Select how many to display",
   pagesSeparator: "of",
-  pagesIndeterminate: "Many",
   paginationFirstPageTitle: "First page",
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
   paginationLastPageTitle: "Last page",
-  paginationInputLabel: "Page input"
+  paginationInputLabel: "Total pages for page input"
 };
 
 const Pagination = ({
@@ -43,7 +43,8 @@ const Pagination = ({
   onPageSizeChange,
   labels,
   showPageProps,
-  navigationProps
+  navigationProps,
+  currentPageInputProps
 }) => {
   const [statePage, setStatePage] = useState(page);
 
@@ -68,6 +69,25 @@ const Pagination = ({
       changePage(page);
     }
   }, [page, pageSize]);
+
+  const FirstPage = () => (
+    <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+  );
+  const PreviousPage = () => (
+    <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+  );
+  const NextPage = () => (
+    <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+  );
+  const LastPage = () => (
+    <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+  );
+
+  const FirstPageTooltipWrapper = withTooltip(FirstPage, labels.paginationFirstPageTitle);
+  const PreviousPageTooltipWrapper = withTooltip(PreviousPage, labels.paginationPreviousPageTitle);
+  const NextPageTooltipWrapper = withTooltip(NextPage, labels.paginationNextPageTitle);
+  const LastPageTooltipWrapper = withTooltip(LastPage, labels.paginationLastPageTitle);
+  const totalPagesId = setId(id, "totalPages");
 
   return (
     <div id={id} className={clsx(className, classes.root)}>
@@ -102,22 +122,20 @@ const Pagination = ({
         <IconButton
           id={setId(id, "firstPage-button")}
           aria-label={setId(id, "firstPage-button")}
-          title={labels.paginationFirstPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
         >
-          <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+          <FirstPageTooltipWrapper />
         </IconButton>
         <IconButton
           id={setId(id, "previousPage-button")}
           aria-label={setId(id, "previousPage-button")}
-          title={labels.paginationPreviousPageTitle}
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
         >
-          <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
+          <PreviousPageTooltipWrapper />
         </IconButton>
         <div className={classes.pageInfo}>
           {showPageJump ? (
@@ -125,7 +143,9 @@ const Pagination = ({
               <HvInput
                 id={setId(id, "currentPage")}
                 labels={labels}
-                inputProps={{ "aria-label": labels.paginationInputLabel }}
+                inputProps={{
+                  "aria-label": `${pages} ${labels.paginationInputLabel}`
+                }}
                 classes={{
                   root: classes.pageSizeInputContainer,
                   input: classes.pageSizeInput,
@@ -140,6 +160,7 @@ const Pagination = ({
                 disabled={pageSize === 0}
                 disableClear
                 type="number"
+                {...currentPageInputProps}
               />
             </div>
           ) : (
@@ -150,27 +171,27 @@ const Pagination = ({
           <HvTypography component="span" variant="sText">
             {` ${labels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
-            {pages || 1}
+          <HvTypography id={totalPagesId} component="span" variant="sText">
+            {pages}
           </HvTypography>
         </div>
         <IconButton
           id={setId(id, "nextPage-button")}
-          title={labels.paginationNextPageTitle}
+          aria-label={setId(id, "nextPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
         >
-          <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+          <NextPageTooltipWrapper />
         </IconButton>
         <IconButton
           id={setId(id, "lastPage-button")}
-          title={labels.paginationLastPageTitle}
+          aria-label={setId(id, "lastPage-button")}
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}
         >
-          <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
+          <LastPageTooltipWrapper />
         </IconButton>
       </div>
     </div>
@@ -283,15 +304,41 @@ Pagination.propTypes = {
    * An object containing all the labels for the component.
    */
   labels: PropTypes.shape({
+    /**
+     * The show label.
+     */
     pageSizePrev: PropTypes.string,
+    /**
+     * Indicate the units of the page size selection.
+     */
     pageSizeEntryName: PropTypes.string,
+    /**
+     * Used for the aria-label of the selection of number of unit.s
+     */
     pageSizeSelectorDescription: PropTypes.string,
+    /**
+     * Separator of current page and total pages.
+     */
     pagesSeparator: PropTypes.string,
-    pagesIndeterminate: PropTypes.string,
+    /**
+     * Title of button `firstPage`.
+     */
     paginationFirstPageTitle: PropTypes.string,
+    /**
+     * Title of button `previousPage`.
+     */
     paginationPreviousPageTitle: PropTypes.string,
+    /**
+     * Title of button `nextPage`.
+     */
     paginationNextPageTitle: PropTypes.string,
+    /**
+     * Title of button `lastPage`.
+     */
     paginationLastPageTitle: PropTypes.string,
+    /**
+     * Aria-label passed to the page input.
+     */
     paginationInputLabel: PropTypes.string
   }),
   /**
@@ -301,7 +348,11 @@ Pagination.propTypes = {
   /**
    * Other props to pagination component.
    */
-  navigationProps: PropTypes.instanceOf(Object)
+  navigationProps: PropTypes.instanceOf(Object),
+  /**
+   * Extra properties passed to the input component representing the current pages.
+   */
+  currentPageInputProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvPagination" })(withLabels(DEFAULT_LABELS)(Pagination));

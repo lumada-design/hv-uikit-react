@@ -104,9 +104,12 @@ const styles = theme => ({
     display: "block"
   },
   textWarning: {
-    color: theme.hv.palette.accent.acce1
+    color: theme.hv.palette.accent.acce1,
+    display: "none"
   },
-
+  showText: {
+    display: "block"
+  },
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",

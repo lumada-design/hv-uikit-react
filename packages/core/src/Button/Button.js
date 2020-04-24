@@ -23,7 +23,7 @@ const HvButton = props => {
 
   const buttonConfiguration = getMaterialConfiguration(classes, category);
   const onClickHandler = event => {
-    if (!disabled) onClick(event);
+    if (!disabled) onClick?.(event);
   };
 
   return (

@@ -11,23 +11,36 @@ export default {
 };
 
 export const Main = () => {
-  return <HvRadio id="test" inputProps={{ "aria-label": "Radio example" }} />;
+  return <HvRadio />;
 };
 
 export const Disabled = () => (
-  <HvRadio id="Radio-disabled" disabled inputProps={{ "aria-label": "Radio disabled" }} />
+  <HvRadio id="radio1" disabled inputProps={{ "aria-label": "Radio disabled" }} />
 );
 
 Disabled.story = {
   parameters: {
     docs: {
       storyDescription:
-        "A sample showcasing a disable radio button that does not allows interaction."
+        "A sample showcasing a disabled radio button that does not allows interaction."
     }
   }
 };
 
-export const Label = () => <HvRadio id="check-label" label="Label" />;
+export const CheckedDisabled = () => (
+  <HvRadio id="radio1" disabled checked inputProps={{ "aria-label": "Radio disabled" }} />
+);
+
+CheckedDisabled.story = {
+  parameters: {
+    docs: {
+      storyDescription:
+        "A sample showcasing a checked and disabled radio button that does not allows interaction."
+    }
+  }
+};
+
+export const Label = () => <HvRadio id="radio1" label="Label" />;
 
 Label.story = {
   parameters: {
@@ -57,7 +70,7 @@ WithClickAction.story = {
 
 export const WithClickActionDisabled = () => (
   <HvRadio
-    id="check-click"
+    id="radio1"
     label="Click me!"
     value="A"
     disabled
@@ -86,8 +99,18 @@ export const WithState = () => {
 
   return (
     <div style={{ display: "inline-flex", flexDirection: "column" }}>
-      <HvRadio label="Radio 1" checked={checkedRadio === valueA} onChange={onChangeRadio(valueA)} />
-      <HvRadio label="Radio 2" checked={checkedRadio === valueB} onChange={onChangeRadio(valueB)} />
+      <HvRadio
+        id="radio1"
+        label="Radio 1"
+        checked={checkedRadio === valueA}
+        onChange={onChangeRadio(valueA)}
+      />
+      <HvRadio
+        id="radio2"
+        label="Radio 2"
+        checked={checkedRadio === valueB}
+        onChange={onChangeRadio(valueB)}
+      />
     </div>
   );
 };

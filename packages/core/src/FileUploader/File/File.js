@@ -47,7 +47,7 @@ const getProgressText = (classes, data, progressConjunctionLabel) => {
 const getProgressBarWith = ({ size, progress }) => {
   const width = Math.round((progress * 100) / size);
 
-  return `${width}%`;
+  return width;
 };
 
 const File = ({
@@ -63,12 +63,20 @@ const File = ({
   const progressText = getProgressText(classes, data, progressConjunctionLabel);
   const statusIcon = getStatusIcon(classes, data.status);
 
+  const currentProgress = getProgressBarWith(data);
+
   return (
     <>
       {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
-        <span className={classes.progressbar} style={{ width: getProgressBarWith(data) }} />
+        <progress
+          className={classes.progressbar}
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow={currentProgress}
+          style={{ width: `${currentProgress}%` }}
+        />
       )}
 
       {statusIcon}

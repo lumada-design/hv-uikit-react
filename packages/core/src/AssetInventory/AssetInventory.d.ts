@@ -165,6 +165,20 @@ export interface HvAssetInventoryProps
    * Disable portal on the Sort dropdown
    */
   disablePortal?: boolean;
+  /**
+   * Other props passed to the searchbox.
+   */
+  searchProps?: object;
+  /**
+   * Other props passed to the Sort. If you want to control the aria-label
+   * use the labels.sortBy, as it is mapped directly to the aria-label.
+   */
+  sortProps?: object;
+  /**
+   * Array of others prop passed to the created button. Each element must include the id of the view
+   * and other props to pe passed to each button.
+   */
+  multibuttonProps?: object;
 }
 
 export type ClassKey =

@@ -183,12 +183,15 @@ HvSwitch.propTypes = {
   onChange: PropTypes.func,
   /**
    * An Object containing the various text associated with the switch.
-   *
-   * - left: Label placed at the left of the switch.
-   * - right: Label placed at the right of the switch.
    */
   labels: PropTypes.shape({
+    /**
+     * Label placed at the left of the switch.
+     */
     left: PropTypes.string,
+    /**
+     * Label placed at the right of the switch.
+     */
     right: PropTypes.string
   }),
   /**
