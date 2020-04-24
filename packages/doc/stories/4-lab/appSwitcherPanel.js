@@ -49,6 +49,10 @@ storiesOf("Lab", module).add("App Switcher Panel", () => <HvAppSwitcherPanel />,
     {
       title: "6. Using icon components mixed with url icons",
       src: "lab/appSwitcherPanel/appSwitcherPanel6"
+    },
+    {
+      title: "7. Alerts on which menu was clicked",
+      src: "lab/appSwitcherPanel/appSwitcherPanel7"
     }
   ]
 });

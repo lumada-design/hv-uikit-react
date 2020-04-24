@@ -20,6 +20,10 @@ import HvTypography from "@hv/uikit-react-core/dist/Typography";
 import { Info } from "@hv/uikit-react-icons/dist/Generic";
 
 export default class Action extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { validIconUrl: true };
+  }
   render() {
     const {
       classes,
@@ -30,15 +34,19 @@ export default class Action extends Component {
       if (iconElement) {
         return iconElement;
       }
-      if (iconUrl) {
+      if (iconUrl && this.state.validIconUrl) {
         return (
           <img
             className={classes.iconUrl}
             src={iconUrl}
-            onError={element => element.target.style.display = "none"}
+            onError={(element) => {
+              element.target.style.display = "none";
+              this.setState({ validIconUrl: false });
+            }}
           />
         );
       }
+      return <div className={classes.dummyImage} />;
     };
 
     /**
@@ -46,31 +54,49 @@ export default class Action extends Component {
      */
     const isSelected = window.location.href.startsWith(url);
 
-    return (
-      <HvTypography
-        component="div"
-        variant={isSelected ? "selectedText" : "normalText"}
-        role="button"
-        className={`${classes.container} ${
-          isSelected ? classes.selected : ""
-        }`}
-        tabIndex={0}
-      >
-        {renderApplicationIcon()}
+    const renderElementWithLink = () => {
+      return (
+        <a href={url} target={target || "_top"} className={classes.link}>
+          {renderElement()}
+        </a>
+      );
+    };
 
-        {isSelected ? (
-          <span>{name}</span>
-        ) : (
-          <a href={url} target={target || "_top"} title={name}>
-            {name}
-          </a>
-        )}
+    /**
+     * Handles the onClick event and triggers the appropriate callback if it exists.
+     */
+    const handleOnClick = () => {
+      const { onClickCallback, application } = this.props;
 
-        {description && (
-          <Info className={classes.iconInfo} title={description} />
-        )}
-      </HvTypography>
-    );
+      if (onClickCallback) {
+        onClickCallback({ ...application, isSelected });
+      }
+    };
+
+    const renderElement = () => {
+      return (
+        <HvTypography
+          component="div"
+          variant={isSelected ? "selectedText" : "normalText"}
+          role="button"
+          className={`${classes.typography} ${
+            isSelected ? classes.selected : ""
+          }`}
+          tabIndex={0}
+          onClick={handleOnClick}
+        >
+          {renderApplicationIcon()}
+
+          <span title={name}>{name}</span>
+
+          {description && (
+            <Info className={classes.iconInfo} title={description} />
+          )}
+        </HvTypography>
+      );
+    };
+
+    return isSelected ? renderElement() : renderElementWithLink();
   }
 }
 
@@ -85,10 +111,12 @@ Action.propTypes = {
     name: PropTypes.string.isRequired,
     /**
      * URL with the icon location to be used to represent the application.
+     * iconUrl will only be used if no iconElement is provided.
      */
     iconUrl: PropTypes.string,
     /**
      * Element to be added as the icon representing the application.
+     * The iconElement will be the primary option to be displayed.
      */
     iconElement: PropTypes.element,
     /**
@@ -98,18 +126,23 @@ Action.propTypes = {
     /**
      *  URL where the application is accesible.
      */
-    url: PropTypes.string,
+    url: PropTypes.string.isRequired,
     /**
      * Defines if the application should be opened in the same tab or in a new one.
      */
-    target: PropTypes.oneOf(["_top", "_blank"])
+    target: PropTypes.oneOf(["_top", "_blank"]),
   }).isRequired,
   /**
    * A Jss object used to override or extend the component styles.
    */
-  classes: PropTypes.instanceOf(Object).isRequired
+  classes: PropTypes.instanceOf(Object).isRequired,
+  /**
+   * Callback triggered when the action is clicked.
+   */
+  onClickCallback: PropTypes.func,
 };
 
 Action.defaultProps = {
-  target: "_top"
+  target: "_top",
+  onClickCallback: () => {}
 };

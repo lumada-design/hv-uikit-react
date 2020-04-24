@@ -16,7 +16,12 @@
 
 import React from "react";
 
-import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons/dist/Generic";
+import {
+  Tool,
+  PingPong,
+  GameController,
+  Champion,
+} from "@hv/uikit-react-icons/dist/Generic";
 
 import DefaultHeader from "./utils/DefaultHeader";
 import AppSwitcherToggle from "./utils/AppSwitcherToggle";
@@ -29,7 +34,7 @@ const appSwitcherToggleProps = {
       iconElement: <Tool boxStyles={boxStyles} />,
       description: "App 1 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "App2 - Url icon",
@@ -37,55 +42,61 @@ const appSwitcherToggleProps = {
         "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "App 2 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "App 3 - Icon PingPong",
       iconElement: <PingPong boxStyles={boxStyles} />,
       description: "App 3 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "App 4 - No icon",
       description: "App 4 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "App 5 - Icon GameController",
       iconElement: <GameController boxStyles={boxStyles} />,
       description: "App 5 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "App6 - Wrong url icon",
-      iconUrl:
-        "http://invalidurl.noicon",
+      iconUrl: "http://invalidurl.noicon",
       description: "App 6 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "App 7 - Icon Champion",
       iconElement: <Champion boxStyles={boxStyles} />,
       description: "App 7 description",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
+      target: "_top",
     },
     {
       name: "ýö ! ' º~ %&#%ç e 合気道",
       iconElement: <Champion boxStyles={boxStyles} />,
       description: "App 8 Special characters",
       url: "https://github.com/pentaho/hv-uikit-react",
-      target: "_top"
-    }
+      target: "_top",
+    },
   ],
+};
+
+const handleActionClicked = (application) => {
+  alert(`The clicked application was: ${application.name}`);
 };
 
 export default (
   <DefaultHeader>
-    <AppSwitcherToggle {...appSwitcherToggleProps} />
+    <AppSwitcherToggle
+      {...appSwitcherToggleProps}
+      onActionClickedCallback={handleActionClicked}
+    />
   </DefaultHeader>
 );

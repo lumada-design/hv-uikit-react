@@ -21,11 +21,31 @@ import Action from "./Action";
 
 export default class AppSwitcherPanel extends Component {
   render() {
-    const { classes, isOpen, title, applications, header, footer } = this.props;
+    const {
+      classes,
+      isOpen,
+      title,
+      applications,
+      header,
+      footer,
+      onActionClickedCallback,
+    } = this.props;
+
+    const actionClicked = (application) => {
+      if (onActionClickedCallback) {
+        onActionClickedCallback(application);
+      }
+    };
 
     const panelActions = applications.map((application, index) => {
       if (application.name && application.url) {
-        return <Action key={index} application={application} />;
+        return (
+          <Action
+            key={index}
+            application={application}
+            onClickCallback={actionClicked}
+          />
+        );
       }
     });
 
@@ -36,7 +56,9 @@ export default class AppSwitcherPanel extends Component {
             header
           ) : (
             <div className={classes.titleContainer}>
-              <div className={classes.title} title={title} >{title}</div>
+              <div className={classes.title} title={title}>
+                {title}
+              </div>
             </div>
           )}
         </div>
@@ -71,10 +93,12 @@ AppSwitcherPanel.propTypes = {
       name: PropTypes.string.isRequired,
       /**
        * URL with the icon location to be used to represent the application.
+       * iconUrl will only be used if no iconElement is provided.
        */
       iconUrl: PropTypes.string,
       /**
        * Element to be added as the icon representing the application.
+       * The iconElement will be the primary option to be displayed.
        */
       iconElement: PropTypes.element,
       /**
@@ -84,11 +108,15 @@ AppSwitcherPanel.propTypes = {
       /**
        *  URL where the application is accesible.
        */
-      url: PropTypes.string,
+      url: PropTypes.string.isRequired,
       /**
        * Defines if the application should be opened in the same tab or in a new one.
        */
       target: PropTypes.oneOf(["_top", "_blank"]),
+      /**
+       * Callback triggered when the action is clicked
+       */
+      onClickCallback: PropTypes.func,
     })
   ).isRequired,
   /**
@@ -99,10 +127,15 @@ AppSwitcherPanel.propTypes = {
    * Element to be added to the footer container.
    */
   footer: PropTypes.element,
+  /**
+   * Triggered when an action is clicked.
+   */
+  onActionClickedCallback: PropTypes.element.func,
 };
 
 AppSwitcherPanel.defaultProps = {
   isOpen: false,
   title: "Apps",
   footer: undefined,
+  onActionClickedCallback: () => {}
 };
