@@ -152,9 +152,12 @@ jobs:
           browser: ${{ matrix.browser }}
           excludes: |
             pa11y
-            issueORissue-${{ matrix.browser }}ORimage
-            bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins
-            bug-${{ matrix.browser }}ORbug-${{ matrix.browser }}-webdriverORbug-jenkins
+            bug-${{ matrix.browser }}
+            bug-${{ matrix.browser }}-webdriver
+            issue
+            issue-${{ matrix.browser }}
+            bug-infrastructure
+            bug-infrastructure-${{ matrix.browser }}
           output-dir: reports
           processes: 3
           path: ./automation/robot/storybook/core
