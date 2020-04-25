@@ -1,6 +1,6 @@
 {
   "name": "@hv/uikit-react-icons",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A collection of icons for use with Hitachi Vantara's React Components.",
   "homepage": "https://github.com/pentaho/hv-uikit-react",
   "license": "Apache-2.0",
@@ -31,7 +31,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@hv/uikit-common-themes": "^2.0.0",
+    "@hv/uikit-common-themes": "^2.0.3",
     "clsx": "^1.1.0"
   },
   "devDependencies": {
