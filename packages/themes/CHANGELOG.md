@@ -3,9 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 2.0.3 (2020-04-25)
+## [2.0.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@2.0.2...@hv/uikit-common-themes@2.0.3) (2020-04-25)
 
-**Note:** Version bump only for package @hv/uikit-common-themes
+
+### Bug Fixes
+
+* **shadows:** correcting color translation between themes. [#1313](https://github.com/pentaho/hv-uikit-react/issues/1313) ([74b23bf](https://github.com/pentaho/hv-uikit-react/commit/74b23bf89a18a29f8fa8a51873965d76fdbdd6c0))
 
 
 
