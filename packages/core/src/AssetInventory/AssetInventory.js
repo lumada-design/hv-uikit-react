@@ -14,6 +14,7 @@ import Sort from "./Sort/Sort";
 import Grid from "../Grid";
 import Pagination from "../Pagination";
 import styles from "./styles";
+import { setId } from "../utils";
 
 // TODO: review event args
 
@@ -412,7 +413,7 @@ class AssetInventory extends React.Component {
         icon: child.props.icon,
         selected: child.props.id === selectedView,
         ...other,
-        id: `${child.props.id}-button`
+        id: setId(child.props.id, "button")
       });
     });
 

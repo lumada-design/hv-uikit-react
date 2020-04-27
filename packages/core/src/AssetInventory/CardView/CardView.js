@@ -5,17 +5,7 @@ import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
 import styles from "./styles";
-
-/**
- * Sets individual ids for each action, using the action id and the data id.
- *
- * @param actions
- * @param id
- * @returns {*}
- */
-const setActionsId = (actions, id) => {
-  return actions?.map(action => ({ ...action, id: `${action.id}-${id}` }));
-};
+import setActionsId from "../setActionsId";
 
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {

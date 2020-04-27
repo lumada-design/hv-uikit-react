@@ -9,6 +9,7 @@ import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
+import setActionsId from "../../setActionsId";
 
 const getValue = checkboxProps =>
   checkboxProps && checkboxProps.value ? checkboxProps.value : false;
@@ -29,17 +30,6 @@ const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semanti
     />
   </Cell>
 );
-
-/**
- * Sets individual ids for each action, using the action id and the data id.
- *
- * @param actions
- * @param id
- * @returns {*}
- */
-const setActionsId = (actions, id) => {
-  return actions?.map(action => ({ ...action, id: `${action.id}-${id}` }));
-};
 
 const actionsCell = (classes, id, viewConfiguration) => {
   return (
