@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.22.2...@hv/uikit-react-lab@1.22.3) (2020-04-27)
+
+
+### Bug Fixes
+
+* appswitcherpanel component [#1393](https://github.com/pentaho/hv-uikit-react/issues/1393) ([2de574b](https://github.com/pentaho/hv-uikit-react/commit/2de574ba6a21eb60cf4092d7c95559928bbcfa66))
+* **input:** focus on suggestion. [#810](https://github.com/pentaho/hv-uikit-react/issues/810) ([e2bd149](https://github.com/pentaho/hv-uikit-react/commit/e2bd1493a2733af7f99e844363071a5b04aa00dd))
+
+
+
+
+
 ## [1.22.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.22.1...@hv/uikit-react-lab@1.22.2) (2020-04-24)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

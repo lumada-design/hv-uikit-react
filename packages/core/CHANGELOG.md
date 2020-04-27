@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.30.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.30.1...@hv/uikit-react-core@1.30.2) (2020-04-27)
+
+
+### Bug Fixes
+
+* **header:** upgrade focus-within-polyfill to fix ssr [#1459](https://github.com/pentaho/hv-uikit-react/issues/1459) ([545e48e](https://github.com/pentaho/hv-uikit-react/commit/545e48e8b09a28a151b1831bb689f71cb0d9915b))
+* **input:** focus on suggestion. [#810](https://github.com/pentaho/hv-uikit-react/issues/810) ([e2bd149](https://github.com/pentaho/hv-uikit-react/commit/e2bd1493a2733af7f99e844363071a5b04aa00dd))
+* **table:** inconsistent pagination. [#1040](https://github.com/pentaho/hv-uikit-react/issues/1040) ([4ad9c41](https://github.com/pentaho/hv-uikit-react/commit/4ad9c41d6735bdedb1529aaa96996883339fc2ed))
+* **table:** undefined secondary action. [#1239](https://github.com/pentaho/hv-uikit-react/issues/1239) ([47f373a](https://github.com/pentaho/hv-uikit-react/commit/47f373a7fa27816c0a04b5818ebe77ac4efd87a3))
+* **tooltip:** break text instead of truncating. [#1357](https://github.com/pentaho/hv-uikit-react/issues/1357) ([e392979](https://github.com/pentaho/hv-uikit-react/commit/e392979894c1dffeedeba31a643dedf111d8b4bc))
+
+
+
+
+
 ## [1.30.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.30.0...@hv/uikit-react-core@1.30.1) (2020-04-24)
 
 
