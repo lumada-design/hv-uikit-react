@@ -31,6 +31,7 @@ const styles = theme => ({
       boxOrient: "vertical",
       textOverflow: "ellipsis",
       overflow: "hidden",
+      wordBreak: "break-word",
       color: theme.hv.palette.accent.acce1
     }
   },

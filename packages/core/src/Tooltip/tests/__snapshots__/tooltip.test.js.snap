@@ -5102,6 +5102,7 @@ body {
   display: -webkit-box;
   overflow: hidden;
   box-orient: vertical;
+  word-break: break-word;
   text-overflow: ellipsis;
 }
 .HvTooltip-multitooltip {
@@ -5195,6 +5196,7 @@ body {
                       "overflow": "hidden",
                       "text-overflow": "ellipsis",
                       "width": "fit-content",
+                      "word-break": "break-word",
                     },
                     Object {
                       "background-color": "#FFFFFF",
@@ -5296,6 +5298,7 @@ body {
                       "overflow": "hidden",
                       "text-overflow": "ellipsis",
                       "width": "fit-content",
+                      "word-break": "break-word",
                     },
                     ".HvTooltip-valueWrapper": Object {
                       "padding": "20px",
@@ -5871,6 +5874,7 @@ body {
                       "overflow": "hidden",
                       "textOverflow": "ellipsis",
                       "width": "fit-content",
+                      "wordBreak": "break-word",
                     },
                     ".HvTooltip-values:last-child": Object {
                       "paddingBottom": 0,
@@ -5919,6 +5923,7 @@ body {
                         "overflow": "hidden",
                         "textOverflow": "ellipsis",
                         "width": "fit-content",
+                        "wordBreak": "break-word",
                       },
                       "backgroundColor": "#FFFFFF",
                       "boxShadow": "0 2px 12px rgba(65,65,65,.12)",
@@ -17646,6 +17651,7 @@ body {
   display: -webkit-box;
   overflow: hidden;
   box-orient: vertical;
+  word-break: break-word;
   text-overflow: ellipsis;
 }
 .HvTooltip-multitooltip {
@@ -17739,6 +17745,7 @@ body {
                       "overflow": "hidden",
                       "text-overflow": "ellipsis",
                       "width": "fit-content",
+                      "word-break": "break-word",
                     },
                     Object {
                       "background-color": "#FFFFFF",
@@ -17840,6 +17847,7 @@ body {
                       "overflow": "hidden",
                       "text-overflow": "ellipsis",
                       "width": "fit-content",
+                      "word-break": "break-word",
                     },
                     ".HvTooltip-valueWrapper": Object {
                       "padding": "20px",
@@ -18415,6 +18423,7 @@ body {
                       "overflow": "hidden",
                       "textOverflow": "ellipsis",
                       "width": "fit-content",
+                      "wordBreak": "break-word",
                     },
                     ".HvTooltip-values:last-child": Object {
                       "paddingBottom": 0,
@@ -18463,6 +18472,7 @@ body {
                         "overflow": "hidden",
                         "textOverflow": "ellipsis",
                         "width": "fit-content",
+                        "wordBreak": "break-word",
                       },
                       "backgroundColor": "#FFFFFF",
                       "boxShadow": "0 2px 12px rgba(65,65,65,.12)",

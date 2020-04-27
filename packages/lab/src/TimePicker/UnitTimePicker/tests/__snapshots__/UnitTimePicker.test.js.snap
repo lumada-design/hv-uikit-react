@@ -28687,6 +28687,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                       Object {
                         "aria-invalid": undefined,
                         "aria-required": undefined,
+                        "ref": Object {
+                          "current": <input
+                            class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                            id="hv-input-2-input"
+                            type="text"
+                            value="30"
+                          />,
+                        },
                         "required": false,
                       }
                     }
@@ -29690,6 +29698,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                         Object {
                           "aria-invalid": undefined,
                           "aria-required": undefined,
+                          "ref": Object {
+                            "current": <input
+                              class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                              id="hv-input-2-input"
+                              type="text"
+                              value="30"
+                            />,
+                          },
                           "required": false,
                         }
                       }
@@ -30694,6 +30710,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                           Object {
                             "aria-invalid": undefined,
                             "aria-required": undefined,
+                            "ref": Object {
+                              "current": <input
+                                class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                                id="hv-input-2-input"
+                                type="text"
+                                value="30"
+                              />,
+                            },
                             "required": false,
                           }
                         }
@@ -31703,6 +31727,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                             Object {
                               "aria-invalid": undefined,
                               "aria-required": undefined,
+                              "ref": Object {
+                                "current": <input
+                                  class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                                  id="hv-input-2-input"
+                                  type="text"
+                                  value="30"
+                                />,
+                              },
                               "required": false,
                             }
                           }
@@ -32712,6 +32744,14 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                               Object {
                                 "aria-invalid": undefined,
                                 "aria-required": undefined,
+                                "ref": Object {
+                                  "current": <input
+                                    class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                                    id="hv-input-2-input"
+                                    type="text"
+                                    value="30"
+                                  />,
+                                },
                                 "required": false,
                               }
                             }

@@ -47,6 +47,7 @@ class HvInput extends React.Component {
     const definedLabels = inputTextConfiguration || labels;
 
     const val = value || initialValue;
+    this.materialInputRef = React.createRef();
 
     this.state = {
       internalId: id || uniqueId("hv-input-"),
@@ -85,6 +86,13 @@ class HvInput extends React.Component {
   }
 
   /**
+   * Looks for the node that represent the input inside the material tree and focus it.
+   */
+  focusInput = () => {
+    this.materialInputRef.current.focus();
+  };
+
+  /**
    * Updates the states while the input is being entered.
    *
    * @param {String} value - the inputted value.
@@ -114,7 +122,7 @@ class HvInput extends React.Component {
     onChange(value);
     this.manageInputValueState(value, null);
     setTimeout(() => {
-      this.node.children[1].children[0].focus();
+      this.focusInput();
     });
   };
 
@@ -153,7 +161,9 @@ class HvInput extends React.Component {
     const { suggestionSelectedCallback } = this.props;
     suggestionSelectedCallback(item);
     this.manageInputValueState(item.label);
+    this.focusInput();
     this.suggestionClearHandler();
+    suggestionSelectedCallback(item);
   };
 
   /**
@@ -443,6 +453,7 @@ class HvInput extends React.Component {
           onChange={this.onChangeHandler}
           inputProps={{
             required: isRequired,
+            ref: this.materialInputRef,
             "aria-required": isRequired || undefined,
             "aria-invalid":
               stateValidationState === validationStates.invalid || undefined,
