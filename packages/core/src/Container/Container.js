@@ -9,6 +9,8 @@ const styles = theme => ({
   root: {
     paddingLeft: theme.spacing(1),
     paddingRight: theme.spacing(1),
+    ...theme.hv.typography.sText,
+    color: theme.hv.palette.base.base2,
     [theme.breakpoints.up("md")]: {
       paddingLeft: theme.spacing(2),
       paddingRight: theme.spacing(2)

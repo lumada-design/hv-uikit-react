@@ -82,7 +82,7 @@ const Group = ({ classes, name, typography }) => {
   );
 };
 
-const Typographies = ({ classes }) => {
+const Typography = ({ classes }) => {
   const theme = useTheme();
   const { typography } = theme.hv;
   const keys = Object.keys(typography);
@@ -103,4 +103,4 @@ const Typographies = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Typographies);
+export default withStyles(styles)(Typography);
