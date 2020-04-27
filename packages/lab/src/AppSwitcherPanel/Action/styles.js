@@ -45,7 +45,7 @@ const hover = theme => ({
 });
 
 const styles = theme => ({
-  container: {
+  typography: {
     display: "flex",
     background: theme.hv.palette.atmosphere.atmo1,
     width: "100%",
@@ -64,17 +64,24 @@ const styles = theme => ({
       cursor: "pointer"
     },
 
-    "& a, & span": {
-      color: "inherit",
-      textDecoration: "inherit",
+    "& span": {
       overflow: "hidden",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
-      width: "calc(100% - 84px)", // 64 for both icons witdh + 20 from the margins
-      marginLeft: "8px"
+      width: "calc(100% - 64px)" // The with of both icons, 32px each.
     }
+
   },
   selected: selected(theme),
+
+  dummyImage: {
+    width: "8px"
+  },
+
+  link: {
+    color: "inherit",
+    textDecoration: "inherit"
+  },
 
   iconInfo: {
     width: "32px",
