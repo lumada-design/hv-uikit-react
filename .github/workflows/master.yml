@@ -1,15 +1,34 @@
-name: CI (master)
+name: Master
 on:
   schedule:
     - cron: '0 5 * * *' # daily at 05:00
-  pull_request:
-    branches:
-      - master
+
+# ref is not needed across checkouts because master is the default branch
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
+  RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
 
 jobs:
+  License-Checks:
+    name: License Checks
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: License Check
+        run: npm run license-check
+
   Lint:
     runs-on: [self-hosted, Linux]
     container:
@@ -170,34 +189,18 @@ jobs:
           path: reports
 
   Release:
-    if: github.event_name == 'schedule'
-    needs: Robot
+    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ env.RELEASE_COMMIT_MESSAGE }}')
+    needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Build-pa11y, Robot]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
         uses: actions/github-script@0.8.0
-        env:
-          RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
         with:
           # repo scope token is required to generate a dispatch event
           github-token: ${{ secrets.BUILD_TOKEN }}
           script: |
-            const branch = await github.repos.getBranch({
+            await github.repos.createDispatchEvent({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: context.ref
+              event_type: 'release'
             })
-
-            const message = branch.data.commit.commit.message
-
-            if(!message.includes('${{ env.RELEASE_COMMIT_MESSAGE }}')){
-              console.log('Last commit not released, triggering a new release.')
-
-              await github.repos.createDispatchEvent({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                event_type: 'release'
-              })
-            } else {
-              console.log('Last commit already released.')
-            }

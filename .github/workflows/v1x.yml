@@ -1,15 +1,34 @@
-name: CI (v1.x)
+name: v1.x
 on:
   schedule:
-    - cron: '0 1 * * *' # daily at 05:00
-  pull_request:
-    branches:
-      - v1.x
+    - cron: '0 1 * * *' # daily at 01:00
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
+  RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
 
 jobs:
+  License-Checks:
+    name: License Checks
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: License Check
+        run: npm run license-check
+
   Lint:
     runs-on: [self-hosted, Linux]
     container:
@@ -87,9 +106,39 @@ jobs:
           name: documentation
           path: dist
 
+  Build-Automation-Storybook:
+    name: Build Automation Storybook
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Generate Documentation
+        run: npm run build-documentation
+
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
+        with:
+          name: automation-storybook
+          path: dist
+
   Robot_pa11y:
     name: Test Robot pa11y
-    needs: Build-Documentation
+    needs: Build-Automation-Storybook
     runs-on: [self-hosted, Windows]
 
     steps:
@@ -106,7 +155,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: documentation
+          name: automation-storybook
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -132,7 +181,7 @@ jobs:
 
   Robot:
     name: Test Robot
-    needs: Build-Documentation
+    needs: Build-Automation-Storybook
     runs-on: [self-hosted, Windows]
     timeout-minutes: 150
     strategy:
@@ -149,7 +198,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: documentation
+          name: automation-storybook
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -180,34 +229,18 @@ jobs:
           path: reports
 
   Release:
-    if: github.event_name == 'schedule'
-    needs: Robot
+    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ env.RELEASE_COMMIT_MESSAGE }}')
+    needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Build-pa11y, Robot]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
         uses: actions/github-script@0.8.0
-        env:
-          RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
         with:
           # repo scope token is required to generate a dispatch event
           github-token: ${{ secrets.BUILD_TOKEN }}
           script: |
-            const branch = await github.repos.getBranch({
+            await github.repos.createDispatchEvent({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: context.ref
+              event_type: 'v1-release'
             })
-
-            const message = branch.data.commit.commit.message
-
-            if(!message.includes('${{ env.RELEASE_COMMIT_MESSAGE }}')){
-              console.log('Last commit not released, triggering a new release.')
-
-              await github.repos.createDispatchEvent({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                event_type: 'release'
-              })
-            } else {
-              console.log('Last commit already released.')
-            }

@@ -4,12 +4,12 @@
 
 <div align="center">
 
+
 ![alt text](https://img.shields.io/badge/node-12.14-brightgreen.svg)
 ![alt text](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![alt text](https://img.shields.io/badge/plataforms-chrome%20%7C%20firefox%20%7C%20safari%20%7C%20edge%20%7C%20ie%2011-blue.svg)
-![alt text](https://img.shields.io/badge/core--coverage-80%25-green.svg)
-![alt text](https://img.shields.io/badge/lab--coverage-68%25-orange.svg)
-![CI](https://github.com/pentaho/hv-uikit-react/workflows/CI/badge.svg?branch=next)
+![Master](https://github.com/pentaho/hv-uikit-react/workflows/Master/badge.svg)
+![v1.x](https://github.com/pentaho/hv-uikit-react/workflows/v1.x/badge.svg)
 
 </div>
 
@@ -101,6 +101,7 @@ UI-KIT is maintained by a small group of invaluable core contributors, with the 
 - Bruno Henriques ([@zettca](https://github.com/zettca))
 - Nelson Antunes ([@nantunes](https://github.com/nantunes))
 - Júlio Costa ([@jsccosta](https://github.com/jsccosta))
+- Hugo Figueira ([@hugompfigueira](https://github.com/hugompfigueira))
 
 Get involved with our development by opening an issue or submitting a pull request. Read the contributing guidelines for information on how we develop.
 
