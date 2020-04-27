@@ -5,10 +5,7 @@ export default {
   title: "Visualizations/Bar Chart",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBarchart } from '@hv/uikit-react-core/dist'",
-    docs: {
-      inlineStories: false
-    }
+    usage: "import { HvBarchart } from '@hv/uikit-react-core/dist'"
   },
   component: HvBarchart
 };
@@ -59,8 +56,7 @@ export const VerticalWithSingleTooltip = () => {
 VerticalWithSingleTooltip.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample with a tooltip in single line mode."
+      storyDescription: "Tooltip in single line mode."
     }
   }
 };
@@ -88,8 +84,7 @@ export const GroupedVerticalBarchart = () => {
 GroupedVerticalBarchart.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample that shows the ability to group bars."
+      storyDescription: "Representation of groups by using multiple bars."
     }
   }
 };
@@ -118,8 +113,7 @@ export const StackedVerticalBarchart = () => {
 StackedVerticalBarchart.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample that shows the ability to stack bars."
+      storyDescription: "Groups in stack mode."
     }
   }
 };
@@ -144,8 +138,7 @@ export const SimpleHorizontalBarchart = () => (
 SimpleHorizontalBarchart.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample oriented horizontally."
+      storyDescription: "Representation of horizontal chart."
     }
   }
 };
@@ -171,8 +164,7 @@ export const HorizontalBarchartWithSingleTooltip = () => (
 HorizontalBarchartWithSingleTooltip.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample oriented horizontally."
+      storyDescription: "Tooltip in single line mode."
     }
   }
 };
@@ -201,8 +193,7 @@ export const GroupedHorizontalBarchart = () => {
 GroupedHorizontalBarchart.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample that shows the ability to group bars."
+      storyDescription: "Representation of groups by using multiple horizontal bars."
     }
   }
 };
@@ -232,8 +223,7 @@ export const StackedHorizontalBarchart = () => {
 StackedHorizontalBarchart.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Barchart sample that shows the ability to stack bars."
+      storyDescription: "Groups in stack mode."
     }
   }
 };

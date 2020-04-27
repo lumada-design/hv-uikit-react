@@ -77,8 +77,8 @@ const Chart = ({
 
   const onMouseMove = event => {
     setCoordinates({
-      x: event.pageX,
-      y: event.pageY
+      x: event.clientX,
+      y: event.clientY
     });
   };
 
