@@ -28689,7 +28689,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                         "aria-required": undefined,
                         "ref": Object {
                           "current": <input
-                            class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                            class="MuiInputBase-input-24 MuiInput-input-9 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-30"
                             id="hv-input-2-input"
                             type="text"
                             value="30"
@@ -29700,7 +29700,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                           "aria-required": undefined,
                           "ref": Object {
                             "current": <input
-                              class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                              class="MuiInputBase-input-24 MuiInput-input-9 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-30"
                               id="hv-input-2-input"
                               type="text"
                               value="30"
@@ -30712,7 +30712,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                             "aria-required": undefined,
                             "ref": Object {
                               "current": <input
-                                class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                                class="MuiInputBase-input-24 MuiInput-input-9 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-30"
                                 id="hv-input-2-input"
                                 type="text"
                                 value="30"
@@ -31729,7 +31729,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                               "aria-required": undefined,
                               "ref": Object {
                                 "current": <input
-                                  class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                                  class="MuiInputBase-input-24 MuiInput-input-9 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-30"
                                   id="hv-input-2-input"
                                   type="text"
                                   value="30"
@@ -32746,7 +32746,7 @@ label[data-shrink=false] + .MuiInputBase-formControl-15 .MuiInputBase-input-24:f
                                 "aria-required": undefined,
                                 "ref": Object {
                                   "current": <input
-                                    class="MuiInputBase-input-54 MuiInput-input-39 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-60"
+                                    class="MuiInputBase-input-24 MuiInput-input-9 HvInput-input HvLabTimePickerUnit-unitTimeInput MuiInputBase-inputAdornedEnd-30"
                                     id="hv-input-2-input"
                                     type="text"
                                     value="30"
