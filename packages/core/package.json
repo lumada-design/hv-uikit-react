@@ -41,7 +41,7 @@
     "deep-diff": "^1.0.2",
     "detect-browser": "^4.8.0",
     "focus-trap-react": "^6.0.0",
-    "focus-within-polyfill": "^5.0.6",
+    "focus-within-polyfill": "^5.0.9",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "plotly.js": "^1.48.3",
