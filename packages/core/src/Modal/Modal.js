@@ -38,7 +38,7 @@ const HvModal = ({
   const closeButtonDisplay = () => <Close role="presentation" />;
 
   const CloseButtonTooltipWrapper = buttonTitle
-    ? withTooltip(closeButtonDisplay, buttonTitle, "right")
+    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
 
   return (

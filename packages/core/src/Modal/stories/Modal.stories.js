@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/";
-import { Unlock } from "@hv/uikit-react-icons/dist";
+import { Ungroup } from "@hv/uikit-react-icons/dist";
 import {
   HvButton,
   HvInput,
@@ -33,7 +33,13 @@ const SimpleModal = ({ buttonMessage, title, content, classes }) => {
       <HvButton id={buttonMessage} style={{ width: "120px" }} onClick={() => setOpen(true)}>
         {buttonMessage}
       </HvButton>
-      <HvModal id="test" classes={classes} open={open} onClose={() => setOpen(false)}>
+      <HvModal
+        disableBackdropClick
+        id="test"
+        classes={classes}
+        open={open}
+        onClose={() => setOpen(false)}
+      >
         {title}
         {content || (
           <HvModalContent>
@@ -60,9 +66,9 @@ export const Main = () => {
   return (
     <div>
       <HvButton id="openModal" style={{ width: "120px" }} onClick={() => setOpen(true)}>
-        Open Modal
+        Open modal
       </HvButton>
-      <HvModal id="test" open={open} onClose={() => setOpen(false)}>
+      <HvModal disableBackdropClick id="test" open={open} onClose={() => setOpen(false)}>
         <HvModalTitle variant="warning">Switch model view?</HvModalTitle>
         <HvModalContent>
           Switching to model view will clear all the fields in your visualization. You will need to
@@ -84,8 +90,16 @@ export const Main = () => {
 export const TextAndSemantic = () => (
   <>
     <SimpleModal
-      buttonMessage="No Icon"
+      buttonMessage="No icon"
       title={<HvModalTitle showIcon={false}>Are you sure?</HvModalTitle>}
+      content={
+        <HvModalContent>
+          <HvTypography style={{ marginLeft: 0 }}>
+            Switching to model view will clear all the fields in your visualization. You will need
+            to re-select your fields.
+          </HvTypography>
+        </HvModalContent>
+      }
     />
     <p />
     <SimpleModal
@@ -117,7 +131,7 @@ TextAndSemantic.story = {
 export const CustomIcon = () => (
   <SimpleModal
     buttonMessage="Custom icon"
-    title={<HvModalTitle customIcon={<Unlock iconSize="M" />}>Are you sure?</HvModalTitle>}
+    title={<HvModalTitle customIcon={<Ungroup iconSize="M" />}>Are you sure?</HvModalTitle>}
   />
 );
 
@@ -136,9 +150,10 @@ export const Accessibility = () => {
   return (
     <div>
       <HvButton style={{ width: "120px" }} onClick={() => setOpen(true)}>
-        Open Modal
+        Open modal
       </HvButton>
       <HvModal
+        disableBackdropClick
         open={open}
         onClose={() => setOpen(false)}
         aria-labelledby="hv-modal-title"
@@ -207,6 +222,7 @@ export const CustomContent = () => {
     <>
       <ModalWithStyles
         buttonMessage="Table"
+        disableBackdropClick
         title={
           <HvModalTitle>
             <div>
@@ -249,7 +265,8 @@ export const CustomContent = () => {
       <p />
       <SimpleModal
         buttonMessage="Inputs"
-        title={<HvModalTitle showIcon={false}>Work Request</HvModalTitle>}
+        disableBackdropClick
+        title={<HvModalTitle showIcon={false}>Work request</HvModalTitle>}
         content={
           <HvModalContent>
             <InputWithStyles
