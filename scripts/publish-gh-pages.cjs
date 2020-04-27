@@ -48,8 +48,8 @@ Promise.all([
       message,
       tag,
       user: {
-        name: "buildguy",
-        email: "buildguy.pentaho@hitachivantara.com"
+        name: "github-actions-bot",
+        email: "support+actions@github.com"
       }
     });
   })
