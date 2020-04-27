@@ -145,7 +145,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <WithStyles(ForwardRef)
-        variant="infoText"
+        variant="sText"
       >
         <ForwardRef
           classes={
@@ -175,10 +175,10 @@ exports[`Dropzone withStyles should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="infoText"
+          variant="sText"
         >
           <p
-            className="HvTypography-root HvTypography-infoText"
+            className="HvTypography-root HvTypography-sText"
           >
             Max. file size: 1.00B
           </p>
@@ -453,7 +453,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         </ForwardRef>
       </WithStyles(ForwardRef)>
       <WithStyles(ForwardRef)
-        variant="infoText"
+        variant="sText"
       >
         <ForwardRef
           classes={
@@ -483,10 +483,10 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="infoText"
+          variant="sText"
         >
           <p
-            className="HvTypography-root HvTypography-infoText"
+            className="HvTypography-root HvTypography-sText"
           >
             Max. file size: 1.00B
           </p>
