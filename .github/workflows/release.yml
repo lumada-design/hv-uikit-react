@@ -73,6 +73,6 @@ jobs:
       - name: Publish Documentation
         run: |
           npm run build-documentation
-          git remote set-url origin https://git:${GH_TOKEN}@github.com/diogofscmariano/hv-uikit-react.git
+          git remote set-url origin https://git:${GH_TOKEN}@github.com/pentaho/hv-uikit-react.git
           NODE_DEBUG=gh-pages npm run publish-documentation
 
