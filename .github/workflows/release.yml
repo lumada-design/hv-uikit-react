@@ -67,6 +67,9 @@ jobs:
           git config --global user.name $GITHUB_ACTOR
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
+      - name: Publish
+        run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
+
       - name: Publish Documentation
         run: |
           npm run build-documentation
