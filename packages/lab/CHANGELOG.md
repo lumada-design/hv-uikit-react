@@ -3,9 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 2.0.3 (2020-04-25)
+# [2.0.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.0.2...@hv/uikit-react-lab@2.0.3) (2020-04-25)
 
-**Note:** Version bump only for package @hv/uikit-react-lab
+
+### Bug Fixes
+
+* **docs:** components without label documentation. [#1421](https://github.com/pentaho/hv-uikit-react/issues/1421) ([58fba02](https://github.com/pentaho/hv-uikit-react/commit/58fba02649200efa6e1482631fa1cc2442cdc21b))
+* **input:** fix input doc. [#810](https://github.com/pentaho/hv-uikit-react/issues/810) ([de1f0da](https://github.com/pentaho/hv-uikit-react/commit/de1f0da87c6c43d6c2d812bc05af2c742d7d1d62))
+* **shadows:** correcting color translation between themes. [#1313](https://github.com/pentaho/hv-uikit-react/issues/1313) ([74b23bf](https://github.com/pentaho/hv-uikit-react/commit/74b23bf89a18a29f8fa8a51873965d76fdbdd6c0))
+* **typescript:** fix definitions. [#1418](https://github.com/pentaho/hv-uikit-react/issues/1418) ([64cd0f4](https://github.com/pentaho/hv-uikit-react/commit/64cd0f407290bf3fd780f56db1e12a83eeedfa7f))
+
+
+### Features
+
+* **textarea:** review char count accessibility. [#1235](https://github.com/pentaho/hv-uikit-react/issues/1235) ([b5f7f49](https://github.com/pentaho/hv-uikit-react/commit/b5f7f4986ed09a6d2791db18c452bf65b2a6618b))
 
 
 

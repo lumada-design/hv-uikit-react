@@ -1,8 +1,8 @@
-name: Pull Request
+name: v1.x Pull Request
 on:
   pull_request:
     branches:
-      - master
+      - v1.x
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -98,14 +98,46 @@ jobs:
           name: documentation
           path: dist
 
+  Build-Automation-Storybook:
+    name: Build Automation Storybook
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Generate Storybook
+        run: npm run automation:package
+
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
+        with:
+          name: automation-storybook
+          path: dist
+
   Robot_pa11y:
     name: Test Robot pa11y
-    needs: Build-Documentation
+    needs: Build-Automation-Storybook
     runs-on: [self-hosted, Windows]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Install PA11Y
         working-directory: ./automation/robot
@@ -115,7 +147,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: documentation
+          name: automation-storybook
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -141,7 +173,7 @@ jobs:
 
   Robot:
     name: Test Robot
-    needs: Build-Documentation
+    needs: Build-Automation-Storybook
     runs-on: [self-hosted, Windows]
     timeout-minutes: 150
     strategy:
@@ -152,11 +184,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: documentation
+          name: automation-storybook
           path: .github/storybook/www
 
       - name: Run Storybook

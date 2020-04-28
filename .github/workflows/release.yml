@@ -13,7 +13,7 @@
 #  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: CI (release)
+name: Release
 on:
   repository_dispatch:
     types: [release]
@@ -64,8 +64,8 @@ jobs:
           npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
           npm config set always-auth true
 
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@users.noreply.github.com"
+          git config --global user.name $GITHUB_ACTOR
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Publish
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
@@ -73,4 +73,6 @@ jobs:
       - name: Publish Documentation
         run: |
           npm run build-documentation
-          npm run publish-documentation
+          git remote set-url origin https://git:${GH_TOKEN}@github.com/diogofscmariano/hv-uikit-react.git
+          NODE_DEBUG=gh-pages npm run publish-documentation
+
