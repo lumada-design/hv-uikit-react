@@ -5,10 +5,7 @@ export default {
   title: "Visualizations/Line Chart",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLinechart } from '@hv/uikit-react-core/dist'",
-    docs: {
-      inlineStories: false
-    }
+    usage: "import { HvLinechart } from '@hv/uikit-react-core/dist'"
   },
   component: HvLinechart
 };
@@ -68,8 +65,7 @@ export const WithArea = () => {
 WithArea.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Linechart sample with that colors the area below it."
+      storyDescription: "Colors the area below it."
     }
   }
 };
@@ -108,8 +104,7 @@ export const LinechartGrouped = () => {
 LinechartGrouped.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Linechart sample that shows the ability to have various lines."
+      storyDescription: "Representation of groups by using multiple lines."
     }
   }
 };
@@ -137,9 +132,7 @@ export const GroupedWithArea = () => {
 GroupedWithArea.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription:
-        "Linechart sample that shows the ability to have various lines with colored areas."
+      storyDescription: "Groups using colored areas."
     }
   }
 };
@@ -168,8 +161,7 @@ export const LinechartStacked = () => {
 LinechartStacked.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Linechart sample that shows the ability to have various lines stacked."
+      storyDescription: "Groups in stack mode."
     }
   }
 };
@@ -213,8 +205,7 @@ export const TimeRepresentation = () => {
 TimeRepresentation.story = {
   parameters: {
     docs: {
-      inlineStories: false,
-      storyDescription: "Linechart sample that shows the ability to represent time related data."
+      storyDescription: "Representation of time related data."
     }
   }
 };

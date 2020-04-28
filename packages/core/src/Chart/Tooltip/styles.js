@@ -1,6 +1,6 @@
 const styles = {
   root: {
-    position: "absolute",
+    position: "fixed",
     zIndex: 100,
     pointerEvents: "none"
   }

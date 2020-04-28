@@ -25,7 +25,7 @@ export const getManagerStylesOverrides = theme => ({
       ? {}
       : {
           // hide the Canvas tab when in production
-          ".simplebar-content > div > div > div > a:first-child": {
+          ".simplebar-content > div > div > div > a:first-of-type": {
             display: "none",
 
             "& + a": {
@@ -38,7 +38,19 @@ export const getManagerStylesOverrides = theme => ({
 });
 
 export const getDocsStylesOverrides = theme => ({
+  // removes the transformation buttons from toolbar
+  ".simplebar-content > div >div:first-of-type > button ": {
+    display: "none"
+  },
+  // each story has a transformation applied (used by buttons of the toolbar), even if no
+  // transformation is used.
+  // theses transformations were removed, as they would reset the coordinates system to
+  // the div were they are applied.
   ".sbdocs": {
+    " & > div > div > div": {
+      transform: "unset !important",
+      WebkitTransform: "unset !important"
+    },
     a: {
       color: theme.hv.typography.inlineLink.color
     },
@@ -63,7 +75,7 @@ export const getDocsStylesOverrides = theme => ({
             // important because https://github.com/storybookjs/storybook/blob/v5.3.18/lib/components/src/blocks/PropsTable/SectionRow.tsx#L19
             backgroundColor: theme.hv.palette.atmosphere.atmo1 + " !important"
           },
-          "tr:not(:first-child)": {
+          "tr:not(:first-of-type)": {
             borderTopColor: theme.hv.palette.atmosphere.atmo5
           }
         }

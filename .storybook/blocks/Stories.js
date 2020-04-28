@@ -1,5 +1,5 @@
 // Copied from https://github.com/storybookjs/storybook/blob/v5.3.18/addons/docs/src/blocks/Stories.tsx
-// just to enable the toolbal (withToolbar)
+// just to enable the toolbar (withToolbar)
 
 import React, { useContext } from "react";
 import { DocsContext, DocsStory, Heading } from "@storybook/addon-docs/blocks";
