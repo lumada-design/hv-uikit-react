@@ -1,4 +1,5 @@
 import React from "react";
+import { withStyles } from "@material-ui/core";
 import { HvDropdown } from "../..";
 
 export default {
@@ -118,6 +119,49 @@ export const SingleSelectionNoDefault = () => (
     ]}
   />
 );
+
+export const DifferentSizeAndPlacements = () => {
+  const data = [
+    {
+      label: "value 1",
+      selected: false
+    },
+    {
+      label: "value 2",
+      selected: false
+    }
+  ];
+
+  const styles = () => ({
+    rootList: {
+      width: "520px"
+    },
+    list: {
+      maxWidth: "unset"
+    }
+  });
+
+  const StyledDropdown = withStyles(styles)(HvDropdown);
+
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
+        <StyledDropdown id="dropdown1" values={data} multiSelect showSearch placement="right" />
+      </div>
+      <div>
+        <StyledDropdown id="dropdown2" values={data} multiSelect showSearch placement="left" />
+      </div>
+    </div>
+  );
+};
+
+DifferentSizeAndPlacements.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Dropdown defined with a specific width and with different placements."
+    }
+  }
+};
 
 export const Disabled = () => (
   <HvDropdown
