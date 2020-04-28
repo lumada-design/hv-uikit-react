@@ -62,6 +62,7 @@ export const BannerController = () => {
           variant={variant}
           showIcon
           actions={<HvButton category="semantic">Action</HvButton>}
+          bannerContentProps={{ actionProps: { "aria-label": "Close the banner" } }}
           {...others}
         />
       </>
@@ -132,7 +133,7 @@ export const BannerVariations = () => {
   const BannerContent = props => (
     <>
       <p />
-      <HvBannerContent actionProps={{ "aria-label": "Close" }} {...props} />
+      <HvBannerContent {...props} />
     </>
   );
 
