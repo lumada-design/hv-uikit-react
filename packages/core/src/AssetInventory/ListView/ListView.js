@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
@@ -7,7 +7,6 @@ import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
 import ListViewHeaderRow from "./ListViewHeaderRow";
 import Grid from "../../Grid";
 import styles from "./styles";
-import GridViewContainer from "../GridViewContainer";
 
 const Rows = ({ renderer, values, selectedValues, viewConfiguration, metadata }) =>
   values.map((value, index) => {
@@ -38,7 +37,6 @@ const ListView = ({
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <div
             id={id}
-            role="table"
             aria-rowcount={values.length}
             className={clsx(className, classes.root)}
             {...others}
@@ -69,7 +67,12 @@ const ListView = ({
       </Grid>
     );
   };
-  return <GridViewContainer elements={GridDisplay} />;
+  const containerRef = useRef(null);
+  return (
+    <div className={classes.root} ref={containerRef}>
+      <div className={classes.elements}>{GridDisplay(containerRef)}</div>
+    </div>
+  );
 };
 
 ListView.propTypes = {
@@ -119,6 +122,10 @@ ListView.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the component that contains the elements class.
+     */
+    elements: PropTypes.string,
     /**
      * Styles applied to the table header.
      */

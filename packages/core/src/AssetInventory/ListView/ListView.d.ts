@@ -49,6 +49,6 @@ export interface HvListViewProps
   metadata?: AssetInventoryMetadata;
 }
 
-type HvListViewClassKey = "root" | "tableBody" | "tableHead";
+type HvListViewClassKey = "root" | "elements" | "tableBody" | "tableHead";
 
 export default function HvListView(props: HvListViewProps): JSX.Element | null;

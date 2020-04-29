@@ -54,15 +54,12 @@ exports[`Card withStyles should be able to render with every property defined 1`
   >
     <div
       className="HvCard-root"
-      role="grid"
     >
       <div
         className="HvCard-semanticContainer HvCard-sema0"
-        role="row"
       />
       <WithStyles(ForwardRef(Card))
         className="HvCard-cardContainer HvCard-selectable"
-        role="cell"
       >
         <ForwardRef(Card)
           className="HvCard-cardContainer HvCard-selectable"
@@ -71,12 +68,10 @@ exports[`Card withStyles should be able to render with every property defined 1`
               "root": "MuiCard-root",
             }
           }
-          role="cell"
         >
           <WithStyles(ForwardRef(Paper))
             className="MuiCard-root HvCard-cardContainer HvCard-selectable"
             elevation={1}
-            role="cell"
           >
             <ForwardRef(Paper)
               className="MuiCard-root HvCard-cardContainer HvCard-selectable"
@@ -113,11 +108,9 @@ exports[`Card withStyles should be able to render with every property defined 1`
                 }
               }
               elevation={1}
-              role="cell"
             >
               <div
                 className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
-                role="cell"
               >
                 <WithStyles(Focus)
                   strategy="card"

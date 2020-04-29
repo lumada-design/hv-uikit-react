@@ -132,7 +132,23 @@ const Focus = props => {
     setFocusTo(nextFocus);
   };
 
-  const onGridKeyDownHandler = (evt, focuses, focusesList) => {
+  const getEnabledKeys = (currentFocusIndex, jump, listSize) => {
+    const disabledKeys = {
+      up: false,
+      down: false,
+      left: false,
+      right: false
+    };
+    disabledKeys.right =
+      (currentFocusIndex + 1) % jump === 0 || currentFocusIndex + 1 > listSize - 1;
+    disabledKeys.left = currentFocusIndex % jump === 0;
+    disabledKeys.up = currentFocusIndex - jump < 0;
+    disabledKeys.down =
+      currentFocusIndex + jump > listSize || currentFocusIndex + jump > listSize - 1;
+    return disabledKeys;
+  };
+
+  const onGridKeyDownHandler = (evt, focuses, focusesList, currentFocusIndex, jump) => {
     const { ArrowUp, ArrowDown, Home, End, ArrowLeft, ArrowRight, Enter, SpaceBar } = KeyboardCodes;
     const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
 
@@ -149,18 +165,28 @@ const Focus = props => {
       return;
     }
 
+    const disabledKeys = getEnabledKeys(currentFocusIndex, jump, focusesList.length);
+
     switch (evt.keyCode) {
       case ArrowUp:
-        focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
+        disabledKeys.up
+          ? ""
+          : focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
         break;
       case ArrowDown:
-        focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
+        disabledKeys.down
+          ? ""
+          : focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
         break;
       case ArrowLeft:
-        focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
+        disabledKeys.left
+          ? ""
+          : focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
         break;
       case ArrowRight:
-        focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
+        disabledKeys.right
+          ? ""
+          : focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
         break;
       case Home:
         focusAndUpdateIndex(focuses.first, evt.current, focusesList);
@@ -224,7 +250,7 @@ const Focus = props => {
     };
 
     if (strategy === "grid") {
-      onGridKeyDownHandler(evt, focuses, focusesList);
+      onGridKeyDownHandler(evt, focuses, focusesList, currentFocus, navigationJump);
       return;
     }
     onListHandler(evt, focuses, focusesList);

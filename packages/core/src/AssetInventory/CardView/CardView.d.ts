@@ -56,6 +56,6 @@ export interface HvCardViewProps
   viewConfiguration: CardViewConfiguration;
 }
 
-type HvCardViewClassKey = "root";
+type HvCardViewClassKey = "root" | "elements";
 
 export default function HvCardView(props: HvCardViewProps): JSX.Element | null;

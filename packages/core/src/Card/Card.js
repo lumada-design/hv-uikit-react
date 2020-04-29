@@ -143,9 +143,8 @@ const HvCard = ({
   );
 
   return (
-    <div role="grid" className={clsx(classes.root)}>
+    <div className={clsx(classes.root)}>
       <div
-        role="row"
         className={clsx(classes.semanticContainer, {
           [classes[semantic]]: semantic,
           [classes.semanticSelected]: selected
@@ -153,7 +152,6 @@ const HvCard = ({
       />
       <Card
         id={id}
-        role="cell"
         className={clsx(classes.cardContainer, className, {
           [classes.selectable]: isSelectable,
           [classes.cardContainerSelected]: selected,
