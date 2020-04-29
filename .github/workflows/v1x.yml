@@ -8,8 +8,34 @@ env:
   RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
 
 jobs:
+  Notify-Start:
+    name: Notify Start
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "title": "${{ github.workflow }} (${{github.ref}}) build started by ${{github.actor}}",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                }
+              ]
+            }
+
   License-Checks:
     name: License Checks
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -30,6 +56,7 @@ jobs:
         run: npm run license-check
 
   Lint:
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -54,6 +81,7 @@ jobs:
 
   Test-Jest:
     name: Test Jest
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -78,6 +106,7 @@ jobs:
 
   Build-Documentation:
     name: Build Documentation
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -108,6 +137,7 @@ jobs:
 
   Build-Automation-Storybook:
     name: Build Automation Storybook
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -227,6 +257,49 @@ jobs:
         with:
           name: ${{ matrix.browser }}-reports
           path: reports
+
+  Notify-End:
+    name: Notify End
+    needs:
+      [License-Checks, Lint, Test-Jest, Build-Documentation, Build-Automation-Storybook, Robot_pa11y, Robot]
+    if: always()
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
+      - name: generate conclusion color
+        id: conclusion_color
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
+
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                }
+              ]
+            }
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ RELEASE_COMMIT_MESSAGE }}')
