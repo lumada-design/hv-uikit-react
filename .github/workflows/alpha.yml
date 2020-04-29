@@ -1,14 +1,49 @@
 name: Alpha
 on:
   schedule:
-    - cron: '0 3 * * *' # daily at 05:00
+    - cron: "0 3 * * *" # daily at 03:00
+
+# ref is not needed across checkouts because master is the default branch
+
+# flow:
+# Notify Start
+# License-Checks | Lint | Test-Jest | Build-Documentation
+# Robot_pa11y | Robot (chrome | ie | firefox)
+# Notify End
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
 
 jobs:
+  Notify-Start:
+    name: Notify Start
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
+                  "footer": "by ${{github.actor}}"
+                }
+              ]
+            }
+
   License-Checks:
     name: License Checks
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -17,8 +52,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "alpha"
 
       - name: Install
         run: |
@@ -29,6 +62,7 @@ jobs:
         run: npm run license-check
 
   Lint:
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -37,8 +71,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "alpha"
 
       - name: Install
         run: |
@@ -53,6 +85,7 @@ jobs:
 
   Test-Jest:
     name: Test Jest
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -61,8 +94,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "alpha"
 
       - name: Install
         run: |
@@ -77,6 +108,7 @@ jobs:
 
   Build-Documentation:
     name: Build Documentation
+    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
     container:
       image: node:12.14.1-buster
@@ -85,8 +117,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "alpha"
 
       - name: Install
         run: |
@@ -113,8 +143,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "alpha"
 
       - name: Install PA11Y
         working-directory: ./automation/robot
@@ -161,8 +189,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "alpha"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -196,3 +222,46 @@ jobs:
         with:
           name: ${{ matrix.browser }}-reports
           path: reports
+
+  Notify-End:
+    name: Notify End
+    needs:
+      [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot]
+    if: always()
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v1
+      - name: generate conclusion color
+        id: conclusion_color
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            if("${{ env.WORKFLOW_CONCLUSION }}" === "success") core.exportVariable("COLOR", "#63A621")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "failure") core.exportVariable("COLOR", "#C62828")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "neutral") core.exportVariable("COLOR", "#BCBCBC")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "cancelled") core.exportVariable("COLOR", "#FFD00A")
+            else if("${{ env.WORKFLOW_CONCLUSION }}" === "timed_out") core.exportVariable("COLOR", "#FFD00A")
+
+      - name: Notify
+        uses: hbfernandes/slack-action@1.0
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "color": "${{env.COLOR}}",
+                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                }
+              ]
+            }
