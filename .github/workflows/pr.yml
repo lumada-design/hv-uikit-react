@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - master
+      - alpha
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
