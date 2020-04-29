@@ -38,7 +38,6 @@ const ListView = ({
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <div
             id={id}
-            role="table"
             aria-rowcount={values.length}
             className={clsx(className, classes.root)}
             {...others}

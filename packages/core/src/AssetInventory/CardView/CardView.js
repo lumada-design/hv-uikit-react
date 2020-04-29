@@ -10,6 +10,7 @@ import GridViewContainer from "../GridViewContainer";
 import setActionsId from "../setActionsId";
 
 import useWidth from "../../utils/useWidth";
+import { setId } from "../../utils/setId";
 
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
@@ -85,11 +86,13 @@ const CardView = ({
         // eslint-disable-next-line no-param-reassign
         value.checked = false;
       }
+
+      const gridId = setId(value.id, "grid");
+
       return (
         <Grid
-          role="gridcell"
           className="li"
-          id={value.id}
+          id={gridId}
           key={value.id}
           item
           xs={breakpoints.xs}
@@ -115,10 +118,6 @@ const CardView = ({
     });
   };
 
-  const cardAmount = values.length;
-  const rowCount = breakpoints[currentBreakpoint] === false ? -1 : breakpoints[currentBreakpoint];
-  const colCount = rowCount === -1 ? 1 : Math.ceil(cardAmount / rowCount);
-
   const GridDisplay = containerRef => (
     <Grid
       className={clsx(className, classes.root)}
@@ -127,9 +126,6 @@ const CardView = ({
       justify="flex-start"
       alignItems="flex-start"
       spacing={4}
-      role="grid"
-      aria-rowcount={rowCount}
-      aria-colcount={colCount}
     >
       {renderCards(containerRef)}
     </Grid>
