@@ -13,6 +13,7 @@ export { default as HvInput } from "./Input";
 export { default as HvSearchBox } from "./SearchBox";
 export { default as HvKpi } from "./Kpi";
 export { default as HvLink } from "./Link";
+export { default as HvList } from "./List";
 export { default as HvLogin } from "./Login";
 export { default as HvModal, HvModalTitle, HvModalContent, HvModalActions } from "./Modal";
 export { default as HvMultiButton } from "./MultiButton";

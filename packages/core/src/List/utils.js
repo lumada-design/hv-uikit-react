@@ -6,27 +6,21 @@ const isItemSelected = (item, newItem) => {
 
 const checkIcons = list => !!list.filter(elem => elem.iconCallback).length;
 
-const parseState = (list, labels) => {
-  const { selectAll, selectionConjunction } = labels;
+const parseState = list => {
   const hasLeftIcons = checkIcons(list);
   const selection = list.filter(elem => elem.selected);
   const anySelected = !!selection.length;
   const allSelected = selection.length === list.length;
   const anySelectableSelected = list.some(elem => elem.selected || elem.disabled);
   const allSelectableSelected = list.every(elem => elem.selected || elem.disabled);
-  const selectionLabel = !anySelected
-    ? selectAll
-    : `${selection.length} ${selectionConjunction} ${list.length}`;
 
   return {
     list,
-    labels,
     hasLeftIcons,
     anySelected,
     allSelected,
     anySelectableSelected,
     allSelectableSelected,
-    selectionLabel,
     selection
   };
 };
