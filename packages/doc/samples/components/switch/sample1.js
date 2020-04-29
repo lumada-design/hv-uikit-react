@@ -14,13 +14,45 @@
  * limitations under the License.
  */
 
-import React from "react";
+import React, { useState } from "react";
 import Switch from "@hv/uikit-react-core/dist/Switch";
+import Typography from "@hv/uikit-react-core/dist/Typography";
+import { withStyles } from "@material-ui/core";
+import classNames from "classnames";
 
-export default (
-  <Switch
-    checked={false}
-    onChange={e => alert(e.target.checked ? "On" : "Off")}
-    aria-label="Engine Control"
-  />
-);
+const styles = theme => ({
+  on: {
+    color: theme.hv.palette.semantic.sema1
+  },
+  off: {
+    color: theme.hv.palette.semantic.sema13
+  }
+});
+
+const StateString = withStyles(styles, {
+  withTheme: true
+})(({ state, classes, children }) => (
+  <Typography
+    className={classNames({ [classes.on]: state, [classes.off]: !state })}
+  >
+    {`The state is ${state ? "On" : "Off"}`}
+  </Typography>
+));
+
+const OnChangeExample = ({ theme }) => {
+  const [state, setState] = useState(false);
+
+  return (
+    <>
+      <Switch
+        checked={false}
+        onChange={() => setState(!state)}
+        aria-label="Engine Control"
+      />
+      <p />
+      <StateString state={state} />
+    </>
+  );
+};
+
+export default <OnChangeExample />;

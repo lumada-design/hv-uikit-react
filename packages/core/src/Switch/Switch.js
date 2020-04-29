@@ -21,7 +21,6 @@ import BaseSwitch from "@material-ui/core/Switch";
 import classnames from "classnames";
 import uniqueId from "lodash/uniqueId";
 import CheckMark from "@hv/uikit-react-icons/dist/Generic/CompletedStep";
-import { KeyboardCodes, isKeypress } from "@hv/uikit-common-utils/dist";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
 
@@ -42,11 +41,6 @@ const Switch = props => {
   const [clickState, setClicked] = useState(checked);
   const DEFAULT_ID_PREFIX = "hv-switch-";
   const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
-
-  const handleChange = event => {
-    setClicked(event.target.checked);
-    onChange(event);
-  };
 
   const createLabel = (
     label,
@@ -75,14 +69,6 @@ const Switch = props => {
     );
   };
 
-  const onKeyDownHandler = event => {
-    if (isKeypress(event, KeyboardCodes.SpaceBar)) {
-      const newState = !clickState;
-      setClicked(newState);
-      onChange(event, newState);
-    }
-  };
-
   const onClickHandler = event => {
     const newState = !clickState;
     setClicked(newState);
@@ -100,7 +86,7 @@ const Switch = props => {
           role="checkbox"
           tabIndex="0"
           aria-checked={clickState}
-          onKeyDown={disabled ? undefined : onKeyDownHandler}
+          onKeyDown={disabled ? undefined : onClickHandler}
           aria-disabled={disabled}
           id={internalId}
           {...other}
@@ -108,16 +94,13 @@ const Switch = props => {
           <BaseSwitch
             tabIndex="-1"
             checked={clickState}
-            onChange={handleChange}
             disabled={disabled}
             value={value}
-            inputProps={
-              {
-                // dummy aria-label this component is not tabbable and it is just presentational.
-                // the accesibility test were always failing because of the missing aria label.
-                "aria-label": "base switch"
-              }
-            }
+            inputProps={{
+              // dummy aria-label this component is not tabbable and it is just presentational.
+              // the accessibility test were always failing because of the missing aria label.
+              "aria-label": "base switch"
+            }}
             classes={{
               root: classes.switchRoot,
               switchBase: classes.switchBase,
