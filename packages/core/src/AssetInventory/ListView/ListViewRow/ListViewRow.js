@@ -9,39 +9,40 @@ import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
+import setActionsId from "../../setActionsId";
 
 const getValue = checkboxProps =>
   checkboxProps && checkboxProps.value ? checkboxProps.value : false;
 
-const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => {
+const selectCell = (classes, onCheckboxSelected, checkboxProps, checked, semantic, id) => (
+  <Cell
+    className={classes.selectCell}
+    semantic={semantic}
+    id={`checkbox-cell-${id}`}
+    key={`checkbox${id}`}
+  >
+    <HvCheckbox
+      className={classes.checkboxPlacement}
+      onChange={onCheckboxSelected}
+      checked={checked}
+      id={`checkbox-${id}`}
+      {...checkboxProps}
+    />
+  </Cell>
+);
+
+const actionsCell = (classes, id, viewConfiguration) => {
   return (
-    <Cell
-      className={classes.selectCell}
-      semantic={semantic}
-      id={`checkbox-cell-${id}`}
-      key={`checkbox${id}`}
-    >
-      <HvCheckbox
-        className={classes.checkboxPlacement}
-        onChange={onCheckboxSelected}
-        checked={checked}
-        id={`checkbox-${id}`}
-        {...checkboxProps}
+    <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
+      <Actions
+        id={id}
+        actions={setActionsId(viewConfiguration.actions, id)}
+        actionsCallback={viewConfiguration.actionsCallback}
+        maxVisibleActions={viewConfiguration.maxVisibleActions}
       />
     </Cell>
   );
 };
-
-const actionsCell = (classes, id, viewConfiguration) => (
-  <Cell className={classes.actionSeparator} id={`action-cell-${id}`} key={`action${id}`}>
-    <Actions
-      id={`action${id}`}
-      actions={viewConfiguration.actions}
-      actionsCallback={viewConfiguration.actionsCallback}
-      maxVisibleActions={viewConfiguration.maxVisibleActions}
-    />
-  </Cell>
-);
 
 const row = (
   viewConfiguration,

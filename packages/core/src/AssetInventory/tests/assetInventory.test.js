@@ -281,7 +281,9 @@ describe("Asset Inventory ", () => {
 
     expect(view.exists()).toBe(false);
 
-    wrapper.findWhere(n => n.type() === "button" && n.prop("id") === "view2").simulate("click");
+    wrapper
+      .findWhere(n => n.type() === "button" && n.prop("id") === "view2-button")
+      .simulate("click");
 
     view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
 

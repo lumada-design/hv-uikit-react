@@ -5,16 +5,23 @@ import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
 import styles from "./styles";
+import setActionsId from "../setActionsId";
 
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
-    return data => render(data, viewConfiguration, metadata, cardProps);
+    return data =>
+      render(
+        data,
+        { ...viewConfiguration, actions: setActionsId(viewConfiguration.actions, data.id) },
+        metadata,
+        cardProps
+      );
   }
   return data => (
     <Card
       {...data}
       onChange={viewConfiguration.onSelection}
-      actions={viewConfiguration.actions}
+      actions={setActionsId(viewConfiguration.actions, data.id)}
       isSelectable={viewConfiguration.isSelectable}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
