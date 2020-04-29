@@ -14,26 +14,35 @@ export const Main = () => {
   return <HvSwitch />;
 };
 
+export const OnChange = () => (
+  <HvSwitch
+    checked
+    id="Switch-no-labels"
+    aria-label="Engine Control"
+    displayIconChecked
+    onChange={(event, state) => alert(`The value of the switch is ${state}`)}
+  />
+);
+
+OnChange.story = {
+  parameters: {
+    docs: {
+      storyDescription: "OnChange is called in the labels as in the switch itself."
+    }
+  }
+};
+
 export const NoLabels = () => (
   <HvSwitch
     checked
     id="Switch-no-labels"
-    disabled={false}
     showLabels={false}
     aria-label="Engine Control"
     displayIconChecked
   />
 );
 
-NoLabels.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a switch without labels."
-    }
-  }
-};
-
-export const Label = () => {
+export const LabelsDefinition = () => {
   const labels = {
     left: "Disconnect",
     right: "Connect"
@@ -42,20 +51,4 @@ export const Label = () => {
   return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
 };
 
-Label.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a switch that includes a label."
-    }
-  }
-};
-
 export const Disabled = () => <HvSwitch disabled />;
-
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a disabled switch that does not allow interaction."
-    }
-  }
-};
