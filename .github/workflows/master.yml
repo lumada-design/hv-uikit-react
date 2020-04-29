@@ -189,7 +189,7 @@ jobs:
           path: reports
 
   Release:
-    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ env.RELEASE_COMMIT_MESSAGE }}')
+    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ RELEASE_COMMIT_MESSAGE }}')
     needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Build-pa11y, Robot]
     runs-on: [self-hosted, Linux]
     steps:

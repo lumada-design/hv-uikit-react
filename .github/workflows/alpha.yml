@@ -1,11 +1,10 @@
-name: v1.x
+name: Alpha
 on:
   schedule:
-    - cron: '0 1 * * *' # daily at 01:00
+    - cron: '0 3 * * *' # daily at 05:00
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
 
 jobs:
   License-Checks:
@@ -19,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -39,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -63,7 +62,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -87,7 +86,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -106,46 +105,16 @@ jobs:
           name: documentation
           path: dist
 
-  Build-Automation-Storybook:
-    name: Build Automation Storybook
-    runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: "v1.x"
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
-
-      - name: Generate Storybook
-        run: npm run automation:package
-
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
-        with:
-          name: automation-storybook
-          path: dist
-
   Robot_pa11y:
     name: Test Robot pa11y
-    needs: Build-Automation-Storybook
+    needs: Build-Documentation
     runs-on: [self-hosted, Windows]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "alpha"
 
       - name: Install PA11Y
         working-directory: ./automation/robot
@@ -155,7 +124,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: automation-storybook
+          name: documentation
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -181,7 +150,7 @@ jobs:
 
   Robot:
     name: Test Robot
-    needs: Build-Automation-Storybook
+    needs: Build-Documentation
     runs-on: [self-hosted, Windows]
     timeout-minutes: 150
     strategy:
@@ -193,12 +162,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "alpha"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: automation-storybook
+          name: documentation
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -227,20 +196,3 @@ jobs:
         with:
           name: ${{ matrix.browser }}-reports
           path: reports
-
-  Release:
-    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ RELEASE_COMMIT_MESSAGE }}')
-    needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Build-pa11y, Robot]
-    runs-on: [self-hosted, Linux]
-    steps:
-      - name: Trigger Release
-        uses: actions/github-script@0.8.0
-        with:
-          # repo scope token is required to generate a dispatch event
-          github-token: ${{ secrets.BUILD_TOKEN }}
-          script: |
-            await github.repos.createDispatchEvent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              event_type: 'v1-release'
-            })
