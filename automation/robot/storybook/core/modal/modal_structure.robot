@@ -23,9 +23,3 @@ close modal when dialog close button is pressed
     Wait Until Element Is Visible               ${dialog}               5s
     Click Button                                ${dialogCloseButton}
     Wait Until Page Does Not Contain Element    ${dialog}               5s
-
-close modal when clicking out dialog
-    Click Button                                ${buttonWarning}
-    Wait Until Element Is Visible               ${dialog}               5s
-    Click Element                               css:body
-    Wait Until Page Does Not Contain Element    ${dialog}               5s

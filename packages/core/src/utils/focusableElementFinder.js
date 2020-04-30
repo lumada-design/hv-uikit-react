@@ -1,3 +1,12 @@
+const SELECTORS = 'input, button, select, textarea, a[href], [tabindex]:not([tabindex="-1"]';
+
+/**
+ * Gets the list of focusable elements.
+ * @param node
+ * @returns {*|NodeListOf<HTMLElementTagNameMap[string]>|NodeListOf<*>|NodeListOf<SVGElementTagNameMap[string]>|*[]}
+ */
+const getFocusableList = node => (node && node.querySelectorAll(SELECTORS)) || [];
+
 /**
  * Auxiliary function to find adjacent nodes to focus.
  *
@@ -5,12 +14,7 @@
  * @returns {{prevFocus: *, nextFocus: *}}
  */
 const getPrevNextFocus = nodeId => {
-  const nodes =
-    (document &&
-      document.querySelectorAll(
-        'input, button, select, textarea, a[href], [tabindex]:not([tabindex="-1"]'
-      )) ||
-    [];
+  const nodes = getFocusableList(document);
 
   const nbNodes = nodes.length;
   let index = 0;
@@ -32,12 +36,7 @@ const getPrevNextFocus = nodeId => {
  * @returns {{last: *, first: *}}
  */
 const getFirstAndLastFocus = node => {
-  const focusableList =
-    (node.current &&
-      node.current.querySelectorAll(
-        'input, button, select, textarea, a[href], [tabindex]:not([tabindex="-1"]'
-      )) ||
-    [];
+  const focusableList = getFocusableList(node);
 
   return {
     first: focusableList[0] || null,
@@ -45,5 +44,5 @@ const getFirstAndLastFocus = node => {
   };
 };
 
-export { getFirstAndLastFocus, getPrevNextFocus };
+export { getFocusableList, getFirstAndLastFocus, getPrevNextFocus };
 export default getPrevNextFocus;
