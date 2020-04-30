@@ -1,7 +1,19 @@
+# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
+#
+# An example using curl:
+# curl \
+#  -H "Accept: application/vnd.github.everest-preview+json" \
+#  -H "Authorization: token <user-token>" \
+#  --request POST \
+#  --data "{\"event_type\": \"alpha\"}" \
+#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
+
 name: Alpha
 on:
   schedule:
     - cron: "0 3 * * *" # daily at 03:00
+  repository_dispatch:
+    types: [alpha]  
 
 # ref is not needed across checkouts because master is the default branch
 

@@ -1,11 +1,23 @@
+# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
+#
+# An example using curl:
+# curl \
+#  -H "Accept: application/vnd.github.everest-preview+json" \
+#  -H "Authorization: token <user-token>" \
+#  --request POST \
+#  --data "{\"event_type\": \"v1x\"}" \
+#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
+
 name: v1.x
 on:
   schedule:
-    - cron: '0 1 * * *' # daily at 01:00
+    - cron: "0 1 * * *" # daily at 01:00
+  repository_dispatch:
+    types: [v1x]
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  RELEASE_COMMIT_MESSAGE: 'chore(release): publish'
+  RELEASE_COMMIT_MESSAGE: "chore(release): publish"
 
 jobs:
   Notify-Start:
@@ -261,7 +273,15 @@ jobs:
   Notify-End:
     name: Notify End
     needs:
-      [License-Checks, Lint, Test-Jest, Build-Documentation, Build-Automation-Storybook, Robot_pa11y, Robot]
+      [
+        License-Checks,
+        Lint,
+        Test-Jest,
+        Build-Documentation,
+        Build-Automation-Storybook,
+        Robot_pa11y,
+        Robot,
+      ]
     if: always()
     runs-on: [self-hosted, Linux]
     container:
@@ -302,8 +322,17 @@ jobs:
             }
 
   Release:
-    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${{ RELEASE_COMMIT_MESSAGE }}')
-    needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Build-pa11y, Robot]
+    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
+    needs:
+      [
+        License-Checks,
+        Lint,
+        Test-Jest,
+        Build-Documentation,
+        Build-Automation-Storybook,
+        Build-pa11y,
+        Robot,
+      ]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
