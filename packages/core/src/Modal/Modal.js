@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import FocusTrap from "focus-trap-react";
 import uniqueId from "lodash/uniqueId";
 import Dialog from "@material-ui/core/Dialog";
-
+import { isKeypress, KeyboardCodes } from "@hv/uikit-common-utils/dist";
+import isNil from "lodash/isNil";
 import Close from "@hv/uikit-react-icons/dist/Generic/Close";
+import { getFirstAndLastFocus } from "../utils/focusableElementFinder";
 import Button from "../Button";
 
 /**
@@ -47,17 +48,60 @@ const Main = ({
   ...others
 }) => {
   const [internalId] = useState(id || uniqueId("hv-modal-"));
+  const [focusableQueue, setFocusableQueue] = useState(null);
 
-  const initialFocus = firstFocusable
-    ? () => {
-        if (!document.getElementById(firstFocusable)) {
-          // eslint-disable-next-line no-console
-          console.warn(`firstFocusable element ${firstFocusable} not found.`);
-          return null;
-        }
-        return document.getElementById(firstFocusable);
+  const setFocus = () => {
+    const focusable = getFirstAndLastFocus(document.getElementById(internalId));
+    setFocusableQueue(focusable);
+    if (isNil(firstFocusable)) {
+      focusable.first.focus();
+    } else {
+      const focusElement = document.getElementById(firstFocusable);
+      if (!isNil(focusElement)) focusElement.focus();
+      // eslint-disable-next-line no-console
+      else console.warn(`firstFocusable element ${firstFocusable} not found.`);
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (open) {
+        setFocus();
       }
-    : undefined;
+    });
+  }, [open]);
+
+  const keyDownHandler = event => {
+    if (
+      isKeypress(event, KeyboardCodes.Tab) &&
+      !isNil(event.target) &&
+      !isNil(focusableQueue)
+    ) {
+      if (event.shiftKey && event.target === focusableQueue.first) {
+        focusableQueue.last.focus();
+        event.preventDefault();
+      }
+      if (!event.shiftKey && event.target === focusableQueue.last) {
+        focusableQueue.first.focus();
+        event.preventDefault();
+      }
+    }
+    // Needed as this handler overrides the one in the material ui Modal.
+    else if (isKeypress(event, KeyboardCodes.Esc)) {
+      if (others.onEscapeKeyDown) {
+        others.onEscapeKeyDown(event);
+      }
+
+      if (!others.disableEscapeKeyDown) {
+        // Swallow the event, in case someone is listening for the escape key on the body.
+        event.stopPropagation();
+
+        if (onClose) {
+          onClose(event, "escapeKeyDown");
+        }
+      }
+    }
+  };
 
   return (
     <Dialog
@@ -75,28 +119,21 @@ const Main = ({
         }
       }}
       onClose={(event, reason) => onClose(event, reason)}
+      onKeyDown={keyDownHandler}
       {...others}
     >
-      <FocusTrap
-        focusTrapOptions={{
-          escapeDeactivates: false,
-          clickOutsideDeactivates: true,
-          initialFocus
-        }}
-      >
-        <div aria-modal>
-          <Button
-            id={`${internalId}-close`}
-            className={classes.closeButton}
-            category="ghost"
-            onClick={event => onClose(event)}
-            title={buttonTitle}
-          >
-            <Close className={classes.iconContainer} />
-          </Button>
-          {children}
-        </div>
-      </FocusTrap>
+      <div aria-modal>
+        <Button
+          id={`${internalId}-close`}
+          className={classes.closeButton}
+          category="ghost"
+          onClick={event => onClose(event)}
+          title={buttonTitle}
+        >
+          <Close className={classes.iconContainer} />
+        </Button>
+        {children}
+      </div>
     </Dialog>
   );
 };
