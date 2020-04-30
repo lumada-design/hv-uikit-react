@@ -40,6 +40,8 @@ export { default as HvBarchart } from "./Barchart";
 export { default as HvLinechart } from "./Linechart";
 export { default as HvUserPreferences } from "./UserPreferences";
 
+export { default as HvFormik } from "./Formik";
+
 // HOCs
 export { default as withId } from "./withId";
 export { default as withLabels } from "./withLabels";
