@@ -114,7 +114,7 @@ Actions.propTypes = {
    */
   category: PropTypes.oneOf(["primary", "secondary", "ghost", "ghostSecondary", "semantic"]),
   /**
-   * The renderable content inside the actions slot of the footer,
+   * The renderable content inside the actions slot ofsdf dasf a the footer,
    * or an Array of actions ´{id, label, icon, disabled}´
    */
   actions: oneOfType([
