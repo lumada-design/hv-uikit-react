@@ -10,6 +10,7 @@
 
 name: Master
 on:
+  push
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
