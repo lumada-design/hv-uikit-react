@@ -114,7 +114,7 @@ AppSwitcherPanel.propTypes = {
        */
       target: PropTypes.oneOf(["_top", "_blank"]),
       /**
-       * Callback triggered when the action is clicked
+       * Callback triggered when the action is clicked.
        */
       onClickCallback: PropTypes.func,
     })
