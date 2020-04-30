@@ -20,8 +20,10 @@ node('non-master') {
         // on each command, otherwise the default $PWD is the jenkins workspace
         def uikit_folder = '/home/node/hv-uikit-react'
 
-        echo "[INFO] CHANGE_FORK: " + env.CHANGE_FORK
-        echo "[INFO] CHANGE_URL: " + env.CHANGE_URL
+        if(env.CHANGE_FORK == null) {
+            currentBuild.result = 'SKIPPED'
+            return
+        }
 
         def image
 
