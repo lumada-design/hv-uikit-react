@@ -21,7 +21,7 @@ node('non-master') {
         def uikit_folder = '/home/node/hv-uikit-react'
 
         if(env.CHANGE_FORK == null) {
-            currentBuild.result = 'SKIPPED'
+            currentBuild.result = 'NOT_BUILT'
             return
         }
 
