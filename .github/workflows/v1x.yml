@@ -330,7 +330,7 @@ jobs:
         Test-Jest,
         Build-Documentation,
         Build-Automation-Storybook,
-        Build-pa11y,
+        Robot-pa11y,
         Robot,
       ]
     runs-on: [self-hosted, Linux]
