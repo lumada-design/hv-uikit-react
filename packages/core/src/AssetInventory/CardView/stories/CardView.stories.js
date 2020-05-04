@@ -54,7 +54,7 @@ export const Main = () => {
 
   const viewConfiguration = {
     onSelection: event => console.log(event.target.checked),
-    breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     actionsCallback: (e, id, action) =>
@@ -142,7 +142,7 @@ export const DefaultRender = () => {
 
   const viewConfiguration = {
     onSelection: event => console.log(event.target.value),
-    breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     actionsCallback: (e, id, action) =>
@@ -221,7 +221,7 @@ export const CustomRender = () => {
 
   const viewConfiguration = {
     onSelection: event => console.log(event.target.value),
-    breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
     actionsCallback: (e, id, action) =>
@@ -315,7 +315,7 @@ export const CustomRenderAndActions = () => {
   // --------------- Configuration ----------------
   const viewConfiguration = {
     onSelection: event => alert(event.target.value),
-    breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true
   };
 

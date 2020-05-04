@@ -21,7 +21,7 @@ const KpiTimeHorizon = score => ({
 const Content = ({ classes, values }) => (
   <>
     <Grid container className={classes.container}>
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
           <Typography className={classes.timestamp} variant="sText">
             {values.event.timestamp}
@@ -30,14 +30,14 @@ const Content = ({ classes, values }) => (
         </div>
       </Grid>
 
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
           <Kpi labels={KpiProbability(values.probability)} />
           <Kpi labels={KpiTimeHorizon(values.timeHorizon)} />
         </div>
       </Grid>
 
-      <Grid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.item}>
         <Typography variant="labelText">Related assets</Typography>
         <Typography variant="normalText" className={classes.text}>
           {values.relatedAssets}
