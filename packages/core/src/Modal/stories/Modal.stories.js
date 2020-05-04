@@ -68,7 +68,13 @@ export const Main = () => {
       <HvButton id="openModal" style={{ width: "120px" }} onClick={() => setOpen(true)}>
         Open modal
       </HvButton>
-      <HvModal disableBackdropClick id="test" open={open} onClose={() => setOpen(false)}>
+      <HvModal
+        disableBackdropClick
+        id="test"
+        open={open}
+        onClose={() => setOpen(false)}
+        firstFocusable="apply"
+      >
         <HvModalTitle variant="warning">Switch model view?</HvModalTitle>
         <HvModalContent>
           Switching to model view will clear all the fields in your visualization. You will need to
