@@ -2,7 +2,7 @@ properties([
     parameters([
         booleanParam(name: 'skipLint', defaultValue: false, description: 'when true, skip lint.'),
         booleanParam(name: 'skipJavascriptTest', defaultValue: false, description: 'when true, skip javascript tests.'),
-        booleanParam(name: 'skipAutomationTest', defaultValue: true, description: 'when true, skip automation tests.'),
+        booleanParam(name: 'skipAutomationTest', defaultValue: false, description: 'when true, skip automation tests.'),
         choice(name: 'skipPublishDoc', choices: ['auto', 'true', 'false'], description: 'when true, skip publish documentation.'),
         choice(choices: ['#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel publish the build result.', name: 'ci_channel'),
         choice(choices: ['#ui-kit', '#ui-kit-eng-ci', '#ui-kit-internal'], description: 'In what channel announce a release.', name: 'release_channel')
@@ -20,8 +20,11 @@ node('non-master') {
         // on each command, otherwise the default $PWD is the jenkins workspace
         def uikit_folder = '/home/node/hv-uikit-react'
 
-        echo "[INFO] CHANGE_FORK: " + env.CHANGE_FORK
-        echo "[INFO] CHANGE_URL: " + env.CHANGE_URL
+        if(env.CHANGE_FORK == null) {
+            // Success will mark the build as ok. The real status should be NOT_BUILT, but its status isn't captured by the plugin correctly
+            currentBuild.result = 'SUCCESS'
+            return
+        }
 
         def image
 
