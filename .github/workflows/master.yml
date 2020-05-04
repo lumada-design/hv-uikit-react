@@ -13,7 +13,7 @@ on:
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
-    types: [master]    
+    types: [master]
 
 # ref is not needed across checkouts because master is the default branch
 
@@ -71,6 +71,9 @@ jobs:
         run: |
           npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
 
       - name: License Check
         run: npm run license-check

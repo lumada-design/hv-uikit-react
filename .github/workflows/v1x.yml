@@ -45,28 +45,6 @@ jobs:
               ]
             }
 
-  License-Checks:
-    name: License Checks
-    needs: [Notify-Start]
-    runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: "v1.x"
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: License Check
-        run: npm run license-check
-
   Lint:
     needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
@@ -145,7 +123,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: documentation
-          path: dist
+          path: packages/doc/dist
 
   Build-Automation-Storybook:
     name: Build Automation Storybook
@@ -176,7 +154,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: automation-storybook
-          path: dist
+          path: automation/storybook/dist
 
   Robot_pa11y:
     name: Test Robot pa11y
@@ -272,16 +250,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs:
-      [
-        License-Checks,
-        Lint,
-        Test-Jest,
-        Build-Documentation,
-        Build-Automation-Storybook,
-        Robot_pa11y,
-        Robot,
-      ]
+    needs: [Lint, Test-Jest, Build-Documentation, Build-Automation-Storybook, Robot_pa11y, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
     container:
@@ -323,16 +292,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs:
-      [
-        License-Checks,
-        Lint,
-        Test-Jest,
-        Build-Documentation,
-        Build-Automation-Storybook,
-        Robot_pa11y,
-        Robot,
-      ]
+    needs: [Lint, Test-Jest, Build-Documentation, Build-Automation-Storybook, Robot_pa11y, Robot]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
