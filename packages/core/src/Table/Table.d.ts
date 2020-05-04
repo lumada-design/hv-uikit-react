@@ -55,6 +55,10 @@ export interface TableColumn {
    * The max-width of the column
    */
   maxWidth?: string | number
+  /**
+   * The min-width of the column
+   */
+  minWidth?: string | number
 
 }
 
