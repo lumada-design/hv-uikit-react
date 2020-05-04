@@ -13,7 +13,7 @@ on:
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
-    types: [master]    
+    types: [master]
 
 # ref is not needed across checkouts because master is the default branch
 
