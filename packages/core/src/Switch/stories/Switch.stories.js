@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 import { HvSwitch } from "../..";
+import Typography from "../../Typography";
 
 export default {
   title: "Components/Selectors/Switch",
@@ -14,15 +17,41 @@ export const Main = () => {
   return <HvSwitch />;
 };
 
-export const OnChange = () => (
-  <HvSwitch
-    checked
-    id="Switch-no-labels"
-    aria-label="Engine Control"
-    displayIconChecked
-    onChange={(event, state) => alert(`The value of the switch is ${state}`)}
-  />
-);
+export const OnChange = () => {
+  const [state, setState] = useState(false);
+
+  const useStyles = makeStyles(theme => ({
+    on: {
+      color: theme.hv.palette.semantic.sema1
+    },
+    off: {
+      color: theme.hv.palette.semantic.sema13
+    }
+  }));
+
+  const StateString = () => {
+    const classes = useStyles();
+    return (
+      <Typography className={clsx({ [classes.on]: state, [classes.off]: !state })}>
+        {`The switch is ${state ? "On" : "Off"}`}
+      </Typography>
+    );
+  };
+
+  return (
+    <>
+      <HvSwitch
+        checked={state}
+        id="Switch-no-labels"
+        aria-label="Engine Control"
+        displayIconChecked
+        onChange={() => setState(!state)}
+      />
+      <p />
+      <StateString state={state} />
+    </>
+  );
+};
 
 OnChange.story = {
   parameters: {
