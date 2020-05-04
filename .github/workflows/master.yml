@@ -72,6 +72,9 @@ jobs:
           npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
+      - name: Bootstrap
+        run: npm run bootstrap
+
       - name: License Check
         run: npm run license-check
 
