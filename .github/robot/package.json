@@ -1,0 +1,19 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "package": "ncc build src/index.js -o lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/exec": "^1.0.3",
+    "@actions/github": "^2.1.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.1"
+  }
+}
