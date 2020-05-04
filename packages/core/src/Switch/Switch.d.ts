@@ -13,7 +13,7 @@ export interface HvSwitchLabelsProp {
 }
 
 export interface HvSwitchProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSwitchClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvSwitchClassKey, "onChange"> {
   /**
    * Denotes selection state of switch component.
    */
@@ -38,6 +38,10 @@ export interface HvSwitchProps
    * Determine if custom icon in button should be displayed
    * */
   displayIconChecked?: boolean;
+  /**
+   * Callback function to be triggered when the input value is changed
+   */
+  onChange: (event: Event, state: boolean) => void;
 }
 
 export type HvSwitchClassKey =

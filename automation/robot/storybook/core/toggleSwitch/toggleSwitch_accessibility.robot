@@ -10,5 +10,5 @@ ${url}    ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--
 
 
 *** Test Cases ***
-icon checked switch against WCAG2AA standard    ${url}no-labels
+icon checked switch against WCAG2AA standard    ${url}no-change
 disables switch against WCAG2AA standard        ${url}disabled
