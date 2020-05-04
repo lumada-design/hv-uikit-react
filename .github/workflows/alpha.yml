@@ -8,7 +8,7 @@
 #  --data "{\"event_type\": \"alpha\"}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Alpha
+name: Alpha Nightly
 on:
   schedule:
     - cron: "0 3 * * *" # daily at 03:00
@@ -64,6 +64,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -83,6 +85,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -106,6 +110,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -129,6 +135,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Install
         run: |
@@ -155,6 +163,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Install PA11Y
         working-directory: ./automation/robot
@@ -201,6 +211,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
