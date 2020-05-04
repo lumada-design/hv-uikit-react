@@ -17,7 +17,10 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
+
+import Fail from "@hv/uikit-react-icons/dist/Generic/Fail";
+import Level5 from "@hv/uikit-react-icons/dist/Generic/Level5";
 
 import HvProvider from "../../../Provider";
 
@@ -79,5 +82,31 @@ describe("ModalTitle Component", () => {
       </HvProvider>
     );
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("custom icon", () => {
+    wrapper = mount(
+      <HvProvider>
+        <ModalTitle classes={{}} customIcon={<Fail />}>
+          Modal Title
+        </ModalTitle>
+      </HvProvider>
+    );
+
+    const customIcon = wrapper.find(Fail);
+    expect(customIcon.length).toBe(1);
+  });
+
+  it("Variant fail", () => {
+    wrapper = mount(
+      <HvProvider>
+        <ModalTitle classes={{}} variant="error">
+          Modal Title
+        </ModalTitle>
+      </HvProvider>
+    );
+
+    const customIcon = wrapper.find(Level5);
+    expect(customIcon.length).toBe(1);
   });
 });

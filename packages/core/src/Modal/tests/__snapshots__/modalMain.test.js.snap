@@ -21,34 +21,22 @@ exports[`Modal Component allows external props to be added 1`] = `
   disableEscapeKeyDown={true}
   id="hv-modal-5"
   onClose={[Function]}
+  onKeyDown={[Function]}
   open={true}
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "initialFocus": undefined,
-      }
-    }
-    paused={false}
+  <div
+    aria-modal={true}
   >
-    <div
-      aria-modal={true}
+    <HvButton
+      category="ghost"
+      id="hv-modal-5-close"
+      onClick={[Function]}
+      title="Close"
     >
-      <HvButton
-        category="ghost"
-        id="hv-modal-5-close"
-        onClick={[Function]}
-        title="Close"
-      >
-        <WithStyles(Close) />
-      </HvButton>
-      Modal Content
-    </div>
-  </FocusTrap>
+      <WithStyles(Close) />
+    </HvButton>
+    Modal Content
+  </div>
 </WithStyles(Dialog)>
 `;
 
@@ -71,35 +59,23 @@ exports[`Modal Component allows external styles to be added 1`] = `
   className="testClassRoot"
   id="hv-modal-7"
   onClose={[Function]}
+  onKeyDown={[Function]}
   open={true}
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "initialFocus": undefined,
-      }
-    }
-    paused={false}
+  <div
+    aria-modal={true}
   >
-    <div
-      aria-modal={true}
+    <HvButton
+      category="ghost"
+      className="testClassCloseButton"
+      id="hv-modal-7-close"
+      onClick={[Function]}
+      title="Close"
     >
-      <HvButton
-        category="ghost"
-        className="testClassCloseButton"
-        id="hv-modal-7-close"
-        onClick={[Function]}
-        title="Close"
-      >
-        <WithStyles(Close) />
-      </HvButton>
-      Modal Content
-    </div>
-  </FocusTrap>
+      <WithStyles(Close) />
+    </HvButton>
+    Modal Content
+  </div>
 </WithStyles(Dialog)>
 `;
 
@@ -122,34 +98,22 @@ exports[`Modal Component onClose should be called when close button is clicked 1
   className=""
   id="hv-modal-8"
   onClose={[Function]}
+  onKeyDown={[Function]}
   open={true}
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "initialFocus": undefined,
-      }
-    }
-    paused={false}
+  <div
+    aria-modal={true}
   >
-    <div
-      aria-modal={true}
+    <HvButton
+      category="ghost"
+      id="hv-modal-8-close"
+      onClick={[Function]}
+      title="Close"
     >
-      <HvButton
-        category="ghost"
-        id="hv-modal-8-close"
-        onClick={[Function]}
-        title="Close"
-      >
-        <WithStyles(Close) />
-      </HvButton>
-      Modal Content
-    </div>
-  </FocusTrap>
+      <WithStyles(Close) />
+    </HvButton>
+    Modal Content
+  </div>
 </WithStyles(Dialog)>
 `;
 
@@ -172,34 +136,22 @@ exports[`Modal Component should render correctly if closed 1`] = `
   className=""
   id="hv-modal-3"
   onClose={[Function]}
+  onKeyDown={[Function]}
   open={false}
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "initialFocus": undefined,
-      }
-    }
-    paused={false}
+  <div
+    aria-modal={true}
   >
-    <div
-      aria-modal={true}
+    <HvButton
+      category="ghost"
+      id="hv-modal-3-close"
+      onClick={[Function]}
+      title="Close"
     >
-      <HvButton
-        category="ghost"
-        id="hv-modal-3-close"
-        onClick={[Function]}
-        title="Close"
-      >
-        <WithStyles(Close) />
-      </HvButton>
-      Modal Content
-    </div>
-  </FocusTrap>
+      <WithStyles(Close) />
+    </HvButton>
+    Modal Content
+  </div>
 </WithStyles(Dialog)>
 `;
 
@@ -222,34 +174,22 @@ exports[`Modal Component should render correctly if opened 1`] = `
   className=""
   id="hv-modal-1"
   onClose={[Function]}
+  onKeyDown={[Function]}
   open={true}
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "initialFocus": undefined,
-      }
-    }
-    paused={false}
+  <div
+    aria-modal={true}
   >
-    <div
-      aria-modal={true}
+    <HvButton
+      category="ghost"
+      id="hv-modal-1-close"
+      onClick={[Function]}
+      title="Close"
     >
-      <HvButton
-        category="ghost"
-        id="hv-modal-1-close"
-        onClick={[Function]}
-        title="Close"
-      >
-        <WithStyles(Close) />
-      </HvButton>
-      Modal Content
-    </div>
-  </FocusTrap>
+      <WithStyles(Close) />
+    </HvButton>
+    Modal Content
+  </div>
 </WithStyles(Dialog)>
 `;
 

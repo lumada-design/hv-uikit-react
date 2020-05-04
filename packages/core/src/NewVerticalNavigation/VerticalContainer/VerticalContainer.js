@@ -70,7 +70,7 @@ const VerticalContainer = ({
   useEffect(() => {
     setTimeout(() => {
       if (open) {
-        focusableList.current = getFirstAndLastFocus(containerRef);
+        focusableList.current = getFirstAndLastFocus(containerRef.current);
       }
     });
   }, [open]);
