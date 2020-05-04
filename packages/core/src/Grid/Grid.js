@@ -15,7 +15,21 @@ const BREAKPOINT_GUTTERS = {
 const SPACINGS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 /**
- * The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. This component is based in a 12-column grid layout.
+ * The grid creates visual consistency between layouts while allowing flexibility
+ * across a wide variety of designs. This component is based in a 12-column grid layout.
+ *
+ * It is is based in the [Material UI Grid](https://material-ui.com/components/grid/#grid).
+ *
+ * The definitions were set following the Design System directives:
+ *
+ * | Breakpoint | Width (in px) | Gutters (in px) | Number of columns |
+ * | ---------- | ------------- | --------------- | ----------------- |
+ * | xs         | [0-600[       | 15              | 4                 |
+ * | sm         | [600-960[     | 15              | 8                 |
+ * | md         | [960-1270[    | 30              | 12                |
+ * | lg         | [1270-1920[   | 30              | 12                |
+ * | xl         | [1920-...[    | 30              | 12                |
+ *
  */
 const HvGrid = ({ container, spacing = "auto", ...others }) => {
   const width = useWidth();
