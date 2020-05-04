@@ -123,7 +123,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: documentation
-          path: dist
+          path: packages/doc/dist
 
   Build-Automation-Storybook:
     name: Build Automation Storybook
@@ -154,7 +154,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: automation-storybook
-          path: dist
+          path: automation/storybook/dist
 
   Robot_pa11y:
     name: Test Robot pa11y
