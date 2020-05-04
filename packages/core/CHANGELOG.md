@@ -3,9 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 2.0.3 (2020-04-25)
+# [2.0.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.0.2...@hv/uikit-react-core@2.0.3) (2020-04-25)
 
-**Note:** Version bump only for package @hv/uikit-react-core
+
+### Bug Fixes
+
+* **docs:** components without label documentation. [#1421](https://github.com/pentaho/hv-uikit-react/issues/1421) ([58fba02](https://github.com/pentaho/hv-uikit-react/commit/58fba02649200efa6e1482631fa1cc2442cdc21b))
+* **header:** fix alignment & baseline of nav items. [#1171](https://github.com/pentaho/hv-uikit-react/issues/1171) ([d7f97c7](https://github.com/pentaho/hv-uikit-react/commit/d7f97c7da865a13a8a04cebc2631d6779293a607))
+* **input:** fix input doc. [#810](https://github.com/pentaho/hv-uikit-react/issues/810) ([de1f0da](https://github.com/pentaho/hv-uikit-react/commit/de1f0da87c6c43d6c2d812bc05af2c742d7d1d62))
+* **shadows:** correcting color translation between themes. [#1313](https://github.com/pentaho/hv-uikit-react/issues/1313) ([74b23bf](https://github.com/pentaho/hv-uikit-react/commit/74b23bf89a18a29f8fa8a51873965d76fdbdd6c0))
+* **table:** fix inconsistent pagination. [#1040](https://github.com/pentaho/hv-uikit-react/issues/1040) ([3a54fff](https://github.com/pentaho/hv-uikit-react/commit/3a54fffabff184b600ffa442a915a37e673cffa1))
+* **tabs:** adjustments on the height and fonts. [#1341](https://github.com/pentaho/hv-uikit-react/issues/1341) ([7322335](https://github.com/pentaho/hv-uikit-react/commit/7322335d6cadc1fc9f568f293e2d97798f3cf11a))
+* **tooltip:** tooltip truncated.[#1357](https://github.com/pentaho/hv-uikit-react/issues/1357) ([80fc177](https://github.com/pentaho/hv-uikit-react/commit/80fc177204185914033a2a2b876231164694fa9e))
+* **typescript:** fix definitions. [#1418](https://github.com/pentaho/hv-uikit-react/issues/1418) ([64cd0f4](https://github.com/pentaho/hv-uikit-react/commit/64cd0f407290bf3fd780f56db1e12a83eeedfa7f))
+
+
+### Features
+
+* **assetinventory:**  add accessibility capability. [#1083](https://github.com/pentaho/hv-uikit-react/issues/1083) ([8023e47](https://github.com/pentaho/hv-uikit-react/commit/8023e479241d5546d545758bee3b07eb477d52e3))
+* **automation:** use docs storybook for automation tests. [#1410](https://github.com/pentaho/hv-uikit-react/issues/1410) ([deae039](https://github.com/pentaho/hv-uikit-react/commit/deae0398e5fe7ca938728124b5ae952320b70585))
+* **dropdown:** align dropdown with ds. pentaho[#1242](https://github.com/pentaho/hv-uikit-react/issues/1242) ([1909c42](https://github.com/pentaho/hv-uikit-react/commit/1909c422f17902d8e23797707b172c58a5088cca))
+* **fileuploader:** review accessibility. [#1292](https://github.com/pentaho/hv-uikit-react/issues/1292) ([c0a869d](https://github.com/pentaho/hv-uikit-react/commit/c0a869d1d79aff0ce19c1a550a9b552a5a474143))
+* **modal:** review accessibility. [#1295](https://github.com/pentaho/hv-uikit-react/issues/1295) ([f042ed9](https://github.com/pentaho/hv-uikit-react/commit/f042ed99b1ea3c7a9e13208560c0e665d9070e91))
+* **pagination:** review accessibility. [#1290](https://github.com/pentaho/hv-uikit-react/issues/1290) ([73fe988](https://github.com/pentaho/hv-uikit-react/commit/73fe98878722ea51adb62f4ad2853ff4074553a5))
+* **textarea:** review char count accessibility. [#1235](https://github.com/pentaho/hv-uikit-react/issues/1235) ([b5f7f49](https://github.com/pentaho/hv-uikit-react/commit/b5f7f4986ed09a6d2791db18c452bf65b2a6618b))
+* **tooltip:** apply tooltip to components.[#1289](https://github.com/pentaho/hv-uikit-react/issues/1289) ([431dd92](https://github.com/pentaho/hv-uikit-react/commit/431dd9276cd483318af87af77ba37d7a9b1fc3ca))
 
 
 

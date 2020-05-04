@@ -5,24 +5,15 @@
 #  -H "Accept: application/vnd.github.everest-preview+json" \
 #  -H "Authorization: token <user-token>" \
 #  --request POST \
-#  --data "{\"event_type\": \"master\"}" \
+#  --data "{\"event_type\": \"v1x\"}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Master
+name: v1.x
 on:
   schedule:
-    - cron: "0 5 * * *" # daily at 05:00
+    - cron: "0 1 * * *" # daily at 01:00
   repository_dispatch:
-    types: [master]
-
-# ref is not needed across checkouts because master is the default branch
-
-# flow:
-# Notify Start
-# License-Checks | Lint | Test-Jest | Build-Documentation
-# Robot_pa11y | Robot (chrome | ie | firefox)
-# Notify End
-# Release
+    types: [v1x]
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -48,35 +39,11 @@ jobs:
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
-                  "footer": "by ${{github.actor}}"
+                  "title": "${{ github.workflow }} (${{github.ref}}) build started by ${{github.actor}}",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
                 }
               ]
             }
-
-  License-Checks:
-    name: License Checks
-    needs: [Notify-Start]
-    runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
-
-      - name: License Check
-        run: npm run license-check
 
   Lint:
     needs: [Notify-Start]
@@ -88,6 +55,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Install
         run: |
@@ -111,6 +80,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Install
         run: |
@@ -134,6 +105,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Install
         run: |
@@ -150,16 +123,49 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: documentation
-          path: dist
+          path: packages/doc/dist
+
+  Build-Automation-Storybook:
+    name: Build Automation Storybook
+    needs: [Notify-Start]
+    runs-on: [self-hosted, Linux]
+    container:
+      image: node:12.14.1-buster
+      options: -u 1000 # buildguy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
+
+      - name: Install
+        run: |
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Bootstrap
+        run: npm run bootstrap
+
+      - name: Generate Storybook
+        run: npm run automation:package
+
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
+        with:
+          name: automation-storybook
+          path: automation/storybook/dist
 
   Robot_pa11y:
     name: Test Robot pa11y
-    needs: Build-Documentation
+    needs: Build-Automation-Storybook
     runs-on: [self-hosted, Windows]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Install PA11Y
         working-directory: ./automation/robot
@@ -169,7 +175,7 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: documentation
+          name: automation-storybook
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -195,7 +201,7 @@ jobs:
 
   Robot:
     name: Test Robot
-    needs: Build-Documentation
+    needs: Build-Automation-Storybook
     runs-on: [self-hosted, Windows]
     timeout-minutes: 150
     strategy:
@@ -206,11 +212,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "v1.x"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: documentation
+          name: automation-storybook
           path: .github/storybook/www
 
       - name: Run Storybook
@@ -242,8 +250,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs:
-      [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot]
+    needs: [Lint, Test-Jest, Build-Documentation, Build-Automation-Storybook, Robot_pa11y, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
     container:
@@ -285,8 +292,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs:
-      [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot]
+    needs: [Lint, Test-Jest, Build-Documentation, Build-Automation-Storybook, Robot_pa11y, Robot]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
@@ -298,5 +304,5 @@ jobs:
             await github.repos.createDispatchEvent({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              event_type: 'release'
+              event_type: 'v1-release'
             })
