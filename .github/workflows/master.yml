@@ -8,7 +8,7 @@
 #  --data "{\"event_type\": \"master\"}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Master
+name: Master Nightly
 on:
   schedule:
     - cron: "0 5 * * *" # daily at 05:00
