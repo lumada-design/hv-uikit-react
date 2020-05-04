@@ -41,8 +41,7 @@ export interface PaginationLabelsProp {
   paginationInputLabel?: string;
 }
 
-export interface HvPaginationProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvPaginationClassKey> {
+export interface HvPaginationCommonProps {
   /**
    * The number of pages the component has.
    */
@@ -64,10 +63,6 @@ export interface HvPaginationProps
    */
   pageSize?: number;
   /**
-   * Controls whether the central page changing mechanism should be visible.
-   */
-  showPageJump?: boolean;
-  /**
    * Controls whether the previous/first page buttons are enabled.
    */
   canPrevious?: boolean;
@@ -83,6 +78,15 @@ export interface HvPaginationProps
    * Function called when the page size changes.
    */
   onPageSizeChange?: (pageSize: number) => void;
+}
+
+export interface HvPaginationProps
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvPaginationClassKey>,
+    HvPaginationCommonProps {
+  /**
+   * Controls whether the central page changing mechanism should be visible.
+   */
+  showPageJump?: boolean;
   /**
    * An object containing all the labels for the component.
    */
@@ -95,7 +99,7 @@ export interface HvPaginationProps
    * Other props to pagination component.
    */
   navigationProps?: Object;
-  /** 
+  /**
    * Extra properties passed to the input component representing the current pages.
    */
   currentPageInputProps?: HvInputProps;

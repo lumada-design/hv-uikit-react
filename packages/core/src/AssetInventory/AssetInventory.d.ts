@@ -5,51 +5,61 @@ import { CardViewConfiguration } from "./CardView";
 import { ListViewConfiguration } from "./ListView";
 import { ListValueProp } from "../List";
 import { MultiButtonData } from "../MultiButton";
+import { HvPaginationCommonProps } from "../Pagination";
 
 export interface AssetInventoryConfiguration extends ListViewConfiguration, CardViewConfiguration {}
 
 export type AssetInventoryMetadata = {
   /**
-   * TODO: improve type
+   * id associated with data entry
    */
   id?: string;
   /**
-   * TODO: improve type
+   * title associated with data entry
    */
   title?: string;
   /**
-   * TODO: improve type
+   * accessor associated with data entry
    */
   accessor?: string;
   /**
-   * TODO: improve type
+   * value type used for searching data entries
    */
   cellType?: "alpha-numeric" | "numeric" | "date" | "node";
   /**
-   * TODO: improve type
+   * whether the data entry is sortable
    */
   sortable?: boolean;
   /**
-   * TODO: improve type
-   * @param value1
-   * @param value2
+   * label describing ascending sort
    */
-  sortFunction?: (value1: any, value2: any) => boolean;
+  sortableLabelAsc?: string;
   /**
-   * TODO: improve type
+   * label describing descending sort
+   */
+  sortableLabelDesc?: string;
+  /**
+   * custom function to sort the values
+   * @param a
+   * @param b
+   */
+  sortFunction?: (a: any, b: any) => boolean;
+  /**
+   * whether the data entry is searchable
    */
   searchable?: boolean;
   /**
-   * TODO: improve type
-   * @param value1
-   * @param value2
+   * custom function to search the values
+   * @param entryValue
+   * @param searchValue
    */
-  searchFunction?: (value1: any, value2: any) => boolean;
+  searchFunction?: (entryValue: any, searchValue: any) => boolean;
 };
 
 export interface HvAssetInventoryProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey>,
-    HvActionsCommonProps {
+    HvActionsCommonProps,
+    HvPaginationCommonProps {
   /**
    * Data passed to the component.
    */
@@ -79,7 +89,7 @@ export interface HvAssetInventoryProps
    */
   configuration: {
     metadata: AssetInventoryMetadata[];
-    viewConfiguration: AssetInventoryConfiguration;
+    viewConfiguration?: AssetInventoryConfiguration;
   };
   /**
    * Callback evoked in the selection of the card.
@@ -103,44 +113,12 @@ export interface HvAssetInventoryProps
   selectedView?: string;
   /**
    * Defines if it has pagination.
-   * TODO: conflate with pagination props
    */
   hasPagination?: boolean;
   /**
    * Enable or disable the server side pagination mechanism
-   * TODO: conflate with pagination props
    */
   paginationServerSide?: boolean;
-  /**
-   * The array of possible page sizes for the dropdown.
-   * TODO: conflate with pagination props
-   */
-  pageSizeOptions?: number[];
-  /**
-   * Page size.
-   * TODO: conflate with pagination props
-   */
-  pageSize?: number;
-  /**
-   * The currently selected page (0-indexed)
-   * TODO: conflate with pagination props.
-   */
-  page?: number;
-  /**
-   * The number of pages the component has.
-   * TODO: conflate with pagination props
-   */
-  pages?: number;
-  /**
-   * Page change callback.
-   * TODO: conflate with pagination props
-   */
-  onPageChange?: (page: number) => void;
-  /**
-   * Page size change callback.
-   * TODO: conflate with pagination props
-   */
-  onPageSizeChange?: (pageSize: number) => void;
   /**
    * Search callback.
    */

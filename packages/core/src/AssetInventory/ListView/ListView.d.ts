@@ -10,6 +10,7 @@ export interface ListViewConfiguration extends ViewConfiguration {
   columnConfiguration: {
     title: string;
     style: object;
+    align?: string;
   }[];
 }
 
@@ -23,7 +24,7 @@ export interface HvListViewProps
    * Configuration used to setup various properties of the view.
    * This configuration is propagated to the known childs of the asset inventory through context.
    */
-  viewConfiguration: ListViewConfiguration;
+  viewConfiguration?: ListViewConfiguration;
   /**
    * The function that will be used to render the list,
    * it receives the values one bye one, is recommended to use
@@ -38,7 +39,7 @@ export interface HvListViewProps
   /**
    * The values that will be passed to the renderer one by one
    */
-  values: object[];
+  values?: object[];
   /**
    * Selected values.
    */

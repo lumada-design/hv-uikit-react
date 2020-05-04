@@ -53,7 +53,7 @@ export interface HvCardViewProps
   /**
    * Configuration settings for the view.
    */
-  viewConfiguration: CardViewConfiguration;
+  viewConfiguration?: CardViewConfiguration;
 }
 
 type HvCardViewClassKey = "root" | "elements";
