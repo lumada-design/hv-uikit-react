@@ -1,5 +1,5 @@
 # See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-# 
+#
 # A few optional parameters that can be passed to this workflow:
 #  - ref: specific branch to perform the release, defaults to 'master'.
 #  - registry: npm registry where to publish the packages, default is defined below by DEFAULT_PUBLISH_REGISTRY.
@@ -10,13 +10,13 @@
 #  -H "Accept: application/vnd.github.everest-preview+json" \
 #  -H "Authorization: token <user-token>" \
 #  --request POST \
-#  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
+#  --data "{\"event_type\": \"v1_release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: CI (release)
-on: 
+name: v1.x Release
+on:
   repository_dispatch:
-    types: [release]
+    types: [v1-release]
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -25,7 +25,7 @@ env:
 jobs:
   Release:
     runs-on: [self-hosted, Linux]
-    container: 
+    container:
       image: node:12.14.1-buster
       options: -u 1000
     env:
@@ -39,6 +39,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ env.CHECKOUT_REF }}
+          # Pulls all commits (needed for semantic release to correctly version)
+          # See https://github.com/semantic-release/semantic-release/issues/1526
+          fetch-depth: "0"
+
+      # Pulls all tags (needed for semantic release to correctly version)
+      - name: Fetch git tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install
         run: |
@@ -57,8 +64,8 @@ jobs:
           npm config set email ${{ secrets.NPM_PUBLISH_EMAIL }}
           npm config set always-auth true
 
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@users.noreply.github.com"
+          git config --global user.name $GITHUB_ACTOR
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Publish
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
@@ -66,4 +73,40 @@ jobs:
       - name: Publish Documentation
         run: |
           npm run build-documentation
-          npm run publish-documentation
+          git remote set-url origin https://git:${GH_TOKEN}@github.com/pentaho/hv-uikit-react.git
+          NODE_DEBUG=gh-pages npm run publish-documentation
+
+      - name: Get Releases Commit Message
+        id: conclusion_color
+        uses: actions/github-script@0.9.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const branch = await github.repos.getBranch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: context.ref
+            })
+            let message = branch.data.commit.commit.message
+            message.replace('chore(release): publish', '')
+
+            core.exportVariable("SLACK_MESSAGE", message)
+
+      - name: Notify release
+        uses: hbfernandes/slack-action@1.0
+        if: success()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_MESSAGE: ${{ env.SLACK_MESSAGE }}
+        with:
+          args: |
+            {
+              "channel": "ui-kit-eng-ci",
+              "attachments": [
+                {
+                  "mrkdwn_in": ["text"],
+                  "title": "ui-kit new artifacts are available and documentation is updated",
+                  "text": "${{env.SLACK_MESSAGE}}\nFor more details about the changes please check the CHANGELOG in https://github.com/${{github.repository}}/releases\n"
+                }
+              ]
+            }
