@@ -5,7 +5,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke    keyboard    bug-infrastructure-ie    issue
+Force Tags        smoke    keyboard    issue
 Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 
@@ -59,9 +59,9 @@ focus first option when a list (no default options selected) is focused
     element attribute value should contain    ${option1}      class            focused
 
 focus selected option when a list (default options selected) is focused
-    [Documentation]  
+    [Documentation]
     ...    If one or more options are selected before the listbox receives focus, focus is set on the first option in the list that is selected.
-    ...    
+    ...
     Go To                                     ${STORYBOOK_URL}/iframe.html?id=components-list--test-list-focusable-selection
     Wait Until Element Is Visible             ${list}         10s
     Element Should Be Visible                 anchorButton
@@ -69,7 +69,7 @@ focus selected option when a list (default options selected) is focused
     element attribute value should contain    ${option3}      class            focused
     Element Attribute Value Should Be         ${option3}      aria-selected    true
 
-focus disabled option when is a list menu 
+focus disabled option when is a list menu
     Go To                                     ${STORYBOOK_URL}/iframe.html?id=components-list--test-list-selectable-disabled
     Wait Until Element Is Visible             ${menubar}      10s
     Element Should Be Visible                 anchorButton
@@ -77,7 +77,7 @@ focus disabled option when is a list menu
     element attribute value should contain    ${option1}      class    focused
     element attribute value should contain    ${option1}      class    disabled
 
-jump focus to next enable option when is a simple/pure list 
+jump focus to next enable option when is a simple/pure list
     Go To                                     ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-selectors
     Wait Until Element Is Visible             ${list}       10s
     Set Focus and press keys                  ${option3}    DOWN

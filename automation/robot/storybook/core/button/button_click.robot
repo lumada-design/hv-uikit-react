@@ -6,7 +6,7 @@ Suite Setup       Run Keywords
 ...               AND               Wait Until Element Is Visible    css:button    10s
 Suite Teardown    Close Browser
 Test Template     Activate and focus button when it is clicked
-Force Tags        smoke    bug-edge-webdriver    bug-infrastructure-ie
+Force Tags        smoke    bug-edge-webdriver
 
 
 *** Comments ***
@@ -26,18 +26,17 @@ Activate and focus button when it is clicked
 
 *** Test Cases ***                                                    button
 activate and focus button when is clicked a default button            default
-    
+
 activate and focus button when is clicked a secondary button          secondary
-            
+
 activate and focus button when is clicked a ghost button              ghost
-    
+
 activate and focus button when is clicked a ghost Secondary button    ghostSecondary
-    
+
 activate and focus button when is clicked a semantic button           semantic
-    
+
 unable to activate and focus a disabled button when it is clicked
     [Template]                       NONE
     Element Should Be Disabled       disabledPrimary
-    Click Button                     disabledPrimary    
+    Click Button                     disabledPrimary
     Alert Should Not Be Present
-

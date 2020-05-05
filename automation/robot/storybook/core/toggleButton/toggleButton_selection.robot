@@ -8,7 +8,7 @@ Force Tags        smoke
 
 
 *** Test Cases ***
-change the state to closed and opened when toggle button is clicked 2 times 
+change the state to closed and opened when toggle button is clicked 2 times
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-toggle-button--main
     Wait Until Element Is Visible        ${toggleButton}    10s
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
@@ -18,7 +18,7 @@ change the state to closed and opened when toggle button is clicked 2 times
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
 
 change state when toggle button is focused and is pressed ENTER
-    [Tags]    Keyboard    bug-infrastructure-ie
+    [Tags]    Keyboard
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-toggle-button--main
     Wait Until Element Is Visible        ${toggleButton}    10s
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
@@ -28,7 +28,7 @@ change state when toggle button is focused and is pressed ENTER
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
 
 change state when toggle button is focused and is pressed SPACE
-    [Tags]    Keyboard    bug-infrastructure-ie
+    [Tags]    Keyboard
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-selectors-toggle-button--main
     Wait Until Element Is Visible        ${toggleButton}    10s
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
@@ -38,5 +38,5 @@ change state when toggle button is focused and is pressed SPACE
     Element Attribute Value Should Be    ${toggleButton}    aria-pressed    false
 
 
-*** Variables *** 
+*** Variables ***
 ${toggleButton}     css:[class*=HvToggleButton-root]
