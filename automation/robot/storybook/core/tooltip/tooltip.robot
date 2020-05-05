@@ -8,15 +8,11 @@ Suite Teardown    Close Browser
 Force Tags        smoke
 
 
-*** Variables ***
-${tooltipPlaceholder}   css:p[class*=HvTypography-root]
-${placeholder}          css:body
+*** Comments ***
+    was verified an ie and firefox webdriver issue
+    just when repeated action 'mouse hover' react event handler do not trust on it.
+    similar as: https://github.com/SeleniumHQ/selenium/issues/6741
 
-*** Keywords ***
-open tooltip sample
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-tooltip--long-text
-    Wait Until Element Is Visible    ${tooltipPlaceholder}    10s
-   
 
 *** Test Cases ***
 tooltip is triggered and when mouse hover item
@@ -25,14 +21,14 @@ tooltip is triggered and when mouse hover item
     Wait Until Page Contains    Tooltips can showcase    3s
 
 tooltip is triggered when item is focused
-    [Tags]    keyboard    bug-infrastructure-ie
+    [Tags]    keyboard
     Page Should Not Contain     Tooltips can showcase
     Press Keys                  ${placeholder}          TAB
     Wait Until Page Contains    Tooltips can showcase   5s
 
 tooltip is dismissed when mouse leaves touch target
-    # verified firefox webdriver error if this test case is precedent of first Test case
-    Mouse Over                          ${tooltipPlaceholder}
+    [Tags]    keyboard
+    Press Keys                          ${placeholder}           TAB
     Wait Until Page Contains            Tooltips can showcase    5s
     Mouse Out                           ${tooltipPlaceholder}
     Wait Until Page Does Not Contain    Tooltips can showcase    3s
@@ -43,3 +39,14 @@ tooltip is dismissed when is removed the item focus
     Wait Until Page Contains            Tooltips can showcase    5s
     Press Keys                          ${tooltipPlaceholder}    TAB
     Wait Until Page Does Not Contain    Tooltips can showcase    3s
+
+
+*** Variables ***
+${tooltipPlaceholder}   css:p[class*=HvTypography-root]
+${placeholder}          css:body
+
+
+*** Keywords ***
+open tooltip sample
+    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-tooltip--long-text
+    Wait Until Element Is Visible    ${tooltipPlaceholder}    10s
