@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HvFormik, HvButton } from "../..";
+import { HvFormik } from "../..";
 
 const container = {
   width: 400,

@@ -122,7 +122,8 @@ class HvTextArea extends React.Component {
 
     const newValue = onChange(event, this.limitValue(value));
 
-    const textAreaValue = this.limitValue(newValue);
+    // initial assignment fails when we wire in formik event handler
+    const textAreaValue = this.limitValue(newValue) || event.target.value;
 
     this.setState({
       currentValueLength: textAreaValue.length,
