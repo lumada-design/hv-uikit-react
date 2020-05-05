@@ -237,7 +237,7 @@ export const Main = () => {
       }
     ],
     viewConfiguration: {
-      breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+      breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
         { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
@@ -584,7 +584,7 @@ export const Configurations = () => {
         icon={<Cards />}
         renderer={cardRenderer}
         viewConfiguration={{
-          breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 }
+          breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
         }}
       />
       <HvListView
@@ -835,7 +835,7 @@ export const ThreeViews = () => {
       }
     ],
     viewConfiguration: {
-      breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+      breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
         { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
@@ -1165,7 +1165,7 @@ export const ServerSidePagination = () => {
           icon={<Cards />}
           renderer={cardRenderer}
           viewConfiguration={{
-            breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 }
+            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
           }}
         />
         <HvListView
@@ -1391,7 +1391,7 @@ export const Accessibility = () => {
       }
     ],
     viewConfiguration: {
-      breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+      breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
         { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
@@ -1675,7 +1675,7 @@ export const AccessibilityList = () => {
       }
     ],
     viewConfiguration: {
-      breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 },
+      breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
         { title: "Event", style: { minWidth: "570px", textAlign: "start" } },

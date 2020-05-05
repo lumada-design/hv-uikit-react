@@ -149,14 +149,13 @@ Maintain selection between pages
     Checkbox Should Be Selected        ${firstCheckbox}
 
 Maintain selection between views
-
     Select Checkbox                    ${firstCheckbox}
-    Click Button                       listView
+    Click Button                       listView-button
     Wait Until Element Is Visible      css:table[id=listView]
     Checkbox Should Be Selected        ${firstCheckbox}
     Checkbox Should Not Be Selected    ${secondCheckbox}
     Select Checkbox                    ${secondCheckbox}
-    Click Button                       cardView
+    Click Button                       cardView-button
     Wait Until Element Is Visible      ${cardView}          2s
     Checkbox Should Be Selected        ${firstCheckbox}
     Checkbox Should Be Selected        ${secondCheckbox}

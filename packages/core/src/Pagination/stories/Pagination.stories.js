@@ -125,7 +125,7 @@ export const CardViewSample = () => {
           viewConfiguration={{
             onSelection: event => handleSelection(event.target.value),
             isSelectable: true,
-            breakpoints: { xs: false, sm: false, md: 4, lg: 3, xl: 3 }
+            breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
           }}
         />
         <p />
