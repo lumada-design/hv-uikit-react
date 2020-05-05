@@ -551,7 +551,7 @@ class HvDatePicker extends React.Component {
           id={id}
         >
           <input
-            id={`${id}_input`}
+            id={`${id}-input`}
             ref={element => {
               this.inputElement = element;
             }}

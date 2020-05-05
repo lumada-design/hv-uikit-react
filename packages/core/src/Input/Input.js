@@ -375,7 +375,7 @@ class HvInput extends React.Component {
         </div>
 
         <Input
-          id={`${id}_input`}
+          id={`${id}-input`}
           aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
           autoFocus={autoFocus}
           onKeyDown={this.onKeyDownHandler}
