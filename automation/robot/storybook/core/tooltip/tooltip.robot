@@ -9,8 +9,8 @@ Force Tags        smoke
 
 
 *** Comments ***
-    was verified an ie and firefox webdriver issue
-    just when repeated action 'mouse hover' react event handler do not trust on it.
+    an ie and firefox webdriver issue was found:
+    - with repeated 'mouse hover' actions the react event handler does not trust them.
     similar as: https://github.com/SeleniumHQ/selenium/issues/6741
 
 
