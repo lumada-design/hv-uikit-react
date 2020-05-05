@@ -113,14 +113,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                 className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <WithStyles(Focus)
-                  configuration={Object {}}
-                  disabled={false}
-                  focusDisabled={true}
-                  focusOnClick={false}
-                  rootRef={Object {}}
-                  selected={false}
                   strategy="card"
-                  useArrows={true}
                   useFalseFocus={true}
                 >
                   <Focus
@@ -135,14 +128,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                         "selected": "HvFocus-selected",
                       }
                     }
-                    configuration={Object {}}
-                    disabled={false}
-                    focusDisabled={true}
-                    focusOnClick={false}
-                    rootRef={Object {}}
-                    selected={false}
                     strategy="card"
-                    useArrows={true}
                     useFalseFocus={true}
                   >
                     <ConditionalWrapper

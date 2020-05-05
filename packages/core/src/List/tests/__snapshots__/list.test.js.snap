@@ -194,9 +194,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -251,8 +248,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -271,9 +266,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -327,8 +319,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -400,9 +390,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -457,8 +444,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -477,9 +462,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -533,8 +515,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -606,9 +586,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -663,8 +640,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -683,9 +658,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -739,8 +711,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -1728,9 +1698,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -1979,8 +1946,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -1999,9 +1964,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -2249,8 +2211,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -2719,9 +2679,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -2970,8 +2927,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -2990,9 +2945,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -3240,8 +3192,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -3710,9 +3660,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -3961,8 +3908,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -3981,9 +3926,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -4231,8 +4173,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -4796,9 +4736,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -4850,8 +4787,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -4870,9 +4805,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -4923,8 +4855,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -4996,9 +4926,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -5050,8 +4977,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5070,9 +4995,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5123,8 +5045,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -5195,9 +5115,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -5249,8 +5166,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5269,9 +5184,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5322,8 +5234,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -5493,9 +5403,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -5580,8 +5487,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5600,9 +5505,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5686,8 +5588,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -5789,9 +5689,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -5876,8 +5773,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5896,9 +5791,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5982,8 +5874,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -6054,9 +5944,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -6141,8 +6028,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -6161,9 +6046,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -6247,8 +6129,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -6450,9 +6330,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -6628,8 +6505,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -6648,9 +6523,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -6825,8 +6697,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -7243,9 +7113,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -7421,8 +7288,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -7441,9 +7306,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -7618,8 +7480,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -8035,9 +7895,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -8213,8 +8070,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -8233,9 +8088,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -8410,8 +8262,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}

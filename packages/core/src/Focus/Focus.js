@@ -13,22 +13,26 @@ const Focus = props => {
   const {
     classes,
     children,
-    configuration,
-    selected,
-    disabled,
-    rootRef,
-    focusOnClick,
-    focusDisabled,
-    strategy,
-    useArrows,
-    useFalseFocus
+    configuration = {},
+    selected = false,
+    disabled = false,
+    rootRef = {},
+    focusOnClick = false,
+    focusDisabled = true,
+    strategy = "listbox",
+    useArrows = true,
+    useFalseFocus = false,
+    filterClass,
+    navigationJump = 4
   } = props;
   const [showFocus, setShowFocus] = useState(null);
   const [childFocus, setChildFocus] = useState(null);
   const [hasRunConfig, setHasRunConfig] = useState(false);
 
   const getFocuses = () =>
-    rootRef.current ? Array.from(rootRef.current.getElementsByClassName(classes.root)) : [];
+    rootRef.current
+      ? Array.from(rootRef.current.getElementsByClassName(filterClass || classes.root))
+      : [];
 
   const setTabIndex = (el, tabIndex = 0) => {
     const elChildFocus = getFocusableChildren(el)[0];
@@ -80,6 +84,10 @@ const Focus = props => {
       return;
     }
 
+    if (strategy === "grid") {
+      return;
+    }
+
     const focusableChildren = getFocusableChildren(el);
     if (focusableChildren.length) {
       focusableChildren.forEach(child => setTabIndex(child, -1));
@@ -116,11 +124,35 @@ const Focus = props => {
     }
   };
 
-  const onKeyDown = evt => {
-    const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
-    const { SpaceBar, ArrowUp, ArrowDown, Enter, Home, End } = KeyboardCodes;
+  const focusAndUpdateIndex = (nextFocus, previousFocus, focusesList) => {
+    if (focusesList?.includes(previousFocus)) {
+      setTabIndex(previousFocus, -1);
+    }
+    setTabIndex(nextFocus, 0);
+    setFocusTo(nextFocus);
+  };
 
-    if (isOneOfKeys(evt, [SpaceBar, ArrowUp, ArrowDown, Home, End])) {
+  const getEnabledKeys = (currentFocusIndex, jump, listSize) => {
+    const disabledKeys = {
+      up: false,
+      down: false,
+      left: false,
+      right: false
+    };
+    disabledKeys.right =
+      (currentFocusIndex + 1) % jump === 0 || currentFocusIndex + 1 > listSize - 1;
+    disabledKeys.left = currentFocusIndex % jump === 0;
+    disabledKeys.up = currentFocusIndex - jump < 0;
+    disabledKeys.down =
+      currentFocusIndex + jump > listSize || currentFocusIndex + jump > listSize - 1;
+    return disabledKeys;
+  };
+
+  const onGridKeyDownHandler = (evt, focuses, focusesList, currentFocusIndex, jump) => {
+    const { ArrowUp, ArrowDown, Home, End, ArrowLeft, ArrowRight, Enter, SpaceBar } = KeyboardCodes;
+    const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
+
+    if (isOneOfKeys(evt, [ArrowUp, ArrowDown, Home, End])) {
       evt.preventDefault();
       evt.stopPropagation();
     }
@@ -133,6 +165,74 @@ const Focus = props => {
       return;
     }
 
+    const disabledKeys = getEnabledKeys(currentFocusIndex, jump, focusesList.length);
+
+    switch (evt.keyCode) {
+      case ArrowUp:
+        disabledKeys.up
+          ? ""
+          : focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
+        break;
+      case ArrowDown:
+        disabledKeys.down
+          ? ""
+          : focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
+        break;
+      case ArrowLeft:
+        disabledKeys.left
+          ? ""
+          : focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
+        break;
+      case ArrowRight:
+        disabledKeys.right
+          ? ""
+          : focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
+        break;
+      case Home:
+        focusAndUpdateIndex(focuses.first, evt.current, focusesList);
+        break;
+      case End:
+        focusAndUpdateIndex(focuses.last, evt.current, focusesList);
+        break;
+      default:
+    }
+  };
+
+  const onListHandler = (evt, focuses, focusesList) => {
+    const { ArrowUp, ArrowDown, Home, End, Enter, SpaceBar } = KeyboardCodes;
+    const childFocusIsInput = childFocus && childFocus.nodeName === "INPUT";
+
+    if (isOneOfKeys(evt, [ArrowUp, ArrowDown, Home, End, SpaceBar])) {
+      evt.preventDefault();
+      evt.stopPropagation();
+    }
+
+    if (isOneOfKeys(evt, [Enter, SpaceBar]) || !useArrows) {
+      // trigger click on enter unless child focus is input
+      if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar)) {
+        evt.currentTarget.click();
+      }
+      return;
+    }
+
+    switch (evt.keyCode) {
+      case ArrowUp:
+        focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
+        break;
+      case ArrowDown:
+        focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
+        break;
+      case Home:
+        focusAndUpdateIndex(focuses.first, evt.current, focusesList);
+        break;
+      case End:
+        focusAndUpdateIndex(focuses.last, evt.current, focusesList);
+        break;
+      default:
+    }
+  };
+
+  const onKeyDown = evt => {
     const isDisabledFocusable = strategy === "menu";
     const focusesList = getFocuses().filter(
       el => isDisabledFocusable || !el.classList.contains(classes.disabled)
@@ -144,28 +244,16 @@ const Focus = props => {
       first: focusesList[0],
       last: focusesList[focusesList.length - 1],
       previous: focusesList[currentFocus - 1],
-      next: focusesList[currentFocus + 1]
+      next: focusesList[currentFocus + 1],
+      fall: focusesList[currentFocus + navigationJump],
+      jump: focusesList[currentFocus - navigationJump]
     };
 
-    switch (evt.keyCode) {
-      case ArrowUp:
-        setFocusTo(focuses.previous || focuses.last);
-        setTabIndex(evt.currentTarget, -1);
-        break;
-      case ArrowDown:
-        setFocusTo(focuses.next || focuses.first);
-        setTabIndex(evt.currentTarget, -1);
-        break;
-      case Home:
-        setFocusTo(focuses.first);
-        setTabIndex(evt.currentTarget, -1);
-        break;
-      case End:
-        setFocusTo(focuses.last);
-        setTabIndex(evt.currentTarget, -1);
-        break;
-      default:
+    if (strategy === "grid") {
+      onGridKeyDownHandler(evt, focuses, focusesList, currentFocus, navigationJump);
+      return;
     }
+    onListHandler(evt, focuses, focusesList);
   };
 
   const onKeyUp = evt => {
@@ -182,7 +270,7 @@ const Focus = props => {
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
       {React.cloneElement(children, {
-        className: clsx(children.props.className, classes.root, {
+        className: clsx(children.props.className, [classes.root, filterClass], {
           [classes.selected]: selected,
           [classes.disabled]: disabled,
           [classes.focusDisabled]: focusDisabled
@@ -228,6 +316,7 @@ Focus.propTypes = {
      * Styles applied when focus disabled.
      */
     focusDisabled: PropTypes.string,
+    focusGridDisabled: PropTypes.string,
     /**
      * Styles applied when focus active.
      */
@@ -256,7 +345,7 @@ Focus.propTypes = {
   /**
    * Focus and navigation strategy to be used.
    */
-  strategy: PropTypes.oneOf(["listbox", "menu", "card"]),
+  strategy: PropTypes.oneOf(["listbox", "menu", "card", "grid"]),
   /**
    * Show focus when click element.
    */
@@ -272,19 +361,15 @@ Focus.propTypes = {
   /**
    * Uses an absolute positioned div as a focus.
    */
-  useFalseFocus: PropTypes.bool
-};
-
-Focus.defaultProps = {
-  rootRef: {},
-  focusOnClick: false,
-  focusDisabled: true,
-  useArrows: true,
-  useFalseFocus: false,
-  strategy: "listbox",
-  configuration: {},
-  selected: false,
-  disabled: false
+  useFalseFocus: PropTypes.bool,
+  /**
+   * Narrows the results of the focus to only theses class
+   */
+  filterClass: PropTypes.string,
+  /**
+   * How much the navigation will skip when using the arrows.
+   */
+  navigationJump: PropTypes.number
 };
 
 export default withStyles(styles, { name: "HvFocus" })(Focus);

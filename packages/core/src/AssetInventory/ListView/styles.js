@@ -1,11 +1,18 @@
 const styles = theme => ({
   root: {
     borderSpacing: `0 ${theme.hv.spacing.xs}px`,
-    width: "100%"
+    width: "100%",
+    display: "table"
   },
-  tableBody: {},
+  listFocusContainer: {
+    background: theme.hv.palette.atmosphere.atmo1,
+    display: "table-row"
+  },
+  tableBody: {
+    display: "table-row-group"
+  },
   tableHead: {
-    width: "100%"
+    display: "table-header-group"
   }
 });
 

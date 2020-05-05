@@ -44,15 +44,11 @@ export interface HvListViewProps
    */
   selectedValues?: string[];
   /**
-   * The spacing between the cells correspond to the usual htlm table attribute
-   */
-  cellSpacing?: string;
-  /**
    * Metadata associated with the values.
    */
   metadata?: AssetInventoryMetadata;
 }
 
-type HvListViewClassKey = "root" | "tableBody" | "tableHead";
+type HvListViewClassKey = "root" | "elements" | "tableBody" | "tableHead";
 
 export default function HvListView(props: HvListViewProps): JSX.Element | null;
