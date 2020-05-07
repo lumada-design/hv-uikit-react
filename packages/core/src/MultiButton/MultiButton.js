@@ -70,12 +70,13 @@ const MultiButton = ({
     }
 
     setCheckedItems(newState);
-    onChange?.(event, newState);
+    onChange?.(event, newState.slice());
   };
 
   const renderButton = (button, idx) => {
     const { id: bId, icon, selected, value, ...other } = button;
-    const isSelected = checkedItems.indexOf(bId) !== -1;
+    const isSelected =
+      checkedItems.indexOf(bId.split("-")[0]) !== -1 || checkedItems.indexOf(bId) !== -1;
 
     const iconButton =
       icon && type === "mixed" ? React.cloneElement(icon, { className: classes.icon }) : icon;

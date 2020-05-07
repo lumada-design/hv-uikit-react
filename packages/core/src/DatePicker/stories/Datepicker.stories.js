@@ -9,7 +9,7 @@ export default {
     usage: "import { HvDatePicker } from '@hv/uikit-react-core/dist'"
   },
   component: HvDatePicker,
-  decorators: [storyFn => <div style={{ height: "500px" }}>{storyFn()}</div>]
+  decorators: [storyFn => <div style={{ height: "600px" }}>{storyFn()}</div>]
 };
 
 export const Main = () => <HvDatePicker id="DatePicker" />;

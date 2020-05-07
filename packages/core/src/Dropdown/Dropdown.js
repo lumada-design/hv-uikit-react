@@ -155,6 +155,7 @@ class HvDropdown extends React.Component {
         role="textbox"
         ref={this.ref}
         tabIndex={0}
+        style={disabled ? { pointerEvents: "none" } : undefined}
         {...others}
       >
         <HvTypography

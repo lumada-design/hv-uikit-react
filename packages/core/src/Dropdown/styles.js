@@ -22,7 +22,8 @@ const styles = theme => ({
     background: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
-    }
+    },
+    cursor: "not-allowed"
   },
   label: {
     ...theme.hv.typography.labelText,
@@ -50,6 +51,7 @@ const styles = theme => ({
     height: 30
   },
   headerDisabled: {
+    pointerEvents: "none",
     "&:hover": {
       cursor: "not-allowed"
     }

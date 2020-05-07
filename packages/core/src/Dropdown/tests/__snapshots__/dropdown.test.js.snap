@@ -170,6 +170,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             onClick={[Function]}
             onKeyDown={[Function]}
             role="textbox"
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }
             tabIndex={0}
           >
             <WithStyles(ForwardRef)

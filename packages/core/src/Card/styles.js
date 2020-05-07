@@ -13,9 +13,13 @@ const styles = theme => {
 
   return {
     root: {},
+    cardContentWrapper: {
+      position: "relative"
+    },
     cardContainer: {
       boxSizing: "content-box",
-      position: "relative"
+      position: "relative",
+      marginTop: "-1px"
     },
     sema0: {
       position: "absolute",
@@ -32,7 +36,7 @@ const styles = theme => {
     },
     semanticContainer: {
       width: "100%",
-      position: "relative"
+      position: "absolute"
     },
     cardOutLine: {
       width: "98%",
