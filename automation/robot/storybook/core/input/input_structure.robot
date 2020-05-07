@@ -4,7 +4,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke       bug-infrastructure-ie
+Force Tags        smoke
 
 *** Variables ***
 ${input}          css:input[type=text]

@@ -5,7 +5,7 @@ Library           SeleniumLibrary
 Suite Setup       open storybook
 Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-pagination--controlled-sample    ${input}    10s
 Suite Teardown    Close Browser
-Force Tags        smoke    bug-infrastructure-ie
+Force Tags        smoke
 
 *** Variables ***
 ${input}        css:input

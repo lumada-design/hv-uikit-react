@@ -5,7 +5,7 @@ Suite Setup       Run Keywords
 ...               open storybook    ${STORYBOOK_URL}/iframe.html?id=components-button--smoke-tests
 ...               AND               Wait Until Element Is Visible    css:button    10s
 Suite Teardown    Close Browser
-Force Tags        smoke    keyboard    bug-infrastructure-ie
+Force Tags        smoke    keyboard
 
 *** Test Cases ***
 tab: move focus to next button when TAB is pressed

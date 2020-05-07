@@ -34,7 +34,6 @@ change selection and keep single selection when activated other value on single 
     Element Attribute Value Should Be    ${option3}          aria-selected    true
 
 filter search results and enable selection when user input search values
-    [Tags]    bug-infrastructure-ie
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-dropdown--single-selection-with-search
     Wait Until Element Is Enabled    ${dropdown}       10s
     Element Text Should Be           ${dropdown}       value 2
@@ -44,8 +43,7 @@ filter search results and enable selection when user input search values
     Click Element                    ${option1}
     Element Text Should Be           ${dropdown}       value 3
 
-clean searched values when previous was done a search 
-    [Tags]    bug-infrastructure-ie
+clean searched values when previous was done a search
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-dropdown--single-selection-with-search
     Wait Until Element Is Enabled    ${dropdown}       10s
     Element Text Should Be           ${dropdown}       value 2
@@ -55,12 +53,12 @@ clean searched values when previous was done a search
     Element Text Should Be           ${dropdown}       value 3
     Click Element                    ${dropdown}
     Page Should Contain Element      ${options}        limit=4
-        
+
 unable to activate a dropdown disabled when it is clicked
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-dropdown--disabled
     Wait Until Element Is Visible    ${dropdown}      10s
     Run Keyword And Ignore Error     Click Element    locator
-    
+
 show an empty dropdown when is activated
     Go To                              ${STORYBOOK_URL}/iframe.html?id=components-dropdown--empty
     Wait Until Element Is Enabled      ${dropdown}    10s
