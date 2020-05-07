@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Field, useFormik, useField } from "formik";
+import { useFormik } from "formik";
+
+import { useForm } from "react-hook-form";
 
 import {
   Caution,
@@ -12,8 +14,6 @@ import {
   User
 } from "@hv/uikit-react-icons/dist";
 
-import PropTypes from "prop-types";
-import clsx from "clsx";
 // import * as yup from "yup";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
@@ -28,8 +28,6 @@ import HvCheckBox from "../Selectors/CheckBox";
 import HvRadio from "../Selectors/RadioButton";
 import HvSwitch from "../Switch";
 import HvList from "../List";
-
-import HvTypography from "../Typography";
 
 import HvTabs from "../Tabs";
 import HvTab from "../Tab";
@@ -106,15 +104,14 @@ const SignupForm = () => {
   ];
 
   const updateMBSet = newState => {
-    let ns = newState;
-    let newArray = multiButtonSet.map(item => {
+    const ns = newState;
+    const newArray = multiButtonSet.map(item => {
       if (ns.indexOf(item.id) !== -1) {
         item.selected = true;
       } else {
         item.selected = undefined;
       }
     });
-
     return newArray;
   };
 
@@ -332,9 +329,6 @@ const SignupForm = () => {
         {value === 1 && renderContainer("container2")}
         {value === 2 && renderContainer("container3")}
       </>
-      {/* 
-      
-       */}
     </form>
   );
 };
