@@ -12,7 +12,7 @@ Force Tags        smoke
 
 *** Test Cases ***
 filter just specific card when search for Event Title    ${cards}    1    7 trac    7 Track severe 8
-filter just specific card when search for Event fix      ${cards}    5    fix n     fix now
+filter just specific card when search for Event fix      ${cards}    5    fix n     Fix now
 filter just specific card when search for Probability    ${cards}    1    97        7 Track severe 8
 
 list view filter rows when search for Event Title

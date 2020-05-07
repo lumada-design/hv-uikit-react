@@ -22,8 +22,8 @@ export const Main = () => {
       status: 3,
       event: {
         description: "Risk of downtime on Truck 12",
-        timestamp: "just now",
-        schedule: "fix 3rd shift"
+        timestamp: "Just now",
+        schedule: "Fix 3rd shift"
       },
       probability: "88%",
       timeHorizon: "23h",
@@ -35,7 +35,7 @@ export const Main = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "fix now"
+        schedule: "Fix now"
       },
       probability: "92%",
       timeHorizon: "8h",
@@ -47,7 +47,7 @@ export const Main = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "fix 3rd shift"
+        schedule: "Fix 3rd shift"
       },
       probability: "90%",
       timeHorizon: "20h",
@@ -70,6 +70,7 @@ export const Main = () => {
             <HvTypography className={classes.timestamp} variant="infoText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
               {value.event.schedule}
             </HvTypography>
@@ -93,9 +94,13 @@ export const Main = () => {
 
   const styles = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: "10px"
     },
     icon: {
       paddingLeft: "3px"
@@ -162,8 +167,8 @@ export const NotSelectable = () => {
       status: 3,
       event: {
         description: "Risk of downtime on Truck 12",
-        timestamp: "just now",
-        schedule: "fix 3rd shift"
+        timestamp: "Just now",
+        schedule: "Fix 3rd shift"
       },
       probability: "88%",
       timeHorizon: "23h",
@@ -175,7 +180,7 @@ export const NotSelectable = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "fix now"
+        schedule: "Fix now"
       },
       probability: "92%",
       timeHorizon: "8h",
@@ -187,7 +192,7 @@ export const NotSelectable = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "fix 3rd shift"
+        schedule: "Fix 3rd shift"
       },
       probability: "90%",
       timeHorizon: "20h",
@@ -235,7 +240,7 @@ export const NotSelectable = () => {
     timestamp: {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
-      borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
     },
     icon: {
       marginLeft: "3px"
@@ -301,8 +306,8 @@ export const NotSelectableWithMenu = () => {
       status: 3,
       event: {
         description: "Risk of downtime on Truck 12",
-        timestamp: "just now",
-        schedule: "fix 3rd shift"
+        timestamp: "Just now",
+        schedule: "Fix 3rd shift"
       },
       probability: "88%",
       timeHorizon: "23h",
@@ -314,7 +319,7 @@ export const NotSelectableWithMenu = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "fix now"
+        schedule: "Fix now"
       },
       probability: "92%",
       timeHorizon: "8h",
@@ -326,7 +331,7 @@ export const NotSelectableWithMenu = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "fix 3rd shift"
+        schedule: "Fix 3rd shift"
       },
       probability: "90%",
       timeHorizon: "20h",
@@ -374,7 +379,7 @@ export const NotSelectableWithMenu = () => {
     timestamp: {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
-      borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
     },
     icon: {
       marginLeft: "3px"
@@ -455,8 +460,8 @@ export const NotStyled = () => {
       status: 3,
       event: {
         description: "Risk of downtime on Truck 12",
-        timestamp: "just now",
-        schedule: "fix 3rd shift"
+        timestamp: "Just now",
+        schedule: "Fix 3rd shift"
       },
       probability: "88%",
       timeHorizon: "23h",
@@ -468,7 +473,7 @@ export const NotStyled = () => {
       event: {
         description: "Track severe breakdown",
         timestamp: "2 minutes ago",
-        schedule: "fix now"
+        schedule: "Fix now"
       },
       probability: "92%",
       timeHorizon: "8h",
@@ -480,7 +485,7 @@ export const NotStyled = () => {
       event: {
         description: "Risk of downtime associated",
         timestamp: "2 hours ago",
-        schedule: "fix 3rd shift"
+        schedule: "Fix 3rd shift"
       },
       probability: "90%",
       timeHorizon: "20h",
@@ -528,7 +533,7 @@ export const NotStyled = () => {
     timestamp: {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
-      borderRight: `solid 2px ${theme.hv.palette.accent.acce1}`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
     }
   });
 
