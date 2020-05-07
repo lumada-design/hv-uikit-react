@@ -29,6 +29,11 @@ import HvRadio from "../Selectors/RadioButton";
 import HvSwitch from "../Switch";
 import HvList from "../List";
 
+import HvTypography from "../Typography";
+
+import HvTabs from "../Tabs";
+import HvTab from "../Tab";
+
 const labels = {
   placeholder: "Insert first name",
   infoText: "Please enter your first name",
@@ -148,8 +153,8 @@ const SignupForm = () => {
     }
   });
 
-  return (
-    <form onSubmit={formik.handleSubmit}>
+  const tabOne = (
+    <>
       <HvInput
         labels={labels}
         id="firstName"
@@ -169,6 +174,11 @@ const SignupForm = () => {
         value={formik.values.email_input}
         validationType="email"
       />
+    </>
+  );
+
+  const tabTwo = (
+    <>
       <div>
         <HvTextArea
           id="textarea"
@@ -200,6 +210,11 @@ const SignupForm = () => {
           );
         }}
       />
+    </>
+  );
+
+  const tabThree = (
+    <>
       <div style={{ width: "500px", marginTop: "50px" }}>
         <HvMultiButton
           multi
@@ -296,6 +311,30 @@ const SignupForm = () => {
           <div style={{ height: "20px", width: "auto" }}>{formik.errors.email}</div>
         ) : null}
       </div>
+    </>
+  );
+
+  const renderContainer = id =>
+    id === "container1" ? tabOne : id === "container2" ? tabTwo : tabThree;
+
+  const [value, setValue] = useState(0);
+  const handleChange = (e, newValue) => setValue(newValue);
+
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <>
+        <HvTabs id="tabs" value={value} onChange={handleChange}>
+          <HvTab id="tabs-tab1" label="Clickable tab 1" />
+          <HvTab id="tabs-tab2" label="Clickable tab 2" />
+          <HvTab id="tabs-tab3" label="Clickable tab 3" />
+        </HvTabs>
+        {value === 0 && renderContainer("container1")}
+        {value === 1 && renderContainer("container2")}
+        {value === 2 && renderContainer("container3")}
+      </>
+      {/* 
+      
+       */}
     </form>
   );
 };
