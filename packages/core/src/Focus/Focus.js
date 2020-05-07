@@ -133,12 +133,7 @@ const Focus = props => {
   };
 
   const getEnabledKeys = (currentFocusIndex, jump, listSize) => {
-    const disabledKeys = {
-      up: false,
-      down: false,
-      left: false,
-      right: false
-    };
+    const disabledKeys = {};
     disabledKeys.right =
       (currentFocusIndex + 1) % jump === 0 || currentFocusIndex + 1 > listSize - 1;
     disabledKeys.left = currentFocusIndex % jump === 0;
@@ -165,33 +160,25 @@ const Focus = props => {
       return;
     }
 
-    const disabledKeys = getEnabledKeys(currentFocusIndex, jump, focusesList.length);
+    const blockedKeys = getEnabledKeys(currentFocusIndex, jump, focusesList.length);
 
-    switch (evt.keyCode) {
-      case ArrowUp:
-        disabledKeys.up
-          ? ""
-          : focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
+    switch (true) {
+      case ArrowUp === evt.keyCode && !blockedKeys.up:
+        focusAndUpdateIndex(focuses.jump || focuses.last, evt.current, focusesList);
         break;
-      case ArrowDown:
-        disabledKeys.down
-          ? ""
-          : focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
+      case ArrowDown === evt.keyCode && !blockedKeys.down:
+        focusAndUpdateIndex(focuses.fall || focuses.first, evt.current, focusesList);
         break;
-      case ArrowLeft:
-        disabledKeys.left
-          ? ""
-          : focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
+      case ArrowLeft === evt.keyCode && !blockedKeys.left:
+        focusAndUpdateIndex(focuses.previous || focuses.last, evt.current, focusesList);
         break;
-      case ArrowRight:
-        disabledKeys.right
-          ? ""
-          : focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
+      case ArrowRight === evt.keyCode && !blockedKeys.right:
+        focusAndUpdateIndex(focuses.next || focuses.first, evt.current, focusesList);
         break;
-      case Home:
+      case Home === evt.keyCode:
         focusAndUpdateIndex(focuses.first, evt.current, focusesList);
         break;
-      case End:
+      case End === evt.keyCode:
         focusAndUpdateIndex(focuses.last, evt.current, focusesList);
         break;
       default:
