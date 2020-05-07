@@ -14,12 +14,14 @@ const styles = theme => {
   return {
     root: {},
     cardContentWrapper: {
-      position: "relative"
+      position: "relative",
+      marginTop: 5,
+      backgroundColor: theme.hv.palette.accent.acce0
     },
     cardContainer: {
       boxSizing: "content-box",
       position: "relative",
-      marginTop: "-1px"
+      marginTop: "-4px"
     },
     sema0: {
       position: "absolute",
