@@ -33,6 +33,11 @@ export interface HvActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvActionsClassKey>,
     HvActionsCommonProps {}
 
-export type HvActionsClassKey = "button" | "actionContainer" | "dropDownMenu" | "dropDownMenuIcon";
+export type HvActionsClassKey =
+  | "button"
+  | "actionContainer"
+  | "dropDownMenu"
+  | "dropDownMenuButton"
+  | "dropDownMenuButtonSelected";
 
 export default function HvActions(props: HvActionsProps): JSX.Element | null;

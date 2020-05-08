@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
-import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox";
-import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck";
-import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial";
+import {
+  Checkbox as CheckBoxIcon,
+  CheckboxCheck,
+  CheckboxPartial
+} from "@hv/uikit-react-icons/dist";
 import { setId } from "../../utils";
 import labelPositions from "../labelPositions";
 import styles from "./styles";
@@ -40,8 +42,8 @@ const prepareIcon = (classes, disabled) => {
 
   return {
     emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
-    checkedIcon: <CheckBoxCheckedIcon color={color} className={classes.icon} />,
-    indeterminateIcon: <CheckBoxPartialIcon color={color} className={classes.icon} />
+    checkedIcon: <CheckboxCheck color={color} className={classes.icon} />,
+    indeterminateIcon: <CheckboxPartial color={color} className={classes.icon} />
   };
 };
 
@@ -58,7 +60,7 @@ const HvCheckbox = props => {
     disabled = false,
     onChange,
     value = "",
-    label = "",
+    label,
     labelPlacement = "end",
     formControlLabelProps,
     ...others
@@ -68,14 +70,11 @@ const HvCheckbox = props => {
   const [isFocusDisabled, disableFocus] = useState(false);
 
   const onLocalChange = evt => {
-    const isKeyEvent =
-      window.event.screenX === 0 &&
-      window.event.screenY === 0 &&
-      window.event.clientX === 0 &&
-      window.event.clientY === 0;
+    const { screenX, screenY, clientX, clientY } = evt.nativeEvent;
+    const isKeyEvent = screenX === 0 && screenY === 0 && clientX === 0 && clientY === 0;
 
     disableFocus(!isKeyEvent);
-    onChange(evt);
+    onChange?.(evt, checked);
   };
 
   const onBlur = () => {
@@ -189,7 +188,7 @@ HvCheckbox.propTypes = {
   /**
    * The label to be added to the checkbox.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    * The position of the checkbox label.
    *  - Accepted values:

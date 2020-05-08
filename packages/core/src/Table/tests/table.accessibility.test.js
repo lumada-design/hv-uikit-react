@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* eslint-disable no-console */
 
 import React from "react";
 import { mount } from "enzyme";
@@ -106,20 +107,7 @@ describe("tableA11Y", () => {
           defaultSorted={sorted}
           labels={labels}
           idForCheckbox="id"
-          secondaryActions={[
-            {
-              label: "Share",
-              action: d => alert(`Sharing ${JSON.stringify(d)}`)
-            },
-            {
-              label: "Hide",
-              action: d => alert(`Hiding ${JSON.stringify(d)}`)
-            },
-            {
-              label: "Remove",
-              action: d => alert(`Removing ${JSON.stringify(d)}`)
-            }
-          ]}
+          secondaryActions={[{ label: "Share" }, { label: "Hide" }, { label: "Remove" }]}
         />
       </HvProvider>
     );

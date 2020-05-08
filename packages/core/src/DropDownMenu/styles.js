@@ -20,6 +20,7 @@ const styles = theme => ({
     },
     "&:disabled": {
       cursor: "not-allowed",
+      backgroundColor: "transparent",
       pointerEvents: "auto"
     },
     borderRadius: 0,
@@ -28,16 +29,16 @@ const styles = theme => ({
     justifyContent: "center"
   },
   iconSelected: {
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    backgroundColor: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1],
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`
+      backgroundColor: theme.palette.atmo1
     }
   },
   menuList: {
     padding: theme.spacing("sm"),
     whiteSpace: "nowrap",
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    backgroundColor: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1]
   }
 });

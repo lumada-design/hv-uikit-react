@@ -5,7 +5,7 @@ export interface HvCheckBoxProps extends StandardProps<CheckboxProps, HvCheckBox
   /**
    * The label to be added to the checkbox.
    */
-  label?: string;
+  label?: React.ReactNode;
 
   /**
    * The position of the checkbox label.

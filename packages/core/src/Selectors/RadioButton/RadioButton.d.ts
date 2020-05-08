@@ -5,7 +5,7 @@ export interface HvRadioButtonProps extends StandardProps<RadioProps, HvRadioBut
   /**
    * The label to be added to the radio button.
    */
-  label?: string;
+  label?: React.ReactNode;
 
   /**
    * The position of the Radio button label.

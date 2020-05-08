@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
-import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected";
-import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
+import { RadioButtonSelected, RadioButtonUnselected } from "@hv/uikit-react-icons/dist";
 import { setId } from "../../utils";
 import labelPositions from "../labelPositions";
 import styles from "./styles";
@@ -39,7 +38,7 @@ const getIcons = (classes, disabled) => {
   const color = disabled ? ["atmo4", "atmo6"] : undefined;
 
   return {
-    emptyIcon: <RadioButtonUnSelected color={color} className={classes.icon} />,
+    emptyIcon: <RadioButtonUnselected color={color} className={classes.icon} />,
     checkedIcon: <RadioButtonSelected color={color} className={classes.icon} />
   };
 };
@@ -74,7 +73,7 @@ const HvRadio = props => {
       window.event.clientY === 0;
 
     disableFocus(!isKeyEvent);
-    onChange(evt);
+    onChange?.(evt, checked);
   };
 
   const onBlur = () => {
@@ -180,7 +179,7 @@ HvRadio.propTypes = {
   /**
    * The label to be added to the radio button.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    * The position of the Radio button label.
    *  - Accepted values:
