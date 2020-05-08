@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { IconButton, Popper, useTheme, withStyles } from "@material-ui/core";
+import { IconButton, Popper, withStyles } from "@material-ui/core";
 import FocusTrap from "focus-trap-react";
 import OutsideClickHandler from "react-outside-click-handler";
-import isNil from "lodash/isNil";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import { isKeypress, KeyboardCodes } from "../utils";
 import List from "../List";
@@ -20,7 +19,7 @@ const DropDownMenu = ({
   classes,
   className,
   icon,
-  placement = "left",
+  placement = "right",
   dataList,
   disablePortal = false,
   onToggleOpen,
@@ -32,16 +31,17 @@ const DropDownMenu = ({
 }) => {
   const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
-  const [applyFocus, setApplyFocus] = useState(false);
+  const [hasFocusTrap, setHasFocusTrap] = useState(true);
   const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
-  const theme = useTheme();
 
   useEffect(() => {
     if (didMountRef.current) {
       onToggleOpen?.(open);
-    } else didMountRef.current = true;
-  }, [open]);
+    } else {
+      didMountRef.current = true;
+    }
+  }, [open, onToggleOpen]);
 
   useEffect(() => {
     if (expanded !== open) {
@@ -49,24 +49,17 @@ const DropDownMenu = ({
     }
   }, [expanded, disabled]);
 
-  const bottom = `bottom-${placement === "right" ? "start" : "end"}`;
-
-  const handleToggle = (event, status = null) => {
-    if (event.keycode !== undefined) {
-      setApplyFocus(true);
-    } else {
-      setApplyFocus(false);
-    }
-
-    if (isNil(status) && status) setOpen(status);
-    else setOpen(prevOpen => !prevOpen);
+  const handleToggle = () => {
+    setHasFocusTrap(true);
+    setOpen(prevOpen => !prevOpen);
   };
 
   const handleClose = event => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
+    setHasFocusTrap(false);
+    const isButtonClick = anchorRef.current?.contains(event.target);
+    if (!isButtonClick) {
+      setOpen(false);
     }
-    handleToggle(event, false);
   };
 
   // If the ESCAPE key is pressed the close handler must be called.
@@ -89,7 +82,7 @@ const DropDownMenu = ({
       (isKeypress(event, KeyboardCodes.ArrowDown) && !open) ||
       (isKeypress(event, KeyboardCodes.ArrowUp) && open)
     ) {
-      handleToggle(event, null);
+      handleToggle(event);
       event.preventDefault();
       event.stopPropagation();
     }
@@ -115,16 +108,16 @@ const DropDownMenu = ({
         {icon || <MoreVert color={disabled ? "atmo7" : undefined} />}
       </IconButton>
       <Popper
+        className={classes.popper}
         disablePortal={disablePortal}
         open={open}
         anchorEl={anchorRef.current}
-        placement={bottom}
+        placement={`bottom-${placement === "left" ? "end" : "start"}`}
         popperOptions={{}}
-        style={{ zIndex: theme.zIndex.tooltip }}
       >
         <OutsideClickHandler onOutsideClick={handleClose}>
           <FocusTrap
-            active={applyFocus}
+            active={hasFocusTrap}
             createOptions={{
               escapeDeactivates: false,
               allowOutsideClick: true,
@@ -138,7 +131,7 @@ const DropDownMenu = ({
                 values={dataList}
                 selectable={false}
                 onClick={(event, item) => {
-                  if (!keepOpened) handleToggle(event, false);
+                  if (!keepOpened) setOpen(false);
                   onClick?.(event, item);
                 }}
               />
@@ -167,6 +160,10 @@ DropDownMenu.propTypes = {
      * Styles applied to the root of the component.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the popper.
+     */
+    popper: PropTypes.string,
     /**
      * Styles applied to the icon.
      */
