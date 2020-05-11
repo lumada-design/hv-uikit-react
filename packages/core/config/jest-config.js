@@ -22,9 +22,9 @@ module.exports = {
   ],
   coverageThreshold: {
     global: {
-      branches: 66,
-      lines: 67,
-      functions: 64
+      branches: 60,
+      lines: 60,
+      functions: 60
     }
   },
   reporters: ["default", "jest-junit"],
