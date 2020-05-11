@@ -230,8 +230,14 @@ export const Main = () => {
         sortableLabelDesc: "TimeHorizon descending"
       },
       {
-        id: "id4",
+        id: "id5",
         accessor: "event.schedule",
+        cellType: "alpha-numeric",
+        searchable: true
+      },
+      {
+        id: "id6",
+        accessor: "event.description",
         cellType: "alpha-numeric",
         searchable: true
       }
@@ -550,8 +556,14 @@ export const Configurations = () => {
         sortableLabelDesc: "TimeHorizon descending"
       },
       {
-        id: "id4",
+        id: "id5",
         accessor: "event.schedule",
+        cellType: "alpha-numeric",
+        searchable: true
+      },
+      {
+        id: "id6",
+        accessor: "event.description",
         cellType: "alpha-numeric",
         searchable: true
       }
@@ -828,8 +840,14 @@ export const ThreeViews = () => {
         sortableLabelDesc: "TimeHorizon descending"
       },
       {
-        id: "id4",
+        id: "id5",
         accessor: "event.schedule",
+        cellType: "alpha-numeric",
+        searchable: true
+      },
+      {
+        id: "id6",
+        accessor: "event.description",
         cellType: "alpha-numeric",
         searchable: true
       }
@@ -1384,8 +1402,14 @@ export const Accessibility = () => {
         sortableLabelDesc: "TimeHorizon descending"
       },
       {
-        id: "id4",
+        id: "id5",
         accessor: "event.schedule",
+        cellType: "alpha-numeric",
+        searchable: true
+      },
+      {
+        id: "id6",
+        accessor: "event.description",
         cellType: "alpha-numeric",
         searchable: true
       }
@@ -1668,8 +1692,14 @@ export const AccessibilityList = () => {
         sortableLabelDesc: "TimeHorizon descending"
       },
       {
-        id: "id4",
+        id: "id5",
         accessor: "event.schedule",
+        cellType: "alpha-numeric",
+        searchable: true
+      },
+      {
+        id: "id6",
+        accessor: "event.description",
         cellType: "alpha-numeric",
         searchable: true
       }
