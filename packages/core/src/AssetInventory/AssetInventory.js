@@ -265,6 +265,10 @@ class AssetInventory extends React.Component {
 
     const { pageSize, page, values } = this.state;
 
+    if (values.length === 0) {
+      return undefined;
+    }
+
     const numPages = paginationServerSide ? pages : Math.ceil(values.length / pageSize);
 
     const onPageChangeInternal = paginationServerSide ? onPageChange : this.paginationOnPageChange;
