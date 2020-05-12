@@ -1,0 +1,24 @@
+name: Pull Request
+on:
+  pull_request:
+    branches:
+      - master
+      - alpha
+    types: [closed]
+
+env:
+  DOCUMENTATION_PUBLISH_FOLDER: pr-${{ github.event.number }}
+
+jobs:
+  CleanupDeployment:
+    name: Cleanup Deployment
+    runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: mark environment as deactivated
+        uses: bobheadxi/deployments@master
+        with:
+          step: deactivate-env
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}-staging
+          desc: Deployment was pruned
