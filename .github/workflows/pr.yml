@@ -45,7 +45,7 @@ jobs:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
     needs: [Notify-Start]
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -124,6 +124,11 @@ jobs:
           keepFiles: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
+
+      - name: Waits deploy for to be up
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "30s"
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
