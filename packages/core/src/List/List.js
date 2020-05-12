@@ -128,7 +128,7 @@ class List extends React.Component {
         key={i}
         rootRef={this.listRef}
         selected={item.selected}
-        disabled={item.disabled}
+        disabledClass={item.disabled}
         strategy={selectable ? "listbox" : "menu"}
         configuration={{
           tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1

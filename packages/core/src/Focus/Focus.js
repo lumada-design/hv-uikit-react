@@ -14,6 +14,7 @@ const Focus = props => {
     classes,
     children,
     configuration = {},
+    disabledClass = false,
     selected = false,
     disabled = false,
     rootRef = {},
@@ -254,12 +255,14 @@ const Focus = props => {
     </div>
   );
 
+  if (disabled) return children;
+
   return (
     <ConditionalWrapper condition={useFalseFocus} wrapper={focusWrapper}>
       {React.cloneElement(children, {
         className: clsx(children.props.className, [classes.root, filterClass], {
           [classes.selected]: selected,
-          [classes.disabled]: disabled,
+          [classes.disabled]: disabledClass,
           [classes.focusDisabled]: focusDisabled
         }),
         ref: config,
@@ -341,6 +344,10 @@ Focus.propTypes = {
    * Show focus when click element.
    */
   focusDisabled: PropTypes.bool,
+  /**
+   * Indicates that the disabled class should be applied.
+   */
+  disabledClass: PropTypes.bool,
   /**
    * Use up/ down keyboard arrows to control focus.
    */

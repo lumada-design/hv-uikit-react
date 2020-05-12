@@ -113,6 +113,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                 className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
               >
                 <WithStyles(Focus)
+                  disabled={true}
                   strategy="card"
                   useFalseFocus={true}
                 >
@@ -128,279 +129,266 @@ exports[`Card withStyles should be able to render with every property defined 1`
                         "selected": "HvFocus-selected",
                       }
                     }
+                    disabled={true}
                     strategy="card"
                     useFalseFocus={true}
                   >
-                    <ConditionalWrapper
-                      condition={true}
-                      wrapper={[Function]}
+                    <div
+                      aria-checked={false}
+                      className=""
+                      onClick={[Function]}
+                      onKeyUp={[Function]}
                     >
-                      <div
-                        className="HvFocus-externalReference"
+                      <WithStyles(Header)
+                        headerTitle="title"
+                        icon="icon"
+                        subheader="subtitle"
                       >
-                        <div
-                          aria-checked={false}
-                          className="HvFocus-root HvFocus-focusDisabled"
-                          onBlur={[Function]}
-                          onClick={[Function]}
-                          onFocus={[Function]}
-                          onKeyDown={[Function]}
-                          onKeyUp={[Function]}
-                          onMouseDown={[Function]}
-                          selected={false}
+                        <Header
+                          classes={
+                            Object {
+                              "action": "HvCardHeader-action",
+                              "content": "HvCardHeader-content",
+                              "root": "HvCardHeader-root",
+                              "subheader": "HvCardHeader-subheader",
+                              "title": "HvCardHeader-title",
+                              "titleShort": "HvCardHeader-titleShort",
+                            }
+                          }
+                          headerTitle="title"
+                          icon="icon"
+                          subheader="subtitle"
                         >
-                          <WithStyles(Header)
-                            headerTitle="title"
-                            icon="icon"
+                          <WithStyles(ForwardRef(CardHeader))
+                            action="icon"
+                            className="HvCardHeader-root"
+                            classes={
+                              Object {
+                                "action": "HvCardHeader-action",
+                                "content": "HvCardHeader-content",
+                                "subheader": "HvCardHeader-subheader",
+                                "title": "HvCardHeader-titleShort",
+                              }
+                            }
                             subheader="subtitle"
+                            title="title"
                           >
-                            <Header
+                            <ForwardRef(CardHeader)
+                              action="icon"
+                              className="HvCardHeader-root"
                               classes={
                                 Object {
-                                  "action": "HvCardHeader-action",
-                                  "content": "HvCardHeader-content",
-                                  "root": "HvCardHeader-root",
-                                  "subheader": "HvCardHeader-subheader",
-                                  "title": "HvCardHeader-title",
-                                  "titleShort": "HvCardHeader-titleShort",
+                                  "action": "MuiCardHeader-action HvCardHeader-action",
+                                  "avatar": "MuiCardHeader-avatar",
+                                  "content": "MuiCardHeader-content HvCardHeader-content",
+                                  "root": "MuiCardHeader-root",
+                                  "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
+                                  "title": "MuiCardHeader-title HvCardHeader-titleShort",
                                 }
                               }
-                              headerTitle="title"
-                              icon="icon"
                               subheader="subtitle"
+                              title="title"
                             >
-                              <WithStyles(ForwardRef(CardHeader))
-                                action="icon"
-                                className="HvCardHeader-root"
-                                classes={
-                                  Object {
-                                    "action": "HvCardHeader-action",
-                                    "content": "HvCardHeader-content",
-                                    "subheader": "HvCardHeader-subheader",
-                                    "title": "HvCardHeader-titleShort",
-                                  }
-                                }
-                                subheader="subtitle"
-                                title="title"
+                              <div
+                                className="MuiCardHeader-root HvCardHeader-root"
                               >
-                                <ForwardRef(CardHeader)
-                                  action="icon"
-                                  className="HvCardHeader-root"
-                                  classes={
-                                    Object {
-                                      "action": "MuiCardHeader-action HvCardHeader-action",
-                                      "avatar": "MuiCardHeader-avatar",
-                                      "content": "MuiCardHeader-content HvCardHeader-content",
-                                      "root": "MuiCardHeader-root",
-                                      "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
-                                      "title": "MuiCardHeader-title HvCardHeader-titleShort",
-                                    }
-                                  }
-                                  subheader="subtitle"
-                                  title="title"
+                                <div
+                                  className="MuiCardHeader-content HvCardHeader-content"
                                 >
-                                  <div
-                                    className="MuiCardHeader-root HvCardHeader-root"
+                                  <WithStyles(ForwardRef(Typography))
+                                    className="MuiCardHeader-title HvCardHeader-titleShort"
+                                    component="span"
+                                    display="block"
+                                    variant="h5"
                                   >
-                                    <div
-                                      className="MuiCardHeader-content HvCardHeader-content"
-                                    >
-                                      <WithStyles(ForwardRef(Typography))
-                                        className="MuiCardHeader-title HvCardHeader-titleShort"
-                                        component="span"
-                                        display="block"
-                                        variant="h5"
-                                      >
-                                        <ForwardRef(Typography)
-                                          className="MuiCardHeader-title HvCardHeader-titleShort"
-                                          classes={
-                                            Object {
-                                              "alignCenter": "MuiTypography-alignCenter",
-                                              "alignJustify": "MuiTypography-alignJustify",
-                                              "alignLeft": "MuiTypography-alignLeft",
-                                              "alignRight": "MuiTypography-alignRight",
-                                              "body1": "MuiTypography-body1",
-                                              "body2": "MuiTypography-body2",
-                                              "button": "MuiTypography-button",
-                                              "caption": "MuiTypography-caption",
-                                              "colorError": "MuiTypography-colorError",
-                                              "colorInherit": "MuiTypography-colorInherit",
-                                              "colorPrimary": "MuiTypography-colorPrimary",
-                                              "colorSecondary": "MuiTypography-colorSecondary",
-                                              "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                              "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                              "displayBlock": "MuiTypography-displayBlock",
-                                              "displayInline": "MuiTypography-displayInline",
-                                              "gutterBottom": "MuiTypography-gutterBottom",
-                                              "h1": "MuiTypography-h1",
-                                              "h2": "MuiTypography-h2",
-                                              "h3": "MuiTypography-h3",
-                                              "h4": "MuiTypography-h4",
-                                              "h5": "MuiTypography-h5",
-                                              "h6": "MuiTypography-h6",
-                                              "noWrap": "MuiTypography-noWrap",
-                                              "overline": "MuiTypography-overline",
-                                              "paragraph": "MuiTypography-paragraph",
-                                              "root": "MuiTypography-root",
-                                              "srOnly": "MuiTypography-srOnly",
-                                              "subtitle1": "MuiTypography-subtitle1",
-                                              "subtitle2": "MuiTypography-subtitle2",
-                                            }
-                                          }
-                                          component="span"
-                                          display="block"
-                                          variant="h5"
-                                        >
-                                          <span
-                                            className="MuiTypography-root MuiCardHeader-title HvCardHeader-titleShort MuiTypography-h5 MuiTypography-displayBlock"
-                                          >
-                                            title
-                                          </span>
-                                        </ForwardRef(Typography)>
-                                      </WithStyles(ForwardRef(Typography))>
-                                      <WithStyles(ForwardRef(Typography))
-                                        className="MuiCardHeader-subheader HvCardHeader-subheader"
-                                        color="textSecondary"
-                                        component="span"
-                                        display="block"
-                                        variant="body1"
-                                      >
-                                        <ForwardRef(Typography)
-                                          className="MuiCardHeader-subheader HvCardHeader-subheader"
-                                          classes={
-                                            Object {
-                                              "alignCenter": "MuiTypography-alignCenter",
-                                              "alignJustify": "MuiTypography-alignJustify",
-                                              "alignLeft": "MuiTypography-alignLeft",
-                                              "alignRight": "MuiTypography-alignRight",
-                                              "body1": "MuiTypography-body1",
-                                              "body2": "MuiTypography-body2",
-                                              "button": "MuiTypography-button",
-                                              "caption": "MuiTypography-caption",
-                                              "colorError": "MuiTypography-colorError",
-                                              "colorInherit": "MuiTypography-colorInherit",
-                                              "colorPrimary": "MuiTypography-colorPrimary",
-                                              "colorSecondary": "MuiTypography-colorSecondary",
-                                              "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                              "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                              "displayBlock": "MuiTypography-displayBlock",
-                                              "displayInline": "MuiTypography-displayInline",
-                                              "gutterBottom": "MuiTypography-gutterBottom",
-                                              "h1": "MuiTypography-h1",
-                                              "h2": "MuiTypography-h2",
-                                              "h3": "MuiTypography-h3",
-                                              "h4": "MuiTypography-h4",
-                                              "h5": "MuiTypography-h5",
-                                              "h6": "MuiTypography-h6",
-                                              "noWrap": "MuiTypography-noWrap",
-                                              "overline": "MuiTypography-overline",
-                                              "paragraph": "MuiTypography-paragraph",
-                                              "root": "MuiTypography-root",
-                                              "srOnly": "MuiTypography-srOnly",
-                                              "subtitle1": "MuiTypography-subtitle1",
-                                              "subtitle2": "MuiTypography-subtitle2",
-                                            }
-                                          }
-                                          color="textSecondary"
-                                          component="span"
-                                          display="block"
-                                          variant="body1"
-                                        >
-                                          <span
-                                            className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-                                          >
-                                            subtitle
-                                          </span>
-                                        </ForwardRef(Typography)>
-                                      </WithStyles(ForwardRef(Typography))>
-                                    </div>
-                                    <div
-                                      className="MuiCardHeader-action HvCardHeader-action"
-                                    >
-                                      icon
-                                    </div>
-                                  </div>
-                                </ForwardRef(CardHeader)>
-                              </WithStyles(ForwardRef(CardHeader))>
-                            </Header>
-                          </WithStyles(Header)>
-                          <WithStyles(Media)
-                            mediaPath="path"
-                          >
-                            <Media
-                              classes={
-                                Object {
-                                  "media": "HvCardMedia-media",
-                                  "root": "HvCardMedia-root",
-                                }
-                              }
-                              mediaPath="path"
-                            >
-                              <WithStyles(ForwardRef(CardMedia))
-                                classes={
-                                  Object {
-                                    "media": "HvCardMedia-media",
-                                    "root": "HvCardMedia-root",
-                                  }
-                                }
-                                image="path"
-                                role="img"
-                              >
-                                <ForwardRef(CardMedia)
-                                  classes={
-                                    Object {
-                                      "img": "MuiCardMedia-img",
-                                      "media": "MuiCardMedia-media HvCardMedia-media",
-                                      "root": "MuiCardMedia-root HvCardMedia-root",
-                                    }
-                                  }
-                                  image="path"
-                                  role="img"
-                                >
-                                  <div
-                                    className="MuiCardMedia-root HvCardMedia-root"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "backgroundImage": "url(\\"path\\")",
+                                    <ForwardRef(Typography)
+                                      className="MuiCardHeader-title HvCardHeader-titleShort"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTypography-alignCenter",
+                                          "alignJustify": "MuiTypography-alignJustify",
+                                          "alignLeft": "MuiTypography-alignLeft",
+                                          "alignRight": "MuiTypography-alignRight",
+                                          "body1": "MuiTypography-body1",
+                                          "body2": "MuiTypography-body2",
+                                          "button": "MuiTypography-button",
+                                          "caption": "MuiTypography-caption",
+                                          "colorError": "MuiTypography-colorError",
+                                          "colorInherit": "MuiTypography-colorInherit",
+                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                          "displayBlock": "MuiTypography-displayBlock",
+                                          "displayInline": "MuiTypography-displayInline",
+                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                          "h1": "MuiTypography-h1",
+                                          "h2": "MuiTypography-h2",
+                                          "h3": "MuiTypography-h3",
+                                          "h4": "MuiTypography-h4",
+                                          "h5": "MuiTypography-h5",
+                                          "h6": "MuiTypography-h6",
+                                          "noWrap": "MuiTypography-noWrap",
+                                          "overline": "MuiTypography-overline",
+                                          "paragraph": "MuiTypography-paragraph",
+                                          "root": "MuiTypography-root",
+                                          "srOnly": "MuiTypography-srOnly",
+                                          "subtitle1": "MuiTypography-subtitle1",
+                                          "subtitle2": "MuiTypography-subtitle2",
+                                        }
                                       }
-                                    }
-                                  />
-                                </ForwardRef(CardMedia)>
-                              </WithStyles(ForwardRef(CardMedia))>
-                            </Media>
-                          </WithStyles(Media)>
-                          <WithStyles(Content)>
-                            <Content
+                                      component="span"
+                                      display="block"
+                                      variant="h5"
+                                    >
+                                      <span
+                                        className="MuiTypography-root MuiCardHeader-title HvCardHeader-titleShort MuiTypography-h5 MuiTypography-displayBlock"
+                                      >
+                                        title
+                                      </span>
+                                    </ForwardRef(Typography)>
+                                  </WithStyles(ForwardRef(Typography))>
+                                  <WithStyles(ForwardRef(Typography))
+                                    className="MuiCardHeader-subheader HvCardHeader-subheader"
+                                    color="textSecondary"
+                                    component="span"
+                                    display="block"
+                                    variant="body1"
+                                  >
+                                    <ForwardRef(Typography)
+                                      className="MuiCardHeader-subheader HvCardHeader-subheader"
+                                      classes={
+                                        Object {
+                                          "alignCenter": "MuiTypography-alignCenter",
+                                          "alignJustify": "MuiTypography-alignJustify",
+                                          "alignLeft": "MuiTypography-alignLeft",
+                                          "alignRight": "MuiTypography-alignRight",
+                                          "body1": "MuiTypography-body1",
+                                          "body2": "MuiTypography-body2",
+                                          "button": "MuiTypography-button",
+                                          "caption": "MuiTypography-caption",
+                                          "colorError": "MuiTypography-colorError",
+                                          "colorInherit": "MuiTypography-colorInherit",
+                                          "colorPrimary": "MuiTypography-colorPrimary",
+                                          "colorSecondary": "MuiTypography-colorSecondary",
+                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                          "displayBlock": "MuiTypography-displayBlock",
+                                          "displayInline": "MuiTypography-displayInline",
+                                          "gutterBottom": "MuiTypography-gutterBottom",
+                                          "h1": "MuiTypography-h1",
+                                          "h2": "MuiTypography-h2",
+                                          "h3": "MuiTypography-h3",
+                                          "h4": "MuiTypography-h4",
+                                          "h5": "MuiTypography-h5",
+                                          "h6": "MuiTypography-h6",
+                                          "noWrap": "MuiTypography-noWrap",
+                                          "overline": "MuiTypography-overline",
+                                          "paragraph": "MuiTypography-paragraph",
+                                          "root": "MuiTypography-root",
+                                          "srOnly": "MuiTypography-srOnly",
+                                          "subtitle1": "MuiTypography-subtitle1",
+                                          "subtitle2": "MuiTypography-subtitle2",
+                                        }
+                                      }
+                                      color="textSecondary"
+                                      component="span"
+                                      display="block"
+                                      variant="body1"
+                                    >
+                                      <span
+                                        className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                                      >
+                                        subtitle
+                                      </span>
+                                    </ForwardRef(Typography)>
+                                  </WithStyles(ForwardRef(Typography))>
+                                </div>
+                                <div
+                                  className="MuiCardHeader-action HvCardHeader-action"
+                                >
+                                  icon
+                                </div>
+                              </div>
+                            </ForwardRef(CardHeader)>
+                          </WithStyles(ForwardRef(CardHeader))>
+                        </Header>
+                      </WithStyles(Header)>
+                      <WithStyles(Media)
+                        mediaPath="path"
+                      >
+                        <Media
+                          classes={
+                            Object {
+                              "media": "HvCardMedia-media",
+                              "root": "HvCardMedia-root",
+                            }
+                          }
+                          mediaPath="path"
+                        >
+                          <WithStyles(ForwardRef(CardMedia))
+                            classes={
+                              Object {
+                                "media": "HvCardMedia-media",
+                                "root": "HvCardMedia-root",
+                              }
+                            }
+                            image="path"
+                            role="img"
+                          >
+                            <ForwardRef(CardMedia)
                               classes={
                                 Object {
-                                  "content": "HvCardContent-content",
+                                  "img": "MuiCardMedia-img",
+                                  "media": "MuiCardMedia-media HvCardMedia-media",
+                                  "root": "MuiCardMedia-root HvCardMedia-root",
+                                }
+                              }
+                              image="path"
+                              role="img"
+                            >
+                              <div
+                                className="MuiCardMedia-root HvCardMedia-root"
+                                role="img"
+                                style={
+                                  Object {
+                                    "backgroundImage": "url(\\"path\\")",
+                                  }
+                                }
+                              />
+                            </ForwardRef(CardMedia)>
+                          </WithStyles(ForwardRef(CardMedia))>
+                        </Media>
+                      </WithStyles(Media)>
+                      <WithStyles(Content)>
+                        <Content
+                          classes={
+                            Object {
+                              "content": "HvCardContent-content",
+                            }
+                          }
+                        >
+                          <WithStyles(ForwardRef(CardContent))
+                            className="HvCardContent-content"
+                          >
+                            <ForwardRef(CardContent)
+                              className="HvCardContent-content"
+                              classes={
+                                Object {
+                                  "root": "MuiCardContent-root",
                                 }
                               }
                             >
-                              <WithStyles(ForwardRef(CardContent))
-                                className="HvCardContent-content"
+                              <div
+                                className="MuiCardContent-root HvCardContent-content"
                               >
-                                <ForwardRef(CardContent)
-                                  className="HvCardContent-content"
-                                  classes={
-                                    Object {
-                                      "root": "MuiCardContent-root",
-                                    }
-                                  }
-                                >
-                                  <div
-                                    className="MuiCardContent-root HvCardContent-content"
-                                  >
-                                    <div />
-                                  </div>
-                                </ForwardRef(CardContent)>
-                              </WithStyles(ForwardRef(CardContent))>
-                            </Content>
-                          </WithStyles(Content)>
-                        </div>
-                      </div>
-                    </ConditionalWrapper>
+                                <div />
+                              </div>
+                            </ForwardRef(CardContent)>
+                          </WithStyles(ForwardRef(CardContent))>
+                        </Content>
+                      </WithStyles(Content)>
+                    </div>
                   </Focus>
                 </WithStyles(Focus)>
                 <WithStyles(WithConfig)

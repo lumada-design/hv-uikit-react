@@ -1,11 +1,8 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import PropTypes from "prop-types/index";
 
-export type HvFocusStrategies =
-  | "listbox"
-  | "menu"
-  | "card"
-  | "grid"
+export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
 export interface HvFocusProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey> {
@@ -20,43 +17,47 @@ export interface HvFocusProps
   /**
    * Whether the focus is selected.
    */
-  selected: boolean,
+  selected: boolean;
   /**
    * Whether the focus is disabled.
    */
-  disabled: boolean,
+  disabled: boolean;
+  /**
+   * Indicates that the disabled class should be applied.
+   */
+  disabledClass: boolean;
   /**
    * Child node to set the focus.
    */
-  children: HTMLElement
+  children: HTMLElement;
   /**
    * Focus and navigation strategy to be used.
    */
-  strategy: HvFocusStrategies,
+  strategy: HvFocusStrategies;
   /**
    * Show focus when click element.
    */
-  focusOnClick: boolean,
+  focusOnClick: boolean;
   /**
    * Show focus when click element.
    */
-  focusDisabled: boolean,
+  focusDisabled: boolean;
   /**
    * Use up/ down keyboard arrows to control focus.
    */
-  useArrows: boolean,
+  useArrows: boolean;
   /**
    * Uses an absolute positioned div as a focus.
    */
-  useFalseFocus: boolean,
+  useFalseFocus: boolean;
   /**
    * Narrows the results of the focusable elements to only this class
    */
-  filterClass: String,
+  filterClass: String;
   /**
    * How much the navigation will skip when using the arrows.
    */
-  navigationJump: Number
+  navigationJump: Number;
 }
 
 export type ClassKey =
@@ -67,6 +68,6 @@ export type ClassKey =
   | "focusGridDisabled"
   | "focused"
   | "externalReference"
-  | "falseFocus"
+  | "falseFocus";
 
 export default function HvFocus(props: HvFocusProps): JSX.Element | null;
