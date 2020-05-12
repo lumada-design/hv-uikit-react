@@ -71,6 +71,9 @@ jobs:
           npm config set @hv:registry ${RESOLVE_REGISTRY}
           npm ci
 
+      - name: Bootstrap
+        run: npm run bootstrap
+
       - name: License Check
         run: npm run license-check
 
@@ -181,114 +184,123 @@ jobs:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
 
-  Robot_pa11y:
-    name: Test Robot pa11y
-    needs: Build-Documentation
-    runs-on: [self-hosted, Windows]
+  # Robot_pa11y:
+  #   name: Test Robot pa11y
+  #   needs: Build-Documentation
+  #   runs-on: [self-hosted, Windows]
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12"
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Install PA11Y
-        working-directory: ./automation/robot
-        shell: cmd
-        run: npm ci
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: "12"
 
-      - name: Run PA11Y
-        shell: cmd
-        run: >-
-          robot
-          --variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}}
-          --include pa11y
-          --outputdir reports
-          --report report.html
-          --log log.html
-          automation\robot\storybook\core
+  #     - name: Install PA11Y
+  #       working-directory: ./automation/robot
+  #       shell: cmd
+  #       run: npm ci
 
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: pa11y-reports
-          path: reports
+  #     - name: Run PA11Y
+  #       shell: cmd
+  #       run: >-
+  #         robot
+  #         --variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}}
+  #         --include pa11y
+  #         --outputdir reports
+  #         --report report.html
+  #         --log log.html
+  #         automation\robot\storybook\core
 
-  Robot:
-    name: Test Robot
-    needs: [Build-Documentation]
-    runs-on: [self-hosted, Linux]
-    timeout-minutes: 45
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chrome, firefox]
-    container:
-      image: ppodgorsek/robot-framework:latest
-      options: ${{ matrix.browser == 'firefox' && '-u 1001' || '' }} --shm-size=4g --cpus 2
-      env:
-        BROWSER: ${{ matrix.browser }}
-        ROBOT_TESTS_DIR: ./automation/robot/storybook/core
-        ROBOT_REPORTS_DIR: ./reports
-        ROBOT_THREADS: 4
-        ROBOT_OPTIONS: "--variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}} --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+  #     - name: Save Reports
+  #       uses: actions/upload-artifact@v1
+  #       if: always()
+  #       with:
+  #         name: pa11y-reports
+  #         path: reports
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #     - name: Clean Reports
+  #       run: rm -rf reports
 
-      - name: Run Robot
-        run: |
-          chmod +x ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
-          ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+  # Robot:
+  #   name: Test Robot
+  #   needs: [Build-Documentation]
+  #   runs-on: [self-hosted, Linux]
+  #   timeout-minutes: 45
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       browser: [chrome, firefox]
+  #   container:
+  #     image: ppodgorsek/robot-framework:latest
+  #     options: ${{ matrix.browser == 'firefox' && '-u 1001' || '' }} --shm-size=4g --cpus 2
+  #     env:
+  #       BROWSER: ${{ matrix.browser }}
+  #       ROBOT_TESTS_DIR: ./automation/robot/storybook/core
+  #       ROBOT_REPORTS_DIR: ./reports
+  #       ROBOT_THREADS: 4
+  #       ROBOT_OPTIONS: "--variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}} --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
 
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: reports
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-  Robot-Legacy:
-    name: Test Robot
-    needs: Build-Documentation
-    runs-on: [self-hosted, Windows]
-    timeout-minutes: 150
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [ie]
+  #     - name: Run Robot
+  #       run: |
+  #         chmod +x ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+  #         ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #     - name: Save Reports
+  #       uses: actions/upload-artifact@v1
+  #       if: failure()
+  #       with:
+  #         name: ${{ matrix.browser }}-reports
+  #         path: reports
 
-      - name: Run SELENIUM Robot
-        uses: ./.github/robot
-        with:
-          storybook-url: https://${{ github.repository_owner }}.github.io/hv-uikit-react/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          browser: ${{ matrix.browser }}
-          excludes: |
-            pa11y
-            bug-${{ matrix.browser }}
-            bug-${{ matrix.browser }}-webdriver
-            issue
-            issue-${{ matrix.browser }}
-            bug-infrastructure
-            bug-infrastructure-${{ matrix.browser }}
-          output-dir: reports
-          processes: 3
-          path: ./automation/robot/storybook/core
+  #     - name: Clean Reports
+  #       run: rm -rf reports
 
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: reports
+  # Robot-Legacy:
+  #   name: Test Robot
+  #   needs: Build-Documentation
+  #   runs-on: [self-hosted, Windows]
+  #   timeout-minutes: 150
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       browser: [ie]
+
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+
+  #     - name: Run SELENIUM Robot
+  #       uses: ./.github/robot
+  #       with:
+  #         storybook-url: https://${{ github.repository_owner }}.github.io/hv-uikit-react/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+  #         browser: ${{ matrix.browser }}
+  #         excludes: |
+  #           pa11y
+  #           bug-${{ matrix.browser }}
+  #           bug-${{ matrix.browser }}-webdriver
+  #           issue
+  #           issue-${{ matrix.browser }}
+  #           bug-infrastructure
+  #           bug-infrastructure-${{ matrix.browser }}
+  #         output-dir: reports
+  #         processes: 3
+  #         path: ./automation/robot/storybook/core
+
+  #     - name: Save Reports
+  #       uses: actions/upload-artifact@v1
+  #       if: always()
+  #       with:
+  #         name: ${{ matrix.browser }}-reports
+  #         path: reports
+
+  #     - name: Clean Reports
+  #       run: rm -rf reports
 
   CleanupDeployment:
     name: Cleanup Deployment
@@ -305,7 +317,8 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot, Robot-Legacy]
+    #  needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot, Robot-Legacy]
+    needs: [License-Checks, Lint, Test-Jest, Build-Documentation]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -344,7 +357,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot, Robot-Legacy]
+    needs: [License-Checks, Lint, Test-Jest, Build-Documentation]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
