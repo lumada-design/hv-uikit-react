@@ -1,6 +1,7 @@
 // components
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
+export { default as HvAvatar } from "./Avatar";
 export { default as HvBanner, HvBannerContent } from "./Banner";
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvButton } from "./Button";
