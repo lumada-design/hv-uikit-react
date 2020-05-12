@@ -23,4 +23,4 @@ vertical navigation item should not be selected
     [Arguments]    ${locator}
     [Documentation]    verify if locator contains selectedItem in class attribute
     wait until element attribute contain    ${locator}    class    -unselected
-        
+

@@ -26,7 +26,7 @@ Verify default dates
     Element Attribute Value Should Be           ${endInput}          value         10 Jun 2019
 
 When delete date the default date is replaced
-    [Tags]    bug-firefox-webdriver  
+    [Tags]    bug-firefox-webdriver
     Element Attribute Value Should Be           ${labelInputDate}    value         5 Jun 2019 - 10 Jun 2019
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
@@ -43,7 +43,7 @@ Change range dates with clicks
     Click Element                               ${startDay20}
     Element Attribute Value Should Be           ${startInput}        value         20 Jun 2019
 
-Change range dates with inputs   
+Change range dates with inputs
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${startInput}        01/02/2019
@@ -121,7 +121,7 @@ Don't change dates with clicking in a end date and clicking cancel
     Element Attribute Value Should Be           ${endInput}          value         10 Jun 2019
 
 Don't change dates with start input and clicking enter
-    [Tags]    bug-chrome-webdriver    
+    [Tags]    bug-chrome-webdriver
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${startInput}        01/02/1975
@@ -133,7 +133,7 @@ Don't change dates with start input and clicking enter
     Element Attribute Value Should Be           ${startInput}        value         5 Jun 2019
 
 Don't change dates with end input and clicking enter
-    [Tags]    bug-chrome-webdriver    
+    [Tags]    bug-chrome-webdriver
     Click Element                               DatePicker
     Wait Until Element Is Visible               ${calendarRange}     7s
     Force input                                 ${endInput}          01/02/1975

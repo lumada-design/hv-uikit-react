@@ -32,5 +32,5 @@ label when file exceeds the maximum size
     Page Should Contain    The file exceeds the maximum upload size
 
 label when file type not allowed
-    [Setup]    NONE    
+    [Setup]    NONE
     Page Should Contain    File type not allowed for upload
