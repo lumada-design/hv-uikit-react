@@ -14,6 +14,13 @@ Force Tags        smoke
 filter just specific card when search for Event Title    ${cards}    1    7 trac    7 Track severe 8
 filter just specific card when search for Event fix      ${cards}    5    fix n     fix now
 filter just specific card when search for Probability    ${cards}    1    97        7 Track severe 8
+
+List view filter when search for Event Title
+    [Documentation]    traceability: issue 1522 
+    [Template]    NONE
+    Click Element    ${listViewButton}
+    validate search    ${rows}    1    7 trac    Track 7 severe breakdown
+
 search does not return data
     [Template]    NONE
     Press Keys                         ${searchBox}      João
