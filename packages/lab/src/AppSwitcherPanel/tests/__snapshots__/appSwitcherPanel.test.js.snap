@@ -1014,6 +1014,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
   >
     <div
       className="AppSwitcherPanel-root-1 AppSwitcherPanel-open-2"
+      id="hv-appswitcherpanel-6"
     >
       <div
         className="AppSwitcherPanel-headerContainer-3"
@@ -8795,6 +8796,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
   >
     <div
       className="AppSwitcherPanel-root-1 AppSwitcherPanel-open-2"
+      id="hv-appswitcherpanel-2"
     >
       <div
         className="AppSwitcherPanel-headerContainer-3"
