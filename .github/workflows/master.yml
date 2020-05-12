@@ -54,10 +54,10 @@ jobs:
               ]
             }
 
-  License-Checks:
-    name: License Checks
-    needs: [Notify-Start]
+  Static-Checks:
+    name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
+    needs: [Notify-Start]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -77,47 +77,8 @@ jobs:
       - name: License Check
         run: npm run license-check
 
-  Lint:
-    needs: [Notify-Start]
-    runs-on: [self-hosted, Linux]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12"
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
-
       - name: Lint
         run: npm run lint
-
-  Test-Jest:
-    name: Test Jest
-    needs: [Notify-Start]
-    runs-on: [self-hosted, Linux]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12"
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
 
       - name: Test
         run: npm run test
@@ -125,6 +86,8 @@ jobs:
   Build-Documentation:
     name: Build Documentation
     runs-on: [self-hosted, Linux]
+    needs: [Notify-Start]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -173,6 +136,11 @@ jobs:
           keepFiles: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
+
+      - name: Waits deploy for to be up
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
@@ -223,43 +191,41 @@ jobs:
   #     - name: Clean Reports
   #       run: rm -rf reports
 
-  # Robot:
-  #   name: Test Robot
-  #   needs: [Build-Documentation]
-  #   runs-on: [self-hosted, Linux]
-  #   timeout-minutes: 45
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       browser: [chrome, firefox]
-  #   container:
-  #     image: ppodgorsek/robot-framework:latest
-  #     options: ${{ matrix.browser == 'firefox' && '-u 1001' || '' }} --shm-size=4g --cpus 2
-  #     env:
-  #       BROWSER: ${{ matrix.browser }}
-  #       ROBOT_TESTS_DIR: ./automation/robot/storybook/core
-  #       ROBOT_REPORTS_DIR: ./reports
-  #       ROBOT_THREADS: 4
-  #       ROBOT_OPTIONS: "--variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}} --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+  Robot:
+    name: Test Robot
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, firefox]
+    container:
+      image: ppodgorsek/robot-framework:latest
+      options: --shm-size=6g --cpus 4
+      env:
+        BROWSER: ${{ matrix.browser }}
+        ROBOT_TESTS_DIR: ./automation/robot/storybook/core
+        ROBOT_REPORTS_DIR: ./reports
+        ROBOT_THREADS: 4
+        ROBOT_OPTIONS: "--variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}} --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
 
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-  #     - name: Run Robot
-  #       run: |
-  #         chmod +x ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
-  #         ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+      - name: Run Robot
+        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
-  #     - name: Save Reports
-  #       uses: actions/upload-artifact@v1
-  #       if: failure()
-  #       with:
-  #         name: ${{ matrix.browser }}-reports
-  #         path: reports
+      - name: Save Reports
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: ${{ matrix.browser }}-reports
+          path: reports
 
-  #     - name: Clean Reports
-  #       run: rm -rf reports
+      - name: Clean Reports
+        run: rm -rf reports
 
   # Robot-Legacy:
   #   name: Test Robot
@@ -317,8 +283,8 @@ jobs:
 
   Notify-End:
     name: Notify End
-    #  needs: [License-Checks, Lint, Test-Jest, Build-Documentation, Robot_pa11y, Robot, Robot-Legacy]
-    needs: [License-Checks, Lint, Test-Jest, Build-Documentation]
+    #    needs: [Static-Checks, Build-Documentation, Robot_pa11y, Robot, Robot-Legacy]
+    needs: [Static-Checks, Build-Documentation, Robot, CleanupDeployment]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -357,7 +323,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [License-Checks, Lint, Test-Jest, Build-Documentation]
+    needs: [Static-Checks, Build-Documentation, Robot, CleanupDeployment]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release

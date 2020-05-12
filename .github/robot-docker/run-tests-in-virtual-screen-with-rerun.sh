@@ -1,5 +1,7 @@
 #!/bin/sh
 
+HOME=${ROBOT_WORK_DIR}
+
 runRobot () {
     xvfb-run \
         --server-args="-screen 0 ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_COLOUR_DEPTH} -ac" \
@@ -14,7 +16,6 @@ runPabot () {
     xvfb-run \
         --server-args="-screen 0 ${SCREEN_WIDTH}x${SCREEN_HEIGHT}x${SCREEN_COLOUR_DEPTH} -ac" \
         pabot \
-        --verbose \
         --processes $ROBOT_THREADS \
         ${PABOT_OPTIONS} \
         --outputDir $ROBOT_REPORTS_DIR \
@@ -51,6 +52,6 @@ then
     runRebot "$ROBOT_REPORTS_DIR/firstRun.xml"
 else 
     echo "First run failed, retrying"
-    runRobot "--rerunfailed ${ROBOT_REPORTS_DIR}/firstRun.xml ${ROBOT_OPTIONS} --output secondRun.xml --report NONE --log NONE"
+    runRobot "--rerunfailed ${ROBOT_REPORTS_DIR}/firstRun.xml ${ROBOT_OPTIONS} --output secondRun.xml --report NONE --log NONE --loglevel TRACE"
     runRebot "--merge $ROBOT_REPORTS_DIR/firstRun.xml $ROBOT_REPORTS_DIR/secondRun.xml"
 fi
