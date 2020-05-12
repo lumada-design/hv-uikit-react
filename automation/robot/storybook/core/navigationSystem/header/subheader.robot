@@ -1,0 +1,31 @@
+*** Setting ***
+Library           SeleniumLibrary
+Resource          _header.resource
+Suite Setup       open storybook    ${iframeHeaderMain}
+Test Setup        Wait Until Element Is Visible    ${header}    10s
+Suite Teardown    Close Browser
+Force Tags        smoke    bug-infrastructure-ie
+Documentation     Test Cases based on Design System Version 1.2.0
+
+
+*** Comments ***
+dev implementation keep items always visible and enabled although human eye it is not visible.
+Because of that the below test cases just can be validated on image recognition tests
+- closes/hide subheader when mouse hover out of child item
+- closes/hide subheader when a child item is selected and mouse hover item that has not child items
+
+
+*** Test Cases ***
+maintains subheader opened and seleleted when user click on actions buttons
+    header item should be selected    ${item3}
+    header item should be selected    ${item3.2}
+    Click Element                     ${action1}
+    header item should be selected    ${item3}
+    header item should be selected    ${item3.2}
+
+maintains subheader opened when mouse hover on parent item
+    header item should be selected    ${item3}
+    header item should be selected    ${item3.2}
+    Mouse Over                        ${item3.1}
+    header item should be selected    ${item3}
+    header item should be selected    ${item3.2}
