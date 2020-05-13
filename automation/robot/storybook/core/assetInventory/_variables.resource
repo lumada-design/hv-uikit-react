@@ -23,7 +23,8 @@ ${iframeListView}          ${STORYBOOK_URL}/iframe.html?id=components-asset-inve
 ${iframeMain}              ${STORYBOOK_URL}/iframe.html?id=components-asset-inventory--main
 ${listViewButton}          id:listView-button
 ${pageCurrent}             id:hv-assetinventory-currentPage-input
-${pageLast}             id:hv-assetinventory-lastPage-button
+${pageLast}                id:hv-assetinventory-lastPage-button
+${pageNavigator}           css:div[class=HvPagination-pageNavigator]
 ${pageNext}                id:hv-assetinventory-nextPage-button
 ${pagePrevious}            id:hv-assetinventory-previousPage-button
 ${pageSize}                css:select[id|='hv-assetinventory-pageSize']

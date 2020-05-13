@@ -8,7 +8,13 @@ describe("Asset Inventory ", () => {
   let wrapper;
 
   // eslint-disable-next-line no-unused-vars
-  const MockView = (id, selectedValues) => <div id={id} />;
+  const MockView = id => <div id={id} />;
+
+  const setupComponent = (props, children = <MockView id="id" />) => (
+    <HvProvider>
+      <AssetInventory {...props}>{children}</AssetInventory>
+    </HvProvider>
+  );
 
   const mockConfiguration = { metadata: [] };
 
@@ -34,13 +40,7 @@ describe("Asset Inventory ", () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(
-      <HvProvider>
-        <AssetInventory values={values} configuration={[]}>
-          <div id="id0" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = shallow(setupComponent({ values, configuration: [] }, <div id="id0" />));
   });
 
   it("should be defined", () => {
@@ -65,13 +65,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     const sort = wrapper.find("Sort");
 
@@ -89,13 +83,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     const sort = wrapper.find("Sort");
 
@@ -114,13 +102,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     const search = wrapper.find(Search);
 
@@ -138,13 +120,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     const search = wrapper.find("Search");
 
@@ -163,13 +139,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     let instance = wrapper.find("AssetInventory").instance();
 
@@ -196,13 +166,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     let instance = wrapper.find("AssetInventory").instance();
 
@@ -229,13 +193,7 @@ describe("Asset Inventory ", () => {
       ]
     };
 
-    wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={configuration}>
-          <MockView id="id" />
-        </AssetInventory>
-      </HvProvider>
-    );
+    wrapper = mount(setupComponent({ values, configuration }));
 
     let instance = wrapper.find("AssetInventory").instance();
 
@@ -265,12 +223,12 @@ describe("Asset Inventory ", () => {
 
   it("should correctly switch views", () => {
     wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={mockConfiguration}>
-          <MockView id="view1">test1</MockView>
-          <MockView id="view2" />
-        </AssetInventory>
-      </HvProvider>
+      setupComponent({ values, configuration: mockConfiguration }, [
+        <MockView id="view1" key="view1">
+          test1
+        </MockView>,
+        <MockView id="view2" key="view2" />
+      ])
     );
 
     let view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
@@ -296,16 +254,22 @@ describe("Asset Inventory ", () => {
 
   it("should render pagination", () => {
     wrapper = mount(
-      <HvProvider>
-        <AssetInventory values={values} configuration={{ metadata: [] }} hasPagination>
-          <MockView id="view1">test1</MockView>
-        </AssetInventory>
-      </HvProvider>
+      setupComponent({ values, configuration: { metadata: [] }, hasPagination: true })
     );
 
     const pagination = wrapper.find("Pagination");
 
     expect(pagination.length).toBe(1);
+  });
+
+  it("shouldn't render pagination when no data exist", () => {
+    wrapper = mount(
+      setupComponent({ values: [], configuration: { metadata: [] }, hasPagination: true })
+    );
+
+    const pagination = wrapper.find("Pagination");
+
+    expect(pagination.length).toBe(0);
   });
 
   it("should present a subset of data using pagination, calculating the page total", () => {
@@ -337,17 +301,13 @@ describe("Asset Inventory ", () => {
     ];
 
     wrapper = mount(
-      <HvProvider>
-        <AssetInventory
-          id="hv-pagination"
-          values={val}
-          configuration={mockConfiguration}
-          hasPagination
-          pageSize={2}
-        >
-          <MockView id="view1">test1</MockView>
-        </AssetInventory>
-      </HvProvider>
+      setupComponent({
+        id: "hv-pagination",
+        values: val,
+        configuration: mockConfiguration,
+        hasPagination: true,
+        pageSize: 2
+      })
     );
 
     const instance = wrapper.find("AssetInventory").instance();
@@ -390,17 +350,13 @@ describe("Asset Inventory ", () => {
     ];
 
     wrapper = mount(
-      <HvProvider>
-        <AssetInventory
-          id="hv-pagination"
-          values={val}
-          configuration={mockConfiguration}
-          hasPagination
-          pageSize={2}
-        >
-          <MockView id="view1">test1</MockView>
-        </AssetInventory>
-      </HvProvider>
+      setupComponent({
+        id: "hv-pagination",
+        values: val,
+        configuration: mockConfiguration,
+        hasPagination: true,
+        pageSize: 2
+      })
     );
 
     const instance = wrapper.find("AssetInventory").instance();
