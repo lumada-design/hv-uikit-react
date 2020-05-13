@@ -16,11 +16,23 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import uniqueId from "lodash/uniqueId";
 
 import Action from "./Action";
 
 export default class AppSwitcherPanel extends Component {
+  constructor(props) {
+    super(props);
+
+    const { id } = this.props;
+
+    this.state = {
+      internalId: id || uniqueId("hv-appswitcherpanel-"),
+    };
+  }
+
   render() {
+    const { internalId } = this.state;
     const {
       classes,
       isOpen,
@@ -50,7 +62,10 @@ export default class AppSwitcherPanel extends Component {
     });
 
     return (
-      <div className={`${classes.root} ${isOpen ? classes.open : ""}`}>
+      <div
+        id={internalId}
+        className={`${classes.root} ${isOpen ? classes.open : ""}`}
+      >
         <div className={classes.headerContainer}>
           {header ? (
             header
