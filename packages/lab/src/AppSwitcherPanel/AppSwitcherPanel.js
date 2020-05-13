@@ -152,5 +152,5 @@ AppSwitcherPanel.defaultProps = {
   isOpen: false,
   title: "Apps",
   footer: undefined,
-  onActionClickedCallback: () => {},
+  onActionClickedCallback: () => {}
 };
