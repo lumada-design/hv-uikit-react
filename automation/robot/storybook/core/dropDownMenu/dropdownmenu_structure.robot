@@ -1,7 +1,6 @@
 *** Setting ***
-Resource          keywords.resource
 Library           SeleniumLibrary
-Variables         variables.yaml
+Resource          _resources.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
 ...               Go To            ${STORYBOOK_URL}/${sampledDisabledItems}
@@ -13,7 +12,7 @@ Force Tags        smoke
 *** Test Cases ***
 open dropdown menu when click dropdown button
     Click Element                        ${dropDownMenu}
-    Wait Until Element Is Visible        ${droppedMenu}     3s    
+    Wait Until Element Is Visible        ${droppedMenu}     3s
 
 close dropdown when click dropdown button
     Click Element                        ${dropDownMenu}
@@ -33,7 +32,7 @@ close dropdown menu when item is selected
     Wait Until Element Is Enabled        ${dropDownMenu}    10s
     Click Element                        ${dropDownMenu}
     Wait Until Element Is Visible        ${droppedMenu}     3s
-    Click Element                        ${dropDownMenu}
+    Click Element                        ${item1}
     Wait Until Element Is Not Visible    ${droppedMenu}     3s
 
 select an item

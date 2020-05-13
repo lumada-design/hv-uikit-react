@@ -24,6 +24,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
         "menuList": "HvDropDownMenu-menuList",
+        "popper": "HvDropDownMenu-popper",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -49,6 +50,7 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
           "menuList": "HvDropDownMenu-menuList",
+          "popper": "HvDropDownMenu-popper",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -240,15 +242,11 @@ exports[`DropDownMenu component with portal closes on double click 1`] = `
         </WithStyles(ForwardRef(IconButton))>
         <ForwardRef(Popper)
           anchorEl={null}
+          className="HvDropDownMenu-popper"
           disablePortal={false}
           open={false}
-          placement="bottom-end"
+          placement="bottom-start"
           popperOptions={Object {}}
-          style={
-            Object {
-              "zIndex": 1500,
-            }
-          }
         />
       </div>
     </DropDownMenu>
@@ -280,6 +278,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
         "menuList": "HvDropDownMenu-menuList",
+        "popper": "HvDropDownMenu-popper",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -305,6 +304,7 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
           "menuList": "HvDropDownMenu-menuList",
+          "popper": "HvDropDownMenu-popper",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -496,15 +496,11 @@ exports[`DropDownMenu component with portal is rendered correctly and behaves as
         </WithStyles(ForwardRef(IconButton))>
         <ForwardRef(Popper)
           anchorEl={null}
+          className="HvDropDownMenu-popper"
           disablePortal={false}
           open={false}
-          placement="bottom-end"
+          placement="bottom-start"
           popperOptions={Object {}}
-          style={
-            Object {
-              "zIndex": 1500,
-            }
-          }
         />
       </div>
     </DropDownMenu>
@@ -536,6 +532,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
         "menuList": "HvDropDownMenu-menuList",
+        "popper": "HvDropDownMenu-popper",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -561,6 +558,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
           "menuList": "HvDropDownMenu-menuList",
+          "popper": "HvDropDownMenu-popper",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -787,15 +785,11 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
               </span>
             </button>
           }
+          className="HvDropDownMenu-popper"
           disablePortal={false}
           open={true}
-          placement="bottom-end"
+          placement="bottom-start"
           popperOptions={Object {}}
-          style={
-            Object {
-              "zIndex": 1500,
-            }
-          }
         >
           <ForwardRef(Portal)
             disablePortal={false}
@@ -806,8 +800,9 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   class="js-focus-within"
                 >
                   <div
+                    class="HvDropDownMenu-popper"
                     role="tooltip"
-                    style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                    style="position: fixed; top: 0px; left: 0px;"
                   >
                     <div>
                       <div
@@ -863,8 +858,9 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     </div>
                   </div>
                   <div
+                    class="HvDropDownMenu-popper"
                     role="tooltip"
-                    style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                    style="position: fixed; top: 0px; left: 0px;"
                   >
                     <div>
                       <div
@@ -920,8 +916,9 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     </div>
                   </div>
                   <div
+                    class="HvDropDownMenu-popper"
                     role="tooltip"
-                    style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                    style="position: fixed; top: 0px; left: 0px;"
                   >
                     <div>
                       <div
@@ -977,8 +974,9 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                     </div>
                   </div>
                   <div
+                    class="HvDropDownMenu-popper"
                     role="tooltip"
-                    style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                    style="position: fixed; top: 0px; left: 0px;"
                   >
                     <div>
                       <div
@@ -1037,13 +1035,13 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
               }
             >
               <div
+                className="HvDropDownMenu-popper"
                 role="tooltip"
                 style={
                   Object {
                     "left": 0,
                     "position": "fixed",
                     "top": 0,
-                    "zIndex": 1500,
                   }
                 }
               >
@@ -1056,7 +1054,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                   <div>
                     <FocusTrap
                       _createFocusTrap={[Function]}
-                      active={false}
+                      active={true}
                       createOptions={
                         Object {
                           "allowOutsideClick": true,
@@ -1792,6 +1790,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
         "menuList": "HvDropDownMenu-menuList",
+        "popper": "HvDropDownMenu-popper",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -1817,6 +1816,7 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
           "menuList": "HvDropDownMenu-menuList",
+          "popper": "HvDropDownMenu-popper",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -2007,15 +2007,11 @@ exports[`DropDownMenu component without portal closes on double click 1`] = `
         </WithStyles(ForwardRef(IconButton))>
         <ForwardRef(Popper)
           anchorEl={null}
+          className="HvDropDownMenu-popper"
           disablePortal={false}
           open={false}
-          placement="bottom-end"
+          placement="bottom-start"
           popperOptions={Object {}}
-          style={
-            Object {
-              "zIndex": 1500,
-            }
-          }
         />
       </div>
     </DropDownMenu>
@@ -2047,6 +2043,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
         "menuList": "HvDropDownMenu-menuList",
+        "popper": "HvDropDownMenu-popper",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -2072,6 +2069,7 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
           "menuList": "HvDropDownMenu-menuList",
+          "popper": "HvDropDownMenu-popper",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -2262,15 +2260,11 @@ exports[`DropDownMenu component without portal is rendered correctly and behaves
         </WithStyles(ForwardRef(IconButton))>
         <ForwardRef(Popper)
           anchorEl={null}
+          className="HvDropDownMenu-popper"
           disablePortal={false}
           open={false}
-          placement="bottom-end"
+          placement="bottom-start"
           popperOptions={Object {}}
-          style={
-            Object {
-              "zIndex": 1500,
-            }
-          }
         />
       </div>
     </DropDownMenu>
@@ -2302,6 +2296,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
         "icon": "HvDropDownMenu-icon",
         "iconSelected": "HvDropDownMenu-iconSelected",
         "menuList": "HvDropDownMenu-menuList",
+        "popper": "HvDropDownMenu-popper",
         "root": "HvDropDownMenu-root",
       }
     }
@@ -2327,6 +2322,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
           "icon": "HvDropDownMenu-icon",
           "iconSelected": "HvDropDownMenu-iconSelected",
           "menuList": "HvDropDownMenu-menuList",
+          "popper": "HvDropDownMenu-popper",
           "root": "HvDropDownMenu-root",
         }
       }
@@ -2552,15 +2548,11 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
               </span>
             </button>
           }
+          className="HvDropDownMenu-popper"
           disablePortal={false}
           open={true}
-          placement="bottom-end"
+          placement="bottom-start"
           popperOptions={Object {}}
-          style={
-            Object {
-              "zIndex": 1500,
-            }
-          }
         >
           <ForwardRef(Portal)
             disablePortal={false}
@@ -2571,8 +2563,9 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                   class="js-focus-within"
                 >
                   <div
+                    class="HvDropDownMenu-popper"
                     role="tooltip"
-                    style="position: fixed; top: 0px; left: 0px; z-index: 1500;"
+                    style="position: fixed; top: 0px; left: 0px;"
                   >
                     <div>
                       <div
@@ -2631,13 +2624,13 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
               }
             >
               <div
+                className="HvDropDownMenu-popper"
                 role="tooltip"
                 style={
                   Object {
                     "left": 0,
                     "position": "fixed",
                     "top": 0,
-                    "zIndex": 1500,
                   }
                 }
               >
@@ -2650,7 +2643,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                   <div>
                     <FocusTrap
                       _createFocusTrap={[Function]}
-                      active={false}
+                      active={true}
                       createOptions={
                         Object {
                           "allowOutsideClick": true,
