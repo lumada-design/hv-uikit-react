@@ -12,9 +12,9 @@ export interface HvBulkActionsLabelsProp {
    */
   selectAllPages?: string;
   /**
-   * Label applied to the Select All selection separator.
+   * Label applied to the Select All across all pages when all elements are selected.
    */
-  selectionConjunction?: string;
+  deselectAllPages: string;
 }
 
 export interface HvBulkActionsProps

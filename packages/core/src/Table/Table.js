@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import map from "lodash/map";
-import each from "lodash/each";
 import isNil from "lodash/isNil";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
@@ -11,33 +9,21 @@ import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
-import HvTypography from "../Typography";
-import expander from "./expander/expander";
-import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
-import { isIndeterminateStatus, isSelected, toggleAll, toggleSelection } from "./checkBoxUtils";
-import Pagination from "../Pagination";
-import NoData from "./NoData";
-import Header from "./Header";
-import checkboxHOC from "./selectTable";
-import { styles, tableStyleOverrides } from "./styles";
-
-import HvCheckBox from "../Selectors/CheckBox";
-import DropDownMenu from "./DropdownMenu";
+import { HvBulkActions, HvPagination, HvTypography } from "..";
 import withLabels from "../withLabels";
 import { setId } from "../utils";
-import withId from "../withId";
+
+import expander from "./expander";
+import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
+import { isSelected, selectPage } from "./checkBoxUtils";
+import DropDownMenu from "./DropdownMenu";
+import NoData from "./NoData";
+import Header from "./Header";
+import withCheckbox from "./selectTable";
+import { styles, tableStyleOverrides } from "./styles";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
-const ReactTableCheckbox = checkboxHOC(ReactTable);
-const updateSelectionFromData = (data, selection, idForCheckbox) => {
-  const dataIds = data.map(item => {
-    return item[idForCheckbox];
-  });
-  const updatedSelection = selection.filter(selectedItem => {
-    return dataIds.includes(selectedItem);
-  });
-  return updatedSelection;
-};
+const ReactTableCheckbox = withCheckbox(ReactTable);
 
 const DEFAULT_LABELS = {
   titleText: "",
@@ -58,118 +44,96 @@ const DEFAULT_LABELS = {
  *   Just one of this properties should be set (or none) has it isn't possible to have a table with
  *   expander and checkbox simultaneously.
  */
-class Table extends React.Component {
-  constructor(props) {
-    super(props);
+const HvTable = props => {
+  const {
+    id,
+    classes,
+    className,
+    uniqClassName,
+    data,
+    columns,
+    page,
+    sortable = true,
+    defaultSorted = [],
+    selections,
+    onSelection,
+    onFetchData,
+    subElementTemplate,
+    tableProps = { tableCaption: "Table Caption" },
+    rowCount,
+    noDataComponent,
+    idForCheckbox = "",
+    getTrProps: getTrPropsProp,
+    getTableProps: getTablePropsProp,
+    labels,
+    actions,
+    actionsCallback,
+    actionsDisabled,
+    maxVisibleActions,
+    secondaryActions,
+    allCheckBoxProps,
+    dropdownMenuProps,
+    paginationLabels,
+    paginationServerSide = false,
+    showPagination = true,
+    showPageSize = true,
+    dataSize,
+    pageSize = data.length,
+    onPageSizeChange,
+    onPageChange,
+    pages,
+    ...others
+  } = props;
 
-    this.state = {
-      // the columns that are sorted
-      sorted: props.defaultSorted || [],
-      // flag for controlling if the component as been render before
-      initiallyLoaded: false,
-      // Controls which row is expanded.
-      expanded: {},
-      // what is the curently displayed age
-      currentPage: props.page || 0,
-      // Controls which row is selected using the checkboxes.
-      selection: props.selections || [],
-      // Controls if the select all options has been used
-      selectAll: false
-    };
-  }
+  const [sorted, setSorted] = useState(defaultSorted);
+  const [initiallyLoaded, setInitiallyLoaded] = useState(false);
+  const [expanded, setExpanded] = useState({});
+  const [currentPage, setCurrentPage] = useState(page || 0);
+  const [currentPageSize, setCurrentPageSize] = useState(pageSize);
+  const [selection, setSelection] = useState(selections || []);
+  const tableRef = useRef(null);
 
   /**
    * Change the state property initiallyLoaded to identify that it is the first load.
    */
-  componentDidMount() {
-    const { initiallyLoaded } = this.state;
-    const { data } = this.props;
+  useEffect(() => {
+    setInitiallyLoaded(true);
+  }, []);
 
-    if (!initiallyLoaded) {
-      this.state.initiallyLoaded = true;
-    }
-    this.state.recordQuantity = data.length;
-  }
+  useEffect(() => {
+    setSelection(selections || []);
+  }, [selections]);
 
-  static getDerivedStateFromProps(props, state) {
-    const { selections, data, idForCheckbox } = props;
+  useEffect(() => {
+    if (!idForCheckbox) return;
 
-    if (!isNil(selections) && selections !== state.selection) {
-      return {
-        selection: selections,
-        selectAll: selections.length === data.length,
-        recordQuantity: data.length
-      };
-    }
+    const dataIds = data.map(item => item[idForCheckbox]);
+    const updatedSelection = selection.filter(item => dataIds.includes(item));
+    setSelection(updatedSelection);
 
-    if (idForCheckbox !== "") {
-      const newSelection = updateSelectionFromData(data, state.selection, idForCheckbox);
-      if (!isNil(newSelection)) {
-        return {
-          selection: newSelection,
-          selectAll: newSelection.length === data.length,
-          recordQuantity: data.length
-        };
-      }
-    }
-
-    return {
-      selectAll: state.selection.length === data.length,
-      recordQuantity: data.length
-    };
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, idForCheckbox]);
 
   /**
-   *
    * Returns data set with nulls replaced by em dashes.
    *
    * @returns {Array} new data set
    */
-  sanitizedData = () => {
-    const { data } = this.props;
-    const newData = [];
-    let newEntry = {};
-    map(data, entry => {
-      newEntry = {};
-      each(entry, (val, key) => {
-        newEntry[key] = val === null ? `\u2014` : val;
+  const sanitizedData = () =>
+    data.map(entry => {
+      const newEntry = {};
+      Object.keys(entry).forEach(key => {
+        newEntry[key] = entry[key] ?? "—";
       });
-      newData.push(newEntry);
+      return newEntry;
     });
-
-    return newData;
-  };
-
-  /**
-   *
-   * Returns subtitle with the correct number of selected checkboxes.
-   *
-   * @param numRows - number of rows in table
-   * @returns {String} number selected
-   */
-  getCheckBoxHeader = numRows => {
-    const { selection } = this.state;
-    if (selection.length === 0) {
-      return "All";
-    }
-
-    return `${selection.length} of ${numRows}`;
-  };
 
   /**
    * Pagination customizations.
-   *
-   * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
    */
-  getPaginationProps = () => {
-    const { currentPage } = this.state;
-
-    const { id, paginationLabels, data, pageSize: propsPageSize } = this.props;
-    const { showPagination, showPageSize } = this.props;
-    const { pageSize = data.length, onPageSizeChange, onPageChange, pages } = this.props;
-
+  const getPaginationProps = () => {
     const PaginationComponent = paginationProps => (
-      <Pagination
+      <HvPagination
         {...paginationProps}
         id={setId(id, "pagination")}
         labels={paginationLabels}
@@ -181,74 +145,24 @@ class Table extends React.Component {
       showPagination: data.length > 0 && showPagination,
       ...(showPagination && { PaginationComponent }),
       ...(showPagination && {
-        onPageSizeChange: (newPageSize, page) => {
-          this.setState({ expanded: {}, currentPage: page });
-          onPageSizeChange?.(newPageSize, page);
+        onPageSizeChange: (newPageSize, p) => {
+          setExpanded({});
+          setCurrentPage(p);
+          setCurrentPageSize(newPageSize);
+          onPageSizeChange?.(newPageSize, p);
         }
       }),
       ...(showPagination && {
-        onPageChange: page => {
-          this.setState({ expanded: {}, currentPage: page });
-          onPageChange?.(page);
+        onPageChange: p => {
+          setExpanded({});
+          setCurrentPage(p);
+          onPageChange?.(p);
         }
       }),
       ...(showPagination && pages && { pages }),
-      ...((propsPageSize !== undefined && { defaultPageSize: propsPageSize }) ||
+      ...((pageSize !== undefined && { defaultPageSize: pageSize }) ||
         (pageSize && { defaultPageSize: pageSize })),
       ...{ showPageSizeOptions: showPageSize }
-    };
-  };
-
-  /**
-   * Obtains server side data.
-   *
-   * @returns {Object}
-   */
-  getServerSizeProps = () => {
-    const { paginationServerSide, page } = this.props;
-
-    return {
-      ...(paginationServerSide && { manual: true }),
-      ...(paginationServerSide && { onFetchData: this.onFetchDataInternal }),
-      ...(paginationServerSide && { page })
-    };
-  };
-
-  /**
-   *
-   * Add the class "sorted" to the selected column.
-   *
-   * @param sortedColumn - the column representation from the user.
-   */
-  onSortChange = sortedColumn => {
-    this.setState({ sorted: sortedColumn, currentPage: 0, expanded: {} });
-  };
-
-  /**
-   * Sort properties override to set onSortedChange
-   *
-   * @returns {{sortable: HvTable.props.sortable}}
-   */
-  getSortProps = () => {
-    const { sortable, defaultSorted } = this.props;
-
-    return {
-      sortable,
-      ...(sortable && { defaultSorted }),
-      onSortedChange: this.onSortChange
-    };
-  };
-
-  getCheckboxProps = () => {
-    const { id, classes, idForCheckbox } = this.props;
-
-    return {
-      selectWidth: 32,
-      SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
-      toggleSelection: (idSelection, shiftkey, row) => {
-        this.toggleSelection(null, row[idForCheckbox]);
-      },
-      id
     };
   };
 
@@ -257,23 +171,76 @@ class Table extends React.Component {
    *
    * @param {Object} tableState - an Object containing information about the current state of the table.
    */
-  onFetchDataInternal = tableState => {
-    const { onFetchData } = this.props;
-    const { initiallyLoaded, sorted: sortedFromState } = this.state;
-    const { pageSize, page, sorted } = tableState;
+  const onFetchDataInternal = tableState => {
+    const { pageSize: pageSizeT, page: pageT, sorted: sortedT } = tableState;
 
-    if (initiallyLoaded) {
-      let cursor = `${page * pageSize}`;
-      if (
-        sortedFromState.length > 0 &&
-        (sortedFromState[0].id !== sorted[0].id || sortedFromState[0].desc !== sorted[0].desc)
-      ) {
-        cursor = "0";
-      }
-
-      onFetchData(cursor, pageSize, sorted);
+    if (!initiallyLoaded) return;
+    let cursor = `${pageT * pageSizeT}`;
+    if (
+      sorted.length > 0 &&
+      (sorted[0].id !== sortedT[0].id || sorted[0].desc !== sortedT[0].desc)
+    ) {
+      cursor = "0";
     }
+
+    onFetchData?.(cursor, pageSizeT, sortedT);
   };
+
+  /**
+   * Obtains server side data.
+   *
+   * @returns {Object}
+   */
+  const getServerSideProps = () =>
+    paginationServerSide ? { page, manual: true, onFetchData: onFetchDataInternal } : {};
+
+  /**
+   * Add the class "sorted" to the selected column.
+   *
+   * @param sortedColumn - the column representation from the user.
+   */
+  const onSortChange = sortedColumn => {
+    // TODO: review
+    setSorted(sortedColumn);
+    setCurrentPage(0);
+    setExpanded({});
+  };
+
+  /**
+   * Sort properties override to set onSortedChange
+   *
+   * @returns {{sortable: HvTable.props.sortable}}
+   */
+  const getSortProps = () => ({
+    sortable,
+    ...(sortable && { defaultSorted }),
+    onSortedChange: onSortChange
+  });
+
+  /**
+   * Selects or unselect a row.
+   *
+   * @param {object} event - the event that triggered the selection
+   * @param {Number} key - the key that uniquely identifies the row.
+   */
+  const toggleSelection = (event, key) => {
+    const newSelection = selection.includes(key)
+      ? selection.filter(el => el !== key)
+      : [...selection, key];
+
+    // update the state
+    setSelection(newSelection);
+    onSelection?.(event, newSelection);
+  };
+
+  const getCheckboxProps = () => ({
+    id,
+    selectWidth: 32,
+    SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
+    toggleSelection: (idSelection, shiftkey, row) => {
+      toggleSelection(null, row[idForCheckbox]);
+    }
+  });
 
   /**
    * Override of the thead th. This method is used to add properties to the entire column.
@@ -283,9 +250,7 @@ class Table extends React.Component {
    * @param {Object} column - An object containing information about the column.
    * @returns {{className: (theadTh|{outline, backgroundColor, "& > div"})}}
    */
-  getTheadThProps = (state, rowInfo, column) => {
-    const { classes, sortable, id } = this.props;
-    const { sorted } = this.state;
+  const getTheadThProps = (state, rowInfo, column) => {
     let isSortable = sortable && (isNil(column.sortable) || column.sortable);
 
     if (column.id === "secondaryActions") {
@@ -321,15 +286,12 @@ class Table extends React.Component {
    *
    * @returns {{className: (tbody, tbodyEmpty)}}
    */
-  getTBodyProps = () => {
-    const { classes, data } = this.props;
-    return {
-      role: "rowgroup",
-      className: clsx(classes.tbody, {
-        [classes.tBodyEmpty]: data.length === 0
-      })
-    };
-  };
+  const getTBodyProps = () => ({
+    role: "rowgroup",
+    className: clsx(classes.tbody, {
+      [classes.tBodyEmpty]: data.length === 0
+    })
+  });
 
   /**
    * A getter for the row provided by the React table
@@ -337,26 +299,35 @@ class Table extends React.Component {
    *
    * @returns {Object} - The object that contains the correct role to be applied to the table rows.
    */
-  getTrGroupProps = () => {
-    const { classes } = this.props;
-    const baseTrGroupProps = {
-      role: undefined,
-      className: classes.trGroups
-    };
-
-    return baseTrGroupProps;
-  };
+  const getTrGroupProps = () => ({
+    role: undefined,
+    className: classes.trGroups
+  });
 
   /**
    * Open and closes the expander of a row.
    *
    * @param {numeric} rowIndex - The index of the row to toggle.
    */
-  toggleExpand = rowIndex => {
-    const { expanded } = this.state;
-    this.setState({
-      expanded: { [rowIndex]: !expanded[rowIndex] }
-    });
+  const toggleExpand = rowIndex => {
+    setExpanded({ [rowIndex]: !expanded[rowIndex] });
+  };
+
+  const computeRowId = rowInfo => {
+    if (idForCheckbox && rowInfo?.original?.[idForCheckbox]) {
+      return rowInfo.original[idForCheckbox];
+    }
+    return null;
+  };
+
+  const computeRowElementId = rowInfo => {
+    const rowId = computeRowId(rowInfo);
+
+    return (
+      (rowId && setId(id, "row", rowId)) ||
+      (rowInfo && setId(id, "row-index", rowInfo.index)) ||
+      undefined
+    );
   };
 
   /**
@@ -367,10 +338,7 @@ class Table extends React.Component {
    * @param {Object} rowInfo - An object containing information about the row.
    * @returns {Object} - The object that contains the classes to be applied to the table.
    */
-  getTrProps = (state, rowInfo) => {
-    const { classes, subElementTemplate } = this.props;
-    const { selection, expanded } = this.state;
-
+  const getTrProps = (state, rowInfo) => {
     const expandedProps =
       rowInfo !== undefined &&
       expanded[0] &&
@@ -380,7 +348,7 @@ class Table extends React.Component {
 
     const ariaRowIndex = rowInfo !== undefined ? { "aria-rowindex": rowInfo.index } : undefined;
     const baseTrProps = {
-      id: this.computeRowElementId(rowInfo),
+      id: computeRowElementId(rowInfo),
       className: classes.tr,
       role: "row",
       "aria-selected": "false",
@@ -394,7 +362,7 @@ class Table extends React.Component {
       };
     }
 
-    const rowId = this.computeRowId(rowInfo);
+    const rowId = computeRowId(rowInfo);
 
     if (rowId && selection.includes(rowId)) {
       return {
@@ -407,12 +375,11 @@ class Table extends React.Component {
     return baseTrProps;
   };
 
-  getTableProps = () => {
-    const { classes, tableProps, data, rowCount } = this.props;
-
+  const getTableProps = () => {
     const baseTableProps = {
       role: "table",
       "aria-rowcount": rowCount || data.length,
+      id: setId(id, "table"),
       className: classes.table
     };
 
@@ -426,47 +393,31 @@ class Table extends React.Component {
     return baseTableProps;
   };
 
-  getTdProps = (state, rowInfo, column) => {
-    const { classes } = this.props;
-
-    const rowElementId = this.computeRowElementId(rowInfo);
-
-    return {
-      id: rowElementId && column.id ? `${rowElementId}-column-${column.id}` : undefined,
-      className: classes.td,
-      role: "cell"
-    };
-  };
+  const getTdProps = (state, rowInfo, column) => ({
+    id: setId(computeRowElementId(rowInfo), "column", column.id),
+    className: classes.td,
+    role: "cell"
+  });
 
   /**
    * Return the NoData component with label.
    *
    * @returns {*}
    */
-  getNoDataProps = () => {
-    const { noDataComponent } = this.props;
-    return <NoData>{noDataComponent}</NoData>;
-  };
+  const getNoDataProps = () => <NoData>{noDataComponent}</NoData>;
 
-  //  ----------- Checkbox -----------
   /**
-   * Selects or unselect a row.
+   * Selects all the available rows on the page.
    *
    * @param {object} event - the event that triggered the selection
-   * @param {Number} key - the key that uniquely identifies the row.
    */
-  toggleSelection = (event, key) => {
-    // start off with the existing state
-    const { selection } = this.state;
-    const { onSelection } = this.props;
-    const select = toggleSelection(key, selection);
+  const togglePage = event => {
+    const anySelected = selection.length > 0;
+    const config = { currentPage, currentPageSize, paginationServerSide };
+    const newSelection = anySelected ? [] : selectPage(idForCheckbox, tableRef, config);
 
-    if (select.length === 0) this.setState({ selectAll: false });
-
-    // update the state
-    this.setState({ selection: select }, () => {
-      onSelection?.(event, select);
-    });
+    setSelection(newSelection);
+    onSelection?.(event, newSelection);
   };
 
   /**
@@ -474,188 +425,139 @@ class Table extends React.Component {
    *
    * @param {object} event - the event that triggered the selection
    */
-  toggleAll = event => {
-    const { idForCheckbox, onSelection } = this.props;
-    const { selectAll } = this.state;
+  const toggleAll = event => {
+    const allSelected = selection.length === data.length;
+    const newSelection = allSelected ? [] : selectPage(idForCheckbox, tableRef);
 
-    const stateToSet = toggleAll(idForCheckbox, selectAll, this.checkboxTable);
-    this.setState({ ...stateToSet }, () => {
-      onSelection?.(event, stateToSet.selection);
-    });
+    setSelection(newSelection);
+    onSelection?.(event, newSelection);
   };
 
-  computeRowElementId(rowInfo) {
-    const { id } = this.props;
+  const AugmentedTable = useMemo(
+    () => (idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns),
+    [idForCheckbox]
+  );
 
-    const rowId = this.computeRowId(rowInfo);
+  const getTableStyles = () => tableStyleOverrides(classes);
 
-    let rowElementId;
-    if (rowId) {
-      rowElementId = setId(id, "row", rowId);
-    } else if (rowInfo) {
-      rowElementId = setId(id, "row-index", rowInfo.index);
-    }
-
-    return rowElementId;
-  }
-
-  computeRowId(rowInfo) {
-    const { idForCheckbox } = this.props;
-
-    if (idForCheckbox && rowInfo && rowInfo.original && rowInfo.original[idForCheckbox]) {
-      return rowInfo.original[idForCheckbox];
-    }
-
-    return null;
-  }
-
-  render() {
-    const {
-      id,
-      classes,
-      className,
-      uniqClassName,
-      columns,
-      data,
-      subElementTemplate,
-      idForCheckbox,
-      useRouter,
-      getTrProps,
-      getTableProps,
-      labels,
-      secondaryActions,
-      sortable,
-      allCheckBoxProps,
-      dropdownMenuProps,
-      rowCount,
-      noDataComponent,
-      ...others
-    } = this.props;
-
-    const { expanded, selectAll, selection, recordQuantity } = this.state;
-
-    const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
-    const tableStyles = tableStyleOverrides(classes);
-
-    // Add dropdown menu column if secondaryActions exists in props
-    if (!!secondaryActions && !columns.some(col => col.accessor === "secondaryActions")) {
-      columns.push({
-        headerText: "",
-        accessor: "secondaryActions",
-        cellType: "alpha-numeric",
-        width: 31,
-        sortable: false,
-        Cell: props =>
-          props.original.noActions ? null : (
-            <DropDownMenu
-              id={`${this.computeRowElementId(props)}-secondaryActions`}
-              secondaryActions={secondaryActions}
-              original={props.original}
-              {...dropdownMenuProps}
-            />
-          )
-      });
-    }
-
-    // Creates the thead with the text and the sorted icon.
-    const ColumnSettings = {
-      ...ReactTableDefaults.column,
-      Header: props => {
-        const { column } = props;
-        const { sorted } = this.state;
-
-        return (
-          <Header
-            key={column.id}
-            tableInternalId={id}
-            column={column}
-            sort={sorted}
-            tableSortable={sortable}
-            onSortChange={this.onSortChange}
+  // Add dropdown menu column if secondaryActions exists in props
+  if (!!secondaryActions && !columns.some(col => col.accessor === "secondaryActions")) {
+    columns.push({
+      headerText: "",
+      accessor: "secondaryActions",
+      cellType: "alpha-numeric",
+      width: 33,
+      sortable: false,
+      Cell: propsCell =>
+        propsCell.original.noActions ? null : (
+          <DropDownMenu
+            id={setId(computeRowElementId(propsCell), secondaryActions)}
+            secondaryActions={secondaryActions}
+            original={propsCell.original}
+            {...dropdownMenuProps}
           />
-        );
-      }
-    };
-    ReactTableDefaults.expanderDefaults.show = false;
-    Object.assign(ReactTableDefaults, {
-      column: ColumnSettings
+        )
     });
-
-    // add expander button
-    const newColumn = createExpanderButton(columns, subElementTemplate, classes, this.toggleExpand);
-    // add expander
-    const newSubComponent = expander(subElementTemplate, classes);
-
-    const sanitizedData = this.sanitizedData();
-
-    return (
-      <div id={id} className={clsx(classes.tableContainer, className)}>
-        {labels.titleText && (
-          <div className={classes.title}>
-            <div>
-              <HvTypography variant="mTitle" id={setId(id, "title")}>
-                {labels.titleText}
-              </HvTypography>
-            </div>
-            {labels.subtitleText && (
-              <div className={classes.subtitle}>
-                <HvTypography variant="sText" id={setId(id, "subtitle")}>
-                  {labels.subtitleText}
-                </HvTypography>
-              </div>
-            )}
-          </div>
-        )}
-        {!!idForCheckbox && (
-          <div className={classes.checkBoxRow}>
-            <div className={classes.checkBoxText}>
-              <HvCheckBox
-                id={setId(id, "select-all")}
-                onChange={this.toggleAll}
-                aria-label="blah"
-                checked={selectAll}
-                disabled={data.length === 0}
-                indeterminate={isIndeterminateStatus(selection, recordQuantity)}
-                {...allCheckBoxProps}
-              />
-              <HvTypography variant="highlightText">
-                {this.getCheckBoxHeader(data.length)}
-              </HvTypography>
-            </div>
-          </div>
-        )}
-        <AugmentedTable
-          id={setId(id, "data")}
-          {...others}
-          {...tableStyles}
-          {...this.getPaginationProps()}
-          {...this.getServerSizeProps()}
-          {...this.getSortProps()}
-          {...this.getCheckboxProps()}
-          /* eslint no-return-assign: 0 */
-          ref={r => (this.checkboxTable = r)}
-          getTableProps={this.getTableProps}
-          getTheadThProps={this.getTheadThProps}
-          getTrProps={getTrProps || this.getTrProps}
-          getTdProps={this.getTdProps}
-          getTbodyProps={this.getTBodyProps}
-          data={sanitizedData}
-          columns={newColumn}
-          className="-highlight"
-          uniqClassName={uniqClassName}
-          SubComponent={newSubComponent}
-          expanded={expanded}
-          keyField={idForCheckbox}
-          isSelected={key => isSelected(key, selection)}
-          NoDataComponent={this.getNoDataProps}
-          getTrGroupProps={this.getTrGroupProps}
-        />
-      </div>
-    );
   }
-}
 
-Table.propTypes = {
+  // Creates the thead with the text and the sorted icon.
+  const ColumnSettings = {
+    ...ReactTableDefaults.column,
+    Header: ({ column }) => (
+      <Header
+        id={id}
+        key={column.id}
+        column={column}
+        sort={sorted}
+        tableSortable={sortable}
+        onSortChange={onSortChange}
+      />
+    )
+  };
+
+  ReactTableDefaults.expanderDefaults.show = false;
+  Object.assign(ReactTableDefaults, {
+    column: ColumnSettings
+  });
+
+  // add expander button
+  const expanderColumn = createExpanderButton(columns, subElementTemplate, classes, toggleExpand);
+
+  // add expander
+  const expanderComponent = expander(subElementTemplate, classes);
+
+  const showSelectAllPages =
+    !paginationServerSide && showPagination && selection.length < data.length;
+
+  return (
+    <div id={id} className={clsx(classes.tableContainer, className)}>
+      {labels.titleText && (
+        <div className={classes.title}>
+          <div>
+            <HvTypography variant="mTitle" id={setId(id, "title")}>
+              {labels.titleText}
+            </HvTypography>
+          </div>
+          {labels.subtitleText && (
+            <div className={classes.subtitle}>
+              <HvTypography variant="sText" id={setId(id, "subtitle")}>
+                {labels.subtitleText}
+              </HvTypography>
+            </div>
+          )}
+        </div>
+      )}
+
+      {idForCheckbox && (
+        <HvBulkActions
+          id={setId(id, "select-all")}
+          aria-controls={setId(id, "table")}
+          numTotal={dataSize ?? data.length}
+          numSelected={selection.length}
+          onSelectAll={togglePage}
+          onSelectAllPages={toggleAll}
+          showSelectAllPages={showSelectAllPages}
+          labels={{
+            selectAllPages: `Select all ${data.length} items across all pages`
+          }}
+          actions={actions}
+          actionsCallback={(...args) => actionsCallback?.(...args, selection)}
+          actionsDisabled={actionsDisabled}
+          maxVisibleActions={maxVisibleActions}
+          {...allCheckBoxProps}
+        />
+      )}
+
+      <AugmentedTable
+        id={setId(id, "data")}
+        {...others}
+        {...getTableStyles()}
+        {...getPaginationProps()}
+        {...getServerSideProps()}
+        {...getSortProps()}
+        {...getCheckboxProps()}
+        ref={tableRef}
+        getTableProps={getTableProps}
+        getTheadThProps={getTheadThProps}
+        getTrProps={getTrPropsProp || getTrProps}
+        getTdProps={getTdProps}
+        getTbodyProps={getTBodyProps}
+        data={sanitizedData()}
+        columns={expanderColumn}
+        className="-highlight"
+        uniqClassName={uniqClassName}
+        SubComponent={expanderComponent}
+        expanded={expanded}
+        keyField={idForCheckbox}
+        isSelected={key => isSelected(key, selection)}
+        NoDataComponent={getNoDataProps}
+        getTrGroupProps={getTrGroupProps}
+      />
+    </div>
+  );
+};
+
+HvTable.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -844,6 +746,10 @@ Table.propTypes = {
    */
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   /**
+   * Number of data entries for server side pagination
+   */
+  dataSize: PropTypes.number,
+  /**
    * Boolean to show or hide the pagination controls
    */
   showPagination: PropTypes.bool,
@@ -900,10 +806,6 @@ Table.propTypes = {
    */
   getTrProps: PropTypes.func,
   /**
-   * Boolean to bind config back to function or not
-   */
-  useRouter: PropTypes.bool,
-  /**
    * Callback which receives the checked state of all items in the list
    */
   onSelection: PropTypes.func,
@@ -920,7 +822,33 @@ Table.propTypes = {
       action: PropTypes.func
     })
   ),
-  // eslint-disable-next-line react/require-default-props
+  /**
+   * The renderable content inside the BulkActions right actions slot,
+   * or an Array of actions `{ id, label, icon, disabled, ... }`
+   */
+  actions: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string,
+        iconCallback: PropTypes.func,
+        disabled: PropTypes.bool
+      })
+    )
+  ]),
+  /**
+   *  Whether actions should be all disabled
+   */
+  actionsDisabled: PropTypes.bool,
+  /**
+   *  The callback function ran when an action is triggered, receiving `action` as param
+   */
+  actionsCallback: PropTypes.func,
+  /**
+   *  The number of maximum visible actions before they're collapsed into a `DropDownMenu`.
+   */
+  maxVisibleActions: PropTypes.number,
   column: PropTypes.shape({
     id: PropTypes.string,
     sortable: PropTypes.bool
@@ -940,45 +868,9 @@ Table.propTypes = {
    */
   rowCount: PropTypes.number,
   /**
-   * Boolean describing if the table columns are rezisable or not
-   */
-  resizable: PropTypes.bool,
-  /**
    * Component to be shown when no data is displayed.
    */
   noDataComponent: PropTypes.node
 };
 
-Table.defaultProps = {
-  className: "",
-  uniqClassName: null,
-  id: undefined,
-  paginationLabels: {},
-  showPagination: true,
-  onPageChange: () => {},
-  showPageSize: true,
-  page: undefined,
-  pageSize: undefined,
-  onPageSizeChange: () => {},
-  paginationServerSide: false,
-  pages: undefined,
-  onFetchData: () => {},
-  sortable: true,
-  defaultSorted: [],
-  subElementTemplate: null,
-  idForCheckbox: "",
-  getTrProps: undefined,
-  useRouter: false,
-  selections: undefined,
-  onSelection: () => {},
-  secondaryActions: null,
-  allCheckBoxProps: undefined,
-  dropdownMenuProps: undefined,
-  getTableProps: undefined,
-  tableProps: { tableCaption: "Table Caption" },
-  rowCount: undefined,
-  resizable: false,
-  noDataComponent: undefined
-};
-
-export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(Table)));
+export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(HvTable));

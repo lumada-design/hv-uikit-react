@@ -1,9 +1,11 @@
+/* eslint-disable no-underscore-dangle */
+
 /**
  * Check if the row is selected based on it's key.
  *
  * @param {Number} key - the key that uniquely identifies the row.
  */
-const isSelected = (key, selection) => selection.includes(key);
+export const isSelected = (key, selection) => selection.includes(key);
 
 /**
  * Selects or unselect a row.
@@ -11,7 +13,7 @@ const isSelected = (key, selection) => selection.includes(key);
  * @param {Number} key - the key that uniquely identifies the row.
  * @param {Array} selection - the array with the selected objects.
  */
-const toggleSelection = (key, selection) => {
+export const toggleSelection = (key, selection) => {
   // start off with the existing state
   let select = selection;
 
@@ -33,38 +35,36 @@ const toggleSelection = (key, selection) => {
  * @param {Array} selection - the array with the selected objects.
  * @param {number} recordQuantity - the total records in the table.
  */
-const isIndeterminateStatus = (selection, recordQuantity) => {
+export const isIndeterminateStatus = (selection, recordQuantity) => {
   const selectionLength = selection.length;
   return selectionLength !== recordQuantity && selectionLength > 0;
 };
 
 /**
- * Selects all the avaible rows on the page.
+ * Selects all the available rows on the page.
  *
  * @param {String} idForCheckbox - property to be used as unique row identifier, One of the fields of the data.
- * @param {Boolean} selectAll - if the select all is selected or not.
- * @param {Boolean} checkboxTable - reference to the checkbox inside the react table.
+ * @param {Boolean} tableRef - reference to the react table.
+ * @param {Array} pageInfo - pagination info array with [ currentPage, currentPageSize ].
  */
-const toggleAll = (idForCheckbox, selectAll, checkboxTable) => {
-  const selection = [];
-  const selectAllToApply = !selectAll;
+export const selectPage = (idForCheckbox, tableRef, pageInfo = []) => {
+  const {
+    currentPage: page = 0,
+    currentPageSize = Number.MAX_SAFE_INTEGER,
+    paginationServerSide
+  } = pageInfo;
 
-  if (selectAllToApply) {
-    // we need to get at the internals of ReactTable
-    const wrappedInstance = checkboxTable.getWrappedInstance();
-    // the 'sortedData' property contains the currently accessible records based on the filter and sort
-    const currentRecords = wrappedInstance.getResolvedState().sortedData;
-    // we just push all the IDs onto the selection array
-    currentRecords.forEach(item => {
-      // eslint-disable-next-line no-underscore-dangle
-      selection.push(item._original[idForCheckbox]);
-    });
-  }
+  // we need to get at the internals of ReactTable
+  const wrappedInstance = tableRef.current.getWrappedInstance();
+  // the 'sortedData' property contains the currently accessible records based on the filter and sort
+  const currentRecords = wrappedInstance.getResolvedState().sortedData;
 
-  return {
-    selectAll: selectAllToApply,
-    selection
-  };
+  // we just map the IDs onto the result array
+  const selectedIds = currentRecords.map(item => item._original[idForCheckbox]);
+
+  const newSelection = paginationServerSide
+    ? selectedIds
+    : selectedIds.slice(page * currentPageSize, (page + 1) * currentPageSize);
+
+  return newSelection;
 };
-
-export { toggleAll, isIndeterminateStatus, toggleSelection, isSelected };

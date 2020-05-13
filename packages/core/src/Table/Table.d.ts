@@ -2,6 +2,7 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
 import { PaginationLabelsProp } from "../Pagination";
+import { HvActionsCommonProps } from "../Actions";
 
 export interface TableLabel {
   /**
@@ -74,7 +75,8 @@ export interface SecondaryAction extends ListValueProp {
 }
 
 export interface HvTableProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTableClassKey> {
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTableClassKey>,
+    HvActionsCommonProps {
   /**
    * Unique class name used to identify the fixed table
    */
@@ -110,6 +112,11 @@ export interface HvTableProps
    * Boolean to show or hide the page size control
    */
   showPageSize?: boolean;
+
+  /**
+   * Number of data entries for server side pagination
+   */
+  dataSize: number;
 
   /**
    * Numeric value to control the page size selected

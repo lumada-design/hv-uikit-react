@@ -13,6 +13,7 @@
     "url": "https://github.com/pentaho/hv-uikit-react.git"
   },
   "scripts": {
+    "start": "start-storybook -p 9001",
     "proptypes": "ts-node --skip-project ./scripts/generateProptypes.ts --ignore-cache",
     "clean": "npm-run-all clean:*",
     "clean:package_clean": "npx lerna run clean --parallel",

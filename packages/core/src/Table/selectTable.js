@@ -13,7 +13,7 @@ import HvCheckBox from "../Selectors/CheckBox";
 const defaultSelectInputComponent = props => {
   return (
     <HvCheckBox
-      inputProps={{ "aria-label": `${props.internalId}-select-${props.id}` }}
+      inputProps={{ "aria-label": `${props.id}-select-${props.id}` }}
       id={props.id}
       checked={props.checked}
       onChange={() => {}}
@@ -34,10 +34,10 @@ export default (Component, options) => {
 
     rowSelector(row) {
       if (!row || !row.hasOwnProperty(this.props.keyField)) return null;
-      const { toggleSelection, selectType, keyField, internalId } = this.props;
+      const { toggleSelection, selectType, keyField, id } = this.props;
       const checked = this.props.isSelected(row[this.props.keyField]);
       const inputProps = {
-        internalId,
+        id,
         checked,
         onClick: toggleSelection,
         selectType,

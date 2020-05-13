@@ -11,7 +11,7 @@ import { setId } from "../utils";
 export const DEFAULT_LABELS = {
   selectAll: "All",
   selectAllPages: "Select all from all pages",
-  selectionConjunction: "of"
+  deselectAllPages: "Unselect all"
 };
 
 /**
@@ -49,7 +49,7 @@ const HvBulkActions = props => {
       ) : (
         <>
           <b>{numSelected}</b>
-          {` ${labels.selectionConjunction} ${numTotal}`}
+          {` of ${numTotal} items`}
         </>
       )}
     </HvTypography>
@@ -80,7 +80,7 @@ const HvBulkActions = props => {
             category={editMode ? "semantic" : "ghost"}
             onClick={(...args) => onSelectAllPages?.(...args)}
           >
-            {labels.selectAllPages}
+            {numSelected === numTotal ? labels.deselectAllPages : labels.selectAllPages}
           </HvButton>
         )}
       </div>
@@ -148,9 +148,9 @@ HvBulkActions.propTypes = {
      */
     selectAllPages: PropTypes.string,
     /**
-     * Label applied to the Select All selection separator.
+     * Label applied to the Select All across all pages when all elements are selected.
      */
-    selectionConjunction: PropTypes.string
+    deselectAllPages: PropTypes.string
   }),
   /**
    * Custom label for select all checkbox
@@ -177,7 +177,7 @@ HvBulkActions.propTypes = {
    */
   onSelectAllPages: PropTypes.func,
   /**
-   * The renderable content inside the actions slot of the footer,
+   * The renderable content inside the right actions slot,
    * or an Array of actions `{ id, label, icon, disabled, ... }`
    */
   actions: PropTypes.oneOfType([

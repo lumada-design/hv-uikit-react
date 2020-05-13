@@ -50,7 +50,7 @@ const styles = theme => ({
       margin: theme.spacing("xs"),
       textAlign: "center",
       borderRadius: 4,
-      background: theme.hv.palette.atmosphere.atmo1
+      backgroundColor: theme.hv.palette.atmosphere.atmo1
     }
   }
 });
