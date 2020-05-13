@@ -2,22 +2,15 @@ import React, { useContext } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import { FocusContext } from "../utils/FocusContext";
 import SelectionContext from "../utils/SelectionContext";
 import MenuItem from "../MenuItem";
 import styles from "./styles";
 
 const MenuBar = ({ classes, id, data = [], onClick, type }) => {
   const selectionPath = useContext(SelectionContext);
-  const { state } = useContext(FocusContext);
 
   const isMenu = type === "menu";
   const isActive = isMenu && data.filter(item => item.id === selectionPath[1]).length > 0;
-
-  const handleMouseOver = () => {
-    const { itemFocused } = state;
-    itemFocused?.blur();
-  };
 
   return (
     <div
@@ -26,7 +19,7 @@ const MenuBar = ({ classes, id, data = [], onClick, type }) => {
         [classes.active]: isActive
       })}
     >
-      <ul id={id} className={classes.list} onMouseOver={handleMouseOver} onFocus={() => {}}>
+      <ul id={id} className={classes.list} onFocus={() => {}}>
         {data.map(item => (
           <MenuItem key={item.id} item={item} type={type} onClick={onClick} />
         ))}

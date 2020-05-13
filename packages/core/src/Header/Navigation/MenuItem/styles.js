@@ -1,4 +1,7 @@
 import "focus-within-polyfill";
+import focusStyles from "../../../Focus/styles";
+
+const { focused, focusDisabled, externalReference, falseFocus } = focusStyles;
 
 const styles = theme => ({
   root: {
@@ -20,17 +23,8 @@ const styles = theme => ({
       }
     }
   },
-  menubarItem: {
-    borderTop: `2px solid transparent`,
-    borderBottom: `2px solid transparent`
-  },
   selectedItem: {
     borderTop: `2px solid ${theme.hv.palette.accent.acce3}`
-  },
-  menuItem: {
-    border: "none",
-    display: "inline-flex",
-    alignItems: "center"
   },
   button: {
     border: "none",
@@ -40,6 +34,19 @@ const styles = theme => ({
     "&:active": {
       outline: "none"
     }
+  },
+  contentFocusDisabled: {
+    ...focusDisabled
+  },
+  contentFocused: {
+    ...focused
+  },
+  externalReference: {
+    ...externalReference
+  },
+  falseFocus: {
+    ...falseFocus,
+    top: "4px"
   }
 });
 

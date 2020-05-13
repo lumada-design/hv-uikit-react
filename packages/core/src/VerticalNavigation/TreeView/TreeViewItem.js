@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useMemo, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
@@ -60,6 +60,7 @@ const TreeViewItem = props => {
 
   const listItemRef = useRef(null);
   const actionableRef = useRef(null);
+  const [useFocus, setUseFocus] = useState(false);
 
   const expandable = Boolean(Array.isArray(children) ? children.length : children);
 
@@ -93,10 +94,9 @@ const TreeViewItem = props => {
 
   const handleClick = useCallback(
     event => {
+      setUseFocus(false);
       if (!tabbable) {
         focus(nodeId);
-      } else {
-        event.currentTarget.blur();
       }
 
       handleAction(event);
@@ -249,9 +249,14 @@ const TreeViewItem = props => {
         variant={selectable && selected ? "selectedText" : "normalText"}
         role="button"
         innerRef={actionableRef}
-        className={classes.content}
+        className={clsx(classes.content, {
+          [classes.contentFocused]: useFocus,
+          [classes.contentFocusDisabled]: !useFocus
+        })}
         tabIndex={tabbable ? 0 : -1}
         onKeyDown={handleKeyDown}
+        onFocus={() => setUseFocus(true)}
+        onBlur={() => setUseFocus(false)}
         onClick={handleClick}
         aria-current={!treeviewMode && selectable && selected ? "page" : undefined}
       >
@@ -260,9 +265,10 @@ const TreeViewItem = props => {
       </HvTypography>
     ),
     [
-      classes.content,
+      classes,
       handleClick,
       handleKeyDown,
+      useFocus,
       id,
       label,
       treeviewMode,
@@ -363,7 +369,15 @@ TreeViewItem.propTypes = {
     /**
      * Style applied when item is unselectable.
      */
-    unselected: PropTypes.string
+    unselected: PropTypes.string,
+    /**
+     * Style applied when element is focused by keyboard.
+     */
+    contentFocused: PropTypes.string,
+    /**
+     * Style applied when element is focused by click.
+     */
+    contentFocusDisabled: PropTypes.string
   }).isRequired,
   /**
    * Is the node disabled.
