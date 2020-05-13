@@ -29,6 +29,6 @@ focus card elements and then next card when pressed tab
     [Template]    NONE
     filter cards and reduce Window size
     Click Element                             ${card1}
-    Press Keys                                NONE    TAB    TAB    TAB    TAB    TAB
+    Press Keys                                NONE    TAB    TAB    TAB    TAB
     Element Should Be Focused                 ${card2} input
     element attribute value should contain    ${card2}    class    -focused
