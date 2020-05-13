@@ -1,7 +1,7 @@
-export { default as ListView } from "./ListView";
+export { default as HvListView } from "./ListView";
 export * from "./ListView";
 
-export { default as CardView } from "./CardView";
+export { default as HvCardView } from "./CardView";
 export * from "./CardView";
 
 export { default } from "./AssetInventory";

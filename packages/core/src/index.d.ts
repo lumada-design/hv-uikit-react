@@ -1,3 +1,6 @@
+export { default as HvAssetInventory } from "./AssetInventory";
+export * from "./AssetInventory";
+
 export { default as HvBadge } from "./Badge";
 export * from "./Badge";
 
@@ -40,7 +43,7 @@ export * from "./Header";
 export { default as HvInput } from "./Input";
 export * from "./Input";
 
-export { default as HvFileUploader } from "./FileUploader"
+export { default as HvFileUploader } from "./FileUploader";
 export * from "./FileUploader";
 
 export { default as HvSearchBox } from "./SearchBox";
@@ -157,15 +160,15 @@ export type HvSemanticColorKeys =
   | "sema18"
   | "sema19";
 
-interface HvAccentColors extends Map<HvAccentColorKeys, string> {}
+type HvAccentColors = Record<HvAccentColorKeys, string>;
 
-interface HvAtmosphereColors extends Map<HvAtmosphereColorKeys, string> {}
+type HvAtmosphereColors = Record<HvAtmosphereColorKeys, string>;
 
-interface HvBaseColors extends Map<HvBaseColorKeys, string> {}
+type HvBaseColors = Record<HvBaseColorKeys, string>;
 
-interface HvSemanticColors extends Map<HvSemanticColorKeys, string> {}
+type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
-interface HvSupportColors extends Map<string, string> {}
+type HvSupportColors = Record<string, string>;
 
 interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
   fontFamily: string;

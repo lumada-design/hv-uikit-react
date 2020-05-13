@@ -3,17 +3,7 @@ import PropTypes from "prop-types";
 import get from "lodash/get";
 import SearchBox from "../../SearchBox";
 
-const searchOperationSetup = metadata => {
-  const searchableCriteria = [];
-
-  metadata.forEach(element => {
-    if (element.searchable) {
-      searchableCriteria.push(element);
-    }
-  });
-
-  return searchableCriteria;
-};
+const searchOperationSetup = (metadata = []) => metadata.filter(element => element.searchable);
 
 const filter = (value, criteria, searchValue) => {
   const evalValue = get(value, criteria.accessor);
