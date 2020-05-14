@@ -5,8 +5,10 @@ import { setId } from "../../utils/setId";
 
 const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
   const onChangeViewHandler = (event, buttonId) => {
-    changeView(event, buttonId);
-    onViewChange(event, buttonId);
+    const ids = buttonId;
+    ids[0] = buttonId[0].replace("-button", "");
+    changeView(event, ids);
+    onViewChange(event, ids);
   };
 
   return (

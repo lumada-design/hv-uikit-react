@@ -6,9 +6,9 @@ Variables         variables.yaml
 Suite Setup       open storybook
 Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-dropdown--multi-selection    ${dropdown}    10s
 Suite Teardown    Close Browser
-Force Tags        smoke     keyboard    bug-infrastructure-ie
+Force Tags        smoke     keyboard
 
- 
+
 *** Test Cases ***
 enter: drop options when dropdown is focused and is pressed ENTER after an ESCAPE
     Click Element                        ${dropdown}

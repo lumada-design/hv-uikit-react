@@ -4,7 +4,7 @@ import { NavigationData } from "../../VerticalNavigation/Navigation";
 import { HvTypographyProps } from "../../Typography";
 
 export interface HvActionProps
-  extends StandardProps<HvTypographyProps, HvActionsClassKey, "onClick"> {
+  extends StandardProps<HvTypographyProps, HvActionClassKey, "onClick"> {
   /**
    * Visual label.
    */
@@ -21,6 +21,6 @@ export interface HvActionProps
   onClick: (event: Event, selectedItem: NavigationData) => void;
 }
 
-export type HvActionsClassKey = "action" | "noIcon";
+export type HvActionClassKey = "action" | "noIcon";
 
 export default function HvVerticalNavigationAction(props: HvActionProps): JSX.Element | null;

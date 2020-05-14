@@ -168,7 +168,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
           <p
             className="HvTypography-root HvTypography-labelText"
           >
-            25.00B progressConjunctionLabel
+            25.00B
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
@@ -208,7 +208,7 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
           <p
             className="HvTypography-root HvTypography-sText"
           >
-             875.00B
+             progressConjunctionLabel 875.00B
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
@@ -500,7 +500,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
           <p
             className="HvTypography-root HvTypography-labelText"
           >
-            25.00B progressConjunctionLabel
+            25.00B
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
@@ -540,7 +540,7 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
           <p
             className="HvTypography-root HvTypography-sText"
           >
-             875.00B
+             progressConjunctionLabel 875.00B
           </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>

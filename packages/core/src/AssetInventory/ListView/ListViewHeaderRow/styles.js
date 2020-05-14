@@ -1,22 +1,11 @@
 const styles = {
-  selectCell: {
-    maxWidth: "32px",
-    marginRight: "10px"
-  },
   root: {
+    display: "table-row",
     alignItems: "center",
-    width: "100%",
-    position: "relative",
-    "& > th": {
-      background: "transparent"
-    }
+    width: "100%"
   },
-  selectable: {
-    marginLeft: "42px"
-  },
-  notSelectable: {},
   headCell: {
-    padding: "0"
+    display: "table-cell"
   }
 };
 

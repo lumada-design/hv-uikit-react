@@ -1,7 +1,19 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-export type HvVerticalNavigationTreeViewItemClassKey = "root";
+export type HvVerticalNavigationTreeViewItemClassKey =
+    "node" |
+    "content" |
+    "group" |
+    "disabled" |
+    "collapsed" |
+    "expanded" |
+    "selectable" |
+    "unselectable" |
+    "selected" |    
+    "unselected" |
+    "contentFocused" |
+   " contentFocusDisabled";
 
 export interface HvVerticalNavigationTreeViewItemProps
   extends StandardProps<

@@ -4,6 +4,9 @@ const styles = theme => ({
   root: {
     display: "contents"
   },
+  popper: {
+    zIndex: theme.zIndex.tooltip
+  },
   icon: {
     position: "relative",
     boxSizing: "content-box",

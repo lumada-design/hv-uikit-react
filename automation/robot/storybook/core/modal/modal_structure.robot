@@ -12,7 +12,6 @@ Force Tags        smoke    keyboard
 
 *** Test Cases ***
 focus first element (close button) when modal is opened
-    [Tags]    bug-infrastructure-ie
     Click Button                                ${buttonWarning}
     Wait Until Element Is Visible               ${dialog}               5s
     Element Should Be Focused                   ${dialogCloseButton}
@@ -22,10 +21,4 @@ close modal when dialog close button is pressed
     Click Button                                ${buttonWarning}
     Wait Until Element Is Visible               ${dialog}               5s
     Click Button                                ${dialogCloseButton}
-    Wait Until Page Does Not Contain Element    ${dialog}               5s
-
-close modal when clicking out dialog
-    Click Button                                ${buttonWarning}
-    Wait Until Element Is Visible               ${dialog}               5s
-    Click Element                               css:body
     Wait Until Page Does Not Contain Element    ${dialog}               5s

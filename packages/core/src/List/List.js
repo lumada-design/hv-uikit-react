@@ -17,8 +17,7 @@ const DEFAULT_STATE = {
   allSelected: false,
   anySelected: false,
   anySelectableSelected: false,
-  allSelectableSelected: false,
-  selectionLabel: ""
+  allSelectableSelected: false
 };
 
 const DEFAULT_LABELS = {
@@ -41,10 +40,10 @@ class List extends React.Component {
 
   static getDerivedStateFromProps(props, state) {
     if (props.values !== state.values) {
-      const { labels, values } = props;
+      const { values } = props;
 
       const parsedList = parseList(values, null, props);
-      const parsedState = parseState(parsedList, labels || DEFAULT_LABELS);
+      const parsedState = parseState(parsedList);
 
       return {
         values,
@@ -59,11 +58,11 @@ class List extends React.Component {
     if (!item.path) evt.preventDefault();
     if (item.disabled) return;
 
-    const { list, labels } = this.state;
+    const { list } = this.state;
     const { onChange, onClick } = this.props;
 
     const parsedList = parseList(list, item, this.props);
-    const parsedState = parseState(parsedList, labels);
+    const parsedState = parseState(parsedList);
 
     this.setState({ ...parsedState });
 
@@ -72,11 +71,11 @@ class List extends React.Component {
   }
 
   handleSelectAll() {
-    const { list, labels, anySelectableSelected } = this.state;
+    const { list, anySelectableSelected } = this.state;
     const { onChange } = this.props;
 
     const parsedList = parseList(list, null, this.props, !anySelectableSelected);
-    const parsedState = parseState(parsedList, labels);
+    const parsedState = parseState(parsedList);
 
     this.setState({ ...parsedState });
 
@@ -84,16 +83,33 @@ class List extends React.Component {
   }
 
   renderSelectAll = () => {
-    const { id, classes } = this.props;
-    const { selectionLabel, allSelected, anySelected } = this.state;
+    const { id, classes, labels } = this.props;
+    const { list, selection, allSelected, anySelected } = this.state;
+    const { selectAll, selectionConjunction } = labels;
+
+    const ofLabel = (
+      <>
+        {selection.length}
+        <HvTypography component="span" variant="normalText">
+          {`\xa0${selectionConjunction}\xa0`}
+          {list.length}
+        </HvTypography>
+      </>
+    );
+
+    const selectionLabel = anySelected ? ofLabel : selectAll;
 
     return (
       <HvCheckBox
         id={setId(id, "select-all")}
-        label={selectionLabel}
+        label={
+          <HvTypography component="span" variant="highlightText">
+            {selectionLabel}
+          </HvTypography>
+        }
         onChange={() => this.handleSelectAll()}
         classes={{ container: classes.selectorContainer }}
-        className={clsx([classes.selectAll])}
+        className={classes.selectAll}
         indeterminate={!allSelected && anySelected}
         checked={allSelected}
       />
@@ -112,7 +128,7 @@ class List extends React.Component {
         key={i}
         rootRef={this.listRef}
         selected={item.selected}
-        disabled={item.disabled}
+        disabledClass={item.disabled}
         strategy={selectable ? "listbox" : "menu"}
         configuration={{
           tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1

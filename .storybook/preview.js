@@ -58,7 +58,7 @@ addParameters({
 
 const channel = addons.getChannel();
 
-const App = ({ story }) => {
+const App = ({ story: Story }) => {
   const [theme, setTheme] = useState(getStoredTheme());
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const App = ({ story }) => {
     return () => channel.off(UIKIT_THEME, setTheme);
   }, [channel, setTheme]);
 
-  return <HvProvider uiKitTheme={theme}>{story()}</HvProvider>;
+  return <HvProvider uiKitTheme={theme}><Story /></HvProvider>;
 };
 
 addDecorator(story => <App story={story} />);

@@ -250,7 +250,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 </ForwardRef>
               </WithStyles(ForwardRef)>
               <WithStyles(ForwardRef)
-                variant="infoText"
+                variant="sText"
               >
                 <ForwardRef
                   classes={
@@ -280,10 +280,10 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-                  variant="infoText"
+                  variant="sText"
                 >
                   <p
-                    className="HvTypography-root HvTypography-infoText"
+                    className="HvTypography-root HvTypography-sText"
                   >
                     Max. file size: 12.00B
                   </p>
@@ -330,7 +330,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 </ForwardRef>
               </WithStyles(ForwardRef)>
               <WithStyles(ForwardRef)
-                variant="infoText"
+                variant="sText"
               >
                 <ForwardRef
                   classes={
@@ -360,10 +360,10 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-                  variant="infoText"
+                  variant="sText"
                 >
                   <p
-                    className="HvTypography-root HvTypography-infoText"
+                    className="HvTypography-root HvTypography-sText"
                   >
                     jpeg
                   </p>
@@ -659,7 +659,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           <p
                             className="HvTypography-root HvTypography-sText"
                           >
-                             14.10MB
+                             of 14.10MB
                           </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
@@ -906,7 +906,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           <p
                             className="HvTypography-root HvTypography-sText"
                           >
-                             875.00kB
+                             of 875.00kB
                           </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>

@@ -91,7 +91,7 @@ This project is licensed under the terms of the [Apache 2.0 license](https://git
 
 An overview of the founding team and core contributors to Hitachi Vantara UI-KIT.
 
-UI-KIT is maintained by a small group of invaluable core contributors, with the massive support and involvement of the community. 😄
+The UI Kit is maintained by a small group of invaluable core contributors, with the massive support and involvement of the community. 😄
 
 - Diogo Mariano ([@diogofscmariano](https://github.com/diogofscmariano))
 - Tiago Santos ([@tiago-ssantos](https://github.com/tiago-ssantos))

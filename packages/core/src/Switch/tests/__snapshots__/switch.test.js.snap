@@ -118,14 +118,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          configuration={Object {}}
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
-          rootRef={Object {}}
-          selected={false}
           strategy="card"
-          useArrows={true}
           useFalseFocus={true}
         >
           <Focus
@@ -140,14 +133,7 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                 "selected": "HvFocus-selected",
               }
             }
-            configuration={Object {}}
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
-            rootRef={Object {}}
-            selected={false}
             strategy="card"
-            useArrows={true}
             useFalseFocus={true}
           >
             <ConditionalWrapper
@@ -189,7 +175,6 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                         "aria-label": "base switch",
                       }
                     }
-                    onChange={[Function]}
                     tabIndex="-1"
                     value=""
                   >
@@ -217,7 +202,6 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                           "aria-label": "base switch",
                         }
                       }
-                      onChange={[Function]}
                       tabIndex="-1"
                       value=""
                     >
@@ -250,7 +234,6 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                               "aria-label": "base switch",
                             }
                           }
-                          onChange={[Function]}
                           tabIndex="-1"
                           type="checkbox"
                           value=""
@@ -281,7 +264,6 @@ exports[`Switch input area hover input can be hovered in 1`] = `
                                 "aria-label": "base switch",
                               }
                             }
-                            onChange={[Function]}
                             tabIndex="-1"
                             type="checkbox"
                             value=""
@@ -567,14 +549,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          configuration={Object {}}
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
-          rootRef={Object {}}
-          selected={false}
           strategy="card"
-          useArrows={true}
           useFalseFocus={true}
         >
           <Focus
@@ -589,14 +564,7 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                 "selected": "HvFocus-selected",
               }
             }
-            configuration={Object {}}
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
-            rootRef={Object {}}
-            selected={false}
             strategy="card"
-            useArrows={true}
             useFalseFocus={true}
           >
             <ConditionalWrapper
@@ -638,7 +606,6 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                         "aria-label": "base switch",
                       }
                     }
-                    onChange={[Function]}
                     tabIndex="-1"
                     value=""
                   >
@@ -666,7 +633,6 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                           "aria-label": "base switch",
                         }
                       }
-                      onChange={[Function]}
                       tabIndex="-1"
                       value=""
                     >
@@ -699,7 +665,6 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                               "aria-label": "base switch",
                             }
                           }
-                          onChange={[Function]}
                           tabIndex="-1"
                           type="checkbox"
                           value=""
@@ -730,7 +695,6 @@ exports[`Switch input area hover input can be hovered out 1`] = `
                                 "aria-label": "base switch",
                               }
                             }
-                            onChange={[Function]}
                             tabIndex="-1"
                             type="checkbox"
                             value=""
@@ -1016,14 +980,7 @@ exports[`Switch label click label can be clicked 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          configuration={Object {}}
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
-          rootRef={Object {}}
-          selected={false}
           strategy="card"
-          useArrows={true}
           useFalseFocus={true}
         >
           <Focus
@@ -1038,14 +995,7 @@ exports[`Switch label click label can be clicked 1`] = `
                 "selected": "HvFocus-selected",
               }
             }
-            configuration={Object {}}
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
-            rootRef={Object {}}
-            selected={false}
             strategy="card"
-            useArrows={true}
             useFalseFocus={true}
           >
             <ConditionalWrapper
@@ -1087,7 +1037,6 @@ exports[`Switch label click label can be clicked 1`] = `
                         "aria-label": "base switch",
                       }
                     }
-                    onChange={[Function]}
                     tabIndex="-1"
                     value=""
                   >
@@ -1115,7 +1064,6 @@ exports[`Switch label click label can be clicked 1`] = `
                           "aria-label": "base switch",
                         }
                       }
-                      onChange={[Function]}
                       tabIndex="-1"
                       value=""
                     >
@@ -1148,7 +1096,6 @@ exports[`Switch label click label can be clicked 1`] = `
                               "aria-label": "base switch",
                             }
                           }
-                          onChange={[Function]}
                           tabIndex="-1"
                           type="checkbox"
                           value=""
@@ -1179,7 +1126,6 @@ exports[`Switch label click label can be clicked 1`] = `
                                 "aria-label": "base switch",
                               }
                             }
-                            onChange={[Function]}
                             tabIndex="-1"
                             type="checkbox"
                             value=""
@@ -1465,14 +1411,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          configuration={Object {}}
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
-          rootRef={Object {}}
-          selected={false}
           strategy="card"
-          useArrows={true}
           useFalseFocus={true}
         >
           <Focus
@@ -1487,14 +1426,7 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                 "selected": "HvFocus-selected",
               }
             }
-            configuration={Object {}}
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
-            rootRef={Object {}}
-            selected={false}
             strategy="card"
-            useArrows={true}
             useFalseFocus={true}
           >
             <ConditionalWrapper
@@ -1536,7 +1468,6 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                         "aria-label": "base switch",
                       }
                     }
-                    onChange={[Function]}
                     tabIndex="-1"
                     value=""
                   >
@@ -1564,7 +1495,6 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                           "aria-label": "base switch",
                         }
                       }
-                      onChange={[Function]}
                       tabIndex="-1"
                       value=""
                     >
@@ -1597,7 +1527,6 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                               "aria-label": "base switch",
                             }
                           }
-                          onChange={[Function]}
                           tabIndex="-1"
                           type="checkbox"
                           value=""
@@ -1628,7 +1557,6 @@ exports[`Switch with Custom Configurations should render correctly 1`] = `
                                 "aria-label": "base switch",
                               }
                             }
-                            onChange={[Function]}
                             tabIndex="-1"
                             type="checkbox"
                             value=""
@@ -1914,14 +1842,7 @@ exports[`Switch with no label display but with custom label configuration should
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          configuration={Object {}}
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
-          rootRef={Object {}}
-          selected={false}
           strategy="card"
-          useArrows={true}
           useFalseFocus={true}
         >
           <Focus
@@ -1936,14 +1857,7 @@ exports[`Switch with no label display but with custom label configuration should
                 "selected": "HvFocus-selected",
               }
             }
-            configuration={Object {}}
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
-            rootRef={Object {}}
-            selected={false}
             strategy="card"
-            useArrows={true}
             useFalseFocus={true}
           >
             <ConditionalWrapper
@@ -1985,7 +1899,6 @@ exports[`Switch with no label display but with custom label configuration should
                         "aria-label": "base switch",
                       }
                     }
-                    onChange={[Function]}
                     tabIndex="-1"
                     value=""
                   >
@@ -2013,7 +1926,6 @@ exports[`Switch with no label display but with custom label configuration should
                           "aria-label": "base switch",
                         }
                       }
-                      onChange={[Function]}
                       tabIndex="-1"
                       value=""
                     >
@@ -2046,7 +1958,6 @@ exports[`Switch with no label display but with custom label configuration should
                               "aria-label": "base switch",
                             }
                           }
-                          onChange={[Function]}
                           tabIndex="-1"
                           type="checkbox"
                           value=""
@@ -2077,7 +1988,6 @@ exports[`Switch with no label display but with custom label configuration should
                                 "aria-label": "base switch",
                               }
                             }
-                            onChange={[Function]}
                             tabIndex="-1"
                             type="checkbox"
                             value=""
@@ -2363,14 +2273,7 @@ exports[`Switch withStyles should render correctly 1`] = `
           </WithStyles(ForwardRef)>
         </div>
         <WithStyles(Focus)
-          configuration={Object {}}
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
-          rootRef={Object {}}
-          selected={false}
           strategy="card"
-          useArrows={true}
           useFalseFocus={true}
         >
           <Focus
@@ -2385,14 +2288,7 @@ exports[`Switch withStyles should render correctly 1`] = `
                 "selected": "HvFocus-selected",
               }
             }
-            configuration={Object {}}
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
-            rootRef={Object {}}
-            selected={false}
             strategy="card"
-            useArrows={true}
             useFalseFocus={true}
           >
             <ConditionalWrapper
@@ -2434,7 +2330,6 @@ exports[`Switch withStyles should render correctly 1`] = `
                         "aria-label": "base switch",
                       }
                     }
-                    onChange={[Function]}
                     tabIndex="-1"
                     value=""
                   >
@@ -2462,7 +2357,6 @@ exports[`Switch withStyles should render correctly 1`] = `
                           "aria-label": "base switch",
                         }
                       }
-                      onChange={[Function]}
                       tabIndex="-1"
                       value=""
                     >
@@ -2495,7 +2389,6 @@ exports[`Switch withStyles should render correctly 1`] = `
                               "aria-label": "base switch",
                             }
                           }
-                          onChange={[Function]}
                           tabIndex="-1"
                           type="checkbox"
                           value=""
@@ -2526,7 +2419,6 @@ exports[`Switch withStyles should render correctly 1`] = `
                                 "aria-label": "base switch",
                               }
                             }
-                            onChange={[Function]}
                             tabIndex="-1"
                             type="checkbox"
                             value=""

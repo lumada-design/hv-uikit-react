@@ -44,8 +44,8 @@ const assetInventoryConfiguration = {
      * Card.
      */
     breakpoints: {
-      xs: 4,
-      sm: 4,
+      xs: 12,
+      sm: 6,
       md: 4,
       lg: 3,
       xl: 3

@@ -40,4 +40,4 @@ Change date in locale pt-PT
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}    2s
     Element Attribute Value Should Be    ${input}       value         1 Fev 1970
-    
+

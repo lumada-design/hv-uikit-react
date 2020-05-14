@@ -5,10 +5,10 @@ Variables         ../../_resources/storybook_variables.yaml
 Variables         variables.yaml
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke    bug-infrastructure-ie
+Force Tags        smoke
 Documentation     please look complementary Test Cases on dropdown_keyboard_navigation.robot
 
- 
+
 *** Test Cases ***
 Focus on input when open dropdown with input
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-dropdown--single-selection-with-search

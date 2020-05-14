@@ -240,6 +240,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               "icon": "HvDropDownMenu-icon",
               "iconSelected": "HvDropDownMenu-iconSelected",
               "menuList": "HvDropDownMenu-menuList",
+              "popper": "HvDropDownMenu-popper",
               "root": "HvDropDownMenu-root HvActions-dropDownMenu",
             }
           }
@@ -272,6 +273,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 "icon": "HvDropDownMenu-icon",
                 "iconSelected": "HvDropDownMenu-iconSelected",
                 "menuList": "HvDropDownMenu-menuList",
+                "popper": "HvDropDownMenu-popper",
                 "root": "HvDropDownMenu-root HvActions-dropDownMenu",
               }
             }
@@ -567,15 +569,11 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               </WithStyles(ForwardRef(IconButton))>
               <ForwardRef(Popper)
                 anchorEl={null}
+                className="HvDropDownMenu-popper"
                 disablePortal={false}
                 open={false}
                 placement="bottom-end"
                 popperOptions={Object {}}
-                style={
-                  Object {
-                    "zIndex": 1500,
-                  }
-                }
               />
             </div>
           </DropDownMenu>
@@ -680,6 +678,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
               "icon": "HvDropDownMenu-icon",
               "iconSelected": "HvDropDownMenu-iconSelected",
               "menuList": "HvDropDownMenu-menuList",
+              "popper": "HvDropDownMenu-popper",
               "root": "HvDropDownMenu-root HvActions-dropDownMenu",
             }
           }
@@ -716,6 +715,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 "icon": "HvDropDownMenu-icon",
                 "iconSelected": "HvDropDownMenu-iconSelected",
                 "menuList": "HvDropDownMenu-menuList",
+                "popper": "HvDropDownMenu-popper",
                 "root": "HvDropDownMenu-root HvActions-dropDownMenu",
               }
             }
@@ -1015,15 +1015,11 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
               </WithStyles(ForwardRef(IconButton))>
               <ForwardRef(Popper)
                 anchorEl={null}
+                className="HvDropDownMenu-popper"
                 disablePortal={false}
                 open={false}
                 placement="bottom-end"
                 popperOptions={Object {}}
-                style={
-                  Object {
-                    "zIndex": 1500,
-                  }
-                }
               />
             </div>
           </DropDownMenu>
@@ -1420,6 +1416,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               "icon": "HvDropDownMenu-icon",
               "iconSelected": "HvDropDownMenu-iconSelected",
               "menuList": "HvDropDownMenu-menuList",
+              "popper": "HvDropDownMenu-popper",
               "root": "HvDropDownMenu-root HvActions-dropDownMenu",
             }
           }
@@ -1448,6 +1445,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 "icon": "HvDropDownMenu-icon",
                 "iconSelected": "HvDropDownMenu-iconSelected",
                 "menuList": "HvDropDownMenu-menuList",
+                "popper": "HvDropDownMenu-popper",
                 "root": "HvDropDownMenu-root HvActions-dropDownMenu",
               }
             }
@@ -1739,15 +1737,11 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               </WithStyles(ForwardRef(IconButton))>
               <ForwardRef(Popper)
                 anchorEl={null}
+                className="HvDropDownMenu-popper"
                 disablePortal={false}
                 open={false}
                 placement="bottom-end"
                 popperOptions={Object {}}
-                style={
-                  Object {
-                    "zIndex": 1500,
-                  }
-                }
               />
             </div>
           </DropDownMenu>

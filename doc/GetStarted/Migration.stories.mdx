@@ -32,9 +32,9 @@ import { Meta } from "@storybook/addon-docs/blocks";
   - [Toggle Button](#toggle-button)
   - [Tooltip](#tooltip)
 
-# From v1.x to v2.x
+## From v1.x to v2.x
 
-## Package Changes
+### Package Changes
 
 - Package `@hv/uikit-common-themes` moved from the [hv-uikit-common](https://github.com/pentaho/hv-uikit-common) repository to [this](https://github.com/pentaho/hv-uikit-react) repository. The package will continue to be published under the same name, only the repository changed.
 
@@ -43,20 +43,20 @@ import { Meta } from "@storybook/addon-docs/blocks";
   - `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
   - `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
 
-## Material-UI v4
+### Material-UI v4
 
 Material UI was upgraded from v3 to v4, and is now a peer-depencency of our packages.
 You have to install it in your project, or upgrade if you're already using it and follow their [migration guide](https://material-ui.com/guides/migration-v3/).
 
-## Provider Changes
+### Provider Changes
 
 The routing was removed from the provider. The component `HvLink` that used the router now offers either a `href` attribute or a `<div />` with an `onClick`.
 
-## Layout Changes
+### Layout Changes
 
 The greater change is our layout component (the Grid) is the definition of spacing, that now uses a 7.5px factor. For example if we passed a spacing of 2, the resulting spacing between containers is 15px.
 
-## Icons Changes
+### Icons Changes
 
 - Removed all deprecated icons. Generic Icons were moved up a directory (to `dist/`).
 - Added the icons index to the module for allowing the ES6 import usage (destructuring).
@@ -70,7 +70,7 @@ To import an icon you should use (using `Checkbox` as an example):
 
 - Icon box dimensions are now according to Design System specifications by default.
 
-## Component Changes
+### Component Changes
 
 With our first major release several components where reviewed in order to remove properties already marked as deprecated. The following list lists all breaking changes that you must fix.
 
@@ -86,7 +86,7 @@ With our first major release several components where reviewed in order to remov
 +<HvMultiButton onChange={(event, data)} />
 ```
 
-### Asset Inventory
+#### Asset Inventory
 
 - `searchBoxLabels` and `labels` merged into `labels`
 - #### List View Row
@@ -95,12 +95,12 @@ With our first major release several components where reviewed in order to remov
   - `checkboxValue` renamed to `checkboxProps.value`
   - `checkboxIndeterminate` renamed to `checkboxProps.indeterminate`
 
-### Button
+#### Button
 
 - `type` renamed to `category`.
 - `colorType` renamed to `category`.
 
-### Card
+#### Card
 
 - Removed class `upperArea`
 - `onClickAction` renamed to `onClick`
@@ -119,19 +119,19 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
 - `checkboxAriaLabel`, `checkboxAriaLabelledBy`, `checkboxAriaDescribedBy` were removed. You should instead pass these props to `checkboxProps`
 - `defaultAriaLabel`, `defaultAriaLabelledBy`, `defaultAriaDescribedBy` removed. You should instead pass these props to `cardButtonProps`
 
-- #### Card Header
+- ##### Card Header
 
   - `needsBorder` removed (was not in use)
   - `onClickAction` renamed to `onClick`
 
-- #### Card Content
+- ##### Card Content
 
   - `needsBorder` removed (was not in use)
   - `buttomBorder` class removed
   - `innerCardContent` renamed to `children`
   - `onClickAction` renamed to `onClick`
 
-- #### Card Footer
+- ##### Card Footer
 
   - `actions.icon` renamed to `actions.iconCallback`
   - `checkboxSelected` changed to `checked`
@@ -142,7 +142,7 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
   - `checkboxAriaLabelledby` changed to `checkboxProps.aria-labelledby`
   - `checkboxDescribedby` changed to `checkboxProps.aria-describedby`
 
-- #### Card Media
+- ##### Card Media
   - `mediaTitle` renamed to `title`
   - `mediaContainer` class rename to `root`
   - `mediaAriaLabel` removed. Pass `aria-label` directly
@@ -151,23 +151,23 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
   - `mediaTitle` renamed to `title`
   - `onClickAction` renamed to `onClick`
 
-### Checkbox
+#### Checkbox
 
 - `type` renamed to `category`.
 - `colorType` renamed to `category`.
 - `propsIcon` renamed to `formControlLabelProps`
 - Removed `checkboxProps` and `propsLabel`. These are now directly passed to the Checkbox
 
-### Dropdown
+#### Dropdown
 
 - `label` changed to `labels.title`
 - `rootActive` class renamed to `rootOpen`
 
-### Dropdown Menu
+#### Dropdown Menu
 
 - `onClick` callback was triggered not only on selection but also when opening the dropdown. A new specific callback `onToggleOpen` was created. This callback is triggered whenever the open state of the dropdown changes
 
-### Input
+#### Input
 
 - `validate` renamed to `showInfo`
 - `value` renamed to `initialValue`
@@ -178,19 +178,19 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
 - `container` class renamed to `root`.
 - `labelDisable` class renamed to `labelDisabled`.
 
-### KPI
+#### KPI
 
 - `kpiContainer` class renamed to `root`
 - `kpiTextConfiguration` renamed to `labels`.
 
-### List
+#### List
 
 - Renamed `root` class to `list`
 - Removed `listProps` props. Instead pass props directly to the component
 - `values.leftIcon` replaced by `values.iconCallback`
 - These changes should also propagated to the `DropDropMenu` and `VerticalNavigation` components
 
-### Login
+#### Login
 
 - `titleText` changed to `labels.titleText`
 - `recoveryTitle` changed to `labels.recoveryTitle`
@@ -209,49 +209,49 @@ As for the accessibility aria-\* props, you should pass them directly to the sub
   - Renamed `logoContainer` class to `root`.
   - Renamed `root` class to `titleContainer`.
 
-### Modal
+#### Modal
 
 - Removed `iconContainer` class - use `closeButton` class instead.
 - #### Modal Actions
   - Renamed class `action` to `spacing`.
 
-### Multi-Button
+#### Multi-Button
 
 - Removed `btnBase` and `btnSecondary` classes - use `button` class instead.
 - Renamed `rootVertical` class to `vertical`.
 
-### Radio Button
+#### Radio Button
 
 - `propsLabel` renamed to `formControlLabelProps`
 - Removed `radioProps` and `propsIcon`. Instead pass props directly to the component
 
-### Snackbar
+#### Snackbar
 
 - `message` renamed to `label`
 - Now has `offset=60` as a default, matching `HvBanner`.
 
-### Tabs
+#### Tabs
 
 - Css class `labelContainer` passed to the `root`
 
-### Table
+#### Table
 
 - `titleText` changed to `labels.titleText`
 - `subtitleText` changed to `labels.subtitleText`
 
-### Text Area
+#### Text Area
 
 - `inputTextConfiguration` replaced by `labels`
 - `value` renamed to `initialValue` (used just for initial values)
 - `inputValue` renamed to `value`
 
-### Toggle Button
+#### Toggle Button
 
 - `selectedTitle` changed to `labels.selectedTitle`
 - `notSelectedTitle` changed to `labels.notSelectedTitle`
 - Removed display inline-table from icon
 
-### Tooltip
+#### Tooltip
 
 - Renamed `multitooltip` class to `tooltipMulti`.
 - `tooltipAnchor` removes, now uses composition.

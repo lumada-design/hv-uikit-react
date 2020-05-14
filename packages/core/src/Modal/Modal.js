@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import FocusTrap from "focus-trap-react";
 import { Dialog, withStyles } from "@material-ui/core";
 import Close from "@hv/uikit-react-icons/dist/Close";
+import isNil from "lodash/isNil";
 import Button from "../Button";
-import { setId } from "../utils";
+import { isKeypress, KeyboardCodes, setId } from "../utils";
 import styles from "./styles";
 import withTooltip from "../withTooltip";
+import { getFocusableList } from "../utils/focusableElementFinder";
 
 /**
  * The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, etc.
@@ -24,27 +25,67 @@ const HvModal = ({
   buttonTitle = "Close",
   ...others
 }) => {
-  const initialFocus = firstFocusable
-    ? () => {
-        if (!document.getElementById(firstFocusable)) {
+  const [focusableQueue, setFocusableQueue] = useState(null);
+
+  const measuredRef = useCallback(node => {
+    if (node) {
+      const focusableList = getFocusableList(node);
+      setFocusableQueue({
+        first: focusableList[1],
+        last: focusableList[focusableList.length - 2]
+      });
+      if (isNil(firstFocusable)) focusableList[1].focus();
+      else {
+        const element = document.getElementById(firstFocusable);
+        if (element) element.focus();
+        else {
           // eslint-disable-next-line no-console
           console.warn(`firstFocusable element ${firstFocusable} not found.`);
-          return null;
+          focusableList[1].focus();
         }
-        return document.getElementById(firstFocusable);
       }
-    : undefined;
+    }
+  }, []);
 
   const closeButtonDisplay = () => <Close role="presentation" />;
 
   const CloseButtonTooltipWrapper = buttonTitle
-    ? withTooltip(closeButtonDisplay, buttonTitle, "right")
+    ? withTooltip(closeButtonDisplay, buttonTitle, "top")
     : closeButtonDisplay;
+
+  const keyDownHandler = event => {
+    if (isKeypress(event, KeyboardCodes.Tab) && !isNil(event.target) && !isNil(focusableQueue)) {
+      if (event.shiftKey && event.target === focusableQueue.first) {
+        focusableQueue.last.focus();
+        event.preventDefault();
+      }
+      if (!event.shiftKey && event.target === focusableQueue.last) {
+        focusableQueue.first.focus();
+        event.preventDefault();
+      }
+    }
+    // Needed as this handler overrides the one in the material ui Modal.
+    else if (isKeypress(event, KeyboardCodes.Esc)) {
+      if (others.onEscapeKeyDown) {
+        others.onEscapeKeyDown(event);
+      }
+
+      if (!others.disableEscapeKeyDown) {
+        // Swallow the event, in case someone is listening for the escape key on the body.
+        event.stopPropagation();
+
+        if (onClose) {
+          onClose(event, "escapeKeyDown");
+        }
+      }
+    }
+  };
 
   return (
     <Dialog
       className={clsx(classes.root, className)}
       id={id}
+      ref={measuredRef}
       open={open}
       PaperProps={{
         classes: {
@@ -57,28 +98,21 @@ const HvModal = ({
         }
       }}
       onClose={(event, reason) => onClose(event, reason)}
+      onKeyDown={keyDownHandler}
       {...others}
     >
-      <FocusTrap
-        focusTrapOptions={{
-          escapeDeactivates: false,
-          clickOutsideDeactivates: true,
-          initialFocus
-        }}
-      >
-        <div aria-modal>
-          <Button
-            id={setId(id, "close")}
-            className={classes.closeButton}
-            category="ghost"
-            onClick={event => onClose(event)}
-            aria-label={buttonTitle}
-          >
-            <CloseButtonTooltipWrapper />
-          </Button>
-          {children}
-        </div>
-      </FocusTrap>
+      <div aria-modal>
+        <Button
+          id={setId(id, "close")}
+          className={classes.closeButton}
+          category="ghost"
+          onClick={event => onClose(event)}
+          aria-label={buttonTitle}
+        >
+          <CloseButtonTooltipWrapper />
+        </Button>
+        {children}
+      </div>
     </Dialog>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
@@ -6,12 +6,15 @@ import { KeyboardCodes, isKeypress } from "../../../utils/KeyboardUtils";
 import HvTypography from "../../../Typography";
 import SelectionContext from "../utils/SelectionContext";
 import { FocusContext } from "../utils/FocusContext";
+import ConditionalWrapper from "../../../utils/ConditionalWrapper";
 import MenuBar from "../MenuBar";
 import styles from "./styles";
+import isBrowser from "../../../utils/browser";
 
 const MenuItem = ({ classes, id, item, type, onClick }) => {
   const selectionPath = useContext(SelectionContext);
   const { dispatch } = useContext(FocusContext);
+  const [useFocus, setUseFocus] = useState(false);
 
   const { data } = item;
   const isMenu = type === "menu";
@@ -25,8 +28,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
       isKeypress(event, KeyboardCodes.SpaceBar)
     ) {
       if (event.type === "click") {
-        // hide focus outline when using mouse
-        event.currentTarget.blur();
+        setUseFocus(false);
       }
 
       onClick?.(event, item);
@@ -34,9 +36,17 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
   };
 
   const handleFocus = event => {
+    setUseFocus(true);
     dispatch({ type: "setItemFocused", itemFocused: event.currentTarget });
   };
 
+  const focusWrapper = childrenToWrap => (
+    <div className={classes.externalReference}>
+      {childrenToWrap}
+      {useFocus && <div className={classes.falseFocus} />}
+    </div>
+  );
+  const isIe = isBrowser(["ie", "edge"]);
   return (
     <li
       id={id}
@@ -46,18 +56,24 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
         [classes.selectedItem]: isSelected
       })}
     >
-      <div
-        role="button"
-        className={classes.button}
-        onClick={actionHandler}
-        onKeyDown={actionHandler}
-        tabIndex={0}
-        onFocus={handleFocus}
-      >
-        <HvTypography variant={isSelected ? "selectedNavText" : "normalText"}>
-          {item.label}
-        </HvTypography>
-      </div>
+      <ConditionalWrapper condition={isIe} wrapper={focusWrapper}>
+        <div
+          role="button"
+          className={clsx(classes.button, {
+            [classes.contentFocused]: useFocus && !isIe,
+            [classes.contentFocusDisabled]: isIe || !useFocus
+          })}
+          onClick={actionHandler}
+          onKeyDown={actionHandler}
+          tabIndex={0}
+          onFocus={handleFocus}
+          onBlur={() => setUseFocus(false)}
+        >
+          <HvTypography variant={isSelected ? "selectedNavText" : "normalText"}>
+            {item.label}
+          </HvTypography>
+        </div>
+      </ConditionalWrapper>
       {hasSubLevel && <MenuBar data={data} onClick={onClick} type="menu" />}
     </li>
   );
@@ -68,11 +84,34 @@ MenuItem.propTypes = {
    * A Jss Object used to override or extend the styles applied.
    */
   classes: PropTypes.shape({
+    /**
+     * Style applied to the first element in the hierarchy.
+     */
     root: PropTypes.string,
-    menubarItem: PropTypes.string,
+    /**
+     * Style applied to the li element when it is selected.
+     */
     selectedItem: PropTypes.string,
-    menuItem: PropTypes.string,
-    button: PropTypes.string
+    /**
+     * Style applied to each item button.
+     */
+    button: PropTypes.string,
+    /**
+     * Style applied when element is focused by keyboard.
+     */
+    contentFocused: PropTypes.string,
+    /**
+     * Style applied when element is focused by click.
+     */
+    contentFocusDisabled: PropTypes.string,
+    /**
+     * Style applied to the reference element used for ie focus.
+     */
+    externalReference: PropTypes.string,
+    /**
+     * Style applied to simulated a focues in ie.
+     */
+    falseFocus: PropTypes.string
   }).isRequired,
   /**
    * Id to be applied to the root node.

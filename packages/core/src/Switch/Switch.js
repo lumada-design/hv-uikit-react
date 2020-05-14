@@ -4,7 +4,7 @@ import clsx from "clsx";
 import isNil from "lodash/isNil";
 import { Switch, withStyles } from "@material-ui/core";
 import CheckMark from "@hv/uikit-react-icons/dist/CompletedStep";
-import { setId, isKeypress, KeyboardCodes } from "../utils";
+import { setId } from "../utils";
 import withLabels from "../withLabels";
 import HvTypography from "../Typography";
 import Focus from "../Focus";
@@ -34,19 +34,6 @@ const HvSwitch = props => {
   } = props;
 
   const [clickState, setClicked] = useState(checked);
-
-  const handleChange = event => {
-    setClicked(event.target.checked);
-    onChange?.(event);
-  };
-
-  const onKeyDownHandler = event => {
-    if (isKeypress(event, KeyboardCodes.SpaceBar)) {
-      const newState = !clickState;
-      setClicked(newState);
-      onChange?.(event, newState);
-    }
-  };
 
   const onClickHandler = event => {
     const newState = !clickState;
@@ -79,10 +66,10 @@ const HvSwitch = props => {
         <div
           className={classes.root}
           onClick={disabled ? undefined : onClickHandler}
+          onKeyDown={disabled ? undefined : onClickHandler}
           role="checkbox"
           tabIndex="0"
           aria-checked={clickState}
-          onKeyDown={disabled ? undefined : onKeyDownHandler}
           aria-disabled={disabled}
           id={id}
           {...others}
@@ -90,7 +77,6 @@ const HvSwitch = props => {
           <Switch
             tabIndex="-1"
             checked={clickState}
-            onChange={handleChange}
             disabled={disabled}
             value={value}
             inputProps={{

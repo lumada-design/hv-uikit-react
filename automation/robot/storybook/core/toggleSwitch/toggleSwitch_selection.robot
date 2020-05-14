@@ -5,7 +5,7 @@ Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
 Suite Teardown    Close Browser
-Force Tags        smoke 
+Force Tags        smoke
 
 
 *** Test Cases ***
@@ -50,7 +50,7 @@ does not switch when is clicked any label of disabled element
     Checkbox Should Be Selected         ${switch} input
 
 switch to Off when checkbox is focused and is pressed SPACE
-    [Tags]    keyboard    bug-infrastructure-ie
+    [Tags]    keyboard
     Go To                              ${STORYBOOK_URL}/iframe.html?id=components-selectors-switch--main
     Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input

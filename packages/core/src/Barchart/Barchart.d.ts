@@ -2,13 +2,13 @@ import { HvChartProps } from "../Chart";
 
 export interface HvBarchartProps extends HvChartProps {
   /**
-   * Sets is the chart is stack.
+   * Sets if the chart is stack.
    */
-  stack: boolean;
+  stack?: boolean;
   /**
-   * Sets is the chart is horizontal.
+   * Sets if the chart is horizontal.
    */
-  horizontal: boolean;
+  horizontal?: boolean;
 }
 
 export default function HvBarchart(props: HvBarchartProps): JSX.Element | null;

@@ -39,10 +39,7 @@ const styles = theme => ({
   checkBox: {
     padding: 0
   },
-  icon: {
-    width: "32px",
-    height: "24px"
-  }
+  icon: {}
 });
 
 export default styles;

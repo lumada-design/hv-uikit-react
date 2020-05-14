@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Card from "../../Card";
 import Grid from "../../Grid";
+import Focus from "../../Focus";
 import styles from "./styles";
+import setActionsId from "../setActionsId";
+
+import useWidth from "../../utils/useWidth";
+import { setId } from "../../utils/setId";
 
 const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
   if (render) {
-    return data => render(data, viewConfiguration, metadata, cardProps);
+    return data =>
+      render(
+        data,
+        { ...viewConfiguration, actions: setActionsId(viewConfiguration.actions, data.id) },
+        metadata,
+        cardProps
+      );
   }
   return data => (
     <Card
       {...data}
       onChange={viewConfiguration.onSelection}
-      actions={viewConfiguration.actions}
+      actions={setActionsId(viewConfiguration.actions, data.id)}
       isSelectable={viewConfiguration.isSelectable}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
@@ -58,34 +69,54 @@ const CardView = ({
 
   const { breakpoints } = viewConfiguration;
 
+  const currentBreakpoint = useWidth();
+  const cardJump = () =>
+    breakpoints[currentBreakpoint] === false ? 1 : 12 / breakpoints[currentBreakpoint];
+
   /**
    * Render of the cards for each value.
    */
-  const renderCards = values.map(value => {
-    if (selectedValues && selectedValues.indexOf(value.id) > -1) {
-      // eslint-disable-next-line no-param-reassign
-      value.checked = true;
-    } else {
-      // eslint-disable-next-line no-param-reassign
-      value.checked = false;
-    }
-    return (
-      <Grid
-        id={value.id}
-        key={value.id}
-        item
-        xs={breakpoints.xs}
-        sm={breakpoints.sm}
-        md={breakpoints.md}
-        lg={breakpoints.lg}
-        xl={breakpoints.xl}
-      >
-        {cardRender(value, others)}
-      </Grid>
-    );
-  });
+  const renderCards = containerRef => {
+    return values.map((value, index) => {
+      if (selectedValues && selectedValues.indexOf(value.id) > -1) {
+        // eslint-disable-next-line no-param-reassign
+        value.checked = true;
+      } else {
+        // eslint-disable-next-line no-param-reassign
+        value.checked = false;
+      }
 
-  return (
+      const gridId = setId(value.id, "grid");
+
+      return (
+        <Grid
+          id={gridId}
+          key={value.id}
+          item
+          xs={breakpoints.xs}
+          sm={breakpoints.sm}
+          md={breakpoints.md}
+          lg={breakpoints.lg}
+          xl={breakpoints.xl}
+        >
+          <Focus
+            rootRef={containerRef}
+            key={value.id}
+            strategy="grid"
+            filterClass="grid"
+            navigationJump={cardJump()}
+            focusDisabled={false}
+          >
+            <div key={value.id} tabIndex={index === 0 ? 0 : -1}>
+              {cardRender(value, others)}
+            </div>
+          </Focus>
+        </Grid>
+      );
+    });
+  };
+
+  const GridDisplay = containerRef => (
     <Grid
       className={clsx(className, classes.root)}
       id={id}
@@ -94,8 +125,14 @@ const CardView = ({
       alignItems="flex-start"
       spacing={4}
     >
-      {renderCards}
+      {renderCards(containerRef)}
     </Grid>
+  );
+  const containerRef = useRef(null);
+  return (
+    <div className={classes.root} ref={containerRef}>
+      <div className={classes.elements}>{GridDisplay(containerRef)}</div>
+    </div>
   );
 };
 
@@ -117,7 +154,11 @@ CardView.propTypes = {
     /**
      * Styles applied to the root.
      */
-    root: PropTypes.string
+    root: PropTypes.string,
+    /**
+     * Styles applied to the component that contains the elements class.
+     */
+    elements: PropTypes.string
   }).isRequired,
   /**
    * Icon used in the multi button in the assert inventory.

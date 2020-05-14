@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 import { HvSwitch } from "../..";
+import Typography from "../../Typography";
 
 export default {
   title: "Components/Selectors/Switch",
@@ -14,26 +17,61 @@ export const Main = () => {
   return <HvSwitch />;
 };
 
+export const OnChange = () => {
+  const [state, setState] = useState(false);
+
+  const useStyles = makeStyles(theme => ({
+    on: {
+      color: theme.hv.palette.semantic.sema1
+    },
+    off: {
+      color: theme.hv.palette.semantic.sema13
+    }
+  }));
+
+  const StateString = () => {
+    const classes = useStyles();
+    return (
+      <Typography className={clsx({ [classes.on]: state, [classes.off]: !state })}>
+        {`The switch is ${state ? "On" : "Off"}`}
+      </Typography>
+    );
+  };
+
+  return (
+    <>
+      <HvSwitch
+        checked={state}
+        id="Switch-no-labels"
+        aria-label="Engine Control"
+        displayIconChecked
+        onChange={() => setState(!state)}
+      />
+      <p />
+      <StateString state={state} />
+    </>
+  );
+};
+
+OnChange.story = {
+  parameters: {
+    docs: {
+      storyDescription: "OnChange is called in the labels as in the switch itself."
+    }
+  }
+};
+
 export const NoLabels = () => (
   <HvSwitch
     checked
     id="Switch-no-labels"
-    disabled={false}
     showLabels={false}
     aria-label="Engine Control"
     displayIconChecked
   />
 );
 
-NoLabels.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a switch without labels."
-    }
-  }
-};
-
-export const Label = () => {
+export const LabelsDefinition = () => {
   const labels = {
     left: "Disconnect",
     right: "Connect"
@@ -42,20 +80,4 @@ export const Label = () => {
   return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
 };
 
-Label.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a switch that includes a label."
-    }
-  }
-};
-
 export const Disabled = () => <HvSwitch disabled />;
-
-Disabled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "A sample showcasing a disabled switch that does not allow interaction."
-    }
-  }
-};

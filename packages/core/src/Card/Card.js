@@ -89,7 +89,7 @@ const HvCard = ({
 
   const defaultContent = (
     <>
-      <Focus strategy="card" useFalseFocus>
+      <Focus strategy="card" useFalseFocus disabled={internalCardButtonProps.tabIndex !== "0"}>
         <div
           className={clsx({
             [classes.upperAreaSelectable]: internalCardButtonProps.tabIndex

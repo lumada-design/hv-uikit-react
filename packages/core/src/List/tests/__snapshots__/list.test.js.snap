@@ -194,9 +194,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -251,8 +248,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -271,9 +266,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -327,8 +319,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -400,9 +390,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -457,8 +444,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -477,9 +462,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -533,8 +515,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -606,9 +586,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -663,8 +640,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -683,9 +658,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -739,8 +711,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -1124,7 +1094,23 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
         }
         indeterminate={true}
-        label="2 of 3"
+        label={
+          <ForwardRef(WithStyles)
+            component="span"
+            variant="highlightText"
+          >
+            <React.Fragment>
+              2
+              <ForwardRef(WithStyles)
+                component="span"
+                variant="normalText"
+              >
+                 of 
+                3
+              </ForwardRef(WithStyles)>
+            </React.Fragment>
+          </ForwardRef(WithStyles)>
+        }
         onChange={[Function]}
       >
         <HvCheckbox
@@ -1143,7 +1129,23 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
           }
           indeterminate={true}
-          label="2 of 3"
+          label={
+            <ForwardRef(WithStyles)
+              component="span"
+              variant="highlightText"
+            >
+              <React.Fragment>
+                2
+                <ForwardRef(WithStyles)
+                  component="span"
+                  variant="normalText"
+                >
+                   of 
+                  3
+                </ForwardRef(WithStyles)>
+              </React.Fragment>
+            </ForwardRef(WithStyles)>
+          }
           onChange={[Function]}
         >
           <WithStyles(ForwardRef(FormControlLabel))
@@ -1183,7 +1185,23 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               />
             }
             disabled={false}
-            label="2 of 3"
+            label={
+              <ForwardRef(WithStyles)
+                component="span"
+                variant="highlightText"
+              >
+                <React.Fragment>
+                  2
+                  <ForwardRef(WithStyles)
+                    component="span"
+                    variant="normalText"
+                  >
+                     of 
+                    3
+                  </ForwardRef(WithStyles)>
+                </React.Fragment>
+              </ForwardRef(WithStyles)>
+            }
             labelPlacement="end"
           >
             <ForwardRef(FormControlLabel)
@@ -1227,7 +1245,23 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 />
               }
               disabled={false}
-              label="2 of 3"
+              label={
+                <ForwardRef(WithStyles)
+                  component="span"
+                  variant="highlightText"
+                >
+                  <React.Fragment>
+                    2
+                    <ForwardRef(WithStyles)
+                      component="span"
+                      variant="normalText"
+                    >
+                       of 
+                      3
+                    </ForwardRef(WithStyles)>
+                  </React.Fragment>
+                </ForwardRef(WithStyles)>
+              }
               labelPlacement="end"
             >
               <label
@@ -1560,7 +1594,91 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     <span
                       className="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                     >
-                      2 of 3
+                      <WithStyles(ForwardRef)
+                        component="span"
+                        variant="highlightText"
+                      >
+                        <ForwardRef
+                          classes={
+                            Object {
+                              "3xlTitle": "HvTypography-3xlTitle",
+                              "4xlTitle": "HvTypography-4xlTitle",
+                              "5xlTitle": "HvTypography-5xlTitle",
+                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "highlightText": "HvTypography-highlightText",
+                              "infoText": "HvTypography-infoText",
+                              "inlineLink": "HvTypography-inlineLink",
+                              "lTitle": "HvTypography-lTitle",
+                              "labelText": "HvTypography-labelText",
+                              "mTitle": "HvTypography-mTitle",
+                              "normalText": "HvTypography-normalText",
+                              "placeholderText": "HvTypography-placeholderText",
+                              "root": "HvTypography-root",
+                              "sLink": "HvTypography-sLink",
+                              "sText": "HvTypography-sText",
+                              "sTitle": "HvTypography-sTitle",
+                              "selectedNavText": "HvTypography-selectedNavText",
+                              "selectedText": "HvTypography-selectedText",
+                              "vizText": "HvTypography-vizText",
+                              "xlTitle": "HvTypography-xlTitle",
+                              "xsTitle": "HvTypography-xsTitle",
+                              "xxlTitle": "HvTypography-xxlTitle",
+                              "xxsTitle": "HvTypography-xxsTitle",
+                            }
+                          }
+                          component="span"
+                          variant="highlightText"
+                        >
+                          <span
+                            className="HvTypography-root HvTypography-highlightText"
+                          >
+                            2
+                            <WithStyles(ForwardRef)
+                              component="span"
+                              variant="normalText"
+                            >
+                              <ForwardRef
+                                classes={
+                                  Object {
+                                    "3xlTitle": "HvTypography-3xlTitle",
+                                    "4xlTitle": "HvTypography-4xlTitle",
+                                    "5xlTitle": "HvTypography-5xlTitle",
+                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "highlightText": "HvTypography-highlightText",
+                                    "infoText": "HvTypography-infoText",
+                                    "inlineLink": "HvTypography-inlineLink",
+                                    "lTitle": "HvTypography-lTitle",
+                                    "labelText": "HvTypography-labelText",
+                                    "mTitle": "HvTypography-mTitle",
+                                    "normalText": "HvTypography-normalText",
+                                    "placeholderText": "HvTypography-placeholderText",
+                                    "root": "HvTypography-root",
+                                    "sLink": "HvTypography-sLink",
+                                    "sText": "HvTypography-sText",
+                                    "sTitle": "HvTypography-sTitle",
+                                    "selectedNavText": "HvTypography-selectedNavText",
+                                    "selectedText": "HvTypography-selectedText",
+                                    "vizText": "HvTypography-vizText",
+                                    "xlTitle": "HvTypography-xlTitle",
+                                    "xsTitle": "HvTypography-xsTitle",
+                                    "xxlTitle": "HvTypography-xxlTitle",
+                                    "xxsTitle": "HvTypography-xxsTitle",
+                                  }
+                                }
+                                component="span"
+                                variant="normalText"
+                              >
+                                <span
+                                  className="HvTypography-root HvTypography-normalText"
+                                >
+                                   of 
+                                  3
+                                </span>
+                              </ForwardRef>
+                            </WithStyles(ForwardRef)>
+                          </span>
+                        </ForwardRef>
+                      </WithStyles(ForwardRef)>
                     </span>
                   </ForwardRef(Typography)>
                 </WithStyles(ForwardRef(Typography))>
@@ -1580,9 +1698,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -1640,7 +1755,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   <span
                     class="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                   >
-                    2 of 3
+                    <span
+                      class="HvTypography-root HvTypography-highlightText"
+                    >
+                      2
+                      <span
+                        class="HvTypography-root HvTypography-normalText"
+                      >
+                         of 
+                        3
+                      </span>
+                    </span>
                   </span>
                 </label>
                 <ul
@@ -1821,8 +1946,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -1841,9 +1964,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -1900,7 +2020,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     <span
                       class="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                     >
-                      2 of 3
+                      <span
+                        class="HvTypography-root HvTypography-highlightText"
+                      >
+                        2
+                        <span
+                          class="HvTypography-root HvTypography-normalText"
+                        >
+                           of 
+                          3
+                        </span>
+                      </span>
                     </span>
                   </label>
                   <ul
@@ -2081,8 +2211,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -2551,9 +2679,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -2611,7 +2736,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   <span
                     class="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                   >
-                    2 of 3
+                    <span
+                      class="HvTypography-root HvTypography-highlightText"
+                    >
+                      2
+                      <span
+                        class="HvTypography-root HvTypography-normalText"
+                      >
+                         of 
+                        3
+                      </span>
+                    </span>
                   </span>
                 </label>
                 <ul
@@ -2792,8 +2927,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -2812,9 +2945,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -2871,7 +3001,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     <span
                       class="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                     >
-                      2 of 3
+                      <span
+                        class="HvTypography-root HvTypography-highlightText"
+                      >
+                        2
+                        <span
+                          class="HvTypography-root HvTypography-normalText"
+                        >
+                           of 
+                          3
+                        </span>
+                      </span>
                     </span>
                   </label>
                   <ul
@@ -3052,8 +3192,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -3522,9 +3660,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -3582,7 +3717,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   <span
                     class="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                   >
-                    2 of 3
+                    <span
+                      class="HvTypography-root HvTypography-highlightText"
+                    >
+                      2
+                      <span
+                        class="HvTypography-root HvTypography-normalText"
+                      >
+                         of 
+                        3
+                      </span>
+                    </span>
                   </span>
                 </label>
                 <ul
@@ -3763,8 +3908,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -3783,9 +3926,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -3842,7 +3982,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     <span
                       class="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
                     >
-                      2 of 3
+                      <span
+                        class="HvTypography-root HvTypography-highlightText"
+                      >
+                        2
+                        <span
+                          class="HvTypography-root HvTypography-normalText"
+                        >
+                           of 
+                          3
+                        </span>
+                      </span>
                     </span>
                   </label>
                   <ul
@@ -4023,8 +4173,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -4588,9 +4736,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -4642,8 +4787,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -4662,9 +4805,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -4715,8 +4855,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -4788,9 +4926,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -4842,8 +4977,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -4862,9 +4995,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -4915,8 +5045,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -4987,9 +5115,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -5041,8 +5166,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5061,9 +5184,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5114,8 +5234,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -5285,9 +5403,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -5372,8 +5487,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5392,9 +5505,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5478,8 +5588,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -5581,9 +5689,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -5668,8 +5773,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5688,9 +5791,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -5774,8 +5874,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -5846,9 +5944,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -5933,8 +6028,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -5953,9 +6046,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -6039,8 +6129,6 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -6242,9 +6330,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               "tabIndex": 0,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="0"
           rootRef={
@@ -6420,8 +6505,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           }
           selected={true}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -6440,9 +6523,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "tabIndex": 0,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -6617,8 +6697,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             }
             selected={true}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -7035,9 +7113,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="1"
           rootRef={
@@ -7213,8 +7288,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -7233,9 +7306,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -7410,8 +7480,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}
@@ -7827,9 +7895,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
               "tabIndex": -1,
             }
           }
-          disabled={false}
-          focusDisabled={true}
-          focusOnClick={false}
           isDropdown={true}
           key="2"
           rootRef={
@@ -8005,8 +8070,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           }
           selected={false}
           strategy="listbox"
-          useArrows={true}
-          useFalseFocus={false}
         >
           <Focus
             classes={
@@ -8025,9 +8088,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "tabIndex": -1,
               }
             }
-            disabled={false}
-            focusDisabled={true}
-            focusOnClick={false}
             isDropdown={true}
             rootRef={
               Object {
@@ -8202,8 +8262,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
             }
             selected={false}
             strategy="listbox"
-            useArrows={true}
-            useFalseFocus={false}
           >
             <ConditionalWrapper
               condition={false}

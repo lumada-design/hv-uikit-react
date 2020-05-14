@@ -15,7 +15,7 @@ ${labelInputDate}    css:input[placeholder='Select a date']
 
 
 *** Test Cases ***
-Verify default date 
+Verify default date
     Element Attribute Value Should Be    ${labelInputDate}           value         1 Jan 1970
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}                 2s

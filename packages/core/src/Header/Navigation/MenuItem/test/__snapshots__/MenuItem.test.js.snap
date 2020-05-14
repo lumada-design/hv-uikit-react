@@ -14,8 +14,10 @@ exports[`MenuItem withStyles should be able to render 1`] = `
     classes={
       Object {
         "button": "HvHeaderMenuItem-button",
-        "menuItem": "HvHeaderMenuItem-menuItem",
-        "menubarItem": "HvHeaderMenuItem-menubarItem",
+        "contentFocusDisabled": "HvHeaderMenuItem-contentFocusDisabled",
+        "contentFocused": "HvHeaderMenuItem-contentFocused",
+        "externalReference": "HvHeaderMenuItem-externalReference",
+        "falseFocus": "HvHeaderMenuItem-falseFocus",
         "root": "HvHeaderMenuItem-root",
         "selectedItem": "HvHeaderMenuItem-selectedItem",
       }
@@ -29,59 +31,65 @@ exports[`MenuItem withStyles should be able to render 1`] = `
     type="menubar"
   >
     <li
-      className="HvHeaderMenuItem-root HvHeaderMenuItem-menubarItem"
+      className="HvHeaderMenuItem-root"
       key="someLabel"
       role="none"
     >
-      <div
-        className="HvHeaderMenuItem-button"
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-        tabIndex={0}
+      <ConditionalWrapper
+        condition={null}
+        wrapper={[Function]}
       >
-        <WithStyles(ForwardRef)
-          variant="normalText"
+        <div
+          className="HvHeaderMenuItem-button HvHeaderMenuItem-contentFocusDisabled"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          <ForwardRef
-            classes={
-              Object {
-                "3xlTitle": "HvTypography-3xlTitle",
-                "4xlTitle": "HvTypography-4xlTitle",
-                "5xlTitle": "HvTypography-5xlTitle",
-                "disabledButtonText": "HvTypography-disabledButtonText",
-                "highlightText": "HvTypography-highlightText",
-                "infoText": "HvTypography-infoText",
-                "inlineLink": "HvTypography-inlineLink",
-                "lTitle": "HvTypography-lTitle",
-                "labelText": "HvTypography-labelText",
-                "mTitle": "HvTypography-mTitle",
-                "normalText": "HvTypography-normalText",
-                "placeholderText": "HvTypography-placeholderText",
-                "root": "HvTypography-root",
-                "sLink": "HvTypography-sLink",
-                "sText": "HvTypography-sText",
-                "sTitle": "HvTypography-sTitle",
-                "selectedNavText": "HvTypography-selectedNavText",
-                "selectedText": "HvTypography-selectedText",
-                "vizText": "HvTypography-vizText",
-                "xlTitle": "HvTypography-xlTitle",
-                "xsTitle": "HvTypography-xsTitle",
-                "xxlTitle": "HvTypography-xxlTitle",
-                "xxsTitle": "HvTypography-xxsTitle",
-              }
-            }
+          <WithStyles(ForwardRef)
             variant="normalText"
           >
-            <p
-              className="HvTypography-root HvTypography-normalText"
+            <ForwardRef
+              classes={
+                Object {
+                  "3xlTitle": "HvTypography-3xlTitle",
+                  "4xlTitle": "HvTypography-4xlTitle",
+                  "5xlTitle": "HvTypography-5xlTitle",
+                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "highlightText": "HvTypography-highlightText",
+                  "infoText": "HvTypography-infoText",
+                  "inlineLink": "HvTypography-inlineLink",
+                  "lTitle": "HvTypography-lTitle",
+                  "labelText": "HvTypography-labelText",
+                  "mTitle": "HvTypography-mTitle",
+                  "normalText": "HvTypography-normalText",
+                  "placeholderText": "HvTypography-placeholderText",
+                  "root": "HvTypography-root",
+                  "sLink": "HvTypography-sLink",
+                  "sText": "HvTypography-sText",
+                  "sTitle": "HvTypography-sTitle",
+                  "selectedNavText": "HvTypography-selectedNavText",
+                  "selectedText": "HvTypography-selectedText",
+                  "vizText": "HvTypography-vizText",
+                  "xlTitle": "HvTypography-xlTitle",
+                  "xsTitle": "HvTypography-xsTitle",
+                  "xxlTitle": "HvTypography-xxlTitle",
+                  "xxsTitle": "HvTypography-xxsTitle",
+                }
+              }
+              variant="normalText"
             >
-              someLabel
-            </p>
-          </ForwardRef>
-        </WithStyles(ForwardRef)>
-      </div>
+              <p
+                className="HvTypography-root HvTypography-normalText"
+              >
+                someLabel
+              </p>
+            </ForwardRef>
+          </WithStyles(ForwardRef)>
+        </div>
+      </ConditionalWrapper>
     </li>
   </MenuItem>
 </WithStyles(MenuItem)>

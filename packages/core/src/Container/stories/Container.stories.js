@@ -8,7 +8,7 @@ export default {
   title: "Foundation/Container",
   parameters: {
     componentSubtitle: null,
-    usage: "import {HvContainer} from '@hv/uikit-react-core/dist/'"
+    usage: "import {HvContainer} from '@hv/uikit-react-core/dist'"
   },
   component: HvContainer
 };
@@ -17,12 +17,16 @@ export const Main = () => {
   const styles = theme => ({
     root: {
       border: "1px solid",
-      backgroundColor: theme.hv.palette.base.base1
+      borderColor: theme.hv.palette.atmosphere.atmo5,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      fontFamily: theme.hv.typography.fontFamily,
+      ...theme.hv.typography.sText
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: "center",
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      backgroundColor: theme.hv.palette.semantic.sema7,
+      color: theme.hv.palette.base.base2,
       height: 125
     }
   });
@@ -41,13 +45,16 @@ export const Main = () => {
 export const SmMaxWidth = () => {
   const styles = theme => ({
     root: {
-      border: "1px solid",
-      backgroundColor: theme.hv.palette.base.base1
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      fontFamily: theme.hv.typography.fontFamily,
+      ...theme.hv.typography.sText
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: "center",
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      backgroundColor: theme.hv.palette.semantic.sema7,
+      color: theme.hv.palette.base.base2,
       height: 125
     }
   });
@@ -74,13 +81,16 @@ SmMaxWidth.story = {
 export const FullWidth = () => {
   const styles = theme => ({
     root: {
-      border: "1px solid",
-      backgroundColor: theme.hv.palette.base.base1
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      fontFamily: theme.hv.typography.fontFamily,
+      ...theme.hv.typography.sText
     },
     paper: {
       padding: theme.spacing(2),
       textAlign: "center",
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      backgroundColor: theme.hv.palette.semantic.sema7,
+      color: theme.hv.palette.base.base2,
       height: 125
     }
   });

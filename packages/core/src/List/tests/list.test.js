@@ -121,7 +121,6 @@ describe("<List />", () => {
       instance.handleSelect(mockEvt, { label: "Value 1" });
       jest.runAllTimers();
 
-      expect(instance.state.selectionLabel).toBe("1 of 3");
       expect(onClickMock).toBeCalledWith(mockEvt, { label: "Value 1" });
       expect(onChangeMock).toBeCalledWith([
         { label: "Value 1", selected: true },
@@ -225,7 +224,6 @@ describe("<List />", () => {
         { label: "Value 2", selected: true },
         { label: "Value 3", selected: true }
       ]);
-      expect(instance.state.selectionLabel).toBe("3 of 3");
     });
 
     it("handleSelect updates state accordingly", () => {

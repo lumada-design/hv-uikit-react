@@ -1,3 +1,7 @@
+import focusStyles from "../../Focus/styles";
+
+const { focused, focusDisabled } = focusStyles;
+
 const selected = theme => ({
   background: theme.hv.palette.accent.acce1,
   color: theme.hv.palette.atmosphere.atmo1,
@@ -83,6 +87,13 @@ const styles = theme => ({
 
   noIcon: {},
   withIcon: {},
+
+  contentFocusDisabled: {
+    ...focusDisabled
+  },
+  contentFocused: {
+    ...focused
+  },
 
   /* role="button" element */
   content: {

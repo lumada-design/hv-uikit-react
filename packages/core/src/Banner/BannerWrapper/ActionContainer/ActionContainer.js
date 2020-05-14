@@ -11,6 +11,7 @@ const ActionContainer = ({ id, classes, onClose, action, actionCallback, ...othe
       <div
         className={classes.closeAction}
         role="button"
+        aria-label="Close"
         onClick={onClose}
         tabIndex={0}
         onKeyDown={onClose}

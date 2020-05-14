@@ -20,7 +20,6 @@ unable to select a disabled option when click on it
     Page Should Contain Element            ${iconChecked}         limit=1
 
 select all options when clicking in header option 'all'
-    [Tags]    bug-infrastructure-ie
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
@@ -45,7 +44,6 @@ show 'all' in header option when is selected all options one by one
     Element Text Should Be                 ${headerItemLabel}     5 of 5
 
 remove list indeterminate state when click in header option 'all' and list is in indeterminate state
-    [Tags]    bug-infrastructure-ie
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
@@ -62,11 +60,10 @@ remove list indeterminate state when unselect the unique selected option
     Page Should Not Contain Element        ${selectedItems}
     Page Should Not Contain Element        ${iconChecked}
     Element Text Should Be                 ${headerItemLabel}     All
-    Element Attribute Value Should Be      ${headerItem}          data-indeterminate      ${None}    
+    Element Attribute Value Should Be      ${headerItem}          data-indeterminate      ${None}
 
 verify list indeterminate state when one option is selected
     Go To                                  ${STORYBOOK_URL}/iframe.html?id=components-list--multi-selection-with-select-all
     Wait Until Element Is Visible          ${list}                10s
     Page Should Contain Element            ${selectedItems}       limit=1
     Element Attribute Value Should Be      ${headerItem}-input    data-indeterminate      true
-

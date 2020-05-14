@@ -66,7 +66,7 @@ const styles = theme => ({
   },
   dropZoneAreaIcon: {
     margin: "auto",
-    marginRight: `${theme.hv.spacing.sm}px`
+    marginRight: `${theme.hv.spacing.xs}px`
   },
   dragText: {
     ...theme.hv.typography.normalText

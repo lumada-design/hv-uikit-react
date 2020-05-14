@@ -3325,9 +3325,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     "tabIndex": 0,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="0"
                                                 rootRef={
@@ -3521,8 +3518,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -3541,9 +3536,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "tabIndex": 0,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -3736,8 +3728,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -4219,9 +4209,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     "tabIndex": -1,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="1"
                                                 rootRef={
@@ -4415,8 +4402,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -4435,9 +4420,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "tabIndex": -1,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -4630,8 +4612,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -5113,9 +5093,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     "tabIndex": -1,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="2"
                                                 rootRef={
@@ -5309,8 +5286,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -5329,9 +5304,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "tabIndex": -1,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -5524,8 +5496,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -7782,9 +7752,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     "tabIndex": 0,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="0"
                                                 rootRef={
@@ -7839,8 +7806,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -7859,9 +7824,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "tabIndex": 0,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -7915,8 +7877,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -7988,9 +7948,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     "tabIndex": -1,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="1"
                                                 rootRef={
@@ -8045,8 +8002,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -8065,9 +8020,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "tabIndex": -1,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -8121,8 +8073,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -8194,9 +8144,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                     "tabIndex": -1,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="2"
                                                 rootRef={
@@ -8251,8 +8198,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -8271,9 +8216,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "tabIndex": -1,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -8327,8 +8269,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -10083,9 +10023,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     "tabIndex": 0,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="0"
                                                 rootRef={
@@ -10141,8 +10078,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 }
                                                 selected={true}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -10161,9 +10096,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "tabIndex": 0,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -10218,8 +10150,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   }
                                                   selected={true}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -10292,9 +10222,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     "tabIndex": -1,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="1"
                                                 rootRef={
@@ -10350,8 +10277,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -10370,9 +10295,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "tabIndex": -1,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -10427,8 +10349,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
@@ -10500,9 +10420,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                     "tabIndex": -1,
                                                   }
                                                 }
-                                                disabled={false}
-                                                focusDisabled={true}
-                                                focusOnClick={false}
                                                 isDropdown={true}
                                                 key="2"
                                                 rootRef={
@@ -10558,8 +10475,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 }
                                                 selected={false}
                                                 strategy="listbox"
-                                                useArrows={true}
-                                                useFalseFocus={false}
                                               >
                                                 <Focus
                                                   classes={
@@ -10578,9 +10493,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "tabIndex": -1,
                                                     }
                                                   }
-                                                  disabled={false}
-                                                  focusDisabled={true}
-                                                  focusOnClick={false}
                                                   isDropdown={true}
                                                   rootRef={
                                                     Object {
@@ -10635,8 +10547,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                   }
                                                   selected={false}
                                                   strategy="listbox"
-                                                  useArrows={true}
-                                                  useFalseFocus={false}
                                                 >
                                                   <ConditionalWrapper
                                                     condition={false}
