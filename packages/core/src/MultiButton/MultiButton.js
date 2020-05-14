@@ -70,7 +70,7 @@ const MultiButton = ({
     }
 
     setCheckedItems(newState);
-    onChange?.(event, newState);
+    onChange?.(event, newState.slice());
   };
 
   const renderButton = (button, idx) => {

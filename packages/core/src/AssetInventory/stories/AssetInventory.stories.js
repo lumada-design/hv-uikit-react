@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core";
 import {
-  Add,
   Cards,
   Connect,
   Delete,
@@ -75,8 +74,8 @@ export const Main = () => {
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+      marginRight: `${theme.hv.spacing.xs}px`
     }
   });
 
@@ -151,6 +150,7 @@ export const Main = () => {
             <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
@@ -174,9 +174,14 @@ export const Main = () => {
 
   const stylesRow = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`,
+      marginTop: "2px"
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
@@ -260,7 +265,7 @@ export const Main = () => {
   // Actions
 
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
+    { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
@@ -275,7 +280,7 @@ export const Main = () => {
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "fix now"
+      schedule: "Fix now"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -290,7 +295,7 @@ export const Main = () => {
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
+      schedule: "Fix 3rd shift"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -316,6 +321,7 @@ export const Main = () => {
         { id: "card", "aria-label": "Select card view" },
         { id: "list", "aria-label": "Select list view" }
       ]}
+      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
       <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
       <HvListView id="list" icon={<List />} renderer={rowRenderer} />
@@ -435,6 +441,7 @@ export const Configurations = () => {
             <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
@@ -458,9 +465,14 @@ export const Configurations = () => {
 
   const stylesRow = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`,
+      marginTop: "2px"
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
@@ -487,7 +499,7 @@ export const Configurations = () => {
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "fix now"
+      schedule: "Fix now"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -502,7 +514,7 @@ export const Configurations = () => {
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
+      schedule: "Fix 3rd shift"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -516,7 +528,7 @@ export const Configurations = () => {
   // ----------------------- Configuration ------------------------------
 
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
+    { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
@@ -590,6 +602,7 @@ export const Configurations = () => {
         { id: "cardView", "aria-label": "Select card view" },
         { id: "listView", "aria-label": "Select list view" }
       ]}
+      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
       <HvCardView
         id="cardView"
@@ -615,6 +628,7 @@ export const Configurations = () => {
             }
           ]
         }}
+        sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
       />
     </HvAssetInventory>
   );
@@ -742,6 +756,7 @@ export const ThreeViews = () => {
             <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
@@ -765,9 +780,14 @@ export const ThreeViews = () => {
 
   const stylesRow = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`,
+      marginTop: "2px"
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
@@ -870,7 +890,7 @@ export const ThreeViews = () => {
   // Actions
 
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
+    { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
@@ -885,7 +905,7 @@ export const ThreeViews = () => {
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "fix now"
+      schedule: "Fix now"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -900,7 +920,7 @@ export const ThreeViews = () => {
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
+      schedule: "Fix 3rd shift"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -927,6 +947,7 @@ export const ThreeViews = () => {
         { id: "list", "aria-label": "Select list view" },
         { id: "textRender", "aria-label": "Select text view" }
       ]}
+      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
       <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
       <HvListView id="list" icon={<List />} renderer={rowRenderer} />
@@ -1054,6 +1075,7 @@ export const ServerSidePagination = () => {
             <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
@@ -1077,9 +1099,14 @@ export const ServerSidePagination = () => {
 
   const stylesRow = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`,
+      marginTop: "2px"
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
@@ -1100,7 +1127,7 @@ export const ServerSidePagination = () => {
   // ----------------------- Configuration ------------------------------
 
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
+    { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
@@ -1177,6 +1204,7 @@ export const ServerSidePagination = () => {
           { id: "card", "aria-label": "Select card view" },
           { id: "list", "aria-label": "Select list view" }
         ]}
+        sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
       >
         <HvCardView
           id="card"
@@ -1328,6 +1356,7 @@ export const Accessibility = () => {
             <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
@@ -1351,9 +1380,14 @@ export const Accessibility = () => {
 
   const stylesRow = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`,
+      marginTop: "2px"
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
@@ -1432,7 +1466,7 @@ export const Accessibility = () => {
   // Actions
 
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
+    { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
@@ -1447,7 +1481,7 @@ export const Accessibility = () => {
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "fix now"
+      schedule: "Fix now"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -1462,7 +1496,7 @@ export const Accessibility = () => {
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
+      schedule: "Fix 3rd shift"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -1488,6 +1522,7 @@ export const Accessibility = () => {
         { id: "card", "aria-label": "Select card view", title: "Card view" },
         { id: "list", "aria-label": "Select list view", title: "List view" }
       ]}
+      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
       <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
       <HvListView id="list" icon={<List />} renderer={rowRenderer} />
@@ -1618,6 +1653,7 @@ export const AccessibilityList = () => {
             <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
+            <div className={classes.columnSplitter} />
             <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
@@ -1641,9 +1677,14 @@ export const AccessibilityList = () => {
 
   const stylesRow = theme => ({
     timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
+      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`,
+      marginTop: "2px"
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
@@ -1722,7 +1763,7 @@ export const AccessibilityList = () => {
   // Actions
 
   const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
+    { id: "post", label: "Dismiss", disabled: false },
     { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
     { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
@@ -1737,7 +1778,7 @@ export const AccessibilityList = () => {
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
-      schedule: "fix now"
+      schedule: "Fix now"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -1752,7 +1793,7 @@ export const AccessibilityList = () => {
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
-      schedule: "fix 3rd shift"
+      schedule: "Fix 3rd shift"
     },
     probability: 90 + id,
     timeHorizon: 8 + id,
@@ -1779,6 +1820,7 @@ export const AccessibilityList = () => {
         { id: "card", "aria-label": "Select card view", title: "Card view" },
         { id: "list", "aria-label": "Select list view", title: "List view" }
       ]}
+      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
       <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
       <HvListView id="list" icon={<List />} renderer={rowRenderer} />

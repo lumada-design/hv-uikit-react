@@ -10,7 +10,7 @@ export default {
     componentSubtitle: null,
     usage: "import { HvTable } from '@hv/uikit-react-core/dist'",
     docs: {
-      inlineStories: false
+      //
     }
   },
   component: HvTable
@@ -357,8 +357,7 @@ export const Empty = () => {
 Empty.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample without data.",
-      inlineStories: false
+      storyDescription: "Table sample without data."
     }
   }
 };
@@ -624,8 +623,7 @@ export const WithExpander = () => {
 WithExpander.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows the ability to add an expander.",
-      inlineStories: false
+      storyDescription: "Table sample that shows the ability to add an expander."
     }
   }
 };
@@ -916,8 +914,7 @@ WithExpanderAndCustomContent.story = {
   parameters: {
     docs: {
       storyDescription:
-        "Table sample that shows the ability to add a complex expander and custom cell.",
-      inlineStories: false
+        "Table sample that shows the ability to add a complex expander and custom cell."
     }
   }
 };
@@ -1167,8 +1164,7 @@ export const WithCheckbox = () => {
 WithCheckbox.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows the ability to add an expander.",
-      inlineStories: false
+      storyDescription: "Table sample that shows the ability to add an expander."
     }
   }
 };
@@ -1314,8 +1310,7 @@ export const WithCheckboxCustomContent = () => {
 WithCheckboxCustomContent.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows the ability to add use a checkbox.",
-      inlineStories: false
+      storyDescription: "Table sample that shows the ability to add use a checkbox."
     }
   }
 };
@@ -1587,8 +1582,7 @@ export const WithCheckboxAndSecondaryActions = () => {
 WithCheckboxAndSecondaryActions.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows the ability to add a secondary action column.",
-      inlineStories: false
+      storyDescription: "Table sample that shows the ability to add a secondary action column."
     }
   }
 };
@@ -1836,8 +1830,7 @@ export const WithNullValues = () => {
 WithNullValues.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample with that has cell values that are null.",
-      inlineStories: false
+      storyDescription: "Table sample with that has cell values that are null."
     }
   }
 };
@@ -2034,8 +2027,7 @@ export const ServerSidePagination = () => {
 ServerSidePagination.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows how to use the table with server side pagination.",
-      inlineStories: false
+      storyDescription: "Table sample that shows how to use the table with server side pagination."
     }
   }
 };

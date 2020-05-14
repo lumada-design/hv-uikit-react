@@ -144,23 +144,25 @@ const HvCard = ({
 
   return (
     <div className={clsx(classes.root)}>
-      <div
-        className={clsx(classes.semanticContainer, {
-          [classes[semantic]]: semantic,
-          [classes.semanticSelected]: selected
-        })}
-      />
-      <Card
-        id={id}
-        className={clsx(classes.cardContainer, className, {
-          [classes.selectable]: isSelectable,
-          [classes.cardContainerSelected]: selected,
-          [classes.selected]: selected
-        })}
-        {...others}
-      >
-        {children || defaultContent}
-      </Card>
+      <div id={setId(id, "cardContentWrapper")} className={classes.cardContentWrapper}>
+        <div
+          className={clsx(classes.semanticContainer, {
+            [classes[semantic]]: semantic,
+            [classes.semanticSelected]: selected
+          })}
+        />
+        <Card
+          id={id}
+          className={clsx(classes.cardContainer, className, {
+            [classes.selectable]: isSelectable,
+            [classes.cardContainerSelected]: selected,
+            [classes.selected]: selected
+          })}
+          {...others}
+        >
+          {children || defaultContent}
+        </Card>
+      </div>
     </div>
   );
 };
@@ -202,6 +204,10 @@ HvCard.propTypes = {
      * Style applied to the root.
      */
     root: PropTypes.string,
+    /**
+     * Style applied to the card wrapper.
+     */
+    cardContentWrapper: PropTypes.string,
     /**
      * Style applied to the cardContainer.
      */
