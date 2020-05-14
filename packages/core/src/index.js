@@ -36,6 +36,7 @@ export { default as HvFileUploader } from "./FileUploader";
 export { default as HvEmptyState } from "./EmptyState";
 export { default as HvBarchart } from "./Barchart";
 export { default as HvLinechart } from "./Linechart";
+export { default as HvUserPreferences } from "./UserPreferences";
 
 // HOCs
 export { default as withId } from "./withId";
