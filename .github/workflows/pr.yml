@@ -115,6 +115,12 @@ jobs:
           mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
           cp -r dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
 
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
+        with:
+          name: documentation
+          path: dist
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -140,50 +146,11 @@ jobs:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
 
-  # Robot_pa11y:
-  #   name: Test Robot pa11y
-  #   needs: Build-Documentation
-  #   runs-on: [self-hosted, Windows]
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: "12"
-
-  #     - name: Install PA11Y
-  #       working-directory: ./automation/robot
-  #       shell: cmd
-  #       run: npm ci
-
-  #     - name: Run PA11Y
-  #       shell: cmd
-  #       run: >-
-  #         robot
-  #         --variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}}
-  #         --include pa11y
-  #         --outputdir reports
-  #         --report report.html
-  #         --log log.html
-  #         automation\robot\storybook\core
-
-  #     - name: Save Reports
-  #       uses: actions/upload-artifact@v1
-  #       if: always()
-  #       with:
-  #         name: pa11y-reports
-  #         path: reports
-
-  #     - name: Clean Reports
-  #       run: rm -rf reports
-
   Robot:
     name: Test Robot
     needs: [Build-Documentation]
     runs-on: [self-hosted, Linux]
-    timeout-minutes: 45
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
@@ -196,11 +163,30 @@ jobs:
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
         ROBOT_REPORTS_DIR: ./reports
         ROBOT_THREADS: 4
-        ROBOT_OPTIONS: "--variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}} --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+        ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+
+    services:
+      storybook:
+        image: nginx
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
 
       - name: Run Robot
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
@@ -218,7 +204,6 @@ jobs:
   Notify-End:
     name: Notify End
     needs: [Static-Checks, Build-Documentation, Robot]
-    #  needs: [Static-Checks, Build-Documentation, Robot_pa11y, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -241,6 +226,7 @@ jobs:
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+          DOCUMENTATION: ${{ env.DOCUMENTATION_URL }}
         with:
           args: |
             {
@@ -250,7 +236,7 @@ jobs:
                   "mrkdwn_in": ["text"],
                   "color": "${{env.COLOR}}",
                   "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}\n Storybook was published in $⁄⁄{{env.DOCUMENTATION}}"
                 }
               ]
             }
