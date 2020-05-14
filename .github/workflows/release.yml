@@ -21,6 +21,9 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
+  DOCUMENTATION_PUBLISH_FOLDER: master
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/master
 
 jobs:
   Release:
@@ -70,11 +73,53 @@ jobs:
       - name: Publish
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
 
-      - name: Publish Documentation
+      - name: Start Documentation Deployment
+        uses: bobheadxi/deployments@master
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          ref: ${{ github.head_ref }}
+          desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v2
+        with:
+          path: public
+          ref: gh-pages
+
+      - name: Generate Documentation
         run: |
           npm run build-documentation
-          git remote set-url origin https://git:${GH_TOKEN}@github.com/pentaho/hv-uikit-react.git
-          NODE_DEBUG=gh-pages npm run publish-documentation
+          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+          mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+          cp -r dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
+          keepFiles: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+
+      - name: Waits deploy for to be up
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "30s"
+
+      - name: Update Deployment Status
+        uses: bobheadxi/deployments@master
+        if: always()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{env.DOCUMENTATION_URL}}
 
       - name: Get Releases Commit Message
         id: conclusion_color
@@ -101,7 +146,7 @@ jobs:
         with:
           args: |
             {
-              "channel": "ui-kit-eng-ci",
+              "channel": "ui-kit",
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
