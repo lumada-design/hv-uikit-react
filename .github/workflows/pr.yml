@@ -4,16 +4,22 @@ on:
     branches:
       - v1.x
 
+# flow:
+# Notify Start
+# License-Checks | Lint | Test-Jest | Build-Documentation
+# Robot_pa11y | Robot (chrome)
+# Notify End
+
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
+  DOCUMENTATION_PUBLISH_FOLDER: pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR #${{ github.event.number }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/pr-${{ github.event.number }}
 
 jobs:
   Notify-Start:
     name: Notify Start
     runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
 
     steps:
       - name: Notify
@@ -27,22 +33,25 @@ jobs:
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "title": "${{ github.workflow }} (${{github.ref}}) build started by ${{github.actor}}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
+                  "footer": "by ${{github.actor}}"
                 }
               ]
             }
 
-  Lint:
-    needs: [Notify-Start]
+  Static-Checks:
+    name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
+    needs: [Notify-Start]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
 
       - name: Install
         run: |
@@ -55,40 +64,21 @@ jobs:
       - name: Lint
         run: npm run lint
 
-  Test-Jest:
-    name: Test Jest
-    needs: [Notify-Start]
-    runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
-
       - name: Test
         run: npm run test
 
   Build-Documentation:
     name: Build Documentation
-    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
+    needs: [Notify-Start]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
 
       - name: Install
         run: |
@@ -98,94 +88,87 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Documentation
-        run: npm run build-documentation
+      - name: Start Documentation Deployment
+        uses: bobheadxi/deployments@master
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          ref: ${{ github.head_ref }}
+          desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
-      - name: Archive Documentation
+      - name: Checkout gh-pages
+        uses: actions/checkout@v2
+        with:
+          path: public
+          ref: gh-pages
+
+      - name: Generate Documentation
+        run: |
+          npm run automation:package
+          npm run build-documentation
+          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+          mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+          cp -r packages/doc/dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+
+      - name: Archive Automation Storybook
         uses: actions/upload-artifact@v1
         with:
           name: documentation
-          path: packages/doc/dist
-
-  Build-Automation-Storybook:
-    name: Build Automation Storybook
-    needs: [Notify-Start]
-    runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install
-        run: |
-          npm config set @hv:registry ${RESOLVE_REGISTRY}
-          npm ci
-
-      - name: Bootstrap
-        run: npm run bootstrap
-
-      - name: Generate Storybook
-        run: npm run automation:package
-
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
-        with:
-          name: automation-storybook
           path: automation/storybook/dist
 
-  Robot_pa11y:
-    name: Test Robot pa11y
-    needs: Build-Automation-Storybook
-    runs-on: [self-hosted, Windows]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install PA11Y
-        working-directory: ./automation/robot
-        shell: cmd
-        run: npm ci
-
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: automation-storybook
-          path: .github/storybook/www
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
+          keepFiles: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
 
-      - name: Run Storybook
-        uses: ./.github/storybook
+      - name: Waits deploy for to be up
+        uses: jakejarvis/wait-action@master
+        with:
+          time: "30s"
 
-      - name: Run PA11Y
-        shell: cmd
-        run: >-
-          robot
-          --variable STORYBOOK_URL:http://localhost:9002
-          --include pa11y
-          --outputdir reports
-          --report report.html
-          --log log.html
-          automation\robot\storybook\core
-
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
+      - name: Update Deployment Status
+        uses: bobheadxi/deployments@master
         if: always()
         with:
-          name: pa11y-reports
-          path: reports
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{env.DOCUMENTATION_URL}}
 
   Robot:
     name: Test Robot
-    needs: Build-Automation-Storybook
-    runs-on: [self-hosted, Windows]
-    timeout-minutes: 150
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome]
+        browser: [chrome, firefox]
+    container:
+      image: ppodgorsek/robot-framework:latest
+      options: --shm-size=6g --cpus 4
+      env:
+        BROWSER: ${{ matrix.browser }}
+        ROBOT_TESTS_DIR: ./automation/robot/storybook/core
+        ROBOT_REPORTS_DIR: ./reports
+        ROBOT_THREADS: 4
+        ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+
+    services:
+      storybook:
+        image: nginx
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
 
     steps:
       - name: Checkout
@@ -194,52 +177,32 @@ jobs:
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: automation-storybook
-          path: .github/storybook/www
+          name: documentation
+          path: ${{ github.workspace }}/dist
 
-      - name: Run Storybook
-        uses: ./.github/storybook
-
-      - name: Run SELENIUM Robot
-        uses: ./.github/robot
+      - name: Restart nginx
+        uses: docker://docker
         with:
-          storybook-url: http://localhost:9002
-          browser: ${{ matrix.browser }}
-          excludes: |
-            pa11y
-            bug-${{ matrix.browser }}
-            bug-${{ matrix.browser }}-webdriver
-            issue
-            issue-${{ matrix.browser }}
-            bug-infrastructure
-            bug-infrastructure-${{ matrix.browser }}
-          output-dir: reports
-          processes: 3
-          path: ./automation/robot/storybook/core
+          args: docker restart storybook
+
+      - name: Run Robot
+        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
-        if: always()
+        if: failure()
         with:
           name: ${{ matrix.browser }}-reports
           path: reports
 
+      - name: Clean Reports
+        run: rm -rf reports
+
   Notify-End:
     name: Notify End
-    needs:
-      [
-        Lint,
-        Test-Jest,
-        Build-Documentation,
-        Build-Automation-Storybook,
-        Robot_pa11y,
-        Robot,
-      ]
+    needs: [Static-Checks, Build-Documentation, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
-    container:
-      image: node:12.14.1-buster
-      options: -u 1000 # buildguy
 
     steps:
       - uses: technote-space/workflow-conclusion-action@v1
