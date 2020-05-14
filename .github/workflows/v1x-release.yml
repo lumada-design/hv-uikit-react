@@ -10,20 +10,20 @@
 #  -H "Accept: application/vnd.github.everest-preview+json" \
 #  -H "Authorization: token <user-token>" \
 #  --request POST \
-#  --data "{\"event_type\": \"release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
+#  --data "{\"event_type\": \"v1-release\", \"client_payload\": {\"ref\": \"alpha\", \"type\": \"prerelease\"}}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: Release
+name: v1.x Release
 on:
   repository_dispatch:
-    types: [release]
+    types: [v1-release]
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
-  DOCUMENTATION_PUBLISH_FOLDER: master
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/master
+  DOCUMENTATION_PUBLISH_FOLDER: v1.x
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v1x"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/v1.x
 
 jobs:
   Release:
@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: "v1.x"
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"

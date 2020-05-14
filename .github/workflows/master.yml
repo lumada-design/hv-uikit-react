@@ -27,9 +27,6 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
-  DOCUMENTATION_PUBLISH_FOLDER: master-staging
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master staging"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/master-staging
 
 jobs:
   Notify-Start:
@@ -104,98 +101,21 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Start Documentation Deployment
-        uses: bobheadxi/deployments@master
-        id: deployment
-        with:
-          step: start
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          ref: ${{ github.head_ref }}
-          desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-
-      - name: Checkout gh-pages
-        uses: actions/checkout@v2
-        with:
-          path: public
-          ref: gh-pages
-
       - name: Generate Documentation
         run: |
           npm run build-documentation
-          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-          mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-          cp -r dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
-          keepFiles: true
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
-
-      - name: Waits deploy for to be up
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
-
-      - name: Update Deployment Status
-        uses: bobheadxi/deployments@master
-        if: always()
-        with:
-          step: finish
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: ${{ job.status }}
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: ${{env.DOCUMENTATION_URL}}
-
-  # Robot_pa11y:
-  #   name: Test Robot pa11y
-  #   needs: Build-Documentation
-  #   runs-on: [self-hosted, Windows]
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: "12"
-
-  #     - name: Install PA11Y
-  #       working-directory: ./automation/robot
-  #       shell: cmd
-  #       run: npm ci
-
-  #     - name: Run PA11Y
-  #       shell: cmd
-  #       run: >-
-  #         robot
-  #         --variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}}
-  #         --include pa11y
-  #         --outputdir reports
-  #         --report report.html
-  #         --log log.html
-  #         automation\robot\storybook\core
-
-  #     - name: Save Reports
-  #       uses: actions/upload-artifact@v1
-  #       if: always()
-  #       with:
-  #         name: pa11y-reports
-  #         path: reports
-
-  #     - name: Clean Reports
-  #       run: rm -rf reports
+          name: documentation
+          path: dist
 
   Robot:
     name: Test Robot
     needs: [Build-Documentation]
     runs-on: [self-hosted, Linux]
-    timeout-minutes: 45
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
@@ -208,11 +128,30 @@ jobs:
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
         ROBOT_REPORTS_DIR: ./reports
         ROBOT_THREADS: 4
-        ROBOT_OPTIONS: "--variable STORYBOOK_URL:${{env.DOCUMENTATION_URL}} --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+        ROBOT_OPTIONS: "--variable STORYBOOK_URL:storybook --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+
+    services:
+      storybook:
+        image: nginx
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
 
       - name: Run Robot
         run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
@@ -227,64 +166,9 @@ jobs:
       - name: Clean Reports
         run: rm -rf reports
 
-  # Robot-Legacy:
-  #   name: Test Robot
-  #   needs: Build-Documentation
-  #   runs-on: [self-hosted, Windows]
-  #   timeout-minutes: 150
-  #   strategy:
-  #     fail-fast: false
-  #     matrix:
-  #       browser: [ie]
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - name: Run SELENIUM Robot
-  #       uses: ./.github/robot
-  #       with:
-  #         storybook-url: https://${{ github.repository_owner }}.github.io/hv-uikit-react/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-  #         browser: ${{ matrix.browser }}
-  #         excludes: |
-  #           pa11y
-  #           bug-${{ matrix.browser }}
-  #           bug-${{ matrix.browser }}-webdriver
-  #           issue
-  #           issue-${{ matrix.browser }}
-  #           bug-infrastructure
-  #           bug-infrastructure-${{ matrix.browser }}
-  #         output-dir: reports
-  #         processes: 3
-  #         path: ./automation/robot/storybook/core
-
-  #     - name: Save Reports
-  #       uses: actions/upload-artifact@v1
-  #       if: always()
-  #       with:
-  #         name: ${{ matrix.browser }}-reports
-  #         path: reports
-
-  #     - name: Clean Reports
-  #       run: rm -rf reports
-
-  CleanupDeployment:
-    name: Cleanup Deployment
-    runs-on: [self-hosted, Linux]
-
-    steps:
-      - name: mark environment as deactivated
-        uses: bobheadxi/deployments@master
-        with:
-          step: deactivate-env
-          token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          desc: Deployment was pruned
-
   Notify-End:
     name: Notify End
-    #    needs: [Static-Checks, Build-Documentation, Robot_pa11y, Robot, Robot-Legacy]
-    needs: [Static-Checks, Build-Documentation, Robot, CleanupDeployment]
+    needs: [Static-Checks, Build-Documentation, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -323,7 +207,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, Build-Documentation, Robot, CleanupDeployment]
+    needs: [Static-Checks, Build-Documentation, Robot]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
