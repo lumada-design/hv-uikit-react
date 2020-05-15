@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.22.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.22.3...@hv/uikit-react-lab@1.22.4) (2020-05-15)
+
+
+### Bug Fixes
+
+* **appswitcherpanel:** added the unique id to the component [#1393](https://github.com/pentaho/hv-uikit-react/issues/1393) ([c23bfe0](https://github.com/pentaho/hv-uikit-react/commit/c23bfe071de98a92bd9e35dd6031c636da5b4e71))
+
+
+
+
+
 ## [1.22.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.22.2...@hv/uikit-react-lab@1.22.3) (2020-04-27)
 
 

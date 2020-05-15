@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.25.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.25.3...@hv/uikit-react-doc@1.25.4) (2020-05-15)
+
+
+### Bug Fixes
+
+* **toggleswitch:** double onChange event triggered. [#1206](https://github.com/pentaho/hv-uikit-react/issues/1206) ([f7b1e1a](https://github.com/pentaho/hv-uikit-react/commit/f7b1e1a25bba1de3c04d6c0319ba04580d21d16e))
+
+
+
+
+
 ## [1.25.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.25.2...@hv/uikit-react-doc@1.25.3) (2020-04-27)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.30.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.30.2...@hv/uikit-react-core@1.30.3) (2020-05-15)
+
+
+### Bug Fixes
+
+* **modal:** impossible to select text in Chrome . [#1483](https://github.com/pentaho/hv-uikit-react/issues/1483) ([a3b171d](https://github.com/pentaho/hv-uikit-react/commit/a3b171d61c73c353d9599e21e49809932f85685b))
+* **toggleswitch:** double onChange event triggered. [#1206](https://github.com/pentaho/hv-uikit-react/issues/1206) ([f7b1e1a](https://github.com/pentaho/hv-uikit-react/commit/f7b1e1a25bba1de3c04d6c0319ba04580d21d16e))
+
+
+
+
+
 ## [1.30.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.30.1...@hv/uikit-react-core@1.30.2) (2020-04-27)
 
 
