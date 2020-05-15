@@ -8,11 +8,9 @@ export default {
   title: "Visualizations/Table",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvTable } from '@hv/uikit-react-core/dist'",
-    docs: {
-      //
-    }
+    usage: "import { HvTable } from '@hv/uikit-react-core/dist'"
   },
+  decorators: [storyFn => <div style={{ height: "700px" }}>{storyFn()}</div>],
   component: HvTable
 };
 
@@ -238,8 +236,8 @@ export const Main = () => {
   };
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   return (
@@ -333,8 +331,8 @@ export const Empty = () => {
   };
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   return (
@@ -584,8 +582,8 @@ export const WithExpander = () => {
   };
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   const subElementTemplate = row => (
@@ -849,8 +847,8 @@ export const WithExpanderAndCustomContent = () => {
   const defaultSorted = [{ id: "name", desc: true }];
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   const subElementTemplate = () => (
@@ -1140,8 +1138,8 @@ export const WithCheckbox = () => {
   };
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   return (
@@ -1538,8 +1536,8 @@ export const WithCheckboxAndSecondaryActions = () => {
   };
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   return (
@@ -1807,8 +1805,8 @@ export const WithNullValues = () => {
   };
 
   const labels = {
-    titleText: "This is a Title",
-    subtitleText: "This is a Subtitle"
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
   };
 
   return (
@@ -1999,8 +1997,8 @@ export const ServerSidePagination = () => {
     render() {
       const { pages, pageSize, sorted, data } = this.state;
       const labels = {
-        titleText: "This is a Title",
-        subtitleText: "This is a Subtitle"
+        titleText: "This is a title",
+        subtitleText: "This is a subtitle"
       };
       return (
         <HvTable
