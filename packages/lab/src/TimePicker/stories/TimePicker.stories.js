@@ -14,8 +14,10 @@ export default {
   decorators: [storyFn => <div style={{ width: 200, minHeight: 200 }}>{storyFn()}</div>]
 };
 
+// TODO #1562 deal with dynamic data
 export const Main = () => <HvTimePicker locale="pt-pt" />;
 
+// TODO #1562 deal with dynamic data
 export const Format12Hours = () => <HvTimePicker locale="en-US" />;
 
 Format12Hours.story = {
@@ -39,6 +41,7 @@ CustomDefault.story = {
 };
 
 export const WithOnChange = () => {
+  // TODO #1562 deal with dynamic data
   const timeProps = {
     hours: new Date().getHours(),
     minutes: new Date().getMinutes(),

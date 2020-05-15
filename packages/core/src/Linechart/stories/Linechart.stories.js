@@ -167,6 +167,7 @@ LinechartStacked.story = {
 };
 
 export const TimeRepresentation = () => {
+  // TODO #1562 deal with dynamic data
   const rand = diff => Math.random() * diff - diff / 2;
 
   const generateDates = (num = 100, startDate = new Date()) =>
