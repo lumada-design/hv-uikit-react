@@ -81,7 +81,7 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: "v1.x"
+              branch: "master"
             })
             let commitMessage = branch.data.commit.commit.message
 
