@@ -42,7 +42,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: master
           # Pulls all commits (needed for semantic release to correctly version)
           # See https://github.com/semantic-release/semantic-release/issues/1526
           fetch-depth: "0"
@@ -75,7 +74,6 @@ jobs:
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
 
       - name: Get Releases Commit Message
-        id: conclusion_color
         uses: actions/github-script@0.9.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -83,20 +81,26 @@ jobs:
             const branch = await github.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              branch: context.ref
+              branch: "v1.x"
             })
-            let message = branch.data.commit.commit.message
+            let commitMessage = branch.data.commit.commit.message
 
-            if ( message.includes('chore(release): publish') ) {
-              message.replace('chore(release): publish', '')
-              core.exportVariable("SLACK_MESSAGE", message)
+            if ( commitMessage.includes('chore(release): publish') ) {
+              const slackMessage = commitMessage.replace('chore(release): publish', '')
+                .replace(/\n/g, "\\n")
+                .replace(/\r/g, "\\r")
+                .replace(/\t/g, "\\t")
+                .replace(/\f/g, "\\f")
+
+              core.exportVariable("SLACK_MESSAGE", slackMessage)
+              core.exportVariable("RELEASED", "true")
             } else {
-              core.exportVariable("RELEASED", true)
+              core.exportVariable("RELEASED", "false")
             }
 
       - name: Start Documentation Deployment
         uses: bobheadxi/deployments@master
-        if: ${RELEASED}
+        if: ${{env.RELEASED}} == "true"
         id: deployment
         with:
           step: start
@@ -107,7 +111,7 @@ jobs:
 
       - name: Checkout gh-pages
         uses: actions/checkout@v2
-        if: ${RELEASED}
+        if: ${{env.RELEASED}} == "true"
         with:
           path: public
           ref: gh-pages
@@ -121,7 +125,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${RELEASED}
+        if: ${{env.RELEASED}} == "true"
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
@@ -132,13 +136,13 @@ jobs:
 
       - name: Waits deploy for to be up
         uses: jakejarvis/wait-action@master
-        if: ${RELEASED}
+        if: ${{env.RELEASED}} == "true"
         with:
           time: "30s"
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
-        if: ${RELEASED} && always()
+        if: ${{env.RELEASED}} == "true" && always()
         with:
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -148,19 +152,20 @@ jobs:
 
       - name: Notify release
         uses: hbfernandes/slack-action@1.0
-        if: ${RELEASED} && success()
+        if: ${{env.RELEASED}} == "true" && success()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          SLACK_MESSAGE: ${{ env.SLACK_MESSAGE }}
         with:
           args: |
             {
-              "channel": "ui-kit-internal",
+              "channel": "ui-kit",
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "title": "ui-kit new artifacts are available and documentation is updated",
-                  "text": "${{env.SLACK_MESSAGE}}\nFor more details about the changes please check the CHANGELOG in https://github.com/${{github.repository}}/releases\n"
+                  "author_name": "New UI-Kit artifacts are available",
+                  "title": "More details https://github.com/${{github.repository}}/releases",
+                  "text": "${{env.SLACK_MESSAGE}}",
+                  "footer": "${{env.DOCUMENTATION_URL}}"
                 }
               ]
             }

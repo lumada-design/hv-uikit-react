@@ -246,7 +246,6 @@ jobs:
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
-          DOCUMENTATION: ${{ env.DOCUMENTATION_URL }}
         with:
           args: |
             {
@@ -256,7 +255,7 @@ jobs:
                   "mrkdwn_in": ["text"],
                   "color": "${{env.COLOR}}",
                   "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}\nStorybook was published in $⁄⁄{{env.DOCUMENTATION}}"
+                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}\n Storybook was published in $⁄⁄{{env.DOCUMENTATION_URL}}"
                 }
               ]
             }
