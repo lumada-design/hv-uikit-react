@@ -3,50 +3,68 @@ Variables         ../../_resources/storybook_variables.yaml
 Resource          ../../_resources/storybook_keywords.robot
 Library           SeleniumLibrary
 Suite Setup       open storybook
+Test Setup        Run Keywords
+...               Go To    ${iframeVerticalNavigation}    AND
+...               Wait Until Element Is Visible    ${listbox}   10s
 Suite Teardown    Close Browser
 Force Tags        smoke
 
+
 *** Test Cases ***
 navigate between levels
-    [Tags]    class    bug-infrastructure-ie
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
-    Wait Until Element Is Enabled       css:ul[role='listbox']               7s
-    Click Element                       //li[contains(.,'Advanced server DS530')]
-    Wait Until Element Is Enabled       //li[contains(.,'Variant X-333')]    2s
-    Click Element                       //li[contains(.,'Variant X-333')]
-    Wait Until Page Contains Element    //div[contains(@class,'Title-titleContainer') and contains(.,'Variant X-333')]    2s
-    Wait Until Keyword Succeeds         3    1s    Element Text Should Be    (//ul[@role='listbox']/li)[1]    Component KY-121
-    Element Text Should Be              (//ul[@role='listbox']/li)[2]        Component HS-921
-    Click Element                       //div[contains(@class,'Title-titleContainer') and contains(.,'Variant X-333')]
-    Wait Until Page Contains Element    //div[contains(@class,'Title-titleContainer') and contains(.,'Advanced server DS530')]    2s
-    Wait Until Keyword Succeeds         3    1s    Element Text Should Be    css:ul[role='listbox']>li    Variant X-333
-    Element Text Should Be              (//ul[@role='listbox']/li)[2]        Variant X-335
-    Click Element                       //div[contains(@class,'Title-titleContainer') and contains(.,'Advanced server DS530')]
-    Wait Until Keyword Succeeds         3    1s    Page Should Contain Element    (//ul[@role='listbox'])[1]/li    limit=4
+    Click Element                ${option: Advanced server DS530}
+    Wait Until Page Contains     Variant X-333    5s
+    Click Element                ${option: Variant X-333}
+    Wait Until Page Contains     Component KY-121    5s
+    Wait Until Page Contains     Component HS-921    5s
+    return on navigation
+    Wait Until Page Contains     Advanced server DS530    5s    #navigation title text
+    return on navigation
+    Wait Until Page Contains     Advanced server DS120    5s
 
 search on first level
-    [Tags]    bug-infrastructure-ie
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
-    Wait Until Element Is Enabled    css:ul[role='listbox']             7s
-    Click Element                    //li[contains(.,'Advanced server DS530')]
-    Wait Until Element Is Enabled    css:input[placeholder='Search']    2s
-    Wait Until Keyword Succeeds      3                                  1     Input Text                css:input[placeholder='Search']    335
-    Wait Until Element Is Enabled    css:input[value='335']             2s
-    Wait Until Keyword Succeeds      3                                  1     Element Text Should Be    css:ul[role='listbox']>li          Variant X-335
+    Click Element                       ${option: Advanced server DS530}
+    Wait Until Element Is Visible       ${searchInput}    5s
+    force input text                    ${searchInput}    335
+    Wait Until Page Does Not Contain    Variant X-333    3s
+    Page Should Contain                 Variant X-335
 
 search on 2nd level
-    [Tags]    bug-infrastructure-ie
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
-    Wait Until Element Is Enabled    css:ul[role='listbox']               7s
-    Click Element                    //li[contains(.,'Advanced server DS530')]
-    Wait Until Element Is Enabled    //li[contains(.,'Variant X-333')]    2s
-    Click Element                    //li[contains(.,'Variant X-333')]
-    Wait Until Element Is Enabled    css:input[placeholder='Search']      2s
-    Wait Until Keyword Succeeds      3                                    1     Input Text                css:input[placeholder='Search']    921
-    Wait Until Element Is Enabled    css:input[value='921']               2s
-    Wait Until Keyword Succeeds      3                                    1     Element Text Should Be    css:ul[role='listbox']>li          Component HS-921
+    Click Element                       ${option: Advanced server DS530}
+    Wait Until Element Is Visible       ${option: Variant X-333}    5s
+    Click Element                       ${option: Variant X-333}
+    Wait Until Element Is Visible       ${searchInput}    5s
+    force input text                    ${searchInput}    921
+    Wait Until Page Does Not Contain    Component KY-121    5s
+    Page Should Contain                 Component HS-921
 
 select action values settings Profile Help
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
-    Wait Until Element Is Enabled    (//ul[@role='listbox'])[2]    7s
     Element Text Should Be           (//ul[@role='listbox'])[2]    Profile\nSettings\nHelp
+
+
+*** Variables ***
+${iframeVerticalNavigation}         ${STORYBOOK_URL}/iframe.html?id=coreverticalnavigation--verticalnavigation4
+${listbox}    	                    css:ul[role='listbox']
+${option: Advanced server DS530}    xpath://li[contains(.,'Advanced server DS530')]
+${option: Variant X-333}            xpath://li[contains(.,'Variant X-333')]
+${searchInput}                      css:input[placeholder=Search]
+${navigationTitle}                  css:[role=button][class*=titleContainer]
+
+
+*** Keywords ***
+force input text
+    [Arguments]    ${locator}    ${text}
+    Wait Until Keyword Succeeds    3x    750ms
+    ...    force    ${locator}    ${text}
+
+force
+    [Arguments]          ${locator}    ${text}
+    Input Text           ${locator}    ${text}
+    Sleep                500ms   #time to react clean input
+    ${value}             Get Element Attribute    ${locator}    value
+    Run Keyword If       "${value}"==""
+    ...    Press Keys    ${locator}    ${text}
+
+return on navigation
+    Wait Until Keyword Succeeds    3x    750ms
+    ...    Click Element           ${navigationTitle}
