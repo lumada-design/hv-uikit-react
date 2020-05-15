@@ -193,7 +193,7 @@ describe("<Dropdown />", () => {
       instance.handleToggle = jest.fn();
 
       const header = dropdownComponent.find("#test-dropdown-header");
-      header.simulate("click");
+      header.simulate("mouseUp");
 
       expect(instance.handleToggle).toBeCalled();
       expect(instance.state.isOpen).toBe(true);

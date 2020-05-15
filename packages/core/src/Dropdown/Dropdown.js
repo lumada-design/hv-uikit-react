@@ -142,9 +142,16 @@ class Dropdown extends React.Component {
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
    * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
+   * @param {Event} event - event.
    * @memberof Dropdown
    */
-  handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
+  handleSelection(
+    selection,
+    commitChanges,
+    toggle,
+    notifyChanges = true,
+    event
+  ) {
     const { multiSelect, onChange } = this.props;
     const { labels } = this.state;
     const selected = getSelected(selection);
@@ -153,7 +160,7 @@ class Dropdown extends React.Component {
       const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
       this.setState({ selectionLabel });
     }
-    if (toggle) this.handleToggle();
+    if (toggle) this.handleToggle(event);
     if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
   }
 
@@ -211,7 +218,7 @@ class Dropdown extends React.Component {
           }
         ])}
         onKeyDown={evt => this.handleToggle(evt)}
-        onClick={evt => this.handleToggle(evt)}
+        onMouseUp={evt => this.handleToggle(evt)}
         role="combobox"
         aria-controls={isOpen ? `${internalId}-values` : undefined}
         aria-owns={isOpen ? `${internalId}-values` : undefined}
@@ -268,8 +275,14 @@ class Dropdown extends React.Component {
         values={values}
         multiSelect={multiSelect}
         showSearch={showSearch}
-        onChange={(selected, commitChanges, toggle, notifyChanges) =>
-          this.handleSelection(selected, commitChanges, toggle, notifyChanges)
+        onChange={(selected, commitChanges, toggle, notifyChanges, event) =>
+          this.handleSelection(
+            selected,
+            commitChanges,
+            toggle,
+            notifyChanges,
+            event
+          )
         }
         labels={labels}
         selectDefault={selectDefault}
