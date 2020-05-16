@@ -159,7 +159,7 @@ jobs:
         with:
           args: |
             {
-              "channel": "ui-kit",
+              "channel": "ui-kit-internal",
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
