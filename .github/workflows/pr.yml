@@ -147,7 +147,7 @@ jobs:
     name: Test Robot
     needs: [Build-Documentation]
     runs-on: [self-hosted, Linux]
-    timeout-minutes: 60
+    timeout-minutes: 90
     strategy:
       fail-fast: false
       matrix:
