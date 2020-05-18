@@ -1,8 +1,10 @@
 import { StandardProps, SnackbarProps } from "@material-ui/core";
 import { Action } from "../Actions";
+import { NotificationsCommonProps } from "../Banner";
 
 export interface HvSnackbarProps
-  extends StandardProps<SnackbarProps, HvSnackbarClassKey, "action"> {
+  extends StandardProps<SnackbarProps, HvSnackbarClassKey, "action">,
+    NotificationsCommonProps {
   /**
    * Action to display.
    */
@@ -14,7 +16,6 @@ export interface HvSnackbarProps
 }
 
 export type HvSnackbarClassKey =
-  // TODO: should have a root?
   // | "root"
   | "anchorOriginTopRight"
   | "anchorOriginTopLeft"

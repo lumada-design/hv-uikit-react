@@ -8,9 +8,10 @@ export type ActionsPositionProp = "auto" | "inline" | "bottom-right";
 
 export type SemanticVariantTypes = "success" | "warning" | "error" | "info" | "default";
 
-export interface HvBannerProps
-  extends StandardProps<SnackbarProps, HvBannerClassKey>,
-    HvActionsCommonProps {
+/**
+ * Interface shared between HvBanner and HvSnackbar
+ */
+export interface NotificationsCommonProps {
   /**
    * The message to display.
    */
@@ -27,15 +28,6 @@ export interface HvBannerProps
    * Controls if the associated icon to the variant should be shown.
    */
   showIcon?: boolean;
-
-  /**
-   * The position property of the header.
-   */
-  actionsPosition?: ActionsPositionProp;
-  /**
-   * How much the transition animation last in milliseconds, if 0 no animation is played.
-   */
-  transitionDuration?: number;
   /**
    * Direction of slide transition.
    */
@@ -44,6 +36,16 @@ export interface HvBannerProps
    * Offset from top/bottom of the page, in px. Defaults to 60px.
    */
   offset?: number;
+}
+
+export interface HvBannerProps
+  extends StandardProps<SnackbarProps, HvBannerClassKey>,
+    HvActionsCommonProps,
+    HvBannerCommonProps {
+  /**
+   * The position property of the header.
+   */
+  actionsPosition?: ActionsPositionProp;
   /**
    * Props to pass down to the Banner Wrapper.
    */
