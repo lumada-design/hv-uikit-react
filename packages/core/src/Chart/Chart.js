@@ -69,11 +69,12 @@ const Chart = ({
     });
 
     setDataTooltip(dataFromPoints);
-
-    if (!isHover) setIsHover(true);
+    setIsHover(true);
   };
 
-  const onUnHover = () => setIsHover(false);
+  const onUnHover = () => {
+    setIsHover(false);
+  };
 
   const onMouseMove = event => {
     setCoordinates({
