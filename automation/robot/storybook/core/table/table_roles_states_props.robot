@@ -56,7 +56,7 @@ DOM contains aria-sort ascending or descending when a column is order by
 DOM contains aria-selected=boolean when a row is selected and unselected
     [Setup]    NONE    
     Go To                                ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-checkbox
-    Wait Until Page Contains             This is a Title              10s
+    Wait Until Page Contains             This is a title              10s
     Page Should Contain Element          css:[aria-selected=false]    limit=10
     Click Element                        ${checkbox_row_1}
     Element Attribute Value Should Be    ${row_1}                     aria-selected    true
@@ -68,7 +68,7 @@ DOM contains aria-selected=boolean when a row is selected and unselected
 DOM contains aria-expanded=boolean when a row is expanded and shrink
     [Setup]    NONE
     Go To                                ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-expander
-    Wait Until Page Contains             This is a Title             10s
+    Wait Until Page Contains             This is a title             10s
     Page Should Not Contain Element      css:[aria-expanded=true]
     Click Element                        ${expander_button}
     Element Attribute Value Should Be    ${row_1}                    aria-expanded    true
