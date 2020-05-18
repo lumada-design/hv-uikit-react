@@ -115,7 +115,6 @@ const Focus = props => {
   };
 
   const onMouseDown = evt => {
-    evt.preventDefault();
     setFocusTo(evt.currentTarget);
     setTabIndex(evt.currentTarget, 0);
     // remove focus outline unless explicitly enabled
