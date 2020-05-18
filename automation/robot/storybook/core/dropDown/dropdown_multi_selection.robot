@@ -1,19 +1,25 @@
 *** Setting ***
-Resource           ../../_resources/storybook_keywords.robot
-Library            SeleniumLibrary
-Variables          ../../_resources/storybook_variables.yaml
-Variables          variables.yaml
-Suite Setup        open storybook
-Test Setup         go to url and wait until element is visible    ${STORYBOOK_URL}/iframe.html?id=components-dropdown--multi-selection    ${dropdown}    10s
-Suite Teardown     Close Browser
-Force Tags         smoke
+Library           SeleniumLibrary
+Resource          _resources.resource
+Suite Setup       open storybook
+Test Setup        Run Keywords
+...               Go To    ${iframeMultiSelectionSearch}    AND
+...               Wait Until Element Is Enabled    ${dropdown}    10s
+Suite Teardown    Close Browser
+Force Tags        smoke
 
 
 *** Comments ***
-theses list did not compatible with list selenium keywords
+theses list was not compatible with list selenium keywords
 
 
 *** Test Cases ***
+Open and close dropdown when click the input (top part of the dropdown)
+    Click Element                        ${dropdownHeader}
+    Wait Until Element Is Visible        ${listBox}    3s
+    Click Element                        ${dropdownHeader}
+    Wait Until Element Is Not Visible    ${listBox}    3s
+
 unselect all values when is unselected all options one by one
     Click Element                        ${dropdown}
     Element Attribute Value Should Be    ${option2}          aria-selected    true
