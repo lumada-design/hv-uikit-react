@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Hitachi Vantara Corporation
+ * Copyright 2020 Hitachi Vantara Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,19 @@
  * limitations under the License.
  */
 
-// components
-export { default as HvDatePicker } from "./DatePicker";
-export { default as HvEmptyState } from "./EmptyState";
-export { default as HvFooter } from "./Footer";
-export { default as HvFormComposer } from "./FormComposer";
-export { default as HvNavigationAnchors } from "./NavigationAnchors";
-export { default as HvNotificationPanel } from "./NotificationPanel";
-export { default as HvSearchBox } from "./SearchBox";
-export { default as HvSlider } from "./Slider";
+import withStyles from "@material-ui/core/styles/withStyles";
+import styles from "./styles";
+
+import Actions from "./Actions";
+import RawAction from "./Action";
+
+const Action = withStyles(styles, {
+  name: "HvUserPreferencesAction",
+  withTheme: true
+})(RawAction);
+export { Action };
+
+export default withStyles(styles, {
+  name: "HvUserPreferencesActions",
+  withTheme: true
+})(Actions);
