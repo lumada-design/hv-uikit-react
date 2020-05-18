@@ -1,6 +1,9 @@
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 
+export { default as HvAvatar } from "./Avatar";
+export * from "./Avatar";
+
 export { default as HvBadge } from "./Badge";
 export * from "./Badge";
 
