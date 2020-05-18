@@ -15,6 +15,7 @@
  */
 
 // components
+export { default as HvAvatar } from "./Avatar";
 export { default as HvBanner } from "./Banner";
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvButton } from "./Button";
