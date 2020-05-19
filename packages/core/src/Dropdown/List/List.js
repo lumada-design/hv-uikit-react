@@ -129,9 +129,10 @@ const List = ({
    * @param commitChanges
    * @param toggle
    * @param notifyChanges
+   * @param event
    */
-  const sendOnChange = (selection, commitChanges, toggle, notifyChanges) => {
-    onChange?.(selection, commitChanges, toggle, notifyChanges);
+  const sendOnChange = (selection, commitChanges, toggle, notifyChanges, event) => {
+    onChange?.(selection, commitChanges, toggle, notifyChanges, event);
     updateSelectionLabel(selection);
   };
 
@@ -212,12 +213,11 @@ const List = ({
    * If the handler is called by the onClickAway it is evaluated if the click was done in the header
    * to prevent the double toggle.
    */
-  const handleCancel = e => {
+  const handleCancel = event => {
     setList(clone(prevList));
     setSearchStr("");
     updateSelectAll(prevList);
-    const toggle = isNil(e) ? true : e.target.id !== "header";
-    sendOnChange(null, false, toggle, false);
+    sendOnChange(prevList, false, true, false, event);
   };
 
   /**

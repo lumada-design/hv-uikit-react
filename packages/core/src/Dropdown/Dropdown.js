@@ -60,29 +60,29 @@ class HvDropdown extends React.Component {
   /**
    *  Opens and closes the dropdown.
    *
-   * @param {Object} evt - the event produced by the click action.
+   * @param {Object} event - the event produced by the click action.
    * @returns {undefined}
    * @memberof Dropdown
    */
-  handleToggle(evt) {
+  handleToggle(event) {
     const { disabled } = this.props;
     const { isOpen } = this.state;
-    if (evt && !isKeypress(evt, KeyboardCodes.Tab)) {
-      evt.stopPropagation();
-      evt.preventDefault();
+    if (event && !isKeypress(event, KeyboardCodes.Tab)) {
+      event.stopPropagation();
+      event.preventDefault();
     }
     // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
     if (
       disabled ||
-      (isKeypress(evt, KeyboardCodes.Enter) === false &&
-        isKeypress(evt, KeyboardCodes.Esc) === false &&
-        isKeypress(evt, KeyboardCodes.ArrowDown) === false) ||
-      (isKeypress(evt, KeyboardCodes.Esc) && !isOpen) ||
-      (isKeypress(evt, KeyboardCodes.ArrowDown) && isOpen)
+      (isKeypress(event, KeyboardCodes.Enter) === false &&
+        isKeypress(event, KeyboardCodes.Esc) === false &&
+        isKeypress(event, KeyboardCodes.ArrowDown) === false) ||
+      (isKeypress(event, KeyboardCodes.Esc) && !isOpen) ||
+      (isKeypress(event, KeyboardCodes.ArrowDown) && isOpen)
     )
       return;
 
-    const anchor = evt ? evt.currentTarget.parentElement : null;
+    const anchor = event ? event.currentTarget.parentElement : null;
 
     this.setState({
       isOpen: !isOpen,
@@ -97,9 +97,10 @@ class HvDropdown extends React.Component {
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
    * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
+   * @param {Event} event - mouseUp event.
    * @memberof Dropdown
    */
-  handleSelection(selection, commitChanges, toggle, notifyChanges = true) {
+  handleSelection(selection, commitChanges, toggle, notifyChanges = true, event) {
     const { multiSelect, onChange, labels } = this.props;
     const selected = getSelected(selection);
 
@@ -107,7 +108,7 @@ class HvDropdown extends React.Component {
       const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
       this.setState({ selectionLabel });
     }
-    if (toggle) this.handleToggle();
+    if (toggle) this.handleToggle(event);
     if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
   }
 
@@ -151,7 +152,8 @@ class HvDropdown extends React.Component {
           [classes.headerDisabled]: disabled
         })}
         onKeyDown={evt => this.handleToggle(evt)}
-        onClick={evt => this.handleToggle(evt)}
+        // Used instead of onClick because of OutsideClickHandler used in the List
+        onMouseUp={evt => this.handleToggle(evt)}
         role="textbox"
         ref={this.ref}
         tabIndex={0}
@@ -201,8 +203,8 @@ class HvDropdown extends React.Component {
         values={values}
         multiSelect={multiSelect}
         showSearch={showSearch}
-        onChange={(selected, commitChanges, toggle, notifyChanges) =>
-          this.handleSelection(selected, commitChanges, toggle, notifyChanges)
+        onChange={(selected, commitChanges, toggle, notifyChanges, evt) =>
+          this.handleSelection(selected, commitChanges, toggle, notifyChanges, evt)
         }
         labels={labels}
         selectDefault={selectDefault}
