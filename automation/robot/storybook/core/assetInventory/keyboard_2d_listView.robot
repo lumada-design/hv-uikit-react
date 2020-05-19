@@ -29,7 +29,7 @@ focus row elements and then next row when pressed tab
     filter cards and reduce Window size
     Click Button                              ${listViewButton}
     Click Element                             ${row1}>div:nth-child(1)
-    Press Keys                                NONE    TAB    TAB    TAB    TAB
+    Press Keys                                NONE    TAB    TAB    TAB
     Element Should Be Focused                 ${row2} input
     element attribute value should contain    ${row2}    class    -focused
 
