@@ -4,7 +4,7 @@ Resource          _resources.resource
 Suite Setup       open storybook
 Suite Teardown    Close Browser
 Force Tags        smoke    bug-infrastructure-ie
-Documentation     please look complementary Test Cases on dropdown_keyboard_navigation.robot
+Documentation     complementary Test on dropdown_keyboard_navigation.robot
 
 
 *** Test Cases ***
