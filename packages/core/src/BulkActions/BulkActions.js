@@ -67,7 +67,8 @@ const HvBulkActions = props => {
         <HvCheckBox
           id={setId(id, "select")}
           className={classes.selectAll}
-          checked={editMode}
+          checked={numSelected > 0}
+          semantic={editMode}
           onChange={(...args) => onSelectAll?.(...args)}
           indeterminate={numSelected > 0 && numSelected < numTotal}
           label={selectAllLabel ?? defaultSelectAllLabel}

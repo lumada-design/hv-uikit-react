@@ -2,50 +2,9 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
-import {
-  Checkbox as CheckBoxIcon,
-  CheckboxCheck,
-  CheckboxPartial
-} from "@hv/uikit-react-icons/dist";
 import { setId } from "../../utils";
-import labelPositions from "../labelPositions";
+import { getLabelStyles, getSelectorIcons } from "../utils";
 import styles from "./styles";
-
-/**
- * Chooses the correct label styling to applied based on position.
- *
- * @param {String} classes - The classes object containing the classes names needed to be applied.
- * @param {Object} labelPosition - an Object containing the available label positions.
- * @returns {Object} - an Object with the name of the class for the required styling.
- */
-const prepareLabelStyles = (classes, labelPosition, label) => {
-  if (label) {
-    switch (labelPosition) {
-      default:
-      case labelPositions.end:
-        return clsx(classes.container, classes.labelEnd);
-      case labelPositions.start:
-        return clsx(classes.container, classes.labelStart);
-    }
-  }
-  return classes.container;
-};
-
-/**
- * Chooses the correct icon to used based on the disable value.
- *
- * @param {Object} props - HvCheckbox props.
- * @returns {Object} - an Object with the selected icons.
- */
-const prepareIcon = (classes, disabled) => {
-  const color = disabled ? ["atmo4", "atmo6"] : undefined;
-
-  return {
-    emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
-    checkedIcon: <CheckboxCheck color={color} className={classes.icon} />,
-    indeterminateIcon: <CheckboxPartial color={color} className={classes.icon} />
-  };
-};
 
 /**
  * A Checkbox is a mechanism that allows user to select one or more options.
@@ -56,6 +15,7 @@ const HvCheckbox = props => {
     className,
     id,
     checked,
+    semantic = false,
     indeterminate,
     disabled = false,
     onChange,
@@ -65,8 +25,8 @@ const HvCheckbox = props => {
     formControlLabelProps,
     ...others
   } = props;
-  const icons = prepareIcon(classes, disabled);
-  const labelClass = prepareLabelStyles(classes, labelPlacement, label);
+  const icons = getSelectorIcons(classes, { disabled, semantic });
+  const labelClass = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
 
   const onLocalChange = evt => {
@@ -98,9 +58,9 @@ const HvCheckbox = props => {
         <Checkbox
           id={setId(id, "input")}
           className={classes.checkBox}
-          icon={icons.emptyIcon}
-          indeterminateIcon={icons.indeterminateIcon}
-          checkedIcon={icons.checkedIcon}
+          icon={icons.checkbox}
+          indeterminateIcon={icons.checkboxPartial}
+          checkedIcon={icons.checkboxChecked}
           color="default"
           disabled={disabled}
           disableRipple
@@ -177,6 +137,10 @@ HvCheckbox.propTypes = {
    * note: if this value is specified the state of the checkbox must be managed
    */
   checked: PropTypes.bool,
+  /**
+   * Whether the selector should use semantic colors
+   */
+  semantic: PropTypes.bool,
   /**
    * If `true` the checkbox uses the intermediate state, if set to `false` the checkbox will not use the intermediate state.
    */

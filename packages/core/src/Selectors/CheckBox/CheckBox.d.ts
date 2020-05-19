@@ -8,6 +8,11 @@ export interface HvCheckBoxProps extends StandardProps<CheckboxProps, HvCheckBox
   label?: React.ReactNode;
 
   /**
+   * Whether the selector should use semantic colors
+   */
+  semantic: boolean;
+
+  /**
    * The position of the checkbox label.
    *  - Accepted values:
    *    --"start",

@@ -8,6 +8,11 @@ export interface HvRadioButtonProps extends StandardProps<RadioProps, HvRadioBut
   label?: React.ReactNode;
 
   /**
+   * Whether the selector should use semantic colors
+   */
+  semantic: boolean;
+
+  /**
    * The position of the Radio button label.
    *  - Accepted values:
    *    --"start",

@@ -150,6 +150,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               </ForwardRef(WithStyles)>
             }
             onChange={[Function]}
+            semantic={false}
           >
             <HvCheckbox
               checked={false}
@@ -179,6 +180,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 </ForwardRef(WithStyles)>
               }
               onChange={[Function]}
+              semantic={false}
             >
               <WithStyles(ForwardRef(FormControlLabel))
                 className="HvCheckBox-container HvCheckBox-labelEnd HvBulkActions-selectAll"
@@ -1678,6 +1680,7 @@ exports[`BulkActions should render correctly 1`] = `
               </ForwardRef(WithStyles)>
             }
             onChange={[Function]}
+            semantic={false}
           >
             <HvCheckbox
               checked={false}
@@ -1706,6 +1709,7 @@ exports[`BulkActions should render correctly 1`] = `
                 </ForwardRef(WithStyles)>
               }
               onChange={[Function]}
+              semantic={false}
             >
               <WithStyles(ForwardRef(FormControlLabel))
                 className="HvCheckBox-container HvCheckBox-labelEnd HvBulkActions-selectAll"
@@ -3314,6 +3318,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
             indeterminate={true}
             label="MockLabel"
             onChange={[Function]}
+            semantic={true}
           >
             <HvCheckbox
               checked={true}
@@ -3333,6 +3338,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
               indeterminate={true}
               label="MockLabel"
               onChange={[Function]}
+              semantic={true}
             >
               <WithStyles(ForwardRef(FormControlLabel))
                 className="HvCheckBox-container HvCheckBox-labelEnd HvBulkActions-selectAll"
@@ -3348,6 +3354,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     checkedIcon={
                       <ForwardRef(WithStyles)
                         className="HvCheckBox-icon"
+                        color={
+                          Array [
+                            "base2",
+                            "base1",
+                          ]
+                        }
                       />
                     }
                     className="HvCheckBox-checkBox"
@@ -3357,12 +3369,24 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                     icon={
                       <ForwardRef(WithStyles)
                         className="HvCheckBox-icon"
+                        color={
+                          Array [
+                            "base1",
+                            "base2",
+                          ]
+                        }
                       />
                     }
                     indeterminate={true}
                     indeterminateIcon={
                       <ForwardRef(WithStyles)
                         className="HvCheckBox-icon"
+                        color={
+                          Array [
+                            "base1",
+                            "base2",
+                          ]
+                        }
                       />
                     }
                     onBlur={[Function]}
@@ -3392,6 +3416,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       checkedIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base2",
+                              "base1",
+                            ]
+                          }
                         />
                       }
                       className="HvCheckBox-checkBox"
@@ -3401,12 +3431,24 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       icon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       indeterminate={true}
                       indeterminateIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       onBlur={[Function]}
@@ -3426,6 +3468,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       checkedIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base2",
+                              "base1",
+                            ]
+                          }
                         />
                       }
                       className="HvCheckBox-checkBox"
@@ -3435,12 +3483,24 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                       icon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       indeterminate={true}
                       indeterminateIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       onBlur={[Function]}
@@ -3452,6 +3512,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         checkedIcon={
                           <ForwardRef(WithStyles)
                             className="HvCheckBox-icon"
+                            color={
+                              Array [
+                                "base2",
+                                "base1",
+                              ]
+                            }
                           />
                         }
                         className="HvCheckBox-checkBox"
@@ -3471,12 +3537,24 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                         icon={
                           <ForwardRef(WithStyles)
                             className="HvCheckBox-icon"
+                            color={
+                              Array [
+                                "base1",
+                                "base2",
+                              ]
+                            }
                           />
                         }
                         indeterminate={true}
                         indeterminateIcon={
                           <ForwardRef(WithStyles)
                             className="HvCheckBox-icon"
+                            color={
+                              Array [
+                                "base1",
+                                "base2",
+                              ]
+                            }
                           />
                         }
                         onBlur={[Function]}
@@ -3488,6 +3566,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                           checkedIcon={
                             <ForwardRef(WithStyles)
                               className="HvCheckBox-icon"
+                              color={
+                                Array [
+                                  "base1",
+                                  "base2",
+                                ]
+                              }
                               fontSize="default"
                             />
                           }
@@ -3505,6 +3589,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                           icon={
                             <ForwardRef(WithStyles)
                               className="HvCheckBox-icon"
+                              color={
+                                Array [
+                                  "base1",
+                                  "base2",
+                                ]
+                              }
                               fontSize="default"
                             />
                           }
@@ -3523,6 +3613,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             checkedIcon={
                               <ForwardRef(WithStyles)
                                 className="HvCheckBox-icon"
+                                color={
+                                  Array [
+                                    "base1",
+                                    "base2",
+                                  ]
+                                }
                                 fontSize="default"
                               />
                             }
@@ -3541,6 +3637,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                             icon={
                               <ForwardRef(WithStyles)
                                 className="HvCheckBox-icon"
+                                color={
+                                  Array [
+                                    "base1",
+                                    "base2",
+                                  ]
+                                }
                                 fontSize="default"
                               />
                             }
@@ -3646,6 +3748,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                         />
                                         <WithStyles(CheckboxPartial)
                                           className="HvCheckBox-icon"
+                                          color={
+                                            Array [
+                                              "base1",
+                                              "base2",
+                                            ]
+                                          }
                                           fontSize="default"
                                         >
                                           <CheckboxPartial
@@ -3658,6 +3766,12 @@ exports[`BulkActions with custom label should render correctly 1`] = `
                                                 "rootS": "HvIconCheckboxPartial-rootS",
                                                 "rootXs": "HvIconCheckboxPartial-rootXs",
                                               }
+                                            }
+                                            color={
+                                              Array [
+                                                "base1",
+                                                "base2",
+                                              ]
                                             }
                                             fontSize="default"
                                           >
@@ -3874,6 +3988,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
               </ForwardRef(WithStyles)>
             }
             onChange={[Function]}
+            semantic={true}
           >
             <HvCheckbox
               checked={true}
@@ -3905,6 +4020,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                 </ForwardRef(WithStyles)>
               }
               onChange={[Function]}
+              semantic={true}
             >
               <WithStyles(ForwardRef(FormControlLabel))
                 className="HvCheckBox-container HvCheckBox-labelEnd HvBulkActions-selectAll"
@@ -3920,6 +4036,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     checkedIcon={
                       <ForwardRef(WithStyles)
                         className="HvCheckBox-icon"
+                        color={
+                          Array [
+                            "base2",
+                            "base1",
+                          ]
+                        }
                       />
                     }
                     className="HvCheckBox-checkBox"
@@ -3929,12 +4051,24 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     icon={
                       <ForwardRef(WithStyles)
                         className="HvCheckBox-icon"
+                        color={
+                          Array [
+                            "base1",
+                            "base2",
+                          ]
+                        }
                       />
                     }
                     indeterminate={true}
                     indeterminateIcon={
                       <ForwardRef(WithStyles)
                         className="HvCheckBox-icon"
+                        color={
+                          Array [
+                            "base1",
+                            "base2",
+                          ]
+                        }
                       />
                     }
                     onBlur={[Function]}
@@ -3976,6 +4110,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       checkedIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base2",
+                              "base1",
+                            ]
+                          }
                         />
                       }
                       className="HvCheckBox-checkBox"
@@ -3985,12 +4125,24 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       icon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       indeterminate={true}
                       indeterminateIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       onBlur={[Function]}
@@ -4022,6 +4174,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       checkedIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base2",
+                              "base1",
+                            ]
+                          }
                         />
                       }
                       className="HvCheckBox-checkBox"
@@ -4031,12 +4189,24 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       icon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       indeterminate={true}
                       indeterminateIcon={
                         <ForwardRef(WithStyles)
                           className="HvCheckBox-icon"
+                          color={
+                            Array [
+                              "base1",
+                              "base2",
+                            ]
+                          }
                         />
                       }
                       onBlur={[Function]}
@@ -4048,6 +4218,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         checkedIcon={
                           <ForwardRef(WithStyles)
                             className="HvCheckBox-icon"
+                            color={
+                              Array [
+                                "base2",
+                                "base1",
+                              ]
+                            }
                           />
                         }
                         className="HvCheckBox-checkBox"
@@ -4067,12 +4243,24 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         icon={
                           <ForwardRef(WithStyles)
                             className="HvCheckBox-icon"
+                            color={
+                              Array [
+                                "base1",
+                                "base2",
+                              ]
+                            }
                           />
                         }
                         indeterminate={true}
                         indeterminateIcon={
                           <ForwardRef(WithStyles)
                             className="HvCheckBox-icon"
+                            color={
+                              Array [
+                                "base1",
+                                "base2",
+                              ]
+                            }
                           />
                         }
                         onBlur={[Function]}
@@ -4084,6 +4272,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                           checkedIcon={
                             <ForwardRef(WithStyles)
                               className="HvCheckBox-icon"
+                              color={
+                                Array [
+                                  "base1",
+                                  "base2",
+                                ]
+                              }
                               fontSize="default"
                             />
                           }
@@ -4101,6 +4295,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                           icon={
                             <ForwardRef(WithStyles)
                               className="HvCheckBox-icon"
+                              color={
+                                Array [
+                                  "base1",
+                                  "base2",
+                                ]
+                              }
                               fontSize="default"
                             />
                           }
@@ -4119,6 +4319,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             checkedIcon={
                               <ForwardRef(WithStyles)
                                 className="HvCheckBox-icon"
+                                color={
+                                  Array [
+                                    "base1",
+                                    "base2",
+                                  ]
+                                }
                                 fontSize="default"
                               />
                             }
@@ -4137,6 +4343,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                             icon={
                               <ForwardRef(WithStyles)
                                 className="HvCheckBox-icon"
+                                color={
+                                  Array [
+                                    "base1",
+                                    "base2",
+                                  ]
+                                }
                                 fontSize="default"
                               />
                             }
@@ -4242,6 +4454,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                         />
                                         <WithStyles(CheckboxPartial)
                                           className="HvCheckBox-icon"
+                                          color={
+                                            Array [
+                                              "base1",
+                                              "base2",
+                                            ]
+                                          }
                                           fontSize="default"
                                         >
                                           <CheckboxPartial
@@ -4254,6 +4472,12 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                                 "rootS": "HvIconCheckboxPartial-rootS",
                                                 "rootXs": "HvIconCheckboxPartial-rootXs",
                                               }
+                                            }
+                                            color={
+                                              Array [
+                                                "base1",
+                                                "base2",
+                                              ]
                                             }
                                             fontSize="default"
                                           >
