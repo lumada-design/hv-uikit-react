@@ -445,13 +445,8 @@ class HvInput extends React.Component {
           id={`${id}-description`}
           variant="helper"
           labels={labels}
-          // classesToApply={clsx(classes.infoText)}
-          // showInfo={false}
           hasIcon={showValidationIcon}
           stateValidation={stateValidationState}
-          // inlineStyling={
-          //   !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
-          // }
         />
 
         {/* <HvTypography
