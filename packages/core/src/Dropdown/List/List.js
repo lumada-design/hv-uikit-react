@@ -142,9 +142,16 @@ const List = ({
    * @param commitChanges
    * @param toggle
    * @param notifyChanges
+   * @param event
    */
-  const sendOnChange = (selection, commitChanges, toggle, notifyChanges) => {
-    onChange(selection, commitChanges, toggle, notifyChanges);
+  const sendOnChange = (
+      selection,
+      commitChanges,
+      toggle,
+      notifyChanges,
+      event
+  ) => {
+    onChange(selection, commitChanges, toggle, notifyChanges, event);
     updateSelectionLabel(selection);
   };
 
@@ -230,7 +237,7 @@ const List = ({
     setSearchStr("");
     updateSelectAll(prevList);
     const toggle = isNil(e) ? true : e.target.id !== "header";
-    sendOnChange(null, false, toggle, false);
+    sendOnChange(prevList, false, toggle, false, e);
   };
 
   /**
