@@ -31,7 +31,7 @@ const DEFAULT_LABELS = {
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
-class HvInput extends React.Component {
+class HvHelperText extends React.Component {
   constructor(props) {
     super(props);
     const { validationState, value, initialValue, labels } = props;
@@ -745,4 +745,6 @@ HvInput.defaultProps = {
   externalWarningTextOverride: null
 };
 
-export default withStyles(styles, { name: "HvInput" })(withLabels(DEFAULT_LABELS)(withId(HvInput)));
+export default withStyles(styles, { name: "HvHelperText" })(
+  withLabels(DEFAULT_LABELS)(withId(HvHelperText))
+);
