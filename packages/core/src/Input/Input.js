@@ -17,6 +17,8 @@ import { validateCharLength, validateInput } from "./validations";
 import styles from "./styles";
 import withTooltips from "../withTooltip";
 
+import HelperText from "../HelperText";
+
 const DEFAULT_LABELS = {
   inputLabel: "",
   placeholder: "",
@@ -345,7 +347,7 @@ class HvInput extends React.Component {
       </div>
     );
     const InfoIcon = withTooltips(IconDisplay, labels.infoText);
-
+    // debugger;
     return (
       <div
         ref={node => {
@@ -426,7 +428,7 @@ class HvInput extends React.Component {
           </div>
         )}
 
-        {showInfo && labels.infoText && (
+        {/* {showInfo && labels.infoText && (
           <HvTypography
             id={`${id}-description`}
             variant="infoText"
@@ -438,15 +440,29 @@ class HvInput extends React.Component {
           >
             {labels.infoText}
           </HvTypography>
-        )}
+        )} */}
+        <HelperText
+          id={`${id}-description`}
+          variant="helper"
+          labels={labels}
+          // classesToApply={clsx(classes.infoText)}
+          // showInfo={false}
+          hasIcon={showValidationIcon}
+          stateValidation={stateValidationState}
+          // inlineStyling={
+          //   !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
+          // }
+        />
 
-        <HvTypography
+        {/* <HvTypography
           variant="sText"
           className={clsx(classes.textWarning, classes.infoText, {
+            // show the text if we are in an invalid state and either of the invalid labels exist
             [classes.showText]:
               stateValidationState === validationStates.invalid &&
               (externalWarningTextOverride || warningText)
           })}
+          // to be applied when in invalid state
           aria-live="polite"
           aria-controls={`${id}-input`}
           aria-atomic="true"
@@ -454,7 +470,7 @@ class HvInput extends React.Component {
           aria-labelledby={labels.inputLabel ? `${id}-label` : null}
         >
           {externalWarningTextOverride || warningText || ""}
-        </HvTypography>
+        </HvTypography> */}
       </div>
     );
   }

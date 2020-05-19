@@ -12,7 +12,7 @@ import InputAdornment from "./InputAdornment";
 import HvTypography from "../Typography";
 import HvList from "../List";
 import validationTypes from "./validationTypes";
-import validationStates from "./validationStates";
+
 import { validateCharLength, validateInput } from "./validations";
 import styles from "./styles";
 import withTooltips from "../withTooltip";
@@ -28,6 +28,13 @@ const DEFAULT_LABELS = {
   clearButtonLabel: "Clear the text"
 };
 
+const validationState = {
+  empty: "empty",
+  filled: "filled",
+  valid: "valid",
+  invalid: "invalid"
+};
+
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
@@ -41,235 +48,9 @@ class HvHelperText extends React.Component {
       currentValidationStateProps: validationState,
       value: value || initialValue,
       suggestionValues: null,
-      warningText: validationState === validationStates.invalid ? labels.warningText : null
+      warningText: validationState === validationState.invalid ? labels.warningText : null
     };
   }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { value: nextValue, validationState } = nextProps;
-    const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
-
-    let returnState = null;
-
-    if (nextValue !== undefined && nextValue !== oldValue) {
-      returnState = {
-        value: nextValue
-      };
-    }
-    if (validationState !== undefined && validationState !== validationStateProp) {
-      returnState = {
-        validationState,
-        currentValidationStateProps:
-          validationState !== validationStateProp ? validationStateProp : validationState
-      };
-    }
-    return returnState;
-  }
-
-  /**
-   * Updates the states while the input is being entered.
-   *
-   * @param {String} value - the inputted value.
-   * @param {*} warningText - the error text below the input.
-   */
-  manageInputValueState = (value, warningText) => {
-    this.setState({
-      validationState: value && value !== "" ? validationStates.filled : validationStates.empty,
-      warningText,
-      value
-    });
-  };
-
-  /**
-   * Looks for the node that represent the input inside the material tree and focus it.
-   */
-  focusInput = () => {
-    this.materialInputRef.current.focus();
-  };
-
-  /**
-   * Clears the input value from the state and refocus the input.
-   *
-   * Note: given than the input component from material doesn't offer any api to focus
-   * this timeout with a node focus was used to solve the problem
-   * because the reference to the input is lost when the component is updated.
-   */
-  handleClear = () => {
-    const { onChange } = this.props;
-    const value = "";
-    onChange(null, value);
-    this.manageInputValueState(value, null);
-    setTimeout(() => {
-      this.focusInput();
-    });
-  };
-
-  /**
-   * clears the suggestion array.
-   */
-  suggestionClearHandler = () => {
-    this.setState({
-      suggestionValues: null
-    });
-  };
-
-  /**
-   * fills of the suggestion array.
-   */
-  suggestionHandler = value => {
-    const { suggestionListCallback } = this.props;
-    const suggestionsArray = suggestionListCallback(value);
-    if (
-      !isNil(suggestionsArray) &&
-      Array.isArray(suggestionsArray) &&
-      !isNil(suggestionsArray[0].label)
-    ) {
-      this.setState({
-        suggestionValues: suggestionsArray
-      });
-    } else {
-      this.suggestionClearHandler();
-    }
-  };
-
-  /**
-   * Executes the user callback adds the selection to the state and clears the suggestions.
-   */
-  suggestionSelectedHandler = (event, item) => {
-    const { suggestionSelectedCallback } = this.props;
-    this.manageInputValueState(item.label);
-    this.focusInput();
-    this.suggestionClearHandler();
-    suggestionSelectedCallback(item);
-  };
-
-  /**
-   * Updates the state while is being inputted, also executes the user onChange
-   * allowing the customization of the input if required.
-   *
-   * @param {Object} event - The event provided by the material ui input
-   */
-  onChangeHandler = event => {
-    const { onChange } = this.props;
-    const { value } = event.target;
-    const newValue = onChange(event, value);
-    this.suggestionHandler(value);
-    this.manageInputValueState(newValue, null);
-  };
-
-  /**
-   * Validates the input updating the state and modifying the info text, also executes
-   * the user provided onBlur passing the current validation status and value.
-   *
-   * @returns {undefined}
-   */
-  onInputBlurHandler = () => {
-    const { value } = this.state;
-    const { onBlur, labels, isRequired } = this.props;
-    const { validation, validationType, minCharQuantity, maxCharQuantity } = this.props;
-
-    let validationState;
-    let warningText = null;
-
-    if (!value || value === "") {
-      if (isRequired) {
-        validationState = validationStates.invalid;
-        warningText = labels.requiredWarningText;
-      } else {
-        validationState = validationStates.empty;
-      }
-    } else {
-      const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
-      const valid = validateInput(value, validation, validationType);
-
-      if (valid && valueSizeStatus) {
-        validationState = validationStates.valid;
-      } else if (!valid || !valueSizeStatus) {
-        validationState = validationStates.invalid;
-
-        if (maxCharQuantity && value.length > maxCharQuantity) {
-          warningText = labels.maxCharQuantityWarningText;
-        } else if (minCharQuantity && value.length < minCharQuantity) {
-          warningText = labels.minCharQuantityWarningText;
-        } else {
-          // eslint-disable-next-line prefer-destructuring
-          warningText = labels.warningText;
-        }
-      }
-    }
-
-    this.setState({ validationState, warningText });
-    onBlur(value, validationState);
-  };
-
-  /**
-   * Updates the state putting again the value from the state because the input value is
-   * not automatically manage, it also executes the onFocus function from the user passing the value
-   */
-  onFocusHandler = () => {
-    const { value } = this.state;
-    const { onFocus } = this.props;
-    this.manageInputValueState(value, null);
-    onFocus(value);
-  };
-
-  /**
-   * Focus the suggestion list when the arrow down is pressed.
-   *
-   * @param {Object} event - The event provided by the material ui input
-   */
-  onKeyDownHandler = event => {
-    const { onKeyDown } = this.props;
-    const { value } = this.state;
-    if (isKeypress(event, KeyboardCodes.ArrowDown)) {
-      this.node.getElementsByTagName("LI")[0].focus();
-    }
-    onKeyDown(event, value);
-  };
-
-  /**
-   * Clears the suggestion list on blur.
-   *
-   * @param {Object} event - The event provided by the material ui input.
-   */
-  onContainerBlurHandler = event => {
-    if (isNil(event.relatedTarget)) {
-      // workaround because IE 11
-      if (isBrowser("ie")) {
-        setTimeout(this.suggestionClearHandler, 100);
-      } else {
-        this.suggestionClearHandler();
-      }
-    }
-  };
-
-  getInputAdornment = (
-    inputId,
-    classes,
-    showValidationIcon,
-    stateValidationState,
-    showClear,
-    clearButtonLabel,
-    customFixedIcon
-  ) => {
-    if (!showValidationIcon && !showClear && isNil(customFixedIcon)) {
-      // nothing to show
-      return null;
-    }
-
-    return (
-      <InputAdornment
-        inputId={inputId}
-        classes={classes}
-        showValidationIcon={showValidationIcon}
-        validationState={stateValidationState}
-        showClear={showClear}
-        handleClear={() => this.handleClear()}
-        clearButtonLabel={clearButtonLabel}
-        customFixedIcon={customFixedIcon}
-      />
-    );
-  };
 
   render() {
     const {
@@ -292,155 +73,90 @@ class HvHelperText extends React.Component {
       minCharQuantity,
       validation,
       externalWarningTextOverride,
-      inputProps,
-      inputRef,
-      onChange,
-      onBlur,
-      onFocus,
-      onKeyDown,
-      suggestionSelectedCallback,
-      suggestionListCallback,
       value,
       autoFocus,
       initialValue,
+      inlineStyling,
+      variant,
+      classesToApply,
+      hasIcon,
+      stateValidation,
       ...others
     } = this.props;
 
-    const {
-      validationState: stateValidationState,
-      value: stateValue,
-      warningText,
-      suggestionValues
-    } = this.state;
+    const getTypographyType = chosenVariant => {
+      return chosenVariant === "helper"
+        ? "infoText"
+        : chosenVariant === "warning"
+        ? "sText"
+        : "sText";
+    };
 
-    // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
-    // - the input have some sort of validation
-    // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
-    const showValidationIcon =
-      !disabled &&
-      validationIconVisible &&
-      showInfo &&
-      (stateValidationState === validationStates.invalid ||
-        validationType !== validationTypes.none ||
-        maxCharQuantity !== null ||
-        minCharQuantity !== null ||
-        validation !== null);
+    const getClassesToApply = chosenVariant => {
+      let labelStyles;
+      if (chosenVariant === "helper") {
+        labelStyles = clsx(classes.infoText);
+      } else if (chosenVariant === "warning") {
+        labelStyles = clsx(classes.textWarning, classes.infoText, {
+          // show the text if we are in an invalid state and either of the invalid labels exist
+          [classes.showText]:
+            stateValidation === validationState.invalid &&
+            (externalWarningTextOverride || labels.warningText)
+        });
+      }
+      return labelStyles;
+    };
 
-    // show the clear button only if the input is enabled, disableClear is false and the input is not empty
-    const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
+    const getLabels = chosenVariant => {
+      let labelToReturn;
+      if (chosenVariant === "helper") {
+        labelToReturn = labels.infoText;
+      } else if (chosenVariant === "warning") {
+        labelToReturn = externalWarningTextOverride || labels.warningText || "";
+      }
+      return labelToReturn;
+    };
 
-    const adornment = this.getInputAdornment(
-      `${id}-input`,
-      classes,
-      showValidationIcon,
-      stateValidationState,
-      showClear,
-      labels.clearButtonLabel,
-      customFixedIcon
-    );
+    // const getInlineStyles = (errorIconExists, stateValidationObject) => {
+    //   return !errorIconExists && stateValidationObject !== validationState.invalid
+    //     ? "block"
+    //     : "none";
+    // };
 
-    const IconDisplay = () => (
-      <div aria-hidden="true" className={classes.infoIconContainer}>
-        <InfoS />
-      </div>
-    );
-    const InfoIcon = withTooltips(IconDisplay, labels.infoText);
-
+    let labelType;
+    // const currentInputState = hasIcon && stateValidation !== validationState.invalid;
+    if (stateValidation !== "invalid") {
+      labelType = variant;
+    } else {
+      labelType = "warning";
+    }
     return (
-      <div
-        ref={node => {
-          this.node = node;
-        }}
-        className={clsx(classes.root, className)}
-        id={id}
-        onBlur={this.onContainerBlurHandler}
-      >
-        <div className={classes.labelContainer}>
-          {labels.inputLabel && (
-            <HvTypography
-              variant="labelText"
-              component="label"
-              id={`${id}-label`}
-              htmlFor={`${id}-input`}
-              className={clsx(classes.label, {
-                [classes.labelDisabled]: disabled
-              })}
-            >
-              {labels.inputLabel}
-              {isRequired && <span aria-hidden="true">*</span>}
-            </HvTypography>
-          )}
-
-          {showInfo && infoIcon && labels.infoText && <InfoIcon />}
-        </div>
-
-        <Input
-          id={`${id}-input`}
-          aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
-          autoFocus={autoFocus}
-          onKeyDown={this.onKeyDownHandler}
-          onBlur={this.onInputBlurHandler}
-          onFocus={this.onFocusHandler}
-          value={stateValue}
-          disabled={disabled}
-          placeholder={labels.placeholder || undefined}
-          type={password ? "password" : "text"}
-          classes={{
-            input: classes.input,
-            focused: classes.inputRootFocused,
-            disabled: classes.inputDisabled,
-            multiline: classes.multiLine
-          }}
-          className={clsx(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled,
-            [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
-          })}
-          onChange={this.onChangeHandler}
-          inputProps={{
-            required: isRequired,
-            ref: this.materialInputRef,
-            "aria-required": isRequired || undefined,
-            "aria-invalid": stateValidationState === validationStates.invalid || undefined,
-            ...inputProps
-          }}
-          inputRef={inputRef}
-          {...(validationIconPosition === "right" && {
-            endAdornment: adornment
-          })}
-          {...(validationIconPosition === "left" && {
-            startAdornment: adornment
-          })}
-          {...others}
-        />
-
-        {suggestionValues && (
-          <div className={classes.suggestionsContainer}>
-            <div className={classes.suggestionList}>
-              <HvList
-                values={suggestionValues}
-                onClick={this.suggestionSelectedHandler}
-                selectable={false}
-                condensed
-              />
-            </div>
-          </div>
-        )}
-
-        {showInfo && labels.infoText && (
-          <HvTypography
-            id={`${id}-description`}
-            variant="infoText"
-            className={clsx(classes.infoText)}
-            style={{
-              display:
-                !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
-            }}
-          >
-            {labels.infoText}
-          </HvTypography>
-        )}
-
+      <>
         <HvTypography
+          id={`${id}-description`}
+          variant={getTypographyType(labelType)}
+          // className={getClassesToApply(labelType)}
+          // style={{
+          //   display:
+          //     !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
+          // }}
+        >
+          {/* Blah */}
+          {getLabels(labelType)}
+        </HvTypography>
+        {/* {showInfo && labels.infoText && ( */}
+        {/* <HvTypography
+          id={`${id}-description`}
+          variant={getTypographyType(variant)}
+          className={getClassesToApply(variant)}
+          // style={{
+          //   display: getInlineStyles(hasIcon, stateValidation)
+          // }}
+        >
+          {getLabels(variant)}
+        </HvTypography> */}
+        {/* )} */}
+        {/* <HvTypography
           variant="sText"
           className={clsx(classes.textWarning, classes.infoText, {
             [classes.showText]:
@@ -454,13 +170,18 @@ class HvHelperText extends React.Component {
           aria-labelledby={labels.inputLabel ? `${id}-label` : null}
         >
           {externalWarningTextOverride || warningText || ""}
-        </HvTypography>
-      </div>
+        </HvTypography> */}
+      </>
     );
   }
 }
 
-HvInput.propTypes = {
+HvHelperText.propTypes = {
+  inlineStyling: PropTypes.shape({}),
+  variant: PropTypes.string,
+  classesToApply: PropTypes.string,
+  hasIcon: PropTypes.bool,
+  stateValidation: PropTypes.shape({}),
   /**
    * Class names to be applied.
    */
@@ -714,7 +435,7 @@ HvInput.propTypes = {
   externalWarningTextOverride: PropTypes.string
 };
 
-HvInput.defaultProps = {
+HvHelperText.defaultProps = {
   className: "",
   id: undefined,
   password: false,
@@ -733,7 +454,7 @@ HvInput.defaultProps = {
   value: undefined,
   initialValue: undefined,
   autoFocus: false,
-  validationState: validationStates.empty,
+  validationState: validationState.empty,
   disabled: false,
   isRequired: false,
   suggestionListCallback: () => {},
