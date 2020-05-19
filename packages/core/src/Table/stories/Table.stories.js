@@ -10,7 +10,6 @@ export default {
     componentSubtitle: null,
     usage: "import { HvTable } from '@hv/uikit-react-core/dist'"
   },
-  decorators: [storyFn => <div style={{ height: "700px" }}>{storyFn()}</div>],
   component: HvTable
 };
 
