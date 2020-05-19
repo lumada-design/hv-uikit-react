@@ -38,114 +38,99 @@ const validationState = {
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
-class HvHelperText extends React.Component {
-  constructor(props) {
-    super(props);
-    const { validationState, value, initialValue, labels } = props;
-    this.materialInputRef = React.createRef();
-    this.state = {
-      validationState,
-      currentValidationStateProps: validationState,
-      value: value || initialValue,
-      suggestionValues: null,
-      warningText: validationState === validationState.invalid ? labels.warningText : null
-    };
-  }
+const HvHelperText = props => {
+  const {
+    labels,
+    classes,
+    className,
+    id,
+    password,
+    disabled,
+    isRequired,
+    infoIcon,
+    validationIconVisible,
+    disableClear,
+    customFixedIcon,
+    validationIconPosition,
+    showInfo,
+    validationType,
+    validationState,
+    maxCharQuantity,
+    minCharQuantity,
+    validation,
+    externalWarningTextOverride,
+    value,
+    autoFocus,
+    initialValue,
+    inlineStyling,
+    variant,
+    classesToApply,
+    hasIcon,
+    stateValidation,
+    ...others
+  } = props;
 
-  render() {
-    const {
-      labels,
-      classes,
-      className,
-      id,
-      password,
-      disabled,
-      isRequired,
-      infoIcon,
-      validationIconVisible,
-      disableClear,
-      customFixedIcon,
-      validationIconPosition,
-      showInfo,
-      validationType,
-      validationState,
-      maxCharQuantity,
-      minCharQuantity,
-      validation,
-      externalWarningTextOverride,
-      value,
-      autoFocus,
-      initialValue,
-      inlineStyling,
-      variant,
-      classesToApply,
-      hasIcon,
-      stateValidation,
-      ...others
-    } = this.props;
+  const getTypographyType = chosenVariant => {
+    return chosenVariant === "helper"
+      ? "infoText"
+      : chosenVariant === "warning"
+      ? "sText"
+      : "sText";
+  };
 
-    const getTypographyType = chosenVariant => {
-      return chosenVariant === "helper"
-        ? "infoText"
-        : chosenVariant === "warning"
-        ? "sText"
-        : "sText";
-    };
-
-    const getClassesToApply = chosenVariant => {
-      let labelStyles;
-      if (chosenVariant === "helper") {
-        labelStyles = clsx(classes.infoText);
-      } else if (chosenVariant === "warning") {
-        labelStyles = clsx(classes.textWarning, classes.infoText, {
-          // show the text if we are in an invalid state and either of the invalid labels exist
-          [classes.showText]:
-            stateValidation === validationState.invalid &&
-            (externalWarningTextOverride || labels.warningText)
-        });
-      }
-      return labelStyles;
-    };
-
-    const getLabels = chosenVariant => {
-      let labelToReturn;
-      if (chosenVariant === "helper") {
-        labelToReturn = labels.infoText;
-      } else if (chosenVariant === "warning") {
-        labelToReturn = externalWarningTextOverride || labels.warningText || "";
-      }
-      return labelToReturn;
-    };
-
-    // const getInlineStyles = (errorIconExists, stateValidationObject) => {
-    //   return !errorIconExists && stateValidationObject !== validationState.invalid
-    //     ? "block"
-    //     : "none";
-    // };
-
-    let labelType;
-    // const currentInputState = hasIcon && stateValidation !== validationState.invalid;
-    if (stateValidation !== "invalid") {
-      labelType = variant;
-    } else {
-      labelType = "warning";
+  const getClassesToApply = chosenVariant => {
+    let labelStyles;
+    if (chosenVariant === "helper") {
+      labelStyles = clsx(classes.infoText);
+    } else if (chosenVariant === "warning") {
+      labelStyles = clsx(classes.textWarning, classes.infoText, {
+        // show the text if we are in an invalid state and either of the invalid labels exist
+        [classes.showText]:
+          stateValidation === "invalid" && (externalWarningTextOverride || labels.warningText)
+      });
     }
-    return (
-      <>
-        <HvTypography
-          id={`${id}-description`}
-          variant={getTypographyType(labelType)}
-          // className={getClassesToApply(labelType)}
-          // style={{
-          //   display:
-          //     !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
-          // }}
-        >
-          {/* Blah */}
-          {getLabels(labelType)}
-        </HvTypography>
-        {/* {showInfo && labels.infoText && ( */}
-        {/* <HvTypography
+    return labelStyles;
+  };
+
+  const getLabels = chosenVariant => {
+    let labelToReturn;
+    if (chosenVariant === "helper") {
+      labelToReturn = labels.infoText;
+    } else if (chosenVariant === "warning") {
+      labelToReturn = externalWarningTextOverride || labels.warningText || "";
+    }
+    return labelToReturn;
+  };
+
+  // const getInlineStyles = (errorIconExists, stateValidationObject) => {
+  //   return !errorIconExists && stateValidationObject !== validationState.invalid
+  //     ? "block"
+  //     : "none";
+  // };
+
+  let labelType;
+  // const currentInputState = hasIcon && stateValidation !== validationState.invalid;
+  if (stateValidation !== "invalid") {
+    labelType = variant;
+  } else {
+    labelType = "warning";
+  }
+  return (
+    <>
+      <HvTypography
+        id={`${id}-description`}
+        variant={getTypographyType(labelType)}
+        className={getClassesToApply(labelType, stateValidation)}
+        // style={{
+        //   display:
+        //     !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
+        // }}
+      >
+        {/* Blah */}
+        {getLabels(labelType)}
+      </HvTypography>
+      {/* {showInfo && labels.infoText && ( */}
+      {/* <HvTypography
           id={`${id}-description`}
           variant={getTypographyType(variant)}
           className={getClassesToApply(variant)}
@@ -155,8 +140,8 @@ class HvHelperText extends React.Component {
         >
           {getLabels(variant)}
         </HvTypography> */}
-        {/* )} */}
-        {/* <HvTypography
+      {/* )} */}
+      {/* <HvTypography
           variant="sText"
           className={clsx(classes.textWarning, classes.infoText, {
             [classes.showText]:
@@ -171,10 +156,9 @@ class HvHelperText extends React.Component {
         >
           {externalWarningTextOverride || warningText || ""}
         </HvTypography> */}
-      </>
-    );
-  }
-}
+    </>
+  );
+};
 
 HvHelperText.propTypes = {
   inlineStyling: PropTypes.shape({}),
