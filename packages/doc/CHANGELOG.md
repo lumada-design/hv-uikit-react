@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.26.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.25.4...@hv/uikit-react-doc@1.26.0) (2020-05-19)
+
+
+### Features
+
+* **avatar:** avatar can be used to represent a user or a brand [#1487](https://github.com/pentaho/hv-uikit-react/issues/1487) ([f2d6b96](https://github.com/pentaho/hv-uikit-react/commit/f2d6b96543e6fd32897140a898ad66daedd3b338))
+* **userpreferences:** add component following ds guideline. [#658](https://github.com/pentaho/hv-uikit-react/issues/658) ([8f6a901](https://github.com/pentaho/hv-uikit-react/commit/8f6a901e0c0c0a1bcba6dbc7844bd8fc01b38d36))
+
+
+
+
+
 ## [1.25.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.25.3...@hv/uikit-react-doc@1.25.4) (2020-05-15)
 
 

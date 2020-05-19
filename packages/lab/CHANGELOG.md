@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.22.4...@hv/uikit-react-lab@1.23.0) (2020-05-19)
+
+
+### Features
+
+* **userpreferences:** add component following ds guideline. [#658](https://github.com/pentaho/hv-uikit-react/issues/658) ([8f6a901](https://github.com/pentaho/hv-uikit-react/commit/8f6a901e0c0c0a1bcba6dbc7844bd8fc01b38d36))
+
+
+
+
+
 ## [1.22.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.22.3...@hv/uikit-react-lab@1.22.4) (2020-05-15)
 
 
