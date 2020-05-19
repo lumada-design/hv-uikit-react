@@ -16,11 +16,31 @@ The **HvProvider** relies on the context feature of React to pass the theme down
 <HvProvider/>
 ```
 
-If you wish to customize the theme, you need to pass your custom theme to the HvProvider component.  
-This theme value is a material-ui-like object that contains the definition of the various colors and spaces defined by the Design System.
+# Overriding themes
+
+The ui-kit theme object is an enhanced material-ui like theme object, 
+the basic structure of a material theme can be found in [here](https://material-ui.com/customization/default-theme/). 
+Ui-kit appends to the material theme an ```hv``` property which contains extra definitions required for the components,
+these definitions can be found in [here] (https://github.com/lumada-design/hv-uikit-react/blob/master/packages/themes/src/dawn.json).
+
+Given the fact that the theme contains some utility functions, if you want to override one of the ui-kit themes you must built your custom theme first.
+To do this you must import the theme builder function like this ```import { themeBuilder } from "@hv/uikit-react-core/dist/theme"; ```.
+The function receives a json object with the same structure as the definitions found in here [here] (https://github.com/lumada-design/hv-uikit-react/blob/master/packages/themes/src/dawn.json).
+The themeBuilder will output a material theme object with the values received appended in the ```hv``` property ,
+this theme then can be passed to the provider.
 
 ```
-<HvProvider theme={mycustomTheme}>
+const myRawCustomTheme = {
+  "palette": {
+    "accent": {
+      "acce0": "#33CE33",
+    }
+  }
+}
+
+const myCustomTheme = themeBuilder(myRawCustomTheme);
+
+<HvProvider theme={myCustomTheme}>
   <MyApp>
 <HvProvider/>
 ```
