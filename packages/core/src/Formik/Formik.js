@@ -14,23 +14,18 @@ import {
 
 // import * as yup from "yup";
 import { withStyles } from "@material-ui/core";
+
+import classes from "../Input/styles";
+
+import { validateCharLength, validateInput } from "../Input/validations";
+
+import HvTypography from "../Typography";
 import styles from "./styles";
 
 import HvInput from "../Input";
-import HvTextArea from "../TextArea";
-import HvDatePicker from "../DatePicker";
 import HvButton from "../Button";
-import HvDropdown from "../Dropdown";
-import HvMultiButton from "../MultiButton";
-import HvCheckBox from "../Selectors/CheckBox";
-import HvRadio from "../Selectors/RadioButton";
-import HvSwitch from "../Switch";
-import HvList from "../List";
 
-import HvTabs from "../Tabs";
-import HvTab from "../Tab";
-
-const labels = {
+const xlabels = {
   placeholder: "Insert first name",
   infoText: "Please enter your first name",
   inputLabel: "First name",
@@ -85,15 +80,97 @@ const SignupForm = () => {
     }
   });
 
+  const customLabel = (label, variant, others) => {
+    return (
+      <HvTypography
+        variant={variant || "labelText"}
+        component="label"
+        // id={`${id}-label`}
+        // htmlFor={`${id}-input`}
+        // className={clsx(classes.label, {
+        //   [classes.labelDisabled]: disabled
+        // })}
+        {...others}
+      >
+        {label || "Blah"}
+        {/* {isRequired && <span aria-hidden="true">*</span>} */}
+      </HvTypography>
+    );
+  };
+
+  const mylabels = {
+    placeholder: "Insert a number",
+    infoText: "Enter a numeric value",
+    inputLabel: "Height",
+    warningText: "Value is not a number",
+    maxCharQuantityWarningText: "Number is too big",
+    requiredWarningText: "The number is required"
+  };
+
+  const validationStates = {
+    empty: "empty",
+    filled: "filled",
+    valid: "valid",
+    invalid: "invalid"
+  };
+
+  const validationFunction = incomingState => {
+    const { value } = incomingState.state;
+    const { onBlur, labels, isRequired } = incomingState.props;
+    const { validation, validationType, minCharQuantity, maxCharQuantity } = incomingState.props;
+
+    let validationState;
+    let warningText = null;
+
+    if (!value || value === "") {
+      if (isRequired) {
+        validationState = validationStates.invalid;
+        warningText = labels.requiredWarningText;
+      } else {
+        validationState = validationStates.empty;
+      }
+    } else {
+      const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
+      const valid = validateInput(value, validation, validationType);
+
+      if (valid && valueSizeStatus) {
+        validationState = validationStates.valid;
+      } else if (!valid || !valueSizeStatus) {
+        validationState = validationStates.invalid;
+
+        if (maxCharQuantity && value.length > maxCharQuantity) {
+          warningText = labels.maxCharQuantityWarningText;
+        } else if (minCharQuantity && value.length < minCharQuantity) {
+          warningText = labels.minCharQuantityWarningText;
+        } else {
+          // eslint-disable-next-line prefer-destructuring
+          warningText = labels.warningText;
+        }
+      }
+    }
+
+    incomingState.setState({ validationState, warningText });
+    onBlur(value, validationState);
+  };
+
   return (
     <form onSubmit={formik.handleSubmit}>
+      <div>{customLabel(xlabels.inputLabel, "labelText")}</div>
       <HvInput
-        labels={labels}
+        // labels={mylabels}
         id="firstName"
         name="firstName"
+        // isRequired
         onChange={formik.handleChange}
         value={formik.values.firstName}
+        labels={{ placeholder: "Something Something" }}
+        // validationFunction={validationFunction}
       />
+      {/* {customLabel(labels.infoText, "infoText")} */}
+      {customLabel(
+        formik.errors.firstName ? formik.errors.firstName : xlabels.infoText,
+        formik.errors.firstName ? "sText" : "infoText"
+      )}
       {/* <HvInput
         labels={labels}
         id="lastName"

@@ -313,6 +313,8 @@ class HvInput extends React.Component {
       suggestionValues
     } = this.state;
 
+    const { validationFunction } = others;
+
     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
     // - the input have some sort of validation
     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
@@ -346,6 +348,8 @@ class HvInput extends React.Component {
     );
     const InfoIcon = withTooltips(IconDisplay, labels.infoText);
 
+    const { CustomLabel } = others;
+
     return (
       <div
         ref={node => {
@@ -355,7 +359,7 @@ class HvInput extends React.Component {
         id={id}
         onBlur={this.onContainerBlurHandler}
       >
-        <div className={classes.labelContainer}>
+        {/* <div className={classes.labelContainer}>
           {labels.inputLabel && (
             <HvTypography
               variant="labelText"
@@ -372,7 +376,7 @@ class HvInput extends React.Component {
           )}
 
           {showInfo && infoIcon && labels.infoText && <InfoIcon />}
-        </div>
+        </div> */}
 
         <Input
           id={`${id}-input`}
@@ -380,6 +384,7 @@ class HvInput extends React.Component {
           autoFocus={autoFocus}
           onKeyDown={this.onKeyDownHandler}
           onBlur={this.onInputBlurHandler}
+          // onBlur={validationFunction(this)}
           onFocus={this.onFocusHandler}
           value={stateValue}
           disabled={disabled}
@@ -426,7 +431,24 @@ class HvInput extends React.Component {
           </div>
         )}
 
-        {showInfo && labels.infoText && (
+        {/* {CustomLabel ? (
+          <CustomLabel
+            className={clsx(classes.textWarning, classes.infoText, {
+              [classes.showText]:
+                stateValidationState === validationStates.invalid &&
+                (externalWarningTextOverride || warningText)
+            })}
+            aria-live="polite"
+            aria-controls={`${id}-input`}
+            aria-atomic="true"
+            aria-relevant="additions text"
+            aria-labelledby={labels.inputLabel ? `${id}-label` : null}
+          />
+        ) : (
+          undefined
+        )} */}
+
+        {/* {showInfo && labels.infoText && (
           <HvTypography
             id={`${id}-description`}
             variant="infoText"
@@ -438,9 +460,9 @@ class HvInput extends React.Component {
           >
             {labels.infoText}
           </HvTypography>
-        )}
+        )} */}
 
-        <HvTypography
+        {/* <HvTypography
           variant="sText"
           className={clsx(classes.textWarning, classes.infoText, {
             [classes.showText]:
@@ -454,7 +476,7 @@ class HvInput extends React.Component {
           aria-labelledby={labels.inputLabel ? `${id}-label` : null}
         >
           {externalWarningTextOverride || warningText || ""}
-        </HvTypography>
+        </HvTypography> */}
       </div>
     );
   }
