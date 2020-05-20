@@ -6,6 +6,7 @@ import ReactTable from "react-table";
 import HvProvider from "../../Provider";
 import HvPagination from "../Pagination";
 import DropDownMenu from "../../DropDownMenu";
+import NoData from "../NoData";
 import HvTable from "..";
 
 /* eslint-disable no-console */
@@ -131,6 +132,26 @@ describe("Hv Table", () => {
       );
 
       expect(wrapper.find(HvPagination).exists()).toBe(false);
+    });
+
+    it("should render no data component if no data exists", () => {
+      wrapper = mount(
+        <HvProvider>
+          <HvTable columns={[]} data={[]} pageSize={5} />
+        </HvProvider>
+      );
+
+      expect(wrapper.find(NoData).exists()).toBe(true);
+    });
+
+    it("should render a custom no data component when passed and no data exists", () => {
+      wrapper = mount(
+        <HvProvider>
+          <HvTable columns={[]} data={[]} pageSize={5} noDataComponent={<div id="noDataTest" />} />
+        </HvProvider>
+      );
+
+      expect(wrapper.find("#noDataTest").exists()).toBe(true);
     });
 
     it("should set column alignment ", () => {

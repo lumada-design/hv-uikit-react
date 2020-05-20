@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
-import { HvTable } from "../..";
+import Fail from "@hv/uikit-react-icons/dist/Fail";
+import { HvEmptyState, HvTable } from "../..";
 
 export default {
   title: "Visualizations/Table",
@@ -352,6 +353,117 @@ export const Empty = () => {
 };
 
 Empty.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Table sample without data."
+    }
+  }
+};
+
+export const CustomEmpty = () => {
+  const getColumns = () => [
+    {
+      headerText: "Title",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left",
+      sortMethod: (a, b) => {
+        if (a === b) {
+          return 0;
+        }
+        const aReverse = Number(a.split(" ")[1]);
+        const bReverse = Number(b.split(" ")[1]);
+        return aReverse > bReverse ? 1 : -1;
+      }
+    },
+    {
+      headerText: "Time",
+      accessor: "createdDate",
+      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric"
+    },
+    {
+      headerText: "Event Type",
+      accessor: "eventType",
+      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Status",
+      accessor: "status",
+      format: value => value.original.status.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Probability",
+      accessor: "riskScore",
+      format: value => `${value.original.riskScore}%`,
+      cellType: "numeric"
+    },
+    {
+      headerText: "Severity",
+      accessor: "severity",
+      format: value => value.original.severity.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+      sortable: false
+    },
+    {
+      headerText: "Priority",
+      accessor: "priority",
+      format: value => value.original.priority.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Asset",
+      accessor: "asset",
+      cellType: "link",
+      fixed: "right",
+      sortable: false
+    }
+  ];
+
+  const [pageSize, setPageSize] = useState(0);
+  const defaultSorted = [{ id: "name", desc: true }];
+
+  const onPageSizeChange = newPageSize => {
+    setPageSize(newPageSize);
+  };
+
+  const labels = {
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
+  };
+
+  const NoDataComponent = () => (
+    <HvEmptyState
+      message="No data"
+      icon={<Fail iconSize="L" color="atmo7" role="presentation" />}
+    />
+  );
+
+  return (
+    <div style={{ padding: "10px" }}>
+      <HvTable
+        data={[]}
+        id="test"
+        columns={getColumns()}
+        defaultPageSize={10}
+        pageSize={pageSize}
+        resizable={false}
+        defaultSorted={defaultSorted}
+        labels={labels}
+        onPageSizeChange={onPageSizeChange}
+        noDataComponent={<NoDataComponent />}
+      />
+    </div>
+  );
+};
+
+CustomEmpty.story = {
   parameters: {
     docs: {
       storyDescription: "Table sample without data."
