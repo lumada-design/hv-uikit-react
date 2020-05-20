@@ -1,11 +1,9 @@
 import React from "react";
-import PropTypes, { oneOfType } from "prop-types";
+import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import clsx from "clsx";
-import HvButton from "../Button";
-import DropDownMenu from "../DropDownMenu";
-import { setId } from "..";
+import { MoreOptionsVertical } from "@hv/uikit-react-icons";
+import { HvButton, HvDropDownMenu, setId } from "..";
 import styles from "./styles";
 
 const Actions = ({
@@ -13,6 +11,7 @@ const Actions = ({
   classes,
   className,
   category = "ghost",
+  disabled = false,
   actions = [],
   actionsCallback,
   maxVisibleActions = Infinity,
@@ -21,19 +20,20 @@ const Actions = ({
   if (!Array.isArray(actions)) return React.isValidElement(actions) ? actions : null;
 
   const renderButton = (action, idx) => {
-    const { disabled, iconCallback, label, ...other } = action;
+    const { disabled: actDisabled, iconCallback, label, ...other } = action;
     const actionId = setId(id, idx, "action", action.id);
+
     return (
       <HvButton
         id={actionId}
-        key={actionId}
+        key={actionId || idx}
         category={category}
         className={classes.button}
-        disabled={disabled}
+        disabled={actDisabled ?? disabled}
         onClick={event => actionsCallback?.(event, id, action)}
+        startIcon={iconCallback?.({ isDisabled: disabled })}
         {...other}
       >
-        {iconCallback?.({ isDisabled: disabled })}
         {label}
       </HvButton>
     );
@@ -43,12 +43,20 @@ const Actions = ({
     const actsVisible = actions.slice(0, maxVisibleActions);
     const actsDropdown = actions.slice(maxVisibleActions);
 
+    const semantic = category === "semantic";
+    const iconColor = (disabled && "atmo7") || (semantic && "base2") || undefined;
+
     return (
       <>
         {actsVisible.map((action, idx) => renderButton(action, idx))}
-        <DropDownMenu
-          classes={{ root: classes.dropDownMenu }}
-          icon={<MoreVert className={classes.dropDownMenuIcon} />}
+        <HvDropDownMenu
+          disabled={disabled}
+          classes={{
+            root: classes.dropDownMenu,
+            icon: classes.dropDownMenuButton,
+            iconSelected: classes.dropDownMenuButtonSelected
+          }}
+          icon={<MoreOptionsVertical color={iconColor} />}
           placement="left"
           onClick={(event, action) => actionsCallback?.(event, id, action)}
           dataList={actsDropdown}
@@ -101,9 +109,13 @@ Actions.propTypes = {
      */
     dropDownMenu: PropTypes.string,
     /**
-     * Styles applied to the DropDownMenu icon.
+     * Styles applied to the DropDownMenu IconButton component.
      */
-    dropDownMenuIcon: PropTypes.string
+    dropDownMenuButton: PropTypes.string,
+    /**
+     * Styles applied to the DropDownMenu IconButton component when it is selected.
+     */
+    dropDownMenuButtonSelected: PropTypes.string
   }).isRequired,
   /**
    * Component identifier.
@@ -114,20 +126,21 @@ Actions.propTypes = {
    */
   category: PropTypes.oneOf(["primary", "secondary", "ghost", "ghostSecondary", "semantic"]),
   /**
+   *  Whether actions should be all disabled
+   */
+  disabled: PropTypes.bool,
+  /**
    * The renderable content inside the actions slot of the footer,
    * or an Array of actions ´{id, label, icon, disabled}´
    */
-  actions: oneOfType([
+  actions: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
-        label: PropTypes.string.isRequired,
+        label: PropTypes.string,
         iconCallback: PropTypes.func,
-        disabled: PropTypes.bool,
-        ariaLabel: PropTypes.string,
-        ariaLabelledBy: PropTypes.string,
-        ariaDescribedBy: PropTypes.string
+        disabled: PropTypes.bool
       })
     )
   ]),

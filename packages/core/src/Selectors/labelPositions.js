@@ -1,6 +1,3 @@
-const labelPositions = Object.freeze({
-  start: "start",
-  end: "end"
-});
+import { labelPositions } from "./utils";
 
 export default labelPositions;

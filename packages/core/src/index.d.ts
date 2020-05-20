@@ -16,6 +16,9 @@ export * from "./Barchart";
 export { default as HvBreadCrumb } from "./BreadCrumb";
 export * from "./BreadCrumb";
 
+export { default as HvBulkActions } from "./BulkActions";
+export * from "./BulkActions";
+
 export { default as HvButton } from "./Button";
 export * from "./Button";
 

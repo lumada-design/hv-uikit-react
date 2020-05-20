@@ -4,6 +4,7 @@ export * from "./AssetInventory";
 export { default as HvAvatar } from "./Avatar";
 export { default as HvBanner, HvBannerContent } from "./Banner";
 export { default as HvBreadcrumb } from "./BreadCrumb";
+export { default as HvBulkActions } from "./BulkActions";
 export { default as HvButton } from "./Button";
 export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMedia } from "./Card";
 export { default as HvContainer } from "./Container";
@@ -42,6 +43,7 @@ export { default as HvUserPreferences } from "./UserPreferences";
 // HOCs
 export { default as withId } from "./withId";
 export { default as withLabels } from "./withLabels";
+export { default as withSemantic } from "./withSemantic";
 export { default as withTooltip } from "./withTooltip";
 
 // Hooks

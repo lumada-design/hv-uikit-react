@@ -532,7 +532,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                         />
                                       }
                                       disabled={false}
-                                      label=""
                                       labelPlacement="end"
                                     >
                                       <ForwardRef(FormControlLabel)
@@ -575,7 +574,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                           />
                                         }
                                         disabled={false}
-                                        label=""
                                         labelPlacement="end"
                                       >
                                         <label
@@ -922,7 +920,8 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                         "actionContainer": "HvActions-actionContainer",
                                         "button": "HvActions-button",
                                         "dropDownMenu": "HvActions-dropDownMenu",
-                                        "dropDownMenuIcon": "HvActions-dropDownMenuIcon",
+                                        "dropDownMenuButton": "HvActions-dropDownMenuButton",
+                                        "dropDownMenuButtonSelected": "HvActions-dropDownMenuButtonSelected",
                                         "root": "HvActions-root",
                                       }
                                     }

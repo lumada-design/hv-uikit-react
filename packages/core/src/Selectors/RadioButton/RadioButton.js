@@ -2,50 +2,12 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Radio, FormControlLabel, withStyles } from "@material-ui/core";
-import RadioButtonSelected from "@hv/uikit-react-icons/dist/RadioButtonSelected";
-import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
 import { setId } from "../../utils";
-import labelPositions from "../labelPositions";
+import { getLabelStyles, getSelectorIcons } from "../utils";
 import styles from "./styles";
 
 /**
- * Returns the correct label styles to be applied based on label position.
- *
- * @param {String} classes - The classes object containing the classes names needed to be applied.
- * @param {Object} labelPosition - an Object containing the available label positions.
- * @returns {Object} - an Object with the name of the class for the required styling.
- */
-const getLabelStyles = (classes, labelPosition, label) => {
-  if (label) {
-    switch (labelPosition) {
-      default:
-      case labelPositions.end:
-        return clsx(classes.container, classes.labelEnd);
-      case labelPositions.start:
-        return clsx(classes.container, classes.labelStart);
-    }
-  }
-  return classes.container;
-};
-
-/**
- * Returns the icons to be used based on the disable value.
- *
- * @param {Object} classes - A JSS Object that contains the css classes to apply.
- * @param {Boolean} disabled - `true` if the disabled icon is required.
- * @returns {Object} - an Object with the selected icons.
- */
-const getIcons = (classes, disabled) => {
-  const color = disabled ? ["atmo4", "atmo6"] : undefined;
-
-  return {
-    emptyIcon: <RadioButtonUnSelected color={color} className={classes.icon} />,
-    checkedIcon: <RadioButtonSelected color={color} className={classes.icon} />
-  };
-};
-
-/**
- * A Checkbox is a mechanism that allows user to select one options
+ * A Radio button is a mechanism that allows user to select one option from a group
  */
 const HvRadio = props => {
   const {
@@ -53,6 +15,7 @@ const HvRadio = props => {
     className,
     id,
     checked,
+    semantic = false,
     disabled,
     onChange,
     value = "",
@@ -62,19 +25,16 @@ const HvRadio = props => {
     ...others
   } = props;
 
-  const icons = getIcons(classes, disabled);
+  const icons = getSelectorIcons(classes, { disabled, semantic });
   const labelStyles = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
 
   const onLocalChange = evt => {
-    const isKeyEvent =
-      window.event.screenX === 0 &&
-      window.event.screenY === 0 &&
-      window.event.clientX === 0 &&
-      window.event.clientY === 0;
+    const { screenX, screenY, clientX, clientY } = evt.nativeEvent;
+    const isKeyEvent = screenX === 0 && screenY === 0 && clientX === 0 && clientY === 0;
 
     disableFocus(!isKeyEvent);
-    onChange(evt);
+    onChange?.(evt, checked);
   };
 
   const onBlur = () => {
@@ -97,8 +57,8 @@ const HvRadio = props => {
         <Radio
           id={setId(id, "input")}
           className={classes.radio}
-          icon={icons.emptyIcon}
-          checkedIcon={icons.checkedIcon}
+          icon={icons.radio}
+          checkedIcon={icons.radioChecked}
           color="default"
           disabled={disabled}
           disableRipple
@@ -173,6 +133,10 @@ HvRadio.propTypes = {
    */
   checked: PropTypes.bool,
   /**
+   * Whether the selector should use semantic colors
+   */
+  semantic: PropTypes.bool,
+  /**
    * The value of the Radio button.
    * this value will be returned in the event object generated for the onChange callback
    */
@@ -180,7 +144,7 @@ HvRadio.propTypes = {
   /**
    * The label to be added to the radio button.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    * The position of the Radio button label.
    *  - Accepted values:
