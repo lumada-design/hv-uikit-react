@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HvLinechart from "../Linechart";
 
 export default {
@@ -206,6 +206,70 @@ TimeRepresentation.story = {
   parameters: {
     docs: {
       storyDescription: "Representation of time related data."
+    }
+  }
+};
+
+export const WithIntervalUpdates = () => {
+  const rand = diff => Math.random() * diff - diff / 2;
+
+  const generateDates = (initialDate, num = 200) =>
+    Array.from(Array(num).keys()).map(i =>
+      new Date(new Date(initialDate).setDate(initialDate.getDate() + i)).toISOString().slice(0, 10)
+    );
+
+  const generateValues = (num = 10, start = 200, inc = 8) => {
+    const values = [start];
+    for (let i = 0; i <= num; i += 1) {
+      values.push(values[i] + rand(inc));
+    }
+    return values;
+  };
+
+  const date = useRef(new Date("2020-01-01"));
+  const values = useRef(generateValues(200));
+
+  const generateData = () => {
+    return [{ x: generateDates(date.current), y: values.current, name: "Sales Target" }];
+  };
+
+  const [data, setData] = useState(generateData(values.current));
+
+  const addDaysToCurrentDate = num => {
+    const currentDay = new Date(date.current);
+    date.current = new Date(currentDay.setDate(currentDay.getDate() + num));
+  };
+
+  useEffect(() => {
+    addDaysToCurrentDate(30);
+    const interval = setInterval(() => {
+      const intervalValues = values.current.slice();
+      intervalValues.splice(0, 30);
+      values.current = intervalValues.concat(
+        generateValues(30, intervalValues[intervalValues.length])
+      );
+
+      addDaysToCurrentDate(30);
+      setData(generateData());
+    }, 2000);
+    return () => clearInterval(interval);
+  });
+
+  return (
+    <HvLinechart
+      title="Sales performance"
+      subtitle="Monthly progress"
+      data={data}
+      xAxisTitle="Date"
+      yAxisTitle="Thousands of Dollars ($)"
+    />
+  );
+};
+
+WithIntervalUpdates.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Data updated each 5 seconds."
     }
   }
 };

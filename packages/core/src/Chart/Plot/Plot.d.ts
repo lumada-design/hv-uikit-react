@@ -32,6 +32,10 @@ export interface HvPlotProps
    * Function to be call after plot render.
    */
   afterPlot?: (data: PlotData, ref: any) => void;
+  /**
+   * Plot revision
+   */
+  revision?: number;
 }
 
 export type HvPlotClassKey = "";
