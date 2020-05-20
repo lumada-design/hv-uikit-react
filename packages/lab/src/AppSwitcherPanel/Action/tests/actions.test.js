@@ -30,7 +30,7 @@ describe("<Action /> with description", () => {
     iconUrl: "http://mockapp1/icon",
     description: "Mock App 1 Description",
     url: "http://mockapp1/",
-    target: "_top",
+    target: "_top"
   };
 
   beforeEach(async () => {
@@ -69,7 +69,7 @@ describe("<Action /> without description", () => {
     name: "Mock App 1",
     iconUrl: "http://mockapp1/icon",
     url: "http://mockapp1/",
-    target: "_top",
+    target: "_top"
   };
 
   beforeEach(async () => {
@@ -108,7 +108,7 @@ describe("<Action /> with an element icon", () => {
     name: "Mock App 1",
     iconElement: <Tool />,
     url: "http://mockapp1/",
-    target: "_top",
+    target: "_top"
   };
 
   beforeEach(async () => {
@@ -143,4 +143,3 @@ describe("<Action /> with an element icon", () => {
     expect(wrapper.find(Tool).length).toBe(1);
   });
 });
-

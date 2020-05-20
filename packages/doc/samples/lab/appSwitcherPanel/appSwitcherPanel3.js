@@ -24,7 +24,10 @@ const getDummyApplicationsList = () => {
 
   for (let index = 1; index <= 100; index++) {
     dummyApplicationsList.push({
-      name: index % 3 === 0 ? `Application ${index} is an application with a big name` : `Application ${index}`,
+      name:
+        index % 3 === 0
+          ? `Application ${index} is an application with a big name`
+          : `Application ${index}`,
       iconUrl: `https://i.picsum.photos/id/${index}/32/32.jpg`,
       description: `This is the auto-generated application number ${index}. Note: All the apps redirect to the UI-KIT storybook`,
       url: "https://github.com/pentaho/hv-uikit-react",
@@ -37,7 +40,7 @@ const getDummyApplicationsList = () => {
 const appSwitcherToggleProps = {
   title: "Big list of applications",
   applications: getDummyApplicationsList(),
-  footer: <div>This is the footer</div>,
+  footer: <div>This is the footer</div>
 };
 
 export default (

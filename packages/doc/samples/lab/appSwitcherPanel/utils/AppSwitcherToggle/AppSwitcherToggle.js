@@ -26,7 +26,7 @@ export default class AppSwitcherToggle extends Component {
     super(props);
 
     this.state = {
-      isOpen: props.isOpen,
+      isOpen: props.isOpen
     };
   }
 
@@ -37,7 +37,7 @@ export default class AppSwitcherToggle extends Component {
    */
   _closePanelContainer = () => {
     this.setState({
-      isOpen: false,
+      isOpen: false
     });
   };
 
@@ -47,8 +47,8 @@ export default class AppSwitcherToggle extends Component {
    * @memberof AppSwitcher
    */
   handleClick = () => {
-    this.setState((prevState) => ({
-      isOpen: !prevState.isOpen,
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
     }));
   };
 
@@ -67,8 +67,10 @@ export default class AppSwitcherToggle extends Component {
       ...this.props,
       isOpen,
       classes: {
-        open: panelRightSide ? classes.appSwitcherPanelOpenRight : classes.appSwitcherPanelOpen,
-      },
+        open: panelRightSide
+          ? classes.appSwitcherPanelOpenRight
+          : classes.appSwitcherPanelOpen
+      }
     };
 
     return (
@@ -76,8 +78,7 @@ export default class AppSwitcherToggle extends Component {
         <HvButton
           className={classes.iconWrapper}
           category="icon"
-          onClick={this.handleClick}
-        >
+          onClick={this.handleClick}>
           <AppSwitcher />
         </HvButton>
 
@@ -103,7 +104,7 @@ AppSwitcherToggle.propTypes = {
     /**
      * Styles applied to wrapper element for the icon.
      */
-    iconWrapper: PropTypes.string,
+    iconWrapper: PropTypes.string
   }).isRequired,
   /**
    * Flag stating if the panel is opened or closed.
@@ -135,19 +136,19 @@ AppSwitcherToggle.propTypes = {
        */
       url: PropTypes.string,
       /**
-       * TODO: Defines if the application should be opened in the same window or in a new one.
+       * Defines if the application should be opened in the same window or in a new one. Options: `_top`, `_blank`
        */
-      target: "",
+      target: PropTypes.oneOf(["_top", "_blank"])
     })
   ).isRequired,
   /**
    * Element to be added to the footer container.
    */
-  footer: PropTypes.element,
+  footer: PropTypes.element
 };
 
 AppSwitcherToggle.defaultProps = {
   isOpen: false,
   title: "Apps",
-  footer: undefined,
+  footer: undefined
 };

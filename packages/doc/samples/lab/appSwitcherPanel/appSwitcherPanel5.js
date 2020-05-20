@@ -25,12 +25,13 @@ import { boxStyles } from "./utils/boxStyles";
 const appSwitcherToggleProps = {
   applications: [
     {
-      name: "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
+      name:
+        "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
       iconUrl:
         "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
       url: "https://pentaho.github.io/hv-uikit-react/",
-      target: "_top",
+      target: "_top"
     },
     {
       name: "UI-KIT GitHub (New Tab)",
@@ -43,18 +44,25 @@ const appSwitcherToggleProps = {
       name: "No Icon App",
       description:
         "This is an App without an icon, URL is set to the UI-KIT storybook",
-      url: "https://github.com/pentaho/hv-uikit-react",
+      url: "https://github.com/pentaho/hv-uikit-react"
     },
     {
       name: "No Description App",
-      url: "https://github.com/pentaho/hv-uikit-react",
+      url: "https://github.com/pentaho/hv-uikit-react"
     }
   ],
   panelRightSide: true
 };
 
+const handlesActionSelectedCallback = application => {
+  return window.location.href.startsWith(application.url);
+};
+
 export default (
-  <DefaultHeader appSwitcherNextToUser>
-    <AppSwitcherToggle {...appSwitcherToggleProps} />
+  <DefaultHeader>
+    <AppSwitcherToggle
+      {...appSwitcherToggleProps}
+      isActionSelectedCallback={handlesActionSelectedCallback}
+    />
   </DefaultHeader>
 );

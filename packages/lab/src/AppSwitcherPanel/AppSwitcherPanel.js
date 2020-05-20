@@ -27,7 +27,7 @@ export default class AppSwitcherPanel extends Component {
     const { id } = this.props;
 
     this.state = {
-      internalId: id || uniqueId("hv-appswitcherpanel-"),
+      internalId: id || uniqueId("hv-appswitcherpanel-")
     };
   }
 
@@ -41,9 +41,10 @@ export default class AppSwitcherPanel extends Component {
       header,
       footer,
       onActionClickedCallback,
+      isActionSelectedCallback
     } = this.props;
 
-    const actionClicked = (application) => {
+    const actionClicked = application => {
       if (onActionClickedCallback) {
         onActionClickedCallback(application);
       }
@@ -56,6 +57,7 @@ export default class AppSwitcherPanel extends Component {
             key={index}
             application={application}
             onClickCallback={actionClicked}
+            isSelectedCallback={isActionSelectedCallback}
           />
         );
       }
@@ -64,8 +66,7 @@ export default class AppSwitcherPanel extends Component {
     return (
       <div
         id={internalId}
-        className={`${classes.root} ${isOpen ? classes.open : ""}`}
-      >
+        className={`${classes.root} ${isOpen ? classes.open : ""}`}>
         <div className={classes.headerContainer}>
           {header ? (
             header
@@ -131,7 +132,7 @@ AppSwitcherPanel.propTypes = {
       /**
        * Callback triggered when the action is clicked
        */
-      onClickCallback: PropTypes.func,
+      onClickCallback: PropTypes.func
     })
   ).isRequired,
   /**
@@ -146,11 +147,16 @@ AppSwitcherPanel.propTypes = {
    * Triggered when an action is clicked.
    */
   onActionClickedCallback: PropTypes.element.func,
+  /**
+   * Must return a boolean stating if the action element is selected or not.
+   */
+  isActionSelectedCallback: PropTypes.element.func
 };
 
 AppSwitcherPanel.defaultProps = {
   isOpen: false,
   title: "Apps",
   footer: undefined,
-  onActionClickedCallback: () => {}
+  onActionClickedCallback: () => {},
+  isActionSelectedCallback: () => false
 };

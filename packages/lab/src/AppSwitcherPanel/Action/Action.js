@@ -25,21 +25,18 @@ export default class Action extends Component {
     this.state = { validIconUrl: true };
   }
   render() {
-    const {
-      classes,
-      application: { name, description, iconUrl, iconElement, url, target },
-    } = this.props;
+    const { classes, application, isSelectedCallback } = this.props;
 
     const renderApplicationIcon = () => {
-      if (iconElement) {
-        return iconElement;
+      if (application.iconElement) {
+        return application.iconElement;
       }
-      if (iconUrl && this.state.validIconUrl) {
+      if (application.iconUrl && this.state.validIconUrl) {
         return (
           <img
             className={classes.iconUrl}
-            src={iconUrl}
-            onError={(element) => {
+            src={application.iconUrl}
+            onError={element => {
               element.target.style.display = "none";
               this.setState({ validIconUrl: false });
             }}
@@ -49,14 +46,14 @@ export default class Action extends Component {
       return <div className={classes.dummyImage} />;
     };
 
-    /**
-     * Checks if the current url starts with the url received in the props.
-     */
-    const isSelected = window.location.href.startsWith(url);
+    const isSelected = isSelectedCallback(application);
 
     const renderElementWithLink = () => {
       return (
-        <a href={url} target={target || "_top"} className={classes.link}>
+        <a
+          href={application.url}
+          target={application.target || "_top"}
+          className={classes.link}>
           {renderElement()}
         </a>
       );
@@ -83,14 +80,16 @@ export default class Action extends Component {
             isSelected ? classes.selected : ""
           }`}
           tabIndex={0}
-          onClick={handleOnClick}
-        >
+          onClick={handleOnClick}>
           {renderApplicationIcon()}
 
-          <span title={name}>{name}</span>
+          <span title={application.name}>{application.name}</span>
 
-          {description && (
-            <Info className={classes.iconInfo} title={description} />
+          {application.description && (
+            <Info
+              className={classes.iconInfo}
+              title={application.description}
+            />
           )}
         </HvTypography>
       );
@@ -130,7 +129,7 @@ Action.propTypes = {
     /**
      * Defines if the application should be opened in the same tab or in a new one.
      */
-    target: PropTypes.oneOf(["_top", "_blank"]),
+    target: PropTypes.oneOf(["_top", "_blank"])
   }).isRequired,
   /**
    * A Jss object used to override or extend the component styles.
@@ -140,9 +139,14 @@ Action.propTypes = {
    * Callback triggered when the action is clicked.
    */
   onClickCallback: PropTypes.func,
+  /**
+   * Must return a boolean stating if the action element is selected or not.
+   */
+  isSelectedCallback: PropTypes.func
 };
 
 Action.defaultProps = {
   target: "_top",
-  onClickCallback: () => {}
+  onClickCallback: () => {},
+  isSelectedCallback: () => false
 };
