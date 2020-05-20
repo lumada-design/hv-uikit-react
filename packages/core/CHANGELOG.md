@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.31.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.31.0...@hv/uikit-react-core@1.31.1) (2020-05-20)
+
+
+### Bug Fixes
+
+* **dropdown:** dropdown closes when clicking the input.[#1461](https://github.com/pentaho/hv-uikit-react/issues/1461) ([f46b95d](https://github.com/pentaho/hv-uikit-react/commit/f46b95dbd46fad4e9b23da01d55337cb5247b402))
+
+
+
+
+
 # [1.31.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@1.30.3...@hv/uikit-react-core@1.31.0) (2020-05-19)
 
 
