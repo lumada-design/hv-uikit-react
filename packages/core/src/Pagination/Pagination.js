@@ -121,7 +121,7 @@ const Pagination = ({
       <div className={classes.pageNavigator} {...navigationProps}>
         <IconButton
           id={setId(id, "firstPage-button")}
-          aria-label={setId(id, "firstPage-button")}
+          aria-label="First Page"
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(0)}
@@ -130,7 +130,7 @@ const Pagination = ({
         </IconButton>
         <IconButton
           id={setId(id, "previousPage-button")}
-          aria-label={setId(id, "previousPage-button")}
+          aria-label="Previous Page"
           className={classes.iconContainer}
           disabled={!canPrevious}
           onClick={() => changePage(statePage - 1)}
@@ -177,7 +177,7 @@ const Pagination = ({
         </div>
         <IconButton
           id={setId(id, "nextPage-button")}
-          aria-label={setId(id, "nextPage-button")}
+          aria-label="Next Page"
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(statePage + 1)}
@@ -186,7 +186,7 @@ const Pagination = ({
         </IconButton>
         <IconButton
           id={setId(id, "lastPage-button")}
-          aria-label={setId(id, "lastPage-button")}
+          aria-label="Last Page"
           className={classes.iconContainer}
           disabled={!canNext}
           onClick={() => changePage(pages - 1)}

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
+import { PaginationLabelsProp } from "../Pagination";
 
 export interface TableLabel {
   /**
@@ -50,16 +51,19 @@ export interface TableColumn {
   /**
    * The width of the column
    */
-  width?: string | number
+  width?: string | number;
   /**
    * The max-width of the column
    */
-  maxWidth?: string | number
+  maxWidth?: string | number;
   /**
    * The min-width of the column
    */
-  minWidth?: string | number
-
+  minWidth?: string | number;
+  /**
+   * Labels for the pagination.
+   */
+  paginationLabels?: PaginationLabelsProp;
 }
 
 export interface SecondaryAction extends ListValueProp {
@@ -160,7 +164,7 @@ export interface HvTableProps
   /**
    * Number of rows available in table to display in aria-rowcount
    */
-  rowCount?: number,
+  rowCount?: number;
 
   /**
    * Callback which receives the checked state of all items in the list
@@ -187,17 +191,22 @@ export interface HvTableProps
    */
   dropdownMenuProps?: Object;
 
-  tableProps?: object,
+  tableProps?: object;
 
   /**
    * Boolean describing if the table columns are rezisable or not
    */
-  resizable?: boolean,
+  resizable?: boolean;
 
   /**
    * The default page size in the page size selector
    */
-  defaultPageSize?: number
+  defaultPageSize?: number;
+
+  /**
+   * Component to be shown when no data is displayed.
+   */
+  noDataComponent?: React.ReactNode;
 }
 
 export type HvTableClassKey =

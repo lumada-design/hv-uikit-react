@@ -10,7 +10,9 @@ const useStyles = makeStyles(() =>
       transform: "translate(-50%,0)",
       transition: "all .3s ease",
       zIndex: 1,
-      pointerEvents: "none",
+      pointerEvents: "none"
+    },
+    default: {
       padding: "32px"
     },
     noTextMessage: {
