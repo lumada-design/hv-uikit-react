@@ -1832,6 +1832,169 @@ WithNullValues.story = {
   }
 };
 
+export const TableWithChangingData = () => {
+  // Table data manipulation
+  const enableUsersData = [
+    {
+      id: 1,
+      name: "Aaron",
+      surname: "Melantha",
+      email: "melantha@mail.com"
+    },
+    {
+      id: 2,
+      name: "Jeanette",
+      surname: "Gentle",
+      email: "gentle@mail.com"
+    },
+    {
+      id: 3,
+      name: "Michael",
+      surname: "Neil",
+      email: "neil@mail.com"
+    },
+    {
+      id: 4,
+      name: "Walter",
+      surname: "Allegro",
+      email: "allegro@mail.com"
+    },
+    {
+      id: 5,
+      name: "James",
+      surname: "Jonah",
+      email: "allegro@mail.com"
+    }
+  ];
+
+  const disabledUserData = [
+    {
+      id: 6,
+      name: "Mary",
+      surname: "Monroe",
+      email: "monroe@mail.com"
+    },
+    {
+      id: 7,
+      name: "Katherine",
+      surname: "Kubrick",
+      email: "kubrick@mail.com"
+    },
+    {
+      id: 8,
+      name: "Peter",
+      surname: "Portland",
+      email: "portland@mail.com"
+    },
+    {
+      id: 9,
+      name: "Yuri",
+      surname: "York",
+      email: "york@mail.com"
+    },
+    {
+      id: 10,
+      name: "Howard",
+      surname: "Holmes",
+      email: "holmes@mail.com"
+    }
+  ];
+
+  const [enabledUsers, setEnabledUsers] = useState(enableUsersData);
+  const [disabledUsers, setDisabledUsers] = useState(disabledUserData);
+
+  const eliminateUserId = (id, list) => list.filter(d => d.id !== id);
+  const findUser = (id, list) => list.find(d => d.id === id);
+
+  const enableUser = (id, currentEnabledUsers, currentDisabledUsers) => {
+    const user = findUser(id, currentDisabledUsers);
+    const newDisableUsers = eliminateUserId(id, currentDisabledUsers);
+    const newEnableUsers = [...currentEnabledUsers];
+    newEnableUsers.push(user);
+    setEnabledUsers(newEnableUsers);
+    setDisabledUsers(newDisableUsers);
+  };
+
+  const disableUser = (id, currentEnabledUsers, currentDisabledUsers) => {
+    const user = findUser(id, currentEnabledUsers);
+    const newEnableUsers = eliminateUserId(id, currentEnabledUsers);
+    const newDisableUsers = [...currentDisabledUsers];
+    newDisableUsers.push(user);
+    setEnabledUsers(newEnableUsers);
+    setDisabledUsers(newDisableUsers);
+  };
+
+  // Table columns
+  const getColumns = () => [
+    {
+      headerText: "ID",
+      accessor: "id",
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Name",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    },
+    {
+      headerText: "Surname",
+      accessor: "surname",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    },
+    {
+      headerText: "Email",
+      accessor: "email",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    }
+  ];
+
+  const disabledUsersActions = [
+    {
+      label: "disable",
+      action: (event, row) => disableUser(row.id, enabledUsers, disabledUsers)
+    }
+  ];
+
+  const enableUsersActions = [
+    {
+      label: "enable",
+      action: (event, row) => enableUser(row.id, enabledUsers, disabledUsers)
+    }
+  ];
+
+  return (
+    <div>
+      <HvTable
+        data={enabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        secondaryActions={disabledUsersActions}
+        defaultPageSize={5}
+      />
+      <HvTable
+        data={disabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        secondaryActions={enableUsersActions}
+        defaultPageSize={5}
+      />
+    </div>
+  );
+};
+
+TableWithChangingData.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Sample showcasing the table component behavior with changing data."
+    }
+  }
+};
+
 export const ServerSidePagination = () => {
   const start = new Date(2001, 0, 1);
   const end = new Date();
