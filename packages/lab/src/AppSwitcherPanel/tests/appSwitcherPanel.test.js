@@ -37,23 +37,23 @@ describe("<AppSwitcherPanel /> with minimum configuration", () => {
         name: "Mock App 1",
         iconUrl: "http://mockapp1/icon",
         url: "http://mockapp1/",
-        target: "_top",
+        target: "_top"
       },
       {
         name: "Mock App 2",
         iconUrl: "http://mockapp2/icon",
         description: "Mock App 2 Description",
         url: "http://mockapp2/",
-        target: "_blank",
+        target: "_blank"
       },
       {
         name: "Mock App 3",
         iconUrl: "http://mockapp2/icon",
         description: "Mock App 2 Description",
-        url: "http://mockapp2/",
-      },
+        url: "http://mockapp2/"
+      }
     ],
-    footer: undefined,
+    footer: undefined
   };
 
   beforeEach(async () => {

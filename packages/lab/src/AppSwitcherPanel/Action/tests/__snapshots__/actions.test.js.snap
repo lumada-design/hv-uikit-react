@@ -31,6 +31,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
         "typography": "Action-typography-1",
       }
     }
+    isSelectedCallback={[Function]}
     onClickCallback={[Function]}
     target="_top"
     theme={
@@ -3884,6 +3885,7 @@ exports[`<Action /> with description should render correctly 1`] = `
         "typography": "Action-typography-1",
       }
     }
+    isSelectedCallback={[Function]}
     onClickCallback={[Function]}
     target="_top"
     theme={
@@ -7751,6 +7753,7 @@ exports[`<Action /> without description should render correctly 1`] = `
         "typography": "Action-typography-1",
       }
     }
+    isSelectedCallback={[Function]}
     onClickCallback={[Function]}
     target="_top"
     theme={

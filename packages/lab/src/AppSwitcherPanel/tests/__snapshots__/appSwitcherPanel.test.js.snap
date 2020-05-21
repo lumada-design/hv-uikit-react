@@ -79,6 +79,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
         "titleContainer": "AppSwitcherPanel-titleContainer-4",
       }
     }
+    isActionSelectedCallback={[Function]}
     isOpen={true}
     onActionClickedCallback={[Function]}
     theme={
@@ -1043,6 +1044,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "url": "http://mockapp1/",
             }
           }
+          isSelectedCallback={[Function]}
           key="0"
           onClickCallback={[Function]}
         >
@@ -1066,6 +1068,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "typography": "Action-typography-8",
               }
             }
+            isSelectedCallback={[Function]}
             onClickCallback={[Function]}
             target="_top"
             theme={
@@ -4908,6 +4911,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "url": "http://mockapp5/",
             }
           }
+          isSelectedCallback={[Function]}
           key="4"
           onClickCallback={[Function]}
         >
@@ -4929,6 +4933,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "typography": "Action-typography-8",
               }
             }
+            isSelectedCallback={[Function]}
             onClickCallback={[Function]}
             target="_top"
             theme={
@@ -7861,6 +7866,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
         "titleContainer": "AppSwitcherPanel-titleContainer-4",
       }
     }
+    isActionSelectedCallback={[Function]}
     isOpen={true}
     onActionClickedCallback={[Function]}
     theme={
@@ -8824,6 +8830,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "url": "http://mockapp1/",
             }
           }
+          isSelectedCallback={[Function]}
           key="0"
           onClickCallback={[Function]}
         >
@@ -8846,6 +8853,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "typography": "Action-typography-8",
               }
             }
+            isSelectedCallback={[Function]}
             onClickCallback={[Function]}
             target="_top"
             theme={
@@ -11719,6 +11727,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "url": "http://mockapp2/",
             }
           }
+          isSelectedCallback={[Function]}
           key="1"
           onClickCallback={[Function]}
         >
@@ -11742,6 +11751,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "typography": "Action-typography-8",
               }
             }
+            isSelectedCallback={[Function]}
             onClickCallback={[Function]}
             target="_top"
             theme={
@@ -15585,6 +15595,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "url": "http://mockapp2/",
             }
           }
+          isSelectedCallback={[Function]}
           key="2"
           onClickCallback={[Function]}
         >
@@ -15607,6 +15618,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "typography": "Action-typography-8",
               }
             }
+            isSelectedCallback={[Function]}
             onClickCallback={[Function]}
             target="_top"
             theme={

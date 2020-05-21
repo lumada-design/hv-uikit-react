@@ -16,7 +16,12 @@
 
 import React from "react";
 
-import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons/dist/Generic";
+import {
+  Tool,
+  PingPong,
+  GameController,
+  Champion
+} from "@hv/uikit-react-icons/dist/Generic";
 
 import DefaultHeader from "./utils/DefaultHeader";
 import AppSwitcherToggle from "./utils/AppSwitcherToggle";
@@ -61,8 +66,7 @@ const appSwitcherToggleProps = {
     },
     {
       name: "App6 - Wrong url icon",
-      iconUrl:
-        "http://invalidurl.noicon",
+      iconUrl: "http://invalidurl.noicon",
       description: "App 6 description",
       url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
@@ -81,7 +85,7 @@ const appSwitcherToggleProps = {
       url: "https://github.com/pentaho/hv-uikit-react",
       target: "_top"
     }
-  ],
+  ]
 };
 
 export default (
