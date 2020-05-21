@@ -16,6 +16,8 @@ env:
   DOCUMENTATION_PUBLISH_FOLDER: pr-${{ github.event.number }}
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR #${{ github.event.number }}"
   DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/pr-${{ github.event.number }}
+  PR_URL: https://github.com/${{ github.repository }}/pull/${{ github.event.number }}
+  RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 jobs:
   Notify-Start:
@@ -34,9 +36,11 @@ jobs:
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
-                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
-                  "footer": "by ${{github.actor}}"
+                  "title": "${{ github.workflow }} (#${{github.event.number}}) build started",
+                  "title_link": "${{ env.RUN_URL }}",
+                  "text": "${{ env.PR_URL }}",
+                  "footer": "by ${{github.actor}}",
+                  "footer_icon": "https://github.com/${{github.actor}}.png?size=20"
                 }
               ]
             }
@@ -235,8 +239,11 @@ jobs:
                 {
                   "mrkdwn_in": ["text"],
                   "color": "${{env.COLOR}}",
-                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}\n Storybook was published in $⁄⁄{{env.DOCUMENTATION}}"
+                  "title": "${{ github.workflow }} (#${{github.event.number}}) build finished - ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}",
+                  "text": "${{env.PR_URL}}\n Storybook published: ${{env.DOCUMENTATION}}",
+                  "footer": "by ${{github.actor}}",
+                  "footer_icon": "https://github.com/${{github.actor}}.png?size=20"
                 }
               ]
             }
