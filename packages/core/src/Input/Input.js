@@ -315,6 +315,8 @@ class HvInput extends React.Component {
       suggestionValues
     } = this.state;
 
+    // const { externalWarningTextOverride } = others;
+
     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
     // - the input have some sort of validation
     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
@@ -448,9 +450,10 @@ class HvInput extends React.Component {
           variant="helper"
           // add prop for custom warning label
           // to be wired via others
-          labels={labels}
+          labels={labels || DEFAULT_LABELS}
           hasIcon={showValidationIcon}
           stateValidation={stateValidationState}
+          externalWarningTextOverride={externalWarningTextOverride}
         />
 
         {/* <HvTypography

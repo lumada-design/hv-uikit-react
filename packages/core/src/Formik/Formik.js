@@ -80,89 +80,112 @@ const SignupForm = () => {
     }
   });
 
-  const customLabel = (label, variant, others) => {
-    return (
-      <HvTypography
-        variant={variant || "labelText"}
-        component="label"
-        // id={`${id}-label`}
-        // htmlFor={`${id}-input`}
-        // className={clsx(classes.label, {
-        //   [classes.labelDisabled]: disabled
-        // })}
-        {...others}
-      >
-        {label || "Blah"}
-        {/* {isRequired && <span aria-hidden="true">*</span>} */}
-      </HvTypography>
-    );
+  // const customLabel = (label, variant, others) => {
+  //   return (
+  //     <HvTypography
+  //       variant={variant || "labelText"}
+  //       component="label"
+  //       // id={`${id}-label`}
+  //       // htmlFor={`${id}-input`}
+  //       // className={clsx(classes.label, {
+  //       //   [classes.labelDisabled]: disabled
+  //       // })}
+  //       {...others}
+  //     >
+  //       {label || "Blah"}
+  //       {/* {isRequired && <span aria-hidden="true">*</span>} */}
+  //     </HvTypography>
+  //   );
+  // };
+
+  const firstNameLabels = {
+    placeholder: "First name",
+    infoText: "Insert first name",
+    inputLabel: "First Name",
+    warningText: "Value is not a string",
+    maxCharQuantityWarningText: "String is too long",
+    requiredWarningText: "First name required"
   };
 
-  const mylabels = {
-    placeholder: "Insert a number",
-    infoText: "Enter a numeric value",
-    inputLabel: "Height",
-    warningText: "Value is not a number",
-    maxCharQuantityWarningText: "Number is too big",
-    requiredWarningText: "The number is required"
+  const secondNameLabels = {
+    placeholder: "Second name",
+    infoText: "Insert second name",
+    inputLabel: "Second Name",
+    warningText: "Value is not a string",
+    maxCharQuantityWarningText: "String is too long",
+    requiredWarningText: "Second name required"
   };
 
-  const validationStates = {
-    empty: "empty",
-    filled: "filled",
-    valid: "valid",
-    invalid: "invalid"
-  };
+  // const validationStates = {
+  //   empty: "empty",
+  //   filled: "filled",
+  //   valid: "valid",
+  //   invalid: "invalid"
+  // };
 
-  const validationFunction = incomingState => {
-    const { value } = incomingState.state;
-    const { onBlur, labels, isRequired } = incomingState.props;
-    const { validation, validationType, minCharQuantity, maxCharQuantity } = incomingState.props;
+  // const validationFunction = incomingState => {
+  //   const { value } = incomingState.state;
+  //   const { onBlur, labels, isRequired } = incomingState.props;
+  //   const { validation, validationType, minCharQuantity, maxCharQuantity } = incomingState.props;
 
-    let validationState;
-    let warningText = null;
+  //   let validationState;
+  //   let warningText = null;
 
-    if (!value || value === "") {
-      if (isRequired) {
-        validationState = validationStates.invalid;
-        warningText = labels.requiredWarningText;
-      } else {
-        validationState = validationStates.empty;
-      }
-    } else {
-      const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
-      const valid = validateInput(value, validation, validationType);
+  //   if (!value || value === "") {
+  //     if (isRequired) {
+  //       validationState = validationStates.invalid;
+  //       warningText = labels.requiredWarningText;
+  //     } else {
+  //       validationState = validationStates.empty;
+  //     }
+  //   } else {
+  //     const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
+  //     const valid = validateInput(value, validation, validationType);
 
-      if (valid && valueSizeStatus) {
-        validationState = validationStates.valid;
-      } else if (!valid || !valueSizeStatus) {
-        validationState = validationStates.invalid;
+  //     if (valid && valueSizeStatus) {
+  //       validationState = validationStates.valid;
+  //     } else if (!valid || !valueSizeStatus) {
+  //       validationState = validationStates.invalid;
 
-        if (maxCharQuantity && value.length > maxCharQuantity) {
-          warningText = labels.maxCharQuantityWarningText;
-        } else if (minCharQuantity && value.length < minCharQuantity) {
-          warningText = labels.minCharQuantityWarningText;
-        } else {
-          // eslint-disable-next-line prefer-destructuring
-          warningText = labels.warningText;
-        }
-      }
-    }
+  //       if (maxCharQuantity && value.length > maxCharQuantity) {
+  //         warningText = labels.maxCharQuantityWarningText;
+  //       } else if (minCharQuantity && value.length < minCharQuantity) {
+  //         warningText = labels.minCharQuantityWarningText;
+  //       } else {
+  //         // eslint-disable-next-line prefer-destructuring
+  //         warningText = labels.warningText;
+  //       }
+  //     }
+  //   }
 
-    incomingState.setState({ validationState, warningText });
-    onBlur(value, validationState);
-  };
+  //   incomingState.setState({ validationState, warningText });
+  //   onBlur(value, validationState);
+  // };
 
   return (
     <form onSubmit={formik.handleSubmit}>
       {/* <div>{customLabel(xlabels.inputLabel, "labelText")}</div> */}
       <HvInput
-        labels={mylabels}
+        labels={firstNameLabels}
         id="firstName"
         name="firstName"
-        // isRequired
+        isRequired
         onChange={formik.handleChange}
         value={formik.values.firstName}
+        validationState={formik.errors.firstName ? "invalid" : "valid"}
+        externalWarningTextOverride={formik.errors.firstName}
+        // labels={{ placeholder: "Something Something" }}
+        // validationFunction={validationFunction}
+      />
+      <HvInput
+        labels={secondNameLabels}
+        id="secondName"
+        name="secondName"
+        isRequired
+        onChange={formik.handleChange}
+        // value={formik.values.secondName}
+        // validationState={formik.errors.secondName ? "invalid" : "valid"}
+        // externalWarningTextOverride={formik.errors.secondName}
         // labels={{ placeholder: "Something Something" }}
         // validationFunction={validationFunction}
       />

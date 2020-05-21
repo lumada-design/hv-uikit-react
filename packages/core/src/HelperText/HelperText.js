@@ -245,6 +245,4 @@ HvHelperText.defaultProps = {
   externalWarningTextOverride: null
 };
 
-export default withStyles(styles, { name: "HvHelperText" })(
-  withLabels(DEFAULT_LABELS)(withId(HvHelperText))
-);
+export default withStyles(styles, { name: "HvHelperText" })(withId(HvHelperText));
