@@ -70,7 +70,7 @@ jobs:
           git config --global user.name $GITHUB_ACTOR
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-      - name: Publish
+      - name: Publish (Lerna)
         run: npm run publish-${{ env.RELEASE_TYPE }} -- --no-git-reset
 
       - name: Get Releases Commit Message
@@ -83,24 +83,18 @@ jobs:
               repo: context.repo.repo,
               branch: "master"
             })
-            let commitMessage = branch.data.commit.commit.message
 
-            if ( commitMessage.includes('chore(release): publish') ) {
-              const slackMessage = commitMessage.replace('chore(release): publish', '')
-                .replace(/\n/g, "\\n")
-                .replace(/\r/g, "\\r")
-                .replace(/\t/g, "\\t")
-                .replace(/\f/g, "\\f")
+            const commitMessage = branch.data.commit.commit.message
+            const slackMessage = commitMessage.replace('chore(release): publish', '')
+              .replace(/\n/g, "\\n")
+              .replace(/\r/g, "\\r")
+              .replace(/\t/g, "\\t")
+              .replace(/\f/g, "\\f")
 
-              core.exportVariable("SLACK_MESSAGE", slackMessage)
-              core.exportVariable("RELEASED", "true")
-            } else {
-              core.exportVariable("RELEASED", "false")
-            }
+            core.exportVariable("SLACK_MESSAGE", slackMessage)
 
       - name: Start Documentation Deployment
         uses: bobheadxi/deployments@master
-        if: ${{env.RELEASED}} == "true"
         id: deployment
         with:
           step: start
@@ -111,7 +105,6 @@ jobs:
 
       - name: Checkout gh-pages
         uses: actions/checkout@v2
-        if: ${{env.RELEASED}} == "true"
         with:
           path: public
           ref: gh-pages
@@ -125,7 +118,6 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{env.RELEASED}} == "true"
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
@@ -136,13 +128,12 @@ jobs:
 
       - name: Waits deploy for to be up
         uses: jakejarvis/wait-action@master
-        if: ${{env.RELEASED}} == "true"
         with:
           time: "30s"
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
-        if: ${{env.RELEASED}} == "true" && always()
+        if: always()
         with:
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -152,13 +143,13 @@ jobs:
 
       - name: Notify release
         uses: hbfernandes/slack-action@1.0
-        if: ${{env.RELEASED}} == "true" && success()
+        if: success()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         with:
           args: |
             {
-              "channel": "ui-kit-internal",
+              "channel": "ui-kit",
               "attachments": [
                 {
                   "mrkdwn_in": ["text"],
