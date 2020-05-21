@@ -24,6 +24,10 @@ const DEFAULT_LABELS = {
  * An input is a graphicl control element that allows the user to write text.
  */
 const HvHelperText = props => {
+  /**
+   * state validation can be driven by different libs (Formik)
+   * - add prop to display custom error message??
+   */
   const { labels, classes, id, externalWarningTextOverride, variant, stateValidation } = props;
 
   const getTypographyType = chosenVariant => {

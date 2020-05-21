@@ -155,22 +155,22 @@ const SignupForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div>{customLabel(xlabels.inputLabel, "labelText")}</div>
+      {/* <div>{customLabel(xlabels.inputLabel, "labelText")}</div> */}
       <HvInput
-        // labels={mylabels}
+        labels={mylabels}
         id="firstName"
         name="firstName"
         // isRequired
         onChange={formik.handleChange}
         value={formik.values.firstName}
-        labels={{ placeholder: "Something Something" }}
+        // labels={{ placeholder: "Something Something" }}
         // validationFunction={validationFunction}
       />
       {/* {customLabel(labels.infoText, "infoText")} */}
-      {customLabel(
+      {/* {customLabel(
         formik.errors.firstName ? formik.errors.firstName : xlabels.infoText,
         formik.errors.firstName ? "sText" : "infoText"
-      )}
+      )} */}
       {/* <HvInput
         labels={labels}
         id="lastName"

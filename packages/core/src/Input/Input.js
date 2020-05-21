@@ -442,8 +442,12 @@ class HvInput extends React.Component {
           </HvTypography>
         )} */}
         <HelperText
+          // replace id setting by withId function
           id={`${id}-description`}
+          // need to figure out a way to get rid of this variant
           variant="helper"
+          // add prop for custom warning label
+          // to be wired via others
           labels={labels}
           hasIcon={showValidationIcon}
           stateValidation={stateValidationState}
