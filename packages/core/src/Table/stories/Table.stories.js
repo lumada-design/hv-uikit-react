@@ -3,6 +3,7 @@ import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
 import { HvTable } from "../..";
+import HvButton from "../../Button";
 
 export default {
   title: "Visualizations/Table",
@@ -1828,6 +1829,210 @@ WithNullValues.story = {
   parameters: {
     docs: {
       storyDescription: "Table sample with that has cell values that are null."
+    }
+  }
+};
+
+export const TableWithChangingData = () => {
+  // Table data manipulation
+  const enableUsersData = [
+    {
+      id: 1,
+      name: "Aaron",
+      surname: "Melantha",
+      email: "melantha@mail.com"
+    },
+    {
+      id: 2,
+      name: "Jeanette",
+      surname: "Gentle",
+      email: "gentle@mail.com"
+    },
+    {
+      id: 3,
+      name: "Michael",
+      surname: "Neil",
+      email: "neil@mail.com"
+    },
+    {
+      id: 4,
+      name: "Walter",
+      surname: "Allegro",
+      email: "allegro@mail.com"
+    },
+    {
+      id: 5,
+      name: "James",
+      surname: "Jonah",
+      email: "allegro@mail.com"
+    }
+  ];
+
+  const disabledUserData = [
+    {
+      id: 6,
+      name: "Mary",
+      surname: "Monroe",
+      email: "monroe@mail.com"
+    },
+    {
+      id: 7,
+      name: "Katherine",
+      surname: "Kubrick",
+      email: "kubrick@mail.com"
+    },
+    {
+      id: 8,
+      name: "Peter",
+      surname: "Portland",
+      email: "portland@mail.com"
+    },
+    {
+      id: 9,
+      name: "Yuri",
+      surname: "York",
+      email: "york@mail.com"
+    },
+    {
+      id: 10,
+      name: "Howard",
+      surname: "Holmes",
+      email: "holmes@mail.com"
+    }
+  ];
+
+  const [enabledUsers, setEnabledUsers] = useState(enableUsersData);
+  const [disabledUsers, setDisabledUsers] = useState(disabledUserData);
+  const [usersToEnable, setUsersToEnable] = useState([]);
+  const [usersToDisable, setUsersToDisable] = useState([]);
+
+  const eliminateUserId = (id, list) => list.filter(d => d.id !== id);
+  const findUser = (id, list) => list.find(d => d.id === id);
+
+  const switchUserAtoB = (id, sender, receiver) => {
+    const newA = [...sender];
+    const newB = [...receiver];
+    const user = findUser(id, newA);
+    const updatedA = eliminateUserId(id, newA);
+    newB.push(user);
+    return { sender: updatedA, receiver: newB };
+  };
+
+  const bulkEnable = (idArray, currentEnabledUsers, currentDisabledUsers) => {
+    let localEnabledUsers = currentEnabledUsers;
+    let localDisabledUsers = currentDisabledUsers;
+    idArray.forEach(id => {
+      const { sender, receiver } = switchUserAtoB(id, localDisabledUsers, localEnabledUsers);
+      localEnabledUsers = receiver;
+      localDisabledUsers = sender;
+    });
+    setEnabledUsers(localEnabledUsers);
+    setDisabledUsers(localDisabledUsers);
+  };
+
+  const bulkDisable = (idArray, currentEnabledUsers, currentDisabledUsers) => {
+    let localEnabledUsers = currentEnabledUsers;
+    let localDisabledUsers = currentDisabledUsers;
+    idArray.forEach(id => {
+      const { sender, receiver } = switchUserAtoB(id, localEnabledUsers, localDisabledUsers);
+      localEnabledUsers = sender;
+      localDisabledUsers = receiver;
+    });
+    setEnabledUsers(localEnabledUsers);
+    setDisabledUsers(localDisabledUsers);
+  };
+
+  // Table columns
+  const getColumns = () => [
+    {
+      headerText: "ID",
+      accessor: "id",
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Name",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    },
+    {
+      headerText: "Surname",
+      accessor: "surname",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    },
+    {
+      headerText: "Email",
+      accessor: "email",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    }
+  ];
+
+  const disabledUsersActions = [
+    {
+      label: "disable",
+      action: (event, row) => bulkDisable([row.id], enabledUsers, disabledUsers)
+    }
+  ];
+
+  const enableUsersActions = [
+    {
+      label: "enable",
+      action: (event, row) => bulkEnable([row.id], enabledUsers, disabledUsers)
+    }
+  ];
+
+  const enabledUsersLabels = {
+    titleText: "Enabled users",
+    subtitleText: ""
+  };
+
+  const disabledUsersLabels = {
+    titleText: "Disabled users",
+    subtitleText: ""
+  };
+
+  return (
+    <div>
+      <HvTable
+        data={enabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        secondaryActions={disabledUsersActions}
+        defaultPageSize={5}
+        labels={enabledUsersLabels}
+        onSelection={(event, idArray) => {
+          setUsersToDisable(idArray);
+        }}
+      />
+      <HvButton onClick={() => bulkDisable(usersToDisable, enabledUsers, disabledUsers)}>
+        Disable selected
+      </HvButton>
+      <HvTable
+        data={disabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        secondaryActions={enableUsersActions}
+        defaultPageSize={5}
+        onSelection={(event, idArray) => {
+          setUsersToEnable(idArray);
+        }}
+        labels={disabledUsersLabels}
+      />
+      <HvButton onClick={() => bulkEnable(usersToEnable, enabledUsers, disabledUsers)}>
+        Enable selected
+      </HvButton>
+    </div>
+  );
+};
+
+TableWithChangingData.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Sample showcasing the table component behavior with changing data."
     }
   }
 };

@@ -51,9 +51,9 @@ describe("Hv Table", () => {
 
   describe("is rendered correctly and behaves as expected", () => {
     const data = [
-      { t1: "test1", link: { displayText: "mock", url: "mock" } },
-      { t1: "test2", link: { displayText: "mock", url: "mock" } },
-      { t1: "test3", link: { displayText: "mock", url: "mock" } }
+      { id: 1, t1: "test1", link: { displayText: "mock", url: "mock" } },
+      { id: 2, t1: "test2", link: { displayText: "mock", url: "mock" } },
+      { id: 3, t1: "test3", link: { displayText: "mock", url: "mock" } }
     ];
     const column = [
       { id: 1, Header: "column 1", cellType: "alpha-numeric" },
