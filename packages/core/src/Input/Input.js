@@ -18,6 +18,7 @@ import styles from "./styles";
 import withTooltips from "../withTooltip";
 
 import HelperText from "../HelperText";
+import BaseInput from "../BaseInput";
 
 const DEFAULT_LABELS = {
   inputLabel: "",
@@ -359,26 +360,47 @@ class HvInput extends React.Component {
         id={id}
         onBlur={this.onContainerBlurHandler}
       >
-        <div className={classes.labelContainer}>
-          {labels.inputLabel && (
-            <HvTypography
-              variant="labelText"
-              component="label"
-              id={`${id}-label`}
-              htmlFor={`${id}-input`}
-              className={clsx(classes.label, {
-                [classes.labelDisabled]: disabled
-              })}
-            >
-              {labels.inputLabel}
-              {isRequired && <span aria-hidden="true">*</span>}
-            </HvTypography>
-          )}
+        <BaseInput
+          id={`${id}-input`}
+          aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
+          autoFocus={autoFocus}
+          onKeyDown={this.onKeyDownHandler}
+          onBlur={this.onInputBlurHandler}
+          onFocus={this.onFocusHandler}
+          value={stateValue}
+          disabled={disabled}
+          placeholder={labels.placeholder || undefined}
+          type={password ? "password" : "text"}
+          classes={{
+            input: classes.input,
+            focused: classes.inputRootFocused,
+            disabled: classes.inputDisabled,
+            multiline: classes.multiLine
+          }}
+          className={clsx(classes.inputRoot, {
+            [classes.inputRootDisabled]: disabled,
+            [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+          })}
+          onChange={this.onChangeHandler}
+          inputProps={{
+            required: isRequired,
+            ref: this.materialInputRef,
+            "aria-required": isRequired || undefined,
+            "aria-invalid": stateValidationState === validationStates.invalid || undefined,
+            ...inputProps
+          }}
+          inputRef={inputRef}
+          {...(validationIconPosition === "right" && {
+            endAdornment: adornment
+          })}
+          {...(validationIconPosition === "left" && {
+            startAdornment: adornment
+          })}
+          // infoIcon={InfoIcon}
+          {...others}
+        />
 
-          {showInfo && infoIcon && labels.infoText && <InfoIcon />}
-        </div>
-
-        <Input
+        {/* <Input
           id={`${id}-input`}
           aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
           autoFocus={autoFocus}
@@ -415,7 +437,7 @@ class HvInput extends React.Component {
             startAdornment: adornment
           })}
           {...others}
-        />
+        /> */}
 
         {suggestionValues && (
           <div className={classes.suggestionsContainer}>

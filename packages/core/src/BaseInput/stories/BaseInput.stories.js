@@ -24,7 +24,11 @@ export const Main = () => {
   };
 
   // return <HvBaseInput labels={labels} id="input-simple-sample" />;
-  return <HvBaseInput labels={labels} />;
+  return (
+    <>
+      <HvBaseInput labels={labels} />
+    </>
+  );
 };
 
 // export const WithIconInfo = () => {
