@@ -355,8 +355,7 @@ class HvBaseInput extends React.Component {
       //   >
       <Input
         id={`${id}-input`}
-        defaultValue="Hello world"
-        // aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
+        aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
         // autoFocus={autoFocus}
         // onKeyDown={this.onKeyDownHandler}
         // onBlur={this.onInputBlurHandler}
@@ -365,16 +364,16 @@ class HvBaseInput extends React.Component {
         // disabled={disabled}
         // placeholder={labels.placeholder || undefined}
         // type={password ? "password" : "text"}
-        // classes={{
-        //   input: classes.input,
-        //   focused: classes.inputRootFocused,
-        //   disabled: classes.inputDisabled,
-        //   multiline: classes.multiLine
-        // }}
-        // className={clsx(classes.inputRoot, {
-        //   [classes.inputRootDisabled]: disabled
-        //   // [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
-        // })}
+        classes={{
+          input: classes.input,
+          focused: classes.inputRootFocused,
+          disabled: classes.inputDisabled,
+          multiline: classes.multiLine
+        }}
+        className={clsx(classes.inputRoot, {
+          // [classes.inputRootDisabled]: disabled
+          // [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+        })}
         // onChange={this.onChangeHandler}
         // inputProps={{
         //   required: isRequired,

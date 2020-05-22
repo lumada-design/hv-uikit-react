@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render correctly 1`] = `
+<WithStyles(WithLabels)>
+  <WithLabels
+    classes={
+      Object {
+        "adornmentButton": "HvBaseInput-adornmentButton",
+        "adornmentsBox": "HvBaseInput-adornmentsBox",
+        "icon": "HvBaseInput-icon",
+        "iconClear": "HvBaseInput-iconClear",
+        "infoIconContainer": "HvBaseInput-infoIconContainer",
+        "infoText": "HvBaseInput-infoText",
+        "input": "HvBaseInput-input",
+        "inputDisabled": "HvBaseInput-inputDisabled",
+        "inputRoot": "HvBaseInput-inputRoot",
+        "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+        "inputRootFocused": "HvBaseInput-inputRootFocused",
+        "inputRootInvalid": "HvBaseInput-inputRootInvalid",
+        "label": "HvBaseInput-label",
+        "labelContainer": "HvBaseInput-labelContainer",
+        "labelDisabled": "HvBaseInput-labelDisabled",
+        "multiLine": "HvBaseInput-multiLine",
+        "root": "HvBaseInput-root",
+        "showText": "HvBaseInput-showText",
+        "suggestionList": "HvBaseInput-suggestionList",
+        "suggestionsContainer": "HvBaseInput-suggestionsContainer",
+        "textWarning": "HvBaseInput-textWarning",
+      }
+    }
+  >
+    <WithId
+      classes={
+        Object {
+          "adornmentButton": "HvBaseInput-adornmentButton",
+          "adornmentsBox": "HvBaseInput-adornmentsBox",
+          "icon": "HvBaseInput-icon",
+          "iconClear": "HvBaseInput-iconClear",
+          "infoIconContainer": "HvBaseInput-infoIconContainer",
+          "infoText": "HvBaseInput-infoText",
+          "input": "HvBaseInput-input",
+          "inputDisabled": "HvBaseInput-inputDisabled",
+          "inputRoot": "HvBaseInput-inputRoot",
+          "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+          "inputRootFocused": "HvBaseInput-inputRootFocused",
+          "inputRootInvalid": "HvBaseInput-inputRootInvalid",
+          "label": "HvBaseInput-label",
+          "labelContainer": "HvBaseInput-labelContainer",
+          "labelDisabled": "HvBaseInput-labelDisabled",
+          "multiLine": "HvBaseInput-multiLine",
+          "root": "HvBaseInput-root",
+          "showText": "HvBaseInput-showText",
+          "suggestionList": "HvBaseInput-suggestionList",
+          "suggestionsContainer": "HvBaseInput-suggestionsContainer",
+          "textWarning": "HvBaseInput-textWarning",
+        }
+      }
+      labels={
+        Object {
+          "clearButtonLabel": "Clear the text",
+          "infoText": "",
+          "inputLabel": "",
+          "maxCharQuantityWarningText": "The value is too big",
+          "minCharQuantityWarningText": "The value is too short",
+          "placeholder": "",
+          "requiredWarningText": "The value is required",
+          "warningText": "something wrong",
+        }
+      }
+    >
+      <HvBaseInput
+        autoFocus={false}
+        className=""
+        classes={
+          Object {
+            "adornmentButton": "HvBaseInput-adornmentButton",
+            "adornmentsBox": "HvBaseInput-adornmentsBox",
+            "icon": "HvBaseInput-icon",
+            "iconClear": "HvBaseInput-iconClear",
+            "infoIconContainer": "HvBaseInput-infoIconContainer",
+            "infoText": "HvBaseInput-infoText",
+            "input": "HvBaseInput-input",
+            "inputDisabled": "HvBaseInput-inputDisabled",
+            "inputRoot": "HvBaseInput-inputRoot",
+            "inputRootDisabled": "HvBaseInput-inputRootDisabled",
+            "inputRootFocused": "HvBaseInput-inputRootFocused",
+            "inputRootInvalid": "HvBaseInput-inputRootInvalid",
+            "label": "HvBaseInput-label",
+            "labelContainer": "HvBaseInput-labelContainer",
+            "labelDisabled": "HvBaseInput-labelDisabled",
+            "multiLine": "HvBaseInput-multiLine",
+            "root": "HvBaseInput-root",
+            "showText": "HvBaseInput-showText",
+            "suggestionList": "HvBaseInput-suggestionList",
+            "suggestionsContainer": "HvBaseInput-suggestionsContainer",
+            "textWarning": "HvBaseInput-textWarning",
+          }
+        }
+        customFixedIcon={null}
+        disableClear={false}
+        disabled={false}
+        externalWarningTextOverride={null}
+        id="hv-base-input-2"
+        infoIcon={false}
+        inputProps={Object {}}
+        inputRef={null}
+        isRequired={false}
+        labels={
+          Object {
+            "clearButtonLabel": "Clear the text",
+            "infoText": "",
+            "inputLabel": "",
+            "maxCharQuantityWarningText": "The value is too big",
+            "minCharQuantityWarningText": "The value is too short",
+            "placeholder": "",
+            "requiredWarningText": "The value is required",
+            "warningText": "something wrong",
+          }
+        }
+        maxCharQuantity={null}
+        minCharQuantity={null}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        password={false}
+        showInfo={true}
+        suggestionListCallback={[Function]}
+        suggestionSelectedCallback={[Function]}
+        validation={null}
+        validationIconPosition="right"
+        validationIconVisible={true}
+        validationType="none"
+      >
+        <WithStyles(ForwardRef(Input))
+          className="HvBaseInput-inputRoot"
+          classes={
+            Object {
+              "disabled": "HvBaseInput-inputDisabled",
+              "focused": "HvBaseInput-inputRootFocused",
+              "input": "HvBaseInput-input",
+              "multiline": "HvBaseInput-multiLine",
+            }
+          }
+          id="hv-base-input-2-input"
+        >
+          <ForwardRef(Input)
+            className="HvBaseInput-inputRoot"
+            classes={
+              Object {
+                "colorSecondary": "MuiInput-colorSecondary",
+                "disabled": "Mui-disabled HvBaseInput-inputDisabled",
+                "error": "Mui-error",
+                "focused": "Mui-focused HvBaseInput-inputRootFocused",
+                "formControl": "MuiInput-formControl",
+                "fullWidth": "MuiInput-fullWidth",
+                "input": "MuiInput-input HvBaseInput-input",
+                "inputMarginDense": "MuiInput-inputMarginDense",
+                "inputMultiline": "MuiInput-inputMultiline",
+                "inputTypeSearch": "MuiInput-inputTypeSearch",
+                "marginDense": "MuiInput-marginDense",
+                "multiline": "MuiInput-multiline HvBaseInput-multiLine",
+                "root": "MuiInput-root",
+                "underline": "MuiInput-underline",
+              }
+            }
+            disableUnderline={true}
+            id="hv-base-input-2-input"
+          >
+            <WithStyles(ForwardRef(InputBase))
+              className="HvBaseInput-inputRoot"
+              classes={
+                Object {
+                  "colorSecondary": "MuiInput-colorSecondary",
+                  "disabled": "Mui-disabled HvBaseInput-inputDisabled",
+                  "error": "Mui-error",
+                  "focused": "Mui-focused HvBaseInput-inputRootFocused",
+                  "formControl": "MuiInput-formControl",
+                  "fullWidth": "MuiInput-fullWidth",
+                  "input": "MuiInput-input HvBaseInput-input",
+                  "inputMarginDense": "MuiInput-inputMarginDense",
+                  "inputMultiline": "MuiInput-inputMultiline",
+                  "inputTypeSearch": "MuiInput-inputTypeSearch",
+                  "marginDense": "MuiInput-marginDense",
+                  "multiline": "MuiInput-multiline HvBaseInput-multiLine",
+                  "root": "MuiInput-root",
+                  "underline": null,
+                }
+              }
+              fullWidth={false}
+              id="hv-base-input-2-input"
+              inputComponent="input"
+              multiline={false}
+              type="text"
+            >
+              <ForwardRef(InputBase)
+                className="HvBaseInput-inputRoot"
+                classes={
+                  Object {
+                    "adornedEnd": "MuiInputBase-adornedEnd",
+                    "adornedStart": "MuiInputBase-adornedStart",
+                    "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                    "disabled": "Mui-disabled Mui-disabled HvBaseInput-inputDisabled",
+                    "error": "Mui-error Mui-error",
+                    "focused": "Mui-focused Mui-focused HvBaseInput-inputRootFocused",
+                    "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                    "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                    "input": "MuiInputBase-input MuiInput-input HvBaseInput-input",
+                    "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                    "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                    "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                    "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                    "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                    "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                    "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                    "multiline": "MuiInputBase-multiline MuiInput-multiline HvBaseInput-multiLine",
+                    "root": "MuiInputBase-root MuiInput-root",
+                  }
+                }
+                fullWidth={false}
+                id="hv-base-input-2-input"
+                inputComponent="input"
+                multiline={false}
+                type="text"
+              >
+                <div
+                  className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot"
+                  onClick={[Function]}
+                >
+                  <input
+                    className="MuiInputBase-input MuiInput-input HvBaseInput-input"
+                    id="hv-base-input-2-input"
+                    onAnimationStart={[Function]}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="text"
+                  />
+                </div>
+              </ForwardRef(InputBase)>
+            </WithStyles(ForwardRef(InputBase))>
+          </ForwardRef(Input)>
+        </WithStyles(ForwardRef(Input))>
+      </HvBaseInput>
+    </WithId>
+  </WithLabels>
+</WithStyles(WithLabels)>
+`;
