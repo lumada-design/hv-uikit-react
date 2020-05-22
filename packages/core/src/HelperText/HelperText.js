@@ -76,7 +76,9 @@ const HvHelperText = props => {
           "aria-labelledby": labels.inputLabel ? `${id}-label` : null
         }
       : undefined;
-
+  // need both hvtypographies due to aria live
+  // ensure that input ids are correctly passed in
+  // undefined for internal validation
   return (
     <>
       <HvTypography

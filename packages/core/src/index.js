@@ -41,6 +41,7 @@ export { default as HvLinechart } from "./Linechart";
 export { default as HvUserPreferences } from "./UserPreferences";
 
 export { default as HvFormik } from "./Formik";
+export { default as HvBseInput } from "./BaseInput";
 
 // HOCs
 export { default as withId } from "./withId";

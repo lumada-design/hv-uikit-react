@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { TextField, useState } from "react";
 import { useFormik } from "formik";
 
 import {
@@ -20,10 +20,10 @@ import classes from "../Input/styles";
 import { validateCharLength, validateInput } from "../Input/validations";
 
 import HvTypography from "../Typography";
+import HelperText from "../HelperText";
 import styles from "./styles";
 
-import HvInput from "../Input";
-import HvButton from "../Button";
+import { HvInput, HvButton, HvDropdown } from "../..";
 
 const xlabels = {
   placeholder: "Insert first name",
@@ -57,11 +57,23 @@ const validate = values => {
   const errors = {};
 
   const firstNameValue = values.firstName;
+  const secondNameValue = values.secondName;
+  const dropdownValues = values.dropdown_values;
 
   if (!firstNameValue) {
     errors.firstName = "First Name is Required";
   } else if (firstNameValue.length > 15) {
     errors.firstName = "Must be 15 characters or less";
+  }
+
+  if (!secondNameValue) {
+    errors.secondName = "Second Name is Required";
+  } else if (secondNameValue.length > 15) {
+    errors.secondName = "Must be 15 characters or less";
+  }
+
+  if (dropdownValues.filter(el => el.selected).length > 2) {
+    errors.dropdownValues = "Too many items selected";
   }
 
   return errors;
@@ -70,33 +82,22 @@ const validate = values => {
 const SignupForm = () => {
   const formik = useFormik({
     initialValues: {
-      firstName: ""
+      firstName: "",
+      secondName: "",
       // "lastName-input": "",
       // "email-input": "",
+      dropdown_values: [
+        { label: "Archie" },
+        { label: "Betty", selected: true },
+        { label: "Jughead" },
+        { label: "Veronica" }
+      ]
     },
     validate,
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
     }
   });
-
-  // const customLabel = (label, variant, others) => {
-  //   return (
-  //     <HvTypography
-  //       variant={variant || "labelText"}
-  //       component="label"
-  //       // id={`${id}-label`}
-  //       // htmlFor={`${id}-input`}
-  //       // className={clsx(classes.label, {
-  //       //   [classes.labelDisabled]: disabled
-  //       // })}
-  //       {...others}
-  //     >
-  //       {label || "Blah"}
-  //       {/* {isRequired && <span aria-hidden="true">*</span>} */}
-  //     </HvTypography>
-  //   );
-  // };
 
   const firstNameLabels = {
     placeholder: "First name",
@@ -116,55 +117,11 @@ const SignupForm = () => {
     requiredWarningText: "Second name required"
   };
 
-  // const validationStates = {
-  //   empty: "empty",
-  //   filled: "filled",
-  //   valid: "valid",
-  //   invalid: "invalid"
-  // };
-
-  // const validationFunction = incomingState => {
-  //   const { value } = incomingState.state;
-  //   const { onBlur, labels, isRequired } = incomingState.props;
-  //   const { validation, validationType, minCharQuantity, maxCharQuantity } = incomingState.props;
-
-  //   let validationState;
-  //   let warningText = null;
-
-  //   if (!value || value === "") {
-  //     if (isRequired) {
-  //       validationState = validationStates.invalid;
-  //       warningText = labels.requiredWarningText;
-  //     } else {
-  //       validationState = validationStates.empty;
-  //     }
-  //   } else {
-  //     const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
-  //     const valid = validateInput(value, validation, validationType);
-
-  //     if (valid && valueSizeStatus) {
-  //       validationState = validationStates.valid;
-  //     } else if (!valid || !valueSizeStatus) {
-  //       validationState = validationStates.invalid;
-
-  //       if (maxCharQuantity && value.length > maxCharQuantity) {
-  //         warningText = labels.maxCharQuantityWarningText;
-  //       } else if (minCharQuantity && value.length < minCharQuantity) {
-  //         warningText = labels.minCharQuantityWarningText;
-  //       } else {
-  //         // eslint-disable-next-line prefer-destructuring
-  //         warningText = labels.warningText;
-  //       }
-  //     }
-  //   }
-
-  //   incomingState.setState({ validationState, warningText });
-  //   onBlur(value, validationState);
-  // };
-
+  // novalidate suspends form validation, but still submits the form
+  // allows formik to handle submission
+  // test novalidate -> a11y
   return (
-    <form onSubmit={formik.handleSubmit}>
-      {/* <div>{customLabel(xlabels.inputLabel, "labelText")}</div> */}
+    <form onSubmit={formik.handleSubmit} noValidate>
       <HvInput
         labels={firstNameLabels}
         id="firstName"
@@ -174,38 +131,43 @@ const SignupForm = () => {
         value={formik.values.firstName}
         validationState={formik.errors.firstName ? "invalid" : "valid"}
         externalWarningTextOverride={formik.errors.firstName}
-        // labels={{ placeholder: "Something Something" }}
-        // validationFunction={validationFunction}
       />
       <HvInput
         labels={secondNameLabels}
         id="secondName"
         name="secondName"
         isRequired
+        // validationType="number"
         onChange={formik.handleChange}
-        // value={formik.values.secondName}
-        // validationState={formik.errors.secondName ? "invalid" : "valid"}
-        // externalWarningTextOverride={formik.errors.secondName}
-        // labels={{ placeholder: "Something Something" }}
-        // validationFunction={validationFunction}
+        value={formik.values.secondName}
+        validationState={formik.errors.secondName ? "invalid" : "valid"}
+        externalWarningTextOverride={formik.errors.secondName}
       />
-      {/* {customLabel(labels.infoText, "infoText")} */}
-      {/* {customLabel(
-        formik.errors.firstName ? formik.errors.firstName : xlabels.infoText,
-        formik.errors.firstName ? "sText" : "infoText"
-      )} */}
-      {/* <HvInput
-        labels={labels}
-        id="lastName"
-        onChange={formik.handleChange}
-        value={formik.values.lastName_input}
+      <HvDropdown
+        id="dropdown"
+        multiSelect
+        showSearch
+        labels={{ title: "Dropdown Title" }}
+        values={formik.values.dropdown_values}
+        onChange={val => {
+          formik.setFieldValue(
+            "dropdown_values",
+            Object.assign(formik.values.dropdown_values, val)
+          );
+        }}
       />
-      <HvInput
-        labels={emailLabels}
-        id="email"
-        onChange={formik.handleChange}
-        value={formik.values.email_input}
-        validationType="email"
+
+      {/* <HelperText
+        // replace id setting by withId function
+        id="dropdown-description"
+        // need to figure out a way to get rid of this variant
+        variant="warning"
+        // add prop for custom warning label
+        // to be wired via others
+        labels={{ infoText: "", warningText: "Error" }}
+        // hasIcon={showValidationIcon}
+        stateValidation={formik.errors.dropdown_values ? "invalid" : "valid"}
+        // externalWarningTextOverride={externalWarningTextOverride}
       /> */}
 
       <div style={{ marginTop: "50px" }}>

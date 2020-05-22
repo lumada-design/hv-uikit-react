@@ -3,19 +3,12 @@ import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
-import InfoS from "@hv/uikit-react-icons/dist/Info";
 import withId from "../withId";
 import withLabels from "../withLabels";
 import { isKeypress, KeyboardCodes } from "../utils";
 import isBrowser from "../utils/browser";
-import InputAdornment from "./InputAdornment";
-import HvTypography from "../Typography";
 import HvList from "../List";
-import validationTypes from "./validationTypes";
-import validationStates from "./validationStates";
-import { validateCharLength, validateInput } from "./validations";
 import styles from "./styles";
-import withTooltips from "../withTooltip";
 
 import HelperText from "../HelperText";
 
@@ -33,17 +26,18 @@ const DEFAULT_LABELS = {
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
-class HvInput extends React.Component {
+class HvBaseInput extends React.Component {
   constructor(props) {
     super(props);
-    const { validationState, value, initialValue, labels } = props;
+    // const { validationState, value, initialValue, labels } = props;
+    const { value, initialValue } = props;
     this.materialInputRef = React.createRef();
     this.state = {
-      validationState,
-      currentValidationStateProps: validationState,
-      value: value || initialValue,
-      suggestionValues: null,
-      warningText: validationState === validationStates.invalid ? labels.warningText : null
+      // validationState,
+      // currentValidationStateProps: validationState,
+      value: value || initialValue
+      // suggestionValues: null,
+      // warningText: validationState === validationStates.invalid ? labels.warningText : null
     };
   }
 
@@ -74,13 +68,13 @@ class HvInput extends React.Component {
    * @param {String} value - the inputted value.
    * @param {*} warningText - the error text below the input.
    */
-  manageInputValueState = (value, warningText) => {
-    this.setState({
-      validationState: value && value !== "" ? validationStates.filled : validationStates.empty,
-      warningText,
-      value
-    });
-  };
+  // manageInputValueState = (value, warningText) => {
+  //   this.setState({
+  //     validationState: value && value !== "" ? validationStates.filled : validationStates.empty,
+  //     warningText,
+  //     value
+  //   });
+  // };
 
   /**
    * Looks for the node that represent the input inside the material tree and focus it.
@@ -109,30 +103,30 @@ class HvInput extends React.Component {
   /**
    * clears the suggestion array.
    */
-  suggestionClearHandler = () => {
-    this.setState({
-      suggestionValues: null
-    });
-  };
+  // suggestionClearHandler = () => {
+  //   this.setState({
+  //     suggestionValues: null
+  //   });
+  // };
 
   /**
    * fills of the suggestion array.
    */
-  suggestionHandler = value => {
-    const { suggestionListCallback } = this.props;
-    const suggestionsArray = suggestionListCallback(value);
-    if (
-      !isNil(suggestionsArray) &&
-      Array.isArray(suggestionsArray) &&
-      !isNil(suggestionsArray[0].label)
-    ) {
-      this.setState({
-        suggestionValues: suggestionsArray
-      });
-    } else {
-      this.suggestionClearHandler();
-    }
-  };
+  // suggestionHandler = value => {
+  //   const { suggestionListCallback } = this.props;
+  //   const suggestionsArray = suggestionListCallback(value);
+  //   if (
+  //     !isNil(suggestionsArray) &&
+  //     Array.isArray(suggestionsArray) &&
+  //     !isNil(suggestionsArray[0].label)
+  //   ) {
+  //     this.setState({
+  //       suggestionValues: suggestionsArray
+  //     });
+  //   } else {
+  //     this.suggestionClearHandler();
+  //   }
+  // };
 
   /**
    * Executes the user callback adds the selection to the state and clears the suggestions.
@@ -165,44 +159,44 @@ class HvInput extends React.Component {
    *
    * @returns {undefined}
    */
-  onInputBlurHandler = () => {
-    const { value } = this.state;
-    const { onBlur, labels, isRequired } = this.props;
-    const { validation, validationType, minCharQuantity, maxCharQuantity } = this.props;
+  // onInputBlurHandler = () => {
+  //   const { value } = this.state;
+  //   const { onBlur, labels, isRequired } = this.props;
+  //   const { validation, validationType, minCharQuantity, maxCharQuantity } = this.props;
 
-    let validationState;
-    let warningText = null;
+  //   let validationState;
+  //   let warningText = null;
 
-    if (!value || value === "") {
-      if (isRequired) {
-        validationState = validationStates.invalid;
-        warningText = labels.requiredWarningText;
-      } else {
-        validationState = validationStates.empty;
-      }
-    } else {
-      const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
-      const valid = validateInput(value, validation, validationType);
+  //   if (!value || value === "") {
+  //     if (isRequired) {
+  //       validationState = validationStates.invalid;
+  //       warningText = labels.requiredWarningText;
+  //     } else {
+  //       validationState = validationStates.empty;
+  //     }
+  //   } else {
+  //     const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
+  //     const valid = validateInput(value, validation, validationType);
 
-      if (valid && valueSizeStatus) {
-        validationState = validationStates.valid;
-      } else if (!valid || !valueSizeStatus) {
-        validationState = validationStates.invalid;
+  //     if (valid && valueSizeStatus) {
+  //       validationState = validationStates.valid;
+  //     } else if (!valid || !valueSizeStatus) {
+  //       validationState = validationStates.invalid;
 
-        if (maxCharQuantity && value.length > maxCharQuantity) {
-          warningText = labels.maxCharQuantityWarningText;
-        } else if (minCharQuantity && value.length < minCharQuantity) {
-          warningText = labels.minCharQuantityWarningText;
-        } else {
-          // eslint-disable-next-line prefer-destructuring
-          warningText = labels.warningText;
-        }
-      }
-    }
+  //       if (maxCharQuantity && value.length > maxCharQuantity) {
+  //         warningText = labels.maxCharQuantityWarningText;
+  //       } else if (minCharQuantity && value.length < minCharQuantity) {
+  //         warningText = labels.minCharQuantityWarningText;
+  //       } else {
+  //         // eslint-disable-next-line prefer-destructuring
+  //         warningText = labels.warningText;
+  //       }
+  //     }
+  //   }
 
-    this.setState({ validationState, warningText });
-    onBlur(value, validationState);
-  };
+  //   this.setState({ validationState, warningText });
+  //   onBlur(value, validationState);
+  // };
 
   /**
    * Updates the state putting again the value from the state because the input value is
@@ -245,33 +239,33 @@ class HvInput extends React.Component {
     }
   };
 
-  getInputAdornment = (
-    inputId,
-    classes,
-    showValidationIcon,
-    stateValidationState,
-    showClear,
-    clearButtonLabel,
-    customFixedIcon
-  ) => {
-    if (!showValidationIcon && !showClear && isNil(customFixedIcon)) {
-      // nothing to show
-      return null;
-    }
+  // getInputAdornment = (
+  //   inputId,
+  //   classes,
+  //   showValidationIcon,
+  //   stateValidationState,
+  //   showClear,
+  //   clearButtonLabel,
+  //   customFixedIcon
+  // ) => {
+  //   if (!showValidationIcon && !showClear && isNil(customFixedIcon)) {
+  //     // nothing to show
+  //     return null;
+  //   }
 
-    return (
-      <InputAdornment
-        inputId={inputId}
-        classes={classes}
-        showValidationIcon={showValidationIcon}
-        validationState={stateValidationState}
-        showClear={showClear}
-        handleClear={() => this.handleClear()}
-        clearButtonLabel={clearButtonLabel}
-        customFixedIcon={customFixedIcon}
-      />
-    );
-  };
+  //   return (
+  //     <InputAdornment
+  //       inputId={inputId}
+  //       classes={classes}
+  //       showValidationIcon={showValidationIcon}
+  //       validationState={stateValidationState}
+  //       showClear={showClear}
+  //       handleClear={() => this.handleClear()}
+  //       clearButtonLabel={clearButtonLabel}
+  //       customFixedIcon={customFixedIcon}
+  //     />
+  //   );
+  // };
 
   render() {
     const {
@@ -310,9 +304,9 @@ class HvInput extends React.Component {
 
     const {
       validationState: stateValidationState,
-      value: stateValue,
-      warningText,
-      suggestionValues
+      value: stateValue
+      // warningText,
+      // suggestionValues
     } = this.state;
 
     // const { externalWarningTextOverride } = others;
@@ -320,165 +314,91 @@ class HvInput extends React.Component {
     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
     // - the input have some sort of validation
     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
-    const showValidationIcon =
-      !disabled &&
-      validationIconVisible &&
-      showInfo &&
-      (stateValidationState === validationStates.invalid ||
-        validationType !== validationTypes.none ||
-        maxCharQuantity !== null ||
-        minCharQuantity !== null ||
-        validation !== null);
+    // const showValidationIcon =
+    //   !disabled &&
+    //   validationIconVisible &&
+    //   showInfo &&
+    //   (stateValidationState === validationStates.invalid ||
+    //     validationType !== validationTypes.none ||
+    //     maxCharQuantity !== null ||
+    //     minCharQuantity !== null ||
+    //     validation !== null);
 
     // show the clear button only if the input is enabled, disableClear is false and the input is not empty
-    const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
+    // const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
 
-    const adornment = this.getInputAdornment(
-      `${id}-input`,
-      classes,
-      showValidationIcon,
-      stateValidationState,
-      showClear,
-      labels.clearButtonLabel,
-      customFixedIcon
-    );
+    // const adornment = this.getInputAdornment(
+    //   `${id}-input`,
+    //   classes,
+    //   // showValidationIcon,
+    //   stateValidationState,
+    //   showClear,
+    //   labels.clearButtonLabel,
+    //   customFixedIcon
+    // );
 
-    const IconDisplay = () => (
-      <div aria-hidden="true" className={classes.infoIconContainer}>
-        <InfoS />
-      </div>
-    );
-    const InfoIcon = withTooltips(IconDisplay, labels.infoText);
+    // const IconDisplay = () => (
+    //   <div aria-hidden="true" className={classes.infoIconContainer}>
+    //     <InfoS />
+    //   </div>
+    // );
+    // const InfoIcon = withTooltips(IconDisplay, labels.infoText);
 
     return (
-      <div
-        ref={node => {
-          this.node = node;
-        }}
-        className={clsx(classes.root, className)}
-        id={id}
-        onBlur={this.onContainerBlurHandler}
-      >
-        <div className={classes.labelContainer}>
-          {labels.inputLabel && (
-            <HvTypography
-              variant="labelText"
-              component="label"
-              id={`${id}-label`}
-              htmlFor={`${id}-input`}
-              className={clsx(classes.label, {
-                [classes.labelDisabled]: disabled
-              })}
-            >
-              {labels.inputLabel}
-              {isRequired && <span aria-hidden="true">*</span>}
-            </HvTypography>
-          )}
-
-          {showInfo && infoIcon && labels.infoText && <InfoIcon />}
-        </div>
-
-        <Input
-          id={`${id}-input`}
-          aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
-          autoFocus={autoFocus}
-          onKeyDown={this.onKeyDownHandler}
-          onBlur={this.onInputBlurHandler}
-          onFocus={this.onFocusHandler}
-          value={stateValue}
-          disabled={disabled}
-          placeholder={labels.placeholder || undefined}
-          type={password ? "password" : "text"}
-          classes={{
-            input: classes.input,
-            focused: classes.inputRootFocused,
-            disabled: classes.inputDisabled,
-            multiline: classes.multiLine
-          }}
-          className={clsx(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled,
-            [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
-          })}
-          onChange={this.onChangeHandler}
-          inputProps={{
-            required: isRequired,
-            ref: this.materialInputRef,
-            "aria-required": isRequired || undefined,
-            "aria-invalid": stateValidationState === validationStates.invalid || undefined,
-            ...inputProps
-          }}
-          inputRef={inputRef}
-          {...(validationIconPosition === "right" && {
-            endAdornment: adornment
-          })}
-          {...(validationIconPosition === "left" && {
-            startAdornment: adornment
-          })}
-          {...others}
-        />
-
-        {suggestionValues && (
-          <div className={classes.suggestionsContainer}>
-            <div className={classes.suggestionList}>
-              <HvList
-                values={suggestionValues}
-                onClick={this.suggestionSelectedHandler}
-                selectable={false}
-                condensed
-              />
-            </div>
-          </div>
-        )}
-
-        {/* {showInfo && labels.infoText && (
-          <HvTypography
-            id={`${id}-description`}
-            variant="infoText"
-            className={clsx(classes.infoText)}
-            style={{
-              display:
-                !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
-            }}
-          >
-            {labels.infoText}
-          </HvTypography>
-        )} */}
-        <HelperText
-          // replace id setting by withId function
-          id={`${id}-description`}
-          // need to figure out a way to get rid of this variant
-          variant="helper"
-          // add prop for custom warning label
-          // to be wired via others
-          labels={labels || DEFAULT_LABELS}
-          hasIcon={showValidationIcon}
-          stateValidation={stateValidationState}
-          externalWarningTextOverride={externalWarningTextOverride}
-        />
-
-        {/* <HvTypography
-          variant="sText"
-          className={clsx(classes.textWarning, classes.infoText, {
-            // show the text if we are in an invalid state and either of the invalid labels exist
-            [classes.showText]:
-              stateValidationState === validationStates.invalid &&
-              (externalWarningTextOverride || warningText)
-          })}
-          // to be applied when in invalid state
-          aria-live="polite"
-          aria-controls={`${id}-input`}
-          aria-atomic="true"
-          aria-relevant="additions text"
-          aria-labelledby={labels.inputLabel ? `${id}-label` : null}
-        >
-          {externalWarningTextOverride || warningText || ""}
-        </HvTypography> */}
-      </div>
+      //   <div
+      //     // ref={node => {
+      //     //   this.node = node;
+      //     // }}
+      //     className={clsx(classes.root, className)}
+      //     id={id}
+      //     onBlur={this.onContainerBlurHandler}
+      //   >
+      <Input
+        id={`${id}-input`}
+        defaultValue="Hello world"
+        // aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
+        // autoFocus={autoFocus}
+        // onKeyDown={this.onKeyDownHandler}
+        // onBlur={this.onInputBlurHandler}
+        // onFocus={this.onFocusHandler}
+        // value={stateValue}
+        // disabled={disabled}
+        // placeholder={labels.placeholder || undefined}
+        // type={password ? "password" : "text"}
+        // classes={{
+        //   input: classes.input,
+        //   focused: classes.inputRootFocused,
+        //   disabled: classes.inputDisabled,
+        //   multiline: classes.multiLine
+        // }}
+        // className={clsx(classes.inputRoot, {
+        //   [classes.inputRootDisabled]: disabled
+        //   // [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+        // })}
+        // onChange={this.onChangeHandler}
+        // inputProps={{
+        //   required: isRequired,
+        //   ref: this.materialInputRef
+        //   // "aria-required": isRequired || undefined,
+        //   // "aria-invalid": stateValidationState === validationStates.invalid || undefined,
+        //   // ...inputProps
+        // }}
+        // inputRef={inputRef}
+        // {...(validationIconPosition === "right" && {
+        //   endAdornment: adornment
+        // })}
+        // {...(validationIconPosition === "left" && {
+        //   startAdornment: adornment
+        // })}
+        {...others}
+      />
+      //   </div>
     );
+    // return <Input defaultValue="Hello world" inputProps={{ "aria-label": "description" }} />;
   }
 }
 
-HvInput.propTypes = {
+HvBaseInput.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -732,7 +652,7 @@ HvInput.propTypes = {
   externalWarningTextOverride: PropTypes.string
 };
 
-HvInput.defaultProps = {
+HvBaseInput.defaultProps = {
   className: "",
   id: undefined,
   password: false,
@@ -751,7 +671,7 @@ HvInput.defaultProps = {
   value: undefined,
   initialValue: undefined,
   autoFocus: false,
-  validationState: validationStates.empty,
+  // validationState: validationStates.empty,
   disabled: false,
   isRequired: false,
   suggestionListCallback: () => {},
@@ -763,4 +683,6 @@ HvInput.defaultProps = {
   externalWarningTextOverride: null
 };
 
-export default withStyles(styles, { name: "HvInput" })(withLabels(DEFAULT_LABELS)(withId(HvInput)));
+export default withStyles(styles, { name: "HvBaseInput" })(
+  withLabels(DEFAULT_LABELS)(withId(HvBaseInput))
+);
