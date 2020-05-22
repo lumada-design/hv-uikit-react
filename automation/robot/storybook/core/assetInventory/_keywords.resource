@@ -13,9 +13,9 @@ filter cards and reduce Window size
 
 move focus from-to locator when pressed keyboard
     [Arguments]    ${fromCard}    ${keyboard}    ${toCard}
-    Click Element                ${fromCard}
-    Press Keys                   ${fromCard}    ${keyboard}
-    Element Should Be Focused    ${toCard}
+    Click Element                 ${fromCard}
+    Press Keys                    ${fromCard}    ${keyboard}
+    focus assertion by Browser    ${toCard}
 
 validate page size
     [Arguments]    ${items}    ${size}    ${numItems}    ${numpages}
@@ -23,3 +23,10 @@ validate page size
     Select From List By Value      ${pageSize}    ${size}
     Page Should Contain Element    ${items}    limit=${numItems}
     Element Text Should Be         ${pageTotal}    ${numpages}
+
+focus assertion by Browser
+    [Arguments]    ${locator}
+    Run Keyword If                            '${BROWSER.lower()}'!='ie'
+    ...   Element Should Be Focused           ${locator}
+    ...   ELSE
+    ...   Wait Until Page Contains Element    ${locator}\[class*=focused]    3s
