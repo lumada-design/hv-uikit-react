@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.26.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.26.1...@hv/uikit-react-doc@1.26.2) (2020-05-22)
+
+
+### Bug Fixes
+
+* **appswitcherpanel:** removed the is selected logic from the component ([ee952f6](https://github.com/pentaho/hv-uikit-react/commit/ee952f66877995e97df7814f77db56fd5489fc93))
+
+
+
+
+
 ## [1.26.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-doc@1.26.0...@hv/uikit-react-doc@1.26.1) (2020-05-20)
 
 **Note:** Version bump only for package @hv/uikit-react-doc
