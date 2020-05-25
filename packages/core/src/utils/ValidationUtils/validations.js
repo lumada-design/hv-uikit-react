@@ -74,4 +74,20 @@ const validateInput = (value, validation, validationType) => {
   }
 };
 
-export { validateCharLength, validateInput, isNumeric, isEmail };
+const validationFunction = (value, validationRules) => {
+  const { maxCharQuantity, minCharQuantity, validation, validationType } = validationRules;
+  // check for input size
+  const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
+  // check for valid input
+  const valid = validateInput(value, validation, validationType);
+
+  const results = {
+    isValid: valid && valueSizeStatus,
+    tooManyChars: maxCharQuantity && value.length > maxCharQuantity,
+    tooFewChars: minCharQuantity && value.length < minCharQuantity
+  };
+
+  return results;
+};
+
+export { validationFunction, validateCharLength, validateInput, isNumeric, isEmail };

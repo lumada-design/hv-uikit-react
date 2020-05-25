@@ -17,7 +17,7 @@ import { withStyles } from "@material-ui/core";
 
 import classes from "../Input/styles";
 
-import { validateCharLength, validateInput } from "../Input/validations";
+// import { validateCharLength, validateInput } from "../Input/validations";
 
 import HvTypography from "../Typography";
 import HelperText from "../HelperText";

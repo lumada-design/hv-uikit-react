@@ -2,20 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
-import { Input, withStyles } from "@material-ui/core";
-import InfoS from "@hv/uikit-react-icons/dist/Info";
+import { withStyles } from "@material-ui/core";
 import withId from "../withId";
 import withLabels from "../withLabels";
 import { isKeypress, KeyboardCodes } from "../utils";
 import isBrowser from "../utils/browser";
 import InputAdornment from "./InputAdornment";
-import HvTypography from "../Typography";
 import HvList from "../List";
-import validationTypes from "./validationTypes";
-import validationStates from "./validationStates";
-import { validateCharLength, validateInput } from "./validations";
+import validationTypes from "../utils/ValidationUtils/validationTypes";
+import validationStates from "../utils/ValidationUtils/validationStates";
+import { validationFunction } from "../utils/ValidationUtils/validations";
 import styles from "./styles";
-import withTooltips from "../withTooltip";
 
 import HelperText from "../HelperText";
 import BaseInput from "../BaseInput";
@@ -166,6 +163,7 @@ class HvInput extends React.Component {
    *
    * @returns {undefined}
    */
+
   onInputBlurHandler = () => {
     const { value } = this.state;
     const { onBlur, labels, isRequired } = this.props;
@@ -182,17 +180,17 @@ class HvInput extends React.Component {
         validationState = validationStates.empty;
       }
     } else {
-      const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
-      const valid = validateInput(value, validation, validationType);
+      const validationParameters = { maxCharQuantity, minCharQuantity, validation, validationType };
+      const validationResults = validationFunction(value, validationParameters);
 
-      if (valid && valueSizeStatus) {
+      if (validationResults.isValid) {
         validationState = validationStates.valid;
-      } else if (!valid || !valueSizeStatus) {
+      } else {
         validationState = validationStates.invalid;
 
-        if (maxCharQuantity && value.length > maxCharQuantity) {
+        if (validationResults.tooManyChars) {
           warningText = labels.maxCharQuantityWarningText;
-        } else if (minCharQuantity && value.length < minCharQuantity) {
+        } else if (validationResults.tooFewChars) {
           warningText = labels.minCharQuantityWarningText;
         } else {
           // eslint-disable-next-line prefer-destructuring
@@ -359,7 +357,7 @@ class HvInput extends React.Component {
         onFocus={this.onFocusHandler}
       >
         <BaseInput
-          id={`${id}-input`}
+          id={id}
           aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
           autoFocus={autoFocus}
           // Need to figure out how to merge both on blur events
@@ -396,44 +394,6 @@ class HvInput extends React.Component {
           validationState={stateValidationState}
           {...others}
         />
-        {/* <Input
-          id={`${id}-input`}
-          aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
-          autoFocus={autoFocus}
-          onKeyDown={this.onKeyDownHandler}
-          onBlur={this.onInputBlurHandler}
-          onFocus={this.onFocusHandler}
-          value={stateValue}
-          disabled={disabled}
-          placeholder={labels.placeholder || undefined}
-          type={password ? "password" : "text"}
-          classes={{
-            input: classes.input,
-            focused: classes.inputRootFocused,
-            disabled: classes.inputDisabled,
-            multiline: classes.multiLine
-          }}
-          className={clsx(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled,
-            [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
-          })}
-          onChange={this.onChangeHandler}
-          inputProps={{
-            required: isRequired,
-            ref: this.materialInputRef,
-            "aria-required": isRequired || undefined,
-            "aria-invalid": stateValidationState === validationStates.invalid || undefined,
-            ...inputProps
-          }}
-          inputRef={inputRef}
-          {...(validationIconPosition === "right" && {
-            endAdornment: adornment
-          })}
-          {...(validationIconPosition === "left" && {
-            startAdornment: adornment
-          })}
-          {...others}
-        /> */}
         {suggestionValues && (
           <div className={classes.suggestionsContainer}>
             <div className={classes.suggestionList}>
@@ -446,49 +406,17 @@ class HvInput extends React.Component {
             </div>
           </div>
         )}
-        {/* {showInfo && labels.infoText && (
-          <HvTypography
-            id={`${id}-description`}
-            variant="infoText"
-            className={clsx(classes.infoText)}
-            style={{
-              display:
-                !infoIcon && stateValidationState !== validationStates.invalid ? "block" : "none"
-            }}
-          >
-            {labels.infoText}
-          </HvTypography>
-        )} */}
-        {/* // TODO: Find a better name for this component */}
         <HelperText
           // replace id setting by withId function
           id={`${id}-description`}
           // need to figure out a way to get rid of this variant
           variant="helper"
           // add prop for custom warning label
-          // to be wired via others
           labels={labels || DEFAULT_LABELS}
           hasIcon={showValidationIcon}
           stateValidation={stateValidationState}
           externalWarningTextOverride={externalWarningTextOverride}
         />
-        {/* <HvTypography
-          variant="sText"
-          className={clsx(classes.textWarning, classes.infoText, {
-            // show the text if we are in an invalid state and either of the invalid labels exist
-            [classes.showText]:
-              stateValidationState === validationStates.invalid &&
-              (externalWarningTextOverride || warningText)
-          })}
-          // to be applied when in invalid state
-          aria-live="polite"
-          aria-controls={`${id}-input`}
-          aria-atomic="true"
-          aria-relevant="additions text"
-          aria-labelledby={labels.inputLabel ? `${id}-label` : null}
-        >
-          {externalWarningTextOverride || warningText || ""}
-        </HvTypography> */}
       </div>
     );
   }

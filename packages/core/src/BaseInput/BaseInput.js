@@ -4,7 +4,6 @@ import isNil from "lodash/isNil";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
 import InfoS from "@hv/uikit-react-icons/dist/Info";
-import withId from "../withId";
 import withLabels from "../withLabels";
 import { isKeypress, KeyboardCodes } from "../utils";
 import isBrowser from "../utils/browser";
@@ -81,7 +80,6 @@ const HvBaseInput = props => {
           [classes.inputRootDisabled]: disabled,
           [classes.inputRootInvalid]: validationState === "invalid"
         })}
-        // onChange={this.onChangeHandler}
         inputProps={{
           required: isRequired,
           // ref: this.materialInputRef,
@@ -90,14 +88,14 @@ const HvBaseInput = props => {
           ...inputProps
         }}
         inputRef={inputRef}
-        {...(validationIconPosition === "right" &&
-          {
-            // endAdornment: adornment
-          })}
-        {...(validationIconPosition === "left" &&
-          {
-            // startAdornment: adornment
-          })}
+        // {...(validationIconPosition === "right" &&
+        //   {
+        //     // endAdornment: adornment
+        //   })}
+        // {...(validationIconPosition === "left" &&
+        //   {
+        //     // startAdornment: adornment
+        //   })}
         {...others}
       />
     </>
@@ -344,8 +342,4 @@ HvBaseInput.defaultProps = {
   externalWarningTextOverride: null
 };
 
-export default withStyles(styles, { name: "HvBaseInput" })(
-  // withLabels(this.props.labels)(withId(HvBaseInput))
-  // withId(HvBaseInput)
-  HvBaseInput
-);
+export default withStyles(styles, { name: "HvBaseInput" })(HvBaseInput);
