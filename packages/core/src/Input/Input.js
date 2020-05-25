@@ -344,13 +344,6 @@ class HvInput extends React.Component {
       customFixedIcon
     );
 
-    // const IconDisplay = () => (
-    //   <div aria-hidden="true" className={classes.infoIconContainer}>
-    //     <InfoS />
-    //   </div>
-    // );
-    // const InfoIcon = withTooltips(IconDisplay, labels.infoText);
-
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
@@ -400,6 +393,7 @@ class HvInput extends React.Component {
           })}
           infoIcon={infoIcon}
           labels={labels || DEFAULT_LABELS}
+          validationState={stateValidationState}
           {...others}
         />
         {/* <Input
