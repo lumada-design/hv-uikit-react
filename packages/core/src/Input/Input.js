@@ -344,12 +344,12 @@ class HvInput extends React.Component {
       customFixedIcon
     );
 
-    const IconDisplay = () => (
-      <div aria-hidden="true" className={classes.infoIconContainer}>
-        <InfoS />
-      </div>
-    );
-    const InfoIcon = withTooltips(IconDisplay, labels.infoText);
+    // const IconDisplay = () => (
+    //   <div aria-hidden="true" className={classes.infoIconContainer}>
+    //     <InfoS />
+    //   </div>
+    // );
+    // const InfoIcon = withTooltips(IconDisplay, labels.infoText);
 
     return (
       <div
@@ -396,10 +396,10 @@ class HvInput extends React.Component {
           {...(validationIconPosition === "left" && {
             startAdornment: adornment
           })}
-          // infoIcon={InfoIcon}
+          infoIcon={infoIcon}
+          labels={labels || DEFAULT_LABELS}
           {...others}
         />
-
         {/* <Input
           id={`${id}-input`}
           aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
@@ -438,7 +438,6 @@ class HvInput extends React.Component {
           })}
           {...others}
         /> */}
-
         {suggestionValues && (
           <div className={classes.suggestionsContainer}>
             <div className={classes.suggestionList}>
@@ -451,7 +450,6 @@ class HvInput extends React.Component {
             </div>
           </div>
         )}
-
         {/* {showInfo && labels.infoText && (
           <HvTypography
             id={`${id}-description`}
@@ -465,6 +463,7 @@ class HvInput extends React.Component {
             {labels.infoText}
           </HvTypography>
         )} */}
+        {/* // TODO: Find a better name for this component */}
         <HelperText
           // replace id setting by withId function
           id={`${id}-description`}
@@ -477,7 +476,6 @@ class HvInput extends React.Component {
           stateValidation={stateValidationState}
           externalWarningTextOverride={externalWarningTextOverride}
         />
-
         {/* <HvTypography
           variant="sText"
           className={clsx(classes.textWarning, classes.infoText, {

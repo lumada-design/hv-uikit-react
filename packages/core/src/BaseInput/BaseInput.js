@@ -13,17 +13,6 @@ import HvTypography from "../Typography";
 import withTooltips from "../withTooltip";
 import HvGenericLabel from "../GenericLabel";
 
-const DEFAULT_LABELS = {
-  inputLabel: "",
-  placeholder: "",
-  infoText: "",
-  warningText: "something wrong",
-  maxCharQuantityWarningText: "The value is too big",
-  minCharQuantityWarningText: "The value is too short",
-  requiredWarningText: "The value is required",
-  clearButtonLabel: "Clear the text"
-};
-
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
@@ -272,27 +261,20 @@ class HvBaseInput extends React.Component {
     );
     const InfoIcon = withTooltips(IconDisplay, labels.infoText);
 
-    const innerLabels = {
-      placeholder: "Insert first name",
-      infoText: "Please enter your first name",
-      inputLabel: "First name",
-      warningText: "Error",
-      maxCharQuantityWarningText: "Max characters exceeded"
-    };
-
+    // TODO: Need to figure out a way to have a generic first name to pass on to tooltip
     return (
       <>
         <div className={classes.labelContainer}>
           <HvGenericLabel
             id={`${id}-label`}
             variant="labelText"
-            label="Blah Blah"
+            label={labels.inputLabel}
             htmlFor={`${id}-input`}
             className={clsx(classes.label, {
               [classes.labelDisabled]: disabled
             })}
           />
-          <IconDisplay />
+          {infoIcon && <InfoIcon />}
           {/* {labels.inputLabel && (
             <HvTypography
               variant="labelText"
@@ -304,6 +286,7 @@ class HvBaseInput extends React.Component {
               })}
             >
               {labels.inputLabel}
+              // TODO: figure out how to wire in span
               {isRequired && <span aria-hidden="true">*</span>}
             </HvTypography>
           )} */}
@@ -533,7 +516,7 @@ HvBaseInput.propTypes = {
   /**
    * Show info icon with info label.infoText.
    */
-  // infoIcon: PropTypes.bool,
+  infoIcon: PropTypes.bool,
   /**
    * If `true` the validation icon is visible, `false` otherwise
    */
@@ -574,7 +557,7 @@ HvBaseInput.defaultProps = {
   inputProps: {},
   inputRef: null,
   customFixedIcon: null,
-  // infoIcon: false,
+  infoIcon: false,
   validationIconVisible: true,
   disableClear: false,
   validationIconPosition: "right",
@@ -593,5 +576,6 @@ HvBaseInput.defaultProps = {
 };
 
 export default withStyles(styles, { name: "HvBaseInput" })(
-  withLabels(DEFAULT_LABELS)(withId(HvBaseInput))
+  // withLabels(this.props.labels)(withId(HvBaseInput))
+  withId(HvBaseInput)
 );

@@ -9,17 +9,6 @@ import HvTypography from "../Typography";
 
 import styles from "./styles";
 
-const DEFAULT_LABELS = {
-  inputLabel: "",
-  placeholder: "",
-  infoText: "",
-  warningText: "something wrong",
-  maxCharQuantityWarningText: "The value is too big",
-  minCharQuantityWarningText: "The value is too short",
-  requiredWarningText: "The value is required",
-  clearButtonLabel: "Clear the text"
-};
-
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
