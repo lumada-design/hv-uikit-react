@@ -31,26 +31,26 @@ class HvBaseInput extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    const { value: nextValue, validationState } = nextProps;
-    const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   const { value: nextValue, validationState } = nextProps;
+  //   const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
 
-    let returnState = null;
+  //   let returnState = null;
 
-    if (nextValue !== undefined && nextValue !== oldValue) {
-      returnState = {
-        value: nextValue
-      };
-    }
-    if (validationState !== undefined && validationState !== validationStateProp) {
-      returnState = {
-        validationState,
-        currentValidationStateProps:
-          validationState !== validationStateProp ? validationStateProp : validationState
-      };
-    }
-    return returnState;
-  }
+  //   if (nextValue !== undefined && nextValue !== oldValue) {
+  //     returnState = {
+  //       value: nextValue
+  //     };
+  //   }
+  //   if (validationState !== undefined && validationState !== validationStateProp) {
+  //     returnState = {
+  //       validationState,
+  //       currentValidationStateProps:
+  //         validationState !== validationStateProp ? validationStateProp : validationState
+  //     };
+  //   }
+  //   return returnState;
+  // }
 
   /**
    * Updates the states while the input is being entered.
@@ -69,9 +69,9 @@ class HvBaseInput extends React.Component {
   /**
    * Looks for the node that represent the input inside the material tree and focus it.
    */
-  focusInput = () => {
-    this.materialInputRef.current.focus();
-  };
+  // focusInput = () => {
+  //   this.materialInputRef.current.focus();
+  // };
 
   /**
    * Clears the input value from the state and refocus the input.
@@ -80,15 +80,15 @@ class HvBaseInput extends React.Component {
    * this timeout with a node focus was used to solve the problem
    * because the reference to the input is lost when the component is updated.
    */
-  handleClear = () => {
-    const { onChange } = this.props;
-    const value = "";
-    onChange(null, value);
-    this.manageInputValueState(value, null);
-    setTimeout(() => {
-      this.focusInput();
-    });
-  };
+  // handleClear = () => {
+  //   const { onChange } = this.props;
+  //   const value = "";
+  //   onChange(null, value);
+  //   this.manageInputValueState(value, null);
+  //   setTimeout(() => {
+  //     this.focusInput();
+  //   });
+  // };
 
   /**
    * Updates the state while is being inputted, also executes the user onChange
@@ -96,13 +96,13 @@ class HvBaseInput extends React.Component {
    *
    * @param {Object} event - The event provided by the material ui input
    */
-  onChangeHandler = event => {
-    const { onChange } = this.props;
-    const { value } = event.target;
-    const newValue = onChange(event, value);
-    this.suggestionHandler(value);
-    this.manageInputValueState(newValue, null);
-  };
+  // onChangeHandler = event => {
+  //   const { onChange } = this.props;
+  //   const { value } = event.target;
+  //   const newValue = onChange(event, value);
+  //   this.suggestionHandler(value);
+  //   this.manageInputValueState(newValue, null);
+  // };
 
   /**
    * Validates the input updating the state and modifying the info text, also executes
@@ -153,42 +153,42 @@ class HvBaseInput extends React.Component {
    * Updates the state putting again the value from the state because the input value is
    * not automatically manage, it also executes the onFocus function from the user passing the value
    */
-  onFocusHandler = () => {
-    const { value } = this.state;
-    const { onFocus } = this.props;
-    this.manageInputValueState(value, null);
-    onFocus(value);
-  };
+  // onFocusHandler = () => {
+  //   const { value } = this.state;
+  //   const { onFocus } = this.props;
+  //   this.manageInputValueState(value, null);
+  //   onFocus(value);
+  // };
 
   /**
    * Focus the suggestion list when the arrow down is pressed.
    *
    * @param {Object} event - The event provided by the material ui input
    */
-  onKeyDownHandler = event => {
-    const { onKeyDown } = this.props;
-    const { value } = this.state;
-    if (isKeypress(event, KeyboardCodes.ArrowDown)) {
-      this.node.getElementsByTagName("LI")[0].focus();
-    }
-    onKeyDown(event, value);
-  };
+  // onKeyDownHandler = event => {
+  //   const { onKeyDown } = this.props;
+  //   const { value } = this.state;
+  //   if (isKeypress(event, KeyboardCodes.ArrowDown)) {
+  //     this.node.getElementsByTagName("LI")[0].focus();
+  //   }
+  //   onKeyDown(event, value);
+  // };
 
   /**
    * Clears the suggestion list on blur.
    *
    * @param {Object} event - The event provided by the material ui input.
    */
-  onContainerBlurHandler = event => {
-    if (isNil(event.relatedTarget)) {
-      // workaround because IE 11
-      if (isBrowser("ie")) {
-        setTimeout(this.suggestionClearHandler, 100);
-      } else {
-        this.suggestionClearHandler();
-      }
-    }
-  };
+  // onContainerBlurHandler = event => {
+  //   if (isNil(event.relatedTarget)) {
+  //     // workaround because IE 11
+  //     if (isBrowser("ie")) {
+  //       setTimeout(this.suggestionClearHandler, 100);
+  //     } else {
+  //       this.suggestionClearHandler();
+  //     }
+  //   }
+  // };
 
   render() {
     const {
@@ -216,15 +216,16 @@ class HvBaseInput extends React.Component {
       value,
       autoFocus,
       initialValue,
+      stateValue,
       ...others
     } = this.props;
 
-    const {
-      validationState: stateValidationState,
-      value: stateValue
-      // warningText,
-      // suggestionValues
-    } = this.state;
+    // const {
+    //   validationState: stateValidationState,
+    //   value: stateValue
+    //   // warningText,
+    //   // suggestionValues
+    // } = this.state;
 
     // const { externalWarningTextOverride } = others;
 
@@ -297,7 +298,7 @@ class HvBaseInput extends React.Component {
           onKeyDown={this.onKeyDownHandler}
           onBlur={this.onInputBlurHandler}
           onFocus={this.onFocusHandler}
-          value={stateValue}
+          value={value}
           disabled={disabled}
           placeholder={labels.placeholder || undefined}
           type={password ? "password" : "text"}
@@ -577,5 +578,6 @@ HvBaseInput.defaultProps = {
 
 export default withStyles(styles, { name: "HvBaseInput" })(
   // withLabels(this.props.labels)(withId(HvBaseInput))
-  withId(HvBaseInput)
+  // withId(HvBaseInput)
+  HvBaseInput
 );
