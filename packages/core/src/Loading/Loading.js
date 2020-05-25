@@ -1,11 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
+import useResizeAware from "react-resize-aware";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import range from "lodash/range";
-import { withStyles } from "@material-ui/core";
+import { useTheme, withStyles } from "@material-ui/core";
 import { HvTypography } from "../..";
 import styles from "./styles";
 
+/**
+ * The Loading component as two forms of working:
+ * - As a normal component inline when no children is passed;
+ * - As a HOC when a children is passed
+ */
 const Loading = ({
   className,
   classes,
@@ -16,12 +22,10 @@ const Loading = ({
   children,
   others
 }) => {
+  const [resizeListener, sizes] = useResizeAware();
   const [overlayPosition, setOverlayPosition] = useState({});
   const ref = useRef();
-
-  const size = small ? "small" : "regular";
-
-  const specificColor = color ? "-color" : "";
+  const theme = useTheme();
 
   useEffect(() => {
     if (children && ref.current) {
@@ -33,21 +37,26 @@ const Loading = ({
         width: clientWidth
       });
     }
-  }, []);
+  }, [children, sizes.width, sizes.height]);
+
+  const getColor = noColor => (color ? theme.palette[color] || color : theme.palette[noColor]);
+
+  const size = small ? "small" : "regular";
+  const colorVariant = color ? "Color" : "";
+  const variant = `${size}${colorVariant}`;
+
+  const inline = { background: getColor(small ? "acce1" : "acce3") };
+
   const barsRender = () => (
     <>
       {isActive && (
         <div className={clsx(className, classes.root)} {...others}>
           <div className={classes.barContainer}>
             {range(0, 3).map(e => (
-              <div key={e} className={clsx(classes.loadingBar, `${size}${specificColor}`)} />
+              <div key={e} style={inline} className={clsx(classes.loadingBar, classes[variant])} />
             ))}
           </div>
-          {text && (
-            <div className={classes.loadingText}>
-              <HvTypography>{text}</HvTypography>
-            </div>
-          )}
+          {text && <HvTypography className={classes.loadingText}>{text}</HvTypography>}
         </div>
       )}
     </>
@@ -61,6 +70,7 @@ const Loading = ({
       >
         {barsRender()}
       </div>
+      {resizeListener}
       {React.cloneElement(children, { ref })}
     </>
   );

@@ -8,7 +8,9 @@ export default {
   title: "Lab/Loading",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLoading } from '@hv/uikit-react-lab/dist'"
+    usage: "import { HvLoading } from '@hv/uikit-react-lab/dist'",
+    deprecated: true,
+    compNameToUse: "Loading component in Core package."
   },
   component: HvLoading
 };

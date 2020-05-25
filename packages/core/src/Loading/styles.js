@@ -43,33 +43,26 @@ const styles = theme => ({
   },
 
   loadingBar: {
-    display: "inline-block",
-
-    "&.regular": {
-      animation: "$loading-regular 1s ease-in-out infinite",
-      backgroundColor: theme.hv.palette.accent.acce3,
-      ...regular
-    },
-    "&.regular-color": {
-      animation: "$loading-regular-color 1s ease-in-out infinite",
-      backgroundColor: ({ color }) =>
-        theme.palette[color] || color || theme.hv.palette.accent.acce3,
-      ...regular
-    },
-
-    "&.small": {
-      animation: "$loading-small 1s ease-in-out infinite",
-      backgroundColor: theme.hv.palette.accent.acce1,
-      ...small
-    },
-    "&.small-color": {
-      backgroundColor: ({ color }) =>
-        theme.palette[color] || color || theme.hv.palette.accent.acce1,
-      animation: "$loading-small-color 1s ease-in-out infinite",
-      ...small
-    }
+    display: "inline-block"
   },
 
+  regular: {
+    animation: "$loading-regular 1s ease-in-out infinite",
+    ...regular
+  },
+  regularColor: {
+    animation: "$loading-regular-color 1s ease-in-out infinite",
+    ...regular
+  },
+
+  small: {
+    animation: "$loading-small 1s ease-in-out infinite",
+    ...small
+  },
+  smallColor: {
+    animation: "$loading-small-color 1s ease-in-out infinite",
+    ...small
+  },
   "@keyframes loading-regular": {
     "0%": {
       transform: "scale(1)",
@@ -110,7 +103,7 @@ const styles = theme => ({
   },
 
   loadingText: {
-    marginTop: "20px"
+    marginTop: "15px"
   },
 
   overlay: {

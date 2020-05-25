@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
-import { useTheme } from "@material-ui/core/styles";
-import HvButton from "../../Button";
 import HvTable from "../../Table";
+import HvButton from "../../Button";
 import HvLoading from "../Loading";
+import Typography from "../../Typography";
 
 export default {
   title: "Components/Loading",
@@ -18,33 +18,110 @@ export const Main = () => {
   return (
     <div style={{ display: "flex" }}>
       <HvLoading isActive />
-      <HvLoading isActive small />
     </div>
   );
 };
 
-export const SpecificColor = () => {
-  const theme = useTheme();
+export const IndeterminateLoading = () => {
+  // eslint-disable-next-line react/prop-types
+  const ExampleBox = ({ text, children }) => (
+    <div>
+      <Typography>{text}</Typography>
+      {children}
+    </div>
+  );
   return (
-    <div
-      style={{
-        width: "150px",
-        height: "50px",
-        backgroundColor: theme.hv.palette.semantic.sema1
-      }}
-    >
-      <HvLoading isActive color="base1" />
+    <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <ExampleBox text="Large Loading">
+        <HvLoading isActive />
+      </ExampleBox>
+      <ExampleBox text="Large Loading w/ label">
+        <HvLoading isActive text="Loading" />
+      </ExampleBox>
+      <ExampleBox text="Small Loading">
+        <HvLoading isActive small />
+      </ExampleBox>
     </div>
   );
 };
 
-SpecificColor.story = {
-  parameters: {
-    docs: {
-      storyDescription:
-        "It is possible to define a specific color to be used in the bars, for the cases where the color must be maintain, independently of the theme"
-    }
-  }
+export const IndeterminateLoadingOnButtons = () => {
+  // eslint-disable-next-line react/prop-types
+  const ExampleBox = ({ text, category, color }) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const activateTimer = () => {
+      if (!isLoading) {
+        setIsLoading(true);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 3000);
+      }
+    };
+
+    return (
+      <div style={{ textAlign: "center" }}>
+        <Typography style={{ paddingBottom: "5px" }}>{text}</Typography>
+        <HvButton category={category} onClick={activateTimer}>
+          {(!isLoading && "Submit") || <HvLoading small isActive={isLoading} color={color} />}
+        </HvButton>
+      </div>
+    );
+  };
+  return (
+    <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <ExampleBox category="primary" text="Primary button" color="base1" />
+      <ExampleBox category="secondary" text="Secondary button" />
+      <ExampleBox category="ghost" text="Ghost button" />
+    </div>
+  );
+};
+
+export const DeterminateLoading = () => {
+  // eslint-disable-next-line react/prop-types
+  const ExampleBox = ({ text, children }) => (
+    <div>
+      <Typography>{text}</Typography>
+      {children}
+    </div>
+  );
+
+  const Progress = () => {
+    const [value, setValue] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setValue(v => (v >= 75 ? 0 : Math.round((v + 1.3) * 100) / 100));
+      }, 1000);
+      return () => clearInterval(interval);
+    }, []);
+
+    return <HvLoading isActive text={`${value}M/75M`} />;
+  };
+
+  const Percentage = () => {
+    const [value, setValue] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setValue(v => (v === 100 ? 0 : v + 5));
+      }, 1000);
+      return () => clearInterval(interval);
+    }, []);
+
+    return <HvLoading isActive text={`${value}%`} />;
+  };
+
+  return (
+    <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <ExampleBox text="Determine w/ percentages">
+        <Percentage />
+      </ExampleBox>
+      <ExampleBox text="Determine w/ progress">
+        <Progress />
+      </ExampleBox>
+    </div>
+  );
 };
 
 const Table = () => {
@@ -192,23 +269,6 @@ Hoc.story = {
     docs: {
       storyDescription:
         "If a children is passed the component works as a HOC (High Order Component), wrapping the children and creating a overlay."
-    }
-  }
-};
-
-export const Inline = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  return (
-    <HvButton style={{ width: "150px" }} onClick={() => setIsLoading(!isLoading)}>
-      {(!isLoading && "Submit") || <HvLoading small isActive={isLoading} color="base1" />}
-    </HvButton>
-  );
-};
-
-Inline.story = {
-  parameters: {
-    docs: {
-      storyDescription: "If no children is passed the component behaves as a normal component"
     }
   }
 };

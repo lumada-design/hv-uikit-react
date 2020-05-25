@@ -6,23 +6,23 @@ export interface HvLoadingProps
   /**
    * Indicates if the component should be render in a small size.
    */
-  small: boolean;
+  small?: boolean;
   /**
    * The text to be displayed.
    */
-  text: string;
+  text?: string;
   /**
    * Activates the loading visualization.
    */
-  isActive: boolean;
+  isActive?: boolean;
   /**
    * Color applied to the bars.
    */
-  color: string;
+  color?: string;
   /**
    * Children
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export type HvLoadingClassKey =
