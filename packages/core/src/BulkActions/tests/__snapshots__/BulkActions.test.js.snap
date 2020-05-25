@@ -1166,6 +1166,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     color="atmo7"
                   />
                 }
+                id="bulkActions-actions-menu"
                 keepOpened={false}
                 onClick={[Function]}
                 placement="left"
@@ -1201,6 +1202,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       color="atmo7"
                     />
                   }
+                  id="bulkActions-actions-menu"
                   keepOpened={false}
                   onClick={[Function]}
                   placement="left"
@@ -1236,14 +1238,14 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         color="atmo7"
                       />
                     }
-                    id="drop-down-menu-2"
+                    id="bulkActions-actions-menu"
                     keepOpened={false}
                     onClick={[Function]}
                     placement="left"
                   >
                     <div
                       className="HvDropDownMenu-root HvActions-dropDownMenu"
-                      id="drop-down-menu-2"
+                      id="bulkActions-actions-menu"
                     >
                       <WithStyles(ForwardRef(IconButton))
                         aria-haspopup="true"
@@ -1255,7 +1257,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               aria-label="Dropdown menu"
                               class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
                               disabled=""
-                              id="drop-down-menu-2-icon-button"
+                              id="bulkActions-actions-menu-icon-button"
                               tabindex="-1"
                               type="button"
                             >
@@ -1285,7 +1287,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         }
                         className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
                         disabled={true}
-                        id="drop-down-menu-2-icon-button"
+                        id="bulkActions-actions-menu-icon-button"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                       >
@@ -1299,7 +1301,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 aria-label="Dropdown menu"
                                 class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
                                 disabled=""
-                                id="drop-down-menu-2-icon-button"
+                                id="bulkActions-actions-menu-icon-button"
                                 tabindex="-1"
                                 type="button"
                               >
@@ -1342,7 +1344,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             }
                           }
                           disabled={true}
-                          id="drop-down-menu-2-icon-button"
+                          id="bulkActions-actions-menu-icon-button"
                           onClick={[Function]}
                           onKeyDown={[Function]}
                         >
@@ -1356,7 +1358,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   aria-label="Dropdown menu"
                                   class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
                                   disabled=""
-                                  id="drop-down-menu-2-icon-button"
+                                  id="bulkActions-actions-menu-icon-button"
                                   tabindex="-1"
                                   type="button"
                                 >
@@ -1388,7 +1390,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled"
                             disabled={true}
                             focusRipple={true}
-                            id="drop-down-menu-2-icon-button"
+                            id="bulkActions-actions-menu-icon-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                           >
@@ -1402,7 +1404,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                     aria-label="Dropdown menu"
                                     class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
                                     disabled=""
-                                    id="drop-down-menu-2-icon-button"
+                                    id="bulkActions-actions-menu-icon-button"
                                     tabindex="-1"
                                     type="button"
                                   >
@@ -1442,7 +1444,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               disableRipple={true}
                               disabled={true}
                               focusRipple={true}
-                              id="drop-down-menu-2-icon-button"
+                              id="bulkActions-actions-menu-icon-button"
                               onClick={[Function]}
                               onKeyDown={[Function]}
                             >
@@ -1451,7 +1453,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 aria-label="Dropdown menu"
                                 className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
                                 disabled={true}
-                                id="drop-down-menu-2-icon-button"
+                                id="bulkActions-actions-menu-icon-button"
                                 onBlur={[Function]}
                                 onClick={[Function]}
                                 onDragLeave={[Function]}

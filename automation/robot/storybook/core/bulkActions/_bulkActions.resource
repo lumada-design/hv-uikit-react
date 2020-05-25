@@ -7,9 +7,9 @@ Resource          ../../_resources/storybook_keywords.robot
 *** Variables ***
 ${actionAdd}            id:add
 ${actionDelete}         id:delete
-${actionMore}           css:button[aria-label='Dropdown menu']
-${actionsDroppedList}   css:ul[id*=drop]
-${actionsDropped}       css:ul[id*=drop]>li
+${actionMore}           bulkActions-actions-menu-icon-button
+${actionsDroppedList}   bulkActions-actions-menu-list
+${actionsDropped}       css:ul[id*=bulkActions-actions-menu-list]>li
 ${actionsButtons}       css:div[class*=actionContainer] button
 ${checkbox0}            id:0-input
 ${checkbox1}            id:1-input

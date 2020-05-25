@@ -18,7 +18,7 @@ focus vertical ascending card when pressed arrow up                     ${card6}
 focus vertical descending card when pressed arrow down                  ${card1}    ARROW_DOWN     ${card4}
 focus first card when pressed home                                      ${card6}    HOME           ${card1}
 focus last card when pressed arrow end                                  ${card1}    END            ${card6}
-#when focus does not move
+#--- when focus does not move ---
 focus does not move when pressed right on right-most cell in the row    ${card3}    ARROW_RIGHT    ${card3}
 focus does not move when pressed left on left-most cell in the row      ${card4}    ARROW_LEFT     ${card4}
 focus does not move when pressed right on last card                     ${card6}    ARROW_RIGHT    ${card6}
