@@ -50,6 +50,7 @@ const Actions = ({
       <>
         {actsVisible.map((action, idx) => renderButton(action, idx))}
         <HvDropDownMenu
+          id={setId(id, "menu")}
           disabled={disabled}
           classes={{
             root: classes.dropDownMenu,
