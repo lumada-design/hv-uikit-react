@@ -16,325 +16,420 @@ import HvGenericLabel from "../GenericLabel";
 /**
  * An input is a graphicl control element that allows the user to write text.
  */
-class HvBaseInput extends React.Component {
-  constructor(props) {
-    super(props);
-    // const { validationState, value, initialValue, labels } = props;
-    const { value, initialValue } = props;
-    this.materialInputRef = React.createRef();
-    this.state = {
-      // validationState,
-      // currentValidationStateProps: validationState,
-      value: value || initialValue
-      // suggestionValues: null,
-      // warningText: validationState === validationStates.invalid ? labels.warningText : null
-    };
-  }
+// class HvBaseInput extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     // const { validationState, value, initialValue, labels } = props;
+//     const { value, initialValue } = props;
+//     this.materialInputRef = React.createRef();
+//     this.state = {
+//       // validationState,
+//       // currentValidationStateProps: validationState,
+//       value: value || initialValue
+//       // suggestionValues: null,
+//       // warningText: validationState === validationStates.invalid ? labels.warningText : null
+//     };
+//   }
 
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   const { value: nextValue, validationState } = nextProps;
-  //   const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
+//   // static getDerivedStateFromProps(nextProps, prevState) {
+//   //   const { value: nextValue, validationState } = nextProps;
+//   //   const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
 
-  //   let returnState = null;
+//   //   let returnState = null;
 
-  //   if (nextValue !== undefined && nextValue !== oldValue) {
-  //     returnState = {
-  //       value: nextValue
-  //     };
-  //   }
-  //   if (validationState !== undefined && validationState !== validationStateProp) {
-  //     returnState = {
-  //       validationState,
-  //       currentValidationStateProps:
-  //         validationState !== validationStateProp ? validationStateProp : validationState
-  //     };
-  //   }
-  //   return returnState;
-  // }
+//   //   if (nextValue !== undefined && nextValue !== oldValue) {
+//   //     returnState = {
+//   //       value: nextValue
+//   //     };
+//   //   }
+//   //   if (validationState !== undefined && validationState !== validationStateProp) {
+//   //     returnState = {
+//   //       validationState,
+//   //       currentValidationStateProps:
+//   //         validationState !== validationStateProp ? validationStateProp : validationState
+//   //     };
+//   //   }
+//   //   return returnState;
+//   // }
 
-  /**
-   * Updates the states while the input is being entered.
-   *
-   * @param {String} value - the inputted value.
-   * @param {*} warningText - the error text below the input.
-   */
-  // manageInputValueState = (value, warningText) => {
-  //   this.setState({
-  //     validationState: value && value !== "" ? validationStates.filled : validationStates.empty,
-  //     warningText,
-  //     value
-  //   });
-  // };
+//   /**
+//    * Updates the states while the input is being entered.
+//    *
+//    * @param {String} value - the inputted value.
+//    * @param {*} warningText - the error text below the input.
+//    */
+//   // manageInputValueState = (value, warningText) => {
+//   //   this.setState({
+//   //     validationState: value && value !== "" ? validationStates.filled : validationStates.empty,
+//   //     warningText,
+//   //     value
+//   //   });
+//   // };
 
-  /**
-   * Looks for the node that represent the input inside the material tree and focus it.
-   */
-  // focusInput = () => {
-  //   this.materialInputRef.current.focus();
-  // };
+//   /**
+//    * Looks for the node that represent the input inside the material tree and focus it.
+//    */
+//   // focusInput = () => {
+//   //   this.materialInputRef.current.focus();
+//   // };
 
-  /**
-   * Clears the input value from the state and refocus the input.
-   *
-   * Note: given than the input component from material doesn't offer any api to focus
-   * this timeout with a node focus was used to solve the problem
-   * because the reference to the input is lost when the component is updated.
-   */
-  // handleClear = () => {
-  //   const { onChange } = this.props;
-  //   const value = "";
-  //   onChange(null, value);
-  //   this.manageInputValueState(value, null);
-  //   setTimeout(() => {
-  //     this.focusInput();
-  //   });
-  // };
+//   /**
+//    * Clears the input value from the state and refocus the input.
+//    *
+//    * Note: given than the input component from material doesn't offer any api to focus
+//    * this timeout with a node focus was used to solve the problem
+//    * because the reference to the input is lost when the component is updated.
+//    */
+//   // handleClear = () => {
+//   //   const { onChange } = this.props;
+//   //   const value = "";
+//   //   onChange(null, value);
+//   //   this.manageInputValueState(value, null);
+//   //   setTimeout(() => {
+//   //     this.focusInput();
+//   //   });
+//   // };
 
-  /**
-   * Updates the state while is being inputted, also executes the user onChange
-   * allowing the customization of the input if required.
-   *
-   * @param {Object} event - The event provided by the material ui input
-   */
-  // onChangeHandler = event => {
-  //   const { onChange } = this.props;
-  //   const { value } = event.target;
-  //   const newValue = onChange(event, value);
-  //   this.suggestionHandler(value);
-  //   this.manageInputValueState(newValue, null);
-  // };
+//   /**
+//    * Updates the state while is being inputted, also executes the user onChange
+//    * allowing the customization of the input if required.
+//    *
+//    * @param {Object} event - The event provided by the material ui input
+//    */
+//   // onChangeHandler = event => {
+//   //   const { onChange } = this.props;
+//   //   const { value } = event.target;
+//   //   const newValue = onChange(event, value);
+//   //   this.suggestionHandler(value);
+//   //   this.manageInputValueState(newValue, null);
+//   // };
 
-  /**
-   * Validates the input updating the state and modifying the info text, also executes
-   * the user provided onBlur passing the current validation status and value.
-   *
-   * @returns {undefined}
-   */
-  // onInputBlurHandler = () => {
-  //   const { value } = this.state;
-  //   const { onBlur, labels, isRequired } = this.props;
-  //   const { validation, validationType, minCharQuantity, maxCharQuantity } = this.props;
+//   /**
+//    * Validates the input updating the state and modifying the info text, also executes
+//    * the user provided onBlur passing the current validation status and value.
+//    *
+//    * @returns {undefined}
+//    */
+//   // onInputBlurHandler = () => {
+//   //   const { value } = this.state;
+//   //   const { onBlur, labels, isRequired } = this.props;
+//   //   const { validation, validationType, minCharQuantity, maxCharQuantity } = this.props;
 
-  //   let validationState;
-  //   let warningText = null;
+//   //   let validationState;
+//   //   let warningText = null;
 
-  //   if (!value || value === "") {
-  //     if (isRequired) {
-  //       validationState = validationStates.invalid;
-  //       warningText = labels.requiredWarningText;
-  //     } else {
-  //       validationState = validationStates.empty;
-  //     }
-  //   } else {
-  //     const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
-  //     const valid = validateInput(value, validation, validationType);
+//   //   if (!value || value === "") {
+//   //     if (isRequired) {
+//   //       validationState = validationStates.invalid;
+//   //       warningText = labels.requiredWarningText;
+//   //     } else {
+//   //       validationState = validationStates.empty;
+//   //     }
+//   //   } else {
+//   //     const valueSizeStatus = validateCharLength(value, maxCharQuantity, minCharQuantity);
+//   //     const valid = validateInput(value, validation, validationType);
 
-  //     if (valid && valueSizeStatus) {
-  //       validationState = validationStates.valid;
-  //     } else if (!valid || !valueSizeStatus) {
-  //       validationState = validationStates.invalid;
+//   //     if (valid && valueSizeStatus) {
+//   //       validationState = validationStates.valid;
+//   //     } else if (!valid || !valueSizeStatus) {
+//   //       validationState = validationStates.invalid;
 
-  //       if (maxCharQuantity && value.length > maxCharQuantity) {
-  //         warningText = labels.maxCharQuantityWarningText;
-  //       } else if (minCharQuantity && value.length < minCharQuantity) {
-  //         warningText = labels.minCharQuantityWarningText;
-  //       } else {
-  //         // eslint-disable-next-line prefer-destructuring
-  //         warningText = labels.warningText;
-  //       }
-  //     }
-  //   }
+//   //       if (maxCharQuantity && value.length > maxCharQuantity) {
+//   //         warningText = labels.maxCharQuantityWarningText;
+//   //       } else if (minCharQuantity && value.length < minCharQuantity) {
+//   //         warningText = labels.minCharQuantityWarningText;
+//   //       } else {
+//   //         // eslint-disable-next-line prefer-destructuring
+//   //         warningText = labels.warningText;
+//   //       }
+//   //     }
+//   //   }
 
-  //   this.setState({ validationState, warningText });
-  //   onBlur(value, validationState);
-  // };
+//   //   this.setState({ validationState, warningText });
+//   //   onBlur(value, validationState);
+//   // };
 
-  /**
-   * Updates the state putting again the value from the state because the input value is
-   * not automatically manage, it also executes the onFocus function from the user passing the value
-   */
-  // onFocusHandler = () => {
-  //   const { value } = this.state;
-  //   const { onFocus } = this.props;
-  //   this.manageInputValueState(value, null);
-  //   onFocus(value);
-  // };
+//   /**
+//    * Updates the state putting again the value from the state because the input value is
+//    * not automatically manage, it also executes the onFocus function from the user passing the value
+//    */
+//   // onFocusHandler = () => {
+//   //   const { value } = this.state;
+//   //   const { onFocus } = this.props;
+//   //   this.manageInputValueState(value, null);
+//   //   onFocus(value);
+//   // };
 
-  /**
-   * Focus the suggestion list when the arrow down is pressed.
-   *
-   * @param {Object} event - The event provided by the material ui input
-   */
-  // onKeyDownHandler = event => {
-  //   const { onKeyDown } = this.props;
-  //   const { value } = this.state;
-  //   if (isKeypress(event, KeyboardCodes.ArrowDown)) {
-  //     this.node.getElementsByTagName("LI")[0].focus();
-  //   }
-  //   onKeyDown(event, value);
-  // };
+//   /**
+//    * Focus the suggestion list when the arrow down is pressed.
+//    *
+//    * @param {Object} event - The event provided by the material ui input
+//    */
+//   // onKeyDownHandler = event => {
+//   //   const { onKeyDown } = this.props;
+//   //   const { value } = this.state;
+//   //   if (isKeypress(event, KeyboardCodes.ArrowDown)) {
+//   //     this.node.getElementsByTagName("LI")[0].focus();
+//   //   }
+//   //   onKeyDown(event, value);
+//   // };
 
-  /**
-   * Clears the suggestion list on blur.
-   *
-   * @param {Object} event - The event provided by the material ui input.
-   */
-  // onContainerBlurHandler = event => {
-  //   if (isNil(event.relatedTarget)) {
-  //     // workaround because IE 11
-  //     if (isBrowser("ie")) {
-  //       setTimeout(this.suggestionClearHandler, 100);
-  //     } else {
-  //       this.suggestionClearHandler();
-  //     }
-  //   }
-  // };
+//   /**
+//    * Clears the suggestion list on blur.
+//    *
+//    * @param {Object} event - The event provided by the material ui input.
+//    */
+//   // onContainerBlurHandler = event => {
+//   //   if (isNil(event.relatedTarget)) {
+//   //     // workaround because IE 11
+//   //     if (isBrowser("ie")) {
+//   //       setTimeout(this.suggestionClearHandler, 100);
+//   //     } else {
+//   //       this.suggestionClearHandler();
+//   //     }
+//   //   }
+//   // };
 
-  render() {
-    const {
-      labels,
-      classes,
-      className,
-      id,
-      password,
-      disabled,
-      isRequired,
-      infoIcon,
-      validationIconVisible,
-      disableClear,
-      customFixedIcon,
-      validationIconPosition,
-      maxCharQuantity,
-      minCharQuantity,
-      externalWarningTextOverride,
-      inputProps,
-      inputRef,
-      onChange,
-      onBlur,
-      onFocus,
-      onKeyDown,
-      value,
-      autoFocus,
-      initialValue,
-      stateValue,
-      ...others
-    } = this.props;
+//   render() {
+//     const {
+//       labels,
+//       classes,
+//       className,
+//       id,
+//       password,
+//       disabled,
+//       isRequired,
+//       infoIcon,
+//       validationIconVisible,
+//       disableClear,
+//       customFixedIcon,
+//       validationIconPosition,
+//       maxCharQuantity,
+//       minCharQuantity,
+//       externalWarningTextOverride,
+//       inputProps,
+//       inputRef,
+//       onChange,
+//       onBlur,
+//       onFocus,
+//       onKeyDown,
+//       value,
+//       autoFocus,
+//       initialValue,
+//       stateValue,
+//       ...others
+//     } = this.props;
 
-    // const {
-    //   validationState: stateValidationState,
-    //   value: stateValue
-    //   // warningText,
-    //   // suggestionValues
-    // } = this.state;
+//     // const {
+//     //   validationState: stateValidationState,
+//     //   value: stateValue
+//     //   // warningText,
+//     //   // suggestionValues
+//     // } = this.state;
 
-    // const { externalWarningTextOverride } = others;
+//     // const { externalWarningTextOverride } = others;
 
-    // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
-    // - the input have some sort of validation
-    // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
-    // const showValidationIcon =
-    //   !disabled &&
-    //   validationIconVisible &&
-    //   showInfo &&
-    //   (stateValidationState === validationStates.invalid ||
-    //     validationType !== validationTypes.none ||
-    //     maxCharQuantity !== null ||
-    //     minCharQuantity !== null ||
-    //     validation !== null);
+//     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
+//     // - the input have some sort of validation
+//     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
+//     // const showValidationIcon =
+//     //   !disabled &&
+//     //   validationIconVisible &&
+//     //   showInfo &&
+//     //   (stateValidationState === validationStates.invalid ||
+//     //     validationType !== validationTypes.none ||
+//     //     maxCharQuantity !== null ||
+//     //     minCharQuantity !== null ||
+//     //     validation !== null);
 
-    // show the clear button only if the input is enabled, disableClear is false and the input is not empty
-    // const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
+//     // show the clear button only if the input is enabled, disableClear is false and the input is not empty
+//     // const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
 
-    // const adornment = this.getInputAdornment(
-    //   `${id}-input`,
-    //   classes,
-    //   // showValidationIcon,
-    //   stateValidationState,
-    //   showClear,
-    //   labels.clearButtonLabel,
-    //   customFixedIcon
-    // );
+//     // const adornment = this.getInputAdornment(
+//     //   `${id}-input`,
+//     //   classes,
+//     //   // showValidationIcon,
+//     //   stateValidationState,
+//     //   showClear,
+//     //   labels.clearButtonLabel,
+//     //   customFixedIcon
+//     // );
 
-    const IconDisplay = () => (
-      <div aria-hidden="true" className={classes.infoIconContainer}>
-        <InfoS />
-      </div>
-    );
-    const InfoIcon = withTooltips(IconDisplay, labels.infoText);
+//     const IconDisplay = () => (
+//       <div aria-hidden="true" className={classes.infoIconContainer}>
+//         <InfoS />
+//       </div>
+//     );
+//     const InfoIcon = withTooltips(IconDisplay, labels.infoText);
 
-    // TODO: Need to figure out a way to have a generic first name to pass on to tooltip
-    return (
-      <>
-        <div className={classes.labelContainer}>
-          <HvGenericLabel
-            id={`${id}-label`}
-            variant="labelText"
-            label={labels.inputLabel}
-            htmlFor={`${id}-input`}
-            className={clsx(classes.label, {
-              [classes.labelDisabled]: disabled
-            })}
-          />
-          {infoIcon && <InfoIcon />}
-          {/* {labels.inputLabel && (
-            <HvTypography
-              variant="labelText"
-              component="label"
-              id={`${id}-label`}
-              htmlFor={`${id}-input`}
-              className={clsx(classes.label, {
-                [classes.labelDisabled]: disabled
-              })}
-            >
-              {labels.inputLabel}
-              // TODO: figure out how to wire in span
-              {isRequired && <span aria-hidden="true">*</span>}
-            </HvTypography>
-          )} */}
-        </div>
-        <Input
-          id={`${id}-input`}
-          autoFocus={autoFocus}
-          onKeyDown={this.onKeyDownHandler}
-          onBlur={this.onInputBlurHandler}
-          onFocus={this.onFocusHandler}
-          value={value}
-          disabled={disabled}
-          placeholder={labels.placeholder || undefined}
-          type={password ? "password" : "text"}
-          classes={{
-            input: classes.input,
-            focused: classes.inputRootFocused,
-            disabled: classes.inputDisabled,
-            multiline: classes.multiLine
-          }}
-          className={clsx(classes.inputRoot, {
-            [classes.inputRootDisabled]: disabled
-            // [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+//     // TODO: Need to figure out a way to have a generic first name to pass on to tooltip
+//     return (
+//       <>
+//         <div className={classes.labelContainer}>
+//           <HvGenericLabel
+//             id={`${id}-label`}
+//             variant="labelText"
+//             label={labels.inputLabel}
+//             htmlFor={`${id}-input`}
+//             className={clsx(classes.label, {
+//               [classes.labelDisabled]: disabled
+//             })}
+//           />
+//           {infoIcon && <InfoIcon />}
+//           {/* {labels.inputLabel && (
+//             <HvTypography
+//               variant="labelText"
+//               component="label"
+//               id={`${id}-label`}
+//               htmlFor={`${id}-input`}
+//               className={clsx(classes.label, {
+//                 [classes.labelDisabled]: disabled
+//               })}
+//             >
+//               {labels.inputLabel}
+//               // TODO: figure out how to wire in span
+//               {isRequired && <span aria-hidden="true">*</span>}
+//             </HvTypography>
+//           )} */}
+//         </div>
+//         <Input
+//           id={`${id}-input`}
+//           autoFocus={autoFocus}
+//           onKeyDown={this.onKeyDownHandler}
+//           onBlur={this.onInputBlurHandler}
+//           onFocus={this.onFocusHandler}
+//           value={value}
+//           disabled={disabled}
+//           placeholder={labels.placeholder || undefined}
+//           type={password ? "password" : "text"}
+//           classes={{
+//             input: classes.input,
+//             focused: classes.inputRootFocused,
+//             disabled: classes.inputDisabled,
+//             multiline: classes.multiLine
+//           }}
+//           className={clsx(classes.inputRoot, {
+//             [classes.inputRootDisabled]: disabled
+//             // [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+//           })}
+//           onChange={this.onChangeHandler}
+//           inputProps={{
+//             required: isRequired,
+//             ref: this.materialInputRef,
+//             "aria-required": isRequired || undefined,
+//             // "aria-invalid": stateValidationState === validationStates.invalid || undefined,
+//             ...inputProps
+//           }}
+//           inputRef={inputRef}
+//           {...(validationIconPosition === "right" &&
+//             {
+//               // endAdornment: adornment
+//             })}
+//           {...(validationIconPosition === "left" &&
+//             {
+//               // startAdornment: adornment
+//             })}
+//           {...others}
+//         />
+//       </>
+//     );
+//   }
+// }
+
+const HvBaseInput = props => {
+  const {
+    labels,
+    classes,
+    className,
+    id,
+    password,
+    disabled,
+    isRequired,
+    infoIcon,
+    validationIconVisible,
+    disableClear,
+    customFixedIcon,
+    validationIconPosition,
+    maxCharQuantity,
+    minCharQuantity,
+    externalWarningTextOverride,
+    inputProps,
+    inputRef,
+    onChange,
+    onBlur,
+    onFocus,
+    onKeyDown,
+    value,
+    autoFocus,
+    initialValue,
+    stateValue,
+    ...others
+  } = props;
+
+  const IconDisplay = () => (
+    <div aria-hidden="true" className={classes.infoIconContainer}>
+      <InfoS />
+    </div>
+  );
+  const InfoIcon = withTooltips(IconDisplay, labels.infoText);
+
+  // TODO: Need to figure out a way to have a generic first name to pass on to tooltip
+  return (
+    <>
+      <div className={classes.labelContainer}>
+        <HvGenericLabel
+          id={`${id}-label`}
+          variant="labelText"
+          label={labels.inputLabel}
+          htmlFor={`${id}-input`}
+          className={clsx(classes.label, {
+            [classes.labelDisabled]: disabled
           })}
-          onChange={this.onChangeHandler}
-          inputProps={{
-            required: isRequired,
-            ref: this.materialInputRef,
-            "aria-required": isRequired || undefined,
-            // "aria-invalid": stateValidationState === validationStates.invalid || undefined,
-            ...inputProps
-          }}
-          inputRef={inputRef}
-          {...(validationIconPosition === "right" &&
-            {
-              // endAdornment: adornment
-            })}
-          {...(validationIconPosition === "left" &&
-            {
-              // startAdornment: adornment
-            })}
-          {...others}
         />
-      </>
-    );
-  }
-}
+        {infoIcon && <InfoIcon />}
+      </div>
+      <Input
+        id={`${id}-input`}
+        // autoFocus={autoFocus}
+        // onKeyDown={this.onKeyDownHandler}
+        // onBlur={this.onInputBlurHandler}
+        // onFocus={this.onFocusHandler}
+        value={value}
+        disabled={disabled}
+        placeholder={labels.placeholder || undefined}
+        type={password ? "password" : "text"}
+        classes={{
+          input: classes.input,
+          focused: classes.inputRootFocused,
+          disabled: classes.inputDisabled,
+          multiline: classes.multiLine
+        }}
+        className={clsx(classes.inputRoot, {
+          [classes.inputRootDisabled]: disabled
+          // [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
+        })}
+        // onChange={this.onChangeHandler}
+        inputProps={{
+          required: isRequired,
+          // ref: this.materialInputRef,
+          "aria-required": isRequired || undefined,
+          // "aria-invalid": stateValidationState === validationStates.invalid || undefined,
+          ...inputProps
+        }}
+        inputRef={inputRef}
+        {...(validationIconPosition === "right" &&
+          {
+            // endAdornment: adornment
+          })}
+        {...(validationIconPosition === "left" &&
+          {
+            // startAdornment: adornment
+          })}
+        {...others}
+      />
+    </>
+  );
+};
 
 HvBaseInput.propTypes = {
   /**

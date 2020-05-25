@@ -352,21 +352,24 @@ class HvInput extends React.Component {
     // const InfoIcon = withTooltips(IconDisplay, labels.infoText);
 
     return (
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         ref={node => {
           this.node = node;
         }}
         className={clsx(classes.root, className)}
         id={id}
-        onBlur={this.onContainerBlurHandler}
+        // onBlur={this.onContainerBlurHandler}
+        onBlur={this.onInputBlurHandler}
+        onChange={this.onChangeHandler}
+        onKeyDown={this.onKeyDownHandler}
+        onFocus={this.onFocusHandler}
       >
         <BaseInput
           id={`${id}-input`}
           aria-describedby={showInfo && labels.infoText ? `${id}-description` : undefined}
           autoFocus={autoFocus}
-          onKeyDown={this.onKeyDownHandler}
-          onBlur={this.onInputBlurHandler}
-          onFocus={this.onFocusHandler}
+          // Need to figure out how to merge both on blur events
           value={stateValue}
           disabled={disabled}
           placeholder={labels.placeholder || undefined}
@@ -381,7 +384,6 @@ class HvInput extends React.Component {
             [classes.inputRootDisabled]: disabled,
             [classes.inputRootInvalid]: stateValidationState === validationStates.invalid
           })}
-          onChange={this.onChangeHandler}
           inputProps={{
             required: isRequired,
             ref: this.materialInputRef,

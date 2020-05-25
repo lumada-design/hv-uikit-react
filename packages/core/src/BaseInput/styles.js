@@ -131,18 +131,18 @@ const styles = theme => ({
     visibility: "hidden"
   },
 
-  suggestionsContainer: {
-    width: "100%",
-    position: "relative",
-    top: "-1px"
-  },
-  suggestionList: {
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
-    padding: `${theme.hv.spacing.sm}px`,
-    position: "absolute",
-    width: "100%"
-  },
+  // suggestionsContainer: {
+  //   width: "100%",
+  //   position: "relative",
+  //   top: "-1px"
+  // },
+  // suggestionList: {
+  //   backgroundColor: theme.hv.palette.atmosphere.atmo1,
+  //   boxShadow: "0 0 0 #fff, 0px -5px 12px -5px rgba(65,65,65,.12)",
+  //   padding: `${theme.hv.spacing.sm}px`,
+  //   position: "absolute",
+  //   width: "100%"
+  // },
   "@global": {
     "input:-webkit-autofill": {
       "-webkit-box-shadow": `0 0 0px 1000px ${theme.hv.palette.atmosphere.atmo1} inset`,
