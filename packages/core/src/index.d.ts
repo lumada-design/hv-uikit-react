@@ -1,6 +1,9 @@
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 
+export { default as HvAvatar } from "./Avatar";
+export * from "./Avatar";
+
 export { default as HvBadge } from "./Badge";
 export * from "./Badge";
 
@@ -12,6 +15,9 @@ export * from "./Barchart";
 
 export { default as HvBreadCrumb } from "./BreadCrumb";
 export * from "./BreadCrumb";
+
+export { default as HvBulkActions } from "./BulkActions";
+export * from "./BulkActions";
 
 export { default as HvButton } from "./Button";
 export * from "./Button";

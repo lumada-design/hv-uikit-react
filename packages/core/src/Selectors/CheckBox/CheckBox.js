@@ -2,48 +2,9 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Checkbox, FormControlLabel, withStyles } from "@material-ui/core";
-import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox";
-import CheckBoxCheckedIcon from "@hv/uikit-react-icons/dist/CheckboxCheck";
-import CheckBoxPartialIcon from "@hv/uikit-react-icons/dist/CheckboxPartial";
 import { setId } from "../../utils";
-import labelPositions from "../labelPositions";
+import { getLabelStyles, getSelectorIcons } from "../utils";
 import styles from "./styles";
-
-/**
- * Chooses the correct label styling to applied based on position.
- *
- * @param {String} classes - The classes object containing the classes names needed to be applied.
- * @param {Object} labelPosition - an Object containing the available label positions.
- * @returns {Object} - an Object with the name of the class for the required styling.
- */
-const prepareLabelStyles = (classes, labelPosition, label) => {
-  if (label) {
-    switch (labelPosition) {
-      default:
-      case labelPositions.end:
-        return clsx(classes.container, classes.labelEnd);
-      case labelPositions.start:
-        return clsx(classes.container, classes.labelStart);
-    }
-  }
-  return classes.container;
-};
-
-/**
- * Chooses the correct icon to used based on the disable value.
- *
- * @param {Object} props - HvCheckbox props.
- * @returns {Object} - an Object with the selected icons.
- */
-const prepareIcon = (classes, disabled) => {
-  const color = disabled ? ["atmo4", "atmo6"] : undefined;
-
-  return {
-    emptyIcon: <CheckBoxIcon color={color} className={classes.icon} />,
-    checkedIcon: <CheckBoxCheckedIcon color={color} className={classes.icon} />,
-    indeterminateIcon: <CheckBoxPartialIcon color={color} className={classes.icon} />
-  };
-};
 
 /**
  * A Checkbox is a mechanism that allows user to select one or more options.
@@ -54,28 +15,26 @@ const HvCheckbox = props => {
     className,
     id,
     checked,
+    semantic = false,
     indeterminate,
     disabled = false,
     onChange,
     value = "",
-    label = "",
+    label,
     labelPlacement = "end",
     formControlLabelProps,
     ...others
   } = props;
-  const icons = prepareIcon(classes, disabled);
-  const labelClass = prepareLabelStyles(classes, labelPlacement, label);
+  const icons = getSelectorIcons(classes, { disabled, semantic });
+  const labelClass = getLabelStyles(classes, labelPlacement, label);
   const [isFocusDisabled, disableFocus] = useState(false);
 
   const onLocalChange = evt => {
-    const isKeyEvent =
-      window.event.screenX === 0 &&
-      window.event.screenY === 0 &&
-      window.event.clientX === 0 &&
-      window.event.clientY === 0;
+    const { screenX, screenY, clientX, clientY } = evt.nativeEvent;
+    const isKeyEvent = screenX === 0 && screenY === 0 && clientX === 0 && clientY === 0;
 
     disableFocus(!isKeyEvent);
-    onChange(evt);
+    onChange?.(evt, checked);
   };
 
   const onBlur = () => {
@@ -99,9 +58,9 @@ const HvCheckbox = props => {
         <Checkbox
           id={setId(id, "input")}
           className={classes.checkBox}
-          icon={icons.emptyIcon}
-          indeterminateIcon={icons.indeterminateIcon}
-          checkedIcon={icons.checkedIcon}
+          icon={icons.checkbox}
+          indeterminateIcon={icons.checkboxPartial}
+          checkedIcon={icons.checkboxChecked}
           color="default"
           disabled={disabled}
           disableRipple
@@ -179,6 +138,10 @@ HvCheckbox.propTypes = {
    */
   checked: PropTypes.bool,
   /**
+   * Whether the selector should use semantic colors
+   */
+  semantic: PropTypes.bool,
+  /**
    * If `true` the checkbox uses the intermediate state, if set to `false` the checkbox will not use the intermediate state.
    */
   indeterminate: PropTypes.bool,
@@ -189,7 +152,7 @@ HvCheckbox.propTypes = {
   /**
    * The label to be added to the checkbox.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    * The position of the checkbox label.
    *  - Accepted values:

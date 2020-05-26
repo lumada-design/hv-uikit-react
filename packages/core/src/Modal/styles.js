@@ -7,7 +7,7 @@ const styles = theme => ({
   paper: {
     background: `${theme.hv.palette.atmosphere.atmo1}`,
     padding: "0px",
-    overflow: "scroll",
+    overflow: "auto",
     boxShadow: theme.hv.shadows[1]
   },
   closeButton: {

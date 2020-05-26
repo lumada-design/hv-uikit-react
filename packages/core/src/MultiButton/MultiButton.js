@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -30,6 +30,10 @@ const MultiButton = ({
    * set the button props
    */
   const [checkedItems, setCheckedItems] = useState(getInitialState(buttons));
+
+  useEffect(() => {
+    setCheckedItems(getInitialState(buttons));
+  }, [buttons]);
 
   const handleClick = (event, idx) => {
     let newState;
@@ -70,7 +74,7 @@ const MultiButton = ({
     }
 
     setCheckedItems(newState);
-    onChange?.(event, newState);
+    onChange?.(event, newState.slice());
   };
 
   const renderButton = (button, idx) => {

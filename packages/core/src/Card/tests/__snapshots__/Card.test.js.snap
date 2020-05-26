@@ -15,6 +15,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
     classes={
       Object {
         "cardContainer": "HvCard-cardContainer",
+        "cardContentWrapper": "HvCard-cardContentWrapper",
         "cardOutLine": "HvCard-cardOutLine",
         "root": "HvCard-root",
         "selectable": "HvCard-selectable",
@@ -56,367 +57,354 @@ exports[`Card withStyles should be able to render with every property defined 1`
       className="HvCard-root"
     >
       <div
-        className="HvCard-semanticContainer HvCard-sema0"
-      />
-      <WithStyles(ForwardRef(Card))
-        className="HvCard-cardContainer HvCard-selectable"
+        className="HvCard-cardContentWrapper"
       >
-        <ForwardRef(Card)
+        <div
+          className="HvCard-semanticContainer HvCard-sema0"
+        />
+        <WithStyles(ForwardRef(Card))
           className="HvCard-cardContainer HvCard-selectable"
-          classes={
-            Object {
-              "root": "MuiCard-root",
-            }
-          }
         >
-          <WithStyles(ForwardRef(Paper))
-            className="MuiCard-root HvCard-cardContainer HvCard-selectable"
-            elevation={1}
-          >
-            <ForwardRef(Paper)
-              className="MuiCard-root HvCard-cardContainer HvCard-selectable"
-              classes={
-                Object {
-                  "elevation0": "MuiPaper-elevation0",
-                  "elevation1": "MuiPaper-elevation1",
-                  "elevation10": "MuiPaper-elevation10",
-                  "elevation11": "MuiPaper-elevation11",
-                  "elevation12": "MuiPaper-elevation12",
-                  "elevation13": "MuiPaper-elevation13",
-                  "elevation14": "MuiPaper-elevation14",
-                  "elevation15": "MuiPaper-elevation15",
-                  "elevation16": "MuiPaper-elevation16",
-                  "elevation17": "MuiPaper-elevation17",
-                  "elevation18": "MuiPaper-elevation18",
-                  "elevation19": "MuiPaper-elevation19",
-                  "elevation2": "MuiPaper-elevation2",
-                  "elevation20": "MuiPaper-elevation20",
-                  "elevation21": "MuiPaper-elevation21",
-                  "elevation22": "MuiPaper-elevation22",
-                  "elevation23": "MuiPaper-elevation23",
-                  "elevation24": "MuiPaper-elevation24",
-                  "elevation3": "MuiPaper-elevation3",
-                  "elevation4": "MuiPaper-elevation4",
-                  "elevation5": "MuiPaper-elevation5",
-                  "elevation6": "MuiPaper-elevation6",
-                  "elevation7": "MuiPaper-elevation7",
-                  "elevation8": "MuiPaper-elevation8",
-                  "elevation9": "MuiPaper-elevation9",
-                  "outlined": "MuiPaper-outlined",
-                  "root": "MuiPaper-root",
-                  "rounded": "MuiPaper-rounded",
-                }
+          <ForwardRef(Card)
+            className="HvCard-cardContainer HvCard-selectable"
+            classes={
+              Object {
+                "root": "MuiCard-root",
               }
+            }
+          >
+            <WithStyles(ForwardRef(Paper))
+              className="MuiCard-root HvCard-cardContainer HvCard-selectable"
               elevation={1}
             >
-              <div
-                className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
+              <ForwardRef(Paper)
+                className="MuiCard-root HvCard-cardContainer HvCard-selectable"
+                classes={
+                  Object {
+                    "elevation0": "MuiPaper-elevation0",
+                    "elevation1": "MuiPaper-elevation1",
+                    "elevation10": "MuiPaper-elevation10",
+                    "elevation11": "MuiPaper-elevation11",
+                    "elevation12": "MuiPaper-elevation12",
+                    "elevation13": "MuiPaper-elevation13",
+                    "elevation14": "MuiPaper-elevation14",
+                    "elevation15": "MuiPaper-elevation15",
+                    "elevation16": "MuiPaper-elevation16",
+                    "elevation17": "MuiPaper-elevation17",
+                    "elevation18": "MuiPaper-elevation18",
+                    "elevation19": "MuiPaper-elevation19",
+                    "elevation2": "MuiPaper-elevation2",
+                    "elevation20": "MuiPaper-elevation20",
+                    "elevation21": "MuiPaper-elevation21",
+                    "elevation22": "MuiPaper-elevation22",
+                    "elevation23": "MuiPaper-elevation23",
+                    "elevation24": "MuiPaper-elevation24",
+                    "elevation3": "MuiPaper-elevation3",
+                    "elevation4": "MuiPaper-elevation4",
+                    "elevation5": "MuiPaper-elevation5",
+                    "elevation6": "MuiPaper-elevation6",
+                    "elevation7": "MuiPaper-elevation7",
+                    "elevation8": "MuiPaper-elevation8",
+                    "elevation9": "MuiPaper-elevation9",
+                    "outlined": "MuiPaper-outlined",
+                    "root": "MuiPaper-root",
+                    "rounded": "MuiPaper-rounded",
+                  }
+                }
+                elevation={1}
               >
-                <WithStyles(Focus)
-                  disabled={true}
-                  strategy="card"
-                  useFalseFocus={true}
+                <div
+                  className="MuiPaper-root MuiCard-root HvCard-cardContainer HvCard-selectable MuiPaper-elevation1 MuiPaper-rounded"
                 >
-                  <Focus
-                    classes={
-                      Object {
-                        "disabled": "HvFocus-disabled",
-                        "externalReference": "HvFocus-externalReference",
-                        "falseFocus": "HvFocus-falseFocus",
-                        "focusDisabled": "HvFocus-focusDisabled",
-                        "focused": "HvFocus-focused",
-                        "root": "HvFocus-root",
-                        "selected": "HvFocus-selected",
-                      }
-                    }
+                  <WithStyles(Focus)
                     disabled={true}
                     strategy="card"
                     useFalseFocus={true}
                   >
-                    <div
-                      aria-checked={false}
-                      className=""
-                      onClick={[Function]}
-                      onKeyUp={[Function]}
+                    <Focus
+                      classes={
+                        Object {
+                          "disabled": "HvFocus-disabled",
+                          "externalReference": "HvFocus-externalReference",
+                          "falseFocus": "HvFocus-falseFocus",
+                          "focusDisabled": "HvFocus-focusDisabled",
+                          "focused": "HvFocus-focused",
+                          "root": "HvFocus-root",
+                          "selected": "HvFocus-selected",
+                        }
+                      }
+                      disabled={true}
+                      strategy="card"
+                      useFalseFocus={true}
                     >
-                      <WithStyles(Header)
-                        headerTitle="title"
-                        icon="icon"
-                        subheader="subtitle"
+                      <div
+                        aria-checked={false}
+                        className=""
+                        onClick={[Function]}
+                        onKeyUp={[Function]}
                       >
-                        <Header
-                          classes={
-                            Object {
-                              "action": "HvCardHeader-action",
-                              "content": "HvCardHeader-content",
-                              "root": "HvCardHeader-root",
-                              "subheader": "HvCardHeader-subheader",
-                              "title": "HvCardHeader-title",
-                              "titleShort": "HvCardHeader-titleShort",
-                            }
-                          }
+                        <WithStyles(Header)
                           headerTitle="title"
                           icon="icon"
                           subheader="subtitle"
                         >
-                          <WithStyles(ForwardRef(CardHeader))
-                            action="icon"
-                            className="HvCardHeader-root"
+                          <Header
                             classes={
                               Object {
                                 "action": "HvCardHeader-action",
                                 "content": "HvCardHeader-content",
+                                "root": "HvCardHeader-root",
                                 "subheader": "HvCardHeader-subheader",
-                                "title": "HvCardHeader-titleShort",
+                                "title": "HvCardHeader-title",
+                                "titleShort": "HvCardHeader-titleShort",
                               }
                             }
+                            headerTitle="title"
+                            icon="icon"
                             subheader="subtitle"
-                            title="title"
                           >
-                            <ForwardRef(CardHeader)
+                            <WithStyles(ForwardRef(CardHeader))
                               action="icon"
                               className="HvCardHeader-root"
                               classes={
                                 Object {
-                                  "action": "MuiCardHeader-action HvCardHeader-action",
-                                  "avatar": "MuiCardHeader-avatar",
-                                  "content": "MuiCardHeader-content HvCardHeader-content",
-                                  "root": "MuiCardHeader-root",
-                                  "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
-                                  "title": "MuiCardHeader-title HvCardHeader-titleShort",
+                                  "action": "HvCardHeader-action",
+                                  "content": "HvCardHeader-content",
+                                  "subheader": "HvCardHeader-subheader",
+                                  "title": "HvCardHeader-titleShort",
                                 }
                               }
                               subheader="subtitle"
                               title="title"
                             >
-                              <div
-                                className="MuiCardHeader-root HvCardHeader-root"
+                              <ForwardRef(CardHeader)
+                                action="icon"
+                                className="HvCardHeader-root"
+                                classes={
+                                  Object {
+                                    "action": "MuiCardHeader-action HvCardHeader-action",
+                                    "avatar": "MuiCardHeader-avatar",
+                                    "content": "MuiCardHeader-content HvCardHeader-content",
+                                    "root": "MuiCardHeader-root",
+                                    "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
+                                    "title": "MuiCardHeader-title HvCardHeader-titleShort",
+                                  }
+                                }
+                                subheader="subtitle"
+                                title="title"
                               >
                                 <div
-                                  className="MuiCardHeader-content HvCardHeader-content"
+                                  className="MuiCardHeader-root HvCardHeader-root"
                                 >
-                                  <WithStyles(ForwardRef(Typography))
-                                    className="MuiCardHeader-title HvCardHeader-titleShort"
-                                    component="span"
-                                    display="block"
-                                    variant="h5"
+                                  <div
+                                    className="MuiCardHeader-content HvCardHeader-content"
                                   >
-                                    <ForwardRef(Typography)
+                                    <WithStyles(ForwardRef(Typography))
                                       className="MuiCardHeader-title HvCardHeader-titleShort"
-                                      classes={
-                                        Object {
-                                          "alignCenter": "MuiTypography-alignCenter",
-                                          "alignJustify": "MuiTypography-alignJustify",
-                                          "alignLeft": "MuiTypography-alignLeft",
-                                          "alignRight": "MuiTypography-alignRight",
-                                          "body1": "MuiTypography-body1",
-                                          "body2": "MuiTypography-body2",
-                                          "button": "MuiTypography-button",
-                                          "caption": "MuiTypography-caption",
-                                          "colorError": "MuiTypography-colorError",
-                                          "colorInherit": "MuiTypography-colorInherit",
-                                          "colorPrimary": "MuiTypography-colorPrimary",
-                                          "colorSecondary": "MuiTypography-colorSecondary",
-                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                          "displayBlock": "MuiTypography-displayBlock",
-                                          "displayInline": "MuiTypography-displayInline",
-                                          "gutterBottom": "MuiTypography-gutterBottom",
-                                          "h1": "MuiTypography-h1",
-                                          "h2": "MuiTypography-h2",
-                                          "h3": "MuiTypography-h3",
-                                          "h4": "MuiTypography-h4",
-                                          "h5": "MuiTypography-h5",
-                                          "h6": "MuiTypography-h6",
-                                          "noWrap": "MuiTypography-noWrap",
-                                          "overline": "MuiTypography-overline",
-                                          "paragraph": "MuiTypography-paragraph",
-                                          "root": "MuiTypography-root",
-                                          "srOnly": "MuiTypography-srOnly",
-                                          "subtitle1": "MuiTypography-subtitle1",
-                                          "subtitle2": "MuiTypography-subtitle2",
-                                        }
-                                      }
                                       component="span"
                                       display="block"
                                       variant="h5"
                                     >
-                                      <span
-                                        className="MuiTypography-root MuiCardHeader-title HvCardHeader-titleShort MuiTypography-h5 MuiTypography-displayBlock"
-                                      >
-                                        title
-                                      </span>
-                                    </ForwardRef(Typography)>
-                                  </WithStyles(ForwardRef(Typography))>
-                                  <WithStyles(ForwardRef(Typography))
-                                    className="MuiCardHeader-subheader HvCardHeader-subheader"
-                                    color="textSecondary"
-                                    component="span"
-                                    display="block"
-                                    variant="body1"
-                                  >
-                                    <ForwardRef(Typography)
-                                      className="MuiCardHeader-subheader HvCardHeader-subheader"
-                                      classes={
-                                        Object {
-                                          "alignCenter": "MuiTypography-alignCenter",
-                                          "alignJustify": "MuiTypography-alignJustify",
-                                          "alignLeft": "MuiTypography-alignLeft",
-                                          "alignRight": "MuiTypography-alignRight",
-                                          "body1": "MuiTypography-body1",
-                                          "body2": "MuiTypography-body2",
-                                          "button": "MuiTypography-button",
-                                          "caption": "MuiTypography-caption",
-                                          "colorError": "MuiTypography-colorError",
-                                          "colorInherit": "MuiTypography-colorInherit",
-                                          "colorPrimary": "MuiTypography-colorPrimary",
-                                          "colorSecondary": "MuiTypography-colorSecondary",
-                                          "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                          "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                          "displayBlock": "MuiTypography-displayBlock",
-                                          "displayInline": "MuiTypography-displayInline",
-                                          "gutterBottom": "MuiTypography-gutterBottom",
-                                          "h1": "MuiTypography-h1",
-                                          "h2": "MuiTypography-h2",
-                                          "h3": "MuiTypography-h3",
-                                          "h4": "MuiTypography-h4",
-                                          "h5": "MuiTypography-h5",
-                                          "h6": "MuiTypography-h6",
-                                          "noWrap": "MuiTypography-noWrap",
-                                          "overline": "MuiTypography-overline",
-                                          "paragraph": "MuiTypography-paragraph",
-                                          "root": "MuiTypography-root",
-                                          "srOnly": "MuiTypography-srOnly",
-                                          "subtitle1": "MuiTypography-subtitle1",
-                                          "subtitle2": "MuiTypography-subtitle2",
+                                      <ForwardRef(Typography)
+                                        className="MuiCardHeader-title HvCardHeader-titleShort"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTypography-alignCenter",
+                                            "alignJustify": "MuiTypography-alignJustify",
+                                            "alignLeft": "MuiTypography-alignLeft",
+                                            "alignRight": "MuiTypography-alignRight",
+                                            "body1": "MuiTypography-body1",
+                                            "body2": "MuiTypography-body2",
+                                            "button": "MuiTypography-button",
+                                            "caption": "MuiTypography-caption",
+                                            "colorError": "MuiTypography-colorError",
+                                            "colorInherit": "MuiTypography-colorInherit",
+                                            "colorPrimary": "MuiTypography-colorPrimary",
+                                            "colorSecondary": "MuiTypography-colorSecondary",
+                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                            "displayBlock": "MuiTypography-displayBlock",
+                                            "displayInline": "MuiTypography-displayInline",
+                                            "gutterBottom": "MuiTypography-gutterBottom",
+                                            "h1": "MuiTypography-h1",
+                                            "h2": "MuiTypography-h2",
+                                            "h3": "MuiTypography-h3",
+                                            "h4": "MuiTypography-h4",
+                                            "h5": "MuiTypography-h5",
+                                            "h6": "MuiTypography-h6",
+                                            "noWrap": "MuiTypography-noWrap",
+                                            "overline": "MuiTypography-overline",
+                                            "paragraph": "MuiTypography-paragraph",
+                                            "root": "MuiTypography-root",
+                                            "srOnly": "MuiTypography-srOnly",
+                                            "subtitle1": "MuiTypography-subtitle1",
+                                            "subtitle2": "MuiTypography-subtitle2",
+                                          }
                                         }
-                                      }
+                                        component="span"
+                                        display="block"
+                                        variant="h5"
+                                      >
+                                        <span
+                                          className="MuiTypography-root MuiCardHeader-title HvCardHeader-titleShort MuiTypography-h5 MuiTypography-displayBlock"
+                                        >
+                                          title
+                                        </span>
+                                      </ForwardRef(Typography)>
+                                    </WithStyles(ForwardRef(Typography))>
+                                    <WithStyles(ForwardRef(Typography))
+                                      className="MuiCardHeader-subheader HvCardHeader-subheader"
                                       color="textSecondary"
                                       component="span"
                                       display="block"
                                       variant="body1"
                                     >
-                                      <span
-                                        className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                                      <ForwardRef(Typography)
+                                        className="MuiCardHeader-subheader HvCardHeader-subheader"
+                                        classes={
+                                          Object {
+                                            "alignCenter": "MuiTypography-alignCenter",
+                                            "alignJustify": "MuiTypography-alignJustify",
+                                            "alignLeft": "MuiTypography-alignLeft",
+                                            "alignRight": "MuiTypography-alignRight",
+                                            "body1": "MuiTypography-body1",
+                                            "body2": "MuiTypography-body2",
+                                            "button": "MuiTypography-button",
+                                            "caption": "MuiTypography-caption",
+                                            "colorError": "MuiTypography-colorError",
+                                            "colorInherit": "MuiTypography-colorInherit",
+                                            "colorPrimary": "MuiTypography-colorPrimary",
+                                            "colorSecondary": "MuiTypography-colorSecondary",
+                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                            "displayBlock": "MuiTypography-displayBlock",
+                                            "displayInline": "MuiTypography-displayInline",
+                                            "gutterBottom": "MuiTypography-gutterBottom",
+                                            "h1": "MuiTypography-h1",
+                                            "h2": "MuiTypography-h2",
+                                            "h3": "MuiTypography-h3",
+                                            "h4": "MuiTypography-h4",
+                                            "h5": "MuiTypography-h5",
+                                            "h6": "MuiTypography-h6",
+                                            "noWrap": "MuiTypography-noWrap",
+                                            "overline": "MuiTypography-overline",
+                                            "paragraph": "MuiTypography-paragraph",
+                                            "root": "MuiTypography-root",
+                                            "srOnly": "MuiTypography-srOnly",
+                                            "subtitle1": "MuiTypography-subtitle1",
+                                            "subtitle2": "MuiTypography-subtitle2",
+                                          }
+                                        }
+                                        color="textSecondary"
+                                        component="span"
+                                        display="block"
+                                        variant="body1"
                                       >
-                                        subtitle
-                                      </span>
-                                    </ForwardRef(Typography)>
-                                  </WithStyles(ForwardRef(Typography))>
+                                        <span
+                                          className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                                        >
+                                          subtitle
+                                        </span>
+                                      </ForwardRef(Typography)>
+                                    </WithStyles(ForwardRef(Typography))>
+                                  </div>
+                                  <div
+                                    className="MuiCardHeader-action HvCardHeader-action"
+                                  >
+                                    icon
+                                  </div>
                                 </div>
-                                <div
-                                  className="MuiCardHeader-action HvCardHeader-action"
-                                >
-                                  icon
-                                </div>
-                              </div>
-                            </ForwardRef(CardHeader)>
-                          </WithStyles(ForwardRef(CardHeader))>
-                        </Header>
-                      </WithStyles(Header)>
-                      <WithStyles(Media)
-                        mediaPath="path"
-                      >
-                        <Media
-                          classes={
-                            Object {
-                              "media": "HvCardMedia-media",
-                              "root": "HvCardMedia-root",
-                            }
-                          }
+                              </ForwardRef(CardHeader)>
+                            </WithStyles(ForwardRef(CardHeader))>
+                          </Header>
+                        </WithStyles(Header)>
+                        <WithStyles(Media)
                           mediaPath="path"
                         >
-                          <WithStyles(ForwardRef(CardMedia))
+                          <Media
                             classes={
                               Object {
                                 "media": "HvCardMedia-media",
                                 "root": "HvCardMedia-root",
                               }
                             }
-                            image="path"
-                            role="img"
+                            mediaPath="path"
                           >
-                            <ForwardRef(CardMedia)
+                            <WithStyles(ForwardRef(CardMedia))
                               classes={
                                 Object {
-                                  "img": "MuiCardMedia-img",
-                                  "media": "MuiCardMedia-media HvCardMedia-media",
-                                  "root": "MuiCardMedia-root HvCardMedia-root",
+                                  "media": "HvCardMedia-media",
+                                  "root": "HvCardMedia-root",
                                 }
                               }
                               image="path"
                               role="img"
                             >
-                              <div
-                                className="MuiCardMedia-root HvCardMedia-root"
-                                role="img"
-                                style={
+                              <ForwardRef(CardMedia)
+                                classes={
                                   Object {
-                                    "backgroundImage": "url(\\"path\\")",
+                                    "img": "MuiCardMedia-img",
+                                    "media": "MuiCardMedia-media HvCardMedia-media",
+                                    "root": "MuiCardMedia-root HvCardMedia-root",
                                   }
                                 }
-                              />
-                            </ForwardRef(CardMedia)>
-                          </WithStyles(ForwardRef(CardMedia))>
-                        </Media>
-                      </WithStyles(Media)>
-                      <WithStyles(Content)>
-                        <Content
-                          classes={
-                            Object {
-                              "content": "HvCardContent-content",
-                            }
-                          }
-                        >
-                          <WithStyles(ForwardRef(CardContent))
-                            className="HvCardContent-content"
-                          >
-                            <ForwardRef(CardContent)
-                              className="HvCardContent-content"
-                              classes={
-                                Object {
-                                  "root": "MuiCardContent-root",
-                                }
-                              }
-                            >
-                              <div
-                                className="MuiCardContent-root HvCardContent-content"
+                                image="path"
+                                role="img"
                               >
-                                <div />
-                              </div>
-                            </ForwardRef(CardContent)>
-                          </WithStyles(ForwardRef(CardContent))>
-                        </Content>
-                      </WithStyles(Content)>
-                    </div>
-                  </Focus>
-                </WithStyles(Focus)>
-                <WithStyles(WithConfig)
-                  actions="actions"
-                  actionsAlignment="left"
-                  checked={false}
-                  disableSpacing={true}
-                  isSelectable={true}
-                  maxVisibleActions={1}
-                  onChange={[Function]}
-                >
-                  <WithConfig
+                                <div
+                                  className="MuiCardMedia-root HvCardMedia-root"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "backgroundImage": "url(\\"path\\")",
+                                    }
+                                  }
+                                />
+                              </ForwardRef(CardMedia)>
+                            </WithStyles(ForwardRef(CardMedia))>
+                          </Media>
+                        </WithStyles(Media)>
+                        <WithStyles(Content)>
+                          <Content
+                            classes={
+                              Object {
+                                "content": "HvCardContent-content",
+                              }
+                            }
+                          >
+                            <WithStyles(ForwardRef(CardContent))
+                              className="HvCardContent-content"
+                            >
+                              <ForwardRef(CardContent)
+                                className="HvCardContent-content"
+                                classes={
+                                  Object {
+                                    "root": "MuiCardContent-root",
+                                  }
+                                }
+                              >
+                                <div
+                                  className="MuiCardContent-root HvCardContent-content"
+                                >
+                                  <div />
+                                </div>
+                              </ForwardRef(CardContent)>
+                            </WithStyles(ForwardRef(CardContent))>
+                          </Content>
+                        </WithStyles(Content)>
+                      </div>
+                    </Focus>
+                  </WithStyles(Focus)>
+                  <WithStyles(WithConfig)
                     actions="actions"
                     actionsAlignment="left"
                     checked={false}
-                    classes={
-                      Object {
-                        "leftContainer": "HvCardFooter-leftContainer",
-                        "rightContainer": "HvCardFooter-rightContainer",
-                        "root": "HvCardFooter-root",
-                      }
-                    }
                     disableSpacing={true}
                     isSelectable={true}
                     maxVisibleActions={1}
                     onChange={[Function]}
                   >
-                    <Footer
+                    <WithConfig
                       actions="actions"
                       actionsAlignment="left"
                       checked={false}
@@ -427,33 +415,34 @@ exports[`Card withStyles should be able to render with every property defined 1`
                           "root": "HvCardFooter-root",
                         }
                       }
-                      config={
-                        Object {
-                          "changeTheme": [Function],
-                        }
-                      }
                       disableSpacing={true}
                       isSelectable={true}
                       maxVisibleActions={1}
                       onChange={[Function]}
                     >
-                      <WithStyles(ForwardRef(CardActions))
-                        className="HvCardFooter-root"
+                      <Footer
+                        actions="actions"
+                        actionsAlignment="left"
+                        checked={false}
+                        classes={
+                          Object {
+                            "leftContainer": "HvCardFooter-leftContainer",
+                            "rightContainer": "HvCardFooter-rightContainer",
+                            "root": "HvCardFooter-root",
+                          }
+                        }
                         config={
                           Object {
                             "changeTheme": [Function],
                           }
                         }
                         disableSpacing={true}
+                        isSelectable={true}
+                        maxVisibleActions={1}
+                        onChange={[Function]}
                       >
-                        <ForwardRef(CardActions)
+                        <WithStyles(ForwardRef(CardActions))
                           className="HvCardFooter-root"
-                          classes={
-                            Object {
-                              "root": "MuiCardActions-root",
-                              "spacing": "MuiCardActions-spacing",
-                            }
-                          }
                           config={
                             Object {
                               "changeTheme": [Function],
@@ -461,86 +450,58 @@ exports[`Card withStyles should be able to render with every property defined 1`
                           }
                           disableSpacing={true}
                         >
-                          <div
-                            className="MuiCardActions-root HvCardFooter-root"
+                          <ForwardRef(CardActions)
+                            className="HvCardFooter-root"
+                            classes={
+                              Object {
+                                "root": "MuiCardActions-root",
+                                "spacing": "MuiCardActions-spacing",
+                              }
+                            }
                             config={
                               Object {
                                 "changeTheme": [Function],
                               }
                             }
+                            disableSpacing={true}
                           >
                             <div
-                              className="HvCardFooter-leftContainer"
+                              className="MuiCardActions-root HvCardFooter-root"
+                              config={
+                                Object {
+                                  "changeTheme": [Function],
+                                }
+                              }
                             >
-                              <WithStyles(HvCheckbox)
-                                checked={false}
-                                onChange={[Function]}
+                              <div
+                                className="HvCardFooter-leftContainer"
                               >
-                                <HvCheckbox
+                                <WithStyles(HvCheckbox)
                                   checked={false}
-                                  classes={
-                                    Object {
-                                      "checkBox": "HvCheckBox-checkBox",
-                                      "container": "HvCheckBox-container",
-                                      "disableFocus": "HvCheckBox-disableFocus",
-                                      "icon": "HvCheckBox-icon",
-                                      "labelDisabled": "HvCheckBox-labelDisabled",
-                                      "labelEnd": "HvCheckBox-labelEnd",
-                                      "labelStart": "HvCheckBox-labelStart",
-                                      "labelTypography": "HvCheckBox-labelTypography",
-                                    }
-                                  }
                                   onChange={[Function]}
                                 >
-                                  <WithStyles(ForwardRef(FormControlLabel))
-                                    className="HvCheckBox-container"
+                                  <HvCheckbox
+                                    checked={false}
                                     classes={
                                       Object {
-                                        "disabled": "HvCheckBox-labelDisabled",
-                                        "label": "HvCheckBox-labelTypography",
+                                        "checkBox": "HvCheckBox-checkBox",
+                                        "container": "HvCheckBox-container",
+                                        "disableFocus": "HvCheckBox-disableFocus",
+                                        "icon": "HvCheckBox-icon",
+                                        "labelDisabled": "HvCheckBox-labelDisabled",
+                                        "labelEnd": "HvCheckBox-labelEnd",
+                                        "labelStart": "HvCheckBox-labelStart",
+                                        "labelTypography": "HvCheckBox-labelTypography",
                                       }
                                     }
-                                    control={
-                                      <ForwardRef(WithStyles)
-                                        checked={false}
-                                        checkedIcon={
-                                          <ForwardRef(WithStyles)
-                                            className="HvCheckBox-icon"
-                                          />
-                                        }
-                                        className="HvCheckBox-checkBox"
-                                        color="default"
-                                        disableRipple={true}
-                                        disabled={false}
-                                        icon={
-                                          <ForwardRef(WithStyles)
-                                            className="HvCheckBox-icon"
-                                          />
-                                        }
-                                        indeterminateIcon={
-                                          <ForwardRef(WithStyles)
-                                            className="HvCheckBox-icon"
-                                          />
-                                        }
-                                        onBlur={[Function]}
-                                        onChange={[Function]}
-                                        value=""
-                                      />
-                                    }
-                                    disabled={false}
-                                    label=""
-                                    labelPlacement="end"
+                                    onChange={[Function]}
                                   >
-                                    <ForwardRef(FormControlLabel)
+                                    <WithStyles(ForwardRef(FormControlLabel))
                                       className="HvCheckBox-container"
                                       classes={
                                         Object {
-                                          "disabled": "Mui-disabled HvCheckBox-labelDisabled",
-                                          "label": "MuiFormControlLabel-label HvCheckBox-labelTypography",
-                                          "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom",
-                                          "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart",
-                                          "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop",
-                                          "root": "MuiFormControlLabel-root",
+                                          "disabled": "HvCheckBox-labelDisabled",
+                                          "label": "HvCheckBox-labelTypography",
                                         }
                                       }
                                       control={
@@ -571,38 +532,22 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                         />
                                       }
                                       disabled={false}
-                                      label=""
                                       labelPlacement="end"
                                     >
-                                      <label
-                                        className="MuiFormControlLabel-root HvCheckBox-container"
-                                      >
-                                        <WithStyles(ForwardRef(Checkbox))
-                                          checked={false}
-                                          checkedIcon={
-                                            <ForwardRef(WithStyles)
-                                              className="HvCheckBox-icon"
-                                            />
+                                      <ForwardRef(FormControlLabel)
+                                        className="HvCheckBox-container"
+                                        classes={
+                                          Object {
+                                            "disabled": "Mui-disabled HvCheckBox-labelDisabled",
+                                            "label": "MuiFormControlLabel-label HvCheckBox-labelTypography",
+                                            "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom",
+                                            "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart",
+                                            "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop",
+                                            "root": "MuiFormControlLabel-root",
                                           }
-                                          className="HvCheckBox-checkBox"
-                                          color="default"
-                                          disableRipple={true}
-                                          disabled={false}
-                                          icon={
-                                            <ForwardRef(WithStyles)
-                                              className="HvCheckBox-icon"
-                                            />
-                                          }
-                                          indeterminateIcon={
-                                            <ForwardRef(WithStyles)
-                                              className="HvCheckBox-icon"
-                                            />
-                                          }
-                                          onBlur={[Function]}
-                                          onChange={[Function]}
-                                          value=""
-                                        >
-                                          <ForwardRef(Checkbox)
+                                        }
+                                        control={
+                                          <ForwardRef(WithStyles)
                                             checked={false}
                                             checkedIcon={
                                               <ForwardRef(WithStyles)
@@ -610,16 +555,38 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                               />
                                             }
                                             className="HvCheckBox-checkBox"
-                                            classes={
-                                              Object {
-                                                "checked": "Mui-checked",
-                                                "colorPrimary": "MuiCheckbox-colorPrimary",
-                                                "colorSecondary": "MuiCheckbox-colorSecondary",
-                                                "disabled": "Mui-disabled",
-                                                "indeterminate": "MuiCheckbox-indeterminate",
-                                                "root": "MuiCheckbox-root",
-                                              }
+                                            color="default"
+                                            disableRipple={true}
+                                            disabled={false}
+                                            icon={
+                                              <ForwardRef(WithStyles)
+                                                className="HvCheckBox-icon"
+                                              />
                                             }
+                                            indeterminateIcon={
+                                              <ForwardRef(WithStyles)
+                                                className="HvCheckBox-icon"
+                                              />
+                                            }
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            value=""
+                                          />
+                                        }
+                                        disabled={false}
+                                        labelPlacement="end"
+                                      >
+                                        <label
+                                          className="MuiFormControlLabel-root HvCheckBox-container"
+                                        >
+                                          <WithStyles(ForwardRef(Checkbox))
+                                            checked={false}
+                                            checkedIcon={
+                                              <ForwardRef(WithStyles)
+                                                className="HvCheckBox-icon"
+                                              />
+                                            }
+                                            className="HvCheckBox-checkBox"
                                             color="default"
                                             disableRipple={true}
                                             disabled={false}
@@ -637,19 +604,21 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                             onChange={[Function]}
                                             value=""
                                           >
-                                            <WithStyles(ForwardRef(SwitchBase))
+                                            <ForwardRef(Checkbox)
                                               checked={false}
                                               checkedIcon={
                                                 <ForwardRef(WithStyles)
                                                   className="HvCheckBox-icon"
-                                                  fontSize="default"
                                                 />
                                               }
                                               className="HvCheckBox-checkBox"
                                               classes={
                                                 Object {
                                                   "checked": "Mui-checked",
+                                                  "colorPrimary": "MuiCheckbox-colorPrimary",
+                                                  "colorSecondary": "MuiCheckbox-colorSecondary",
                                                   "disabled": "Mui-disabled",
+                                                  "indeterminate": "MuiCheckbox-indeterminate",
                                                   "root": "MuiCheckbox-root",
                                                 }
                                               }
@@ -659,20 +628,18 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                               icon={
                                                 <ForwardRef(WithStyles)
                                                   className="HvCheckBox-icon"
-                                                  fontSize="default"
                                                 />
                                               }
-                                              inputProps={
-                                                Object {
-                                                  "data-indeterminate": false,
-                                                }
+                                              indeterminateIcon={
+                                                <ForwardRef(WithStyles)
+                                                  className="HvCheckBox-icon"
+                                                />
                                               }
                                               onBlur={[Function]}
                                               onChange={[Function]}
-                                              type="checkbox"
                                               value=""
                                             >
-                                              <ForwardRef(SwitchBase)
+                                              <WithStyles(ForwardRef(SwitchBase))
                                                 checked={false}
                                                 checkedIcon={
                                                   <ForwardRef(WithStyles)
@@ -683,10 +650,9 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                 className="HvCheckBox-checkBox"
                                                 classes={
                                                   Object {
-                                                    "checked": "PrivateSwitchBase-checked-85 Mui-checked",
-                                                    "disabled": "PrivateSwitchBase-disabled-86 Mui-disabled",
-                                                    "input": "PrivateSwitchBase-input-87",
-                                                    "root": "PrivateSwitchBase-root-84 MuiCheckbox-root",
+                                                    "checked": "Mui-checked",
+                                                    "disabled": "Mui-disabled",
+                                                    "root": "MuiCheckbox-root",
                                                   }
                                                 }
                                                 color="default"
@@ -708,31 +674,44 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                 type="checkbox"
                                                 value=""
                                               >
-                                                <WithStyles(ForwardRef(IconButton))
-                                                  className="PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                <ForwardRef(SwitchBase)
+                                                  checked={false}
+                                                  checkedIcon={
+                                                    <ForwardRef(WithStyles)
+                                                      className="HvCheckBox-icon"
+                                                      fontSize="default"
+                                                    />
+                                                  }
+                                                  className="HvCheckBox-checkBox"
+                                                  classes={
+                                                    Object {
+                                                      "checked": "PrivateSwitchBase-checked-85 Mui-checked",
+                                                      "disabled": "PrivateSwitchBase-disabled-86 Mui-disabled",
+                                                      "input": "PrivateSwitchBase-input-87",
+                                                      "root": "PrivateSwitchBase-root-84 MuiCheckbox-root",
+                                                    }
+                                                  }
                                                   color="default"
-                                                  component="span"
                                                   disableRipple={true}
                                                   disabled={false}
-                                                  onBlur={[Function]}
-                                                  onFocus={[Function]}
-                                                  tabIndex={null}
-                                                >
-                                                  <ForwardRef(IconButton)
-                                                    className="PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
-                                                    classes={
-                                                      Object {
-                                                        "colorInherit": "MuiIconButton-colorInherit",
-                                                        "colorPrimary": "MuiIconButton-colorPrimary",
-                                                        "colorSecondary": "MuiIconButton-colorSecondary",
-                                                        "disabled": "Mui-disabled",
-                                                        "edgeEnd": "MuiIconButton-edgeEnd",
-                                                        "edgeStart": "MuiIconButton-edgeStart",
-                                                        "label": "MuiIconButton-label",
-                                                        "root": "MuiIconButton-root",
-                                                        "sizeSmall": "MuiIconButton-sizeSmall",
-                                                      }
+                                                  icon={
+                                                    <ForwardRef(WithStyles)
+                                                      className="HvCheckBox-icon"
+                                                      fontSize="default"
+                                                    />
+                                                  }
+                                                  inputProps={
+                                                    Object {
+                                                      "data-indeterminate": false,
                                                     }
+                                                  }
+                                                  onBlur={[Function]}
+                                                  onChange={[Function]}
+                                                  type="checkbox"
+                                                  value=""
+                                                >
+                                                  <WithStyles(ForwardRef(IconButton))
+                                                    className="PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
                                                     color="default"
                                                     component="span"
                                                     disableRipple={true}
@@ -741,27 +720,32 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                     onFocus={[Function]}
                                                     tabIndex={null}
                                                   >
-                                                    <WithStyles(ForwardRef(ButtonBase))
-                                                      centerRipple={true}
-                                                      className="MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                    <ForwardRef(IconButton)
+                                                      className="PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                      classes={
+                                                        Object {
+                                                          "colorInherit": "MuiIconButton-colorInherit",
+                                                          "colorPrimary": "MuiIconButton-colorPrimary",
+                                                          "colorSecondary": "MuiIconButton-colorSecondary",
+                                                          "disabled": "Mui-disabled",
+                                                          "edgeEnd": "MuiIconButton-edgeEnd",
+                                                          "edgeStart": "MuiIconButton-edgeStart",
+                                                          "label": "MuiIconButton-label",
+                                                          "root": "MuiIconButton-root",
+                                                          "sizeSmall": "MuiIconButton-sizeSmall",
+                                                        }
+                                                      }
+                                                      color="default"
                                                       component="span"
                                                       disableRipple={true}
                                                       disabled={false}
-                                                      focusRipple={true}
                                                       onBlur={[Function]}
                                                       onFocus={[Function]}
                                                       tabIndex={null}
                                                     >
-                                                      <ForwardRef(ButtonBase)
+                                                      <WithStyles(ForwardRef(ButtonBase))
                                                         centerRipple={true}
                                                         className="MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
-                                                        classes={
-                                                          Object {
-                                                            "disabled": "Mui-disabled",
-                                                            "focusVisible": "Mui-focusVisible",
-                                                            "root": "MuiButtonBase-root",
-                                                          }
-                                                        }
                                                         component="span"
                                                         disableRipple={true}
                                                         disabled={false}
@@ -770,173 +754,193 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                         onFocus={[Function]}
                                                         tabIndex={null}
                                                       >
-                                                        <span
-                                                          aria-disabled={false}
-                                                          className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                        <ForwardRef(ButtonBase)
+                                                          centerRipple={true}
+                                                          className="MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          classes={
+                                                            Object {
+                                                              "disabled": "Mui-disabled",
+                                                              "focusVisible": "Mui-focusVisible",
+                                                              "root": "MuiButtonBase-root",
+                                                            }
+                                                          }
+                                                          component="span"
+                                                          disableRipple={true}
+                                                          disabled={false}
+                                                          focusRipple={true}
                                                           onBlur={[Function]}
-                                                          onDragLeave={[Function]}
                                                           onFocus={[Function]}
-                                                          onKeyDown={[Function]}
-                                                          onKeyUp={[Function]}
-                                                          onMouseDown={[Function]}
-                                                          onMouseLeave={[Function]}
-                                                          onMouseUp={[Function]}
-                                                          onTouchEnd={[Function]}
-                                                          onTouchMove={[Function]}
-                                                          onTouchStart={[Function]}
                                                           tabIndex={null}
                                                         >
                                                           <span
-                                                            className="MuiIconButton-label"
+                                                            aria-disabled={false}
+                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            onBlur={[Function]}
+                                                            onDragLeave={[Function]}
+                                                            onFocus={[Function]}
+                                                            onKeyDown={[Function]}
+                                                            onKeyUp={[Function]}
+                                                            onMouseDown={[Function]}
+                                                            onMouseLeave={[Function]}
+                                                            onMouseUp={[Function]}
+                                                            onTouchEnd={[Function]}
+                                                            onTouchMove={[Function]}
+                                                            onTouchStart={[Function]}
+                                                            tabIndex={null}
                                                           >
-                                                            <input
-                                                              checked={false}
-                                                              className="PrivateSwitchBase-input-87"
-                                                              data-indeterminate={false}
-                                                              disabled={false}
-                                                              onChange={[Function]}
-                                                              type="checkbox"
-                                                              value=""
-                                                            />
-                                                            <WithStyles(Checkbox)
-                                                              className="HvCheckBox-icon"
-                                                              fontSize="default"
+                                                            <span
+                                                              className="MuiIconButton-label"
                                                             >
-                                                              <Checkbox
+                                                              <input
+                                                                checked={false}
+                                                                className="PrivateSwitchBase-input-87"
+                                                                data-indeterminate={false}
+                                                                disabled={false}
+                                                                onChange={[Function]}
+                                                                type="checkbox"
+                                                                value=""
+                                                              />
+                                                              <WithStyles(Checkbox)
                                                                 className="HvCheckBox-icon"
-                                                                classes={
-                                                                  Object {
-                                                                    "root": "HvIconCheckbox-root",
-                                                                    "rootL": "HvIconCheckbox-rootL",
-                                                                    "rootM": "HvIconCheckbox-rootM",
-                                                                    "rootS": "HvIconCheckbox-rootS",
-                                                                    "rootXs": "HvIconCheckbox-rootXs",
-                                                                  }
-                                                                }
                                                                 fontSize="default"
                                                               >
-                                                                <div
-                                                                  className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                <Checkbox
+                                                                  className="HvCheckBox-icon"
+                                                                  classes={
+                                                                    Object {
+                                                                      "root": "HvIconCheckbox-root",
+                                                                      "rootL": "HvIconCheckbox-rootL",
+                                                                      "rootM": "HvIconCheckbox-rootM",
+                                                                      "rootS": "HvIconCheckbox-rootS",
+                                                                      "rootXs": "HvIconCheckbox-rootXs",
+                                                                    }
+                                                                  }
                                                                   fontSize="default"
                                                                 >
-                                                                  <svg
-                                                                    focusable={false}
-                                                                    height="16px"
-                                                                    viewBox="0 0 16 16"
-                                                                    width="16px"
-                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                  <div
+                                                                    className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    fontSize="default"
                                                                   >
-                                                                    <path
-                                                                      className="color0"
-                                                                      d="M0 0h16v16H0z"
-                                                                      fill="#FFFFFF"
-                                                                    />
-                                                                    <path
-                                                                      className="color1"
-                                                                      d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
-                                                                      fill="#414141"
-                                                                    />
-                                                                  </svg>
-                                                                </div>
-                                                              </Checkbox>
-                                                            </WithStyles(Checkbox)>
+                                                                    <svg
+                                                                      focusable={false}
+                                                                      height="16px"
+                                                                      viewBox="0 0 16 16"
+                                                                      width="16px"
+                                                                      xmlns="http://www.w3.org/2000/svg"
+                                                                    >
+                                                                      <path
+                                                                        className="color0"
+                                                                        d="M0 0h16v16H0z"
+                                                                        fill="#FFFFFF"
+                                                                      />
+                                                                      <path
+                                                                        className="color1"
+                                                                        d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
+                                                                        fill="#414141"
+                                                                      />
+                                                                    </svg>
+                                                                  </div>
+                                                                </Checkbox>
+                                                              </WithStyles(Checkbox)>
+                                                            </span>
+                                                            <NoSsr />
                                                           </span>
-                                                          <NoSsr />
-                                                        </span>
-                                                      </ForwardRef(ButtonBase)>
-                                                    </WithStyles(ForwardRef(ButtonBase))>
-                                                  </ForwardRef(IconButton)>
-                                                </WithStyles(ForwardRef(IconButton))>
-                                              </ForwardRef(SwitchBase)>
-                                            </WithStyles(ForwardRef(SwitchBase))>
-                                          </ForwardRef(Checkbox)>
-                                        </WithStyles(ForwardRef(Checkbox))>
-                                        <WithStyles(ForwardRef(Typography))
-                                          className="MuiFormControlLabel-label HvCheckBox-labelTypography"
-                                          component="span"
-                                        >
-                                          <ForwardRef(Typography)
+                                                        </ForwardRef(ButtonBase)>
+                                                      </WithStyles(ForwardRef(ButtonBase))>
+                                                    </ForwardRef(IconButton)>
+                                                  </WithStyles(ForwardRef(IconButton))>
+                                                </ForwardRef(SwitchBase)>
+                                              </WithStyles(ForwardRef(SwitchBase))>
+                                            </ForwardRef(Checkbox)>
+                                          </WithStyles(ForwardRef(Checkbox))>
+                                          <WithStyles(ForwardRef(Typography))
                                             className="MuiFormControlLabel-label HvCheckBox-labelTypography"
-                                            classes={
-                                              Object {
-                                                "alignCenter": "MuiTypography-alignCenter",
-                                                "alignJustify": "MuiTypography-alignJustify",
-                                                "alignLeft": "MuiTypography-alignLeft",
-                                                "alignRight": "MuiTypography-alignRight",
-                                                "body1": "MuiTypography-body1",
-                                                "body2": "MuiTypography-body2",
-                                                "button": "MuiTypography-button",
-                                                "caption": "MuiTypography-caption",
-                                                "colorError": "MuiTypography-colorError",
-                                                "colorInherit": "MuiTypography-colorInherit",
-                                                "colorPrimary": "MuiTypography-colorPrimary",
-                                                "colorSecondary": "MuiTypography-colorSecondary",
-                                                "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                                "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                                "displayBlock": "MuiTypography-displayBlock",
-                                                "displayInline": "MuiTypography-displayInline",
-                                                "gutterBottom": "MuiTypography-gutterBottom",
-                                                "h1": "MuiTypography-h1",
-                                                "h2": "MuiTypography-h2",
-                                                "h3": "MuiTypography-h3",
-                                                "h4": "MuiTypography-h4",
-                                                "h5": "MuiTypography-h5",
-                                                "h6": "MuiTypography-h6",
-                                                "noWrap": "MuiTypography-noWrap",
-                                                "overline": "MuiTypography-overline",
-                                                "paragraph": "MuiTypography-paragraph",
-                                                "root": "MuiTypography-root",
-                                                "srOnly": "MuiTypography-srOnly",
-                                                "subtitle1": "MuiTypography-subtitle1",
-                                                "subtitle2": "MuiTypography-subtitle2",
-                                              }
-                                            }
                                             component="span"
                                           >
-                                            <span
-                                              className="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
-                                            />
-                                          </ForwardRef(Typography)>
-                                        </WithStyles(ForwardRef(Typography))>
-                                      </label>
-                                    </ForwardRef(FormControlLabel)>
-                                  </WithStyles(ForwardRef(FormControlLabel))>
-                                </HvCheckbox>
-                              </WithStyles(HvCheckbox)>
-                            </div>
-                            <div
-                              className="HvCardFooter-rightContainer"
-                            >
-                              <WithStyles(Actions)
-                                actions="actions"
-                                maxVisibleActions={1}
+                                            <ForwardRef(Typography)
+                                              className="MuiFormControlLabel-label HvCheckBox-labelTypography"
+                                              classes={
+                                                Object {
+                                                  "alignCenter": "MuiTypography-alignCenter",
+                                                  "alignJustify": "MuiTypography-alignJustify",
+                                                  "alignLeft": "MuiTypography-alignLeft",
+                                                  "alignRight": "MuiTypography-alignRight",
+                                                  "body1": "MuiTypography-body1",
+                                                  "body2": "MuiTypography-body2",
+                                                  "button": "MuiTypography-button",
+                                                  "caption": "MuiTypography-caption",
+                                                  "colorError": "MuiTypography-colorError",
+                                                  "colorInherit": "MuiTypography-colorInherit",
+                                                  "colorPrimary": "MuiTypography-colorPrimary",
+                                                  "colorSecondary": "MuiTypography-colorSecondary",
+                                                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                                                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                                                  "displayBlock": "MuiTypography-displayBlock",
+                                                  "displayInline": "MuiTypography-displayInline",
+                                                  "gutterBottom": "MuiTypography-gutterBottom",
+                                                  "h1": "MuiTypography-h1",
+                                                  "h2": "MuiTypography-h2",
+                                                  "h3": "MuiTypography-h3",
+                                                  "h4": "MuiTypography-h4",
+                                                  "h5": "MuiTypography-h5",
+                                                  "h6": "MuiTypography-h6",
+                                                  "noWrap": "MuiTypography-noWrap",
+                                                  "overline": "MuiTypography-overline",
+                                                  "paragraph": "MuiTypography-paragraph",
+                                                  "root": "MuiTypography-root",
+                                                  "srOnly": "MuiTypography-srOnly",
+                                                  "subtitle1": "MuiTypography-subtitle1",
+                                                  "subtitle2": "MuiTypography-subtitle2",
+                                                }
+                                              }
+                                              component="span"
+                                            >
+                                              <span
+                                                className="MuiTypography-root MuiFormControlLabel-label HvCheckBox-labelTypography MuiTypography-body1"
+                                              />
+                                            </ForwardRef(Typography)>
+                                          </WithStyles(ForwardRef(Typography))>
+                                        </label>
+                                      </ForwardRef(FormControlLabel)>
+                                    </WithStyles(ForwardRef(FormControlLabel))>
+                                  </HvCheckbox>
+                                </WithStyles(HvCheckbox)>
+                              </div>
+                              <div
+                                className="HvCardFooter-rightContainer"
                               >
-                                <Actions
+                                <WithStyles(Actions)
                                   actions="actions"
-                                  classes={
-                                    Object {
-                                      "actionContainer": "HvActions-actionContainer",
-                                      "button": "HvActions-button",
-                                      "dropDownMenu": "HvActions-dropDownMenu",
-                                      "dropDownMenuIcon": "HvActions-dropDownMenuIcon",
-                                      "root": "HvActions-root",
-                                    }
-                                  }
                                   maxVisibleActions={1}
-                                />
-                              </WithStyles(Actions)>
+                                >
+                                  <Actions
+                                    actions="actions"
+                                    classes={
+                                      Object {
+                                        "actionContainer": "HvActions-actionContainer",
+                                        "button": "HvActions-button",
+                                        "dropDownMenu": "HvActions-dropDownMenu",
+                                        "dropDownMenuButton": "HvActions-dropDownMenuButton",
+                                        "dropDownMenuButtonSelected": "HvActions-dropDownMenuButtonSelected",
+                                        "root": "HvActions-root",
+                                      }
+                                    }
+                                    maxVisibleActions={1}
+                                  />
+                                </WithStyles(Actions)>
+                              </div>
                             </div>
-                          </div>
-                        </ForwardRef(CardActions)>
-                      </WithStyles(ForwardRef(CardActions))>
-                    </Footer>
-                  </WithConfig>
-                </WithStyles(WithConfig)>
-              </div>
-            </ForwardRef(Paper)>
-          </WithStyles(ForwardRef(Paper))>
-        </ForwardRef(Card)>
-      </WithStyles(ForwardRef(Card))>
+                          </ForwardRef(CardActions)>
+                        </WithStyles(ForwardRef(CardActions))>
+                      </Footer>
+                    </WithConfig>
+                  </WithStyles(WithConfig)>
+                </div>
+              </ForwardRef(Paper)>
+            </WithStyles(ForwardRef(Paper))>
+          </ForwardRef(Card)>
+        </WithStyles(ForwardRef(Card))>
+      </div>
     </div>
   </HvCard>
 </WithStyles(HvCard)>

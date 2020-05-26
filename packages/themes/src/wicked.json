@@ -178,11 +178,12 @@
       "fontWeight": 400
     },
     "inlineLink": {
-      "color": "#4389DB",
+      "color": "#DEDEDE",
       "fontSize": "14px",
       "letterSpacing": "0.02em",
       "lineHeight": "20px",
-      "fontWeight": 600
+      "fontWeight": 600,
+      "textDecorationLine": "underline"
     },
     "selectedNavText": {
       "color": "#DEDEDE",
@@ -206,11 +207,12 @@
       "fontWeight": 400
     },
     "sLink": {
-      "color": "#4389DB",
+      "color": "#DEDEDE",
       "fontSize": "12px",
       "letterSpacing": "0.02em",
       "lineHeight": "16px",
-      "fontWeight": 400
+      "fontWeight": 400,
+      "textDecorationLine": "underline"
     },
     "sText": {
       "color": "#DEDEDE",

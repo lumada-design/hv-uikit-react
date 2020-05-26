@@ -1,3 +1,5 @@
+import { semanticStyles } from "../withSemantic";
+
 const styles = theme => ({
   root: {},
   button: {
@@ -10,7 +12,18 @@ const styles = theme => ({
     float: "right"
   },
   dropDownMenu: {},
-  dropDownMenuIcon: {}
+  dropDownMenuButton: {
+    ...semanticStyles(theme)
+  },
+  dropDownMenuButtonSelected: {
+    backgroundColor: theme.palette.atmo1,
+    "&:hover:not(:disabled)": {
+      backgroundColor: theme.palette.atmo1
+    },
+    "& svg .color0": {
+      fill: theme.palette.acce1
+    }
+  }
 });
 
 export default styles;

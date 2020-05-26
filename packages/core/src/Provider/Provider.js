@@ -13,7 +13,7 @@ import {
   createMuiTheme
 } from "@material-ui/core";
 
-import { themeBuilder, generateClassName, CssBaseline } from "../theme";
+import { themeBuilder, generateClassName, CssBaseline, getTheme } from "../theme";
 
 import { ConfigProvider } from "../config/context";
 
@@ -44,8 +44,8 @@ const applyCustomTheme = (InputTargetTheme, InputSourceTheme) => {
 
 const HvProvider = ({ children, theme = null, uiKitTheme = "dawn", changeTheme = () => {} }) => {
   const pConfig = { changeTheme };
-
-  const customTheme = applyCustomTheme(themeBuilder(uiKitTheme), theme);
+  const rawUiKitTheme = getTheme(uiKitTheme);
+  const customTheme = applyCustomTheme(themeBuilder(rawUiKitTheme), theme);
 
   window.hvTheme = customTheme;
 

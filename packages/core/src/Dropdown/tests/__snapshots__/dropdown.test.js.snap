@@ -167,9 +167,14 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
           <div
             className=""
             id="test-dropdown-header"
-            onClick={[Function]}
             onKeyDown={[Function]}
+            onMouseUp={[Function]}
             role="textbox"
+            style={
+              Object {
+                "pointerEvents": "none",
+              }
+            }
             tabIndex={0}
           >
             <WithStyles(ForwardRef)
@@ -6501,8 +6506,8 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
           <div
             className=""
             id="hv-dropdown-7-header"
-            onClick={[Function]}
             onKeyDown={[Function]}
+            onMouseUp={[Function]}
             role="textbox"
             tabIndex={0}
           >
@@ -8523,8 +8528,8 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
           <div
             className=""
             id="hv-dropdown-1-header"
-            onClick={[Function]}
             onKeyDown={[Function]}
+            onMouseUp={[Function]}
             role="textbox"
             tabIndex={0}
           >

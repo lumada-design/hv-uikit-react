@@ -18,9 +18,7 @@ const getTheme = uiKitTheme => {
   }
 };
 
-const hvTheme = uiKitTheme => {
-  const theme = getTheme(uiKitTheme);
-
+const themeBuilder = theme => {
   const themeSpacing = createSpacing(theme);
   const themePalette = createPalette(theme);
   const themeTypography = createTypography(themePalette, theme);
@@ -70,10 +68,11 @@ const hvTheme = uiKitTheme => {
   });
 };
 
-const defaultTheme = hvTheme();
+const defaultTheme = themeBuilder(getTheme("dawn"));
 
 export { default as generateClassName } from "./generateClassName";
 export { default as CssBaseline } from "./CssBaseline";
+export { getTheme };
 
-export { hvTheme as themeBuilder };
+export { themeBuilder };
 export default defaultTheme;

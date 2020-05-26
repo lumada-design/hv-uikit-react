@@ -51,8 +51,8 @@ export const getDocsStylesOverrides = theme => ({
       transform: "unset !important",
       WebkitTransform: "unset !important"
     },
-    a: {
-      color: theme.hv.typography.inlineLink.color
+    'a[class*="sbdocs"]': {
+      ...theme.hv.typography.inlineLink
     },
     "&.sbdocs-wrapper": {
       backgroundColor: theme.hv.palette.atmosphere.atmo2
