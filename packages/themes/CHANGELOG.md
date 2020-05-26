@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@2.0.3...@hv/uikit-common-themes@2.0.4) (2020-05-26)
+
+
+### Bug Fixes
+
+* **table:** adjustment in layout. [#1536](https://github.com/pentaho/hv-uikit-react/issues/1536) ([4add43d](https://github.com/pentaho/hv-uikit-react/commit/4add43db0d0be4c9c2f94fba68cd1d2e55118bd0))
+
+
+
+
+
 ## [2.0.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@2.0.2...@hv/uikit-common-themes@2.0.3) (2020-04-25)
 
 

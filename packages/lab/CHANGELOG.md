@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.0.4...@hv/uikit-react-lab@2.1.0) (2020-05-26)
+
+
+### Bug Fixes
+
+* **table:** adjustment in layout. [#1536](https://github.com/pentaho/hv-uikit-react/issues/1536) ([4add43d](https://github.com/pentaho/hv-uikit-react/commit/4add43db0d0be4c9c2f94fba68cd1d2e55118bd0))
+
+
+### Features
+
+* **userpreferences:** add component following ds guideline. [#658](https://github.com/pentaho/hv-uikit-react/issues/658) ([bf7f3f9](https://github.com/pentaho/hv-uikit-react/commit/bf7f3f9d7b560acdc38bc1f3b4fe18fe03578bcd))
+
+
+
+
+
 ## [2.0.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.0.3...@hv/uikit-react-lab@2.0.4) (2020-05-15)
 
 **Note:** Version bump only for package @hv/uikit-react-lab

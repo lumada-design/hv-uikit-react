@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.0.4...@hv/uikit-react-icons@2.0.5) (2020-05-26)
+
+**Note:** Version bump only for package @hv/uikit-react-icons
+
+
+
+
+
 ## [2.0.4](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.0.3...@hv/uikit-react-icons@2.0.4) (2020-05-15)
 
 **Note:** Version bump only for package @hv/uikit-react-icons
