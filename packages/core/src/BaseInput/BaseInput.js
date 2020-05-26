@@ -48,7 +48,7 @@ const HvBaseInput = props => {
     </div>
   );
   const InfoIcon = withTooltips(IconDisplay, labels.infoText);
-
+  // debugger;
   // TODO: Need to figure out a way to have a generic first name to pass on to tooltip
   return (
     <>
@@ -70,16 +70,18 @@ const HvBaseInput = props => {
         disabled={disabled}
         placeholder={labels.placeholder || undefined}
         type={password ? "password" : "text"}
-        classes={{
-          input: classes.input,
-          focused: classes.inputRootFocused,
-          disabled: classes.inputDisabled,
-          multiline: classes.multiLine
-        }}
-        className={clsx(classes.inputRoot, {
-          [classes.inputRootDisabled]: disabled,
-          [classes.inputRootInvalid]: validationState === "invalid"
-        })}
+        classes={classes}
+        className={className}
+        // classes={{
+        //   input: classes.input,
+        //   focused: classes.inputRootFocused,
+        //   disabled: classes.inputDisabled,
+        //   multiline: classes.multiLine
+        // }}
+        // className={clsx(classes.inputRoot, {
+        //   [classes.inputRootDisabled]: disabled,
+        //   [classes.inputRootInvalid]: validationState === "invalid"
+        // })}
         inputProps={{
           required: isRequired,
           // ref: this.materialInputRef,

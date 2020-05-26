@@ -319,15 +319,15 @@ class HvInput extends React.Component {
     // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
     // - the input have some sort of validation
     // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
-    const showValidationIcon =
-      !disabled &&
-      validationIconVisible &&
-      showInfo &&
-      (stateValidationState === validationStates.invalid ||
-        validationType !== validationTypes.none ||
-        maxCharQuantity !== null ||
-        minCharQuantity !== null ||
-        validation !== null);
+    const showValidationIcon = true;
+    // !disabled &&
+    // validationIconVisible &&
+    // showInfo &&
+    // (stateValidationState === validationStates.invalid ||
+    //   validationType !== validationTypes.none ||
+    //   maxCharQuantity !== null ||
+    //   minCharQuantity !== null ||
+    //   validation !== null);
 
     // show the clear button only if the input is enabled, disableClear is false and the input is not empty
     const showClear = !disabled && !disableClear && stateValue != null && stateValue !== "";
