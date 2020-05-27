@@ -11,9 +11,6 @@ exports[`Slider  should render correctly 1`] = `
       100,
     ]
   }
-  divisionQuantity={100}
-  formatMark={[Function]}
-  formatTooltip={[Function]}
   knobProperties={
     Array [
       Object {
@@ -39,16 +36,6 @@ exports[`Slider  should render correctly 1`] = `
       },
     ]
   }
-  markDigits={0}
-  markProperties={Array []}
-  markStep={1}
-  maxPointValue={100}
-  minPointValue={0}
-  noOverlap={true}
-  onAfterChange={[Function]}
-  onBeforeChange={[Function]}
-  onChange={[Function]}
-  values={Array []}
 >
   <HvSlider
     classes={

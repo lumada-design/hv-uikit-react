@@ -69,12 +69,11 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
           >
             <div
               className="MuiTabs-flexContainer HvTabs-flexContainer"
+              onKeyDown={[Function]}
               role="tablist"
             >
               <WithStyles(HvTab)
-                disabled={false}
                 fullWidth={false}
-                icon={null}
                 indicator={false}
                 key=".0"
                 label="Clickable Tab"
@@ -152,7 +151,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         role="tab"
+                        tabIndex={-1}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={false}
@@ -169,7 +170,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
+                          onFocus={[Function]}
                           role="tab"
+                          tabIndex={-1}
                         >
                           <button
                             aria-selected={false}
@@ -188,7 +191,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
                             role="tab"
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             <span
@@ -196,7 +199,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             >
                               Clickable Tab
                             </span>
-                            <NoSsr />
                           </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
@@ -205,9 +207,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 </HvTab>
               </WithStyles(HvTab)>
               <WithStyles(HvTab)
-                disabled={false}
                 fullWidth={false}
-                icon={null}
                 indicator={false}
                 key=".1"
                 label="Clickable Tab"
@@ -285,7 +285,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         role="tab"
+                        tabIndex={0}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={true}
@@ -302,7 +304,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
+                          onFocus={[Function]}
                           role="tab"
+                          tabIndex={0}
                         >
                           <button
                             aria-selected={true}
@@ -329,7 +333,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             >
                               Clickable Tab
                             </span>
-                            <NoSsr />
                           </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
@@ -338,9 +341,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 </HvTab>
               </WithStyles(HvTab)>
               <WithStyles(HvTab)
-                disabled={false}
                 fullWidth={false}
-                icon={null}
                 indicator={false}
                 key=".2"
                 label="Clickable Tab"
@@ -418,7 +419,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         role="tab"
+                        tabIndex={-1}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={false}
@@ -435,7 +438,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
+                          onFocus={[Function]}
                           role="tab"
+                          tabIndex={-1}
                         >
                           <button
                             aria-selected={false}
@@ -454,7 +459,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
                             role="tab"
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             <span
@@ -462,7 +467,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             >
                               Clickable Tab
                             </span>
-                            <NoSsr />
                           </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
@@ -471,9 +475,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 </HvTab>
               </WithStyles(HvTab)>
               <WithStyles(HvTab)
-                disabled={false}
                 fullWidth={false}
-                icon={null}
                 indicator={false}
                 key=".3"
                 label="Clickable Tab"
@@ -551,7 +553,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
+                        onFocus={[Function]}
                         role="tab"
+                        tabIndex={-1}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={false}
@@ -568,7 +572,9 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
+                          onFocus={[Function]}
                           role="tab"
+                          tabIndex={-1}
                         >
                           <button
                             aria-selected={false}
@@ -587,7 +593,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
                             role="tab"
-                            tabIndex={0}
+                            tabIndex={-1}
                             type="button"
                           >
                             <span
@@ -595,7 +601,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             >
                               Clickable Tab
                             </span>
-                            <NoSsr />
                           </button>
                         </ForwardRef(ButtonBase)>
                       </WithStyles(ForwardRef(ButtonBase))>
@@ -619,10 +624,10 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 className="MuiTabs-indicator HvTabs-indicator"
                 classes={
                   Object {
-                    "colorPrimary": "PrivateTabIndicator-colorPrimary-41",
-                    "colorSecondary": "PrivateTabIndicator-colorSecondary-42",
-                    "root": "PrivateTabIndicator-root-40",
-                    "vertical": "PrivateTabIndicator-vertical-43",
+                    "colorPrimary": "PrivateTabIndicator-colorPrimary-6",
+                    "colorSecondary": "PrivateTabIndicator-colorSecondary-7",
+                    "root": "PrivateTabIndicator-root-5",
+                    "vertical": "PrivateTabIndicator-vertical-8",
                   }
                 }
                 color="secondary"
@@ -635,7 +640,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                 }
               >
                 <span
-                  className="PrivateTabIndicator-root-40 PrivateTabIndicator-colorSecondary-42 MuiTabs-indicator HvTabs-indicator"
+                  className="PrivateTabIndicator-root-5 PrivateTabIndicator-colorSecondary-7 MuiTabs-indicator HvTabs-indicator"
                   style={
                     Object {
                       "left": 0,
@@ -719,6 +724,7 @@ exports[`Tabs withStyles should render correctly 1`] = `
           >
             <div
               className="MuiTabs-flexContainer HvTabs-flexContainer"
+              onKeyDown={[Function]}
               role="tablist"
             />
             <WithStyles(ForwardRef(TabIndicator))
@@ -736,10 +742,10 @@ exports[`Tabs withStyles should render correctly 1`] = `
                 className="MuiTabs-indicator HvTabs-indicator"
                 classes={
                   Object {
-                    "colorPrimary": "PrivateTabIndicator-colorPrimary-13",
-                    "colorSecondary": "PrivateTabIndicator-colorSecondary-14",
-                    "root": "PrivateTabIndicator-root-12",
-                    "vertical": "PrivateTabIndicator-vertical-15",
+                    "colorPrimary": "PrivateTabIndicator-colorPrimary-2",
+                    "colorSecondary": "PrivateTabIndicator-colorSecondary-3",
+                    "root": "PrivateTabIndicator-root-1",
+                    "vertical": "PrivateTabIndicator-vertical-4",
                   }
                 }
                 color="secondary"
@@ -752,7 +758,7 @@ exports[`Tabs withStyles should render correctly 1`] = `
                 }
               >
                 <span
-                  className="PrivateTabIndicator-root-12 PrivateTabIndicator-colorSecondary-14 MuiTabs-indicator HvTabs-indicator"
+                  className="PrivateTabIndicator-root-1 PrivateTabIndicator-colorSecondary-3 MuiTabs-indicator HvTabs-indicator"
                   style={
                     Object {
                       "left": 0,

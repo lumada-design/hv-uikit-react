@@ -8,7 +8,6 @@ exports[`TimePicker should render correctly 1`] = `
       "title": "mockTitle",
     }
   }
-  locale="en"
   minutes={20}
   onChange={
     [MockFunction] {
@@ -73,11 +72,13 @@ exports[`TimePicker should render correctly 1`] = `
     period="PM"
     seconds={30}
   >
-    <ForwardRef(ClickAwayListener)
+    <ClickAwayListener
       onClickAway={[Function]}
     >
       <div
         className="HvTimePicker-timePickerContainer"
+        onClick={[Function]}
+        onTouchEnd={[Function]}
       >
         <WithStyles(ForwardRef)
           className="HvTimePicker-label"
@@ -187,7 +188,7 @@ exports[`TimePicker should render correctly 1`] = `
           }
         />
       </div>
-    </ForwardRef(ClickAwayListener)>
+    </ClickAwayListener>
   </HvTimePicker>
 </WithStyles(HvTimePicker)>
 `;

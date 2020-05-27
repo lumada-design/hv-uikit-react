@@ -6,7 +6,6 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
     Object {
       "$$typeof": Symbol(react.forward_ref),
       "Naked": [Function],
-      "defaultProps": undefined,
       "displayName": "WithStyles(Unlock)",
       "options": Object {
         "defaultTheme": Object {
@@ -320,7 +319,6 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
       Object {
         "$$typeof": Symbol(react.forward_ref),
         "Naked": [Function],
-        "defaultProps": undefined,
         "displayName": "WithStyles(Unlock)",
         "options": Object {
           "defaultTheme": Object {
@@ -640,7 +638,6 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
         Object {
           "$$typeof": Symbol(react.forward_ref),
           "Naked": [Function],
-          "defaultProps": undefined,
           "displayName": "WithStyles(Unlock)",
           "options": Object {
             "defaultTheme": Object {
