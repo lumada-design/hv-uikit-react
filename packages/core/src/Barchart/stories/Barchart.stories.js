@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HvBarchart from "../Barchart";
 
 export default {
@@ -224,6 +224,50 @@ StackedHorizontalBarchart.story = {
   parameters: {
     docs: {
       storyDescription: "Groups in stack mode."
+    }
+  }
+};
+
+export const WithIntervalUpdates = () => {
+  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+  const [data, setData] = useState([
+    {
+      x: ["January", "February", "March"],
+      y: [2300, 1000, 8500],
+      name: "Sales Target"
+    }
+  ]);
+
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setData([
+        {
+          x: ["January", "February", "March"],
+          y: [rand(1000, 3000), rand(500, 3500), 8500],
+          name: "Sales Target"
+        }
+      ]);
+    }, 2000);
+
+    return () => clearTimeout(interval);
+  });
+
+  return (
+    <HvBarchart
+      title="Simple Vertical Bar Chart"
+      subtitle="Sales performance (YTD)"
+      xAxisTitle="Thousands of Dollars ($)"
+      yAxisTitle="Axis description"
+      data={data}
+    />
+  );
+};
+
+WithIntervalUpdates.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Data updated each second."
     }
   }
 };

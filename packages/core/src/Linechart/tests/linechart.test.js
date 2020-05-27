@@ -4,7 +4,7 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import HvProvider from "../../Provider";
-import { setData } from "../lineChartPlotlyOverrides";
+import { applyDataDefaults } from "../lineChartPlotlyOverrides";
 import Linechart from "..";
 
 describe("Linechart withStyles", () => {
@@ -52,7 +52,7 @@ describe("Linechart withStyles", () => {
       name: "Sales Target"
     };
 
-    const overwrittenData = setData([traceTest], "area");
+    const overwrittenData = applyDataDefaults([traceTest], "area");
     expect(overwrittenData[0].mode).toBe("lines");
     expect(overwrittenData[0].hoverinfo).toBe("none");
     expect(overwrittenData[0].fill).toBe("tonexty");
@@ -65,7 +65,7 @@ describe("Linechart withStyles", () => {
       y: ["January", "February", "March"],
       name: "Sales Target"
     };
-    const overwrittenData = setData([traceTest], "line");
+    const overwrittenData = applyDataDefaults([traceTest], "line");
     expect(overwrittenData[0].mode).toBe("lines");
     expect(overwrittenData[0].hoverinfo).toBe("none");
     expect(overwrittenData[0].type).toBe("line");
@@ -77,7 +77,7 @@ describe("Linechart withStyles", () => {
       y: ["January", "February", "March"],
       name: "Sales Target"
     };
-    const overwrittenData = setData([traceTest], "stack");
+    const overwrittenData = applyDataDefaults([traceTest], "stack");
     expect(overwrittenData[0].mode).toBe("lines");
     expect(overwrittenData[0].hoverinfo).toBe("none");
     expect(overwrittenData[0].fill).toBe("tonexty");
@@ -87,7 +87,7 @@ describe("Linechart withStyles", () => {
 
   it("shouldn't override existing data", () => {
     const traceTest = { hoverinfo: "xx" };
-    const overwrittenData = setData([traceTest]);
+    const overwrittenData = applyDataDefaults([traceTest]);
     expect(overwrittenData[0].hoverinfo).toBe("xx");
   });
 });

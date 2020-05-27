@@ -9,7 +9,7 @@ const setterIfNil = (object, property, value) => {
  * Auxiliary functions to set the data in order to follow the DS guideline.
  *
  */
-export const setData = (inputData, type) => {
+export const applyDataDefaults = (inputData, type) => {
   const data = inputData;
 
   data.forEach(trace => {
@@ -37,7 +37,7 @@ export const setData = (inputData, type) => {
   return data;
 };
 
-export const setLayout = (inputLayout, rangeSlider) => {
+export const applyLayoutDefaults = (inputLayout, rangeSlider) => {
   const layout = inputLayout === undefined ? {} : clone(inputLayout);
 
   if (rangeSlider) {
