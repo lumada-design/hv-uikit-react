@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from "react";
-import { mount, shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import HvProvider from "../../Provider";
 import Barchart from "..";
@@ -20,7 +20,7 @@ describe("Barchart withStyles", () => {
   const layout = {};
 
   beforeEach(() => {
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
         <Barchart data={data} layout={layout} />
       </HvProvider>
