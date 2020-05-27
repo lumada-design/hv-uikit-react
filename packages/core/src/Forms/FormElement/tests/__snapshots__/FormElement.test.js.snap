@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormElement  should render correctly 1`] = `
+<WithStyles(FormElement)
+  elementStatus="invalid"
+  elementValue="Albert2"
+>
+  <WithStyles(HvBaseInput)
+    style={
+      Object {
+        "paddingTop": "8px",
+      }
+    }
+  />
+  <WithStyles(WithId)
+    label="Names do not contain numbers"
+    showWhen="invalid"
+    style={
+      Object {
+        "marginTop": "8px",
+      }
+    }
+  />
+</WithStyles(FormElement)>
+`;
+
+exports[`FormElement  should render correctly 2`] = `
+<WithStyles(HvBaseInput)
+  style={
+    Object {
+      "paddingTop": "8px",
+    }
+  }
+/>
+`;
+
+exports[`FormElement  should render correctly 3`] = `
+<WithStyles(WithId)
+  label="Names do not contain numbers"
+  showWhen="invalid"
+  style={
+    Object {
+      "marginTop": "8px",
+    }
+  }
+/>
+`;

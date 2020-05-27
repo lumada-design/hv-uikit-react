@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoText should render correctly 1`] = `
+<WithStyles(WithId)
+  id="base"
+  inputState="valid"
+  labels={
+    Object {
+      "infoText": "Info text for a valid string",
+      "warningText": "something wrong",
+    }
+  }
+>
+  <WithId
+    classes={
+      Object {
+        "infoDisabled": "HvInfoText-infoDisabled",
+        "infoText": "HvInfoText-infoText",
+        "root": "HvInfoText-root",
+        "showText": "HvInfoText-showText",
+      }
+    }
+    id="base"
+    inputState="valid"
+    labels={
+      Object {
+        "infoText": "Info text for a valid string",
+        "warningText": "something wrong",
+      }
+    }
+  >
+    <HvInfoText
+      classes={
+        Object {
+          "infoDisabled": "HvInfoText-infoDisabled",
+          "infoText": "HvInfoText-infoText",
+          "root": "HvInfoText-root",
+          "showText": "HvInfoText-showText",
+        }
+      }
+      id="base"
+      inputState="valid"
+      labels={
+        Object {
+          "infoText": "Info text for a valid string",
+          "warningText": "something wrong",
+        }
+      }
+    >
+      <WithStyles(ForwardRef)
+        aria-atomic="true"
+        aria-live="polite"
+        aria-relevant="additions text"
+        className="HvInfoText-infoText"
+        id="base"
+        inputState="valid"
+        labels={
+          Object {
+            "infoText": "Info text for a valid string",
+            "warningText": "something wrong",
+          }
+        }
+        variant="infoText"
+      >
+        <ForwardRef
+          aria-atomic="true"
+          aria-live="polite"
+          aria-relevant="additions text"
+          className="HvInfoText-infoText"
+          classes={
+            Object {
+              "3xlTitle": "HvTypography-3xlTitle",
+              "4xlTitle": "HvTypography-4xlTitle",
+              "5xlTitle": "HvTypography-5xlTitle",
+              "disabledButtonText": "HvTypography-disabledButtonText",
+              "highlightText": "HvTypography-highlightText",
+              "infoText": "HvTypography-infoText",
+              "inlineLink": "HvTypography-inlineLink",
+              "lTitle": "HvTypography-lTitle",
+              "labelText": "HvTypography-labelText",
+              "mTitle": "HvTypography-mTitle",
+              "normalText": "HvTypography-normalText",
+              "placeholderText": "HvTypography-placeholderText",
+              "root": "HvTypography-root",
+              "sLink": "HvTypography-sLink",
+              "sText": "HvTypography-sText",
+              "sTitle": "HvTypography-sTitle",
+              "selectedNavText": "HvTypography-selectedNavText",
+              "selectedText": "HvTypography-selectedText",
+              "vizText": "HvTypography-vizText",
+              "xlTitle": "HvTypography-xlTitle",
+              "xsTitle": "HvTypography-xsTitle",
+              "xxlTitle": "HvTypography-xxlTitle",
+              "xxsTitle": "HvTypography-xxsTitle",
+            }
+          }
+          id="base"
+          inputState="valid"
+          labels={
+            Object {
+              "infoText": "Info text for a valid string",
+              "warningText": "something wrong",
+            }
+          }
+          variant="infoText"
+        >
+          <p
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            className="HvInfoText-infoText HvTypography-root HvTypography-infoText"
+            id="base"
+            inputState="valid"
+            labels={
+              Object {
+                "infoText": "Info text for a valid string",
+                "warningText": "something wrong",
+              }
+            }
+          />
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </HvInfoText>
+  </WithId>
+</WithStyles(WithId)>
+`;

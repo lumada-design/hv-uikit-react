@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoText should render correctly 1`] = `
+<WithStyles(WithId)
+  label="description"
+>
+  <WithId
+    classes={
+      Object {
+        "labelDisabled": "HvInfoText-labelDisabled",
+        "root": "HvInfoText-root",
+      }
+    }
+    label="description"
+  >
+    <HvInfoText
+      classes={
+        Object {
+          "labelDisabled": "HvInfoText-labelDisabled",
+          "root": "HvInfoText-root",
+        }
+      }
+      id="hv-info-text-2"
+      label="description"
+    >
+      <WithStyles(ForwardRef)
+        className="HvInfoText-root"
+        component="label"
+        id="hv-info-text-2"
+        variant="labelText"
+      >
+        <ForwardRef
+          className="HvInfoText-root"
+          classes={
+            Object {
+              "3xlTitle": "HvTypography-3xlTitle",
+              "4xlTitle": "HvTypography-4xlTitle",
+              "5xlTitle": "HvTypography-5xlTitle",
+              "disabledButtonText": "HvTypography-disabledButtonText",
+              "highlightText": "HvTypography-highlightText",
+              "infoText": "HvTypography-infoText",
+              "inlineLink": "HvTypography-inlineLink",
+              "lTitle": "HvTypography-lTitle",
+              "labelText": "HvTypography-labelText",
+              "mTitle": "HvTypography-mTitle",
+              "normalText": "HvTypography-normalText",
+              "placeholderText": "HvTypography-placeholderText",
+              "root": "HvTypography-root",
+              "sLink": "HvTypography-sLink",
+              "sText": "HvTypography-sText",
+              "sTitle": "HvTypography-sTitle",
+              "selectedNavText": "HvTypography-selectedNavText",
+              "selectedText": "HvTypography-selectedText",
+              "vizText": "HvTypography-vizText",
+              "xlTitle": "HvTypography-xlTitle",
+              "xsTitle": "HvTypography-xsTitle",
+              "xxlTitle": "HvTypography-xxlTitle",
+              "xxsTitle": "HvTypography-xxsTitle",
+            }
+          }
+          component="label"
+          id="hv-info-text-2"
+          variant="labelText"
+        >
+          <label
+            className="HvInfoText-root HvTypography-root HvTypography-labelText"
+            id="hv-info-text-2"
+          >
+            description
+          </label>
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </HvInfoText>
+  </WithId>
+</WithStyles(WithId)>
+`;
