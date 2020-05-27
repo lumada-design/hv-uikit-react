@@ -50,7 +50,7 @@
     "prop-types": "^15.7.2",
     "react-google-charts": "^3.0.15",
     "react-outside-click-handler": "^1.2.4",
-    "react-plotly.js": "^2.3.0",
+    "react-plotly.js": "^2.4.0",
     "react-resize-aware": "^3.0.0",
     "react-reveal": "^1.2.2",
     "react-table": "6.8.6",
