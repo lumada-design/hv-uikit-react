@@ -152,7 +152,7 @@ Sizes.story = {
   parameters: {
     docs: {
       storyDescription:
-        "You can change the size of the avatar with the size property (XS, S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size."
+        "You can change the size of the avatar with the size property (S, M, L). When using an icon avatar, preferably use as iconSize the size immediately below the avatar size."
     }
   }
 };
