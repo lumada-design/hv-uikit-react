@@ -131,13 +131,13 @@ jobs:
         uses: actions/download-artifact@v1
         with:
           name: documentation
-          path: ${{ github.workspace }}/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          path: ${{ github.workspace }}/public/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          publish_dir: ./public
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
           keep_files: true
           user_name: "github-actions[bot]"

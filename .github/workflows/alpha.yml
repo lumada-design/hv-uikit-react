@@ -136,12 +136,6 @@ jobs:
           ref: ${{ github.head_ref }}
           desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
-      - name: Checkout gh-pages
-        uses: actions/checkout@v2
-        with:
-          path: ${{ github.workspace }}/public
-          ref: gh-pages
-
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
@@ -152,9 +146,9 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          publish_dir: ./public
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
-          keepFiles: true
+          keep_files: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
 
