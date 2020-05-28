@@ -152,7 +152,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/public
+          publish_dir: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
           keepFiles: true
           user_name: "github-actions[bot]"
@@ -237,7 +237,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Build-Documentation, Github-Deployment, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 
