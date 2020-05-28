@@ -30,6 +30,15 @@ import withId from "../withId";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = checkboxHOC(ReactTable);
+const updateSelectionFromData = (data, selection, idForCheckbox) => {
+  const dataIds = data.map(item => {
+    return item[idForCheckbox];
+  });
+  const updatedSelection = selection.filter(selectedItem => {
+    return dataIds.includes(selectedItem);
+  });
+  return updatedSelection;
+};
 
 const DEFAULT_LABELS = {
   titleText: "",
@@ -84,14 +93,31 @@ class Table extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    const { selections } = props;
-    if (selections !== state.selections) {
+    const { selections, data, idForCheckbox } = props;
+
+    if (!isNil(selections) && selections !== state.selection) {
       return {
-        selections
+        selection: selections,
+        selectAll: selections.length === data.length,
+        recordQuantity: data.length
       };
     }
 
-    return null;
+    if (idForCheckbox !== "") {
+      const newSelection = updateSelectionFromData(data, state.selection, idForCheckbox);
+      if (!isNil(newSelection)) {
+        return {
+          selection: newSelection,
+          selectAll: newSelection.length === data.length,
+          recordQuantity: data.length
+        };
+      }
+    }
+
+    return {
+      selectAll: state.selection.length === data.length,
+      recordQuantity: data.length
+    };
   }
 
   /**
@@ -354,7 +380,6 @@ class Table extends React.Component {
         : undefined;
 
     const ariaRowIndex = rowInfo !== undefined ? { "aria-rowindex": rowInfo.index } : undefined;
-
     const baseTrProps = {
       id: this.computeRowElementId(rowInfo),
       className: classes.tr,
@@ -532,6 +557,7 @@ class Table extends React.Component {
                 event.stopPropagation();
                 item?.action?.(event, props.original);
               }}
+              keepOpened={false}
               {...dropdownMenuProps}
             />
           )

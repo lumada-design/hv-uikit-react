@@ -8,6 +8,9 @@ import styles from "./styles";
 /**
  * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
  * called 'markers' connected by straight line segments. It is a basic type of chart common in many fields.
+ *
+ * Our implementation uses as base Plotly. If you have a specific case
+ * that we don't cover directly, the Plotly [documentation](https://plotly.com/javascript/) is a good starting point.
  */
 const Linechart = ({
   id,

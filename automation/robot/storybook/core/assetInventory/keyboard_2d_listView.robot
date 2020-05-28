@@ -17,7 +17,7 @@ focus vertical ascending row when pressed arrow up      ${row6}    ARROW_UP     
 focus vertical descending row when pressed arrow down   ${row1}    ARROW_DOWN     ${row2}
 focus first row when pressed home                       ${row6}    HOME           ${row1}
 focus last row when pressed arrow end                   ${row1}    END            ${row6}
-#when focus does not move
+# --- when focus does not move ---
 focus does not move when pressed up on first row        ${row1}    ARROW_UP       ${row1}
 focus does not move when pressed down on last row       ${row6}    ARROW_DOWN     ${row6}
 focus does not move when pressed arrow right            ${row1}    ARROW_RIGHT    ${row1}
@@ -29,7 +29,7 @@ focus row elements and then next row when pressed tab
     filter cards and reduce Window size
     Click Button                              ${listViewButton}
     Click Element                             ${row1}>div:nth-child(1)
-    Press Keys                                NONE    TAB    TAB    TAB    TAB
+    Press Keys                                NONE    TAB    TAB    TAB
     Element Should Be Focused                 ${row2} input
     element attribute value should contain    ${row2}    class    -focused
 
@@ -39,4 +39,4 @@ list view move focus from-to locator when pressed keyboard
     [Arguments]    ${from}    ${keyboard}    ${to}
     Click Element                ${from}>div:nth-child(1)
     Press Keys                   ${from}    ${keyboard}
-    Element Should Be Focused    ${to}
+    focus assertion by Browser   ${to}

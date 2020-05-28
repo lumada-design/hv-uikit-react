@@ -2,13 +2,11 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import { CardActions, withStyles } from "@material-ui/core";
-import HvCheckBox from "../../Selectors/CheckBox";
+import { HvCheckBox, setId } from "../..";
 import Actions from "../../Actions";
 import withConfig from "../../config/withConfig";
 import styles from "./styles";
 
-const getValue = checkboxProps =>
-  checkboxProps && checkboxProps.value ? checkboxProps.value : false;
 /**
  * The footer container contains the actions of the cards also
  * it creates a checkbox if the card is required to be selectable positioning it to the left.
@@ -42,7 +40,7 @@ const Footer = props => {
         }
       >
         <Actions
-          id={getValue(checkboxProps) || id}
+          id={setId(id, "actions")}
           actions={actions}
           maxVisibleActions={maxVisibleActions}
           actionsCallback={actionsCallback}

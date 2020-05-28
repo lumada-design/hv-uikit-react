@@ -1,4 +1,4 @@
-import React, { memo, useLayoutEffect, useRef, useState } from "react";
+import React, { memo, useLayoutEffect, useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
@@ -6,28 +6,30 @@ import equals from "lodash/isEqual";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot, ...others }) => {
-  const [revision, setRevision] = useState(0);
+const Plot = ({ data, layout, config, revision = 0, onHover, onUnHover, afterPlot, ...others }) => {
+  const [plotRevision, setPlotRevision] = useState(revision);
   const [newData, setNewData] = useState(data);
+
+  useEffect(() => setNewData(data), [data]);
+
+  useEffect(() => setPlotRevision(revision), [revision]);
 
   const PlotGraph = createPlotlyComponent(Plotly);
 
   const ref = useRef(null);
 
   const afterPlotInternal = () => {
-    const afterData = afterPlot(newData, ref);
+    const afterData = afterPlot?.(newData, ref);
     if (afterData) {
       setNewData(afterData);
-      setRevision(revision + 1);
+      setPlotRevision(plotRevision + 1);
     }
   };
 
   /**
    * Call in the first render.
    */
-  useLayoutEffect(() => {
-    if (afterPlot) afterPlotInternal();
-  }, []);
+  useLayoutEffect(afterPlotInternal, []);
 
   return (
     <div ref={ref}>
@@ -35,7 +37,7 @@ const Plot = ({ data, layout, config, onHover, onUnHover, afterPlot, ...others }
         data={newData}
         layout={layout}
         config={config}
-        revision={revision}
+        revision={plotRevision}
         onHover={(event, eventData) => onHover(event, eventData)}
         onUnhover={(event, eventData) => onUnHover(event, eventData)}
         onAfterPlot={afterPlot && afterPlotInternal}
@@ -70,7 +72,11 @@ Plot.propTypes = {
   /**
    * Function to be call after plot render.
    */
-  afterPlot: PropTypes.func
+  afterPlot: PropTypes.func,
+  /**
+   * Plot revision.
+   */
+  revision: PropTypes.number
 };
 
 const arePropsEqual = (prevProps, nextProps) =>

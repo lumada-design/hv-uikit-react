@@ -19,7 +19,7 @@ We welcome contributions to our project. Here are a few guidelines that will hel
 Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests. 
 Please use **#ui-kit** slack channel on the [hitachivantara-eng workspace](https://hitachivantara-eng.slack.com/messages/CFY74GK6G).
 
-## New component
+## New components
 When contributing with a new component, please add it to the **lab** in `packages/lab/src/<YOUR_COMPONENT>`
 
 In order to make your component available in the Storybook you also need to add:
@@ -49,27 +49,25 @@ Help us to maximize the effort we can spend fixing issues and adding new feature
 Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
 
 #### Branch Structure
-All stable releases are tagged ([view tags](https://github.com/pentaho/hv-uikit-react/tags)). At any given time, `alpha` represents the latest development version of the library.
-All contributions should target `alpha` branch. Maintainers wil be responsible to port changes to `master`.
+All contributions should target the `master` branch (or `v1.x` if targeting the previous major version). Maintainers will be responsible for reviewing and merging the Pull Request.
+
+The `alpha` branch is used for UI Kit team developments and its release cycle is longer. All stable releases are tagged ([view tags](https://github.com/pentaho/hv-uikit-react/tags)).
 
 #### Setup
-1. Pull the latest `alpha` branch.  
+1. Pull the latest `master` branch.  
 2. Always work and submit pull requests from a branch:
    ```
-   $ git checkout -b { YOUR_BRANCH_NAME } alpha
+   $ git checkout -b YOUR_BRANCH_NAME master
    ```
 3. Make sure you follow our [coding standards](#coding-standards), and add new test cases where appropriate following the [testing guidelines](#testing).
-4. Commit your changes using a descriptive commit message that follows our [commit message guidelines](#commit-message-guidelines). 
+4. Commit your changes using a descriptive commit message that follows our [commit message guidelines](#commit-message-guidelines).
 5. Once ready for feedback from other contributors and maintainers, push your commits to your fork:
    ```
-   $ git push origin { YOUR_BRANCH_NAME }
+   $ git push YOUR_FORK_REMOTE YOUR_BRANCH_NAME
    ```
-6. Please send a pull request to `alpha` using the following format:
-   ```
-   #[issue number] - pattern name
-   ```
+6. Open a Pull Request. The title should follow the same [guidelines of the commit message](#commit-message-guidelines) (most of the times it can simply be the same than the first commit message).
 
-Maintainers will be reviewing your work and making comments, asking questions and suggesting changes to be made before they merge your code.
+Maintainers will be reviewing your work, making comments, asking questions and suggesting changes to be made before they merge your code.
 Once all revisions to your merge request are complete, a maintainer will squash and merge your commits for you.
 
 **That's it! Thank you for your contribution!**

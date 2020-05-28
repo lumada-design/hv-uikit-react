@@ -19,7 +19,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
       },
     ]
   }
-  id="id"
+  id="id-actions"
   maxVisibleActions={1}
 >
   <Actions
@@ -50,7 +50,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         "root": "HvActions-root",
       }
     }
-    id="id"
+    id="id-actions"
     maxVisibleActions={1}
   >
     <div
@@ -61,7 +61,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         className="HvActions-button"
         disabled={false}
         id="view"
-        key="id-0-action-view"
+        key="id-actions-0-action-view"
         onClick={[Function]}
       >
         <HvButton
@@ -234,6 +234,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
         disablePortal={false}
         disabled={false}
         icon={<ForwardRef(WithStyles) />}
+        id="id-actions-menu"
         keepOpened={false}
         onClick={[Function]}
         placement="left"
@@ -264,6 +265,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           disablePortal={false}
           disabled={false}
           icon={<ForwardRef(WithStyles) />}
+          id="id-actions-menu"
           keepOpened={false}
           onClick={[Function]}
           placement="left"
@@ -294,14 +296,14 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             disablePortal={false}
             disabled={false}
             icon={<ForwardRef(WithStyles) />}
-            id="drop-down-menu-1"
+            id="id-actions-menu"
             keepOpened={false}
             onClick={[Function]}
             placement="left"
           >
             <div
               className="HvDropDownMenu-root HvActions-dropDownMenu"
-              id="drop-down-menu-1"
+              id="id-actions-menu"
             >
               <WithStyles(ForwardRef(IconButton))
                 aria-haspopup="true"
@@ -312,7 +314,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       aria-haspopup="true"
                       aria-label="Dropdown menu"
                       class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                      id="drop-down-menu-1-icon-button"
+                      id="id-actions-menu-icon-button"
                       tabindex="0"
                       type="button"
                     >
@@ -342,7 +344,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 }
                 className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
                 disabled={false}
-                id="drop-down-menu-1-icon-button"
+                id="id-actions-menu-icon-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
               >
@@ -355,7 +357,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                         aria-haspopup="true"
                         aria-label="Dropdown menu"
                         class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                        id="drop-down-menu-1-icon-button"
+                        id="id-actions-menu-icon-button"
                         tabindex="0"
                         type="button"
                       >
@@ -398,7 +400,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     }
                   }
                   disabled={false}
-                  id="drop-down-menu-1-icon-button"
+                  id="id-actions-menu-icon-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                 >
@@ -411,7 +413,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                           aria-haspopup="true"
                           aria-label="Dropdown menu"
                           class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                          id="drop-down-menu-1-icon-button"
+                          id="id-actions-menu-icon-button"
                           tabindex="0"
                           type="button"
                         >
@@ -443,7 +445,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
                     disabled={false}
                     focusRipple={true}
-                    id="drop-down-menu-1-icon-button"
+                    id="id-actions-menu-icon-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -456,7 +458,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                             aria-haspopup="true"
                             aria-label="Dropdown menu"
                             class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                            id="drop-down-menu-1-icon-button"
+                            id="id-actions-menu-icon-button"
                             tabindex="0"
                             type="button"
                           >
@@ -496,7 +498,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      id="drop-down-menu-1-icon-button"
+                      id="id-actions-menu-icon-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                     >
@@ -505,7 +507,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                         aria-label="Dropdown menu"
                         className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
                         disabled={false}
-                        id="drop-down-menu-1-icon-button"
+                        id="id-actions-menu-icon-button"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onDragLeave={[Function]}
@@ -598,7 +600,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
       },
     ]
   }
-  id="id"
+  id="id-actions"
   maxVisibleActions={0}
 >
   <Actions
@@ -629,7 +631,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         "root": "HvActions-root",
       }
     }
-    id="id"
+    id="id-actions"
     maxVisibleActions={0}
   >
     <div
@@ -663,6 +665,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
         disablePortal={false}
         disabled={false}
         icon={<ForwardRef(WithStyles) />}
+        id="id-actions-menu"
         keepOpened={false}
         onClick={[Function]}
         placement="left"
@@ -697,6 +700,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
           disablePortal={false}
           disabled={false}
           icon={<ForwardRef(WithStyles) />}
+          id="id-actions-menu"
           keepOpened={false}
           onClick={[Function]}
           placement="left"
@@ -731,14 +735,14 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
             disablePortal={false}
             disabled={false}
             icon={<ForwardRef(WithStyles) />}
-            id="drop-down-menu-2"
+            id="id-actions-menu"
             keepOpened={false}
             onClick={[Function]}
             placement="left"
           >
             <div
               className="HvDropDownMenu-root HvActions-dropDownMenu"
-              id="drop-down-menu-2"
+              id="id-actions-menu"
             >
               <WithStyles(ForwardRef(IconButton))
                 aria-haspopup="true"
@@ -749,7 +753,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       aria-haspopup="true"
                       aria-label="Dropdown menu"
                       class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                      id="drop-down-menu-2-icon-button"
+                      id="id-actions-menu-icon-button"
                       tabindex="0"
                       type="button"
                     >
@@ -779,7 +783,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 }
                 className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
                 disabled={false}
-                id="drop-down-menu-2-icon-button"
+                id="id-actions-menu-icon-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
               >
@@ -792,7 +796,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                         aria-haspopup="true"
                         aria-label="Dropdown menu"
                         class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                        id="drop-down-menu-2-icon-button"
+                        id="id-actions-menu-icon-button"
                         tabindex="0"
                         type="button"
                       >
@@ -835,7 +839,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     }
                   }
                   disabled={false}
-                  id="drop-down-menu-2-icon-button"
+                  id="id-actions-menu-icon-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                 >
@@ -848,7 +852,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                           aria-haspopup="true"
                           aria-label="Dropdown menu"
                           class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                          id="drop-down-menu-2-icon-button"
+                          id="id-actions-menu-icon-button"
                           tabindex="0"
                           type="button"
                         >
@@ -880,7 +884,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                     className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
                     disabled={false}
                     focusRipple={true}
-                    id="drop-down-menu-2-icon-button"
+                    id="id-actions-menu-icon-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -893,7 +897,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                             aria-haspopup="true"
                             aria-label="Dropdown menu"
                             class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                            id="drop-down-menu-2-icon-button"
+                            id="id-actions-menu-icon-button"
                             tabindex="0"
                             type="button"
                           >
@@ -933,7 +937,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      id="drop-down-menu-2-icon-button"
+                      id="id-actions-menu-icon-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                     >
@@ -942,7 +946,7 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                         aria-label="Dropdown menu"
                         className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
                         disabled={false}
-                        id="drop-down-menu-2-icon-button"
+                        id="id-actions-menu-icon-button"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onDragLeave={[Function]}
@@ -1035,7 +1039,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
       },
     ]
   }
-  id="id"
+  id="id-actions"
   maxVisibleActions={2}
 >
   <Actions
@@ -1066,7 +1070,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         "root": "HvActions-root",
       }
     }
-    id="id"
+    id="id-actions"
     maxVisibleActions={2}
   >
     <div
@@ -1077,7 +1081,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         className="HvActions-button"
         disabled={false}
         id="view"
-        key="id-0-action-view"
+        key="id-actions-0-action-view"
         onClick={[Function]}
       >
         <HvButton
@@ -1231,7 +1235,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         className="HvActions-button"
         disabled={false}
         id="delete"
-        key="id-1-action-delete"
+        key="id-actions-1-action-delete"
         onClick={[Function]}
       >
         <HvButton
@@ -1400,6 +1404,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
         disablePortal={false}
         disabled={false}
         icon={<ForwardRef(WithStyles) />}
+        id="id-actions-menu"
         keepOpened={false}
         onClick={[Function]}
         placement="left"
@@ -1426,6 +1431,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           disablePortal={false}
           disabled={false}
           icon={<ForwardRef(WithStyles) />}
+          id="id-actions-menu"
           keepOpened={false}
           onClick={[Function]}
           placement="left"
@@ -1452,14 +1458,14 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             disablePortal={false}
             disabled={false}
             icon={<ForwardRef(WithStyles) />}
-            id="drop-down-menu-3"
+            id="id-actions-menu"
             keepOpened={false}
             onClick={[Function]}
             placement="left"
           >
             <div
               className="HvDropDownMenu-root HvActions-dropDownMenu"
-              id="drop-down-menu-3"
+              id="id-actions-menu"
             >
               <WithStyles(ForwardRef(IconButton))
                 aria-haspopup="true"
@@ -1470,7 +1476,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       aria-haspopup="true"
                       aria-label="Dropdown menu"
                       class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                      id="drop-down-menu-3-icon-button"
+                      id="id-actions-menu-icon-button"
                       tabindex="0"
                       type="button"
                     >
@@ -1500,7 +1506,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 }
                 className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
                 disabled={false}
-                id="drop-down-menu-3-icon-button"
+                id="id-actions-menu-icon-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
               >
@@ -1513,7 +1519,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                         aria-haspopup="true"
                         aria-label="Dropdown menu"
                         class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                        id="drop-down-menu-3-icon-button"
+                        id="id-actions-menu-icon-button"
                         tabindex="0"
                         type="button"
                       >
@@ -1556,7 +1562,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     }
                   }
                   disabled={false}
-                  id="drop-down-menu-3-icon-button"
+                  id="id-actions-menu-icon-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                 >
@@ -1569,7 +1575,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                           aria-haspopup="true"
                           aria-label="Dropdown menu"
                           class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                          id="drop-down-menu-3-icon-button"
+                          id="id-actions-menu-icon-button"
                           tabindex="0"
                           type="button"
                         >
@@ -1601,7 +1607,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
                     disabled={false}
                     focusRipple={true}
-                    id="drop-down-menu-3-icon-button"
+                    id="id-actions-menu-icon-button"
                     onClick={[Function]}
                     onKeyDown={[Function]}
                   >
@@ -1614,7 +1620,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                             aria-haspopup="true"
                             aria-label="Dropdown menu"
                             class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
-                            id="drop-down-menu-3-icon-button"
+                            id="id-actions-menu-icon-button"
                             tabindex="0"
                             type="button"
                           >
@@ -1654,7 +1660,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                       disableRipple={true}
                       disabled={false}
                       focusRipple={true}
-                      id="drop-down-menu-3-icon-button"
+                      id="id-actions-menu-icon-button"
                       onClick={[Function]}
                       onKeyDown={[Function]}
                     >
@@ -1663,7 +1669,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                         aria-label="Dropdown menu"
                         className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton"
                         disabled={false}
-                        id="drop-down-menu-3-icon-button"
+                        id="id-actions-menu-icon-button"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onDragLeave={[Function]}
