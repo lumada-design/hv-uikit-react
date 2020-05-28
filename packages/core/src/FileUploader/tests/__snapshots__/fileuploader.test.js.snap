@@ -773,7 +773,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                   </Close>
                                 </WithStyles(Close)>
                               </span>
-                              <NoSsr />
                             </button>
                           </ForwardRef(ButtonBase)>
                         </WithStyles(ForwardRef(ButtonBase))>
@@ -1020,7 +1019,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                   </Close>
                                 </WithStyles(Close)>
                               </span>
-                              <NoSsr />
                             </button>
                           </ForwardRef(ButtonBase)>
                         </WithStyles(ForwardRef(ButtonBase))>

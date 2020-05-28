@@ -3,12 +3,7 @@
 exports[`InputAdornment should be defined 1`] = `
 <WithStyles(InputAdornment)
   classes={Object {}}
-  clearButtonLabel="Clear the text"
-  customFixedIcon={null}
   handleClear={[MockFunction]}
-  inputId={null}
-  showClear={true}
-  showValidationIcon={true}
   theme={
     Object {
       "hv": Object {

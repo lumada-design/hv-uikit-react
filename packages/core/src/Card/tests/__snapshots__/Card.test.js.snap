@@ -685,10 +685,10 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                   className="HvCheckBox-checkBox"
                                                   classes={
                                                     Object {
-                                                      "checked": "PrivateSwitchBase-checked-85 Mui-checked",
-                                                      "disabled": "PrivateSwitchBase-disabled-86 Mui-disabled",
-                                                      "input": "PrivateSwitchBase-input-87",
-                                                      "root": "PrivateSwitchBase-root-84 MuiCheckbox-root",
+                                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                                      "input": "PrivateSwitchBase-input-4",
+                                                      "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
                                                     }
                                                   }
                                                   color="default"
@@ -711,7 +711,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                   value=""
                                                 >
                                                   <WithStyles(ForwardRef(IconButton))
-                                                    className="PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                    className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                                     color="default"
                                                     component="span"
                                                     disableRipple={true}
@@ -721,7 +721,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                     tabIndex={null}
                                                   >
                                                     <ForwardRef(IconButton)
-                                                      className="PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                      className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                                       classes={
                                                         Object {
                                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -745,7 +745,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                     >
                                                       <WithStyles(ForwardRef(ButtonBase))
                                                         centerRipple={true}
-                                                        className="MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                                         component="span"
                                                         disableRipple={true}
                                                         disabled={false}
@@ -756,7 +756,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                       >
                                                         <ForwardRef(ButtonBase)
                                                           centerRipple={true}
-                                                          className="MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                                           classes={
                                                             Object {
                                                               "disabled": "Mui-disabled",
@@ -774,7 +774,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                         >
                                                           <span
                                                             aria-disabled={false}
-                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-84 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
                                                             onBlur={[Function]}
                                                             onDragLeave={[Function]}
                                                             onFocus={[Function]}
@@ -793,7 +793,7 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                             >
                                                               <input
                                                                 checked={false}
-                                                                className="PrivateSwitchBase-input-87"
+                                                                className="PrivateSwitchBase-input-4"
                                                                 data-indeterminate={false}
                                                                 disabled={false}
                                                                 onChange={[Function]}
@@ -843,7 +843,6 @@ exports[`Card withStyles should be able to render with every property defined 1`
                                                                 </Checkbox>
                                                               </WithStyles(Checkbox)>
                                                             </span>
-                                                            <NoSsr />
                                                           </span>
                                                         </ForwardRef(ButtonBase)>
                                                       </WithStyles(ForwardRef(ButtonBase))>
