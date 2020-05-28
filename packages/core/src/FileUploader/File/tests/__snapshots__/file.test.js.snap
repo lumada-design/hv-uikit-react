@@ -322,7 +322,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
                   </Close>
                 </WithStyles(Close)>
               </span>
-              <NoSsr />
             </button>
           </ForwardRef(ButtonBase)>
         </WithStyles(ForwardRef(ButtonBase))>
@@ -654,7 +653,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
                   </Close>
                 </WithStyles(Close)>
               </span>
-              <NoSsr />
             </button>
           </ForwardRef(ButtonBase)>
         </WithStyles(ForwardRef(ButtonBase))>

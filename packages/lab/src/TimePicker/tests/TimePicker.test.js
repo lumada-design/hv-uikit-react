@@ -7,7 +7,6 @@ import TimePicker from "..";
 import { PeriodPickerOptions, TimeFormat } from "../enums";
 import * as converters from "../timePickerConverter";
 import * as formatters from "../timePickerFormatter";
-import Typography from "../../../../core/dist/Typography/Typography";
 import UnitTimePicker from "../UnitTimePicker";
 import PeriodPicker from "../PeriodPicker";
 
@@ -183,21 +182,6 @@ describe("TimePicker", () => {
   it("isPopperBelowParent - should return false if the popper placement isn't bottom", () => {
     timePickerComponent.setState({ timePopperPlacement: "something" });
     expect(timePickerInstance.isPopperBelowParent()).toBe(false);
-  });
-
-  it("renderLabel - should render the label", () => {
-    const Label = timePickerInstance.renderLabel;
-    const LabelWrapper = mount(
-      <HvProvider>
-        <Label />
-      </HvProvider>
-    );
-    expect(LabelWrapper.find(Typography)).toHaveLength(1);
-    expect(
-      LabelWrapper.find(Typography)
-        .at(0)
-        .text()
-    ).toBe(mockTitle);
   });
 
   it("renderInput - should render the input", () => {

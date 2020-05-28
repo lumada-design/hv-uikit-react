@@ -3,8 +3,6 @@
 exports[`<Navigation /> should render correctly 1`] = `
 <WithStyles(Navigation)
   id="id1"
-  isNextEnabled={true}
-  isPreviousEnabled={true}
   navigationText="Navigation text"
   onNavigateNext={[MockFunction]}
   onNavigatePrevious={[MockFunction]}

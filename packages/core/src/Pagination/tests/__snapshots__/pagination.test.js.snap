@@ -365,9 +365,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
+                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
                                     "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -410,9 +415,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
+                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
                                       "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -464,6 +474,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -557,7 +568,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                         </WithStyles(HvTooltip)>
                       </Component>
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -689,9 +699,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
+                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
                                     "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -734,9 +749,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
+                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
                                       "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -788,6 +808,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -881,7 +902,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                         </WithStyles(HvTooltip)>
                       </Component>
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -1143,9 +1163,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
+                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
                                     "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -1188,9 +1213,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
+                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
                                       "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -1242,6 +1272,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -1335,7 +1366,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                         </WithStyles(HvTooltip)>
                       </Component>
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -1467,9 +1497,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
+                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
+                                    "onEntered": [Function],
+                                    "onEntering": [Function],
                                     "onExit": [Function],
+                                    "onExited": [Function],
+                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -1512,9 +1547,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
+                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
+                                      "onEntered": [Function],
+                                      "onEntering": [Function],
                                       "onExit": [Function],
+                                      "onExited": [Function],
+                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -1566,6 +1606,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
+                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -1659,7 +1700,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                         </WithStyles(HvTooltip)>
                       </Component>
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>

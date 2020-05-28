@@ -39,5 +39,5 @@ Change date in locale pt-PT
     Element Should Not Be Visible        ${calendar}
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}    2s
-    Element Attribute Value Should Be    ${input}       value         1 Fev 1970
+    Element Attribute Value Should Be    ${input}       value         1 fev 1970
 

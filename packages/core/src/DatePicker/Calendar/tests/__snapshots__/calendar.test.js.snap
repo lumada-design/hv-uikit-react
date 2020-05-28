@@ -4,9 +4,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
 <WithStyles(Calendar)
   handleDateChange={[MockFunction]}
   id="default"
-  label={null}
   locale="en-US"
-  rangeMode={false}
   selectedDate={1970-01-01T00:00:00.000Z}
 >
   <Calendar
@@ -867,9 +865,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -912,9 +915,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -966,6 +974,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -1129,9 +1138,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -1174,9 +1188,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -1228,6 +1247,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -1391,9 +1411,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -1436,9 +1461,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -1490,6 +1520,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -1653,9 +1684,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -1698,9 +1734,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -1752,6 +1793,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -1915,9 +1957,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -1960,9 +2007,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -2014,6 +2066,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -2177,9 +2230,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -2222,9 +2280,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -2276,6 +2339,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -2439,9 +2503,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -2484,9 +2553,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -2538,6 +2612,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -2701,9 +2776,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -2746,9 +2826,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -2800,6 +2885,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -2963,9 +3049,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -3008,9 +3099,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -3062,6 +3158,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -3225,9 +3322,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -3270,9 +3372,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -3324,6 +3431,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -3487,9 +3595,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -3532,9 +3645,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -3586,6 +3704,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -3749,9 +3868,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -3794,9 +3918,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -3848,6 +3977,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -4011,9 +4141,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -4056,9 +4191,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -4110,6 +4250,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -4273,9 +4414,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -4318,9 +4464,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -4372,6 +4523,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -4535,9 +4687,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -4580,9 +4737,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -4634,6 +4796,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -4797,9 +4960,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -4842,9 +5010,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -4896,6 +5069,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -5059,9 +5233,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -5104,9 +5283,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -5158,6 +5342,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -5321,9 +5506,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -5366,9 +5556,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -5420,6 +5615,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -5583,9 +5779,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -5628,9 +5829,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -5682,6 +5888,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -5845,9 +6052,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -5890,9 +6102,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -5944,6 +6161,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -6107,9 +6325,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -6152,9 +6375,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -6206,6 +6434,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -6369,9 +6598,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -6414,9 +6648,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -6468,6 +6707,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -6631,9 +6871,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -6676,9 +6921,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -6730,6 +6980,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -6893,9 +7144,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -6938,9 +7194,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -6992,6 +7253,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -7155,9 +7417,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -7200,9 +7467,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -7254,6 +7526,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -7417,9 +7690,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -7462,9 +7740,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -7516,6 +7799,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -7679,9 +7963,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -7724,9 +8013,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -7778,6 +8072,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -7941,9 +8236,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -7986,9 +8286,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -8040,6 +8345,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -8203,9 +8509,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -8248,9 +8559,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -8302,6 +8618,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -8465,9 +8782,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -8510,9 +8832,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -8564,6 +8891,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -8727,9 +9055,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -8772,9 +9105,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -8826,6 +9164,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -8989,9 +9328,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -9034,9 +9378,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -9088,6 +9437,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -9251,9 +9601,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -9296,9 +9651,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -9350,6 +9710,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -9513,9 +9874,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -9558,9 +9924,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -9612,6 +9983,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -9775,9 +10147,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -9820,9 +10197,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -9874,6 +10256,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -10037,9 +10420,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -10082,9 +10470,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -10136,6 +10529,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -10299,9 +10693,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -10344,9 +10743,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -10398,6 +10802,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -10561,9 +10966,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -10606,9 +11016,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -10660,6 +11075,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -10823,9 +11239,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -10868,9 +11289,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -10922,6 +11348,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -11085,9 +11512,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -11130,9 +11562,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -11184,6 +11621,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -11347,9 +11785,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -11392,9 +11835,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -11446,6 +11894,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -11609,9 +12058,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -11654,9 +12108,14 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -11708,6 +12167,7 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -11820,9 +12280,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
 exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
 <WithStyles(Calendar)
   id="default"
-  label={null}
-  locale="en"
-  rangeMode={false}
   selectedDate={1970-01-01T00:00:00.000Z}
 >
   <Calendar
@@ -12682,9 +13139,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -12727,9 +13189,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -12781,6 +13248,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -12944,9 +13412,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -12989,9 +13462,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -13043,6 +13521,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -13206,9 +13685,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -13251,9 +13735,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -13305,6 +13794,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -13468,9 +13958,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -13513,9 +14008,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -13567,6 +14067,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -13730,9 +14231,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -13775,9 +14281,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -13829,6 +14340,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -13992,9 +14504,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -14037,9 +14554,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -14091,6 +14613,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -14254,9 +14777,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -14299,9 +14827,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -14353,6 +14886,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -14516,9 +15050,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -14561,9 +15100,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -14615,6 +15159,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -14778,9 +15323,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -14823,9 +15373,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -14877,6 +15432,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -15040,9 +15596,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -15085,9 +15646,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -15139,6 +15705,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -15302,9 +15869,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -15347,9 +15919,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -15401,6 +15978,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -15564,9 +16142,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -15609,9 +16192,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -15663,6 +16251,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -15826,9 +16415,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -15871,9 +16465,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -15925,6 +16524,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -16088,9 +16688,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -16133,9 +16738,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -16187,6 +16797,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -16350,9 +16961,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -16395,9 +17011,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -16449,6 +17070,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -16612,9 +17234,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -16657,9 +17284,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -16711,6 +17343,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -16874,9 +17507,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -16919,9 +17557,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -16973,6 +17616,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -17136,9 +17780,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -17181,9 +17830,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -17235,6 +17889,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -17398,9 +18053,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -17443,9 +18103,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -17497,6 +18162,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -17660,9 +18326,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -17705,9 +18376,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -17759,6 +18435,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -17922,9 +18599,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -17967,9 +18649,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -18021,6 +18708,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -18184,9 +18872,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -18229,9 +18922,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -18283,6 +18981,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -18446,9 +19145,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -18491,9 +19195,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -18545,6 +19254,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -18708,9 +19418,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -18753,9 +19468,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -18807,6 +19527,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -18970,9 +19691,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -19015,9 +19741,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -19069,6 +19800,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -19232,9 +19964,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -19277,9 +20014,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -19331,6 +20073,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -19494,9 +20237,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -19539,9 +20287,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -19593,6 +20346,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -19756,9 +20510,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -19801,9 +20560,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -19855,6 +20619,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -20018,9 +20783,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -20063,9 +20833,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -20117,6 +20892,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -20280,9 +21056,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -20325,9 +21106,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -20379,6 +21165,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -20542,9 +21329,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -20587,9 +21379,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -20641,6 +21438,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -20804,9 +21602,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -20849,9 +21652,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -20903,6 +21711,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -21066,9 +21875,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -21111,9 +21925,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -21165,6 +21984,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -21328,9 +22148,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -21373,9 +22198,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -21427,6 +22257,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -21590,9 +22421,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -21635,9 +22471,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -21689,6 +22530,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -21852,9 +22694,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -21897,9 +22744,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -21951,6 +22803,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -22114,9 +22967,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -22159,9 +23017,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -22213,6 +23076,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -22376,9 +23240,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -22421,9 +23290,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -22475,6 +23349,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -22638,9 +23513,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -22683,9 +23563,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -22737,6 +23622,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -22900,9 +23786,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -22945,9 +23836,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -22999,6 +23895,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -23162,9 +24059,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -23207,9 +24109,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -23261,6 +24168,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",
@@ -23424,9 +24332,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     "$$typeof": Symbol(react.forward_ref),
                     "propTypes": Object {
                       "children": [Function],
+                      "disableStrictModeCompat": [Function],
                       "in": [Function],
                       "onEnter": [Function],
+                      "onEntered": [Function],
+                      "onEntering": [Function],
                       "onExit": [Function],
+                      "onExited": [Function],
+                      "onExiting": [Function],
                       "style": [Function],
                       "timeout": [Function],
                     },
@@ -23469,9 +24382,14 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                       "$$typeof": Symbol(react.forward_ref),
                       "propTypes": Object {
                         "children": [Function],
+                        "disableStrictModeCompat": [Function],
                         "in": [Function],
                         "onEnter": [Function],
+                        "onEntered": [Function],
+                        "onEntering": [Function],
                         "onExit": [Function],
+                        "onExited": [Function],
+                        "onExiting": [Function],
                         "style": [Function],
                         "timeout": [Function],
                       },
@@ -23523,6 +24441,7 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     onMouseOver={[Function]}
+                    onTouchStart={[Function]}
                     style={
                       Object {
                         "overflow": "hidden",

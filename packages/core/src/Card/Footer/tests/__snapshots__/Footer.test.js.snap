@@ -202,7 +202,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                     >
                       View
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -558,7 +557,6 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                             </MoreOptionsVertical>
                           </WithStyles(MoreOptionsVertical)>
                         </span>
-                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>
@@ -997,7 +995,6 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                             </MoreOptionsVertical>
                           </WithStyles(MoreOptionsVertical)>
                         </span>
-                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>
@@ -1222,7 +1219,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     >
                       View
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -1376,7 +1372,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                     >
                       Delete
                     </span>
-                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -1720,7 +1715,6 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                             </MoreOptionsVertical>
                           </WithStyles(MoreOptionsVertical)>
                         </span>
-                        <NoSsr />
                       </button>
                     </ForwardRef(ButtonBase)>
                   </WithStyles(ForwardRef(ButtonBase))>
