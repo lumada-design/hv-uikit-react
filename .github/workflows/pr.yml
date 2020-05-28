@@ -96,42 +96,50 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
+      - name: Generate Documentation
+        run: |
+          npm run build-documentation
+
+      - name: Archive Documentation
+        uses: actions/upload-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  Github-Deployment:
+    name: Github Deployment
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    steps:
       - name: Start Documentation Deployment
         uses: bobheadxi/deployments@master
         id: deployment
         with:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}-staging
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
           ref: ${{ github.head_ref }}
-          desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
-      - name: Checkout gh-pages
-        uses: actions/checkout@v2
-        with:
-          path: public
-          ref: gh-pages
-
-      - name: Generate Documentation
-        run: |
-          npm run build-documentation
-          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-          mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-          cp -r dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-
-      - name: Archive Documentation
-        uses: actions/upload-artifact@v1
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
         with:
           name: documentation
-          path: dist
+          path: ${{ github.workspace }}/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
-          keepFiles: true
+          keep_files: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
 
@@ -150,6 +158,11 @@ jobs:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
 
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/public
+
   Robot:
     name: Test Robot
     needs: [Build-Documentation]
@@ -161,7 +174,7 @@ jobs:
         browser: [chrome]
     container:
       image: ppodgorsek/robot-framework:latest
-      options: --shm-size=6g --cpus 4
+      options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
@@ -200,19 +213,28 @@ jobs:
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports
-          path: reports
+          path: ${{ github.workspace }}/reports
 
-      - name: Clean Reports
-        run: rm -rf reports
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+          rm -rf ${{ github.workspace }}/reports
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Build-Documentation, Github-Deployment, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 
     steps:
+      # delete artifact since it was published to gh-pages
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: documentation
+
       - uses: technote-space/workflow-conclusion-action@v1
+
       - name: generate conclusion color
         id: conclusion_color
         uses: actions/github-script@0.9.0
