@@ -212,7 +212,7 @@ jobs:
           args: docker restart storybook
 
       - name: Run Robot
-        run: ${{ github.workspace }}/.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
+        run: ./.github/robot-docker/run-tests-in-virtual-screen-with-rerun.sh
 
       - name: Save Reports
         uses: actions/upload-artifact@v1
@@ -229,7 +229,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Build-Documentation, Github-Deployment, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 

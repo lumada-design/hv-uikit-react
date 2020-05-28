@@ -122,7 +122,7 @@ jobs:
         browser: [chrome, firefox]
     container:
       image: ppodgorsek/robot-framework:latest
-      options: --shm-size=6g --cpus 4
+      options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
