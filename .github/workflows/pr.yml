@@ -109,7 +109,7 @@ jobs:
       - name: Checkout gh-pages
         uses: actions/checkout@v2
         with:
-          path: public
+          path: ./public
           ref: gh-pages
 
       - name: Generate Documentation
@@ -150,6 +150,11 @@ jobs:
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
 
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ./public
+
   Robot:
     name: Test Robot
     needs: [Build-Documentation]
@@ -158,10 +163,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome]
+        browser: [chrome, firefox]
     container:
       image: ppodgorsek/robot-framework:latest
-      options: --shm-size=6g --cpus 4
+      options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
@@ -200,10 +205,13 @@ jobs:
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports
-          path: reports
+          path: ./reports
 
-      - name: Clean Reports
-        run: rm -rf reports
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ./dist
+          rm -rf ./reports
 
   Notify-End:
     name: Notify End
