@@ -93,7 +93,7 @@ const MultiButton = ({
           [classes.isSelected]: isSelected,
           [classes.isUnselected]: !isSelected
         })}
-        category={selected ? "secondary" : "ghost"}
+        category="ghost"
         aria-label={value}
         {...other}
       >
