@@ -2,10 +2,10 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Main } from "../stories/ComponentName.stories";
-import { HvProvider, HvComponentName } from "../..";
+import { Main } from "../stories/Footer.stories";
+import { HvProvider, HvFooter } from "../..";
 
-describe("ComponentName", () => {
+describe("Footer", () => {
   let wrapper;
 
   it("should be defined", () => {
@@ -18,11 +18,11 @@ describe("ComponentName", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(HvComponentName)).toMatchSnapshot();
+    expect(wrapper.find(HvFooter)).toMatchSnapshot();
   });
 
-  it("should render the ComponentName", () => {
-    const component = wrapper.find(HvComponentName);
+  it("should render the Footer", () => {
+    const component = wrapper.find(HvFooter);
     expect(component.length).toBe(1);
   });
 });
