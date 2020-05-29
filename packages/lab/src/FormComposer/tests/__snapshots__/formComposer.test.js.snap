@@ -2,7 +2,6 @@
 
 exports[`FormComposer should render correctly 1`] = `
 <WithStyles(HvFormComposer)
-  footerContent={Array []}
   groups={
     Array [
       Object {
@@ -19,9 +18,6 @@ exports[`FormComposer should render correctly 1`] = `
       },
     ]
   }
-  hasFooter={false}
-  hasNavigation={false}
-  mainTitle=""
 >
   <HvFormComposer
     classes={

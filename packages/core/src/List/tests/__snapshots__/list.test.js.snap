@@ -2,14 +2,6 @@
 
 exports[`<List /> Multi selection should render correctly 1`] = `
 <WithStyles(List)
-  condensed={false}
-  hasTooltips={false}
-  labels={
-    Object {
-      "selectAll": "All",
-      "selectionConjunction": "of",
-    }
-  }
   multiSelect={true}
   onChange={
     [MockFunction] {
@@ -59,12 +51,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
       ],
     }
   }
-  onClick={[Function]}
-  selectDefault={false}
-  selectable={true}
   showSelectAll={true}
-  singleSelectionToggle={true}
-  useSelector={false}
   values={
     Array [
       Object {
@@ -784,14 +771,6 @@ exports[`<List /> Multi selection should render correctly 1`] = `
 
 exports[`<List /> Multi selection with selectors should render correctly 1`] = `
 <WithStyles(List)
-  condensed={false}
-  hasTooltips={false}
-  labels={
-    Object {
-      "selectAll": "All",
-      "selectionConjunction": "of",
-    }
-  }
   multiSelect={true}
   onChange={
     [MockFunction] {
@@ -901,11 +880,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
       ],
     }
   }
-  onClick={[Function]}
-  selectDefault={false}
-  selectable={true}
   showSelectAll={true}
-  singleSelectionToggle={true}
   useSelector={true}
   values={
     Array [
@@ -1375,10 +1350,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         className="HvCheckBox-checkBox"
                         classes={
                           Object {
-                            "checked": "PrivateSwitchBase-checked-71 Mui-checked",
-                            "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
-                            "input": "PrivateSwitchBase-input-73",
-                            "root": "PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate",
+                            "checked": "PrivateSwitchBase-checked-6 Mui-checked",
+                            "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
+                            "input": "PrivateSwitchBase-input-8",
+                            "root": "PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate",
                           }
                         }
                         color="default"
@@ -1401,7 +1376,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         value=""
                       >
                         <WithStyles(ForwardRef(IconButton))
-                          className="PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                          className="PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                           color="default"
                           component="span"
                           disableRipple={true}
@@ -1411,7 +1386,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           tabIndex={null}
                         >
                           <ForwardRef(IconButton)
-                            className="PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                            className="PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                             classes={
                               Object {
                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -1435,7 +1410,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           >
                             <WithStyles(ForwardRef(ButtonBase))
                               centerRipple={true}
-                              className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                              className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                               component="span"
                               disableRipple={true}
                               disabled={false}
@@ -1446,7 +1421,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             >
                               <ForwardRef(ButtonBase)
                                 centerRipple={true}
-                                className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                                className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                                 classes={
                                   Object {
                                     "disabled": "Mui-disabled",
@@ -1464,7 +1439,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               >
                                 <span
                                   aria-disabled={false}
-                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                                   onBlur={[Function]}
                                   onDragLeave={[Function]}
                                   onFocus={[Function]}
@@ -1483,7 +1458,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   >
                                     <input
                                       checked={false}
-                                      className="PrivateSwitchBase-input-73"
+                                      className="PrivateSwitchBase-input-8"
                                       data-indeterminate={true}
                                       disabled={false}
                                       onChange={[Function]}
@@ -1539,7 +1514,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       </CheckboxPartial>
                                     </WithStyles(CheckboxPartial)>
                                   </span>
-                                  <NoSsr />
                                 </span>
                               </ForwardRef(ButtonBase)>
                             </WithStyles(ForwardRef(ButtonBase))>
@@ -1710,13 +1684,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-73"
+                        class="PrivateSwitchBase-input-8"
                         data-indeterminate="true"
                         type="checkbox"
                         value=""
@@ -1784,14 +1758,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="0"
                             type="checkbox"
@@ -1840,13 +1814,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -1895,14 +1869,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -1975,13 +1949,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-73"
+                          class="PrivateSwitchBase-input-8"
                           data-indeterminate="true"
                           type="checkbox"
                           value=""
@@ -2049,14 +2023,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="0"
                               type="checkbox"
@@ -2105,13 +2079,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -2160,14 +2134,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -2447,10 +2421,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   className="HvCheckBox-checkBox"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-71 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-73",
-                                      "root": "PrivateSwitchBase-root-70 MuiCheckbox-root",
+                                      "checked": "PrivateSwitchBase-checked-6 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-8",
+                                      "root": "PrivateSwitchBase-root-5 MuiCheckbox-root",
                                     }
                                   }
                                   color="default"
@@ -2473,7 +2447,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -2483,7 +2457,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                      className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -2507,7 +2481,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -2518,7 +2492,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -2536,7 +2510,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -2555,7 +2529,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             >
                                               <input
                                                 checked={true}
-                                                className="PrivateSwitchBase-input-73"
+                                                className="PrivateSwitchBase-input-8"
                                                 data-indeterminate={false}
                                                 disabled={false}
                                                 onChange={[Function]}
@@ -2605,7 +2579,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                 </CheckboxCheck>
                                               </WithStyles(CheckboxCheck)>
                                             </span>
-                                            <NoSsr />
                                           </span>
                                         </ForwardRef(ButtonBase)>
                                       </WithStyles(ForwardRef(ButtonBase))>
@@ -2691,13 +2664,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-73"
+                        class="PrivateSwitchBase-input-8"
                         data-indeterminate="true"
                         type="checkbox"
                         value=""
@@ -2765,14 +2738,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="0"
                             type="checkbox"
@@ -2821,13 +2794,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -2876,14 +2849,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -2956,13 +2929,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-73"
+                          class="PrivateSwitchBase-input-8"
                           data-indeterminate="true"
                           type="checkbox"
                           value=""
@@ -3030,14 +3003,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="0"
                               type="checkbox"
@@ -3086,13 +3059,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -3141,14 +3114,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -3428,10 +3401,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   className="HvCheckBox-checkBox"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-71 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-73",
-                                      "root": "PrivateSwitchBase-root-70 MuiCheckbox-root",
+                                      "checked": "PrivateSwitchBase-checked-6 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-8",
+                                      "root": "PrivateSwitchBase-root-5 MuiCheckbox-root",
                                     }
                                   }
                                   color="default"
@@ -3454,7 +3427,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -3464,7 +3437,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                                      className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -3488,7 +3461,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -3499,7 +3472,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -3517,7 +3490,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -3536,7 +3509,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             >
                                               <input
                                                 checked={false}
-                                                className="PrivateSwitchBase-input-73"
+                                                className="PrivateSwitchBase-input-8"
                                                 data-indeterminate={false}
                                                 disabled={false}
                                                 onChange={[Function]}
@@ -3586,7 +3559,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                 </Checkbox>
                                               </WithStyles(Checkbox)>
                                             </span>
-                                            <NoSsr />
                                           </span>
                                         </ForwardRef(ButtonBase)>
                                       </WithStyles(ForwardRef(ButtonBase))>
@@ -3672,13 +3644,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 >
                   <span
                     aria-disabled="false"
-                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                    class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                   >
                     <span
                       class="MuiIconButton-label"
                     >
                       <input
-                        class="PrivateSwitchBase-input-73"
+                        class="PrivateSwitchBase-input-8"
                         data-indeterminate="true"
                         type="checkbox"
                         value=""
@@ -3746,14 +3718,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="0"
                             type="checkbox"
@@ -3802,13 +3774,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -3857,14 +3829,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-73"
+                            class="PrivateSwitchBase-input-8"
                             data-indeterminate="false"
                             tabindex="-1"
                             type="checkbox"
@@ -3937,13 +3909,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   >
                     <span
                       aria-disabled="false"
-                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
+                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root MuiCheckbox-indeterminate HvCheckBox-checkBox"
                     >
                       <span
                         class="MuiIconButton-label"
                       >
                         <input
-                          class="PrivateSwitchBase-input-73"
+                          class="PrivateSwitchBase-input-8"
                           data-indeterminate="true"
                           type="checkbox"
                           value=""
@@ -4011,14 +3983,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="0"
                               type="checkbox"
@@ -4067,13 +4039,13 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -4122,14 +4094,14 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-73"
+                              class="PrivateSwitchBase-input-8"
                               data-indeterminate="false"
                               tabindex="-1"
                               type="checkbox"
@@ -4409,10 +4381,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   className="HvCheckBox-checkBox"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-71 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-72 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-73",
-                                      "root": "PrivateSwitchBase-root-70 MuiCheckbox-root",
+                                      "checked": "PrivateSwitchBase-checked-6 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-8",
+                                      "root": "PrivateSwitchBase-root-5 MuiCheckbox-root",
                                     }
                                   }
                                   color="default"
@@ -4435,7 +4407,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                    className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -4445,7 +4417,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                      className="PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -4469,7 +4441,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -4480,7 +4452,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -4498,7 +4470,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-70 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-71 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiCheckbox-root HvCheckBox-checkBox PrivateSwitchBase-checked-6 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -4517,7 +4489,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             >
                                               <input
                                                 checked={true}
-                                                className="PrivateSwitchBase-input-73"
+                                                className="PrivateSwitchBase-input-8"
                                                 data-indeterminate={false}
                                                 disabled={false}
                                                 onChange={[Function]}
@@ -4567,7 +4539,6 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                 </CheckboxCheck>
                                               </WithStyles(CheckboxCheck)>
                                             </span>
-                                            <NoSsr />
                                           </span>
                                         </ForwardRef(ButtonBase)>
                                       </WithStyles(ForwardRef(ButtonBase))>
@@ -4643,22 +4614,10 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
 
 exports[`<List /> Single selection should render correctly 1`] = `
 <WithStyles(List)
-  condensed={false}
-  hasTooltips={false}
-  labels={
-    Object {
-      "selectAll": "All",
-      "selectionConjunction": "of",
-    }
-  }
-  multiSelect={false}
   onChange={[MockFunction]}
   onClick={[MockFunction]}
   selectDefault={true}
-  selectable={true}
-  showSelectAll={false}
   singleSelectionToggle={false}
-  useSelector={false}
   values={
     Array [
       Object {
@@ -5306,22 +5265,6 @@ exports[`<List /> Single selection should render correctly 1`] = `
 
 exports[`<List /> Single selection with icons should render correctly 1`] = `
 <WithStyles(List)
-  condensed={false}
-  hasTooltips={false}
-  labels={
-    Object {
-      "selectAll": "All",
-      "selectionConjunction": "of",
-    }
-  }
-  multiSelect={false}
-  onChange={[Function]}
-  onClick={[Function]}
-  selectDefault={false}
-  selectable={true}
-  showSelectAll={false}
-  singleSelectionToggle={true}
-  useSelector={false}
   values={
     Array [
       Object {
@@ -6237,21 +6180,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
 
 exports[`<List /> Single selection with selectors should render correctly 1`] = `
 <WithStyles(List)
-  condensed={false}
-  hasTooltips={false}
-  labels={
-    Object {
-      "selectAll": "All",
-      "selectionConjunction": "of",
-    }
-  }
-  multiSelect={false}
-  onChange={[Function]}
-  onClick={[Function]}
   selectDefault={true}
-  selectable={true}
-  showSelectAll={false}
-  singleSelectionToggle={true}
   useSelector={true}
   values={
     Array [
@@ -6352,14 +6281,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="0"
                             type="radio"
                             value=""
@@ -6405,13 +6334,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -6457,13 +6386,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -6544,14 +6473,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="0"
                               type="radio"
                               value=""
@@ -6597,13 +6526,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -6649,13 +6578,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -6895,10 +6824,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   className="HvRadioButton-radio"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-13 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-14 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-15",
-                                      "root": "PrivateSwitchBase-root-12 MuiRadio-root",
+                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-4",
+                                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                     }
                                   }
                                   color="default"
@@ -6914,7 +6843,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                                    className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -6923,7 +6852,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -6946,7 +6875,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -6957,7 +6886,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -6975,7 +6904,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -6994,7 +6923,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <input
                                                 checked={true}
-                                                className="PrivateSwitchBase-input-15"
+                                                className="PrivateSwitchBase-input-4"
                                                 onChange={[Function]}
                                                 type="radio"
                                                 value=""
@@ -7039,7 +6968,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 </RadioButtonSelected>
                                               </WithStyles(RadioButtonSelected)>
                                             </span>
-                                            <NoSsr />
                                           </span>
                                         </ForwardRef(ButtonBase)>
                                       </WithStyles(ForwardRef(ButtonBase))>
@@ -7135,14 +7063,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="0"
                             type="radio"
                             value=""
@@ -7188,13 +7116,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -7240,13 +7168,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -7327,14 +7255,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="0"
                               type="radio"
                               value=""
@@ -7380,13 +7308,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -7432,13 +7360,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -7677,10 +7605,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   className="HvRadioButton-radio"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-13 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-14 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-15",
-                                      "root": "PrivateSwitchBase-root-12 MuiRadio-root",
+                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-4",
+                                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                     }
                                   }
                                   color="default"
@@ -7696,7 +7624,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                    className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -7705,7 +7633,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -7728,7 +7656,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -7739,7 +7667,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -7757,7 +7685,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -7776,7 +7704,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <input
                                                 checked={false}
-                                                className="PrivateSwitchBase-input-15"
+                                                className="PrivateSwitchBase-input-4"
                                                 onChange={[Function]}
                                                 type="radio"
                                                 value=""
@@ -7821,7 +7749,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 </RadioButtonUnselected>
                                               </WithStyles(RadioButtonUnselected)>
                                             </span>
-                                            <NoSsr />
                                           </span>
                                         </ForwardRef(ButtonBase)>
                                       </WithStyles(ForwardRef(ButtonBase))>
@@ -7917,14 +7844,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
                             checked=""
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="0"
                             type="radio"
                             value=""
@@ -7970,13 +7897,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -8022,13 +7949,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                     >
                       <span
                         aria-disabled="false"
-                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                       >
                         <span
                           class="MuiIconButton-label"
                         >
                           <input
-                            class="PrivateSwitchBase-input-15"
+                            class="PrivateSwitchBase-input-4"
                             tabindex="-1"
                             type="radio"
                             value=""
@@ -8109,14 +8036,14 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-13 Mui-checked"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio PrivateSwitchBase-checked-2 Mui-checked"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
                               checked=""
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="0"
                               type="radio"
                               value=""
@@ -8162,13 +8089,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -8214,13 +8141,13 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       >
                         <span
                           aria-disabled="false"
-                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                         >
                           <span
                             class="MuiIconButton-label"
                           >
                             <input
-                              class="PrivateSwitchBase-input-15"
+                              class="PrivateSwitchBase-input-4"
                               tabindex="-1"
                               type="radio"
                               value=""
@@ -8459,10 +8386,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   className="HvRadioButton-radio"
                                   classes={
                                     Object {
-                                      "checked": "PrivateSwitchBase-checked-13 Mui-checked",
-                                      "disabled": "PrivateSwitchBase-disabled-14 Mui-disabled",
-                                      "input": "PrivateSwitchBase-input-15",
-                                      "root": "PrivateSwitchBase-root-12 MuiRadio-root",
+                                      "checked": "PrivateSwitchBase-checked-2 Mui-checked",
+                                      "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
+                                      "input": "PrivateSwitchBase-input-4",
+                                      "root": "PrivateSwitchBase-root-1 MuiRadio-root",
                                     }
                                   }
                                   color="default"
@@ -8478,7 +8405,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   value=""
                                 >
                                   <WithStyles(ForwardRef(IconButton))
-                                    className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                    className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                     color="default"
                                     component="span"
                                     disableRipple={true}
@@ -8487,7 +8414,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     tabIndex={null}
                                   >
                                     <ForwardRef(IconButton)
-                                      className="PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                      className="PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                       classes={
                                         Object {
                                           "colorInherit": "MuiIconButton-colorInherit",
@@ -8510,7 +8437,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         centerRipple={true}
-                                        className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                        className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                         component="span"
                                         disableRipple={true}
                                         disabled={false}
@@ -8521,7 +8448,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                       >
                                         <ForwardRef(ButtonBase)
                                           centerRipple={true}
-                                          className="MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                          className="MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                           classes={
                                             Object {
                                               "disabled": "Mui-disabled",
@@ -8539,7 +8466,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                         >
                                           <span
                                             aria-disabled={false}
-                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-12 MuiRadio-root HvRadioButton-radio"
+                                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root HvRadioButton-radio"
                                             onBlur={[Function]}
                                             onDragLeave={[Function]}
                                             onFocus={[Function]}
@@ -8558,7 +8485,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                             >
                                               <input
                                                 checked={false}
-                                                className="PrivateSwitchBase-input-15"
+                                                className="PrivateSwitchBase-input-4"
                                                 onChange={[Function]}
                                                 type="radio"
                                                 value=""
@@ -8603,7 +8530,6 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 </RadioButtonUnselected>
                                               </WithStyles(RadioButtonUnselected)>
                                             </span>
-                                            <NoSsr />
                                           </span>
                                         </ForwardRef(ButtonBase)>
                                       </WithStyles(ForwardRef(ButtonBase))>

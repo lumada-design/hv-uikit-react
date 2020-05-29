@@ -30,6 +30,5 @@ exports[`Tooltip withStyles should render correctly 1`] = `
 <WithStyles(MainToolTip)
   coordinates={Object {}}
   data={Object {}}
-  useSingle={false}
 />
 `;
