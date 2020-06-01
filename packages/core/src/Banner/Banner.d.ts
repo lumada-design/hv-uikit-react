@@ -41,7 +41,7 @@ export interface NotificationsCommonProps {
 export interface HvBannerProps
   extends StandardProps<SnackbarProps, HvBannerClassKey>,
     HvActionsCommonProps,
-    HvBannerCommonProps {
+    NotificationsCommonProps {
   /**
    * The position property of the header.
    */
