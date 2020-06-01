@@ -139,6 +139,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
         multiSelect={true}
         notifyChangesOnFirstRender={false}
         onChange={[Function]}
+        popperProps={Object {}}
         selectDefault={true}
         showSearch={true}
         singleSelectionToggle={true}
@@ -169,6 +170,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             id="test-dropdown-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
+            popperProps={Object {}}
             role="textbox"
             style={
               Object {
@@ -281,6 +283,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             multiSelect={true}
             notifyChangesOnFirstRender={false}
             onChange={[Function]}
+            popperProps={Object {}}
             selectDefault={true}
             showSearch={true}
             singleSelectionToggle={true}
@@ -339,6 +342,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
               multiSelect={true}
               notifyChangesOnFirstRender={false}
               onChange={[Function]}
+              popperProps={Object {}}
               selectDefault={true}
               showSearch={true}
               singleSelectionToggle={true}
@@ -1441,13 +1445,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     >
                                       <span
                                         aria-disabled="false"
-                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                       >
                                         <span
                                           class="MuiIconButton-label"
                                         >
                                           <input
-                                            class="PrivateSwitchBase-input-4"
+                                            class="PrivateSwitchBase-input-240"
                                             data-indeterminate="false"
                                             id="test-dropdown-values-select-all-input"
                                             type="checkbox"
@@ -1510,13 +1514,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           >
                                             <span
                                               aria-disabled="false"
-                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                             >
                                               <span
                                                 class="MuiIconButton-label"
                                               >
                                                 <input
-                                                  class="PrivateSwitchBase-input-4"
+                                                  class="PrivateSwitchBase-input-240"
                                                   data-indeterminate="false"
                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                   tabindex="0"
@@ -1568,13 +1572,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           >
                                             <span
                                               aria-disabled="false"
-                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                             >
                                               <span
                                                 class="MuiIconButton-label"
                                               >
                                                 <input
-                                                  class="PrivateSwitchBase-input-4"
+                                                  class="PrivateSwitchBase-input-240"
                                                   data-indeterminate="false"
                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                   tabindex="-1"
@@ -1626,13 +1630,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                           >
                                             <span
                                               aria-disabled="false"
-                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                             >
                                               <span
                                                 class="MuiIconButton-label"
                                               >
                                                 <input
-                                                  class="PrivateSwitchBase-input-4"
+                                                  class="PrivateSwitchBase-input-240"
                                                   data-indeterminate="false"
                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                   tabindex="-1"
@@ -1719,7 +1723,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                       role="tooltip"
                       style={
                         Object {
-                          "display": null,
                           "left": 0,
                           "position": "fixed",
                           "top": 0,
@@ -3005,10 +3008,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         className="HvCheckBox-checkBox"
                                                         classes={
                                                           Object {
-                                                            "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                            "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                            "input": "PrivateSwitchBase-input-4",
-                                                            "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
+                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                            "input": "PrivateSwitchBase-input-240",
+                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                           }
                                                         }
                                                         color="default"
@@ -3032,7 +3035,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         value=""
                                                       >
                                                         <WithStyles(ForwardRef(IconButton))
-                                                          className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                           color="default"
                                                           component="span"
                                                           disableRipple={true}
@@ -3042,7 +3045,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           tabIndex={null}
                                                         >
                                                           <ForwardRef(IconButton)
-                                                            className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             classes={
                                                               Object {
                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -3066,7 +3069,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <WithStyles(ForwardRef(ButtonBase))
                                                               centerRipple={true}
-                                                              className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               component="span"
                                                               disableRipple={true}
                                                               disabled={false}
@@ -3077,7 +3080,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <ForwardRef(ButtonBase)
                                                                 centerRipple={true}
-                                                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                 classes={
                                                                   Object {
                                                                     "disabled": "Mui-disabled",
@@ -3095,7 +3098,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               >
                                                                 <span
                                                                   aria-disabled={false}
-                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                   onBlur={[Function]}
                                                                   onDragLeave={[Function]}
                                                                   onFocus={[Function]}
@@ -3114,7 +3117,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   >
                                                                     <input
                                                                       checked={false}
-                                                                      className="PrivateSwitchBase-input-4"
+                                                                      className="PrivateSwitchBase-input-240"
                                                                       data-indeterminate={false}
                                                                       disabled={false}
                                                                       id="test-dropdown-values-select-all-input"
@@ -3165,6 +3168,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       </Checkbox>
                                                                     </WithStyles(Checkbox)>
                                                                   </span>
+                                                                  <NoSsr />
                                                                 </span>
                                                               </ForwardRef(ButtonBase)>
                                                             </WithStyles(ForwardRef(ButtonBase))>
@@ -3244,6 +3248,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                         }
                                         multiSelect={true}
                                         onChange={[Function]}
+                                        onClick={[Function]}
                                         selectDefault={true}
                                         selectable={true}
                                         showSelectAll={false}
@@ -3355,13 +3360,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   tabindex="0"
@@ -3413,13 +3418,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   tabindex="-1"
@@ -3471,13 +3476,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   tabindex="-1"
@@ -3565,13 +3570,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     tabindex="0"
@@ -3623,13 +3628,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     tabindex="-1"
@@ -3681,13 +3686,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     tabindex="-1"
@@ -3979,10 +3984,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-4",
-                                                                            "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-240",
+                                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -4006,7 +4011,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         value=""
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -4016,7 +4021,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -4040,7 +4045,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -4051,7 +4056,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -4069,7 +4074,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -4088,7 +4093,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                   >
                                                                                     <input
                                                                                       checked={false}
-                                                                                      className="PrivateSwitchBase-input-4"
+                                                                                      className="PrivateSwitchBase-input-240"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="test-dropdown-values-list-item-0-selector-input"
@@ -4139,6 +4144,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                       </Checkbox>
                                                                                     </WithStyles(Checkbox)>
                                                                                   </span>
+                                                                                  <NoSsr />
                                                                                 </span>
                                                                               </ForwardRef(ButtonBase)>
                                                                             </WithStyles(ForwardRef(ButtonBase))>
@@ -4238,13 +4244,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   tabindex="0"
@@ -4296,13 +4302,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   tabindex="-1"
@@ -4354,13 +4360,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   tabindex="-1"
@@ -4448,13 +4454,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     tabindex="0"
@@ -4506,13 +4512,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     tabindex="-1"
@@ -4564,13 +4570,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     tabindex="-1"
@@ -4862,10 +4868,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-4",
-                                                                            "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-240",
+                                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -4889,7 +4895,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         value=""
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -4899,7 +4905,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -4923,7 +4929,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -4934,7 +4940,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -4952,7 +4958,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -4971,7 +4977,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                   >
                                                                                     <input
                                                                                       checked={false}
-                                                                                      className="PrivateSwitchBase-input-4"
+                                                                                      className="PrivateSwitchBase-input-240"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="test-dropdown-values-list-item-1-selector-input"
@@ -5022,6 +5028,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                       </Checkbox>
                                                                                     </WithStyles(Checkbox)>
                                                                                   </span>
+                                                                                  <NoSsr />
                                                                                 </span>
                                                                               </ForwardRef(ButtonBase)>
                                                                             </WithStyles(ForwardRef(ButtonBase))>
@@ -5121,13 +5128,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   tabindex="0"
@@ -5179,13 +5186,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   tabindex="-1"
@@ -5237,13 +5244,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
-                                                                  class="PrivateSwitchBase-input-4"
+                                                                  class="PrivateSwitchBase-input-240"
                                                                   data-indeterminate="false"
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   tabindex="-1"
@@ -5331,13 +5338,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     tabindex="0"
@@ -5389,13 +5396,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     tabindex="-1"
@@ -5447,13 +5454,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                             >
                                                               <span
                                                                 aria-disabled="false"
-                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                               >
                                                                 <span
                                                                   class="MuiIconButton-label"
                                                                 >
                                                                   <input
-                                                                    class="PrivateSwitchBase-input-4"
+                                                                    class="PrivateSwitchBase-input-240"
                                                                     data-indeterminate="false"
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     tabindex="-1"
@@ -5745,10 +5752,10 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-2 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-3 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-4",
-                                                                            "root": "PrivateSwitchBase-root-1 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-238 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-239 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-240",
+                                                                            "root": "PrivateSwitchBase-root-237 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -5772,7 +5779,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         value=""
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -5782,7 +5789,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -5806,7 +5813,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -5817,7 +5824,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -5835,7 +5842,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-237 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -5854,7 +5861,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                   >
                                                                                     <input
                                                                                       checked={false}
-                                                                                      className="PrivateSwitchBase-input-4"
+                                                                                      className="PrivateSwitchBase-input-240"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="test-dropdown-values-list-item-2-selector-input"
@@ -5905,6 +5912,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                       </Checkbox>
                                                                                     </WithStyles(Checkbox)>
                                                                                   </span>
+                                                                                  <NoSsr />
                                                                                 </span>
                                                                               </ForwardRef(ButtonBase)>
                                                                             </WithStyles(ForwardRef(ButtonBase))>
@@ -6164,6 +6172,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         >
                                                           Apply
                                                         </span>
+                                                        <NoSsr />
                                                       </button>
                                                     </ForwardRef(ButtonBase)>
                                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -6312,6 +6321,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         >
                                                           Cancel
                                                         </span>
+                                                        <NoSsr />
                                                       </button>
                                                     </ForwardRef(ButtonBase)>
                                                   </WithStyles(ForwardRef(ButtonBase))>
@@ -6472,6 +6482,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
         multiSelect={false}
         notifyChangesOnFirstRender={false}
         onChange={[Function]}
+        popperProps={Object {}}
         selectDefault={false}
         showSearch={false}
         singleSelectionToggle={true}
@@ -6502,6 +6513,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
             id="hv-dropdown-7-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
+            popperProps={Object {}}
             role="textbox"
             tabIndex={0}
           >
@@ -6609,6 +6621,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
             multiSelect={false}
             notifyChangesOnFirstRender={false}
             onChange={[Function]}
+            popperProps={Object {}}
             selectDefault={false}
             showSearch={false}
             singleSelectionToggle={true}
@@ -6667,6 +6680,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
               multiSelect={false}
               notifyChangesOnFirstRender={false}
               onChange={[Function]}
+              popperProps={Object {}}
               selectDefault={false}
               showSearch={false}
               singleSelectionToggle={true}
@@ -7613,7 +7627,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                       role="tooltip"
                       style={
                         Object {
-                          "display": null,
                           "left": 0,
                           "position": "fixed",
                           "top": 0,
@@ -7667,6 +7680,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                         }
                                         multiSelect={false}
                                         onChange={[Function]}
+                                        onClick={[Function]}
                                         selectDefault={false}
                                         selectable={true}
                                         showSelectAll={false}
@@ -8494,6 +8508,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
         multiSelect={false}
         notifyChangesOnFirstRender={false}
         onChange={[MockFunction]}
+        popperProps={Object {}}
         selectDefault={true}
         showSearch={true}
         singleSelectionToggle={true}
@@ -8524,6 +8539,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
             id="hv-dropdown-1-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
+            popperProps={Object {}}
             role="textbox"
             tabIndex={0}
           >
@@ -8631,6 +8647,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
             multiSelect={false}
             notifyChangesOnFirstRender={false}
             onChange={[Function]}
+            popperProps={Object {}}
             selectDefault={true}
             showSearch={true}
             singleSelectionToggle={true}
@@ -8689,6 +8706,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
               multiSelect={false}
               notifyChangesOnFirstRender={false}
               onChange={[Function]}
+              popperProps={Object {}}
               selectDefault={true}
               showSearch={true}
               singleSelectionToggle={true}
@@ -8876,7 +8894,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                       role="tooltip"
                       style={
                         Object {
-                          "display": null,
                           "left": 0,
                           "position": "fixed",
                           "top": 0,
@@ -9938,6 +9955,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                         }
                                         multiSelect={false}
                                         onChange={[Function]}
+                                        onClick={[Function]}
                                         selectDefault={true}
                                         selectable={true}
                                         showSelectAll={false}

@@ -2,7 +2,11 @@
 
 exports[`<Actions /> should render correctly 1`] = `
 <WithStyles(Actions)
+  applyLabel="Apply"
+  cancelLabel="Cancel"
   id="acts"
+  onApply={[Function]}
+  onCancel={[Function]}
 >
   <Actions
     applyLabel="Apply"
@@ -160,6 +164,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     >
                       Apply
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
@@ -308,6 +313,7 @@ exports[`<Actions /> should render correctly 1`] = `
                     >
                       Cancel
                     </span>
+                    <NoSsr />
                   </button>
                 </ForwardRef(ButtonBase)>
               </WithStyles(ForwardRef(ButtonBase))>
