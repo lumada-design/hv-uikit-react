@@ -54,9 +54,9 @@ ${checkBox 10}            id:select-10-input
 ${checkBox 5}             id:select-5-input
 ${checkBox 6}             id:select-6-input
 ${iframe changingData}    ${STORYBOOK_URL}/iframe.html?id=visualizations-table--table-with-changing-data
-${table1 all}             id:hv-table-1-select-all-input
-${table1 label}           css:#hv-table-1-select-all + p
-${table2 all}             id:hv-table-2-select-all-input
-${table2 label}           css:#hv-table-2-select-all + p
-${table2 nextPage}        id:hv-table-2-pagination-nextPage-button
-${table2 previousPage}    id:hv-table-2-pagination-previousPage-button
+${table1 all}             id:table1-select-all-input
+${table1 label}           css:#table1-select-all + p
+${table2 all}             id:table2-select-all-input
+${table2 label}           css:#table2-select-all + p
+${table2 nextPage}        id:table2-pagination-nextPage-button
+${table2 previousPage}    id:table2-pagination-previousPage-button
