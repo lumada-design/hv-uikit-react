@@ -40,9 +40,15 @@ jobs:
           node-version: "12"
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.0.0
         with:
-          fetch-depth: 0
+          # Pulls all commits (needed for semantic release to correctly version)
+          # See https://github.com/semantic-release/semantic-release/issues/1526
+          fetch-depth: "0"
+
+      # Pulls all tags (needed for semantic release to correctly version)
+      - name: Fetch git tags
+        run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
 
       - name: Install
         run: |
