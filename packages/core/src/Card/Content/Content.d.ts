@@ -1,7 +1,6 @@
-import React from "react";
 import { CardContentProps, StandardProps } from "@material-ui/core";
 
-export interface HvCardContentProps extends StandardProps<CardContentProps, HvCardContentClassKey> {}
+export type HvCardContentProps = StandardProps<CardContentProps, HvCardContentClassKey>;
 
 export type HvCardContentClassKey = "content";
 

@@ -1,7 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 import { HvTypographyProps } from "../../../Typography";
 
-export interface HvLabelProps extends StandardProps<HvTypographyProps, HvLabelClassKey> {}
+export type HvLabelProps = StandardProps<HvTypographyProps, HvLabelClassKey>
 
 export type HvLabelClassKey = "root";
 

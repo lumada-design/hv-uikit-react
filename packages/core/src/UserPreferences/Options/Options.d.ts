@@ -1,6 +1,6 @@
 import {StandardProps} from "@material-ui/core";
-import {Payload} from "../Actions";
 import * as React from "react";
+import {Payload} from "../Actions";
 
 export interface HvOptionsProps
     extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvOptionsClassKey, "onClick"> {

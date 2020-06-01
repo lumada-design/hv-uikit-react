@@ -188,7 +188,7 @@ interface HvThemeTypographyDefinition {
   fontWeight: string;
 }
 
-interface HvThemeSpacing extends Map<string, number> {}
+type HvThemeSpacing = Map<string, number>;
 
 interface HvThemeVizPalette {
   palette: {

@@ -10,23 +10,23 @@ export interface HvCardProps
   /**
    * Extra properties to be passed element used to represent the clickable default card.
    */
-  cardButtonProps?: Object;
+  cardButtonProps?: Record<string, any>;
   /**
    * Extra properties to be passed element used to represent the default header card.
    */
-  headerProps?: Object;
+  headerProps?: Record<string, any>;
   /**
    * Extra properties to be passed element used to represent the default media element.
    */
-  mediaProps?: Object;
+  mediaProps?: Record<string, any>;
   /**
    * Extra properties to be passed element used to represent the default footer card.
    */
-  footerProps?: Object;
+  footerProps?: Record<string, any>;
   /**
    * Extra properties to be passed element used to represent the default content card.
    */
-  contentProps?: Object;
+  contentProps?: Record<string, any>;
   /**
    *  The renderable content inside the title slot of the header.
    */
@@ -94,7 +94,7 @@ export interface HvCardProps
    */
   checked?: boolean;
   /**
-   * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
+   * Properties to be passed onto the checkbox component, the values of the Record<string, any> are equivalent to the
    * HvCheckbox API.
    */
   checkBoxProps?: HvCheckBoxProps;

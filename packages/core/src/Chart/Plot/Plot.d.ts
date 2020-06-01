@@ -1,10 +1,11 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { PlotData as PlotlyPlotData, Layout, Config } from "@types/plotly.js";
+// eslint-disable-next-line import/no-unresolved
+import { Config, Layout, PlotData as PlotlyPlotData } from "plotly.js";
 
-export interface PlotData extends PlotlyPlotData {}
-export interface PlotLayout extends Layout {}
-export interface PlotConfig extends Config {}
+export type PlotData = PlotlyPlotData;
+export type PlotLayout = Layout;
+export type PlotConfig = Config;
 
 export interface HvPlotProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvPlotClassKey> {

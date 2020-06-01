@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { ListLabelsProp, ListValueProp } from "../List";
 import { PopperProps } from "@material-ui/core/Popper";
+import { ListLabelsProp, ListValueProp } from "../List";
 
 export interface DropDownLabelsProp extends ListLabelsProp {
   /**
