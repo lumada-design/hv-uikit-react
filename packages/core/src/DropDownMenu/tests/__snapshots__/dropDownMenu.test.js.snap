@@ -1036,7 +1036,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                 role="tooltip"
                 style={
                   Object {
-                    "display": null,
                     "left": 0,
                     "position": "fixed",
                     "top": 0,
@@ -2609,7 +2608,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                 role="tooltip"
                 style={
                   Object {
-                    "display": null,
                     "left": 0,
                     "position": "fixed",
                     "top": 0,

@@ -72,13 +72,11 @@ exports[`TimePicker should render correctly 1`] = `
     period="PM"
     seconds={30}
   >
-    <ClickAwayListener
+    <ForwardRef(ClickAwayListener)
       onClickAway={[Function]}
     >
       <div
         className="HvTimePicker-timePickerContainer"
-        onClick={[Function]}
-        onTouchEnd={[Function]}
       >
         <WithStyles(ForwardRef)
           className="HvTimePicker-label"
@@ -188,7 +186,7 @@ exports[`TimePicker should render correctly 1`] = `
           }
         />
       </div>
-    </ClickAwayListener>
+    </ForwardRef(ClickAwayListener)>
   </HvTimePicker>
 </WithStyles(HvTimePicker)>
 `;
