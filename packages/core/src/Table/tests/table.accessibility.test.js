@@ -100,6 +100,7 @@ describe("tableA11Y", () => {
       <HvProvider>
         <HvTableWithStyles
           data={data}
+          id="test2"
           columns={getColumns()}
           defaultPageSize={10}
           pageSize={10}

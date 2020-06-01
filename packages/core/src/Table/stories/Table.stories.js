@@ -2118,6 +2118,7 @@ export const TableWithChangingData = () => {
   return (
     <div>
       <HvTable
+        id="table1"
         data={enabledUsers}
         columns={getColumns()}
         defaultSorted={[{ id: "id" }]}
@@ -2133,6 +2134,7 @@ export const TableWithChangingData = () => {
         Disable selected
       </HvButton>
       <HvTable
+        id="table2"
         data={disabledUsers}
         columns={getColumns()}
         defaultSorted={[{ id: "id" }]}
