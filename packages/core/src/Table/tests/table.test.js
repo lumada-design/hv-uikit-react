@@ -58,9 +58,9 @@ describe("Hv Table", () => {
       { id: 3, t1: "test3", link: { displayText: "mock", url: "mock" } }
     ];
     const column = [
-      { id: 1, Header: "column 1", cellType: "alpha-numeric" },
-      { id: 2, Header: "column 2", cellType: "numeric" },
-      { id: 3, Header: "column 3", cellType: "link" }
+      { Header: "column 1", cellType: "alpha-numeric" },
+      { Header: "column 2", cellType: "numeric" },
+      { Header: "column 3", cellType: "link" }
     ];
     const defaultSorted = [{ id: 1, desc: true }];
 
@@ -225,8 +225,8 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).toEqual([column[0].id]);
+      instance.toggleSelection(eventMock, data[0].id);
+      expect(instance.state.selection).toEqual([data[0].id]);
     });
 
     it("should deselect one value", () => {
@@ -244,30 +244,11 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).toEqual([column[0].id]);
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).not.toEqual([column[0].id]);
+      instance.toggleSelection(eventMock, data[0].id);
+      expect(instance.state.selection).toEqual([data[0].id]);
+      instance.toggleSelection(eventMock, data[0].id);
+      expect(instance.state.selection).not.toEqual([data[0].id]);
       expect(instance.state.selectAll).toBe(false);
-    });
-
-    it("should check if the value is selected", () => {
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            columns={column}
-            data={data}
-            defaultSorted={defaultSorted}
-            pageSize={5}
-            idForCheckbox="id"
-          />
-        </HvProvider>
-      );
-
-      const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).toEqual([column[0].id]);
     });
 
     it("should add an expander if the subElementTemplate is defined", () => {

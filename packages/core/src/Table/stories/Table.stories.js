@@ -1042,7 +1042,7 @@ WithExpanderAndCustomContent.story = {
 export const WithCheckbox = () => {
   const data = [
     {
-      id: 14,
+      pid: 14,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
@@ -1055,7 +1055,7 @@ export const WithCheckbox = () => {
       subElementTitle2: "cell_2"
     },
     {
-      id: 13,
+      pid: 13,
       name: "Event 2",
       createdDate: "10/14/2018",
       eventType: "Risk of failure profile",
@@ -1066,7 +1066,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 12,
+      pid: 12,
       name: "Event 3",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1077,7 +1077,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 11,
+      pid: 11,
       name: "Event 4",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1088,7 +1088,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 3", url: "blablabla" }
     },
     {
-      id: 10,
+      pid: 10,
       name: "Event 5",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1099,7 +1099,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 8,
+      pid: 8,
       name: "Event 6",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1110,7 +1110,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 7,
+      pid: 7,
       name: "Event 7",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1121,7 +1121,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 6,
+      pid: 6,
       name: "Event 8",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1132,7 +1132,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 5,
+      pid: 5,
       name: "Event 9",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1143,7 +1143,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 4,
+      pid: 4,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1154,7 +1154,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 3,
+      pid: 3,
       name: "Event 10",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1165,7 +1165,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 2,
+      pid: 2,
       name: "Event 11",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1176,7 +1176,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 1,
+      pid: 1,
       name: "Event 12",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1275,7 +1275,7 @@ export const WithCheckbox = () => {
         defaultSorted={defaultSorted}
         labels={labels}
         onPageSizeChange={onPageSizeChange}
-        idForCheckbox="id"
+        idForCheckbox="pid"
       />
     </div>
   );
@@ -1438,7 +1438,7 @@ WithCheckboxCustomContent.story = {
 export const WithCheckboxAndSecondaryActions = () => {
   const data = [
     {
-      id: 14,
+      pid: 14,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
@@ -1451,7 +1451,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       subElementTitle2: "cell_2"
     },
     {
-      id: 13,
+      pid: 13,
       name: "Event 2",
       createdDate: "10/14/2018",
       eventType: "Risk of failure profile",
@@ -1462,7 +1462,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 12,
+      pid: 12,
       name: "Event 3",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1473,7 +1473,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 11,
+      pid: 11,
       name: "Event 4",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1484,7 +1484,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 3", url: "blablabla" }
     },
     {
-      id: 10,
+      pid: 10,
       name: "Event 5",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1495,7 +1495,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 8,
+      pid: 8,
       name: "Event 6",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1506,7 +1506,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 7,
+      pid: 7,
       name: "Event 7",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1517,7 +1517,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 6,
+      pid: 6,
       name: "Event 8",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1528,7 +1528,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 5,
+      pid: 5,
       name: "Event 9",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1540,7 +1540,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       noActions: true
     },
     {
-      id: 4,
+      pid: 4,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1551,7 +1551,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 3,
+      pid: 3,
       name: "Event 10",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1563,7 +1563,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       noActions: true
     },
     {
-      id: 2,
+      pid: 2,
       name: "Event 11",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1574,7 +1574,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 1,
+      pid: 1,
       name: "Event 12",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1673,7 +1673,7 @@ export const WithCheckboxAndSecondaryActions = () => {
         defaultSorted={defaultSorted}
         labels={labels}
         onPageSizeChange={onPageSizeChange}
-        idForCheckbox="id"
+        idForCheckbox="pid"
         secondaryActions={[
           {
             label: "Share",

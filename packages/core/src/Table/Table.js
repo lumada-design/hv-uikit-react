@@ -241,13 +241,13 @@ class Table extends React.Component {
   };
 
   getCheckboxProps = () => {
-    const { id, classes } = this.props;
+    const { id, classes, idForCheckbox } = this.props;
 
     return {
       selectWidth: 32,
       SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
       toggleSelection: (idSelection, shiftkey, row) => {
-        this.toggleSelection(null, row.id);
+        this.toggleSelection(null, row[idForCheckbox]);
       },
       id
     };
