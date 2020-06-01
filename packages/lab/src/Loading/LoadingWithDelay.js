@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
+import withDeprecate from "@hv/uikit-react-core/dist/withDeprecated";
 import Loading from "./Loading";
 import styles from "./styles";
 
@@ -71,4 +72,7 @@ LoadingWithDelay.propTypes = {
   delay: PropTypes.number
 };
 
-export default withStyles(styles)(LoadingWithDelay);
+export default withDeprecate(
+  withStyles(styles, { name: "HvLoadingWithDelay" })(LoadingWithDelay),
+  "Please use the Loading component in the Core Package"
+);
