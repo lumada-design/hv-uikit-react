@@ -1,6 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListLabelsProp, ListValueProp } from "../List";
+import { PopperProps } from "@material-ui/core/Popper";
 
 export interface DropDownLabelsProp extends ListLabelsProp {
   /**
@@ -86,6 +87,10 @@ export interface HvDropdownProps
    * A function to be executed whenever a item is selected in the dropdown, the function receives the selected item(s).
    */
   onChange?: (selected: ListValueProp | ListValueProp[] | undefined) => void;
+  /**
+   * Properties passed to the undelying Popper component
+   */
+  popperProps?: Partial<PopperProps>;
 }
 
 export type HvDropdownClassKey =

@@ -31,6 +31,7 @@ const List = ({
   anchorEl = null,
   singleSelectionToggle,
   placement,
+  popperProps,
   ...others
 }) => {
   const [searchStr, setSearchStr] = useState();
@@ -354,6 +355,7 @@ const List = ({
         onCreate: data => handleListCreate(data)
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
+      {...popperProps}
     >
       <OutsideClickHandler onOutsideClick={e => handleCancel(e)}>
         <ConditionalWrapper condition={showList} wrapper={c => <FocusTrap>{c}</FocusTrap>}>
@@ -428,7 +430,11 @@ List.propTypes = {
   /**
    * Placement of the dropdown.
    */
-  placement: PropTypes.oneOf(["left", "right"])
+  placement: PropTypes.oneOf(["left", "right"]),
+  /**
+   * An object containing props to be wired to the popper component.
+   */
+  popperProps: PropTypes.shape()
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

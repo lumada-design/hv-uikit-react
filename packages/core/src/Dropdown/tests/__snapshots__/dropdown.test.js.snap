@@ -139,6 +139,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
         multiSelect={true}
         notifyChangesOnFirstRender={false}
         onChange={[Function]}
+        popperProps={Object {}}
         selectDefault={true}
         showSearch={true}
         singleSelectionToggle={true}
@@ -169,6 +170,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             id="test-dropdown-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
+            popperProps={Object {}}
             role="textbox"
             style={
               Object {
@@ -281,6 +283,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
             multiSelect={true}
             notifyChangesOnFirstRender={false}
             onChange={[Function]}
+            popperProps={Object {}}
             selectDefault={true}
             showSearch={true}
             singleSelectionToggle={true}
@@ -339,6 +342,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
               multiSelect={true}
               notifyChangesOnFirstRender={false}
               onChange={[Function]}
+              popperProps={Object {}}
               selectDefault={true}
               showSearch={true}
               singleSelectionToggle={true}
@@ -6472,6 +6476,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
         multiSelect={false}
         notifyChangesOnFirstRender={false}
         onChange={[Function]}
+        popperProps={Object {}}
         selectDefault={false}
         showSearch={false}
         singleSelectionToggle={true}
@@ -6502,6 +6507,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
             id="hv-dropdown-7-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
+            popperProps={Object {}}
             role="textbox"
             tabIndex={0}
           >
@@ -6609,6 +6615,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
             multiSelect={false}
             notifyChangesOnFirstRender={false}
             onChange={[Function]}
+            popperProps={Object {}}
             selectDefault={false}
             showSearch={false}
             singleSelectionToggle={true}
@@ -6667,6 +6674,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
               multiSelect={false}
               notifyChangesOnFirstRender={false}
               onChange={[Function]}
+              popperProps={Object {}}
               selectDefault={false}
               showSearch={false}
               singleSelectionToggle={true}
@@ -8494,6 +8502,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
         multiSelect={false}
         notifyChangesOnFirstRender={false}
         onChange={[MockFunction]}
+        popperProps={Object {}}
         selectDefault={true}
         showSearch={true}
         singleSelectionToggle={true}
@@ -8524,6 +8533,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
             id="hv-dropdown-1-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
+            popperProps={Object {}}
             role="textbox"
             tabIndex={0}
           >
@@ -8631,6 +8641,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
             multiSelect={false}
             notifyChangesOnFirstRender={false}
             onChange={[Function]}
+            popperProps={Object {}}
             selectDefault={true}
             showSearch={true}
             singleSelectionToggle={true}
@@ -8689,6 +8700,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
               multiSelect={false}
               notifyChangesOnFirstRender={false}
               onChange={[Function]}
+              popperProps={Object {}}
               selectDefault={true}
               showSearch={true}
               singleSelectionToggle={true}
