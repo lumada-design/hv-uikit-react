@@ -40,6 +40,9 @@ export * from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";
 export * from "./EmptyState";
 
+export { default as HvFooter } from "./Footer";
+export * from "./Footer";
+
 export { default as HvGrid } from "./Grid";
 export * from "./Grid";
 

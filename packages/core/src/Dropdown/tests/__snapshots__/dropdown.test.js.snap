@@ -1723,7 +1723,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                       role="tooltip"
                       style={
                         Object {
-                          "display": null,
                           "left": 0,
                           "position": "fixed",
                           "top": 0,
@@ -7621,7 +7620,6 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                       role="tooltip"
                       style={
                         Object {
-                          "display": null,
                           "left": 0,
                           "position": "fixed",
                           "top": 0,
@@ -8888,7 +8886,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                       role="tooltip"
                       style={
                         Object {
-                          "display": null,
                           "left": 0,
                           "position": "fixed",
                           "top": 0,

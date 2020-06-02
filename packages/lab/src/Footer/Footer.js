@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { HvTypography } from "@hv/uikit-react-core/dist";
 import { withStyles } from "@material-ui/core";
+import { HvTypography } from "@hv/uikit-react-core";
+import withDeprecate from "@hv/uikit-react-core/dist/withDeprecated";
 import styles from "./styles";
 
 /**
@@ -44,4 +45,7 @@ HvFooter.propTypes = {
   labelRightName: PropTypes.string
 };
 
-export default withStyles(styles, { name: "HvFooter" })(HvFooter);
+export default withDeprecate(
+  withStyles(styles, { name: "HvFooter" })(HvFooter),
+  "Please use the HvFooter component in the core package instead."
+);

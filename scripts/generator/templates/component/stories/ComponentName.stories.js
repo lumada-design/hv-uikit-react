@@ -1,5 +1,5 @@
 import React from "react";
-import { HvComponentName } from "../.."; // TODO: add HvComponentName to src/index.js
+import { HvComponentName } from "../..";
 
 export default {
   title: "Components/ComponentName",

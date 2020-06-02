@@ -109,66 +109,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
               exit={true}
               in={true}
               mountOnEnter={false}
-              nodeRef={
-                Object {
-                  "current": <div
-                    class="MuiPaper-root MuiDrawer-paper HvNavigationAnchors-drawerPaper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
-                  >
-                    <ul
-                      class="MuiList-root HvNavigationAnchors-listRoot MuiList-dense HvNavigationAnchors-listDense MuiList-padding"
-                    >
-                      <div
-                        aria-disabled="false"
-                        class="MuiButtonBase-root MuiListItem-root HvNavigationAnchors-listItemRoot MuiListItem-dense MuiListItem-gutters HvNavigationAnchors-listItemGutters MuiListItem-button Mui-selected HvNavigationAnchors-listItemSelected"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiListItemText-root MuiListItemText-dense HvNavigationAnchors-listItemTextDense"
-                        >
-                          <span
-                            class="MuiTypography-root MuiListItemText-primary HvNavigationAnchors-listItemTextSelected MuiTypography-body2 MuiTypography-displayBlock"
-                          >
-                            Option1
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        aria-disabled="false"
-                        class="MuiButtonBase-root MuiListItem-root HvNavigationAnchors-listItemRoot MuiListItem-dense MuiListItem-gutters HvNavigationAnchors-listItemGutters MuiListItem-button"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiListItemText-root MuiListItemText-dense HvNavigationAnchors-listItemTextDense"
-                        >
-                          <span
-                            class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                          >
-                            Option2
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        aria-disabled="false"
-                        class="MuiButtonBase-root MuiListItem-root HvNavigationAnchors-listItemRoot MuiListItem-dense MuiListItem-gutters HvNavigationAnchors-listItemGutters MuiListItem-button"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiListItemText-root MuiListItemText-dense HvNavigationAnchors-listItemTextDense"
-                        >
-                          <span
-                            class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                          >
-                            Option3
-                          </span>
-                        </div>
-                      </div>
-                    </ul>
-                  </div>,
-                }
-              }
               onEnter={[Function]}
               onEntered={[Function]}
               onEntering={[Function]}
@@ -368,7 +308,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           <WithStyles(ForwardRef(Typography))
                                             className="MuiListItemText-primary HvNavigationAnchors-listItemTextSelected"
                                             component="span"
-                                            display="block"
                                             variant="body2"
                                           >
                                             <ForwardRef(Typography)
@@ -408,11 +347,10 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                                 }
                                               }
                                               component="span"
-                                              display="block"
                                               variant="body2"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiListItemText-primary HvNavigationAnchors-listItemTextSelected MuiTypography-body2 MuiTypography-displayBlock"
+                                                className="MuiTypography-root MuiListItemText-primary HvNavigationAnchors-listItemTextSelected MuiTypography-body2"
                                               >
                                                 Option1
                                               </span>
@@ -528,7 +466,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           <WithStyles(ForwardRef(Typography))
                                             className="MuiListItemText-primary"
                                             component="span"
-                                            display="block"
                                             variant="body2"
                                           >
                                             <ForwardRef(Typography)
@@ -568,11 +505,10 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                                 }
                                               }
                                               component="span"
-                                              display="block"
                                               variant="body2"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
+                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                               >
                                                 Option2
                                               </span>
@@ -688,7 +624,6 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                           <WithStyles(ForwardRef(Typography))
                                             className="MuiListItemText-primary"
                                             component="span"
-                                            display="block"
                                             variant="body2"
                                           >
                                             <ForwardRef(Typography)
@@ -728,11 +663,10 @@ exports[`User withStyles should handle click action correctly 1`] = `
                                                 }
                                               }
                                               component="span"
-                                              display="block"
                                               variant="body2"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
+                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                               >
                                                 Option3
                                               </span>
@@ -889,66 +823,6 @@ exports[`User withStyles should render correctly with props 1`] = `
               exit={true}
               in={true}
               mountOnEnter={false}
-              nodeRef={
-                Object {
-                  "current": <div
-                    class="MuiPaper-root MuiDrawer-paper HvNavigationAnchors-drawerPaper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft MuiPaper-elevation0"
-                  >
-                    <ul
-                      class="MuiList-root HvNavigationAnchors-listRoot MuiList-dense HvNavigationAnchors-listDense MuiList-padding"
-                    >
-                      <div
-                        aria-disabled="false"
-                        class="MuiButtonBase-root MuiListItem-root HvNavigationAnchors-listItemRoot MuiListItem-dense MuiListItem-gutters HvNavigationAnchors-listItemGutters MuiListItem-button Mui-selected HvNavigationAnchors-listItemSelected"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiListItemText-root MuiListItemText-dense HvNavigationAnchors-listItemTextDense"
-                        >
-                          <span
-                            class="MuiTypography-root MuiListItemText-primary HvNavigationAnchors-listItemTextSelected MuiTypography-body2 MuiTypography-displayBlock"
-                          >
-                            Option1
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        aria-disabled="false"
-                        class="MuiButtonBase-root MuiListItem-root HvNavigationAnchors-listItemRoot MuiListItem-dense MuiListItem-gutters HvNavigationAnchors-listItemGutters MuiListItem-button"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiListItemText-root MuiListItemText-dense HvNavigationAnchors-listItemTextDense"
-                        >
-                          <span
-                            class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                          >
-                            Option2
-                          </span>
-                        </div>
-                      </div>
-                      <div
-                        aria-disabled="false"
-                        class="MuiButtonBase-root MuiListItem-root HvNavigationAnchors-listItemRoot MuiListItem-dense MuiListItem-gutters HvNavigationAnchors-listItemGutters MuiListItem-button"
-                        role="button"
-                        tabindex="0"
-                      >
-                        <div
-                          class="MuiListItemText-root MuiListItemText-dense HvNavigationAnchors-listItemTextDense"
-                        >
-                          <span
-                            class="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
-                          >
-                            Option3
-                          </span>
-                        </div>
-                      </div>
-                    </ul>
-                  </div>,
-                }
-              }
               onEnter={[Function]}
               onEntered={[Function]}
               onEntering={[Function]}
@@ -1148,7 +1022,6 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           <WithStyles(ForwardRef(Typography))
                                             className="MuiListItemText-primary HvNavigationAnchors-listItemTextSelected"
                                             component="span"
-                                            display="block"
                                             variant="body2"
                                           >
                                             <ForwardRef(Typography)
@@ -1188,11 +1061,10 @@ exports[`User withStyles should render correctly with props 1`] = `
                                                 }
                                               }
                                               component="span"
-                                              display="block"
                                               variant="body2"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiListItemText-primary HvNavigationAnchors-listItemTextSelected MuiTypography-body2 MuiTypography-displayBlock"
+                                                className="MuiTypography-root MuiListItemText-primary HvNavigationAnchors-listItemTextSelected MuiTypography-body2"
                                               >
                                                 Option1
                                               </span>
@@ -1308,7 +1180,6 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           <WithStyles(ForwardRef(Typography))
                                             className="MuiListItemText-primary"
                                             component="span"
-                                            display="block"
                                             variant="body2"
                                           >
                                             <ForwardRef(Typography)
@@ -1348,11 +1219,10 @@ exports[`User withStyles should render correctly with props 1`] = `
                                                 }
                                               }
                                               component="span"
-                                              display="block"
                                               variant="body2"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
+                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                               >
                                                 Option2
                                               </span>
@@ -1468,7 +1338,6 @@ exports[`User withStyles should render correctly with props 1`] = `
                                           <WithStyles(ForwardRef(Typography))
                                             className="MuiListItemText-primary"
                                             component="span"
-                                            display="block"
                                             variant="body2"
                                           >
                                             <ForwardRef(Typography)
@@ -1508,11 +1377,10 @@ exports[`User withStyles should render correctly with props 1`] = `
                                                 }
                                               }
                                               component="span"
-                                              display="block"
                                               variant="body2"
                                             >
                                               <span
-                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2 MuiTypography-displayBlock"
+                                                className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
                                               >
                                                 Option3
                                               </span>
