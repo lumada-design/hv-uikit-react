@@ -8,7 +8,7 @@ const setterIfNil = (object, property, value) => {
 /**
  * Auxiliary functions to set the layout in order to follow the DS guideline.
  */
-export const setLayout = (inputLayout, stack) => {
+export const applyLayoutDefaults = (inputLayout, stack) => {
   const layout = inputLayout === undefined ? {} : clone(inputLayout);
   setterIfNil(layout, "bargap", 0.25);
   setterIfNil(layout, "bargroupgap", 0.25);
@@ -17,7 +17,7 @@ export const setLayout = (inputLayout, stack) => {
   return layout;
 };
 
-export const setData = (inputData, isHorizontal) => {
+export const applyDataDefaults = (inputData, isHorizontal) => {
   const data = inputData;
 
   data.forEach(trace => {

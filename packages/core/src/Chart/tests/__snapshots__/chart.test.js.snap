@@ -23,12 +23,660 @@ exports[`Chart withStyles should render correctly 1`] = `
     ]
   }
   layout={Object {}}
-/>
+>
+  <Chart
+    classes={
+      Object {
+        "defaultColors": "HvChart-defaultColors",
+        "gridColor": "HvChart-gridColor",
+        "lineColor": "HvChart-lineColor",
+        "paddingTop": "HvChart-paddingTop",
+        "plotColor": "HvChart-plotColor",
+        "root": "HvChart-root",
+        "subtitle": "HvChart-subtitle",
+        "titleContainer": "HvChart-titleContainer",
+        "vizText": "HvChart-vizText",
+      }
+    }
+    data={
+      Array [
+        Object {
+          "hoverinfo": "none",
+          "name": "Sales Target",
+          "orientation": "h",
+          "type": "bar",
+          "x": Array [
+            2300,
+            1000,
+            8500,
+          ],
+          "y": Array [
+            "January",
+            "February",
+            "March",
+          ],
+        },
+      ]
+    }
+    layout={Object {}}
+  >
+    <div
+      className="HvChart-root"
+    >
+      <div
+        className="HvChart-titleContainer"
+      >
+        <div
+          className="HvChart-subtitle"
+        />
+      </div>
+      <div
+        className=""
+        onMouseMove={[Function]}
+      >
+        <WithStyles(Plot)
+          config={
+            Object {
+              "displayModeBar": false,
+              "responsive": true,
+            }
+          }
+          data={
+            Array [
+              Object {
+                "hoverinfo": "none",
+                "name": "Sales Target",
+                "orientation": "h",
+                "type": "bar",
+                "x": Array [
+                  2300,
+                  1000,
+                  8500,
+                ],
+                "y": Array [
+                  "January",
+                  "February",
+                  "March",
+                ],
+              },
+            ]
+          }
+          layout={
+            Object {
+              "autosize": true,
+              "colorway": Array [
+                "#2DB3E0",
+                "#FF990D",
+                "#D31F6B",
+                "#FFD00A",
+                "#18C38A",
+                "#098CB2",
+                "#EA5B86",
+                "#9B469B",
+                "#F4763D",
+                "#419393",
+                "#58C9DD",
+                "#F8C189",
+                "#528BBF",
+                "#DE64BD",
+                "#73BF9C",
+                "#9672C1",
+                "#EB95AF",
+                "#646A98",
+                "#D88136",
+                "#309B59",
+              ],
+              "legend": Object {
+                "font": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+                "orientation": "h",
+                "x": 1,
+                "xanchor": "right",
+                "y": 1.1,
+                "yanchor": "bottom",
+              },
+              "margin": Object {
+                "b": 50,
+                "l": 50,
+                "pad": 0,
+                "t": 10,
+              },
+              "paper_bgcolor": "#FFFFFF",
+              "plot_bgcolor": "#FFFFFF",
+              "xaxis": Object {
+                "automargin": true,
+                "autorange": true,
+                "fixedrange": true,
+                "gridcolor": "#DEDEDE",
+                "linecolor": "#BCBCBC",
+                "linewidth": 1,
+                "range": Array [
+                  0,
+                  8947.368421052632,
+                ],
+                "showgrid": true,
+                "tickcolor": "#BCBCBC",
+                "tickfont": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+                "ticklen": 2,
+                "title": Object {
+                  "font": Object {
+                    "color": "#414141",
+                    "family": Array [
+                      "'Open Sans'",
+                      "Arial",
+                      "Helvetica",
+                      "sans-serif",
+                    ],
+                    "size": 10,
+                  },
+                },
+                "type": "linear",
+                "zeroline": false,
+              },
+              "yaxis": Object {
+                "automargin": true,
+                "autorange": true,
+                "fixedrange": true,
+                "gridcolor": "#DEDEDE",
+                "linecolor": "#BCBCBC",
+                "linewidth": 1,
+                "range": Array [
+                  -0.5,
+                  2.5,
+                ],
+                "showgrid": false,
+                "tickcolor": "#BCBCBC",
+                "tickfont": Object {
+                  "color": "#414141",
+                  "family": Array [
+                    "'Open Sans'",
+                    "Arial",
+                    "Helvetica",
+                    "sans-serif",
+                  ],
+                  "size": 10,
+                },
+                "ticklen": 2,
+                "title": Object {
+                  "font": Object {
+                    "color": "#414141",
+                    "family": Array [
+                      "'Open Sans'",
+                      "Arial",
+                      "Helvetica",
+                      "sans-serif",
+                    ],
+                    "size": 10,
+                  },
+                },
+                "type": "category",
+                "zeroline": false,
+              },
+            }
+          }
+          onHover={[Function]}
+          onUnHover={[Function]}
+        >
+          <Plot
+            classes={Object {}}
+            config={
+              Object {
+                "displayModeBar": false,
+                "responsive": true,
+              }
+            }
+            data={
+              Array [
+                Object {
+                  "hoverinfo": "none",
+                  "name": "Sales Target",
+                  "orientation": "h",
+                  "type": "bar",
+                  "x": Array [
+                    2300,
+                    1000,
+                    8500,
+                  ],
+                  "y": Array [
+                    "January",
+                    "February",
+                    "March",
+                  ],
+                },
+              ]
+            }
+            layout={
+              Object {
+                "autosize": true,
+                "colorway": Array [
+                  "#2DB3E0",
+                  "#FF990D",
+                  "#D31F6B",
+                  "#FFD00A",
+                  "#18C38A",
+                  "#098CB2",
+                  "#EA5B86",
+                  "#9B469B",
+                  "#F4763D",
+                  "#419393",
+                  "#58C9DD",
+                  "#F8C189",
+                  "#528BBF",
+                  "#DE64BD",
+                  "#73BF9C",
+                  "#9672C1",
+                  "#EB95AF",
+                  "#646A98",
+                  "#D88136",
+                  "#309B59",
+                ],
+                "legend": Object {
+                  "font": Object {
+                    "color": "#414141",
+                    "family": Array [
+                      "'Open Sans'",
+                      "Arial",
+                      "Helvetica",
+                      "sans-serif",
+                    ],
+                    "size": 10,
+                  },
+                  "orientation": "h",
+                  "x": 1,
+                  "xanchor": "right",
+                  "y": 1.1,
+                  "yanchor": "bottom",
+                },
+                "margin": Object {
+                  "b": 50,
+                  "l": 50,
+                  "pad": 0,
+                  "t": 10,
+                },
+                "paper_bgcolor": "#FFFFFF",
+                "plot_bgcolor": "#FFFFFF",
+                "xaxis": Object {
+                  "automargin": true,
+                  "autorange": true,
+                  "fixedrange": true,
+                  "gridcolor": "#DEDEDE",
+                  "linecolor": "#BCBCBC",
+                  "linewidth": 1,
+                  "range": Array [
+                    0,
+                    8947.368421052632,
+                  ],
+                  "showgrid": true,
+                  "tickcolor": "#BCBCBC",
+                  "tickfont": Object {
+                    "color": "#414141",
+                    "family": Array [
+                      "'Open Sans'",
+                      "Arial",
+                      "Helvetica",
+                      "sans-serif",
+                    ],
+                    "size": 10,
+                  },
+                  "ticklen": 2,
+                  "title": Object {
+                    "font": Object {
+                      "color": "#414141",
+                      "family": Array [
+                        "'Open Sans'",
+                        "Arial",
+                        "Helvetica",
+                        "sans-serif",
+                      ],
+                      "size": 10,
+                    },
+                  },
+                  "type": "linear",
+                  "zeroline": false,
+                },
+                "yaxis": Object {
+                  "automargin": true,
+                  "autorange": true,
+                  "fixedrange": true,
+                  "gridcolor": "#DEDEDE",
+                  "linecolor": "#BCBCBC",
+                  "linewidth": 1,
+                  "range": Array [
+                    -0.5,
+                    2.5,
+                  ],
+                  "showgrid": false,
+                  "tickcolor": "#BCBCBC",
+                  "tickfont": Object {
+                    "color": "#414141",
+                    "family": Array [
+                      "'Open Sans'",
+                      "Arial",
+                      "Helvetica",
+                      "sans-serif",
+                    ],
+                    "size": 10,
+                  },
+                  "ticklen": 2,
+                  "title": Object {
+                    "font": Object {
+                      "color": "#414141",
+                      "family": Array [
+                        "'Open Sans'",
+                        "Arial",
+                        "Helvetica",
+                        "sans-serif",
+                      ],
+                      "size": 10,
+                    },
+                  },
+                  "type": "category",
+                  "zeroline": false,
+                },
+              }
+            }
+            onHover={[Function]}
+            onUnHover={[Function]}
+          >
+            <PlotlyComponent
+              classes={Object {}}
+              config={
+                Object {
+                  "displayModeBar": false,
+                  "responsive": true,
+                }
+              }
+              data={
+                Array [
+                  Object {
+                    "hoverinfo": "none",
+                    "name": "Sales Target",
+                    "orientation": "h",
+                    "type": "bar",
+                    "x": Array [
+                      2300,
+                      1000,
+                      8500,
+                    ],
+                    "y": Array [
+                      "January",
+                      "February",
+                      "March",
+                    ],
+                  },
+                ]
+              }
+              debug={false}
+              layout={
+                Object {
+                  "autosize": true,
+                  "colorway": Array [
+                    "#2DB3E0",
+                    "#FF990D",
+                    "#D31F6B",
+                    "#FFD00A",
+                    "#18C38A",
+                    "#098CB2",
+                    "#EA5B86",
+                    "#9B469B",
+                    "#F4763D",
+                    "#419393",
+                    "#58C9DD",
+                    "#F8C189",
+                    "#528BBF",
+                    "#DE64BD",
+                    "#73BF9C",
+                    "#9672C1",
+                    "#EB95AF",
+                    "#646A98",
+                    "#D88136",
+                    "#309B59",
+                  ],
+                  "legend": Object {
+                    "font": Object {
+                      "color": "#414141",
+                      "family": Array [
+                        "'Open Sans'",
+                        "Arial",
+                        "Helvetica",
+                        "sans-serif",
+                      ],
+                      "size": 10,
+                    },
+                    "orientation": "h",
+                    "x": 1,
+                    "xanchor": "right",
+                    "y": 1.1,
+                    "yanchor": "bottom",
+                  },
+                  "margin": Object {
+                    "b": 50,
+                    "l": 50,
+                    "pad": 0,
+                    "t": 10,
+                  },
+                  "paper_bgcolor": "#FFFFFF",
+                  "plot_bgcolor": "#FFFFFF",
+                  "xaxis": Object {
+                    "automargin": true,
+                    "autorange": true,
+                    "fixedrange": true,
+                    "gridcolor": "#DEDEDE",
+                    "linecolor": "#BCBCBC",
+                    "linewidth": 1,
+                    "range": Array [
+                      0,
+                      8947.368421052632,
+                    ],
+                    "showgrid": true,
+                    "tickcolor": "#BCBCBC",
+                    "tickfont": Object {
+                      "color": "#414141",
+                      "family": Array [
+                        "'Open Sans'",
+                        "Arial",
+                        "Helvetica",
+                        "sans-serif",
+                      ],
+                      "size": 10,
+                    },
+                    "ticklen": 2,
+                    "title": Object {
+                      "font": Object {
+                        "color": "#414141",
+                        "family": Array [
+                          "'Open Sans'",
+                          "Arial",
+                          "Helvetica",
+                          "sans-serif",
+                        ],
+                        "size": 10,
+                      },
+                    },
+                    "type": "linear",
+                    "zeroline": false,
+                  },
+                  "yaxis": Object {
+                    "automargin": true,
+                    "autorange": true,
+                    "fixedrange": true,
+                    "gridcolor": "#DEDEDE",
+                    "linecolor": "#BCBCBC",
+                    "linewidth": 1,
+                    "range": Array [
+                      -0.5,
+                      2.5,
+                    ],
+                    "showgrid": false,
+                    "tickcolor": "#BCBCBC",
+                    "tickfont": Object {
+                      "color": "#414141",
+                      "family": Array [
+                        "'Open Sans'",
+                        "Arial",
+                        "Helvetica",
+                        "sans-serif",
+                      ],
+                      "size": 10,
+                    },
+                    "ticklen": 2,
+                    "title": Object {
+                      "font": Object {
+                        "color": "#414141",
+                        "family": Array [
+                          "'Open Sans'",
+                          "Arial",
+                          "Helvetica",
+                          "sans-serif",
+                        ],
+                        "size": 10,
+                      },
+                    },
+                    "type": "category",
+                    "zeroline": false,
+                  },
+                }
+              }
+              onAfterPlot={null}
+              onHover={[Function]}
+              onUnhover={[Function]}
+              revision={0}
+              style={
+                Object {
+                  "position": "relative",
+                }
+              }
+              useResizeHandler={false}
+            >
+              <div
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
+              />
+            </PlotlyComponent>
+          </Plot>
+        </WithStyles(Plot)>
+      </div>
+    </div>
+  </Chart>
+</WithStyles(Chart)>
 `;
 
 exports[`Tooltip withStyles should render correctly 1`] = `
 <WithStyles(MainToolTip)
   coordinates={Object {}}
   data={Object {}}
-/>
+>
+  <MainToolTip
+    classes={
+      Object {
+        "root": "HvChartTooltip-root",
+      }
+    }
+    coordinates={Object {}}
+    data={Object {}}
+    useSingle={false}
+  >
+    <div
+      className="HvChartTooltip-root"
+      style={
+        Object {
+          "left": undefined,
+          "top": undefined,
+          "visibility": "hidden",
+        }
+      }
+    >
+      <WithStyles(memo(MultiTooltip))
+        data={Object {}}
+      >
+        <MultiTooltip
+          classes={
+            Object {
+              "color": "HvChartMultiTooltip-color",
+              "root": "HvChartMultiTooltip-root",
+              "separator": "HvChartMultiTooltip-separator",
+              "separatorColor": "HvChartMultiTooltip-separatorColor",
+              "title": "HvChartMultiTooltip-title",
+              "values": "HvChartMultiTooltip-values",
+              "valuesContainer": "HvChartMultiTooltip-valuesContainer",
+            }
+          }
+          data={Object {}}
+        >
+          <div
+            className="HvChartMultiTooltip-root"
+          >
+            <div
+              className="HvChartMultiTooltip-title"
+            >
+              <div>
+                <WithStyles(ForwardRef)
+                  variant="labelText"
+                >
+                  <ForwardRef
+                    classes={
+                      Object {
+                        "3xlTitle": "HvTypography-3xlTitle",
+                        "4xlTitle": "HvTypography-4xlTitle",
+                        "5xlTitle": "HvTypography-5xlTitle",
+                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "highlightText": "HvTypography-highlightText",
+                        "infoText": "HvTypography-infoText",
+                        "inlineLink": "HvTypography-inlineLink",
+                        "lTitle": "HvTypography-lTitle",
+                        "labelText": "HvTypography-labelText",
+                        "mTitle": "HvTypography-mTitle",
+                        "normalText": "HvTypography-normalText",
+                        "placeholderText": "HvTypography-placeholderText",
+                        "root": "HvTypography-root",
+                        "sLink": "HvTypography-sLink",
+                        "sText": "HvTypography-sText",
+                        "sTitle": "HvTypography-sTitle",
+                        "selectedNavText": "HvTypography-selectedNavText",
+                        "selectedText": "HvTypography-selectedText",
+                        "vizText": "HvTypography-vizText",
+                        "xlTitle": "HvTypography-xlTitle",
+                        "xsTitle": "HvTypography-xsTitle",
+                        "xxlTitle": "HvTypography-xxlTitle",
+                        "xxsTitle": "HvTypography-xxsTitle",
+                      }
+                    }
+                    variant="labelText"
+                  >
+                    <p
+                      className="HvTypography-root HvTypography-labelText"
+                    />
+                  </ForwardRef>
+                </WithStyles(ForwardRef)>
+              </div>
+            </div>
+            <div
+              className="HvChartMultiTooltip-valuesContainer"
+            />
+          </div>
+        </MultiTooltip>
+      </WithStyles(memo(MultiTooltip))>
+    </div>
+  </MainToolTip>
+</WithStyles(MainToolTip)>
 `;

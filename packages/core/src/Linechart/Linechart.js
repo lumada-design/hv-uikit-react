@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Chart from "../Chart";
-import { setData, setLayout } from "./lineChartPlotlyOverrides";
+import { applyDataDefaults, applyLayoutDefaults } from "./lineChartPlotlyOverrides";
 import styles from "./styles";
 
 /**
@@ -27,8 +27,13 @@ const Linechart = ({
   rangeSlider = false,
   ...others
 }) => {
-  const newData = setData(data, type);
-  const newLayout = setLayout(layout, rangeSlider);
+  /* Values derived from props */
+
+  const chartData = useMemo(() => applyDataDefaults(data, type), [data, type]);
+  const chartLayout = useMemo(() => applyLayoutDefaults(layout, rangeSlider), [
+    layout,
+    rangeSlider
+  ]);
 
   return (
     <Chart
@@ -38,8 +43,8 @@ const Linechart = ({
       subtitle={subtitle}
       xAxisTitle={xAxisTitle}
       yAxisTitle={yAxisTitle}
-      data={newData}
-      layout={newLayout}
+      data={chartData}
+      layout={chartLayout}
       config={config}
       tooltipType={tooltipType}
       {...others}
