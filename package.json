@@ -100,7 +100,8 @@
     "ts-node": "^8.10.1",
     "tslint": "5.14.0",
     "typescript": "^3.8.3",
-    "typescript-to-proptypes": "^1.5.0"
+    "typescript-to-proptypes": "^1.5.0",
+    "core-js": "^3.6.5"
   },
   "dependencies": {
     "acorn": "^7.2.0",
