@@ -200,12 +200,11 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               "lineHeight": "16px",
             },
             "inlineLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "14px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
-              "textDecorationLine": "underline",
             },
             "lTitle": Object {
               "color": "#414141",
@@ -243,12 +242,11 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               "lineHeight": "20px",
             },
             "sLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "12px",
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecorationLine": "underline",
             },
             "sText": Object {
               "color": "#414141",
@@ -1012,12 +1010,11 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 "lineHeight": "16px",
               },
               "inlineLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "14px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "20px",
-                "textDecorationLine": "underline",
               },
               "lTitle": Object {
                 "color": "#414141",
@@ -1055,12 +1052,11 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 "lineHeight": "20px",
               },
               "sLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "letterSpacing": "0.02em",
                 "lineHeight": "16px",
-                "textDecorationLine": "underline",
               },
               "sText": Object {
                 "color": "#414141",
@@ -1907,12 +1903,11 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               "lineHeight": "16px",
             },
             "inlineLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "14px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
-              "textDecorationLine": "underline",
             },
             "lTitle": Object {
               "color": "#414141",
@@ -1950,12 +1945,11 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               "lineHeight": "20px",
             },
             "sLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "12px",
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecorationLine": "underline",
             },
             "sText": Object {
               "color": "#414141",
@@ -2718,12 +2712,11 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 "lineHeight": "16px",
               },
               "inlineLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "14px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "20px",
-                "textDecorationLine": "underline",
               },
               "lTitle": Object {
                 "color": "#414141",
@@ -2761,12 +2754,11 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 "lineHeight": "20px",
               },
               "sLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "letterSpacing": "0.02em",
                 "lineHeight": "16px",
-                "textDecorationLine": "underline",
               },
               "sText": Object {
                 "color": "#414141",
@@ -3634,12 +3626,11 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               "lineHeight": "16px",
             },
             "inlineLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "14px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
-              "textDecorationLine": "underline",
             },
             "lTitle": Object {
               "color": "#414141",
@@ -3677,12 +3668,11 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               "lineHeight": "20px",
             },
             "sLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "12px",
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecorationLine": "underline",
             },
             "sText": Object {
               "color": "#414141",
@@ -4446,12 +4436,11 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 "lineHeight": "16px",
               },
               "inlineLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "14px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "20px",
-                "textDecorationLine": "underline",
               },
               "lTitle": Object {
                 "color": "#414141",
@@ -4489,12 +4478,11 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 "lineHeight": "20px",
               },
               "sLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "letterSpacing": "0.02em",
                 "lineHeight": "16px",
-                "textDecorationLine": "underline",
               },
               "sText": Object {
                 "color": "#414141",
@@ -5379,12 +5367,11 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               "lineHeight": "16px",
             },
             "inlineLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "14px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "20px",
-              "textDecorationLine": "underline",
             },
             "lTitle": Object {
               "color": "#414141",
@@ -5422,12 +5409,11 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               "lineHeight": "20px",
             },
             "sLink": Object {
-              "color": "#414141",
+              "color": "#146BD2",
               "fontSize": "12px",
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecorationLine": "underline",
             },
             "sText": Object {
               "color": "#414141",
@@ -6189,12 +6175,11 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 "lineHeight": "16px",
               },
               "inlineLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "14px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "20px",
-                "textDecorationLine": "underline",
               },
               "lTitle": Object {
                 "color": "#414141",
@@ -6232,12 +6217,11 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 "lineHeight": "20px",
               },
               "sLink": Object {
-                "color": "#414141",
+                "color": "#146BD2",
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "letterSpacing": "0.02em",
                 "lineHeight": "16px",
-                "textDecorationLine": "underline",
               },
               "sText": Object {
                 "color": "#414141",

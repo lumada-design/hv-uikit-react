@@ -1,6 +1,7 @@
 const styles = theme => ({
   a: {
-    ...theme.hv.typography.inlineLink
+    ...theme.hv.typography.inlineLink,
+    textDecoration: "none"
   }
 });
 
