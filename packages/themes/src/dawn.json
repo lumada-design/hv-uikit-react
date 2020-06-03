@@ -178,12 +178,11 @@
       "fontWeight": 400
     },
     "inlineLink": {
-      "color": "#414141",
+      "color": "#146BD2",
       "fontSize": "14px",
       "letterSpacing": "0.02em",
       "lineHeight": "20px",
-      "fontWeight": 600,
-      "textDecorationLine": "underline"
+      "fontWeight": 600
     },
     "selectedNavText": {
       "color": "#CC0000",
@@ -207,12 +206,11 @@
       "fontWeight": 400
     },
     "sLink": {
-      "color": "#414141",
+      "color": "#146BD2",
       "fontSize": "12px",
       "letterSpacing": "0.02em",
       "lineHeight": "16px",
-      "fontWeight": 400,
-      "textDecorationLine": "underline"
+      "fontWeight": 400
     },
     "sText": {
       "color": "#414141",
@@ -238,10 +236,7 @@
     "xl": 90
   },
 
-  "shadows": [
-    "none",
-    "0 2px 12px rgba(65,65,65,0.12)"
-  ],
+  "shadows": ["none", "0 2px 12px rgba(65,65,65,0.12)"],
 
   "viz": {
     "palette": {
