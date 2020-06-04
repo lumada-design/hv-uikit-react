@@ -4,7 +4,10 @@ const styles = theme => ({
     height: 32,
     alignItems: "center",
     transition: "none",
-    boxShadow: `-1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, -1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}`
+    boxShadow: `-1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, -1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}`,
+    background: theme.hv.palette.atmosphere.atmo2,
+    position: "relative",
+    zIndex: 0
   },
   button: {
     width: "100%",
@@ -14,12 +17,6 @@ const styles = theme => ({
     border: "none",
     transition: "none",
     flex: "1 0 0px",
-    "&:hover": {
-      border: "none !important"
-    },
-    "&:focus": {
-      zIndex: 1
-    },
     "&:active": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
     }
@@ -30,16 +27,16 @@ const styles = theme => ({
     overflow: "hidden"
   },
   isSelected: {
-    zIndex: 1,
     background: theme.hv.palette.atmosphere.atmo1,
     height: 34,
     cursor: "default",
     ...theme.hv.typography.highlightText,
-    boxShadow: `1px -1px 0px 0px ${theme.hv.palette.accent.acce1}, 1px 0px 0px 0px ${theme.hv.palette.accent.acce1}, 0px 0px 0px 1px ${theme.hv.palette.accent.acce1}, 0px 0px 0px 0px ${theme.hv.palette.accent.acce1}`
+    boxShadow: `1px -1px 0px 0px ${theme.hv.palette.accent.acce1}, 1px 0px 0px 0px ${theme.hv.palette.accent.acce1}, 0px 0px 0px 1px ${theme.hv.palette.accent.acce1}, 0px 0px 0px 0px ${theme.hv.palette.accent.acce1}`,
+    zIndex: 1
   },
   isUnselected: {
     minWidth: "32px !important",
-    background: theme.hv.palette.atmosphere.atmo2,
+
     ...theme.hv.typography.normalText,
     "&:hover": {
       background: theme.hv.palette.atmosphere.atmo4

@@ -241,18 +241,19 @@ export const WithIntervalUpdates = () => {
   };
 
   useEffect(() => {
-    addDaysToCurrentDate(30);
-    const interval = setInterval(() => {
+    const interval = setTimeout(() => {
+      addDaysToCurrentDate(1);
+
       const intervalValues = values.current.slice();
-      intervalValues.splice(0, 30);
+      intervalValues.splice(0, 1);
       values.current = intervalValues.concat(
-        generateValues(30, intervalValues[intervalValues.length])
+        generateValues(1, intervalValues[intervalValues.length])
       );
 
-      addDaysToCurrentDate(30);
       setData(generateData());
-    }, 2000);
-    return () => clearInterval(interval);
+    }, 1000);
+
+    return () => clearTimeout(interval);
   });
 
   return (
@@ -262,6 +263,8 @@ export const WithIntervalUpdates = () => {
       data={data}
       xAxisTitle="Date"
       yAxisTitle="Thousands of Dollars ($)"
+      // TODO #1588 Remove fixed height (plotly bug)
+      style={{ height: 450 }}
     />
   );
 };
@@ -269,7 +272,7 @@ export const WithIntervalUpdates = () => {
 WithIntervalUpdates.story = {
   parameters: {
     docs: {
-      storyDescription: "Data updated each 5 seconds."
+      storyDescription: "Data updated each second."
     }
   }
 };

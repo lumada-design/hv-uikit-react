@@ -2,7 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Main } from "../stories/BulkActions.stories";
+import { Main } from "../stories/ComponentName.stories";
 import { HvProvider, HvComponentName } from "../..";
 
 describe("ComponentName", () => {

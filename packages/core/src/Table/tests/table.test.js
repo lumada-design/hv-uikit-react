@@ -4,9 +4,11 @@ import React from "react";
 import { mount } from "enzyme";
 import ReactTable from "react-table";
 import HvProvider from "../../Provider";
-import HvPagination from "../Pagination";
+import HvPagination from "../../Pagination";
 import DropDownMenu from "../../DropDownMenu";
+import NoData from "../NoData";
 import HvTable from "..";
+import { CustomEmpty } from "../stories/Table.stories";
 
 /* eslint-disable no-console */
 
@@ -51,14 +53,14 @@ describe("Hv Table", () => {
 
   describe("is rendered correctly and behaves as expected", () => {
     const data = [
-      { t1: "test1", link: { displayText: "mock", url: "mock" } },
-      { t1: "test2", link: { displayText: "mock", url: "mock" } },
-      { t1: "test3", link: { displayText: "mock", url: "mock" } }
+      { id: 1, t1: "test1", link: { displayText: "mock", url: "mock" } },
+      { id: 2, t1: "test2", link: { displayText: "mock", url: "mock" } },
+      { id: 3, t1: "test3", link: { displayText: "mock", url: "mock" } }
     ];
     const column = [
-      { id: 1, Header: "column 1", cellType: "alpha-numeric" },
-      { id: 2, Header: "column 2", cellType: "numeric" },
-      { id: 3, Header: "column 3", cellType: "link" }
+      { Header: "column 1", cellType: "alpha-numeric" },
+      { Header: "column 2", cellType: "numeric" },
+      { Header: "column 3", cellType: "link" }
     ];
     const defaultSorted = [{ id: 1, desc: true }];
 
@@ -133,6 +135,26 @@ describe("Hv Table", () => {
       expect(wrapper.find(HvPagination).exists()).toBe(false);
     });
 
+    it("should render no data component if no data exists", () => {
+      wrapper = mount(
+        <HvProvider>
+          <HvTable columns={[]} data={[]} pageSize={5} />
+        </HvProvider>
+      );
+
+      expect(wrapper.find(NoData).exists()).toBe(true);
+    });
+
+    it("should render a custom no data component when passed and no data exists", () => {
+      wrapper = mount(
+        <HvProvider>
+          <CustomEmpty />
+        </HvProvider>
+      );
+
+      expect(wrapper.find("#emptyState").exists()).toBe(true);
+    });
+
     it("should set column alignment ", () => {
       const classesToApply = {
         alphaNumeric: "alphaNumeric-random",
@@ -203,8 +225,8 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).toEqual([column[0].id]);
+      instance.toggleSelection(eventMock, data[0].id);
+      expect(instance.state.selection).toEqual([data[0].id]);
     });
 
     it("should deselect one value", () => {
@@ -222,30 +244,11 @@ describe("Hv Table", () => {
       );
 
       const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).toEqual([column[0].id]);
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).not.toEqual([column[0].id]);
+      instance.toggleSelection(eventMock, data[0].id);
+      expect(instance.state.selection).toEqual([data[0].id]);
+      instance.toggleSelection(eventMock, data[0].id);
+      expect(instance.state.selection).not.toEqual([data[0].id]);
       expect(instance.state.selectAll).toBe(false);
-    });
-
-    it("should check if the value is selected", () => {
-      wrapper = mount(
-        <HvProvider>
-          <HvTable
-            classes={{}}
-            columns={column}
-            data={data}
-            defaultSorted={defaultSorted}
-            pageSize={5}
-            idForCheckbox="id"
-          />
-        </HvProvider>
-      );
-
-      const instance = wrapper.find("Table").instance();
-      instance.toggleSelection(eventMock, column[0].id);
-      expect(instance.state.selection).toEqual([column[0].id]);
     });
 
     it("should add an expander if the subElementTemplate is defined", () => {

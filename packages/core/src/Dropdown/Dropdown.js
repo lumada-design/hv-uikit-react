@@ -137,6 +137,8 @@ class HvDropdown extends React.Component {
       disablePortal,
       hasTooltips,
       singleSelectionToggle,
+      // TODO: convert component to functional so we don't to destructure here
+      popperProps,
       ...others
     } = this.props;
 
@@ -189,7 +191,9 @@ class HvDropdown extends React.Component {
       labels,
       singleSelectionToggle,
       classes,
-      placement
+      placement,
+      // TODO: convert component to functional so we don't to destructure here
+      popperProps
     } = this.props;
     const { isOpen, values, anchorEl } = this.state;
 
@@ -216,6 +220,7 @@ class HvDropdown extends React.Component {
         singleSelectionToggle={singleSelectionToggle}
         aria-labelledby={labels.title ? setId(id, "label") : undefined}
         placement={placement}
+        popperProps={popperProps}
       />
     );
   }
@@ -413,7 +418,11 @@ HvDropdown.propTypes = {
   /**
    * Placement of the dropdown.
    */
-  placement: PropTypes.oneOf(["left", "right"])
+  placement: PropTypes.oneOf(["left", "right"]),
+  /**
+   * An object containing props to be wired to the popper component.
+   */
+  popperProps: PropTypes.shape()
 };
 
 HvDropdown.defaultProps = {
@@ -431,7 +440,8 @@ HvDropdown.defaultProps = {
   disablePortal: false,
   hasTooltips: false,
   singleSelectionToggle: true,
-  placement: undefined
+  placement: undefined,
+  popperProps: {}
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(

@@ -104,17 +104,6 @@ const HvUserPreferences = ({
     [closeOnExit, toggleOpen]
   );
 
-  const userInfoRender = useMemo(
-    () =>
-      userInfo && (
-        <div className={classes.userInfo}>
-          <Typography variant="highlightText">{userInfo.label1}</Typography>
-          <Typography variant="sText">{userInfo.label2}</Typography>
-        </div>
-      ),
-    [userInfo]
-  );
-
   const renderedContainer = useMemo(
     () => (
       <>
@@ -124,12 +113,17 @@ const HvUserPreferences = ({
           className={classes.contentContainer}
           onKeyDown={handlerKeyContainer}
         >
-          {userInfoRender}
+          {userInfo && (
+            <div className={classes.userInfo}>
+              <Typography variant="highlightText">{userInfo.label1}</Typography>
+              <Typography variant="sText">{userInfo.label2}</Typography>
+            </div>
+          )}
           {children}
         </div>
       </>
     ),
-    [children, classes.contentContainer, handlerKeyContainer, userInfo]
+    [children, classes.userInfo, classes.contentContainer, handlerKeyContainer, userInfo]
   );
 
   return (

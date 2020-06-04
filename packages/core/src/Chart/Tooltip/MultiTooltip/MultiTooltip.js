@@ -12,7 +12,7 @@ const MultiTooltip = ({ classes, data }) => (
       </div>
     </div>
     <div className={classes.valuesContainer}>
-      {data.elements.map(element => (
+      {data?.elements?.map(element => (
         <div key={element.name} className={classes.values}>
           <div className={classes.color} style={{ backgroundColor: element.color }} />
           <div className={classes.separatorColor} />

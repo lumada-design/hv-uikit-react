@@ -5,7 +5,7 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px  0`
   },
   label: {
-    marginBottom: `${theme.hv.spacing.xs}px`
+    marginBottom: `5px`
   },
   ul: {
     paddingInlineStart: 0,

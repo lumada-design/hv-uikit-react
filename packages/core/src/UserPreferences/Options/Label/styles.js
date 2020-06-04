@@ -1,8 +1,8 @@
-const styles = theme => ({
+const styles = () => ({
   root: {
     listStyle: "none",
-    marginBottom: `${theme.hv.spacing.xs}px`,
-    paddingBottom: "5px !important"
+    marginBottom: `5px`,
+    paddingBottom: "0px !important"
   }
 });
 

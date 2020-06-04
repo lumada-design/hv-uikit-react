@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import Chart from "../Chart";
-import { setData, setLayout } from "./lineChartPlotlyOverrides";
+import { applyDataDefaults, applyLayoutDefaults } from "./lineChartPlotlyOverrides";
 import styles from "./styles";
 
 /**
  * A line chart or line plot or line graph is a type of chart which displays information as a series of data points
  * called 'markers' connected by straight line segments. It is a basic type of chart common in many fields.
+ *
+ * Our implementation uses as base Plotly. If you have a specific case
+ * that we don't cover directly, the Plotly [documentation](https://plotly.com/javascript/) is a good starting point.
  */
 const Linechart = ({
   id,
@@ -24,8 +27,13 @@ const Linechart = ({
   rangeSlider = false,
   ...others
 }) => {
-  const newData = setData(data, type);
-  const newLayout = setLayout(layout, rangeSlider);
+  /* Values derived from props */
+
+  const chartData = useMemo(() => applyDataDefaults(data, type), [data, type]);
+  const chartLayout = useMemo(() => applyLayoutDefaults(layout, rangeSlider), [
+    layout,
+    rangeSlider
+  ]);
 
   return (
     <Chart
@@ -35,8 +43,8 @@ const Linechart = ({
       subtitle={subtitle}
       xAxisTitle={xAxisTitle}
       yAxisTitle={yAxisTitle}
-      data={newData}
-      layout={newLayout}
+      data={chartData}
+      layout={chartLayout}
       config={config}
       tooltipType={tooltipType}
       {...others}

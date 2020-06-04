@@ -4,7 +4,6 @@ import clsx from "clsx";
 import map from "lodash/map";
 import each from "lodash/each";
 import isNil from "lodash/isNil";
-import uniqueId from "lodash/uniqueId";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 
@@ -17,7 +16,7 @@ import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
 import { isIndeterminateStatus, isSelected, toggleAll, toggleSelection } from "./checkBoxUtils";
-import Pagination from "./Pagination";
+import Pagination from "../Pagination";
 import NoData from "./NoData";
 import Header from "./Header";
 import checkboxHOC from "./selectTable";
@@ -25,9 +24,26 @@ import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
 import DropDownMenu from "../DropDownMenu";
+import withLabels from "../withLabels";
+import { setId } from "../utils";
+import withId from "../withId";
 
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = checkboxHOC(ReactTable);
+const updateSelectionFromData = (data, selection, idForCheckbox) => {
+  const dataIds = data.map(item => {
+    return item[idForCheckbox];
+  });
+  const updatedSelection = selection.filter(selectedItem => {
+    return dataIds.includes(selectedItem);
+  });
+  return updatedSelection;
+};
+
+const DEFAULT_LABELS = {
+  titleText: "",
+  subtitleText: ""
+};
 
 /**
  * Table component. This component offers:
@@ -48,7 +64,6 @@ class Table extends React.Component {
     super(props);
 
     this.state = {
-      internalId: props.id || uniqueId("hv-table-"),
       // the columns that are sorted
       sorted: props.defaultSorted || [],
       // flag for controlling if the component as been render before
@@ -78,14 +93,31 @@ class Table extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    const { selections } = props;
-    if (selections !== state.selections) {
+    const { selections, data, idForCheckbox } = props;
+
+    if (!isNil(selections) && selections !== state.selection) {
       return {
-        selections
+        selection: selections,
+        selectAll: selections.length === data.length,
+        recordQuantity: data.length
       };
     }
 
-    return null;
+    if (idForCheckbox !== "") {
+      const newSelection = updateSelectionFromData(data, state.selection, idForCheckbox);
+      if (!isNil(newSelection)) {
+        return {
+          selection: newSelection,
+          selectAll: newSelection.length === data.length,
+          recordQuantity: data.length
+        };
+      }
+    }
+
+    return {
+      selectAll: state.selection.length === data.length,
+      recordQuantity: data.length
+    };
   }
 
   /**
@@ -131,18 +163,22 @@ class Table extends React.Component {
    * @returns {{showPageSizeOptions: HvTable.props.showPageSize, showPagination: HvTable.props.showPagination}}
    */
   getPaginationProps = () => {
-    const { internalId, currentPage } = this.state;
+    const { currentPage } = this.state;
 
-    const { data, pageSize: propsPageSize } = this.props;
+    const { id, paginationLabels, data, pageSize: propsPageSize } = this.props;
     const { showPagination, showPageSize } = this.props;
     const { pageSize = data.length, onPageSizeChange, onPageChange, pages } = this.props;
 
     const PaginationComponent = paginationProps => (
-      <Pagination {...paginationProps} page={currentPage} />
+      <Pagination
+        {...paginationProps}
+        id={setId(id, "pagination")}
+        labels={paginationLabels}
+        page={currentPage}
+      />
     );
 
     return {
-      id: `${internalId}-pagination`,
       showPagination: data.length > 0 && showPagination,
       ...(showPagination && { PaginationComponent }),
       ...(showPagination && {
@@ -205,16 +241,15 @@ class Table extends React.Component {
   };
 
   getCheckboxProps = () => {
-    const { classes } = this.props;
-    const { internalId } = this.state;
+    const { id, classes, idForCheckbox } = this.props;
 
     return {
       selectWidth: 32,
       SelectAllInputComponent: () => <div className={clsx(classes.checkBox)} />,
-      toggleSelection: (id, shiftkey, row) => {
-        this.toggleSelection(null, row.id);
+      toggleSelection: (idSelection, shiftkey, row) => {
+        this.toggleSelection(null, row[idForCheckbox]);
       },
-      internalId
+      id
     };
   };
 
@@ -250,8 +285,8 @@ class Table extends React.Component {
    * @returns {{className: (theadTh|{outline, backgroundColor, "& > div"})}}
    */
   getTheadThProps = (state, rowInfo, column) => {
-    const { classes, sortable } = this.props;
-    const { sorted, internalId } = this.state;
+    const { classes, sortable, id } = this.props;
+    const { sorted } = this.state;
     let isSortable = sortable && (isNil(column.sortable) || column.sortable);
 
     if (column.id === "secondaryActions") {
@@ -272,7 +307,7 @@ class Table extends React.Component {
     appendClassnames(column, sorted, classes, sortable);
 
     return {
-      id: column.id ? `${internalId}-column-${column.id}` : undefined,
+      id: column.id ? setId(id, "column", column.id) : undefined,
       scope: "col",
       ...ariaSort,
       className:
@@ -345,7 +380,6 @@ class Table extends React.Component {
         : undefined;
 
     const ariaRowIndex = rowInfo !== undefined ? { "aria-rowindex": rowInfo.index } : undefined;
-
     const baseTrProps = {
       id: this.computeRowElementId(rowInfo),
       className: classes.tr,
@@ -405,6 +439,16 @@ class Table extends React.Component {
     };
   };
 
+  /**
+   * Return the NoData component with label.
+   *
+   * @returns {*}
+   */
+  getNoDataProps = () => {
+    const { noDataComponent } = this.props;
+    return <NoData>{noDataComponent}</NoData>;
+  };
+
   //  ----------- Checkbox -----------
   /**
    * Selects or unselect a row.
@@ -442,15 +486,15 @@ class Table extends React.Component {
   };
 
   computeRowElementId(rowInfo) {
-    const { internalId } = this.state;
+    const { id } = this.props;
 
     const rowId = this.computeRowId(rowInfo);
 
     let rowElementId;
     if (rowId) {
-      rowElementId = `${internalId}-row-${rowId}`;
+      rowElementId = setId(id, "row", rowId);
     } else if (rowInfo) {
-      rowElementId = `${internalId}-row-index-${rowInfo.index}`;
+      rowElementId = setId(id, "row-index", rowInfo.index);
     }
 
     return rowElementId;
@@ -468,6 +512,7 @@ class Table extends React.Component {
 
   render() {
     const {
+      id,
       classes,
       className,
       uniqClassName,
@@ -484,10 +529,11 @@ class Table extends React.Component {
       allCheckBoxProps,
       dropdownMenuProps,
       rowCount,
+      noDataComponent,
       ...others
     } = this.props;
 
-    const { internalId, expanded, selectAll, selection, recordQuantity } = this.state;
+    const { expanded, selectAll, selection, recordQuantity } = this.state;
 
     const AugmentedTable = idForCheckbox ? ReactTableCheckbox : ReactTableFixedColumns;
     const tableStyles = tableStyleOverrides(classes);
@@ -511,6 +557,7 @@ class Table extends React.Component {
                 event.stopPropagation();
                 item?.action?.(event, props.original);
               }}
+              keepOpened={false}
               {...dropdownMenuProps}
             />
           )
@@ -527,7 +574,7 @@ class Table extends React.Component {
         return (
           <Header
             key={column.id}
-            tableInternalId={internalId}
+            tableInternalId={id}
             column={column}
             sort={sorted}
             tableSortable={sortable}
@@ -549,17 +596,17 @@ class Table extends React.Component {
     const sanitizedData = this.sanitizedData();
 
     return (
-      <div id={internalId} className={clsx(classes.tableContainer, className)}>
+      <div id={id} className={clsx(classes.tableContainer, className)}>
         {labels.titleText && (
           <div className={classes.title}>
             <div>
-              <HvTypography variant="mTitle" id={`${internalId}-title`}>
+              <HvTypography variant="mTitle" id={setId(id, "title")}>
                 {labels.titleText}
               </HvTypography>
             </div>
             {labels.subtitleText && (
               <div className={classes.subtitle}>
-                <HvTypography variant="sText" id={`${internalId}-subtitle`}>
+                <HvTypography variant="sText" id={setId(id, "subtitle")}>
                   {labels.subtitleText}
                 </HvTypography>
               </div>
@@ -570,7 +617,7 @@ class Table extends React.Component {
           <div className={classes.checkBoxRow}>
             <div className={classes.checkBoxText}>
               <HvCheckBox
-                id={`${internalId}-select-all`}
+                id={setId(id, "select-all")}
                 onChange={this.toggleAll}
                 aria-label="blah"
                 checked={selectAll}
@@ -585,7 +632,7 @@ class Table extends React.Component {
           </div>
         )}
         <AugmentedTable
-          id={`${internalId}-data`}
+          id={setId(id, "data")}
           {...others}
           {...tableStyles}
           {...this.getPaginationProps()}
@@ -607,7 +654,7 @@ class Table extends React.Component {
           expanded={expanded}
           keyField={idForCheckbox}
           isSelected={key => isSelected(key, selection)}
-          NoDataComponent={NoData}
+          NoDataComponent={this.getNoDataProps}
           getTrGroupProps={this.getTrGroupProps}
         />
       </div>
@@ -740,6 +787,47 @@ Table.propTypes = {
     subtitleText: PropTypes.string
   }),
   /**
+   * Labels for the pagination.
+   */
+  paginationLabels: PropTypes.shape({
+    /**
+     * Show label.
+     */
+    pageSizePrev: PropTypes.string,
+    /**
+     * Indication of the units of the page size selection.
+     */
+    pageSizeEntryName: PropTypes.string,
+    /**
+     * Used for the aria-label of the selection of number of unit.
+     */
+    pageSizeSelectorDescription: PropTypes.string,
+    /**
+     * Separator of current page and total pages.
+     */
+    pagesSeparator: PropTypes.string,
+    /**
+     * Title of button `firstPage`.
+     */
+    paginationFirstPageTitle: PropTypes.string,
+    /**
+     * Title of button `previousPage`.
+     */
+    paginationPreviousPageTitle: PropTypes.string,
+    /**
+     * Title of button `nextPage`.
+     */
+    paginationNextPageTitle: PropTypes.string,
+    /**
+     * Pagination title of button `lastPage`.
+     */
+    paginationLastPageTitle: PropTypes.string,
+    /**
+     * Aria-label passed to the page input.
+     */
+    paginationInputLabel: PropTypes.string
+  }),
+  /**
    * The column definition to apply to the table. Please check https://react-table.js.org/#/story/readme for more info
    Use the property "cellType" to define the different types of cell. Available values: "number" , "alpha-numeric" and "link.
    If the type is "link", in data use the structure {displayText: {text to display} ,url: {url} }.
@@ -861,17 +949,18 @@ Table.propTypes = {
   /**
    * Boolean describing if the table columns are rezisable or not
    */
-  resizable: PropTypes.bool
+  resizable: PropTypes.bool,
+  /**
+   * Component to be shown when no data is displayed.
+   */
+  noDataComponent: PropTypes.node
 };
 
 Table.defaultProps = {
   className: "",
   uniqClassName: null,
   id: undefined,
-  labels: {
-    titleText: "",
-    subtitleText: ""
-  },
+  paginationLabels: {},
   showPagination: true,
   onPageChange: () => {},
   showPageSize: true,
@@ -895,7 +984,8 @@ Table.defaultProps = {
   getTableProps: undefined,
   tableProps: { tableCaption: "Table Caption" },
   rowCount: undefined,
-  resizable: false
+  resizable: false,
+  noDataComponent: undefined
 };
 
-export default withStyles(styles, { name: "HvTable" })(Table);
+export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(Table)));

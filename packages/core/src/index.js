@@ -10,6 +10,7 @@ export { default as HvCard, HvCardHeader, HvCardFooter, HvCardContent, HvCardMed
 export { default as HvContainer } from "./Container";
 export { default as HvDropdown } from "./Dropdown";
 export { default as HvDropDownMenu } from "./DropDownMenu";
+export { default as HvFooter } from "./Footer";
 export { default as HvHeader } from "./Header";
 export { default as HvInput } from "./Input";
 export { default as HvSearchBox } from "./SearchBox";

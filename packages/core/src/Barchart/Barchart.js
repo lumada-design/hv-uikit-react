@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useMemo, useEffect, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
-import { clone, fill } from "lodash";
 import { withStyles } from "@material-ui/core";
 import Chart from "../Chart";
-import { setData, setLayout } from "./barchartPlotlyOverrides";
+import { applyLayoutDefaults, applyDataDefaults } from "./barchartPlotlyOverrides";
 import styles from "./styles";
 
 const MARGIN = 50;
@@ -11,6 +10,9 @@ const MAX_BAR_WIDTH = 90;
 
 /**
  * A Bar chart is a chart or graph that presents categorical data with rectangular bars.
+ *
+ * Our implementation uses as base Plotly. If you have a specific case
+ * that we don't cover directly, the Plotly [documentation](https://plotly.com/javascript/) is a good starting point.
  */
 const Barchart = ({
   id,
@@ -27,50 +29,74 @@ const Barchart = ({
   yAxisTitle,
   ...others
 }) => {
-  const newLayout = setLayout(layout, stack);
-  const newData = setData(data, horizontal);
+  /* Values derived from props */
 
-  const { barmode, bargap, bargroupgap } = newLayout;
+  const dataWithDefaults = useMemo(() => applyDataDefaults(data, horizontal), [data, horizontal]);
+  const chartLayout = useMemo(() => applyLayoutDefaults(layout, stack), [layout, stack]);
 
-  const isStack = barmode === "stack";
-  const numberOfBarsByGroup = isStack ? 1 : newData.length;
-  const numberOfGroup = newData[0].x.length;
+  /* State */
+
+  const [chartData, setChartData] = useState(dataWithDefaults);
+
+  /* Effects */
+
+  const firstRender = useRef(true);
+  useEffect(() => {
+    // only setChartData when prop value changes
+    // not needed on first render because the
+    // initial state is already properly set
+    if (!firstRender.current) {
+      setChartData(dataWithDefaults);
+    }
+
+    firstRender.current = false;
+  }, [dataWithDefaults]);
 
   /**
    * Used to force the max width of each bar with 90px.
+   *
+   * (this is effectively more an effect than a callback)
    */
-  const recalculateBarWidth = (plotData, ref) => {
-    const { width } = ref.current.getBoundingClientRect();
-    const plotWidth = width - MARGIN;
-    const groupWidth = plotWidth / numberOfGroup;
-    const colWidth = groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
+  const recalculateBarWidth = useCallback(ref => {
+    // use the data and layout info directly from the plotly ref
+    // as it's always the most uptodate version.
+    const plotData = ref.current.props.data;
+    const plotLayout = ref.current.props.layout;
 
-    const greaterThan90 = colWidth / numberOfBarsByGroup > MAX_BAR_WIDTH;
-    const isAlreadyGreaterThan90 = plotData[0].width !== undefined;
+    if (plotData.length > 0) {
+      const { barmode, bargap, bargroupgap } = plotLayout;
 
-    if (greaterThan90) {
-      const newWidth = (MAX_BAR_WIDTH / plotWidth) * numberOfGroup;
+      const isStack = barmode === "stack";
+      const numberOfBarsByGroup = isStack ? 1 : plotData.length;
+      const numberOfGroup = plotData[0].x.length;
 
-      plotData.map(subData => {
-        // eslint-disable-next-line no-param-reassign
-        subData.width = fill(clone(subData.x), newWidth);
-        return subData;
-      });
+      const { width } = ref.current.el.getBoundingClientRect();
+      const plotWidth = width - MARGIN;
+      const groupWidth = plotWidth / numberOfGroup;
+      const colWidth = groupWidth * (1 - bargap) - groupWidth * (1 - bargap) * bargroupgap;
 
-      return plotData;
+      const greaterThan90 = colWidth / numberOfBarsByGroup > MAX_BAR_WIDTH;
+      const isAlreadyGreaterThan90 = plotData[0].width !== undefined;
+
+      if (greaterThan90 && !isAlreadyGreaterThan90) {
+        const newWidth = (MAX_BAR_WIDTH / plotWidth) * numberOfGroup;
+
+        const newData = plotData.map(subData => {
+          return { ...subData, width: newWidth };
+        });
+
+        setChartData(newData);
+      }
+
+      if (!greaterThan90 && isAlreadyGreaterThan90) {
+        const newData = plotData.map(subData => {
+          return { ...subData, width: undefined };
+        });
+
+        setChartData(newData);
+      }
     }
-
-    if (!greaterThan90 && isAlreadyGreaterThan90) {
-      plotData.map(subData => {
-        // eslint-disable-next-line no-param-reassign
-        subData.width = undefined;
-        return subData;
-      });
-      return plotData;
-    }
-
-    return null;
-  };
+  }, []);
 
   return (
     <Chart
@@ -80,8 +106,8 @@ const Barchart = ({
       subtitle={subtitle}
       xAxisTitle={xAxisTitle}
       yAxisTitle={yAxisTitle}
-      data={newData}
-      layout={newLayout}
+      data={chartData}
+      layout={chartLayout}
       config={config}
       tooltipType={tooltipType}
       afterPlot={recalculateBarWidth}

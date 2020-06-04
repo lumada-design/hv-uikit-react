@@ -58,9 +58,7 @@ exports[`Tab withStyles should render correctly 1`] = `
           disabled={false}
           focusRipple={true}
           onClick={[Function]}
-          onFocus={[Function]}
           role="tab"
-          tabIndex={-1}
         >
           <ForwardRef(ButtonBase)
             className="MuiTab-root HvTab-root MuiTab-textColorInherit"
@@ -76,9 +74,7 @@ exports[`Tab withStyles should render correctly 1`] = `
             disabled={false}
             focusRipple={true}
             onClick={[Function]}
-            onFocus={[Function]}
             role="tab"
-            tabIndex={-1}
           >
             <button
               className="MuiButtonBase-root MuiTab-root HvTab-root MuiTab-textColorInherit"
@@ -96,7 +92,7 @@ exports[`Tab withStyles should render correctly 1`] = `
               onTouchMove={[Function]}
               onTouchStart={[Function]}
               role="tab"
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span

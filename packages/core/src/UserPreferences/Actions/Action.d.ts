@@ -14,7 +14,7 @@ export interface Payload {
 }
 
 export interface HvUserPreferenceActionProps
-  extends StandardProps<HvTypographyProps, HvUserPreferenceActionsClassKey, "onClick"> {
+  extends StandardProps<HvTypographyProps, HvUserPreferenceActionClassKey, "onClick"> {
   /**
    * Visual label.
    */
@@ -31,7 +31,7 @@ export interface HvUserPreferenceActionProps
   onClick: (event: Event, payload: Payload) => void;
 }
 
-export type HvUserPreferenceActionsClassKey = "action" | "noIcon";
+export type HvUserPreferenceActionClassKey = "action" | "noIcon";
 
 export default function HvUserPreferencesAction(
   props: HvUserPreferenceActionProps

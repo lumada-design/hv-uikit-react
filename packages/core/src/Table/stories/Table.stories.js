@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
-import { HvTable } from "../..";
+import { Fail } from "@hv/uikit-react-icons";
+import { makeStyles } from "@material-ui/core/styles";
+import { HvButton, HvEmptyState, HvTable } from "../..";
 
 export default {
   title: "Visualizations/Table",
@@ -352,6 +354,127 @@ export const Empty = () => {
 };
 
 Empty.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Table sample without data."
+    }
+  }
+};
+
+export const CustomEmpty = () => {
+  const getColumns = () => [
+    {
+      headerText: "Title",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left",
+      sortMethod: (a, b) => {
+        if (a === b) {
+          return 0;
+        }
+        const aReverse = Number(a.split(" ")[1]);
+        const bReverse = Number(b.split(" ")[1]);
+        return aReverse > bReverse ? 1 : -1;
+      }
+    },
+    {
+      headerText: "Time",
+      accessor: "createdDate",
+      format: value => moment(new Date(value.original.createdDate)).format("MM/DD/YYYY"),
+      cellType: "numeric"
+    },
+    {
+      headerText: "Event Type",
+      accessor: "eventType",
+      format: value => value.original.eventType.replace("_", " ").toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Status",
+      accessor: "status",
+      format: value => value.original.status.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Probability",
+      accessor: "riskScore",
+      format: value => `${value.original.riskScore}%`,
+      cellType: "numeric"
+    },
+    {
+      headerText: "Severity",
+      accessor: "severity",
+      format: value => value.original.severity.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric",
+      sortable: false
+    },
+    {
+      headerText: "Priority",
+      accessor: "priority",
+      format: value => value.original.priority.toLowerCase(),
+      style: { textTransform: "capitalize" },
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Asset",
+      accessor: "asset",
+      cellType: "link",
+      fixed: "right",
+      sortable: false
+    }
+  ];
+
+  const [pageSize, setPageSize] = useState(0);
+  const defaultSorted = [{ id: "name", desc: true }];
+
+  const onPageSizeChange = newPageSize => {
+    setPageSize(newPageSize);
+  };
+
+  const labels = {
+    titleText: "This is a title",
+    subtitleText: "This is a subtitle"
+  };
+
+  const NoDataComponent = () => {
+    const useStyles = makeStyles({
+      root: {
+        padding: "30px"
+      }
+    });
+    const classes = useStyles();
+    return (
+      <HvEmptyState
+        id="emptyState"
+        className={classes.root}
+        message="No data to display."
+        icon={<Fail iconSize="M" color="acce3" role="presentation" />}
+      />
+    );
+  };
+
+  return (
+    <div style={{ padding: "10px" }}>
+      <HvTable
+        data={[]}
+        id="test"
+        columns={getColumns()}
+        defaultPageSize={10}
+        pageSize={pageSize}
+        resizable={false}
+        defaultSorted={defaultSorted}
+        labels={labels}
+        onPageSizeChange={onPageSizeChange}
+        noDataComponent={<NoDataComponent />}
+      />
+    </div>
+  );
+};
+
+CustomEmpty.story = {
   parameters: {
     docs: {
       storyDescription: "Table sample without data."
@@ -919,7 +1042,7 @@ WithExpanderAndCustomContent.story = {
 export const WithCheckbox = () => {
   const data = [
     {
-      id: 14,
+      pid: 14,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
@@ -932,7 +1055,7 @@ export const WithCheckbox = () => {
       subElementTitle2: "cell_2"
     },
     {
-      id: 13,
+      pid: 13,
       name: "Event 2",
       createdDate: "10/14/2018",
       eventType: "Risk of failure profile",
@@ -943,7 +1066,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 12,
+      pid: 12,
       name: "Event 3",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -954,7 +1077,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 11,
+      pid: 11,
       name: "Event 4",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -965,7 +1088,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 3", url: "blablabla" }
     },
     {
-      id: 10,
+      pid: 10,
       name: "Event 5",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -976,7 +1099,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 8,
+      pid: 8,
       name: "Event 6",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -987,7 +1110,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 7,
+      pid: 7,
       name: "Event 7",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -998,7 +1121,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 6,
+      pid: 6,
       name: "Event 8",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1009,7 +1132,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 5,
+      pid: 5,
       name: "Event 9",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1020,7 +1143,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 4,
+      pid: 4,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1031,7 +1154,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 3,
+      pid: 3,
       name: "Event 10",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1042,7 +1165,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 2,
+      pid: 2,
       name: "Event 11",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1053,7 +1176,7 @@ export const WithCheckbox = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 1,
+      pid: 1,
       name: "Event 12",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1152,7 +1275,7 @@ export const WithCheckbox = () => {
         defaultSorted={defaultSorted}
         labels={labels}
         onPageSizeChange={onPageSizeChange}
-        idForCheckbox="id"
+        idForCheckbox="pid"
       />
     </div>
   );
@@ -1315,7 +1438,7 @@ WithCheckboxCustomContent.story = {
 export const WithCheckboxAndSecondaryActions = () => {
   const data = [
     {
-      id: 14,
+      pid: 14,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection ssssssssssssssssssssssssssssssssssssssssssssssssssss",
@@ -1328,7 +1451,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       subElementTitle2: "cell_2"
     },
     {
-      id: 13,
+      pid: 13,
       name: "Event 2",
       createdDate: "10/14/2018",
       eventType: "Risk of failure profile",
@@ -1339,7 +1462,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 12,
+      pid: 12,
       name: "Event 3",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1350,7 +1473,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 11,
+      pid: 11,
       name: "Event 4",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1361,7 +1484,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 3", url: "blablabla" }
     },
     {
-      id: 10,
+      pid: 10,
       name: "Event 5",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1372,7 +1495,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 8,
+      pid: 8,
       name: "Event 6",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1383,7 +1506,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 7,
+      pid: 7,
       name: "Event 7",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1394,7 +1517,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 6,
+      pid: 6,
       name: "Event 8",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1405,7 +1528,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 2", url: "blablabla" }
     },
     {
-      id: 5,
+      pid: 5,
       name: "Event 9",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1417,7 +1540,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       noActions: true
     },
     {
-      id: 4,
+      pid: 4,
       name: "Event 1",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1428,7 +1551,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 3,
+      pid: 3,
       name: "Event 10",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1440,7 +1563,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       noActions: true
     },
     {
-      id: 2,
+      pid: 2,
       name: "Event 11",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1451,7 +1574,7 @@ export const WithCheckboxAndSecondaryActions = () => {
       link: { displayText: "Asset 1", url: "blablabla" }
     },
     {
-      id: 1,
+      pid: 1,
       name: "Event 12",
       createdDate: "10/14/2018",
       eventType: "Anomaly detection",
@@ -1550,7 +1673,7 @@ export const WithCheckboxAndSecondaryActions = () => {
         defaultSorted={defaultSorted}
         labels={labels}
         onPageSizeChange={onPageSizeChange}
-        idForCheckbox="id"
+        idForCheckbox="pid"
         secondaryActions={[
           {
             label: "Share",
@@ -1828,6 +1951,212 @@ WithNullValues.story = {
   parameters: {
     docs: {
       storyDescription: "Table sample with that has cell values that are null."
+    }
+  }
+};
+
+export const TableWithChangingData = () => {
+  // Table data manipulation
+  const enableUsersData = [
+    {
+      id: 1,
+      name: "Aaron",
+      surname: "Melantha",
+      email: "melantha@mail.com"
+    },
+    {
+      id: 2,
+      name: "Jeanette",
+      surname: "Gentle",
+      email: "gentle@mail.com"
+    },
+    {
+      id: 3,
+      name: "Michael",
+      surname: "Neil",
+      email: "neil@mail.com"
+    },
+    {
+      id: 4,
+      name: "Walter",
+      surname: "Allegro",
+      email: "allegro@mail.com"
+    },
+    {
+      id: 5,
+      name: "James",
+      surname: "Jonah",
+      email: "allegro@mail.com"
+    }
+  ];
+
+  const disabledUserData = [
+    {
+      id: 6,
+      name: "Mary",
+      surname: "Monroe",
+      email: "monroe@mail.com"
+    },
+    {
+      id: 7,
+      name: "Katherine",
+      surname: "Kubrick",
+      email: "kubrick@mail.com"
+    },
+    {
+      id: 8,
+      name: "Peter",
+      surname: "Portland",
+      email: "portland@mail.com"
+    },
+    {
+      id: 9,
+      name: "Yuri",
+      surname: "York",
+      email: "york@mail.com"
+    },
+    {
+      id: 10,
+      name: "Howard",
+      surname: "Holmes",
+      email: "holmes@mail.com"
+    }
+  ];
+
+  const [enabledUsers, setEnabledUsers] = useState(enableUsersData);
+  const [disabledUsers, setDisabledUsers] = useState(disabledUserData);
+  const [usersToEnable, setUsersToEnable] = useState([]);
+  const [usersToDisable, setUsersToDisable] = useState([]);
+
+  const eliminateUserId = (id, list) => list.filter(d => d.id !== id);
+  const findUser = (id, list) => list.find(d => d.id === id);
+
+  const switchUserAtoB = (id, sender, receiver) => {
+    const newA = [...sender];
+    const newB = [...receiver];
+    const user = findUser(id, newA);
+    const updatedA = eliminateUserId(id, newA);
+    newB.push(user);
+    return { sender: updatedA, receiver: newB };
+  };
+
+  const bulkEnable = (idArray, currentEnabledUsers, currentDisabledUsers) => {
+    let localEnabledUsers = currentEnabledUsers;
+    let localDisabledUsers = currentDisabledUsers;
+    idArray.forEach(id => {
+      const { sender, receiver } = switchUserAtoB(id, localDisabledUsers, localEnabledUsers);
+      localEnabledUsers = receiver;
+      localDisabledUsers = sender;
+    });
+    setEnabledUsers(localEnabledUsers);
+    setDisabledUsers(localDisabledUsers);
+  };
+
+  const bulkDisable = (idArray, currentEnabledUsers, currentDisabledUsers) => {
+    let localEnabledUsers = currentEnabledUsers;
+    let localDisabledUsers = currentDisabledUsers;
+    idArray.forEach(id => {
+      const { sender, receiver } = switchUserAtoB(id, localEnabledUsers, localDisabledUsers);
+      localEnabledUsers = sender;
+      localDisabledUsers = receiver;
+    });
+    setEnabledUsers(localEnabledUsers);
+    setDisabledUsers(localDisabledUsers);
+  };
+
+  // Table columns
+  const getColumns = () => [
+    {
+      headerText: "ID",
+      accessor: "id",
+      cellType: "alpha-numeric"
+    },
+    {
+      headerText: "Name",
+      accessor: "name",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    },
+    {
+      headerText: "Surname",
+      accessor: "surname",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    },
+    {
+      headerText: "Email",
+      accessor: "email",
+      cellType: "alpha-numeric",
+      fixed: "left"
+    }
+  ];
+
+  const disabledUsersActions = [
+    {
+      label: "disable",
+      action: (event, row) => bulkDisable([row.id], enabledUsers, disabledUsers)
+    }
+  ];
+
+  const enableUsersActions = [
+    {
+      label: "enable",
+      action: (event, row) => bulkEnable([row.id], enabledUsers, disabledUsers)
+    }
+  ];
+
+  const enabledUsersLabels = {
+    titleText: "Enabled users",
+    subtitleText: ""
+  };
+
+  const disabledUsersLabels = {
+    titleText: "Disabled users",
+    subtitleText: ""
+  };
+
+  return (
+    <div>
+      <HvTable
+        id="table1"
+        data={enabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        secondaryActions={disabledUsersActions}
+        defaultPageSize={5}
+        labels={enabledUsersLabels}
+        onSelection={(event, idArray) => {
+          setUsersToDisable(idArray);
+        }}
+      />
+      <HvButton onClick={() => bulkDisable(usersToDisable, enabledUsers, disabledUsers)}>
+        Disable selected
+      </HvButton>
+      <HvTable
+        id="table2"
+        data={disabledUsers}
+        columns={getColumns()}
+        defaultSorted={[{ id: "id" }]}
+        idForCheckbox="id"
+        secondaryActions={enableUsersActions}
+        defaultPageSize={5}
+        onSelection={(event, idArray) => {
+          setUsersToEnable(idArray);
+        }}
+        labels={disabledUsersLabels}
+      />
+      <HvButton onClick={() => bulkEnable(usersToEnable, enabledUsers, disabledUsers)}>
+        Enable selected
+      </HvButton>
+    </div>
+  );
+};
+
+TableWithChangingData.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Sample showcasing the table component behavior with changing data."
     }
   }
 };

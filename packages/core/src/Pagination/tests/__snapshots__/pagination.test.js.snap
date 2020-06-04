@@ -240,11 +240,13 @@ exports[`Custom Pagination should render correctly 1`] = `
           className="HvPagination-pageNavigator"
         >
           <WithStyles(ForwardRef(IconButton))
+            aria-label="First Page"
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
+              aria-label="First Page"
               className="HvPagination-iconContainer"
               classes={
                 Object {
@@ -263,6 +265,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
+                aria-label="First Page"
                 centerRipple={true}
                 className="MuiIconButton-root HvPagination-iconContainer"
                 disabled={false}
@@ -270,6 +273,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
+                  aria-label="First Page"
                   centerRipple={true}
                   className="MuiIconButton-root HvPagination-iconContainer"
                   classes={
@@ -285,6 +289,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   onClick={[Function]}
                 >
                   <button
+                    aria-label="First Page"
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     onBlur={[Function]}
@@ -365,14 +370,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
-                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
-                                    "onEntered": [Function],
-                                    "onEntering": [Function],
                                     "onExit": [Function],
-                                    "onExited": [Function],
-                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -415,14 +415,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
-                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
-                                      "onEntered": [Function],
-                                      "onEntering": [Function],
                                       "onExit": [Function],
-                                      "onExited": [Function],
-                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -474,7 +469,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
-                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -574,11 +568,13 @@ exports[`Custom Pagination should render correctly 1`] = `
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
           <WithStyles(ForwardRef(IconButton))
+            aria-label="Previous Page"
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
+              aria-label="Previous Page"
               className="HvPagination-iconContainer"
               classes={
                 Object {
@@ -597,6 +593,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
+                aria-label="Previous Page"
                 centerRipple={true}
                 className="MuiIconButton-root HvPagination-iconContainer"
                 disabled={false}
@@ -604,6 +601,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
+                  aria-label="Previous Page"
                   centerRipple={true}
                   className="MuiIconButton-root HvPagination-iconContainer"
                   classes={
@@ -619,6 +617,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   onClick={[Function]}
                 >
                   <button
+                    aria-label="Previous Page"
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     onBlur={[Function]}
@@ -699,14 +698,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
-                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
-                                    "onEntered": [Function],
-                                    "onEntering": [Function],
                                     "onExit": [Function],
-                                    "onExited": [Function],
-                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -749,14 +743,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
-                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
-                                      "onEntered": [Function],
-                                      "onEntering": [Function],
                                       "onExit": [Function],
-                                      "onExited": [Function],
-                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -808,7 +797,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
-                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -1038,11 +1026,13 @@ exports[`Custom Pagination should render correctly 1`] = `
             </WithStyles(ForwardRef)>
           </div>
           <WithStyles(ForwardRef(IconButton))
+            aria-label="Next Page"
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
+              aria-label="Next Page"
               className="HvPagination-iconContainer"
               classes={
                 Object {
@@ -1061,6 +1051,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
+                aria-label="Next Page"
                 centerRipple={true}
                 className="MuiIconButton-root HvPagination-iconContainer"
                 disabled={false}
@@ -1068,6 +1059,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
+                  aria-label="Next Page"
                   centerRipple={true}
                   className="MuiIconButton-root HvPagination-iconContainer"
                   classes={
@@ -1083,6 +1075,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   onClick={[Function]}
                 >
                   <button
+                    aria-label="Next Page"
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     onBlur={[Function]}
@@ -1163,14 +1156,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
-                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
-                                    "onEntered": [Function],
-                                    "onEntering": [Function],
                                     "onExit": [Function],
-                                    "onExited": [Function],
-                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -1213,14 +1201,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
-                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
-                                      "onEntered": [Function],
-                                      "onEntering": [Function],
                                       "onExit": [Function],
-                                      "onExited": [Function],
-                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -1272,7 +1255,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
-                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",
@@ -1372,11 +1354,13 @@ exports[`Custom Pagination should render correctly 1`] = `
             </ForwardRef(IconButton)>
           </WithStyles(ForwardRef(IconButton))>
           <WithStyles(ForwardRef(IconButton))
+            aria-label="Last Page"
             className="HvPagination-iconContainer"
             disabled={false}
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
+              aria-label="Last Page"
               className="HvPagination-iconContainer"
               classes={
                 Object {
@@ -1395,6 +1379,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
+                aria-label="Last Page"
                 centerRipple={true}
                 className="MuiIconButton-root HvPagination-iconContainer"
                 disabled={false}
@@ -1402,6 +1387,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
+                  aria-label="Last Page"
                   centerRipple={true}
                   className="MuiIconButton-root HvPagination-iconContainer"
                   classes={
@@ -1417,6 +1403,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                   onClick={[Function]}
                 >
                   <button
+                    aria-label="Last Page"
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
                     onBlur={[Function]}
@@ -1497,14 +1484,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   "$$typeof": Symbol(react.forward_ref),
                                   "propTypes": Object {
                                     "children": [Function],
-                                    "disableStrictModeCompat": [Function],
                                     "in": [Function],
                                     "onEnter": [Function],
-                                    "onEntered": [Function],
-                                    "onEntering": [Function],
                                     "onExit": [Function],
-                                    "onExited": [Function],
-                                    "onExiting": [Function],
                                     "style": [Function],
                                     "timeout": [Function],
                                   },
@@ -1547,14 +1529,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     "$$typeof": Symbol(react.forward_ref),
                                     "propTypes": Object {
                                       "children": [Function],
-                                      "disableStrictModeCompat": [Function],
                                       "in": [Function],
                                       "onEnter": [Function],
-                                      "onEntered": [Function],
-                                      "onEntering": [Function],
                                       "onExit": [Function],
-                                      "onExited": [Function],
-                                      "onExiting": [Function],
                                       "style": [Function],
                                       "timeout": [Function],
                                     },
@@ -1606,7 +1583,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   onMouseEnter={[Function]}
                                   onMouseLeave={[Function]}
                                   onMouseOver={[Function]}
-                                  onTouchStart={[Function]}
                                   style={
                                     Object {
                                       "overflow": "hidden",

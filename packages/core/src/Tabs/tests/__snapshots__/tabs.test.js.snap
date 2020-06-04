@@ -69,7 +69,6 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
           >
             <div
               className="MuiTabs-flexContainer HvTabs-flexContainer"
-              onKeyDown={[Function]}
               role="tablist"
             >
               <WithStyles(HvTab)
@@ -151,9 +150,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         role="tab"
-                        tabIndex={-1}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={false}
@@ -170,9 +167,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
-                          onFocus={[Function]}
                           role="tab"
-                          tabIndex={-1}
                         >
                           <button
                             aria-selected={false}
@@ -191,7 +186,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
                             role="tab"
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -285,9 +280,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         role="tab"
-                        tabIndex={0}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={true}
@@ -304,9 +297,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
-                          onFocus={[Function]}
                           role="tab"
-                          tabIndex={0}
                         >
                           <button
                             aria-selected={true}
@@ -419,9 +410,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         role="tab"
-                        tabIndex={-1}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={false}
@@ -438,9 +427,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
-                          onFocus={[Function]}
                           role="tab"
-                          tabIndex={-1}
                         >
                           <button
                             aria-selected={false}
@@ -459,7 +446,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
                             role="tab"
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -553,9 +540,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                         disabled={false}
                         focusRipple={true}
                         onClick={[Function]}
-                        onFocus={[Function]}
                         role="tab"
-                        tabIndex={-1}
                       >
                         <ForwardRef(ButtonBase)
                           aria-selected={false}
@@ -572,9 +557,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                           disabled={false}
                           focusRipple={true}
                           onClick={[Function]}
-                          onFocus={[Function]}
                           role="tab"
-                          tabIndex={-1}
                         >
                           <button
                             aria-selected={false}
@@ -593,7 +576,7 @@ exports[`Compose Tabs withStyles should render correctly 1`] = `
                             onTouchMove={[Function]}
                             onTouchStart={[Function]}
                             role="tab"
-                            tabIndex={-1}
+                            tabIndex={0}
                             type="button"
                           >
                             <span
@@ -724,7 +707,6 @@ exports[`Tabs withStyles should render correctly 1`] = `
           >
             <div
               className="MuiTabs-flexContainer HvTabs-flexContainer"
-              onKeyDown={[Function]}
               role="tablist"
             />
             <WithStyles(ForwardRef(TabIndicator))

@@ -9,6 +9,7 @@
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/pentaho/hv-uikit-react.git"

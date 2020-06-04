@@ -1,50 +1,44 @@
-import React, { memo, useLayoutEffect, useRef, useState, useEffect } from "react";
+import React, { useLayoutEffect, useRef, useCallback } from "react";
 import PropTypes from "prop-types";
 import Plotly from "plotly.js-basic-dist";
 import createPlotlyComponent from "react-plotly.js/factory";
-import equals from "lodash/isEqual";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
+const PlotGraph = createPlotlyComponent(Plotly);
+
+const plotGraphStyle = { position: "relative" };
+
 const Plot = ({ data, layout, config, revision = 0, onHover, onUnHover, afterPlot, ...others }) => {
-  const [plotRevision, setPlotRevision] = useState(revision);
-  const [newData, setNewData] = useState(data);
-
-  useEffect(() => setNewData(data), [data]);
-
-  useEffect(() => setPlotRevision(revision), [revision]);
-
-  const PlotGraph = createPlotlyComponent(Plotly);
-
   const ref = useRef(null);
 
-  const afterPlotInternal = () => {
-    const afterData = afterPlot?.(newData, ref);
-    if (afterData) {
-      setNewData(afterData);
-      setPlotRevision(plotRevision + 1);
-    }
-  };
+  /* Callbacks */
+
+  const afterPlotInternal = useCallback(() => {
+    afterPlot?.(ref);
+  }, [afterPlot]);
+
+  /* Effects */
 
   /**
-   * Call in the first render.
+   * Call in the first render because react-plotly.js won't do so.
+   * (https://github.com/plotly/react-plotly.js/blob/bd15ca98be12b159633fb57c4ea762cb7a64c3a7/src/factory.js#L88)
    */
   useLayoutEffect(afterPlotInternal, []);
 
   return (
-    <div ref={ref}>
-      <PlotGraph
-        data={newData}
-        layout={layout}
-        config={config}
-        revision={plotRevision}
-        onHover={(event, eventData) => onHover(event, eventData)}
-        onUnhover={(event, eventData) => onUnHover(event, eventData)}
-        onAfterPlot={afterPlot && afterPlotInternal}
-        style={{ position: "relative" }}
-        {...others}
-      />
-    </div>
+    <PlotGraph
+      ref={ref}
+      data={data}
+      layout={layout}
+      config={config}
+      revision={revision}
+      onHover={onHover}
+      onUnhover={onUnHover}
+      onAfterPlot={afterPlot != null ? afterPlotInternal : null}
+      style={plotGraphStyle}
+      {...others}
+    />
   );
 };
 
@@ -79,7 +73,4 @@ Plot.propTypes = {
   revision: PropTypes.number
 };
 
-const arePropsEqual = (prevProps, nextProps) =>
-  equals(prevProps.data, nextProps.data) && equals(prevProps.layout, nextProps.layout);
-
-export default withStyles(styles, { name: "HvChartPlot" })(memo(Plot, arePropsEqual));
+export default withStyles(styles, { name: "HvChartPlot" })(Plot);

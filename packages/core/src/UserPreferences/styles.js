@@ -22,7 +22,7 @@ const styles = theme => ({
   container: {
     display: "flex",
     zIndex: 20,
-    boxShadow: `0 2px 12px rgba(65,65,65,.12)`
+    boxShadow: theme.hv.shadows[1]
   },
   contentContainer: {
     paddingTop: `${theme.hv.spacing.sm}px`,
