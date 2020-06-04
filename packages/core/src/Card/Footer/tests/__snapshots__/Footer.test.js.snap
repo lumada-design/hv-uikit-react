@@ -71,16 +71,22 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             Object {
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
               "ghostSecondary": "HvButton-ghostSecondary",
               "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+              "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+              "iconSVG": "HvButton-iconSVG",
               "primary": "HvButton-primary",
               "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
               "root": "HvButton-root",
               "rootIcon": "HvButton-rootIcon",
               "secondary": "HvButton-secondary",
               "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
               "semantic": "HvButton-semantic",
               "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
               "startIcon": "HvButton-startIcon",
             }
           }
@@ -89,7 +95,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
           onClick={[Function]}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvActions-button"
+            className="HvActions-button HvButton-ghostSVG"
             classes={
               Object {
                 "containedPrimary": "HvButton-primary",
@@ -108,7 +114,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvActions-button"
+              className="HvActions-button HvButton-ghostSVG"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
@@ -150,7 +156,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -161,7 +167,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                  className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -179,7 +185,7 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     disabled={false}
                     id="view"
                     onBlur={[Function]}
@@ -1118,16 +1124,22 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             Object {
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
               "ghostSecondary": "HvButton-ghostSecondary",
               "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+              "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+              "iconSVG": "HvButton-iconSVG",
               "primary": "HvButton-primary",
               "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
               "root": "HvButton-root",
               "rootIcon": "HvButton-rootIcon",
               "secondary": "HvButton-secondary",
               "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
               "semantic": "HvButton-semantic",
               "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
               "startIcon": "HvButton-startIcon",
             }
           }
@@ -1136,7 +1148,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           onClick={[Function]}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvActions-button"
+            className="HvActions-button HvButton-ghostSVG"
             classes={
               Object {
                 "containedPrimary": "HvButton-primary",
@@ -1155,7 +1167,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvActions-button"
+              className="HvActions-button HvButton-ghostSVG"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
@@ -1197,7 +1209,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -1208,7 +1220,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                  className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -1226,7 +1238,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     disabled={false}
                     id="view"
                     onBlur={[Function]}
@@ -1271,16 +1283,22 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             Object {
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
               "ghostSecondary": "HvButton-ghostSecondary",
               "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+              "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+              "iconSVG": "HvButton-iconSVG",
               "primary": "HvButton-primary",
               "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
               "root": "HvButton-root",
               "rootIcon": "HvButton-rootIcon",
               "secondary": "HvButton-secondary",
               "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
               "semantic": "HvButton-semantic",
               "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
               "startIcon": "HvButton-startIcon",
             }
           }
@@ -1289,7 +1307,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
           onClick={[Function]}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvActions-button"
+            className="HvActions-button HvButton-ghostSVG"
             classes={
               Object {
                 "containedPrimary": "HvButton-primary",
@@ -1308,7 +1326,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvActions-button"
+              className="HvActions-button HvButton-ghostSVG"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
@@ -1350,7 +1368,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -1361,7 +1379,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                  className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -1379,7 +1397,7 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button MuiButton-textPrimary HvButton-ghost"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     disabled={false}
                     id="delete"
                     onBlur={[Function]}

@@ -2,7 +2,6 @@ import { fade, hexToRgb } from "@material-ui/core";
 import { outlineStyles } from "../Focus/styles";
 
 const setColor = color => ({
-  color,
   "& svg .color0": {
     fill: color
   }
@@ -36,8 +35,9 @@ const styles = theme => {
       minWidth: "unset",
       ...theme.hv.typography.highlightText
     },
+
     primary: {
-      ...setColor(theme.hv.palette.accent.acce0),
+      color: theme.hv.palette.accent.acce0,
       backgroundColor: theme.hv.palette.accent.acce2,
       "&:hover": {
         backgroundColor: theme.hv.palette.accent.acce2h
@@ -46,8 +46,8 @@ const styles = theme => {
         backgroundColor: theme.hv.palette.accent.acce2
       },
       "&$primaryDisabled": {
-        backgroundColor: theme.hv.palette.atmosphere.atmo4,
         color: theme.hv.palette.atmosphere.atmo7,
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
         cursor: "not-allowed",
         pointerEvents: "auto"
       },
@@ -58,14 +58,10 @@ const styles = theme => {
         pointerEvents: "auto"
       }
     },
-    primaryDisabled: {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      ...setColor(theme.hv.palette.atmosphere.atmo7),
-      cursor: "not-allowed"
-    },
+    primaryDisabled: {},
     secondary: {
+      color: theme.hv.palette.accent.acce1,
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
-      ...setColor(theme.hv.palette.accent.acce1),
       border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
       "&:hover": {
         backgroundColor: theme.hv.palette.atmosphere.atmo4,
@@ -75,8 +71,8 @@ const styles = theme => {
         backgroundColor: theme.hv.palette.atmosphere.atmo1
       },
       "&$secondaryDisabled": {
-        backgroundColor: theme.hv.palette.atmosphere.atmo4,
         color: theme.hv.palette.atmosphere.atmo7,
+        backgroundColor: theme.hv.palette.atmosphere.atmo4,
         border: "none",
         cursor: "not-allowed",
         pointerEvents: "auto"
@@ -89,14 +85,10 @@ const styles = theme => {
         pointerEvents: "auto"
       }
     },
-    secondaryDisabled: {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      ...setColor(theme.hv.palette.atmosphere.atmo7),
-      cursor: "not-allowed",
-      border: "none"
-    },
+    secondaryDisabled: {},
+
     ghost: {
-      ...setColor(theme.hv.palette.accent.acce1),
+      color: theme.hv.palette.accent.acce1,
       backgroundColor: "transparent",
       "&:hover": {
         backgroundColor: theme.hv.palette.atmosphere.atmo4
@@ -119,13 +111,10 @@ const styles = theme => {
         pointerEvents: "auto"
       }
     },
-    ghostDisabled: {
-      backgroundColor: "transparent",
-      ...setColor(theme.hv.palette.atmosphere.atmo7),
-      cursor: "not-allowed"
-    },
+    ghostDisabled: {},
+
     ghostSecondary: {
-      ...setColor(theme.hv.palette.accent.acce2),
+      color: theme.hv.palette.accent.acce2,
       backgroundColor: "transparent",
       "&:hover": {
         backgroundColor: theme.hv.palette.atmosphere.atmo4
@@ -134,8 +123,8 @@ const styles = theme => {
         backgroundColor: "transparent"
       },
       "&$ghostSecondaryDisabled": {
-        backgroundColor: "transparent",
         color: theme.hv.palette.atmosphere.atmo7,
+        backgroundColor: "transparent",
         border: "none",
         cursor: "not-allowed",
         pointerEvents: "auto"
@@ -148,13 +137,10 @@ const styles = theme => {
         pointerEvents: "auto"
       }
     },
-    ghostSecondaryDisabled: {
-      backgroundColor: "transparent",
-      ...setColor(theme.hv.palette.atmosphere.atmo7),
-      cursor: "not-allowed"
-    },
+    ghostSecondaryDisabled: {},
+
     semantic: {
-      ...setColor(theme.hv.palette.base.base2),
+      color: theme.hv.palette.base.base2,
       backgroundColor: "transparent",
       "&:hover": {
         backgroundColor: convertedColor
@@ -163,8 +149,8 @@ const styles = theme => {
         backgroundColor: convertedColor
       },
       "&$semanticDisabled": {
+        color: theme.hv.palette.atmosphere.atmo7,
         backgroundColor: convertedColorDisabled,
-        ...setColor(theme.hv.palette.atmosphere.atmo7),
         border: "none",
         cursor: "not-allowed",
         pointerEvents: "auto"
@@ -177,14 +163,47 @@ const styles = theme => {
         pointerEvents: "auto"
       }
     },
-    semanticDisabled: {
-      backgroundColor: convertedColorDisabled,
-      color: theme.hv.palette.atmosphere.atmo7,
-      cursor: "not-allowed"
-    },
+    semanticDisabled: {},
     startIcon: {
       marginLeft: -8,
       marginRight: 0
+    },
+
+    primarySVG: {
+      ...setColor(theme.hv.palette.accent.acce0),
+      "&$primaryDisabled": {
+        ...setColor(theme.hv.palette.atmosphere.atmo7)
+      }
+    },
+    secondarySVG: {
+      ...setColor(theme.hv.palette.accent.acce1),
+      "&$secondaryDisabled": {
+        ...setColor(theme.hv.palette.atmosphere.atmo7)
+      }
+    },
+    ghostSVG: {
+      ...setColor(theme.hv.palette.accent.acce1),
+      "&$ghostDisabled": {
+        ...setColor(theme.hv.palette.atmosphere.atmo7)
+      }
+    },
+    ghostSecondarySVG: {
+      ...setColor(theme.hv.palette.accent.acce2),
+      "&$ghostSecondaryDisabled": {
+        ...setColor(theme.hv.palette.atmosphere.atmo7)
+      }
+    },
+    semanticSVG: {
+      ...setColor(theme.hv.palette.base.base2),
+      "&$semanticDisabled": {
+        ...setColor(theme.hv.palette.atmosphere.atmo7)
+      }
+    },
+    iconSVG: {
+      ...setColor(theme.hv.palette.accent.acce1),
+      "&$ghostDisabled": {
+        ...setColor(theme.hv.palette.atmosphere.atmo7)
+      }
     }
   };
 };

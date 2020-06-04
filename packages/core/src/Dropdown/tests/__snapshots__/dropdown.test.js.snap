@@ -1685,7 +1685,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                     id="test-dropdown-values-actions"
                                   >
                                     <button
-                                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                       id="test-dropdown-values-actions-apply"
                                       tabindex="0"
                                       type="button"
@@ -1697,7 +1697,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                       </span>
                                     </button>
                                     <button
-                                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                      class="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                       id="test-dropdown-values-actions-cancel"
                                       tabindex="0"
                                       type="button"
@@ -6038,16 +6038,22 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 Object {
                                                   "ghost": "HvButton-ghost",
                                                   "ghostDisabled": "HvButton-ghostDisabled",
+                                                  "ghostSVG": "HvButton-ghostSVG",
                                                   "ghostSecondary": "HvButton-ghostSecondary",
                                                   "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+                                                  "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+                                                  "iconSVG": "HvButton-iconSVG",
                                                   "primary": "HvButton-primary",
                                                   "primaryDisabled": "HvButton-primaryDisabled",
+                                                  "primarySVG": "HvButton-primarySVG",
                                                   "root": "HvButton-root",
                                                   "rootIcon": "HvButton-rootIcon",
                                                   "secondary": "HvButton-secondary",
                                                   "secondaryDisabled": "HvButton-secondaryDisabled",
+                                                  "secondarySVG": "HvButton-secondarySVG",
                                                   "semantic": "HvButton-semantic",
                                                   "semanticDisabled": "HvButton-semanticDisabled",
+                                                  "semanticSVG": "HvButton-semanticSVG",
                                                   "startIcon": "HvButton-startIcon",
                                                 }
                                               }
@@ -6055,7 +6061,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               onClick={[Function]}
                                             >
                                               <WithStyles(ForwardRef(Button))
-                                                className="HvDropdownActions-button"
+                                                className="HvDropdownActions-button HvButton-ghostSVG"
                                                 classes={
                                                   Object {
                                                     "containedPrimary": "HvButton-primary",
@@ -6073,7 +6079,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 variant="text"
                                               >
                                                 <ForwardRef(Button)
-                                                  className="HvDropdownActions-button"
+                                                  className="HvDropdownActions-button HvButton-ghostSVG"
                                                   classes={
                                                     Object {
                                                       "colorInherit": "MuiButton-colorInherit",
@@ -6114,7 +6120,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   variant="text"
                                                 >
                                                   <WithStyles(ForwardRef(ButtonBase))
-                                                    className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                                    className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                     component="button"
                                                     disableRipple={true}
                                                     disabled={false}
@@ -6125,7 +6131,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     type="button"
                                                   >
                                                     <ForwardRef(ButtonBase)
-                                                      className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                                      className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                       classes={
                                                         Object {
                                                           "disabled": "Mui-disabled",
@@ -6143,7 +6149,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       type="button"
                                                     >
                                                       <button
-                                                        className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                                        className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                         disabled={false}
                                                         id="test-dropdown-values-actions-apply"
                                                         onBlur={[Function]}
@@ -6186,16 +6192,22 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 Object {
                                                   "ghost": "HvButton-ghost",
                                                   "ghostDisabled": "HvButton-ghostDisabled",
+                                                  "ghostSVG": "HvButton-ghostSVG",
                                                   "ghostSecondary": "HvButton-ghostSecondary",
                                                   "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+                                                  "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+                                                  "iconSVG": "HvButton-iconSVG",
                                                   "primary": "HvButton-primary",
                                                   "primaryDisabled": "HvButton-primaryDisabled",
+                                                  "primarySVG": "HvButton-primarySVG",
                                                   "root": "HvButton-root",
                                                   "rootIcon": "HvButton-rootIcon",
                                                   "secondary": "HvButton-secondary",
                                                   "secondaryDisabled": "HvButton-secondaryDisabled",
+                                                  "secondarySVG": "HvButton-secondarySVG",
                                                   "semantic": "HvButton-semantic",
                                                   "semanticDisabled": "HvButton-semanticDisabled",
+                                                  "semanticSVG": "HvButton-semanticSVG",
                                                   "startIcon": "HvButton-startIcon",
                                                 }
                                               }
@@ -6203,7 +6215,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               onClick={[Function]}
                                             >
                                               <WithStyles(ForwardRef(Button))
-                                                className="HvDropdownActions-button"
+                                                className="HvDropdownActions-button HvButton-ghostSVG"
                                                 classes={
                                                   Object {
                                                     "containedPrimary": "HvButton-primary",
@@ -6221,7 +6233,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 variant="text"
                                               >
                                                 <ForwardRef(Button)
-                                                  className="HvDropdownActions-button"
+                                                  className="HvDropdownActions-button HvButton-ghostSVG"
                                                   classes={
                                                     Object {
                                                       "colorInherit": "MuiButton-colorInherit",
@@ -6262,7 +6274,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   variant="text"
                                                 >
                                                   <WithStyles(ForwardRef(ButtonBase))
-                                                    className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                                    className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                     component="button"
                                                     disableRipple={true}
                                                     disabled={false}
@@ -6273,7 +6285,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                     type="button"
                                                   >
                                                     <ForwardRef(ButtonBase)
-                                                      className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                                      className="MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                       classes={
                                                         Object {
                                                           "disabled": "Mui-disabled",
@@ -6291,7 +6303,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       type="button"
                                                     >
                                                       <button
-                                                        className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button MuiButton-textPrimary HvButton-ghost"
+                                                        className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDropdownActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                                                         disabled={false}
                                                         id="test-dropdown-values-actions-cancel"
                                                         onBlur={[Function]}

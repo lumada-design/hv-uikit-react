@@ -159,7 +159,12 @@ Sizes.story = {
 
 export const Buttons = () => {
   const AvatarButton = ({ children, ...other }) => (
-    <HvButton aria-label="Open the user profile" category="icon" {...other}>
+    <HvButton
+      aria-label="Open the user profile"
+      category="icon"
+      overrideIconColors={false}
+      {...other}
+    >
       {children}
     </HvButton>
   );
@@ -179,7 +184,7 @@ export const Buttons = () => {
         onClick={doAlert}
       />
       <HvAvatar id="icon" backgroundColor="sema1" component={AvatarButton} onClick={doAlert}>
-        <LogIn color="atmo1" iconSize="XS" />
+        <LogIn semantic="sema8" iconSize="XS" />
       </HvAvatar>
     </>
   );

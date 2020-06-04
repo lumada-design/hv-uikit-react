@@ -278,7 +278,6 @@ export const SmokeTests = () => (
           className="all"
           id="allProperties"
           disabled
-          classes=""
           startIcon={<Caution />}
           onClick={() => alert("incorrect")}
         >
