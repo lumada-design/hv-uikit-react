@@ -8,11 +8,6 @@ export interface HvSearchBoxProps
    * it receives the value or event+value.
    */
   onSubmit?: (event: Event, value: string) => void;
-  /**
-   * The function that will be executed when the searchbox changes,
-   * it receives the searchbox value
-   */
-  onChange?: (event: Event, value: string) => void;
 }
 
 export type HvSearchBoxClassKey = "root";
