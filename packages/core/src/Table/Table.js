@@ -11,7 +11,6 @@ import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import HvTypography from "../Typography";
 import expander from "./expander/expander";
 import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
@@ -23,7 +22,7 @@ import checkboxHOC from "./selectTable";
 import { styles, tableStyleOverrides } from "./styles";
 
 import HvCheckBox from "../Selectors/CheckBox";
-import DropDownMenu from "../DropDownMenu";
+import DropDownMenu from "./DropdownMenu";
 import withLabels from "../withLabels";
 import { setId } from "../utils";
 import withId from "../withId";
@@ -550,14 +549,8 @@ class Table extends React.Component {
           props.original.noActions ? null : (
             <DropDownMenu
               id={`${this.computeRowElementId(props)}-secondaryActions`}
-              disablePortal={false}
-              icon={<MoreVert boxStyles={{ width: "30px", height: "30px" }} />}
-              dataList={secondaryActions}
-              onClick={(event, item) => {
-                event.stopPropagation();
-                item?.action?.(event, props.original);
-              }}
-              keepOpened={false}
+              secondaryActions={secondaryActions}
+              original={props.original}
               {...dropdownMenuProps}
             />
           )

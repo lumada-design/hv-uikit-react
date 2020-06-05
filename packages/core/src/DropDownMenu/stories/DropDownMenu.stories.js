@@ -99,14 +99,18 @@ export const Controlled = () => {
 
     return (
       <>
-        <HvButton category="ghost" onClick={() => setOpen(prevState => !prevState)}>
-          {open ? "Close" : "Open"}
+        <HvButton
+          category="ghost"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
+          Click
         </HvButton>
         <HvDropDownMenu
           id="dropMenu"
           expanded={open}
           onClick={(e, item) => console.log(item.label)}
-          onToggleOpen={value => setOpen(value)}
           disablePortal={false}
           aria-label="dropdownMenu-1"
           keepOpened={false}
