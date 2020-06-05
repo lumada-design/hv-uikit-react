@@ -7,7 +7,10 @@ on:
     types: [closed]
 
 env:
-  DOCUMENTATION_PUBLISH_FOLDER: pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: remove PR ${{ github.repository }}/#${{ github.event.number }}"
 
 jobs:
   CleanupDeployment:
@@ -15,6 +18,29 @@ jobs:
     runs-on: [self-hosted, Linux]
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+          ssh-key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 0
+
+      - name: Commit removal
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git rm $DOCUMENTATION_PUBLISH_FOLDER
+          git commit -m $DOCUMENTATION_PUBLISH_MESSAGE
+          git push
+
+      - name: Cleanup Folder
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/gh-docs
+
       - name: mark environment as deactivated
         uses: bobheadxi/deployments@master
         with:

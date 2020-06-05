@@ -21,9 +21,11 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
-  DOCUMENTATION_PUBLISH_FOLDER: master
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/master
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for master"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/master
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/master/
 
 jobs:
   Release:
@@ -103,33 +105,23 @@ jobs:
           ref: ${{ github.head_ref }}
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
-      - name: Checkout gh-pages
-        uses: actions/checkout@v2
-        with:
-          path: public
-          ref: gh-pages
-
       - name: Generate Documentation
         run: |
           npm run build-documentation
-          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
           mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
           cp -r dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           publish_dir: ./public
+          external_repository: ${{env.DOCUMENTATION_PUBLISH_REPO}}
+          publish_branch: ${{env.DOCUMENTATION_PUBLISH_BRANCH}}
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
           keepFiles: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-
-      - name: Waits deploy for to be up
-        uses: jakejarvis/wait-action@master
-        with:
-          time: "30s"
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master

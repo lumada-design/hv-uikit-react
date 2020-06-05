@@ -21,9 +21,11 @@ on:
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
   DEFAULT_PUBLISH_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/uikit-npm-release-orl/
-  DOCUMENTATION_PUBLISH_FOLDER: v1.x
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v1x"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/v1.x
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/v1.x
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for v1.x"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/v1.x/
 
 jobs:
   Release:
@@ -98,16 +100,9 @@ jobs:
           ref: ${{ github.head_ref }}
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
-      - name: Checkout gh-pages
-        uses: actions/checkout@v2
-        with:
-          path: public
-          ref: gh-pages
-
       - name: Generate Documentation
         run: |
           npm run build-documentation
-          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
           mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
           cp -r packages/doc/dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
 

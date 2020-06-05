@@ -6,49 +6,24 @@ on:
       - alpha
 
 # flow:
-# Notify Start
 # License-Checks | Lint | Test-Jest | Build-Documentation
 # Robot_pa11y | Robot (chrome)
 # Notify End
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DOCUMENTATION_PUBLISH_FOLDER: pr-${{ github.event.number }}
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR #${{ github.event.number }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/pr-${{ github.event.number }}/
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR ${{ github.repository }}/#${{ github.event.number }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
   PR_URL: https://github.com/${{ github.repository }}/pull/${{ github.event.number }}
   RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 jobs:
-  Notify-Start:
-    name: Notify Start
-    runs-on: [self-hosted, Linux]
-
-    steps:
-      - name: Notify
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit-eng-ci",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "title": "${{ github.workflow }} (#${{github.event.number}}) build started",
-                  "title_link": "${{ env.RUN_URL }}",
-                  "text": "${{ env.PR_URL }}",
-                  "footer": "by ${{github.actor}}",
-                  "footer_icon": "https://github.com/${{github.actor}}.png?size=20"
-                }
-              ]
-            }
-
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
 
     steps:
       - name: Checkout
@@ -78,7 +53,6 @@ jobs:
   Build-Documentation:
     name: Build Documentation
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
 
     steps:
       - name: Checkout
@@ -136,17 +110,14 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           publish_dir: ./public
+          external_repository: ${{env.DOCUMENTATION_PUBLISH_REPO}}
+          publish_branch: ${{env.DOCUMENTATION_PUBLISH_BRANCH}}
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
           keep_files: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-
-      - name: Waits deploy for to be up
-        uses: jakejarvis/wait-action@master
-        with:
-          time: "30s"
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
@@ -161,7 +132,7 @@ jobs:
       - name: Clean Folders
         if: always()
         run: |
-          rm -rf ${{ github.workspace }}/public
+          rm -rf ${{ github.workspace }}/public $HOME/actions_github_pages_* /tmp/ssh-auth.sock
 
   Robot:
     name: Test Robot

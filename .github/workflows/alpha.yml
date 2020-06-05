@@ -25,9 +25,11 @@ on:
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DOCUMENTATION_PUBLISH_FOLDER: alpha
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/alpha
   DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for alpha"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/alpha
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/alpha/
 
 jobs:
   Notify-Start:
@@ -145,8 +147,10 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
           publish_dir: ./public
+          external_repository: ${{env.DOCUMENTATION_PUBLISH_REPO}}
+          publish_branch: ${{env.DOCUMENTATION_PUBLISH_BRANCH}}
           commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
           keep_files: true
           user_name: "github-actions[bot]"
