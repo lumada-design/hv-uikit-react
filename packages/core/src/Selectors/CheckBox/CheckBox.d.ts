@@ -10,7 +10,7 @@ export interface HvCheckBoxProps extends StandardProps<CheckboxProps, HvCheckBox
   /**
    * Whether the selector should use semantic colors
    */
-  semantic: boolean;
+  semantic?: boolean;
 
   /**
    * The position of the checkbox label.

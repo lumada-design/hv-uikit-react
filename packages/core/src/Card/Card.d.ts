@@ -97,7 +97,7 @@ export interface HvCardProps
    * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
    * HvCheckbox API.
    */
-  checkBoxProps?: HvCheckBoxProps;
+  checkboxProps?: HvCheckBoxProps;
 }
 
 export type HvCardClassKey =
