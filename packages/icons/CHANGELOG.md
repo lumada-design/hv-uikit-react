@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.0.6...@hv/uikit-react-icons@2.1.0) (2020-06-05)
+
+
+### Features
+
+* **footer:** promote component to core. [#1601](https://github.com/pentaho/hv-uikit-react/issues/1601) ([ed160c2](https://github.com/pentaho/hv-uikit-react/commit/ed160c2ac1f051385a178aa9690596adebec0bd8))
+
+
+
+
+
 ## [2.0.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.0.5...@hv/uikit-react-icons@2.0.6) (2020-06-03)
 
 **Note:** Version bump only for package @hv/uikit-react-icons

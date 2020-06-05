@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@2.0.5...@hv/uikit-common-themes@2.0.6) (2020-06-05)
+
+
+### Bug Fixes
+
+* **themes:** revert links to ds 1.2.1 ([becbec3](https://github.com/pentaho/hv-uikit-react/commit/becbec32fc87beb3d871d6b7cf26c4b7d6cd9f42))
+
+
+
+
+
 ## [2.0.5](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-common-themes@2.0.4...@hv/uikit-common-themes@2.0.5) (2020-06-03)
 
 **Note:** Version bump only for package @hv/uikit-common-themes
