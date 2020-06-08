@@ -5,45 +5,22 @@ on:
       - v1.x
 
 # flow:
-# Notify Start
 # License-Checks | Lint | Test-Jest | Build-Documentation
 # Robot_pa11y | Robot (chrome)
 # Notify End
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DOCUMENTATION_PUBLISH_FOLDER: pr-${{ github.event.number }}
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR #${{ github.event.number }}"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR ${{ github.repository }}#${{ github.event.number }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
 
 jobs:
-  Notify-Start:
-    name: Notify Start
-    runs-on: [self-hosted, Linux]
-
-    steps:
-      - name: Notify
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit-eng-ci",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
-                  "footer": "by ${{github.actor}}"
-                }
-              ]
-            }
-
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
 
     steps:
       - name: Checkout
@@ -70,7 +47,6 @@ jobs:
   Build-Documentation:
     name: Build Documentation
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
 
     steps:
       - name: Checkout
@@ -88,6 +64,11 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
+      - name: Generate Documentation
+        run: |
+          npm run automation:package
+          npm run build-documentation
+
       - name: Start Documentation Deployment
         uses: bobheadxi/deployments@master
         id: deployment
@@ -98,40 +79,41 @@ jobs:
           ref: ${{ github.head_ref }}
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
-      - name: Checkout gh-pages
+      - name: Checkout Documentation Repository
         uses: actions/checkout@v2
         with:
-          path: public
-          ref: gh-pages
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+          ssh-key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 1
 
-      - name: Generate Documentation
+      - name: Copy Documentation to Repository
         run: |
-          npm run automation:package
-          npm run build-documentation
-          rm -rf ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-          mkdir -p ./public/${DOCUMENTATION_PUBLISH_FOLDER}
-          cp -r packages/doc/dist/* ./public/${DOCUMENTATION_PUBLISH_FOLDER}
+          mkdir -p ./gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
+          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+          cp -r packages/doc/dist/* ./gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
+
+      - name: Push Documentation
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+          git pull --rebase
+          git push
+
+      - name: Cleanup Folder
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/gh-docs
 
       - name: Archive Automation Storybook
         uses: actions/upload-artifact@v1
         with:
           name: documentation
           path: automation/storybook/dist
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
-          keepFiles: true
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
-
-      - name: Waits deploy for to be up
-        uses: jakejarvis/wait-action@master
-        with:
-          time: "30s"
 
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
@@ -154,7 +136,7 @@ jobs:
         browser: [chrome, firefox]
     container:
       image: ppodgorsek/robot-framework:latest
-      options: --shm-size=6g --cpus 4
+      options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
