@@ -16,52 +16,6 @@ element attribute value should not contain
     ${value}              Get Element Attribute    ${locator}      ${attribute}
     Should Not Contain    ${value}                 ${expected}     ignore_case=True
 
-go to url and wait until element is visible
-    [Arguments]    ${page}    ${locator}    ${seconds}
-    [Documentation]    go to 'url' and wait the 'seconds' until 'element' is visible
-    Go To                            ${page}
-    Wait Until Element Is Visible    ${locator}    ${seconds}
-
-get constanct css property value
-    [Arguments]        ${locator}    ${property}
-    [Documentation]
-    ...     equal of keyword "get css property value" but wait until 2 seconds to browser fade end
-    ...
-    ${previous}    get css property value    ${locator}    ${property}
-    FOR            ${index}                  IN RANGE                      10
-    \              Sleep                     200ms
-    \              ${last}                   get css property value    ${locator}    ${property}
-    \              Run Keyword If            '${previous}' == '${last}'
-    ...            Return From Keyword       ${last}
-    \              Run Keyword If            '${previous}' == '${last}'    Exit For Loop
-    \              ${previous}               Set Variable                  ${last}
-    \              Run Keyword If            ${index} == 9
-    ...            fail                      After 2 seconds The property are still changing
-    END
-
-get css property value
-    [Arguments]        ${locator}    ${property}
-    [Documentation]
-    ...    Attention! please check also get constanct css property value to avoid fade problems
-    ...
-    ...    This keyword retrieves the CSS property value of an element. The element
-    ...    is retrieved using the locator.
-    ...
-    ...    Arguments:
-    ...    - locator          any Selenium Library supported locator xpath/css/id etc.
-    ...    - property_name    the name of the css property for which the value is returned.
-    ...
-    ...    Returns            returns the string value of the given css attribute or fails.
-    ...
-    ...    note: Same output can be get by javascript:
-    ...    window.getComputedStyle(document.getElementById("${l}"), null).getPropertyValue("${a}");
-    ...    IE11 webdriver have a bug that returns error running that javascript
-    ...
-    ${css}=         Wait Until Keyword Succeeds    5    400ms
-    ...             Get WebElement       ${locator}
-    ${prop_val}=    Call Method    ${css}    value_of_css_property    ${property}
-    [Return]        ${prop_val}
-
 open storybook
     [Arguments]        ${url}=${STORYBOOK_URL}    ${browser}=${BROWSER}
     [Documentation]
@@ -73,16 +27,6 @@ open storybook
     Open Browser    ${url}    ${browser}
     ...             options=add_argument("--window-size=1920,1080");\ add_argument("--headless")
     Maximize Browser Window
-
-verify css element property value
-    [Arguments]    ${locator}    ${property}    ${value}
-    ${current_value}    get constanct css property value    ${locator}    ${property}
-    Should Be Equal     ${current_value}     ${value}     css incorrect value
-
-verify css element property has different value
-    [Arguments]    ${locator}    ${property}    ${value}
-    ${current_value}       get constanct css property value    ${locator}    ${property}
-    Should Not Be Equal    ${current_value}                    ${value}
 
 verify element is not focused
     [Arguments]        ${locator}
@@ -99,8 +43,7 @@ clean input
 force input
     [Arguments]        ${locator}    ${string}
     [Documentation]
-    ...                Cleans the input locator and sets with the string value.
-    ...
+    ...    Cleans the input locator and sets with the string value.
     Clean input        ${locator}
     Input Text         ${locator}    ${string}
 
@@ -109,7 +52,6 @@ set focus and press keys
     [Documentation]
     ...   work around for react consider as a human action,
     ...   otherwise using 'press keys' directly will be reverted by react
-    ...
     Set Focus To Element    ${locator}
     Press Keys              none          @{keys}
 
@@ -124,18 +66,6 @@ wait until element attribute not contain
     [Documentation]    necessary for Internet Explorer synchronization
     Wait Until Keyword Succeeds    5x    1s
     ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
-
-wait until css attribute contain
-    [Arguments]    ${locator}    ${property}    ${value}
-    [Documentation]    necessary for Internet Explorer synchronization
-    Wait Until Keyword Succeeds    5x    1s
-    ...    verify css element property value    ${locator}    ${property}    ${value}
-
-wait until css attribute not contain
-    [Arguments]    ${locator}    ${property}    ${value}
-    [Documentation]    necessary for Internet Explorer synchronization
-    Wait Until Keyword Succeeds    5x    1s
-    ...   verify css element property has different value    ${locator}    ${property}    ${value}
 
 restore default windows size 1920 1080
     Set Window Size    1920    1080    True
