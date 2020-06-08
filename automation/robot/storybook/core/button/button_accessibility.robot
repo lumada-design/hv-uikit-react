@@ -1,13 +1,8 @@
 *** Setting ***
 Resource         ../../_resources/accessibility.robot
-Variables        ../../_resources/storybook_variables.yaml
+Test Template    pa11y should not find errors
 Force Tags       pa11y
 
 
-*** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=components-button--
-
-
 *** Test Cases ***
-storybook button samples against WCAG2AA standard
-    pa11y should not find errors    ${url}smoke-tests
+buttons smoke sample    ${components}button--smoke-tests

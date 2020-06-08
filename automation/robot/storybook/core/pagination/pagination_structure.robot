@@ -1,11 +1,12 @@
 *** Setting ***
-Variables         ../../_resources/storybook_variables.yaml
-Resource          ../../_resources/storybook_keywords.robot
-Library           SeleniumLibrary
+Resource          ../../_resources/keywords.resource
 Suite Setup       open storybook
-Test Setup        Go To URL And Wait Until Element Is Visible    ${STORYBOOK_URL}/iframe.html?id=components-pagination--controlled-sample    ${input}    10s
+Test Setup        Run Keywords
+...               Go To    ${components}pagination--controlled-sample
+...               AND    Wait Until Element Is Visible    ${input}
 Suite Teardown    Close Browser
 Force Tags        smoke
+
 
 *** Variables ***
 ${input}        css:input
@@ -14,6 +15,7 @@ ${first}        pagination-firstPage-button
 ${previous}     pagination-previousPage-button
 ${next}         pagination-nextPage-button
 ${last}         pagination-lastPage-button
+
 
 *** Test Cases ***
 check default disabled previous/first page

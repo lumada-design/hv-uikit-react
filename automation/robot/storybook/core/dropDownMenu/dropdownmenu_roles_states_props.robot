@@ -1,5 +1,4 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _resources.resource
 Suite Setup       open storybook
 Test Template     verify dropped dropdownmenu has attributes
@@ -18,8 +17,8 @@ aria-disabled    ${item2}           aria-disabled    true
 *** Keywords ***
 verify dropped dropdownmenu has attributes
     [Arguments]    ${locator}    ${attribute}    ${expected}
-    Go To                                ${STORYBOOK_URL}/${sampledDisabledItems}
-    Wait Until Page Contains Element     ${dropDownMenu}    10s
+    Go To                                ${components}dropdown-menu--disabled-items
+    Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
-    Wait Until Page Contains Element     ${droppedMenu}    5s
+    Wait Until Page Contains Element     ${droppedMenu}
     Element Attribute Value Should Be    ${locator}    ${attribute}    ${expected}

@@ -1,7 +1,5 @@
 *** Setting ***
-Variables         ../../_resources/storybook_variables.yaml
-Resource          ../../_resources/storybook_keywords.robot
-Library           SeleniumLibrary
+Resource          ../../_resources/keywords.resource
 Suite Setup       open storybook
 Test Setup        open tooltip sample
 Suite Teardown    Close Browser
@@ -18,7 +16,7 @@ Force Tags        smoke
 tooltip is triggered and when mouse hover item
     Page Should Not Contain     Tooltips can showcase
     Mouse Over                  ${tooltipPlaceholder}
-    Wait Until Page Contains    Tooltips can showcase    3s
+    Wait Until Page Contains    Tooltips can showcase
 
 tooltip is triggered when item is focused
     [Tags]    keyboard
@@ -29,16 +27,16 @@ tooltip is triggered when item is focused
 tooltip is dismissed when mouse leaves touch target
     [Tags]    keyboard
     Press Keys                          ${placeholder}           TAB
-    Wait Until Page Contains            Tooltips can showcase    5s
+    Wait Until Page Contains            Tooltips can showcase
     Mouse Out                           ${tooltipPlaceholder}
-    Wait Until Page Does Not Contain    Tooltips can showcase    3s
+    Wait Until Page Does Not Contain    Tooltips can showcase
 
 tooltip is dismissed when is removed the item focus
     [Tags]    keyboard
     Mouse Over                          ${tooltipPlaceholder}
-    Wait Until Page Contains            Tooltips can showcase    5s
+    Wait Until Page Contains            Tooltips can showcase
     Press Keys                          ${tooltipPlaceholder}    TAB
-    Wait Until Page Does Not Contain    Tooltips can showcase    3s
+    Wait Until Page Does Not Contain    Tooltips can showcase
 
 
 *** Variables ***
@@ -48,5 +46,5 @@ ${placeholder}          css:body
 
 *** Keywords ***
 open tooltip sample
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-tooltip--long-text
-    Wait Until Element Is Visible    ${tooltipPlaceholder}    10s
+    Go To                            ${components}tooltip--long-text
+    Wait Until Element Is Visible    ${tooltipPlaceholder}

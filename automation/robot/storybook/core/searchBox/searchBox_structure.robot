@@ -1,19 +1,17 @@
 *** Setting ***
-Variables         ../../_resources/storybook_variables.yaml
-Resource          ../../_resources/storybook_keywords.robot
-Library           SeleniumLibrary
+Resource          ../../_resources/keywords.resource
 Suite Setup       open storybook
 Suite Teardown    Close Browser
 Force Tags        smoke
 
 *** Test Cases ***
 submit a search
-    Go To                            ${STORYBOOK_URL}/iframe.html?id=components-searchbox--main
-    Wait Until Element Is Enabled    css:input[type='text']                     10s
+    Go To                            ${components}searchbox--main
+    Wait Until Element Is Enabled    css:input[type='text']
     Input Text                       css:input[type='text']                     B
-    Wait Until Element Is Visible    //*[contains(.,'B second suggestion')]    3s
+    Wait Until Element Is Visible    //*[contains(.,'B second suggestion')]
 
 unable to submit a search
-    Go To                               ${STORYBOOK_URL}/iframe.html?id=components-searchbox--disabled
+    Go To                               ${components}searchbox--disabled
     Wait Until Page Contains Element    css:input[type='text']
     Element Should Be Disabled          css:input[type='text']

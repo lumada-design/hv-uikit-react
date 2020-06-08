@@ -1,27 +1,22 @@
 *** Setting ***
 Resource         ../../_resources/accessibility.robot
-Variables        ../../_resources/storybook_variables.yaml
 Test Template    pa11y should not find errors
 Force Tags       pa11y
 
 
-*** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=components-input--
-
-
 *** Test Cases ***
-storybook sample InputCustomValidation against standard      ${url}custom-validation
-storybook sample InputInitialState against standard          ${url}invalid-state
-storybook sample InputNoValidation against standard          ${url}no-validation
-storybook sample InputSimpleWithIconInfo against standard    ${url}with-icon-info
-storybook sample InputCustomProps against standard           ${url}custom-props
-storybook sample InputDefaultValue against standard          ${url}default-value
-storybook sample InputEmail against standard                 ${url}email
-storybook sample InputEvents against standard                ${url}event-demostration
-storybook sample InputMax against standard                   ${url}limited
-storybook sample InputMaxNumeric against standard            ${url}numeric-limited
-storybook sample InputPassword against standard              ${url}password
-storybook sample InputRequiredMaxNumeric against standard    ${url}numeric-required
-storybook sample InputSimple against standard                ${url}main
-storybook sample InputSuggestions against standard           ${url}suggestion
-storybook sample InputUncontrolledValue against standard     ${url}controlled-with-buttons
+Input Custom Validation        ${components}input--custom-validation
+Input Initial State            ${components}input--invalid-state
+Input No Validation            ${components}input--no-validation
+Input Simple With Icon Info    ${components}input--with-icon-info
+Input Custom Props             ${components}input--custom-props
+Input Default Value            ${components}input--default-value
+Input Email                    ${components}input--email
+Input Events                   ${components}input--event-demostration
+Input Max                      ${components}input--limited
+Input Max Numeric              ${components}input--numeric-limited
+Input Password                 ${components}input--password
+Input Required Max Numeric     ${components}input--numeric-required
+Input Simple                   ${components}input--main
+Input Suggestions              ${components}input--suggestion
+Input Uncontrolled Value       ${components}input--controlled-with-buttons

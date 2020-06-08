@@ -1,5 +1,4 @@
 *** Setting ***
-Library     SeleniumLibrary
 Resource    ../table.resource
 
 

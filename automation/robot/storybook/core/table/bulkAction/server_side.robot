@@ -1,10 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          ../table.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
-...               Go To    ${iframe_serverSide}
-...               AND    Wait Until Element Is Visible    ${table}    10s
+...               Go To    ${visualizations}table--server-side-pagination
+...               AND    Wait Until Element Is Visible    ${table}
 Test Template     Run Keyword
 Suite Teardown    Close Browser
 Force Tags        smoke
@@ -28,11 +27,11 @@ disable actions when is removed all selections
 show previous page when it is deleted all rows of last page
     Wait Until Element Is Enabled       ${pagination_last_page}    timeout=10s
     Click Button                        ${pagination_last_page}
-    wait until page contains elements   ${rows_populated}    3    10s
+    wait until page contains elements   ${rows_populated}    3
     select Checkbox                     ${bulkAction_checkbox}
     Wait Until Page Contains            3 of 553 items    timeout=10s
     Click Button                        Delete
-    wait until page contains elements   ${rows_populated}    10    10s
+    wait until page contains elements   ${rows_populated}    10
     select Checkbox                     ${bulkAction_checkbox}
     Wait Until Page Contains            10 of 550 items    timeout=10s
     Textfield Value Should Be           ${pagination_input}    55

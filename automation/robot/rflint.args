@@ -11,7 +11,7 @@
 --error TrailingBlankLines
 --error PeriodInTestName
 --error PeriodInSuiteName
---ignore LineTooLong
+--error LineTooLong
 --ignore FileTooLong
 --ignore TooManyTestCases
 --ignore TooManyTestSteps

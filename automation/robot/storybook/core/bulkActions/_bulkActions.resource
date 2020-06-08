@@ -1,7 +1,5 @@
 *** Setting ***
-Library           SeleniumLibrary
-Variables         ../../_resources/storybook_variables.yaml
-Resource          ../../_resources/storybook_keywords.robot
+Resource          ../../_resources/keywords.resource
 
 
 *** Variables ***
@@ -20,5 +18,4 @@ ${checkbox5}            id:5-input
 ${checkbox6}            id:6-input
 ${checkbox7}            id:7-input
 ${checkboxs}            css:#bulkActions ~ div input
-${iframeBulkActions}    ${STORYBOOK_URL}/iframe.html?id=components-bulk-actions--controlled-with-actions
 ${parentCheckbox}       id:bulkActions-select-input

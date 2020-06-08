@@ -1,5 +1,4 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _keywords.resource
 Suite Setup       Run Keywords
 ...               open storybook    AND

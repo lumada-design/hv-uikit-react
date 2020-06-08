@@ -1,10 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          ../table.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
-...               Go To    ${iframe_changingData}    AND
-...               Wait Until Page Contains Element    ${table1 all}    15s
+...               Go To    ${visualizations}table--table-with-changing-data    AND
+...               Wait Until Page Contains Element    ${table1 all}
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -40,7 +39,7 @@ selection count label 2 is correctly updated when hidden values are removed
     select 2 hidden rows
     Click Button              Enable
     Select CheckBox           ${table2 all}
-    Element Should Contain    ${table2 label}    5 of 8   ignore_case=True
+    Element Should Contain    ${table2 label}    8 of 8   ignore_case=True
 
 
 *** Keywords ***

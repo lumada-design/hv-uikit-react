@@ -1,21 +1,16 @@
 *** Setting ***
 Resource         ../../_resources/accessibility.robot
-Variables        ../../_resources/storybook_variables.yaml
 Force Tags       pa11y
 
 
-*** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=components-dropdown--
-
-
 *** Test Cases ***
-storybook sample dropdown disabled against WCAG2AA standard
+dropdown disabled
     [Documentation]
     ...    = ATTENTION! =
     ...    contrast *error* is too ignored as "Design System Team" feedback: \n
     ...    https://github.com/pentaho/hv-uikit-react/issues/775#issuecomment-557167364
-    ...    ---
-    pa11y result should be equal as file    ${url}disabled    ${CURDIR}/WCAG2AA_dropdown10.json
+    pa11y result should be equal as file    ${components}dropdown--disabled
+    ...    ${CURDIR}/WCAG2AA_dropdown10.json
 
-storybook sample dropdown expanded against WCAG2AA standard
-    pa11y should not find errors    ${url}expanded
+dropdown expanded
+    pa11y should not find errors    ${components}dropdown--expanded

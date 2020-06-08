@@ -6,12 +6,12 @@ Force Tags       pa11y
 
 
 *** Test Cases ***
-checkbox against WCAG2AA standard     ${iframe_clientSide}
-empty against WCAG2AA standard        ${iframe_empty}
-expander against WCAG2AA standard     ${iframe_expander}
-nulls against WCAG2AA standard        ${iframe_NullValues}
-secondary against WCAG2AA standard    ${iframe_secondaryActions}
-simple against WCAG2AA standard       ${iframe_main}
+checkbox against WCAG2AA standard     ${visualizations}table--with-checkbox
+empty against WCAG2AA standard        ${visualizations}table--empty
+expander against WCAG2AA standard     ${visualizations}table--with-expander-and-custom-content
+nulls against WCAG2AA standard        ${visualizations}table--with-null-values
+secondary against WCAG2AA standard    ${visualizations}table--with-checkbox-and-secondary-actions
+simple against WCAG2AA standard       ${visualizations}table--main
 
 
 *** Comments ***

@@ -1,11 +1,9 @@
 *** Setting ***
-Variables         ../../_resources/storybook_variables.yaml
-Resource          ../../_resources/storybook_keywords.robot
-Library           SeleniumLibrary
+Resource          ../../_resources/keywords.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
-...               Go To              ${STORYBOOK_URL}/iframe.html?id=components-file-uploader--automation-sample
-...               AND                Wait Until Element Is Enabled    ${button_removeFile}
+...               Go To    ${components}file-uploader--automation-sample
+...               AND    Wait Until Element Is Enabled    ${button_removeFile}
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -17,7 +15,7 @@ ${button_removeFile}     css:button[aria-label='Remove File']
 *** Test Cases ***
 remove files one by one
     Click Element                       ${button_removeFile}
-    Wait Until Page Does Not Contain    file 1.png              2s
+    Wait Until Page Does Not Contain    file 1.png
     Page Should Contain Element         ${button_removeFile}    limit=3
     Click Element                       ${button_removeFile}
     Click Element                       ${button_removeFile}
