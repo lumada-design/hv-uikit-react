@@ -25,9 +25,11 @@ on:
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  DOCUMENTATION_PUBLISH_FOLDER: alpha
-  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for alpha"
-  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/hv-uikit-react/alpha
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/alpha
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for ${{ github.repository }}/alpha"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/alpha/
 
 jobs:
   Notify-Start:
@@ -136,27 +138,39 @@ jobs:
           ref: ${{ github.head_ref }}
           desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
 
+      - name: Checkout Documentation Repository
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+          ssh-key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 1
+
+      - name: Remove Previous Documentation
+        run: |
+          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
           name: documentation
-          path: ${{ github.workspace }}/public/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          commit_message: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
-          keep_files: true
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
+      - name: Push Documentation
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+          git push
 
-      - name: Waits deploy for to be up
-        uses: jakejarvis/wait-action@master
-        with:
-          time: "30s"
-
+      - name: Cleanup Folder
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/gh-docs
+  
       - name: Update Deployment Status
         uses: bobheadxi/deployments@master
         if: always()
@@ -166,11 +180,6 @@ jobs:
           status: ${{ job.status }}
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
           env_url: ${{env.DOCUMENTATION_URL}}
-
-      - name: Clean Folders
-        if: always()
-        run: |
-          rm -rf ${{ github.workspace }}/public
 
   Robot:
     name: Test Robot
