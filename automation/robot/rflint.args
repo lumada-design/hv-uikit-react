@@ -12,7 +12,7 @@
 --error PeriodInTestName
 --error PeriodInSuiteName
 --error LineTooLong
---ignore FileTooLong
+--error FileTooLong
 --ignore TooManyTestCases
 --ignore TooManyTestSteps
 --ignore TooFewKeywordSteps

@@ -32,11 +32,6 @@ unable to select disabled option when click on it
     Run Keyword And Continue On Failure    Click Element    ${option4}
     Element Attribute Value Should Be      ${option4}       aria-selected    ${None}
 
-verify option label truncated with 3 dots when option label string is too long
-    Go To                                ${components}list--single-selection-with-icon
-    Wait Until Element Is Visible        ${list}       10s
-    verify css element property value    ${option5}    text-overflow    clip
-
 unable to select disabled option when all list options are disabled
     Go To                                ${components}list--main
     Wait Until Element Is Visible        ${menubar}
