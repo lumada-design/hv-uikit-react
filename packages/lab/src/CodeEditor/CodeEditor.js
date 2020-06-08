@@ -24,7 +24,7 @@ export const DefaultCodeEditorOptions = {
   }
 };
 
-const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...remainingProps }) => {
+const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...others }) => {
   // merges the 2 objects together, overriding defaults with passed in options
   const mergedOptions = {
     ...DefaultCodeEditorOptions,
@@ -49,7 +49,7 @@ const CodeEditor = ({ classes, theme, defaultValue, options, editorProps, ...rem
         }}
         theme={"hv"}
         {...editorProps}
-        {...remainingProps}
+        {...others}
       />
     </div>
   );

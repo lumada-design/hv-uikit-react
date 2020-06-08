@@ -1,11 +1,3 @@
-/*
- * ========================================================================
- *
- * Copyright (c) by Hitachi Vantara, 2019. All rights reserved.
- *
- * ========================================================================
- */
-
 import { createStyles } from "@material-ui/core";
 
 const styles = theme =>
