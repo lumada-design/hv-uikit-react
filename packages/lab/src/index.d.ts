@@ -1,3 +1,6 @@
+export { default as HvCodeEditor } from "./CodeEditor";
+export * from "./CodeEditor";
+
 export { default as HvFooter } from "./Footer";
 export * from "./Footer";
 

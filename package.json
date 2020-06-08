@@ -104,6 +104,7 @@
   },
   "dependencies": {
     "acorn": "^7.2.0",
-    "moment": "^2.26.0"
+    "moment": "^2.26.0",
+    "react-monaco-editor": "^0.36.0"
   }
 }
