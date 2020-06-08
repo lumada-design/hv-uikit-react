@@ -14,14 +14,6 @@ ${header_3}                     css:[role=columnheader]:nth-child(3)
 ${header_7}                     css:[role=columnheader]:nth-child(7)
 ${header_8}                     css:[role=columnheader]:nth-child(8)
 ${headers}                      css:[role=table] [role=row] [scope=col]
-${iframe_changingData}          ${STORYBOOK_URL}/iframe.html?id=visualizations-table--table-with-changing-data
-${iframe_clientSide}            ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-checkbox
-${iframe_empty}                 ${STORYBOOK_URL}/iframe.html?id=visualizations-table--empty
-${iframe_expander}              ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-expander-and-custom-content
-${iframe_main}                  ${STORYBOOK_URL}/iframe.html?id=visualizations-table--main
-${iframe_NullValues}            ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-null-values
-${iframe_secondaryActions}      ${STORYBOOK_URL}/iframe.html?id=visualizations-table--with-checkbox-and-secondary-actions
-${iframe_serverSide}            ${STORYBOOK_URL}/iframe.html?id=visualizations-table--server-side-pagination
 ${pagination_count_of_pages}    css:[id$=pagination-totalPages]
 ${pagination_first_page}        css:button[aria-label='First Page']
 ${pagination_input}             css:input[aria-label*='page input']

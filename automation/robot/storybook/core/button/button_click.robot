@@ -1,16 +1,11 @@
 *** Setting ***
-Library           SeleniumLibrary
-Resource          ../../_resources/storybook_keywords.robot
+Resource          ../../_resources/keywords.resource
 Suite Setup       Run Keywords
-...               open storybook    ${STORYBOOK_URL}/iframe.html?id=components-button--smoke-tests
-...               AND               Wait Until Element Is Visible    css:button    10s
+...               open storybook    ${components}button--smoke-tests
+...               AND               Wait Until Element Is Visible    css:button
 Suite Teardown    Close Browser
 Test Template     Activate and focus button when it is clicked
 Force Tags        smoke    bug-edge-webdriver
-
-
-*** Comments ***
-bug-edge-webdriver  https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16448300/
 
 
 *** Keywords ***

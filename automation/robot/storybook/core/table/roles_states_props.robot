@@ -1,9 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          table.resource
 Suite Setup       open storybook
 Test Setup        go to url and wait until element is visible
-...               ${iframe_clientSide}    ${table}    10s
+...               ${visualizations}table--with-checkbox    ${table}
 Suite Teardown    Close Browser
 Force Tags        wai-aria-practices
 Documentation     https://www.w3.org/TR/wai-aria-practices/#table
@@ -53,8 +52,8 @@ DOM contains aria-sort ascending or descending when a column is order by
 
 DOM contains aria-selected as boolean when a row is selected and unselected
     [Setup]    NONE
-    Go To                                ${iframe_clientSide}
-    Wait Until Page Contains             This is a title    10s
+    Go To                                ${visualizations}table--with-checkbox
+    Wait Until Page Contains             This is a title
     Page Should Contain Element          css:[aria-selected=false]    limit=10
     Click Element                        ${row_1_checkbox}
     Element Attribute Value Should Be    ${row_1}    aria-selected    true
@@ -65,8 +64,8 @@ DOM contains aria-selected as boolean when a row is selected and unselected
 
 DOM contains aria-expanded as boolean when a row is expanded and shrink
     [Setup]    NONE
-    Go To                                ${iframe_expander}
-    Wait Until Page Contains             This is a title             10s
+    Go To                                ${visualizations}table--with-expander-and-custom-content
+    Wait Until Page Contains             This is a title
     Page Should Not Contain Element      css:[aria-expanded=true]
     Click Element                        ${button_expand}
     Element Attribute Value Should Be    ${row_1}    aria-expanded    true

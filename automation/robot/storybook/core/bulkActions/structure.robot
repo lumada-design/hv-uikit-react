@@ -1,9 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _bulkActions.resource
-Suite Setup       open storybook    ${iframeBulkActions}
+Suite Setup       open storybook
 Test Setup        Run Keywords
-...               go to    ${iframeBulkActions}    AND
+...               Go To    ${components}bulk-actions--controlled-with-actions    AND
 ...               Wait Until Page Contains Element    ${parentCheckbox}    timeout=10s
 Suite Teardown    Close Browser
 Force Tags        smoke
@@ -13,14 +12,14 @@ Force Tags        smoke
 collect all values when all items are selected
     Select Checkbox                      ${parentCheckbox}
     Click Element                        ${actionDelete}
-    Wait Until Element Is Not Visible    ${checkboxs}    3s
+    Wait Until Element Is Not Visible    ${checkboxs}
 
 collect specific values when some items are selected
     Select Checkbox                      ${checkbox0}
     Select Checkbox                      ${checkbox7}
     Click Element                        ${actionDelete}
-    Wait Until Element Is Not Visible    ${checkbox0}    3s
-    Wait Until Element Is Not Visible    ${checkbox7}    3s
+    Wait Until Element Is Not Visible    ${checkbox0}
+    Wait Until Element Is Not Visible    ${checkbox7}
     Page Should Contain Element          ${checkboxs}    limit=6
 
 bulk actions are disable when no item is selected
@@ -59,5 +58,5 @@ filter max actions visible when maxVisibleActions is defined
     Page Should Contain Element      ${actionsButtons}    limit=3
     Select Checkbox                  ${parentCheckbox}
     Click Element                    ${actionMore}
-    Wait Until Element Is Visible    ${actionsDroppedList}       3s
+    Wait Until Element Is Visible    ${actionsDroppedList}
     Page Should Contain Element      ${actionsDropped}    limit=2

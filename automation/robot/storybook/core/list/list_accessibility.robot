@@ -1,14 +1,9 @@
 *** Setting ***
 Resource         ../../_resources/accessibility.robot
-Variables        ../../_resources/storybook_variables.yaml
 Test Template    pa11y should not find errors
 Force Tags       pa11y
 
 
-*** Variables ***
-${url}    ${STORYBOOK_URL}/iframe.html?id=components-list--
-
-
 *** Test Cases ***
-multiple selection list against WCAG2AA standard     ${url}multi-selection-with-select-all
-single selection list against WCAG2AA standard       ${url}single-selection-with-icon
+multiple selection list    ${components}list--multi-selection-with-select-all
+single selection list      ${components}list--single-selection-with-icon

@@ -6,4 +6,4 @@ Force Tags       pa11y
 
 
 *** Test Cases ***
-bulk actions sample against WCAG2AA standard       ${iframeBulkActions}
+bulk actions sample    ${components}bulk-actions--controlled-with-actions

@@ -1,10 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          ../table.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
-...               Go To    ${iframe_serverSide}
-...               AND    Wait Until Element Is Visible    ${table}    10s
+...               Go To    ${visualizations}table--server-side-pagination
+...               AND    Wait Until Element Is Visible    ${table}
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -47,7 +46,7 @@ keep selection when number of rows per table is increased
     Select Checkbox                     ${row_1_checkbox}
     Select Checkbox                     ${row_10_checkbox}
     Select From List By Value           ${rows_per_page}   20
-    wait until page contains elements   ${rows_populated}    20    10s
+    wait until page contains elements   ${rows_populated}    20
     Checkbox Should Be Selected         ${row_1_checkbox}
     Checkbox Should Be Selected         ${row_10_checkbox}
 

@@ -1,9 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _bulkActions.resource
-Suite Setup       open storybook    ${iframeBulkActions}
+Suite Setup       open storybook
 Test Setup        Run Keywords
-...               go to    ${iframeBulkActions}    AND
+...               Go To    ${components}bulk-actions--controlled-with-actions    AND
 ...               Wait Until Page Contains Element    ${parentCheckbox}    timeout=10s
 Suite Teardown    Close Browser
 Force Tags        smoke    keyboard

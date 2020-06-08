@@ -1,9 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
-Resource          ../../_resources/storybook_keywords.robot
+Resource          ../../_resources/keywords.resource
 Suite Setup       Run Keywords
-...               open storybook    ${STORYBOOK_URL}/iframe.html?id=components-button--smoke-tests
-...               AND               Wait Until Element Is Visible    css:button    10s
+...               open storybook    ${components}button--smoke-tests
+...               AND               Wait Until Element Is Visible    css:button
 Suite Teardown    Close Browser
 Force Tags        smoke    keyboard
 

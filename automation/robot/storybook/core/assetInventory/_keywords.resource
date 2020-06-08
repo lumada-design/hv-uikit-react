@@ -1,14 +1,13 @@
 *** Setting ***
-Library     SeleniumLibrary
-Resource    ../../_resources/storybook_keywords.robot
+Resource    ../../_resources/keywords.resource
 Resource    _variables.resource
 
 
 *** Keywords ***
 filter cards and reduce Window size
     Set Window Size                  1200    800
-    Go To                            ${iframeConfigurations}
-    Wait Until Element Is Enabled    ${searchBox}    10s
+    Go To                            ${components}asset-inventory--configurations
+    Wait Until Element Is Enabled    ${searchBox}
     Select From List By Label        ${pageSize}    6
 
 move focus from-to locator when pressed keyboard
@@ -29,4 +28,4 @@ focus assertion by Browser
     Run Keyword If                            '${BROWSER.lower()}'!='ie'
     ...   Element Should Be Focused           ${locator}
     ...   ELSE
-    ...   Wait Until Page Contains Element    ${locator}\[class*=focused]    3s
+    ...   Wait Until Page Contains Element    ${locator}\[class*=focused]

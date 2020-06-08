@@ -1,10 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _resources.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
 ...               Go To    ${iframeSingleSelectionSearch}    AND
-...               Wait Until Element Is Enabled    ${dropdown}    10s
+...               Wait Until Element Is Enabled    ${dropdown}
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -16,9 +15,9 @@ theses list did not compatible with list selenium keywords
 *** Test Cases ***
 Open and close dropdown when click the input (top part of the dropdown)
     Click Element                        ${dropdownHeader}
-    Wait Until Element Is Visible        ${listBox}    3s
+    Wait Until Element Is Visible        ${listBox}
     Click Element                        ${dropdownHeader}
-    Wait Until Element Is Not Visible    ${listBox}    3s
+    Wait Until Element Is Not Visible    ${listBox}
 
 close dropdown and save selection when select an item on simple dropdown
     Element Text Should Be               ${dropdown} p    value 2
@@ -54,8 +53,8 @@ clean searched values when previous was done a search
     Page Should Contain Element      ${options}        limit=4
 
 show an empty dropdown when is activated
-    [Setup]    NONE    
+    [Setup]    NONE
     Go To                              ${iframeEmpty}
-    Wait Until Element Is Enabled      ${dropdown}    10s
+    Wait Until Element Is Enabled      ${dropdown}
     Click Element                      ${dropdown}
     Page Should Not Contain Element    ${options}

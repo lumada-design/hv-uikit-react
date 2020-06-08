@@ -1,10 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          ../table.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
-...               Go To    ${iframe_clientSide}
-...               AND    Wait Until Element Is Visible    ${table}    10s
+...               Go To    ${visualizations}table--with-checkbox
+...               AND    Wait Until Element Is Visible    ${table}
 Suite Teardown    Close Browser
 Force Tags        smoke
 
@@ -40,9 +39,9 @@ keep same data sort when pagination is moved to next page
 show first table page when a column is sorted
     [Documentation]    sort by vs pagination
     Click Button                                ${pagination_next_page}
-    Wait Until Element Is Enabled               ${header_2}     3s
+    Wait Until Element Is Enabled               ${header_2}
     Click Element                               ${header_2}
-    Wait Until Page Does Not Contain Element    ${pagination_first_page}:enabled    5s
+    Wait Until Page Does Not Contain Element    ${pagination_first_page}:enabled
     Textfield Value Should Be                   ${pagination_input}    1
 
 keep same data sort when pagination is moved to previous page

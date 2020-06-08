@@ -4,6 +4,3 @@ checkbox_remember:    css:input[type='checkbox']
 label_remember:       css:div[class*=buttonsContainerWithRemember]>label
 button_login:         css:button[type=submit]
 button_forgot:        xpath://button[contains(.,'Forgot')]
-login1:               iframe.html?id=components-login--successful
-login2:               iframe.html?id=components-login--unsuccessful
-login5:               iframe.html?id=components-login--custom-background

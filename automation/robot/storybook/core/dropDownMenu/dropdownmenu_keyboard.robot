@@ -1,5 +1,4 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _resources.resource
 Suite Setup       open storybook
 Test Template     Run Keyword
@@ -23,19 +22,19 @@ focus button and close menu    move focus    ${item1}    TAB           ${dropDow
 
 activates item and close menu when item is focused and is pressed ENTER
     [Template]    NONE
-    Go To                                ${STORYBOOK_URL}/${sampleKeepOpenedFalse}
-    Wait Until Page Contains Element     ${dropDownMenu}    10s
+    Go To                                ${components}dropdown-menu--controlled
+    Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
-    Wait Until Element Is Visible        ${item1}           5s
+    Wait Until Element Is Visible        ${item1}
     Press Keys                           NONE               ARROW_DOWN
     Element Should Be Focused            ${item2}
     Press Keys                           NONE               ENTER
-    Wait Until Element Is Not Visible    ${item2}           5s
+    Wait Until Element Is Not Visible    ${item2}
 
 focus page elements with TAB
     [Template]    NONE
-    Go To                               ${STORYBOOK_URL}/${sampleKeyboard}
-    Wait Until Page Contains Element    ${dropDownMenu}    10s
+    Go To                               ${components}dropdown-menu--keyboard-navigation
+    Wait Until Page Contains Element    ${dropDownMenu}
     set focus and press keys            id:button1         TAB    TAB
     Element Should Be Focused           id:button2
 
@@ -44,29 +43,29 @@ focus page elements with TAB
 open menu
     [Documentation]    drop menu when is focused and is pressed keyboard
     [Arguments]    ${keyboard}
-    Go To                               ${STORYBOOK_URL}/${sampledDisabledItems}
-    Wait Until Page Contains Element    ${dropDownMenu}    10s
+    Go To                               ${components}dropdown-menu--disabled-items
+    Wait Until Page Contains Element    ${dropDownMenu}
     set focus and press keys            ${dropDownMenu}    ${keyboard}
-    Wait Until Element Is Visible       ${item1}           5s
+    Wait Until Element Is Visible       ${item1}
     Element Should Be Focused           ${item1}
 
 close menu
     [Documentation]    close menu when is focused and is pressed keyboard
     [Arguments]    ${keyboard}
-    Go To                                ${STORYBOOK_URL}/${sampledDisabledItems}
-    Wait Until Page Contains Element     ${dropDownMenu}    10s
+    Go To                                ${components}dropdown-menu--disabled-items
+    Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
-    Wait Until Element Is Visible        ${item1}           5s
+    Wait Until Element Is Visible        ${item1}
     Press Keys                           NONE               ${keyboard}
-    Wait Until Element Is Not Visible    ${item1}           5s
+    Wait Until Element Is Not Visible    ${item1}
 
 move focus
     [Documentation]    move focus from item to other is pressed keyboard
     [Arguments]    ${itemA}    ${keyboard}    ${itemB}
-    Go To                               ${STORYBOOK_URL}/${sampledDisabledItems}
-    Wait Until Page Contains Element    ${dropDownMenu}    10s
+    Go To                               ${components}dropdown-menu--disabled-items
+    Wait Until Page Contains Element    ${dropDownMenu}
     Click Element                       ${dropDownMenu}
-    Wait Until Element Is Visible       ${itemA}           5s
+    Wait Until Element Is Visible       ${itemA}
     Click Element                       ${itemA}
     Press Keys                          NONE               ${keyboard}
     Element Should Be Focused           ${itemB}
