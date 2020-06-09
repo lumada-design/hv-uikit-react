@@ -1,4 +1,4 @@
-import { StandardProps, ButtonProps } from "@material-ui/core";
+import { ButtonProps, StandardProps } from "@material-ui/core";
 
 export type HvButtonCategories =
   | "primary"
@@ -13,6 +13,11 @@ export interface HvButtonProps extends StandardProps<ButtonProps, HvButtonClassK
    * Category of button to use
    */
   category?: HvButtonCategories;
+
+  /**
+   * Defines the default colors of the button are forced into the icon.
+   */
+  overrideIconColors?: boolean;
 }
 
 export type HvButtonClassKey =

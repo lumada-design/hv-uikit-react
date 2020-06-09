@@ -7,22 +7,28 @@ exports[`Button should render correctly 1`] = `
       Object {
         "ghost": "HvButton-ghost",
         "ghostDisabled": "HvButton-ghostDisabled",
+        "ghostSVG": "HvButton-ghostSVG",
         "ghostSecondary": "HvButton-ghostSecondary",
         "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+        "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+        "iconSVG": "HvButton-iconSVG",
         "primary": "HvButton-primary",
         "primaryDisabled": "HvButton-primaryDisabled",
+        "primarySVG": "HvButton-primarySVG",
         "root": "HvButton-root",
         "rootIcon": "HvButton-rootIcon",
         "secondary": "HvButton-secondary",
         "secondaryDisabled": "HvButton-secondaryDisabled",
+        "secondarySVG": "HvButton-secondarySVG",
         "semantic": "HvButton-semantic",
         "semanticDisabled": "HvButton-semanticDisabled",
+        "semanticSVG": "HvButton-semanticSVG",
         "startIcon": "HvButton-startIcon",
       }
     }
   >
     <WithStyles(ForwardRef(Button))
-      className=""
+      className="HvButton-primarySVG"
       classes={
         Object {
           "containedPrimary": "HvButton-primary",
@@ -39,7 +45,7 @@ exports[`Button should render correctly 1`] = `
       variant="contained"
     >
       <ForwardRef(Button)
-        className=""
+        className="HvButton-primarySVG"
         classes={
           Object {
             "colorInherit": "MuiButton-colorInherit",
@@ -79,7 +85,7 @@ exports[`Button should render correctly 1`] = `
         variant="contained"
       >
         <WithStyles(ForwardRef(ButtonBase))
-          className="MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary"
+          className="MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
           component="button"
           disableRipple={true}
           disabled={false}
@@ -89,7 +95,7 @@ exports[`Button should render correctly 1`] = `
           type="button"
         >
           <ForwardRef(ButtonBase)
-            className="MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary"
+            className="MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
             classes={
               Object {
                 "disabled": "Mui-disabled",
@@ -106,7 +112,7 @@ exports[`Button should render correctly 1`] = `
             type="button"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained MuiButton-containedPrimary HvButton-primary"
+              className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-contained HvButton-primarySVG MuiButton-containedPrimary HvButton-primary"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}

@@ -95,6 +95,7 @@ const MultiButton = ({
         })}
         category="ghost"
         aria-label={value}
+        overrideIconColors={false}
         {...other}
       >
         {type !== "text" && iconButton}

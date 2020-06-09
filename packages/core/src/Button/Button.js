@@ -18,6 +18,7 @@ const HvButton = props => {
     onClick,
     category = "primary",
     startIcon,
+    overrideIconColors = true,
     ...others
   } = props;
 
@@ -29,7 +30,8 @@ const HvButton = props => {
   return (
     <Button
       className={clsx(className, {
-        [classes.rootIcon]: category === "icon"
+        [classes.rootIcon]: category === "icon",
+        [classes[`${category}SVG`]]: overrideIconColors
       })}
       id={id}
       classes={buttonConfiguration.classes}
@@ -140,7 +142,11 @@ HvButton.propTypes = {
   /**
    * Element placed before the children.
    */
-  startIcon: PropTypes.node
+  startIcon: PropTypes.node,
+  /**
+   * Defines the default colors of the button are forced into the icon.
+   */
+  overrideIconColors: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvButton" })(HvButton);
