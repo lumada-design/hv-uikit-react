@@ -11,13 +11,14 @@ if (process.env.BABEL_ENV === 'es') {
       "@babel/preset-env",
       {
         modules: ['esm', 'production-umd'].includes(process.env.BABEL_ENV) ? false : 'commonjs',
-      },
-    ],
+        useBuiltIns: 'usage',
+        corejs: 3.6
+      }
+    ]
   ];
 }
 
-const defaultAlias = {
-};
+const defaultAlias = {};
 
 const productionPlugins = [
   'babel-plugin-transform-react-constant-elements',
@@ -25,9 +26,9 @@ const productionPlugins = [
   [
     'babel-plugin-transform-react-remove-prop-types',
     {
-      mode: 'unsafe-wrap',
-    },
-  ],
+      mode: 'unsafe-wrap'
+    }
+  ]
 ];
 
 module.exports = {
@@ -39,12 +40,12 @@ module.exports = {
     // any package needs to declare 7.4.4 as a runtime dependency. default is ^7.0.0
     ['@babel/plugin-transform-runtime', { version: '^7.4.4' }],
     // for IE 11 support
-    '@babel/plugin-transform-object-assign',
+    '@babel/plugin-transform-object-assign'
   ],
   ignore: [/@babel[\\|/]runtime/], // Fix a Windows issue.
   env: {
     cjs: {
-      plugins: productionPlugins,
+      plugins: productionPlugins
     },
     coverage: {
       plugins: [
@@ -53,10 +54,10 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             root: ['./'],
-            alias: defaultAlias,
-          },
-        ],
-      ],
+            alias: defaultAlias
+          }
+        ]
+      ]
     },
     development: {
       plugins: [
@@ -64,23 +65,23 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             alias: {
-              modules: './modules',
-            },
-          },
-        ],
-      ],
+              modules: './modules'
+            }
+          }
+        ]
+      ]
     },
     esm: {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]]
     },
     es: {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]]
     },
     production: {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]]
     },
     'production-umd': {
-      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]],
+      plugins: [...productionPlugins, ['@babel/plugin-transform-runtime', { useESModules: true }]]
     },
     test: {
       sourceMaps: 'both',
@@ -89,10 +90,10 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             root: ['./'],
-            alias: defaultAlias,
-          },
-        ],
-      ],
+            alias: defaultAlias
+          }
+        ]
+      ]
     },
     benchmark: {
       plugins: [
@@ -101,10 +102,10 @@ module.exports = {
           'babel-plugin-module-resolver',
           {
             root: ['./'],
-            alias: defaultAlias,
-          },
-        ],
-      ],
-    },
-  },
+            alias: defaultAlias
+          }
+        ]
+      ]
+    }
+  }
 };
