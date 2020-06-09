@@ -243,6 +243,11 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
             Object {
               "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
               "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+              "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
+              "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
+              "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
+              "inputExtensionOpen": "HvDropDownMenu-inputExtensionOpen",
+              "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
               "menuList": "HvDropDownMenu-menuList",
               "popper": "HvDropDownMenu-popper",
               "root": "HvDropDownMenu-root HvActions-dropDownMenu",
@@ -274,6 +279,11 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
               Object {
                 "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
                 "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
+                "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
+                "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
+                "inputExtensionOpen": "HvDropDownMenu-inputExtensionOpen",
+                "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                 "menuList": "HvDropDownMenu-menuList",
                 "popper": "HvDropDownMenu-popper",
                 "root": "HvDropDownMenu-root HvActions-dropDownMenu",
@@ -568,7 +578,12 @@ exports[`Footer should render the actions and the dropdown accordingly 1`] = `
                 disablePortal={false}
                 open={false}
                 placement="bottom-end"
-                popperOptions={Object {}}
+                popperOptions={
+                  Object {
+                    "onCreate": [Function],
+                    "onUpdate": [Function],
+                  }
+                }
               />
             </div>
           </DropDownMenu>
@@ -673,6 +688,11 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
             Object {
               "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
               "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+              "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
+              "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
+              "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
+              "inputExtensionOpen": "HvDropDownMenu-inputExtensionOpen",
+              "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
               "menuList": "HvDropDownMenu-menuList",
               "popper": "HvDropDownMenu-popper",
               "root": "HvDropDownMenu-root HvActions-dropDownMenu",
@@ -708,6 +728,11 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
               Object {
                 "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
                 "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
+                "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
+                "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
+                "inputExtensionOpen": "HvDropDownMenu-inputExtensionOpen",
+                "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                 "menuList": "HvDropDownMenu-menuList",
                 "popper": "HvDropDownMenu-popper",
                 "root": "HvDropDownMenu-root HvActions-dropDownMenu",
@@ -1006,7 +1031,12 @@ exports[`Footer should render the actions and the dropdown accordingly 2`] = `
                 disablePortal={false}
                 open={false}
                 placement="bottom-end"
-                popperOptions={Object {}}
+                popperOptions={
+                  Object {
+                    "onCreate": [Function],
+                    "onUpdate": [Function],
+                  }
+                }
               />
             </div>
           </DropDownMenu>
@@ -1409,6 +1439,11 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
             Object {
               "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
               "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+              "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
+              "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
+              "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
+              "inputExtensionOpen": "HvDropDownMenu-inputExtensionOpen",
+              "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
               "menuList": "HvDropDownMenu-menuList",
               "popper": "HvDropDownMenu-popper",
               "root": "HvDropDownMenu-root HvActions-dropDownMenu",
@@ -1436,6 +1471,11 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
               Object {
                 "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
                 "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
+                "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
+                "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
+                "inputExtensionOpen": "HvDropDownMenu-inputExtensionOpen",
+                "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                 "menuList": "HvDropDownMenu-menuList",
                 "popper": "HvDropDownMenu-popper",
                 "root": "HvDropDownMenu-root HvActions-dropDownMenu",
@@ -1726,7 +1766,12 @@ exports[`Footer should render the actions and the dropdown accordingly 3`] = `
                 disablePortal={false}
                 open={false}
                 placement="bottom-end"
-                popperOptions={Object {}}
+                popperOptions={
+                  Object {
+                    "onCreate": [Function],
+                    "onUpdate": [Function],
+                  }
+                }
               />
             </div>
           </DropDownMenu>
