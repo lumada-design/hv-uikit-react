@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.2.0...@hv/uikit-react-lab@2.3.0) (2020-06-09)
+
+
+### Features
+
+* **code-editor:** add code editor component from Foundry. [#1629](https://github.com/pentaho/hv-uikit-react/issues/1629) ([e8a7c10](https://github.com/pentaho/hv-uikit-react/commit/e8a7c10f2db2d528399f21f96c35650ac6e2e48f))
+* **code-editor:** add yaml example and fix syntax highlight ([52ac0fc](https://github.com/pentaho/hv-uikit-react/commit/52ac0fc1fbd7674c7993d975cb04fc4e4df8c81b))
+* **code-editor:** fix comments ([4537e3f](https://github.com/pentaho/hv-uikit-react/commit/4537e3fc21dc5f5cf90dd1054162bc3bf2ef4e31))
+
+
+
+
+
 # [2.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.1.1...@hv/uikit-react-lab@2.2.0) (2020-06-05)
 
 
