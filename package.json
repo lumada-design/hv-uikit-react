@@ -91,6 +91,7 @@
     "husky": "^4.2.5",
     "lerna": "^3.22.0",
     "license-checker": "^25.0.1",
+    "monaco-editor-webpack-plugin": "^1.9.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "prompt-input": "^3.0.0",
@@ -108,6 +109,7 @@
   },
   "dependencies": {
     "acorn": "^7.2.0",
-    "moment": "^2.26.0"
+    "moment": "^2.26.0",
+    "react-monaco-editor": "^0.36.0"
   }
 }

@@ -1,6 +1,7 @@
 const path = require("path");
 
 var NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
+const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
 const docFolder = path.resolve(__dirname, "../doc");
 const corePackageSrc = path.resolve(__dirname, "../packages/core/src");
@@ -91,6 +92,18 @@ module.exports = {
           }
         }
       )
+    );
+
+    config.plugins.push(
+      new MonacoWebpackPlugin({
+        // see https://github.com/Microsoft/monaco-editor-webpack-plugin#options
+        languages: [
+          // "javascript",
+          "json",
+          // "typescript", // needed for JavaScript, adds the required HTML worker
+          "yaml"
+        ]
+      })
     );
 
     // rule for txt files
