@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { NavigationData } from "../../VerticalNavigation/Navigation";
+import { NavigationData } from "../Navigation";
 import { HvTypographyProps } from "../../Typography";
 
 export interface HvActionProps

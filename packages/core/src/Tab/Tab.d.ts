@@ -1,6 +1,6 @@
 import { StandardProps, TabProps } from "@material-ui/core";
 
-export interface HvTabProps extends StandardProps<TabProps, HvTabClassKey> {}
+export type HvTabProps = StandardProps<TabProps, HvTabClassKey>;
 
 export type HvTabClassKey = "root" | "labelContainer" | "selected" | "disabled";
 

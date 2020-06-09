@@ -43,7 +43,7 @@ export interface TableColumn {
   /**
    *  Used to render a standard cell, defaults to the accessed value.
    */
-  Cell?: React.ReactNode | String | Function;
+  Cell?: React.ReactNode | string | Function;
   /**
    * If `true` the column may be sorted.
    */
@@ -184,14 +184,14 @@ export interface HvTableProps
   /**
    *  Extra properties passed to the select all checkbox props.
    */
-  allCheckBoxProps?: Object;
+  allCheckBoxProps?: Record<string, any>;
 
   /**
    *  Extra properties passed to the dropdown menu.
    */
-  dropdownMenuProps?: Object;
+  dropdownMenuProps?: Record<string, any>;
 
-  tableProps?: object;
+  tableProps?: Record<string, any>;
 
   /**
    * Boolean describing if the table columns are rezisable or not

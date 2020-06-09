@@ -1,19 +1,20 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
+import { SyntheticEvent } from "react";
 
 export type HvVerticalNavigationTreeViewItemClassKey =
-    "node" |
-    "content" |
-    "group" |
-    "disabled" |
-    "collapsed" |
-    "expanded" |
-    "selectable" |
-    "unselectable" |
-    "selected" |    
-    "unselected" |
-    "contentFocused" |
-   " contentFocusDisabled";
+  | "node"
+  | "content"
+  | "group"
+  | "disabled"
+  | "collapsed"
+  | "expanded"
+  | "selectable"
+  | "unselectable"
+  | "selected"
+  | "unselected"
+  | "contentFocused"
+  | " contentFocusDisabled";
 
 export interface HvVerticalNavigationTreeViewItemProps
   extends StandardProps<
@@ -43,11 +44,12 @@ export interface HvVerticalNavigationTreeViewItemProps
   /**
    * The node payload.
    */
+  // eslint-disable-next-line
   payload: any;
   /**
    * @ignore
    */
-  onClick: (event: any) => void;
+  onClick: (event: React.SyntheticEvent) => void;
 }
 
 export default function HvVerticalNavigationTreeItemView(

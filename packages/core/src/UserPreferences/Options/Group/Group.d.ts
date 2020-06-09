@@ -10,7 +10,7 @@ export interface HvGroupProps
   /**
    * Props applied to the generated label.
    */
-  labelProps: Object;
+  labelProps: any;
 }
 
 export type HvUserPreferenceActionsClassKey = "root" | "label";

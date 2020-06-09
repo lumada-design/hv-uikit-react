@@ -1,8 +1,7 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow, mount } from "enzyme";
-import toJson from "enzyme-to-json";
+import { mount, shallow } from "enzyme";
 
 import ListItem from "@material-ui/core/ListItem";
 import HvProvider from "@hv/uikit-react-core/dist/Provider";

@@ -1,5 +1,5 @@
 import { ContainerProps } from "@material-ui/core";
 
-export interface HvContainerProps extends ContainerProps {}
+export type HvContainerProps = ContainerProps;
 
 export default function HvContainer(props: HvContainerProps): JSX.Element | null;

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import PropTypes from "prop-types/index";
 
 export type HvFocusStrategies = "listbox" | "menu" | "card" | "grid";
 
@@ -13,7 +12,7 @@ export interface HvFocusProps
   /**
    * Extra configuration for the child element.
    */
-  configuration: Object;
+  configuration: Record<string, any>;
   /**
    * Whether the focus is selected.
    */
@@ -53,11 +52,11 @@ export interface HvFocusProps
   /**
    * Narrows the results of the focusable elements to only this class
    */
-  filterClass: String;
+  filterClass: string;
   /**
    * How much the navigation will skip when using the arrows.
    */
-  navigationJump: Number;
+  navigationJump: number;
 }
 
 export type ClassKey =
