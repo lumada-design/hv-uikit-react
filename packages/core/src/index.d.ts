@@ -55,14 +55,7 @@ export * from "./Header";
 export { default as HvInput } from "./Input";
 export * from "./Input";
 
-export { default as HvBaseInput } from "./Forms/BaseInput";
-export * from "./Forms/BaseInput";
-
-export { default as HvFormElement, HvFormElementContextConsumer, HvFormElementContextProvider } from "./Forms/FormElement";
-export * from "./Forms/FormElement";
-
-export { default as HvInfoText } from "./Forms/InfoText";
-export * from "./Forms/InfoText";
+export * from "./Forms";
 
 export { default as HvLabel } from "./Forms/Label";
 export * from "./Forms/Label";

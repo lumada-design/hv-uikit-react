@@ -1,18 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { isNil, isFunction } from "lodash";
+import { isNil } from "lodash";
 import { Input, withStyles } from "@material-ui/core";
 import { HvFormElementContextConsumer } from "../FormElement";
 import styles from "./styles";
 
+const getCurrentDescribeBy = (elementStatus = "", availableDescriptors = []) => {
+  return availableDescriptors.find(descriptor => {
+    return descriptor.showWhen === elementStatus;
+  })?.id;
+};
+
+/**
+ * An Input component that only posses the most basic functionalities.
+ * It should be used alongside the other form elements to construct a proper accesible form.
+ */
 const HvBaseInput = props => {
   const {
     placeholder,
     classes,
     className = "",
     id,
-    password = false,
     disabled = false,
     inputProps,
     inputRef,
@@ -26,51 +35,50 @@ const HvBaseInput = props => {
   } = props;
 
   const onChangeHandler = event => {
-    if (!isNil(onChange) && isFunction(onChange)) {
-      onChange(event, event.target.value);
-    }
+    onChange?.(event, event.target.value);
   };
 
   return (
-    <>
-      <HvFormElementContextConsumer>
-        {FormContext => {
-          const { elementStatus, elementValue } = FormContext;
-          const localInvalid = elementStatus === "invalid" || invalid;
-          const locaValue = !isNil(elementValue) ? elementValue : value;
+    <HvFormElementContextConsumer>
+      {formContext => {
+        const { elementStatus, elementValue, elementDisabled, descriptors } = formContext;
+        const localInvalid = invalid || elementStatus === "invalid";
+        const locaValue = !isNil(value) ? value : elementValue;
+        const localDisabled = disabled || elementDisabled;
+        const currentDescribedBy = getCurrentDescribeBy(elementStatus, descriptors?.HvInfoText);
 
-          return (
-            <Input
-              id={id}
-              defaultValue={defaultValue}
-              value={locaValue}
-              disabled={disabled}
-              placeholder={placeholder}
-              type={password ? "password" : "text"}
-              onChange={onChangeHandler}
-              classes={{
-                input: classes.input,
-                focused: classes.inputRootFocused,
-                disabled: classes.inputDisabled,
-                multiline: classes.multiLine
-              }}
-              className={clsx(classes.inputRoot, className, {
-                [classes.inputRootDisabled]: disabled,
-                [classes.inputRootInvalid]: localInvalid
-              })}
-              inputProps={{
-                "aria-required": required || undefined,
-                "aria-invalid": localInvalid || undefined,
-                ...inputProps
-              }}
-              inputRef={inputRef}
-              multiline={multiline}
-              {...others}
-            />
-          );
-        }}
-      </HvFormElementContextConsumer>
-    </>
+        return (
+          <Input
+            id={`${id}-container`}
+            defaultValue={defaultValue}
+            value={locaValue}
+            disabled={localDisabled}
+            placeholder={placeholder}
+            onChange={onChangeHandler}
+            classes={{
+              input: classes.input,
+              focused: classes.inputRootFocused,
+              disabled: classes.inputDisabled,
+              multiline: classes.multiLine
+            }}
+            className={clsx(classes.inputRoot, className, {
+              [classes.inputRootDisabled]: localDisabled,
+              [classes.inputRootInvalid]: localInvalid
+            })}
+            inputProps={{
+              "aria-required": required || undefined,
+              "aria-invalid": localInvalid || undefined,
+              "aria-describedby": currentDescribedBy,
+              id,
+              ...inputProps
+            }}
+            inputRef={inputRef}
+            multiline={multiline}
+            {...others}
+          />
+        );
+      }}
+    </HvFormElementContextConsumer>
   );
 };
 HvBaseInput.propTypes = {
@@ -139,10 +147,6 @@ HvBaseInput.propTypes = {
    * If ´true´ the input is disabled.
    */
   disabled: PropTypes.bool,
-  /**
-   * If ´true´ the input is of type password hiding the value.
-   */
-  password: PropTypes.bool,
   /**
    * The function that will be executed onChange, allows modification of the input,
    * it receives the value. If a new value should be presented it must returned it.

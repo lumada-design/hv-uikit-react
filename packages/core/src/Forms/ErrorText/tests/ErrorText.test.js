@@ -2,18 +2,19 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { HvLabel } from "../../..";
+
 import HvProvider from "../../../Provider";
+import ErrorText from "../ErrorText";
 
 /* eslint-disable no-console */
 
-describe("Label", () => {
+describe("ErrorText", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvLabel label="description" />
+        <ErrorText id="base" errorTextStatus="valid" label="text" />
       </HvProvider>
     );
   });
@@ -23,11 +24,11 @@ describe("Label", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(HvLabel)).toMatchSnapshot();
+    expect(wrapper.find(ErrorText)).toMatchSnapshot();
   });
 
-  it("should render the Input component", () => {
-    const infoTextComponent = wrapper.find(HvLabel);
-    expect(infoTextComponent.length).toBe(1);
+  it("should render the error component", () => {
+    const errorTextComponent = wrapper.find(ErrorText);
+    expect(errorTextComponent.length).toBe(1);
   });
 });

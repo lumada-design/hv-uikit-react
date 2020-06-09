@@ -1,7 +1,12 @@
 const styles = theme => ({
-  root: {},
+  root: {
+    display: "inline-block"
+  },
   labelDisabled: {
     color: theme.hv.palette.atmosphere.atmo7
+  },
+  childGutter: {
+    marginBottom: 8
   }
 });
 

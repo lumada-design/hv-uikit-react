@@ -2,46 +2,60 @@
 
 exports[`FormElement  should render correctly 1`] = `
 <WithStyles(FormElement)
-  elementStatus="invalid"
-  elementValue="Albert2"
+  elementStatus="valid"
+  elementValue="George"
 >
-  <WithStyles(HvBaseInput)
-    style={
-      Object {
-        "paddingTop": "8px",
-      }
-    }
+  <WithStyles(HvLabelText)
+    id="label-id"
+    key="1"
+    label="First name"
+  >
+    <WithStyles(HvBaseInput)
+      id="id-input"
+      placeholder="Insert your name"
+    />
+  </WithStyles(HvLabelText)>
+  <WithStyles(HvInfoText)
+    id="infotext-main-standby"
+    key="2"
+    label="Write your name in this input do not put numbers"
+    showWhen="standBy"
   />
-  <WithStyles(WithId)
+  <WithStyles(HvInfoText)
+    id="infotext-main-valid"
+    key="3"
+    label="Your value is valid"
+    showWhen="valid"
+  />
+  <WithStyles(HvErrorText)
+    id="error-text-main"
+    key="4"
     label="Names do not contain numbers"
     showWhen="invalid"
-    style={
-      Object {
-        "marginTop": "8px",
-      }
-    }
   />
 </WithStyles(FormElement)>
 `;
 
 exports[`FormElement  should render correctly 2`] = `
 <WithStyles(HvBaseInput)
-  style={
-    Object {
-      "paddingTop": "8px",
-    }
-  }
+  id="id-input"
+  placeholder="Insert your name"
 />
 `;
 
 exports[`FormElement  should render correctly 3`] = `
-<WithStyles(WithId)
-  label="Names do not contain numbers"
-  showWhen="invalid"
-  style={
-    Object {
-      "marginTop": "8px",
-    }
-  }
-/>
+Array [
+  <WithStyles(HvInfoText)
+    id="infotext-main-standby"
+    key="2"
+    label="Write your name in this input do not put numbers"
+    showWhen="standBy"
+  />,
+  <WithStyles(HvInfoText)
+    id="infotext-main-valid"
+    key="3"
+    label="Your value is valid"
+    showWhen="valid"
+  />,
+]
 `;

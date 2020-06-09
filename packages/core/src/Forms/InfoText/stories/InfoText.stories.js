@@ -1,6 +1,6 @@
 import React from "react";
 
-import InfoText from "../InfoText";
+import { HvInfoText } from "../../..";
 
 export default {
   title: "Components/Forms/InfoText",
@@ -8,40 +8,48 @@ export default {
     componentSubtitle: null,
     usage: "import { HvInfoText } from '@hv/uikit-react-core/dist'"
   },
-  component: InfoText
+  component: HvInfoText
 };
 
 export const Main = () => {
+  return <HvInfoText id="base" infoTextStatus="valid" label="extra details" showWhen="valid" />;
+};
+
+export const InfoInvalidState = () => {
   return (
-    <>
-      <InfoText id="base" infoTextStatus="valid" label="extra details" showWhen="valid" />
-    </>
+    <HvInfoText
+      id="base"
+      infoTextStatus="invalid"
+      label="something when wrong"
+      showWhen="invalid"
+    />
   );
 };
 
-export const InfoErrorState = () => {
+InfoInvalidState.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Info text showcasing the invalid style."
+    }
+  }
+};
+
+export const DisabledInfoText = () => {
   return (
-    <>
-      <InfoText
-        id="base"
-        infoTextStatus="invalid"
-        label="something when wrong"
-        showWhen="invalid"
-      />
-    </>
+    <HvInfoText
+      id="disabled"
+      infoTextStatus="invalid"
+      label="something when wrong"
+      showWhen="invalid"
+      disabled
+    />
   );
 };
 
-export const disabledInfoText = () => {
-  return (
-    <>
-      <InfoText
-        id="base"
-        infoTextStatus="invalid"
-        label="something when wrong"
-        showWhen="invalid"
-        disabled
-      />
-    </>
-  );
+DisabledInfoText.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Info text showcasing the disabled."
+    }
+  }
 };

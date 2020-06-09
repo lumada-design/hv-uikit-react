@@ -7,14 +7,14 @@ import HvTypography from "../../Typography";
 
 import styles from "./styles";
 /**
- * Component used in conjunction with other form elements, to give extra information about status.
+ * Component used in conjunction with other form elements, to give extra information about error status.
  */
-const HvInfoText = props => {
+const HvErrorText = props => {
   const {
     label,
     classes,
     id,
-    infoTextStatus,
+    errorTextStatus,
     showWhen,
     disabled,
     disableGutter = false,
@@ -25,7 +25,7 @@ const HvInfoText = props => {
     <HvFormElementContextConsumer>
       {formContext => {
         const { elementStatus, elementDisabled } = formContext;
-        const localStatus = infoTextStatus || elementStatus || "standBy";
+        const localStatus = errorTextStatus || elementStatus || "standBy";
         const isVisible = localStatus === showWhen;
         const localDisabled = disabled || elementDisabled;
         return (
@@ -34,10 +34,13 @@ const HvInfoText = props => {
             variant="infoText"
             className={clsx({
               [classes.showText]: isVisible,
-              [classes.infoDisabled]: localDisabled,
-              [classes.infoText]: !localDisabled,
+              [classes.errorTextDisabled]: localDisabled,
+              [classes.errorText]: !localDisabled,
               [classes.topGutter]: !disableGutter
             })}
+            aria-live="polite"
+            aria-atomic="true"
+            aria-relevant="additions text"
             {...others}
           >
             {label}
@@ -48,11 +51,11 @@ const HvInfoText = props => {
   );
 };
 
-HvInfoText.propTypes = {
+HvErrorText.propTypes = {
   /**
-   * Describes the current state of the info text
+   * Describes the current state of the error text.
    */
-  infoTextStatus: PropTypes.string,
+  errorTextStatus: PropTypes.string,
   /**
    * Id to be applied to the root node.
    */
@@ -64,7 +67,7 @@ HvInfoText.propTypes = {
     /**
      * Styles applied to the information text.
      */
-    infoText: PropTypes.string,
+    errorText: PropTypes.string,
     /**
      * Styles applied when the text should be shown.
      */
@@ -72,7 +75,7 @@ HvInfoText.propTypes = {
     /**
      * Styles applied when the text is disabled.
      */
-    infoDisabled: PropTypes.string,
+    errorTextDisabled: PropTypes.string,
     /**
      * Separation between text and upper element.
      */
@@ -91,7 +94,7 @@ HvInfoText.propTypes = {
    */
   showWhen: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * If ´true´ the input is disabled.
+   * If ´true´ the text is disabled.
    */
   disabled: PropTypes.bool,
   /**
@@ -100,4 +103,4 @@ HvInfoText.propTypes = {
   disableGutter: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvInfoText" })(HvInfoText);
+export default withStyles(styles, { name: "HvErrorText" })(HvErrorText);

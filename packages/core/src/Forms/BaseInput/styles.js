@@ -6,11 +6,11 @@ const styles = theme => ({
     maxWidth: "610px"
   },
   inputRoot: {
-    margin: "0",
+    margin: 0,
     width: "100%",
     borderStyle: "solid",
     borderWidth: " 0 0 1px 0",
-    background: theme.hv.palette.atmosphere.atmo1,
+    backgroundColor: theme.hv.palette.atmosphere.atmo1,
     borderColor: theme.hv.palette.atmosphere.atmo6,
     "&:hover": {
       borderStyle: "solid",
@@ -50,8 +50,8 @@ const styles = theme => ({
   },
   input: {
     height: `20px`,
-    marginLeft: `${theme.hv.spacing.xs}px`,
-    marginRight: `${theme.hv.spacing.xs}px`,
+    marginLeft: theme.hv.spacing.xs,
+    marginRight: theme.hv.spacing.xs,
     padding: "6px 0 5px",
     ...theme.hv.typography.normalText,
     overflow: "hidden",

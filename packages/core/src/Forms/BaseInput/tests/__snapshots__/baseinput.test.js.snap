@@ -39,18 +39,19 @@ exports[`Input should render correctly 1`] = `
           "multiline": "HvBaseInput-multiLine",
         }
       }
-      disabled={false}
+      id="undefined-container"
       inputProps={
         Object {
+          "aria-describedby": undefined,
           "aria-invalid": undefined,
           "aria-label": "Input Label",
           "aria-required": undefined,
+          "id": undefined,
         }
       }
       multiline={false}
       onChange={[Function]}
       placeholder="test"
-      type="text"
     >
       <ForwardRef(Input)
         className="HvBaseInput-inputRoot"
@@ -73,18 +74,19 @@ exports[`Input should render correctly 1`] = `
           }
         }
         disableUnderline={true}
-        disabled={false}
+        id="undefined-container"
         inputProps={
           Object {
+            "aria-describedby": undefined,
             "aria-invalid": undefined,
             "aria-label": "Input Label",
             "aria-required": undefined,
+            "id": undefined,
           }
         }
         multiline={false}
         onChange={[Function]}
         placeholder="test"
-        type="text"
       >
         <WithStyles(ForwardRef(InputBase))
           className="HvBaseInput-inputRoot"
@@ -106,14 +108,16 @@ exports[`Input should render correctly 1`] = `
               "underline": null,
             }
           }
-          disabled={false}
           fullWidth={false}
+          id="undefined-container"
           inputComponent="input"
           inputProps={
             Object {
+              "aria-describedby": undefined,
               "aria-invalid": undefined,
               "aria-label": "Input Label",
               "aria-required": undefined,
+              "id": undefined,
             }
           }
           multiline={false}
@@ -145,14 +149,16 @@ exports[`Input should render correctly 1`] = `
                 "root": "MuiInputBase-root MuiInput-root",
               }
             }
-            disabled={false}
             fullWidth={false}
+            id="undefined-container"
             inputComponent="input"
             inputProps={
               Object {
+                "aria-describedby": undefined,
                 "aria-invalid": undefined,
                 "aria-label": "Input Label",
                 "aria-required": undefined,
+                "id": undefined,
               }
             }
             multiline={false}
@@ -167,7 +173,6 @@ exports[`Input should render correctly 1`] = `
               <input
                 aria-label="Input Label"
                 className="MuiInputBase-input MuiInput-input HvBaseInput-input"
-                disabled={false}
                 onAnimationStart={[Function]}
                 onBlur={[Function]}
                 onChange={[Function]}

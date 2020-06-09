@@ -11,19 +11,19 @@ export interface HvFormElementProps
   /**
    * Components that will receive the form context values.
    */
-  children: React.ReactNode,
+  children: React.ReactNode;
   /**
    * Represents the status of this form element, 
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the childrens through the context.
    */
-  elementStatus?: HvFormStatus,
+  elementStatus?: HvFormStatus;
   /**
    * Represents the status of this form element, 
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the childrens through the context.
    */
-  elementValue?: string,
+  elementValue?: string;
 }
 
 export type HvFormElementClassKey =

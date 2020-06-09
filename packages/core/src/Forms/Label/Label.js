@@ -2,48 +2,63 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
+import { isNil } from "lodash";
 import { HvFormElementContextConsumer } from "../FormElement";
-
-import withId from "../../withId";
+import { getDescriptorMap } from "../FormElement/utils/FormUtils";
 import HvTypography from "../../Typography";
 
 import styles from "./styles";
+
+const getChildIdToLabel = (children, childName) => {
+  let childId = "";
+  if (Array.isArray(children)) {
+    childId = React.Children.forEach(child => {
+      const foundId = getDescriptorMap(child, childName)?.id;
+      if (!isNil(foundId)) {
+        childId = childId.concat(`${foundId} `);
+      }
+    });
+  } else {
+    childId = getDescriptorMap(children, childName)?.id;
+  }
+  return childId;
+};
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
+ * If it receives a children, the component will set itself as a label for the children.
  */
-const HvInfoText = props => {
-  const { label, classes, id, disabled, ...others } = props;
-
+const HvLabelText = props => {
+  const { label, children, classes, id, disabled, ...others } = props;
+  const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
   return (
-    <>
-      <HvFormElementContextConsumer>
-        {() => {
-          return (
-            <>
-              <HvTypography
-                id={id}
-                className={clsx(classes.root, {
-                  [classes.labelDisabled]: disabled
-                })}
-                variant="labelText"
-                component="label"
-                {...others}
-              >
-                {label}
-              </HvTypography>
-            </>
-          );
-        }}
-      </HvFormElementContextConsumer>
-    </>
+    <HvFormElementContextConsumer>
+      {formContext => {
+        const { elementDisabled } = formContext;
+        const localDisabled = disabled || elementDisabled;
+        return (
+          <>
+            <HvTypography
+              id={id}
+              className={clsx(classes.root, {
+                [classes.labelDisabled]: localDisabled,
+                [classes.childGutter]: !isNil(children)
+              })}
+              variant="labelText"
+              component="label"
+              htmlFor={childId}
+              {...others}
+            >
+              {label}
+            </HvTypography>
+            {children}
+          </>
+        );
+      }}
+    </HvFormElementContextConsumer>
   );
 };
 
-HvInfoText.propTypes = {
-  /**
-   * Describes the current state of the info text
-   */
-  infoTextStatus: PropTypes.string,
+HvLabelText.propTypes = {
   /**
    * Id to be applied to the root node.
    */
@@ -59,20 +74,25 @@ HvInfoText.propTypes = {
     /**
      * Styles applied when the text should be shown.
      */
-    labelDisabled: PropTypes.string
+    labelDisabled: PropTypes.string,
+    /**
+     * Separation between the label and the children.
+     */
+    childGutter: PropTypes.string
   }).isRequired,
   /**
-   * The text to be shown by the info text.
+   * The children to label.
+   * If defined the aria-labelledby prop will be overriden for this element id.
+   */
+  children: PropTypes.node,
+  /**
+   * The text to be shown by the label.
    */
   label: PropTypes.string,
-  /**
-   * When this text is to be rendered.
-   */
-  showWhen: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
    * If ´true´ the input is disabled.
    */
   disabled: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvInfoText" })(withId(HvInfoText));
+export default withStyles(styles, { name: "HvInfoText" })(HvLabelText);

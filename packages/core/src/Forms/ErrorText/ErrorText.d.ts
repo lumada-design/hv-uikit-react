@@ -1,13 +1,13 @@
 import { StandardProps } from "@material-ui/core";
 
-export interface HvInfoTextProps
+export interface HvErrorTextProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInfoTextClassKey> {
   /**
-   * Describes the current state of the info text
+   * Describes the current state of the error text.
    */
-  infoTextStatus?: string;
+  errorTextStatus?: string;
   /**
-   * The text to be shown by the info text.
+   * The text to be shown by the error text.
    */
   label?: string;
   /**
@@ -20,6 +20,6 @@ export interface HvInfoTextProps
   disabled?: boolean;
 }
 
-export type HvInfoTextClassKey = "infoText" | "showText" | "infoDisabled" | "@global";
+export type HvInfoTextClassKey = "errorText" | "showText" | "errorTextDisabled" | "@global";
 
-export default function HvInfoText(props: HvInfoTextProps): JSX.Element | null;
+export default function HvErrorText(props: HvErrorTextProps): JSX.Element | null;

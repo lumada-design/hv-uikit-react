@@ -1,11 +1,11 @@
 const styles = theme => ({
   root: {},
   topGutter: { marginTop: 8 },
-  infoDisabled: {
+  errorTextDisabled: {
     color: theme.hv.palette.atmosphere.atmo7,
     display: "none"
   },
-  infoText: {
+  errorText: {
     color: theme.hv.palette.accent.acce1,
     display: "none"
   },

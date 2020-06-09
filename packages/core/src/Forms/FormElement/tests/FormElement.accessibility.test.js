@@ -18,19 +18,16 @@ describe("FormElementA11Y", () => {
     const wrapper = mount(
       <HvProvider>
         <HvFormElement elementValue="Albert2" elementStatus="invalid">
-          <HvLabel id={inputLabelId} htmlFor={inputId} label="First name" />
-          <HvBaseInput
-            style={{ paddingTop: "8px" }}
-            inputProps={{
-              "aria-labelledby": inputLabelId
-            }}
-            aria-labelledby={inputLabelId}
-          />
-          <HvInfoText
-            style={{ marginTop: "8px" }}
-            label="Names do not contain numbers"
-            showWhen="invalid"
-          />
+          <HvLabel id={inputLabelId} label="First name">
+            <HvBaseInput
+              id={inputId}
+              inputProps={{
+                "aria-labelledby": inputLabelId
+              }}
+              aria-labelledby={inputLabelId}
+            />
+          </HvLabel>
+          <HvInfoText label="Names do not contain numbers" showWhen="invalid" />
         </HvFormElement>
       </HvProvider>
     );

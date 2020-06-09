@@ -1,26 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Label should render correctly 1`] = `
-<WithStyles(HvLabelText)
-  label="description"
+exports[`ErrorText should render correctly 1`] = `
+<WithStyles(HvErrorText)
+  errorTextStatus="valid"
+  id="base"
+  label="text"
 >
-  <HvLabelText
+  <HvErrorText
     classes={
       Object {
-        "childGutter": "HvInfoText-childGutter",
-        "labelDisabled": "HvInfoText-labelDisabled",
-        "root": "HvInfoText-root",
+        "errorText": "HvErrorText-errorText",
+        "errorTextDisabled": "HvErrorText-errorTextDisabled",
+        "root": "HvErrorText-root",
+        "showText": "HvErrorText-showText",
+        "topGutter": "HvErrorText-topGutter",
       }
     }
-    label="description"
+    errorTextStatus="valid"
+    id="base"
+    label="text"
   >
     <WithStyles(ForwardRef)
-      className="HvInfoText-root"
-      component="label"
-      variant="labelText"
+      aria-atomic="true"
+      aria-live="polite"
+      aria-relevant="additions text"
+      className="HvErrorText-errorText HvErrorText-topGutter"
+      id="base"
+      variant="infoText"
     >
       <ForwardRef
-        className="HvInfoText-root"
+        aria-atomic="true"
+        aria-live="polite"
+        aria-relevant="additions text"
+        className="HvErrorText-errorText HvErrorText-topGutter"
         classes={
           Object {
             "3xlTitle": "HvTypography-3xlTitle",
@@ -48,16 +60,20 @@ exports[`Label should render correctly 1`] = `
             "xxsTitle": "HvTypography-xxsTitle",
           }
         }
-        component="label"
-        variant="labelText"
+        id="base"
+        variant="infoText"
       >
-        <label
-          className="HvInfoText-root HvTypography-root HvTypography-labelText"
+        <p
+          aria-atomic="true"
+          aria-live="polite"
+          aria-relevant="additions text"
+          className="HvErrorText-errorText HvErrorText-topGutter HvTypography-root HvTypography-infoText"
+          id="base"
         >
-          description
-        </label>
+          text
+        </p>
       </ForwardRef>
     </WithStyles(ForwardRef)>
-  </HvLabelText>
-</WithStyles(HvLabelText)>
+  </HvErrorText>
+</WithStyles(HvErrorText)>
 `;

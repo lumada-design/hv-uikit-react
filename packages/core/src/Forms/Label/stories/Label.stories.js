@@ -12,17 +12,9 @@ export default {
 };
 
 export const Main = () => {
-  return (
-    <>
-      <HvLabel id="base" label="Username" />
-    </>
-  );
+  return <HvLabel id="base" label="Username" />;
 };
 
 export const disabledInfoText = () => {
-  return (
-    <>
-      <HvLabel id="disable" label="Username" disabled />
-    </>
-  );
+  return <HvLabel id="disable" label="Username" disabled />;
 };
