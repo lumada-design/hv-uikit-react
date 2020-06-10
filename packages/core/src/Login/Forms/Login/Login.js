@@ -149,8 +149,8 @@ class Login extends React.Component {
               message={incorrectCredentialsMessage}
             />
           ) : (
-              customMessageElement
-            )}
+            customMessageElement
+          )}
         </div>
 
         <div className={classes.inputUser}>
