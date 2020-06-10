@@ -77,7 +77,7 @@ class Login extends React.Component {
       await login({ username, password });
       if (this.isMounted) this.setState({ isLogging: false });
     } catch (error) {
-      if (this.isMounted) this.setState({ loginError: true });
+      if (this.isMounted) this.setState({ loginError: true, isLogging: false });
     }
   };
 
@@ -149,8 +149,8 @@ class Login extends React.Component {
               message={incorrectCredentialsMessage}
             />
           ) : (
-            customMessageElement
-          )}
+              customMessageElement
+            )}
         </div>
 
         <div className={classes.inputUser}>
