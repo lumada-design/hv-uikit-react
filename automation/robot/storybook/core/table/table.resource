@@ -10,6 +10,7 @@ ${button_expand}                css:[aria-label='row expander button']
 ${cells}                        css:[role=table] [role=row] [role=cell]
 ${header_1}                     css:[role=columnheader]:nth-child(1)
 ${header_2}                     css:[role=columnheader]:nth-child(2)
+${header_3}                     css:[role=columnheader]:nth-child(3)
 ${header_7}                     css:[role=columnheader]:nth-child(7)
 ${header_8}                     css:[role=columnheader]:nth-child(8)
 ${headers}                      css:[role=table] [role=row] [scope=col]
