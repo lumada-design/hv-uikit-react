@@ -4,8 +4,8 @@ import isNil from "lodash/isNil";
 
 import AngleDown from "@hv/uikit-react-icons/dist/Down";
 import AngleUp from "@hv/uikit-react-icons/dist/Up";
-import { KeyboardCodes, isKeypress } from "../utils";
-
+import { isKeypress, KeyboardCodes } from "../utils";
+import CellWithTooltip from "./CellWithTooltip";
 import { buildLink } from "./addins";
 
 /**
@@ -25,14 +25,14 @@ import { buildLink } from "./addins";
  * @param {Function} format - The formatting function to be executed to format the row value.
  * @param {Number} id - The index to find the required row on the data.
  * @param {Object} classes - The classes to be applied.
- * @returns {JSX} A container that has the row value formatted if required.
+ * @returns {function(*): *} A container that has the row value formatted if required.
  */
-const wrapper = (format, id, classes) => {
+const wrapper = (format, id) => {
   if (format) {
-    return data => <div className={classes.textContainer}>{format(data)}</div>;
+    return data => <CellWithTooltip data={format(data)} />;
   }
   /* eslint no-underscore-dangle: 0 */
-  return data => <div className={classes.textContainer}>{data.row._original[id]}</div>;
+  return data => <CellWithTooltip data={data.row._original[id]} />;
 };
 
 /**
