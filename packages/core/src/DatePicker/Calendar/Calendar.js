@@ -335,7 +335,6 @@ class Calendar extends React.Component {
 
     const DateDisplay = () => (
       <div
-        key={getDateISO(currentDate)}
         onClick={onClickFunc}
         onKeyDown={event => this.arrowKeysFocus(event, onClickFunc, 7)}
         role="presentation"
@@ -353,7 +352,7 @@ class Calendar extends React.Component {
 
     const DateTooltipWrapper = withTooltip(DateDisplay, getFormattedDate(currentDate, locale));
 
-    return <DateTooltipWrapper />;
+    return <DateTooltipWrapper key={getDateISO(currentDate)} />;
   };
 
   /**
