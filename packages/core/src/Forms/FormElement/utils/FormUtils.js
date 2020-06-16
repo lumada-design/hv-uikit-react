@@ -44,7 +44,7 @@ const updateDescriptors = (element, names, descriptors = {}) => {
  *
  * @param {Array} children - The children inside the form element to scan.
  * @param {Array} names - An array with the names of the components this function should scan i.e.: HvHelperText.
- * @param {Object} descriptors - Already found descriptors used for recurssion.
+ * @param {Object} descriptors - Already found descriptors used for recursion.
  *
  */
 const findDescriptors = (children, names, descriptors = {}) => {

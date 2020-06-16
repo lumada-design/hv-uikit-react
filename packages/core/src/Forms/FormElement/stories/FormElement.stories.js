@@ -14,7 +14,7 @@ export default {
 export const Main = () => {
   const [notificationText, setNotificationText] = useState("");
   const [inputValue, setInputValue] = useState("");
-  const [status, setstatus] = useState("standBy");
+  const [status, setStatus] = useState("standBy");
 
   const hasNumber = string => {
     return /\d/.test(string);
@@ -26,16 +26,16 @@ export const Main = () => {
 
   const validateValue = value => {
     if (value === "") {
-      setstatus("standBy");
+      setStatus("standBy");
       setNotificationText("");
       return;
     }
     if (hasNumber(value)) {
-      setstatus("invalid");
+      setStatus("invalid");
       setNotificationText("Names do not contain numbers");
       return;
     }
-    setstatus("valid");
+    setStatus("valid");
     setNotificationText("Your value is valid");
   };
 

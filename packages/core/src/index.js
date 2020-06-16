@@ -18,6 +18,7 @@ export { default as HvDropDownMenu } from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFileUploader } from "./FileUploader";
 export { default as HvFooter } from "./Footer";
+export * from "./Forms";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
 export { default as HvInput } from "./Input";
@@ -45,7 +46,6 @@ export { default as HvTooltip } from "./Tooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
-export * from "./Forms";
 
 // HOCs
 export { default as withId } from "./withId";
