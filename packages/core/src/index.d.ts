@@ -118,6 +118,9 @@ export * from "./Typography";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 export * from "./VerticalNavigation";
 
+export { default as HvLoading } from "./Loading";
+export * from "./Loading";
+
 export { default as HvProvider } from "./Provider";
 export * from "./Provider";
 
