@@ -1,11 +1,11 @@
 const styles = theme => ({
   button: {
-    color: theme.hv.palette.accent.acce1,
+    color: theme.palette.acce1,
     "& span": {
-      color: theme.hv.palette.accent.acce1
+      color: theme.palette.acce1
     },
     "&:nth-child(1)": {
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: theme.spacing("xs")
     }
   }
 });

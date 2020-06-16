@@ -4,7 +4,7 @@ import isNil from "lodash/isNil";
 import { ClickAwayListener, Popper, withStyles } from "@material-ui/core";
 import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
 import clsx from "clsx";
-import { setId, isKeypress, KeyboardCodes } from "../utils";
+import { isKeypress, KeyboardCodes, setId } from "../utils";
 import Typography from "../Typography";
 import Calendar from "./Calendar";
 import Actions from "./Actions";
@@ -126,18 +126,6 @@ class HvDatePicker extends React.Component {
     this.setState({
       calendarOpen: open
     });
-  };
-
-  /**
-   * Gets the classes that should be applied to the input depending on the state.
-   *
-   * @returns {Object} The style to be applied.
-   */
-  getInputStyle = () => {
-    const { classes } = this.props;
-    const { calendarOpen } = this.state;
-
-    return calendarOpen ? `${classes.inputCalendarOpen}` : `${classes.inputCalendarClosed}`;
   };
 
   createCalendarPlacement = data => {
@@ -536,14 +524,18 @@ class HvDatePicker extends React.Component {
    * @memberOf Calendar
    */
   renderInput = () => {
-    const { id, classes, labels } = this.props;
+    const { id, className, classes, labels } = this.props;
+    const { calendarOpen } = this.state;
 
     return (
       <>
         {labels && labels.title && this.renderLabel()}
         <div
           aria-label={isNil(labels) || isNil(labels.title) ? "Date input" : undefined}
-          className={this.getInputStyle()}
+          className={clsx(className, classes.root, {
+            [classes.inputCalendarOpen]: calendarOpen,
+            [classes.inputCalendarClosed]: !calendarOpen
+          })}
           onKeyDown={this.handleKeyboardClick}
           onClick={this.handleCalendarIconClick}
           role="button"
@@ -576,7 +568,6 @@ class HvDatePicker extends React.Component {
     const {
       id,
       classes,
-      className,
       theme,
       rangeMode,
       horizontalPlacement,
@@ -611,7 +602,7 @@ class HvDatePicker extends React.Component {
         <ClickAwayListener onClickAway={this.handleCalendarClickAway}>
           <div>
             {!calendarFlipped && (
-              <div className={clsx(classes.popperRoot, classes.listBorderDown, className)} />
+              <div className={clsx(classes.popperRoot, classes.listBorderDown)} />
             )}
             <div
               className={clsx(classes.popperRoot, {

@@ -37,6 +37,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
         "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
         "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+        "root": "HvDatePicker-root",
         "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
       }
     }
@@ -833,6 +834,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
           "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
           "rangeMainContainer": "HvDatePicker-rangeMainContainer",
           "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+          "root": "HvDatePicker-root",
           "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
         }
       }
@@ -1618,7 +1620,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
       >
         <div
           aria-label="Date input"
-          className="HvDatePicker-inputCalendarClosed"
+          className="HvDatePicker-root HvDatePicker-inputCalendarClosed"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -1742,6 +1744,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
         "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
         "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+        "root": "HvDatePicker-root",
         "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
       }
     }
@@ -2537,6 +2540,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
           "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
           "rangeMainContainer": "HvDatePicker-rangeMainContainer",
           "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+          "root": "HvDatePicker-root",
           "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
         }
       }
@@ -3321,7 +3325,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
       >
         <div
           aria-label="Date input"
-          className="HvDatePicker-inputCalendarClosed"
+          className="HvDatePicker-root HvDatePicker-inputCalendarClosed"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
@@ -3455,6 +3459,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
         "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
         "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+        "root": "HvDatePicker-root",
         "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
       }
     }
@@ -4260,6 +4265,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
           "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
           "rangeMainContainer": "HvDatePicker-rangeMainContainer",
           "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+          "root": "HvDatePicker-root",
           "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
         }
       }
@@ -5086,7 +5092,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
           </ForwardRef>
         </WithStyles(ForwardRef)>
         <div
-          className="HvDatePicker-inputCalendarClosed"
+          className="HvDatePicker-root HvDatePicker-inputCalendarClosed"
           id="testingDatePicker"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -5208,6 +5214,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
         "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
         "rangeMainContainer": "HvDatePicker-rangeMainContainer",
         "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+        "root": "HvDatePicker-root",
         "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
       }
     }
@@ -6000,6 +6007,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
           "rangeLeftCalendarContainer": "HvDatePicker-rangeLeftCalendarContainer",
           "rangeMainContainer": "HvDatePicker-rangeMainContainer",
           "rangeRightCalendarContainer": "HvDatePicker-rangeRightCalendarContainer",
+          "root": "HvDatePicker-root",
           "singleCalendarFooter": "HvDatePicker-singleCalendarFooter",
         }
       }
@@ -6783,7 +6791,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
       >
         <div
           aria-label="Date input"
-          className="HvDatePicker-inputCalendarClosed"
+          className="HvDatePicker-root HvDatePicker-inputCalendarClosed"
           onClick={[Function]}
           onKeyDown={[Function]}
           role="button"
