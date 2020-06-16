@@ -1,7 +1,5 @@
 *** Setting ***
 Resource          table.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
 Test Setup        Run Keywords
 ...               Go To    ${visualizations}table--with-checkbox
 ...               AND    Wait Until Element Is Visible    ${table}

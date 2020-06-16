@@ -1,0 +1,104 @@
+*** Settings ***
+Library     SeleniumLibrary    timeout=15s    #version 4.3.0
+Library     String
+Resource    _variables.resource
+
+*** Keywords ***
+clean input
+    [Documentation]
+    ...   it uses keyboards to select and delete input content
+    ...    - check if input has clean button (works better)
+    ...    - keyword Input Text, option clear=True did not work in some cases
+    [Arguments]       ${locator}
+    Run Keyword If    '${BROWSER.lower()}'=='ie'
+    ...    Press Keys    ${locator}    CTRL+A+DELETE   #IE11 keyboards case incompatible
+    ...    ELSE
+    ...    Press Keys    ${locator}    CTRL+a+DELETE
+
+element attribute value should contain
+    [Documentation]
+    ...   attribute must has a specific substring
+    [Arguments]       ${locator}               ${attribute}    ${expected}
+    ${value}          Get Element Attribute    ${locator}      ${attribute}
+    Should Contain    ${value}                 ${expected}     ignore_case=True
+
+element attribute value should not contain
+    [Documentation]
+    ...   attribute can not has a specific substring
+    [Arguments]           ${locator}               ${attribute}    ${expected}
+    ${value}              Get Element Attribute    ${locator}      ${attribute}
+    Should Not Contain    ${value}                 ${expected}     ignore_case=True
+
+elements text should be
+    [Documentation]
+    ...   compare text of node list
+    [Arguments]    ${csslocator}    ${text}
+    ${values}          get elements text    ${csslocator}
+    Should Be Equal    ${values}            ${text}          ignore_case=True
+
+elements text should not be
+    [Documentation]
+    ...   compare text of node list
+    [Arguments]    ${csslocator}    ${text}
+    ${values}              get elements text    ${csslocator}
+    Should Not Be Equal    ${values}            ${text}          ignore_case=True
+
+force input
+    [Documentation]
+    ...    Cleans the input locator and sets with the string value.
+    ...     - note: check "clean input" documentation
+    [Arguments]        ${locator}    ${string}
+    Clean input        ${locator}
+    Input Text         ${locator}    ${string}
+
+get elements text
+    [Documentation]
+    ...    get text of a node list
+    [Arguments]    ${csslocator}
+    ${csslocator}=    Replace String        ${csslocator}    css:    ${EMPTY}
+    ${values}         Execute Javascript
+    ...   return Array.from(document.querySelectorAll("${csslocator}"))
+    ...   \.map(function(el){return el.innerText.trim();}).join(',')
+    #not supported on ie11
+    #return Array.from(document.querySelectorAll("${csslocator}"))
+    #.map(el => el.innerText).join(',')
+    [Return]          ${values}
+
+open browser webdriver
+    [Documentation]
+    ...   Open the chosen browser on the storybook url provided with options: \n
+    ...    - *window-size=1920,1080;  start-maximized;  headless*
+    ...   Arguments:
+    ...   - url        url address of storybook (by default about:blank)
+    ...   - browser    the desired browser ( by defautl is assuming variable ${BROWSER} )
+    [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
+    Open Browser    ${url}    ${browser}
+    ...             options=add_argument("--window-size=1920,1080");\ add_argument("--headless")
+    Maximize Browser Window
+
+set focus and press keys
+    [Documentation]
+    ...   - work around for react consider as a human action
+    ...   - otherwise using 'press keys' directly will be reverted by react
+    [Arguments]    ${locator}    @{keys}
+    Set Focus To Element    ${locator}
+    Press Keys              none          @{keys}
+
+wait until element attribute contain
+    [Documentation]    wait 5 seconds for asynchronous condition
+    [Arguments]    ${locator}    ${attribute}    ${expected}
+    Wait Until Keyword Succeeds    5x    1s
+    ...    element attribute value should contain    ${locator}    ${attribute}    ${expected}
+
+wait until element attribute not contain
+    [Documentation]    wait 5 seconds for asynchronous condition
+    [Arguments]    ${locator}    ${attribute}    ${value}
+    Wait Until Keyword Succeeds    5x    1s
+    ...    element attribute value should not contain    ${locator}    ${attribute}    ${value}
+
+wait until page contains elements
+    [Documentation]    workaround while it is not possible use seleniumLibrary 4.4 with:
+    ...                 - *'Wait Until Page Contains Element ... limit=x'*
+    [Arguments]    ${csslocator}    ${limit}
+    Wait For Condition
+    ...    return document.querySelectorAll('${csslocator}'.replace('css:','')).length == ${limit}

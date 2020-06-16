@@ -1,12 +1,9 @@
 *** Setting ***
 Resource          _keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
 Test Setup        Run Keywords
 ...               Go To    ${components}asset-inventory--configurations
-...               AND      Wait Until Element Is Visible    hv-assetinventory
+...               AND    Wait Until Element Is Visible    hv-assetinventory
 Test Template     validate search
-Force Tags        smoke
 
 
 *** Test Cases ***
@@ -41,7 +38,6 @@ remove search when user click button clear the text
     Page Should Contain Element    ${cards}        limit=1
     Click Button                   ${clearText}
     Page Should Contain Element    ${cards}        limit=10
-
 
 *** Keywords ***
 validate search

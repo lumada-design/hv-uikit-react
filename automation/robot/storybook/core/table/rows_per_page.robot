@@ -1,9 +1,6 @@
 *** Setting ***
 Resource          table.resource
-Suite Setup       open storybook
 Test Template     show correct rows and pages when rows per page is changed
-Suite Teardown    Close Browser
-Force Tags        smoke
 Documentation     selection of rows per page
 
 
@@ -25,7 +22,7 @@ server side - 100 rows    ${visualizations}table--server-side-pagination    100 
 show correct rows and pages when rows per page is changed
     [Arguments]    ${url}    ${per_page}    ${populated}    ${pages}
     Go To                                ${url}
-    Wait Until Element Is Enabled        ${rows_per_page}    timeout=10s
+    Wait Until Element Is Enabled        ${rows_per_page}
     Select From List By Value            ${rows_per_page}    ${per_page}
     wait until page contains elements    ${rows_populated}    ${populated}
     Page Should Contain Element          ${rows_counted}    limit=${per_page}

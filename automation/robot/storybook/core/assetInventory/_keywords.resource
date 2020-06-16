@@ -1,5 +1,5 @@
 *** Setting ***
-Resource    ../../_resources/keywords.resource
+Resource    ../_keywords.resource
 Resource    _variables.resource
 
 

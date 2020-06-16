@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../../_resources/keywords.resource
+Resource    ../../_keywords.resource
 
 
 *** Keywords ***

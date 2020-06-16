@@ -1,11 +1,8 @@
 *** Setting ***
 Resource          _keywords.resource
-Suite Setup       Run Keywords
-...               open storybook    AND
-...               filter cards and reduce Window size
+Suite Setup       filter cards and reduce Window size
 Test Template     move focus from-to locator when pressed keyboard
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        keyboard
 Documentation     https://www.w3.org/TR/wai-aria-practices/examples/grid/dataGrids.html
 ...               Not implemented: Page Up, Page Down, Control + Home, Control + End
 
