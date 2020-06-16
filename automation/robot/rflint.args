@@ -10,7 +10,7 @@
 --error InvalidTable
 --error TrailingBlankLines
 --error PeriodInTestName
---ignore PeriodInSuiteName
+--error PeriodInSuiteName
 --ignore LineTooLong
 --ignore FileTooLong
 --ignore TooManyTestCases

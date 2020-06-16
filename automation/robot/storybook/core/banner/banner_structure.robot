@@ -18,7 +18,7 @@ ${messageText}        banner2-content-message-text
 
 
 *** Test Cases ***
-banner structure with svg, text and action
+banner structure with svg text and action
     Click Button                     success
     Wait Until Element Is Visible    ${banner}            2s
     Element Text Should Be           ${messageText}       This is a success banner.

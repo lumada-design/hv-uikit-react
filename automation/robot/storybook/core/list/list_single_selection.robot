@@ -10,7 +10,7 @@ Documentation     options selections just for lists with single selection
 
 
 *** Test Cases ***
-remove a selected option when click on it (single selection list)
+remove a selected option when click on it - single selection list
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}             10s
     Element Attribute Value Should Be    ${option3}          aria-selected    true
@@ -18,7 +18,7 @@ remove a selected option when click on it (single selection list)
     Element Attribute Value Should Be    ${option3}          aria-selected    ${None}
     Page Should Not Contain Element      ${selectedItems}
 
-change selected option when click on other option (single selection list)
+change selected option when click on other option - single selection list
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}       10s
     Element Attribute Value Should Be    ${option3}    aria-selected    true
@@ -34,7 +34,7 @@ unable to select disabled option when click on it
     Run Keyword And Continue On Failure    Click Element    ${option4}
     Element Attribute Value Should Be      ${option4}       aria-selected    ${None}
 
-verify option label truncated with ... when option label string is too long
+verify option label truncated with 3 dots when option label string is too long
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-list--single-selection-with-icon
     Wait Until Element Is Visible        ${list}       10s
     verify css element property value    ${option5}    text-overflow    clip
@@ -47,7 +47,7 @@ unable to select disabled option when all list options are disabled
     Click Element                        ${option5}
     Element Attribute Value Should Be    ${option5}    aria-selected    ${None}
 
-verify menu options have correct option attributed when is a menu list 
+verify menu options have correct option attributed when is a menu list
     Go To                                ${STORYBOOK_URL}/iframe.html?id=components-list--main
     Wait Until Element Is Visible        ${menubar}       10s
     Click Element                        ${option1}
