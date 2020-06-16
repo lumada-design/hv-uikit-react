@@ -805,7 +805,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
-        <Component>
+        <Component
+          key="1969-12-28"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -975,7 +977,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-28"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -1067,7 +1068,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1969-12-29"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -1237,7 +1240,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-29"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -1329,7 +1331,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1969-12-30"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -1499,7 +1503,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-30"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -1591,7 +1594,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1969-12-31"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -1761,7 +1766,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-31"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -1853,7 +1857,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-01"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -2023,7 +2029,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-01"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -2115,7 +2120,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-02"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -2285,7 +2292,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-02"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -2377,7 +2383,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-03"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -2547,7 +2555,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-03"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -2639,7 +2646,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-04"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -2809,7 +2818,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-04"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -2901,7 +2909,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-05"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -3071,7 +3081,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-05"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -3163,7 +3172,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-06"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -3333,7 +3344,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-06"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -3425,7 +3435,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-07"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -3595,7 +3607,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-07"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -3687,7 +3698,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-08"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -3857,7 +3870,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-08"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -3949,7 +3961,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-09"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -4119,7 +4133,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-09"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -4211,7 +4224,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-10"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -4381,7 +4396,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-10"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -4473,7 +4487,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-11"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -4643,7 +4659,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-11"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -4735,7 +4750,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-12"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -4905,7 +4922,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-12"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -4997,7 +5013,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-13"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -5167,7 +5185,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-13"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -5259,7 +5276,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-14"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -5429,7 +5448,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-14"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -5521,7 +5539,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-15"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -5691,7 +5711,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-15"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -5783,7 +5802,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-16"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -5953,7 +5974,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-16"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -6045,7 +6065,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-17"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -6215,7 +6237,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-17"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -6307,7 +6328,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-18"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -6477,7 +6500,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-18"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -6569,7 +6591,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-19"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -6739,7 +6763,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-19"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -6831,7 +6854,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-20"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -7001,7 +7026,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-20"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -7093,7 +7117,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-21"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -7263,7 +7289,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-21"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -7355,7 +7380,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-22"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -7525,7 +7552,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-22"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -7617,7 +7643,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-23"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -7787,7 +7815,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-23"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -7879,7 +7906,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-24"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -8049,7 +8078,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-24"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -8141,7 +8169,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-25"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -8311,7 +8341,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-25"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -8403,7 +8432,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-26"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -8573,7 +8604,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-26"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -8665,7 +8695,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-27"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -8835,7 +8867,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-27"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -8927,7 +8958,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-28"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -9097,7 +9130,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-28"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -9189,7 +9221,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-29"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -9359,7 +9393,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-29"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -9451,7 +9484,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-30"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -9621,7 +9656,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-30"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -9713,7 +9747,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-31"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -9883,7 +9919,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-31"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -9975,7 +10010,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-01"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -10145,7 +10182,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-01"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -10237,7 +10273,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-02"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -10407,7 +10445,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-02"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -10499,7 +10536,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-03"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -10669,7 +10708,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-03"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -10761,7 +10799,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-04"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -10931,7 +10971,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-04"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -11023,7 +11062,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-05"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -11193,7 +11234,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-05"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -11285,7 +11325,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-06"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -11455,7 +11497,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-06"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -11547,7 +11588,9 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-07"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -11717,7 +11760,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-07"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -12617,7 +12659,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
-        <Component>
+        <Component
+          key="1969-12-28"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -12787,7 +12831,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-28"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -12879,7 +12922,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1969-12-29"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -13049,7 +13094,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-29"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -13141,7 +13185,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1969-12-30"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -13311,7 +13357,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-30"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -13403,7 +13448,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1969-12-31"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -13573,7 +13620,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1969-12-31"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -13665,7 +13711,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-01"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -13835,7 +13883,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-01"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -13927,7 +13974,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-02"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -14097,7 +14146,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-02"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -14189,7 +14237,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-03"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -14359,7 +14409,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-03"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -14451,7 +14500,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-04"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -14621,7 +14672,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-04"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -14713,7 +14763,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-05"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -14883,7 +14935,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-05"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -14975,7 +15026,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-06"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -15145,7 +15198,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-06"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -15237,7 +15289,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-07"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -15407,7 +15461,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-07"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -15499,7 +15552,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-08"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -15669,7 +15724,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-08"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -15761,7 +15815,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-09"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -15931,7 +15987,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-09"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -16023,7 +16078,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-10"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -16193,7 +16250,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-10"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -16285,7 +16341,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-11"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -16455,7 +16513,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-11"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -16547,7 +16604,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-12"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -16717,7 +16776,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-12"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -16809,7 +16867,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-13"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -16979,7 +17039,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-13"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -17071,7 +17130,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-14"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -17241,7 +17302,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-14"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -17333,7 +17393,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-15"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -17503,7 +17565,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-15"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -17595,7 +17656,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-16"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -17765,7 +17828,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-16"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -17857,7 +17919,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-17"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -18027,7 +18091,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-17"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -18119,7 +18182,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-18"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -18289,7 +18354,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-18"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -18381,7 +18445,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-19"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -18551,7 +18617,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-19"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -18643,7 +18708,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-20"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -18813,7 +18880,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-20"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -18905,7 +18971,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-21"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -19075,7 +19143,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-21"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -19167,7 +19234,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-22"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -19337,7 +19406,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-22"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -19429,7 +19497,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-23"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -19599,7 +19669,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-23"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -19691,7 +19760,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-24"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -19861,7 +19932,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-24"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -19953,7 +20023,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-25"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -20123,7 +20195,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-25"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -20215,7 +20286,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-26"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -20385,7 +20458,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-26"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -20477,7 +20549,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-27"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -20647,7 +20721,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-27"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -20739,7 +20812,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-28"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -20909,7 +20984,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-28"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -21001,7 +21075,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-29"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -21171,7 +21247,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-29"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -21263,7 +21338,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-30"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -21433,7 +21510,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-30"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -21525,7 +21601,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-01-31"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -21695,7 +21773,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-01-31"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -21787,7 +21864,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-01"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -21957,7 +22036,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-01"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -22049,7 +22127,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-02"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -22219,7 +22299,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-02"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -22311,7 +22390,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-03"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -22481,7 +22562,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-03"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -22573,7 +22653,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-04"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -22743,7 +22825,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-04"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -22835,7 +22916,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-05"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -23005,7 +23088,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-05"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -23097,7 +23179,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-06"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -23267,7 +23351,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-06"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
@@ -23359,7 +23442,9 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-        <Component>
+        <Component
+          key="1970-02-07"
+        >
           <WithStyles(HvTooltip)
             disableFocusListener={true}
             disableTouchListener={true}
@@ -23529,7 +23614,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                   >
                     <DateDisplay>
                       <div
-                        key="1970-02-07"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="presentation"
