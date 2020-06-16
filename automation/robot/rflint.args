@@ -1,0 +1,23 @@
+--recursive
+--error DuplicateKeywordNames
+--error DuplicateSettingsInResource
+--error DuplicateSettingsInSuite
+--error DuplicateTestNames
+--error DuplicateVariablesInResource
+--error DuplicateVariablesInSuite
+--error InvalidTableInResource
+--error TagWithSpaces
+--error InvalidTable
+--error TrailingBlankLines
+--error PeriodInTestName
+--ignore PeriodInSuiteName
+--ignore LineTooLong
+--ignore FileTooLong
+--ignore TooManyTestCases
+--ignore TooManyTestSteps
+--ignore TooFewKeywordSteps
+--ignore TooFewTestSteps
+--ignore RequireKeywordDocumentation
+--ignore RequireSuiteDocumentation
+--ignore RequireTestDocumentation
+--ignore TrailingWhitespace
