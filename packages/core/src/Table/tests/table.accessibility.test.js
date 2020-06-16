@@ -7,9 +7,13 @@ import { mount } from "enzyme";
 import { toHaveNoViolations } from "jest-axe";
 import axe from "../../../config/axe-config";
 import HvProvider from "../../Provider";
-import HvTableWithStyles from "../index";
-
-import { labels, data, getColumns, sorted, subElementTemplate } from "./TableData";
+import {
+  Main,
+  Empty,
+  WithExpander,
+  WithCheckbox,
+  WithCheckboxAndSecondaryActions
+} from "../stories/Table.stories";
 
 expect.extend(toHaveNoViolations);
 
@@ -19,16 +23,7 @@ describe("tableA11Y", () => {
     console.warn = jest.fn();
     const wrapper = mount(
       <HvProvider>
-        <HvTableWithStyles
-          data={data}
-          id="test"
-          columns={getColumns()}
-          defaultPageSize={10}
-          pageSize={10}
-          resizable={false}
-          defaultSorted={sorted}
-          labels={labels}
-        />
+        <Main />
       </HvProvider>
     );
 
@@ -40,15 +35,7 @@ describe("tableA11Y", () => {
   it("Empty Table", async () => {
     const wrapper = mount(
       <HvProvider>
-        <HvTableWithStyles
-          data={[]}
-          columns={getColumns()}
-          defaultPageSize={0}
-          pageSize={10}
-          resizable={false}
-          defaultSorted={sorted}
-          labels={labels}
-        />
+        <Empty />
       </HvProvider>
     );
 
@@ -59,16 +46,7 @@ describe("tableA11Y", () => {
   it("Expandable Table", async () => {
     const wrapper = mount(
       <HvProvider>
-        <HvTableWithStyles
-          data={data}
-          columns={getColumns()}
-          defaultPageSize={10}
-          pageSize={10}
-          resizable={false}
-          defaultSorted={sorted}
-          labels={labels}
-          subElementTemplate={subElementTemplate}
-        />
+        <WithExpander />
       </HvProvider>
     );
 
@@ -78,16 +56,7 @@ describe("tableA11Y", () => {
   it("Table With Checkbox", async () => {
     const wrapper = mount(
       <HvProvider>
-        <HvTableWithStyles
-          data={data}
-          columns={getColumns()}
-          defaultPageSize={10}
-          pageSize={10}
-          resizable={false}
-          defaultSorted={sorted}
-          labels={labels}
-          idForCheckbox="id"
-        />
+        <WithCheckbox />
       </HvProvider>
     );
 
@@ -98,18 +67,7 @@ describe("tableA11Y", () => {
   it("Table with Checkbox and Actions", async () => {
     const wrapper = mount(
       <HvProvider>
-        <HvTableWithStyles
-          data={data}
-          id="test2"
-          columns={getColumns()}
-          defaultPageSize={10}
-          pageSize={10}
-          resizable={false}
-          defaultSorted={sorted}
-          labels={labels}
-          idForCheckbox="id"
-          secondaryActions={[{ label: "Share" }, { label: "Hide" }, { label: "Remove" }]}
-        />
+        <WithCheckboxAndSecondaryActions />
       </HvProvider>
     );
     const results = await axe(wrapper.html());

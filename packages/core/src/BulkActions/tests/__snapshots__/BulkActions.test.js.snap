@@ -116,9 +116,9 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
       id="bulkActions"
       labels={
         Object {
+          "deselectAllPages": "Unselect all",
           "selectAll": "All",
           "selectAllPages": "Select all from all pages",
-          "selectionConjunction": "of",
         }
       }
       maxVisibleActions={2}
@@ -1677,9 +1677,9 @@ exports[`BulkActions should render correctly 1`] = `
       }
       labels={
         Object {
+          "deselectAllPages": "Unselect all",
           "selectAll": "All",
           "selectAllPages": "Select all from all pages",
-          "selectionConjunction": "of",
         }
       }
       maxVisibleActions={3}
@@ -3350,9 +3350,9 @@ exports[`BulkActions with custom label should render correctly 1`] = `
       }
       labels={
         Object {
+          "deselectAllPages": "Unselect all",
           "selectAll": "All",
           "selectAllPages": "Select all from all pages",
-          "selectionConjunction": "of",
         }
       }
       numSelected={2}
@@ -4006,9 +4006,9 @@ exports[`BulkActions with selection should render correctly 1`] = `
       }
       labels={
         Object {
+          "deselectAllPages": "Unselect all",
           "selectAll": "All mock",
           "selectAllPages": "All Pages mock",
-          "selectionConjunction": "of",
         }
       }
       numSelected={3}
@@ -4035,7 +4035,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                   <b>
                     3
                   </b>
-                   of 5
+                   of 5 items
                 </React.Fragment>
               </ForwardRef(WithStyles)>
             }
@@ -4067,7 +4067,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     <b>
                       3
                     </b>
-                     of 5
+                     of 5 items
                   </React.Fragment>
                 </ForwardRef(WithStyles)>
               }
@@ -4138,7 +4138,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       <b>
                         3
                       </b>
-                       of 5
+                       of 5 items
                     </React.Fragment>
                   </ForwardRef(WithStyles)>
                 }
@@ -4212,7 +4212,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         <b>
                           3
                         </b>
-                         of 5
+                         of 5 items
                       </React.Fragment>
                     </ForwardRef(WithStyles)>
                   }
@@ -4660,7 +4660,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 <b>
                                   3
                                 </b>
-                                 of 5
+                                 of 5 items
                               </span>
                             </ForwardRef>
                           </WithStyles(ForwardRef)>

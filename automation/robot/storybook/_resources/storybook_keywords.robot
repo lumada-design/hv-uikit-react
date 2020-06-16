@@ -18,7 +18,7 @@ element attribute value should not contain
 
 go to url and wait until element is visible
     [Arguments]    ${page}    ${locator}    ${seconds}
-    [Documentation]    go to 'url' and wait the 'seconds' until 'element' is visible 
+    [Documentation]    go to 'url' and wait the 'seconds' until 'element' is visible
     Go To                            ${page}
     Wait Until Element Is Visible    ${locator}    ${seconds}
 
@@ -53,7 +53,7 @@ get css property value
     ...
     ...                note: Same output can be get by javascript: "return window.getComputedStyle(document.getElementById("${locator}"), null).getPropertyValue("${attribute name}");
     ...                IE11 webdriver have a bug that returns error running that javascript
-    ...    
+    ...
     ${css}=         Wait Until Keyword Succeeds    5         400ms                    Get WebElement       ${locator}
     ${prop_val}=    Call Method                    ${css}    value_of_css_property    ${property}
     [Return]        ${prop_val}
@@ -100,30 +100,30 @@ force input
 
 set focus and press keys
     [Arguments]    ${locator}    @{keys}
-    [Documentation]    
-    ...   work around for react consider as a human action, otherwise using 'press keys' directly will be reverted by react  
-    ...    
+    [Documentation]
+    ...   work around for react consider as a human action, otherwise using 'press keys' directly will be reverted by react
+    ...
     Set Focus To Element    ${locator}
     Press Keys              none          @{keys}
 
 wait until element attribute contain
     [Arguments]    ${locator}    ${attribute}    ${expected}
     [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization
-    Wait Until Keyword Succeeds    5x    1s    element attribute value should contain    ${locator}    ${attribute}    ${expected} 
+    Wait Until Keyword Succeeds    5x    1s    element attribute value should contain    ${locator}    ${attribute}    ${expected}
 
 wait until element attribute not contain
     [Arguments]    ${locator}    ${attribute}    ${unexpected}
     [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization
     Wait Until Keyword Succeeds    5x    1s    element attribute value should not contain    ${locator}    ${attribute}    ${unexpected}
-    
+
 wait until css attribute contain
     [Arguments]    ${locator}    ${property}    ${value}
-    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization    
+    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization
     Wait Until Keyword Succeeds    5x    1s    verify css element property value    ${locator}    ${property}    ${value}
-    
+
 wait until css attribute not contain
     [Arguments]    ${locator}    ${property}    ${value}
-    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization    
+    [Documentation]    retry 5 times every second until keyword succeed \n necessary for Internet Explorer synchronization
     Wait Until Keyword Succeeds    5x    1s    verify css element property has different value    ${locator}    ${property}    ${value}
 
 restore default windows size 1920 1080
@@ -135,7 +135,7 @@ get elements text
     ${values}         Execute Javascript    return Array.from(document.querySelectorAll("${csslocator}")).map(function(el){return el.innerText.trim();}).join(',')
     #not supported on ie11                  return Array.from(document.querySelectorAll("${csslocator}")).map(el => el.innerText).join(',')
     [Return]          ${values}
-    
+
 elements text should be
     [Arguments]    ${csslocator}    ${text}
     ${values}          get elements text    ${csslocator}
@@ -145,3 +145,11 @@ elements text should not be
     [Arguments]    ${csslocator}    ${text}
     ${values}              get elements text    ${csslocator}
     Should Not Be Equal    ${values}            ${text}          ignore_case=True
+
+wait until page contains elements
+    [Documentation]    workaround while it is not possible use seleniumLibrary 4.4 with: \n
+    ...                *'Wait Until Page Contains Element ... limit=x'*
+    [Arguments]    ${csslocator}    ${limit}    ${timeout}
+    Wait For Condition
+    ...    return document.querySelectorAll('${csslocator}'.replace('css:','')).length == ${limit}
+    ...    timeout=${timeout}
