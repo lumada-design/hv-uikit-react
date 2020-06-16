@@ -9,13 +9,13 @@ const styles = theme => ({
     width: "30px",
     height: "30px",
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.palette.atmo4,
       cursor: "pointer"
     }
   },
   disabled: {
     "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo6
+      fill: theme.palette.atmo6
     },
     "&:hover": {
       backgroundColor: "transparent",
@@ -27,7 +27,7 @@ const styles = theme => ({
     textAlign: "center",
     padding: "5px 0",
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.palette.atmo4,
       cursor: "pointer"
     }
   },
