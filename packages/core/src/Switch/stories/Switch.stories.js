@@ -88,7 +88,7 @@ export const Controlled = () => {
 
   return (
     <>
-      <Button onClick={() => setChecked(prev => !prev)}>Toggle</Button> 
+      <Button onClick={() => setChecked(prev => !prev)}>Toggle</Button>
       <p />
       <HvSwitch checked={checked} />
     </>
