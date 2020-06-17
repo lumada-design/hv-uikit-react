@@ -63,7 +63,7 @@ export default class Action extends Component {
      * Handles the onClick event and triggers the appropriate callback if it exists.
      */
     const handleOnClick = () => {
-      const { onClickCallback, application } = this.props;
+      const { onClickCallback } = this.props;
 
       if (onClickCallback) {
         onClickCallback({ ...application, isSelected });
@@ -105,6 +105,10 @@ Action.propTypes = {
    */
   application: PropTypes.shape({
     /**
+     * Id of the application.
+     */
+    id: PropTypes.string.isRequired,
+    /**
      * Name of the application, this is the value that will be displayed on the component.
      */
     name: PropTypes.string.isRequired,
@@ -129,7 +133,11 @@ Action.propTypes = {
     /**
      * Defines if the application should be opened in the same tab or in a new one.
      */
-    target: PropTypes.oneOf(["_top", "_blank"])
+    target: PropTypes.oneOf(["_top", "_blank"]),
+    /**
+     * Callback triggered when the action is clicked
+     */
+    onClickCallback: PropTypes.func
   }).isRequired,
   /**
    * A Jss object used to override or extend the component styles.

@@ -104,6 +104,10 @@ AppSwitcherPanel.propTypes = {
   applications: PropTypes.arrayOf(
     PropTypes.shape({
       /**
+       * Id of the application.
+       */
+      id: PropTypes.string.isRequired,
+      /**
        * Name of the application, this is the value that will be displayed on the component.
        */
       name: PropTypes.string.isRequired,
