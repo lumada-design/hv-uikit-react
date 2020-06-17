@@ -11,6 +11,7 @@ import "react-table-hoc-fixed-columns/lib/styles.css";
 import { withStyles } from "@material-ui/core";
 import { HvBulkActions, HvPagination, HvTypography } from "..";
 import withLabels from "../withLabels";
+import withId from "../withId";
 import { setId } from "../utils";
 
 import expander from "./expander";
@@ -209,7 +210,7 @@ const HvTable = props => {
   /**
    * Sort properties override to set onSortedChange
    *
-   * @returns {{sortable: HvTable.props.sortable}}
+   * @returns {{sortable: boolean, onSortedChange: onSortChange}}
    */
   const getSortProps = () => ({
     sortable,
@@ -246,11 +247,12 @@ const HvTable = props => {
    * Override of the thead th. This method is used to add properties to the entire column.
    *
    * @param {Object} state - The current state of the table.
-   * @param {Object} rowInfo - An object containing information about the row.
-   * @param {Object} column - An object containing information about the column.
-   * @returns {{className: (theadTh|{outline, backgroundColor, "& > div"})}}
+   * @param {Object} rowInfo - An object with row information.
+   * @param {Object} column - An object with column information.
+   * @param {Object} instance- An object with instance information.
+   * @returns {{onClick: onClick, scope: string, className: (*), id: (any)}}
    */
-  const getTheadThProps = (state, rowInfo, column) => {
+  const getTheadThProps = (state, rowInfo, column, instance) => {
     let isSortable = sortable && (isNil(column.sortable) || column.sortable);
 
     if (column.id === "secondaryActions") {
@@ -272,6 +274,14 @@ const HvTable = props => {
 
     return {
       id: column.id ? setId(id, "column", column.id) : undefined,
+      onClick: () => {
+        // The onClick select the outside div and not the custom header. This forces the focus to be set in the icons
+        // so the focus works normally.
+        if (isSortable) {
+          document.getElementById(`${id}-column-${column.id}-sort-button`).focus();
+          instance.sortColumn(column);
+        }
+      },
       scope: "col",
       ...ariaSort,
       className:
@@ -284,7 +294,7 @@ const HvTable = props => {
   /**
    * Override of the tbody. This method is used to add properties to the entire table body.
    *
-   * @returns {{className: (tbody, tbodyEmpty)}}
+   * @returns {{role: string, className: string}}
    */
   const getTBodyProps = () => ({
     role: "rowgroup",
@@ -873,4 +883,4 @@ HvTable.propTypes = {
   noDataComponent: PropTypes.node
 };
 
-export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(HvTable));
+export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(HvTable)));

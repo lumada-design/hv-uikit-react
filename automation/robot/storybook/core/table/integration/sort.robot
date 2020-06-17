@@ -53,3 +53,8 @@ keep same data sort when pagination is moved to previous page
     elements text should be      ${column_2}    ${ascending_values_2}
     Click Element                ${pagination_previous_page}
     elements text should be      ${column_2}    ${ascending_values}
+
+header tab: change focus to next sortable column header after clicking a sortable column
+    Click Element                ${header_2}
+    Press Keys                   None                               TAB
+    Element Should Be Focused    ${header_3} [role=button]
