@@ -40,6 +40,9 @@ export * from "./DropDownMenu";
 export { default as HvEmptyState } from "./EmptyState";
 export * from "./EmptyState";
 
+export { default as HvFileUploader } from "./FileUploader";
+export * from "./FileUploader";
+
 export { default as HvFooter } from "./Footer";
 export * from "./Footer";
 
@@ -51,12 +54,6 @@ export * from "./Header";
 
 export { default as HvInput } from "./Input";
 export * from "./Input";
-
-export { default as HvFileUploader } from "./FileUploader";
-export * from "./FileUploader";
-
-export { default as HvSearchBox } from "./SearchBox";
-export * from "./SearchBox";
 
 export { default as HvKpi } from "./Kpi";
 export * from "./Kpi";
@@ -70,6 +67,9 @@ export * from "./Link";
 export { default as HvList } from "./List";
 export * from "./List";
 
+export { default as HvLoading } from "./Loading";
+export * from "./Loading";
+
 export { default as HvLogin } from "./Login";
 export * from "./Login";
 
@@ -82,11 +82,13 @@ export * from "./MultiButton";
 export { default as HvPagination } from "./Pagination";
 export * from "./Pagination";
 
-export { default as HvCheckBox } from "./Selectors/CheckBox";
-export * from "./Selectors/CheckBox";
+export { default as HvProvider } from "./Provider";
+export * from "./Provider";
 
-export { default as HvRadio } from "./Selectors/RadioButton";
-export * from "./Selectors/RadioButton";
+export { default as HvSearchBox } from "./SearchBox";
+export * from "./SearchBox";
+
+export * from "./Selectors";
 
 export { default as HvSnackbar } from "./Snackbar";
 export * from "./Snackbar";
@@ -115,14 +117,12 @@ export * from "./Tooltip";
 export { default as HvTypography } from "./Typography";
 export * from "./Typography";
 
+export { default as HvUserPreferences } from "./UserPreferences";
+// TODO: review export name collisions
+// export * from "./UserPreferences";
+
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 export * from "./VerticalNavigation";
-
-export { default as HvLoading } from "./Loading";
-export * from "./Loading";
-
-export { default as HvProvider } from "./Provider";
-export * from "./Provider";
 
 export interface HvTheme {
   type: string;
