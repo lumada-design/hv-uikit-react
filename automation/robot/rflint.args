@@ -13,8 +13,8 @@
 --error PeriodInSuiteName
 --error LineTooLong
 --error FileTooLong
---ignore TooManyTestCases
---ignore TooManyTestSteps
+--error TooManyTestCases
+--error TooManyTestSteps
 --ignore TooFewKeywordSteps
 --ignore TooFewTestSteps
 --ignore RequireKeywordDocumentation

@@ -11,8 +11,6 @@ Force Tags        smoke
 
 *** Test Cases ***
 switch to off,on,off when checkbox is clicked 3 times
-    Go To                              ${components}selectors-switch--main
-    Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input
     Click Element                      ${switch}
     Checkbox Should not Be Selected    ${switch} input
@@ -22,8 +20,6 @@ switch to off,on,off when checkbox is clicked 3 times
     Checkbox Should not Be Selected    ${switch} input
 
 switch to different state when any label is clicked
-    Go To                              ${components}selectors-switch--main
-    Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input
     Click Element                      ${leftLabel}
     Checkbox Should not Be Selected    ${switch} input
@@ -53,8 +49,6 @@ does not switch when is clicked any label of disabled element
 
 switch to Off when checkbox is focused and is pressed SPACE
     [Tags]    keyboard
-    Go To                              ${components}selectors-switch--main
-    Wait Until Element Is Enabled      ${switch}          10s
     Checkbox Should Be Selected        ${switch} input
     set focus and press keys           ${switch}          SPACE
     Checkbox Should not Be Selected    ${switch} input

@@ -72,10 +72,8 @@ Change month by using the arrows icons
     Wait Until Element Is Visible        ${calendar}
     Click element                        ${navigationMonth}-right
     Element Text Should Be               ${navigationMonth}    February
-    Click element                        ${navigationMonth}-right
-    Element Text Should Be               ${navigationMonth}    March
     Click element                        ${navigationMonth}-left
-    Element Text Should Be               ${navigationMonth}    February
+    Element Text Should Be               ${navigationMonth}    January
     Click Element                        ${day9}
     Element Should Not Be Visible        ${calendar}
     Element Attribute Value Should Be    css:input     value     9 Jan 1970
@@ -96,10 +94,8 @@ Change year by using the arrows icons
     Wait Until Element Is Visible        ${calendar}
     Click element                        ${navigationYear}-right
     Element Text Should Be               ${navigationYear}    1971
-    Click element                        ${navigationYear}-right
-    Element Text Should Be               ${navigationYear}     1972
     Click element                        ${navigationYear}-left
-    Element Text Should Be               ${navigationYear}     1971
+    Element Text Should Be               ${navigationYear}     1970
     Click Element                        ${day9}
     Element Should Not Be Visible        ${calendar}
     Element Attribute Value Should Be    css:input     value     9 Jan 1970

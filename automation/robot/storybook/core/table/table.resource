@@ -1,6 +1,5 @@
 *** Setting ***
-Variables    ../../_resources/storybook_variables.yaml
-Resource     ../../_resources/storybook_keywords.robot
+Resource     ../../_resources/keywords.resource
 
 
 *** Variables ***

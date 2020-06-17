@@ -14,8 +14,8 @@ Verify current date as default value
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}
     Click Element                        ${input}
-    ${year}    ${month}   ${day}         Get Time    year month day
-    Element Attribute Value Should Be    ${input}    value    ${day}/${month}/${year}
+    ${current_date}                      get current date
+    Element Attribute Value Should Be    ${input}    value    ${current_date}
 
 When delete date is replaced with current date
     [Tags]    bug-firefox-webdriver
@@ -37,3 +37,9 @@ Change date in locale pt-PT
     Click Element                        DatePicker
     Wait Until Element Is Visible        ${calendar}
     Element Attribute Value Should Be    ${input}       value    1 fev 1970
+
+
+*** Keywords ***
+get current date
+    ${year}    ${month}    ${day}    Get Time    year month day
+    [Return]    ${day}/${month}/${year}
