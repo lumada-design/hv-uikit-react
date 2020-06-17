@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import { HvSwitch } from "../..";
 import Typography from "../../Typography";
+import Button from "../../Button";
 
 export default {
   title: "Components/Selectors/Switch",
@@ -81,3 +82,15 @@ export const LabelsDefinition = () => {
 };
 
 export const Disabled = () => <HvSwitch disabled />;
+
+export const Controlled = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setChecked(prev => !prev)}>Toggle</Button>
+      <p />
+      <HvSwitch checked={checked} />
+    </>
+  );
+};

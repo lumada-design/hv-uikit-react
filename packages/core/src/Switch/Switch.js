@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
@@ -34,6 +34,10 @@ const HvSwitch = props => {
   } = props;
 
   const [clickState, setClicked] = useState(checked);
+
+  useEffect(() => {
+    setClicked(checked);
+  }, [checked]);
 
   const onClickHandler = event => {
     const newState = !clickState;
