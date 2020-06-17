@@ -94,7 +94,6 @@ elements text should not be
 wait until page contains elements
     [Documentation]    workaround while it is not possible use seleniumLibrary 4.4 with: \n
     ...                *'Wait Until Page Contains Element ... limit=x'*
-    [Arguments]    ${csslocator}    ${limit}    ${timeout}
+    [Arguments]    ${csslocator}    ${limit}
     Wait For Condition
     ...    return document.querySelectorAll('${csslocator}'.replace('css:','')).length == ${limit}
-    ...    timeout=${timeout}

@@ -39,7 +39,7 @@ selection count label 2 is correctly updated when hidden values are removed
     select 2 hidden rows
     Click Button              Enable
     Select CheckBox           ${table2 all}
-    Element Should Contain    ${table2 label}    8 of 8   ignore_case=True
+    Element Should Contain    ${table2 label}    5 of 8   ignore_case=True
 
 
 *** Keywords ***

@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 Resource          ../../_resources/keywords.resource
 Suite Setup       open storybook
 Test Setup        Run Keywords
-...               Go To    ${iframeC}date-picker--range-with-values    AND
+...               Go To    ${components}date-picker--range-with-values    AND
 ...               Wait Until Element Is Visible    DatePicker    10s
 Suite Teardown    Close Browser
 Variables         variables.yaml

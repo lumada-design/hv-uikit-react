@@ -1,8 +1,9 @@
 *** Setting ***
 Resource          table.resource
 Suite Setup       open storybook
-Test Setup        go to url and wait until element is visible
-...               ${visualizations}table--with-checkbox    ${table}
+Test Setup        Run Keywords
+...               Go To    ${visualizations}table--with-checkbox
+...               AND    Wait Until Element Is Visible    ${table}
 Suite Teardown    Close Browser
 Force Tags        wai-aria-practices
 Documentation     https://www.w3.org/TR/wai-aria-practices/#table
