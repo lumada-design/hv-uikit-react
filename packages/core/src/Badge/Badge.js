@@ -89,7 +89,9 @@ Badge.propTypes = {
    */
   count: PropTypes.number,
   /**
-   * True if count should be displayed. Exclusive to label.
+   * True if count should be displayed.
+   * Note showCount and label are mutually exclusive.
+   * showCount is ignored when label is specified at the same time.
    */
   showCount: PropTypes.bool,
   /**
@@ -97,7 +99,9 @@ Badge.propTypes = {
    */
   maxCount: PropTypes.number,
   /**
-   * Custom text to show in place of count. Exclusive to showCount.
+   * Custom text to show in place of count.
+   * Note showCount and label are mutually exclusive.
+   * showCount is ignored when label is specified at the same time.
    */
   label: PropTypes.string,
   /**
