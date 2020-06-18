@@ -201,7 +201,6 @@ const HvTable = props => {
    * @param sortedColumn - the column representation from the user.
    */
   const onSortChange = sortedColumn => {
-    // TODO: review
     setSorted(sortedColumn);
     setCurrentPage(0);
     setExpanded({});
@@ -273,7 +272,7 @@ const HvTable = props => {
     appendClassnames(column, sorted, classes, sortable);
 
     return {
-      id: column.id ? setId(id, "column", column.id) : undefined,
+      id: setId(id, "column", column.id),
       onClick: () => {
         // The onClick select the outside div and not the custom header. This forces the focus to be set in the icons
         // so the focus works normally.
@@ -471,24 +470,17 @@ const HvTable = props => {
   }
 
   // Creates the thead with the text and the sorted icon.
-  const ColumnSettings = {
-    ...ReactTableDefaults.column,
-    Header: ({ column }) => (
-      <Header
-        id={id}
-        key={column.id}
-        column={column}
-        sort={sorted}
-        tableSortable={sortable}
-        onSortChange={onSortChange}
-      />
-    )
-  };
-
   ReactTableDefaults.expanderDefaults.show = false;
-  Object.assign(ReactTableDefaults, {
-    column: ColumnSettings
-  });
+  ReactTableDefaults.column.Header = ({ column }) => (
+    <Header
+      id={id}
+      key={column.id}
+      column={column}
+      sort={sorted}
+      tableSortable={sortable}
+      onSortChange={onSortChange}
+    />
+  );
 
   // add expander button
   const expanderColumn = createExpanderButton(columns, subElementTemplate, classes, toggleExpand);

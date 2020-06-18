@@ -35,14 +35,18 @@ const getSortType = (id, sort) => {
   return undefined;
 };
 
+const handleSortChange = (colId, onSortChange, sort) => {
+  // The table only supports one sorted column
+  const newState = [...sort];
+  newState[0].id = colId;
+  newState[0].desc = !newState[0].desc;
+  onSortChange?.(newState);
+};
+
 const handleKeyDown = (event, colId, onSortChange, sort) => {
   if (isKeypress(event, KeyboardCodes.Enter) || isKeypress(event, KeyboardCodes.Space)) {
     event.preventDefault();
-    // The table only supports one sorted column
-    const newState = [...sort];
-    newState[0].id = colId;
-    newState[0].desc = !newState[0].desc;
-    onSortChange?.(newState);
+    handleSortChange(colId, onSortChange, sort);
   }
 };
 
@@ -50,7 +54,6 @@ const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
   const { id: colId, sortable, cellType, headerText } = column;
 
   const columnSortable = (sortable == null && tableSortable) || sortable;
-
   const sortType = getSortType(colId, sort);
 
   return (
@@ -64,6 +67,7 @@ const Header = ({ id, classes, column, tableSortable, sort, onSortChange }) => {
           aria-label={setId(id, "column", colId, "sort-button")}
           role="button"
           tabIndex="0"
+          onClick={event => handleSortChange(event, colId, onSortChange, sort)}
           onKeyDown={event => handleKeyDown(event, colId, onSortChange, sort)}
         >
           {renderSort(sortType, columnSortable)}
