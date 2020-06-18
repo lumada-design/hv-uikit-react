@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import BaseSwitch from "@material-ui/core/Switch";
 
@@ -39,6 +39,11 @@ const Switch = props => {
   } = props;
 
   const [clickState, setClicked] = useState(checked);
+
+  useEffect(() => {
+    setClicked(checked);
+  }, [checked]);
+
   const DEFAULT_ID_PREFIX = "hv-switch-";
   const internalId = id || uniqueId(DEFAULT_ID_PREFIX);
 

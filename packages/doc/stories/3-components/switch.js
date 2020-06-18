@@ -43,6 +43,10 @@ storiesOf("Components/Selection mechanisms", module).add(
       {
         title: "4. Disabled in Left Position",
         src: "components/switch/sample4.js"
+      },
+      {
+        title: "5. Controlled Switch",
+        src: "components/switch/sample5.js"
       }
     ]
   }
