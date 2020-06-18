@@ -55,6 +55,6 @@ export interface HvListViewRowProps
     | "atmo6";
 }
 
-type HvListViewRowClassKey = "root";
+export type HvListViewRowClassKey = "root";
 
 export default function HvListViewRow(props: HvListViewRowProps): JSX.Element | null;

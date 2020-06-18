@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-type ToggleLabels = {
+export type HvToggleButtonLabelsProp = {
   /**
    * Description for selected.
    */
@@ -29,7 +29,7 @@ export interface HvToggleButtonProps
   /**
    * Labels.
    */
-  labels?: ToggleLabels;
+  labels?: HvToggleButtonLabelsProp;
   /**
    * Icon for when selected.
    */

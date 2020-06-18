@@ -4,7 +4,7 @@ import { HvTypographyProps } from "../../Typography";
 import { Payload } from "../Actions";
 
 export interface HvOptionProps
-  extends StandardProps<HvTypographyProps, HvUserPreferenceActionsClassKey, "onClick"> {
+  extends StandardProps<HvTypographyProps, HvUserPreferencesOptionClassKey, "onClick"> {
   /**
    * Visual label.
    */
@@ -21,6 +21,6 @@ export interface HvOptionProps
   onClick: (event: Event, payload: Payload) => void;
 }
 
-export type HvUserPreferenceActionsClassKey = "action" | "noIcon" | "li";
+export type HvUserPreferencesOptionClassKey = "action" | "noIcon" | "li";
 
 export default function HvUserPreferencesOption(props: HvOptionProps): JSX.Element | null;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-interface LoginLabelsProp {
+export interface LoginLabelsProp {
   /**
    * The welcome message
    */
