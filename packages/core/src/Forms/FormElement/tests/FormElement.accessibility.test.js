@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { toHaveNoViolations } from "jest-axe";
 import axe from "../../../../config/axe-config";
 import HvProvider from "../../../Provider";
-import { HvFormElement, HvBaseInput, HvInfoText, HvLabel } from "../../..";
+import { HvFormElement, HvBaseInput, HvHelperText, HvLabel } from "../../..";
 
 expect.extend(toHaveNoViolations);
 
@@ -27,7 +27,9 @@ describe("FormElementA11Y", () => {
               aria-labelledby={inputLabelId}
             />
           </HvLabel>
-          <HvInfoText label="Names do not contain numbers" showWhen="invalid" />
+          <HvHelperText key="2" id="infotext-main" notification="warning">
+            Write your name in this input do not put numbers
+          </HvHelperText>
         </HvFormElement>
       </HvProvider>
     );

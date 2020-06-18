@@ -4,6 +4,5 @@ export {
   HvFormElementContextConsumer,
   HvFormElementContextProvider
 } from "./FormElement";
-export { default as HvInfoText } from "./InfoText";
-export { default as HvErrorText } from "./ErrorText";
+export { default as HvHelperText } from "./HelperText";
 export { default as HvLabel } from "./Label";

@@ -54,6 +54,7 @@ export const InvalidInput = () => {
     <HvBaseInput
       id="invalid-input"
       aria-label="invalid input"
+      invalid
       placeholder="Insert data"
       inputProps={{
         "aria-label": "invalid input"

@@ -6,12 +6,6 @@ import { Input, withStyles } from "@material-ui/core";
 import { HvFormElementContextConsumer } from "../FormElement";
 import styles from "./styles";
 
-const getCurrentDescribeBy = (elementStatus = "", availableDescriptors = []) => {
-  return availableDescriptors.find(descriptor => {
-    return descriptor.showWhen === elementStatus;
-  })?.id;
-};
-
 /**
  * An Input component that only posses the most basic functionalities.
  * It should be used alongside the other form elements to construct a proper accesible form.
@@ -45,7 +39,7 @@ const HvBaseInput = props => {
         const localInvalid = invalid || elementStatus === "invalid";
         const locaValue = !isNil(value) ? value : elementValue;
         const localDisabled = disabled || elementDisabled;
-        const currentDescribedBy = getCurrentDescribeBy(elementStatus, descriptors?.HvInfoText);
+        const currentDescribedBy = descriptors?.HvHelperText[0]?.id;
 
         return (
           <Input

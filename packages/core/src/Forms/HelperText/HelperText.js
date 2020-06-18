@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
+import { isEmpty } from "lodash";
 import { HvFormElementContextConsumer } from "../FormElement";
 import HvTypography from "../../Typography";
 
@@ -9,13 +10,12 @@ import styles from "./styles";
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  */
-const HvInfoText = props => {
+const HvHelperText = props => {
   const {
-    label,
+    children,
+    notification = "",
     classes,
     id,
-    infoTextStatus,
-    showWhen,
     disabled,
     disableGutter = false,
     ...others
@@ -24,35 +24,52 @@ const HvInfoText = props => {
   return (
     <HvFormElementContextConsumer>
       {formContext => {
-        const { elementStatus, elementDisabled } = formContext;
-        const localStatus = infoTextStatus || elementStatus || "standBy";
-        const isVisible = localStatus === showWhen;
+        const { elementDisabled } = formContext;
+        const isVisible = !isEmpty(notification);
         const localDisabled = disabled || elementDisabled;
         return (
-          <HvTypography
-            id={id}
-            variant="infoText"
-            className={clsx({
-              [classes.showText]: isVisible,
-              [classes.infoDisabled]: localDisabled,
-              [classes.infoText]: !localDisabled,
-              [classes.topGutter]: !disableGutter
-            })}
-            {...others}
-          >
-            {label}
-          </HvTypography>
+          <>
+            <HvTypography
+              id={id}
+              variant="infoText"
+              className={clsx({
+                [classes.showText]: !isVisible,
+                [classes.helperDisabled]: localDisabled,
+                [classes.helperText]: !localDisabled,
+                [classes.topGutter]: !disableGutter
+              })}
+              {...others}
+            >
+              {children}
+            </HvTypography>
+            <HvTypography
+              id={`${id}-notification`}
+              variant="infoText"
+              className={clsx({
+                [classes.showText]: isVisible,
+                [classes.helperDisabled]: localDisabled,
+                [classes.helperText]: !localDisabled,
+                [classes.topGutter]: !disableGutter
+              })}
+              aria-live="polite"
+              aria-atomic="true"
+              aria-relevant="additions text"
+              {...others}
+            >
+              {notification}
+            </HvTypography>
+          </>
         );
       }}
     </HvFormElementContextConsumer>
   );
 };
 
-HvInfoText.propTypes = {
+HvHelperText.propTypes = {
   /**
-   * Describes the current state of the info text
+   * The description to be shown by this helper text
    */
-  infoTextStatus: PropTypes.string,
+  children: PropTypes.node.isRequired,
   /**
    * Id to be applied to the root node.
    */
@@ -64,7 +81,7 @@ HvInfoText.propTypes = {
     /**
      * Styles applied to the information text.
      */
-    infoText: PropTypes.string,
+    helperText: PropTypes.string,
     /**
      * Styles applied when the text should be shown.
      */
@@ -72,7 +89,7 @@ HvInfoText.propTypes = {
     /**
      * Styles applied when the text is disabled.
      */
-    infoDisabled: PropTypes.string,
+    helperDisabled: PropTypes.string,
     /**
      * Separation between text and upper element.
      */
@@ -85,11 +102,7 @@ HvInfoText.propTypes = {
   /**
    * The text to be shown by the info text.
    */
-  label: PropTypes.string,
-  /**
-   * When this text is to be rendered.
-   */
-  showWhen: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  notification: PropTypes.string,
   /**
    * If ´true´ the input is disabled.
    */
@@ -100,4 +113,4 @@ HvInfoText.propTypes = {
   disableGutter: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvInfoText" })(HvInfoText);
+export default withStyles(styles, { name: "HvHelperText" })(HvHelperText);

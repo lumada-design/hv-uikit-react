@@ -6,56 +6,38 @@ exports[`FormElement  should render correctly 1`] = `
   elementValue="George"
 >
   <WithStyles(HvLabelText)
-    id="label-id"
+    id="test"
     key="1"
     label="First name"
   >
     <WithStyles(HvBaseInput)
-      id="id-input"
+      id="id-test"
       placeholder="Insert your name"
     />
   </WithStyles(HvLabelText)>
-  <WithStyles(HvInfoText)
-    id="infotext-main-standby"
+  <WithStyles(HvHelperText)
+    id="infotext-main"
     key="2"
-    label="Write your name in this input do not put numbers"
-    showWhen="standBy"
-  />
-  <WithStyles(HvInfoText)
-    id="infotext-main-valid"
-    key="3"
-    label="Your value is valid"
-    showWhen="valid"
-  />
-  <WithStyles(HvErrorText)
-    id="error-text-main"
-    key="4"
-    label="Names do not contain numbers"
-    showWhen="invalid"
-  />
+    notification="warning"
+  >
+    Write your name in this input do not put numbers
+  </WithStyles(HvHelperText)>
 </WithStyles(FormElement)>
 `;
 
 exports[`FormElement  should render correctly 2`] = `
 <WithStyles(HvBaseInput)
-  id="id-input"
+  id="id-test"
   placeholder="Insert your name"
 />
 `;
 
 exports[`FormElement  should render correctly 3`] = `
-Array [
-  <WithStyles(HvInfoText)
-    id="infotext-main-standby"
-    key="2"
-    label="Write your name in this input do not put numbers"
-    showWhen="standBy"
-  />,
-  <WithStyles(HvInfoText)
-    id="infotext-main-valid"
-    key="3"
-    label="Your value is valid"
-    showWhen="valid"
-  />,
-]
+<WithStyles(HvHelperText)
+  id="infotext-main"
+  key="2"
+  notification="warning"
+>
+  Write your name in this input do not put numbers
+</WithStyles(HvHelperText)>
 `;

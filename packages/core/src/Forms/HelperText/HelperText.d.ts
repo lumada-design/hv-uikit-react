@@ -3,23 +3,15 @@ import { StandardProps } from "@material-ui/core";
 export interface HvInfoTextProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInfoTextClassKey> {
   /**
-   * Describes the current state of the info text
+   * The text to be shown by the helper text as a notification for the user.
    */
-  infoTextStatus?: string;
-  /**
-   * The text to be shown by the info text.
-   */
-  label?: string;
-  /**
-   * When this text is to be rendered.
-   */
-  showWhen: "standBy" | "valid" | "invalid";
+  notification?: string;
   /**
    * If ´true´ the input is disabled.
    */
   disabled?: boolean;
 }
 
-export type HvInfoTextClassKey = "infoText" | "showText" | "infoDisabled" | "@global";
+export type HvInfoTextClassKey = "helperText" | "showText" | "helperDisabled" | "@global";
 
 export default function HvInfoText(props: HvInfoTextProps): JSX.Element | null;

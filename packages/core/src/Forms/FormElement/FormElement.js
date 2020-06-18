@@ -18,7 +18,7 @@ const FormElement = props => {
     ...others
   } = props;
 
-  const descriptors = findDescriptors(children, ["HvInfoText", "HvErrorText", "HvLabel"], {});
+  const descriptors = findDescriptors(children, ["HvHelperText", "HvLabel"], {});
   const contextValue = {
     elementStatus,
     elementValue,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HvFormElement, HvBaseInput, HvInfoText, HvErrorText, HvLabel } from "../../..";
+import { HvFormElement, HvBaseInput, HvHelperText, HvLabel } from "../../..";
 
 export default {
   title: "Components/Forms",
@@ -12,6 +12,7 @@ export default {
 };
 
 export const Main = () => {
+  const [notificationText, setNotificationText] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [elementStatus, setElementStatus] = useState("standBy");
 
@@ -26,13 +27,16 @@ export const Main = () => {
   const validateValue = value => {
     if (value === "") {
       setElementStatus("standBy");
+      setNotificationText("");
       return;
     }
     if (hasNumber(value)) {
       setElementStatus("invalid");
+      setNotificationText("Names do not contain numbers");
       return;
     }
     setElementStatus("valid");
+    setNotificationText("Your value is valid");
   };
 
   const inputId = "controlled-input";
@@ -48,19 +52,9 @@ export const Main = () => {
           onBlur={() => validateValue(inputValue)}
         />
       </HvLabel>
-      <HvInfoText
-        key="2"
-        id="infotext-main-standby"
-        label="Write your name in this input do not put numbers"
-        showWhen="standBy"
-      />
-      <HvInfoText key="3" id="infotext-main-valid" label="Your value is valid" showWhen="valid" />
-      <HvErrorText
-        key="4"
-        id="error-text-main"
-        label="Names do not contain numbers"
-        showWhen="invalid"
-      />
+      <HvHelperText key="2" id="infotext-main" notification={notificationText}>
+        Write your name in this input do not put numbers
+      </HvHelperText>
     </HvFormElement>
   );
 };
@@ -71,12 +65,9 @@ export const FormElementInvalid = () => {
       <HvLabel key="1" id="invalid-input-label" label="First name">
         <HvBaseInput id="invalid-input" />
       </HvLabel>
-      <HvErrorText
-        key="2"
-        id="error-text-invalid"
-        label="Names do not contain numbers"
-        showWhen="invalid"
-      />
+      <HvHelperText key="2" id="error-text-invalid" notification="Names do not contain numbers">
+        Write your name in this input do not put numbers
+      </HvHelperText>
     </HvFormElement>
   );
 };
@@ -95,7 +86,9 @@ export const FormElementValid = () => {
       <HvLabel key="1" id="valid-input-label" label="First name">
         <HvBaseInput id="valid-input" />
       </HvLabel>
-      <HvInfoText key="2" id="info-text-valid" label="Your value is valid" showWhen="valid" />
+      <HvHelperText key="2" id="info-text-valid">
+        Your value is valid
+      </HvHelperText>
     </HvFormElement>
   );
 };
@@ -114,12 +107,9 @@ export const FormElementDisabled = () => {
       <HvLabel key="1" id="disabled-input-label" label="First name">
         <HvBaseInput id="disable-input" placeholder="Insert your name" />
       </HvLabel>
-      <HvInfoText
-        key="2"
-        id="info-text-valid-disabled"
-        label="Your value is valid"
-        showWhen="valid"
-      />
+      <HvHelperText key="2" id="info-text-valid-disabled">
+        Your value is valid
+      </HvHelperText>
     </HvFormElement>
   );
 };
@@ -127,7 +117,7 @@ export const FormElementDisabled = () => {
 FormElementDisabled.story = {
   parameters: {
     docs: {
-      storyDescription: "Form element propagating the valid state to the input."
+      storyDescription: "Form element propagating the disabled state to the input."
     }
   }
 };

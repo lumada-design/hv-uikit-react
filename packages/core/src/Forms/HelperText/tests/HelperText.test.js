@@ -4,17 +4,19 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import ErrorText from "../ErrorText";
+import HelperText from "../HelperText";
 
 /* eslint-disable no-console */
 
-describe("ErrorText", () => {
+describe("HelperText", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <ErrorText id="base" errorTextStatus="valid" label="text" />
+        <HelperText id="base" notification="test">
+          test
+        </HelperText>
       </HvProvider>
     );
   });
@@ -24,11 +26,11 @@ describe("ErrorText", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(ErrorText)).toMatchSnapshot();
+    expect(wrapper.find(HelperText)).toMatchSnapshot();
   });
 
-  it("should render the error component", () => {
-    const errorTextComponent = wrapper.find(ErrorText);
-    expect(errorTextComponent.length).toBe(1);
+  it("should render the Input component", () => {
+    const HvHelperTextComponent = wrapper.find(HelperText);
+    expect(HvHelperTextComponent.length).toBe(1);
   });
 });

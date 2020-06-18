@@ -4,7 +4,7 @@ import { isNil } from "lodash";
  * Returns a descriptor in case the element being checked matches with the name.
  *
  * @param {Array} element - The current element being checked.
- * @param {string} componentName - The name of the component this function should scan i.e.: HvInfoText.
+ * @param {string} componentName - The name of the component this function should scan i.e.: HvHelperText.
  */
 const getDescriptorMap = (element, componentName) => {
   if (element.type?.displayName?.includes(componentName)) {
@@ -22,7 +22,7 @@ const initializeFieldIfEmpty = field => (isNil(field) || !Array.isArray(field) ?
  * Receives a descriptor checks whether if the name matches and updates it.
  *
  * @param {Array} element - The current element being checked.
- * @param {Array} names - An array with the names of the components this function should scan i.e.: HvInfoText.
+ * @param {Array} names - An array with the names of the components this function should scan i.e.: HvHelperText.
  * @param {Object} descriptors - descriptors to update.
  *
  */
@@ -43,7 +43,7 @@ const updateDescriptors = (element, names, descriptors = {}) => {
  * Inside each key there will be an array with each id of the found descriptor.
  *
  * @param {Array} children - The children inside the form element to scan.
- * @param {Array} names - An array with the names of the components this function should scan i.e.: HvInfoText.
+ * @param {Array} names - An array with the names of the components this function should scan i.e.: HvHelperText.
  * @param {Object} descriptors - Already found descriptors used for recurssion.
  *
  */
