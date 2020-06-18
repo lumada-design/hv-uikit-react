@@ -30,7 +30,8 @@ const Badge = props => {
 
   const badgeClasses = clsx(classes.badgePosition, {
     [classes.badge]: count > 0 || renderedCountOrLabel,
-    [classes.showCount]: renderedCountOrLabel,
+    [classes.showCount]: !label && renderedCountOrLabel,
+    [classes.showLabel]: label,
     [classes.badgeIcon]: icon,
     [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1
   });
@@ -67,9 +68,13 @@ Badge.propTypes = {
      */
     badgeIcon: PropTypes.string,
     /**
-     * Styles applied to the component when shows count or label.
+     * Styles applied to the component when shows count.
      */
     showCount: PropTypes.string,
+    /**
+     * Styles applied to the component when shows label.
+     */
+    showLabel: PropTypes.string,
     /**
      * Styles applied to the component when count has one digit.
      */

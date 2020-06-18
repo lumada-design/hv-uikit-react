@@ -39,6 +39,7 @@ export type HvBadgeClassKey =
   | "badge"
   | "badgeIcon"
   | "showCount"
+  | "showLabel"
   | "badgeOneDigit";
 
 export default function HvBadge(props: HvBadgeProps): JSX.Element | null;
