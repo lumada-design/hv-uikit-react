@@ -2,7 +2,7 @@ import { StandardProps } from "@material-ui/core";
 import { HvInputProps } from "../Input";
 
 export interface HvSearchBoxProps
-  extends StandardProps<HvInputProps, HvSearchBoxClassKey, "onSubmit" | "onChange"> {
+  extends StandardProps<HvInputProps, HvSearchBoxClassKey, "onSubmit"> {
   /**
    * The function that will be executed on Enter, allows checking the value state,
    * it receives the value or event+value.
