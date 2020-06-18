@@ -172,21 +172,21 @@ export type HvSemanticColorKeys =
   | "sema18"
   | "sema19";
 
-type HvAccentColors = Record<HvAccentColorKeys, string>;
+export type HvAccentColors = Record<HvAccentColorKeys, string>;
 
-type HvAtmosphereColors = Record<HvAtmosphereColorKeys, string>;
+export type HvAtmosphereColors = Record<HvAtmosphereColorKeys, string>;
 
-type HvBaseColors = Record<HvBaseColorKeys, string>;
+export type HvBaseColors = Record<HvBaseColorKeys, string>;
 
-type HvSemanticColors = Record<HvSemanticColorKeys, string>;
+export type HvSemanticColors = Record<HvSemanticColorKeys, string>;
 
-type HvSupportColors = Record<string, string>;
+export type HvSupportColors = Record<string, string>;
 
-interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
+export interface HvThemeTypography extends Map<string, HvThemeTypographyDefinition> {
   fontFamily: string;
 }
 
-interface HvThemeTypographyDefinition {
+export interface HvThemeTypographyDefinition {
   color: string;
   fontSize: string;
   letterSpacing: string;
@@ -194,9 +194,9 @@ interface HvThemeTypographyDefinition {
   fontWeight: string;
 }
 
-type HvThemeSpacing = Map<string, number>;
+export type HvThemeSpacing = Map<string, number>;
 
-interface HvThemeVizPalette {
+export interface HvThemeVizPalette {
   palette: {
     categorical: Map<string, string>;
     undefinedState: Map<string, string>;

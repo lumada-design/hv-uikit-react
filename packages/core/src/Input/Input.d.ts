@@ -1,6 +1,6 @@
 import { StandardProps, InputProps } from "@material-ui/core";
 
-interface InputSuggestion {
+export interface InputSuggestion {
   id: string;
   label: string;
 }
