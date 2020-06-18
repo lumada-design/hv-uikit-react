@@ -24,6 +24,7 @@ export const Main = () => (
     <HvBadge id="badge2" showCount count={8} />
     <HvBadge id="badge3" showCount count={22} />
     <HvBadge id="badge4" showCount count={100} />
+    <HvBadge id="labelBadge1" label="New" />
   </>
 );
 
@@ -38,6 +39,7 @@ export const WithIcon = () => (
     <HvBadge id="badge7" showCount count={8} icon={<Alert />} />
     <HvBadge id="badge8" showCount count={88} icon={<Alert />} />
     <HvBadge id="badge9" showCount count={888} icon={<Alert />} />
+    <HvBadge id="labelBadge2" label="New" icon={<Alert />} />
   </>
 );
 
@@ -57,6 +59,7 @@ export const WithText = () => (
     <HvBadge id="badge12" showCount count={8} text="Events" textVariant="sTitle" />
     <HvBadge id="badge13" showCount count={88} text="Events" textVariant="sTitle" />
     <HvBadge id="badge14" showCount count={888} text="Events" textVariant="sTitle" />
+    <HvBadge id="labelBadge3" label="New" text="Events" textVariant="sTitle" />
   </>
 );
 
