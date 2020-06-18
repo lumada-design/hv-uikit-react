@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.4.1...@hv/uikit-react-core@2.4.2) (2020-06-18)
+
+
+### Bug Fixes
+
+* **switch:** handle checked prop change. [#1668](https://github.com/pentaho/hv-uikit-react/issues/1668) ([819f7ee](https://github.com/pentaho/hv-uikit-react/commit/819f7ee3779240e85d4d857e72e9d290c90ae4c7))
+* suggestion for issue [#1636](https://github.com/pentaho/hv-uikit-react/issues/1636) ([7a0949f](https://github.com/pentaho/hv-uikit-react/commit/7a0949f3f80a1ec74dd582fbeda98c684acd8f81))
+
+
+
+
+
 ## [2.4.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.4.0...@hv/uikit-react-core@2.4.1) (2020-06-11)
 
 **Note:** Version bump only for package @hv/uikit-react-core
