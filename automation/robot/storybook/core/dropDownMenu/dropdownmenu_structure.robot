@@ -1,11 +1,8 @@
 *** Setting ***
-Resource          _resources.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}dropdown-menu--disabled-items
-...               AND      Wait Until Element Is Enabled    ${dropDownMenu}
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      _resources.resource
+Test Setup    Run Keywords
+...           Go To    ${components}dropdown-menu--disabled-items
+...           AND      Wait Until Element Is Enabled    ${dropDownMenu}
 
 
 *** Test Cases ***

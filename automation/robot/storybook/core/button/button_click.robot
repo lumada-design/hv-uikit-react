@@ -1,11 +1,9 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
+Resource          ../_keywords.resource
 Suite Setup       Run Keywords
-...               open storybook    ${components}button--smoke-tests
-...               AND               Wait Until Element Is Visible    css:button
-Suite Teardown    Close Browser
+...               open browser webdriver    ${components}button--smoke-tests
+...               AND    Wait Until Element Is Visible    css:button
 Test Template     Activate and focus button when it is clicked
-Force Tags        smoke    bug-edge-webdriver
 
 
 *** Keywords ***

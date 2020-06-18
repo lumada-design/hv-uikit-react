@@ -1,9 +1,7 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Variables         variables.yaml
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke    bug-infrastructure-ie
+Resource      ../_keywords.resource
+Variables     variables.yaml
+Force Tags    bug-infrastructure-ie
 
 
 *** Test Cases ***

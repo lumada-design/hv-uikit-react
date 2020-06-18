@@ -1,11 +1,9 @@
 *** Setting ***
-Resource          _resources.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}dropdown--multi-selection    AND
-...               Wait Until Element Is Enabled    ${dropdown}
-Suite Teardown    Close Browser
-Force Tags        smoke     keyboard
+Resource      _resources.resource
+Test Setup    Run Keywords
+...           Go To    ${components}dropdown--multi-selection    AND
+...           Wait Until Element Is Enabled    ${dropdown}
+Force Tags    keyboard
 
 
 *** Test Cases ***

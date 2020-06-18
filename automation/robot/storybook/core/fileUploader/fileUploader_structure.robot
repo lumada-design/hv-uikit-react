@@ -1,11 +1,8 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}file-uploader--automation-sample
-...               AND    Wait Until Element Is Enabled    ${button_removeFile}
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      ../_keywords.resource
+Test Setup    Run Keywords
+...           Go To    ${components}file-uploader--automation-sample
+...           AND    Wait Until Element Is Enabled    ${button_removeFile}
 
 
 *** Variables ***

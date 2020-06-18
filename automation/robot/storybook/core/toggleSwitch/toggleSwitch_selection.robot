@@ -1,12 +1,14 @@
 *** Setting ***
-Variables         variables.yaml
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}selectors-switch--main    AND
-...               Wait Until Element Is Enabled    ${switch}
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      ../_keywords.resource
+Test Setup    Run Keywords
+...           Go To    ${components}selectors-switch--main    AND
+...           Wait Until Element Is Enabled    ${switch}
+
+
+*** Variables ***
+${switch}        css:[role=checkbox]
+${leftLabel}     css:[class*=leftLabel]
+${rightLabel}    css:[class*=rightLabel]
 
 
 *** Test Cases ***

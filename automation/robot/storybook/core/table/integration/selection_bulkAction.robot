@@ -1,11 +1,8 @@
 *** Setting ***
-Resource          ../table.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${visualizations}table--table-with-changing-data    AND
-...               Wait Until Page Contains Element    ${table1 all}
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      ../table.resource
+Test Setup    Run Keywords
+...           Go To    ${visualizations}table--table-with-changing-data    AND
+...           Wait Until Page Contains Element    ${table1 all}
 
 
 *** Test Cases ***

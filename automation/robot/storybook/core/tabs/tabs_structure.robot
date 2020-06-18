@@ -1,8 +1,6 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource    ../_keywords.resource
+
 
 *** Test Cases ***
 New Element of the tabs can be selected when using CLICK

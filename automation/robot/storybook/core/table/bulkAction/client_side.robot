@@ -1,12 +1,9 @@
 *** Setting ***
 Resource          ../table.resource
-Suite Setup       open storybook
 Test Setup        Run Keywords
 ...               Go To    ${visualizations}table--with-checkbox
 ...               AND    Wait Until Element Is Visible    ${table}
 Test Template     Run Keyword
-Suite Teardown    Close Browser
-Force Tags        smoke
 
 
 *** Test Cases ***

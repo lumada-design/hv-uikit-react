@@ -1,12 +1,9 @@
 *** Setting ***
 Resource          _keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
 Test Setup        Run Keywords
 ...               Go To    ${components}asset-inventory--configurations
-...               AND      Wait Until Element Is Visible    hv-assetinventory
+...               AND    Wait Until Element Is Visible    hv-assetinventory
 Test Template     Run Keyword
-Force Tags        smoke
 
 
 *** Test Cases ***   | pageSize | Number of Items | number of pages

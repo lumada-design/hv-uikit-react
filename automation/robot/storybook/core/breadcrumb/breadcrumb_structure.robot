@@ -1,8 +1,11 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource    ../_keywords.resource
+
+
+***Variables***
+${breadcrumb}    css:[id^=breadcrumb]
+${dropDown}      breadcrumb3-submenu-list
+${label_text}    Label 2\nLabel 3\nLabel 4\nLabel 5\nLabel 6\nLabel 7
 
 
 *** Test Cases ***
@@ -18,9 +21,3 @@ show all links levels when breadcrumb is rendered
     Go To                            ${components}breadcrumb--with-url
     Wait Until Element Is Visible    ${breadcrumb}
     Element Text Should Be           ${breadcrumb}    Sites\nDesign System\nPattern Library\nHome
-
-
-***Variables***
-${breadcrumb}    css:[id^=breadcrumb]
-${dropDown}      breadcrumb3-submenu-list
-${label_text}    Label 2\nLabel 3\nLabel 4\nLabel 5\nLabel 6\nLabel 7

@@ -1,10 +1,8 @@
 *** Setting ***
-Variables         variables.yaml
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke    wai-aria-practices
-Documentation     https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props
+Variables        variables.yaml
+Resource         ../_keywords.resource
+Force Tags       wai-aria-practices
+Documentation    https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props
 ...
 ...    doc parts not applied by UIKIT team: \n
 ...    - Each option in the listbox has role option and is a DOM descendant of the element

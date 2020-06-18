@@ -1,12 +1,10 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Variables         variables.yaml
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}modal--text-and-semantic
-...               AND    Wait Until Element Is Enabled    ${buttonWarning}
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Resource      ../_keywords.resource
+Variables     variables.yaml
+Test Setup    Run Keywords
+...           Go To    ${components}modal--text-and-semantic
+...           AND    Wait Until Element Is Enabled    ${buttonWarning}
+Force Tags    keyboard
 
 
 *** Test Cases ***

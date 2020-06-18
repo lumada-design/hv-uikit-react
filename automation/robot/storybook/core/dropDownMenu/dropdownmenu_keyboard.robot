@@ -1,9 +1,7 @@
 *** Setting ***
 Resource          _resources.resource
-Suite Setup       open storybook
 Test Template     Run Keyword
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        keyboard
 
 
 *** Test Cases ***

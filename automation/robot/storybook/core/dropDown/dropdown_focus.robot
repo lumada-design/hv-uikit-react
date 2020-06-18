@@ -1,9 +1,6 @@
 *** Setting ***
-Resource          _resources.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke
-Documentation     please look complementary Test Cases on dropdown_keyboard_navigation.robot
+Resource         _resources.resource
+Documentation    please look complementary Test Cases on dropdown_keyboard_navigation.robot
 
 
 *** Test Cases ***

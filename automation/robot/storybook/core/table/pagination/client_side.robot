@@ -1,16 +1,13 @@
-
 *** Setting ***
-Resource          _keywords.resource
-Suite Setup       open storybook
+Resource          _pagination.resource
 Test Setup        Run Keywords
 ...               Go To    ${visualizations}table--main
 ...               AND    Wait Until Element Is Enabled    ${pagination_input}
 Test Template     Run Keyword
 Test Teardown     Run Keyword If Test Failed
 ...               Capture Page Screenshot    ${SUITE_NAME}${TEST_NAME}.png
-Suite Teardown    Close Browser
-Force Tags        smoke
 Documentation     in all Test Cases was assumed the buttons are enabled
+
 
 *** Test Cases ***
 current page increase when is clicked next page            click next page

@@ -1,8 +1,6 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource    ../_keywords.resource
+
 
 *** Variables ***
 ${input}                    check-label-input
@@ -11,6 +9,7 @@ ${inputIndeterm}            checkState3-input
 ${inputIndetermDisabled}    checkState4-input
 ${inputDisabled}            checkState5-input
 ${inputDisabledChecked}     checkState6-input
+
 
 *** Test Cases ***
 select and unselect a checkbox with label

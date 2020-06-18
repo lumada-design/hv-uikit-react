@@ -1,10 +1,9 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       Run Keywords
-...               open storybook    ${components}user-preferences--two-buttons
-...               AND               Wait Until Element Is Visible    ${userPreferences}
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard    bug-infrastructure-ie
+Resource       ../_keywords.resource
+Suite Setup    Run Keywords
+...            open browser webdriver    ${components}user-preferences--two-buttons
+...            AND               Wait Until Element Is Visible    ${userPreferences}
+Force Tags     keyboard    bug-infrastructure-ie
 
 
 *** Test Cases ***

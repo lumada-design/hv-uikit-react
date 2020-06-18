@@ -1,11 +1,8 @@
 *** Setting ***
 Resource          _verticalNavigation.resource
-Suite Setup       open storybook
 Test Setup        Run Keywords
 ...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
 ...               Wait Until Element Is Visible    ${burger}
-Suite Teardown    Close Browser
-Force Tags        smoke
 Documentation     Test Cases based on Design System Version 1.2.0
 
 
@@ -32,8 +29,8 @@ keep the focus when item is selected with keyboard
     Element Should Be Focused                          ${item1.1}>div
 
 focus action item when action item is selected
-    Click Element                    ${burger}
-    Wait Until Element Is Visible    ${expanded}
-    verify element is not focused    ${action2}
-    Click Element                    ${action2}
-    Element Should Be Focused        ${action2}
+    Click Element                               ${burger}
+    Wait Until Element Is Visible               ${expanded}
+    Wait Until Page Does Not Contain Element    ${action2}:focus
+    Click Element                               ${action2}
+    Element Should Be Focused                   ${action2}

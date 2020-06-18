@@ -1,8 +1,5 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Default Tags      smoke
+Resource    ../_keywords.resource
 
 
 *** Variables ***
@@ -11,6 +8,7 @@ ${2ndRadioButton}         id:radio2-input
 ${radioSelected}          css:div[class*='RadioButtonSelected']
 ${radioNotSelected}       css:div[class*='RadioButtonUnselected']
 ${1stRadioButtonLabel}    xpath://span[text()='Label']
+
 
 *** Test Cases ***
 select radio button by clicking in input

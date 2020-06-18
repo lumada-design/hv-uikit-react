@@ -1,10 +1,8 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Test Template     Verify selectable card behavior
+Resource          ../_keywords.resource
 Variables         variables.yaml
-Force Tags        smoke    keyboard
+Test Template     Verify selectable card behavior
+Force Tags        keyboard
 
 
 *** Keywords ***

@@ -1,12 +1,10 @@
 *** Setting ***
-Resource          table.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${visualizations}table--with-checkbox
-...               AND    Wait Until Element Is Visible    ${table}
-Suite Teardown    Close Browser
-Force Tags        wai-aria-practices
-Documentation     https://www.w3.org/TR/wai-aria-practices/#table
+Resource         table.resource
+Test Setup       Run Keywords
+...              Go To    ${visualizations}table--with-checkbox
+...              AND    Wait Until Element Is Visible    ${table}
+Force Tags       wai-aria-practices
+Documentation    https://www.w3.org/TR/wai-aria-practices/#table
 
 
 *** Test Cases ***

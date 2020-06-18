@@ -1,9 +1,7 @@
 *** Setting ***
 Resource          _resources.resource
-Suite Setup       open storybook
 Test Template     verify dropped dropdownmenu has attributes
-Suite Teardown    Close Browser
-Force Tags        smoke    wai-aria-practices
+Force Tags        wai-aria-practices
 
 
 *** Test Cases ***

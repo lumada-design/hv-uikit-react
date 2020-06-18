@@ -1,8 +1,6 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource    ../_keywords.resource
+
 
 *** Variables ***
 ${input}          css:input[type=text]
@@ -12,6 +10,7 @@ ${description}    id:input-simple-sample-description
 ${iconInfo}       css:div[class*="HvInput-infoIconContainer"]
 ${iconSuccess}    css:div[class*="HvIconSuccess-root"]
 ${iconMap}        css:div[class*="HvIconMap-root"]
+
 
 *** Test Cases ***
 keep focus when choosing auto-complete suggestion

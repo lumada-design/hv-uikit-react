@@ -1,12 +1,10 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}date-picker--range-with-values    AND
-...               Wait Until Element Is Visible    DatePicker
-Suite Teardown    Close Browser
-Variables         variables.yaml
-Force Tags        smoke    bug-ie-webdriver
+Resource      ../_keywords.resource
+Variables     variables.yaml
+Test Setup    Run Keywords
+...           Go To    ${components}date-picker--range-with-values    AND
+...           Wait Until Element Is Visible    DatePicker
+Force Tags    bug-ie-webdriver
 
 
 *** Variables ***

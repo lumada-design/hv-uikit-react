@@ -1,11 +1,8 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}pagination--controlled-sample
-...               AND    Wait Until Element Is Visible    ${input}
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      ../_keywords.resource
+Test Setup    Run Keywords
+...           Go To    ${components}pagination--controlled-sample
+...           AND    Wait Until Element Is Visible    ${input}
 
 
 *** Variables ***

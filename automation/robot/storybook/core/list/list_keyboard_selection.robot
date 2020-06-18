@@ -1,10 +1,8 @@
 *** Setting ***
-Variables         variables.yaml
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
-Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
+Variables        variables.yaml
+Resource         ../_keywords.resource
+Force Tags       keyboard
+Documentation    https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 
 *** Test Cases ***

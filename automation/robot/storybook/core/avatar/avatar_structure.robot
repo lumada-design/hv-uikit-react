@@ -1,10 +1,9 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       Run Keywords
-...               open storybook    ${components}avatar--fallbacks    AND
-...               Wait Until Element Is Visible    ${fallbackToDefaultUserIcon}
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource       ../_keywords.resource
+Suite Setup    Run Keywords
+...            open browser webdriver    ${components}avatar--fallbacks    AND
+...            Wait Until Element Is Visible    ${fallbackToDefaultUserIcon}
+
 
 
 *** Variables ***

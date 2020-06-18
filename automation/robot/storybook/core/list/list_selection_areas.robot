@@ -1,11 +1,9 @@
 *** Setting ***
-Variables          variables.yaml
-Resource           ../../_resources/keywords.resource
-Suite Setup        open storybook
-Suite Teardown     Close Browser
-Test Template      select an option by locator
-Default Tags       smoke
-Documentation      select a option clicking in different areas icon, label, input
+Variables        variables.yaml
+Resource         ../_keywords.resource
+Suite Setup      open browser webdriver
+Test Template    select an option by locator
+Documentation    select a option clicking in different areas icon, label, input
 
 
 *** Keywords ***

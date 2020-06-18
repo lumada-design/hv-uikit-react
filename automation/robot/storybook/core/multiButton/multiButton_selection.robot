@@ -1,11 +1,11 @@
 *** Setting ***
-Resource           ../../_resources/keywords.resource
-Suite Setup        open storybook
-Suite Teardown     Close Browser
-Default Tags       smoke
+Resource       ../_keywords.resource
+Suite Setup    open browser webdriver
+
 
 *** Variables ***
 ${storybook_iframe}    ${components}multi-button--
+
 
 *** Test Cases ***
 multiButton when just allow single selection

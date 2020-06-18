@@ -1,9 +1,6 @@
 *** Setting ***
 Resource          table.resource
-Suite Setup       open storybook
 Test Template     show correct rows and pages when rows per page is changed
-Suite Teardown    Close Browser
-Force Tags        smoke
 Documentation     selection of rows per page
 
 

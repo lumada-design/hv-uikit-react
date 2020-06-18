@@ -1,10 +1,7 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Test Template     Verify selectable card behavior
-Variables         variables.yaml
-Force Tags        smoke
+Resource         ../_keywords.resource
+Variables        variables.yaml
+Test Template    Verify selectable card behavior
 
 
 *** Test Cases ***        card                      locator        isSelected    onClickAction

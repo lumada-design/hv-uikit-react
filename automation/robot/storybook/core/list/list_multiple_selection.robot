@@ -1,13 +1,10 @@
 *** Setting ***
-Variables         variables.yaml
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${components}list--multi-selection-with-select-all
-...               AND    Wait Until Element Is Visible    ${list}
-Suite Teardown    Close Browser
-Force Tags        smoke
-Documentation     options selections just for lists with multiple selection
+Variables        variables.yaml
+Resource         ../_keywords.resource
+Test Setup       Run Keywords
+...              Go To    ${components}list--multi-selection-with-select-all
+...              AND    Wait Until Element Is Visible    ${list}
+Documentation    options selections just for lists with multiple selection
 
 
 *** Test Cases ***

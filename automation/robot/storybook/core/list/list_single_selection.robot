@@ -1,10 +1,7 @@
 *** Setting ***
-Variables         variables.yaml
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke
-Documentation     options selections just for lists with single selection
+Variables        variables.yaml
+Resource         ../_keywords.resource
+Documentation    options selections just for lists with single selection
 
 
 *** Test Cases ***

@@ -1,3 +1,0 @@
-switch:        css:[role=checkbox]
-leftLabel:     css:[class*=leftLabel]
-rightLabel:    css:[class*=rightLabel]

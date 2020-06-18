@@ -1,10 +1,10 @@
 *** Setting ***
-Resource          ../../_resources/keywords.resource
-Suite Setup       Run Keywords
-...               open storybook    ${components}button--smoke-tests
-...               AND               Wait Until Element Is Visible    css:button
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Resource       ../_keywords.resource
+Suite Setup    Run Keywords
+...            open browser webdriver    ${components}button--smoke-tests
+...            AND    Wait Until Element Is Visible    css:button
+Force Tags     keyboard
+
 
 *** Test Cases ***
 tab: move focus to next button when TAB is pressed

@@ -1,9 +1,7 @@
 *** Setting ***
 Variables         variables.yaml
-Resource          ../../_resources/keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard    issue
+Resource          ../_keywords.resource
+Force Tags        keyboard    issue
 Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
 
 
