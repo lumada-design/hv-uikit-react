@@ -85,7 +85,9 @@ Badge.propTypes = {
     badgeContainer: PropTypes.string
   }).isRequired,
   /**
-   * Count is the number of unread notifications
+   * Count is the number of unread notifications.
+   * Note count and label are mutually exclusive.
+   * count is ignored when label is specified at the same time.
    */
   count: PropTypes.number,
   /**

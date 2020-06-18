@@ -4,7 +4,9 @@ import { StandardProps } from "@material-ui/core";
 export interface HvBadgeProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBadgeClassKey> {
   /**
-   * Count is the number of unread notifications
+   * Count is the number of unread notifications.
+   * Note count and label are mutually exclusive.
+   * count is ignored when label is specified at the same time.
    */
   count?: number;
   /**
