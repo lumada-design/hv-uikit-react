@@ -6,15 +6,19 @@ export interface HvBadgeProps
   /**
    * Count is the number of unread notifications
    */
-  count: number;
+  count?: number;
   /**
-   * True if count should be displayed.
+   * True if count should be displayed. Exclusive to label.
    */
   showCount?: boolean;
   /**
    * The maximum number of unread notifications to be displayed
    */
   maxCount?: number;
+  /**
+   * Custom text to show in place of count. Exclusive to showCount.
+   */
+  label?: string;
   /**
    * Icon which the notification will be attached.
    */

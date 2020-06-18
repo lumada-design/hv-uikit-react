@@ -12,28 +12,34 @@ const Badge = props => {
   const {
     classes,
     showCount = false,
-    count,
+    count = 0,
     maxCount = 99,
+    label = null,
     icon = null,
     text = null,
     textVariant = null,
     ...others
   } = props;
   const renderedCount = count > maxCount ? `${maxCount}+` : count;
+  // If label is specified and non-empty, render it.
+  // If showCount is specified and count > 0, render the count.
+  // Otherwise, render nothing on the badge.
+  // (Note count=0 should not be rendered to avoid ghosty 0.)
+  const renderedCountOrLabel = label || (showCount && count > 0 && renderedCount) || null;
   const Component = icon || (text && <Typography variant={textVariant}>{text}</Typography>);
 
   const badgeClasses = clsx(classes.badgePosition, {
-    [classes.badge]: count > 0,
-    [classes.showCount]: showCount,
+    [classes.badge]: count > 0 || renderedCountOrLabel,
+    [classes.showCount]: renderedCountOrLabel,
     [classes.badgeIcon]: icon,
-    [classes.badgeOneDigit]: showCount && count <= 9
+    [classes.badgeOneDigit]: String(renderedCountOrLabel).length === 1
   });
 
   return (
-    <div aria-label={renderedCount} className={classes.root} {...others}>
+    <div aria-label={renderedCountOrLabel} className={classes.root} {...others}>
       {Component}
       <div className={Component ? classes.badgeContainer : null}>
-        <div className={badgeClasses}>{showCount && renderedCount}</div>
+        <div className={badgeClasses}>{renderedCountOrLabel}</div>
       </div>
     </div>
   );
@@ -61,7 +67,7 @@ Badge.propTypes = {
      */
     badgeIcon: PropTypes.string,
     /**
-     * Styles applied to the component when shows count.
+     * Styles applied to the component when shows count or label.
      */
     showCount: PropTypes.string,
     /**
@@ -76,15 +82,19 @@ Badge.propTypes = {
   /**
    * Count is the number of unread notifications
    */
-  count: PropTypes.number.isRequired,
+  count: PropTypes.number,
   /**
-   * True if count should be displayed.
+   * True if count should be displayed. Exclusive to label.
    */
   showCount: PropTypes.bool,
   /**
    * The maximum number of unread notifications to be displayed
    */
   maxCount: PropTypes.number,
+  /**
+   * Custom text to show in place of count. Exclusive to showCount.
+   */
+  label: PropTypes.string,
   /**
    * Icon which the notification will be attached.
    */

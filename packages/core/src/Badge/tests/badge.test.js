@@ -75,4 +75,15 @@ describe("Badge ", () => {
 
     expect(divs.at(2).text()).toEqual("99+");
   });
+
+  it("should render correctly with custom label", () => {
+    wrapper = mount(
+      <HvProvider>
+        <Badge label="New!" />
+      </HvProvider>
+    );
+    const divs = wrapper.find("div");
+
+    expect(divs.at(1).text()).toEqual("New!");
+  });
 });

@@ -22,7 +22,7 @@ const styles = theme => ({
     ...theme.hv.typography.labelText,
     fontFamily: theme.hv.typography.fontFamily,
     padding: "0 5px",
-    maxWidth: 30,
+    wordBreak: "keep-all",
     color: theme.hv.palette.atmosphere.atmo1
   },
   badgeOneDigit: {
