@@ -135,9 +135,9 @@ Action.propTypes = {
      */
     target: PropTypes.oneOf(["_top", "_blank"]),
     /**
-     * Callback triggered when the action is clicked
+     * True when the application is selected, false otherwise.
      */
-    onClickCallback: PropTypes.func
+    isSelected: PropTypes.bool
   }).isRequired,
   /**
    * A Jss object used to override or extend the component styles.

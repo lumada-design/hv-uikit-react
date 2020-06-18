@@ -21,6 +21,23 @@ import { HvAppSwitcherPanelApplication } from "../../AppSwitcherPanel";
 export interface HvAppSwitcherPanelActionProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>> {
   /**
+   * The application data to be used to render the Action object.
+   */
+  application: HvAppSwitcherPanelActionApplication;
+  /**
+   * Callback triggered when the action is clicked.
+   */
+  onClickCallback?: (application?: HvAppSwitcherPanelActionApplication) => void;
+  /**
+   * Must return a boolean stating if the action element is selected or not.
+   */
+  isSelectedCallback?: (
+    application?: HvAppSwitcherPanelActionApplication
+  ) => boolean;
+}
+
+export interface HvAppSwitcherPanelActionApplication {
+  /**
    * Id of the application.
    */
   id: string;
@@ -51,9 +68,9 @@ export interface HvAppSwitcherPanelActionProps
    */
   target?: "_top" | "_blank";
   /**
-   * Callback triggered when the action is clicked
+   * True when the application is selected, false otherwise.
    */
-  onClickCallback?: (application?: HvAppSwitcherPanelApplication) => void;
+  isSelected?: boolean;
 }
 
 export default function HvAppSwitcherPanelAction(

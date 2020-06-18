@@ -17,7 +17,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-import { HvAppSwitcherPanelActionProps } from "./Action";
+import { HvAppSwitcherPanelActionApplication } from "./Action";
 
 export interface HvAppSwitcherPanelProps
   extends StandardProps<React.HTMLAttributes<HTMLElement>> {
@@ -32,7 +32,7 @@ export interface HvAppSwitcherPanelProps
   /**
    * The list of applications to be used to render the actions on the component.
    */
-  applications: HvAppSwitcherPanelActionProps[];
+  applications: HvAppSwitcherPanelActionApplication[];
   /**
    * Element to be added to the header container, if none is provided a label with the title will be added.
    */
@@ -44,34 +44,15 @@ export interface HvAppSwitcherPanelProps
   /**
    * Triggered when an action is clicked.
    */
-  onActionClickedCallback?: (application?: HvAppSwitcherApplication) => void;
+  onActionClickedCallback?: (
+    application?: HvAppSwitcherPanelActionApplication
+  ) => void;
   /**
    * Must return a boolean stating if the action element is selected or not.
    */
-  isActionSelectedCallback?: (application?: HvAppSwitcherApplication) => void;
-}
-
-export interface HvAppSwitcherPanelApplication {
-  /**
-   * Id of the application.
-   */
-  id: string;
-  /**
-   * Name of the application.
-   */
-  name: string;
-  /**
-   * Small description of the application.
-   */
-  description: string;
-  /**
-   * URL where the application is accesible.
-   */
-  url: string;
-  /**
-   * States if the application is selected.
-   */
-  isSelected: boolean;
+  isActionSelectedCallback?: (
+    application?: HvAppSwitcherPanelActionApplication
+  ) => boolean;
 }
 
 export default function HvAppSwitcherPanel(
