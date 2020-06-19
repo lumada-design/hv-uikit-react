@@ -52,7 +52,8 @@ export const HelperTextNotification = () => {
 HelperTextNotification.story = {
   parameters: {
     docs: {
-      storyDescription: "Helper text showcasing the ability to swit."
+      storyDescription:
+        "Helper text showcasing the ability to notify the user by replacing the description text."
     }
   }
 };
@@ -68,7 +69,7 @@ export const DisabledInfoText = () => {
 DisabledInfoText.story = {
   parameters: {
     docs: {
-      storyDescription: "Helper text showcasing the disabled."
+      storyDescription: "Helper text showcasing the disabled state."
     }
   }
 };

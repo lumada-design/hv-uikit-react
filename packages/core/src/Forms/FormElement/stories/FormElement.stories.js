@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvFormElement, HvBaseInput, HvHelperText, HvLabel } from "../../..";
 
 export default {
-  title: "Components/Forms",
+  title: "Components/Forms/FormElement",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'"
@@ -14,7 +14,7 @@ export default {
 export const Main = () => {
   const [notificationText, setNotificationText] = useState("");
   const [inputValue, setInputValue] = useState("");
-  const [elementStatus, setElementStatus] = useState("standBy");
+  const [status, setstatus] = useState("standBy");
 
   const hasNumber = string => {
     return /\d/.test(string);
@@ -26,16 +26,16 @@ export const Main = () => {
 
   const validateValue = value => {
     if (value === "") {
-      setElementStatus("standBy");
+      setstatus("standBy");
       setNotificationText("");
       return;
     }
     if (hasNumber(value)) {
-      setElementStatus("invalid");
+      setstatus("invalid");
       setNotificationText("Names do not contain numbers");
       return;
     }
-    setElementStatus("valid");
+    setstatus("valid");
     setNotificationText("Your value is valid");
   };
 
@@ -43,7 +43,7 @@ export const Main = () => {
   const inputLabelId = "controlled-input-label";
 
   return (
-    <HvFormElement elementValue={inputValue} elementStatus={elementStatus}>
+    <HvFormElement value={inputValue} status={status}>
       <HvLabel key="1" id={inputLabelId} label="First name">
         <HvBaseInput
           id={inputId}
@@ -61,7 +61,7 @@ export const Main = () => {
 
 export const FormElementInvalid = () => {
   return (
-    <HvFormElement elementValue="Albert2" elementStatus="invalid">
+    <HvFormElement value="Albert2" status="invalid">
       <HvLabel key="1" id="invalid-input-label" label="First name">
         <HvBaseInput id="invalid-input" />
       </HvLabel>
@@ -82,7 +82,7 @@ FormElementInvalid.story = {
 
 export const FormElementValid = () => {
   return (
-    <HvFormElement elementValue="Hello" elementStatus="valid">
+    <HvFormElement value="Hello" status="valid">
       <HvLabel key="1" id="valid-input-label" label="First name">
         <HvBaseInput id="valid-input" />
       </HvLabel>
@@ -103,7 +103,7 @@ FormElementValid.story = {
 
 export const FormElementDisabled = () => {
   return (
-    <HvFormElement elementStatus="valid" elementDisabled>
+    <HvFormElement status="valid" disabled>
       <HvLabel key="1" id="disabled-input-label" label="First name">
         <HvBaseInput id="disable-input" placeholder="Insert your name" />
       </HvLabel>

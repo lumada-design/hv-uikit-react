@@ -90,7 +90,7 @@ HvLabelText.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * If ´true´ the input is disabled.
+   * If ´true´ the label is disabled.
    */
   disabled: PropTypes.bool
 };

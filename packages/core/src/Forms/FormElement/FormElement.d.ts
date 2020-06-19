@@ -17,13 +17,13 @@ export interface HvFormElementProps
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the childrens through the context.
    */
-  elementStatus?: HvFormStatus;
+  status?: HvFormStatus;
   /**
    * Represents the status of this form element, 
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the childrens through the context.
    */
-  elementValue?: string;
+  value?: string;
 }
 
 export type HvFormElementClassKey =

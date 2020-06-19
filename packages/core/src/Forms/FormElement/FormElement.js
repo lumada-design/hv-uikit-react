@@ -9,20 +9,13 @@ import styles from "./styles";
  * The FormElement is a component used to contain and control components capable of receiving data.
  */
 const FormElement = props => {
-  const {
-    classes,
-    children,
-    elementStatus = "standBy",
-    elementValue,
-    elementDisabled = false,
-    ...others
-  } = props;
+  const { classes, children, status = "standBy", value, disabled = false, ...others } = props;
 
   const descriptors = findDescriptors(children, ["HvHelperText", "HvLabel"], {});
   const contextValue = {
-    elementStatus,
-    elementValue,
-    elementDisabled,
+    elementStatus: status,
+    elementValue: value,
+    elementDisabled: disabled,
     descriptors
   };
 
@@ -52,18 +45,18 @@ FormElement.propTypes = {
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the childrens through the context.
    */
-  elementStatus: PropTypes.oneOf(["standBy", "valid", "invalid"]),
+  status: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
    * Represents the status of this form element,
    * where valid is correct, invalid is incorrect and standby means no validations had run.
    * this value will be propagated to the childrens through the context.
    */
-  elementValue: PropTypes.string,
+  value: PropTypes.string,
   /**
    * If `true` the form element and all of it's children are disabled which blocks interactions.
    * this value will be propagated to the childrens through the context.
    */
-  elementDisabled: PropTypes.bool
+  disabled: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvFormElement" })(FormElement);

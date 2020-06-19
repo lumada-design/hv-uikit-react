@@ -9,7 +9,7 @@ describe.only("FormElement ", () => {
   beforeEach(() => {
     wrapper = shallow(
       <HvProvider>
-        <HvFormElement elementValue="George" elementStatus="valid">
+        <HvFormElement value="George" status="valid">
           <HvLabel key="1" id="test" label="First name">
             <HvBaseInput id="id-test" placeholder="Insert your name" />
           </HvLabel>

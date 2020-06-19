@@ -100,11 +100,11 @@ HvHelperText.propTypes = {
     "@global": PropTypes.string
   }).isRequired,
   /**
-   * The text to be shown by the info text.
+   * The text to replace the description to shown an alert to the user.
    */
   notification: PropTypes.string,
   /**
-   * If ´true´ the input is disabled.
+   * If ´true´ the text is disabled.
    */
   disabled: PropTypes.bool,
   /**

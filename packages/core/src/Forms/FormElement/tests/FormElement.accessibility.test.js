@@ -17,7 +17,7 @@ describe("FormElementA11Y", () => {
 
     const wrapper = mount(
       <HvProvider>
-        <HvFormElement elementValue="Albert2" elementStatus="invalid">
+        <HvFormElement value="Albert2" status="invalid">
           <HvLabel id={inputLabelId} label="First name">
             <HvBaseInput
               id={inputId}
