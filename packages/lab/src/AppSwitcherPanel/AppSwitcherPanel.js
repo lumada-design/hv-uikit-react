@@ -104,6 +104,10 @@ AppSwitcherPanel.propTypes = {
   applications: PropTypes.arrayOf(
     PropTypes.shape({
       /**
+       * Id of the application.
+       */
+      id: PropTypes.string.isRequired,
+      /**
        * Name of the application, this is the value that will be displayed on the component.
        */
       name: PropTypes.string.isRequired,
@@ -130,9 +134,9 @@ AppSwitcherPanel.propTypes = {
        */
       target: PropTypes.oneOf(["_top", "_blank"]),
       /**
-       * Callback triggered when the action is clicked
+       * True when the application is selected, false otherwise.
        */
-      onClickCallback: PropTypes.func
+      isSelected: PropTypes.bool
     })
   ).isRequired,
   /**
