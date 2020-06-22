@@ -15,9 +15,9 @@ badge maxCount is 99
 all badges renders an icon
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-badge--with-icon
     Wait Until Element Is Visible    //*[local-name() = 'svg']    7s
-    Page Should Contain Element      //*[local-name() = 'svg']    limit=5
+    Page Should Contain Element      //*[local-name() = 'svg']    limit=7
     
 all badges renders a text
     go to                          ${STORYBOOK_URL}/iframe.html?id=components-badge--with-text
     Wait Until Page Contains       Events                    10s
-    Page Should Contain Element    //*[text() = 'Events']    limit=5
+    Page Should Contain Element    //*[text() = 'Events']    limit=7
