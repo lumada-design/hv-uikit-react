@@ -274,37 +274,35 @@ export const Main = () => {
   // Data
 
   const compressorData = id => ({
-    headerTitle: `${id} Risk of downtime ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
       schedule: "Fix now"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track A, Zone 15 Brake"
   });
 
   const machineData = id => ({
-    headerTitle: `${id} Track severe ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
       schedule: "Fix 3rd shift"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track B, Load 2 Brake"
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
+    Array.from(Array(num).keys(), id => ({
+      id: `id_${id}`,
+      probability: 90 + id,
+      timeHorizon: 8 + id,
+      checkboxProps: { value: `id_${id}` },
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+    }));
 
   return (
     <HvAssetInventory
@@ -494,37 +492,35 @@ export const Configurations = () => {
   // --------------------------- Values ---------------------------------
 
   const compressorData = id => ({
-    headerTitle: `${id} Risk of downtime ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
       schedule: "Fix now"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track A, Zone 15 Brake"
   });
 
   const machineData = id => ({
-    headerTitle: `${id} Track severe ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
       schedule: "Fix 3rd shift"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track B, Load 2 Brake"
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
+    Array.from(Array(num).keys(), id => ({
+      id: `id_${id}`,
+      probability: 90 + id,
+      timeHorizon: 8 + id,
+      checkboxProps: { value: `id_${id}` },
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+    }));
 
   // ----------------------- Configuration ------------------------------
 
@@ -901,37 +897,35 @@ export const ThreeViews = () => {
   // Data
 
   const compressorData = id => ({
-    headerTitle: `${id} Risk of downtime ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
       schedule: "Fix now"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track A, Zone 15 Brake"
   });
 
   const machineData = id => ({
-    headerTitle: `${id} Track severe ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
       schedule: "Fix 3rd shift"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track B, Load 2 Brake"
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
+    Array.from(Array(num).keys(), id => ({
+      id: `id_${id}`,
+      probability: 90 + id,
+      timeHorizon: 8 + id,
+      checkboxProps: { value: `id_${id}` },
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+    }));
 
   return (
     <HvAssetInventory
@@ -1478,37 +1472,35 @@ export const Accessibility = () => {
   // Data
 
   const compressorData = id => ({
-    headerTitle: `${id} Risk of downtime ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
       schedule: "Fix now"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track A, Zone 15 Brake"
   });
 
   const machineData = id => ({
-    headerTitle: `${id} Track severe ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
       schedule: "Fix 3rd shift"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track B, Load 2 Brake"
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
+    Array.from(Array(num).keys(), id => ({
+      id: `id_${id}`,
+      probability: 90 + id,
+      timeHorizon: 8 + id,
+      checkboxProps: { value: `id_${id}` },
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+    }));
 
   return (
     <HvAssetInventory
@@ -1775,37 +1767,35 @@ export const AccessibilityList = () => {
   // Data
 
   const compressorData = id => ({
-    headerTitle: `${id} Risk of downtime ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Risk of downtime ${id + 1}`,
     status: 5,
     event: {
       description: `Risk of downtime on Truck ${id}`,
       timestamp: "2 minutes ago",
       schedule: "Fix now"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track A, Zone 15 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track A, Zone 15 Brake"
   });
 
   const machineData = id => ({
-    headerTitle: `${id} Track severe ${id + 1}`,
-    id: `id_${id}`,
+    headerTitle: `Track severe ${id + 1}`,
     status: 2,
     event: {
       description: `Track ${id} severe breakdown`,
       timestamp: "2 hours ago",
       schedule: "Fix 3rd shift"
     },
-    probability: 90 + id,
-    timeHorizon: 8 + id,
-    relatedAssets: "Track B, Load 2 Brake",
-    checkboxValue: `id_${id}`
+    relatedAssets: "Track B, Load 2 Brake"
   });
 
   const values = (num = 10) =>
-    Array.from(Array(num).keys()).map(i => (i % 2 === 0 ? compressorData(i) : machineData(i)));
+    Array.from(Array(num).keys(), id => ({
+      id: `id_${id}`,
+      probability: 90 + id,
+      timeHorizon: 8 + id,
+      checkboxProps: { value: `id_${id}` },
+      ...(id % 2 === 0 ? compressorData(id) : machineData(id))
+    }));
 
   return (
     <HvAssetInventory

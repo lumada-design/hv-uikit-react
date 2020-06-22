@@ -7,15 +7,15 @@ Test Template     validate search
 
 
 *** Test Cases ***
-filter just specific card when search for Event Title    ${cards}    1    7 trac    7 Track severe 8
+filter just specific card when search for Event Title    ${cards}    5    trac      Track severe 8
 filter just specific card when search for Event fix      ${cards}    5    fix n     Fix now
-filter just specific card when search for Probability    ${cards}    1    97        7 Track severe 8
+filter just specific card when search for Probability    ${cards}    1    97        Track severe 8
 
 list view filter rows when search for Event Title
     [Documentation]    traceability: issue 1522
     [Template]    NONE
     Click Element    ${listViewButton}
-    validate search    ${rows}    1    7 trac    Track 7 severe breakdown
+    validate search    ${rows}    1    track 7      Track 7 severe breakdown
 
 hide cards and pagination when search does not return data
     [Template]    NONE

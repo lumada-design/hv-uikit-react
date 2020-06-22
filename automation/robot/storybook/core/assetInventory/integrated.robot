@@ -11,7 +11,7 @@ select, search and sort
     Input Text                     ${searchBox}    Track
     Click Element                  ${dropdownHeader}
     Click Element                  ${sortTitleDesc}
-    Checkbox Should Be Selected    ${checkBox4}
+    Checkbox Should Be Selected    ${checkBox3}
 
 search, select, list view, select, paginate and card view
     Input Text                         ${searchBox}    Track
