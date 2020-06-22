@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelperText should render correctly 1`] = `
+<WithStyles(HvHelperText)
+  id="base"
+  notification="test"
+>
+  <HvHelperText
+    classes={
+      Object {
+        "helperDisabled": "HvHelperText-helperDisabled",
+        "helperText": "HvHelperText-helperText",
+        "root": "HvHelperText-root",
+        "showText": "HvHelperText-showText",
+        "topGutter": "HvHelperText-topGutter",
+      }
+    }
+    id="base"
+    notification="test"
+  >
+    <WithStyles(ForwardRef)
+      className="HvHelperText-helperText HvHelperText-topGutter"
+      id="base"
+      variant="infoText"
+    >
+      <ForwardRef
+        className="HvHelperText-helperText HvHelperText-topGutter"
+        classes={
+          Object {
+            "3xlTitle": "HvTypography-3xlTitle",
+            "4xlTitle": "HvTypography-4xlTitle",
+            "5xlTitle": "HvTypography-5xlTitle",
+            "disabledButtonText": "HvTypography-disabledButtonText",
+            "highlightText": "HvTypography-highlightText",
+            "infoText": "HvTypography-infoText",
+            "inlineLink": "HvTypography-inlineLink",
+            "lTitle": "HvTypography-lTitle",
+            "labelText": "HvTypography-labelText",
+            "mTitle": "HvTypography-mTitle",
+            "normalText": "HvTypography-normalText",
+            "placeholderText": "HvTypography-placeholderText",
+            "root": "HvTypography-root",
+            "sLink": "HvTypography-sLink",
+            "sText": "HvTypography-sText",
+            "sTitle": "HvTypography-sTitle",
+            "selectedNavText": "HvTypography-selectedNavText",
+            "selectedText": "HvTypography-selectedText",
+            "vizText": "HvTypography-vizText",
+            "xlTitle": "HvTypography-xlTitle",
+            "xsTitle": "HvTypography-xsTitle",
+            "xxlTitle": "HvTypography-xxlTitle",
+            "xxsTitle": "HvTypography-xxsTitle",
+          }
+        }
+        id="base"
+        variant="infoText"
+      >
+        <p
+          className="HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-infoText"
+          id="base"
+        >
+          test
+        </p>
+      </ForwardRef>
+    </WithStyles(ForwardRef)>
+    <WithStyles(ForwardRef)
+      aria-atomic="true"
+      aria-live="polite"
+      aria-relevant="additions text"
+      className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
+      id="base-notification"
+      variant="infoText"
+    >
+      <ForwardRef
+        aria-atomic="true"
+        aria-live="polite"
+        aria-relevant="additions text"
+        className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
+        classes={
+          Object {
+            "3xlTitle": "HvTypography-3xlTitle",
+            "4xlTitle": "HvTypography-4xlTitle",
+            "5xlTitle": "HvTypography-5xlTitle",
+            "disabledButtonText": "HvTypography-disabledButtonText",
+            "highlightText": "HvTypography-highlightText",
+            "infoText": "HvTypography-infoText",
+            "inlineLink": "HvTypography-inlineLink",
+            "lTitle": "HvTypography-lTitle",
+            "labelText": "HvTypography-labelText",
+            "mTitle": "HvTypography-mTitle",
+            "normalText": "HvTypography-normalText",
+            "placeholderText": "HvTypography-placeholderText",
+            "root": "HvTypography-root",
+            "sLink": "HvTypography-sLink",
+            "sText": "HvTypography-sText",
+            "sTitle": "HvTypography-sTitle",
+            "selectedNavText": "HvTypography-selectedNavText",
+            "selectedText": "HvTypography-selectedText",
+            "vizText": "HvTypography-vizText",
+            "xlTitle": "HvTypography-xlTitle",
+            "xsTitle": "HvTypography-xsTitle",
+            "xxlTitle": "HvTypography-xxlTitle",
+            "xxsTitle": "HvTypography-xxsTitle",
+          }
+        }
+        id="base-notification"
+        variant="infoText"
+      >
+        <p
+          aria-atomic="true"
+          aria-live="polite"
+          aria-relevant="additions text"
+          className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-infoText"
+          id="base-notification"
+        >
+          test
+        </p>
+      </ForwardRef>
+    </WithStyles(ForwardRef)>
+  </HvHelperText>
+</WithStyles(HvHelperText)>
+`;

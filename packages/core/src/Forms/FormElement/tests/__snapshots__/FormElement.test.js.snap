@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormElement  should render correctly 1`] = `
+<WithStyles(FormElement)
+  status="valid"
+  value="George"
+>
+  <WithStyles(HvLabelText)
+    id="test"
+    key="1"
+    label="First name"
+  >
+    <WithStyles(HvBaseInput)
+      id="id-test"
+      placeholder="Insert your name"
+    />
+  </WithStyles(HvLabelText)>
+  <WithStyles(HvHelperText)
+    id="infotext-main"
+    key="2"
+    notification="warning"
+  >
+    Write your name in this input do not put numbers
+  </WithStyles(HvHelperText)>
+</WithStyles(FormElement)>
+`;
+
+exports[`FormElement  should render correctly 2`] = `
+<WithStyles(HvBaseInput)
+  id="id-test"
+  placeholder="Insert your name"
+/>
+`;
+
+exports[`FormElement  should render correctly 3`] = `
+<WithStyles(HvHelperText)
+  id="infotext-main"
+  key="2"
+  notification="warning"
+>
+  Write your name in this input do not put numbers
+</WithStyles(HvHelperText)>
+`;

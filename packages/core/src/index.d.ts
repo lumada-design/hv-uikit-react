@@ -55,6 +55,11 @@ export * from "./Header";
 export { default as HvInput } from "./Input";
 export * from "./Input";
 
+export * from "./Forms";
+
+export { default as HvLabel } from "./Forms/Label";
+export * from "./Forms/Label";
+
 export { default as HvKpi } from "./Kpi";
 export * from "./Kpi";
 

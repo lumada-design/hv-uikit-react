@@ -21,6 +21,7 @@ export { default as HvFooter } from "./Footer";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
 export { default as HvInput } from "./Input";
+export { default as HvSearchBox } from "./SearchBox";
 export { default as HvKpi } from "./Kpi";
 export { default as HvLinechart } from "./Linechart";
 export { default as HvLink } from "./Link";
@@ -31,7 +32,6 @@ export { default as HvModal } from "./Modal";
 export * from "./Modal";
 export { default as HvMultiButton } from "./MultiButton";
 export { default as HvPagination } from "./Pagination";
-export { default as HvSearchBox } from "./SearchBox";
 export * from "./Selectors";
 export { default as HvSnackbar } from "./Snackbar";
 export * from "./Snackbar";
@@ -45,6 +45,7 @@ export { default as HvTooltip } from "./Tooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
+export * from "./Forms";
 
 // HOCs
 export { default as withId } from "./withId";
