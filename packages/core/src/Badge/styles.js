@@ -1,3 +1,11 @@
+const labelBaseStyle = theme => ({
+  ...theme.hv.typography.labelText,
+  fontFamily: theme.hv.typography.fontFamily,
+  padding: "0 5px",
+  wordBreak: "keep-all",
+  color: theme.hv.palette.atmosphere.atmo1
+});
+
 const styles = theme => ({
   root: {
     position: "relative",
@@ -19,11 +27,11 @@ const styles = theme => ({
     left: "-7px"
   },
   showCount: {
-    ...theme.hv.typography.labelText,
-    fontFamily: theme.hv.typography.fontFamily,
-    padding: "0 5px",
-    maxWidth: 30,
-    color: theme.hv.palette.atmosphere.atmo1
+    ...labelBaseStyle(theme),
+    maxWidth: 30
+  },
+  showLabel: {
+    ...labelBaseStyle(theme)
   },
   badgeOneDigit: {
     padding: 0,
