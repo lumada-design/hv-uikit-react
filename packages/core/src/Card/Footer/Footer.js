@@ -28,7 +28,7 @@ const Footer = props => {
   } = props;
 
   return (
-    <CardActions id={id} className={clsx(classes.root, className)} {...others}>
+    <CardActions id={setId(id, "footer")} className={clsx(classes.root, className)} {...others}>
       {isSelectable && (
         <div className={classes.leftContainer}>
           <HvCheckBox onChange={onChange} checked={checked} {...checkboxProps} />
@@ -40,7 +40,7 @@ const Footer = props => {
         }
       >
         <Actions
-          id={setId(id, "actions")}
+          id={id}
           actions={actions}
           maxVisibleActions={maxVisibleActions}
           actionsCallback={actionsCallback}

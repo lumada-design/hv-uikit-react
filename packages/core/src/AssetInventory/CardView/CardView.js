@@ -78,13 +78,8 @@ const CardView = ({
    */
   const renderCards = containerRef => {
     return values.map((value, index) => {
-      if (selectedValues && selectedValues.indexOf(value.id) > -1) {
-        // eslint-disable-next-line no-param-reassign
-        value.checked = true;
-      } else {
-        // eslint-disable-next-line no-param-reassign
-        value.checked = false;
-      }
+      // eslint-disable-next-line no-param-reassign
+      value.checked = !!(selectedValues && selectedValues.indexOf(value.id) > -1);
 
       const gridId = setId(value.id, "grid");
 
