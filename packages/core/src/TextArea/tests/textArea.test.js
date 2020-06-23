@@ -2,13 +2,9 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { toHaveNoViolations } from "jest-axe";
-import axe from "../../../config/axe-config";
 
 import HvProvider from "../../Provider";
 import TextArea from "..";
-
-expect.extend(toHaveNoViolations);
 
 describe("TextArea withStyles", () => {
   let wrapper;
@@ -205,35 +201,5 @@ describe("TextArea Component", () => {
     inputElement.scrollTop = 20;
     inputElement.dispatchEvent(new Event("scroll"));
     expect(instance.state.autoScrolling).toBe(true);
-  });
-});
-
-describe("TextAreaA11Y", () => {
-  it("Simple", async () => {
-    const onChangeMock = jest.fn();
-    const labels = {
-      inputLabel: "Label",
-      placeholder: "Enter value",
-      startCount: "Inserted",
-      middleCount: "of",
-      endCount: "available"
-    };
-
-    const wrapper = mount(
-      <HvProvider>
-        <TextArea
-          labels={labels}
-          classes={{}}
-          rows={4}
-          initialValue="test"
-          onChange={onChangeMock}
-          maxCharQuantity={10}
-        />
-      </HvProvider>
-    );
-
-    const results = await axe(wrapper.html());
-
-    expect(results).toHaveNoViolations();
   });
 });

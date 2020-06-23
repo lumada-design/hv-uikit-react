@@ -2,16 +2,11 @@ import React from "react";
 import { mount } from "enzyme";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
-import { toHaveNoViolations } from "jest-axe";
 import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
 import HvProvider from "../../Provider";
 import iconVariants from "../../utils/iconVariants";
 import Button from "../../Button";
-
-import axe from "../../../config/axe-config";
-
-expect.extend(toHaveNoViolations);
 
 describe("Banner ", () => {
   const wrapper = mount(
@@ -189,58 +184,5 @@ describe("Banner ", () => {
     const error = mount(iconVariants("error")).find("Fail");
     expect(error.length).toBe(1);
     expect(iconVariants("test")).toBe(null);
-  });
-});
-
-describe("BannerA11Y", () => {
-  const bannerContentProps = {
-    actionProps: {
-      "aria-label": "Close Button Label"
-    }
-  };
-
-  it("simple banner should have no errors", async () => {
-    const wrapper = mount(
-      <HvProvider>
-        <Banner
-          variant="default"
-          open
-          showIcon
-          label="Label"
-          onClose={() => {}}
-          bannerContentProps={bannerContentProps}
-        />
-      </HvProvider>
-    );
-
-    const results = await axe(wrapper.html());
-
-    expect(results).toHaveNoViolations();
-  });
-
-  it("banner with actions should have no errors", async () => {
-    const wrapper = mount(
-      <HvProvider>
-        <Banner
-          id="banner"
-          variant="default"
-          open
-          actions={[
-            {
-              id: "testButton",
-              label: "test"
-            }
-          ]}
-          showIcon
-          label="Label"
-          onClose={() => {}}
-          bannerContentProps={bannerContentProps}
-        />
-      </HvProvider>
-    );
-
-    const results = await axe(wrapper.html());
-
-    expect(results).toHaveNoViolations();
   });
 });

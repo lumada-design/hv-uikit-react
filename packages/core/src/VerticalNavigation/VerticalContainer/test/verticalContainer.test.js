@@ -2,12 +2,8 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { toHaveNoViolations } from "jest-axe";
-import axe from "../../../../config/axe-config";
 import HvProvider from "../../../Provider";
 import VerticalContainer from "..";
-
-expect.extend(toHaveNoViolations);
 
 const Content = <div id="test_div" />;
 
@@ -122,24 +118,5 @@ describe("VerticalContainer", () => {
     expect(AnchorBarComponent.length).toBe(0);
     const containerComponent = wrapper.find("#test-container");
     expect(containerComponent.length).toBe(1);
-  });
-});
-
-describe("VerticalContainerA11Y", () => {
-  let wrapper;
-
-  it("default state", async () => {
-    wrapper = setupComponent();
-    const results = await axe(wrapper.html());
-
-    expect(results).toHaveNoViolations();
-  });
-
-  it("with disabled and single", async () => {
-    wrapper = setupComponent({
-      isOpen: true
-    });
-    const results = await axe(wrapper.html());
-    expect(results).toHaveNoViolations();
   });
 });
