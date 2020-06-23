@@ -3,45 +3,37 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
-import Barchart from "..";
+import { HvBarchart, HvProvider } from "../..";
 import { applyDataDefaults, applyLayoutDefaults } from "../barchartPlotlyOverrides";
 
-describe("Barchart withStyles", () => {
-  let wrapper;
+import { Main } from "../stories/Barchart.stories";
 
-  const trace1 = {
+const data = [
+  {
     x: [2300, 1000, 8500],
     y: ["January", "February", "March"],
     name: "Sales Target"
-  };
+  }
+];
+const layout = {};
 
-  const data = [trace1];
-  const layout = {};
-
-  beforeEach(() => {
-    wrapper = mount(
-      <HvProvider>
-        <Barchart data={data} layout={layout} />
-      </HvProvider>
-    );
-  });
+describe("Barchart", () => {
+  const wrapper = mount(
+    <HvProvider>
+      <Main />
+    </HvProvider>
+  );
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Barchart)).toMatchSnapshot();
+    expect(wrapper.find(HvBarchart)).toMatchSnapshot();
   });
 
   it("should render the Barchart", () => {
-    wrapper = mount(
-      <HvProvider>
-        <Barchart data={data} layout={layout} />
-      </HvProvider>
-    );
-    const barchart = wrapper.find(Barchart);
+    const barchart = wrapper.find(HvBarchart);
     expect(barchart.length).toBe(1);
   });
 

@@ -3,15 +3,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
-import Kpi from "..";
-
-const labels = {
-  title: "Avg. service time",
-  indicator: "8.85",
-  unit: "MS",
-  comparisonIndicatorInfo: "vs last 24h."
-};
+import { HvKpi, HvProvider } from "../..";
+import { Main } from "../stories/Kpi.stories";
 
 describe("Kpi", () => {
   let wrapper;
@@ -19,7 +12,7 @@ describe("Kpi", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Kpi labels={labels} />
+        <Main />
       </HvProvider>
     );
   });
@@ -29,11 +22,11 @@ describe("Kpi", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Kpi)).toMatchSnapshot();
+    expect(wrapper.find(HvKpi)).toMatchSnapshot();
   });
 
   it("should render the Kpi component", () => {
-    const KpiComponent = wrapper.find(Kpi);
+    const KpiComponent = wrapper.find(HvKpi);
     expect(KpiComponent.length).toBe(1);
   });
 });

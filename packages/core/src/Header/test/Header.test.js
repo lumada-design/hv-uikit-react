@@ -1,22 +1,19 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
-import Header from "../Header";
-import Brand from "../Brand";
+import { HvHeader, HvProvider } from "../..";
+import { Main } from "../stories/Header.stories";
 
-describe("Header withStyles", () => {
+describe("Header", () => {
   let wrapper;
 
   it("should be able to render", () => {
     wrapper = mount(
       <HvProvider>
-        <Header>
-          <Brand name="test" />
-        </Header>
+        <Main />
       </HvProvider>
     );
 
-    expect(wrapper.find(Header)).toMatchSnapshot();
+    expect(wrapper.find(HvHeader)).toMatchSnapshot();
   });
 });

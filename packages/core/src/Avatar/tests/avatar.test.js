@@ -1,14 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { LogIn, User } from "@hv/uikit-react-icons/dist";
+import { LogIn, User } from "@hv/uikit-react-icons";
+import { HvAvatar, HvButton, HvProvider } from "../..";
 
-import HvButton from "../../Button";
-
-import HvProvider from "../../Provider";
 import theme from "../../theme";
-
-import HvAvatar from "../index";
 
 function returnAvatarAndRootNode(wrapper) {
   const avatar = wrapper.find(HvAvatar);

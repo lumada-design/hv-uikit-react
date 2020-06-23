@@ -3,8 +3,8 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
-import Card from "..";
+import { HvCard, HvProvider } from "../..";
+import { Main } from "../stories/Card.stories";
 
 const configuration = {
   title: "title",
@@ -14,25 +14,17 @@ const configuration = {
   icon: "icon"
 };
 
-describe("Card withStyles", () => {
+describe("Card", () => {
   let wrapper;
 
   it("should be able to render with every property defined", () => {
     wrapper = mount(
       <HvProvider>
-        <Card
-          icon={configuration.icon}
-          headerTitle={configuration.title}
-          subheader={configuration.subtitle}
-          innerCardContent={configuration.content}
-          actions={configuration.actions}
-          mediaPath="path"
-          isSelectable
-        />
+        <Main />
       </HvProvider>
     );
 
-    expect(wrapper.find(Card)).toMatchSnapshot();
+    expect(wrapper.find(HvCard)).toMatchSnapshot();
   });
 
   it("should select when clicking on the card", () => {
@@ -40,7 +32,7 @@ describe("Card withStyles", () => {
     const onChangeM = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <Card
+        <HvCard
           icon={configuration.icon}
           headerTitle={configuration.title}
           subheader={configuration.subtitle}
@@ -67,7 +59,7 @@ describe("Card withStyles", () => {
     const onChangeM = jest.fn();
     wrapper = mount(
       <HvProvider>
-        <Card
+        <HvCard
           icon={configuration.icon}
           headerTitle={configuration.title}
           subheader={configuration.subtitle}

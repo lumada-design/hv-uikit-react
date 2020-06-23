@@ -1,17 +1,17 @@
 import React from "react";
 import { mount } from "enzyme";
-import Fail from "@hv/uikit-react-icons/dist/Fail";
+import { Fail } from "@hv/uikit-react-icons";
 import { Snackbar as MaterialSnackbar } from "@material-ui/core";
+import { HvButton, HvBanner, HvProvider } from "../..";
+
 import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
-import HvProvider from "../../Provider";
 import iconVariants from "../../utils/iconVariants";
-import Button from "../../Button";
 
 describe("Banner ", () => {
   const wrapper = mount(
     <HvProvider>
-      <Banner id="banner" variant="default" open={false} onClose={() => {}} />
+      <HvBanner id="banner" variant="default" open={false} onClose={() => {}} />
     </HvProvider>
   );
 
@@ -36,7 +36,7 @@ describe("Banner ", () => {
   it("should render the BannerContentWrapper component", () => {
     const bannerComponent = mount(
       <HvProvider>
-        <Banner id="banner" variant="default" label="label" open onClose={() => {}} />
+        <HvBanner id="banner" variant="default" label="label" open onClose={() => {}} />
       </HvProvider>
     ).find(HvBannerContentWrapper);
     expect(bannerComponent.length).toBe(1);
@@ -45,7 +45,7 @@ describe("Banner ", () => {
   it("should render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <Banner id="banner" variant="error" label="label" open showIcon onClose={() => {}} />
+        <HvBanner id="banner" variant="error" label="label" open showIcon onClose={() => {}} />
       </HvProvider>
     ).find(Fail);
     expect(iconComponent.length).toBe(1);
@@ -54,7 +54,7 @@ describe("Banner ", () => {
   it("shouldn't render the icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <Banner
+        <HvBanner
           id="banner"
           variant="error"
           label="label"
@@ -70,7 +70,7 @@ describe("Banner ", () => {
   it("should render a custom icon in the component", () => {
     const iconComponent = mount(
       <HvProvider>
-        <Banner
+        <HvBanner
           id="banner"
           variant="default"
           label="label"
@@ -86,24 +86,24 @@ describe("Banner ", () => {
   it("should render a action on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <Banner
+        <HvBanner
           id="banner"
           label="label"
           variant="default"
           open
-          actions={<Button>button</Button>}
+          actions={<HvButton>button</HvButton>}
           actionsPosition="inline"
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(Button);
+    ).find(HvButton);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should render a action by passing a structure on the message", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <Banner
+        <HvBanner
           id="banner1"
           variant="default"
           open
@@ -118,31 +118,31 @@ describe("Banner ", () => {
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(Button);
+    ).find(HvButton);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should render a action on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <Banner
+        <HvBanner
           id="banner"
           variant="default"
           open
           label="label"
-          actions={<Button>button</Button>}
+          actions={<HvButton>button</HvButton>}
           actionsPosition="bottom-right"
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(Button);
+    ).find(HvButton);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should render a action by passing a structure on the action container", () => {
     const buttonComponent = mount(
       <HvProvider>
-        <Banner
+        <HvBanner
           id="Snackbar"
           variant="default"
           open
@@ -157,7 +157,7 @@ describe("Banner ", () => {
           onClose={() => {}}
         />
       </HvProvider>
-    ).find(Button);
+    ).find(HvButton);
     expect(buttonComponent.length).toBe(1);
   });
 
@@ -165,7 +165,7 @@ describe("Banner ", () => {
     const offset = 10;
     let component = mount(
       <HvProvider>
-        <Banner open offset={offset} onClose={() => {}} label="label" />
+        <HvBanner open offset={offset} onClose={() => {}} label="label" />
       </HvProvider>
     ).find(MaterialSnackbar);
 
@@ -173,7 +173,7 @@ describe("Banner ", () => {
 
     component = mount(
       <HvProvider>
-        <Banner open offset={offset} anchorOrigin="bottom" label="label" onClose={() => {}} />
+        <HvBanner open offset={offset} anchorOrigin="bottom" label="label" onClose={() => {}} />
       </HvProvider>
     ).find(MaterialSnackbar);
 

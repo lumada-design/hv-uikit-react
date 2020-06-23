@@ -1,37 +1,19 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import AngleForwards12 from "@hv/uikit-react-icons/dist/DropRightXS";
-import HvProvider from "../../Provider";
-import Breadcrumb from "..";
+import { DropRightXS } from "@hv/uikit-react-icons";
+import { HvBreadcrumb, HvProvider } from "../..";
+import {
+  Main,
+  LimitedToFivePaths,
+  LimitedToTwoPaths,
+  WithURL
+} from "../stories/BreadCrumb.stories";
 
-const listRoute = [
-  {
-    label: "label",
-    path: "path"
-  },
-  {
-    label: "label",
-    path: "path"
-  },
-  {
-    label: "label",
-    path: "path"
-  },
-  {
-    label: "label",
-    path: "path"
-  },
-  {
-    label: "label",
-    path: "path"
-  }
-];
-
-describe("Breadcrumb withStyles", () => {
+describe("Breadcrumb", () => {
   const wrapper = mount(
     <HvProvider>
-      <Breadcrumb />
+      <Main />
     </HvProvider>
   );
 
@@ -40,28 +22,23 @@ describe("Breadcrumb withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Breadcrumb)).toMatchSnapshot();
+    expect(wrapper.find(HvBreadcrumb)).toMatchSnapshot();
   });
 
   it("should render the Breadcrumb component", () => {
-    const CardComponent = wrapper.find(Breadcrumb);
-    expect(CardComponent.length).toBe(1);
+    const component = wrapper.find(HvBreadcrumb);
+    expect(component.length).toBe(1);
   });
 
-  it("should create a breadcrumb with 5 pages", () => {
-    const separatorList = mount(
-      <HvProvider>
-        <Breadcrumb listRoute={listRoute} />
-      </HvProvider>
-    ).find(AngleForwards12);
-
-    expect(separatorList.length).toBe(4);
+  it("should create a breadcrumb with 9 pages", () => {
+    const separatorList = wrapper.find(DropRightXS);
+    expect(separatorList.length).toBe(8);
   });
 
   it("should create a breadcrumb with submenu", () => {
     const existsDropdownMenu = mount(
       <HvProvider>
-        <Breadcrumb listRoute={listRoute} maxVisible={2} />
+        <LimitedToFivePaths />
       </HvProvider>
     ).exists("DropDownMenu");
 
@@ -71,9 +48,9 @@ describe("Breadcrumb withStyles", () => {
   it("should present always two paths", () => {
     const separatorList = mount(
       <HvProvider>
-        <Breadcrumb listRoute={listRoute} maxVisible={0} />
+        <LimitedToTwoPaths />
       </HvProvider>
-    ).find(AngleForwards12);
+    ).find(DropRightXS);
 
     expect(separatorList.length).toBe(2);
   });
@@ -81,9 +58,9 @@ describe("Breadcrumb withStyles", () => {
   it("should create a breadcrumb with 4 pages from url", () => {
     const separatorList = mount(
       <HvProvider>
-        <Breadcrumb url="http://test/a/b/c/d" />
+        <WithURL />
       </HvProvider>
-    ).find(AngleForwards12);
+    ).find(DropRightXS);
 
     expect(separatorList.length).toBe(3);
   });

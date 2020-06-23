@@ -2,25 +2,26 @@
 
 // import { mount } from "enzyme";
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 
-import CheckBoxIcon from "@hv/uikit-react-icons/dist/Checkbox";
+import { Checkbox } from "@hv/uikit-react-icons";
 
-import CheckBox from "..";
+import { HvCheckBox, HvProvider } from "../../..";
 import labelPositions from "../../labelPositions";
-import HvProvider from "../../../Provider";
 import theme from "../../../theme";
 
-describe("CheckBox withStyles", () => {
+import { Main, Disabled } from "../stories/CheckBox.stories";
+
+describe("CheckBox", () => {
   let wrapper;
 
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
 
   beforeEach(async () => {
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
-        <CheckBox />
+        <Main />
       </HvProvider>
     );
   });
@@ -30,46 +31,35 @@ describe("CheckBox withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(CheckBox)).toMatchSnapshot();
+    expect(wrapper.find(HvCheckBox)).toMatchSnapshot();
   });
 
   it("should render the Checkbox component", () => {
-    wrapper = mount(
-      <HvProvider>
-        <CheckBox />
-      </HvProvider>
-    );
-    const buttonComponent = wrapper.find(CheckBox);
+    const buttonComponent = wrapper.find(HvCheckBox);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should have an icon", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <CheckBox />
-      </HvProvider>
-    );
-
-    const component = mountWrapper.find(CheckBox);
+    const component = wrapper.find(HvCheckBox);
     const componentHtml = component.html();
 
-    expect(component.find(CheckBoxIcon).length).toBe(1);
+    expect(component.find(Checkbox).length).toBe(1);
 
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
-    const mountWrapper = mount(
+    wrapper = mount(
       <HvProvider>
-        <CheckBox disabled />
+        <Disabled />
       </HvProvider>
     );
 
-    const component = mountWrapper.find(CheckBox);
+    const component = wrapper.find(HvCheckBox);
     const componentHtml = component.html();
 
-    expect(component.find(CheckBoxIcon).length).toBe(1);
+    expect(component.find(Checkbox).length).toBe(1);
 
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
@@ -78,9 +68,9 @@ describe("CheckBox withStyles", () => {
   it("should apply the correct class name when there is a label at the start", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <CheckBox label="test" labelPlacement={labelPositions.start} />
+        <HvCheckBox label="test" labelPlacement={labelPositions.start} />
       </HvProvider>
-    ).find(CheckBox);
+    ).find(HvCheckBox);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(true);
     expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
@@ -88,9 +78,9 @@ describe("CheckBox withStyles", () => {
   it("should apply the correct class name when there is a label at the end", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <CheckBox label="test" labelPlacement={labelPositions.end} />
+        <HvCheckBox label="test" labelPlacement={labelPositions.end} />
       </HvProvider>
-    ).find(CheckBox);
+    ).find(HvCheckBox);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
     expect(mountWrapper.html().includes(labelEndClassName)).toBe(true);
   });
@@ -98,9 +88,9 @@ describe("CheckBox withStyles", () => {
   it("should not apply any class name when there is no label specified", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <CheckBox labelPlacement={labelPositions.start} />
+        <HvCheckBox labelPlacement={labelPositions.start} />
       </HvProvider>
-    ).find(CheckBox);
+    ).find(HvCheckBox);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
     expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });

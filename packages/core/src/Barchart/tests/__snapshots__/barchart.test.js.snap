@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Barchart withStyles should render correctly 1`] = `
+exports[`Barchart should render correctly 1`] = `
 <WithStyles(Barchart)
   data={
     Array [
@@ -9,19 +9,22 @@ exports[`Barchart withStyles should render correctly 1`] = `
         "name": "Sales Target",
         "type": "bar",
         "x": Array [
-          2300,
-          1000,
-          8500,
-        ],
-        "y": Array [
           "January",
           "February",
           "March",
         ],
+        "y": Array [
+          2300,
+          1000,
+          8500,
+        ],
       },
     ]
   }
-  layout={Object {}}
+  subtitle="Sales performance (YTD)"
+  title="Simple Vertical Bar Chart"
+  xAxisTitle="Thousands of Dollars ($)"
+  yAxisTitle="Axis description"
 >
   <Barchart
     classes={Object {}}
@@ -32,19 +35,22 @@ exports[`Barchart withStyles should render correctly 1`] = `
           "name": "Sales Target",
           "type": "bar",
           "x": Array [
-            2300,
-            1000,
-            8500,
-          ],
-          "y": Array [
             "January",
             "February",
             "March",
           ],
+          "y": Array [
+            2300,
+            1000,
+            8500,
+          ],
         },
       ]
     }
-    layout={Object {}}
+    subtitle="Sales performance (YTD)"
+    title="Simple Vertical Bar Chart"
+    xAxisTitle="Thousands of Dollars ($)"
+    yAxisTitle="Axis description"
   >
     <WithStyles(Chart)
       afterPlot={[Function]}
@@ -56,14 +62,14 @@ exports[`Barchart withStyles should render correctly 1`] = `
             "name": "Sales Target",
             "type": "bar",
             "x": Array [
-              2300,
-              1000,
-              8500,
-            ],
-            "y": Array [
               "January",
               "February",
               "March",
+            ],
+            "y": Array [
+              2300,
+              1000,
+              8500,
             ],
           },
         ]
@@ -74,7 +80,11 @@ exports[`Barchart withStyles should render correctly 1`] = `
           "bargroupgap": 0.25,
         }
       }
+      subtitle="Sales performance (YTD)"
+      title="Simple Vertical Bar Chart"
       tooltipType="multiple"
+      xAxisTitle="Thousands of Dollars ($)"
+      yAxisTitle="Axis description"
     >
       <Chart
         afterPlot={[Function]}
@@ -98,14 +108,14 @@ exports[`Barchart withStyles should render correctly 1`] = `
               "name": "Sales Target",
               "type": "bar",
               "x": Array [
-                2300,
-                1000,
-                8500,
-              ],
-              "y": Array [
                 "January",
                 "February",
                 "March",
+              ],
+              "y": Array [
+                2300,
+                1000,
+                8500,
               ],
             },
           ]
@@ -116,7 +126,11 @@ exports[`Barchart withStyles should render correctly 1`] = `
             "bargroupgap": 0.25,
           }
         }
+        subtitle="Sales performance (YTD)"
+        title="Simple Vertical Bar Chart"
         tooltipType="multiple"
+        xAxisTitle="Thousands of Dollars ($)"
+        yAxisTitle="Axis description"
       >
         <div
           className="HvChart-root"
@@ -124,12 +138,93 @@ exports[`Barchart withStyles should render correctly 1`] = `
           <div
             className="HvChart-titleContainer"
           >
+            <WithStyles(ForwardRef)
+              variant="mTitle"
+            >
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                variant="mTitle"
+              >
+                <h3
+                  className="HvTypography-root HvTypography-mTitle"
+                >
+                  Simple Vertical Bar Chart
+                </h3>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
             <div
               className="HvChart-subtitle"
-            />
+            >
+              <WithStyles(ForwardRef)
+                variant="sText"
+              >
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledButtonText": "HvTypography-disabledButtonText",
+                      "highlightText": "HvTypography-highlightText",
+                      "infoText": "HvTypography-infoText",
+                      "inlineLink": "HvTypography-inlineLink",
+                      "lTitle": "HvTypography-lTitle",
+                      "labelText": "HvTypography-labelText",
+                      "mTitle": "HvTypography-mTitle",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sLink": "HvTypography-sLink",
+                      "sText": "HvTypography-sText",
+                      "sTitle": "HvTypography-sTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "selectedText": "HvTypography-selectedText",
+                      "vizText": "HvTypography-vizText",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
+                  }
+                  variant="sText"
+                >
+                  <p
+                    className="HvTypography-root HvTypography-sText"
+                  >
+                    Sales performance (YTD)
+                  </p>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+            </div>
           </div>
           <div
-            className=""
+            className="HvChart-paddingTop"
             onMouseMove={[Function]}
           >
             <WithStyles(Plot)
@@ -147,14 +242,14 @@ exports[`Barchart withStyles should render correctly 1`] = `
                     "name": "Sales Target",
                     "type": "bar",
                     "x": Array [
-                      2300,
-                      1000,
-                      8500,
-                    ],
-                    "y": Array [
                       "January",
                       "February",
                       "March",
+                    ],
+                    "y": Array [
+                      2300,
+                      1000,
+                      8500,
                     ],
                   },
                 ]
@@ -219,8 +314,8 @@ exports[`Barchart withStyles should render correctly 1`] = `
                     "linecolor": "#BCBCBC",
                     "linewidth": 1,
                     "range": Array [
-                      350,
-                      9150,
+                      -0.5,
+                      2.5,
                     ],
                     "showgrid": false,
                     "tickcolor": "#BCBCBC",
@@ -246,8 +341,9 @@ exports[`Barchart withStyles should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
+                      "text": "Thousands of Dollars ($)",
                     },
-                    "type": "linear",
+                    "type": "category",
                     "zeroline": false,
                   },
                   "yaxis": Object {
@@ -258,8 +354,8 @@ exports[`Barchart withStyles should render correctly 1`] = `
                     "linecolor": "#BCBCBC",
                     "linewidth": 1,
                     "range": Array [
-                      -0.11111111111111112,
-                      2.111111111111111,
+                      0,
+                      8947.368421052632,
                     ],
                     "showgrid": true,
                     "tickcolor": "#BCBCBC",
@@ -285,14 +381,16 @@ exports[`Barchart withStyles should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
+                      "text": "Axis description",
                     },
-                    "type": "category",
+                    "type": "linear",
                     "zeroline": false,
                   },
                 }
               }
               onHover={[Function]}
               onUnHover={[Function]}
+              title="Simple Vertical Bar Chart"
             >
               <Plot
                 afterPlot={[Function]}
@@ -310,14 +408,14 @@ exports[`Barchart withStyles should render correctly 1`] = `
                       "name": "Sales Target",
                       "type": "bar",
                       "x": Array [
-                        2300,
-                        1000,
-                        8500,
-                      ],
-                      "y": Array [
                         "January",
                         "February",
                         "March",
+                      ],
+                      "y": Array [
+                        2300,
+                        1000,
+                        8500,
                       ],
                     },
                   ]
@@ -382,8 +480,8 @@ exports[`Barchart withStyles should render correctly 1`] = `
                       "linecolor": "#BCBCBC",
                       "linewidth": 1,
                       "range": Array [
-                        350,
-                        9150,
+                        -0.5,
+                        2.5,
                       ],
                       "showgrid": false,
                       "tickcolor": "#BCBCBC",
@@ -409,8 +507,9 @@ exports[`Barchart withStyles should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
+                        "text": "Thousands of Dollars ($)",
                       },
-                      "type": "linear",
+                      "type": "category",
                       "zeroline": false,
                     },
                     "yaxis": Object {
@@ -421,8 +520,8 @@ exports[`Barchart withStyles should render correctly 1`] = `
                       "linecolor": "#BCBCBC",
                       "linewidth": 1,
                       "range": Array [
-                        -0.11111111111111112,
-                        2.111111111111111,
+                        0,
+                        8947.368421052632,
                       ],
                       "showgrid": true,
                       "tickcolor": "#BCBCBC",
@@ -448,14 +547,16 @@ exports[`Barchart withStyles should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
+                        "text": "Axis description",
                       },
-                      "type": "category",
+                      "type": "linear",
                       "zeroline": false,
                     },
                   }
                 }
                 onHover={[Function]}
                 onUnHover={[Function]}
+                title="Simple Vertical Bar Chart"
               >
                 <PlotlyComponent
                   classes={Object {}}
@@ -472,14 +573,14 @@ exports[`Barchart withStyles should render correctly 1`] = `
                         "name": "Sales Target",
                         "type": "bar",
                         "x": Array [
-                          2300,
-                          1000,
-                          8500,
-                        ],
-                        "y": Array [
                           "January",
                           "February",
                           "March",
+                        ],
+                        "y": Array [
+                          2300,
+                          1000,
+                          8500,
                         ],
                       },
                     ]
@@ -545,8 +646,8 @@ exports[`Barchart withStyles should render correctly 1`] = `
                         "linecolor": "#BCBCBC",
                         "linewidth": 1,
                         "range": Array [
-                          350,
-                          9150,
+                          -0.5,
+                          2.5,
                         ],
                         "showgrid": false,
                         "tickcolor": "#BCBCBC",
@@ -572,8 +673,9 @@ exports[`Barchart withStyles should render correctly 1`] = `
                             ],
                             "size": 10,
                           },
+                          "text": "Thousands of Dollars ($)",
                         },
-                        "type": "linear",
+                        "type": "category",
                         "zeroline": false,
                       },
                       "yaxis": Object {
@@ -584,8 +686,8 @@ exports[`Barchart withStyles should render correctly 1`] = `
                         "linecolor": "#BCBCBC",
                         "linewidth": 1,
                         "range": Array [
-                          -0.11111111111111112,
-                          2.111111111111111,
+                          0,
+                          8947.368421052632,
                         ],
                         "showgrid": true,
                         "tickcolor": "#BCBCBC",
@@ -611,8 +713,9 @@ exports[`Barchart withStyles should render correctly 1`] = `
                             ],
                             "size": 10,
                           },
+                          "text": "Axis description",
                         },
-                        "type": "category",
+                        "type": "linear",
                         "zeroline": false,
                       },
                     }
@@ -626,6 +729,7 @@ exports[`Barchart withStyles should render correctly 1`] = `
                       "position": "relative",
                     }
                   }
+                  title="Simple Vertical Bar Chart"
                   useResizeHandler={false}
                 >
                   <div

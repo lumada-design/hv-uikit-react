@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToggleButton withStyles should render correctly 1`] = `
+exports[`ToggleButton should render correctly 1`] = `
 <WithStyles(WithLabels)
+  aria-label="Lock selection"
+  labels={
+    Object {
+      "notSelectedTitle": "Open",
+      "selectedTitle": "Closed",
+    }
+  }
   notSelectedIcon={
     Object {
       "$$typeof": Symbol(react.forward_ref),
@@ -301,13 +308,319 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
       "useStyles": [Function],
     }
   }
+  selectedIcon={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Naked": [Function],
+      "displayName": "WithStyles(Lock)",
+      "options": Object {
+        "defaultTheme": Object {
+          "breakpoints": Object {
+            "between": [Function],
+            "down": [Function],
+            "keys": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+            "only": [Function],
+            "up": [Function],
+            "values": Object {
+              "lg": 1280,
+              "md": 960,
+              "sm": 600,
+              "xl": 1920,
+              "xs": 0,
+            },
+            "width": [Function],
+          },
+          "direction": "ltr",
+          "mixins": Object {
+            "gutters": [Function],
+            "toolbar": Object {
+              "@media (min-width:0px) and (orientation: landscape)": Object {
+                "minHeight": 48,
+              },
+              "@media (min-width:600px)": Object {
+                "minHeight": 64,
+              },
+              "minHeight": 56,
+            },
+          },
+          "overrides": Object {},
+          "palette": Object {
+            "action": Object {
+              "active": "rgba(0, 0, 0, 0.54)",
+              "disabled": "rgba(0, 0, 0, 0.26)",
+              "disabledBackground": "rgba(0, 0, 0, 0.12)",
+              "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
+              "selected": "rgba(0, 0, 0, 0.14)",
+            },
+            "augmentColor": [Function],
+            "background": Object {
+              "default": "#fafafa",
+              "paper": "#fff",
+            },
+            "common": Object {
+              "black": "#000",
+              "white": "#fff",
+            },
+            "contrastThreshold": 3,
+            "divider": "rgba(0, 0, 0, 0.12)",
+            "error": Object {
+              "contrastText": "#fff",
+              "dark": "#d32f2f",
+              "light": "#e57373",
+              "main": "#f44336",
+            },
+            "getContrastText": [Function],
+            "grey": Object {
+              "100": "#f5f5f5",
+              "200": "#eeeeee",
+              "300": "#e0e0e0",
+              "400": "#bdbdbd",
+              "50": "#fafafa",
+              "500": "#9e9e9e",
+              "600": "#757575",
+              "700": "#616161",
+              "800": "#424242",
+              "900": "#212121",
+              "A100": "#d5d5d5",
+              "A200": "#aaaaaa",
+              "A400": "#303030",
+              "A700": "#616161",
+            },
+            "info": Object {
+              "contrastText": "#fff",
+              "dark": "#1976d2",
+              "light": "#64b5f6",
+              "main": "#2196f3",
+            },
+            "primary": Object {
+              "contrastText": "#fff",
+              "dark": "#303f9f",
+              "light": "#7986cb",
+              "main": "#3f51b5",
+            },
+            "secondary": Object {
+              "contrastText": "#fff",
+              "dark": "#c51162",
+              "light": "#ff4081",
+              "main": "#f50057",
+            },
+            "success": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#388e3c",
+              "light": "#81c784",
+              "main": "#4caf50",
+            },
+            "text": Object {
+              "disabled": "rgba(0, 0, 0, 0.38)",
+              "hint": "rgba(0, 0, 0, 0.38)",
+              "primary": "rgba(0, 0, 0, 0.87)",
+              "secondary": "rgba(0, 0, 0, 0.54)",
+            },
+            "tonalOffset": 0.2,
+            "type": "light",
+            "warning": Object {
+              "contrastText": "rgba(0, 0, 0, 0.87)",
+              "dark": "#f57c00",
+              "light": "#ffb74d",
+              "main": "#ff9800",
+            },
+          },
+          "props": Object {},
+          "shadows": Array [
+            "none",
+            "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+            "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+            "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+            "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+            "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+            "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+            "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+            "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+            "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+            "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+            "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+            "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+            "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+            "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+            "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+            "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+            "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+            "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+            "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+            "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+            "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+            "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+            "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+            "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+          ],
+          "shape": Object {
+            "borderRadius": 4,
+          },
+          "spacing": [Function],
+          "transitions": Object {
+            "create": [Function],
+            "duration": Object {
+              "complex": 375,
+              "enteringScreen": 225,
+              "leavingScreen": 195,
+              "short": 250,
+              "shorter": 200,
+              "shortest": 150,
+              "standard": 300,
+            },
+            "easing": Object {
+              "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+              "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+              "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+              "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+            },
+            "getAutoHeightDuration": [Function],
+          },
+          "typography": Object {
+            "body1": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.5,
+            },
+            "body2": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.01071em",
+              "lineHeight": 1.43,
+            },
+            "button": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.02857em",
+              "lineHeight": 1.75,
+              "textTransform": "uppercase",
+            },
+            "caption": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.03333em",
+              "lineHeight": 1.66,
+            },
+            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+            "fontSize": 14,
+            "fontWeightBold": 700,
+            "fontWeightLight": 300,
+            "fontWeightMedium": 500,
+            "fontWeightRegular": 400,
+            "h1": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "6rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.01562em",
+              "lineHeight": 1.167,
+            },
+            "h2": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3.75rem",
+              "fontWeight": 300,
+              "letterSpacing": "-0.00833em",
+              "lineHeight": 1.2,
+            },
+            "h3": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "3rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.167,
+            },
+            "h4": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "2.125rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00735em",
+              "lineHeight": 1.235,
+            },
+            "h5": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.5rem",
+              "fontWeight": 400,
+              "letterSpacing": "0em",
+              "lineHeight": 1.334,
+            },
+            "h6": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1.25rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.0075em",
+              "lineHeight": 1.6,
+            },
+            "htmlFontSize": 16,
+            "overline": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.75rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.08333em",
+              "lineHeight": 2.66,
+              "textTransform": "uppercase",
+            },
+            "pxToRem": [Function],
+            "round": [Function],
+            "subtitle1": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "1rem",
+              "fontWeight": 400,
+              "letterSpacing": "0.00938em",
+              "lineHeight": 1.75,
+            },
+            "subtitle2": Object {
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": "0.875rem",
+              "fontWeight": 500,
+              "letterSpacing": "0.00714em",
+              "lineHeight": 1.57,
+            },
+          },
+          "zIndex": Object {
+            "appBar": 1100,
+            "drawer": 1200,
+            "mobileStepper": 1000,
+            "modal": 1300,
+            "snackbar": 1400,
+            "speedDial": 1050,
+            "tooltip": 1500,
+          },
+        },
+        "name": "HvIconLock",
+      },
+      "propTypes": Object {
+        "classes": [Function],
+        "innerRef": [Function],
+      },
+      "render": [Function],
+      "useStyles": [Function],
+    }
+  }
 >
   <WithLabels
+    aria-label="Lock selection"
     classes={
       Object {
         "disabled": "HvToggleButton-disabled",
         "icon": "HvToggleButton-icon",
         "root": "HvToggleButton-root",
+      }
+    }
+    labels={
+      Object {
+        "notSelectedTitle": "Open",
+        "selectedTitle": "Closed",
       }
     }
     notSelectedIcon={
@@ -609,8 +922,308 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
         "useStyles": [Function],
       }
     }
+    selectedIcon={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Naked": [Function],
+        "displayName": "WithStyles(Lock)",
+        "options": Object {
+          "defaultTheme": Object {
+            "breakpoints": Object {
+              "between": [Function],
+              "down": [Function],
+              "keys": Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ],
+              "only": [Function],
+              "up": [Function],
+              "values": Object {
+                "lg": 1280,
+                "md": 960,
+                "sm": 600,
+                "xl": 1920,
+                "xs": 0,
+              },
+              "width": [Function],
+            },
+            "direction": "ltr",
+            "mixins": Object {
+              "gutters": [Function],
+              "toolbar": Object {
+                "@media (min-width:0px) and (orientation: landscape)": Object {
+                  "minHeight": 48,
+                },
+                "@media (min-width:600px)": Object {
+                  "minHeight": 64,
+                },
+                "minHeight": 56,
+              },
+            },
+            "overrides": Object {},
+            "palette": Object {
+              "action": Object {
+                "active": "rgba(0, 0, 0, 0.54)",
+                "disabled": "rgba(0, 0, 0, 0.26)",
+                "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                "hover": "rgba(0, 0, 0, 0.08)",
+                "hoverOpacity": 0.08,
+                "selected": "rgba(0, 0, 0, 0.14)",
+              },
+              "augmentColor": [Function],
+              "background": Object {
+                "default": "#fafafa",
+                "paper": "#fff",
+              },
+              "common": Object {
+                "black": "#000",
+                "white": "#fff",
+              },
+              "contrastThreshold": 3,
+              "divider": "rgba(0, 0, 0, 0.12)",
+              "error": Object {
+                "contrastText": "#fff",
+                "dark": "#d32f2f",
+                "light": "#e57373",
+                "main": "#f44336",
+              },
+              "getContrastText": [Function],
+              "grey": Object {
+                "100": "#f5f5f5",
+                "200": "#eeeeee",
+                "300": "#e0e0e0",
+                "400": "#bdbdbd",
+                "50": "#fafafa",
+                "500": "#9e9e9e",
+                "600": "#757575",
+                "700": "#616161",
+                "800": "#424242",
+                "900": "#212121",
+                "A100": "#d5d5d5",
+                "A200": "#aaaaaa",
+                "A400": "#303030",
+                "A700": "#616161",
+              },
+              "info": Object {
+                "contrastText": "#fff",
+                "dark": "#1976d2",
+                "light": "#64b5f6",
+                "main": "#2196f3",
+              },
+              "primary": Object {
+                "contrastText": "#fff",
+                "dark": "#303f9f",
+                "light": "#7986cb",
+                "main": "#3f51b5",
+              },
+              "secondary": Object {
+                "contrastText": "#fff",
+                "dark": "#c51162",
+                "light": "#ff4081",
+                "main": "#f50057",
+              },
+              "success": Object {
+                "contrastText": "rgba(0, 0, 0, 0.87)",
+                "dark": "#388e3c",
+                "light": "#81c784",
+                "main": "#4caf50",
+              },
+              "text": Object {
+                "disabled": "rgba(0, 0, 0, 0.38)",
+                "hint": "rgba(0, 0, 0, 0.38)",
+                "primary": "rgba(0, 0, 0, 0.87)",
+                "secondary": "rgba(0, 0, 0, 0.54)",
+              },
+              "tonalOffset": 0.2,
+              "type": "light",
+              "warning": Object {
+                "contrastText": "rgba(0, 0, 0, 0.87)",
+                "dark": "#f57c00",
+                "light": "#ffb74d",
+                "main": "#ff9800",
+              },
+            },
+            "props": Object {},
+            "shadows": Array [
+              "none",
+              "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+              "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+              "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+              "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+              "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+              "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+              "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+              "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+              "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+              "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+              "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+              "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+              "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+              "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+              "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+              "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+              "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+              "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+              "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+              "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+              "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+              "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+              "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+              "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+            ],
+            "shape": Object {
+              "borderRadius": 4,
+            },
+            "spacing": [Function],
+            "transitions": Object {
+              "create": [Function],
+              "duration": Object {
+                "complex": 375,
+                "enteringScreen": 225,
+                "leavingScreen": 195,
+                "short": 250,
+                "shorter": 200,
+                "shortest": 150,
+                "standard": 300,
+              },
+              "easing": Object {
+                "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+              },
+              "getAutoHeightDuration": [Function],
+            },
+            "typography": Object {
+              "body1": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "1rem",
+                "fontWeight": 400,
+                "letterSpacing": "0.00938em",
+                "lineHeight": 1.5,
+              },
+              "body2": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "0.875rem",
+                "fontWeight": 400,
+                "letterSpacing": "0.01071em",
+                "lineHeight": 1.43,
+              },
+              "button": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "0.875rem",
+                "fontWeight": 500,
+                "letterSpacing": "0.02857em",
+                "lineHeight": 1.75,
+                "textTransform": "uppercase",
+              },
+              "caption": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "0.75rem",
+                "fontWeight": 400,
+                "letterSpacing": "0.03333em",
+                "lineHeight": 1.66,
+              },
+              "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+              "fontSize": 14,
+              "fontWeightBold": 700,
+              "fontWeightLight": 300,
+              "fontWeightMedium": 500,
+              "fontWeightRegular": 400,
+              "h1": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "6rem",
+                "fontWeight": 300,
+                "letterSpacing": "-0.01562em",
+                "lineHeight": 1.167,
+              },
+              "h2": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "3.75rem",
+                "fontWeight": 300,
+                "letterSpacing": "-0.00833em",
+                "lineHeight": 1.2,
+              },
+              "h3": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "3rem",
+                "fontWeight": 400,
+                "letterSpacing": "0em",
+                "lineHeight": 1.167,
+              },
+              "h4": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "2.125rem",
+                "fontWeight": 400,
+                "letterSpacing": "0.00735em",
+                "lineHeight": 1.235,
+              },
+              "h5": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "1.5rem",
+                "fontWeight": 400,
+                "letterSpacing": "0em",
+                "lineHeight": 1.334,
+              },
+              "h6": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "1.25rem",
+                "fontWeight": 500,
+                "letterSpacing": "0.0075em",
+                "lineHeight": 1.6,
+              },
+              "htmlFontSize": 16,
+              "overline": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "0.75rem",
+                "fontWeight": 400,
+                "letterSpacing": "0.08333em",
+                "lineHeight": 2.66,
+                "textTransform": "uppercase",
+              },
+              "pxToRem": [Function],
+              "round": [Function],
+              "subtitle1": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "1rem",
+                "fontWeight": 400,
+                "letterSpacing": "0.00938em",
+                "lineHeight": 1.75,
+              },
+              "subtitle2": Object {
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": "0.875rem",
+                "fontWeight": 500,
+                "letterSpacing": "0.00714em",
+                "lineHeight": 1.57,
+              },
+            },
+            "zIndex": Object {
+              "appBar": 1100,
+              "drawer": 1200,
+              "mobileStepper": 1000,
+              "modal": 1300,
+              "snackbar": 1400,
+              "speedDial": 1050,
+              "tooltip": 1500,
+            },
+          },
+          "name": "HvIconLock",
+        },
+        "propTypes": Object {
+          "classes": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+        "useStyles": [Function],
+      }
+    }
   >
     <ToggleButton
+      aria-label="Lock selection"
       classes={
         Object {
           "disabled": "HvToggleButton-disabled",
@@ -620,8 +1233,8 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
       }
       labels={
         Object {
-          "notSelectedTitle": "",
-          "selectedTitle": "",
+          "notSelectedTitle": "Open",
+          "selectedTitle": "Closed",
         }
       }
       notSelectedIcon={
@@ -923,8 +1536,308 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
           "useStyles": [Function],
         }
       }
+      selectedIcon={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "Naked": [Function],
+          "displayName": "WithStyles(Lock)",
+          "options": Object {
+            "defaultTheme": Object {
+              "breakpoints": Object {
+                "between": [Function],
+                "down": [Function],
+                "keys": Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ],
+                "only": [Function],
+                "up": [Function],
+                "values": Object {
+                  "lg": 1280,
+                  "md": 960,
+                  "sm": 600,
+                  "xl": 1920,
+                  "xs": 0,
+                },
+                "width": [Function],
+              },
+              "direction": "ltr",
+              "mixins": Object {
+                "gutters": [Function],
+                "toolbar": Object {
+                  "@media (min-width:0px) and (orientation: landscape)": Object {
+                    "minHeight": 48,
+                  },
+                  "@media (min-width:600px)": Object {
+                    "minHeight": 64,
+                  },
+                  "minHeight": 56,
+                },
+              },
+              "overrides": Object {},
+              "palette": Object {
+                "action": Object {
+                  "active": "rgba(0, 0, 0, 0.54)",
+                  "disabled": "rgba(0, 0, 0, 0.26)",
+                  "disabledBackground": "rgba(0, 0, 0, 0.12)",
+                  "hover": "rgba(0, 0, 0, 0.08)",
+                  "hoverOpacity": 0.08,
+                  "selected": "rgba(0, 0, 0, 0.14)",
+                },
+                "augmentColor": [Function],
+                "background": Object {
+                  "default": "#fafafa",
+                  "paper": "#fff",
+                },
+                "common": Object {
+                  "black": "#000",
+                  "white": "#fff",
+                },
+                "contrastThreshold": 3,
+                "divider": "rgba(0, 0, 0, 0.12)",
+                "error": Object {
+                  "contrastText": "#fff",
+                  "dark": "#d32f2f",
+                  "light": "#e57373",
+                  "main": "#f44336",
+                },
+                "getContrastText": [Function],
+                "grey": Object {
+                  "100": "#f5f5f5",
+                  "200": "#eeeeee",
+                  "300": "#e0e0e0",
+                  "400": "#bdbdbd",
+                  "50": "#fafafa",
+                  "500": "#9e9e9e",
+                  "600": "#757575",
+                  "700": "#616161",
+                  "800": "#424242",
+                  "900": "#212121",
+                  "A100": "#d5d5d5",
+                  "A200": "#aaaaaa",
+                  "A400": "#303030",
+                  "A700": "#616161",
+                },
+                "info": Object {
+                  "contrastText": "#fff",
+                  "dark": "#1976d2",
+                  "light": "#64b5f6",
+                  "main": "#2196f3",
+                },
+                "primary": Object {
+                  "contrastText": "#fff",
+                  "dark": "#303f9f",
+                  "light": "#7986cb",
+                  "main": "#3f51b5",
+                },
+                "secondary": Object {
+                  "contrastText": "#fff",
+                  "dark": "#c51162",
+                  "light": "#ff4081",
+                  "main": "#f50057",
+                },
+                "success": Object {
+                  "contrastText": "rgba(0, 0, 0, 0.87)",
+                  "dark": "#388e3c",
+                  "light": "#81c784",
+                  "main": "#4caf50",
+                },
+                "text": Object {
+                  "disabled": "rgba(0, 0, 0, 0.38)",
+                  "hint": "rgba(0, 0, 0, 0.38)",
+                  "primary": "rgba(0, 0, 0, 0.87)",
+                  "secondary": "rgba(0, 0, 0, 0.54)",
+                },
+                "tonalOffset": 0.2,
+                "type": "light",
+                "warning": Object {
+                  "contrastText": "rgba(0, 0, 0, 0.87)",
+                  "dark": "#f57c00",
+                  "light": "#ffb74d",
+                  "main": "#ff9800",
+                },
+              },
+              "props": Object {},
+              "shadows": Array [
+                "none",
+                "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
+                "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
+                "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+                "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
+                "0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12)",
+                "0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12)",
+                "0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12)",
+                "0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12)",
+                "0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)",
+                "0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12)",
+                "0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)",
+                "0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12)",
+                "0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12)",
+                "0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12)",
+                "0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12)",
+                "0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12)",
+                "0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12)",
+                "0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12)",
+                "0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12)",
+                "0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12)",
+                "0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12)",
+                "0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)",
+                "0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)",
+              ],
+              "shape": Object {
+                "borderRadius": 4,
+              },
+              "spacing": [Function],
+              "transitions": Object {
+                "create": [Function],
+                "duration": Object {
+                  "complex": 375,
+                  "enteringScreen": 225,
+                  "leavingScreen": 195,
+                  "short": 250,
+                  "shorter": 200,
+                  "shortest": 150,
+                  "standard": 300,
+                },
+                "easing": Object {
+                  "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                  "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                  "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                  "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                },
+                "getAutoHeightDuration": [Function],
+              },
+              "typography": Object {
+                "body1": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.5,
+                },
+                "body2": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.01071em",
+                  "lineHeight": 1.43,
+                },
+                "button": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.02857em",
+                  "lineHeight": 1.75,
+                  "textTransform": "uppercase",
+                },
+                "caption": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.03333em",
+                  "lineHeight": 1.66,
+                },
+                "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                "fontSize": 14,
+                "fontWeightBold": 700,
+                "fontWeightLight": 300,
+                "fontWeightMedium": 500,
+                "fontWeightRegular": 400,
+                "h1": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "6rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.01562em",
+                  "lineHeight": 1.167,
+                },
+                "h2": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3.75rem",
+                  "fontWeight": 300,
+                  "letterSpacing": "-0.00833em",
+                  "lineHeight": 1.2,
+                },
+                "h3": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "3rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.167,
+                },
+                "h4": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "2.125rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00735em",
+                  "lineHeight": 1.235,
+                },
+                "h5": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.5rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0em",
+                  "lineHeight": 1.334,
+                },
+                "h6": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1.25rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.0075em",
+                  "lineHeight": 1.6,
+                },
+                "htmlFontSize": 16,
+                "overline": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.75rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.08333em",
+                  "lineHeight": 2.66,
+                  "textTransform": "uppercase",
+                },
+                "pxToRem": [Function],
+                "round": [Function],
+                "subtitle1": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "1rem",
+                  "fontWeight": 400,
+                  "letterSpacing": "0.00938em",
+                  "lineHeight": 1.75,
+                },
+                "subtitle2": Object {
+                  "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                  "fontSize": "0.875rem",
+                  "fontWeight": 500,
+                  "letterSpacing": "0.00714em",
+                  "lineHeight": 1.57,
+                },
+              },
+              "zIndex": Object {
+                "appBar": 1100,
+                "drawer": 1200,
+                "mobileStepper": 1000,
+                "modal": 1300,
+                "snackbar": 1400,
+                "speedDial": 1050,
+                "tooltip": 1500,
+              },
+            },
+            "name": "HvIconLock",
+          },
+          "propTypes": Object {
+            "classes": [Function],
+            "innerRef": [Function],
+          },
+          "render": [Function],
+          "useStyles": [Function],
+        }
+      }
     >
       <div
+        aria-label="Lock selection"
         aria-pressed={false}
         className="HvToggleButton-root"
         onClick={[Function]}
@@ -932,48 +1845,269 @@ exports[`ToggleButton withStyles should render correctly 1`] = `
         role="button"
         tabIndex={0}
       >
-        <IconDisplay>
-          <WithStyles(Unlock)
-            className="HvToggleButton-icon"
+        <Component>
+          <WithStyles(HvTooltip)
+            disableFocusListener={true}
+            disableTouchListener={true}
+            open={false}
+            style={
+              Object {
+                "overflow": "hidden",
+                "textOverflow": "ellipsis",
+                "whiteSpace": "nowrap",
+              }
+            }
+            title={
+              <ForwardRef(WithStyles)
+                variant="infoText"
+              >
+                Open
+              </ForwardRef(WithStyles)>
+            }
           >
-            <Unlock
-              className="HvToggleButton-icon"
+            <HvTooltip
               classes={
                 Object {
-                  "root": "HvIconUnlock-root",
-                  "rootL": "HvIconUnlock-rootL",
-                  "rootM": "HvIconUnlock-rootM",
-                  "rootS": "HvIconUnlock-rootS",
-                  "rootXs": "HvIconUnlock-rootXs",
+                  "color": "HvTooltip-color",
+                  "popper": "HvTooltip-popper",
+                  "root": "HvTooltip-root",
+                  "separator": "HvTooltip-separator",
+                  "separatorColor": "HvTooltip-separatorColor",
+                  "title": "HvTooltip-title",
+                  "tooltip": "HvTooltip-tooltip",
+                  "tooltipMulti": "HvTooltip-tooltipMulti",
+                  "valueWrapper": "HvTooltip-valueWrapper",
+                  "values": "HvTooltip-values",
+                  "valuesContainer": "HvTooltip-valuesContainer",
                 }
               }
-            >
-              <div
-                className="HvToggleButton-icon HvIconUnlock-root HvIconUnlock-rootS"
-              >
-                <svg
-                  focusable={false}
-                  height="16px"
-                  viewBox="0 0 16 16"
-                  width="16px"
-                  xmlns="http://www.w3.org/2000/svg"
+              disableFocusListener={true}
+              disableTouchListener={true}
+              open={false}
+              style={
+                Object {
+                  "overflow": "hidden",
+                  "textOverflow": "ellipsis",
+                  "whiteSpace": "nowrap",
+                }
+              }
+              title={
+                <ForwardRef(WithStyles)
+                  variant="infoText"
                 >
-                  <g
-                    className="color0"
-                    fill="#414141"
+                  Open
+                </ForwardRef(WithStyles)>
+              }
+            >
+              <WithStyles(ForwardRef(Tooltip))
+                TransitionComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "propTypes": Object {
+                      "children": [Function],
+                      "in": [Function],
+                      "onEnter": [Function],
+                      "onExit": [Function],
+                      "style": [Function],
+                      "timeout": [Function],
+                    },
+                    "render": [Function],
+                  }
+                }
+                TransitionProps={
+                  Object {
+                    "timeout": 400,
+                  }
+                }
+                classes={
+                  Object {
+                    "popper": "HvTooltip-popper",
+                    "tooltip": "HvTooltip-tooltip",
+                  }
+                }
+                disableFocusListener={true}
+                disableTouchListener={true}
+                enterDelay={300}
+                placement="top"
+                style={
+                  Object {
+                    "overflow": "hidden",
+                    "textOverflow": "ellipsis",
+                    "whiteSpace": "nowrap",
+                  }
+                }
+                title={
+                  <ForwardRef(WithStyles)
+                    variant="infoText"
                   >
-                    <path
-                      d="M7.5 8h1v4h-1z"
-                    />
-                    <path
-                      d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
-                    />
-                  </g>
-                </svg>
-              </div>
-            </Unlock>
-          </WithStyles(Unlock)>
-        </IconDisplay>
+                    Open
+                  </ForwardRef(WithStyles)>
+                }
+              >
+                <ForwardRef(Tooltip)
+                  TransitionComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "propTypes": Object {
+                        "children": [Function],
+                        "in": [Function],
+                        "onEnter": [Function],
+                        "onExit": [Function],
+                        "style": [Function],
+                        "timeout": [Function],
+                      },
+                      "render": [Function],
+                    }
+                  }
+                  TransitionProps={
+                    Object {
+                      "timeout": 400,
+                    }
+                  }
+                  classes={
+                    Object {
+                      "arrow": "MuiTooltip-arrow",
+                      "popper": "MuiTooltip-popper HvTooltip-popper",
+                      "popperArrow": "MuiTooltip-popperArrow",
+                      "popperInteractive": "MuiTooltip-popperInteractive",
+                      "tooltip": "MuiTooltip-tooltip HvTooltip-tooltip",
+                      "tooltipArrow": "MuiTooltip-tooltipArrow",
+                      "tooltipPlacementBottom": "MuiTooltip-tooltipPlacementBottom",
+                      "tooltipPlacementLeft": "MuiTooltip-tooltipPlacementLeft",
+                      "tooltipPlacementRight": "MuiTooltip-tooltipPlacementRight",
+                      "tooltipPlacementTop": "MuiTooltip-tooltipPlacementTop",
+                      "touch": "MuiTooltip-touch",
+                    }
+                  }
+                  disableFocusListener={true}
+                  disableTouchListener={true}
+                  enterDelay={300}
+                  placement="top"
+                  style={
+                    Object {
+                      "overflow": "hidden",
+                      "textOverflow": "ellipsis",
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                  title={
+                    <ForwardRef(WithStyles)
+                      variant="infoText"
+                    >
+                      Open
+                    </ForwardRef(WithStyles)>
+                  }
+                >
+                  <div
+                    aria-describedby={null}
+                    className=""
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseOver={[Function]}
+                    style={
+                      Object {
+                        "overflow": "hidden",
+                        "textOverflow": "ellipsis",
+                        "whiteSpace": "nowrap",
+                      }
+                    }
+                    title={null}
+                  >
+                    <IconDisplay>
+                      <WithStyles(Unlock)
+                        className="HvToggleButton-icon"
+                      >
+                        <Unlock
+                          className="HvToggleButton-icon"
+                          classes={
+                            Object {
+                              "root": "HvIconUnlock-root",
+                              "rootL": "HvIconUnlock-rootL",
+                              "rootM": "HvIconUnlock-rootM",
+                              "rootS": "HvIconUnlock-rootS",
+                              "rootXs": "HvIconUnlock-rootXs",
+                            }
+                          }
+                        >
+                          <div
+                            className="HvToggleButton-icon HvIconUnlock-root HvIconUnlock-rootS"
+                          >
+                            <svg
+                              focusable={false}
+                              height="16px"
+                              viewBox="0 0 16 16"
+                              width="16px"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g
+                                className="color0"
+                                fill="#414141"
+                              >
+                                <path
+                                  d="M7.5 8h1v4h-1z"
+                                />
+                                <path
+                                  d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
+                                />
+                              </g>
+                            </svg>
+                          </div>
+                        </Unlock>
+                      </WithStyles(Unlock)>
+                    </IconDisplay>
+                  </div>
+                  <ForwardRef(Popper)
+                    anchorEl={
+                      <div
+                        class=""
+                        style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"
+                      >
+                        <div
+                          class="HvToggleButton-icon HvIconUnlock-root HvIconUnlock-rootS"
+                        >
+                          <svg
+                            focusable="false"
+                            height="16px"
+                            viewBox="0 0 16 16"
+                            width="16px"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g
+                              class="color0"
+                              fill="#414141"
+                            >
+                              <path
+                                d="M7.5 8h1v4h-1z"
+                              />
+                              <path
+                                d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                    }
+                    className="MuiTooltip-popper HvTooltip-popper"
+                    id={null}
+                    open={false}
+                    placement="top"
+                    popperOptions={
+                      Object {
+                        "modifiers": Object {
+                          "arrow": Object {
+                            "element": null,
+                            "enabled": false,
+                          },
+                        },
+                      }
+                    }
+                    transition={true}
+                  />
+                </ForwardRef(Tooltip)>
+              </WithStyles(ForwardRef(Tooltip))>
+            </HvTooltip>
+          </WithStyles(HvTooltip)>
+        </Component>
       </div>
     </ToggleButton>
   </WithLabels>

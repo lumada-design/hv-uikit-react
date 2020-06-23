@@ -2,9 +2,8 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import HvProvider from "../../Provider";
-
-import VerticalNavigation from "../index";
+import { HvProvider, HvVerticalNavigation } from "../..";
+import { Main, Collapsable } from "../stories/VerticalNavigation.stories";
 
 describe("<VerticalNavigation />", () => {
   const toggleOpenCallbackMock = jest.fn();
@@ -12,46 +11,26 @@ describe("<VerticalNavigation />", () => {
   let wrapper;
 
   describe("collapsable closed vertical navigation", () => {
-    beforeEach(async () => {
-      wrapper = mount(
-        <HvProvider>
-          <VerticalNavigation
-            isOpen={false}
-            isCollapsable
-            position="fixed"
-            toggleOpenCallback={toggleOpenCallbackMock}
-          >
-            <div>1</div>
-            <div>2</div>
-          </VerticalNavigation>
-        </HvProvider>
-      );
-    });
+    wrapper = mount(
+      <HvProvider>
+        <Main />
+      </HvProvider>
+    );
 
     it("should render correctly", () => {
-      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
+      expect(wrapper.find(HvVerticalNavigation)).toMatchSnapshot();
     });
   });
 
   describe("collapsable open vertical navigation", () => {
-    beforeEach(async () => {
-      wrapper = mount(
-        <HvProvider>
-          <VerticalNavigation
-            isOpen
-            isCollapsable
-            position="fixed"
-            toggleOpenCallback={toggleOpenCallbackMock}
-          >
-            <div>1</div>
-            <div>2</div>
-          </VerticalNavigation>
-        </HvProvider>
-      );
-    });
+    wrapper = mount(
+      <HvProvider>
+        <Collapsable />
+      </HvProvider>
+    );
 
     it("should render correctly", () => {
-      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
+      expect(wrapper.find(HvVerticalNavigation)).toMatchSnapshot();
     });
   });
 
@@ -59,7 +38,7 @@ describe("<VerticalNavigation />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <VerticalNavigation
+          <HvVerticalNavigation
             isOpen
             isCollapsable={false}
             position="fixed"
@@ -67,13 +46,13 @@ describe("<VerticalNavigation />", () => {
           >
             <div>1</div>
             <div>2</div>
-          </VerticalNavigation>
+          </HvVerticalNavigation>
         </HvProvider>
       );
     });
 
     it("should render correctly", () => {
-      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
+      expect(wrapper.find(HvVerticalNavigation)).toMatchSnapshot();
     });
   });
 
@@ -81,7 +60,7 @@ describe("<VerticalNavigation />", () => {
     beforeEach(async () => {
       wrapper = mount(
         <HvProvider>
-          <VerticalNavigation
+          <HvVerticalNavigation
             isOpen={false}
             isCollapsable={false}
             position="fixed"
@@ -89,13 +68,13 @@ describe("<VerticalNavigation />", () => {
           >
             <div>1</div>
             <div>2</div>
-          </VerticalNavigation>
+          </HvVerticalNavigation>
         </HvProvider>
       );
     });
 
     it("should render correctly", () => {
-      expect(wrapper.find(VerticalNavigation)).toMatchSnapshot();
+      expect(wrapper.find(HvVerticalNavigation)).toMatchSnapshot();
     });
   });
 });

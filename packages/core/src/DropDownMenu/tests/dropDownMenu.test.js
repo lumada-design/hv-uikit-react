@@ -2,8 +2,8 @@ import React from "react";
 import { mount } from "enzyme";
 import { Popper } from "@material-ui/core";
 
-import DropDownMenu from "../index";
-import HvProvider from "../../Provider";
+import { HvDropDownMenu, HvProvider } from "../..";
+import { Main, KeyboardNavigation } from "../stories/DropDownMenu.stories";
 
 jest.mock(
   "popper.js",
@@ -24,43 +24,31 @@ describe("DropDownMenu", () => {
   const SPACE = " ";
   const ENTER = "Enter";
 
-  const menuOptions = [
-    {
-      label: "Label 1"
-    },
-    {
-      label: "Label 2"
-    },
-    {
-      label: "Label 3"
-    }
-  ];
-
   describe("component without portal", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu id="dropdownMenu" dataList={menuOptions} icon={<div />} />
+          <Main />
         </HvProvider>
       );
     });
 
     it("is rendered correctly and behaves as expected", () => {
-      expect(wrapper.find(DropDownMenu)).toMatchSnapshot();
+      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
     });
 
     it("opens on click", () => {
       const button = wrapper.find("div");
       button.at(1).simulate("click");
 
-      expect(wrapper.find(DropDownMenu)).toMatchSnapshot();
+      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
     });
 
     it("closes on double click", () => {
       const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
-      expect(wrapper.find(DropDownMenu)).toMatchSnapshot();
+      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
     });
 
     it("opens on Enter", () => {
@@ -118,27 +106,27 @@ describe("DropDownMenu", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu dataList={menuOptions} icon={<div />} disablePortal={false} />
+          <Main />
         </HvProvider>
       );
     });
 
     it("is rendered correctly and behaves as expected", () => {
-      expect(wrapper.find(DropDownMenu)).toMatchSnapshot();
+      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
     });
 
     it("opens on click", () => {
       const button = wrapper.find("div");
       button.at(1).simulate("click");
 
-      expect(wrapper.find(DropDownMenu)).toMatchSnapshot();
+      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
     });
 
     it("closes on double click", () => {
       const button = wrapper.find("div");
       button.at(0).simulate("click");
       button.at(0).simulate("click");
-      expect(wrapper.find(DropDownMenu)).toMatchSnapshot();
+      expect(wrapper.find(HvDropDownMenu)).toMatchSnapshot();
     });
 
     it("opens on Enter", () => {
@@ -194,23 +182,18 @@ describe("DropDownMenu", () => {
     it("closes after selecting one option", () => {
       wrapper = mount(
         <HvProvider>
-          <DropDownMenu
-            dataList={menuOptions}
-            icon={<div />}
-            keepOpened={false}
-            onClick={() => {}}
-            id="test"
-          />
+          <KeyboardNavigation />
         </HvProvider>
       );
 
-      const button = wrapper.find("button");
+      expect(wrapper.find(Popper).prop("open")).toBe(false);
 
+      const button = wrapper.find("button").at(1);
       button.simulate("click");
 
       expect(wrapper.find(Popper).prop("open")).toBe(true);
 
-      const option = wrapper.find('li[id="test-list-item-0"]');
+      const option = wrapper.find("li").at(0);
       option.simulate("click");
       expect(wrapper.find(Popper).prop("open")).toBe(false);
     });

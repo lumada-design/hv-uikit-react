@@ -23,19 +23,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
       },
     ]
   }
-  labels={
-    Object {
-      "dragText": "Drag and drop or ",
-      "dropFilesText": "Drop files here",
-      "dropzoneLabel": "My Label",
-      "fileSizeError": "The file exceeds the maximum upload size",
-      "fileTypeError": "File type not allowed for upload",
-      "progressConjunction": "of",
-      "removeFileButtonLabel": "Remove File",
-      "selectFilesText": "Select files",
-      "sizeWarningLabel": "Max. file size:",
-    }
-  }
   maxFileSize={12}
   onFileRemoved={[MockFunction]}
   onFilesAdded={[MockFunction]}
@@ -62,19 +49,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
           "type": "image/png",
         },
       ]
-    }
-    labels={
-      Object {
-        "dragText": "Drag and drop or ",
-        "dropFilesText": "Drop files here",
-        "dropzoneLabel": "My Label",
-        "fileSizeError": "The file exceeds the maximum upload size",
-        "fileTypeError": "File type not allowed for upload",
-        "progressConjunction": "of",
-        "removeFileButtonLabel": "Remove File",
-        "selectFilesText": "Select files",
-        "sizeWarningLabel": "Max. file size:",
-      }
     }
     maxFileSize={12}
     onFileRemoved={[MockFunction]}
@@ -107,19 +81,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
         Object {
           "acceptedFiles": "Accepted files:",
           "drag": "Drag and drop or",
-          "dragText": "Drag and drop or ",
           "dropFiles": "Drop files here",
-          "dropFilesText": "Drop files here",
           "dropzone": "Label",
-          "dropzoneLabel": "My Label",
           "fileSizeError": "The file exceeds the maximum upload size",
           "fileTypeError": "File type not allowed for upload",
           "progressConjunction": "of",
           "removeFileButtonLabel": "Remove File",
           "selectFiles": "Select files",
-          "selectFilesText": "Select files",
           "sizeWarning": "Max. file size:",
-          "sizeWarningLabel": "Max. file size:",
         }
       }
       maxFileSize={12}
@@ -140,19 +109,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
             Object {
               "acceptedFiles": "Accepted files:",
               "drag": "Drag and drop or",
-              "dragText": "Drag and drop or ",
               "dropFiles": "Drop files here",
-              "dropFilesText": "Drop files here",
               "dropzone": "Label",
-              "dropzoneLabel": "My Label",
               "fileSizeError": "The file exceeds the maximum upload size",
               "fileTypeError": "File type not allowed for upload",
               "progressConjunction": "of",
               "removeFileButtonLabel": "Remove File",
               "selectFiles": "Select files",
-              "selectFilesText": "Select files",
               "sizeWarning": "Max. file size:",
-              "sizeWarningLabel": "Max. file size:",
             }
           }
           maxFileSize={12}
@@ -184,19 +148,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
               Object {
                 "acceptedFiles": "Accepted files:",
                 "drag": "Drag and drop or",
-                "dragText": "Drag and drop or ",
                 "dropFiles": "Drop files here",
-                "dropFilesText": "Drop files here",
                 "dropzone": "Label",
-                "dropzoneLabel": "My Label",
                 "fileSizeError": "The file exceeds the maximum upload size",
                 "fileTypeError": "File type not allowed for upload",
                 "progressConjunction": "of",
                 "removeFileButtonLabel": "Remove File",
                 "selectFiles": "Select files",
-                "selectFilesText": "Select files",
                 "sizeWarning": "Max. file size:",
-                "sizeWarningLabel": "Max. file size:",
               }
             }
             maxFileSize={12}
@@ -229,19 +188,14 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                 Object {
                   "acceptedFiles": "Accepted files:",
                   "drag": "Drag and drop or",
-                  "dragText": "Drag and drop or ",
                   "dropFiles": "Drop files here",
-                  "dropFilesText": "Drop files here",
                   "dropzone": "Label",
-                  "dropzoneLabel": "My Label",
                   "fileSizeError": "The file exceeds the maximum upload size",
                   "fileTypeError": "File type not allowed for upload",
                   "progressConjunction": "of",
                   "removeFileButtonLabel": "Remove File",
                   "selectFiles": "Select files",
-                  "selectFilesText": "Select files",
                   "sizeWarning": "Max. file size:",
-                  "sizeWarningLabel": "Max. file size:",
                 }
               }
               maxFileSize={12}

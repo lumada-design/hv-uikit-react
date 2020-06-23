@@ -9,18 +9,6 @@ import HvProvider from "../../Provider";
 import File from "../File";
 import FileList from "../FileList";
 
-const DEFAULT_LABELS = {
-  progressConjunction: "of",
-  dropzoneLabel: "My Label",
-  sizeWarningLabel: "Max. file size:",
-  dragText: "Drag and drop or ",
-  selectFilesText: "Select files",
-  dropFilesText: "Drop files here",
-  fileSizeError: "The file exceeds the maximum upload size",
-  fileTypeError: "File type not allowed for upload",
-  removeFileButtonLabel: "Remove File"
-};
-
 const fileList = [
   {
     id: "1",
@@ -52,7 +40,6 @@ describe("FileUploader withStyles", () => {
     fileList,
     onFilesAdded: onClickCallback,
     onFileRemoved: onClickCallback,
-    labels: DEFAULT_LABELS,
     acceptedFiles: ["jpeg"],
     maxFileSize: 12
   };
@@ -112,7 +99,6 @@ describe("FileUploader validations", () => {
       ],
       onFilesAdded: onClickCallback,
       onFileRemoved: onClickCallback,
-      labels: DEFAULT_LABELS,
       acceptedFiles: ["png"],
       maxFileSize: 1
     };
@@ -141,7 +127,6 @@ describe("FileUploader validations", () => {
       ],
       onFilesAdded: onClickCallback,
       onFileRemoved: onClickCallback,
-      labels: DEFAULT_LABELS,
       acceptedFiles: ["png"],
       maxFileSize: 5 * 1000
     };

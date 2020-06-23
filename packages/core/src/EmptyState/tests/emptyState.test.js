@@ -1,60 +1,48 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow, mount } from "enzyme";
-import HvProvider from "../../Provider";
-import EmptyState from "..";
+import { mount } from "enzyme";
+import { HvEmptyState, HvProvider } from "../..";
+import { CustomMessages } from "../stories/EmptyState.stories";
 
-const mockClasses = {};
-const mockTitle = "mockTitle";
-const mockMessage = "mockMessage";
-const mockIcon = <div />;
-
-describe("<EmptyState /> with String title/message", () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(
-      <HvProvider>
-        <EmptyState classes={mockClasses} title={mockTitle} message={mockMessage} icon={mockIcon} />
-      </HvProvider>
-    );
-  });
+describe("<HvEmptyState /> with String title/message", () => {
+  const wrapper = mount(
+    <HvProvider>
+      <CustomMessages />
+    </HvProvider>
+  );
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(EmptyState)).toMatchSnapshot();
+    expect(wrapper.find(HvEmptyState)).toMatchSnapshot();
   });
 });
 
 describe("<EmptyState /> with Element title/message/action", () => {
-  let wrapper;
-  const MockTitle = () => <div>{mockTitle}</div>;
-  const MockMessage = () => <div>{mockMessage}</div>;
+  const MockTitle = () => <div>mockTitle</div>;
+  const MockMessage = () => <div>mockMessage</div>;
   const MockAction = () => <div>mockAction</div>;
 
-  beforeEach(() => {
-    wrapper = mount(
-      <HvProvider>
-        <EmptyState
-          title={<MockTitle />}
-          message={<MockMessage />}
-          action={<MockAction />}
-          icon={mockIcon}
-        />
-      </HvProvider>
-    );
-  });
+  const wrapper = mount(
+    <HvProvider>
+      <HvEmptyState
+        title={<MockTitle />}
+        message={<MockMessage />}
+        action={<MockAction />}
+        icon={<div />}
+      />
+    </HvProvider>
+  );
 
   it("should be defined", () => {
     expect(wrapper).toBeDefined();
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(EmptyState)).toMatchSnapshot();
+    expect(wrapper.find(HvEmptyState)).toMatchSnapshot();
   });
 
   it("should contain the title Element", () => {

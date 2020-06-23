@@ -2,12 +2,14 @@
 
 exports[`Kpi should render correctly 1`] = `
 <WithStyles(WithLabels)
+  id="test-kpi"
   labels={
     Object {
-      "comparisonIndicatorInfo": "vs last 24h.",
-      "indicator": "8.85",
-      "title": "Avg. service time",
-      "unit": "MS",
+      "comparisonIndicator": "99%",
+      "comparisonIndicatorInfo": "info comparison",
+      "indicator": "9.99",
+      "title": "Title",
+      "unit": "Units",
     }
   }
 >
@@ -25,12 +27,14 @@ exports[`Kpi should render correctly 1`] = `
         "visualIndicatorContainer": "HvKpi-visualIndicatorContainer",
       }
     }
+    id="test-kpi"
     labels={
       Object {
-        "comparisonIndicatorInfo": "vs last 24h.",
-        "indicator": "8.85",
-        "title": "Avg. service time",
-        "unit": "MS",
+        "comparisonIndicator": "99%",
+        "comparisonIndicatorInfo": "info comparison",
+        "indicator": "9.99",
+        "title": "Title",
+        "unit": "Units",
       }
     }
   >
@@ -48,17 +52,20 @@ exports[`Kpi should render correctly 1`] = `
           "visualIndicatorContainer": "HvKpi-visualIndicatorContainer",
         }
       }
+      id="test-kpi"
       labels={
         Object {
-          "comparisonIndicatorInfo": "vs last 24h.",
-          "indicator": "8.85",
-          "title": "Avg. service time",
-          "unit": "MS",
+          "comparisonIndicator": "99%",
+          "comparisonIndicatorInfo": "info comparison",
+          "indicator": "9.99",
+          "title": "Title",
+          "unit": "Units",
         }
       }
     >
       <div
         className="HvKpi-root"
+        id="test-kpi"
       >
         <div>
           <WithStyles(ForwardRef)
@@ -97,7 +104,7 @@ exports[`Kpi should render correctly 1`] = `
               <p
                 className="HvTypography-root HvTypography-highlightText"
               >
-                Avg. service time
+                Title
               </p>
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -143,7 +150,7 @@ exports[`Kpi should render correctly 1`] = `
               <h2
                 className="HvKpi-spacingToTheRight HvKpi-indicatorText HvTypography-root HvTypography-lTitle"
               >
-                8.85
+                9.99
               </h2>
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -185,7 +192,7 @@ exports[`Kpi should render correctly 1`] = `
               <h4
                 className="HvKpi-indicatorUnit HvTypography-root HvTypography-sTitle"
               >
-                MS
+                Units
               </h4>
             </ForwardRef>
           </WithStyles(ForwardRef)>
