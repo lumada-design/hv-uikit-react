@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suggestions should render correctly 1`] = `
+<WithStyles(HvSuggestions)
+  expanded={false}
+  onClose={[Function]}
+  onSuggestionSelected={[Function]}
+  suggestionValues={Array []}
+>
+  <HvSuggestions
+    classes={
+      Object {
+        "popper": "HvSuggestions-popper",
+        "root": "HvSuggestions-root",
+        "suggestionContainer": "HvSuggestions-suggestionContainer",
+      }
+    }
+    expanded={false}
+    onClose={[Function]}
+    onSuggestionSelected={[Function]}
+    suggestionValues={Array []}
+  >
+    <div
+      className="HvSuggestions-root"
+    >
+      <ForwardRef(Popper)
+        className="HvSuggestions-popper"
+        disablePortal={true}
+        open={false}
+      />
+    </div>
+  </HvSuggestions>
+</WithStyles(HvSuggestions)>
+`;

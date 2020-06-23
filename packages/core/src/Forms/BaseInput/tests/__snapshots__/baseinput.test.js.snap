@@ -39,12 +39,13 @@ exports[`Input should render correctly 1`] = `
           "multiline": "HvBaseInput-multiLine",
         }
       }
-      id="undefined-container"
       inputProps={
         Object {
+          "aria-controls": undefined,
           "aria-describedby": undefined,
           "aria-invalid": undefined,
           "aria-label": "Input Label",
+          "aria-labelledby": undefined,
           "aria-required": undefined,
           "id": undefined,
         }
@@ -74,12 +75,13 @@ exports[`Input should render correctly 1`] = `
           }
         }
         disableUnderline={true}
-        id="undefined-container"
         inputProps={
           Object {
+            "aria-controls": undefined,
             "aria-describedby": undefined,
             "aria-invalid": undefined,
             "aria-label": "Input Label",
+            "aria-labelledby": undefined,
             "aria-required": undefined,
             "id": undefined,
           }
@@ -109,13 +111,14 @@ exports[`Input should render correctly 1`] = `
             }
           }
           fullWidth={false}
-          id="undefined-container"
           inputComponent="input"
           inputProps={
             Object {
+              "aria-controls": undefined,
               "aria-describedby": undefined,
               "aria-invalid": undefined,
               "aria-label": "Input Label",
+              "aria-labelledby": undefined,
               "aria-required": undefined,
               "id": undefined,
             }
@@ -150,13 +153,14 @@ exports[`Input should render correctly 1`] = `
               }
             }
             fullWidth={false}
-            id="undefined-container"
             inputComponent="input"
             inputProps={
               Object {
+                "aria-controls": undefined,
                 "aria-describedby": undefined,
                 "aria-invalid": undefined,
                 "aria-label": "Input Label",
+                "aria-labelledby": undefined,
                 "aria-required": undefined,
                 "id": undefined,
               }

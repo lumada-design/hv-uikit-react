@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { isNil } from "lodash";
 import { Input, withStyles } from "@material-ui/core";
+import { setId } from "../../utils";
 import { HvFormElementContextConsumer } from "../FormElement";
 import styles from "./styles";
 
 /**
  * An Input component that only posses the most basic functionalities.
- * It should be used alongside the other form elements to construct a proper accesible form.
+ * It should be used alongside the other form elements to construct a proper accessible form.
  */
 const HvBaseInput = props => {
   const {
@@ -35,17 +35,17 @@ const HvBaseInput = props => {
   return (
     <HvFormElementContextConsumer>
       {formContext => {
-        const { elementStatus, elementValue, elementDisabled, descriptors } = formContext;
+        const { elementStatus, elementValue, elementDisabled, descriptors = {} } = formContext;
         const localInvalid = invalid || elementStatus === "invalid";
-        const locaValue = !isNil(value) ? value : elementValue;
+        const localValue = value ?? elementValue;
         const localDisabled = disabled || elementDisabled;
-        const currentDescribedBy = descriptors?.HvHelperText[0]?.id;
+        const { HvLabel, HvHelperText, HvSuggestions } = descriptors;
 
         return (
           <Input
-            id={`${id}-container`}
+            id={setId(id, "container")}
             defaultValue={defaultValue}
-            value={locaValue}
+            value={localValue}
             disabled={localDisabled}
             placeholder={placeholder}
             onChange={onChangeHandler}
@@ -62,7 +62,9 @@ const HvBaseInput = props => {
             inputProps={{
               "aria-required": required || undefined,
               "aria-invalid": localInvalid || undefined,
-              "aria-describedby": currentDescribedBy,
+              "aria-describedby": HvHelperText?.[0]?.id,
+              "aria-labelledby": HvLabel?.[0]?.id,
+              "aria-controls": HvSuggestions?.[0]?.id,
               id,
               ...inputProps
             }}
@@ -75,6 +77,7 @@ const HvBaseInput = props => {
     </HvFormElementContextConsumer>
   );
 };
+
 HvBaseInput.propTypes = {
   /**
    * Class names to be applied.
