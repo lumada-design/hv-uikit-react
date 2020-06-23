@@ -17,16 +17,16 @@ export const Main = () => (
       type="mixed"
       style={{ margin: "10px", width: "210px" }}
       buttons={[
-        { id: "map", value: "Map", icon: <Map />, selected: true },
-        { id: "satellite", value: "Satellite", icon: <LocationPin /> }
+        { id: "mixed_map", value: "Map", icon: <Map />, selected: true },
+        { id: "mixed_satellite", value: "Satellite", icon: <LocationPin /> }
       ]}
     />
     <HvMultiButton
       type="icon"
       style={{ margin: "10px", width: "64px" }}
       buttons={[
-        { id: "map", icon: <Map />, selected: true },
-        { id: "satellite", icon: <LocationPin /> }
+        { id: "icon_map", icon: <Map />, selected: true, "aria-label": "Map" },
+        { id: "icon_satellite", icon: <LocationPin />, "aria-label": "Satellite" }
       ]}
     />
   </div>

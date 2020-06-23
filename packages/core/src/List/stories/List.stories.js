@@ -205,6 +205,7 @@ export const TestListNotSelected = () => (
     </button>
     <HvList
       id="list"
+      aria-label="Test List Not Selected"
       hasTooltips
       values={[
         { label: "Share" },
@@ -232,6 +233,7 @@ export const TestListFocusableSelection = () => (
     </button>
     <HvList
       id="list"
+      aria-label="Test List Focusable Selection"
       selectDefault
       hasTooltips
       values={[

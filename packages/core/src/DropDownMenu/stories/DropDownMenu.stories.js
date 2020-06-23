@@ -53,6 +53,7 @@ export const WithIconsAndActions = () => {
 
   return (
     <HvDropDownMenu
+      id="dropdownmenu-with-icons-and-actions"
       placement="right"
       onClick={(e, item) => console.log(item.label)}
       aria-label="dropdownMenu-3"
@@ -70,6 +71,13 @@ WithIconsAndActions.story = {
     docs: {
       storyDescription:
         "DropDownMenu with Icons and Actions. Icons should be colored accordingly when selected"
+    },
+    pa11y: {
+      actions: [
+        // open menu before testing
+        "click element #dropdownmenu-with-icons-and-actions-icon-button",
+        "wait for element #dropdownmenu-with-icons-and-actions-list to be visible"
+      ]
     }
   }
 };
@@ -148,6 +156,45 @@ KeyboardNavigation.story = {
   parameters: {
     docs: {
       disable: true
+    }
+  }
+};
+
+export const A11YClosed = () => (
+  <HvDropDownMenu
+    id="dropdownmenu-closed"
+    onClick={(e, item) => console.log(item.label)}
+    dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+  />
+);
+
+A11YClosed.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};
+
+export const A11YOpen = () => (
+  <HvDropDownMenu
+    id="dropdownmenu-open"
+    onClick={(e, item) => console.log(item.label)}
+    dataList={[{ label: "Label 1" }, { label: "Label 2" }, { label: "Label 3" }]}
+  />
+);
+
+A11YOpen.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    pa11y: {
+      actions: [
+        // open menu before testing
+        "click element #dropdownmenu-open-icon-button",
+        "wait for element #dropdownmenu-open-list to be visible"
+      ]
     }
   }
 };

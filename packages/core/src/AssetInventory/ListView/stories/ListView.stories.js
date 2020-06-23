@@ -59,7 +59,13 @@ export const Main = () => {
     const { Icon, sema } = status;
 
     return (
-      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
+      <HvListViewRow
+        id={id}
+        checkboxProps={{
+          value: value.id,
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+        }}
+      >
         <HvListViewCell semantic={sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={sema} className={classes.icon} />
         </HvListViewCell>
@@ -67,11 +73,11 @@ export const Main = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="infoText">
+            <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -160,6 +166,19 @@ export const Main = () => {
   );
 };
 
+Main.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Use of align attribute
+        // https://github.com/lumada-design/hv-uikit-react/issues/1691
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
+      ]
+    }
+  }
+};
+
 export const NotSelectable = () => {
   const values = [
     {
@@ -204,7 +223,13 @@ export const NotSelectable = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
+      <HvListViewRow
+        id={id}
+        checkboxProps={{
+          value: value.id,
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+        }}
+      >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
@@ -212,10 +237,10 @@ export const NotSelectable = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="infoText">
+            <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -299,6 +324,19 @@ export const NotSelectable = () => {
   );
 };
 
+NotSelectable.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Use of align attribute
+        // https://github.com/lumada-design/hv-uikit-react/issues/1691
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
+      ]
+    }
+  }
+};
+
 export const NotSelectableWithMenu = () => {
   const values = [
     {
@@ -343,7 +381,13 @@ export const NotSelectableWithMenu = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
+      <HvListViewRow
+        id={id}
+        checkboxProps={{
+          value: value.id,
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+        }}
+      >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
@@ -351,10 +395,10 @@ export const NotSelectableWithMenu = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="infoText">
+            <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -449,6 +493,14 @@ NotSelectableWithMenu.story = {
     docs: {
       storyDescription:
         "List View that is not selectable with many actions, collapsed into a DropDownMenu"
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Use of align attribute
+        // https://github.com/lumada-design/hv-uikit-react/issues/1691
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
+      ]
     }
   }
 };
@@ -497,7 +549,13 @@ export const NotStyled = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
+      <HvListViewRow
+        id={id}
+        checkboxProps={{
+          value: value.id,
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
+        }}
+      >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon />
         </HvListViewCell>
@@ -505,10 +563,10 @@ export const NotStyled = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="infoText">
+            <HvTypography className={classes.timestamp} variant="sText">
               {value.event.timestamp}
             </HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }} variant="infoText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -572,6 +630,14 @@ NotStyled.story = {
   parameters: {
     docs: {
       storyDescription: "Default ListView without style overrides"
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Use of align attribute
+        // https://github.com/lumada-design/hv-uikit-react/issues/1691
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
+      ]
     }
   }
 };

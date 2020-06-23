@@ -67,6 +67,7 @@ export const Main = () => {
         innerCardContent={<SingleContent />}
         mediaPath={compressor}
         mediaHeight={186}
+        mediaTitle="Compressor"
       />
     </div>
   );
@@ -221,7 +222,6 @@ export const AllComponents = () => {
         }}
         checkboxProps={{
           value: "value",
-          "aria-label": "leaf checkbox",
           inputProps: {
             "aria-label": "leaf input"
           }
@@ -352,7 +352,10 @@ export const MultipleActions = () => {
         actions={myActions}
         actionsAlignment="right"
         checkboxProps={{
-          value: "value"
+          value: "value",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
         }}
         maxVisibleActions={2}
         cardButtonProps={{
@@ -478,7 +481,6 @@ export const NoActions = () => {
         innerCardContent={<Content />}
         checkboxProps={{
           value: "value",
-          "aria-label": "leaf checkbox",
           inputProps: {
             "aria-label": "leaf input"
           }
@@ -518,7 +520,6 @@ export const OnlyTitle = () => {
         headerTitle={configurationNoMedia.title}
         checkboxProps={{
           value: "value",
-          "aria-label": "leaf checkbox",
           inputProps: {
             "aria-label": "leaf input"
           }
@@ -610,7 +611,6 @@ export const KPICard = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            "aria-label": "leaf checkbox",
             inputProps: { "aria-label": "leaf input" }
           }}
           cardButtonProps={{ "aria-label": "leaf" }}
@@ -630,7 +630,6 @@ export const KPICard = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            "aria-label": "leaf checkbox",
             inputProps: { "aria-label": "leaf input" }
           }}
           cardButtonProps={{ "aria-label": "leaf" }}
@@ -648,7 +647,6 @@ export const KPICard = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            "aria-label": "leaf checkbox",
             inputProps: { "aria-label": "leaf input" }
           }}
           cardButtonProps={{ "aria-label": "leaf" }}
@@ -720,7 +718,6 @@ export const WithComposition = () => {
           aria-label="Composed card"
           checkboxProps={{
             value: "value",
-            "aria-label": "Composed card",
             inputProps: {
               "aria-label": "composed input"
             }
@@ -749,8 +746,8 @@ export const WithFooterComposition = () => {
         <Upload />
         Update
       </HvButton>
-      <HvButton category="icon">
-        <MoreOptionsVertical aria-label="more options" />
+      <HvButton category="icon" aria-label="more options">
+        <MoreOptionsVertical />
       </HvButton>
     </>
   );
@@ -778,7 +775,6 @@ export const WithFooterComposition = () => {
           isSelectable
           checkboxProps={{
             value: "value",
-            "aria-label": "Composed card",
             inputProps: {
               "aria-label": "composed input"
             }
@@ -843,7 +839,6 @@ export const AutomaticActions = () => {
         actionsAlignment="left"
         checkboxProps={{
           value: "value",
-          "aria-label": "Composed card",
           inputProps: {
             "aria-label": "composed input"
           }
@@ -932,7 +927,6 @@ export const Selectable = () => {
         }}
         checkboxProps={{
           value: "value",
-          "aria-label": "Composed card",
           inputProps: {
             "aria-label": "composed input"
           }
@@ -1115,6 +1109,12 @@ export const WithClickAction = () => {
         footerProps={{
           "aria-label": "Compressor"
         }}
+        checkboxProps={{
+          value: "value",
+          inputProps: {
+            "aria-label": "leaf input"
+          }
+        }}
       />
     </div>
   );
@@ -1179,6 +1179,12 @@ export const CustomActionsSelectable = () => {
           subheader={toggleB ? "Compressor" : "onChange()"}
           id="cardId"
           aria-label="Asset Avatar L90 press enter or space to select this card"
+          checkboxProps={{
+            value: "l90",
+            inputProps: {
+              "aria-label": "L90 input"
+            }
+          }}
           innerCardContent={<SingleContent classes={styles} />}
           onClick={() => setToggleA(!toggleA)}
           onChange={() => setToggleB(!toggleB)}
@@ -1226,6 +1232,12 @@ export const CustomActionsNotSelectable = () => {
           id="cardId"
           innerCardContent={<SingleContent classes={styles} />}
           aria-label="Asset Avatar L90 press enter or space to use this card main action"
+          checkboxProps={{
+            value: "l90",
+            inputProps: {
+              "aria-label": "l90 input"
+            }
+          }}
           onClick={() => setToggleA(!toggleA)}
           onChange={() => setToggleB(!toggleB)}
           isSelectable
