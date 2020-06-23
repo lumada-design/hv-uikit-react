@@ -10,6 +10,7 @@ import Calendar from "./Calendar";
 import Actions from "./Actions";
 import styles from "./styles";
 import withLabels from "../withLabels";
+import withId from "../withId";
 import {
   convertISOStringDateToDate,
   DEFAULT_LOCALE,
@@ -396,9 +397,14 @@ class HvDatePicker extends React.Component {
    * @memberOf HvDatePicker
    */
   renderLabel = () => {
-    const { classes, labels } = this.props;
+    const { id, classes, labels } = this.props;
     return (
-      <Typography variant="labelText" className={classes.label}>
+      <Typography
+        id={setId(id, "label")}
+        variant="labelText"
+        component="label"
+        className={classes.label}
+      >
         {labels.title}
       </Typography>
     );
@@ -527,11 +533,15 @@ class HvDatePicker extends React.Component {
     const { id, className, classes, labels } = this.props;
     const { calendarOpen } = this.state;
 
+    const naming = {
+      "aria-label": isNil(labels) || isNil(labels.title) ? "Date input" : undefined,
+      "aria-labelledby": labels && labels.title ? setId(id, "label") : undefined
+    };
+
     return (
       <>
         {labels && labels.title && this.renderLabel()}
         <div
-          aria-label={isNil(labels) || isNil(labels.title) ? "Date input" : undefined}
           className={clsx(className, classes.root, {
             [classes.inputCalendarOpen]: calendarOpen,
             [classes.inputCalendarClosed]: !calendarOpen
@@ -541,6 +551,7 @@ class HvDatePicker extends React.Component {
           role="button"
           tabIndex={0}
           id={id}
+          {...naming}
         >
           <input
             ref={element => {
@@ -552,6 +563,7 @@ class HvDatePicker extends React.Component {
             type="text"
             readOnly
             tabIndex={-1}
+            {...naming}
           />
           <CalendarIcon tabIndex={-1} className={classes.icon} />
         </div>
@@ -741,5 +753,5 @@ HvDatePicker.defaultProps = {
 };
 
 export default withStyles(styles, { name: "HvDatePicker", withTheme: true })(
-  withLabels(DEFAULT_LABELS)(HvDatePicker)
+  withLabels(DEFAULT_LABELS)(withId(HvDatePicker))
 );
