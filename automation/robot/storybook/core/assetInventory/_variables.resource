@@ -14,13 +14,13 @@ ${dropdownHeader}     id:sort_hv-assetinventory-header
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${firstCheckbox}      css:input[value='id_0']
 ${listViewButton}     id:listView-button
-${pageCurrent}        id:hv-assetinventory-currentPage-input
-${pageLast}           id:hv-assetinventory-lastPage-button
+${pageCurrent}        id:hv-assetinventory-pagination-currentPage-input
+${pageLast}           id:hv-assetinventory-pagination-lastPage-button
 ${pageNavigator}      css:div[class=HvPagination-pageNavigator]
-${pageNext}           id:hv-assetinventory-nextPage-button
-${pagePrevious}       id:hv-assetinventory-previousPage-button
-${pageSize}           css:select[id|='hv-assetinventory-pageSize']
-${pageTotal}          id:hv-assetinventory-totalPages
+${pageNext}           id:hv-assetinventory-pagination-nextPage-button
+${pagePrevious}       id:hv-assetinventory-pagination-previousPage-button
+${pageSize}           css:select[id|='hv-assetinventory-pagination-pageSize']
+${pageTotal}          id:hv-assetinventory-pagination-totalPages
 ${row1}               css:#listView ul>li:nth-child(1)
 ${row2}               css:#listView ul>li:nth-child(2)
 ${row3}               css:#listView ul>li:nth-child(3)
