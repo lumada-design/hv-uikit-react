@@ -34,7 +34,7 @@ export const Main = () => (
   >
     <Actions>
       <Action
-        label="Logout"
+        label="Log Out"
         icon={<LogOut />}
         onClick={(event, data) => {
           alert(`action ${data.label} selected`);

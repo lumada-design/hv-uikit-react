@@ -22,6 +22,7 @@ const styles = theme => ({
     justifyContent: "flex-start",
     alignItems: "center",
     height: "32px",
+    padding: 0,
     color: theme.hv.palette.atmosphere.acce1,
 
     "&:hover": hover(theme),
