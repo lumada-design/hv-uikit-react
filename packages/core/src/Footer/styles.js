@@ -33,13 +33,14 @@ const styles = theme => ({
   },
   copyright: {
     [theme.breakpoints.only("xs")]: {
-      flexDirection: "column"
+      flexDirection: "column",
+      marginBottom: theme.spacing("xs")
     }
   },
   separator: {
     width: 1,
-    height: 20,
-    backgroundColor: theme.palette.atmo5,
+    height: 16,
+    backgroundColor: theme.palette.acce1,
     margin: theme.spacing(0, "xs"),
     [theme.breakpoints.only("xs")]: {
       display: "none"
