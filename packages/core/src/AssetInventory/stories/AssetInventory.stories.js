@@ -428,6 +428,7 @@ export const Configurations = () => {
 
     return (
       <HvListViewRow
+        id={id}
         checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
         checked={value.checked}
       >
@@ -743,6 +744,7 @@ export const ThreeViews = () => {
 
     return (
       <HvListViewRow
+        id={id}
         checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
         checked={value.checked}
       >
@@ -1062,6 +1064,7 @@ export const ServerSidePagination = () => {
 
     return (
       <HvListViewRow
+        id={id}
         checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
         checked={value.checked}
       >
