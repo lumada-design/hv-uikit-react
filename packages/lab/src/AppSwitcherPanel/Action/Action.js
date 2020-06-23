@@ -34,10 +34,7 @@ export default class Action extends Component {
 
     const renderElementWithLink = () => {
       return (
-        <a
-          href={application.url}
-          target={application.target || "_top"}
-          className={classes.link}>
+        <a href={application.url} target={application.target || "_top"} className={classes.link}>
           {renderElement()}
         </a>
       );
@@ -46,7 +43,7 @@ export default class Action extends Component {
     /**
      * Handles the onClick event and triggers the appropriate callback if it exists.
      */
-    const handleOnClick = (event) => {
+    const handleOnClick = event => {
       const { onClickCallback } = this.props;
 
       if (onClickCallback) {
@@ -60,20 +57,16 @@ export default class Action extends Component {
           component="div"
           variant={isSelected ? "selectedText" : "normalText"}
           role="button"
-          className={`${classes.typography} ${
-            isSelected ? classes.selected : ""
-          }`}
+          className={`${classes.typography} ${isSelected ? classes.selected : ""}`}
           tabIndex={0}
-          onClick={handleOnClick}>
+          onClick={handleOnClick}
+        >
           {renderApplicationIcon()}
 
           <span title={application.name}>{application.name}</span>
 
           {application.description && (
-            <Info
-              className={classes.iconInfo}
-              title={application.description}
-            />
+            <Info className={classes.iconInfo} title={application.description} />
           )}
         </HvTypography>
       );

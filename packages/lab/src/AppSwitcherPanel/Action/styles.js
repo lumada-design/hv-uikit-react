@@ -54,7 +54,6 @@ const styles = theme => ({
       textOverflow: "ellipsis",
       width: "calc(100% - 64px)" // The with of both icons, 32px each.
     }
-
   },
   selected: selected(theme),
 

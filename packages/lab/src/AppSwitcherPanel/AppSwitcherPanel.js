@@ -48,9 +48,7 @@ export default class AppSwitcherPanel extends Component {
     });
 
     return (
-      <div
-        id={internalId}
-        className={`${classes.root} ${isOpen ? classes.open : ""}`}>
+      <div id={internalId} className={`${classes.root} ${isOpen ? classes.open : ""}`}>
         <div className={classes.headerContainer}>
           {header ? (
             header
