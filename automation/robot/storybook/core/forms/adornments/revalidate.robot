@@ -1,0 +1,63 @@
+*** Setting ***
+Resource      _resource.resource
+Test Setup    Run Keywords
+...           Go To    ${components}forms-formelement--form-element-state-transition
+...           AND    Wait Until Element Is Enabled    ${input}    10s
+
+
+*** Test Cases ***
+does not show validation adornment icons when input is cleaned
+    Input Text                           ${input}    Joao
+    Press Keys                           NONE    TAB
+    wait until element is Visible        ${adornment_accepted}
+    Click Element                        ${input}
+    wait until Element Is Visible        ${clean_button}
+    Click Element                        ${clean_button}
+    wait until element is Not Visible    ${adornment_accepted}
+
+does not show previous validation when type after clean input
+    Input Text                           ${input}    Joao
+    Press Keys                           NONE    TAB
+    Click Element                        ${input}
+    wait until Element Is Visible        ${clean_button}
+    click Element                        ${clean_button}
+    Press Keys                           ${input}    1a
+    Element Should Not Be Visible        ${adornment_accepted}
+
+revalidate input when adornment button is clicked - failed to accepted
+    Input Text                       ${input}    a1b2
+    Press Keys                       NONE    TAB
+    Wait Until Element Is Visible    ${adornment_failed}
+    Double Click Element             ${input}
+    Press Keys                       NONE    DELETE    Joao
+    Click Element                    ${adornment_failed}
+    Wait Until Element Is Visible    ${adornment_accepted}
+    Element Should Not Be Visible    ${adornment_failed}
+
+revalidate input when adornment button is clicked - accepted to accepted
+    Input Text                       ${input}    Joao
+    Press Keys                       NONE    TAB
+    Wait Until Element Is Visible    ${adornment_accepted}
+    Double Click Element             ${input}
+    Press Keys                       NONE    DELETE    Goncalves
+    Click Element                    ${adornment_accepted}
+    Wait Until Element Is Visible    ${adornment_accepted}
+    Element Should Not Be Visible    ${adornment_failed}
+
+revalidate input when focus goes out - failed to failed
+    Input Text                       ${input}    a1
+    Press Keys                       NONE    TAB
+    Wait Until Element Is Visible    ${adornment_failed}
+    Double Click Element             ${input}
+    Press Keys                       NONE    DELETE    1a    TAB
+    Wait Until Element Is Visible    ${adornment_failed}
+    Element Should Not Be Visible    ${adornment_accepted}
+
+revalidate input when focus goes out - accepted to failed
+    Input Text                       ${input}    Joao
+    Press Keys                       NONE    TAB
+    Wait Until Element Is Visible    ${adornment_accepted}
+    Double Click Element             ${input}
+    Press Keys                       NONE    DELETE    1a    TAB
+    Wait Until Element Is Visible    ${adornment_failed}
+    Element Should Not Be Visible    ${adornment_accepted}

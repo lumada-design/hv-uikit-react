@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { HvFormElement, HvBaseInput, HvHelperText, HvLabel } from "../../..";
+
+import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
+
+import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvInputAdornment } from "../../..";
 
 export default {
   title: "Components/Forms/FormElement",
@@ -127,6 +130,79 @@ FormElementDisabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
+    }
+  }
+};
+
+export const FormElementStateTransition = () => {
+  const [elementValue, setElementValue] = useState("");
+  const [elementStatus, setElementStatus] = useState("standBy");
+  const [showCloseAdornment, setShowCloseAdornment] = useState(false);
+  const [notificationText, setNotificationText] = useState(
+    "Write your name in this input do not put numbers"
+  );
+
+  const inputId = "controlled-input";
+  const inputLabelId = "controlled-input-label";
+
+  const setElement = (value = "", setStatus = true) => {
+    const hasNumber = /\d/.test(value);
+    const isEmpty = !value || value.length === 0;
+
+    if (setStatus) {
+      setElementStatus((hasNumber && "invalid") || (isEmpty && "standBy") || "valid");
+      setNotificationText(
+        (hasNumber && "Names do not contain numbers") ||
+          (isEmpty && "Write your name in this input do not put numbers") ||
+          "Your value is valid"
+      );
+    }
+
+    setElementValue(value);
+  };
+
+  return (
+    <HvFormElement value={elementValue} status={elementStatus}>
+      <HvLabel id={inputLabelId} htmlFor={inputId} label="First name" />
+      <HvBaseInput
+        id={inputId}
+        inputProps={{
+          "aria-labelledby": inputLabelId
+        }}
+        aria-labelledby={inputLabelId}
+        placeholder="Insert your name"
+        onChange={(event, value) => setElement(value, false)}
+        onBlur={event => {
+          event.persist();
+          setTimeout(() => setElement(event.target.value), 250);
+        }}
+        onFocus={() => setShowCloseAdornment(true)}
+        onMouseEnter={() => setShowCloseAdornment(true)}
+        onMouseLeave={() => setShowCloseAdornment(false)}
+        endAdornment={
+          <>
+            <HvInputAdornment
+              showWhen="standBy"
+              isShown={showCloseAdornment}
+              onClick={() => setElement("")}
+              icon={<CloseXS />}
+            />
+            <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
+            <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
+          </>
+        }
+      />
+      <HvHelperText key="2" id="info-text-valid" notification={notificationText}>
+        Write your name in this input do not put numbers
+      </HvHelperText>
+    </HvFormElement>
+  );
+};
+
+FormElementStateTransition.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Form element updates input state."
     }
   }
 };

@@ -52,6 +52,7 @@ exports[`Input should render correctly 1`] = `
       }
       multiline={false}
       onChange={[Function]}
+      onFocus={[Function]}
       placeholder="test"
     >
       <ForwardRef(Input)
@@ -88,6 +89,7 @@ exports[`Input should render correctly 1`] = `
         }
         multiline={false}
         onChange={[Function]}
+        onFocus={[Function]}
         placeholder="test"
       >
         <WithStyles(ForwardRef(InputBase))
@@ -125,6 +127,7 @@ exports[`Input should render correctly 1`] = `
           }
           multiline={false}
           onChange={[Function]}
+          onFocus={[Function]}
           placeholder="test"
           type="text"
         >
@@ -167,6 +170,7 @@ exports[`Input should render correctly 1`] = `
             }
             multiline={false}
             onChange={[Function]}
+            onFocus={[Function]}
             placeholder="test"
             type="text"
           >
