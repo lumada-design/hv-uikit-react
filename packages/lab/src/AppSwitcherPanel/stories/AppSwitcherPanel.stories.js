@@ -1,12 +1,7 @@
 /* eslint-disable no-alert */
 import React from "react";
 
-import {
-  Tool,
-  PingPong,
-  GameController,
-  Champion
-} from "@hv/uikit-react-icons/dist";
+import { Tool, PingPong, GameController, Champion } from "@hv/uikit-react-icons/dist";
 
 import HvAppSwitcherPanel from "../../AppSwitcherPanel";
 
@@ -58,8 +53,7 @@ export const Main = () => {
     },
     {
       name: "UI-KIT Storybook",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
+      iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
       url: "https://lumada-design.github.io/uikit/master/",
       target: "_top"
@@ -81,8 +75,7 @@ export const Main = () => {
     },
     {
       name: "No Icon App",
-      description:
-        "This is an App without an icon, URL is set to the UI-KIT storybook",
+      description: "This is an App without an icon, URL is set to the UI-KIT storybook",
       url: "https://github.com/lumada-design/hv-uikit-react"
     },
     {
@@ -117,8 +110,7 @@ export const sample2 = () => {
     {
       name:
         "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
+      iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
       url: "https://lumada-design.github.io/uikit/master/",
       target: "_top"
@@ -132,8 +124,7 @@ export const sample2 = () => {
     },
     {
       name: "No Icon App",
-      description:
-        "This is an App without an icon, URL is set to the UI-KIT storybook",
+      description: "This is an App without an icon, URL is set to the UI-KIT storybook",
       url: "https://github.com/lumada-design/hv-uikit-react"
     },
     {
@@ -223,8 +214,7 @@ export const sample4 = () => {
     {
       name:
         "App with a bigger name than the others just to showcase the truncation on the AppSwitcherPanel",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
+      iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "This is the Storybook for the UI-KIT project",
       url: "https://lumada-design.github.io/uikit/master/",
       target: "_top"
@@ -238,8 +228,7 @@ export const sample4 = () => {
     },
     {
       name: "No Icon App",
-      description:
-        "This is an App without an icon, URL is set to the UI-KIT storybook",
+      description: "This is an App without an icon, URL is set to the UI-KIT storybook",
       url: "https://github.com/lumada-design/hv-uikit-react"
     },
     {
@@ -254,11 +243,7 @@ export const sample4 = () => {
         title="Custom header"
         applications={applicationsList}
         isActionSelectedCallback={handlesActionSelectedCallback}
-        header={
-          <div style={{ backgroundColor: "lightgreen" }}>
-            This is the custom header
-          </div>
-        }
+        header={<div style={{ backgroundColor: "lightgreen" }}>This is the custom header</div>}
         isOpen
       />
     </div>
@@ -294,8 +279,7 @@ export const sample5 = () => {
     },
     {
       name: "App2 - Url icon",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
+      iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "App 2 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -385,8 +369,7 @@ export const sample6 = () => {
     },
     {
       name: "App2 - Url icon",
-      iconUrl:
-        "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
+      iconUrl: "https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png",
       description: "App 2 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"

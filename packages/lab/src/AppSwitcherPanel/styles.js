@@ -1,4 +1,4 @@
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     display: "none",
     width: "320px",
@@ -20,7 +20,7 @@ const styles = (theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     padding: `${theme.hv.spacing.sm}px`,
-    borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
+    borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
   },
   titleContainer: {
     width: "100%",
@@ -46,7 +46,7 @@ const styles = (theme) => ({
     height: "52px",
     borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`,
     padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px`
-  },
+  }
 });
 
 export default styles;
