@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import { HvFormElement, HvLabel, HvBaseInput, HvSuggestions } from "../../..";
-import { isKeypress, KeyboardCodes } from "../../../utils";
+import { HvFormElement, HvLabel, HvBaseInput, HvButton, HvSuggestions } from "../../..";
+import { KeyboardCodes, isKeypress } from "../../../utils";
 import countryList from "../../../Input/stories/countries";
 
 export default {
@@ -18,6 +18,8 @@ export default {
     )
   ]
 };
+
+const { Esc, Tab } = KeyboardCodes;
 
 export const Main = () => {
   const suggestions = countryList;
@@ -38,6 +40,20 @@ export const Main = () => {
     console.log(val);
     setOpen(false);
     setValue(val.label);
+    inputRef?.current?.focus();
+  };
+
+  const handleSuggestionsKey = evt => {
+    if (isKeypress(evt, Esc)) {
+      inputRef?.current?.focus();
+      setOpen(false);
+    } else if (isKeypress(evt, Tab)) {
+      if (evt.shiftKey) {
+        setTimeout(() => inputRef?.current?.focus());
+      } else {
+        setOpen(false);
+      }
+    }
   };
 
   return (
@@ -48,6 +64,7 @@ export const Main = () => {
           expanded={open}
           anchorEl={inputRef.current?.parentElement}
           onClose={() => setOpen(false)}
+          onKeyDown={handleSuggestionsKey}
           onSuggestionSelected={handleSelection}
           suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
         />
@@ -101,6 +118,20 @@ export const ServerSideSuggestions = () => {
     console.log(val);
     setOpen(false);
     setValue(val.label);
+    inputRef?.current?.focus();
+  };
+
+  const handleSuggestionsKey = evt => {
+    if (isKeypress(evt, Esc)) {
+      inputRef?.current?.focus();
+      setOpen(false);
+    } else if (isKeypress(evt, Tab)) {
+      if (evt.shiftKey) {
+        setTimeout(() => inputRef?.current?.focus());
+      } else {
+        setOpen(false);
+      }
+    }
   };
 
   return (
@@ -111,6 +142,7 @@ export const ServerSideSuggestions = () => {
           expanded={open}
           anchorEl={inputRef.current?.parentElement}
           onClose={() => setOpen(false)}
+          onKeyDown={handleSuggestionsKey}
           onSuggestionSelected={handleSelection}
           suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
         />
@@ -153,6 +185,7 @@ export const OpenWithDownArrow = () => {
     console.log(val);
     setOpen(false);
     setValue(val.label);
+    inputRef?.current?.focus();
   };
 
   const handleKey = e => {
@@ -162,25 +195,42 @@ export const OpenWithDownArrow = () => {
     }
   };
 
+  const handleSuggestionsKey = evt => {
+    if (isKeypress(evt, Esc)) {
+      inputRef?.current?.focus();
+      setOpen(false);
+    } else if (isKeypress(evt, Tab)) {
+      if (evt.shiftKey) {
+        setTimeout(() => inputRef?.current?.focus());
+      } else {
+        setOpen(false);
+      }
+    }
+  };
+
   return (
-    <HvFormElement value={value}>
-      <HvLabel id="countries" label="Select country">
-        <HvBaseInput
-          inputRef={inputRef}
-          placeholder="Insert country"
-          onChange={handleChange}
-          onKeyDown={handleKey}
-        />
-        <HvSuggestions
-          id="suggestions"
-          expanded={open}
-          anchorEl={inputRef.current?.parentElement}
-          onClose={() => setOpen(false)}
-          onSuggestionSelected={handleSelection}
-          suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
-        />
-      </HvLabel>
-    </HvFormElement>
+    <>
+      <HvFormElement value={value}>
+        <HvLabel id="countries" label="Select country">
+          <HvBaseInput
+            inputRef={inputRef}
+            placeholder="Insert country"
+            onChange={handleChange}
+            onKeyDown={handleKey}
+          />
+          <HvSuggestions
+            id="suggestions"
+            expanded={open}
+            anchorEl={inputRef.current?.parentElement}
+            onClose={() => setOpen(false)}
+            onKeyDown={handleSuggestionsKey}
+            onSuggestionSelected={handleSelection}
+            suggestionValues={suggestionList.map((label, id) => ({ id: String(id), label }))}
+          />
+        </HvLabel>
+      </HvFormElement>
+      <HvButton category="ghost">Submit</HvButton>
+    </>
   );
 };
 

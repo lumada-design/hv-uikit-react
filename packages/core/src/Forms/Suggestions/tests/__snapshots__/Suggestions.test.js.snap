@@ -4,24 +4,27 @@ exports[`Suggestions should render correctly 1`] = `
 <WithStyles(HvSuggestions)
   expanded={false}
   onClose={[Function]}
+  onKeyDown={[Function]}
   onSuggestionSelected={[Function]}
   suggestionValues={Array []}
 >
   <HvSuggestions
     classes={
       Object {
+        "list": "HvSuggestions-list",
         "popper": "HvSuggestions-popper",
         "root": "HvSuggestions-root",
-        "suggestionContainer": "HvSuggestions-suggestionContainer",
       }
     }
     expanded={false}
     onClose={[Function]}
+    onKeyDown={[Function]}
     onSuggestionSelected={[Function]}
     suggestionValues={Array []}
   >
     <div
       className="HvSuggestions-root"
+      onKeyDown={[Function]}
     >
       <ForwardRef(Popper)
         className="HvSuggestions-popper"

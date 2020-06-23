@@ -26,6 +26,6 @@ export interface HvSuggestionsProps
   onSuggestionSelected?: (event: MouseEvent, item: ListValueProp) => void;
 }
 
-export type HvSuggestionsClassKey = "root" | "popper" | "suggestionContainer";
+export type HvSuggestionsClassKey = "root" | "popper" | "list";
 
 export default function HvSuggestions(props: HvSuggestionsProps): JSX.Element | null;

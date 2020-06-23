@@ -8,7 +8,7 @@ const styles = theme => ({
     transform: "translate3d(0, -1px, 0) !important",
     zIndex: theme.zIndex.tooltip
   },
-  suggestionContainer: {
+  list: {
     backgroundColor: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1],
     padding: theme.spacing("sm")

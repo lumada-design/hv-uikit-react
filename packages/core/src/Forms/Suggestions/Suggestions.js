@@ -27,15 +27,14 @@ const HvSuggestions = props => {
     <div id={id} className={clsx(className, classes.root)} {...others}>
       <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
         <OutsideClickHandler onOutsideClick={e => onClose?.(e)}>
-          <div className={classes.suggestionContainer}>
-            <HvList
-              id={setId(id, "list")}
-              condensed
-              values={suggestionValues}
-              onClick={onSuggestionSelected}
-              selectable={false}
-            />
-          </div>
+          <HvList
+            className={classes.list}
+            id={setId(id, "list")}
+            condensed
+            values={suggestionValues}
+            onClick={onSuggestionSelected}
+            selectable={false}
+          />
         </OutsideClickHandler>
       </Popper>
     </div>
@@ -66,7 +65,7 @@ HvSuggestions.propTypes = {
     /**
      * Styles applied to the suggestion list container.
      */
-    suggestionContainer: PropTypes.string
+    list: PropTypes.string
   }).isRequired,
   /**
    * Whether suggestions is visible.
