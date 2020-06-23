@@ -1,7 +1,5 @@
 *** Settings ***
-Library      SeleniumLibrary
-Variables    ../../../_resources/storybook_variables.yaml
-Resource     ../../../_resources/storybook_keywords.robot
+Resource     ../../_keywords.resource
 
 
 *** Keywords ***
@@ -23,7 +21,6 @@ ${actions}             css:[id^=hv-actions]
 ${brand}               css:div[class=HvHeaderBrand-root]
 ${childItems}          css:ul[class*=MenuBar-active] li
 ${header}              css:div[class=HvHeader-header]
-${iframeHeaderMain}    ${STORYBOOK_URL}/iframe.html?id=components-navigation-system-horizontal-navigation--main
 ${item1.1}             css:li[class*=MenuItem]:nth-child(1) li:nth-child(1)
 ${item1.2}             css:li[class*=MenuItem]:nth-child(1) li:nth-child(2)
 ${item1}               css:li[class*=MenuItem]:nth-child(1)

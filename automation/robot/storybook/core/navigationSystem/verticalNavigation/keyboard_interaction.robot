@@ -1,12 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _verticalNavigation.resource
-Suite Setup       open storybook    ${iframeCollapsable}
 Test Setup        Run Keywords
-...               Reload Page    AND
+...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
 ...               expand vertical navigation
-Suite Teardown    Close Browser
-Force Tags        smoke    keyboard
+Force Tags        keyboard
 Documentation     Test Cases based on Design System Version 1.2.0
 
 

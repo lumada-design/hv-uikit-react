@@ -1,10 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          table.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Test Setup        go to url and wait until element is visible
-...               ${iframe_clientSide}    ${table}   10s
+Test Setup        Run Keywords
+...               Go To    ${visualizations}table--with-checkbox
+...               AND    Wait Until Element Is Visible    ${table}
 Test Teardown     Run Keyword If Test Failed
 ...               Capture Page Screenshot    ${SUITE_NAME}${TEST_NAME}.png
 Force Tags        keyboard    bug-infrastructure-ie

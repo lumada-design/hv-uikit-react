@@ -1,10 +1,9 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _header.resource
-Suite Setup       open storybook    ${iframeHeaderMain}
-Test Setup        Wait Until Element Is Visible    ${header}    10s
-Suite Teardown    Close Browser
-Force Tags        smoke    bug-infrastructure-ie
+Test Setup        Run Keywords
+...               Go To    ${components}navigation-system-horizontal-navigation--main
+...               AND    Wait Until Element Is Visible    ${header}
+Force Tags        bug-infrastructure-ie
 Documentation     Test Cases based on Design System Version 1.2.0
 
 

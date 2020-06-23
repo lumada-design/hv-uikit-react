@@ -1,18 +1,15 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _header.resource
-Suite Setup       open storybook    ${iframeHeaderMain}
 Test Setup        Run Keywords
-...               Reload Page    AND
-...               Wait Until Element Is Visible    ${header}    10s
-Suite Teardown    Close Browser
-Force Tags        smoke    bug-infrastructure-ie
+...               Go To    ${components}navigation-system-horizontal-navigation--main
+...               AND    Wait Until Element Is Visible    ${header}
+Force Tags        bug-infrastructure-ie
 Documentation     Test Cases based on Design System Version 1.2.0
 
 
 *** Comments ***
-note1: work around, keywords for sync will not work (dev implementation keep items always visible and enabled)
-The click element fails with error 'other element will receive the click', so the solution was try until succeed
+note1: keywords for sync will not work (dev implementation keep items always visible and enabled)
+The click element fails with error 'other element will receive the click',
 
 
 *** Test Cases ***
@@ -30,7 +27,7 @@ select a item and the child item when user click on a child item
     header item should be selected        ${item1.2}
 
 select a foreign child item when other child item is selected
-    Wait Until Element Is Visible     ${header}    10s
+    Wait Until Element Is Visible     ${header}
     header item should be selected    ${item3}
     header item should be selected    ${item3.2}
     mouse over                        ${item5}

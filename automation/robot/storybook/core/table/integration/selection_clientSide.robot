@@ -1,12 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
-Resource          ../table.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${iframe_clientSide}
-...               AND    Wait Until Element Is Visible    ${table}    10s
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      ../table.resource
+Test Setup    Run Keywords
+...           Go To    ${visualizations}table--with-checkbox
+...           AND    Wait Until Element Is Visible    ${table}
 
 
 *** Test Cases ***

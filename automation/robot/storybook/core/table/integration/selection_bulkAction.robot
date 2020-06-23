@@ -1,12 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
-Resource          ../table.resource
-Suite Setup       open storybook
-Test Setup        Run Keywords
-...               Go To    ${iframe_changingData}    AND
-...               Wait Until Page Contains Element    ${table1 all}    15s
-Suite Teardown    Close Browser
-Force Tags        smoke
+Resource      ../table.resource
+Test Setup    Run Keywords
+...           Go To    ${visualizations}table--table-with-changing-data    AND
+...           Wait Until Page Contains Element    ${table1 all}
 
 
 *** Test Cases ***
