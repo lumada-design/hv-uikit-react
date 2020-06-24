@@ -11,7 +11,7 @@ Force Tags        smoke
 badge maxCount is 99
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-badge--with-icon
     Wait Until Element Is Visible    //div[contains(@class,'Badge-showCount') and contains(.,'99+')]      10s
-    
+
 all badges renders an icon
     Go To                            ${STORYBOOK_URL}/iframe.html?id=components-badge--with-icon
     Wait Until Element Is Visible    //*[local-name() = 'svg']    7s
