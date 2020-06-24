@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.3.2...@hv/uikit-react-lab@2.4.0) (2020-06-24)
+
+
+### Features
+
+* **appswitcherpanel:** add appswitcherpanel to uikit v2 ([dc65bc7](https://github.com/pentaho/hv-uikit-react/commit/dc65bc78051443dfb066868c7cf8b4fd4b6a24f9))
+* **appswitcherpanel:** removed the license headers ([b4478e8](https://github.com/pentaho/hv-uikit-react/commit/b4478e83560ed799013e26edde97c258396297c5))
+
+
+
+
+
 ## [2.3.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.3.1...@hv/uikit-react-lab@2.3.2) (2020-06-18)
 
 **Note:** Version bump only for package @hv/uikit-react-lab
