@@ -27,12 +27,7 @@ export const Main = () => (
 Main.story = {
   parameters: {
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -45,12 +40,7 @@ Empty.story = {
       storyDescription: "Dropdown with no values"
     },
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -74,12 +64,7 @@ SingleSelection.story = {
       storyDescription: "Support ids to manage selection"
     },
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -116,12 +101,7 @@ export const MultiSelectionNoSearch = () => (
 MultiSelectionNoSearch.story = {
   parameters: {
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -145,12 +125,7 @@ SingleSelectionWithSearch.story = {
       storyDescription: "Single selection Dropdown with search and less than 10 elements"
     },
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -173,12 +148,7 @@ export const SingleSelectionNoDefault = () => (
 SingleSelectionNoDefault.story = {
   parameters: {
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -224,12 +194,7 @@ DifferentSizeAndPlacements.story = {
       storyDescription: "Dropdown defined with a specific width and with different placements."
     },
     pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
-      ]
+      ignore: ["region"]
     }
   }
 };
@@ -265,10 +230,7 @@ Disabled.story = {
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-        "color-contrast",
-        // TODO: BUG aria-label not applied to element with role "combobox"
-        // https://github.com/lumada-design/hv-uikit-react/issues/1693
-        "aria-input-field-name"
+        "color-contrast"
       ]
     }
   }

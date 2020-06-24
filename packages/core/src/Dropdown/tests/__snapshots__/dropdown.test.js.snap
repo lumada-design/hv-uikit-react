@@ -160,12 +160,14 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
         <div
           aria-controls="test-dropdown-values"
           aria-expanded={true}
+          aria-labelledby="test-dropdown-selectionLabel"
           aria-owns="test-dropdown-values"
           className="HvDropdown-root HvDropdown-rootDisabled HvDropdown-rootOpen"
           id="test-dropdown"
           role="combobox"
         >
           <div
+            aria-labelledby="test-dropdown-selectionLabel"
             className=""
             id="test-dropdown-header"
             onKeyDown={[Function]}
@@ -180,6 +182,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
           >
             <WithStyles(ForwardRef)
               className="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled"
+              id="test-dropdown-selectionLabel"
               variant="normalText"
             >
               <ForwardRef
@@ -211,10 +214,12 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                id="test-dropdown-selectionLabel"
                 variant="normalText"
               >
                 <p
                   className="HvDropdown-selection HvDropdown-truncate HvDropdown-selectionDisabled HvTypography-root HvTypography-normalText"
+                  id="test-dropdown-selectionLabel"
                 >
                   All
                 </p>
@@ -6507,12 +6512,14 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
         <div
           aria-controls="hv-dropdown-7-values"
           aria-expanded={true}
+          aria-labelledby="hv-dropdown-7-selectionLabel"
           aria-owns="hv-dropdown-7-values"
           className="HvDropdown-root HvDropdown-rootOpen"
           id="hv-dropdown-7"
           role="combobox"
         >
           <div
+            aria-labelledby="hv-dropdown-7-selectionLabel"
             className=""
             id="hv-dropdown-7-header"
             onKeyDown={[Function]}
@@ -6522,6 +6529,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
           >
             <WithStyles(ForwardRef)
               className="HvDropdown-selection HvDropdown-truncate"
+              id="hv-dropdown-7-selectionLabel"
               variant="normalText"
             >
               <ForwardRef
@@ -6553,10 +6561,12 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                id="hv-dropdown-7-selectionLabel"
                 variant="normalText"
               >
                 <p
                   className="HvDropdown-selection HvDropdown-truncate HvTypography-root HvTypography-normalText"
+                  id="hv-dropdown-7-selectionLabel"
                 >
                   Select...
                 </p>
@@ -8531,12 +8541,14 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
         <div
           aria-controls="hv-dropdown-1-values"
           aria-expanded={true}
+          aria-labelledby="hv-dropdown-1-selectionLabel"
           aria-owns="hv-dropdown-1-values"
           className="HvDropdown-root HvDropdown-rootOpen"
           id="hv-dropdown-1"
           role="combobox"
         >
           <div
+            aria-labelledby="hv-dropdown-1-selectionLabel"
             className=""
             id="hv-dropdown-1-header"
             onKeyDown={[Function]}
@@ -8546,6 +8558,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
           >
             <WithStyles(ForwardRef)
               className="HvDropdown-selection HvDropdown-truncate"
+              id="hv-dropdown-1-selectionLabel"
               variant="normalText"
             >
               <ForwardRef
@@ -8577,10 +8590,12 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                id="hv-dropdown-1-selectionLabel"
                 variant="normalText"
               >
                 <p
                   className="HvDropdown-selection HvDropdown-truncate HvTypography-root HvTypography-normalText"
+                  id="hv-dropdown-1-selectionLabel"
                 >
                   Select...
                 </p>

@@ -121,7 +121,7 @@ class HvDropdown extends React.Component {
     );
   }
 
-  renderHeader() {
+  renderHeader(selectionLabelId) {
     const {
       classes,
       disabled,
@@ -149,7 +149,7 @@ class HvDropdown extends React.Component {
     return (
       <div
         id={setId(id, "header")}
-        aria-labelledby={labels.title ? setId(id, "label") : undefined}
+        aria-labelledby={selectionLabelId}
         className={clsx(classes.header, {
           [classes.headerDisabled]: disabled
         })}
@@ -163,6 +163,7 @@ class HvDropdown extends React.Component {
         {...others}
       >
         <HvTypography
+          id={selectionLabelId}
           variant="normalText"
           className={clsx(classes.selection, classes.truncate, {
             [classes.selectionDisabled]: disabled
@@ -228,6 +229,7 @@ class HvDropdown extends React.Component {
   render() {
     const { id, classes, className, labels, disabled } = this.props;
     const { isOpen } = this.state;
+    const selectionLabelId = setId(id, "selectionLabel");
 
     return (
       <>
@@ -239,7 +241,8 @@ class HvDropdown extends React.Component {
           aria-expanded={isOpen}
           aria-owns={isOpen ? setId(id, "values") : undefined}
           aria-controls={isOpen ? setId(id, "values") : undefined}
-          aria-labelledby={labels.title ? setId(id, "label") : undefined}
+          aria-labelledby={selectionLabelId}
+          aria-describedby={labels.title ? setId(id, "label") : undefined}
           ref={el => {
             this.node = el;
           }}
@@ -248,7 +251,7 @@ class HvDropdown extends React.Component {
             [classes.rootOpen]: isOpen
           })}
         >
-          {this.renderHeader()}
+          {this.renderHeader(selectionLabelId)}
           {this.renderList()}
         </div>
       </>
