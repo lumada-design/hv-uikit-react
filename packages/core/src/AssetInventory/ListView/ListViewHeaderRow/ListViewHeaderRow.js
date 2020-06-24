@@ -1,16 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
-import HvTypography from "../../../Typography";
+import { HvTypography } from "../../..";
 import styles from "./styles";
 
-const HeaderCells = (classes, columnConfiguration) =>
+const renderHeaderCells = (classes, columnConfiguration) =>
   columnConfiguration.map((configuration, index) => {
-    const alignConf =
-      !isNil(configuration) && !isNil(configuration.align) ? configuration.align : undefined;
-
     const keyIndex = `th${index}`;
 
     return (
@@ -18,8 +14,7 @@ const HeaderCells = (classes, columnConfiguration) =>
         className={clsx(classes.headCell, {
           [classes[configuration.spacing]]: configuration.spacing
         })}
-        style={{ ...configuration.style }}
-        align={alignConf}
+        style={{ textAlign: configuration?.align, ...configuration.style }}
         id={index}
         key={keyIndex}
       >
@@ -34,7 +29,7 @@ const ListViewHeaderRow = ({ viewConfiguration, classes, id, className, ...other
   return (
     <div className={clsx(className, classes.root)} id={id} {...others}>
       {viewConfiguration.isSelectable && <div aria-label="selectable" />}
-      {HeaderCells(classes, columnConfiguration)}
+      {renderHeaderCells(classes, columnConfiguration)}
     </div>
   );
 };
