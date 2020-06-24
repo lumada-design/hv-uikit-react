@@ -26,14 +26,20 @@ export default {
 export const Main = () => {
   const values = (num = 10) => {
     const variations = [
-      { semantic: "sema2", subheader: "Machine", mediaPath: compressor },
-      { semantic: "sema3", subheader: "Compressor", mediaPath: leaf }
+      {
+        semantic: "sema2",
+        subheader: "Compressor",
+        mediaPath: compressor,
+        mediaTitle: "Compressor"
+      },
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
     ];
 
     return [...Array(num).keys()].map(id => ({
       id: `id_${id + 1}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       checkboxValue: `id_${id + 1}`,
+      checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
         secondContent: "Jun 30, 2015 12:27:53 PM"
@@ -114,14 +120,20 @@ export const DefaultRender = () => {
 
   const values = (num = 10) => {
     const variations = [
-      { semantic: "sema2", subheader: "Machine", mediaPath: compressor },
-      { semantic: "sema3", subheader: "Compressor", mediaPath: leaf }
+      {
+        semantic: "sema2",
+        subheader: "Compressor",
+        mediaPath: compressor,
+        mediaTitle: "Compressor"
+      },
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
     ];
 
     return [...Array(num).keys()].map(id => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
       checkboxValue: `id_${id}`,
+      checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
         secondContent: "Jun 30, 2015 12:27:53 PM"
@@ -180,7 +192,7 @@ export const CustomRender = () => {
 
   const renderer = (value, viewConfiguration) => (
     <HvCard id={value.id}>
-      <CustomMedia mediaPath={value.mediaPath} mediaHeight={160} />
+      <CustomMedia mediaPath={value.mediaPath} mediaHeight={160} title={value.mediaTitle} />
       <HvCardFooter
         actions={viewConfiguration.actions}
         maxVisibleActions={viewConfiguration.maxVisibleActions}
@@ -188,7 +200,8 @@ export const CustomRender = () => {
         isSelectable={viewConfiguration.isSelectable}
         onChange={viewConfiguration.onSelection}
         checkboxProps={{
-          value: value.checkboxValue
+          value: value.checkboxValue,
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
         }}
       />
     </HvCard>
@@ -198,8 +211,13 @@ export const CustomRender = () => {
 
   const values = (num = 10) => {
     const variations = [
-      { semantic: "sema2", subheader: "Machine", mediaPath: compressor },
-      { semantic: "sema3", subheader: "Compressor", mediaPath: leaf }
+      {
+        semantic: "sema2",
+        subheader: "Compressor",
+        mediaPath: compressor,
+        mediaTitle: "Compressor"
+      },
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
     ];
 
     return [...Array(num).keys()].map(id => ({
@@ -261,7 +279,7 @@ export const CustomRenderAndActions = () => {
         <Upload />
         Update
       </HvButton>
-      <HvButton category="ghost" className={classes.smallButton}>
+      <HvButton category="ghost" className={classes.smallButton} aria-label="More...">
         <MoreOptionsVertical />
       </HvButton>
     </>
@@ -283,13 +301,14 @@ export const CustomRenderAndActions = () => {
 
   const renderer = (value, viewConfiguration) => (
     <HvCard id={value.id}>
-      <CustomMedia mediaPath={value.mediaPath} mediaHeight={160} />
+      <CustomMedia mediaPath={value.mediaPath} mediaHeight={160} title={value.mediaTitle} />
       <HvCardFooter
         actions={<StyledActions />}
         isSelectable={viewConfiguration.isSelectable}
         onChange={viewConfiguration.onSelection}
         checkboxProps={{
-          value: value.checkboxValue
+          value: value.checkboxValue,
+          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
         }}
       />
     </HvCard>
@@ -299,8 +318,13 @@ export const CustomRenderAndActions = () => {
 
   const values = (num = 10) => {
     const variations = [
-      { semantic: "sema2", subheader: "Machine", mediaPath: compressor },
-      { semantic: "sema3", subheader: "Compressor", mediaPath: leaf }
+      {
+        semantic: "sema2",
+        subheader: "Compressor",
+        mediaPath: compressor,
+        mediaTitle: "Compressor"
+      },
+      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
     ];
 
     return [...Array(num).keys()].map(id => ({

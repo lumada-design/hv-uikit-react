@@ -315,7 +315,7 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues.length).toBe(2);
 
     const totalPages = wrapper.findWhere(
-      n => n.type() === "span" && n.prop("id") === "hv-pagination-totalPages"
+      n => n.type() === "span" && n.prop("id") === "hv-pagination-pagination-totalPages"
     );
 
     expect(totalPages.text()).toBe("3");
@@ -365,7 +365,9 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues[1].id).toBe("2");
 
     wrapper
-      .findWhere(n => n.type() === "button" && n.prop("id") === "hv-pagination-nextPage-button")
+      .findWhere(
+        n => n.type() === "button" && n.prop("id") === "hv-pagination-pagination-nextPage-button"
+      )
       .simulate("click");
 
     expect(instance.state.viewValues.length).toBe(2);

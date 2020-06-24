@@ -11,7 +11,7 @@ export default {
 };
 
 export const Main = () => {
-  return <HvRadio />;
+  return <HvRadio inputProps={{ "aria-label": "Simple radio button" }} />;
 };
 
 export const Disabled = () => (
@@ -23,6 +23,15 @@ Disabled.story = {
     docs: {
       storyDescription:
         "A sample showcasing a disabled radio button that does not allows interaction."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };
@@ -36,6 +45,15 @@ CheckedDisabled.story = {
     docs: {
       storyDescription:
         "A sample showcasing a checked and disabled radio button that does not allows interaction."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };
@@ -83,6 +101,15 @@ WithClickActionDisabled.story = {
     docs: {
       storyDescription:
         "Dos not return the value when clicked because is disabled, check the browser console to see the result."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };

@@ -3,14 +3,10 @@ import { mount } from "enzyme";
 
 import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons/dist";
 
-import { toHaveNoViolations } from "jest-axe";
-import axe from "../../../config/axe-config";
 import HvProvider from "../../Provider";
 import HvButton from "../../Button";
 import HvDropDownMenu from "../../DropDownMenu";
 import Actions from "..";
-
-expect.extend(toHaveNoViolations);
 
 const actions = [
   { id: "post", label: "Add", iconCallback: () => <Add />, disabled: true },
@@ -81,19 +77,5 @@ describe("Actions with custom actions", () => {
 
     const element = wrapper.find(HvButton);
     expect(element.text()).toEqual(label);
-  });
-});
-
-describe("ActionsA11Y", () => {
-  let wrapper;
-  it("should find no errors", async () => {
-    wrapper = mount(
-      <HvProvider>
-        <Actions id="actions" actions={actions} />
-      </HvProvider>
-    );
-
-    const results = await axe(wrapper.html());
-    expect(results).toHaveNoViolations();
   });
 });

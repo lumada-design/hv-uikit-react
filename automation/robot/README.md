@@ -40,10 +40,3 @@
  | Install firefox webdriver | https://github.com/mozilla/geckodriver/releases/tag/v0.24.0                 |
  | Install chrome webdriver  | https://sites.google.com/a/chromium.org/chromedriver/downloads              |
  | Install safari webdriver  | https://developer.apple.com/documentation/webkit/about_webdriver_for_safari |
-
-## Pa11y Robot Framework execution
-
- | Software                  | Instruction                                          | Description               |
- | ------------------------- | ---------------------------------------------------- | ------------------------- |
- | install nodejs            | https://nodejs.org/en/download/                      | download and full install |
- | install pa11y             | https://github.com/pa11y/pa11y                       | commmand line version     |

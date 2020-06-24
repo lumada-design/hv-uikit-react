@@ -112,3 +112,16 @@ export const Main = () => {
     </HvHeader>
   );
 };
+
+Main.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG List element loses semantic with role="none":
+        // https://github.com/lumada-design/hv-uikit-react/issues/1697
+        "list"
+      ]
+    }
+  }
+};

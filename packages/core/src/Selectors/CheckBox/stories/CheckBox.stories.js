@@ -22,6 +22,15 @@ Disabled.story = {
   parameters: {
     docs: {
       storyDescription: "A sample showcasing a disable checkbox that does not allows interaction."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };
@@ -69,6 +78,15 @@ WithClickActionDisabled.story = {
     docs: {
       storyDescription:
         "Dos not return the value when clicked because is disabled, check the browser console to see the result."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };
@@ -116,6 +134,15 @@ WithState.story = {
   parameters: {
     docs: {
       storyDescription: "Demostration of how to set the state of the checkbox"
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };

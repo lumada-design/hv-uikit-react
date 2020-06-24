@@ -2,12 +2,8 @@ import React from "react";
 import { mount } from "enzyme";
 import { Popper } from "@material-ui/core";
 
-import { toHaveNoViolations } from "jest-axe";
-import axe from "../../../config/axe-config";
 import DropDownMenu from "../index";
 import HvProvider from "../../Provider";
-
-expect.extend(toHaveNoViolations);
 
 jest.mock(
   "popper.js",
@@ -217,51 +213,6 @@ describe("DropDownMenu", () => {
       const option = wrapper.find('li[id="test-list-item-0"]');
       option.simulate("click");
       expect(wrapper.find(Popper).prop("open")).toBe(false);
-    });
-  });
-
-  describe("DropdowmMenuA11Y", () => {
-    it("closed", async () => {
-      wrapper = mount(
-        <HvProvider>
-          <DropDownMenu
-            dataList={menuOptions}
-            icon={<div />}
-            keepOpened={false}
-            onClick={() => {}}
-            id="test"
-            aria-label="test"
-          />
-        </HvProvider>
-      );
-
-      const results = await axe(wrapper.html());
-
-      expect(results).toHaveNoViolations();
-    });
-
-    it("open", async () => {
-      wrapper = mount(
-        <HvProvider>
-          <DropDownMenu
-            dataList={menuOptions}
-            icon={<div />}
-            keepOpened={false}
-            onClick={() => {}}
-            id="test"
-            aria-label="test"
-            disablePortal
-          />
-        </HvProvider>
-      );
-
-      const button = wrapper.find("button");
-
-      button.simulate("click");
-
-      const results = await axe(wrapper.html());
-
-      expect(results).toHaveNoViolations();
     });
   });
 });

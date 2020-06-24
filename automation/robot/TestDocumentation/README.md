@@ -11,7 +11,6 @@ http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#tes
 | smoke              | smoke tests                                                                         |
 | distinct           | distinct behavior between browsers not supported by UIKIT                           |
 | responsive         | responsive tests (resize windows)                                                   |
-| pa11y              | accessibility tests with pa11y command                                              |
 | keyboard           | keyboard interaction tests ( https://www.w3.org/TR/wai-aria-practices )             |
 | wai-aria-practices | WAI-ARIA Roles, States, and Properties ( https://www.w3.org/TR/wai-aria-practices ) |
 
