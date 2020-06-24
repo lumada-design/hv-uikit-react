@@ -7,7 +7,8 @@ Test Template     Run Keyword
 Test Teardown     Run Keyword If Test Failed
 ...               Capture Page Screenshot    ${SUITE_NAME}${TEST_NAME}.png
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke    bug-ie-webdriver
+Documentation     bug-ie-webdriver https://github.com/lumada-design/hv-uikit-react/issues/1708
 
 
 *** Variables ***

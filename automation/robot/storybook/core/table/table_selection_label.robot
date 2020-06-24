@@ -7,7 +7,8 @@ Test Setup        Run Keywords
 ...               Reload Page    AND
 ...               Wait Until Page Contains Element    ${table1 all}    10s
 Suite Teardown    Close Browser
-Force Tags        smoke
+Force Tags        smoke    bug-ie-webdriver
+Documentation     bug-ie-webdriver https://github.com/lumada-design/hv-uikit-react/issues/1708
 
 
 *** Test Cases ***
@@ -15,12 +16,12 @@ selection count label is correctly updated when is added values or removed
     Select CheckBox           ${checkBox 1}
     Select CheckBox           ${checkBox 5}
     Select CheckBox           ${checkBox 6}
-    Element Text Should Be    ${table1 label}    2 of 5   ignore_case:True
-    Element Text Should Be    ${table2 label}    1 of 5   ignore_case:True
+    wait Until Element Contains    ${table1 label}    2 of 5
+    wait Until Element Contains    ${table2 label}    1 of 5
     Click Button              Disable selected
     Select CheckBox           ${table1 all}
-    Element Text Should Be    ${table1 label}    3 of 3   ignore_case:True
-    Element Text Should Be    ${table2 label}    1 of 7   ignore_case:True
+    wait Until Element Contains    ${table1 label}    3 of 3
+    wait Until Element Contains    ${table2 label}    1 of 7
 
 selection count label is correctly updated when hidden values are added or removed
     Select CheckBox           ${table1 all}
@@ -32,20 +33,20 @@ selection count label is correctly updated when hidden values are added or remov
     Click Button              Enable selected
     Select CheckBox           ${table1 all}
     Select CheckBox           ${table2 all}
-    Element Text Should Be    ${table1 label}    2 of 2   ignore_case:True
-    Element Text Should Be    ${table2 label}    8 of 8   ignore_case:True
+    wait Until Element Contains    ${table1 label}    2 of 2
+    wait Until Element Contains    ${table2 label}    8 of 8
 
 selection count label is correctly updated when pass from all to indeterminate
     Select CheckBox           ${table1 all}
-    Element Text Should Be    ${table1 label}    5 of 5   ignore_case:True
+    wait Until Element Contains    ${table1 label}    5 of 5
     Unselect CheckBox         ${checkBox 1}
-    Element Text Should Be    ${table1 label}    4 of 5   ignore_case:True
+    wait Until Element Contains    ${table1 label}    4 of 5
 
 selection count label is correctly updated when is not selected any value
     Select CheckBox           ${table1 all}
     Select CheckBox           ${checkBox 6}
     Click Button              Enable selected
-    Element Text Should Be    ${table1 label}    5 of 6   ignore_case:True
+    wait Until Element Contains    ${table1 label}    5 of 6
 
 
 *** Variables ***
