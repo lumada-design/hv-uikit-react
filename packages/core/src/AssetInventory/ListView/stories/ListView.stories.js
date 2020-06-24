@@ -59,7 +59,7 @@ export const Main = () => {
     const { Icon, sema } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }}>
+      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
         <HvListViewCell semantic={sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={sema} className={classes.icon} />
         </HvListViewCell>
@@ -131,7 +131,7 @@ export const Main = () => {
       status={getStatus(value.status)}
       value={value}
       key={value.id + index}
-      id={value.id + index}
+      id={value.id}
     />
   );
 
@@ -204,7 +204,7 @@ export const NotSelectable = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }}>
+      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
@@ -271,7 +271,7 @@ export const NotSelectable = () => {
       status={getStatus(value.status)}
       value={value}
       key={value.id + index}
-      id={value.id + index}
+      id={value.id}
     />
   );
 
@@ -343,7 +343,7 @@ export const NotSelectableWithMenu = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }}>
+      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
@@ -410,7 +410,7 @@ export const NotSelectableWithMenu = () => {
       status={getStatus(value.status)}
       value={value}
       key={value.id + index}
-      id={value.id + index}
+      id={value.id}
     />
   );
 
@@ -497,7 +497,7 @@ export const NotStyled = () => {
     const { Icon } = status;
 
     return (
-      <HvListViewRow checkboxProps={{ value: value.id }}>
+      <HvListViewRow id={id} checkboxProps={{ value: value.id }}>
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
           <Icon />
         </HvListViewCell>
@@ -561,7 +561,7 @@ export const NotStyled = () => {
       status={getStatus(value.status)}
       value={value}
       key={value.id + index}
-      id={value.id + index}
+      id={value.id}
     />
   );
 
