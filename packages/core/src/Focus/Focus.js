@@ -153,9 +153,9 @@ const Focus = props => {
 
     if (isOneOfKeys(evt, [Enter, SpaceBar]) || !useArrows) {
       // trigger click on enter unless child focus is input
-      if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar)) {
-        evt.currentTarget.click();
-      }
+      if ((!childFocusIsInput && isKey(evt, Enter)) || isKey(evt, SpaceBar))
+        if (isBrowser("firefox")) evt.target.click();
+        else evt.currentTarget.click();
       return;
     }
 
