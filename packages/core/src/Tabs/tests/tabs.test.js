@@ -3,44 +3,29 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
+import { HvProvider, HvTabs } from "../..";
+import { Main } from "../stories/Tabs.stories";
 
-import Tabs from "..";
-import Tab from "../../Tab";
-
-describe("Tabs withStyles", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
-        <Tabs />
-      </HvProvider>
-    );
-  });
+describe("Tabs", () => {
+  const wrapper = mount(
+    <HvProvider>
+      <HvTabs />
+    </HvProvider>
+  );
 
   it("should render correctly", () => {
-    expect(wrapper.find(Tabs)).toMatchSnapshot();
+    expect(wrapper.find(HvTabs)).toMatchSnapshot();
   });
 });
 
 describe("Compose Tabs withStyles", () => {
-  let wrapper;
-
-  beforeEach(async () => {
-    wrapper = mount(
-      <HvProvider>
-        <Tabs value={1}>
-          <Tab label="Clickable Tab" />
-          <Tab label="Clickable Tab" />
-          <Tab label="Clickable Tab" />
-          <Tab label="Clickable Tab" />
-        </Tabs>
-      </HvProvider>
-    );
-  });
+  const wrapper = mount(
+    <HvProvider>
+      <Main />
+    </HvProvider>
+  );
 
   it("should render correctly", () => {
-    expect(wrapper.find(Tabs)).toMatchSnapshot();
+    expect(wrapper.find(HvTabs)).toMatchSnapshot();
   });
 });

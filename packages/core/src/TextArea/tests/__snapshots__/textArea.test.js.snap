@@ -8,4 +8,4 @@ exports[`TextArea Component should render correctly if opened 1`] = `
 />
 `;
 
-exports[`TextArea withStyles should render correctly 1`] = `<WithStyles(WithLabels) />`;
+exports[`TextArea should render correctly 1`] = `null`;

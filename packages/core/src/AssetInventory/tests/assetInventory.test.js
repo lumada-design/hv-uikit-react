@@ -7,7 +7,6 @@ import Search from "../Search/Search";
 describe("Asset Inventory ", () => {
   let wrapper;
 
-  // eslint-disable-next-line no-unused-vars
   const MockView = id => <div id={id} />;
 
   const setupComponent = (props, children = <MockView id="id" />) => (

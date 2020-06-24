@@ -1,3 +1,419 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton withStyles should render correctly 1`] = `<WithStyles(HvRadio) />`;
+exports[`RadioButton should render correctly 1`] = `
+<WithStyles(HvRadio)
+  inputProps={
+    Object {
+      "aria-label": "Simple radio button",
+    }
+  }
+>
+  <HvRadio
+    classes={
+      Object {
+        "container": "HvRadioButton-container",
+        "disableFocus": "HvRadioButton-disableFocus",
+        "icon": "HvRadioButton-icon",
+        "labelDisabled": "HvRadioButton-labelDisabled",
+        "labelEnd": "HvRadioButton-labelEnd",
+        "labelStart": "HvRadioButton-labelStart",
+        "labelTypography": "HvRadioButton-labelTypography",
+        "radio": "HvRadioButton-radio",
+      }
+    }
+    inputProps={
+      Object {
+        "aria-label": "Simple radio button",
+      }
+    }
+  >
+    <WithStyles(ForwardRef(FormControlLabel))
+      className="HvRadioButton-container"
+      classes={
+        Object {
+          "disabled": "HvRadioButton-labelDisabled",
+          "label": "HvRadioButton-labelTypography",
+        }
+      }
+      control={
+        <ForwardRef(WithStyles)
+          checkedIcon={
+            <ForwardRef(WithStyles)
+              className="HvRadioButton-icon"
+            />
+          }
+          className="HvRadioButton-radio"
+          color="default"
+          disableRipple={true}
+          icon={
+            <ForwardRef(WithStyles)
+              className="HvRadioButton-icon"
+            />
+          }
+          inputProps={
+            Object {
+              "aria-label": "Simple radio button",
+            }
+          }
+          onBlur={[Function]}
+          onChange={[Function]}
+          value=""
+        />
+      }
+      label=""
+      labelPlacement="end"
+    >
+      <ForwardRef(FormControlLabel)
+        className="HvRadioButton-container"
+        classes={
+          Object {
+            "disabled": "Mui-disabled HvRadioButton-labelDisabled",
+            "label": "MuiFormControlLabel-label HvRadioButton-labelTypography",
+            "labelPlacementBottom": "MuiFormControlLabel-labelPlacementBottom",
+            "labelPlacementStart": "MuiFormControlLabel-labelPlacementStart",
+            "labelPlacementTop": "MuiFormControlLabel-labelPlacementTop",
+            "root": "MuiFormControlLabel-root",
+          }
+        }
+        control={
+          <ForwardRef(WithStyles)
+            checkedIcon={
+              <ForwardRef(WithStyles)
+                className="HvRadioButton-icon"
+              />
+            }
+            className="HvRadioButton-radio"
+            color="default"
+            disableRipple={true}
+            icon={
+              <ForwardRef(WithStyles)
+                className="HvRadioButton-icon"
+              />
+            }
+            inputProps={
+              Object {
+                "aria-label": "Simple radio button",
+              }
+            }
+            onBlur={[Function]}
+            onChange={[Function]}
+            value=""
+          />
+        }
+        label=""
+        labelPlacement="end"
+      >
+        <label
+          className="MuiFormControlLabel-root HvRadioButton-container"
+        >
+          <WithStyles(ForwardRef(Radio))
+            checkedIcon={
+              <ForwardRef(WithStyles)
+                className="HvRadioButton-icon"
+              />
+            }
+            className="HvRadioButton-radio"
+            color="default"
+            disableRipple={true}
+            icon={
+              <ForwardRef(WithStyles)
+                className="HvRadioButton-icon"
+              />
+            }
+            inputProps={
+              Object {
+                "aria-label": "Simple radio button",
+              }
+            }
+            onBlur={[Function]}
+            onChange={[Function]}
+            value=""
+          >
+            <ForwardRef(Radio)
+              checkedIcon={
+                <ForwardRef(WithStyles)
+                  className="HvRadioButton-icon"
+                />
+              }
+              className="HvRadioButton-radio"
+              classes={
+                Object {
+                  "checked": "Mui-checked",
+                  "colorPrimary": "MuiRadio-colorPrimary",
+                  "colorSecondary": "MuiRadio-colorSecondary",
+                  "disabled": "Mui-disabled",
+                  "root": "MuiRadio-root",
+                }
+              }
+              color="default"
+              disableRipple={true}
+              icon={
+                <ForwardRef(WithStyles)
+                  className="HvRadioButton-icon"
+                />
+              }
+              inputProps={
+                Object {
+                  "aria-label": "Simple radio button",
+                }
+              }
+              onBlur={[Function]}
+              onChange={[Function]}
+              value=""
+            >
+              <WithStyles(ForwardRef(SwitchBase))
+                checkedIcon={
+                  <ForwardRef(WithStyles)
+                    className="HvRadioButton-icon"
+                  />
+                }
+                className="HvRadioButton-radio"
+                classes={
+                  Object {
+                    "checked": "Mui-checked",
+                    "disabled": "Mui-disabled",
+                    "root": "MuiRadio-root",
+                  }
+                }
+                color="default"
+                disableRipple={true}
+                disabled={false}
+                icon={
+                  <ForwardRef(WithStyles)
+                    className="HvRadioButton-icon"
+                  />
+                }
+                inputProps={
+                  Object {
+                    "aria-label": "Simple radio button",
+                  }
+                }
+                onBlur={[Function]}
+                onChange={[Function]}
+                type="radio"
+                value=""
+              >
+                <ForwardRef(SwitchBase)
+                  checkedIcon={
+                    <ForwardRef(WithStyles)
+                      className="HvRadioButton-icon"
+                    />
+                  }
+                  className="HvRadioButton-radio"
+                  classes={
+                    Object {
+                      "checked": "PrivateSwitchBase-checked-6 Mui-checked",
+                      "disabled": "PrivateSwitchBase-disabled-7 Mui-disabled",
+                      "input": "PrivateSwitchBase-input-8",
+                      "root": "PrivateSwitchBase-root-5 MuiRadio-root",
+                    }
+                  }
+                  color="default"
+                  disableRipple={true}
+                  disabled={false}
+                  icon={
+                    <ForwardRef(WithStyles)
+                      className="HvRadioButton-icon"
+                    />
+                  }
+                  inputProps={
+                    Object {
+                      "aria-label": "Simple radio button",
+                    }
+                  }
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  type="radio"
+                  value=""
+                >
+                  <WithStyles(ForwardRef(IconButton))
+                    className="PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                    color="default"
+                    component="span"
+                    disableRipple={true}
+                    disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    tabIndex={null}
+                  >
+                    <ForwardRef(IconButton)
+                      className="PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                      classes={
+                        Object {
+                          "colorInherit": "MuiIconButton-colorInherit",
+                          "colorPrimary": "MuiIconButton-colorPrimary",
+                          "colorSecondary": "MuiIconButton-colorSecondary",
+                          "disabled": "Mui-disabled",
+                          "edgeEnd": "MuiIconButton-edgeEnd",
+                          "edgeStart": "MuiIconButton-edgeStart",
+                          "label": "MuiIconButton-label",
+                          "root": "MuiIconButton-root",
+                          "sizeSmall": "MuiIconButton-sizeSmall",
+                        }
+                      }
+                      color="default"
+                      component="span"
+                      disableRipple={true}
+                      disabled={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      tabIndex={null}
+                    >
+                      <WithStyles(ForwardRef(ButtonBase))
+                        centerRipple={true}
+                        className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                        component="span"
+                        disableRipple={true}
+                        disabled={false}
+                        focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        tabIndex={null}
+                      >
+                        <ForwardRef(ButtonBase)
+                          centerRipple={true}
+                          className="MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                          classes={
+                            Object {
+                              "disabled": "Mui-disabled",
+                              "focusVisible": "Mui-focusVisible",
+                              "root": "MuiButtonBase-root",
+                            }
+                          }
+                          component="span"
+                          disableRipple={true}
+                          disabled={false}
+                          focusRipple={true}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            aria-disabled={false}
+                            className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-5 MuiRadio-root HvRadioButton-radio"
+                            onBlur={[Function]}
+                            onDragLeave={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchEnd={[Function]}
+                            onTouchMove={[Function]}
+                            onTouchStart={[Function]}
+                            tabIndex={null}
+                          >
+                            <span
+                              className="MuiIconButton-label"
+                            >
+                              <input
+                                aria-label="Simple radio button"
+                                className="PrivateSwitchBase-input-8"
+                                disabled={false}
+                                onChange={[Function]}
+                                type="radio"
+                                value=""
+                              />
+                              <WithStyles(RadioButtonUnselected)
+                                className="HvRadioButton-icon"
+                              >
+                                <RadioButtonUnselected
+                                  className="HvRadioButton-icon"
+                                  classes={
+                                    Object {
+                                      "root": "HvIconRadioButtonUnselected-root",
+                                      "rootL": "HvIconRadioButtonUnselected-rootL",
+                                      "rootM": "HvIconRadioButtonUnselected-rootM",
+                                      "rootS": "HvIconRadioButtonUnselected-rootS",
+                                      "rootXs": "HvIconRadioButtonUnselected-rootXs",
+                                    }
+                                  }
+                                >
+                                  <div
+                                    className="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                                  >
+                                    <svg
+                                      focusable={false}
+                                      height="16px"
+                                      viewBox="0 0 16 16"
+                                      width="16px"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        className="color0"
+                                        d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                        fill="#FFFFFF"
+                                      />
+                                      <path
+                                        className="color1"
+                                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                        fill="#414141"
+                                      />
+                                    </svg>
+                                  </div>
+                                </RadioButtonUnselected>
+                              </WithStyles(RadioButtonUnselected)>
+                            </span>
+                          </span>
+                        </ForwardRef(ButtonBase)>
+                      </WithStyles(ForwardRef(ButtonBase))>
+                    </ForwardRef(IconButton)>
+                  </WithStyles(ForwardRef(IconButton))>
+                </ForwardRef(SwitchBase)>
+              </WithStyles(ForwardRef(SwitchBase))>
+            </ForwardRef(Radio)>
+          </WithStyles(ForwardRef(Radio))>
+          <WithStyles(ForwardRef(Typography))
+            className="MuiFormControlLabel-label HvRadioButton-labelTypography"
+            component="span"
+          >
+            <ForwardRef(Typography)
+              className="MuiFormControlLabel-label HvRadioButton-labelTypography"
+              classes={
+                Object {
+                  "alignCenter": "MuiTypography-alignCenter",
+                  "alignJustify": "MuiTypography-alignJustify",
+                  "alignLeft": "MuiTypography-alignLeft",
+                  "alignRight": "MuiTypography-alignRight",
+                  "body1": "MuiTypography-body1",
+                  "body2": "MuiTypography-body2",
+                  "button": "MuiTypography-button",
+                  "caption": "MuiTypography-caption",
+                  "colorError": "MuiTypography-colorError",
+                  "colorInherit": "MuiTypography-colorInherit",
+                  "colorPrimary": "MuiTypography-colorPrimary",
+                  "colorSecondary": "MuiTypography-colorSecondary",
+                  "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                  "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                  "displayBlock": "MuiTypography-displayBlock",
+                  "displayInline": "MuiTypography-displayInline",
+                  "gutterBottom": "MuiTypography-gutterBottom",
+                  "h1": "MuiTypography-h1",
+                  "h2": "MuiTypography-h2",
+                  "h3": "MuiTypography-h3",
+                  "h4": "MuiTypography-h4",
+                  "h5": "MuiTypography-h5",
+                  "h6": "MuiTypography-h6",
+                  "noWrap": "MuiTypography-noWrap",
+                  "overline": "MuiTypography-overline",
+                  "paragraph": "MuiTypography-paragraph",
+                  "root": "MuiTypography-root",
+                  "srOnly": "MuiTypography-srOnly",
+                  "subtitle1": "MuiTypography-subtitle1",
+                  "subtitle2": "MuiTypography-subtitle2",
+                }
+              }
+              component="span"
+            >
+              <span
+                className="MuiTypography-root MuiFormControlLabel-label HvRadioButton-labelTypography MuiTypography-body1"
+              />
+            </ForwardRef(Typography)>
+          </WithStyles(ForwardRef(Typography))>
+        </label>
+      </ForwardRef(FormControlLabel)>
+    </WithStyles(ForwardRef(FormControlLabel))>
+  </HvRadio>
+</WithStyles(HvRadio)>
+`;

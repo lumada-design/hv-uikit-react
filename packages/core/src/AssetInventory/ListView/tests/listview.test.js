@@ -1,24 +1,24 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 
-import HvProvider from "../../../Provider";
-import ListView from "..";
+import { HvListView, HvProvider } from "../../..";
+import { Main } from "../stories/ListView.stories";
 
 describe("AssetInventoryListView", () => {
   let wrapper;
 
   it("should be defined", () => {
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
-        <ListView />
+        <Main />
       </HvProvider>
     );
     expect(wrapper).toBeDefined();
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(ListView)).toMatchSnapshot();
+    expect(wrapper.find(HvListView)).toMatchSnapshot();
   });
 });

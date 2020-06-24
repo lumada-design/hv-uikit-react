@@ -3,14 +3,13 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
-import HvInput from "../../Input";
-import Pagination from "..";
+import { HvInput, HvPagination, HvProvider } from "../..";
+import { Main, ControlledSample } from "../stories/Pagination.stories";
 
 describe("Default Pagination", () => {
   const wrapper = mount(
     <HvProvider>
-      <Pagination pages={1} />
+      <Main />
     </HvProvider>
   );
 
@@ -19,7 +18,7 @@ describe("Default Pagination", () => {
   });
 
   it("should render the Pagination component", () => {
-    const paginationComponent = wrapper.find(Pagination);
+    const paginationComponent = wrapper.find(HvPagination);
     expect(paginationComponent.length).toBe(1);
   });
 
@@ -37,7 +36,7 @@ describe("Default Pagination", () => {
 describe("Pagination without pageJump Input", () => {
   const wrapper = mount(
     <HvProvider>
-      <Pagination showPageJump={false} />
+      <HvPagination showPageJump={false} />
     </HvProvider>
   );
 
@@ -50,7 +49,7 @@ describe("Pagination without pageJump Input", () => {
 describe("Pagination without pageSize select", () => {
   const wrapper = mount(
     <HvProvider>
-      <Pagination showPageSizeOptions={false} />
+      <HvPagination showPageSizeOptions={false} />
     </HvProvider>
   );
 
@@ -63,16 +62,7 @@ describe("Pagination without pageSize select", () => {
 describe("Custom Pagination", () => {
   const wrapper = mount(
     <HvProvider>
-      <Pagination
-        pages={4}
-        page={2}
-        showPageSizeOptions
-        pageSizeOptions={[5, 10]}
-        pageSize={5}
-        showPageJump={false}
-        canPrevious
-        canNext
-      />
+      <ControlledSample />
     </HvProvider>
   );
 
@@ -81,6 +71,6 @@ describe("Custom Pagination", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Pagination)).toMatchSnapshot();
+    expect(wrapper.find(HvPagination)).toMatchSnapshot();
   });
 });

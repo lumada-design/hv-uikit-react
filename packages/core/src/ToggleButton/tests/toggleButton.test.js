@@ -2,17 +2,16 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Lock from "@hv/uikit-react-icons/dist/Lock";
-import Unlock from "@hv/uikit-react-icons/dist/Unlock";
-import HvProvider from "../../Provider";
-import ToggleButton from "../index";
+import { Lock, Unlock } from "@hv/uikit-react-icons";
+import { HvProvider, HvToggleButton } from "../..";
+import { Main } from "../stories/ToggleButton.stories";
 
 let wrapper;
 
-describe("ToggleButton withStyles", () => {
+describe("ToggleButton", () => {
   wrapper = mount(
     <HvProvider>
-      <ToggleButton notSelectedIcon={Unlock} />
+      <Main />
     </HvProvider>
   );
 
@@ -21,7 +20,7 @@ describe("ToggleButton withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(ToggleButton)).toMatchSnapshot();
+    expect(wrapper.find(HvToggleButton)).toMatchSnapshot();
   });
 
   it("should render the unselected icon", () => {
@@ -30,14 +29,8 @@ describe("ToggleButton withStyles", () => {
   });
 
   it("should respond to select value", () => {
-    wrapper = mount(
-      <HvProvider>
-        <ToggleButton notSelectedIcon={Unlock} selectedIcon={Lock} selected />
-      </HvProvider>
-    );
-
     const selectIcon = wrapper.find(Lock);
-    expect(selectIcon.length).toBe(1);
+    expect(selectIcon.length).toBe(0);
   });
 
   it("should call onClick", () => {
@@ -45,7 +38,7 @@ describe("ToggleButton withStyles", () => {
 
     wrapper = mount(
       <HvProvider>
-        <ToggleButton notSelectedIcon={Unlock} selectedIcon={Lock} onClick={onClickMock} />
+        <HvToggleButton notSelectedIcon={Unlock} selectedIcon={Lock} onClick={onClickMock} />
       </HvProvider>
     );
     const divs = wrapper.find("div");
@@ -57,7 +50,7 @@ describe("ToggleButton withStyles", () => {
   it("should set the default class if animated", () => {
     wrapper = mount(
       <HvProvider>
-        <ToggleButton notSelectedIcon={Unlock} animated />
+        <HvToggleButton notSelectedIcon={Unlock} animated />
       </HvProvider>
     );
 
@@ -69,7 +62,7 @@ describe("ToggleButton withStyles", () => {
   it("should toggle the classes if animated", () => {
     wrapper = mount(
       <HvProvider>
-        <ToggleButton notSelectedIcon={Unlock} animated />
+        <HvToggleButton notSelectedIcon={Unlock} animated />
       </HvProvider>
     );
 

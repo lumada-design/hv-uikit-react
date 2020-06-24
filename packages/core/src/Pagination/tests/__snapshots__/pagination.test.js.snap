@@ -3,22 +3,32 @@
 exports[`Custom Pagination should render correctly 1`] = `
 <WithStyles(WithLabels)
   canNext={true}
-  canPrevious={true}
-  page={2}
-  pageSize={5}
+  canPrevious={false}
+  id="pagination"
+  labels={
+    Object {
+      "pageSizeEntryName": "items",
+    }
+  }
+  onPageChange={[Function]}
+  onPageSizeChange={[Function]}
+  page={0}
+  pageSize={12}
   pageSizeOptions={
     Array [
-      5,
-      10,
+      4,
+      6,
+      12,
+      24,
+      48,
+      2000,
     ]
   }
-  pages={4}
-  showPageJump={false}
-  showPageSizeOptions={true}
+  pages={6}
 >
   <WithLabels
     canNext={true}
-    canPrevious={true}
+    canPrevious={false}
     classes={
       Object {
         "icon": "HvPagination-icon",
@@ -35,21 +45,31 @@ exports[`Custom Pagination should render correctly 1`] = `
         "selectDownIcon": "HvPagination-selectDownIcon",
       }
     }
-    page={2}
-    pageSize={5}
+    id="pagination"
+    labels={
+      Object {
+        "pageSizeEntryName": "items",
+      }
+    }
+    onPageChange={[Function]}
+    onPageSizeChange={[Function]}
+    page={0}
+    pageSize={12}
     pageSizeOptions={
       Array [
-        5,
-        10,
+        4,
+        6,
+        12,
+        24,
+        48,
+        2000,
       ]
     }
-    pages={4}
-    showPageJump={false}
-    showPageSizeOptions={true}
+    pages={6}
   >
     <Pagination
       canNext={true}
-      canPrevious={true}
+      canPrevious={false}
       classes={
         Object {
           "icon": "HvPagination-icon",
@@ -66,9 +86,10 @@ exports[`Custom Pagination should render correctly 1`] = `
           "selectDownIcon": "HvPagination-selectDownIcon",
         }
       }
+      id="pagination"
       labels={
         Object {
-          "pageSizeEntryName": "rows",
+          "pageSizeEntryName": "items",
           "pageSizePrev": "Show",
           "pageSizeSelectorDescription": "Select how many to display",
           "pagesSeparator": "of",
@@ -79,20 +100,25 @@ exports[`Custom Pagination should render correctly 1`] = `
           "paginationPreviousPageTitle": "Previous page",
         }
       }
-      page={2}
-      pageSize={5}
+      onPageChange={[Function]}
+      onPageSizeChange={[Function]}
+      page={0}
+      pageSize={12}
       pageSizeOptions={
         Array [
-          5,
-          10,
+          4,
+          6,
+          12,
+          24,
+          48,
+          2000,
         ]
       }
-      pages={4}
-      showPageJump={false}
-      showPageSizeOptions={true}
+      pages={6}
     >
       <div
         className="HvPagination-root"
+        id="pagination"
       >
         <div
           className="HvPagination-pageSizeOptions"
@@ -143,20 +169,45 @@ exports[`Custom Pagination should render correctly 1`] = `
             aria-label="Select how many to display"
             className="HvPagination-pageSizeOptionsSelect"
             disabled={false}
+            id="pagination-pageSize"
             onChange={[Function]}
-            value={5}
+            value={12}
           >
             <option
-              key="5"
-              value={5}
+              key="4"
+              value={4}
             >
-              5
+              4
             </option>
             <option
-              key="10"
-              value={10}
+              key="6"
+              value={6}
             >
-              10
+              6
+            </option>
+            <option
+              key="12"
+              value={12}
+            >
+              12
+            </option>
+            <option
+              key="24"
+              value={24}
+            >
+              24
+            </option>
+            <option
+              key="48"
+              value={48}
+            >
+              48
+            </option>
+            <option
+              key="2000"
+              value={2000}
+            >
+              2000
             </option>
           </select>
           <WithStyles(DropDownXS)
@@ -231,7 +282,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               <span
                 className="HvTypography-root HvTypography-sText"
               >
-                rows
+                items
               </span>
             </ForwardRef>
           </WithStyles(ForwardRef)>
@@ -242,7 +293,8 @@ exports[`Custom Pagination should render correctly 1`] = `
           <WithStyles(ForwardRef(IconButton))
             aria-label="First Page"
             className="HvPagination-iconContainer"
-            disabled={false}
+            disabled={true}
+            id="pagination-firstPage-button"
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
@@ -261,21 +313,23 @@ exports[`Custom Pagination should render correctly 1`] = `
                   "sizeSmall": "MuiIconButton-sizeSmall",
                 }
               }
-              disabled={false}
+              disabled={true}
+              id="pagination-firstPage-button"
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
                 aria-label="First Page"
                 centerRipple={true}
-                className="MuiIconButton-root HvPagination-iconContainer"
-                disabled={false}
+                className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
+                disabled={true}
                 focusRipple={true}
+                id="pagination-firstPage-button"
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
                   aria-label="First Page"
                   centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer"
+                  className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -284,14 +338,16 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                   }
                   disableRipple={true}
-                  disabled={false}
+                  disabled={true}
                   focusRipple={true}
+                  id="pagination-firstPage-button"
                   onClick={[Function]}
                 >
                   <button
                     aria-label="First Page"
-                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
-                    disabled={false}
+                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer Mui-disabled Mui-disabled"
+                    disabled={true}
+                    id="pagination-firstPage-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}
@@ -304,7 +360,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
-                    tabIndex={0}
+                    tabIndex={-1}
                     type="button"
                   >
                     <span
@@ -481,6 +537,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   <FirstPage>
                                     <WithStyles(Start)
                                       className="HvPagination-icon"
+                                      color="atmo7"
                                     >
                                       <Start
                                         className="HvPagination-icon"
@@ -493,6 +550,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             "rootXs": "HvIconStart-rootXs",
                                           }
                                         }
+                                        color="atmo7"
                                       >
                                         <div
                                           className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
@@ -507,7 +565,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                              fill="#414141"
+                                              fill="#999999"
                                             />
                                           </svg>
                                         </div>
@@ -534,7 +592,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>
@@ -570,7 +628,8 @@ exports[`Custom Pagination should render correctly 1`] = `
           <WithStyles(ForwardRef(IconButton))
             aria-label="Previous Page"
             className="HvPagination-iconContainer"
-            disabled={false}
+            disabled={true}
+            id="pagination-previousPage-button"
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
@@ -589,21 +648,23 @@ exports[`Custom Pagination should render correctly 1`] = `
                   "sizeSmall": "MuiIconButton-sizeSmall",
                 }
               }
-              disabled={false}
+              disabled={true}
+              id="pagination-previousPage-button"
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
                 aria-label="Previous Page"
                 centerRipple={true}
-                className="MuiIconButton-root HvPagination-iconContainer"
-                disabled={false}
+                className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
+                disabled={true}
                 focusRipple={true}
+                id="pagination-previousPage-button"
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
                   aria-label="Previous Page"
                   centerRipple={true}
-                  className="MuiIconButton-root HvPagination-iconContainer"
+                  className="MuiIconButton-root HvPagination-iconContainer Mui-disabled"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -612,14 +673,16 @@ exports[`Custom Pagination should render correctly 1`] = `
                     }
                   }
                   disableRipple={true}
-                  disabled={false}
+                  disabled={true}
                   focusRipple={true}
+                  id="pagination-previousPage-button"
                   onClick={[Function]}
                 >
                   <button
                     aria-label="Previous Page"
-                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
-                    disabled={false}
+                    className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer Mui-disabled Mui-disabled"
+                    disabled={true}
+                    id="pagination-previousPage-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}
@@ -632,7 +695,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     onTouchEnd={[Function]}
                     onTouchMove={[Function]}
                     onTouchStart={[Function]}
-                    tabIndex={0}
+                    tabIndex={-1}
                     type="button"
                   >
                     <span
@@ -809,6 +872,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   <PreviousPage>
                                     <WithStyles(Backwards)
                                       className="HvPagination-icon"
+                                      color="atmo7"
                                     >
                                       <Backwards
                                         className="HvPagination-icon"
@@ -821,6 +885,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             "rootXs": "HvIconBackwards-rootXs",
                                           }
                                         }
+                                        color="atmo7"
                                       >
                                         <div
                                           className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
@@ -835,7 +900,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                              fill="#414141"
+                                              fill="#999999"
                                             />
                                           </svg>
                                         </div>
@@ -862,7 +927,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>
@@ -898,48 +963,535 @@ exports[`Custom Pagination should render correctly 1`] = `
           <div
             className="HvPagination-pageInfo"
           >
-            <WithStyles(ForwardRef)
-              component="span"
-              variant="sText"
+            <div
+              className="HvPagination-pageJump"
             >
-              <ForwardRef
+              <WithStyles(WithLabels)
                 classes={
                   Object {
-                    "3xlTitle": "HvTypography-3xlTitle",
-                    "4xlTitle": "HvTypography-4xlTitle",
-                    "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
-                    "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
-                    "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
-                    "mTitle": "HvTypography-mTitle",
-                    "normalText": "HvTypography-normalText",
-                    "placeholderText": "HvTypography-placeholderText",
-                    "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
-                    "sTitle": "HvTypography-sTitle",
-                    "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
-                    "vizText": "HvTypography-vizText",
-                    "xlTitle": "HvTypography-xlTitle",
-                    "xsTitle": "HvTypography-xsTitle",
-                    "xxlTitle": "HvTypography-xxlTitle",
-                    "xxsTitle": "HvTypography-xxsTitle",
+                    "input": "HvPagination-pageSizeInput",
+                    "inputRoot": "HvPagination-pageSizeInputRoot",
+                    "root": "HvPagination-pageSizeInputContainer",
                   }
                 }
-                component="span"
-                variant="sText"
+                disableClear={true}
+                disabled={false}
+                id="pagination-currentPage"
+                initialValue="1"
+                inputProps={
+                  Object {
+                    "aria-label": "6 Total pages for page input",
+                  }
+                }
+                labels={
+                  Object {
+                    "pageSizeEntryName": "items",
+                    "pageSizePrev": "Show",
+                    "pageSizeSelectorDescription": "Select how many to display",
+                    "pagesSeparator": "of",
+                    "paginationFirstPageTitle": "First page",
+                    "paginationInputLabel": "Total pages for page input",
+                    "paginationLastPageTitle": "Last page",
+                    "paginationNextPageTitle": "Next page",
+                    "paginationPreviousPageTitle": "Previous page",
+                  }
+                }
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                type="number"
+                validationIconVisible={false}
+                value="1"
               >
-                <span
-                  className="HvTypography-root HvTypography-sText"
+                <WithLabels
+                  classes={
+                    Object {
+                      "adornmentButton": "HvInput-adornmentButton",
+                      "adornmentsBox": "HvInput-adornmentsBox",
+                      "icon": "HvInput-icon",
+                      "iconClear": "HvInput-iconClear",
+                      "infoIconContainer": "HvInput-infoIconContainer",
+                      "infoText": "HvInput-infoText",
+                      "input": "HvInput-input HvPagination-pageSizeInput",
+                      "inputDisabled": "HvInput-inputDisabled",
+                      "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                      "inputRootDisabled": "HvInput-inputRootDisabled",
+                      "inputRootFocused": "HvInput-inputRootFocused",
+                      "inputRootInvalid": "HvInput-inputRootInvalid",
+                      "label": "HvInput-label",
+                      "labelContainer": "HvInput-labelContainer",
+                      "labelDisabled": "HvInput-labelDisabled",
+                      "multiLine": "HvInput-multiLine",
+                      "root": "HvInput-root HvPagination-pageSizeInputContainer",
+                      "showText": "HvInput-showText",
+                      "suggestionList": "HvInput-suggestionList",
+                      "suggestionsContainer": "HvInput-suggestionsContainer",
+                      "textWarning": "HvInput-textWarning",
+                    }
+                  }
+                  disableClear={true}
+                  disabled={false}
+                  id="pagination-currentPage"
+                  initialValue="1"
+                  inputProps={
+                    Object {
+                      "aria-label": "6 Total pages for page input",
+                    }
+                  }
+                  labels={
+                    Object {
+                      "pageSizeEntryName": "items",
+                      "pageSizePrev": "Show",
+                      "pageSizeSelectorDescription": "Select how many to display",
+                      "pagesSeparator": "of",
+                      "paginationFirstPageTitle": "First page",
+                      "paginationInputLabel": "Total pages for page input",
+                      "paginationLastPageTitle": "Last page",
+                      "paginationNextPageTitle": "Next page",
+                      "paginationPreviousPageTitle": "Previous page",
+                    }
+                  }
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="number"
+                  validationIconVisible={false}
+                  value="1"
                 >
-                  3
-                </span>
-              </ForwardRef>
-            </WithStyles(ForwardRef)>
+                  <WithId
+                    classes={
+                      Object {
+                        "adornmentButton": "HvInput-adornmentButton",
+                        "adornmentsBox": "HvInput-adornmentsBox",
+                        "icon": "HvInput-icon",
+                        "iconClear": "HvInput-iconClear",
+                        "infoIconContainer": "HvInput-infoIconContainer",
+                        "infoText": "HvInput-infoText",
+                        "input": "HvInput-input HvPagination-pageSizeInput",
+                        "inputDisabled": "HvInput-inputDisabled",
+                        "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                        "inputRootDisabled": "HvInput-inputRootDisabled",
+                        "inputRootFocused": "HvInput-inputRootFocused",
+                        "inputRootInvalid": "HvInput-inputRootInvalid",
+                        "label": "HvInput-label",
+                        "labelContainer": "HvInput-labelContainer",
+                        "labelDisabled": "HvInput-labelDisabled",
+                        "multiLine": "HvInput-multiLine",
+                        "root": "HvInput-root HvPagination-pageSizeInputContainer",
+                        "showText": "HvInput-showText",
+                        "suggestionList": "HvInput-suggestionList",
+                        "suggestionsContainer": "HvInput-suggestionsContainer",
+                        "textWarning": "HvInput-textWarning",
+                      }
+                    }
+                    disableClear={true}
+                    disabled={false}
+                    id="pagination-currentPage"
+                    initialValue="1"
+                    inputProps={
+                      Object {
+                        "aria-label": "6 Total pages for page input",
+                      }
+                    }
+                    labels={
+                      Object {
+                        "clearButtonLabel": "Clear the text",
+                        "infoText": "",
+                        "inputLabel": "",
+                        "maxCharQuantityWarningText": "The value is too big",
+                        "minCharQuantityWarningText": "The value is too short",
+                        "pageSizeEntryName": "items",
+                        "pageSizePrev": "Show",
+                        "pageSizeSelectorDescription": "Select how many to display",
+                        "pagesSeparator": "of",
+                        "paginationFirstPageTitle": "First page",
+                        "paginationInputLabel": "Total pages for page input",
+                        "paginationLastPageTitle": "Last page",
+                        "paginationNextPageTitle": "Next page",
+                        "paginationPreviousPageTitle": "Previous page",
+                        "placeholder": "",
+                        "requiredWarningText": "The value is required",
+                        "warningText": "something wrong",
+                      }
+                    }
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onKeyDown={[Function]}
+                    type="number"
+                    validationIconVisible={false}
+                    value="1"
+                  >
+                    <HvInput
+                      autoFocus={false}
+                      className=""
+                      classes={
+                        Object {
+                          "adornmentButton": "HvInput-adornmentButton",
+                          "adornmentsBox": "HvInput-adornmentsBox",
+                          "icon": "HvInput-icon",
+                          "iconClear": "HvInput-iconClear",
+                          "infoIconContainer": "HvInput-infoIconContainer",
+                          "infoText": "HvInput-infoText",
+                          "input": "HvInput-input HvPagination-pageSizeInput",
+                          "inputDisabled": "HvInput-inputDisabled",
+                          "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                          "inputRootDisabled": "HvInput-inputRootDisabled",
+                          "inputRootFocused": "HvInput-inputRootFocused",
+                          "inputRootInvalid": "HvInput-inputRootInvalid",
+                          "label": "HvInput-label",
+                          "labelContainer": "HvInput-labelContainer",
+                          "labelDisabled": "HvInput-labelDisabled",
+                          "multiLine": "HvInput-multiLine",
+                          "root": "HvInput-root HvPagination-pageSizeInputContainer",
+                          "showText": "HvInput-showText",
+                          "suggestionList": "HvInput-suggestionList",
+                          "suggestionsContainer": "HvInput-suggestionsContainer",
+                          "textWarning": "HvInput-textWarning",
+                        }
+                      }
+                      customFixedIcon={null}
+                      disableClear={true}
+                      disabled={false}
+                      externalWarningTextOverride={null}
+                      id="pagination-currentPage"
+                      infoIcon={false}
+                      initialValue="1"
+                      inputProps={
+                        Object {
+                          "aria-label": "6 Total pages for page input",
+                        }
+                      }
+                      inputRef={null}
+                      isRequired={false}
+                      labels={
+                        Object {
+                          "clearButtonLabel": "Clear the text",
+                          "infoText": "",
+                          "inputLabel": "",
+                          "maxCharQuantityWarningText": "The value is too big",
+                          "minCharQuantityWarningText": "The value is too short",
+                          "pageSizeEntryName": "items",
+                          "pageSizePrev": "Show",
+                          "pageSizeSelectorDescription": "Select how many to display",
+                          "pagesSeparator": "of",
+                          "paginationFirstPageTitle": "First page",
+                          "paginationInputLabel": "Total pages for page input",
+                          "paginationLastPageTitle": "Last page",
+                          "paginationNextPageTitle": "Next page",
+                          "paginationPreviousPageTitle": "Previous page",
+                          "placeholder": "",
+                          "requiredWarningText": "The value is required",
+                          "warningText": "something wrong",
+                        }
+                      }
+                      maxCharQuantity={null}
+                      minCharQuantity={null}
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      password={false}
+                      showInfo={true}
+                      suggestionListCallback={[Function]}
+                      suggestionSelectedCallback={[Function]}
+                      type="number"
+                      validation={null}
+                      validationIconPosition="right"
+                      validationIconVisible={false}
+                      validationState="empty"
+                      validationType="none"
+                      value="1"
+                    >
+                      <div
+                        className="HvInput-root HvPagination-pageSizeInputContainer"
+                        id="pagination-currentPage"
+                        onBlur={[Function]}
+                      >
+                        <div
+                          className="HvInput-labelContainer"
+                        />
+                        <WithStyles(ForwardRef(Input))
+                          autoFocus={false}
+                          className="HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                          classes={
+                            Object {
+                              "disabled": "HvInput-inputDisabled",
+                              "focused": "HvInput-inputRootFocused",
+                              "input": "HvInput-input HvPagination-pageSizeInput",
+                              "multiline": "HvInput-multiLine",
+                            }
+                          }
+                          disabled={false}
+                          endAdornment={null}
+                          id="pagination-currentPage-input"
+                          inputProps={
+                            Object {
+                              "aria-invalid": undefined,
+                              "aria-label": "6 Total pages for page input",
+                              "aria-required": undefined,
+                              "ref": Object {
+                                "current": <input
+                                  aria-label="6 Total pages for page input"
+                                  class="MuiInputBase-input MuiInput-input HvInput-input HvPagination-pageSizeInput"
+                                  id="pagination-currentPage-input"
+                                  type="number"
+                                  value="1"
+                                />,
+                              },
+                              "required": false,
+                            }
+                          }
+                          inputRef={null}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          type="number"
+                          value="1"
+                        >
+                          <ForwardRef(Input)
+                            autoFocus={false}
+                            className="HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                            classes={
+                              Object {
+                                "colorSecondary": "MuiInput-colorSecondary",
+                                "disabled": "Mui-disabled HvInput-inputDisabled",
+                                "error": "Mui-error",
+                                "focused": "Mui-focused HvInput-inputRootFocused",
+                                "formControl": "MuiInput-formControl",
+                                "fullWidth": "MuiInput-fullWidth",
+                                "input": "MuiInput-input HvInput-input HvPagination-pageSizeInput",
+                                "inputMarginDense": "MuiInput-inputMarginDense",
+                                "inputMultiline": "MuiInput-inputMultiline",
+                                "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                "marginDense": "MuiInput-marginDense",
+                                "multiline": "MuiInput-multiline HvInput-multiLine",
+                                "root": "MuiInput-root",
+                                "underline": "MuiInput-underline",
+                              }
+                            }
+                            disableUnderline={true}
+                            disabled={false}
+                            endAdornment={null}
+                            id="pagination-currentPage-input"
+                            inputProps={
+                              Object {
+                                "aria-invalid": undefined,
+                                "aria-label": "6 Total pages for page input",
+                                "aria-required": undefined,
+                                "ref": Object {
+                                  "current": <input
+                                    aria-label="6 Total pages for page input"
+                                    class="MuiInputBase-input MuiInput-input HvInput-input HvPagination-pageSizeInput"
+                                    id="pagination-currentPage-input"
+                                    type="number"
+                                    value="1"
+                                  />,
+                                },
+                                "required": false,
+                              }
+                            }
+                            inputRef={null}
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            type="number"
+                            value="1"
+                          >
+                            <WithStyles(ForwardRef(InputBase))
+                              autoFocus={false}
+                              className="HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                              classes={
+                                Object {
+                                  "colorSecondary": "MuiInput-colorSecondary",
+                                  "disabled": "Mui-disabled HvInput-inputDisabled",
+                                  "error": "Mui-error",
+                                  "focused": "Mui-focused HvInput-inputRootFocused",
+                                  "formControl": "MuiInput-formControl",
+                                  "fullWidth": "MuiInput-fullWidth",
+                                  "input": "MuiInput-input HvInput-input HvPagination-pageSizeInput",
+                                  "inputMarginDense": "MuiInput-inputMarginDense",
+                                  "inputMultiline": "MuiInput-inputMultiline",
+                                  "inputTypeSearch": "MuiInput-inputTypeSearch",
+                                  "marginDense": "MuiInput-marginDense",
+                                  "multiline": "MuiInput-multiline HvInput-multiLine",
+                                  "root": "MuiInput-root",
+                                  "underline": null,
+                                }
+                              }
+                              disabled={false}
+                              endAdornment={null}
+                              fullWidth={false}
+                              id="pagination-currentPage-input"
+                              inputComponent="input"
+                              inputProps={
+                                Object {
+                                  "aria-invalid": undefined,
+                                  "aria-label": "6 Total pages for page input",
+                                  "aria-required": undefined,
+                                  "ref": Object {
+                                    "current": <input
+                                      aria-label="6 Total pages for page input"
+                                      class="MuiInputBase-input MuiInput-input HvInput-input HvPagination-pageSizeInput"
+                                      id="pagination-currentPage-input"
+                                      type="number"
+                                      value="1"
+                                    />,
+                                  },
+                                  "required": false,
+                                }
+                              }
+                              inputRef={null}
+                              multiline={false}
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              type="number"
+                              value="1"
+                            >
+                              <ForwardRef(InputBase)
+                                autoFocus={false}
+                                className="HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                classes={
+                                  Object {
+                                    "adornedEnd": "MuiInputBase-adornedEnd",
+                                    "adornedStart": "MuiInputBase-adornedStart",
+                                    "colorSecondary": "MuiInputBase-colorSecondary MuiInput-colorSecondary",
+                                    "disabled": "Mui-disabled Mui-disabled HvInput-inputDisabled",
+                                    "error": "Mui-error Mui-error",
+                                    "focused": "Mui-focused Mui-focused HvInput-inputRootFocused",
+                                    "formControl": "MuiInputBase-formControl MuiInput-formControl",
+                                    "fullWidth": "MuiInputBase-fullWidth MuiInput-fullWidth",
+                                    "input": "MuiInputBase-input MuiInput-input HvInput-input HvPagination-pageSizeInput",
+                                    "inputAdornedEnd": "MuiInputBase-inputAdornedEnd",
+                                    "inputAdornedStart": "MuiInputBase-inputAdornedStart",
+                                    "inputHiddenLabel": "MuiInputBase-inputHiddenLabel",
+                                    "inputMarginDense": "MuiInputBase-inputMarginDense MuiInput-inputMarginDense",
+                                    "inputMultiline": "MuiInputBase-inputMultiline MuiInput-inputMultiline",
+                                    "inputTypeSearch": "MuiInputBase-inputTypeSearch MuiInput-inputTypeSearch",
+                                    "marginDense": "MuiInputBase-marginDense MuiInput-marginDense",
+                                    "multiline": "MuiInputBase-multiline MuiInput-multiline HvInput-multiLine",
+                                    "root": "MuiInputBase-root MuiInput-root",
+                                  }
+                                }
+                                disabled={false}
+                                endAdornment={null}
+                                fullWidth={false}
+                                id="pagination-currentPage-input"
+                                inputComponent="input"
+                                inputProps={
+                                  Object {
+                                    "aria-invalid": undefined,
+                                    "aria-label": "6 Total pages for page input",
+                                    "aria-required": undefined,
+                                    "ref": Object {
+                                      "current": <input
+                                        aria-label="6 Total pages for page input"
+                                        class="MuiInputBase-input MuiInput-input HvInput-input HvPagination-pageSizeInput"
+                                        id="pagination-currentPage-input"
+                                        type="number"
+                                        value="1"
+                                      />,
+                                    },
+                                    "required": false,
+                                  }
+                                }
+                                inputRef={null}
+                                multiline={false}
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onFocus={[Function]}
+                                onKeyDown={[Function]}
+                                type="number"
+                                value="1"
+                              >
+                                <div
+                                  className="MuiInputBase-root MuiInput-root HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                  onClick={[Function]}
+                                >
+                                  <input
+                                    aria-label="6 Total pages for page input"
+                                    autoFocus={false}
+                                    className="MuiInputBase-input MuiInput-input HvInput-input HvPagination-pageSizeInput"
+                                    disabled={false}
+                                    id="pagination-currentPage-input"
+                                    onAnimationStart={[Function]}
+                                    onBlur={[Function]}
+                                    onChange={[Function]}
+                                    onFocus={[Function]}
+                                    onKeyDown={[Function]}
+                                    required={false}
+                                    type="number"
+                                    value="1"
+                                  />
+                                </div>
+                              </ForwardRef(InputBase)>
+                            </WithStyles(ForwardRef(InputBase))>
+                          </ForwardRef(Input)>
+                        </WithStyles(ForwardRef(Input))>
+                        <WithStyles(ForwardRef)
+                          aria-atomic="true"
+                          aria-controls="pagination-currentPage-input"
+                          aria-labelledby={null}
+                          aria-live="polite"
+                          aria-relevant="additions text"
+                          className="HvInput-textWarning HvInput-infoText"
+                          variant="sText"
+                        >
+                          <ForwardRef
+                            aria-atomic="true"
+                            aria-controls="pagination-currentPage-input"
+                            aria-labelledby={null}
+                            aria-live="polite"
+                            aria-relevant="additions text"
+                            className="HvInput-textWarning HvInput-infoText"
+                            classes={
+                              Object {
+                                "3xlTitle": "HvTypography-3xlTitle",
+                                "4xlTitle": "HvTypography-4xlTitle",
+                                "5xlTitle": "HvTypography-5xlTitle",
+                                "disabledButtonText": "HvTypography-disabledButtonText",
+                                "highlightText": "HvTypography-highlightText",
+                                "infoText": "HvTypography-infoText",
+                                "inlineLink": "HvTypography-inlineLink",
+                                "lTitle": "HvTypography-lTitle",
+                                "labelText": "HvTypography-labelText",
+                                "mTitle": "HvTypography-mTitle",
+                                "normalText": "HvTypography-normalText",
+                                "placeholderText": "HvTypography-placeholderText",
+                                "root": "HvTypography-root",
+                                "sLink": "HvTypography-sLink",
+                                "sText": "HvTypography-sText",
+                                "sTitle": "HvTypography-sTitle",
+                                "selectedNavText": "HvTypography-selectedNavText",
+                                "selectedText": "HvTypography-selectedText",
+                                "vizText": "HvTypography-vizText",
+                                "xlTitle": "HvTypography-xlTitle",
+                                "xsTitle": "HvTypography-xsTitle",
+                                "xxlTitle": "HvTypography-xxlTitle",
+                                "xxsTitle": "HvTypography-xxsTitle",
+                              }
+                            }
+                            variant="sText"
+                          >
+                            <p
+                              aria-atomic="true"
+                              aria-controls="pagination-currentPage-input"
+                              aria-labelledby={null}
+                              aria-live="polite"
+                              aria-relevant="additions text"
+                              className="HvInput-textWarning HvInput-infoText HvTypography-root HvTypography-sText"
+                            />
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
+                      </div>
+                    </HvInput>
+                  </WithId>
+                </WithLabels>
+              </WithStyles(WithLabels)>
+            </div>
             <WithStyles(ForwardRef)
               component="span"
               variant="sText"
@@ -984,6 +1536,7 @@ exports[`Custom Pagination should render correctly 1`] = `
             </WithStyles(ForwardRef)>
             <WithStyles(ForwardRef)
               component="span"
+              id="pagination-totalPages"
               variant="sText"
             >
               <ForwardRef
@@ -1015,12 +1568,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                   }
                 }
                 component="span"
+                id="pagination-totalPages"
                 variant="sText"
               >
                 <span
                   className="HvTypography-root HvTypography-sText"
+                  id="pagination-totalPages"
                 >
-                  4
+                  6
                 </span>
               </ForwardRef>
             </WithStyles(ForwardRef)>
@@ -1029,6 +1584,7 @@ exports[`Custom Pagination should render correctly 1`] = `
             aria-label="Next Page"
             className="HvPagination-iconContainer"
             disabled={false}
+            id="pagination-nextPage-button"
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
@@ -1048,6 +1604,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 }
               }
               disabled={false}
+              id="pagination-nextPage-button"
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
@@ -1056,6 +1613,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 className="MuiIconButton-root HvPagination-iconContainer"
                 disabled={false}
                 focusRipple={true}
+                id="pagination-nextPage-button"
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
@@ -1072,12 +1630,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
+                  id="pagination-nextPage-button"
                   onClick={[Function]}
                 >
                   <button
                     aria-label="Next Page"
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
+                    id="pagination-nextPage-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}
@@ -1357,6 +1917,7 @@ exports[`Custom Pagination should render correctly 1`] = `
             aria-label="Last Page"
             className="HvPagination-iconContainer"
             disabled={false}
+            id="pagination-lastPage-button"
             onClick={[Function]}
           >
             <ForwardRef(IconButton)
@@ -1376,6 +1937,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 }
               }
               disabled={false}
+              id="pagination-lastPage-button"
               onClick={[Function]}
             >
               <WithStyles(ForwardRef(ButtonBase))
@@ -1384,6 +1946,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 className="MuiIconButton-root HvPagination-iconContainer"
                 disabled={false}
                 focusRipple={true}
+                id="pagination-lastPage-button"
                 onClick={[Function]}
               >
                 <ForwardRef(ButtonBase)
@@ -1400,12 +1963,14 @@ exports[`Custom Pagination should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   focusRipple={true}
+                  id="pagination-lastPage-button"
                   onClick={[Function]}
                 >
                   <button
                     aria-label="Last Page"
                     className="MuiButtonBase-root MuiIconButton-root HvPagination-iconContainer"
                     disabled={false}
+                    id="pagination-lastPage-button"
                     onBlur={[Function]}
                     onClick={[Function]}
                     onDragLeave={[Function]}

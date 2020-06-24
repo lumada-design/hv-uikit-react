@@ -2,10 +2,9 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Download from "@hv/uikit-react-icons/dist/Download";
-import HvProvider from "../../Provider";
+import { Download } from "@hv/uikit-react-icons";
+import { HvButton, HvProvider } from "../..";
 import materialButtonConfiguration from "../materialButtonConfiguration";
-import HvButton from "..";
 
 describe("Button", () => {
   let wrapper;

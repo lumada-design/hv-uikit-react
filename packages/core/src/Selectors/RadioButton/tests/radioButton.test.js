@@ -1,25 +1,24 @@
 /* eslint-env jest */
 
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 
-import RadioButtonUnSelected from "@hv/uikit-react-icons/dist/RadioButtonUnselected";
-
-import RadioButton from "..";
+import { RadioButtonUnselected } from "@hv/uikit-react-icons";
+import { HvProvider, HvRadio } from "../../..";
 import labelPositions from "../../labelPositions";
-import HvProvider from "../../../Provider";
 import theme from "../../../theme";
+import { Main, Disabled } from "../stories/RadioButton.stories";
 
-describe("RadioButton withStyles", () => {
+describe("RadioButton", () => {
   let wrapper;
 
   const labelStartClassName = "labelStart";
   const labelEndClassName = "labelEnd";
 
   beforeEach(async () => {
-    wrapper = shallow(
+    wrapper = mount(
       <HvProvider>
-        <RadioButton />
+        <Main />
       </HvProvider>
     );
   });
@@ -29,46 +28,35 @@ describe("RadioButton withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(RadioButton)).toMatchSnapshot();
+    expect(wrapper.find(HvRadio)).toMatchSnapshot();
   });
 
   it("should render the RadioButton component", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <RadioButton />
-      </HvProvider>
-    );
-    const buttonComponent = mountWrapper.find(RadioButton);
+    const buttonComponent = wrapper.find(HvRadio);
     expect(buttonComponent.length).toBe(1);
   });
 
   it("should have an icon", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <RadioButton />
-      </HvProvider>
-    );
-
-    const component = mountWrapper.find(RadioButton);
+    const component = wrapper.find(HvRadio);
     const componentHtml = component.html();
 
-    expect(component.find(RadioButtonUnSelected).length).toBe(1);
+    expect(component.find(RadioButtonUnselected).length).toBe(1);
 
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
-    const mountWrapper = mount(
+    wrapper = mount(
       <HvProvider>
-        <RadioButton disabled />
+        <Disabled />
       </HvProvider>
     );
 
-    const component = mountWrapper.find(RadioButton);
+    const component = wrapper.find(HvRadio);
     const componentHtml = component.html();
 
-    expect(component.find(RadioButtonUnSelected).length).toBe(1);
+    expect(component.find(RadioButtonUnselected).length).toBe(1);
 
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
     expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
@@ -77,9 +65,9 @@ describe("RadioButton withStyles", () => {
   it("should apply the correct class name when there is a label at the start", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioButton label="test" labelPlacement={labelPositions.start} />
+        <HvRadio label="test" labelPlacement={labelPositions.start} />
       </HvProvider>
-    ).find(RadioButton);
+    ).find(HvRadio);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(true);
     expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
@@ -87,9 +75,9 @@ describe("RadioButton withStyles", () => {
   it("should apply the correct class name when there is a label at the end", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioButton label="test" labelPlacement={labelPositions.end} />
+        <HvRadio label="test" labelPlacement={labelPositions.end} />
       </HvProvider>
-    ).find(RadioButton);
+    ).find(HvRadio);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
     expect(mountWrapper.html().includes(labelEndClassName)).toBe(true);
   });
@@ -97,9 +85,9 @@ describe("RadioButton withStyles", () => {
   it("should not apply any class name when there is no label specified", () => {
     const mountWrapper = mount(
       <HvProvider>
-        <RadioButton labelPlacement={labelPositions.start} />
+        <HvRadio labelPlacement={labelPositions.start} />
       </HvProvider>
-    ).find(RadioButton);
+    ).find(HvRadio);
     expect(mountWrapper.html().includes(labelStartClassName)).toBe(false);
     expect(mountWrapper.html().includes(labelEndClassName)).toBe(false);
   });
