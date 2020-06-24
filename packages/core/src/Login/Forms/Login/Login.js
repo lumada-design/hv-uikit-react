@@ -77,7 +77,7 @@ class Login extends React.Component {
       await login({ username, password });
       if (this.isMounted) this.setState({ isLogging: false });
     } catch (error) {
-      if (this.isMounted) this.setState({ loginError: true });
+      if (this.isMounted) this.setState({ loginError: true, isLogging: false });
     }
   };
 
