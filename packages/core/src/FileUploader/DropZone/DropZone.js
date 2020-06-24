@@ -1,13 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import uniqueId from "lodash/uniqueId";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import Doc from "@hv/uikit-react-icons/dist/Doc";
-import { KeyboardCodes, isKeypress } from "../../utils";
+import { isKeypress, KeyboardCodes } from "../../utils";
 import HvTypography from "../../Typography";
 import { convertUnits } from "../utils";
 import { setId } from "../..";
+import withId from "../../withId";
 import styles from "./styles";
 
 const DropZone = ({
@@ -243,4 +244,4 @@ DropZone.propTypes = {
   onFilesAdded: PropTypes.func
 };
 
-export default withStyles(styles, { name: "HvFileUploaderDropZone" })(DropZone);
+export default withStyles(styles, { name: "HvFileUploaderDropZone" })(withId(DropZone));
