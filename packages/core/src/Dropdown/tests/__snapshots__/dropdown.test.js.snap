@@ -168,7 +168,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
         >
           <div
             aria-labelledby="test-dropdown-selectionLabel"
-            className=""
+            className="HvDropdown-header HvDropdown-headerDisabled"
             id="test-dropdown-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
@@ -1532,7 +1532,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   value=""
                                                 />
                                                 <div
-                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                   font-size="default"
                                                 >
                                                   <svg
@@ -1590,7 +1590,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   value=""
                                                 />
                                                 <div
-                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                   font-size="default"
                                                 >
                                                   <svg
@@ -1648,7 +1648,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                   value=""
                                                 />
                                                 <div
-                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                   font-size="default"
                                                 >
                                                   <svg
@@ -3276,8 +3276,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               "box": "HvList-box",
                                               "condensed": "HvList-condensed",
                                               "disabled": "HvList-disabled",
+                                              "focus": "HvList-focus",
+                                              "icon": "HvList-icon",
                                               "label": "HvList-label",
                                               "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                              "link": "HvList-link",
                                               "list": "HvList-list",
                                               "listItem": "HvList-listItem",
                                               "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -3331,6 +3334,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                               role="listbox"
                                             >
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": 0,
@@ -3376,7 +3384,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -3434,7 +3442,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -3492,7 +3500,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -3536,6 +3544,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -3586,7 +3595,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -3644,7 +3653,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -3702,7 +3711,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -3762,6 +3771,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         classes={
                                                           Object {
                                                             "container": "HvList-selectorContainer",
+                                                            "icon": "HvList-icon",
                                                             "labelTypography": "HvList-truncate",
                                                           }
                                                         }
@@ -3776,7 +3786,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "checkBox": "HvCheckBox-checkBox",
                                                               "container": "HvCheckBox-container HvList-selectorContainer",
                                                               "disableFocus": "HvCheckBox-disableFocus",
-                                                              "icon": "HvCheckBox-icon",
+                                                              "icon": "HvCheckBox-icon HvList-icon",
                                                               "labelDisabled": "HvCheckBox-labelDisabled",
                                                               "labelEnd": "HvCheckBox-labelEnd",
                                                               "labelStart": "HvCheckBox-labelStart",
@@ -3800,7 +3810,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 checked={false}
                                                                 checkedIcon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 className="HvCheckBox-checkBox"
@@ -3809,13 +3819,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disabled={false}
                                                                 icon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-0-selector-input"
                                                                 indeterminateIcon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 onBlur={[Function]}
@@ -3845,7 +3855,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   checked={false}
                                                                   checkedIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   className="HvCheckBox-checkBox"
@@ -3854,13 +3864,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disabled={false}
                                                                   icon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   indeterminateIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   onBlur={[Function]}
@@ -3881,7 +3891,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   checked={false}
                                                                   checkedIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   className="HvCheckBox-checkBox"
@@ -3890,13 +3900,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disabled={false}
                                                                   icon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-0-selector-input"
                                                                   indeterminateIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   onBlur={[Function]}
@@ -3907,7 +3917,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     checked={false}
                                                                     checkedIcon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     className="HvCheckBox-checkBox"
@@ -3926,13 +3936,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     disabled={false}
                                                                     icon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     id="test-dropdown-values-list-item-0-selector-input"
                                                                     indeterminateIcon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     onBlur={[Function]}
@@ -3943,7 +3953,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       checked={false}
                                                                       checkedIcon={
                                                                         <ForwardRef(WithStyles)
-                                                                          className="HvCheckBox-icon"
+                                                                          className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
                                                                       }
@@ -3960,7 +3970,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       disabled={false}
                                                                       icon={
                                                                         <ForwardRef(WithStyles)
-                                                                          className="HvCheckBox-icon"
+                                                                          className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
                                                                       }
@@ -3979,7 +3989,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         checked={false}
                                                                         checkedIcon={
                                                                           <ForwardRef(WithStyles)
-                                                                            className="HvCheckBox-icon"
+                                                                            className="HvCheckBox-icon HvList-icon"
                                                                             fontSize="default"
                                                                           />
                                                                         }
@@ -3997,7 +4007,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         disabled={false}
                                                                         icon={
                                                                           <ForwardRef(WithStyles)
-                                                                            className="HvCheckBox-icon"
+                                                                            className="HvCheckBox-icon HvList-icon"
                                                                             fontSize="default"
                                                                           />
                                                                         }
@@ -4104,11 +4114,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                       value=""
                                                                                     />
                                                                                     <WithStyles(Checkbox)
-                                                                                      className="HvCheckBox-icon"
+                                                                                      className="HvCheckBox-icon HvList-icon"
                                                                                       fontSize="default"
                                                                                     >
                                                                                       <Checkbox
-                                                                                        className="HvCheckBox-icon"
+                                                                                        className="HvCheckBox-icon HvList-icon"
                                                                                         classes={
                                                                                           Object {
                                                                                             "root": "HvIconCheckbox-root",
@@ -4121,7 +4131,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                         fontSize="default"
                                                                                       >
                                                                                         <div
-                                                                                          className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                                          className="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                                           fontSize="default"
                                                                                         >
                                                                                           <svg
@@ -4214,6 +4224,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 </Focus>
                                               </WithStyles(Focus)>
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": -1,
@@ -4259,7 +4274,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -4317,7 +4332,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -4375,7 +4390,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -4419,6 +4434,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -4469,7 +4485,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -4527,7 +4543,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -4585,7 +4601,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -4645,6 +4661,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         classes={
                                                           Object {
                                                             "container": "HvList-selectorContainer",
+                                                            "icon": "HvList-icon",
                                                             "labelTypography": "HvList-truncate",
                                                           }
                                                         }
@@ -4659,7 +4676,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "checkBox": "HvCheckBox-checkBox",
                                                               "container": "HvCheckBox-container HvList-selectorContainer",
                                                               "disableFocus": "HvCheckBox-disableFocus",
-                                                              "icon": "HvCheckBox-icon",
+                                                              "icon": "HvCheckBox-icon HvList-icon",
                                                               "labelDisabled": "HvCheckBox-labelDisabled",
                                                               "labelEnd": "HvCheckBox-labelEnd",
                                                               "labelStart": "HvCheckBox-labelStart",
@@ -4683,7 +4700,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 checked={false}
                                                                 checkedIcon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 className="HvCheckBox-checkBox"
@@ -4692,13 +4709,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disabled={false}
                                                                 icon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-1-selector-input"
                                                                 indeterminateIcon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 onBlur={[Function]}
@@ -4728,7 +4745,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   checked={false}
                                                                   checkedIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   className="HvCheckBox-checkBox"
@@ -4737,13 +4754,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disabled={false}
                                                                   icon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   indeterminateIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   onBlur={[Function]}
@@ -4764,7 +4781,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   checked={false}
                                                                   checkedIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   className="HvCheckBox-checkBox"
@@ -4773,13 +4790,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disabled={false}
                                                                   icon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-1-selector-input"
                                                                   indeterminateIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   onBlur={[Function]}
@@ -4790,7 +4807,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     checked={false}
                                                                     checkedIcon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     className="HvCheckBox-checkBox"
@@ -4809,13 +4826,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     disabled={false}
                                                                     icon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     id="test-dropdown-values-list-item-1-selector-input"
                                                                     indeterminateIcon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     onBlur={[Function]}
@@ -4826,7 +4843,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       checked={false}
                                                                       checkedIcon={
                                                                         <ForwardRef(WithStyles)
-                                                                          className="HvCheckBox-icon"
+                                                                          className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
                                                                       }
@@ -4843,7 +4860,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       disabled={false}
                                                                       icon={
                                                                         <ForwardRef(WithStyles)
-                                                                          className="HvCheckBox-icon"
+                                                                          className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
                                                                       }
@@ -4862,7 +4879,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         checked={false}
                                                                         checkedIcon={
                                                                           <ForwardRef(WithStyles)
-                                                                            className="HvCheckBox-icon"
+                                                                            className="HvCheckBox-icon HvList-icon"
                                                                             fontSize="default"
                                                                           />
                                                                         }
@@ -4880,7 +4897,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         disabled={false}
                                                                         icon={
                                                                           <ForwardRef(WithStyles)
-                                                                            className="HvCheckBox-icon"
+                                                                            className="HvCheckBox-icon HvList-icon"
                                                                             fontSize="default"
                                                                           />
                                                                         }
@@ -4987,11 +5004,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                       value=""
                                                                                     />
                                                                                     <WithStyles(Checkbox)
-                                                                                      className="HvCheckBox-icon"
+                                                                                      className="HvCheckBox-icon HvList-icon"
                                                                                       fontSize="default"
                                                                                     >
                                                                                       <Checkbox
-                                                                                        className="HvCheckBox-icon"
+                                                                                        className="HvCheckBox-icon HvList-icon"
                                                                                         classes={
                                                                                           Object {
                                                                                             "root": "HvIconCheckbox-root",
@@ -5004,7 +5021,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                         fontSize="default"
                                                                                       >
                                                                                         <div
-                                                                                          className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                                          className="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                                           fontSize="default"
                                                                                         >
                                                                                           <svg
@@ -5097,6 +5114,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                 </Focus>
                                               </WithStyles(Focus)>
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": -1,
@@ -5142,7 +5164,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -5200,7 +5222,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -5258,7 +5280,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   value=""
                                                                 />
                                                                 <div
-                                                                  class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                  class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                   font-size="default"
                                                                 >
                                                                   <svg
@@ -5302,6 +5324,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -5352,7 +5375,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -5410,7 +5433,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -5468,7 +5491,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     value=""
                                                                   />
                                                                   <div
-                                                                    class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                    class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                     font-size="default"
                                                                   >
                                                                     <svg
@@ -5528,6 +5551,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                         classes={
                                                           Object {
                                                             "container": "HvList-selectorContainer",
+                                                            "icon": "HvList-icon",
                                                             "labelTypography": "HvList-truncate",
                                                           }
                                                         }
@@ -5542,7 +5566,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                               "checkBox": "HvCheckBox-checkBox",
                                                               "container": "HvCheckBox-container HvList-selectorContainer",
                                                               "disableFocus": "HvCheckBox-disableFocus",
-                                                              "icon": "HvCheckBox-icon",
+                                                              "icon": "HvCheckBox-icon HvList-icon",
                                                               "labelDisabled": "HvCheckBox-labelDisabled",
                                                               "labelEnd": "HvCheckBox-labelEnd",
                                                               "labelStart": "HvCheckBox-labelStart",
@@ -5566,7 +5590,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 checked={false}
                                                                 checkedIcon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 className="HvCheckBox-checkBox"
@@ -5575,13 +5599,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                 disabled={false}
                                                                 icon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 id="test-dropdown-values-list-item-2-selector-input"
                                                                 indeterminateIcon={
                                                                   <ForwardRef(WithStyles)
-                                                                    className="HvCheckBox-icon"
+                                                                    className="HvCheckBox-icon HvList-icon"
                                                                   />
                                                                 }
                                                                 onBlur={[Function]}
@@ -5611,7 +5635,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   checked={false}
                                                                   checkedIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   className="HvCheckBox-checkBox"
@@ -5620,13 +5644,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disabled={false}
                                                                   icon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   indeterminateIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   onBlur={[Function]}
@@ -5647,7 +5671,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   checked={false}
                                                                   checkedIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   className="HvCheckBox-checkBox"
@@ -5656,13 +5680,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   disabled={false}
                                                                   icon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   id="test-dropdown-values-list-item-2-selector-input"
                                                                   indeterminateIcon={
                                                                     <ForwardRef(WithStyles)
-                                                                      className="HvCheckBox-icon"
+                                                                      className="HvCheckBox-icon HvList-icon"
                                                                     />
                                                                   }
                                                                   onBlur={[Function]}
@@ -5673,7 +5697,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     checked={false}
                                                                     checkedIcon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     className="HvCheckBox-checkBox"
@@ -5692,13 +5716,13 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                     disabled={false}
                                                                     icon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     id="test-dropdown-values-list-item-2-selector-input"
                                                                     indeterminateIcon={
                                                                       <ForwardRef(WithStyles)
-                                                                        className="HvCheckBox-icon"
+                                                                        className="HvCheckBox-icon HvList-icon"
                                                                       />
                                                                     }
                                                                     onBlur={[Function]}
@@ -5709,7 +5733,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       checked={false}
                                                                       checkedIcon={
                                                                         <ForwardRef(WithStyles)
-                                                                          className="HvCheckBox-icon"
+                                                                          className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
                                                                       }
@@ -5726,7 +5750,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                       disabled={false}
                                                                       icon={
                                                                         <ForwardRef(WithStyles)
-                                                                          className="HvCheckBox-icon"
+                                                                          className="HvCheckBox-icon HvList-icon"
                                                                           fontSize="default"
                                                                         />
                                                                       }
@@ -5745,7 +5769,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         checked={false}
                                                                         checkedIcon={
                                                                           <ForwardRef(WithStyles)
-                                                                            className="HvCheckBox-icon"
+                                                                            className="HvCheckBox-icon HvList-icon"
                                                                             fontSize="default"
                                                                           />
                                                                         }
@@ -5763,7 +5787,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                         disabled={false}
                                                                         icon={
                                                                           <ForwardRef(WithStyles)
-                                                                            className="HvCheckBox-icon"
+                                                                            className="HvCheckBox-icon HvList-icon"
                                                                             fontSize="default"
                                                                           />
                                                                         }
@@ -5870,11 +5894,11 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                       value=""
                                                                                     />
                                                                                     <WithStyles(Checkbox)
-                                                                                      className="HvCheckBox-icon"
+                                                                                      className="HvCheckBox-icon HvList-icon"
                                                                                       fontSize="default"
                                                                                     >
                                                                                       <Checkbox
-                                                                                        className="HvCheckBox-icon"
+                                                                                        className="HvCheckBox-icon HvList-icon"
                                                                                         classes={
                                                                                           Object {
                                                                                             "root": "HvIconCheckbox-root",
@@ -5887,7 +5911,7 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                                         fontSize="default"
                                                                                       >
                                                                                         <div
-                                                                                          className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                                                          className="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                                                           fontSize="default"
                                                                                         >
                                                                                           <svg
@@ -6520,7 +6544,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
         >
           <div
             aria-labelledby="hv-dropdown-7-selectionLabel"
-            className=""
+            className="HvDropdown-header"
             id="hv-dropdown-7-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
@@ -7718,8 +7742,11 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                               "box": "HvList-box",
                                               "condensed": "HvList-condensed",
                                               "disabled": "HvList-disabled",
+                                              "focus": "HvList-focus",
+                                              "icon": "HvList-icon",
                                               "label": "HvList-label",
                                               "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                              "link": "HvList-link",
                                               "list": "HvList-list",
                                               "listItem": "HvList-listItem",
                                               "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -7772,6 +7799,11 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                               role="listbox"
                                             >
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": 0,
@@ -7838,6 +7870,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -7968,6 +8001,11 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 </Focus>
                                               </WithStyles(Focus)>
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": -1,
@@ -8034,6 +8072,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -8164,6 +8203,11 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                 </Focus>
                                               </WithStyles(Focus)>
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": -1,
@@ -8230,6 +8274,7 @@ exports[`<Dropdown /> <Dropdown /> with selectDefault false should render correc
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -8549,7 +8594,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
         >
           <div
             aria-labelledby="hv-dropdown-1-selectionLabel"
-            className=""
+            className="HvDropdown-header"
             id="hv-dropdown-1-header"
             onKeyDown={[Function]}
             onMouseUp={[Function]}
@@ -9996,8 +10041,11 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                               "box": "HvList-box",
                                               "condensed": "HvList-condensed",
                                               "disabled": "HvList-disabled",
+                                              "focus": "HvList-focus",
+                                              "icon": "HvList-icon",
                                               "label": "HvList-label",
                                               "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                              "link": "HvList-link",
                                               "list": "HvList-list",
                                               "listItem": "HvList-listItem",
                                               "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -10050,6 +10098,11 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                               role="listbox"
                                             >
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": 0,
@@ -10117,6 +10170,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -10249,6 +10303,11 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 </Focus>
                                               </WithStyles(Focus)>
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": -1,
@@ -10316,6 +10375,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",
@@ -10447,6 +10507,11 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                 </Focus>
                                               </WithStyles(Focus)>
                                               <WithStyles(Focus)
+                                                classes={
+                                                  Object {
+                                                    "focus": "HvList-focus",
+                                                  }
+                                                }
                                                 configuration={
                                                   Object {
                                                     "tabIndex": -1,
@@ -10514,6 +10579,7 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                       "disabled": "HvFocus-disabled",
                                                       "externalReference": "HvFocus-externalReference",
                                                       "falseFocus": "HvFocus-falseFocus",
+                                                      "focus": "HvFocus-focus HvList-focus",
                                                       "focusDisabled": "HvFocus-focusDisabled",
                                                       "focused": "HvFocus-focused",
                                                       "root": "HvFocus-root",

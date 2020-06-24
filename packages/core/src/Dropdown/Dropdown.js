@@ -139,6 +139,7 @@ class HvDropdown extends React.Component {
       singleSelectionToggle,
       // TODO: convert component to functional so we don't to destructure here
       popperProps,
+      className,
       ...others
     } = this.props;
 

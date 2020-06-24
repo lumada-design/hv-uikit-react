@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../Focus/styles";
+
 const hover = theme => ({
   background: theme.hv.palette.atmosphere.atmo4,
   "& *": {
@@ -25,6 +27,11 @@ const styles = theme => ({
 
     // hover
     "&:hover": hover(theme),
+
+    "&:focus": {
+      ...outlineStyles,
+      ...hover(theme)
+    },
 
     // cursor
     cursor: "pointer",

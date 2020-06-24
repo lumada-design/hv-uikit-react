@@ -23,6 +23,9 @@ const hoverActive = theme => ({
 
 const styles = theme => ({
   root: {},
+  focus: {
+    ...hover(theme)
+  },
   list: {
     display: "block",
     padding: 0,
@@ -79,6 +82,14 @@ const styles = theme => ({
     width: "32px",
     height: "32px",
     marginLeft: "auto"
+  },
+  icon: {
+    height: "30px"
+  },
+  link: {
+    "&:focus": {
+      boxShadow: "unset !important"
+    }
   }
 });
 

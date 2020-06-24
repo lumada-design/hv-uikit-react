@@ -16,6 +16,7 @@ const styles = theme => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:focus": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
       ...outlineStyles
     },
     "&:disabled": {

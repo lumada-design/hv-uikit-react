@@ -1,7 +1,10 @@
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   a: {
     ...theme.hv.typography.inlineLink,
-    textDecoration: "none"
+    textDecoration: "none",
+    "&:focus": { ...outlineStyles }
   }
 });
 

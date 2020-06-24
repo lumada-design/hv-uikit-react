@@ -39,7 +39,7 @@ const styles = theme => {
     primary: {
       color: theme.hv.palette.accent.acce0,
       backgroundColor: theme.hv.palette.accent.acce2,
-      "&:hover": {
+      "&:hover,&:focus": {
         backgroundColor: theme.hv.palette.accent.acce2h
       },
       "&:active": {
@@ -63,7 +63,7 @@ const styles = theme => {
       color: theme.hv.palette.accent.acce1,
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
       border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-      "&:hover": {
+      "&:hover,&:focus": {
         backgroundColor: theme.hv.palette.atmosphere.atmo4,
         border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
       },
@@ -90,7 +90,7 @@ const styles = theme => {
     ghost: {
       color: theme.hv.palette.accent.acce1,
       backgroundColor: "transparent",
-      "&:hover": {
+      "&:hover,&:focus": {
         backgroundColor: theme.hv.palette.atmosphere.atmo4
       },
       "&:active": {
@@ -116,7 +116,7 @@ const styles = theme => {
     ghostSecondary: {
       color: theme.hv.palette.accent.acce2,
       backgroundColor: "transparent",
-      "&:hover": {
+      "&:hover,&:focus": {
         backgroundColor: theme.hv.palette.atmosphere.atmo4
       },
       "&:active": {
@@ -142,7 +142,7 @@ const styles = theme => {
     semantic: {
       color: theme.hv.palette.base.base2,
       backgroundColor: "transparent",
-      "&:hover": {
+      "&:hover,&:focus": {
         backgroundColor: convertedColor
       },
       "&:active": {

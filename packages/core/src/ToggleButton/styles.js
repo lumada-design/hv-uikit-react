@@ -1,6 +1,12 @@
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   root: {
-    display: "inline-flex"
+    display: "inline-flex",
+    "&:focus": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      ...outlineStyles
+    }
   },
   icon: {
     "&:hover": {

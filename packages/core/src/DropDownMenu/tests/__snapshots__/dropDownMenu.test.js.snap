@@ -1448,8 +1448,11 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   "box": "HvList-box",
                                   "condensed": "HvList-condensed",
                                   "disabled": "HvList-disabled",
+                                  "focus": "HvList-focus",
+                                  "icon": "HvList-icon",
                                   "label": "HvList-label",
                                   "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                  "link": "HvList-link",
                                   "list": "HvList-list",
                                   "listItem": "HvList-listItem",
                                   "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -1502,6 +1505,11 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                   role="menu"
                                 >
                                   <WithStyles(Focus)
+                                    classes={
+                                      Object {
+                                        "focus": "HvList-focus",
+                                      }
+                                    }
                                     configuration={
                                       Object {
                                         "tabIndex": 0,
@@ -1568,6 +1576,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           "disabled": "HvFocus-disabled",
                                           "externalReference": "HvFocus-externalReference",
                                           "falseFocus": "HvFocus-falseFocus",
+                                          "focus": "HvFocus-focus HvList-focus",
                                           "focusDisabled": "HvFocus-focusDisabled",
                                           "focused": "HvFocus-focused",
                                           "root": "HvFocus-root",
@@ -1698,6 +1707,11 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     </Focus>
                                   </WithStyles(Focus)>
                                   <WithStyles(Focus)
+                                    classes={
+                                      Object {
+                                        "focus": "HvList-focus",
+                                      }
+                                    }
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -1764,6 +1778,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           "disabled": "HvFocus-disabled",
                                           "externalReference": "HvFocus-externalReference",
                                           "falseFocus": "HvFocus-falseFocus",
+                                          "focus": "HvFocus-focus HvList-focus",
                                           "focusDisabled": "HvFocus-focusDisabled",
                                           "focused": "HvFocus-focused",
                                           "root": "HvFocus-root",
@@ -1894,6 +1909,11 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                     </Focus>
                                   </WithStyles(Focus)>
                                   <WithStyles(Focus)
+                                    classes={
+                                      Object {
+                                        "focus": "HvList-focus",
+                                      }
+                                    }
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -1960,6 +1980,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           "disabled": "HvFocus-disabled",
                                           "externalReference": "HvFocus-externalReference",
                                           "falseFocus": "HvFocus-falseFocus",
+                                          "focus": "HvFocus-focus HvList-focus",
                                           "focusDisabled": "HvFocus-focusDisabled",
                                           "focused": "HvFocus-focused",
                                           "root": "HvFocus-root",
@@ -3367,8 +3388,11 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   "box": "HvList-box",
                                   "condensed": "HvList-condensed",
                                   "disabled": "HvList-disabled",
+                                  "focus": "HvList-focus",
+                                  "icon": "HvList-icon",
                                   "label": "HvList-label",
                                   "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+                                  "link": "HvList-link",
                                   "list": "HvList-list",
                                   "listItem": "HvList-listItem",
                                   "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -3421,6 +3445,11 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                   role="menu"
                                 >
                                   <WithStyles(Focus)
+                                    classes={
+                                      Object {
+                                        "focus": "HvList-focus",
+                                      }
+                                    }
                                     configuration={
                                       Object {
                                         "tabIndex": 0,
@@ -3487,6 +3516,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           "disabled": "HvFocus-disabled",
                                           "externalReference": "HvFocus-externalReference",
                                           "falseFocus": "HvFocus-falseFocus",
+                                          "focus": "HvFocus-focus HvList-focus",
                                           "focusDisabled": "HvFocus-focusDisabled",
                                           "focused": "HvFocus-focused",
                                           "root": "HvFocus-root",
@@ -3617,6 +3647,11 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     </Focus>
                                   </WithStyles(Focus)>
                                   <WithStyles(Focus)
+                                    classes={
+                                      Object {
+                                        "focus": "HvList-focus",
+                                      }
+                                    }
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -3683,6 +3718,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           "disabled": "HvFocus-disabled",
                                           "externalReference": "HvFocus-externalReference",
                                           "falseFocus": "HvFocus-falseFocus",
+                                          "focus": "HvFocus-focus HvList-focus",
                                           "focusDisabled": "HvFocus-focusDisabled",
                                           "focused": "HvFocus-focused",
                                           "root": "HvFocus-root",
@@ -3813,6 +3849,11 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                     </Focus>
                                   </WithStyles(Focus)>
                                   <WithStyles(Focus)
+                                    classes={
+                                      Object {
+                                        "focus": "HvList-focus",
+                                      }
+                                    }
                                     configuration={
                                       Object {
                                         "tabIndex": -1,
@@ -3879,6 +3920,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           "disabled": "HvFocus-disabled",
                                           "externalReference": "HvFocus-externalReference",
                                           "falseFocus": "HvFocus-falseFocus",
+                                          "focus": "HvFocus-focus HvList-focus",
                                           "focusDisabled": "HvFocus-focusDisabled",
                                           "focused": "HvFocus-focused",
                                           "root": "HvFocus-root",

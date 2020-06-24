@@ -134,6 +134,7 @@ class List extends React.Component {
           tabIndex: selection[0] === item || (!anySelected && i === 0) ? 0 : -1
         }}
         isDropdown
+        classes={{ focus: classes.focus }}
       >
         <li
           id={itemId}
@@ -173,7 +174,8 @@ class List extends React.Component {
         onChange={evt => this.handleSelect(evt, item)}
         classes={{
           container: classes.selectorContainer,
-          labelTypography: classes.truncate
+          labelTypography: classes.truncate,
+          icon: classes.icon
         }}
       />
     ) : (
@@ -192,7 +194,8 @@ class List extends React.Component {
         disabled={item.disabled}
         classes={{
           container: classes.selectorContainer,
-          labelTypography: classes.truncate
+          labelTypography: classes.truncate,
+          icon: classes.icon
         }}
       />
     ) : (
@@ -201,12 +204,12 @@ class List extends React.Component {
   };
 
   renderItemText = item => {
-    const { multiSelect, hasTooltips } = this.props;
+    const { multiSelect, hasTooltips, classes } = this.props;
     const Text = () => this.renderText(item);
     const ItemText = hasTooltips ? withTooltip(Text, item.label) : Text;
 
     return !multiSelect && item.path ? (
-      <HvLink key={item.label} route={item.path}>
+      <HvLink key={item.label} route={item.path} classes={{ a: classes.link }}>
         <ItemText />
       </HvLink>
     ) : (
@@ -360,7 +363,19 @@ List.propTypes = {
     /**
      * Styles applied when the list item text when truncate.
      */
-    truncate: PropTypes.string
+    truncate: PropTypes.string,
+    /**
+     * Styles applied to the icon of the selector.
+     */
+    icon: PropTypes.string,
+    /**
+     * Styles applied when focus .
+     */
+    focus: PropTypes.string,
+    /**
+     * Styles applied to the link.
+     */
+    link: PropTypes.string
   }).isRequired,
   /**
    * The id of the root element

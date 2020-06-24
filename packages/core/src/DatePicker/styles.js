@@ -1,3 +1,5 @@
+import { outlineStyles } from "../Focus/styles";
+
 const icon = {
   position: "absolute",
   right: 0,
@@ -13,7 +15,10 @@ const styles = theme => ({
     height: "32px",
     paddingLeft: theme.spacing("xs"),
     paddingRight: theme.spacing("md"),
-    fontFamily: theme.hv.typography.fontFamily
+    fontFamily: theme.hv.typography.fontFamily,
+    "&:focus": {
+      ...outlineStyles
+    }
   },
   inputCalendarClosed: {
     border: `1px solid ${theme.palette.atmo6}`,
@@ -52,7 +57,10 @@ const styles = theme => ({
   },
   icon: {
     ...icon,
-    cursor: "pointer"
+    cursor: "pointer",
+    "&:focus": {
+      ...outlineStyles
+    }
   },
   iconClear: {
     ...icon,

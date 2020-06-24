@@ -82,13 +82,11 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
       <div>
         Here are some helpful links instead:
       </div>
-      <div>
-        <a
-          href="/"
-        >
-          Online Help
-        </a>
-      </div>
+      <ForwardRef(WithStyles)
+        route="/"
+      >
+        Online Help
+      </ForwardRef(WithStyles)>
     </ForwardRef(WithStyles)>
   }
   icon={
@@ -114,13 +112,11 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
         <div>
           Here are some helpful links instead:
         </div>
-        <div>
-          <a
-            href="/"
-          >
-            Online Help
-          </a>
-        </div>
+        <ForwardRef(WithStyles)
+          route="/"
+        >
+          Online Help
+        </ForwardRef(WithStyles)>
       </ForwardRef(WithStyles)>
     }
     classes={
@@ -335,13 +331,25 @@ exports[`<HvEmptyState /> with String title/message should render correctly 1`] 
                   <div>
                     Here are some helpful links instead:
                   </div>
-                  <div>
-                    <a
-                      href="/"
+                  <WithStyles(HvLink)
+                    route="/"
+                  >
+                    <HvLink
+                      classes={
+                        Object {
+                          "a": "HvLink-a",
+                        }
+                      }
+                      route="/"
                     >
-                      Online Help
-                    </a>
-                  </div>
+                      <a
+                        className="HvLink-a"
+                        href="/"
+                      >
+                        Online Help
+                      </a>
+                    </HvLink>
+                  </WithStyles(HvLink)>
                 </div>
               </ForwardRef>
             </WithStyles(ForwardRef)>

@@ -1,4 +1,5 @@
 import { fade, hexToRgb } from "@material-ui/core";
+import { outlineStyles } from "../../../Focus/styles";
 
 const styles = theme => ({
   actionContainer: {
@@ -16,6 +17,9 @@ const styles = theme => ({
     cursor: "pointer",
     "&:hover": {
       backgroundColor: fade(hexToRgb(theme.hv.palette.base.base1), 0.3)
+    },
+    "&:focus": {
+      ...outlineStyles
     }
   },
   iconContainer: {

@@ -1,7 +1,10 @@
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   root: {
+    margin: "3px",
     minWidth: 70,
-    padding: "16px 20px",
+    padding: "13px 20px",
     textTransform: "none",
     fontFamily: theme.hv.typography.fontFamily,
     ...theme.hv.typography.normalText,
@@ -14,6 +17,9 @@ const styles = theme => ({
       "&:hover": {
         background: theme.hv.palette.atmosphere.atmo4
       }
+    },
+    "&:focus": {
+      ...outlineStyles
     },
     "&$disabled": {
       color: theme.hv.palette.atmosphere.atmo7,

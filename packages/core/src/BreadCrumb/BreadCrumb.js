@@ -27,7 +27,13 @@ LastPathElement.propTypes = {
 };
 
 const Page = ({ Component, onClick, elem, classes }) => (
-  <HvLink route={elem.path} Component={Component} onClick={onClick} data={elem}>
+  <HvLink
+    route={elem.path}
+    Component={Component}
+    onClick={onClick}
+    data={elem}
+    classes={{ a: classes.a }}
+  >
     <div className={classes.centerContainer}>
       <HvTypography variant="sLink" className={classes.link}>
         {startCase(elem.label)}

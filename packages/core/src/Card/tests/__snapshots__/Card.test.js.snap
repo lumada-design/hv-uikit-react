@@ -163,6 +163,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                           "disabled": "HvFocus-disabled",
                           "externalReference": "HvFocus-externalReference",
                           "falseFocus": "HvFocus-falseFocus",
+                          "focus": "HvFocus-focus",
                           "focusDisabled": "HvFocus-focusDisabled",
                           "focused": "HvFocus-focused",
                           "root": "HvFocus-root",

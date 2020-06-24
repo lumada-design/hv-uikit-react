@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../Focus/styles";
+
 const styles = theme => ({
   dropZoneContainer: {
     position: "relative",
@@ -9,6 +11,10 @@ const styles = theme => ({
     "&:hover": {
       background: `${theme.hv.palette.atmosphere.atmo1}`,
       border: `1px dotted ${theme.hv.palette.accent.acce1}`
+    },
+    "&:focus": {
+      background: `${theme.hv.palette.atmosphere.atmo1}`,
+      ...outlineStyles
     }
   },
   dropZoneContainerDisabled: {
