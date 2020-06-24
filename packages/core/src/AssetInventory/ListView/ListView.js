@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import isNil from "lodash/isNil";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { ListViewContextProvider } from "./ListViewContext/ListViewContext";
@@ -41,14 +40,11 @@ const ListView = ({
             className={clsx(className, classes.root)}
             {...others}
           >
-            {!isNil(viewConfiguration) &&
-              !isNil(viewConfiguration.columnConfiguration) &&
-              viewConfiguration.columnConfiguration.length > 0 &&
-              values.length > 0 && (
-                <div className={classes.tableHead}>
-                  <ListViewHeaderRow viewConfiguration={enhancedViewConfiguration} />
-                </div>
-              )}
+            {viewConfiguration?.columnConfiguration?.length > 0 && values.length > 0 && (
+              <div className={classes.tableHead}>
+                <ListViewHeaderRow viewConfiguration={enhancedViewConfiguration} />
+              </div>
+            )}
             <ul className={classes.tableBody}>
               <ListViewContextProvider value={enhancedViewConfiguration}>
                 <Rows

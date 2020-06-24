@@ -166,19 +166,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Use of align attribute
-        // https://github.com/lumada-design/hv-uikit-react/issues/1691
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
-      ]
-    }
-  }
-};
-
 export const NotSelectable = () => {
   const values = [
     {
@@ -322,19 +309,6 @@ export const NotSelectable = () => {
       viewConfiguration={configuration}
     />
   );
-};
-
-NotSelectable.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Use of align attribute
-        // https://github.com/lumada-design/hv-uikit-react/issues/1691
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
-      ]
-    }
-  }
 };
 
 export const NotSelectableWithMenu = () => {
@@ -493,14 +467,6 @@ NotSelectableWithMenu.story = {
     docs: {
       storyDescription:
         "List View that is not selectable with many actions, collapsed into a DropDownMenu"
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Use of align attribute
-        // https://github.com/lumada-design/hv-uikit-react/issues/1691
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
-      ]
     }
   }
 };
@@ -630,14 +596,6 @@ NotStyled.story = {
   parameters: {
     docs: {
       storyDescription: "Default ListView without style overrides"
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Use of align attribute
-        // https://github.com/lumada-design/hv-uikit-react/issues/1691
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr"
-      ]
     }
   }
 };

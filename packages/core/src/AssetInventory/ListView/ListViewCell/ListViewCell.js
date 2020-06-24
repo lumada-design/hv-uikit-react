@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
@@ -12,29 +11,21 @@ const cell = (
   className,
   id,
   children,
-  viewConfiguration,
+  viewConfiguration = {},
   columnIndex,
   semantic,
   others
 ) => {
-  const columnConfiguration =
-    isNil(viewConfiguration) || isNil(viewConfiguration.columnConfiguration)
-      ? null
-      : viewConfiguration.columnConfiguration;
-  const alignConf =
-    !isNil(columnConfiguration) &&
-    !isNil(columnIndex) &&
-    Array.isArray(columnConfiguration) &&
-    !isNil(columnConfiguration[columnIndex].align)
-      ? columnConfiguration[columnIndex].align
-      : undefined;
+  const { columnConfiguration } = viewConfiguration;
+  const alignConf = columnConfiguration?.[columnIndex]?.align;
+
   return (
     <div
       className={clsx(className, classes.root, {
         [classes.semanticBar]: semantic,
         [classes[semantic]]: semantic
       })}
-      align={align || alignConf}
+      style={{ textAlign: align || alignConf }}
       id={id}
       {...others}
     >
