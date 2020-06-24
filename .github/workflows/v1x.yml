@@ -213,13 +213,9 @@ jobs:
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
-        uses: actions/github-script@0.8.0
-        with:
-          # repo scope token is required to generate a dispatch event
-          github-token: ${{ secrets.BUILD_TOKEN }}
-          script: |
-            await github.repos.createDispatchEvent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              event_type: 'v1-release'
-            })
+        # repo scope personal token is required to generate a dispatch event
+        run: |
+          curl -X POST \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
+            -d '{"event_type": "v1-release"}'
