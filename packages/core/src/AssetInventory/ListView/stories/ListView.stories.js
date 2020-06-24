@@ -146,7 +146,7 @@ export const Main = () => {
       { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" }, align: "left" }
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
-    actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`)
+    actionsCallback: (e, id, action) => alert(`You have pressed ${id} with action ${action.label}`)
   };
 
   return (

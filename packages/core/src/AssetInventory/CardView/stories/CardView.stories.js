@@ -31,9 +31,9 @@ export const Main = () => {
     ];
 
     return [...Array(num).keys()].map(id => ({
-      id: `id_${id}`,
+      id: `id_${id + 1}`,
       headerTitle: `Asset Avatar ${id + 1}`,
-      checkboxValue: `id_${id}`,
+      checkboxValue: `id_${id + 1}`,
       data: {
         firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
         secondContent: "Jun 30, 2015 12:27:53 PM"
