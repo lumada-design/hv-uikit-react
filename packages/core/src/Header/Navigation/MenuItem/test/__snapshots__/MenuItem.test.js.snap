@@ -33,7 +33,6 @@ exports[`MenuItem withStyles should be able to render 1`] = `
     <li
       className="HvHeaderMenuItem-root"
       key="someLabel"
-      role="none"
     >
       <ConditionalWrapper
         condition={null}

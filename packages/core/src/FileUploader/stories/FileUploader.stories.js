@@ -83,19 +83,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG When not provided with an ID the label isn't associated with the input
-        // https://github.com/lumada-design/hv-uikit-react/issues/1694
-        "label-title-only"
-      ]
-    }
-  }
-};
-
 export const Basic = () => {
   const Sample = () => {
     const uploadHandlers = {};

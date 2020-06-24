@@ -51,7 +51,6 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
     <li
       id={id}
       key={item.label}
-      role="none"
       className={clsx(classes.root, classes[`${type}Item`], {
         [classes.selectedItem]: isSelected
       })}
