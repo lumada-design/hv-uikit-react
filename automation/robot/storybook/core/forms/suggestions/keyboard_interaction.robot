@@ -36,7 +36,6 @@ return focus to input when is pressed SHIFT TAB
     Wait Until Element Is Visible    ${suggestion_options}:first-child:focus
     Press Keys                       NONE    SHIFT+TAB
     Wait Until Element Is Visible    ${input}:focus
-    Element Should Be Visible        ${suggestion_list}
 
 select an option list when is pressed SPACE
     Press Keys                           ${input}    por
