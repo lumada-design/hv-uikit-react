@@ -78,6 +78,9 @@ export * from "./Loading";
 export { default as HvLogin } from "./Login";
 export * from "./Login";
 
+export { default as HvLoginContainer } from "./LoginContainer";
+export * from "./LoginContainer";
+
 export { default as HvModal } from "./Modal";
 export * from "./Modal";
 

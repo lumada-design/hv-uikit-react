@@ -1,5 +1,5 @@
-import withStyles from "@material-ui/core/styles/withStyles";
+import { withStyles } from "@material-ui/core";
 import styles from "./styles";
-import LoginTemplate from "./Login";
+import Login from "./Login";
 
-export default withStyles(styles)(LoginTemplate);
+export default withStyles(styles, { name: "Login" })(Login);
