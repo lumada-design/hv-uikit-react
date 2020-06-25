@@ -11,25 +11,32 @@ import setActionsId from "../setActionsId";
 import useWidth from "../../utils/useWidth";
 import { setId } from "../../utils/setId";
 
-const CardRenderChooser = (viewConfiguration, render, innerCardContent, metadata, cardProps) => {
-  if (render) {
-    return data =>
-      render(
-        data,
-        { ...viewConfiguration, actions: setActionsId(viewConfiguration.actions, data.id) },
-        metadata,
-        cardProps
-      );
-  }
-  return data => (
+const DEFAULT_VIEW_CONFIGURATION = {
+  onSelection: null,
+  breakpoints: {
+    xs: false,
+    sm: false,
+    md: false,
+    lg: false,
+    xl: false
+  },
+  actions: null
+};
+
+const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, cardProps) => data => {
+  const actions = setActionsId(viewConfiguration.actions, data.id);
+
+  return render ? (
+    render(data, { ...viewConfiguration, actions }, metadata, cardProps)
+  ) : (
     <Card
       {...data}
       onChange={viewConfiguration.onSelection}
-      actions={setActionsId(viewConfiguration.actions, data.id)}
+      actions={actions}
       isSelectable={viewConfiguration.isSelectable}
       actionsCallback={viewConfiguration.actionsCallback}
       maxVisibleActions={viewConfiguration.maxVisibleActions}
-      innerCardContent={innerCardContent ? innerCardContent(data) : undefined}
+      innerCardContent={cardContent?.(data)}
       {...cardProps}
     />
   );
@@ -43,23 +50,16 @@ const CardView = ({
   values,
   selectedValues,
   renderer,
-  viewConfiguration = {
-    onSelection: null,
-    breakpoints: {
-      xs: false,
-      sm: false,
-      md: false,
-      lg: false,
-      xl: false
-    },
-    actions: null
-  },
+  viewConfiguration = DEFAULT_VIEW_CONFIGURATION,
   innerCardContent,
   metadata,
   ...others
 }) => {
+  const containerRef = useRef(null);
+  const currentBreakpoint = useWidth();
+
   // If no custom render is passed, the render uses the standard card implementation
-  const cardRender = CardRenderChooser(
+  const renderCard = CardRenderChooser(
     viewConfiguration,
     renderer,
     innerCardContent,
@@ -69,31 +69,19 @@ const CardView = ({
 
   const { breakpoints } = viewConfiguration;
 
-  const currentBreakpoint = useWidth();
   const cardJump = () =>
     breakpoints[currentBreakpoint] === false ? 1 : 12 / breakpoints[currentBreakpoint];
 
   /**
    * Render of the cards for each value.
    */
-  const renderCards = containerRef => {
+  const renderCards = () => {
     return values.map((value, index) => {
       // eslint-disable-next-line no-param-reassign
       value.checked = !!(selectedValues && selectedValues.indexOf(value.id) > -1);
 
-      const gridId = setId(value.id, "grid");
-
       return (
-        <Grid
-          id={gridId}
-          key={value.id}
-          item
-          xs={breakpoints.xs}
-          sm={breakpoints.sm}
-          md={breakpoints.md}
-          lg={breakpoints.lg}
-          xl={breakpoints.xl}
-        >
+        <Grid id={setId(value.id, "grid")} key={value.id} item {...breakpoints}>
           <Focus
             rootRef={containerRef}
             key={value.id}
@@ -103,7 +91,7 @@ const CardView = ({
             focusDisabled={false}
           >
             <div key={value.id} tabIndex={index === 0 ? 0 : -1}>
-              {cardRender(value, others)}
+              {renderCard(value)}
             </div>
           </Focus>
         </Grid>
@@ -111,22 +99,20 @@ const CardView = ({
     });
   };
 
-  const GridDisplay = containerRef => (
-    <Grid
-      className={clsx(className, classes.root)}
-      id={id}
-      container
-      justify="flex-start"
-      alignItems="flex-start"
-      spacing={4}
-    >
-      {renderCards(containerRef)}
-    </Grid>
-  );
-  const containerRef = useRef(null);
   return (
     <div className={classes.root} ref={containerRef}>
-      <div className={classes.elements}>{GridDisplay(containerRef)}</div>
+      <div className={classes.elements}>
+        <Grid
+          className={clsx(className, classes.root)}
+          id={id}
+          container
+          justify="flex-start"
+          alignItems="flex-start"
+          spacing={4}
+        >
+          {renderCards()}
+        </Grid>
+      </div>
     </div>
   );
 };

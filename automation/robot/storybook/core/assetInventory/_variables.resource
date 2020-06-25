@@ -8,6 +8,7 @@ ${cards}              css:#cardView>div
 ${cardViewButton}     id:cardView-button
 ${checkBox1}          xpath:(//input[@type='checkbox'])[1]
 ${checkBox2}          xpath:(//input[@type='checkbox'])[2]
+${checkBox3}          xpath:(//input[@type='checkbox'])[3]
 ${checkBox4}          xpath:(//input[@type='checkbox'])[4]
 ${clearText}          css:button[title='Clear the text']
 ${dropdownHeader}     id:sort_hv-assetinventory-header
