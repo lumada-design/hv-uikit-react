@@ -100,11 +100,8 @@ describe("TextArea Component", () => {
         />
       </HvProvider>
     );
-    const label = wrapperMount.find("HvTextArea").find("p");
-    expect(label.at(1).text()).toBe("Inserted ");
-    expect(label.at(2).text()).toBe("4");
-    expect(label.at(3).text()).toBe("of");
-    expect(label.at(4).text()).toBe("10 available");
+    const label = wrapperMount.find("HvTextArea").find("span");
+    expect(label.at(0).text()).toBe("Inserted 4 of 10 available");
   });
 
   //--------------------------

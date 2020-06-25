@@ -153,68 +153,55 @@ class HvTextArea extends React.Component {
     const { currentValueLength, overflow } = this.state;
     const val = initialValue;
 
-    const CountTypography = ({ text, countClassNames, variant = "infoText" }) =>
-      !isNil(text) && (
-        <HvTypography
-          className={clsx(classes.inline, countClassNames, {
-            [classes.disabled]: disabled,
-            [classes.invalid]: overflow
-          })}
-          variant={variant}
-        >
-          {text}
-        </HvTypography>
-      );
     return (
-      <div>
-        <div className={classes.root}>
-          <Input
-            classes={{
-              root: classes.container,
-              input: clsx(classes.input, {
-                [classes.resize]: !disabled && resizable,
-                [classes.defaultWith]: !resizable
-              }),
-              inputRoot: classes.inputRoot,
-              inputRootDisabled: classes.inputRootDisabled,
-              inputRootFocused: classes.inputRootFocused
-            }}
-            className={className}
-            id={id}
-            labels={labels}
-            initialValue={val && this.limitValue(val)}
-            value={this.limitValue(value)}
-            onChange={this.onChangeHandler}
-            multiline
-            rows={rows}
-            disabled={disabled}
-            showInfo={false}
-            validationIconVisible={false}
-            disableClear
-            inputRef={this.textInputRef}
-            validationState={(overflow && "invalid") || undefined}
-            aria-invalid={overflow || undefined}
-            {...others}
-          />
-          {maxCharQuantity ? (
-            <div className={classes.characterCounter} aria-live="polite" {...countCharProps}>
-              <CountTypography text={`${labels.startCount} `} />
-              <CountTypography
-                countClassNames={{ [classes.currentCounter]: !disabled }}
-                variant="labelText"
-                text={currentValueLength}
-              />
-              <CountTypography
-                countClassNames={[classes.separator, { [classes.maxCharacter]: !disabled }]}
-                text={labels.middleCount}
-              />
-              <CountTypography
-                countClassNames={{ [classes.maxCharacter]: !disabled }}
-                text={`${maxCharQuantity} ${labels.endCount}`}
-              />
-            </div>
-          ) : null}
-        </div>
+      <div className={classes.root}>
+        <Input
+          classes={{
+            root: classes.container,
+            input: clsx(classes.input, {
+              [classes.resize]: !disabled && resizable,
+              [classes.defaultWith]: !resizable
+            }),
+            inputRoot: classes.inputRoot,
+            inputRootDisabled: classes.inputRootDisabled,
+            inputRootFocused: classes.inputRootFocused
+          }}
+          className={className}
+          id={id}
+          labels={labels}
+          initialValue={val && this.limitValue(val)}
+          value={this.limitValue(value)}
+          onChange={this.onChangeHandler}
+          multiline
+          rows={rows}
+          disabled={disabled}
+          showInfo={false}
+          validationIconVisible={false}
+          disableClear
+          inputRef={this.textInputRef}
+          validationState={(overflow && "invalid") || undefined}
+          aria-invalid={overflow || undefined}
+          {...others}
+        />
+        {maxCharQuantity && (
+          <div className={classes.characterCounter} aria-live="polite" {...countCharProps}>
+            <HvTypography
+              variant="sText"
+              component="span"
+              aria-disabled={disabled}
+              className={clsx({
+                [classes.disabled]: disabled,
+                [classes.invalid]: overflow
+              })}
+            >
+              <>
+                {labels.startCount}
+                <b>{` ${currentValueLength} `}</b>
+                {`${labels.middleCount} ${maxCharQuantity} ${labels.endCount}`}
+              </>
+            </HvTypography>
+          </div>
+        )}
       </div>
     );
   }
@@ -261,22 +248,6 @@ HvTextArea.propTypes = {
      * Style applied on the character counter.
      */
     characterCounter: PropTypes.string,
-    /**
-     * Style controlling the layout of the counter.
-     */
-    inline: PropTypes.string,
-    /**
-     * Style applied to the separator element of the character counter.
-     */
-    separator: PropTypes.string,
-    /**
-     * Style applied to the max counter element of the character counter.
-     */
-    maxCharacter: PropTypes.string,
-    /**
-     * Style applied to the current counter element of the character counter.
-     */
-    currentCounter: PropTypes.string,
     /**
      * Style applied to the character counter when it is disabled.
      */
