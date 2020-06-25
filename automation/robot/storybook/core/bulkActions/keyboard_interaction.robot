@@ -19,8 +19,9 @@ tab sequence from checkbox to actions when actions are enable
     Element Should Be Focused    ${checkbox0}
 
 tab sequence from checkbox to next page element when actions are disable
+    Select Checkbox              ${parentCheckbox}
     Unselect Checkbox            ${parentCheckbox}
-    Press Keys                   NONE    TAB    TAB
+    Press Keys                   NONE    TAB
     Element Should Be Focused    ${checkbox0}
 
 #space select and unselect check box

@@ -224,9 +224,59 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
+  Robot-Windows:
+    name: Test Robot (Windows)
+    needs: Build-Documentation
+    runs-on: [self-hosted, Windows]
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [ie]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Run SELENIUM Robot
+        uses: ./.github/robot
+        with:
+          storybook-url: http://localhost:9002
+          browser: ${{ matrix.browser }}
+          excludes: |
+            pa11y
+            bug-${{ matrix.browser }}
+            bug-${{ matrix.browser }}-webdriver
+            issue
+            issue-${{ matrix.browser }}
+            bug-infrastructure
+            bug-infrastructure-${{ matrix.browser }}
+          output-dir: ./reports
+          processes: 3
+          path: ./automation/robot/storybook/core
+
+      - name: Save Reports
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: ${{ matrix.browser }}-reports
+          path: ${{ github.workspace }}/reports
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          Remove-Item -path ${{ github.workspace }}/dist -recurse -force
+          Remove-Item -path ${{ github.workspace }}/reports -recurse -force
+
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Robot]
+    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Robot, Robot-Windows]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -275,13 +325,9 @@ jobs:
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
-        uses: actions/github-script@0.8.0
-        with:
-          # repo scope token is required to generate a dispatch event
-          github-token: ${{ secrets.BUILD_TOKEN }}
-          script: |
-            await github.repos.createDispatchEvent({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              event_type: 'release'
-            })
+        # repo scope personal token is required to generate a dispatch event
+        run: |
+          curl -X POST \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
+            -d '{"event_type": "release"}'
