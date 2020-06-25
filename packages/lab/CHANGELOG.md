@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.23.3](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.23.2...@hv/uikit-react-lab@1.23.3) (2020-06-25)
+
+
+### Bug Fixes
+
+* **appswitcherpanel:** added the app id and typescript types ([#1665](https://github.com/pentaho/hv-uikit-react/issues/1665)) ([2908ff6](https://github.com/pentaho/hv-uikit-react/commit/2908ff6dc70c50da8cb8a66e6afb3a77492001a2))
+
+
+
+
+
 ## [1.23.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@1.23.1...@hv/uikit-react-lab@1.23.2) (2020-05-22)
 
 
