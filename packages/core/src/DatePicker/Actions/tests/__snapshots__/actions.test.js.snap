@@ -40,16 +40,22 @@ exports[`<Actions /> should render correctly 1`] = `
             Object {
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
               "ghostSecondary": "HvButton-ghostSecondary",
               "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+              "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+              "iconSVG": "HvButton-iconSVG",
               "primary": "HvButton-primary",
               "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
               "root": "HvButton-root",
               "rootIcon": "HvButton-rootIcon",
               "secondary": "HvButton-secondary",
               "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
               "semantic": "HvButton-semantic",
               "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
               "startIcon": "HvButton-startIcon",
             }
           }
@@ -57,7 +63,7 @@ exports[`<Actions /> should render correctly 1`] = `
           onClick={[Function]}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvDatePickerActions-button"
+            className="HvDatePickerActions-button HvButton-ghostSVG"
             classes={
               Object {
                 "containedPrimary": "HvButton-primary",
@@ -75,7 +81,7 @@ exports[`<Actions /> should render correctly 1`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvDatePickerActions-button"
+              className="HvDatePickerActions-button HvButton-ghostSVG"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
@@ -116,7 +122,7 @@ exports[`<Actions /> should render correctly 1`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button MuiButton-textPrimary HvButton-ghost"
+                className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -127,7 +133,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button MuiButton-textPrimary HvButton-ghost"
+                  className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -145,7 +151,7 @@ exports[`<Actions /> should render correctly 1`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button MuiButton-textPrimary HvButton-ghost"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     disabled={false}
                     id="id-apply"
                     onBlur={[Function]}
@@ -188,16 +194,22 @@ exports[`<Actions /> should render correctly 1`] = `
             Object {
               "ghost": "HvButton-ghost",
               "ghostDisabled": "HvButton-ghostDisabled",
+              "ghostSVG": "HvButton-ghostSVG",
               "ghostSecondary": "HvButton-ghostSecondary",
               "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
+              "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
+              "iconSVG": "HvButton-iconSVG",
               "primary": "HvButton-primary",
               "primaryDisabled": "HvButton-primaryDisabled",
+              "primarySVG": "HvButton-primarySVG",
               "root": "HvButton-root",
               "rootIcon": "HvButton-rootIcon",
               "secondary": "HvButton-secondary",
               "secondaryDisabled": "HvButton-secondaryDisabled",
+              "secondarySVG": "HvButton-secondarySVG",
               "semantic": "HvButton-semantic",
               "semanticDisabled": "HvButton-semanticDisabled",
+              "semanticSVG": "HvButton-semanticSVG",
               "startIcon": "HvButton-startIcon",
             }
           }
@@ -205,7 +217,7 @@ exports[`<Actions /> should render correctly 1`] = `
           onClick={[Function]}
         >
           <WithStyles(ForwardRef(Button))
-            className="HvDatePickerActions-button"
+            className="HvDatePickerActions-button HvButton-ghostSVG"
             classes={
               Object {
                 "containedPrimary": "HvButton-primary",
@@ -223,7 +235,7 @@ exports[`<Actions /> should render correctly 1`] = `
             variant="text"
           >
             <ForwardRef(Button)
-              className="HvDatePickerActions-button"
+              className="HvDatePickerActions-button HvButton-ghostSVG"
               classes={
                 Object {
                   "colorInherit": "MuiButton-colorInherit",
@@ -264,7 +276,7 @@ exports[`<Actions /> should render correctly 1`] = `
               variant="text"
             >
               <WithStyles(ForwardRef(ButtonBase))
-                className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button MuiButton-textPrimary HvButton-ghost"
+                className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                 component="button"
                 disableRipple={true}
                 disabled={false}
@@ -275,7 +287,7 @@ exports[`<Actions /> should render correctly 1`] = `
                 type="button"
               >
                 <ForwardRef(ButtonBase)
-                  className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button MuiButton-textPrimary HvButton-ghost"
+                  className="MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                   classes={
                     Object {
                       "disabled": "Mui-disabled",
@@ -293,7 +305,7 @@ exports[`<Actions /> should render correctly 1`] = `
                   type="button"
                 >
                   <button
-                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button MuiButton-textPrimary HvButton-ghost"
+                    className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvDatePickerActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost"
                     disabled={false}
                     id="id-cancel"
                     onBlur={[Function]}

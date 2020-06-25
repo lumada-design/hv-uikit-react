@@ -1,12 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
-Resource          _keywords.resource
-Suite Setup       open storybook
-Suite Teardown    Close Browser
-Test Setup        Run Keywords
-...               Go To    ${iframeConfigurations}
-...               AND      Wait Until Element Is Visible    hv-assetinventory    10s
-Force Tags        smoke
+Resource      _keywords.resource
+Test Setup    Run Keywords
+...           Go To    ${components}asset-inventory--configurations
+...           AND    Wait Until Element Is Visible    hv-assetinventory
 
 
 *** Test Cases ***
@@ -15,7 +11,7 @@ select, search and sort
     Input Text                     ${searchBox}    Track
     Click Element                  ${dropdownHeader}
     Click Element                  ${sortTitleDesc}
-    Checkbox Should Be Selected    ${checkBox4}
+    Checkbox Should Be Selected    ${checkBox3}
 
 search, select, list view, select, paginate and card view
     Input Text                         ${searchBox}    Track

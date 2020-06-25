@@ -2,27 +2,23 @@
 
 import React from "react";
 import { mount, shallow } from "enzyme";
-import { toHaveNoViolations } from "jest-axe";
-import axe from "../../../config/axe-config";
 
-import HvProvider from "../../Provider";
-import TextArea from "..";
+import { HvProvider, HvTextArea } from "../..";
+import { Main } from "../stories/TextArea.stories";
 
-expect.extend(toHaveNoViolations);
-
-describe("TextArea withStyles", () => {
+describe("TextArea", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <TextArea />
+        <Main />
       </HvProvider>
     );
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(TextArea)).toMatchSnapshot();
+    expect(wrapper.find(HvTextArea)).toMatchSnapshot();
   });
 });
 
@@ -32,13 +28,13 @@ describe("TextArea Component", () => {
   beforeEach(async () => {
     wrapper = shallow(
       <HvProvider>
-        <TextArea rows={4} initialValue="test" onChange={() => {}} />
+        <HvTextArea rows={4} initialValue="test" onChange={() => {}} />
       </HvProvider>
     );
   });
 
   it("should render correctly if opened", () => {
-    expect(wrapper.find(TextArea)).toMatchSnapshot();
+    expect(wrapper.find(HvTextArea)).toMatchSnapshot();
   });
 
   it("should save the current value length on change", () => {
@@ -46,7 +42,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea rows={4} initialValue="test" onChange={onChangeMock} maxCharQuantity={10} />
+        <HvTextArea rows={4} initialValue="test" onChange={onChangeMock} maxCharQuantity={10} />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
@@ -60,7 +56,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea
+        <HvTextArea
           rows={4}
           initialValue="test"
           onChange={onChangeMock}
@@ -80,7 +76,7 @@ describe("TextArea Component", () => {
     const onChangeMock = jest.fn(() => value);
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea initialValue="test" onChange={onChangeMock} maxCharQuantity={5} />
+        <HvTextArea initialValue="test" onChange={onChangeMock} maxCharQuantity={5} />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
@@ -92,7 +88,7 @@ describe("TextArea Component", () => {
   it("should render the count label correctly", () => {
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea
+        <HvTextArea
           rows={4}
           initialValue="test"
           labels={{
@@ -118,7 +114,7 @@ describe("TextArea Component", () => {
       React.createElement(
         props => (
           <HvProvider>
-            <TextArea
+            <HvTextArea
               value={props.value}
               rows={4}
               initialValue={props.value}
@@ -169,7 +165,7 @@ describe("TextArea Component", () => {
   it("should scroll down on update when autoScroll", () => {
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea classes={{}} value="test" autoScroll />
+        <HvTextArea classes={{}} value="test" autoScroll />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
@@ -189,7 +185,7 @@ describe("TextArea Component", () => {
   it("should stop and resume autoScrolling on scroll", () => {
     const wrapperMount = mount(
       <HvProvider>
-        <TextArea classes={{}} value="test" autoScroll />
+        <HvTextArea classes={{}} value="test" autoScroll />
       </HvProvider>
     );
     const instance = wrapperMount.find("HvTextArea").instance();
@@ -205,35 +201,5 @@ describe("TextArea Component", () => {
     inputElement.scrollTop = 20;
     inputElement.dispatchEvent(new Event("scroll"));
     expect(instance.state.autoScrolling).toBe(true);
-  });
-});
-
-describe("TextAreaA11Y", () => {
-  it("Simple", async () => {
-    const onChangeMock = jest.fn();
-    const labels = {
-      inputLabel: "Label",
-      placeholder: "Enter value",
-      startCount: "Inserted",
-      middleCount: "of",
-      endCount: "available"
-    };
-
-    const wrapper = mount(
-      <HvProvider>
-        <TextArea
-          labels={labels}
-          classes={{}}
-          rows={4}
-          initialValue="test"
-          onChange={onChangeMock}
-          maxCharQuantity={10}
-        />
-      </HvProvider>
-    );
-
-    const results = await axe(wrapper.html());
-
-    expect(results).toHaveNoViolations();
   });
 });

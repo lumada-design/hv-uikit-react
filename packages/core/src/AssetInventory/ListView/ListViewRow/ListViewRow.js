@@ -9,6 +9,7 @@ import Actions from "../../../Actions";
 import Cell from "../ListViewCell";
 import { ListViewContextConsumer } from "../ListViewContext/ListViewContext";
 import styles from "./styles";
+import withId from "../../../withId";
 import setActionsId from "../../setActionsId";
 import Focus from "../../../Focus";
 
@@ -245,4 +246,4 @@ ListViewRow.propTypes = {
   ])
 };
 
-export default withStyles(styles, { name: "HvListViewRow" })(ListViewRow);
+export default withStyles(styles, { name: "HvListViewRow" })(withId(ListViewRow));

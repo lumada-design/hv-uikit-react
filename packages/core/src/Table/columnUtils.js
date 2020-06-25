@@ -2,22 +2,13 @@ import React from "react";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
 
-import AngleDown from "@hv/uikit-react-icons/dist/Down";
-import AngleUp from "@hv/uikit-react-icons/dist/Up";
-import { KeyboardCodes, isKeypress } from "../utils";
+import { Down, Up } from "@hv/uikit-react-icons";
+import { isKeypress, KeyboardCodes } from "../utils";
+import CellWithTooltip from "./CellWithTooltip";
 
 import { buildLink } from "./addins";
 
-/**
- * When the component is render for the first time the default sorted column doesn't
- * have applied the class "sorted".
- * The class "sorted" is removed from the columns that aren't sorted.
- *
- * @param {Boolean} initiallyLoaded - if it is the first load of the table.
- * @param {Object} column - An object containing information about the column.
- * @param {Array} colSortedSelected - An array containing the columns to be sorted.
- * @returns {String} - The classname to apply.
- */
+/* eslint-disable no-underscore-dangle */
 
 /**
  * A function used to wrap the cell data into a div to contain it adding the ellipsis functionality.
@@ -25,15 +16,11 @@ import { buildLink } from "./addins";
  * @param {Function} format - The formatting function to be executed to format the row value.
  * @param {Number} id - The index to find the required row on the data.
  * @param {Object} classes - The classes to be applied.
- * @returns {JSX} A container that has the row value formatted if required.
+ * @returns {function(*): *} A container that has the row value formatted if required.
  */
-const wrapper = (format, id, classes) => {
-  if (format) {
-    return data => <div className={classes.textContainer}>{format(data)}</div>;
-  }
-  /* eslint no-underscore-dangle: 0 */
-  return data => <div className={classes.textContainer}>{data.row._original[id]}</div>;
-};
+const wrapper = (format, id) => data => (
+  <CellWithTooltip data={format ? format(data) : data.row._original[id]} />
+);
 
 /**
  *  Set the class responsible for the alignment of the displayed text,
@@ -44,21 +31,16 @@ const wrapper = (format, id, classes) => {
  * @returns {String} - The class to apply.
  */
 const setColumnAlignment = (cellType, classes) => {
-  let classToApply;
   switch (cellType) {
     case "alpha-numeric":
-      classToApply = clsx(classes.alphaNumeric, "alphaNumeric");
-      break;
+      return clsx(classes.alphaNumeric, "alphaNumeric");
     case "link":
-      classToApply = clsx(classes.alphaNumeric, "link");
-      break;
+      return clsx(classes.alphaNumeric, "link");
     case "numeric":
-      classToApply = classes.numeric;
-      break;
+      return classes.numeric;
     default:
-      classToApply = classes.centered;
+      return classes.centered;
   }
-  return classToApply;
 };
 
 /**
@@ -68,12 +50,8 @@ const setColumnAlignment = (cellType, classes) => {
  * @param existingClassNames
  * @returns {*}
  */
-const setHeaderSortableClass = (sortableProp, existingClassNames) => {
-  if (!isNil(sortableProp) && sortableProp) {
-    return clsx(existingClassNames, "sortable");
-  }
-  return existingClassNames;
-};
+const setHeaderSortableClass = (sortableProp, existingClassNames) =>
+  clsx(existingClassNames, sortableProp && "sortable");
 
 /**
  * Creates an expander button inside the first column of the table.
@@ -109,9 +87,9 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
           aria-expanded={isExpanded}
         >
           {isExpanded ? (
-            <AngleUp className={classes.separatorContainer} width="10px" height="10px" />
+            <Up className={classes.separatorContainer} width="10px" height="10px" />
           ) : (
-            <AngleDown className={classes.separatorContainer} width="10px" height="10px" />
+            <Down className={classes.separatorContainer} width="10px" height="10px" />
           )}
         </div>
 
@@ -122,7 +100,6 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"
           })}
         >
-          {/* eslint-disable-next-line no-underscore-dangle */}
           {rest.row._original[rest.column.id]}
         </div>
       </>

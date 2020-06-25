@@ -1,7 +1,7 @@
 import React, { MouseEvent } from "react";
 import { StandardProps } from "@material-ui/core";
 
-interface NavigationItemProp {
+export interface NavigationItemProp {
   id: string;
   label: string;
   path?: string;

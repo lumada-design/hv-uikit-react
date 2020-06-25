@@ -13,8 +13,6 @@ export interface HvListViewHeaderRowProps
   viewConfiguration?: ViewConfiguration;
 }
 
-type HvListViewHeaderRowClassKey =
-  | "root"
-  | "headCell";
+export type HvListViewHeaderRowClassKey = "root" | "headCell";
 
 export default function HvListViewHeaderRow(props: HvListViewHeaderRowProps): JSX.Element | null;

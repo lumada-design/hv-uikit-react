@@ -1,12 +1,8 @@
 *** Setting ***
-Library           SeleniumLibrary
 Resource          _verticalNavigation.resource
-Suite Setup       open storybook    ${iframeCollapsable}
 Test Setup        Run Keywords
-...               Reload Page    AND
+...               Go To    ${components}navigation-system-vertical-navigation--collapsable    AND
 ...               expand vertical navigation
-Suite Teardown    Close Browser
-Force Tags        smoke
 Documentation     Test Cases based on Design System Version 1.2.0
 
 
@@ -19,9 +15,9 @@ save previous selection when vertical navigation menu is closed and then opened
     Click Element                                      ${item2.3.1}
     vertical navigation item should be selected        ${item2.3.1}
     Click Element                                      ${burger}
-    Wait Until Element Is Not Visible                  ${expanded}     4s
+    Wait Until Element Is Not Visible                  ${expanded}
     Click Element                                      ${burger}
-    Wait Until Element Is Visible                      ${expanded}     4s
+    Wait Until Element Is Visible                      ${expanded}
     vertical navigation item should be selected        ${item2.3.1}
 
 select a parent item when item is clicked 1 level

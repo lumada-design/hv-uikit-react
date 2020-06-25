@@ -20,7 +20,7 @@ on:
 # flow:
 # Notify Start
 # License-Checks | Lint | Test-Jest | Build-Documentation
-# Robot_pa11y | Robot (chrome | ie | firefox)
+# A11Y-Tests | Robot (chrome | ie | firefox)
 # Notify End
 # Release
 
@@ -110,6 +110,56 @@ jobs:
         with:
           name: documentation
           path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  A11Y-Tests:
+    name: Accessibility Tests
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    services:
+      storybook:
+        image: nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
+
+      - name: Install automation/pa11y
+        run: |
+          cd ${{ github.workspace }}/automation/pa11y
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Test A11Y
+        run: |
+          cd ${{ github.workspace }}/automation/pa11y
+          STORYBOOK_URL=http://localhost:9001 npm run pa11y-ci
 
       - name: Clean Folders
         if: always()
@@ -226,7 +276,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Robot, Robot-Windows]
+    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Robot, Robot-Windows]
     if: always()
     runs-on: [self-hosted, Linux]
 

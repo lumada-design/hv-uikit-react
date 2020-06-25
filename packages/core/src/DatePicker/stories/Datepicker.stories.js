@@ -14,12 +14,37 @@ export default {
 
 export const Main = () => <HvDatePicker id="DatePicker" />;
 
+Main.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
+    }
+  }
+};
+
 export const DefaultValue = () => <HvDatePicker id="DatePicker" value="1970-01-01" />;
 
 DefaultValue.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker sample with a value already set."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
     }
   }
 };
@@ -45,6 +70,16 @@ Localized.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker sample with values localized."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
     }
   }
 };
@@ -55,6 +90,16 @@ WithActions.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker with action buttons at the bottom."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
     }
   }
 };
@@ -73,6 +118,20 @@ WithCustomLabels.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker with actions buttons at the bottom that have custom labels."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+        // TODO: BUG Custom label isn't a real label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "button-name",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Div.Name"
+      ]
     }
   }
 };
@@ -92,6 +151,16 @@ RangeMode.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker in range mode allowing the selection of more than one value."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
     }
   }
 };
@@ -120,6 +189,16 @@ RangeWithValues.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker in range mode with values already set."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
     }
   }
 };
@@ -130,6 +209,16 @@ NearInvalid.story = {
   parameters: {
     docs: {
       storyDescription: "Datepicker in range mode with invalid near invalid dates."
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
     }
   }
 };
@@ -157,4 +246,19 @@ export const WithValueChange = () => {
   };
 
   return <Example />;
+};
+
+WithValueChange.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Input has no label
+        // https://github.com/lumada-design/hv-uikit-react/issues/1692
+        "label",
+        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
+        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
+      ]
+    }
+  }
 };

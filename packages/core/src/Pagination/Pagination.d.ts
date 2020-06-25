@@ -94,11 +94,11 @@ export interface HvPaginationProps
   /**
    * Other props to show page component.
    */
-  showPageProps?: Object;
+  showPageProps?: Record<string, any>;
   /**
    * Other props to pagination component.
    */
-  navigationProps?: Object;
+  navigationProps?: Record<string, any>;
   /**
    * Extra properties passed to the input component representing the current pages.
    */

@@ -115,6 +115,9 @@ const Focus = props => {
   };
 
   const onMouseDown = evt => {
+    const hasCard = !!evt.currentTarget?.querySelector(".HvCard-root");
+    if (strategy === "grid" && hasCard) return;
+
     setFocusTo(evt.currentTarget);
     setTabIndex(evt.currentTarget, 0);
     // remove focus outline unless explicitly enabled
@@ -132,16 +135,12 @@ const Focus = props => {
     setFocusTo(nextFocus);
   };
 
-  const getEnabledKeys = (currentFocusIndex, jump, listSize) => {
-    const disabledKeys = {};
-    disabledKeys.right =
-      (currentFocusIndex + 1) % jump === 0 || currentFocusIndex + 1 > listSize - 1;
-    disabledKeys.left = currentFocusIndex % jump === 0;
-    disabledKeys.up = currentFocusIndex - jump < 0;
-    disabledKeys.down =
-      currentFocusIndex + jump > listSize || currentFocusIndex + jump > listSize - 1;
-    return disabledKeys;
-  };
+  const getEnabledKeys = (currentFocusIndex, jump, listSize) => ({
+    right: (currentFocusIndex + 1) % jump === 0 || currentFocusIndex + 1 > listSize - 1,
+    left: currentFocusIndex % jump === 0,
+    up: currentFocusIndex - jump < 0,
+    down: currentFocusIndex + jump > listSize || currentFocusIndex + jump > listSize - 1
+  });
 
   const onGridKeyDownHandler = (evt, focuses, focusesList, currentFocusIndex, jump) => {
     const { ArrowUp, ArrowDown, Home, End, ArrowLeft, ArrowRight, Enter, SpaceBar } = KeyboardCodes;

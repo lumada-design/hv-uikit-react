@@ -9,18 +9,19 @@
  */
 import React from "react";
 import HvCheckBox from "../Selectors/CheckBox";
+import { setId } from "../utils";
 
 const defaultSelectInputComponent = props => {
   return (
     <HvCheckBox
-      inputProps={{ "aria-label": `${props.internalId}-select-${props.id}` }}
+      inputProps={{ "aria-label": setId(props.id, "select") }}
       id={props.id}
       checked={props.checked}
       onChange={() => {}}
       onClick={e => {
         const { shiftKey } = e;
         e.stopPropagation();
-        props.onClick(props.id, shiftKey, props.row);
+        props.onClick?.(props.id, shiftKey, props.row);
       }}
     />
   );
@@ -34,15 +35,14 @@ export default (Component, options) => {
 
     rowSelector(row) {
       if (!row || !row.hasOwnProperty(this.props.keyField)) return null;
-      const { toggleSelection, selectType, keyField, internalId } = this.props;
+      const { toggleSelection, selectType, keyField, id } = this.props;
       const checked = this.props.isSelected(row[this.props.keyField]);
       const inputProps = {
-        internalId,
         checked,
         onClick: toggleSelection,
         selectType,
         row,
-        id: `select-${row[keyField]}`
+        id: setId("select", row[keyField])
       };
       return React.createElement(this.props.SelectInputComponent, inputProps);
     }

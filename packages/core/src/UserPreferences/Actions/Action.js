@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { isKeypress, KeyboardCodes } from "../../utils";
 import styles from "./styles";
-import HvTypography from "../../Typography";
+import { HvButton } from "../..";
 
 const Action = ({ classes, className, id, label, icon, onClick, ...others }) => {
   const payload = { id, label };
@@ -33,11 +33,9 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
   );
 
   return (
-    <HvTypography
+    <HvButton
       id={id}
-      component="div"
-      variant="normalText"
-      role="button"
+      category="ghost"
       className={clsx(className, classes.action, {
         [classes.noIcon]: !icon
       })}
@@ -48,7 +46,7 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
     >
       {renderedIcon}
       {label}
-    </HvTypography>
+    </HvButton>
   );
 };
 

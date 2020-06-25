@@ -1,8 +1,8 @@
 const styles = theme => ({
   calendarWrapper: {
     overflow: "hidden",
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    padding: `${theme.hv.spacing.sm}px`
+    backgroundColor: theme.palette.atmo1,
+    padding: theme.spacing("sm")
   },
   calendarGrid: {
     display: "flex",
@@ -12,7 +12,7 @@ const styles = theme => ({
   navigationContainer: {
     display: "flex",
     justifyContent: "space-between",
-    padding: `${theme.hv.spacing.xs}px 0`
+    padding: `${theme.spacing("xs")}px 0`
   },
   navigationMonth: {
     minWidth: "160px"
@@ -33,19 +33,19 @@ const styles = theme => ({
     height: "40px",
     width: "40px",
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.palette.atmo4,
       cursor: "pointer"
     }
   },
   calendarDateNotInMonth: {
-    color: `${theme.hv.palette.atmosphere.atmo7}`
+    color: theme.palette.atmo7
   },
   calendarDateSelected: {
-    backgroundColor: `${theme.hv.palette.accent.acce1}`,
-    color: `${theme.hv.palette.atmosphere.atmo1}`,
+    backgroundColor: theme.palette.acce1,
+    color: theme.palette.atmo1,
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.accent.acce1}`,
-      color: `${theme.hv.palette.atmosphere.atmo1}`
+      backgroundColor: theme.palette.acce1,
+      color: theme.palette.atmo1
     }
   },
   calendarDateInvalid: {
@@ -82,16 +82,16 @@ const styles = theme => ({
     height: "40px",
     width: "92px",
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.palette.atmo4,
       cursor: "pointer"
     }
   },
   calendarMonthlyCellSelected: {
-    backgroundColor: `${theme.hv.palette.accent.acce1}`,
-    color: `${theme.hv.palette.atmosphere.atmo1}`,
+    backgroundColor: theme.palette.acce1,
+    color: theme.palette.atmo1,
     "&:hover": {
-      backgroundColor: `${theme.hv.palette.accent.acce1}`,
-      color: `${theme.hv.palette.atmosphere.atmo1}`
+      backgroundColor: theme.palette.acce1,
+      color: theme.palette.atmo1
     }
   }
 });

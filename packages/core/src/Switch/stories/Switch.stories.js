@@ -26,7 +26,7 @@ export const OnChange = () => {
       color: theme.hv.palette.semantic.sema1
     },
     off: {
-      color: theme.hv.palette.semantic.sema13
+      color: theme.hv.palette.semantic.sema14
     }
   }));
 

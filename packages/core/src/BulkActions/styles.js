@@ -3,6 +3,7 @@ import { semanticStyles } from "../withSemantic";
 const styles = theme => ({
   root: {
     display: "flex",
+    backgroundColor: theme.palette.atmo1,
     margin: theme.spacing("sm", 0, "xs")
   },
   editMode: {

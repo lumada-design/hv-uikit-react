@@ -1,11 +1,13 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 
-export interface HvUserPreferenceActionsProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvUserPreferenceActionsClassKey> {}
+export type HvUserPreferencesActionsProps = StandardProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HvUserPreferencesActionsClassKey
+>;
 
-export type HvUserPreferenceActionsClassKey = "root";
+export type HvUserPreferencesActionsClassKey = "root";
 
 export default function HvUserPreferencesActions(
-  props: HvUserPreferenceActionsProps
+  props: HvUserPreferencesActionsProps
 ): JSX.Element | null;

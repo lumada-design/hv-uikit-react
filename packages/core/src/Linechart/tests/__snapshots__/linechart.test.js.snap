@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Linechart withStyles should render correctly 1`] = `
+exports[`Linechart should render correctly 1`] = `
 <WithStyles(Linechart)
   data={
     Array [
@@ -10,19 +10,40 @@ exports[`Linechart withStyles should render correctly 1`] = `
         "name": "Sales Target",
         "type": "line",
         "x": Array [
-          2300,
-          1000,
-          8500,
-        ],
-        "y": Array [
           "January",
           "February",
           "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ],
+        "y": Array [
+          5929,
+          2393,
+          1590,
+          7817,
+          4749,
+          1702,
+          2381,
+          2909,
+          6732,
+          3098,
+          2119,
+          2146,
         ],
       },
     ]
   }
-  layout={Object {}}
+  subtitle="Sales performance (YTD)"
+  title="Simple line"
+  xAxisTitle="2018"
+  yAxisTitle="Thousands of Dollars ($)"
 >
   <Linechart
     classes={Object {}}
@@ -34,19 +55,40 @@ exports[`Linechart withStyles should render correctly 1`] = `
           "name": "Sales Target",
           "type": "line",
           "x": Array [
-            2300,
-            1000,
-            8500,
-          ],
-          "y": Array [
             "January",
             "February",
             "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          "y": Array [
+            5929,
+            2393,
+            1590,
+            7817,
+            4749,
+            1702,
+            2381,
+            2909,
+            6732,
+            3098,
+            2119,
+            2146,
           ],
         },
       ]
     }
-    layout={Object {}}
+    subtitle="Sales performance (YTD)"
+    title="Simple line"
+    xAxisTitle="2018"
+    yAxisTitle="Thousands of Dollars ($)"
   >
     <WithStyles(Chart)
       classes={Object {}}
@@ -58,20 +100,42 @@ exports[`Linechart withStyles should render correctly 1`] = `
             "name": "Sales Target",
             "type": "line",
             "x": Array [
-              2300,
-              1000,
-              8500,
-            ],
-            "y": Array [
               "January",
               "February",
               "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ],
+            "y": Array [
+              5929,
+              2393,
+              1590,
+              7817,
+              4749,
+              1702,
+              2381,
+              2909,
+              6732,
+              3098,
+              2119,
+              2146,
             ],
           },
         ]
       }
       layout={Object {}}
+      subtitle="Sales performance (YTD)"
+      title="Simple line"
       tooltipType="multiple"
+      xAxisTitle="2018"
+      yAxisTitle="Thousands of Dollars ($)"
     >
       <Chart
         classes={
@@ -95,20 +159,42 @@ exports[`Linechart withStyles should render correctly 1`] = `
               "name": "Sales Target",
               "type": "line",
               "x": Array [
-                2300,
-                1000,
-                8500,
-              ],
-              "y": Array [
                 "January",
                 "February",
                 "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ],
+              "y": Array [
+                5929,
+                2393,
+                1590,
+                7817,
+                4749,
+                1702,
+                2381,
+                2909,
+                6732,
+                3098,
+                2119,
+                2146,
               ],
             },
           ]
         }
         layout={Object {}}
+        subtitle="Sales performance (YTD)"
+        title="Simple line"
         tooltipType="multiple"
+        xAxisTitle="2018"
+        yAxisTitle="Thousands of Dollars ($)"
       >
         <div
           className="HvChart-root"
@@ -116,12 +202,93 @@ exports[`Linechart withStyles should render correctly 1`] = `
           <div
             className="HvChart-titleContainer"
           >
+            <WithStyles(ForwardRef)
+              variant="mTitle"
+            >
+              <ForwardRef
+                classes={
+                  Object {
+                    "3xlTitle": "HvTypography-3xlTitle",
+                    "4xlTitle": "HvTypography-4xlTitle",
+                    "5xlTitle": "HvTypography-5xlTitle",
+                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "highlightText": "HvTypography-highlightText",
+                    "infoText": "HvTypography-infoText",
+                    "inlineLink": "HvTypography-inlineLink",
+                    "lTitle": "HvTypography-lTitle",
+                    "labelText": "HvTypography-labelText",
+                    "mTitle": "HvTypography-mTitle",
+                    "normalText": "HvTypography-normalText",
+                    "placeholderText": "HvTypography-placeholderText",
+                    "root": "HvTypography-root",
+                    "sLink": "HvTypography-sLink",
+                    "sText": "HvTypography-sText",
+                    "sTitle": "HvTypography-sTitle",
+                    "selectedNavText": "HvTypography-selectedNavText",
+                    "selectedText": "HvTypography-selectedText",
+                    "vizText": "HvTypography-vizText",
+                    "xlTitle": "HvTypography-xlTitle",
+                    "xsTitle": "HvTypography-xsTitle",
+                    "xxlTitle": "HvTypography-xxlTitle",
+                    "xxsTitle": "HvTypography-xxsTitle",
+                  }
+                }
+                variant="mTitle"
+              >
+                <h3
+                  className="HvTypography-root HvTypography-mTitle"
+                >
+                  Simple line
+                </h3>
+              </ForwardRef>
+            </WithStyles(ForwardRef)>
             <div
               className="HvChart-subtitle"
-            />
+            >
+              <WithStyles(ForwardRef)
+                variant="sText"
+              >
+                <ForwardRef
+                  classes={
+                    Object {
+                      "3xlTitle": "HvTypography-3xlTitle",
+                      "4xlTitle": "HvTypography-4xlTitle",
+                      "5xlTitle": "HvTypography-5xlTitle",
+                      "disabledButtonText": "HvTypography-disabledButtonText",
+                      "highlightText": "HvTypography-highlightText",
+                      "infoText": "HvTypography-infoText",
+                      "inlineLink": "HvTypography-inlineLink",
+                      "lTitle": "HvTypography-lTitle",
+                      "labelText": "HvTypography-labelText",
+                      "mTitle": "HvTypography-mTitle",
+                      "normalText": "HvTypography-normalText",
+                      "placeholderText": "HvTypography-placeholderText",
+                      "root": "HvTypography-root",
+                      "sLink": "HvTypography-sLink",
+                      "sText": "HvTypography-sText",
+                      "sTitle": "HvTypography-sTitle",
+                      "selectedNavText": "HvTypography-selectedNavText",
+                      "selectedText": "HvTypography-selectedText",
+                      "vizText": "HvTypography-vizText",
+                      "xlTitle": "HvTypography-xlTitle",
+                      "xsTitle": "HvTypography-xsTitle",
+                      "xxlTitle": "HvTypography-xxlTitle",
+                      "xxsTitle": "HvTypography-xxsTitle",
+                    }
+                  }
+                  variant="sText"
+                >
+                  <p
+                    className="HvTypography-root HvTypography-sText"
+                  >
+                    Sales performance (YTD)
+                  </p>
+                </ForwardRef>
+              </WithStyles(ForwardRef)>
+            </div>
           </div>
           <div
-            className=""
+            className="HvChart-paddingTop"
             onMouseMove={[Function]}
           >
             <WithStyles(Plot)
@@ -139,14 +306,32 @@ exports[`Linechart withStyles should render correctly 1`] = `
                     "name": "Sales Target",
                     "type": "line",
                     "x": Array [
-                      2300,
-                      1000,
-                      8500,
-                    ],
-                    "y": Array [
                       "January",
                       "February",
                       "March",
+                      "April",
+                      "May",
+                      "June",
+                      "July",
+                      "August",
+                      "September",
+                      "October",
+                      "November",
+                      "December",
+                    ],
+                    "y": Array [
+                      5929,
+                      2393,
+                      1590,
+                      7817,
+                      4749,
+                      1702,
+                      2381,
+                      2909,
+                      6732,
+                      3098,
+                      2119,
+                      2146,
                     ],
                   },
                 ]
@@ -209,8 +394,8 @@ exports[`Linechart withStyles should render correctly 1`] = `
                     "linecolor": "#BCBCBC",
                     "linewidth": 1,
                     "range": Array [
-                      1000,
-                      8500,
+                      0,
+                      11,
                     ],
                     "showgrid": false,
                     "tickcolor": "#BCBCBC",
@@ -236,8 +421,9 @@ exports[`Linechart withStyles should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
+                      "text": "2018",
                     },
-                    "type": "linear",
+                    "type": "category",
                     "zeroline": false,
                   },
                   "yaxis": Object {
@@ -248,8 +434,8 @@ exports[`Linechart withStyles should render correctly 1`] = `
                     "linecolor": "#BCBCBC",
                     "linewidth": 1,
                     "range": Array [
-                      -0.11111111111111112,
-                      2.111111111111111,
+                      1244.0555555555557,
+                      8162.944444444444,
                     ],
                     "showgrid": true,
                     "tickcolor": "#BCBCBC",
@@ -275,14 +461,16 @@ exports[`Linechart withStyles should render correctly 1`] = `
                         ],
                         "size": 10,
                       },
+                      "text": "Thousands of Dollars ($)",
                     },
-                    "type": "category",
+                    "type": "linear",
                     "zeroline": false,
                   },
                 }
               }
               onHover={[Function]}
               onUnHover={[Function]}
+              title="Simple line"
             >
               <Plot
                 classes={Object {}}
@@ -300,14 +488,32 @@ exports[`Linechart withStyles should render correctly 1`] = `
                       "name": "Sales Target",
                       "type": "line",
                       "x": Array [
-                        2300,
-                        1000,
-                        8500,
-                      ],
-                      "y": Array [
                         "January",
                         "February",
                         "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                        "August",
+                        "September",
+                        "October",
+                        "November",
+                        "December",
+                      ],
+                      "y": Array [
+                        5929,
+                        2393,
+                        1590,
+                        7817,
+                        4749,
+                        1702,
+                        2381,
+                        2909,
+                        6732,
+                        3098,
+                        2119,
+                        2146,
                       ],
                     },
                   ]
@@ -370,8 +576,8 @@ exports[`Linechart withStyles should render correctly 1`] = `
                       "linecolor": "#BCBCBC",
                       "linewidth": 1,
                       "range": Array [
-                        1000,
-                        8500,
+                        0,
+                        11,
                       ],
                       "showgrid": false,
                       "tickcolor": "#BCBCBC",
@@ -397,8 +603,9 @@ exports[`Linechart withStyles should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
+                        "text": "2018",
                       },
-                      "type": "linear",
+                      "type": "category",
                       "zeroline": false,
                     },
                     "yaxis": Object {
@@ -409,8 +616,8 @@ exports[`Linechart withStyles should render correctly 1`] = `
                       "linecolor": "#BCBCBC",
                       "linewidth": 1,
                       "range": Array [
-                        -0.11111111111111112,
-                        2.111111111111111,
+                        1244.0555555555557,
+                        8162.944444444444,
                       ],
                       "showgrid": true,
                       "tickcolor": "#BCBCBC",
@@ -436,14 +643,16 @@ exports[`Linechart withStyles should render correctly 1`] = `
                           ],
                           "size": 10,
                         },
+                        "text": "Thousands of Dollars ($)",
                       },
-                      "type": "category",
+                      "type": "linear",
                       "zeroline": false,
                     },
                   }
                 }
                 onHover={[Function]}
                 onUnHover={[Function]}
+                title="Simple line"
               >
                 <PlotlyComponent
                   classes={Object {}}
@@ -461,14 +670,32 @@ exports[`Linechart withStyles should render correctly 1`] = `
                         "name": "Sales Target",
                         "type": "line",
                         "x": Array [
-                          2300,
-                          1000,
-                          8500,
-                        ],
-                        "y": Array [
                           "January",
                           "February",
                           "March",
+                          "April",
+                          "May",
+                          "June",
+                          "July",
+                          "August",
+                          "September",
+                          "October",
+                          "November",
+                          "December",
+                        ],
+                        "y": Array [
+                          5929,
+                          2393,
+                          1590,
+                          7817,
+                          4749,
+                          1702,
+                          2381,
+                          2909,
+                          6732,
+                          3098,
+                          2119,
+                          2146,
                         ],
                       },
                     ]
@@ -532,8 +759,8 @@ exports[`Linechart withStyles should render correctly 1`] = `
                         "linecolor": "#BCBCBC",
                         "linewidth": 1,
                         "range": Array [
-                          1000,
-                          8500,
+                          0,
+                          11,
                         ],
                         "showgrid": false,
                         "tickcolor": "#BCBCBC",
@@ -559,8 +786,9 @@ exports[`Linechart withStyles should render correctly 1`] = `
                             ],
                             "size": 10,
                           },
+                          "text": "2018",
                         },
-                        "type": "linear",
+                        "type": "category",
                         "zeroline": false,
                       },
                       "yaxis": Object {
@@ -571,8 +799,8 @@ exports[`Linechart withStyles should render correctly 1`] = `
                         "linecolor": "#BCBCBC",
                         "linewidth": 1,
                         "range": Array [
-                          -0.11111111111111112,
-                          2.111111111111111,
+                          1244.0555555555557,
+                          8162.944444444444,
                         ],
                         "showgrid": true,
                         "tickcolor": "#BCBCBC",
@@ -598,8 +826,9 @@ exports[`Linechart withStyles should render correctly 1`] = `
                             ],
                             "size": 10,
                           },
+                          "text": "Thousands of Dollars ($)",
                         },
-                        "type": "category",
+                        "type": "linear",
                         "zeroline": false,
                       },
                     }
@@ -613,6 +842,7 @@ exports[`Linechart withStyles should render correctly 1`] = `
                       "position": "relative",
                     }
                   }
+                  title="Simple line"
                   useResizeHandler={false}
                 >
                   <div

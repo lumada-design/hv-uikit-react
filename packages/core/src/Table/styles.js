@@ -291,6 +291,11 @@ const styles = theme => ({
       display: "block",
       margin: "0 auto"
     }
+  },
+  tooltipAnchor: {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
   }
 });
 

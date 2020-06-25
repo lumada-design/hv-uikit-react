@@ -1,12 +1,3 @@
-const inputRoot = theme => ({
-  position: "relative",
-  background: theme.hv.palette.atmosphere.atmo1,
-  height: "32px",
-  paddingLeft: `${theme.hv.spacing.xs}px`,
-  paddingRight: `${theme.hv.spacing.md}px`,
-  fontFamily: theme.hv.typography.fontFamily
-});
-
 const icon = {
   position: "absolute",
   right: 0,
@@ -16,18 +7,24 @@ const icon = {
 };
 
 const styles = theme => ({
+  root: {
+    position: "relative",
+    background: theme.palette.atmo1,
+    height: "32px",
+    paddingLeft: theme.spacing("xs"),
+    paddingRight: theme.spacing("md"),
+    fontFamily: theme.hv.typography.fontFamily
+  },
   inputCalendarClosed: {
-    ...inputRoot(theme),
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    border: `1px solid ${theme.palette.atmo6}`,
     "&:hover": {
       cursor: "pointer",
-      border: `1px solid ${theme.hv.palette.accent.acce1}`
+      border: `1px solid ${theme.palette.acce1}`
     }
   },
   inputCalendarOpen: {
-    ...inputRoot(theme),
     boxShadow: theme.hv.shadows[1],
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`
+    border: `1px solid ${theme.palette.atmo1}`
   },
   noBorderTop: {
     borderTop: "none"
@@ -66,26 +63,22 @@ const styles = theme => ({
     width: "320px"
   },
   label: {
-    marginBottom: `${theme.hv.spacing.xs}px`,
+    marginBottom: theme.spacing("xs"),
     display: "block"
   },
   calendarContainer: {
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
+    backgroundColor: theme.palette.atmo1,
     width: "320px"
-    // display: "flex",
-    // flexDirection: "column",
-    // boxShadow: theme.hv.shadows[1]`
   },
   singleCalendarFooter: {
-    padding: `${theme.hv.spacing.sm}px`,
+    padding: theme.spacing("sm"),
     textAlign: "right",
-    borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
+    borderTop: `3px solid ${theme.palette.atmo2}`
   },
   rangeMainContainer: {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo1}`,
-    // boxShadow: theme.hv.shadows[1],
+    backgroundColor: theme.palette.atmo1,
     width: "640px"
   },
   rangeCalendarsContainer: {
@@ -101,7 +94,7 @@ const styles = theme => ({
   rangeCalendarsFooter: {
     display: "flex",
     flexDirection: "row",
-    borderTop: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
+    borderTop: `3px solid ${theme.palette.atmo2}`
   },
   rangeFooterLeft: {
     width: "50%"
@@ -109,7 +102,7 @@ const styles = theme => ({
   rangeFooterRight: {
     width: "50%",
     textAlign: "right",
-    padding: `${theme.hv.spacing.sm}px`
+    padding: theme.spacing("sm")
   },
   actionsContainer: {
     textAlign: "right"
@@ -121,10 +114,10 @@ const styles = theme => ({
     borderBottom: "none"
   },
   borderTopDisplay: {
-    borderTop: `1px solid ${theme.hv.palette.accent.acce1}`
+    borderTop: `1px solid ${theme.palette.acce1}`
   },
   borderBottomDisplay: {
-    borderBottom: `1px solid ${theme.hv.palette.accent.acce1}`
+    borderBottom: `1px solid ${theme.palette.acce1}`
   },
   popperRoot: {
     display: "block"
@@ -132,20 +125,20 @@ const styles = theme => ({
   listBorderDown: {
     height: "10px",
     width: "320px",
-    background: theme.hv.palette.atmosphere.atmo1
+    background: theme.palette.atmo1
   },
   listBorderUp: {
     height: "10px",
     boxShadow: " 0px -5px 5px -4px rgba(65,65,65,.12)",
     width: "320px",
-    background: theme.hv.palette.atmosphere.atmo1
+    background: theme.palette.atmo1
   },
   calendarOpenDown: {
-    background: theme.hv.palette.atmosphere.atmo1,
+    background: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1]
   },
   calendarOpenUp: {
-    background: theme.hv.palette.atmosphere.atmo1,
+    background: theme.palette.atmo1,
     boxShadow: theme.hv.shadows[1]
   }
 });

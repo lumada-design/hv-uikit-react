@@ -14,14 +14,53 @@ module.exports = {
     "react/require-default-props": "off",
 
     // turned off while this isn't resolved: https://github.com/eslint/eslint/issues/12642
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never"
+      }
+    ]
   },
   overrides: [
     {
       files: ["*.stories.js"],
       rules: {
         "no-console": "off",
-        "no-alert": "off"
+        "no-alert": "off",
+        "no-any": 0
+      }
+    },
+    {
+      files: ["*.ts"],
+      env: { browser: true, es6: true, node: true },
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off"
+      },
+      extends: [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        ecmaVersion: 2020,
+        sourceType: "module",
+        project: "./tsconfig.json"
+      },
+      plugins: ["@typescript-eslint"],
+      settings: {
+        "import/resolver": {
+          typescript: {
+            directory: "./packages/*/tsconfig.json"
+          }
+        }
       }
     }
   ],

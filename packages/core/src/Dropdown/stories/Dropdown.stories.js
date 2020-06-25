@@ -24,12 +24,23 @@ export const Main = () => (
   />
 );
 
+Main.story = {
+  parameters: {
+    pa11y: {
+      ignore: ["region"]
+    }
+  }
+};
+
 export const Empty = () => <HvDropdown id="dropdown1" />;
 
 Empty.story = {
   parameters: {
     docs: {
       storyDescription: "Dropdown with no values"
+    },
+    pa11y: {
+      ignore: ["region"]
     }
   }
 };
@@ -51,6 +62,9 @@ SingleSelection.story = {
   parameters: {
     docs: {
       storyDescription: "Support ids to manage selection"
+    },
+    pa11y: {
+      ignore: ["region"]
     }
   }
 };
@@ -84,6 +98,14 @@ export const MultiSelectionNoSearch = () => (
   />
 );
 
+MultiSelectionNoSearch.story = {
+  parameters: {
+    pa11y: {
+      ignore: ["region"]
+    }
+  }
+};
+
 export const SingleSelectionWithSearch = () => (
   <HvDropdown
     id="dropdown6"
@@ -101,6 +123,9 @@ SingleSelectionWithSearch.story = {
   parameters: {
     docs: {
       storyDescription: "Single selection Dropdown with search and less than 10 elements"
+    },
+    pa11y: {
+      ignore: ["region"]
     }
   }
 };
@@ -119,6 +144,14 @@ export const SingleSelectionNoDefault = () => (
     ]}
   />
 );
+
+SingleSelectionNoDefault.story = {
+  parameters: {
+    pa11y: {
+      ignore: ["region"]
+    }
+  }
+};
 
 export const DifferentSizeAndPlacements = () => {
   const data = [
@@ -159,6 +192,9 @@ DifferentSizeAndPlacements.story = {
   parameters: {
     docs: {
       storyDescription: "Dropdown defined with a specific width and with different placements."
+    },
+    pa11y: {
+      ignore: ["region"]
     }
   }
 };
@@ -185,6 +221,20 @@ export const Disabled = () => (
     ]}
   />
 );
+
+Disabled.story = {
+  parameters: {
+    pa11y: {
+      ignore: [
+        "region",
+        // Text or images of text that are part of an inactive user interface component have no contrast requirement.
+        // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
+    }
+  }
+};
 
 export const Expanded = () => (
   <HvDropdown

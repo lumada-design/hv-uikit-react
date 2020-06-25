@@ -1,7 +1,6 @@
 import { DialogContentProps, StandardProps } from "@material-ui/core";
 
-export interface HvModalContentProps
-  extends StandardProps<DialogContentProps, HvModalContentClassKey> {}
+export type HvModalContentProps = StandardProps<DialogContentProps, HvModalContentClassKey>;
 
 export type HvModalContentClassKey = "root" | "textContent";
 

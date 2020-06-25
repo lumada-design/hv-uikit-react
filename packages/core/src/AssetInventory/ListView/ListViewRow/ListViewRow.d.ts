@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListViewConfiguration } from "..";
-import { HvCheckBoxProps } from "../../../Selectors/CheckBox";
+import { HvCheckBoxProps } from "../../..";
 
 export interface HvListViewRowProps
   extends StandardProps<React.HTMLAttributes<HTMLTableSectionElement>, HvListViewRowClassKey> {
@@ -19,11 +19,11 @@ export interface HvListViewRowProps
    *  Note: if this value is specified the checkbox becomes a controlled component and it's state should be set from outside.
    */
   checked?: boolean;
-  /** 
+  /**
    * Properties to be passed onto the checkbox component, the values of the object are equivalent to the
    * HvCheckbox API.
-  */
- checkBoxProps?: HvCheckBoxProps;
+   */
+  checkboxProps?: HvCheckBoxProps;
   /**
    *  The border to the right of the checkbox
    */
@@ -55,6 +55,6 @@ export interface HvListViewRowProps
     | "atmo6";
 }
 
-type HvListViewRowClassKey = "root";
+export type HvListViewRowClassKey = "root";
 
 export default function HvListViewRow(props: HvListViewRowProps): JSX.Element | null;

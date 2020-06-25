@@ -2,9 +2,7 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import Tooltip from "..";
-import HvProvider from "../../Provider";
-import HvTypography from "../../Typography";
+import { HvProvider, HvTooltip, HvTypography } from "../..";
 
 const createTitle = data => (
   <div>
@@ -31,9 +29,9 @@ describe("Single Line Tooltip", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip title={<HvTypography variant="labelText">Grid View</HvTypography>}>
+        <HvTooltip title={<HvTypography variant="labelText">Grid View</HvTypography>}>
           {Anchor}
-        </Tooltip>
+        </HvTooltip>
       </HvProvider>
     );
   });
@@ -43,11 +41,11 @@ describe("Single Line Tooltip", () => {
   });
 
   it("should render single line tooltip correctly", () => {
-    expect(wrapper.find(Tooltip)).toMatchSnapshot();
+    expect(wrapper.find(HvTooltip)).toMatchSnapshot();
   });
 
   it("should render the single line Tooltip", () => {
-    const tooltip = wrapper.find(Tooltip);
+    const tooltip = wrapper.find(HvTooltip);
     expect(tooltip.length).toBe(1);
   });
 });
@@ -69,9 +67,9 @@ describe("Multi Line Tooltip - No Header", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip title={title} useSingle={false}>
+        <HvTooltip title={title} useSingle={false}>
           {Anchor}
-        </Tooltip>
+        </HvTooltip>
       </HvProvider>
     );
   });
@@ -81,11 +79,11 @@ describe("Multi Line Tooltip - No Header", () => {
   });
 
   it("should render multiple line tooltip correctly", () => {
-    expect(wrapper.find(Tooltip)).toMatchSnapshot();
+    expect(wrapper.find(HvTooltip)).toMatchSnapshot();
   });
 
   it("should render the multiple line Tooltip", () => {
-    const tooltip = wrapper.find(Tooltip);
+    const tooltip = wrapper.find(HvTooltip);
     expect(tooltip.length).toBe(1);
   });
 });
@@ -106,9 +104,9 @@ describe("Multi Line Tooltip - With Header", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Tooltip title={title} useSingle={false}>
+        <HvTooltip title={title} useSingle={false}>
           {Anchor}
-        </Tooltip>
+        </HvTooltip>
       </HvProvider>
     );
   });
@@ -118,11 +116,11 @@ describe("Multi Line Tooltip - With Header", () => {
   });
 
   it("should render multiple line tooltip with header correctly", () => {
-    expect(wrapper.find(Tooltip)).toMatchSnapshot();
+    expect(wrapper.find(HvTooltip)).toMatchSnapshot();
   });
 
   it("should render the multiple line Tooltip with header", () => {
-    const tooltip = wrapper.find(Tooltip);
+    const tooltip = wrapper.find(HvTooltip);
     expect(tooltip.length).toBe(1);
   });
 });

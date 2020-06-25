@@ -1,7 +1,6 @@
 import { DialogActionsProps, StandardProps } from "@material-ui/core";
 
-export interface HvModalActionsProps
-  extends StandardProps<DialogActionsProps, HvModalActionsClassKey> {}
+export type HvModalActionsProps = StandardProps<DialogActionsProps, HvModalActionsClassKey>;
 
 export type HvModalActionsClassKey = "root" | "spacing";
 

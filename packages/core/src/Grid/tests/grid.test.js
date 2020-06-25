@@ -1,19 +1,13 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
-import Grid from "..";
+import { HvGrid, HvProvider } from "../..";
+import { Main } from "../stories/Grid.stories";
 
-window.matchMedia = jest.fn(() => ({
-  matches: false,
-  addListener: jest.fn(),
-  removeListener: jest.fn()
-}));
-
-describe("Grid withStyles", () => {
+describe("Grid", () => {
   const wrapper = mount(
     <HvProvider>
-      <Grid />
+      <Main />
     </HvProvider>
   );
 
@@ -22,11 +16,11 @@ describe("Grid withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Grid)).toMatchSnapshot();
+    expect(wrapper.find(HvGrid)).toMatchSnapshot();
   });
 
   it("should render the Grid component", () => {
-    const GridComponent = wrapper.find(Grid);
-    expect(GridComponent.length).toBe(1);
+    const GridComponent = wrapper.find(HvGrid);
+    expect(GridComponent.length).toBe(5);
   });
 });

@@ -25,16 +25,17 @@ const styles = theme => ({
     boxShadow: theme.hv.shadows[1]
   },
   contentContainer: {
-    paddingTop: `${theme.hv.spacing.sm}px`,
-    paddingBottom: `${theme.hv.spacing.sm}px`,
+    paddingTop: theme.hv.spacing.sm,
+    paddingBottom: theme.hv.spacing.sm,
     height: "100%",
     minWidth: "320px",
     overflow: "auto",
     backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   userInfo: {
-    paddingLeft: `${theme.hv.spacing.sm}px`,
-    paddingRight: `${theme.hv.spacing.sm}px`,
+    paddingLeft: theme.hv.spacing.sm,
+    paddingRight: theme.hv.spacing.sm,
+    marginBottom: theme.hv.spacing.xs,
     " & > :not(:first-child)": {
       paddingTop: "5px"
     }

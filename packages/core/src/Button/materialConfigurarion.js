@@ -37,7 +37,6 @@ const getMaterialConfiguration = (classes, category) => {
     containedPrimary: classes.primary,
     outlinedPrimary: classes.secondary,
     textPrimary: classes.ghost,
-    disabled: classes.primaryDisabled,
     startIcon: classes.startIcon
   };
 
@@ -47,7 +46,8 @@ const getMaterialConfiguration = (classes, category) => {
       return {
         ...materialContained,
         classes: {
-          ...styling
+          ...styling,
+          disabled: classes.primaryDisabled
         }
       };
     case categoryValues.secondary:

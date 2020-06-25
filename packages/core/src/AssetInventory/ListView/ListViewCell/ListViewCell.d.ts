@@ -43,6 +43,6 @@ export interface HvListViewCellProps
     | "atmo6";
 }
 
-type HvListViewCellClassKey = "root" | "semanticBar";
+export type HvListViewCellClassKey = "root" | "semanticBar";
 
 export default function HvListViewCell(props: HvListViewCellProps): JSX.Element | null;

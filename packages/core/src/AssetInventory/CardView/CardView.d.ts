@@ -3,7 +3,7 @@ import { StandardProps } from "@material-ui/core";
 import { AssetInventoryMetadata } from "..";
 import { ViewConfiguration } from "../ViewConfiguration";
 
-type SizeProps = true | false | "auto" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type SizeProps = true | false | "auto" | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
 export interface CardViewConfiguration extends ViewConfiguration {
   /**
@@ -56,6 +56,6 @@ export interface HvCardViewProps
   viewConfiguration?: CardViewConfiguration;
 }
 
-type HvCardViewClassKey = "root" | "elements";
+export type HvCardViewClassKey = "root" | "elements";
 
 export default function HvCardView(props: HvCardViewProps): JSX.Element | null;

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import moment from "moment";
 import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
-import { Fail } from "@hv/uikit-react-icons";
 import { makeStyles } from "@material-ui/core/styles";
-import { HvButton, HvEmptyState, HvTable } from "../..";
+import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import { HvEmptyState, HvTable } from "../..";
+
+/* eslint-disable no-underscore-dangle */
 
 export default {
   title: "Visualizations/Table",
@@ -451,7 +453,7 @@ export const CustomEmpty = () => {
         id="emptyState"
         className={classes.root}
         message="No data to display."
-        icon={<Fail iconSize="M" color="acce3" role="presentation" />}
+        icon={<Fail iconSize="M" color="sema14" role="presentation" />}
       />
     );
   };
@@ -726,6 +728,7 @@ export const WithExpander = () => {
   return (
     <div>
       <HvTable
+        id="table"
         data={data}
         columns={getColumns()}
         defaultPageSize={10}
@@ -896,13 +899,11 @@ export const WithExpanderAndCustomContent = () => {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          // eslint-disable-next-line no-underscore-dangle
           [" ", Number(cellData.row._original.allocateVsCapability), "color:black"]
         ];
         return (
           <div style={{ display: "flex" }}>
             <div style={{ paddingRight: "5px", alignSelf: "center" }}>
-              {/* eslint-disable-next-line no-underscore-dangle */}
               {cellData.row._original.allocateVsCapability}
               /1 TB
             </div>
@@ -930,14 +931,12 @@ export const WithExpanderAndCustomContent = () => {
       accessor: "averageCompression",
       minWidth: 150,
       cellType: "numeric",
-      // eslint-disable-next-line no-underscore-dangle
       Cell: cellData => `${cellData.row._original.averageCompression}:1`
     },
     {
       headerText: "Total IOPS",
       accessor: "totalIOPS",
       cellType: "numeric",
-      // eslint-disable-next-line no-underscore-dangle
       Cell: cellData => cellData.row._original.totalIOPS.toLocaleString("en-US")
     },
     {
@@ -945,7 +944,6 @@ export const WithExpanderAndCustomContent = () => {
       accessor: "totalThroughput",
       minWidth: 130,
       cellType: "numeric",
-      // eslint-disable-next-line no-underscore-dangle
       Cell: cellData => `${cellData.row._original.totalThroughput.toLocaleString("en-US")} MB/s`
     },
     {
@@ -953,7 +951,6 @@ export const WithExpanderAndCustomContent = () => {
       accessor: "averageServiceTime",
       minWidth: 130,
       cellType: "numeric",
-      // eslint-disable-next-line no-underscore-dangle
       Cell: cellData => `${cellData.row._original.averageServiceTime} ms`
     },
     {
@@ -961,7 +958,6 @@ export const WithExpanderAndCustomContent = () => {
       accessor: "averageReadTime",
       minWidth: 130,
       cellType: "numeric",
-      // eslint-disable-next-line no-underscore-dangle
       Cell: cellData => `${cellData.row._original.averageReadTime} ms`
     }
   ];
@@ -1040,7 +1036,7 @@ WithExpanderAndCustomContent.story = {
 };
 
 export const WithCheckbox = () => {
-  const data = [
+  const initialData = [
     {
       pid: 14,
       name: "Event 1",
@@ -1252,6 +1248,7 @@ export const WithCheckbox = () => {
     }
   ];
 
+  const [data, setData] = useState(initialData);
   const [pageSize, setPageSize] = useState(10);
   const defaultSorted = [{ id: "name", desc: true }];
 
@@ -1264,9 +1261,26 @@ export const WithCheckbox = () => {
     subtitleText: "This is a subtitle"
   };
 
+  const actions = [
+    { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
+    { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
+    { id: "put", label: "Preview", iconCallback: () => <Preview /> }
+  ];
+
+  const handleAction = (event, id, action, selection = []) => {
+    switch (action.id) {
+      case "delete":
+        setData(data.filter(el => !selection.includes(el.pid)));
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div>
       <HvTable
+        id="table"
         data={data}
         columns={getColumns()}
         defaultPageSize={10}
@@ -1276,6 +1290,9 @@ export const WithCheckbox = () => {
         labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
+        actions={actions}
+        actionsCallback={handleAction}
+        maxVisibleActions={1}
       />
     </div>
   );
@@ -1284,7 +1301,7 @@ export const WithCheckbox = () => {
 WithCheckbox.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows the ability to add an expander."
+      storyDescription: "Table sample that shows the ability to add checkboxes."
     }
   }
 };
@@ -1361,15 +1378,11 @@ export const WithCheckboxCustomContent = () => {
       Cell: cellData => {
         const value = [
           [" ", " ", { role: "style" }],
-          // eslint-disable-next-line no-underscore-dangle
           [" ", Number(cellData.row._original.salesGrowth), `color:${cellData.row._original.color}`]
         ];
         return (
           <div style={{ display: "flex" }}>
-            <div style={{ alignSelf: "center" }}>
-              {/* eslint-disable-next-line no-underscore-dangle */}
-              {`${cellData.row._original.salesGrowth}€`}
-            </div>
+            <div style={{ alignSelf: "center" }}>{`${cellData.row._original.salesGrowth}€`}</div>
             <div style={{ alignSelf: "center" }}>
               <Chart
                 width="55px"
@@ -1665,6 +1678,7 @@ export const WithCheckboxAndSecondaryActions = () => {
   return (
     <div>
       <HvTable
+        id="table"
         data={data}
         columns={getColumns()}
         defaultPageSize={10}
@@ -1934,6 +1948,7 @@ export const WithNullValues = () => {
   return (
     <div>
       <HvTable
+        id="table"
         data={data}
         columns={getColumns()}
         defaultPageSize={10}
@@ -1957,119 +1972,29 @@ WithNullValues.story = {
 
 export const TableWithChangingData = () => {
   // Table data manipulation
-  const enableUsersData = [
-    {
-      id: 1,
-      name: "Aaron",
-      surname: "Melantha",
-      email: "melantha@mail.com"
-    },
-    {
-      id: 2,
-      name: "Jeanette",
-      surname: "Gentle",
-      email: "gentle@mail.com"
-    },
-    {
-      id: 3,
-      name: "Michael",
-      surname: "Neil",
-      email: "neil@mail.com"
-    },
-    {
-      id: 4,
-      name: "Walter",
-      surname: "Allegro",
-      email: "allegro@mail.com"
-    },
-    {
-      id: 5,
-      name: "James",
-      surname: "Jonah",
-      email: "allegro@mail.com"
-    }
+  const initialData = [
+    { id: 1, name: "Aaron", surname: "Melantha", email: "melantha@mail.com" },
+    { id: 2, name: "Jeanette", surname: "Gentle", email: "gentle@mail.com" },
+    { id: 3, name: "Michael", surname: "Neil", email: "neil@mail.com" },
+    { id: 4, name: "Walter", surname: "Allegro", email: "allegro@mail.com" },
+    { id: 5, name: "James", surname: "Jonah", email: "allegro@mail.com" },
+    { id: 6, name: "Mary", surname: "Monroe", email: "monroe@mail.com" },
+    { id: 7, name: "Katherine", surname: "Kubrick", email: "kubrick@mail.com" },
+    { id: 8, name: "Peter", surname: "Portland", email: "portland@mail.com" },
+    { id: 9, name: "Yuri", surname: "York", email: "york@mail.com" },
+    { id: 10, name: "Howard", surname: "Holmes", email: "holmes@mail.com" }
   ];
 
-  const disabledUserData = [
-    {
-      id: 6,
-      name: "Mary",
-      surname: "Monroe",
-      email: "monroe@mail.com"
-    },
-    {
-      id: 7,
-      name: "Katherine",
-      surname: "Kubrick",
-      email: "kubrick@mail.com"
-    },
-    {
-      id: 8,
-      name: "Peter",
-      surname: "Portland",
-      email: "portland@mail.com"
-    },
-    {
-      id: 9,
-      name: "Yuri",
-      surname: "York",
-      email: "york@mail.com"
-    },
-    {
-      id: 10,
-      name: "Howard",
-      surname: "Holmes",
-      email: "holmes@mail.com"
-    }
-  ];
-
-  const [enabledUsers, setEnabledUsers] = useState(enableUsersData);
-  const [disabledUsers, setDisabledUsers] = useState(disabledUserData);
-  const [usersToEnable, setUsersToEnable] = useState([]);
-  const [usersToDisable, setUsersToDisable] = useState([]);
-
-  const eliminateUserId = (id, list) => list.filter(d => d.id !== id);
-  const findUser = (id, list) => list.find(d => d.id === id);
-
-  const switchUserAtoB = (id, sender, receiver) => {
-    const newA = [...sender];
-    const newB = [...receiver];
-    const user = findUser(id, newA);
-    const updatedA = eliminateUserId(id, newA);
-    newB.push(user);
-    return { sender: updatedA, receiver: newB };
-  };
-
-  const bulkEnable = (idArray, currentEnabledUsers, currentDisabledUsers) => {
-    let localEnabledUsers = currentEnabledUsers;
-    let localDisabledUsers = currentDisabledUsers;
-    idArray.forEach(id => {
-      const { sender, receiver } = switchUserAtoB(id, localDisabledUsers, localEnabledUsers);
-      localEnabledUsers = receiver;
-      localDisabledUsers = sender;
-    });
-    setEnabledUsers(localEnabledUsers);
-    setDisabledUsers(localDisabledUsers);
-  };
-
-  const bulkDisable = (idArray, currentEnabledUsers, currentDisabledUsers) => {
-    let localEnabledUsers = currentEnabledUsers;
-    let localDisabledUsers = currentDisabledUsers;
-    idArray.forEach(id => {
-      const { sender, receiver } = switchUserAtoB(id, localEnabledUsers, localDisabledUsers);
-      localEnabledUsers = sender;
-      localDisabledUsers = receiver;
-    });
-    setEnabledUsers(localEnabledUsers);
-    setDisabledUsers(localDisabledUsers);
-  };
+  const [enabledUsers, setEnabledUsers] = useState(initialData.slice(0, 5));
+  const [disabledUsers, setDisabledUsers] = useState(initialData.slice(5));
 
   // Table columns
   const getColumns = () => [
     {
       headerText: "ID",
       accessor: "id",
-      cellType: "alpha-numeric"
+      cellType: "alpha-numeric",
+      width: 40
     },
     {
       headerText: "Name",
@@ -2091,64 +2016,63 @@ export const TableWithChangingData = () => {
     }
   ];
 
-  const disabledUsersActions = [
-    {
-      label: "disable",
-      action: (event, row) => bulkDisable([row.id], enabledUsers, disabledUsers)
-    }
-  ];
-
-  const enableUsersActions = [
-    {
-      label: "enable",
-      action: (event, row) => bulkEnable([row.id], enabledUsers, disabledUsers)
-    }
-  ];
-
-  const enabledUsersLabels = {
-    titleText: "Enabled users",
-    subtitleText: ""
+  const handleBulkDisable = (event, id, action, selection = []) => {
+    const elementsToMove = initialData.filter(el => selection.includes(el.id));
+    setDisabledUsers([...disabledUsers, ...elementsToMove]);
+    setEnabledUsers(enabledUsers.filter(el => !selection.includes(el.id)));
+  };
+  const handleBulkEnable = (event, id, action, selection) => {
+    const elementsToMove = initialData.filter(el => selection.includes(el.id));
+    setEnabledUsers([...enabledUsers, ...elementsToMove]);
+    setDisabledUsers(disabledUsers.filter(el => !selection.includes(el.id)));
   };
 
-  const disabledUsersLabels = {
-    titleText: "Disabled users",
-    subtitleText: ""
-  };
+  const useStyles = makeStyles({
+    container: {
+      display: "flex",
+      justifyContent: "space-evenly",
+      "&>*": {
+        flexGrow: 1,
+        margin: 20
+      }
+    }
+  });
+  const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.container}>
       <HvTable
         id="table1"
         data={enabledUsers}
         columns={getColumns()}
         defaultSorted={[{ id: "id" }]}
         idForCheckbox="id"
-        secondaryActions={disabledUsersActions}
-        defaultPageSize={5}
-        labels={enabledUsersLabels}
-        onSelection={(event, idArray) => {
-          setUsersToDisable(idArray);
-        }}
+        actions={[{ id: "disable", label: "Disable" }]}
+        actionsCallback={handleBulkDisable}
+        secondaryActions={[
+          {
+            label: "Disable",
+            action: (event, row) => handleBulkDisable(null, null, null, [row.id])
+          }
+        ]}
+        labels={{ titleText: "Enabled users" }}
       />
-      <HvButton onClick={() => bulkDisable(usersToDisable, enabledUsers, disabledUsers)}>
-        Disable selected
-      </HvButton>
       <HvTable
         id="table2"
         data={disabledUsers}
         columns={getColumns()}
         defaultSorted={[{ id: "id" }]}
         idForCheckbox="id"
-        secondaryActions={enableUsersActions}
-        defaultPageSize={5}
-        onSelection={(event, idArray) => {
-          setUsersToEnable(idArray);
-        }}
-        labels={disabledUsersLabels}
+        actions={[{ id: "enable", label: "Enable" }]}
+        actionsCallback={handleBulkEnable}
+        secondaryActions={[
+          {
+            label: "Enable",
+            action: (event, row) => handleBulkEnable(null, null, null, [row.id])
+          }
+        ]}
+        labels={{ titleText: "Disabled users" }}
       />
-      <HvButton onClick={() => bulkEnable(usersToEnable, enabledUsers, disabledUsers)}>
-        Enable selected
-      </HvButton>
     </div>
   );
 };
@@ -2164,53 +2088,42 @@ TableWithChangingData.story = {
 export const ServerSidePagination = () => {
   const start = new Date(2001, 0, 1);
   const end = new Date();
-  const randomDate = () =>
-    new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
-  const newEvent = () => {
-    const statusChance = Math.random();
-    const severityChance = Math.random();
-    const priorityChance = Math.random();
-    const eventNumber = Math.floor(Math.random() * 10000);
+  const getRand = id => (Math.abs(Math.sin(id)) * 10 ** 4) % 1;
+  const getRandom = (id = 0, max = 100, min = 1) => {
+    const r = getRand(id);
+    return Math.floor(r * (max - min)) + min;
+  };
+
+  const randomDate = (id = 0) => new Date(getRandom(id, end.getTime(), start.getTime()));
+
+  const newEntry = (value, i) => {
+    const status = getRand(i);
+    const severity = getRand(i + 1);
+    const priority = getRand(i + 2);
+    const id = i;
     return {
-      id: eventNumber,
-      name: `Event ${eventNumber}`,
-      createdDate: randomDate(),
-      // eslint-disable-next-line no-nested-ternary
-      status: statusChance > 0.66 ? "Open" : statusChance > 0.33 ? "Pending" : "Closed",
-      riskScore: `${Math.floor(Math.random() * 100)}`,
-      // eslint-disable-next-line no-nested-ternary
-      severity: severityChance > 0.66 ? "Critical" : severityChance > 0.33 ? "Moderate" : "Low",
-      // eslint-disable-next-line no-nested-ternary
-      priority: priorityChance > 0.66 ? "Critical" : priorityChance > 0.33 ? "Moderate" : "Low"
+      id,
+      name: `Event ${id}`,
+      createdDate: randomDate(id),
+      status: (status > 0.66 && "Open") || (status > 0.33 && "Pending") || "Closed",
+      riskScore: getRandom(id),
+      severity: (severity > 0.66 && "Critical") || (severity > 0.33 && "Moderate") || "Low",
+      priority: (priority > 0.66 && "Critical") || (priority > 0.33 && "Moderate") || "Low"
     };
   };
 
-  const range = len => {
-    const arr = [];
-    for (let i = 0; i < len; i += 1) {
-      arr.push(i);
-    }
-    return arr;
-  };
+  const makeData = (len = 553) => Array.from(Array(len), newEntry);
 
-  const makeData = (len = 5553) => {
-    return range(len).map(() => {
-      return {
-        ...newEvent(),
-        children: range(10).map(newEvent)
-      };
-    });
-  };
+  let serverData = makeData();
 
-  const rawData = makeData();
   const requestData = (pageSize, cursor, sorted) => {
     console.log("Fetch data: sorted -> ", JSON.stringify(sorted));
     console.log("Fetch data: pageSize -> ", JSON.stringify(pageSize));
     console.log("Fetch data: cursor -> ", JSON.stringify(cursor));
     return new Promise(resolve => {
       // You can retrieve your data however you want, in this case, we will just use some local data.
-      const filteredData = rawData;
+      const filteredData = serverData;
       // You can also use the sorting in your request, but again, you are responsible for applying it.
       const sortedData = orderBy(
         filteredData,
@@ -2226,8 +2139,10 @@ export const ServerSidePagination = () => {
       );
       // You must return an object containing the rows of the current page, and optionally the total pages number.
       const res = {
+        cursor,
         rows: sortedData.slice(Number(cursor), Number(cursor) + pageSize),
-        pages: Math.ceil(filteredData.length / pageSize)
+        pages: Math.ceil(filteredData.length / pageSize),
+        dataSize: sortedData.length
       };
       // Here we'll simulate a server response with 500ms of delay.
       setTimeout(() => resolve(res), 500);
@@ -2241,7 +2156,9 @@ export const ServerSidePagination = () => {
       this.state = {
         data: [],
         pages: null,
+        cursor: undefined,
         sorted: [{ id: "name", desc: true }],
+        dataSize: 10,
         pageSize: 10
       };
       this.fetchData = this.fetchData.bind(this);
@@ -2309,6 +2226,12 @@ export const ServerSidePagination = () => {
       });
     };
 
+    handleAction = (event, id, action, selection = []) => {
+      const { pageSize, cursor, sorted } = this.state;
+      serverData = serverData.filter(el => !selection.includes(el.id));
+      this.fetchData(cursor, pageSize, sorted);
+    };
+
     fetchData(cursor, pageSize, sorted) {
       // Whenever the table model changes, or the user sorts or changes pages, this method gets called and passed the current table model.
       // You can set the `loading` prop of the table to true to use the built-in one or show you're own loading bar if you want.
@@ -2316,24 +2239,30 @@ export const ServerSidePagination = () => {
       requestData(pageSize, cursor, sorted).then(res => {
         // Now just get the rows of data to your React Table (and update anything else like total pages or loading)
         this.setState({
+          cursor: res.cursor,
           data: res.rows,
-          pages: res.pages
+          pages: res.pages,
+          dataSize: res.dataSize
         });
       });
     }
 
     render() {
-      const { pages, pageSize, sorted, data } = this.state;
+      const { pages, pageSize, dataSize, sorted, data } = this.state;
       const labels = {
         titleText: "This is a title",
         subtitleText: "This is a subtitle"
       };
       return (
         <HvTable
-          data={data}
           id="test"
+          idForCheckbox="id"
+          data={data}
+          actions={[{ id: "delete", label: "Delete", iconCallback: () => <Delete /> }]}
+          actionsCallback={this.handleAction}
           columns={this.getColumns()}
           defaultPageSize={10}
+          dataSize={dataSize}
           pageSize={pageSize}
           pages={pages}
           resizable={false}
@@ -2353,7 +2282,8 @@ export const ServerSidePagination = () => {
 ServerSidePagination.story = {
   parameters: {
     docs: {
-      storyDescription: "Table sample that shows how to use the table with server side pagination."
+      storyDescription:
+        "Table sample that shows how to use the table with server side pagination. Bulk Actions"
     }
   }
 };

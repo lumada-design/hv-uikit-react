@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { IconButton, Popper, withStyles } from "@material-ui/core";
@@ -7,7 +7,7 @@ import OutsideClickHandler from "react-outside-click-handler";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import { isKeypress, KeyboardCodes } from "../utils";
 import List from "../List";
-import { setId, getPrevNextFocus } from "..";
+import { getPrevNextFocus, setId } from "..";
 import styles from "./styles";
 import withId from "../withId";
 
@@ -31,6 +31,7 @@ const DropDownMenu = ({
 }) => {
   const didMountRef = useRef(false);
   const [open, setOpen] = useState(expanded && !disabled);
+  const [positionUp, setPositionUp] = useState(false);
   const [hasFocusTrap, setHasFocusTrap] = useState(true);
   const anchorRef = React.useRef(null);
   const focusNodes = getPrevNextFocus(setId(id, "icon-button"));
@@ -47,6 +48,7 @@ const DropDownMenu = ({
     if (expanded !== open) {
       setOpen(expanded && !disabled);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [expanded, disabled]);
 
   const handleToggle = () => {
@@ -88,6 +90,13 @@ const DropDownMenu = ({
     }
   };
 
+  const handleListFlip = data => {
+    const position = data.flipped;
+    if (positionUp !== position) {
+      setPositionUp(position);
+    }
+  };
+
   return (
     <div id={id} className={clsx(className, classes.root)}>
       <IconButton
@@ -113,7 +122,10 @@ const DropDownMenu = ({
         open={open}
         anchorEl={anchorRef.current}
         placement={`bottom-${placement === "left" ? "end" : "start"}`}
-        popperOptions={{}}
+        popperOptions={{
+          onUpdate: data => handleListFlip(data),
+          onCreate: data => handleListFlip(data)
+        }}
       >
         <OutsideClickHandler onOutsideClick={handleClose}>
           <FocusTrap
@@ -124,17 +136,34 @@ const DropDownMenu = ({
               fallbackFocus: document.getElementById(setId(id, "icon-button"))
             }}
           >
-            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-            <div className={classes.menuList} onKeyDown={handleKeyDown}>
-              <List
-                id={setId(id, "list")}
-                values={dataList}
-                selectable={false}
-                onClick={(event, item) => {
-                  if (!keepOpened) setOpen(false);
-                  onClick?.(event, item);
-                }}
-              />
+            <div>
+              {!positionUp && (
+                <div
+                  className={clsx(classes.inputExtensionOpen, {
+                    [classes.inputExtensionLeftPosition]: placement === "left"
+                  })}
+                />
+              )}
+              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+              <div className={classes.menuList} onKeyDown={handleKeyDown}>
+                <List
+                  id={setId(id, "list")}
+                  values={dataList}
+                  selectable={false}
+                  onClick={(event, item) => {
+                    if (!keepOpened) setOpen(false);
+                    onClick?.(event, item);
+                  }}
+                />
+              </div>
+              {positionUp && (
+                <div
+                  className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
+                    [classes.inputExtensionFloatRight]: placement === "right",
+                    [classes.inputExtensionFloatLeft]: placement === "left"
+                  })}
+                />
+              )}
             </div>
           </FocusTrap>
         </OutsideClickHandler>
@@ -175,7 +204,27 @@ DropDownMenu.propTypes = {
     /**
      * Styles applied to the list.
      */
-    menuList: PropTypes.string
+    menuList: PropTypes.string,
+    /**
+     * Styles applied to the extension of the button.
+     */
+    inputExtensionOpen: PropTypes.string,
+    /**
+     * Styles applied to the extension shadow.
+     */
+    inputExtensionOpenShadow: PropTypes.string,
+    /**
+     * Styles applied to the extension to go right when open down.
+     */
+    inputExtensionFloatRight: PropTypes.string,
+    /**
+     * Styles applied to the extension to go right when open up.
+     */
+    inputExtensionFloatLeft: PropTypes.string,
+    /**
+     * Styles applied to the extension to go left when open up.
+     */
+    inputExtensionLeftPosition: PropTypes.string
   }).isRequired,
   /**
    * Icon.

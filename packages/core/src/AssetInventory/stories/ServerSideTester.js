@@ -1,33 +1,34 @@
 // --------------------------- Values ---------------------------------
 
-const compressorData = id => ({
-  headerTitle: `${id} Risk of downtime ${id + 1}`,
+const baseData = id => ({
   id: `id_${id}`,
+  probability: 90 + id,
+  timeHorizon: 8 + id,
+  checkboxProps: { value: `id_${id}` }
+});
+
+const compressorData = id => ({
+  ...baseData(id),
+  headerTitle: `Risk of downtime ${id + 1}`,
   status: 5,
   event: {
     description: `Risk of downtime on Truck ${id}`,
     timestamp: "2 minutes ago",
     schedule: "fix now"
   },
-  probability: 90 + id,
-  timeHorizon: 8 + id,
-  relatedAssets: "Track A, Zone 15 Brake",
-  checkboxValue: `id_${id}`
+  relatedAssets: "Track A, Zone 15 Brake"
 });
 
 const machineData = id => ({
-  headerTitle: `${id} Track severe ${id + 1}`,
-  id: `id_${id}`,
+  ...baseData(id),
+  headerTitle: `Track severe ${id + 1}`,
   status: 2,
   event: {
     description: `Track ${id} severe breakdown`,
     timestamp: "2 hours ago",
     schedule: "fix 3rd shift"
   },
-  probability: 90 + id,
-  timeHorizon: 8 + id,
-  relatedAssets: "Track B, Load 2 Brake",
-  checkboxValue: `id_${id}`
+  relatedAssets: "Track B, Load 2 Brake"
 });
 
 /**

@@ -45,8 +45,8 @@ describe("Badge ", () => {
         <Badge count={12} showCount />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
 
+    const divs = wrapper.find("div");
     expect(divs.at(1).text()).toEqual("12");
     expect(divs.find("div.HvBadge-badge")).toHaveLength(1);
     expect(divs.find("div.HvBadge-showCount")).toHaveLength(1);
@@ -90,8 +90,8 @@ describe("Badge ", () => {
         <Badge count={100} showCount />
       </HvProvider>
     );
-    const divs = wrapper.find("div");
 
+    const divs = wrapper.find("div");
     expect(divs.at(1).text()).toEqual("99+");
   });
 
@@ -101,12 +101,11 @@ describe("Badge ", () => {
         <Badge count={100} showCount text="hello" textVariant="sTitle" />
       </HvProvider>
     );
-    const text = wrapper.find(Typography);
 
+    const text = wrapper.find(Typography);
     expect(text.length).toEqual(1);
 
     const divs = wrapper.find("div");
-
     expect(divs.at(1).text()).toEqual("99+");
   });
 
@@ -116,12 +115,11 @@ describe("Badge ", () => {
         <Badge count={100} showCount icon={<Alert />} />
       </HvProvider>
     );
-    const icon = wrapper.find(Alert);
 
+    const icon = wrapper.find(Alert);
     expect(icon.length).toEqual(1);
 
     const divs = wrapper.find("div");
-
     expect(divs.at(2).text()).toEqual("99+");
   });
 

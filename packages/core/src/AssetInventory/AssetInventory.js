@@ -279,7 +279,7 @@ class AssetInventory extends React.Component {
 
     return (
       <Pagination
-        id={id}
+        id={setId(id, "pagination")}
         classes={{
           root: classes.pagination
         }}

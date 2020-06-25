@@ -88,8 +88,13 @@ export const CardViewSample = () => {
   const pageSizeOptions = [4, 8, 12, 24, 48];
   const createData = num => {
     const variations = [
-      { semantic: "sema2", subheader: "Machine", mediaPath: compressorImage },
-      { semantic: "sema3", subheader: "Compressor", mediaPath: leafImage }
+      {
+        semantic: "sema2",
+        subheader: "Compressor",
+        mediaPath: compressorImage,
+        mediaTitle: "Compressor"
+      },
+      { semantic: "sema3", subheader: "Plant", mediaPath: leafImage, mediaTitle: "Leaf" }
     ];
 
     return [...Array(num).keys()].map(id => ({
@@ -97,6 +102,7 @@ export const CardViewSample = () => {
       headerTitle: `Asset Avatar ${id + 1}`,
       mediaHeight: 186,
       selected: false,
+      checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
       ...variations[id % variations.length]
     }));
   };

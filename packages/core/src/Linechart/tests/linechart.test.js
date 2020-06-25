@@ -3,11 +3,11 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import HvProvider from "../../Provider";
+import { HvLinechart, HvProvider } from "../..";
 import { applyDataDefaults } from "../lineChartPlotlyOverrides";
-import Linechart from "..";
+import { Main } from "../stories/Linechart.stories";
 
-describe("Linechart withStyles", () => {
+describe("Linechart", () => {
   let wrapper;
 
   const trace1 = {
@@ -22,7 +22,7 @@ describe("Linechart withStyles", () => {
   beforeEach(() => {
     wrapper = mount(
       <HvProvider>
-        <Linechart data={data} layout={layout} />
+        <Main />
       </HvProvider>
     );
   });
@@ -32,16 +32,16 @@ describe("Linechart withStyles", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Linechart)).toMatchSnapshot();
+    expect(wrapper.find(HvLinechart)).toMatchSnapshot();
   });
 
   it("should render the Linechart", () => {
     wrapper = mount(
       <HvProvider>
-        <Linechart data={data} layout={layout} />
+        <HvLinechart data={data} layout={layout} />
       </HvProvider>
     );
-    const linechart = wrapper.find(Linechart);
+    const linechart = wrapper.find(HvLinechart);
     expect(linechart.length).toBe(1);
   });
 

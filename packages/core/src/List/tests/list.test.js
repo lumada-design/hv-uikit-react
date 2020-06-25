@@ -7,59 +7,24 @@ import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox";
 import List from "..";
 
-const mockDataSingleSelection = [
-  {
-    label: "Value 1"
-  },
-  {
-    label: "Value 2"
-  },
-  {
-    label: "Value 3"
-  }
-];
+const mockDataSingleSelection = [{ label: "Value 1" }, { label: "Value 2" }, { label: "Value 3" }];
 
 const mockDataSingleSelectionWithIds = [
-  {
-    label: "Value 1",
-    id: "id-1"
-  },
-  {
-    label: "Value 2",
-    id: "id-2"
-  },
-  {
-    label: "Value 3",
-    id: "id-3"
-  }
+  { label: "Value 1", id: "id-1" },
+  { label: "Value 2", id: "id-2" },
+  { label: "Value 3", id: "id-3" }
 ];
 
 const mockDataSingleSelectionWithIcons = [
-  {
-    label: "Value 1",
-    iconCallback: () => <LineChartIcon />
-  },
-  {
-    label: "Value 2"
-  },
-  {
-    label: "Value 3",
-    showNavIcon: true
-  }
+  { label: "Value 1", iconCallback: () => <LineChartIcon /> },
+  { label: "Value 2" },
+  { label: "Value 3", showNavIcon: true }
 ];
 
 const mockDataMultiSelection = [
-  {
-    label: "Value 1",
-    selected: true
-  },
-  {
-    label: "Value 2"
-  },
-  {
-    label: "Value 3",
-    selected: true
-  }
+  { label: "Value 1", selected: true },
+  { label: "Value 2" },
+  { label: "Value 3", selected: true }
 ];
 
 describe("<List />", () => {

@@ -33,18 +33,12 @@ const styles = theme => ({
     textAlign: "right"
   },
   rtSortIcon: {
-    width: "32px",
-    height: "32px",
     "&:focus": {
       outline: 0
     }
   },
   rtSortIconNumeric: {
     marginLeft: "auto"
-  },
-  box: {
-    width: "32px",
-    height: "32px"
   }
 });
 

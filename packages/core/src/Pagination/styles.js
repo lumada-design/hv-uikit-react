@@ -96,15 +96,7 @@ const styles = theme => ({
       ...outlineStyles
     }
   },
-  icon: {
-    width: "32px",
-    height: "32px",
-    display: "flex",
-    alignItems: "center",
-    "&>svg": {
-      margin: "0 auto"
-    }
-  },
+  icon: {},
   selectDownIcon: {
     display: "inline-block",
     position: "relative",

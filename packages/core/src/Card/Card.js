@@ -126,7 +126,7 @@ const HvCard = ({
           disableSpacing
           checkboxProps={checkboxProps}
           actions={actions}
-          id={setId(id, "footer")}
+          id={id}
           actionsCallback={actionsCallback}
           maxVisibleActions={maxVisibleActions}
           actionsAlignment={actionsAlignment}

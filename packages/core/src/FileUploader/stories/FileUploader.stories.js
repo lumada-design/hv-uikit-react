@@ -256,6 +256,14 @@ SingleUpload.story = {
   parameters: {
     docs: {
       storyDescription: "FileUploader which permits the upload of a single file at a time"
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG When not provided with an ID the label isn't associated with the input
+        // https://github.com/lumada-design/hv-uikit-react/issues/1694
+        "label-title-only"
+      ]
     }
   }
 };
@@ -380,6 +388,15 @@ AutomationSample.story = {
   parameters: {
     docs: {
       disable: true
+    },
+    pa11y: {
+      ignore: [
+        "region",
+        // TODO: BUG Upload failed error message color with insufficient contrast:
+        // https://github.com/lumada-design/hv-uikit-react/issues/1696
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ]
     }
   }
 };

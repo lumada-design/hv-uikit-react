@@ -3,21 +3,21 @@ const styles = theme => ({
     paddingBottom: "10px"
   },
   background: {
-    backgroundColor: `${theme.hv.palette.atmosphere.atmo3}`,
-    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    backgroundColor: theme.palette.atmo3,
+    borderBottom: `1px solid ${theme.palette.atmo6}`,
     borderTop: "1px solid transparent",
     borderLeft: "1px solid transparent",
     borderRight: "1px solid transparent"
   },
   headerDayOfWeek: {
     paddingTop: "5px",
-    paddingLeft: `${theme.hv.spacing.xs}px`
+    paddingLeft: theme.spacing("xs")
   },
   headerDate: {
-    padding: `5px ${theme.hv.spacing.xs}px`
+    padding: `5px ${theme.spacing("xs")}px`
   },
   invalid: {
-    border: `1px solid ${theme.hv.palette.semantic.sema4}`
+    border: `1px solid ${theme.palette.sema4}`
   },
   input: {
     border: "none",
