@@ -301,6 +301,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: "alpha"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
