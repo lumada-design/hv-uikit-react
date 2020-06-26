@@ -18,15 +18,6 @@ show error adornment button when inserted invalid input and and focus goes out
     Wait Until Element Is Visible    ${adornment_failed}
     Element Should Not Be Visible    ${adornment_accepted}
 
-show adornment button and clean button when validated input is focused
-    [Documentation]    integration
-    Input Text                       ${input}    Joao
-    Press Keys                       NONE       TAB
-    Wait Until Element Is Visible    ${adornment_accepted}
-    Click Element                    ${input}
-    Wait Until Element Is Visible    ${clean_button}
-    Element Should Be Visible        ${adornment_accepted}
-
 does not show validation adornment icons when user is still typing
     Press Keys                       ${input}   Joao \
     Element Should Not Be Visible    ${adornment_accepted}
