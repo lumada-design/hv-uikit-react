@@ -42,8 +42,8 @@ export const Main = () => {
     setNotificationText("Your value is valid");
   };
 
-  const inputId = "controlled-input";
-  const inputLabelId = "controlled-input-label";
+  const inputId = "main-controlled-input";
+  const inputLabelId = "main-controlled-input-label";
 
   return (
     <HvFormElement value={inputValue} status={status}>
@@ -169,35 +169,41 @@ export const FormElementStateTransition = () => {
 
   return (
     <HvFormElement value={elementValue} status={elementStatus}>
-      <HvLabel id={inputLabelId} htmlFor={inputId} label="First name" />
-      <HvBaseInput
-        id={inputId}
-        inputProps={{
-          "aria-labelledby": inputLabelId
-        }}
-        aria-labelledby={inputLabelId}
-        placeholder="Insert your name"
-        onChange={(event, value) => setElement(value, false)}
-        onBlur={event => {
-          event.persist();
-          setTimeout(() => setElement(event.target.value), 250);
-        }}
+      <HvLabel
+        id={inputLabelId}
+        htmlFor={inputId}
         onFocus={event => onFocusHandler(event, elementStatus)}
-        onMouseEnter={() => setShowCloseAdornment(true)}
-        onMouseLeave={() => setShowCloseAdornment(false)}
-        endAdornment={
-          <>
-            <HvInputAdornment
-              showWhen="standBy"
-              isShown={showCloseAdornment}
-              onClick={() => setElement("")}
-              icon={<CloseXS />}
-            />
-            <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
-            <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
-          </>
-        }
-      />
+        label="First name"
+      >
+        <HvBaseInput
+          id={inputId}
+          inputProps={{
+            "aria-labelledby": inputLabelId
+          }}
+          aria-labelledby={inputLabelId}
+          placeholder="Insert your name"
+          onChange={(event, value) => setElement(value, false)}
+          onBlur={event => {
+            event.persist();
+            setTimeout(() => setElement(event.target.value), 250);
+          }}
+          onFocus={event => onFocusHandler(event, elementStatus)}
+          onMouseEnter={() => setShowCloseAdornment(true)}
+          onMouseLeave={() => setShowCloseAdornment(false)}
+          endAdornment={
+            <>
+              <HvInputAdornment
+                showWhen="standBy"
+                isShown={showCloseAdornment}
+                onClick={() => setElement("")}
+                icon={<CloseXS />}
+              />
+              <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
+              <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
+            </>
+          }
+        />
+      </HvLabel>
       <HvHelperText key="2" id="info-text-valid" notification={notificationText}>
         Write your name in this input do not put numbers
       </HvHelperText>

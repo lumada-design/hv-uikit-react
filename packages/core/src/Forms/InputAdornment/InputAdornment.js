@@ -39,7 +39,6 @@ const HvInputAdornment = props => {
                 className,
                 { [classes.hideIcon]: !displayIcon },
                 classes.adornmentButton
-                // classes.iconAction
               )}
               onClick={onClick}
               {...others}
