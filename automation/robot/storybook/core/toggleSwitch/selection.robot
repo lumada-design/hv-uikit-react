@@ -56,3 +56,13 @@ switch to Off when checkbox is focused and is pressed SPACE
     Checkbox Should not Be Selected    ${switch} input
     Press keys                         NONE               SPACE
     Checkbox Should Be Selected        ${switch} input
+
+switch state when is controlled by other component
+    [Setup]    NONE
+    Go To                               ${components}selectors-switch--controlled
+    Wait Until Page Contains Element    ${switch}
+    Checkbox Should not Be Selected     ${switch} input
+    Click Button                        Toggle
+    Checkbox Should Be Selected         ${switch} input
+    Click Button                        Toggle
+    Checkbox Should not Be Selected     ${switch} input
