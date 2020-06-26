@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../Focus/styles";
+
 const styles = theme => ({
   container: {
     height: "32px",
@@ -7,9 +9,8 @@ const styles = theme => ({
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:focus-within:not(.disableFocus)": {
-      outlineColor: "-webkit-focus-ring-color",
-      outlineStyle: "auto",
-      outlineOffset: "-3px"
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      ...outlineStyles
     }
   },
   disableFocus: {

@@ -1,3 +1,5 @@
+import { outlineStyles } from "../Focus/styles";
+
 const styles = theme => ({
   root: {
     position: "relative",
@@ -35,7 +37,10 @@ const styles = theme => ({
     position: "relative",
     height: `${theme.hv.spacing.md}px`,
     cursor: "pointer",
-    userSelect: "none"
+    userSelect: "none",
+    "&:focus": {
+      ...outlineStyles
+    }
   },
   selection: {
     padding: `0 ${theme.hv.spacing.md}px 0 ${theme.hv.spacing.xs}px`,

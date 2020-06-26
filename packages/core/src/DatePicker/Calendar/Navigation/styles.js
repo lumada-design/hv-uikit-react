@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../../Focus/styles";
+
 const styles = theme => ({
   root: {
     display: "flex",
@@ -11,6 +13,11 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: theme.palette.atmo4,
       cursor: "pointer"
+    },
+    "&:focus": {
+      backgroundColor: theme.palette.atmo4,
+      cursor: "pointer",
+      ...outlineStyles
     }
   },
   disabled: {
@@ -29,6 +36,11 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: theme.palette.atmo4,
       cursor: "pointer"
+    },
+    "&:focus": {
+      backgroundColor: theme.palette.atmo4,
+      cursor: "pointer",
+      ...outlineStyles
     }
   },
   textWithoutHover: {

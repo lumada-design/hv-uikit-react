@@ -443,10 +443,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
           "MuiIconButton": Object {
             "root": Object {
               "&:focus": Object {
-                "outlineColor": "Highlight",
-                "outlineOffset": -2,
-                "outlineStyle": "auto",
-                "outlineWidth": 4,
+                "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                "outlineColor": "#52A8EC",
+                "outlineOffset": "-1px",
+                "outlineStyle": "solid",
+                "outlineWidth": "0px",
               },
               "&:hover": Object {
                 "backgroundColor": "#F0F0F0",
@@ -1263,10 +1264,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "MuiIconButton": Object {
                     "root": Object {
                       "&:focus": Object {
-                        "outlineColor": "Highlight",
-                        "outlineOffset": -2,
-                        "outlineStyle": "auto",
-                        "outlineWidth": 4,
+                        "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                        "outlineColor": "#52A8EC",
+                        "outlineOffset": "-1px",
+                        "outlineStyle": "solid",
+                        "outlineWidth": "0px",
                       },
                       "&:hover": Object {
                         "backgroundColor": "#F0F0F0",
@@ -2169,10 +2171,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "MuiIconButton": Object {
                     "root": Object {
                       "&:focus": Object {
-                        "outlineColor": "Highlight",
-                        "outlineOffset": -2,
-                        "outlineStyle": "auto",
-                        "outlineWidth": 4,
+                        "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                        "outlineColor": "#52A8EC",
+                        "outlineOffset": "-1px",
+                        "outlineStyle": "solid",
+                        "outlineWidth": "0px",
                       },
                       "&:hover": Object {
                         "backgroundColor": "#F0F0F0",
@@ -3076,10 +3079,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
           "MuiIconButton": Object {
             "root": Object {
               "&:focus": Object {
-                "outlineColor": "Highlight",
-                "outlineOffset": -2,
-                "outlineStyle": "auto",
-                "outlineWidth": 4,
+                "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                "outlineColor": "#52A8EC",
+                "outlineOffset": "-1px",
+                "outlineStyle": "solid",
+                "outlineWidth": "0px",
               },
               "&:hover": Object {
                 "backgroundColor": "#F0F0F0",
@@ -3894,10 +3898,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "MuiIconButton": Object {
                     "root": Object {
                       "&:focus": Object {
-                        "outlineColor": "Highlight",
-                        "outlineOffset": -2,
-                        "outlineStyle": "auto",
-                        "outlineWidth": 4,
+                        "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                        "outlineColor": "#52A8EC",
+                        "outlineOffset": "-1px",
+                        "outlineStyle": "solid",
+                        "outlineWidth": "0px",
                       },
                       "&:hover": Object {
                         "backgroundColor": "#F0F0F0",
@@ -4762,10 +4767,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "MuiIconButton": Object {
                     "root": Object {
                       "&:focus": Object {
-                        "outlineColor": "Highlight",
-                        "outlineOffset": -2,
-                        "outlineStyle": "auto",
-                        "outlineWidth": 4,
+                        "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                        "outlineColor": "#52A8EC",
+                        "outlineOffset": "-1px",
+                        "outlineStyle": "solid",
+                        "outlineWidth": "0px",
                       },
                       "&:hover": Object {
                         "backgroundColor": "#F0F0F0",
@@ -5670,10 +5676,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "MuiIconButton": Object {
                     "root": Object {
                       "&:focus": Object {
-                        "outlineColor": "Highlight",
-                        "outlineOffset": -2,
-                        "outlineStyle": "auto",
-                        "outlineWidth": 4,
+                        "boxShadow": "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)",
+                        "outlineColor": "#52A8EC",
+                        "outlineOffset": "-1px",
+                        "outlineStyle": "solid",
+                        "outlineWidth": "0px",
                       },
                       "&:hover": Object {
                         "backgroundColor": "#F0F0F0",

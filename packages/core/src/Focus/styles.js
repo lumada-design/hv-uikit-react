@@ -1,10 +1,9 @@
-import isBrowser from "../utils/browser";
-
 export const outlineStyles = {
-  outlineColor: "Highlight",
-  outlineStyle: isBrowser(["ie", "edge"]) ? "solid" : "auto",
-  outlineWidth: 4,
-  outlineOffset: -2
+  outlineColor: "#52A8EC",
+  outlineStyle: "solid",
+  outlineWidth: "0px",
+  outlineOffset: "-1px",
+  boxShadow: "0 0 0 1px #52A8EC, 0 0 0 4px rgba(29,155,209,.3)"
 };
 
 const styles = {
@@ -23,9 +22,7 @@ const styles = {
   focused: {
     ...outlineStyles,
     "@media (-webkit-min-device-pixel-ratio:0)": {
-      outlineColor: "-webkit-focus-ring-color",
-      outlineStyle: "auto",
-      outlineOffset: -2
+      ...outlineStyles
     }
   },
   externalReference: {
@@ -38,15 +35,14 @@ const styles = {
     zIndex: "1",
     ...outlineStyles,
     "@media (-webkit-min-device-pixel-ratio:0)": {
-      outlineColor: "-webkit-focus-ring-color",
-      outlineStyle: "auto",
-      outlineOffset: -2
+      ...outlineStyles
     },
     top: 0,
     left: "0.5%",
     backgroundColor: "transparent",
     pointerEvents: "none"
-  }
+  },
+  focus: {}
 };
 
 export default styles;

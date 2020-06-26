@@ -49,6 +49,7 @@ exports[`Breadcrumb should render correctly 1`] = `
     aria-label="Breadcrumb"
     classes={
       Object {
+        "a": "HvBreadCrumb-a",
         "centerContainer": "HvBreadCrumb-centerContainer",
         "link": "HvBreadCrumb-link",
         "orderedList": "HvBreadCrumb-orderedList",
@@ -110,6 +111,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -126,6 +128,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -143,6 +146,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_0"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 1",
@@ -154,7 +162,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -166,7 +174,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route1"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route1"
                   >
                     <div
@@ -263,6 +271,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -279,6 +288,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -296,6 +306,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_1"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 2",
@@ -307,7 +322,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -319,7 +334,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route2"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route2"
                   >
                     <div
@@ -416,6 +431,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -432,6 +448,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -449,6 +466,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_2"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 3",
@@ -460,7 +482,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -472,7 +494,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route3"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route3"
                   >
                     <div
@@ -569,6 +591,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -585,6 +608,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -602,6 +626,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_3"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 4",
@@ -613,7 +642,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -625,7 +654,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route4"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route4"
                   >
                     <div
@@ -722,6 +751,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -738,6 +768,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -755,6 +786,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_4"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 5",
@@ -766,7 +802,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -778,7 +814,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route5"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route5"
                   >
                     <div
@@ -875,6 +911,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -891,6 +928,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -908,6 +946,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_5"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 6",
@@ -919,7 +962,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -931,7 +974,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route6"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route6"
                   >
                     <div
@@ -1028,6 +1071,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -1044,6 +1088,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -1061,6 +1106,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_6"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 7",
@@ -1072,7 +1122,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -1084,7 +1134,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route7"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route7"
                   >
                     <div
@@ -1181,6 +1231,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <PathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",
@@ -1197,6 +1248,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             <Page
               classes={
                 Object {
+                  "a": "HvBreadCrumb-a",
                   "centerContainer": "HvBreadCrumb-centerContainer",
                   "link": "HvBreadCrumb-link",
                   "orderedList": "HvBreadCrumb-orderedList",
@@ -1214,6 +1266,11 @@ exports[`Breadcrumb should render correctly 1`] = `
               key="key_7"
             >
               <WithStyles(HvLink)
+                classes={
+                  Object {
+                    "a": "HvBreadCrumb-a",
+                  }
+                }
                 data={
                   Object {
                     "label": "Label 8",
@@ -1225,7 +1282,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                 <HvLink
                   classes={
                     Object {
-                      "a": "HvLink-a",
+                      "a": "HvLink-a HvBreadCrumb-a",
                     }
                   }
                   data={
@@ -1237,7 +1294,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                   route="route8"
                 >
                   <a
-                    className="HvLink-a"
+                    className="HvLink-a HvBreadCrumb-a"
                     href="route8"
                   >
                     <div
@@ -1334,6 +1391,7 @@ exports[`Breadcrumb should render correctly 1`] = `
         <LastPathElement
           classes={
             Object {
+              "a": "HvBreadCrumb-a",
               "centerContainer": "HvBreadCrumb-centerContainer",
               "link": "HvBreadCrumb-link",
               "orderedList": "HvBreadCrumb-orderedList",

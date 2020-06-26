@@ -74,8 +74,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
         "box": "HvList-box",
         "condensed": "HvList-condensed",
         "disabled": "HvList-disabled",
+        "focus": "HvList-focus",
+        "icon": "HvList-icon",
         "label": "HvList-label",
         "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+        "link": "HvList-link",
         "list": "HvList-list",
         "listItem": "HvList-listItem",
         "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -176,6 +179,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
         role="listbox"
       >
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": 0,
@@ -242,6 +250,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -372,6 +381,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -438,6 +452,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -568,6 +583,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -634,6 +654,7 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -904,8 +925,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
         "box": "HvList-box",
         "condensed": "HvList-condensed",
         "disabled": "HvList-disabled",
+        "focus": "HvList-focus",
+        "icon": "HvList-icon",
         "label": "HvList-label",
         "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+        "link": "HvList-link",
         "list": "HvList-list",
         "listItem": "HvList-listItem",
         "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -1667,6 +1691,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
         role="listbox"
       >
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": 0,
@@ -1772,7 +1801,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                             font-size="default"
                           >
                             <svg
@@ -1827,7 +1856,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                             font-size="default"
                           >
                             <svg
@@ -1883,7 +1912,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                             font-size="default"
                           >
                             <svg
@@ -1927,6 +1956,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -2037,7 +2067,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                               font-size="default"
                             >
                               <svg
@@ -2092,7 +2122,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                               font-size="default"
                             >
                               <svg
@@ -2148,7 +2178,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                               font-size="default"
                             >
                               <svg
@@ -2207,6 +2237,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   classes={
                     Object {
                       "container": "HvList-selectorContainer",
+                      "icon": "HvList-icon",
                       "labelTypography": "HvList-truncate",
                     }
                   }
@@ -2220,7 +2251,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         "checkBox": "HvCheckBox-checkBox",
                         "container": "HvCheckBox-container HvList-selectorContainer",
                         "disableFocus": "HvCheckBox-disableFocus",
-                        "icon": "HvCheckBox-icon",
+                        "icon": "HvCheckBox-icon HvList-icon",
                         "labelDisabled": "HvCheckBox-labelDisabled",
                         "labelEnd": "HvCheckBox-labelEnd",
                         "labelStart": "HvCheckBox-labelStart",
@@ -2243,7 +2274,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           checked={true}
                           checkedIcon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           className="HvCheckBox-checkBox"
@@ -2252,12 +2283,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           disabled={false}
                           icon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           indeterminateIcon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           onBlur={[Function]}
@@ -2286,7 +2317,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             checked={true}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             className="HvCheckBox-checkBox"
@@ -2295,12 +2326,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disabled={false}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -2319,7 +2350,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             checked={true}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             className="HvCheckBox-checkBox"
@@ -2328,12 +2359,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disabled={false}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -2344,7 +2375,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               checked={true}
                               checkedIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               className="HvCheckBox-checkBox"
@@ -2363,12 +2394,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disabled={false}
                               icon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               onBlur={[Function]}
@@ -2379,7 +2410,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 checked={true}
                                 checkedIcon={
                                   <ForwardRef(WithStyles)
-                                    className="HvCheckBox-icon"
+                                    className="HvCheckBox-icon HvList-icon"
                                     fontSize="default"
                                   />
                                 }
@@ -2396,7 +2427,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 disabled={false}
                                 icon={
                                   <ForwardRef(WithStyles)
-                                    className="HvCheckBox-icon"
+                                    className="HvCheckBox-icon HvList-icon"
                                     fontSize="default"
                                   />
                                 }
@@ -2414,7 +2445,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   checked={true}
                                   checkedIcon={
                                     <ForwardRef(WithStyles)
-                                      className="HvCheckBox-icon"
+                                      className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
                                   }
@@ -2432,7 +2463,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   disabled={false}
                                   icon={
                                     <ForwardRef(WithStyles)
-                                      className="HvCheckBox-icon"
+                                      className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
                                   }
@@ -2537,11 +2568,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                 value=""
                                               />
                                               <WithStyles(CheckboxCheck)
-                                                className="HvCheckBox-icon"
+                                                className="HvCheckBox-icon HvList-icon"
                                                 fontSize="default"
                                               >
                                                 <CheckboxCheck
-                                                  className="HvCheckBox-icon"
+                                                  className="HvCheckBox-icon HvList-icon"
                                                   classes={
                                                     Object {
                                                       "root": "HvIconCheckboxCheck-root",
@@ -2554,7 +2585,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                   fontSize="default"
                                                 >
                                                   <div
-                                                    className="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                                                    className="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                                                     fontSize="default"
                                                   >
                                                     <svg
@@ -2647,6 +2678,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -2752,7 +2788,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                             font-size="default"
                           >
                             <svg
@@ -2807,7 +2843,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                             font-size="default"
                           >
                             <svg
@@ -2863,7 +2899,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                             font-size="default"
                           >
                             <svg
@@ -2907,6 +2943,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -3017,7 +3054,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                               font-size="default"
                             >
                               <svg
@@ -3072,7 +3109,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                               font-size="default"
                             >
                               <svg
@@ -3128,7 +3165,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                               font-size="default"
                             >
                               <svg
@@ -3187,6 +3224,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   classes={
                     Object {
                       "container": "HvList-selectorContainer",
+                      "icon": "HvList-icon",
                       "labelTypography": "HvList-truncate",
                     }
                   }
@@ -3200,7 +3238,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         "checkBox": "HvCheckBox-checkBox",
                         "container": "HvCheckBox-container HvList-selectorContainer",
                         "disableFocus": "HvCheckBox-disableFocus",
-                        "icon": "HvCheckBox-icon",
+                        "icon": "HvCheckBox-icon HvList-icon",
                         "labelDisabled": "HvCheckBox-labelDisabled",
                         "labelEnd": "HvCheckBox-labelEnd",
                         "labelStart": "HvCheckBox-labelStart",
@@ -3223,7 +3261,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           checked={false}
                           checkedIcon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           className="HvCheckBox-checkBox"
@@ -3232,12 +3270,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           disabled={false}
                           icon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           indeterminateIcon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           onBlur={[Function]}
@@ -3266,7 +3304,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             checked={false}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             className="HvCheckBox-checkBox"
@@ -3275,12 +3313,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disabled={false}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -3299,7 +3337,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             checked={false}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             className="HvCheckBox-checkBox"
@@ -3308,12 +3346,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disabled={false}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -3324,7 +3362,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               checked={false}
                               checkedIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               className="HvCheckBox-checkBox"
@@ -3343,12 +3381,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disabled={false}
                               icon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               onBlur={[Function]}
@@ -3359,7 +3397,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 checked={false}
                                 checkedIcon={
                                   <ForwardRef(WithStyles)
-                                    className="HvCheckBox-icon"
+                                    className="HvCheckBox-icon HvList-icon"
                                     fontSize="default"
                                   />
                                 }
@@ -3376,7 +3414,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 disabled={false}
                                 icon={
                                   <ForwardRef(WithStyles)
-                                    className="HvCheckBox-icon"
+                                    className="HvCheckBox-icon HvList-icon"
                                     fontSize="default"
                                   />
                                 }
@@ -3394,7 +3432,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   checked={false}
                                   checkedIcon={
                                     <ForwardRef(WithStyles)
-                                      className="HvCheckBox-icon"
+                                      className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
                                   }
@@ -3412,7 +3450,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   disabled={false}
                                   icon={
                                     <ForwardRef(WithStyles)
-                                      className="HvCheckBox-icon"
+                                      className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
                                   }
@@ -3517,11 +3555,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                 value=""
                                               />
                                               <WithStyles(Checkbox)
-                                                className="HvCheckBox-icon"
+                                                className="HvCheckBox-icon HvList-icon"
                                                 fontSize="default"
                                               >
                                                 <Checkbox
-                                                  className="HvCheckBox-icon"
+                                                  className="HvCheckBox-icon HvList-icon"
                                                   classes={
                                                     Object {
                                                       "root": "HvIconCheckbox-root",
@@ -3534,7 +3572,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                   fontSize="default"
                                                 >
                                                   <div
-                                                    className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                                    className="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                                                     fontSize="default"
                                                   >
                                                     <svg
@@ -3627,6 +3665,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -3732,7 +3775,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                             font-size="default"
                           >
                             <svg
@@ -3787,7 +3830,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                             font-size="default"
                           >
                             <svg
@@ -3843,7 +3886,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             value=""
                           />
                           <div
-                            class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                            class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                             font-size="default"
                           >
                             <svg
@@ -3887,6 +3930,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -3997,7 +4041,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                               font-size="default"
                             >
                               <svg
@@ -4052,7 +4096,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckbox-root HvIconCheckbox-rootS"
                               font-size="default"
                             >
                               <svg
@@ -4108,7 +4152,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               value=""
                             />
                             <div
-                              class="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                              class="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                               font-size="default"
                             >
                               <svg
@@ -4167,6 +4211,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                   classes={
                     Object {
                       "container": "HvList-selectorContainer",
+                      "icon": "HvList-icon",
                       "labelTypography": "HvList-truncate",
                     }
                   }
@@ -4180,7 +4225,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                         "checkBox": "HvCheckBox-checkBox",
                         "container": "HvCheckBox-container HvList-selectorContainer",
                         "disableFocus": "HvCheckBox-disableFocus",
-                        "icon": "HvCheckBox-icon",
+                        "icon": "HvCheckBox-icon HvList-icon",
                         "labelDisabled": "HvCheckBox-labelDisabled",
                         "labelEnd": "HvCheckBox-labelEnd",
                         "labelStart": "HvCheckBox-labelStart",
@@ -4203,7 +4248,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           checked={true}
                           checkedIcon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           className="HvCheckBox-checkBox"
@@ -4212,12 +4257,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           disabled={false}
                           icon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           indeterminateIcon={
                             <ForwardRef(WithStyles)
-                              className="HvCheckBox-icon"
+                              className="HvCheckBox-icon HvList-icon"
                             />
                           }
                           onBlur={[Function]}
@@ -4246,7 +4291,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             checked={true}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             className="HvCheckBox-checkBox"
@@ -4255,12 +4300,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disabled={false}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -4279,7 +4324,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             checked={true}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             className="HvCheckBox-checkBox"
@@ -4288,12 +4333,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             disabled={false}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             indeterminateIcon={
                               <ForwardRef(WithStyles)
-                                className="HvCheckBox-icon"
+                                className="HvCheckBox-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -4304,7 +4349,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               checked={true}
                               checkedIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               className="HvCheckBox-checkBox"
@@ -4323,12 +4368,12 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               disabled={false}
                               icon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               indeterminateIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvCheckBox-icon"
+                                  className="HvCheckBox-icon HvList-icon"
                                 />
                               }
                               onBlur={[Function]}
@@ -4339,7 +4384,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 checked={true}
                                 checkedIcon={
                                   <ForwardRef(WithStyles)
-                                    className="HvCheckBox-icon"
+                                    className="HvCheckBox-icon HvList-icon"
                                     fontSize="default"
                                   />
                                 }
@@ -4356,7 +4401,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 disabled={false}
                                 icon={
                                   <ForwardRef(WithStyles)
-                                    className="HvCheckBox-icon"
+                                    className="HvCheckBox-icon HvList-icon"
                                     fontSize="default"
                                   />
                                 }
@@ -4374,7 +4419,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   checked={true}
                                   checkedIcon={
                                     <ForwardRef(WithStyles)
-                                      className="HvCheckBox-icon"
+                                      className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
                                   }
@@ -4392,7 +4437,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   disabled={false}
                                   icon={
                                     <ForwardRef(WithStyles)
-                                      className="HvCheckBox-icon"
+                                      className="HvCheckBox-icon HvList-icon"
                                       fontSize="default"
                                     />
                                   }
@@ -4497,11 +4542,11 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                 value=""
                                               />
                                               <WithStyles(CheckboxCheck)
-                                                className="HvCheckBox-icon"
+                                                className="HvCheckBox-icon HvList-icon"
                                                 fontSize="default"
                                               >
                                                 <CheckboxCheck
-                                                  className="HvCheckBox-icon"
+                                                  className="HvCheckBox-icon HvList-icon"
                                                   classes={
                                                     Object {
                                                       "root": "HvIconCheckboxCheck-root",
@@ -4514,7 +4559,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                   fontSize="default"
                                                 >
                                                   <div
-                                                    className="HvCheckBox-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
+                                                    className="HvCheckBox-icon HvList-icon HvIconCheckboxCheck-root HvIconCheckboxCheck-rootS"
                                                     fontSize="default"
                                                   >
                                                     <svg
@@ -4638,8 +4683,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
         "box": "HvList-box",
         "condensed": "HvList-condensed",
         "disabled": "HvList-disabled",
+        "focus": "HvList-focus",
+        "icon": "HvList-icon",
         "label": "HvList-label",
         "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+        "link": "HvList-link",
         "list": "HvList-list",
         "listItem": "HvList-listItem",
         "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -4690,6 +4738,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
         role="listbox"
       >
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": 0,
@@ -4753,6 +4806,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -4880,6 +4934,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -4943,6 +5002,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -5069,6 +5129,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -5132,6 +5197,7 @@ exports[`<List /> Single selection should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -5287,8 +5353,11 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
         "box": "HvList-box",
         "condensed": "HvList-condensed",
         "disabled": "HvList-disabled",
+        "focus": "HvList-focus",
+        "icon": "HvList-icon",
         "label": "HvList-label",
         "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+        "link": "HvList-link",
         "list": "HvList-list",
         "listItem": "HvList-listItem",
         "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -5341,6 +5410,11 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
         role="listbox"
       >
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": 0,
@@ -5437,6 +5511,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -5627,6 +5702,11 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -5723,6 +5803,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -5882,6 +5963,11 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -5978,6 +6064,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -6202,8 +6289,11 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         "box": "HvList-box",
         "condensed": "HvList-condensed",
         "disabled": "HvList-disabled",
+        "focus": "HvList-focus",
+        "icon": "HvList-icon",
         "label": "HvList-label",
         "labelIconLeftPadding": "HvList-labelIconLeftPadding",
+        "link": "HvList-link",
         "list": "HvList-list",
         "listItem": "HvList-listItem",
         "noIconLeftPadding": "HvList-noIconLeftPadding",
@@ -6254,6 +6344,11 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
         role="listbox"
       >
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": 0,
@@ -6294,7 +6389,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -6346,7 +6441,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -6398,7 +6493,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -6441,6 +6536,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -6486,7 +6582,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -6538,7 +6634,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -6590,7 +6686,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -6648,6 +6744,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   classes={
                     Object {
                       "container": "HvList-selectorContainer",
+                      "icon": "HvList-icon",
                       "labelTypography": "HvList-truncate",
                     }
                   }
@@ -6659,7 +6756,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       Object {
                         "container": "HvRadioButton-container HvList-selectorContainer",
                         "disableFocus": "HvRadioButton-disableFocus",
-                        "icon": "HvRadioButton-icon",
+                        "icon": "HvRadioButton-icon HvList-icon",
                         "labelDisabled": "HvRadioButton-labelDisabled",
                         "labelEnd": "HvRadioButton-labelEnd",
                         "labelStart": "HvRadioButton-labelStart",
@@ -6682,7 +6779,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           checked={true}
                           checkedIcon={
                             <ForwardRef(WithStyles)
-                              className="HvRadioButton-icon"
+                              className="HvRadioButton-icon HvList-icon"
                             />
                           }
                           className="HvRadioButton-radio"
@@ -6690,7 +6787,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           disableRipple={true}
                           icon={
                             <ForwardRef(WithStyles)
-                              className="HvRadioButton-icon"
+                              className="HvRadioButton-icon HvList-icon"
                             />
                           }
                           onBlur={[Function]}
@@ -6718,7 +6815,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             checked={true}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             className="HvRadioButton-radio"
@@ -6726,7 +6823,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             disableRipple={true}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -6744,7 +6841,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             checked={true}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             className="HvRadioButton-radio"
@@ -6752,7 +6849,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             disableRipple={true}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -6763,7 +6860,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               checked={true}
                               checkedIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvRadioButton-icon"
+                                  className="HvRadioButton-icon HvList-icon"
                                 />
                               }
                               className="HvRadioButton-radio"
@@ -6780,7 +6877,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               disableRipple={true}
                               icon={
                                 <ForwardRef(WithStyles)
-                                  className="HvRadioButton-icon"
+                                  className="HvRadioButton-icon HvList-icon"
                                 />
                               }
                               onBlur={[Function]}
@@ -6791,7 +6888,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 checked={true}
                                 checkedIcon={
                                   <ForwardRef(WithStyles)
-                                    className="HvRadioButton-icon"
+                                    className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
                                 className="HvRadioButton-radio"
@@ -6807,7 +6904,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 disabled={false}
                                 icon={
                                   <ForwardRef(WithStyles)
-                                    className="HvRadioButton-icon"
+                                    className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
                                 onBlur={[Function]}
@@ -6819,7 +6916,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   checked={true}
                                   checkedIcon={
                                     <ForwardRef(WithStyles)
-                                      className="HvRadioButton-icon"
+                                      className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
                                   className="HvRadioButton-radio"
@@ -6836,7 +6933,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   disabled={false}
                                   icon={
                                     <ForwardRef(WithStyles)
-                                      className="HvRadioButton-icon"
+                                      className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
                                   onBlur={[Function]}
@@ -6934,10 +7031,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 value=""
                                               />
                                               <WithStyles(RadioButtonSelected)
-                                                className="HvRadioButton-icon"
+                                                className="HvRadioButton-icon HvList-icon"
                                               >
                                                 <RadioButtonSelected
-                                                  className="HvRadioButton-icon"
+                                                  className="HvRadioButton-icon HvList-icon"
                                                   classes={
                                                     Object {
                                                       "root": "HvIconRadioButtonSelected-root",
@@ -6949,7 +7046,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                   }
                                                 >
                                                   <div
-                                                    className="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                                                    className="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                                                   >
                                                     <svg
                                                       focusable={false}
@@ -7041,6 +7138,11 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -7081,7 +7183,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -7133,7 +7235,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -7185,7 +7287,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -7228,6 +7330,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -7273,7 +7376,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -7325,7 +7428,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -7377,7 +7480,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -7434,6 +7537,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   classes={
                     Object {
                       "container": "HvList-selectorContainer",
+                      "icon": "HvList-icon",
                       "labelTypography": "HvList-truncate",
                     }
                   }
@@ -7445,7 +7549,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       Object {
                         "container": "HvRadioButton-container HvList-selectorContainer",
                         "disableFocus": "HvRadioButton-disableFocus",
-                        "icon": "HvRadioButton-icon",
+                        "icon": "HvRadioButton-icon HvList-icon",
                         "labelDisabled": "HvRadioButton-labelDisabled",
                         "labelEnd": "HvRadioButton-labelEnd",
                         "labelStart": "HvRadioButton-labelStart",
@@ -7468,7 +7572,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           checked={false}
                           checkedIcon={
                             <ForwardRef(WithStyles)
-                              className="HvRadioButton-icon"
+                              className="HvRadioButton-icon HvList-icon"
                             />
                           }
                           className="HvRadioButton-radio"
@@ -7476,7 +7580,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           disableRipple={true}
                           icon={
                             <ForwardRef(WithStyles)
-                              className="HvRadioButton-icon"
+                              className="HvRadioButton-icon HvList-icon"
                             />
                           }
                           onBlur={[Function]}
@@ -7504,7 +7608,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             checked={false}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             className="HvRadioButton-radio"
@@ -7512,7 +7616,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             disableRipple={true}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -7530,7 +7634,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             checked={false}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             className="HvRadioButton-radio"
@@ -7538,7 +7642,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             disableRipple={true}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -7549,7 +7653,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               checked={false}
                               checkedIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvRadioButton-icon"
+                                  className="HvRadioButton-icon HvList-icon"
                                 />
                               }
                               className="HvRadioButton-radio"
@@ -7566,7 +7670,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               disableRipple={true}
                               icon={
                                 <ForwardRef(WithStyles)
-                                  className="HvRadioButton-icon"
+                                  className="HvRadioButton-icon HvList-icon"
                                 />
                               }
                               onBlur={[Function]}
@@ -7577,7 +7681,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 checked={false}
                                 checkedIcon={
                                   <ForwardRef(WithStyles)
-                                    className="HvRadioButton-icon"
+                                    className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
                                 className="HvRadioButton-radio"
@@ -7593,7 +7697,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 disabled={false}
                                 icon={
                                   <ForwardRef(WithStyles)
-                                    className="HvRadioButton-icon"
+                                    className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
                                 onBlur={[Function]}
@@ -7605,7 +7709,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   checked={false}
                                   checkedIcon={
                                     <ForwardRef(WithStyles)
-                                      className="HvRadioButton-icon"
+                                      className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
                                   className="HvRadioButton-radio"
@@ -7622,7 +7726,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   disabled={false}
                                   icon={
                                     <ForwardRef(WithStyles)
-                                      className="HvRadioButton-icon"
+                                      className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
                                   onBlur={[Function]}
@@ -7720,10 +7824,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 value=""
                                               />
                                               <WithStyles(RadioButtonUnselected)
-                                                className="HvRadioButton-icon"
+                                                className="HvRadioButton-icon HvList-icon"
                                               >
                                                 <RadioButtonUnselected
-                                                  className="HvRadioButton-icon"
+                                                  className="HvRadioButton-icon HvList-icon"
                                                   classes={
                                                     Object {
                                                       "root": "HvIconRadioButtonUnselected-root",
@@ -7735,7 +7839,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                   }
                                                 >
                                                   <div
-                                                    className="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                                                    className="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                                                   >
                                                     <svg
                                                       focusable={false}
@@ -7827,6 +7931,11 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
           </Focus>
         </WithStyles(Focus)>
         <WithStyles(Focus)
+          classes={
+            Object {
+              "focus": "HvList-focus",
+            }
+          }
           configuration={
             Object {
               "tabIndex": -1,
@@ -7867,7 +7976,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -7919,7 +8028,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -7971,7 +8080,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             value=""
                           />
                           <div
-                            class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                            class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                           >
                             <svg
                               focusable="false"
@@ -8014,6 +8123,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                 "disabled": "HvFocus-disabled",
                 "externalReference": "HvFocus-externalReference",
                 "falseFocus": "HvFocus-falseFocus",
+                "focus": "HvFocus-focus HvList-focus",
                 "focusDisabled": "HvFocus-focusDisabled",
                 "focused": "HvFocus-focused",
                 "root": "HvFocus-root",
@@ -8059,7 +8169,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonSelected-root HvIconRadioButtonSelected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -8111,7 +8221,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -8163,7 +8273,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               value=""
                             />
                             <div
-                              class="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                              class="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                             >
                               <svg
                                 focusable="false"
@@ -8220,6 +8330,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                   classes={
                     Object {
                       "container": "HvList-selectorContainer",
+                      "icon": "HvList-icon",
                       "labelTypography": "HvList-truncate",
                     }
                   }
@@ -8231,7 +8342,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                       Object {
                         "container": "HvRadioButton-container HvList-selectorContainer",
                         "disableFocus": "HvRadioButton-disableFocus",
-                        "icon": "HvRadioButton-icon",
+                        "icon": "HvRadioButton-icon HvList-icon",
                         "labelDisabled": "HvRadioButton-labelDisabled",
                         "labelEnd": "HvRadioButton-labelEnd",
                         "labelStart": "HvRadioButton-labelStart",
@@ -8254,7 +8365,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           checked={false}
                           checkedIcon={
                             <ForwardRef(WithStyles)
-                              className="HvRadioButton-icon"
+                              className="HvRadioButton-icon HvList-icon"
                             />
                           }
                           className="HvRadioButton-radio"
@@ -8262,7 +8373,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                           disableRipple={true}
                           icon={
                             <ForwardRef(WithStyles)
-                              className="HvRadioButton-icon"
+                              className="HvRadioButton-icon HvList-icon"
                             />
                           }
                           onBlur={[Function]}
@@ -8290,7 +8401,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             checked={false}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             className="HvRadioButton-radio"
@@ -8298,7 +8409,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             disableRipple={true}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -8316,7 +8427,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             checked={false}
                             checkedIcon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             className="HvRadioButton-radio"
@@ -8324,7 +8435,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             disableRipple={true}
                             icon={
                               <ForwardRef(WithStyles)
-                                className="HvRadioButton-icon"
+                                className="HvRadioButton-icon HvList-icon"
                               />
                             }
                             onBlur={[Function]}
@@ -8335,7 +8446,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               checked={false}
                               checkedIcon={
                                 <ForwardRef(WithStyles)
-                                  className="HvRadioButton-icon"
+                                  className="HvRadioButton-icon HvList-icon"
                                 />
                               }
                               className="HvRadioButton-radio"
@@ -8352,7 +8463,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               disableRipple={true}
                               icon={
                                 <ForwardRef(WithStyles)
-                                  className="HvRadioButton-icon"
+                                  className="HvRadioButton-icon HvList-icon"
                                 />
                               }
                               onBlur={[Function]}
@@ -8363,7 +8474,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 checked={false}
                                 checkedIcon={
                                   <ForwardRef(WithStyles)
-                                    className="HvRadioButton-icon"
+                                    className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
                                 className="HvRadioButton-radio"
@@ -8379,7 +8490,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 disabled={false}
                                 icon={
                                   <ForwardRef(WithStyles)
-                                    className="HvRadioButton-icon"
+                                    className="HvRadioButton-icon HvList-icon"
                                   />
                                 }
                                 onBlur={[Function]}
@@ -8391,7 +8502,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   checked={false}
                                   checkedIcon={
                                     <ForwardRef(WithStyles)
-                                      className="HvRadioButton-icon"
+                                      className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
                                   className="HvRadioButton-radio"
@@ -8408,7 +8519,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                   disabled={false}
                                   icon={
                                     <ForwardRef(WithStyles)
-                                      className="HvRadioButton-icon"
+                                      className="HvRadioButton-icon HvList-icon"
                                     />
                                   }
                                   onBlur={[Function]}
@@ -8506,10 +8617,10 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                 value=""
                                               />
                                               <WithStyles(RadioButtonUnselected)
-                                                className="HvRadioButton-icon"
+                                                className="HvRadioButton-icon HvList-icon"
                                               >
                                                 <RadioButtonUnselected
-                                                  className="HvRadioButton-icon"
+                                                  className="HvRadioButton-icon HvList-icon"
                                                   classes={
                                                     Object {
                                                       "root": "HvIconRadioButtonUnselected-root",
@@ -8521,7 +8632,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                   }
                                                 >
                                                   <div
-                                                    className="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                                                    className="HvRadioButton-icon HvList-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
                                                   >
                                                     <svg
                                                       focusable={false}

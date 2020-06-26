@@ -335,6 +335,7 @@ class Calendar extends React.Component {
 
     const DateDisplay = () => (
       <div
+        className={classes.focusSelection}
         onClick={onClickFunc}
         onKeyDown={event => this.arrowKeysFocus(event, onClickFunc, 7)}
         role="presentation"
@@ -429,6 +430,7 @@ class Calendar extends React.Component {
           const onClick = () => this.navigateTo(NAV_OPTIONS.MONTH, index + 1);
           return (
             <div
+              className={classes.focusSelection}
               key={key}
               role="presentation"
               onClick={onClick}

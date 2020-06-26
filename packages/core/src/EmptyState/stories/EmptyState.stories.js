@@ -1,6 +1,6 @@
 import React from "react";
-import { Fail, BarChart, Ghost } from "@hv/uikit-react-icons/dist";
-import { HvEmptyState, HvTypography } from "../..";
+import { BarChart, Fail, Ghost } from "@hv/uikit-react-icons/dist";
+import { HvEmptyState, HvLink, HvTypography } from "../..";
 
 export default {
   title: "Components/Empty State",
@@ -26,7 +26,7 @@ export const WithAction = () => (
     id="empty-state-action"
     title="Start building data routes"
     message="Before we create any dashboard we need to get some data."
-    action={<a href="/">Create a new data route</a>}
+    action={<HvLink route="/">Create a new data route</HvLink>}
     icon={<BarChart iconSize="L" color="atmo7" role="presentation" />}
   />
 );
@@ -44,9 +44,7 @@ export const CustomMessages = () => {
   const CustomAction = (
     <HvTypography component="div">
       <div>Here are some helpful links instead:</div>
-      <div>
-        <a href="/">Online Help</a>
-      </div>
+      <HvLink route="/">Online Help</HvLink>
     </HvTypography>
   );
 

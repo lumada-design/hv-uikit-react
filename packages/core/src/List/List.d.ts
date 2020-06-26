@@ -91,6 +91,9 @@ export type HvListClassKey =
   | "box"
   | "labelIconLeftPadding"
   | "noIconLeftPadding"
-  | "truncate";
+  | "truncate"
+  | "icon"
+  | "focus"
+  | "link";
 
 export default function HvList(props: HvListProps): JSX.Element | null;

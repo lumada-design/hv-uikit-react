@@ -1,3 +1,5 @@
+import { outlineStyles } from "../../../Focus/styles";
+
 const styles = theme => ({
   rangeLabel: {
     paddingBottom: "10px"
@@ -28,6 +30,9 @@ const styles = theme => ({
     "&::-webkit-inner-spin-button, &::-webkit-calendar-picker-indicator": {
       " -webkit-appearance": "none",
       display: "none"
+    },
+    "&:focus": {
+      ...outlineStyles
     }
   }
 });

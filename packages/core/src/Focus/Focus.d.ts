@@ -67,6 +67,7 @@ export type ClassKey =
   | "focusGridDisabled"
   | "focused"
   | "externalReference"
-  | "falseFocus";
+  | "falseFocus"
+  | "focus";
 
 export default function HvFocus(props: HvFocusProps): JSX.Element | null;

@@ -1,5 +1,5 @@
 import React from "react";
-import { HvFooter, HvTypography } from "../..";
+import { HvFooter, HvLink, HvTypography } from "../..";
 
 export default {
   title: "Components/Footer",
@@ -26,8 +26,8 @@ export const CustomLabels = () => {
       name="Hitachi Vantara"
       copyright="© Hitachi Vantara Corporation 2018"
       links={
-        <HvTypography variant="inlineLink" component="a" href="https://www.hitachivantara.com">
-          License information
+        <HvTypography component="div" variant="inlineLink">
+          <HvLink route="https://www.hitachivantara.com">License information</HvLink>
         </HvTypography>
       }
     />

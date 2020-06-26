@@ -30,7 +30,8 @@ const styles = theme => ({
     overflow: "hidden",
     fontFamily: theme.hv.typography.fontFamily,
     [theme.breakpoints.up("sm")]: {
-      marginLeft: `${theme.hv.spacing.sm}px`
+      marginLeft: "16px",
+      paddingLeft: "4px"
     },
     "& a": {
       ...theme.hv.typography.inlineLink,

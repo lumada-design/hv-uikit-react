@@ -99,8 +99,22 @@ const Focus = props => {
     setHasRunConfig(true);
   };
 
+  const addFocusClass = evt => {
+    if (!useFalseFocus) {
+      evt.currentTarget.classList.add(classes.focused);
+      classes.focus.split(" ").forEach(c => evt.currentTarget.classList.add(c));
+    }
+  };
+
+  const removeFocusClass = evt => {
+    if (!useFalseFocus) {
+      evt.currentTarget.classList.remove(classes.focused);
+      classes.focus.split(" ").forEach(c => evt.currentTarget.classList.remove(c));
+    }
+  };
+
   const onFocus = evt => {
-    if (!useFalseFocus) evt.currentTarget.classList.add(classes.focused);
+    addFocusClass(evt);
     setShowFocus(true);
     // give focus to child element if any focusable
 
@@ -110,7 +124,7 @@ const Focus = props => {
 
   const onBlur = evt => {
     setShowFocus(false);
-    if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
+    removeFocusClass(evt);
     onBlurStrategy(evt);
   };
 
@@ -122,7 +136,7 @@ const Focus = props => {
     setTabIndex(evt.currentTarget, 0);
     // remove focus outline unless explicitly enabled
     if (!focusOnClick) {
-      if (!useFalseFocus) evt.currentTarget.classList.remove(classes.focused);
+      removeFocusClass(evt);
       setShowFocus(false);
     }
   };
@@ -308,7 +322,11 @@ Focus.propTypes = {
     /**
      * Styles applied when focus active.
      */
-    focused: PropTypes.string
+    focused: PropTypes.string,
+    /**
+     * Styles applied when focus customization is passed.
+     */
+    focus: PropTypes.string
   }).isRequired,
   /**
    * The reference to the root element to hold all Focus' context.

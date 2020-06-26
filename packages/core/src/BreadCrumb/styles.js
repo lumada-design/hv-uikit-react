@@ -29,6 +29,11 @@ const styles = theme => ({
   },
   orderedList: {
     display: "flex"
+  },
+  a: {
+    "&:focus > div > p": {
+      color: theme.hv.palette.accent.acce2h
+    }
   }
 });
 
