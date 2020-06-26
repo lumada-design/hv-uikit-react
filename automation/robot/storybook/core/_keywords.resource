@@ -1,5 +1,5 @@
 *** Settings ***
-Library     SeleniumLibrary    timeout=15s    #version 4.3.0
+Library     SeleniumLibrary    timeout=15s    implicit_wait=3s    #version 4.3.0
 Library     String
 Resource    _variables.resource
 
