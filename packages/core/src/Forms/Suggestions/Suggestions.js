@@ -100,5 +100,7 @@ HvSuggestions.propTypes = {
    */
   onSuggestionSelected: PropTypes.func
 };
-
-export default withStyles(styles, { name: "HvSuggestions" })(HvSuggestions);
+const displayName = "HvSuggestions";
+const wrapper = withStyles(styles, { name: displayName })(HvSuggestions);
+wrapper.displayName = displayName;
+export default wrapper;

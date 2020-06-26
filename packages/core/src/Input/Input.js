@@ -49,7 +49,7 @@ class HvInput extends React.Component {
     const { value: nextValue, validationState } = nextProps;
     const { value: oldValue, currentValidationStateProps: validationStateProp } = prevState;
 
-    let returnState = null;
+    let returnState = {};
 
     if (nextValue !== undefined && nextValue !== oldValue) {
       returnState = {
@@ -57,11 +57,11 @@ class HvInput extends React.Component {
       };
     }
     if (validationState !== undefined && validationState !== validationStateProp) {
-      returnState = {
+      Object.assign(returnState, {
         validationState,
         currentValidationStateProps:
           validationState !== validationStateProp ? validationStateProp : validationState
-      };
+      });
     }
     return returnState;
   }

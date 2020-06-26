@@ -120,7 +120,7 @@ class HvTextArea extends React.Component {
   onChangeHandler = (event, value) => {
     const { onChange } = this.props;
 
-    const newValue = onChange(event, this.limitValue(value));
+    const newValue = onChange(event, this.limitValue(value)) ?? value;
 
     const textAreaValue = this.limitValue(newValue);
 
