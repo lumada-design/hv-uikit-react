@@ -49,9 +49,6 @@ const HvBaseInput = props => {
             disabled={localDisabled}
             placeholder={placeholder}
             onChange={onChangeHandler}
-            onFocus={() => {
-              alert("Focusing");
-            }}
             classes={{
               input: classes.input,
               focused: classes.inputRootFocused,

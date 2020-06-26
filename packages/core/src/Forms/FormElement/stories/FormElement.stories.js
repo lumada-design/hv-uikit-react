@@ -157,8 +157,14 @@ export const FormElementStateTransition = () => {
           "Your value is valid"
       );
     }
-
+    setShowCloseAdornment(false);
     setElementValue(value);
+  };
+
+  const onFocusHandler = event => {
+    const { value } = event.target;
+    value ? setShowCloseAdornment(true) : setShowCloseAdornment(false);
+    setElementStatus("standBy");
   };
 
   return (
@@ -176,7 +182,7 @@ export const FormElementStateTransition = () => {
           event.persist();
           setTimeout(() => setElement(event.target.value), 250);
         }}
-        onFocus={() => setShowCloseAdornment(true)}
+        onFocus={event => onFocusHandler(event, elementStatus)}
         onMouseEnter={() => setShowCloseAdornment(true)}
         onMouseLeave={() => setShowCloseAdornment(false)}
         endAdornment={
