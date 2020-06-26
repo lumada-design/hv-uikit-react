@@ -362,6 +362,7 @@ class HvInput extends React.Component {
               component="label"
               id={`${id}-label`}
               htmlFor={`${id}-input`}
+              aria-disabled={disabled}
               className={clsx(classes.label, {
                 [classes.labelDisabled]: disabled
               })}
