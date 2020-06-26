@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import { Card, withStyles } from "@material-ui/core";
@@ -47,6 +47,10 @@ const HvCard = ({
 }) => {
   const [selected, setSelected] = useState(checked);
   const footerExist = (actions || isSelectable) && !noFooter;
+
+  useEffect(() => {
+    setSelected(checked);
+  }, [checked]);
 
   const clickActionHandler = evt => {
     if (isSelectable && selectOnClickAction) {

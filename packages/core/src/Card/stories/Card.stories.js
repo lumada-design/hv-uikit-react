@@ -13,7 +13,7 @@ import {
 } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import { HvButton, HvCard, HvKpi, HvTypography } from "../..";
+import { HvButton, HvCard, HvKpi, HvSwitch, HvTypography } from "../..";
 
 import { HvCardMedia, HvCardFooter, HvCardHeader, HvCardContent } from "..";
 
@@ -1250,6 +1250,44 @@ export const CustomActionsNotSelectable = () => {
 };
 
 CustomActionsNotSelectable.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};
+
+export const Controlled = () => {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <>
+      <HvSwitch
+        id="controller"
+        checked={checked}
+        displayIconChecked
+        onChange={() => setChecked(!checked)}
+      />
+      <div style={{ width: 360, paddingTop: 10 }}>
+        <HvCard
+          headerTitle="Asset Avatar L90"
+          subheader="Compressor"
+          id="controlled"
+          isSelectable
+          checked={checked}
+          mediaPath={compressor}
+          mediaHeight={186}
+          mediaTitle="Compressor"
+          checkboxProps={{
+            inputProps: { "aria-label": "Check asset" }
+          }}
+        />
+      </div>
+    </>
+  );
+};
+
+Controlled.story = {
   parameters: {
     docs: {
       disable: true
