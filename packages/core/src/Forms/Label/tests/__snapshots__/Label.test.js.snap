@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label should render correctly 1`] = `
-<WithStyles(HvLabelText)
+<HvLabel
   label="description"
 >
   <HvLabelText
     classes={
       Object {
-        "childGutter": "HvInfoText-childGutter",
-        "labelDisabled": "HvInfoText-labelDisabled",
-        "root": "HvInfoText-root",
+        "childGutter": "HvLabel-childGutter",
+        "labelDisabled": "HvLabel-labelDisabled",
+        "root": "HvLabel-root",
       }
     }
     label="description"
   >
     <WithStyles(ForwardRef)
-      className="HvInfoText-root"
+      className="HvLabel-root"
       component="label"
       variant="labelText"
     >
       <ForwardRef
-        className="HvInfoText-root"
+        className="HvLabel-root"
         classes={
           Object {
             "3xlTitle": "HvTypography-3xlTitle",
@@ -52,12 +52,12 @@ exports[`Label should render correctly 1`] = `
         variant="labelText"
       >
         <label
-          className="HvInfoText-root HvTypography-root HvTypography-labelText"
+          className="HvLabel-root HvTypography-root HvTypography-labelText"
         >
           description
         </label>
       </ForwardRef>
     </WithStyles(ForwardRef)>
   </HvLabelText>
-</WithStyles(HvLabelText)>
+</HvLabel>
 `;

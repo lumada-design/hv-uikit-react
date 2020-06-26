@@ -59,21 +59,6 @@ export const Main = () => {
   );
 };
 
-Main.story = {
-  parameters: {
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label"
-      ]
-    }
-  }
-};
-
 export const FormElementInvalid = () => {
   return (
     <HvFormElement value="Albert2" status="invalid">
@@ -91,16 +76,6 @@ FormElementInvalid.story = {
   parameters: {
     docs: {
       storyDescription: "Form element propagating the invalid state to the input."
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label"
-      ]
     }
   }
 };
@@ -122,16 +97,6 @@ FormElementValid.story = {
   parameters: {
     docs: {
       storyDescription: "Form element propagating the valid state to the input."
-    },
-    pa11y: {
-      ignore: [
-        "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label"
-      ]
     }
   }
 };
@@ -157,11 +122,6 @@ FormElementDisabled.story = {
     pa11y: {
       ignore: [
         "region",
-        // TODO: BUG Properties missing on production:
-        // https://github.com/lumada-design/hv-uikit-react/issues/1703
-        "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
-        "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-        "label",
         // Text or images of text that are part of an inactive user interface component have no contrast requirement.
         // https://github.com/lumada-design/hv-uikit-react/issues/775#issuecomment-557167364
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",

@@ -94,5 +94,7 @@ HvLabelText.propTypes = {
    */
   disabled: PropTypes.bool
 };
-
-export default withStyles(styles, { name: "HvInfoText" })(HvLabelText);
+const displayName = "HvLabel";
+const wrapper = withStyles(styles, { name: displayName })(HvLabelText);
+wrapper.displayName = displayName;
+export default wrapper;

@@ -112,5 +112,7 @@ HvHelperText.propTypes = {
    */
   disableGutter: PropTypes.bool
 };
-
-export default withStyles(styles, { name: "HvHelperText" })(HvHelperText);
+const displayName = "HvHelperText";
+const wrapper = withStyles(styles, { name: displayName })(HvHelperText);
+wrapper.displayName = displayName;
+export default wrapper;
