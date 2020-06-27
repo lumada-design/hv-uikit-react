@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.4.0...@hv/uikit-react-lab@2.5.0) (2020-06-27)
+
+
+### Features
+
+* **focus:** add hover when focus. [#1657](https://github.com/pentaho/hv-uikit-react/issues/1657) ([4808c32](https://github.com/pentaho/hv-uikit-react/commit/4808c3282e4f734207a802d267348c967e54d0cf))
+* **typescript:** add lint and tsc validation. [#1611](https://github.com/pentaho/hv-uikit-react/issues/1611) ([fbd6ac2](https://github.com/pentaho/hv-uikit-react/commit/fbd6ac2e3bb1b03176040be6f177ac140a35c0d9))
+
+
+
+
+
 # [2.4.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-lab@2.3.2...@hv/uikit-react-lab@2.4.0) (2020-06-24)
 
 

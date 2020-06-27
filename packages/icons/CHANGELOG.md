@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.2.0...@hv/uikit-react-icons@2.3.0) (2020-06-27)
+
+
+### Bug Fixes
+
+* **cardview:** use of keyboard on firefox. [#1580](https://github.com/pentaho/hv-uikit-react/issues/1580) ([9d29ec8](https://github.com/pentaho/hv-uikit-react/commit/9d29ec89d9861e460e1d0191424e4e783c640d46))
+
+
+### Features
+
+* **typescript:** add lint and tsc validation. [#1611](https://github.com/pentaho/hv-uikit-react/issues/1611) ([fbd6ac2](https://github.com/pentaho/hv-uikit-react/commit/fbd6ac2e3bb1b03176040be6f177ac140a35c0d9))
+
+
+
+
+
 # [2.2.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.1.0...@hv/uikit-react-icons@2.2.0) (2020-06-09)
 
 
