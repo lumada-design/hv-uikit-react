@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resource.resource
 Test Setup    Run Keywords
-...           Go To    ${components}forms-formelement--form-element-state-transition
+...           Go To    ${components}forms-formelement--main
 ...           AND    Wait Until Element Is Enabled    ${input}    10s
 
 
