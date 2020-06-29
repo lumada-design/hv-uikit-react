@@ -55,7 +55,13 @@ module.exports = (async () => {
   const pa11yciConfig = {
     defaults: {
       timeout: 15000,
-      ignore: ["region"],
+      ignore: [
+        "region",
+        // Disabling contrast tests due to inconsistent false positives
+        // https://github.com/pa11y/pa11y/issues/422
+        "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+        "color-contrast"
+      ],
       runners: ["htmlcs", "axe"],
       standard: "WCAG2AA",
       rootElement: "div[id=root]",
