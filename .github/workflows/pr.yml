@@ -3,7 +3,6 @@ on:
   pull_request:
     branches:
       - master
-      - alpha
 
 # flow:
 # License-Checks | Lint | Test-Jest | Build-Documentation
