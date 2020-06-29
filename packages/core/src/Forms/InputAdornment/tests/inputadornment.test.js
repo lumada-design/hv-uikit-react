@@ -13,7 +13,7 @@ describe("InputAdornment", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvInputAdornment showWhen="onHover" icon={<Close />} />
+        <HvInputAdornment icon={<Close />} />
       </HvProvider>
     );
   });
@@ -27,7 +27,7 @@ describe("InputAdornment", () => {
   });
 
   it("should render the Input component", () => {
-    const inputAdornmentComponent = wrapper.find("HvInputAdornment");
+    const inputAdornmentComponent = wrapper.find(HvInputAdornment);
     expect(inputAdornmentComponent.length).toBe(1);
   });
 });

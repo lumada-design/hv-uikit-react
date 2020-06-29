@@ -11,7 +11,12 @@ import styles from "./styles";
 const FormElement = props => {
   const { classes, children, status = "standBy", value, disabled = false, ...others } = props;
 
-  const descriptors = findDescriptors(children, ["HvHelperText", "HvLabel", "HvSuggestions"]);
+  const descriptors = findDescriptors(children, [
+    "HvHelperText",
+    "HvLabel",
+    "HvSuggestions",
+    "HvBaseInput"
+  ]);
   const contextValue = {
     elementStatus: status,
     elementValue: value,

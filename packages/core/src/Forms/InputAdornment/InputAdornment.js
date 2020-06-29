@@ -10,19 +10,18 @@ const HvInputAdornment = props => {
   const {
     classes,
     className,
-    inputId,
     icon,
-    showWhen,
+    showWhen = "standBy",
     onClick,
-    inputButtonLabel,
-    isShown,
+    isShown = false,
     ...others
   } = props;
 
   return (
     <HvFormElementContextConsumer>
       {formContext => {
-        const { elementStatus, elementValue } = formContext;
+        const { elementStatus = "standBy", elementValue = "", descriptors = {} } = formContext;
+        const { HvBaseInput, HvLabel } = descriptors;
 
         const displayIcon =
           (elementValue !== "" && elementStatus === showWhen) || (isShown && elementValue !== "");
@@ -32,9 +31,8 @@ const HvInputAdornment = props => {
             <button
               type="button"
               tabIndex={-1}
-              aria-controls={inputId || undefined}
-              aria-label={inputButtonLabel}
-              title={inputButtonLabel}
+              aria-labelledby={HvLabel?.[0]?.id || undefined}
+              aria-controls={HvBaseInput?.[0]?.id || undefined}
               className={clsx(
                 className,
                 { [classes.hideIcon]: !displayIcon },
@@ -57,10 +55,6 @@ HvInputAdornment.propTypes = {
    */
   className: PropTypes.string,
   /**
-   * Id to be applied to the root node.
-   */
-  inputId: PropTypes.string,
-  /**
    * A Jss Object used to override or extend the component styles applied.
    */
   classes: PropTypes.shape({
@@ -81,35 +75,33 @@ HvInputAdornment.propTypes = {
      */
     iconAction: PropTypes.string,
     /**
-     * Styles applied to the icon
+     * Styles applied to the icon.
      */
     icon: PropTypes.string,
     /**
-     * Styles applied to the icon when it's supposed to be hidden
+     * Styles applied to the icon when it's supposed to be hidden.
      */
     hideIcon: PropTypes.string
   }),
-
   /**
    * The icon to be added into the input.
    */
-  icon: PropTypes.node,
+  icon: PropTypes.node.isRequired,
   /**
-   * When the input aligment should be displayed
+   * When the adornment should be displayed.
    */
-  showWhen: PropTypes.string,
+  showWhen: PropTypes.oneOf(["standBy", "valid", "invalid"]),
   /**
-   * OnClick handler
+   * Function to be executed when this element is clicked.
    */
   onClick: PropTypes.func,
   /**
-   * The label of the clear button
-   */
-  inputButtonLabel: PropTypes.string,
-  /**
-   * If the icon display is influenced by an external actor, i.e. hover on input
+   * If the icon display is influenced by an external actor, i.e. hover on input.
    */
   isShown: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvInputAdornment" })(HvInputAdornment);
+const displayName = "HvInputAdornment";
+const wrapper = withStyles(styles, { name: displayName })(HvInputAdornment);
+wrapper.displayName = displayName;
+export default wrapper;

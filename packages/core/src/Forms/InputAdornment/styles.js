@@ -3,12 +3,6 @@ const styles = {
     width: 30,
     height: 30
   },
-  // adornmentsBox: {
-  //   display: "flex",
-  //   flexDirection: "row",
-  //   height: 30,
-  //   justifyContent: "center"
-  // },
   adornmentButton: {
     backgroundColor: "transparent",
     border: "none",

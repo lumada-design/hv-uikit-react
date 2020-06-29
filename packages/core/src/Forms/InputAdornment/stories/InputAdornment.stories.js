@@ -10,7 +10,8 @@ export default {
     componentSubtitle: null,
     usage: "import { HvInputAdornment } from '@hv/uikit-react-core/dist'"
   },
-  component: HvInputAdornment
+  component: HvInputAdornment,
+  decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
 };
 
 export const Main = () => {
@@ -18,16 +19,14 @@ export const Main = () => {
   const inputLabelId = "controlled-input-label";
 
   return (
-    <HvFormElement value="valid input content" status="valid">
-      <HvLabel id={inputLabelId} htmlFor={inputId} label="First name">
+    <HvFormElement value="valid input content" status="standBy">
+      <HvLabel id={inputLabelId} label="First name">
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
           endAdornment={
             <>
-              <HvInputAdornment showWhen="onHover" icon={<CloseXS />} />
-              <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
-              <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
+              <HvInputAdornment showWhen="standBy" icon={<CloseXS />} />
             </>
           }
         />
@@ -37,18 +36,17 @@ export const Main = () => {
 };
 
 export const ValidInput = () => {
-  const inputId = "controlled-input";
-  const inputLabelId = "controlled-input-label";
+  const inputId = "valid-controlled-input";
+  const inputLabelId = "valid-controlled-input-label";
 
   return (
-    <HvFormElement elementValue="valid input content" status="valid">
-      <HvLabel id={inputLabelId} htmlFor={inputId} label="First name">
+    <HvFormElement value="valid input content" status="valid">
+      <HvLabel id={inputLabelId} label="First name">
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
           endAdornment={
             <>
-              <HvInputAdornment showWhen="onHover" icon={<CloseXS />} />
               <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
               <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
             </>
@@ -68,18 +66,17 @@ ValidInput.story = {
 };
 
 export const InvalidInput = () => {
-  const inputId = "controlled-input";
-  const inputLabelId = "controlled-input-label";
+  const inputId = "invalid-controlled-input";
+  const inputLabelId = "invalid-controlled-input-label";
 
   return (
-    <HvFormElement elementValue="invalid input content" status="invalid">
-      <HvLabel id={inputLabelId} htmlFor={inputId} label="First name">
+    <HvFormElement value="invalid input content" status="invalid">
+      <HvLabel id={inputLabelId} label="First name">
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
           endAdornment={
             <>
-              <HvInputAdornment showWhen="onHover" icon={<CloseXS />} />
               <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
               <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
             </>

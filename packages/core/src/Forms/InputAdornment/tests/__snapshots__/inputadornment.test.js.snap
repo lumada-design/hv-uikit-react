@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`InputAdornment should render correctly 1`] = `
-<WithStyles(HvInputAdornment)
+<HvInputAdornment
   icon={<ForwardRef(WithStyles) />}
-  showWhen="onHover"
 >
   <HvInputAdornment
     classes={
@@ -14,7 +13,6 @@ exports[`InputAdornment should render correctly 1`] = `
       }
     }
     icon={<ForwardRef(WithStyles) />}
-    showWhen="onHover"
   >
     <div
       aria-hidden="true"
@@ -62,5 +60,5 @@ exports[`InputAdornment should render correctly 1`] = `
       </button>
     </div>
   </HvInputAdornment>
-</WithStyles(HvInputAdornment)>
+</HvInputAdornment>
 `;
