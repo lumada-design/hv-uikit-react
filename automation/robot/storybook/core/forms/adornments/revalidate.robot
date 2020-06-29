@@ -14,7 +14,7 @@ does not show validation adornment icons when input is cleaned
     Press Keys                           NONE    DELETE    TAB
     wait until element is Not Visible    ${adornment_accepted}
 
-does not show previous validation when input is being edited
+does not show previous adornment when input is being edited
     [Documentation]    unexpected behavior just when firefox run via webdriver
     [Tags]    bug-firefox-webdriver
     Input Text                           ${input}    Joao
@@ -22,6 +22,12 @@ does not show previous validation when input is being edited
     wait until element is Visible        ${adornment_accepted}
     Press Keys                           ${input}   \ Goncalves
     wait until element is Not Visible    ${adornment_accepted}
+
+does not show previous adornment when input is being edited by clicking in label
+    Input Text                         ${input}    Joao
+    Click Element                      ${label}
+    Wait Until Element Is Visible      ${input}:focus
+    page Should Not Contain Element    ${adornment_accepted}
 
 revalidate input when adornment button is clicked - failed to accepted
     [Documentation]    unexpected behavior just when firefox run via webdriver

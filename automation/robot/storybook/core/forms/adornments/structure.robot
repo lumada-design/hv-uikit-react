@@ -23,3 +23,7 @@ does not show validation adornment icons when user is still typing
     Element Should Not Be Visible    ${adornment_accepted}
     Press Keys                       ${input}   123
     Element Should Not Be Visible    ${adornment_failed}
+
+focus input when label is pressed
+    Click Element                      ${label}
+    Wait Until Element Is Visible      ${input}:focus

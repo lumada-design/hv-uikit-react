@@ -6,5 +6,5 @@ Resource    ../../_keywords.resource
 ${adornment_accepted}    css:button [class*=IconSuccess]
 ${adornment_failed}      css:button [class*=IconFail]
 ${clean_button}          css:button [class*=IconClose]
-${input}                 id:controlled-input
-${label}                 id:controlled-input-label
+${input}                 css:#controlled-input
+${label}                 css:#controlled-input-label
