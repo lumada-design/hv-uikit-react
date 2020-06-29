@@ -33,6 +33,7 @@ change focus to previous item and keep item selection when is pressed SHIFT-TAB
 change focus to previous item when is pressed SHIFT-TAB on previous clicked item
     [Documentation]   traceability:
     ...               https://github.com/lumada-design/hv-uikit-react/issues/1124
+    [Tags]    bug-firefox-webdriver
     Mouse Over                       ${item3}
     Wait Until Element Is Visible    ${item3.2}
     Click Element                    ${item3.2}
