@@ -116,7 +116,7 @@ export interface HvTableProps
   /**
    * Number of data entries for server side pagination
    */
-  dataSize: number;
+  dataSize?: number;
 
   /**
    * Numeric value to control the page size selected
