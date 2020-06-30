@@ -321,7 +321,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Build-Documentation, Robot, Robot-Windows]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release
