@@ -7,7 +7,9 @@ exports[`InputAdornment should render correctly 1`] = `
   <HvInputAdornment
     classes={
       Object {
+        "adornment": "HvInputAdornment-adornment",
         "adornmentButton": "HvInputAdornment-adornmentButton",
+        "adornmentIcon": "HvInputAdornment-adornmentIcon",
         "hideIcon": "HvInputAdornment-hideIcon",
         "icon": "HvInputAdornment-icon",
       }
@@ -15,12 +17,10 @@ exports[`InputAdornment should render correctly 1`] = `
     icon={<ForwardRef(WithStyles) />}
   >
     <div
-      aria-hidden="true"
+      aria-hidden="false"
     >
-      <button
-        className="HvInputAdornment-adornmentButton HvInputAdornment-hideIcon"
-        tabIndex={-1}
-        type="button"
+      <div
+        className="HvInputAdornment-adornment HvInputAdornment-adornmentIcon HvInputAdornment-hideIcon"
       >
         <div
           className="HvInputAdornment-icon"
@@ -57,7 +57,7 @@ exports[`InputAdornment should render correctly 1`] = `
             </CloseXS>
           </WithStyles(CloseXS)>
         </div>
-      </button>
+      </div>
     </div>
   </HvInputAdornment>
 </HvInputAdornment>

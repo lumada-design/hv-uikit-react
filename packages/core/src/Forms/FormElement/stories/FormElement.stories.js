@@ -42,28 +42,32 @@ export const Main = () => {
   };
 
   const onFocusHandler = event => {
-    const { value } = event.target;
-    value ? setShowCloseAdornment(true) : setShowCloseAdornment(false);
-    setElementStatus("standBy");
+    const { value, type } = event.target;
+    if (type !== "button") {
+      value ? setShowCloseAdornment(true) : setShowCloseAdornment(false);
+      setElementStatus("standBy");
+      setNotificationText(undefined);
+    }
+  };
+
+  const onBlurHandler = event => {
+    if (event.relatedTarget === null || event.relatedTarget === undefined) {
+      setElement(event.target.value);
+    }
   };
 
   return (
-    <HvFormElement value={elementValue} status={elementStatus}>
-      <HvLabel
-        id={inputLabelId}
-        htmlFor={inputId}
-        onFocus={event => onFocusHandler(event, elementStatus)}
-        label="First name"
-      >
+    <HvFormElement
+      onBlur={event => onBlurHandler(event)}
+      onFocus={event => onFocusHandler(event)}
+      value={elementValue}
+      status={elementStatus}
+    >
+      <HvLabel id={inputLabelId} label="First name">
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
           onChange={(event, value) => setElement(value, false)}
-          onBlur={event => {
-            event.persist();
-            setTimeout(() => setElement(event.target.value), 250);
-          }}
-          onFocus={event => onFocusHandler(event, elementStatus)}
           onMouseEnter={() => setShowCloseAdornment(true)}
           onMouseLeave={() => setShowCloseAdornment(false)}
           endAdornment={

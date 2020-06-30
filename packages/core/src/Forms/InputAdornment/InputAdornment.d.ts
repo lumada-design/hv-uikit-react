@@ -19,6 +19,8 @@ extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInputAdornmentClas
 
 export type HvInputAdornmentClassKey =
   | "icon"
+  | "adornment"
+  | "adornmentIcon"
   | "adornmentButton"
   | "hideIcon"
 

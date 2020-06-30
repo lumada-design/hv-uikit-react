@@ -3,12 +3,18 @@ const styles = {
     width: 30,
     height: 30
   },
-  adornmentButton: {
+  adornment: {
     backgroundColor: "transparent",
     border: "none",
     padding: 0,
     margin: 0,
     cursor: "pointer"
+  },
+  adornmentButton: {
+    cursor: "pointer"
+  },
+  adornmentIcon: {
+    cursor: "default"
   },
   hideIcon: {
     display: "none"

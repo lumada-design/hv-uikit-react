@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { isNil } from "lodash";
 import { withStyles } from "@material-ui/core";
 import { HvFormElementContextConsumer } from "../FormElement";
-
 import styles from "./styles";
 
 const HvInputAdornment = props => {
@@ -25,26 +25,40 @@ const HvInputAdornment = props => {
 
         const displayIcon =
           (elementValue !== "" && elementStatus === showWhen) || (isShown && elementValue !== "");
+        const ariaHidden = displayIcon ? "true" : "false";
+        const IconButton = (
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-labelledby={HvLabel?.[0]?.id || undefined}
+            aria-controls={HvBaseInput?.[0]?.id || undefined}
+            className={clsx(className, [classes.adornment, classes.adornmentButton], {
+              [classes.hideIcon]: !displayIcon
+            })}
+            onClick={onClick}
+            onKeyDown={() => {}}
+            {...others}
+          >
+            <div className={classes.icon}>{icon}</div>
+          </button>
+        );
 
-        return (
-          <div aria-hidden="true">
-            <button
-              type="button"
-              tabIndex={-1}
-              aria-labelledby={HvLabel?.[0]?.id || undefined}
-              aria-controls={HvBaseInput?.[0]?.id || undefined}
-              className={clsx(
-                className,
-                { [classes.hideIcon]: !displayIcon },
-                classes.adornmentButton
-              )}
-              onClick={onClick}
-              {...others}
-            >
-              <div className={classes.icon}>{icon}</div>
-            </button>
+        const Icon = (
+          <div
+            aria-labelledby={HvLabel?.[0]?.id || undefined}
+            aria-controls={HvBaseInput?.[0]?.id || undefined}
+            className={clsx(className, [classes.adornment, classes.adornmentIcon], {
+              [classes.hideIcon]: !displayIcon
+            })}
+            {...others}
+          >
+            <div className={classes.icon}>{icon}</div>
           </div>
         );
+
+        const element = !isNil(onClick) ? IconButton : Icon;
+
+        return <div aria-hidden={ariaHidden}>{element}</div>;
       }}
     </HvFormElementContextConsumer>
   );
@@ -63,11 +77,15 @@ HvInputAdornment.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the adornment box.
+     * Styles applied to all adornments
      */
-    // adornmentsBox: PropTypes.string,
+    adornment: PropTypes.string,
     /**
-     * Styles applied to the adornment button.
+     * Styles applied to the adornment when acting as a button.
+     */
+    adornmentIcon: PropTypes.string,
+    /**
+     * Styles applied to the adornment when acting as a button.
      */
     adornmentButton: PropTypes.string,
     /**
