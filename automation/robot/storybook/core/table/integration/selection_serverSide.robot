@@ -19,7 +19,9 @@ remove selection when pagination is moved to next page
     Checkbox Should Not Be Selected             ${bulkAction_checkbox}
 
 remove selection when pagination is moved to previous page
-    [Documentation]    selection vs pagination
+    [Tags]    bug-ie-webdriver
+    [Documentation]     https://github.com/lumada-design/hv-uikit-react/issues/1708
+    ...                 selection vs pagination
     Wait Until Element Is Enabled               ${row_1_checkbox}
     Select Checkbox                             ${row_1_checkbox}
     Click Element                               ${pagination_next_page}
