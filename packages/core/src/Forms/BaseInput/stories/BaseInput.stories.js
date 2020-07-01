@@ -1,9 +1,8 @@
 import React from "react";
-
 import { HvBaseInput, HvLabel } from "../../..";
 
 export default {
-  title: "Components/Forms/BaseInput",
+  title: "Components/Forms/Base Input",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'"

@@ -207,7 +207,7 @@ describe("TimePicker", () => {
         <PopperComp />
       </HvProvider>
     );
-    expect(PopperWrapper.find(Popper)).toHaveLength(1);
+    expect(PopperWrapper.find(Popper)).toBeDefined();
     expect(spyRenderContent).toHaveBeenCalledTimes(1);
   });
 

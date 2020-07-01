@@ -25,5 +25,5 @@ Some examples:
 ```
 STORY=card npm run pa11y-ci
 STORY=forms npm run pa11y-ci
-STORY=forms-formelement npm run pa11y-ci
+STORY=forms-form-element npm run pa11y-ci
 ```

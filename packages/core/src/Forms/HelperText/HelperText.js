@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { isEmpty } from "lodash";
+import isEmpty from "lodash/isEmpty";
 import { HvFormElementContext } from "../FormElement";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";
@@ -16,6 +16,7 @@ const HvHelperText = props => {
     children,
     notification = "",
     classes,
+    className,
     id,
     disabled,
     disableGutter = false,
@@ -31,7 +32,7 @@ const HvHelperText = props => {
       <HvTypography
         id={localId}
         variant="infoText"
-        className={clsx({
+        className={clsx(className, {
           [classes.showText]: !isVisible,
           [classes.helperDisabled]: localDisabled,
           [classes.helperText]: !localDisabled,
@@ -44,7 +45,7 @@ const HvHelperText = props => {
       <HvTypography
         id={setId(localId, "notification")}
         variant="infoText"
-        className={clsx({
+        className={clsx(className, {
           [classes.showText]: isVisible,
           [classes.helperDisabled]: localDisabled,
           [classes.helperText]: !localDisabled,
@@ -62,6 +63,10 @@ const HvHelperText = props => {
 };
 
 HvHelperText.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * The description to be shown by this helper text
    */
