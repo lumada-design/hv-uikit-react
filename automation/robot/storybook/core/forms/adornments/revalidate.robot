@@ -2,7 +2,7 @@
 Resource      _resource.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}forms-formelement--main
-...           AND    Wait Until Element Is Enabled    ${input}    10s
+...           AND    Wait Until Element Is Enabled    ${input}
 
 
 *** Test Cases ***
@@ -24,10 +24,10 @@ does not show previous adornment when input is being edited
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited by clicking in label
-    Input Text                         ${input}    Joao
-    Click Element                      ${label}
-    Wait Until Element Is Visible      ${input}:focus
-    page Should Not Contain Element    ${adornment_accepted}
+    Input Text                       ${input}    Joao
+    Click Element                    ${label}
+    Wait Until Element Is Visible    ${input}:focus
+    Element Should Not Be Visible    ${adornment_accepted}
 
 revalidate input when adornment button is clicked - failed to accepted
     [Documentation]    unexpected behavior just when firefox run via webdriver

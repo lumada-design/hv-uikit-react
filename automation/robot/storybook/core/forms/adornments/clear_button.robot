@@ -2,7 +2,7 @@
 Resource      _resource.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}forms-formelement--main
-...           AND    Wait Until Element Is Enabled    ${input}    10s
+...           AND    Wait Until Element Is Enabled    ${input}   
 
 
 *** Test Cases ***
