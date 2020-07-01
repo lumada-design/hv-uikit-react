@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.3.0...@hv/uikit-react-icons@2.3.1) (2020-07-01)
+
+
+### Bug Fixes
+
+* **babel:** add core-js to peer dependencies. [#1634](https://github.com/pentaho/hv-uikit-react/issues/1634) ([a8ba6ae](https://github.com/pentaho/hv-uikit-react/commit/a8ba6ae1c70480b9730aeec1e12d67db1376b0de))
+
+
+
+
+
 # [2.3.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-icons@2.2.0...@hv/uikit-react-icons@2.3.0) (2020-06-27)
 
 
