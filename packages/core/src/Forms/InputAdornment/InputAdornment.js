@@ -25,7 +25,7 @@ const HvInputAdornment = props => {
 
         const displayIcon =
           (elementValue !== "" && elementStatus === showWhen) || (isShown && elementValue !== "");
-        const ariaHidden = displayIcon ? "true" : "false";
+        const ariaHidden = displayIcon ? "false" : "true";
         const IconButton = (
           <button
             type="button"

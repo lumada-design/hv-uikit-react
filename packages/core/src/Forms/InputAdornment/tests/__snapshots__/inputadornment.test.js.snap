@@ -17,7 +17,7 @@ exports[`InputAdornment should render correctly 1`] = `
     icon={<ForwardRef(WithStyles) />}
   >
     <div
-      aria-hidden="false"
+      aria-hidden="true"
     >
       <div
         className="HvInputAdornment-adornment HvInputAdornment-adornmentIcon HvInputAdornment-hideIcon"
