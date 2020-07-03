@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Suggestions should render correctly 1`] = `
-<HvSuggestions
+<WithStyles(HvSuggestions)
   expanded={false}
   onClose={[Function]}
   onKeyDown={[Function]}
@@ -33,5 +33,5 @@ exports[`Suggestions should render correctly 1`] = `
       />
     </div>
   </HvSuggestions>
-</HvSuggestions>
+</WithStyles(HvSuggestions)>
 `;

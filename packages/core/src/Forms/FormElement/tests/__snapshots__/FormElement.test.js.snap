@@ -5,7 +5,7 @@ exports[`FormElement  should render correctly 1`] = `
   status="valid"
   value="George"
 >
-  <HvLabel
+  <WithStyles(HvLabelText)
     id="test"
     key="1"
     label="First name"
@@ -14,14 +14,14 @@ exports[`FormElement  should render correctly 1`] = `
       id="id-test"
       placeholder="Insert your name"
     />
-  </HvLabel>
-  <HvHelperText
+  </WithStyles(HvLabelText)>
+  <WithStyles(HvHelperText)
     id="infotext-main"
     key="2"
     notification="warning"
   >
     Write your name in this input do not put numbers
-  </HvHelperText>
+  </WithStyles(HvHelperText)>
 </WithStyles(FormElement)>
 `;
 
@@ -33,11 +33,11 @@ exports[`FormElement  should render correctly 2`] = `
 `;
 
 exports[`FormElement  should render correctly 3`] = `
-<HvHelperText
+<WithStyles(HvHelperText)
   id="infotext-main"
   key="2"
   notification="warning"
 >
   Write your name in this input do not put numbers
-</HvHelperText>
+</WithStyles(HvHelperText)>
 `;

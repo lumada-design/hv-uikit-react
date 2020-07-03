@@ -18,6 +18,7 @@ export const Main = () => {
   return (
     <HvLabel id={inputLabelId} label="First name">
       <HvBaseInput
+        id="main-input"
         placeholder="Insert data"
         inputProps={{
           "aria-labelledby": inputLabelId
