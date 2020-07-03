@@ -7,7 +7,7 @@ import { isNil } from "lodash";
  * @param {string} componentName - The name of the component this function should scan i.e.: HvHelperText.
  */
 const getDescriptorMap = (element, componentName) => {
-  if (element.type?.displayName?.includes(componentName)) {
+  if (element.type?.__docgenInfo?.displayName?.includes(componentName)) {
     return {
       id: element.props?.id,
       showWhen: element.props?.showWhen
