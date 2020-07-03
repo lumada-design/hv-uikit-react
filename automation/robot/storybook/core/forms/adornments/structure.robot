@@ -6,13 +6,13 @@ Test Setup    Run Keywords
 
 
 *** Test Cases ***
-show accepted adornment button when inserted valid input and and focus goes out
+show accepted adornment when inserted valid input and and focus goes out
     Input Text                       ${input}    Joao
     Press Keys                       NONE    TAB
     Wait Until Element Is Visible    ${adornment_accepted}
     Element Should Not Be Visible    ${adornment_failed}
 
-show error adornment button when inserted invalid input and and focus goes out
+show error adornment when inserted invalid input and and focus goes out
     Input Text                       ${input}    1234
     Press Keys                       NONE       TAB
     Wait Until Element Is Visible    ${adornment_failed}
