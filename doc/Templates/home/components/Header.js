@@ -7,7 +7,7 @@ import HvHeader, {
   HvHeaderBrand,
   HvHeaderNavigation
 } from "@hv/uikit-react-core/dist/Header";
-import HitachiLogo from "./HitachiLogo";
+import HitachiLogo from "../../resources/HitachiLogo";
 import styles from "../views/detail/styles";
 import NavContext from "../hoc/NavContext";
 

@@ -1,24 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+import clsx from "clsx";
+import { HvLoginContainer } from "@hv/uikit-react-core/dist";
 import Header, { HvHeaderBrand } from "@hv/uikit-react-core/dist/Header";
-import Login from "@hv/uikit-react-core/dist/Login";
-import HitachiLogo from "../home/components/HitachiLogo";
+import LoginForm from "./LoginForm";
+import RecoverForm from "./RecoverForm";
+import { authenticate, recoverPassword } from "./utils";
+import HitachiLogo from "../resources/HitachiLogo";
 
-const callSimulation = () =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, 2000);
-  });
+const Login = ({ classes }) => {
+  const [authStatus, setAuthStatus] = useState("idle");
+  const [recoverStatus, setRecoverStatus] = useState("idle");
+  const [activeForm, setActiveForm] = useState("login");
 
-// eslint-disable-next-line react/prop-types
-const LoginTemplate = ({ classes }) => (
-  <div>
-    <Header id="header">
-      <HvHeaderBrand logo={<HitachiLogo />} name="Maintenance Insights" />
-    </Header>
-    <div className={classes.root}>
-      <Login id="test" login={callSimulation} recovery={callSimulation} allowRecover />
-    </div>
-  </div>
-);
-export default LoginTemplate;
+  const login = async credentials => {
+    try {
+      setAuthStatus("pending");
+      await authenticate(credentials);
+      setAuthStatus("success");
+      setTimeout(() => setAuthStatus("idle"), 2000);
+    } catch (error) {
+      setAuthStatus("error");
+      setTimeout(() => setAuthStatus("idle"), 2000);
+    }
+  };
+
+  const recover = async email => {
+    try {
+      setRecoverStatus("pending");
+      await recoverPassword(email);
+      setRecoverStatus("success");
+      setTimeout(() => {
+        setRecoverStatus("idle");
+        setActiveForm("login");
+      }, 2000);
+    } catch (error) {
+      setRecoverStatus("error");
+      setTimeout(() => {
+        setRecoverStatus("idle");
+        setActiveForm("login");
+      }, 2000);
+    }
+  };
+
+  return (
+    <>
+      <Header id="header">
+        <HvHeaderBrand logo={<HitachiLogo />} name="Maintenance Insights" />
+      </Header>
+      <HvLoginContainer className={classes.root}>
+        {activeForm === "login" ? (
+          <LoginForm
+            status={authStatus}
+            onSubmit={credentials => login(credentials)}
+            onRecover={() => setActiveForm("recover")}
+            onRemenber={() => {}}
+          />
+        ) : (
+          <RecoverForm
+            status={recoverStatus}
+            onSubmit={email => recover(email)}
+            onCancel={() => setActiveForm("login")}
+          />
+        )}
+      </HvLoginContainer>
+    </>
+  );
+};
+
+export default Login;

@@ -29,6 +29,7 @@ export { default as HvLink } from "./Link";
 export { default as HvList } from "./List";
 export { default as HvLoading } from "./Loading";
 export { default as HvLogin } from "./Login";
+export { default as HvLoginContainer } from "./LoginContainer";
 export { default as HvModal } from "./Modal";
 export * from "./Modal";
 export { default as HvMultiButton } from "./MultiButton";
