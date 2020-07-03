@@ -29,7 +29,7 @@ does not show previous adornment when input is being edited by clicking in label
     Wait Until Element Is Visible    ${input}:focus
     Element Should Not Be Visible    ${adornment_accepted}
 
-revalidate input when adornment button is clicked - failed to accepted
+revalidate adornments when input value is changed - failed to accepted
     [Documentation]    unexpected behavior just when firefox run via webdriver
     [Tags]    bug-firefox-webdriver
     Input Text                       ${input}    a1b2
@@ -40,7 +40,7 @@ revalidate input when adornment button is clicked - failed to accepted
     Wait Until Element Is Visible    ${adornment_accepted}
     Element Should Not Be Visible    ${adornment_failed}
 
-revalidate input when adornment button is clicked - accepted to accepted
+revalidate adornments when input value is changed - accepted to accepted
     Input Text                       ${input}    Joao
     Press Keys                       NONE    TAB
     Wait Until Element Is Visible    ${adornment_accepted}
