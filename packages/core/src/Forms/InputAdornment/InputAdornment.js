@@ -13,7 +13,7 @@ const HvInputAdornment = props => {
     icon,
     showWhen = "standBy",
     onClick,
-    isShown = false,
+    isVisible = false,
     ...others
   } = props;
 
@@ -24,14 +24,13 @@ const HvInputAdornment = props => {
         const { HvBaseInput, HvLabel } = descriptors;
 
         const displayIcon =
-          (elementValue !== "" && elementStatus === showWhen) || (isShown && elementValue !== "");
-        const ariaHidden = displayIcon ? "false" : "true";
+          (elementValue !== "" && elementStatus === showWhen) || (isVisible && elementValue !== "");
         const IconButton = (
           <button
             type="button"
             tabIndex={-1}
-            aria-labelledby={HvLabel?.[0]?.id || undefined}
-            aria-controls={HvBaseInput?.[0]?.id || undefined}
+            aria-labelledby={HvLabel?.[0]?.id}
+            aria-controls={HvBaseInput?.[0]?.id}
             className={clsx(className, [classes.adornment, classes.adornmentButton], {
               [classes.hideIcon]: !displayIcon
             })}
@@ -45,11 +44,10 @@ const HvInputAdornment = props => {
 
         const Icon = (
           <div
-            aria-labelledby={HvLabel?.[0]?.id || undefined}
-            aria-controls={HvBaseInput?.[0]?.id || undefined}
             className={clsx(className, [classes.adornment, classes.adornmentIcon], {
               [classes.hideIcon]: !displayIcon
             })}
+            role="presentation"
             {...others}
           >
             <div className={classes.icon}>{icon}</div>
@@ -58,7 +56,7 @@ const HvInputAdornment = props => {
 
         const element = !isNil(onClick) ? IconButton : Icon;
 
-        return <div aria-hidden={ariaHidden}>{element}</div>;
+        return <div>{element}</div>;
       }}
     </HvFormElementContextConsumer>
   );
@@ -116,7 +114,7 @@ HvInputAdornment.propTypes = {
   /**
    * If the icon display is influenced by an external actor, i.e. hover on input.
    */
-  isShown: PropTypes.bool
+  isVisible: PropTypes.bool
 };
 
 const displayName = "HvInputAdornment";

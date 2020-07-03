@@ -24,11 +24,7 @@ export const Main = () => {
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
-          endAdornment={
-            <>
-              <HvInputAdornment showWhen="standBy" icon={<CloseXS />} />
-            </>
-          }
+          endAdornment={<HvInputAdornment showWhen="standBy" icon={<CloseXS />} />}
         />
       </HvLabel>
     </HvFormElement>

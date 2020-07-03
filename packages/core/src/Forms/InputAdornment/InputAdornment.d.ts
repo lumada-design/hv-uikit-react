@@ -14,7 +14,7 @@ extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInputAdornmentClas
   /**
    * If the icon display is influenced by an external actor, i.e. hover on input
    */
-  isShown?: boolean;
+  isVisible?: boolean;
 }
 
 export type HvInputAdornmentClassKey =

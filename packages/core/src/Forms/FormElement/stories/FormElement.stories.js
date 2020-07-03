@@ -74,7 +74,7 @@ export const Main = () => {
             <>
               <HvInputAdornment
                 showWhen="standBy"
-                isShown={showCloseAdornment}
+                isVisible={showCloseAdornment}
                 onClick={() => setElement("")}
                 icon={<CloseXS />}
               />
