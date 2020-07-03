@@ -21,5 +21,3 @@ sort data when a sort list option is changed and is pressed ENTER
     Press Keys                           NONE    ARROW_DOWN    ENTER
     Wait Until Element Is Not Visible    ${sortTitleDesc}
     Page Should Contain                  Title descending
-
-    
