@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.6.1...@hv/uikit-react-core@2.7.0) (2020-07-04)
+
+
+### Bug Fixes
+
+* **formelement:** not adding aria property .[#1735](https://github.com/pentaho/hv-uikit-react/issues/1735) ([82ca603](https://github.com/pentaho/hv-uikit-react/commit/82ca603e3955ef105bb5afb812863d4760f9f77d))
+
+
+### Features
+
+* **logincontainer:** refactor login. [#1614](https://github.com/pentaho/hv-uikit-react/issues/1614) ([85fc3c6](https://github.com/pentaho/hv-uikit-react/commit/85fc3c6b28acc22a79275e805e529efc5ee72003))
+
+
+
+
+
 ## [2.6.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.6.0...@hv/uikit-react-core@2.6.1) (2020-07-01)
 
 
