@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { isNil } from "lodash";
-import { HvFormElementContextConsumer } from "../FormElement";
+import { HvFormElementContext } from "../FormElement";
 import { getDescriptorMap } from "../FormElement/utils/FormUtils";
-import HvTypography from "../../Typography";
-
+import { HvTypography } from "../..";
+import { setId } from "../../utils";
 import styles from "./styles";
 
 const getChildIdToLabel = (children, childName) => {
@@ -27,38 +27,34 @@ const getChildIdToLabel = (children, childName) => {
  * Component used in conjunction with other form elements, to give extra information about status.
  * If it receives a children, the component will set itself as a label for the children.
  */
-const HvLabelText = props => {
+const HvLabel = props => {
   const { label, children, classes, id, disabled, ...others } = props;
+  const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
+  const localDisabled = disabled || elementDisabled;
+  const localId = id ?? setId(elementId, "label");
+
   return (
-    <HvFormElementContextConsumer>
-      {formContext => {
-        const { elementDisabled } = formContext;
-        const localDisabled = disabled || elementDisabled;
-        return (
-          <>
-            <HvTypography
-              id={id}
-              className={clsx(classes.root, {
-                [classes.labelDisabled]: localDisabled,
-                [classes.childGutter]: !isNil(children)
-              })}
-              variant="labelText"
-              component="label"
-              htmlFor={childId}
-              {...others}
-            >
-              {label}
-            </HvTypography>
-            {children}
-          </>
-        );
-      }}
-    </HvFormElementContextConsumer>
+    <>
+      <HvTypography
+        id={localId}
+        className={clsx(classes.root, {
+          [classes.labelDisabled]: localDisabled,
+          [classes.childGutter]: !isNil(children)
+        })}
+        variant="labelText"
+        component="label"
+        htmlFor={childId}
+        {...others}
+      >
+        {label}
+      </HvTypography>
+      {children}
+    </>
   );
 };
 
-HvLabelText.propTypes = {
+HvLabel.propTypes = {
   /**
    * Id to be applied to the root node.
    */
@@ -95,4 +91,4 @@ HvLabelText.propTypes = {
   disabled: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvLabel" })(HvLabelText);
+export default withStyles(styles, { name: "HvLabel" })(HvLabel);

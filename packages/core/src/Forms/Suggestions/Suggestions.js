@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Popper, withStyles } from "@material-ui/core";
 import { HvList } from "../..";
 import { setId } from "../../utils";
+import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
 /**
@@ -23,8 +24,11 @@ const HvSuggestions = props => {
     ...others
   } = props;
 
+  const { elementId } = useContext(HvFormElementContext);
+  const localId = id ?? setId(elementId, "suggestions");
+
   return (
-    <div id={id} className={clsx(className, classes.root)} {...others}>
+    <div id={localId} className={clsx(className, classes.root)} {...others}>
       <Popper open={expanded} disablePortal anchorEl={anchorEl} className={classes.popper}>
         <OutsideClickHandler onOutsideClick={e => onClose?.(e)}>
           <HvList

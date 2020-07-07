@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormElement  should render correctly 1`] = `
-<WithStyles(FormElement)
+<WithStyles(WithId)
   status="valid"
   value="George"
 >
-  <WithStyles(HvLabelText)
+  <WithStyles(HvLabel)
     id="test"
     key="1"
     label="First name"
@@ -14,7 +14,7 @@ exports[`FormElement  should render correctly 1`] = `
       id="id-test"
       placeholder="Insert your name"
     />
-  </WithStyles(HvLabelText)>
+  </WithStyles(HvLabel)>
   <WithStyles(HvHelperText)
     id="infotext-main"
     key="2"
@@ -22,7 +22,7 @@ exports[`FormElement  should render correctly 1`] = `
   >
     Write your name in this input do not put numbers
   </WithStyles(HvHelperText)>
-</WithStyles(FormElement)>
+</WithStyles(WithId)>
 `;
 
 exports[`FormElement  should render correctly 2`] = `
