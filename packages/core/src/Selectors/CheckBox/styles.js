@@ -8,9 +8,11 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
-    "&:focus-within:not(.disableFocus)": {
+    "&:focus-within": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      ...outlineStyles
+      "& svg": {
+        ...outlineStyles
+      }
     }
   },
   disableFocus: {
