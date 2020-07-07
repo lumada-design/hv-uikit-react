@@ -30,16 +30,6 @@ change focus to previous item and keep item selection when is pressed SHIFT-TAB
     header item should be selected     ${item3}
     header item should be selected     ${item3.2}
 
-change focus to previous item when is pressed SHIFT-TAB on previous clicked item
-    [Documentation]   traceability:
-    ...               https://github.com/lumada-design/hv-uikit-react/issues/1124
-    [Tags]    bug-firefox-webdriver
-    Mouse Over                       ${item3}
-    Wait Until Element Is Visible    ${item3.2}
-    Click Element                    ${item3.2}
-    Press Keys                       ${None}    SHIFT+TAB
-    Wait Until Element Is Visible    ${item3.1}>div:focus
-
 select a parent item when item is focused and is pressed ENTER
     header item should not be selected    ${item1}
     Wait Until Element Is Visible         ${brand}
