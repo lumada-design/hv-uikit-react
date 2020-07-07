@@ -1,28 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputAdornment should render correctly 1`] = `
-<HvInputAdornment
+exports[`Adornment should render correctly 1`] = `
+<WithStyles(HvAdornment)
   icon={<ForwardRef(WithStyles) />}
 >
-  <HvInputAdornment
+  <HvAdornment
     classes={
       Object {
-        "adornment": "HvInputAdornment-adornment",
-        "adornmentButton": "HvInputAdornment-adornmentButton",
-        "adornmentIcon": "HvInputAdornment-adornmentIcon",
-        "hideIcon": "HvInputAdornment-hideIcon",
-        "icon": "HvInputAdornment-icon",
+        "adornment": "HvAdornment-adornment",
+        "adornmentButton": "HvAdornment-adornmentButton",
+        "adornmentIcon": "HvAdornment-adornmentIcon",
+        "hideIcon": "HvAdornment-hideIcon",
+        "icon": "HvAdornment-icon",
+        "root": "HvAdornment-root",
       }
     }
     icon={<ForwardRef(WithStyles) />}
   >
-    <div>
+    <div
+      className="HvAdornment-root"
+    >
       <div
-        className="HvInputAdornment-adornment HvInputAdornment-adornmentIcon HvInputAdornment-hideIcon"
+        className="HvAdornment-adornment HvAdornment-adornmentIcon"
         role="presentation"
       >
         <div
-          className="HvInputAdornment-icon"
+          className="HvAdornment-icon"
         >
           <WithStyles(CloseXS)>
             <CloseXS
@@ -58,6 +61,6 @@ exports[`InputAdornment should render correctly 1`] = `
         </div>
       </div>
     </div>
-  </HvInputAdornment>
-</HvInputAdornment>
+  </HvAdornment>
+</WithStyles(HvAdornment)>
 `;

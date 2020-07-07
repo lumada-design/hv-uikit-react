@@ -10,7 +10,7 @@ exports[`FormElement  should render correctly 1`] = `
     key="1"
     label="First name"
   >
-    <HvBaseInput
+    <WithStyles(HvBaseInput)
       id="id-test"
       placeholder="Insert your name"
     />
@@ -26,7 +26,7 @@ exports[`FormElement  should render correctly 1`] = `
 `;
 
 exports[`FormElement  should render correctly 2`] = `
-<HvBaseInput
+<WithStyles(HvBaseInput)
   id="id-test"
   placeholder="Insert your name"
 />

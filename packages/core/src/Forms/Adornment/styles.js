@@ -1,4 +1,5 @@
 const styles = {
+  root: {},
   icon: {
     width: 30,
     height: 30

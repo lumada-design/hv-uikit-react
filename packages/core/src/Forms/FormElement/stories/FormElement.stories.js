@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
 
-import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvInputAdornment } from "../../..";
+import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvAdornment } from "../../..";
 
 export default {
   title: "Components/Forms/FormElement",
@@ -37,23 +37,41 @@ export const Main = () => {
           "Your value is valid"
       );
     }
-    setShowCloseAdornment(false);
+    isEmpty ? setShowCloseAdornment(false) : setShowCloseAdornment(true);
     setElementValue(value);
   };
 
   const onFocusHandler = event => {
-    const { value, type } = event.target;
-    if (type !== "button") {
-      value ? setShowCloseAdornment(true) : setShowCloseAdornment(false);
+    const { type } = event.target;
+    if (
+      (type !== "button" && !event.currentTarget.contains(document.activeElement)) ||
+      elementStatus !== "standBy"
+    ) {
       setElementStatus("standBy");
       setNotificationText(undefined);
+      if (!showCloseAdornment && elementValue) {
+        setShowCloseAdornment(true);
+        return;
+      }
+      if (showCloseAdornment && !elementValue) {
+        setShowCloseAdornment(false);
+      }
     }
   };
 
   const onBlurHandler = event => {
     if (event.relatedTarget === null || event.relatedTarget === undefined) {
       setElement(event.target.value);
+      setShowCloseAdornment(false);
     }
+  };
+
+  const onMouseLeaveHandler = event => {
+    if (!event.currentTarget.contains(document.activeElement)) setShowCloseAdornment(false);
+  };
+
+  const onMouseEnterHandler = () => {
+    if (elementValue) setShowCloseAdornment(true);
   };
 
   return (
@@ -68,18 +86,20 @@ export const Main = () => {
           id={inputId}
           placeholder="Insert your name"
           onChange={(event, value) => setElement(value, false)}
-          onMouseEnter={() => setShowCloseAdornment(true)}
-          onMouseLeave={() => setShowCloseAdornment(false)}
+          onMouseEnter={onMouseEnterHandler}
+          onMouseLeave={event => onMouseLeaveHandler(event)}
           endAdornment={
             <>
-              <HvInputAdornment
-                showWhen="standBy"
+              <HvAdornment
                 isVisible={showCloseAdornment}
-                onClick={() => setElement("")}
+                onClick={() => {
+                  setElement("");
+                }}
                 icon={<CloseXS />}
+                aria-label="clear button"
               />
-              <HvInputAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
-              <HvInputAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
+              <HvAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
+              <HvAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
             </>
           }
         />

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input should render correctly 1`] = `
-<HvBaseInput
+<WithStyles(HvBaseInput)
   inputProps={
     Object {
       "aria-label": "Input Label",
@@ -190,5 +190,5 @@ exports[`Input should render correctly 1`] = `
       </ForwardRef(Input)>
     </WithStyles(ForwardRef(Input))>
   </HvBaseInput>
-</HvBaseInput>
+</WithStyles(HvBaseInput)>
 `;

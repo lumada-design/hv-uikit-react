@@ -5,15 +5,15 @@ import { mount } from "enzyme";
 import Close from "@hv/uikit-react-icons/dist/CloseXS";
 
 import HvProvider from "../../../Provider";
-import HvInputAdornment from "../InputAdornment";
+import HvAdornment from "../Adornment";
 
-describe("InputAdornment", () => {
+describe("Adornment", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvInputAdornment icon={<Close />} />
+        <HvAdornment icon={<Close />} />
       </HvProvider>
     );
   });
@@ -23,11 +23,11 @@ describe("InputAdornment", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(HvInputAdornment)).toMatchSnapshot();
+    expect(wrapper.find(HvAdornment)).toMatchSnapshot();
   });
 
   it("should render the Input component", () => {
-    const inputAdornmentComponent = wrapper.find(HvInputAdornment);
+    const inputAdornmentComponent = wrapper.find(HvAdornment);
     expect(inputAdornmentComponent.length).toBe(1);
   });
 });

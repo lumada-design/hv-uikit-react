@@ -1,8 +1,8 @@
 import { StandardProps } from "@material-ui/core";
 import { HvFormStatus } from "../FormElement";
 
-export interface HvInputAdornmentProps
-extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInputAdornmentClassKey> {
+export interface HvAdornmentProps
+extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvAdornmentClassKey> {
   /**
    * The icon to be added into the input.
    */
@@ -12,16 +12,17 @@ extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInputAdornmentClas
    */
   showWhen?: HvFormStatus;
   /**
-   * If the icon display is influenced by an external actor, i.e. hover on input
+   * If this property is defined the adornment visibility will be exclusively controlled by this value.
    */
   isVisible?: boolean;
 }
 
-export type HvInputAdornmentClassKey =
+export type HvAdornmentClassKey =
+  | "root"
   | "icon"
   | "adornment"
   | "adornmentIcon"
   | "adornmentButton"
   | "hideIcon"
 
-export default function HvInputAdornment(props: HvInputAdornmentProps): JSX.Element | null;
+export default function HvAdornment(props: HvAdornmentProps): JSX.Element | null;

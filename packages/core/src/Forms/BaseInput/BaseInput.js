@@ -171,7 +171,4 @@ HvBaseInput.propTypes = {
   invalid: PropTypes.bool
 };
 
-const displayName = "HvBaseInput";
-const wrapper = withStyles(styles, { name: displayName })(HvBaseInput);
-wrapper.displayName = displayName;
-export default wrapper;
+export default withStyles(styles, { name: "HvBaseInput" })(HvBaseInput);

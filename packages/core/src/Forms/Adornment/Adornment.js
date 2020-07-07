@@ -6,62 +6,69 @@ import { withStyles } from "@material-ui/core";
 import { HvFormElementContextConsumer } from "../FormElement";
 import styles from "./styles";
 
-const HvInputAdornment = props => {
+const HvAdornment = props => {
   const {
     classes,
     className,
     icon,
-    showWhen = "standBy",
+    showWhen = "",
     onClick,
-    isVisible = false,
+    isVisible = undefined,
     ...others
   } = props;
 
   return (
     <HvFormElementContextConsumer>
       {formContext => {
-        const { elementStatus = "standBy", elementValue = "", descriptors = {} } = formContext;
-        const { HvBaseInput, HvLabel } = descriptors;
+        const { elementStatus = "", descriptors = {} } = formContext;
+        const { HvBaseInput } = descriptors;
 
-        const displayIcon =
-          (elementValue !== "" && elementStatus === showWhen) || (isVisible && elementValue !== "");
-        const IconButton = (
-          <button
-            type="button"
-            tabIndex={-1}
-            aria-labelledby={HvLabel?.[0]?.id}
-            aria-controls={HvBaseInput?.[0]?.id}
-            className={clsx(className, [classes.adornment, classes.adornmentButton], {
-              [classes.hideIcon]: !displayIcon
-            })}
-            onClick={onClick}
-            onKeyDown={() => {}}
-            {...others}
-          >
-            <div className={classes.icon}>{icon}</div>
-          </button>
-        );
+        let displayIcon;
 
-        const Icon = (
-          <div
-            className={clsx(className, [classes.adornment, classes.adornmentIcon], {
-              [classes.hideIcon]: !displayIcon
-            })}
-            role="presentation"
-            {...others}
-          >
-            <div className={classes.icon}>{icon}</div>
-          </div>
-        );
+        if (isVisible === undefined) {
+          displayIcon = showWhen === "" || elementStatus === showWhen;
+        } else {
+          displayIcon = isVisible;
+        }
 
-        const element = !isNil(onClick) ? IconButton : Icon;
+        let element = null;
+        if (!isNil(onClick)) {
+          element = (
+            <button
+              type="button"
+              tabIndex={-1}
+              aria-controls={HvBaseInput?.[0]?.id}
+              className={clsx(className, [classes.adornment, classes.adornmentButton], {
+                [classes.hideIcon]: !displayIcon
+              })}
+              onClick={onClick}
+              onKeyDown={() => {}}
+              {...others}
+            >
+              <div className={classes.icon}>{icon}</div>
+            </button>
+          );
+        } else {
+          element = (
+            <div
+              className={clsx(className, [classes.adornment, classes.adornmentIcon], {
+                [classes.hideIcon]: !displayIcon
+              })}
+              role="presentation"
+              {...others}
+            >
+              <div className={classes.icon}>{icon}</div>
+            </div>
+          );
+        }
 
-        return <div>{element}</div>;
+        return <div className={classes.root}>{element}</div>;
       }}
     </HvFormElementContextConsumer>
   );
 };
-HvInputAdornment.propTypes = {
+
+HvAdornment.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -112,12 +119,9 @@ HvInputAdornment.propTypes = {
    */
   onClick: PropTypes.func,
   /**
-   * If the icon display is influenced by an external actor, i.e. hover on input.
+   * If this property is defined the adornment visibility will be exclusively controlled by this value.
    */
   isVisible: PropTypes.bool
 };
 
-const displayName = "HvInputAdornment";
-const wrapper = withStyles(styles, { name: displayName })(HvInputAdornment);
-wrapper.displayName = displayName;
-export default wrapper;
+export default withStyles(styles, { name: "HvAdornment" })(HvAdornment);
