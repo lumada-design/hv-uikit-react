@@ -1,0 +1,28 @@
+import { StandardProps } from "@material-ui/core";
+import { HvFormStatus } from "../FormElement";
+
+export interface HvAdornmentProps
+extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvAdornmentClassKey> {
+  /**
+   * The icon to be added into the input.
+   */
+  icon: React.ReactNode;
+  /**
+   * When the input aligment should be displayed
+   */
+  showWhen?: HvFormStatus;
+  /**
+   * If this property is defined the adornment visibility will be exclusively controlled by this value.
+   */
+  isVisible?: boolean;
+}
+
+export type HvAdornmentClassKey =
+  | "root"
+  | "icon"
+  | "adornment"
+  | "adornmentIcon"
+  | "adornmentButton"
+  | "hideIcon"
+
+export default function HvAdornment(props: HvAdornmentProps): JSX.Element | null;

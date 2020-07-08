@@ -13,7 +13,7 @@ const inputProps = {
 describe("Input", () => {
   let wrapper;
 
-  const getInputProps = ParentElement => ParentElement.find("HvBaseInput").props();
+  const getInputProps = ParentElement => ParentElement.find(BaseInput).props();
 
   beforeEach(async () => {
     wrapper = mount(
@@ -32,7 +32,7 @@ describe("Input", () => {
   });
 
   it("should render the Input component", () => {
-    const inputComponent = wrapper.find("HvBaseInput");
+    const inputComponent = wrapper.find(BaseInput);
     expect(inputComponent.length).toBe(1);
   });
 

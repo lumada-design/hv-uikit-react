@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Adornment should render correctly 1`] = `
+<WithStyles(HvAdornment)
+  icon={<ForwardRef(WithStyles) />}
+>
+  <HvAdornment
+    classes={
+      Object {
+        "adornment": "HvAdornment-adornment",
+        "adornmentButton": "HvAdornment-adornmentButton",
+        "adornmentIcon": "HvAdornment-adornmentIcon",
+        "hideIcon": "HvAdornment-hideIcon",
+        "icon": "HvAdornment-icon",
+        "root": "HvAdornment-root",
+      }
+    }
+    icon={<ForwardRef(WithStyles) />}
+  >
+    <div
+      className="HvAdornment-root"
+    >
+      <div
+        className="HvAdornment-adornment HvAdornment-adornmentIcon"
+        role="presentation"
+      >
+        <div
+          className="HvAdornment-icon"
+        >
+          <WithStyles(CloseXS)>
+            <CloseXS
+              classes={
+                Object {
+                  "root": "HvIconCloseXS-root",
+                  "rootL": "HvIconCloseXS-rootL",
+                  "rootM": "HvIconCloseXS-rootM",
+                  "rootS": "HvIconCloseXS-rootS",
+                  "rootXs": "HvIconCloseXS-rootXs",
+                }
+              }
+            >
+              <div
+                className="HvIconCloseXS-root HvIconCloseXS-rootXs"
+              >
+                <svg
+                  focusable={false}
+                  height="12px"
+                  viewBox="0 0 12 12"
+                  width="12px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="color0"
+                    d="M10.6 2.1l-.7-.7L6 5.3 2.1 1.4l-.7.7L5.3 6 1.4 9.9l.7.7L6 6.7l3.9 3.9.7-.7L6.7 6z"
+                    fill="#414141"
+                  />
+                </svg>
+              </div>
+            </CloseXS>
+          </WithStyles(CloseXS)>
+        </div>
+      </div>
+    </div>
+  </HvAdornment>
+</WithStyles(HvAdornment)>
+`;

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { HvFormElement, HvBaseInput, HvHelperText, HvLabel } from "../../..";
+
+import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
+
+import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvAdornment } from "../../..";
 
 export default {
   title: "Components/Forms/FormElement",
@@ -12,47 +15,96 @@ export default {
 };
 
 export const Main = () => {
-  const [notificationText, setNotificationText] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [status, setStatus] = useState("standBy");
-
-  const hasNumber = string => {
-    return /\d/.test(string);
-  };
-
-  const onChangeHandler = (event, value = "") => {
-    setInputValue(value);
-  };
-
-  const validateValue = value => {
-    if (value === "") {
-      setStatus("standBy");
-      setNotificationText("");
-      return;
-    }
-    if (hasNumber(value)) {
-      setStatus("invalid");
-      setNotificationText("Names do not contain numbers");
-      return;
-    }
-    setStatus("valid");
-    setNotificationText("Your value is valid");
-  };
+  const [elementValue, setElementValue] = useState("");
+  const [elementStatus, setElementStatus] = useState("standBy");
+  const [showCloseAdornment, setShowCloseAdornment] = useState(false);
+  const [notificationText, setNotificationText] = useState(
+    "Write your name in this input do not put numbers"
+  );
 
   const inputId = "controlled-input";
   const inputLabelId = "controlled-input-label";
 
+  const setElement = (value = "", setStatus = true) => {
+    const hasNumber = /\d/.test(value);
+    const isEmpty = !value || value.length === 0;
+
+    if (setStatus) {
+      setElementStatus((hasNumber && "invalid") || (isEmpty && "standBy") || "valid");
+      setNotificationText(
+        (hasNumber && "Names do not contain numbers") ||
+          (isEmpty && "Write your name in this input do not put numbers") ||
+          "Your value is valid"
+      );
+    }
+    isEmpty ? setShowCloseAdornment(false) : setShowCloseAdornment(true);
+    setElementValue(value);
+  };
+
+  const onFocusHandler = event => {
+    const { type } = event.target;
+    if (
+      (type !== "button" && !event.currentTarget.contains(document.activeElement)) ||
+      elementStatus !== "standBy"
+    ) {
+      setElementStatus("standBy");
+      setNotificationText(undefined);
+      if (!showCloseAdornment && elementValue) {
+        setShowCloseAdornment(true);
+        return;
+      }
+      if (showCloseAdornment && !elementValue) {
+        setShowCloseAdornment(false);
+      }
+    }
+  };
+
+  const onBlurHandler = event => {
+    if (event.relatedTarget === null || event.relatedTarget === undefined) {
+      setElement(event.target.value);
+      setShowCloseAdornment(false);
+    }
+  };
+
+  const onMouseLeaveHandler = event => {
+    if (!event.currentTarget.contains(document.activeElement)) setShowCloseAdornment(false);
+  };
+
+  const onMouseEnterHandler = () => {
+    if (elementValue) setShowCloseAdornment(true);
+  };
+
   return (
-    <HvFormElement value={inputValue} status={status}>
-      <HvLabel key="1" id={inputLabelId} label="First name">
+    <HvFormElement
+      onBlur={event => onBlurHandler(event)}
+      onFocus={event => onFocusHandler(event)}
+      value={elementValue}
+      status={elementStatus}
+    >
+      <HvLabel id={inputLabelId} label="First name">
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
-          onChange={onChangeHandler}
-          onBlur={() => validateValue(inputValue)}
+          onChange={(event, value) => setElement(value, false)}
+          onMouseEnter={onMouseEnterHandler}
+          onMouseLeave={event => onMouseLeaveHandler(event)}
+          endAdornment={
+            <>
+              <HvAdornment
+                isVisible={showCloseAdornment}
+                onClick={() => {
+                  setElement("");
+                }}
+                icon={<CloseXS />}
+                aria-label="clear button"
+              />
+              <HvAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
+              <HvAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
+            </>
+          }
         />
       </HvLabel>
-      <HvHelperText key="2" id="infotext-main" notification={notificationText}>
+      <HvHelperText key="2" id="info-text-valid" notification={notificationText}>
         Write your name in this input do not put numbers
       </HvHelperText>
     </HvFormElement>

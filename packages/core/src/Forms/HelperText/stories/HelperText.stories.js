@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HvHelperText, HvButton } from "../../..";
 
 export default {
-  title: "Components/Forms/InfoText",
+  title: "Components/Forms/HelperText",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvHelperText } from '@hv/uikit-react-core/dist'"
