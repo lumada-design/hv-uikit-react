@@ -52,7 +52,8 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
       id={id}
       key={item.label}
       className={clsx(classes.root, classes[`${type}Item`], {
-        [classes.selectedItem]: isSelected
+        [classes.selectedItem]: !isMenu && isSelected,
+        [classes.notSelectedItem]: !isMenu && !isSelected
       })}
     >
       <ConditionalWrapper condition={isIe} wrapper={focusWrapper}>
@@ -92,6 +93,10 @@ MenuItem.propTypes = {
      */
     selectedItem: PropTypes.string,
     /**
+     * Style applied to the li element when it isn't selected.
+     */
+    notSelectedItem: PropTypes.string,
+    /**
      * Style applied to each item button.
      */
     button: PropTypes.string,
@@ -108,7 +113,7 @@ MenuItem.propTypes = {
      */
     externalReference: PropTypes.string,
     /**
-     * Style applied to simulated a focues in ie.
+     * Style applied to simulated a focus in ie.
      */
     falseFocus: PropTypes.string
   }).isRequired,

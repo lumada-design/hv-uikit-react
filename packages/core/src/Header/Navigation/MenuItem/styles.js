@@ -27,12 +27,15 @@ const styles = theme => {
       }
     },
     selectedItem: {
-      borderTop: `2px solid ${theme.hv.palette.accent.acce3}`
+      borderTop: `2px solid ${theme.hv.palette.accent.acce3}`,
+      paddingTop: "2px"
+    },
+    notSelectedItem: {
+      marginTop: "4px"
     },
     button: {
       border: "none",
       cursor: "pointer",
-      marginTop: 2,
       padding: `6px ${theme.hv.spacing.sm}px`,
       "&:active": {
         outline: "none"
