@@ -90,6 +90,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                         "contentFocused": "HvHeaderMenuItem-contentFocused",
                         "externalReference": "HvHeaderMenuItem-externalReference",
                         "falseFocus": "HvHeaderMenuItem-falseFocus",
+                        "notSelectedItem": "HvHeaderMenuItem-notSelectedItem",
                         "root": "HvHeaderMenuItem-root",
                         "selectedItem": "HvHeaderMenuItem-selectedItem",
                       }
@@ -104,7 +105,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                     type="menubar"
                   >
                     <li
-                      className="HvHeaderMenuItem-root"
+                      className="HvHeaderMenuItem-root HvHeaderMenuItem-notSelectedItem"
                       key="someLabel"
                     >
                       <ConditionalWrapper

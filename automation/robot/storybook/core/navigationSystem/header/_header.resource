@@ -6,12 +6,12 @@ Resource     ../../_keywords.resource
 header item should be selected
     [Arguments]    ${locator}
     [Documentation]    verify if locator contains selectedItem in class attribute
-    wait until element attribute contain    ${locator}    class    selectedItem
+    wait until element attribute contain    ${locator}>div>p    class    selectedNavText
 
 header item should not be selected
     [Arguments]    ${locator}
     [Documentation]    verify if locator contains selectedItem in class attribute
-    wait until element attribute not contain    ${locator}    class    selectedItem
+    wait until element attribute not contain    ${locator}>div>p    class    selectedNavText
 
 
 *** Variables ***
