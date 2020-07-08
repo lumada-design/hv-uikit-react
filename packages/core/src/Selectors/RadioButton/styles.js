@@ -10,7 +10,10 @@ const styles = theme => ({
     },
     "&:focus-within:not(.disableFocus)": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      ...outlineStyles
+      "& svg": {
+        borderRadius: "50%",
+        ...outlineStyles
+      }
     }
   },
   disableFocus: {

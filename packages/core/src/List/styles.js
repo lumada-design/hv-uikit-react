@@ -84,7 +84,11 @@ const styles = theme => ({
     marginLeft: "auto"
   },
   icon: {
-    height: "30px"
+    height: "30px",
+    "& svg": {
+      boxShadow: "none !important",
+      outline: "none !important"
+    }
   },
   link: {
     "&:focus": {
