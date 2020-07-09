@@ -2,11 +2,8 @@
 
 **Table of Contents**
 
-- [Package Changes](#package-changes)
-- [Material-UI v4](#material-ui-v4)
-- [Provider Changes](#provider-changes)
-- [Layout Changes](#layout-changes)
 - [Icons Changes](#icons-changes)
+- [Theme](#theme)
 - [Component Changes](#component-changes)
   - [Asset Inventory](#asset-inventory)
   - [Button](#button)
@@ -28,29 +25,8 @@
   - [Toggle Button](#toggle-button)
   - [Tooltip](#tooltip)
 
-# From v1.x to v2.x
 
-## Package Changes
-
-- Package `@hv/uikit-common-themes` moved from the [hv-uikit-common](https://github.com/pentaho/hv-uikit-common) repository to [this](https://github.com/pentaho/hv-uikit-react) repository. The package will continue to be published under the same name, only the repository changed.
-
-- Packages `@hv/uikit-common-icons` and `@hv/uikit-common-utils` are now deprecated, are will no longer receive updates. You can still use the other releases if you need them. As for their contents:
-
-  - `@hv/uikit-common-icons` was integrated in `@hv/uikit-react-icons` package. SVG files can be found in `assets/` folder.
-  - `@hv/uikit-common-utils` was integrated in `@hv/uikit-react-core` package, under `/dist/utils`.
-
-## Material-UI v4
-
-Material UI was upgraded from v3 to v4, and is now a peer-depencency of our packages.
-You have to install it in your project, or upgrade if you're already using it and follow their [migration guide](https://material-ui.com/guides/migration-v3/).
-
-## Provider Changes
-
-The routing was removed from the provider. The component `HvLink` that used the router now offers either a `href` attribute or a `<div />` with an `onClick`.
-
-## Layout Changes
-
-The greater change is our layout component (the Grid) is the definition of spacing, that now uses a 7.5px factor. For example if we passed a spacing of 2, the resulting spacing between containers is 15px.
+# From v2.x to v3.x
 
 ## Icons Changes
 
@@ -65,6 +41,8 @@ To import an icon you should use (using `Checkbox` as an example):
 ```
 
 - Icon box dimensions are now according to Design System specifications by default.
+
+##Theme
 
 ## Component Changes
 
