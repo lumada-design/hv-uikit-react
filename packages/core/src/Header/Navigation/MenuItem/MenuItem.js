@@ -29,6 +29,7 @@ const MenuItem = ({ classes, id, item, type, onClick }) => {
     ) {
       if (event.type === "click") {
         setUseFocus(false);
+        event.currentTarget.blur();
       }
 
       onClick?.(event, item);
