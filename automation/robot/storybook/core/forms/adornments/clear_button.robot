@@ -12,6 +12,7 @@ show clean button when input is not empty and is focused
     wait Until Element Is Visible    ${clean_button}
 
 show clean button when input is not empty and mouse is hover it
+    [Documentation]    to avoid firefox errors must be used input text and then keyboard kw
     Input Text                           ${input}    Joao
     Press Keys                           NONE    TAB
     Wait Until Element Is Not Visible    ${clean_button}
@@ -19,8 +20,7 @@ show clean button when input is not empty and mouse is hover it
     wait until Element Is Visible        ${clean_button}
 
 show clean button when input is not empty and is focused and mouse is hover it
-    Input Text                           ${input}    Joao
-    Press Keys                           NONE    TAB
+    Press Keys                           ${input}    Joao    TAB
     Mouse Over                           ${label}
     Wait Until Element Is Not Visible    ${clean_button}
     Double Click Element                 ${input}
