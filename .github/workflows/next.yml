@@ -5,20 +5,20 @@
 #  -H "Accept: application/vnd.github.everest-preview+json" \
 #  -H "Authorization: token <user-token>" \
 #  --request POST \
-#  --data "{\"event_type\": \"v1x\"}" \
+#  --data "{\"event_type\": \"master\"}" \
 #  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
 
-name: v1.x Nightly
+name: Next Nightly
 on:
   schedule:
-    - cron: "0 1 * * *" # daily at 01:00
+    - cron: "0 7 * * *" # daily at 07:00
   repository_dispatch:
-    types: [v1x]
+    types: [next]
 
 # flow:
 # Notify Start
-# License-Checks | Lint | Test-Jest | Build-Documentation | Build-Automation-Storybook
-# Robot_pa11y | Robot (chrome | ie | firefox)
+# License-Checks | Lint | Test-Jest | Build-Documentation
+# A11Y-Tests | Robot (chrome | ie | firefox)
 # Notify End
 # Release
 
@@ -27,37 +27,14 @@ env:
   RELEASE_COMMIT_MESSAGE: "chore(release): publish"
 
 jobs:
-  Notify-Start:
-    name: Notify Start
-    runs-on: [self-hosted, Linux]
-    steps:
-      - name: Notify
-        uses: hbfernandes/slack-action@1.0
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        with:
-          args: |
-            {
-              "channel": "ui-kit-eng-ci",
-              "attachments": [
-                {
-                  "mrkdwn_in": ["text"],
-                  "title": "Workflow ${{ github.workflow }} (${{github.ref}}) build started",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}",
-                  "footer": "by ${{github.actor}}"
-                }
-              ]
-            }
-
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
-    needs: [Notify-Start]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -70,6 +47,9 @@ jobs:
 
       - name: Bootstrap
         run: npm run bootstrap
+
+      - name: License Check
+        run: npm run license-check
 
       - name: Lint
         run: npm run lint
@@ -79,14 +59,13 @@ jobs:
 
   Build-Documentation:
     name: Build Documentation
-    needs: [Notify-Start]
     runs-on: [self-hosted, Linux]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -100,14 +79,72 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
-      - name: Generate Automation Storybook
-        run: npm run automation:package
+      - name: Generate Documentation
+        run: |
+          npm run build-documentation
 
-      - name: Archive Automation Storybook
+      - name: Archive Documentation
         uses: actions/upload-artifact@v1
         with:
-          name: automation-storybook
-          path: automation/storybook/dist
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+
+  A11Y-Tests:
+    name: Accessibility Tests
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    services:
+      storybook:
+        image: nginx
+        ports:
+          - 9001:80
+        volumes:
+          - ${{ github.workspace }}/dist:/usr/share/nginx/html
+        options: >-
+          --name storybook
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "next"
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Restart nginx
+        uses: docker://docker
+        with:
+          args: docker restart storybook
+
+      - name: Install automation/pa11y
+        run: |
+          cd ${{ github.workspace }}/automation/pa11y
+          npm config set @hv:registry ${RESOLVE_REGISTRY}
+          npm ci
+
+      - name: Test A11Y
+        run: |
+          cd ${{ github.workspace }}/automation/pa11y
+          STORYBOOK_URL=http://localhost:9001 npm run pa11y-ci
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
 
   Robot:
     name: Test Robot
@@ -140,12 +177,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: "v1.x"
+          ref: "next"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
         with:
-          name: automation-storybook
+          name: documentation
           path: ${{ github.workspace }}/dist
 
       - name: Restart nginx
@@ -161,19 +198,80 @@ jobs:
         if: failure()
         with:
           name: ${{ matrix.browser }}-reports
-          path: reports
+          path: ${{ github.workspace }}/reports
 
-      - name: Clean Reports
-        run: rm -rf reports
+      - name: Clean Folders
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/dist
+          rm -rf ${{ github.workspace }}/reports
+
+  Robot-Windows:
+    name: Test Robot (Windows)
+    needs: Build-Documentation
+    runs-on: [self-hosted, Windows]
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [ie]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: "next"
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/dist
+
+      - name: Run SELENIUM Robot
+        uses: ./.github/robot
+        with:
+          storybook-url: http://localhost:9002
+          browser: ${{ matrix.browser }}
+          excludes: |
+            pa11y
+            bug-${{ matrix.browser }}
+            bug-${{ matrix.browser }}-webdriver
+            issue
+            issue-${{ matrix.browser }}
+            bug-infrastructure
+            bug-infrastructure-${{ matrix.browser }}
+          output-dir: ./reports
+          processes: 3
+          path: ./automation/robot/storybook/core
+
+      - name: Save Reports
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: ${{ matrix.browser }}-reports
+          path: ${{ github.workspace }}/reports
+
+      - name: Clean Folders
+        if: always()
+        run: |
+          Remove-Item -path ${{ github.workspace }}/dist -recurse -force
+          Remove-Item -path ${{ github.workspace }}/reports -recurse -force
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Robot, Robot-Windows]
     if: always()
     runs-on: [self-hosted, Linux]
 
     steps:
+      # delete artifact since it was published to gh-pages
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: documentation
+
       - uses: technote-space/workflow-conclusion-action@v1
+
       - name: generate conclusion color
         id: conclusion_color
         uses: actions/github-script@0.9.0
@@ -204,16 +302,3 @@ jobs:
                 }
               ]
             }
-
-  Release:
-    if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, Build-Documentation, Robot]
-    runs-on: [self-hosted, Linux]
-    steps:
-      - name: Trigger Release
-        # repo scope personal token is required to generate a dispatch event
-        run: |
-          curl -X POST \
-            https://api.github.com/repos/${{ github.repository }}/dispatches \
-            -H 'Authorization: token ${{ secrets.BUILD_TOKEN }}' \
-            -d '{"event_type": "v1-release"}'
