@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.7.0...@hv/uikit-react-core@2.8.0) (2020-07-10)
+
+
+### Bug Fixes
+
+* **header:** submenu not showing when hovering menus to the left. [#1752](https://github.com/pentaho/hv-uikit-react/issues/1752) ([3f8006f](https://github.com/pentaho/hv-uikit-react/commit/3f8006fc7e4926f7524ce8b4ae7a07df90fa7bcb))
+
+
+### Features
+
+* **checkbox:** update focus styling. [#1499](https://github.com/pentaho/hv-uikit-react/issues/1499) ([e6e88d7](https://github.com/pentaho/hv-uikit-react/commit/e6e88d7e641813dd8b13d75105e28a8048215380))
+* **inputadornment:** extract logic from input. [#1560](https://github.com/pentaho/hv-uikit-react/issues/1560) ([#1652](https://github.com/pentaho/hv-uikit-react/issues/1652)) ([b38ecaf](https://github.com/pentaho/hv-uikit-react/commit/b38ecaf0490f2cd05af4a5457436ed52621d3097))
+* **radio:** update focus styling. [#1500](https://github.com/pentaho/hv-uikit-react/issues/1500) ([e196429](https://github.com/pentaho/hv-uikit-react/commit/e196429dd18a7268997fc90974dd00535fe9d059))
+
+
+
+
+
 # [2.7.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.6.1...@hv/uikit-react-core@2.7.0) (2020-07-04)
 
 
