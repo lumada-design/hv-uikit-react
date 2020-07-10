@@ -7,7 +7,7 @@ import {
   BottomXS as ArrowDown,
   Level3Bad
 } from "@hv/uikit-react-icons/dist";
-import { HvKpi, HvTypography, HvCard } from "../..";
+import { HvBox, HvKpi, HvTypography, HvCard } from "../..";
 
 export default {
   title: "Visualizations/KPI",
@@ -27,15 +27,10 @@ export const Main = () => {
     comparisonIndicator: "99%"
   };
 
-  const kpiContainer = {
-    minWidth: "190px",
-    padding: "20px"
-  };
-
   return (
-    <div style={kpiContainer}>
+    <HvBox p="sm" minWidth="190px">
       <HvKpi labels={AverageKpiTextConfiguration} id="test-kpi" />
-    </div>
+    </HvBox>
   );
 };
 
@@ -49,27 +44,22 @@ export const AverageService = () => {
   };
 
   const KpiVisualAverage = () => (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <HvBox display="flex" alignItems="center">
       <ArrowUp title="Up" boxStyles={{ width: "16px", height: "16px" }} semantic="sema1" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
-    </div>
+    </HvBox>
   );
 
-  const kpiContainer = {
-    minWidth: "190px",
-    padding: "20px"
-  };
-
   return (
-    <div style={kpiContainer}>
+    <HvBox p="sm" minWidth="190px">
       <HvKpi
         labels={labels}
         visualIndicator={<Success title="Good" semantic="sema1" />}
         visualComparison={<KpiVisualAverage />}
       />
-    </div>
+    </HvBox>
   );
 };
 
@@ -91,12 +81,12 @@ export const Iops = () => {
   };
 
   const IopsComparisonVisualAverage = () => (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <HvBox display="flex" alignItems="center">
       <ArrowDown title="Down" boxStyles={{ width: "20px", height: "20px" }} semantic="sema4" />
       <HvTypography component="span" variant="highlightText">
         {labels.comparisonIndicator}
       </HvTypography>
-    </div>
+    </HvBox>
   );
 
   const TrendIndicator = () => (
@@ -148,20 +138,15 @@ export const Iops = () => {
     </div>
   );
 
-  const kpiContainer = {
-    minWidth: "190px",
-    padding: "20px"
-  };
-
   return (
-    <div style={kpiContainer}>
+    <HvBox p="sm" minWidth="190px">
       <HvKpi
         labels={labels}
         visualIndicator={<Average title="Bad" semantic="sema4" />}
         trendIndicator={<TrendIndicator />}
         visualComparison={<IopsComparisonVisualAverage />}
       />
-    </div>
+    </HvBox>
   );
 };
 

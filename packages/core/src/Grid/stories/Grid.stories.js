@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Hidden, Paper, withStyles, useTheme } from "@material-ui/core";
-import { HvGrid, HvContainer, HvTypography, useWidth } from "../..";
+import { Hidden, useTheme } from "@material-ui/core";
+import { HvBox, HvGrid, HvContainer, HvTypography, useWidth } from "../..";
 
 export default {
   title: "Foundation/Grid",
@@ -13,109 +13,87 @@ export default {
 };
 
 export const Main = () => {
-  const styles = theme => ({
-    root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo2,
-      marginTop: theme.spacing(2),
-      flex: 1,
-      fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
-    },
-    paper: {
-      padding: theme.spacing(2),
-      height: 150,
-      textAlign: "center",
-      backgroundColor: theme.hv.palette.semantic.sema7,
-      ...theme.hv.typography.sText,
-      color: theme.hv.palette.base.base2,
-      display: "flex",
-      alignItems: "center"
-    }
-  });
   const width = useWidth();
-  const Example = withStyles(styles)(({ classes }) => (
+
+  const Box = ({ children }) => (
+    <HvBox
+      display="flex"
+      alignItems="center"
+      p={2}
+      height="150px"
+      textAlign="center"
+      bgcolor="sema7"
+      color="base2"
+    >
+      <HvTypography variant="sText">{children}</HvTypography>
+    </HvBox>
+  );
+
+  return (
     <div>
       <HvTypography variant="highlightText">{`Current width: ${width}`}</HvTypography>
-      <div className={classes.root}>
+      <HvBox bgcolor="atmo2" mt={2} flex={1}>
         <HvContainer>
           <HvGrid container>
             <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
-              <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+              <Box>xl=1 lg=1 md sm=3 xs=3</Box>
             </HvGrid>
             <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
-              <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+              <Box>xl=1 lg=1 md sm=3 xs=3</Box>
             </HvGrid>
             <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
-              <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+              <Box>xl=1 lg=1 md sm=3 xs=3</Box>
             </HvGrid>
             <HvGrid item xl={1} lg={1} md sm={3} xs={3}>
-              <Paper className={classes.paper}>xl=1 lg=1 md sm=3 xs=3</Paper>
+              <Box>xl=1 lg=1 md sm=3 xs=3</Box>
             </HvGrid>
             <Hidden smDown>
               <HvGrid item xl={1} lg={1} md>
-                <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                <Box>xl=1 lg=1 md sm=false xs=false</Box>
               </HvGrid>
               <HvGrid item xl={1} lg={1} md>
-                <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                <Box>xl=1 lg=1 md sm=false xs=false</Box>
               </HvGrid>
               <HvGrid item xl={1} lg={1} md>
-                <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                <Box>xl=1 lg=1 md sm=false xs=false</Box>
               </HvGrid>
               <HvGrid item xl={1} lg={1} md>
-                <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                <Box>xl=1 lg=1 md sm=false xs=false</Box>
               </HvGrid>
               <Hidden mdDown>
                 <HvGrid item xl={1} lg={1}>
-                  <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  <Box>xl=1 lg=1 md sm=false xs=false</Box>
                 </HvGrid>
                 <HvGrid item xl={1} lg={1}>
-                  <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  <Box>xl=1 lg=1 md sm=false xs=false</Box>
                 </HvGrid>
                 <HvGrid item xl={1} lg={1}>
-                  <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  <Box>xl=1 lg=1 md sm=false xs=false</Box>
                 </HvGrid>
                 <HvGrid item xl={1} lg={1}>
-                  <Paper className={classes.paper}>xl=1 lg=1 md sm=false xs=false</Paper>
+                  <Box>xl=1 lg=1 md sm=false xs=false</Box>
                 </HvGrid>
               </Hidden>
             </Hidden>
           </HvGrid>
         </HvContainer>
-      </div>
+      </HvBox>
     </div>
-  ));
-  return <Example />;
+  );
 };
-
-const Box = ({ text, classes }) => (
-  <div className={classes.box}>
-    <HvTypography variant="sText">{text}</HvTypography>
-  </div>
-);
-
-const styles = theme => ({
-  box: {
-    backgroundColor: theme.hv.palette.semantic.sema7,
-    display: "flex",
-    height: "150px",
-    width: "100%",
-    padding: 20,
-    "&>*": {
-      margin: "auto",
-      textAlign: "center",
-      color: theme.hv.palette.base.base2
-    }
-  }
-});
-
-const StyledBox = withStyles(styles)(Box);
 
 export const The12Columns = () => {
   const theme = useTheme();
-
   const breakpoint = useWidth();
   const title = `Breakpoint: ${breakpoint}`;
+
+  const Box = ({ children }) => (
+    <HvBox bgcolor="sema7" display="flex" height="150px" p="20px">
+      <HvBox m="auto" textAlign="center" color="base2">
+        <HvTypography variant="sText">{children}</HvTypography>
+      </HvBox>
+    </HvBox>
+  );
 
   const styledContainer = {
     border: "1px solid",
@@ -131,7 +109,7 @@ export const The12Columns = () => {
         <HvGrid container>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
             <HvGrid key={value} item xs={1} sm={1} md={1} lg={1} xl={1}>
-              <StyledBox text={value.toString()} />
+              <Box>{value.toString()}</Box>
             </HvGrid>
           ))}
         </HvGrid>
@@ -146,6 +124,14 @@ export const Behaviour = () => {
   const breakpoint = useWidth();
   const title = `Breakpoint: ${breakpoint}`;
 
+  const Box = ({ children }) => (
+    <HvBox bgcolor="sema7" display="flex" height="150px" p="20px">
+      <HvBox m="auto" textAlign="center" color="base2">
+        <HvTypography variant="sText">{children}</HvTypography>
+      </HvBox>
+    </HvBox>
+  );
+
   const styledContainer = {
     border: "1px solid",
     borderColor: theme.hv.palette.atmosphere.atmo5,
@@ -159,25 +145,25 @@ export const Behaviour = () => {
       <div style={styledContainer}>
         <HvGrid container>
           <HvGrid item xs={4} sm={8} md={8} lg={12} xl={12}>
-            <StyledBox text={"xs={4} sm={8} md={8} lg={12} xl={12}"} />
+            <Box>{"xs={4} sm={8} md={8} lg={12} xl={12}"}</Box>
           </HvGrid>
           <HvGrid item xs={4} sm={4} md={4} lg={6} xl={6}>
-            <StyledBox text={"xs={4} sm={4} md={4} lg={6} xl={6}"} />
+            <Box>{"xs={4} sm={4} md={4} lg={6} xl={6}"}</Box>
           </HvGrid>
           <HvGrid item xs={4} sm={4} md={4} lg={6} xl={6}>
-            <StyledBox text={"xs={4} sm={4} md={4} lg={6} xl={6}"} />
+            <Box>{"xs={4} sm={4} md={4} lg={6} xl={6}"}</Box>
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <Box>{"xs={1} sm={2} md={2} lg={3} xl={3}"}</Box>
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <Box>{"xs={1} sm={2} md={2} lg={3} xl={3}"}</Box>
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <Box>{"xs={1} sm={2} md={2} lg={3} xl={3}"}</Box>
           </HvGrid>
           <HvGrid item xs={1} sm={2} md={2} lg={3} xl={3}>
-            <StyledBox text={"xs={1} sm={2} md={2} lg={3} xl={3}"} />
+            <Box>{"xs={1} sm={2} md={2} lg={3} xl={3}"}</Box>
           </HvGrid>
         </HvGrid>
       </div>
