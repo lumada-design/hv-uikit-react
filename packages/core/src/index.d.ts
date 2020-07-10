@@ -13,6 +13,9 @@ export * from "./Banner";
 export { default as HvBarchart } from "./Barchart";
 export * from "./Barchart";
 
+export { default as HvBox } from "./Box";
+export * from "./Box";
+
 export { default as HvBreadCrumb } from "./BreadCrumb";
 export * from "./BreadCrumb";
 

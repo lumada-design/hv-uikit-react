@@ -6,6 +6,7 @@ export { default as HvBadge } from "./Badge";
 export { default as HvBanner } from "./Banner";
 export * from "./Banner";
 export { default as HvBarchart } from "./Barchart";
+export { default as HvBox } from "./Box";
 export { default as HvBreadcrumb } from "./BreadCrumb";
 export { default as HvBulkActions } from "./BulkActions";
 export { default as HvButton } from "./Button";
