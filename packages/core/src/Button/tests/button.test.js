@@ -105,20 +105,6 @@ describe("Button", () => {
       materialButtonConfiguration.variant.text
     );
   });
-
-  it("should correctly map the secondary type to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="ghostSecondary">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.text
-    );
-  });
 });
 
 describe("Button with Icon", () => {

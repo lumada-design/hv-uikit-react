@@ -4,7 +4,6 @@ export type HvButtonCategories =
   | "primary"
   | "secondary"
   | "ghost"
-  | "ghostSecondary"
   | "semantic"
   | "icon";
 
@@ -29,8 +28,6 @@ export type HvButtonClassKey =
   | "secondaryDisabled"
   | "ghost"
   | "ghostDisabled"
-  | "ghostSecondary"
-  | "ghostSecondaryDisabled"
   | "semantic"
   | "semanticDisabled"
   | "startIcon";

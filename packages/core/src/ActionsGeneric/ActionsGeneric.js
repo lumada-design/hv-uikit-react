@@ -125,7 +125,7 @@ ActionsGeneric.propTypes = {
   /**
    * Button category.
    */
-  category: PropTypes.oneOf(["primary", "secondary", "ghost", "ghostSecondary", "semantic"]),
+  category: PropTypes.oneOf(["primary", "secondary", "ghost", "semantic"]),
   /**
    *  Whether actions should be all disabled
    */

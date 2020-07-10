@@ -8,7 +8,6 @@ import { Checkbox } from "@hv/uikit-react-icons";
 
 import { HvCheckBox, HvProvider } from "../../..";
 import labelPositions from "../../labelPositions";
-import theme from "../../../theme";
 
 import { Main, Disabled } from "../stories/CheckBox.stories";
 
@@ -41,12 +40,8 @@ describe("CheckBox", () => {
 
   it("should have an icon", () => {
     const component = wrapper.find(HvCheckBox);
-    const componentHtml = component.html();
 
     expect(component.find(Checkbox).length).toBe(1);
-
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(false);
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(false);
   });
 
   it("should have an icon when disabled", () => {
@@ -57,12 +52,8 @@ describe("CheckBox", () => {
     );
 
     const component = wrapper.find(HvCheckBox);
-    const componentHtml = component.html();
 
     expect(component.find(Checkbox).length).toBe(1);
-
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo4)).toBe(true);
-    expect(componentHtml.includes(theme.hv.palette.atmosphere.atmo6)).toBe(true);
   });
 
   it("should apply the correct class name when there is a label at the start", () => {

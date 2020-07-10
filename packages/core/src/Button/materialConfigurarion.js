@@ -19,7 +19,6 @@ const categoryValues = Object.freeze({
   primary: "primary",
   secondary: "secondary",
   ghost: "ghost",
-  ghostSecondary: "ghostSecondary",
   semantic: "semantic",
   icon: "icon"
 });
@@ -64,15 +63,6 @@ const getMaterialConfiguration = (classes, category) => {
         classes: {
           ...styling,
           disabled: classes.ghostDisabled
-        }
-      };
-    case categoryValues.ghostSecondary:
-      return {
-        ...materialText,
-        classes: {
-          ...styling,
-          textPrimary: classes.ghostSecondary,
-          disabled: classes.ghostSecondaryDisabled
         }
       };
     case categoryValues.semantic:

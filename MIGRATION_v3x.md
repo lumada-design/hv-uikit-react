@@ -71,8 +71,8 @@ With our first major release several components where reviewed in order to remov
 
 ### Button
 
-- `type` renamed to `category`.
-- `colorType` renamed to `category`.
+- `ghostSecondary` category is deprecated.
+- `ghostSecondary` and `ghostSecondaryDisabled` class are deprecated.
 
 ### Card
 
