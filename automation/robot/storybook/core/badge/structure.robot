@@ -4,9 +4,9 @@ Resource    ../_keywords.resource
 
 *** Test Cases ***
 badge maxCount is 99
-    Go To                       ${components}badge--with-icon
+    Go To                       ${patterns}badge--with-icon
     Wait Until Page Contains    99+
 
 all badges renders a text
-    go to                       ${components}badge--with-text
+    go to                       ${patterns}badge--with-text
     Wait Until Page Contains    Events

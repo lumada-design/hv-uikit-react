@@ -3,7 +3,7 @@ import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import { CardActions, withStyles } from "@material-ui/core";
 import { HvCheckBox, setId } from "../..";
-import Actions from "../../Actions";
+import ActionsGeneric from "../../ActionsGeneric";
 import withConfig from "../../config/withConfig";
 import styles from "./styles";
 
@@ -39,7 +39,7 @@ const Footer = props => {
           classes[`${isSelectable || Array.isArray(actions) ? "right" : actionsAlignment}Container`]
         }
       >
-        <Actions
+        <ActionsGeneric
           id={id}
           actions={actions}
           maxVisibleActions={maxVisibleActions}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvCheckBox } from "../../..";
 
 export default {
-  title: "Components/Selectors/Checkbox",
+  title: "Patterns/Selectors/Checkbox",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvCheckBox } from '@hv/uikit-react-core/dist'"

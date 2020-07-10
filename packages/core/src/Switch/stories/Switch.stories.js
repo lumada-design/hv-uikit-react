@@ -6,7 +6,7 @@ import Typography from "../../Typography";
 import Button from "../../Button";
 
 export default {
-  title: "Components/Selectors/Switch",
+  title: "Patterns/Selectors/Switch",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSwitch } from '@hv/uikit-react-core/dist'"

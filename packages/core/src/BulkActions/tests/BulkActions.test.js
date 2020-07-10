@@ -4,10 +4,10 @@ import React from "react";
 import { mount } from "enzyme";
 import { Main, ControlledWithActions } from "../stories/BulkActions.stories";
 import { HvProvider, HvBulkActions, HvDropDownMenu, HvCheckBox } from "../..";
-import Actions from "../../Actions";
+import ActionsGeneric from "../../ActionsGeneric";
 import { DEFAULT_LABELS } from "../BulkActions";
 
-describe("BulkActions", () => {
+describe("[v3] BulkActions", () => {
   let wrapper;
 
   it("should be defined", () => {
@@ -34,12 +34,12 @@ describe("BulkActions", () => {
   });
 
   it("should render a Actions component", () => {
-    const component = wrapper.find(Actions);
+    const component = wrapper.find(ActionsGeneric);
     expect(component.length).toBe(1);
   });
 });
 
-describe("BulkActions controlled with actions", () => {
+describe("[v3] BulkActions controlled with actions", () => {
   let wrapper;
 
   it("should be defined", () => {
@@ -61,7 +61,7 @@ describe("BulkActions controlled with actions", () => {
   });
 
   it("should render the Actions component", () => {
-    const component = wrapper.find(Actions);
+    const component = wrapper.find(ActionsGeneric);
     expect(component.length).toBe(1);
   });
 
@@ -75,7 +75,7 @@ describe("BulkActions controlled with actions", () => {
   });
 });
 
-describe("BulkActions with selection", () => {
+describe("[v3] BulkActions with selection", () => {
   let wrapper;
   const onSelectAllMock = jest.fn();
   const onSelectAllPagesMock = jest.fn();
@@ -127,7 +127,7 @@ describe("BulkActions with selection", () => {
   */
 });
 
-describe("BulkActions with custom label", () => {
+describe("[v3] BulkActions with custom label", () => {
   let wrapper;
   const labelMock = "MockLabel";
 

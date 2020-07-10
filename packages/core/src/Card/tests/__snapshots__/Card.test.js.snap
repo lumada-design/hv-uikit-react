@@ -52,6 +52,7 @@ exports[`Card should be able to render with every property defined 1`] = `
         "sema18": "HvCard-sema18",
         "sema19": "HvCard-sema19",
         "sema2": "HvCard-sema2",
+        "sema20": "HvCard-sema20",
         "sema3": "HvCard-sema3",
         "sema4": "HvCard-sema4",
         "sema5": "HvCard-sema5",
@@ -471,23 +472,20 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "3xlTitle": "HvTypography-3xlTitle",
                                               "4xlTitle": "HvTypography-4xlTitle",
                                               "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledButtonText": "HvTypography-disabledButtonText",
+                                              "disabledText": "HvTypography-disabledText",
                                               "highlightText": "HvTypography-highlightText",
-                                              "infoText": "HvTypography-infoText",
-                                              "inlineLink": "HvTypography-inlineLink",
                                               "lTitle": "HvTypography-lTitle",
-                                              "labelText": "HvTypography-labelText",
+                                              "link": "HvTypography-link",
                                               "mTitle": "HvTypography-mTitle",
                                               "normalText": "HvTypography-normalText",
                                               "placeholderText": "HvTypography-placeholderText",
                                               "root": "HvTypography-root",
-                                              "sLink": "HvTypography-sLink",
-                                              "sText": "HvTypography-sText",
                                               "sTitle": "HvTypography-sTitle",
                                               "selectedNavText": "HvTypography-selectedNavText",
-                                              "selectedText": "HvTypography-selectedText",
                                               "vizText": "HvTypography-vizText",
+                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                                               "xlTitle": "HvTypography-xlTitle",
+                                              "xsInlineLink": "HvTypography-xsInlineLink",
                                               "xsTitle": "HvTypography-xsTitle",
                                               "xxlTitle": "HvTypography-xxlTitle",
                                               "xxsTitle": "HvTypography-xxsTitle",
@@ -495,11 +493,11 @@ exports[`Card should be able to render with every property defined 1`] = `
                                           }
                                           variant="labelText"
                                         >
-                                          <p
-                                            className="HvTypography-root HvTypography-labelText"
+                                          <span
+                                            className="HvTypography-root"
                                           >
                                             ID
-                                          </p>
+                                          </span>
                                         </ForwardRef>
                                       </WithStyles(ForwardRef)>
                                       <WithStyles(ForwardRef)
@@ -518,23 +516,20 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "3xlTitle": "HvTypography-3xlTitle",
                                               "4xlTitle": "HvTypography-4xlTitle",
                                               "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledButtonText": "HvTypography-disabledButtonText",
+                                              "disabledText": "HvTypography-disabledText",
                                               "highlightText": "HvTypography-highlightText",
-                                              "infoText": "HvTypography-infoText",
-                                              "inlineLink": "HvTypography-inlineLink",
                                               "lTitle": "HvTypography-lTitle",
-                                              "labelText": "HvTypography-labelText",
+                                              "link": "HvTypography-link",
                                               "mTitle": "HvTypography-mTitle",
                                               "normalText": "HvTypography-normalText",
                                               "placeholderText": "HvTypography-placeholderText",
                                               "root": "HvTypography-root",
-                                              "sLink": "HvTypography-sLink",
-                                              "sText": "HvTypography-sText",
                                               "sTitle": "HvTypography-sTitle",
                                               "selectedNavText": "HvTypography-selectedNavText",
-                                              "selectedText": "HvTypography-selectedText",
                                               "vizText": "HvTypography-vizText",
+                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                                               "xlTitle": "HvTypography-xlTitle",
+                                              "xsInlineLink": "HvTypography-xsInlineLink",
                                               "xsTitle": "HvTypography-xsTitle",
                                               "xxlTitle": "HvTypography-xxlTitle",
                                               "xxsTitle": "HvTypography-xxsTitle",
@@ -580,23 +575,20 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "3xlTitle": "HvTypography-3xlTitle",
                                               "4xlTitle": "HvTypography-4xlTitle",
                                               "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledButtonText": "HvTypography-disabledButtonText",
+                                              "disabledText": "HvTypography-disabledText",
                                               "highlightText": "HvTypography-highlightText",
-                                              "infoText": "HvTypography-infoText",
-                                              "inlineLink": "HvTypography-inlineLink",
                                               "lTitle": "HvTypography-lTitle",
-                                              "labelText": "HvTypography-labelText",
+                                              "link": "HvTypography-link",
                                               "mTitle": "HvTypography-mTitle",
                                               "normalText": "HvTypography-normalText",
                                               "placeholderText": "HvTypography-placeholderText",
                                               "root": "HvTypography-root",
-                                              "sLink": "HvTypography-sLink",
-                                              "sText": "HvTypography-sText",
                                               "sTitle": "HvTypography-sTitle",
                                               "selectedNavText": "HvTypography-selectedNavText",
-                                              "selectedText": "HvTypography-selectedText",
                                               "vizText": "HvTypography-vizText",
+                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                                               "xlTitle": "HvTypography-xlTitle",
+                                              "xsInlineLink": "HvTypography-xsInlineLink",
                                               "xsTitle": "HvTypography-xsTitle",
                                               "xxlTitle": "HvTypography-xxlTitle",
                                               "xxsTitle": "HvTypography-xxsTitle",
@@ -604,11 +596,11 @@ exports[`Card should be able to render with every property defined 1`] = `
                                           }
                                           variant="labelText"
                                         >
-                                          <p
-                                            className="HvTypography-root HvTypography-labelText"
+                                          <span
+                                            className="HvTypography-root"
                                           >
                                             Last connected
-                                          </p>
+                                          </span>
                                         </ForwardRef>
                                       </WithStyles(ForwardRef)>
                                       <WithStyles(ForwardRef)
@@ -627,23 +619,20 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "3xlTitle": "HvTypography-3xlTitle",
                                               "4xlTitle": "HvTypography-4xlTitle",
                                               "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledButtonText": "HvTypography-disabledButtonText",
+                                              "disabledText": "HvTypography-disabledText",
                                               "highlightText": "HvTypography-highlightText",
-                                              "infoText": "HvTypography-infoText",
-                                              "inlineLink": "HvTypography-inlineLink",
                                               "lTitle": "HvTypography-lTitle",
-                                              "labelText": "HvTypography-labelText",
+                                              "link": "HvTypography-link",
                                               "mTitle": "HvTypography-mTitle",
                                               "normalText": "HvTypography-normalText",
                                               "placeholderText": "HvTypography-placeholderText",
                                               "root": "HvTypography-root",
-                                              "sLink": "HvTypography-sLink",
-                                              "sText": "HvTypography-sText",
                                               "sTitle": "HvTypography-sTitle",
                                               "selectedNavText": "HvTypography-selectedNavText",
-                                              "selectedText": "HvTypography-selectedText",
                                               "vizText": "HvTypography-vizText",
+                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                                               "xlTitle": "HvTypography-xlTitle",
+                                              "xsInlineLink": "HvTypography-xsInlineLink",
                                               "xsTitle": "HvTypography-xsTitle",
                                               "xxlTitle": "HvTypography-xxlTitle",
                                               "xxsTitle": "HvTypography-xxsTitle",

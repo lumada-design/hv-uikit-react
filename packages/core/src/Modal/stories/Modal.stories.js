@@ -16,7 +16,7 @@ import {
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Modal",
+  title: "Patterns/Modal",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvModal } from '@hv/uikit-react-core/dist'"

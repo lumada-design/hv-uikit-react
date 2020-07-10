@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BulkActions controlled with actions should render correctly 1`] = `
+exports[`[v3] BulkActions controlled with actions should render correctly 1`] = `
 <WithStyles(WithLabels)
   actions={
     Array [
@@ -32,7 +32,6 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
   numSelected={0}
   numTotal={8}
   onSelectAll={[Function]}
-  onSelectAllPages={[Function]}
 >
   <WithLabels
     actions={
@@ -75,7 +74,6 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
     numSelected={0}
     numTotal={8}
     onSelectAll={[Function]}
-    onSelectAllPages={[Function]}
   >
     <HvBulkActions
       actions={
@@ -125,7 +123,6 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
       numSelected={0}
       numTotal={8}
       onSelectAll={[Function]}
-      onSelectAllPages={[Function]}
     >
       <div
         className="HvBulkActions-root"
@@ -551,7 +548,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                                 <path
                                                   className="color0"
                                                   d="M0 0h16v16H0z"
-                                                  fill="#FFFFFF"
+                                                  fill="#FBFCFC"
                                                 />
                                                 <path
                                                   className="color1"
@@ -627,23 +624,20 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   "3xlTitle": "HvTypography-3xlTitle",
                                   "4xlTitle": "HvTypography-4xlTitle",
                                   "5xlTitle": "HvTypography-5xlTitle",
-                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                  "disabledText": "HvTypography-disabledText",
                                   "highlightText": "HvTypography-highlightText",
-                                  "infoText": "HvTypography-infoText",
-                                  "inlineLink": "HvTypography-inlineLink",
                                   "lTitle": "HvTypography-lTitle",
-                                  "labelText": "HvTypography-labelText",
+                                  "link": "HvTypography-link",
                                   "mTitle": "HvTypography-mTitle",
                                   "normalText": "HvTypography-normalText",
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",
-                                  "sLink": "HvTypography-sLink",
-                                  "sText": "HvTypography-sText",
                                   "sTitle": "HvTypography-sTitle",
                                   "selectedNavText": "HvTypography-selectedNavText",
-                                  "selectedText": "HvTypography-selectedText",
                                   "vizText": "HvTypography-vizText",
+                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                                   "xlTitle": "HvTypography-xlTitle",
+                                  "xsInlineLink": "HvTypography-xsInlineLink",
                                   "xsTitle": "HvTypography-xsTitle",
                                   "xxlTitle": "HvTypography-xxlTitle",
                                   "xxsTitle": "HvTypography-xxsTitle",
@@ -670,7 +664,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
             </HvCheckbox>
           </WithStyles(HvCheckbox)>
         </div>
-        <WithStyles(Actions)
+        <WithStyles(ActionsGeneric)
           actions={
             Array [
               Object {
@@ -706,7 +700,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
           id="bulkActions-actions"
           maxVisibleActions={2}
         >
-          <Actions
+          <ActionsGeneric
             actions={
               Array [
                 Object {
@@ -735,12 +729,12 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
             category="ghost"
             classes={
               Object {
-                "actionContainer": "HvActions-actionContainer",
-                "button": "HvActions-button",
-                "dropDownMenu": "HvActions-dropDownMenu",
-                "dropDownMenuButton": "HvActions-dropDownMenuButton",
-                "dropDownMenuButtonSelected": "HvActions-dropDownMenuButtonSelected",
-                "root": "HvActions-root HvBulkActions-actions",
+                "actionContainer": "HvActionsGeneric-actionContainer",
+                "button": "HvActionsGeneric-button",
+                "dropDownMenu": "HvActionsGeneric-dropDownMenu",
+                "dropDownMenuButton": "HvActionsGeneric-dropDownMenuButton",
+                "dropDownMenuButtonSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
+                "root": "HvActionsGeneric-root HvBulkActions-actions",
               }
             }
             disabled={true}
@@ -748,11 +742,11 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
             maxVisibleActions={2}
           >
             <div
-              className="HvActions-root HvBulkActions-actions HvActions-actionContainer"
+              className="HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer"
             >
               <WithStyles(HvButton)
                 category="ghost"
-                className="HvActions-button"
+                className="HvActionsGeneric-button"
                 disabled={true}
                 id="add"
                 key="bulkActions-actions-0-action-add"
@@ -761,7 +755,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               >
                 <HvButton
                   category="ghost"
-                  className="HvActions-button"
+                  className="HvActionsGeneric-button"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
@@ -791,7 +785,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   startIcon={<ForwardRef(WithStyles) />}
                 >
                   <WithStyles(ForwardRef(Button))
-                    className="HvActions-button HvButton-ghostSVG"
+                    className="HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -811,7 +805,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     variant="text"
                   >
                     <ForwardRef(Button)
-                      className="HvActions-button HvButton-ghostSVG"
+                      className="HvActionsGeneric-button HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -854,7 +848,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
-                        className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                         component="button"
                         disableRipple={true}
                         disabled={true}
@@ -865,7 +859,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
-                          className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                          className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -883,7 +877,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
                             disabled={true}
                             id="add"
                             onBlur={[Function]}
@@ -950,7 +944,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               </WithStyles(HvButton)>
               <WithStyles(HvButton)
                 category="ghost"
-                className="HvActions-button"
+                className="HvActionsGeneric-button"
                 disabled={true}
                 id="delete"
                 key="bulkActions-actions-1-action-delete"
@@ -959,7 +953,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               >
                 <HvButton
                   category="ghost"
-                  className="HvActions-button"
+                  className="HvActionsGeneric-button"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
@@ -989,7 +983,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   startIcon={<ForwardRef(WithStyles) />}
                 >
                   <WithStyles(ForwardRef(Button))
-                    className="HvActions-button HvButton-ghostSVG"
+                    className="HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -1009,7 +1003,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     variant="text"
                   >
                     <ForwardRef(Button)
-                      className="HvActions-button HvButton-ghostSVG"
+                      className="HvActionsGeneric-button HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -1052,7 +1046,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
-                        className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                         component="button"
                         disableRipple={true}
                         disabled={true}
@@ -1063,7 +1057,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
-                          className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                          className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -1081,7 +1075,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
                             disabled={true}
                             id="delete"
                             onBlur={[Function]}
@@ -1149,9 +1143,9 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
               <WithStyles(WithId)
                 classes={
                   Object {
-                    "icon": "HvActions-dropDownMenuButton",
-                    "iconSelected": "HvActions-dropDownMenuButtonSelected",
-                    "root": "HvActions-dropDownMenu",
+                    "icon": "HvActionsGeneric-dropDownMenuButton",
+                    "iconSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
+                    "root": "HvActionsGeneric-dropDownMenu",
                   }
                 }
                 dataList={
@@ -1183,8 +1177,8 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 <WithId
                   classes={
                     Object {
-                      "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
-                      "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                      "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
+                      "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
                       "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
                       "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
                       "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
@@ -1192,7 +1186,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                       "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                       "menuList": "HvDropDownMenu-menuList",
                       "popper": "HvDropDownMenu-popper",
-                      "root": "HvDropDownMenu-root HvActions-dropDownMenu",
+                      "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                     }
                   }
                   dataList={
@@ -1224,8 +1218,8 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                   <DropDownMenu
                     classes={
                       Object {
-                        "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
-                        "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                        "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
+                        "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
                         "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
                         "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
                         "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
@@ -1233,7 +1227,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                         "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                         "menuList": "HvDropDownMenu-menuList",
                         "popper": "HvDropDownMenu-popper",
-                        "root": "HvDropDownMenu-root HvActions-dropDownMenu",
+                        "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                       }
                     }
                     dataList={
@@ -1263,7 +1257,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                     placement="left"
                   >
                     <div
-                      className="HvDropDownMenu-root HvActions-dropDownMenu"
+                      className="HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                       id="bulkActions-actions-menu"
                     >
                       <WithStyles(ForwardRef(IconButton))
@@ -1274,7 +1268,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             "current": <button
                               aria-haspopup="true"
                               aria-label="Dropdown menu"
-                              class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                              class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                               disabled=""
                               id="bulkActions-actions-menu-icon-button"
                               tabindex="-1"
@@ -1296,7 +1290,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                     <path
                                       class="color0"
                                       d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                      fill="#999999"
+                                      fill="#414141"
                                     />
                                   </svg>
                                 </div>
@@ -1304,7 +1298,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                             </button>,
                           }
                         }
-                        className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
+                        className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                         disabled={true}
                         id="bulkActions-actions-menu-icon-button"
                         onClick={[Function]}
@@ -1318,7 +1312,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               "current": <button
                                 aria-haspopup="true"
                                 aria-label="Dropdown menu"
-                                class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                 disabled=""
                                 id="bulkActions-actions-menu-icon-button"
                                 tabindex="-1"
@@ -1340,7 +1334,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                       <path
                                         class="color0"
                                         d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                        fill="#999999"
+                                        fill="#414141"
                                       />
                                     </svg>
                                   </div>
@@ -1348,7 +1342,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               </button>,
                             }
                           }
-                          className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
+                          className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                           classes={
                             Object {
                               "colorInherit": "MuiIconButton-colorInherit",
@@ -1375,7 +1369,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 "current": <button
                                   aria-haspopup="true"
                                   aria-label="Dropdown menu"
-                                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                   disabled=""
                                   id="bulkActions-actions-menu-icon-button"
                                   tabindex="-1"
@@ -1397,7 +1391,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                         <path
                                           class="color0"
                                           d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                          fill="#999999"
+                                          fill="#414141"
                                         />
                                       </svg>
                                     </div>
@@ -1406,7 +1400,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               }
                             }
                             centerRipple={true}
-                            className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled"
+                            className="MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled"
                             disabled={true}
                             focusRipple={true}
                             id="bulkActions-actions-menu-icon-button"
@@ -1421,7 +1415,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                   "current": <button
                                     aria-haspopup="true"
                                     aria-label="Dropdown menu"
-                                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                     disabled=""
                                     id="bulkActions-actions-menu-icon-button"
                                     tabindex="-1"
@@ -1443,7 +1437,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#999999"
+                                            fill="#414141"
                                           />
                                         </svg>
                                       </div>
@@ -1452,7 +1446,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                 }
                               }
                               centerRipple={true}
-                              className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled"
+                              className="MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled"
                               classes={
                                 Object {
                                   "disabled": "Mui-disabled",
@@ -1470,7 +1464,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                               <button
                                 aria-haspopup="true"
                                 aria-label="Dropdown menu"
-                                className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                 disabled={true}
                                 id="bulkActions-actions-menu-icon-button"
                                 onBlur={[Function]}
@@ -1519,7 +1513,7 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                                           <path
                                             className="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#999999"
+                                            fill="#414141"
                                           />
                                         </svg>
                                       </div>
@@ -1549,15 +1543,15 @@ exports[`BulkActions controlled with actions should render correctly 1`] = `
                 </WithId>
               </WithStyles(WithId)>
             </div>
-          </Actions>
-        </WithStyles(Actions)>
+          </ActionsGeneric>
+        </WithStyles(ActionsGeneric)>
       </div>
     </HvBulkActions>
   </WithLabels>
 </WithStyles(WithLabels)>
 `;
 
-exports[`BulkActions should render correctly 1`] = `
+exports[`[v3] BulkActions should render correctly 1`] = `
 <WithStyles(WithLabels)
   actions={
     Array [
@@ -2095,7 +2089,7 @@ exports[`BulkActions should render correctly 1`] = `
                                                 <path
                                                   className="color0"
                                                   d="M0 0h16v16H0z"
-                                                  fill="#FFFFFF"
+                                                  fill="#FBFCFC"
                                                 />
                                                 <path
                                                   className="color1"
@@ -2171,23 +2165,20 @@ exports[`BulkActions should render correctly 1`] = `
                                   "3xlTitle": "HvTypography-3xlTitle",
                                   "4xlTitle": "HvTypography-4xlTitle",
                                   "5xlTitle": "HvTypography-5xlTitle",
-                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                  "disabledText": "HvTypography-disabledText",
                                   "highlightText": "HvTypography-highlightText",
-                                  "infoText": "HvTypography-infoText",
-                                  "inlineLink": "HvTypography-inlineLink",
                                   "lTitle": "HvTypography-lTitle",
-                                  "labelText": "HvTypography-labelText",
+                                  "link": "HvTypography-link",
                                   "mTitle": "HvTypography-mTitle",
                                   "normalText": "HvTypography-normalText",
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",
-                                  "sLink": "HvTypography-sLink",
-                                  "sText": "HvTypography-sText",
                                   "sTitle": "HvTypography-sTitle",
                                   "selectedNavText": "HvTypography-selectedNavText",
-                                  "selectedText": "HvTypography-selectedText",
                                   "vizText": "HvTypography-vizText",
+                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                                   "xlTitle": "HvTypography-xlTitle",
+                                  "xsInlineLink": "HvTypography-xsInlineLink",
                                   "xsTitle": "HvTypography-xsTitle",
                                   "xxlTitle": "HvTypography-xxlTitle",
                                   "xxsTitle": "HvTypography-xxsTitle",
@@ -2214,7 +2205,7 @@ exports[`BulkActions should render correctly 1`] = `
             </HvCheckbox>
           </WithStyles(HvCheckbox)>
         </div>
-        <WithStyles(Actions)
+        <WithStyles(ActionsGeneric)
           actions={
             Array [
               Object {
@@ -2254,7 +2245,7 @@ exports[`BulkActions should render correctly 1`] = `
           disabled={true}
           maxVisibleActions={3}
         >
-          <Actions
+          <ActionsGeneric
             actions={
               Array [
                 Object {
@@ -2288,23 +2279,23 @@ exports[`BulkActions should render correctly 1`] = `
             category="ghost"
             classes={
               Object {
-                "actionContainer": "HvActions-actionContainer",
-                "button": "HvActions-button",
-                "dropDownMenu": "HvActions-dropDownMenu",
-                "dropDownMenuButton": "HvActions-dropDownMenuButton",
-                "dropDownMenuButtonSelected": "HvActions-dropDownMenuButtonSelected",
-                "root": "HvActions-root HvBulkActions-actions",
+                "actionContainer": "HvActionsGeneric-actionContainer",
+                "button": "HvActionsGeneric-button",
+                "dropDownMenu": "HvActionsGeneric-dropDownMenu",
+                "dropDownMenuButton": "HvActionsGeneric-dropDownMenuButton",
+                "dropDownMenuButtonSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
+                "root": "HvActionsGeneric-root HvBulkActions-actions",
               }
             }
             disabled={true}
             maxVisibleActions={3}
           >
             <div
-              className="HvActions-root HvBulkActions-actions HvActions-actionContainer"
+              className="HvActionsGeneric-root HvBulkActions-actions HvActionsGeneric-actionContainer"
             >
               <WithStyles(HvButton)
                 category="ghost"
-                className="HvActions-button"
+                className="HvActionsGeneric-button"
                 disabled={true}
                 id="get"
                 key="0"
@@ -2313,7 +2304,7 @@ exports[`BulkActions should render correctly 1`] = `
               >
                 <HvButton
                   category="ghost"
-                  className="HvActions-button"
+                  className="HvActionsGeneric-button"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
@@ -2343,7 +2334,7 @@ exports[`BulkActions should render correctly 1`] = `
                   startIcon={<ForwardRef(WithStyles) />}
                 >
                   <WithStyles(ForwardRef(Button))
-                    className="HvActions-button HvButton-ghostSVG"
+                    className="HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -2363,7 +2354,7 @@ exports[`BulkActions should render correctly 1`] = `
                     variant="text"
                   >
                     <ForwardRef(Button)
-                      className="HvActions-button HvButton-ghostSVG"
+                      className="HvActionsGeneric-button HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -2406,7 +2397,7 @@ exports[`BulkActions should render correctly 1`] = `
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
-                        className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                         component="button"
                         disableRipple={true}
                         disabled={true}
@@ -2417,7 +2408,7 @@ exports[`BulkActions should render correctly 1`] = `
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
-                          className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                          className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -2435,7 +2426,7 @@ exports[`BulkActions should render correctly 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
                             disabled={true}
                             id="get"
                             onBlur={[Function]}
@@ -2508,7 +2499,7 @@ exports[`BulkActions should render correctly 1`] = `
               </WithStyles(HvButton)>
               <WithStyles(HvButton)
                 category="ghost"
-                className="HvActions-button"
+                className="HvActionsGeneric-button"
                 disabled={true}
                 id="lock"
                 key="1"
@@ -2517,7 +2508,7 @@ exports[`BulkActions should render correctly 1`] = `
               >
                 <HvButton
                   category="ghost"
-                  className="HvActions-button"
+                  className="HvActionsGeneric-button"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
@@ -2547,7 +2538,7 @@ exports[`BulkActions should render correctly 1`] = `
                   startIcon={<ForwardRef(WithStyles) />}
                 >
                   <WithStyles(ForwardRef(Button))
-                    className="HvActions-button HvButton-ghostSVG"
+                    className="HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -2567,7 +2558,7 @@ exports[`BulkActions should render correctly 1`] = `
                     variant="text"
                   >
                     <ForwardRef(Button)
-                      className="HvActions-button HvButton-ghostSVG"
+                      className="HvActionsGeneric-button HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -2610,7 +2601,7 @@ exports[`BulkActions should render correctly 1`] = `
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
-                        className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                         component="button"
                         disableRipple={true}
                         disabled={true}
@@ -2621,7 +2612,7 @@ exports[`BulkActions should render correctly 1`] = `
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
-                          className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                          className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -2639,7 +2630,7 @@ exports[`BulkActions should render correctly 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
                             disabled={true}
                             id="lock"
                             onBlur={[Function]}
@@ -2711,7 +2702,7 @@ exports[`BulkActions should render correctly 1`] = `
               </WithStyles(HvButton)>
               <WithStyles(HvButton)
                 category="ghost"
-                className="HvActions-button"
+                className="HvActionsGeneric-button"
                 disabled={true}
                 id="delete"
                 key="2"
@@ -2720,7 +2711,7 @@ exports[`BulkActions should render correctly 1`] = `
               >
                 <HvButton
                   category="ghost"
-                  className="HvActions-button"
+                  className="HvActionsGeneric-button"
                   classes={
                     Object {
                       "ghost": "HvButton-ghost",
@@ -2750,7 +2741,7 @@ exports[`BulkActions should render correctly 1`] = `
                   startIcon={<ForwardRef(WithStyles) />}
                 >
                   <WithStyles(ForwardRef(Button))
-                    className="HvActions-button HvButton-ghostSVG"
+                    className="HvActionsGeneric-button HvButton-ghostSVG"
                     classes={
                       Object {
                         "containedPrimary": "HvButton-primary",
@@ -2770,7 +2761,7 @@ exports[`BulkActions should render correctly 1`] = `
                     variant="text"
                   >
                     <ForwardRef(Button)
-                      className="HvActions-button HvButton-ghostSVG"
+                      className="HvActionsGeneric-button HvButton-ghostSVG"
                       classes={
                         Object {
                           "colorInherit": "MuiButton-colorInherit",
@@ -2813,7 +2804,7 @@ exports[`BulkActions should render correctly 1`] = `
                       variant="text"
                     >
                       <WithStyles(ForwardRef(ButtonBase))
-                        className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                        className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                         component="button"
                         disableRipple={true}
                         disabled={true}
@@ -2824,7 +2815,7 @@ exports[`BulkActions should render correctly 1`] = `
                         type="button"
                       >
                         <ForwardRef(ButtonBase)
-                          className="MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
+                          className="MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled"
                           classes={
                             Object {
                               "disabled": "Mui-disabled",
@@ -2842,7 +2833,7 @@ exports[`BulkActions should render correctly 1`] = `
                           type="button"
                         >
                           <button
-                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActions-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
+                            className="MuiButtonBase-root MuiButton-root HvButton-root MuiButton-text HvActionsGeneric-button HvButton-ghostSVG MuiButton-textPrimary HvButton-ghost Mui-disabled HvButton-ghostDisabled Mui-disabled"
                             disabled={true}
                             id="delete"
                             onBlur={[Function]}
@@ -2910,9 +2901,9 @@ exports[`BulkActions should render correctly 1`] = `
               <WithStyles(WithId)
                 classes={
                   Object {
-                    "icon": "HvActions-dropDownMenuButton",
-                    "iconSelected": "HvActions-dropDownMenuButtonSelected",
-                    "root": "HvActions-dropDownMenu",
+                    "icon": "HvActionsGeneric-dropDownMenuButton",
+                    "iconSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
+                    "root": "HvActionsGeneric-dropDownMenu",
                   }
                 }
                 dataList={
@@ -2943,8 +2934,8 @@ exports[`BulkActions should render correctly 1`] = `
                 <WithId
                   classes={
                     Object {
-                      "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
-                      "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                      "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
+                      "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
                       "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
                       "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
                       "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
@@ -2952,7 +2943,7 @@ exports[`BulkActions should render correctly 1`] = `
                       "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                       "menuList": "HvDropDownMenu-menuList",
                       "popper": "HvDropDownMenu-popper",
-                      "root": "HvDropDownMenu-root HvActions-dropDownMenu",
+                      "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                     }
                   }
                   dataList={
@@ -2983,8 +2974,8 @@ exports[`BulkActions should render correctly 1`] = `
                   <DropDownMenu
                     classes={
                       Object {
-                        "icon": "HvDropDownMenu-icon HvActions-dropDownMenuButton",
-                        "iconSelected": "HvDropDownMenu-iconSelected HvActions-dropDownMenuButtonSelected",
+                        "icon": "HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton",
+                        "iconSelected": "HvDropDownMenu-iconSelected HvActionsGeneric-dropDownMenuButtonSelected",
                         "inputExtensionFloatLeft": "HvDropDownMenu-inputExtensionFloatLeft",
                         "inputExtensionFloatRight": "HvDropDownMenu-inputExtensionFloatRight",
                         "inputExtensionLeftPosition": "HvDropDownMenu-inputExtensionLeftPosition",
@@ -2992,7 +2983,7 @@ exports[`BulkActions should render correctly 1`] = `
                         "inputExtensionOpenShadow": "HvDropDownMenu-inputExtensionOpenShadow",
                         "menuList": "HvDropDownMenu-menuList",
                         "popper": "HvDropDownMenu-popper",
-                        "root": "HvDropDownMenu-root HvActions-dropDownMenu",
+                        "root": "HvDropDownMenu-root HvActionsGeneric-dropDownMenu",
                       }
                     }
                     dataList={
@@ -3022,7 +3013,7 @@ exports[`BulkActions should render correctly 1`] = `
                     placement="left"
                   >
                     <div
-                      className="HvDropDownMenu-root HvActions-dropDownMenu"
+                      className="HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                       id="drop-down-menu-1"
                     >
                       <WithStyles(ForwardRef(IconButton))
@@ -3033,7 +3024,7 @@ exports[`BulkActions should render correctly 1`] = `
                             "current": <button
                               aria-haspopup="true"
                               aria-label="Dropdown menu"
-                              class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                              class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                               disabled=""
                               id="drop-down-menu-1-icon-button"
                               tabindex="-1"
@@ -3055,7 +3046,7 @@ exports[`BulkActions should render correctly 1`] = `
                                     <path
                                       class="color0"
                                       d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                      fill="#999999"
+                                      fill="#414141"
                                     />
                                   </svg>
                                 </div>
@@ -3063,7 +3054,7 @@ exports[`BulkActions should render correctly 1`] = `
                             </button>,
                           }
                         }
-                        className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
+                        className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                         disabled={true}
                         id="drop-down-menu-1-icon-button"
                         onClick={[Function]}
@@ -3077,7 +3068,7 @@ exports[`BulkActions should render correctly 1`] = `
                               "current": <button
                                 aria-haspopup="true"
                                 aria-label="Dropdown menu"
-                                class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                 disabled=""
                                 id="drop-down-menu-1-icon-button"
                                 tabindex="-1"
@@ -3099,7 +3090,7 @@ exports[`BulkActions should render correctly 1`] = `
                                       <path
                                         class="color0"
                                         d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                        fill="#999999"
+                                        fill="#414141"
                                       />
                                     </svg>
                                   </div>
@@ -3107,7 +3098,7 @@ exports[`BulkActions should render correctly 1`] = `
                               </button>,
                             }
                           }
-                          className="HvDropDownMenu-icon HvActions-dropDownMenuButton"
+                          className="HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton"
                           classes={
                             Object {
                               "colorInherit": "MuiIconButton-colorInherit",
@@ -3134,7 +3125,7 @@ exports[`BulkActions should render correctly 1`] = `
                                 "current": <button
                                   aria-haspopup="true"
                                   aria-label="Dropdown menu"
-                                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                  class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                   disabled=""
                                   id="drop-down-menu-1-icon-button"
                                   tabindex="-1"
@@ -3156,7 +3147,7 @@ exports[`BulkActions should render correctly 1`] = `
                                         <path
                                           class="color0"
                                           d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                          fill="#999999"
+                                          fill="#414141"
                                         />
                                       </svg>
                                     </div>
@@ -3165,7 +3156,7 @@ exports[`BulkActions should render correctly 1`] = `
                               }
                             }
                             centerRipple={true}
-                            className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled"
+                            className="MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled"
                             disabled={true}
                             focusRipple={true}
                             id="drop-down-menu-1-icon-button"
@@ -3180,7 +3171,7 @@ exports[`BulkActions should render correctly 1`] = `
                                   "current": <button
                                     aria-haspopup="true"
                                     aria-label="Dropdown menu"
-                                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                    class="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                     disabled=""
                                     id="drop-down-menu-1-icon-button"
                                     tabindex="-1"
@@ -3202,7 +3193,7 @@ exports[`BulkActions should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#999999"
+                                            fill="#414141"
                                           />
                                         </svg>
                                       </div>
@@ -3211,7 +3202,7 @@ exports[`BulkActions should render correctly 1`] = `
                                 }
                               }
                               centerRipple={true}
-                              className="MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled"
+                              className="MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled"
                               classes={
                                 Object {
                                   "disabled": "Mui-disabled",
@@ -3229,7 +3220,7 @@ exports[`BulkActions should render correctly 1`] = `
                               <button
                                 aria-haspopup="true"
                                 aria-label="Dropdown menu"
-                                className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActions-dropDownMenuButton Mui-disabled Mui-disabled"
+                                className="MuiButtonBase-root MuiIconButton-root HvDropDownMenu-icon HvActionsGeneric-dropDownMenuButton Mui-disabled Mui-disabled"
                                 disabled={true}
                                 id="drop-down-menu-1-icon-button"
                                 onBlur={[Function]}
@@ -3278,7 +3269,7 @@ exports[`BulkActions should render correctly 1`] = `
                                           <path
                                             className="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#999999"
+                                            fill="#414141"
                                           />
                                         </svg>
                                       </div>
@@ -3308,15 +3299,15 @@ exports[`BulkActions should render correctly 1`] = `
                 </WithId>
               </WithStyles(WithId)>
             </div>
-          </Actions>
-        </WithStyles(Actions)>
+          </ActionsGeneric>
+        </WithStyles(ActionsGeneric)>
       </div>
     </HvBulkActions>
   </WithLabels>
 </WithStyles(WithLabels)>
 `;
 
-exports[`BulkActions with custom label should render correctly 1`] = `
+exports[`[v3] BulkActions with custom label should render correctly 1`] = `
 <WithStyles(WithLabels)
   numSelected={2}
   numTotal={5}
@@ -3924,7 +3915,7 @@ exports[`BulkActions with custom label should render correctly 1`] = `
             </HvCheckbox>
           </WithStyles(HvCheckbox)>
         </div>
-        <WithStyles(Actions)
+        <WithStyles(ActionsGeneric)
           category="semantic"
           classes={
             Object {
@@ -3933,32 +3924,32 @@ exports[`BulkActions with custom label should render correctly 1`] = `
           }
           disabled={false}
         >
-          <Actions
+          <ActionsGeneric
             category="semantic"
             classes={
               Object {
-                "actionContainer": "HvActions-actionContainer",
-                "button": "HvActions-button",
-                "dropDownMenu": "HvActions-dropDownMenu",
-                "dropDownMenuButton": "HvActions-dropDownMenuButton",
-                "dropDownMenuButtonSelected": "HvActions-dropDownMenuButtonSelected",
-                "root": "HvActions-root HvBulkActions-actions",
+                "actionContainer": "HvActionsGeneric-actionContainer",
+                "button": "HvActionsGeneric-button",
+                "dropDownMenu": "HvActionsGeneric-dropDownMenu",
+                "dropDownMenuButton": "HvActionsGeneric-dropDownMenuButton",
+                "dropDownMenuButtonSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
+                "root": "HvActionsGeneric-root HvBulkActions-actions",
               }
             }
             disabled={false}
           >
             <div
-              className="HvActions-root HvBulkActions-actions"
+              className="HvActionsGeneric-root HvBulkActions-actions"
             />
-          </Actions>
-        </WithStyles(Actions)>
+          </ActionsGeneric>
+        </WithStyles(ActionsGeneric)>
       </div>
     </HvBulkActions>
   </WithLabels>
 </WithStyles(WithLabels)>
 `;
 
-exports[`BulkActions with selection should render correctly 1`] = `
+exports[`[v3] BulkActions with selection should render correctly 1`] = `
 <WithStyles(WithLabels)
   labels={
     Object {
@@ -4035,7 +4026,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                   <b>
                     3
                   </b>
-                   of 5 items
+                   / 5 items
                 </React.Fragment>
               </ForwardRef(WithStyles)>
             }
@@ -4067,7 +4058,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                     <b>
                       3
                     </b>
-                     of 5 items
+                     / 5 items
                   </React.Fragment>
                 </ForwardRef(WithStyles)>
               }
@@ -4138,7 +4129,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                       <b>
                         3
                       </b>
-                       of 5 items
+                       / 5 items
                     </React.Fragment>
                   </ForwardRef(WithStyles)>
                 }
@@ -4212,7 +4203,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                         <b>
                           3
                         </b>
-                         of 5 items
+                         / 5 items
                       </React.Fragment>
                     </ForwardRef(WithStyles)>
                   }
@@ -4629,23 +4620,20 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                   "3xlTitle": "HvTypography-3xlTitle",
                                   "4xlTitle": "HvTypography-4xlTitle",
                                   "5xlTitle": "HvTypography-5xlTitle",
-                                  "disabledButtonText": "HvTypography-disabledButtonText",
+                                  "disabledText": "HvTypography-disabledText",
                                   "highlightText": "HvTypography-highlightText",
-                                  "infoText": "HvTypography-infoText",
-                                  "inlineLink": "HvTypography-inlineLink",
                                   "lTitle": "HvTypography-lTitle",
-                                  "labelText": "HvTypography-labelText",
+                                  "link": "HvTypography-link",
                                   "mTitle": "HvTypography-mTitle",
                                   "normalText": "HvTypography-normalText",
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",
-                                  "sLink": "HvTypography-sLink",
-                                  "sText": "HvTypography-sText",
                                   "sTitle": "HvTypography-sTitle",
                                   "selectedNavText": "HvTypography-selectedNavText",
-                                  "selectedText": "HvTypography-selectedText",
                                   "vizText": "HvTypography-vizText",
+                                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                                   "xlTitle": "HvTypography-xlTitle",
+                                  "xsInlineLink": "HvTypography-xsInlineLink",
                                   "xsTitle": "HvTypography-xsTitle",
                                   "xxlTitle": "HvTypography-xxlTitle",
                                   "xxsTitle": "HvTypography-xxsTitle",
@@ -4660,7 +4648,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
                                 <b>
                                   3
                                 </b>
-                                 of 5 items
+                                 / 5 items
                               </span>
                             </ForwardRef>
                           </WithStyles(ForwardRef)>
@@ -4673,7 +4661,7 @@ exports[`BulkActions with selection should render correctly 1`] = `
             </HvCheckbox>
           </WithStyles(HvCheckbox)>
         </div>
-        <WithStyles(Actions)
+        <WithStyles(ActionsGeneric)
           category="semantic"
           classes={
             Object {
@@ -4682,25 +4670,25 @@ exports[`BulkActions with selection should render correctly 1`] = `
           }
           disabled={false}
         >
-          <Actions
+          <ActionsGeneric
             category="semantic"
             classes={
               Object {
-                "actionContainer": "HvActions-actionContainer",
-                "button": "HvActions-button",
-                "dropDownMenu": "HvActions-dropDownMenu",
-                "dropDownMenuButton": "HvActions-dropDownMenuButton",
-                "dropDownMenuButtonSelected": "HvActions-dropDownMenuButtonSelected",
-                "root": "HvActions-root HvBulkActions-actions",
+                "actionContainer": "HvActionsGeneric-actionContainer",
+                "button": "HvActionsGeneric-button",
+                "dropDownMenu": "HvActionsGeneric-dropDownMenu",
+                "dropDownMenuButton": "HvActionsGeneric-dropDownMenuButton",
+                "dropDownMenuButtonSelected": "HvActionsGeneric-dropDownMenuButtonSelected",
+                "root": "HvActionsGeneric-root HvBulkActions-actions",
               }
             }
             disabled={false}
           >
             <div
-              className="HvActions-root HvBulkActions-actions"
+              className="HvActionsGeneric-root HvBulkActions-actions"
             />
-          </Actions>
-        </WithStyles(Actions)>
+          </ActionsGeneric>
+        </WithStyles(ActionsGeneric)>
       </div>
     </HvBulkActions>
   </WithLabels>

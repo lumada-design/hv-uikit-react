@@ -20,7 +20,7 @@ focus button and close menu    move focus    ${item1}    TAB           ${dropDow
 
 activates item and close menu when item is focused and is pressed ENTER
     [Template]    NONE
-    Go To                                ${components}dropdown-menu--controlled
+    Go To                                ${patterns}dropdown-menu--controlled
     Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
     Wait Until Element Is Visible        ${item1}
@@ -31,7 +31,7 @@ activates item and close menu when item is focused and is pressed ENTER
 
 focus page elements with TAB
     [Template]    NONE
-    Go To                               ${components}dropdown-menu--keyboard-navigation
+    Go To                               ${patterns}dropdown-menu--keyboard-navigation
     Wait Until Page Contains Element    ${dropDownMenu}
     set focus and press keys            id:button1         TAB    TAB
     Element Should Be Focused           id:button2
@@ -41,7 +41,7 @@ focus page elements with TAB
 open menu
     [Documentation]    drop menu when is focused and is pressed keyboard
     [Arguments]    ${keyboard}
-    Go To                               ${components}dropdown-menu--disabled-items
+    Go To                               ${patterns}dropdown-menu--disabled-items
     Wait Until Page Contains Element    ${dropDownMenu}
     set focus and press keys            ${dropDownMenu}    ${keyboard}
     Wait Until Element Is Visible       ${item1}
@@ -50,7 +50,7 @@ open menu
 close menu
     [Documentation]    close menu when is focused and is pressed keyboard
     [Arguments]    ${keyboard}
-    Go To                                ${components}dropdown-menu--disabled-items
+    Go To                                ${patterns}dropdown-menu--disabled-items
     Wait Until Page Contains Element     ${dropDownMenu}
     Click Element                        ${dropDownMenu}
     Wait Until Element Is Visible        ${item1}
@@ -60,7 +60,7 @@ close menu
 move focus
     [Documentation]    move focus from item to other is pressed keyboard
     [Arguments]    ${itemA}    ${keyboard}    ${itemB}
-    Go To                               ${components}dropdown-menu--disabled-items
+    Go To                               ${patterns}dropdown-menu--disabled-items
     Wait Until Page Contains Element    ${dropDownMenu}
     Click Element                       ${dropDownMenu}
     Wait Until Element Is Visible       ${itemA}

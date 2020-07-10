@@ -6,7 +6,7 @@ import compressorImage from "../../Card/stories/resources/compressor.png";
 import leafImage from "../../Card/stories/resources/leaf.png";
 
 export default {
-  title: "Components/Pagination",
+  title: "Patterns/Pagination",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvPagination } from '@hv/uikit-react-core/dist'"

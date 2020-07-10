@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}pagination--controlled-sample
+...           Go To    ${patterns}pagination--controlled-sample
 ...           AND    Wait Until Element Is Visible    ${input}
 
 

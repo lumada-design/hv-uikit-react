@@ -18,7 +18,7 @@ const ListContainer = withStyles(styles)(({ classes, children }) => (
 ));
 
 export default {
-  title: "Components/List",
+  title: "Patterns/List",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvList } from '@hv/uikit-react-core/dist'"

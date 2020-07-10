@@ -133,23 +133,20 @@ exports[`Custom Pagination should render correctly 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -159,7 +156,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               variant="sText"
             >
               <span
-                className="HvTypography-root HvTypography-sText"
+                className="HvTypography-root"
               >
                 Show
               </span>
@@ -254,23 +251,20 @@ exports[`Custom Pagination should render correctly 1`] = `
                   "3xlTitle": "HvTypography-3xlTitle",
                   "4xlTitle": "HvTypography-4xlTitle",
                   "5xlTitle": "HvTypography-5xlTitle",
-                  "disabledButtonText": "HvTypography-disabledButtonText",
+                  "disabledText": "HvTypography-disabledText",
                   "highlightText": "HvTypography-highlightText",
-                  "infoText": "HvTypography-infoText",
-                  "inlineLink": "HvTypography-inlineLink",
                   "lTitle": "HvTypography-lTitle",
-                  "labelText": "HvTypography-labelText",
+                  "link": "HvTypography-link",
                   "mTitle": "HvTypography-mTitle",
                   "normalText": "HvTypography-normalText",
                   "placeholderText": "HvTypography-placeholderText",
                   "root": "HvTypography-root",
-                  "sLink": "HvTypography-sLink",
-                  "sText": "HvTypography-sText",
                   "sTitle": "HvTypography-sTitle",
                   "selectedNavText": "HvTypography-selectedNavText",
-                  "selectedText": "HvTypography-selectedText",
                   "vizText": "HvTypography-vizText",
+                  "vizTextDisabled": "HvTypography-vizTextDisabled",
                   "xlTitle": "HvTypography-xlTitle",
+                  "xsInlineLink": "HvTypography-xsInlineLink",
                   "xsTitle": "HvTypography-xsTitle",
                   "xxlTitle": "HvTypography-xxlTitle",
                   "xxsTitle": "HvTypography-xxsTitle",
@@ -280,7 +274,7 @@ exports[`Custom Pagination should render correctly 1`] = `
               variant="sText"
             >
               <span
-                className="HvTypography-root HvTypography-sText"
+                className="HvTypography-root"
               >
                 items
               </span>
@@ -565,7 +559,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                              fill="#999999"
+                                              fill="#414141"
                                             />
                                           </svg>
                                         </div>
@@ -592,7 +586,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                            fill="#999999"
+                                            fill="#414141"
                                           />
                                         </svg>
                                       </div>
@@ -900,7 +894,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                              fill="#999999"
+                                              fill="#414141"
                                             />
                                           </svg>
                                         </div>
@@ -927,7 +921,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                            fill="#999999"
+                                            fill="#414141"
                                           />
                                         </svg>
                                       </div>
@@ -1452,23 +1446,20 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 "3xlTitle": "HvTypography-3xlTitle",
                                 "4xlTitle": "HvTypography-4xlTitle",
                                 "5xlTitle": "HvTypography-5xlTitle",
-                                "disabledButtonText": "HvTypography-disabledButtonText",
+                                "disabledText": "HvTypography-disabledText",
                                 "highlightText": "HvTypography-highlightText",
-                                "infoText": "HvTypography-infoText",
-                                "inlineLink": "HvTypography-inlineLink",
                                 "lTitle": "HvTypography-lTitle",
-                                "labelText": "HvTypography-labelText",
+                                "link": "HvTypography-link",
                                 "mTitle": "HvTypography-mTitle",
                                 "normalText": "HvTypography-normalText",
                                 "placeholderText": "HvTypography-placeholderText",
                                 "root": "HvTypography-root",
-                                "sLink": "HvTypography-sLink",
-                                "sText": "HvTypography-sText",
                                 "sTitle": "HvTypography-sTitle",
                                 "selectedNavText": "HvTypography-selectedNavText",
-                                "selectedText": "HvTypography-selectedText",
                                 "vizText": "HvTypography-vizText",
+                                "vizTextDisabled": "HvTypography-vizTextDisabled",
                                 "xlTitle": "HvTypography-xlTitle",
+                                "xsInlineLink": "HvTypography-xsInlineLink",
                                 "xsTitle": "HvTypography-xsTitle",
                                 "xxlTitle": "HvTypography-xxlTitle",
                                 "xxsTitle": "HvTypography-xxsTitle",
@@ -1476,13 +1467,13 @@ exports[`Custom Pagination should render correctly 1`] = `
                             }
                             variant="sText"
                           >
-                            <p
+                            <span
                               aria-atomic="true"
                               aria-controls="pagination-currentPage-input"
                               aria-labelledby={null}
                               aria-live="polite"
                               aria-relevant="additions text"
-                              className="HvInput-textWarning HvInput-infoText HvTypography-root HvTypography-sText"
+                              className="HvInput-textWarning HvInput-infoText HvTypography-root"
                             />
                           </ForwardRef>
                         </WithStyles(ForwardRef)>
@@ -1502,23 +1493,20 @@ exports[`Custom Pagination should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
@@ -1528,7 +1516,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 variant="sText"
               >
                 <span
-                  className="HvTypography-root HvTypography-sText"
+                  className="HvTypography-root"
                 >
                    of 
                 </span>
@@ -1545,23 +1533,20 @@ exports[`Custom Pagination should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
@@ -1572,7 +1557,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 variant="sText"
               >
                 <span
-                  className="HvTypography-root HvTypography-sText"
+                  className="HvTypography-root"
                   id="pagination-totalPages"
                 >
                   6

@@ -1,3 +1,6 @@
+export { default as HvActionsGeneric } from "./ActionsGeneric";
+export * from "./ActionsGeneric";
+
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 

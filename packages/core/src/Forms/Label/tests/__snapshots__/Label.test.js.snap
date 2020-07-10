@@ -26,23 +26,20 @@ exports[`Label should render correctly 1`] = `
             "3xlTitle": "HvTypography-3xlTitle",
             "4xlTitle": "HvTypography-4xlTitle",
             "5xlTitle": "HvTypography-5xlTitle",
-            "disabledButtonText": "HvTypography-disabledButtonText",
+            "disabledText": "HvTypography-disabledText",
             "highlightText": "HvTypography-highlightText",
-            "infoText": "HvTypography-infoText",
-            "inlineLink": "HvTypography-inlineLink",
             "lTitle": "HvTypography-lTitle",
-            "labelText": "HvTypography-labelText",
+            "link": "HvTypography-link",
             "mTitle": "HvTypography-mTitle",
             "normalText": "HvTypography-normalText",
             "placeholderText": "HvTypography-placeholderText",
             "root": "HvTypography-root",
-            "sLink": "HvTypography-sLink",
-            "sText": "HvTypography-sText",
             "sTitle": "HvTypography-sTitle",
             "selectedNavText": "HvTypography-selectedNavText",
-            "selectedText": "HvTypography-selectedText",
             "vizText": "HvTypography-vizText",
+            "vizTextDisabled": "HvTypography-vizTextDisabled",
             "xlTitle": "HvTypography-xlTitle",
+            "xsInlineLink": "HvTypography-xsInlineLink",
             "xsTitle": "HvTypography-xsTitle",
             "xxlTitle": "HvTypography-xxlTitle",
             "xxsTitle": "HvTypography-xxsTitle",
@@ -52,7 +49,7 @@ exports[`Label should render correctly 1`] = `
         variant="labelText"
       >
         <label
-          className="HvLabel-root HvTypography-root HvTypography-labelText"
+          className="HvLabel-root HvTypography-root"
         >
           description
         </label>

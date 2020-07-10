@@ -8,7 +8,7 @@ import HvHeader, { HvHeaderActions, HvHeaderBrand, HvHeaderNavigation } from "..
 import HitachiLogo from "./assets/HitachiLogo";
 
 export default {
-  title: "Components/Navigation System/Horizontal Navigation",
+  title: "Patterns/Navigation System/Horizontal Navigation",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvHeader } from '@hv/uikit-react-core/dist'",

@@ -390,7 +390,7 @@ exports[`CheckBox should render correctly 1`] = `
                                       <path
                                         className="color0"
                                         d="M0 0h16v16H0z"
-                                        fill="#FFFFFF"
+                                        fill="#FBFCFC"
                                       />
                                       <path
                                         className="color1"

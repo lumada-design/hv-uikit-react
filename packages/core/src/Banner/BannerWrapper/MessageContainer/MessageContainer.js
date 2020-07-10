@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../../../Typography";
-import Actions from "../../../Actions";
+import ActionsGeneric from "../../../ActionsGeneric";
 import { setId } from "../../../utils";
 import styles from "./styles";
 
@@ -21,7 +21,7 @@ const MessageContainer = ({
     </HvTypography>
     {actionsOnMessage && (
       <div id={setId(id, "message-actions")} className={classes.actionMessageContainer}>
-        <Actions
+        <ActionsGeneric
           id={id}
           category="semantic"
           actions={actionsOnMessage}

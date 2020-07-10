@@ -219,23 +219,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
@@ -247,7 +244,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     variant="labelText"
                   >
                     <label
-                      className="HvTypography-root HvTypography-labelText"
+                      className="HvTypography-root"
                       htmlFor="drop-zone-2-input-file"
                       id="drop-zone-2-input-file-label"
                     >
@@ -264,23 +261,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
@@ -288,11 +282,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                     variant="sText"
                   >
-                    <p
-                      className="HvTypography-root HvTypography-sText"
+                    <span
+                      className="HvTypography-root"
                     >
                       Max. file size: 12.00B
-                    </p>
+                    </span>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <WithStyles(ForwardRef)
@@ -304,23 +298,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
@@ -328,11 +319,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                     variant="labelText"
                   >
-                    <p
-                      className="HvTypography-root HvTypography-labelText"
+                    <span
+                      className="HvTypography-root"
                     >
                       Accepted files:
-                    </p>
+                    </span>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <WithStyles(ForwardRef)
@@ -344,23 +335,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "3xlTitle": "HvTypography-3xlTitle",
                         "4xlTitle": "HvTypography-4xlTitle",
                         "5xlTitle": "HvTypography-5xlTitle",
-                        "disabledButtonText": "HvTypography-disabledButtonText",
+                        "disabledText": "HvTypography-disabledText",
                         "highlightText": "HvTypography-highlightText",
-                        "infoText": "HvTypography-infoText",
-                        "inlineLink": "HvTypography-inlineLink",
                         "lTitle": "HvTypography-lTitle",
-                        "labelText": "HvTypography-labelText",
+                        "link": "HvTypography-link",
                         "mTitle": "HvTypography-mTitle",
                         "normalText": "HvTypography-normalText",
                         "placeholderText": "HvTypography-placeholderText",
                         "root": "HvTypography-root",
-                        "sLink": "HvTypography-sLink",
-                        "sText": "HvTypography-sText",
                         "sTitle": "HvTypography-sTitle",
                         "selectedNavText": "HvTypography-selectedNavText",
-                        "selectedText": "HvTypography-selectedText",
                         "vizText": "HvTypography-vizText",
+                        "vizTextDisabled": "HvTypography-vizTextDisabled",
                         "xlTitle": "HvTypography-xlTitle",
+                        "xsInlineLink": "HvTypography-xsInlineLink",
                         "xsTitle": "HvTypography-xsTitle",
                         "xxlTitle": "HvTypography-xxlTitle",
                         "xxsTitle": "HvTypography-xxsTitle",
@@ -368,11 +356,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     }
                     variant="sText"
                   >
-                    <p
-                      className="HvTypography-root HvTypography-sText"
+                    <span
+                      className="HvTypography-root"
                     >
                       jpeg
-                    </p>
+                    </span>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
               </div>
@@ -453,23 +441,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
@@ -598,23 +583,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
@@ -622,11 +604,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         }
                         variant="sText"
                       >
-                        <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
+                        <span
+                          className="HvFileUploaderFile-nameText HvTypography-root"
                         >
                           Screenshot 2019-12-05 at 17.15.43.png
-                        </p>
+                        </span>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <span
@@ -641,23 +623,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -665,11 +644,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           }
                           variant="sText"
                         >
-                          <p
-                            className="HvTypography-root HvTypography-sText"
+                          <span
+                            className="HvTypography-root"
                           >
                              of 14.10MB
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </span>
@@ -844,23 +823,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "3xlTitle": "HvTypography-3xlTitle",
                             "4xlTitle": "HvTypography-4xlTitle",
                             "5xlTitle": "HvTypography-5xlTitle",
-                            "disabledButtonText": "HvTypography-disabledButtonText",
+                            "disabledText": "HvTypography-disabledText",
                             "highlightText": "HvTypography-highlightText",
-                            "infoText": "HvTypography-infoText",
-                            "inlineLink": "HvTypography-inlineLink",
                             "lTitle": "HvTypography-lTitle",
-                            "labelText": "HvTypography-labelText",
+                            "link": "HvTypography-link",
                             "mTitle": "HvTypography-mTitle",
                             "normalText": "HvTypography-normalText",
                             "placeholderText": "HvTypography-placeholderText",
                             "root": "HvTypography-root",
-                            "sLink": "HvTypography-sLink",
-                            "sText": "HvTypography-sText",
                             "sTitle": "HvTypography-sTitle",
                             "selectedNavText": "HvTypography-selectedNavText",
-                            "selectedText": "HvTypography-selectedText",
                             "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
                             "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
                             "xsTitle": "HvTypography-xsTitle",
                             "xxlTitle": "HvTypography-xxlTitle",
                             "xxsTitle": "HvTypography-xxsTitle",
@@ -868,11 +844,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         }
                         variant="sText"
                       >
-                        <p
-                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-sText"
+                        <span
+                          className="HvFileUploaderFile-nameText HvTypography-root"
                         >
                           Screenshot 2019-12-05 at 12.03.13.png
-                        </p>
+                        </span>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <span
@@ -887,23 +863,20 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -911,11 +884,11 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                           }
                           variant="sText"
                         >
-                          <p
-                            className="HvTypography-root HvTypography-sText"
+                          <span
+                            className="HvTypography-root"
                           >
                              of 875.00kB
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </span>

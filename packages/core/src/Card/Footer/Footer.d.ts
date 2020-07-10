@@ -1,8 +1,8 @@
 import { CardActionsProps, StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../../Actions";
+import { HvActionsGenericCommonProps } from "../../ActionsGeneric";
 import { HvCheckBoxProps } from "../../Selectors/CheckBox";
 
-export interface HvCardFooterCommonProps extends HvActionsCommonProps {
+export interface HvCardFooterCommonProps extends HvActionsGenericCommonProps {
   /**
    * The alignment applied to the action elements
    */

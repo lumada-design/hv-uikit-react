@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import HvProvider from "../../../Provider";
 import HvButton from "../../../Button";
 
-import Actions from "..";
+import ActionsGeneric from "..";
 
 describe("<Actions />", () => {
   let wrapper;
@@ -19,17 +19,22 @@ describe("<Actions />", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <Actions id="id" onCancel={onCancelMock()} onApply={onApplyMock()} labels={mockLabels} />
+        <ActionsGeneric
+          id="id"
+          onCancel={onCancelMock()}
+          onApply={onApplyMock()}
+          labels={mockLabels}
+        />
       </HvProvider>
     );
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(Actions)).toMatchSnapshot();
+    expect(wrapper.find(ActionsGeneric)).toMatchSnapshot();
   });
 
   it("onCancel is triggered", () => {
-    actionsComponent = wrapper.find(Actions);
+    actionsComponent = wrapper.find(ActionsGeneric);
 
     actionsComponent
       .find(HvButton)
@@ -42,7 +47,7 @@ describe("<Actions />", () => {
   });
 
   it("onApply is triggered", () => {
-    actionsComponent = wrapper.find(Actions);
+    actionsComponent = wrapper.find(ActionsGeneric);
 
     actionsComponent
       .find(HvButton)

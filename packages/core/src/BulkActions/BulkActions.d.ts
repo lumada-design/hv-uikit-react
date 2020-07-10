@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
 export interface HvBulkActionsLabelsProp {
   /**
@@ -19,7 +19,7 @@ export interface HvBulkActionsLabelsProp {
 
 export interface HvBulkActionsProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvBulkActionsClassKey>,
-    HvActionsCommonProps {
+      HvActionsGenericCommonProps {
   /**
    * Labels
    */

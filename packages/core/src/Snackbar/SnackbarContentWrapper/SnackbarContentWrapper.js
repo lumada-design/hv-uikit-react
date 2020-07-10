@@ -4,7 +4,7 @@ import { SnackbarContent, withStyles } from "@material-ui/core";
 import TextTruncate from "./MultiLineEllipsis";
 import iconVariants from "../../utils/iconVariants";
 import { setId } from "../../utils";
-import Actions from "../../Actions";
+import ActionsGeneric from "../../ActionsGeneric";
 import styles from "./styles";
 
 const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
@@ -40,7 +40,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
           />
           {action && (
             <div id={setId(id, "action")} className={classes.action}>
-              <Actions
+              <ActionsGeneric
                 id={id}
                 category="semantic"
                 actions={innerAction}

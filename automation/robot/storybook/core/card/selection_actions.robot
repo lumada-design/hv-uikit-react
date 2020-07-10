@@ -37,7 +37,7 @@ Verify selectable card behavior
     ...   | isSelected      | flag if card is selected                       |
     ...   | onClickAction   | flag if onClickAction function was called      |
     ...
-    Go To                                ${components}card--custom-${card}
+    Go To                                ${patterns}card--custom-${card}
     Wait Until Element Is Enabled        ${locator}
     Click Element                        ${locator}
     Run Keyword If                       '${isSelected}'=='true'

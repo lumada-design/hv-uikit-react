@@ -4,7 +4,7 @@ import { HvToggleButton, HvButton } from "../..";
 import Eye from "./Eye";
 
 export default {
-  title: "Components/Selectors/Toggle Button",
+  title: "Patterns/Selectors/Toggle Button",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvToggleButton } from '@hv/uikit-react-core/dist'"

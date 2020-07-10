@@ -6,7 +6,7 @@ import { HvListView, HvListViewCell, HvListViewRow, HvTypography } from "../../.
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Asset Inventory/List View",
+  title: "Patterns/Asset Inventory/List View",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvListView, HvListViewRow, HvListViewCell } from '@hv/uikit-react-core/dist'"

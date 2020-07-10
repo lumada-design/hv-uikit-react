@@ -10,7 +10,7 @@ const container = {
 };
 
 export default {
-  title: "Components/Badge",
+  title: "Patterns/Badge",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBadge } from '@hv/uikit-react-core/dist'"
