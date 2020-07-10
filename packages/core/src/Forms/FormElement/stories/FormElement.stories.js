@@ -43,10 +43,8 @@ export const Main = () => {
 
   const onFocusHandler = event => {
     const { type } = event.target;
-    if (
-      (type !== "button" && !event.currentTarget.contains(document.activeElement)) ||
-      elementStatus !== "standBy"
-    ) {
+    if (type === "button") return;
+    if (!event.currentTarget.contains(document.activeElement) || elementStatus !== "standBy") {
       setElementStatus("standBy");
       setNotificationText(undefined);
       if (!showCloseAdornment && elementValue) {

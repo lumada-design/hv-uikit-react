@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { Input, withStyles } from "@material-ui/core";
 import { setId } from "../../utils";
-import { HvFormElementContextConsumer } from "../FormElement";
+import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
 /**
@@ -27,54 +27,56 @@ const HvBaseInput = props => {
     invalid = false,
     ...others
   } = props;
+  const {
+    elementId,
+    elementName,
+    elementStatus,
+    elementValue,
+    elementDisabled,
+    descriptors = {}
+  } = useContext(HvFormElementContext);
 
   const onChangeHandler = event => {
     onChange?.(event, event.target.value);
   };
 
-  return (
-    <HvFormElementContextConsumer>
-      {formContext => {
-        const { elementStatus, elementValue, elementDisabled, descriptors = {} } = formContext;
-        const localInvalid = invalid || elementStatus === "invalid";
-        const localValue = value ?? elementValue;
-        const localDisabled = disabled || elementDisabled;
-        const { HvLabel, HvHelperText, HvSuggestions } = descriptors;
+  const localInvalid = invalid || elementStatus === "invalid";
+  const localValue = value ?? elementValue;
+  const localDisabled = disabled || elementDisabled;
+  const localId = id ?? setId(elementId, "input");
+  const { HvLabel, HvHelperText, HvSuggestions } = descriptors;
 
-        return (
-          <Input
-            id={setId(id, "container")}
-            defaultValue={defaultValue}
-            value={localValue}
-            disabled={localDisabled}
-            placeholder={placeholder}
-            onChange={onChangeHandler}
-            classes={{
-              input: classes.input,
-              focused: classes.inputRootFocused,
-              disabled: classes.inputDisabled,
-              multiline: classes.multiLine
-            }}
-            className={clsx(classes.inputRoot, className, {
-              [classes.inputRootDisabled]: localDisabled,
-              [classes.inputRootInvalid]: localInvalid
-            })}
-            inputProps={{
-              "aria-required": required || undefined,
-              "aria-invalid": localInvalid || undefined,
-              "aria-describedby": HvHelperText?.[0]?.id,
-              "aria-labelledby": HvLabel?.[0]?.id,
-              "aria-controls": HvSuggestions?.[0]?.id,
-              id,
-              ...inputProps
-            }}
-            inputRef={inputRef}
-            multiline={multiline}
-            {...others}
-          />
-        );
+  return (
+    <Input
+      id={localId}
+      name={elementName}
+      defaultValue={defaultValue}
+      value={localValue}
+      disabled={localDisabled}
+      placeholder={placeholder}
+      onChange={onChangeHandler}
+      classes={{
+        input: classes.input,
+        focused: classes.inputRootFocused,
+        disabled: classes.inputDisabled,
+        multiline: classes.multiLine
       }}
-    </HvFormElementContextConsumer>
+      className={clsx(classes.inputRoot, className, {
+        [classes.inputRootDisabled]: localDisabled,
+        [classes.inputRootInvalid]: localInvalid
+      })}
+      inputProps={{
+        "aria-required": required || undefined,
+        "aria-invalid": localInvalid || undefined,
+        "aria-describedby": HvHelperText?.[0]?.id,
+        "aria-labelledby": HvLabel?.[0]?.id,
+        "aria-controls": HvSuggestions?.[0]?.id,
+        ...inputProps
+      }}
+      inputRef={inputRef}
+      multiline={multiline}
+      {...others}
+    />
   );
 };
 

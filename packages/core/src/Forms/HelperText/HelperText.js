@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import { isEmpty } from "lodash";
-import { HvFormElementContextConsumer } from "../FormElement";
-import HvTypography from "../../Typography";
-
+import { HvFormElementContext } from "../FormElement";
+import { HvTypography } from "../..";
+import { setId } from "../../utils";
 import styles from "./styles";
+
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  */
@@ -20,48 +21,43 @@ const HvHelperText = props => {
     disableGutter = false,
     ...others
   } = props;
+  const { elementId, elementDisabled } = useContext(HvFormElementContext);
+  const isVisible = !isEmpty(notification);
+  const localDisabled = disabled || elementDisabled;
+  const localId = id ?? setId(elementId, "text");
 
   return (
-    <HvFormElementContextConsumer>
-      {formContext => {
-        const { elementDisabled } = formContext;
-        const isVisible = !isEmpty(notification);
-        const localDisabled = disabled || elementDisabled;
-        return (
-          <>
-            <HvTypography
-              id={id}
-              variant="infoText"
-              className={clsx({
-                [classes.showText]: !isVisible,
-                [classes.helperDisabled]: localDisabled,
-                [classes.helperText]: !localDisabled,
-                [classes.topGutter]: !disableGutter
-              })}
-              {...others}
-            >
-              {children}
-            </HvTypography>
-            <HvTypography
-              id={`${id}-notification`}
-              variant="infoText"
-              className={clsx({
-                [classes.showText]: isVisible,
-                [classes.helperDisabled]: localDisabled,
-                [classes.helperText]: !localDisabled,
-                [classes.topGutter]: !disableGutter
-              })}
-              aria-live="polite"
-              aria-atomic="true"
-              aria-relevant="additions text"
-              {...others}
-            >
-              {notification}
-            </HvTypography>
-          </>
-        );
-      }}
-    </HvFormElementContextConsumer>
+    <>
+      <HvTypography
+        id={localId}
+        variant="infoText"
+        className={clsx({
+          [classes.showText]: !isVisible,
+          [classes.helperDisabled]: localDisabled,
+          [classes.helperText]: !localDisabled,
+          [classes.topGutter]: !disableGutter
+        })}
+        {...others}
+      >
+        {children}
+      </HvTypography>
+      <HvTypography
+        id={setId(localId, "notification")}
+        variant="infoText"
+        className={clsx({
+          [classes.showText]: isVisible,
+          [classes.helperDisabled]: localDisabled,
+          [classes.helperText]: !localDisabled,
+          [classes.topGutter]: !disableGutter
+        })}
+        aria-live="polite"
+        aria-atomic="true"
+        aria-relevant="additions text"
+        {...others}
+      >
+        {notification}
+      </HvTypography>
+    </>
   );
 };
 
