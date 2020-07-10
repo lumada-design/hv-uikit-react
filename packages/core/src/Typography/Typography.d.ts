@@ -19,17 +19,13 @@ export interface HvTypographyProps
     | "xxsTitle"
     | "highlightText"
     | "normalText"
-    | "selectedText"
-    | "disabledButtonText"
     | "placeholderText"
-    | "inlineLink"
+    | "link"
+    | "disabledText"
     | "selectedNavText"
-    | "labelText"
-    | "infoText"
-    | "sLink"
-    | "sText"
     | "vizText"
-    | "disabledText";
+    | "vizTextDisabled"
+    | "xsInlineLink";
 
   /**
    * The component used for the root node.
@@ -54,17 +50,15 @@ export type HvTypographyClassKey =
   | "mTitle"
   | "sTitle"
   | "xsTitle"
+  | "xxsTitle"
   | "highlightText"
   | "normalText"
-  | "disabledButtonText"
   | "placeholderText"
-  | "inlineLink"
+  | "link"
+  | "disabledText"
   | "selectedNavText"
-  | "labelText"
-  | "infoText"
-  | "sLink"
-  | "sText"
   | "vizText"
-  | "disabledText";
+  | "vizTextDisabled"
+  | "xsInlineLink";
 
 export default function HvTypography(props: HvTypographyProps): JSX.Element | null;
