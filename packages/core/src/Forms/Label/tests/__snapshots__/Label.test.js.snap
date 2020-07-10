@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label should render correctly 1`] = `
-<WithStyles(HvLabelText)
+<WithStyles(HvLabel)
   label="description"
 >
-  <HvLabelText
+  <HvLabel
     classes={
       Object {
         "childGutter": "HvLabel-childGutter",
@@ -58,6 +58,6 @@ exports[`Label should render correctly 1`] = `
         </label>
       </ForwardRef>
     </WithStyles(ForwardRef)>
-  </HvLabelText>
-</WithStyles(HvLabelText)>
+  </HvLabel>
+</WithStyles(HvLabel)>
 `;
