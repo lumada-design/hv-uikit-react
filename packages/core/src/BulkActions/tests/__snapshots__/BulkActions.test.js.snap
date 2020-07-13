@@ -1160,7 +1160,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                 disabled={true}
                 icon={
                   <ForwardRef(WithStyles)
-                    color="atmo7"
+                    color="atmo5"
                   />
                 }
                 id="bulkActions-actions-menu"
@@ -1201,7 +1201,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   disabled={true}
                   icon={
                     <ForwardRef(WithStyles)
-                      color="atmo7"
+                      color="atmo5"
                     />
                   }
                   id="bulkActions-actions-menu"
@@ -1242,7 +1242,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     disabled={true}
                     icon={
                       <ForwardRef(WithStyles)
-                        color="atmo7"
+                        color="atmo5"
                       />
                     }
                     id="bulkActions-actions-menu"
@@ -1284,7 +1284,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                     <path
                                       class="color0"
                                       d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                      fill="#414141"
+                                      fill="#999999"
                                     />
                                   </svg>
                                 </div>
@@ -1328,7 +1328,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       <path
                                         class="color0"
                                         d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                        fill="#414141"
+                                        fill="#999999"
                                       />
                                     </svg>
                                   </div>
@@ -1385,7 +1385,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         <path
                                           class="color0"
                                           d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                          fill="#414141"
+                                          fill="#999999"
                                         />
                                       </svg>
                                     </div>
@@ -1431,7 +1431,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                           <path
                                             class="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>
@@ -1480,7 +1480,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   className="MuiIconButton-label"
                                 >
                                   <WithStyles(MoreOptionsVertical)
-                                    color="atmo7"
+                                    color="atmo5"
                                   >
                                     <MoreOptionsVertical
                                       classes={
@@ -1492,7 +1492,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                           "rootXs": "HvIconMoreOptionsVertical-rootXs",
                                         }
                                       }
-                                      color="atmo7"
+                                      color="atmo5"
                                     >
                                       <div
                                         className="HvIconMoreOptionsVertical-root HvIconMoreOptionsVertical-rootS"
@@ -1507,7 +1507,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                           <path
                                             className="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>
@@ -2909,7 +2909,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 disabled={true}
                 icon={
                   <ForwardRef(WithStyles)
-                    color="atmo7"
+                    color="atmo5"
                   />
                 }
                 keepOpened={false}
@@ -2949,7 +2949,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   disabled={true}
                   icon={
                     <ForwardRef(WithStyles)
-                      color="atmo7"
+                      color="atmo5"
                     />
                   }
                   keepOpened={false}
@@ -2989,7 +2989,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     disabled={true}
                     icon={
                       <ForwardRef(WithStyles)
-                        color="atmo7"
+                        color="atmo5"
                       />
                     }
                     id="drop-down-menu-1"
@@ -3031,7 +3031,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                     <path
                                       class="color0"
                                       d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                      fill="#414141"
+                                      fill="#999999"
                                     />
                                   </svg>
                                 </div>
@@ -3075,7 +3075,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       <path
                                         class="color0"
                                         d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                        fill="#414141"
+                                        fill="#999999"
                                       />
                                     </svg>
                                   </div>
@@ -3132,7 +3132,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         <path
                                           class="color0"
                                           d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                          fill="#414141"
+                                          fill="#999999"
                                         />
                                       </svg>
                                     </div>
@@ -3178,7 +3178,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>
@@ -3227,7 +3227,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   className="MuiIconButton-label"
                                 >
                                   <WithStyles(MoreOptionsVertical)
-                                    color="atmo7"
+                                    color="atmo5"
                                   >
                                     <MoreOptionsVertical
                                       classes={
@@ -3239,7 +3239,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                           "rootXs": "HvIconMoreOptionsVertical-rootXs",
                                         }
                                       }
-                                      color="atmo7"
+                                      color="atmo5"
                                     >
                                       <div
                                         className="HvIconMoreOptionsVertical-root HvIconMoreOptionsVertical-rootS"
@@ -3254,7 +3254,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                           <path
                                             className="color0"
                                             d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>

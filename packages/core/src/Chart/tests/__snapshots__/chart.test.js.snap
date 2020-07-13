@@ -156,14 +156,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                 "autorange": true,
                 "fixedrange": true,
                 "gridcolor": "#999999",
-                "linecolor": undefined,
+                "linecolor": "#CCCED0",
                 "linewidth": 1,
                 "range": Array [
                   0,
                   8947.368421052632,
                 ],
                 "showgrid": true,
-                "tickcolor": undefined,
+                "tickcolor": "#CCCED0",
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -195,14 +195,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                 "autorange": true,
                 "fixedrange": true,
                 "gridcolor": "#999999",
-                "linecolor": undefined,
+                "linecolor": "#CCCED0",
                 "linewidth": 1,
                 "range": Array [
                   -0.5,
                   2.5,
                 ],
                 "showgrid": false,
-                "tickcolor": undefined,
+                "tickcolor": "#CCCED0",
                 "tickfont": Object {
                   "color": "#414141",
                   "family": Array [
@@ -317,14 +317,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                   "autorange": true,
                   "fixedrange": true,
                   "gridcolor": "#999999",
-                  "linecolor": undefined,
+                  "linecolor": "#CCCED0",
                   "linewidth": 1,
                   "range": Array [
                     0,
                     8947.368421052632,
                   ],
                   "showgrid": true,
-                  "tickcolor": undefined,
+                  "tickcolor": "#CCCED0",
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -356,14 +356,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                   "autorange": true,
                   "fixedrange": true,
                   "gridcolor": "#999999",
-                  "linecolor": undefined,
+                  "linecolor": "#CCCED0",
                   "linewidth": 1,
                   "range": Array [
                     -0.5,
                     2.5,
                   ],
                   "showgrid": false,
-                  "tickcolor": undefined,
+                  "tickcolor": "#CCCED0",
                   "tickfont": Object {
                     "color": "#414141",
                     "family": Array [
@@ -479,14 +479,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                     "autorange": true,
                     "fixedrange": true,
                     "gridcolor": "#999999",
-                    "linecolor": undefined,
+                    "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
                       0,
                       8947.368421052632,
                     ],
                     "showgrid": true,
-                    "tickcolor": undefined,
+                    "tickcolor": "#CCCED0",
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [
@@ -518,14 +518,14 @@ exports[`Chart withStyles should render correctly 1`] = `
                     "autorange": true,
                     "fixedrange": true,
                     "gridcolor": "#999999",
-                    "linecolor": undefined,
+                    "linecolor": "#CCCED0",
                     "linewidth": 1,
                     "range": Array [
                       -0.5,
                       2.5,
                     ],
                     "showgrid": false,
-                    "tickcolor": undefined,
+                    "tickcolor": "#CCCED0",
                     "tickfont": Object {
                       "color": "#414141",
                       "family": Array [

@@ -44,7 +44,7 @@ const ActionsGeneric = ({
     const actsDropdown = actions.slice(maxVisibleActions);
 
     const semantic = category === "semantic";
-    const iconColor = (disabled && "atmo7") || (semantic && "base2") || undefined;
+    const iconColor = (disabled && "atmo5") || (semantic && "base2") || undefined;
 
     return (
       <>

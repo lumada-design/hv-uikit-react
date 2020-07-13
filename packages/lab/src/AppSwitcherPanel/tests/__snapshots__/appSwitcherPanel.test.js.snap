@@ -370,7 +370,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "cviz26": "#FF5252",
                 "cviz27": "#EC3D57",
                 "cviz28": "#D8265D",
-                "sema1": "#63A621",
+                "sema1": "#59941B",
                 "sema5": "#C51162",
               },
               "sequential": Object {
@@ -426,7 +426,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "outlineWidth": "0px",
               },
               "&:hover": Object {
-                "backgroundColor": "#CCCED0",
+                "backgroundColor": "#E8E8E8",
               },
               "borderRadius": 0,
               "padding": 0,
@@ -526,7 +526,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
           "secondary": Object {
             "contrastText": "#fff",
             "dark": "rgb(45, 45, 45)",
-            "light": "rgb(103, 103, 103)",
+            "light": "#999999",
             "main": "#414141",
           },
           "sema1": "#59941B",
@@ -561,7 +561,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
           "supp4": "#C19C31",
           "supp5": "#546B6B",
           "text": Object {
-            "disabled": undefined,
+            "disabled": "#999999",
             "hint": "rgba(0, 0, 0, 0.38)",
             "primary": "#414141",
             "secondary": "rgba(0, 0, 0, 0.54)",
@@ -1163,7 +1163,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz26": "#FF5252",
                         "cviz27": "#EC3D57",
                         "cviz28": "#D8265D",
-                        "sema1": "#63A621",
+                        "sema1": "#59941B",
                         "sema5": "#C51162",
                       },
                       "sequential": Object {
@@ -1219,7 +1219,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "outlineWidth": "0px",
                       },
                       "&:hover": Object {
-                        "backgroundColor": "#CCCED0",
+                        "backgroundColor": "#E8E8E8",
                       },
                       "borderRadius": 0,
                       "padding": 0,
@@ -1319,7 +1319,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "secondary": Object {
                     "contrastText": "#fff",
                     "dark": "rgb(45, 45, 45)",
-                    "light": "rgb(103, 103, 103)",
+                    "light": "#999999",
                     "main": "#414141",
                   },
                   "sema1": "#59941B",
@@ -1354,7 +1354,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
                   "text": Object {
-                    "disabled": undefined,
+                    "disabled": "#999999",
                     "hint": "rgba(0, 0, 0, 0.38)",
                     "primary": "#414141",
                     "secondary": "rgba(0, 0, 0, 0.54)",
@@ -2039,7 +2039,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz26": "#FF5252",
                         "cviz27": "#EC3D57",
                         "cviz28": "#D8265D",
-                        "sema1": "#63A621",
+                        "sema1": "#59941B",
                         "sema5": "#C51162",
                       },
                       "sequential": Object {
@@ -2095,7 +2095,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "outlineWidth": "0px",
                       },
                       "&:hover": Object {
-                        "backgroundColor": "#CCCED0",
+                        "backgroundColor": "#E8E8E8",
                       },
                       "borderRadius": 0,
                       "padding": 0,
@@ -2195,7 +2195,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "secondary": Object {
                     "contrastText": "#fff",
                     "dark": "rgb(45, 45, 45)",
-                    "light": "rgb(103, 103, 103)",
+                    "light": "#999999",
                     "main": "#414141",
                   },
                   "sema1": "#59941B",
@@ -2230,7 +2230,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
                   "text": Object {
-                    "disabled": undefined,
+                    "disabled": "#999999",
                     "hint": "rgba(0, 0, 0, 0.38)",
                     "primary": "#414141",
                     "secondary": "rgba(0, 0, 0, 0.54)",
@@ -2916,7 +2916,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "cviz26": "#FF5252",
                 "cviz27": "#EC3D57",
                 "cviz28": "#D8265D",
-                "sema1": "#63A621",
+                "sema1": "#59941B",
                 "sema5": "#C51162",
               },
               "sequential": Object {
@@ -2972,7 +2972,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "outlineWidth": "0px",
               },
               "&:hover": Object {
-                "backgroundColor": "#CCCED0",
+                "backgroundColor": "#E8E8E8",
               },
               "borderRadius": 0,
               "padding": 0,
@@ -3072,7 +3072,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
           "secondary": Object {
             "contrastText": "#fff",
             "dark": "rgb(45, 45, 45)",
-            "light": "rgb(103, 103, 103)",
+            "light": "#999999",
             "main": "#414141",
           },
           "sema1": "#59941B",
@@ -3107,7 +3107,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
           "supp4": "#C19C31",
           "supp5": "#546B6B",
           "text": Object {
-            "disabled": undefined,
+            "disabled": "#999999",
             "hint": "rgba(0, 0, 0, 0.38)",
             "primary": "#414141",
             "secondary": "rgba(0, 0, 0, 0.54)",
@@ -3707,7 +3707,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz26": "#FF5252",
                         "cviz27": "#EC3D57",
                         "cviz28": "#D8265D",
-                        "sema1": "#63A621",
+                        "sema1": "#59941B",
                         "sema5": "#C51162",
                       },
                       "sequential": Object {
@@ -3763,7 +3763,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "outlineWidth": "0px",
                       },
                       "&:hover": Object {
-                        "backgroundColor": "#CCCED0",
+                        "backgroundColor": "#E8E8E8",
                       },
                       "borderRadius": 0,
                       "padding": 0,
@@ -3863,7 +3863,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "secondary": Object {
                     "contrastText": "#fff",
                     "dark": "rgb(45, 45, 45)",
-                    "light": "rgb(103, 103, 103)",
+                    "light": "#999999",
                     "main": "#414141",
                   },
                   "sema1": "#59941B",
@@ -3898,7 +3898,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
                   "text": Object {
-                    "disabled": undefined,
+                    "disabled": "#999999",
                     "hint": "rgba(0, 0, 0, 0.38)",
                     "primary": "#414141",
                     "secondary": "rgba(0, 0, 0, 0.54)",
@@ -4545,7 +4545,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz26": "#FF5252",
                         "cviz27": "#EC3D57",
                         "cviz28": "#D8265D",
-                        "sema1": "#63A621",
+                        "sema1": "#59941B",
                         "sema5": "#C51162",
                       },
                       "sequential": Object {
@@ -4601,7 +4601,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "outlineWidth": "0px",
                       },
                       "&:hover": Object {
-                        "backgroundColor": "#CCCED0",
+                        "backgroundColor": "#E8E8E8",
                       },
                       "borderRadius": 0,
                       "padding": 0,
@@ -4701,7 +4701,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "secondary": Object {
                     "contrastText": "#fff",
                     "dark": "rgb(45, 45, 45)",
-                    "light": "rgb(103, 103, 103)",
+                    "light": "#999999",
                     "main": "#414141",
                   },
                   "sema1": "#59941B",
@@ -4736,7 +4736,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
                   "text": Object {
-                    "disabled": undefined,
+                    "disabled": "#999999",
                     "hint": "rgba(0, 0, 0, 0.38)",
                     "primary": "#414141",
                     "secondary": "rgba(0, 0, 0, 0.54)",
@@ -5423,7 +5423,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz26": "#FF5252",
                         "cviz27": "#EC3D57",
                         "cviz28": "#D8265D",
-                        "sema1": "#63A621",
+                        "sema1": "#59941B",
                         "sema5": "#C51162",
                       },
                       "sequential": Object {
@@ -5479,7 +5479,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "outlineWidth": "0px",
                       },
                       "&:hover": Object {
-                        "backgroundColor": "#CCCED0",
+                        "backgroundColor": "#E8E8E8",
                       },
                       "borderRadius": 0,
                       "padding": 0,
@@ -5579,7 +5579,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "secondary": Object {
                     "contrastText": "#fff",
                     "dark": "rgb(45, 45, 45)",
-                    "light": "rgb(103, 103, 103)",
+                    "light": "#999999",
                     "main": "#414141",
                   },
                   "sema1": "#59941B",
@@ -5614,7 +5614,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "supp4": "#C19C31",
                   "supp5": "#546B6B",
                   "text": Object {
-                    "disabled": undefined,
+                    "disabled": "#999999",
                     "hint": "rgba(0, 0, 0, 0.38)",
                     "primary": "#414141",
                     "secondary": "rgba(0, 0, 0, 0.54)",

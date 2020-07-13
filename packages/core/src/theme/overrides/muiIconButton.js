@@ -5,7 +5,7 @@ const muiIconButton = theme => ({
     padding: 0,
     borderRadius: 0,
     "&:hover": {
-      backgroundColor: theme.palette.atmosphere.atmo4
+      backgroundColor: theme.palette.atmosphere.atmo3
     },
     "&:focus": {
       ...outlineStyles

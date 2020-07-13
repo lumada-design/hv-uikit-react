@@ -66,7 +66,7 @@ const Pagination = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, pageSize]);
 
-  const setColor = condition => (condition ? "atmo7" : undefined);
+  const setColor = condition => (condition ? "atmo5" : undefined);
   const FirstPage = () => <Start className={classes.icon} color={setColor(!canPrevious)} />;
   const PrevPage = () => <Backwards className={classes.icon} color={setColor(!canPrevious)} />;
   const NextPage = () => <Forwards className={classes.icon} color={setColor(!canNext)} />;

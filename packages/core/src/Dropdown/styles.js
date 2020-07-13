@@ -6,10 +6,11 @@ const styles = theme => ({
     maxWidth: 310,
     minWidth: 310,
     background: theme.hv.palette.atmosphere.atmo1,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     "&:hover": {
       border: `1px solid ${theme.hv.palette.accent.acce1}`
-    }
+    },
+    borderRadius: "2px"
   },
   rootOpen: {
     border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
@@ -19,11 +20,17 @@ const styles = theme => ({
       boxShadow: theme.hv.shadows[1]
     }
   },
+  rootOpenUp: {
+    borderRadius: "0px 0px 2px 2px"
+  },
+  rootOpenDown: {
+    borderRadius: "2px 2px 0px 0px"
+  },
   rootDisabled: {
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
-    background: theme.hv.palette.atmosphere.atmo4,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+    background: theme.hv.palette.atmosphere.atmo3,
     "&:hover": {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
     },
     cursor: "not-allowed"
   },

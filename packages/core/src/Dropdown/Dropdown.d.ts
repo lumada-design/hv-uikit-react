@@ -88,7 +88,7 @@ export interface HvDropdownProps
    */
   onChange?: (selected: ListValueProp | ListValueProp[] | undefined) => void;
   /**
-   * Properties passed to the undelying Popper component
+   * Properties passed to the underlying Popper component
    */
   popperProps?: Partial<PopperProps>;
 }
@@ -96,6 +96,8 @@ export interface HvDropdownProps
 export type HvDropdownClassKey =
   | "root"
   | "rootOpen"
+  | "rootOpenUp"
+  | "rootOpenDown"
   | "rootDisabled"
   | "rootList"
   | "list"

@@ -123,7 +123,7 @@ const styles = theme => {
         backgroundColor: convertedColor
       },
       "&$semanticDisabled": {
-        color: theme.hv.palette.atmosphere.atmo7,
+        color: theme.hv.palette.atmosphere.atmo5,
         backgroundColor: convertedColorDisabled,
         border: "none",
         cursor: "not-allowed",
@@ -131,7 +131,7 @@ const styles = theme => {
       },
       "&$semanticDisabled&:hover": {
         backgroundColor: convertedColorDisabled,
-        color: theme.hv.palette.atmosphere.atmo7,
+        color: theme.hv.palette.atmosphere.atmo5,
         border: "none",
         cursor: "not-allowed",
         pointerEvents: "auto"
@@ -146,31 +146,31 @@ const styles = theme => {
     primarySVG: {
       ...setColor(theme.hv.palette.accent.acce0),
       "&$primaryDisabled": {
-        ...setColor(theme.hv.palette.atmosphere.atmo7)
+        ...setColor(theme.hv.palette.atmosphere.atmo5)
       }
     },
     secondarySVG: {
       ...setColor(theme.hv.palette.accent.acce1),
       "&$secondaryDisabled": {
-        ...setColor(theme.hv.palette.atmosphere.atmo7)
+        ...setColor(theme.hv.palette.atmosphere.atmo5)
       }
     },
     ghostSVG: {
       ...setColor(theme.hv.palette.accent.acce1),
       "&$ghostDisabled": {
-        ...setColor(theme.hv.palette.atmosphere.atmo7)
+        ...setColor(theme.hv.palette.atmosphere.atmo5)
       }
     },
     semanticSVG: {
       ...setColor(theme.hv.palette.base.base2),
       "&$semanticDisabled": {
-        ...setColor(theme.hv.palette.atmosphere.atmo7)
+        ...setColor(theme.hv.palette.atmosphere.atmo5)
       }
     },
     iconSVG: {
       ...setColor(theme.hv.palette.accent.acce1),
       "&$ghostDisabled": {
-        ...setColor(theme.hv.palette.atmosphere.atmo7)
+        ...setColor(theme.hv.palette.atmosphere.atmo5)
       }
     }
   };

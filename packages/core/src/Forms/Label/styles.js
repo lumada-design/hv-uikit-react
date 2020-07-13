@@ -3,7 +3,7 @@ const styles = theme => ({
     display: "inline-block"
   },
   labelDisabled: {
-    color: theme.hv.palette.atmosphere.atmo7
+    color: theme.hv.palette.atmosphere.atmo5
   },
   childGutter: {
     marginBottom: 8

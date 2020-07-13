@@ -53,8 +53,8 @@ export const Main = () => {
   // --------------- Configuration ----------------
   const myActions = [
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -147,8 +147,8 @@ export const DefaultRender = () => {
   // --------------- Configuration ----------------
   const myActions = [
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -232,8 +232,8 @@ export const CustomRender = () => {
   // --------------- Configuration ----------------
   const myActions = [
     { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 

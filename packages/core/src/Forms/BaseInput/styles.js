@@ -11,7 +11,7 @@ const styles = theme => ({
     borderStyle: "solid",
     borderWidth: " 0 0 1px 0",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    borderColor: theme.hv.palette.atmosphere.atmo6,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
@@ -20,10 +20,10 @@ const styles = theme => ({
     }
   },
   inputRootDisabled: {
-    borderColor: theme.hv.palette.atmosphere.atmo6,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     background: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
-      borderColor: theme.hv.palette.atmosphere.atmo6,
+      borderColor: theme.hv.palette.atmosphere.atmo4,
       background: theme.hv.palette.atmosphere.atmo4,
       cursor: "not-allowed"
     },

@@ -1,7 +1,7 @@
 const styles = theme => ({
   topGutter: { marginTop: 8 },
   helperDisabled: {
-    color: theme.hv.palette.atmosphere.atmo7,
+    color: theme.hv.palette.atmosphere.atmo5,
     display: "none"
   },
   helperText: {

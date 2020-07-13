@@ -5,7 +5,7 @@ const styles = theme => ({
     position: "relative",
     width: "100%",
     display: "flex",
-    border: `1px dotted ${theme.hv.palette.atmosphere.atmo6}`,
+    border: `1px dotted ${theme.hv.palette.atmosphere.atmo4}`,
     cursor: "pointer",
     background: `${theme.hv.palette.atmosphere.atmo2}`,
     "&:hover": {
@@ -20,19 +20,19 @@ const styles = theme => ({
   dropZoneContainerDisabled: {
     "&$dropZoneContainer": {
       background: `${theme.hv.palette.atmosphere.atmo4}`,
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       cursor: "not-allowed",
       "&:hover": {
         background: `${theme.hv.palette.atmosphere.atmo4}`,
-        border: `1px solid ${theme.hv.palette.atmosphere.atmo6}`,
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
         cursor: "not-allowed"
       }
     },
     "& $dragText": {
-      color: theme.hv.palette.atmosphere.atmo6
+      color: theme.hv.palette.atmosphere.atmo4
     },
     "& $selectFilesText": {
-      color: theme.hv.palette.atmosphere.atmo6
+      color: theme.hv.palette.atmosphere.atmo4
     }
   },
   dragAction: {

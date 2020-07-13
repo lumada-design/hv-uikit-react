@@ -613,7 +613,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
         >
           <WithStyles(Doc)
             className="HvFileUploaderDropZone-dropZoneAreaIcon"
-            color="atmo6"
+            color="atmo4"
             iconSize="M"
           >
             <Doc
@@ -627,7 +627,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                   "rootXs": "HvIconDoc-rootXs",
                 }
               }
-              color="atmo6"
+              color="atmo4"
               iconSize="M"
             >
               <div
@@ -643,7 +643,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                   <path
                     className="color0"
                     d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-                    fill="#414141"
+                    fill="#CCCED0"
                   />
                 </svg>
               </div>

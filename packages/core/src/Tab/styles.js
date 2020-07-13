@@ -22,7 +22,7 @@ const styles = theme => ({
       ...outlineStyles
     },
     "&$disabled": {
-      color: theme.hv.palette.atmosphere.atmo7,
+      color: theme.hv.palette.atmosphere.atmo5,
       cursor: "not-allowed",
       pointerEvents: "all",
       opacity: 1,

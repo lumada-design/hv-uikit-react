@@ -19,7 +19,7 @@ const styles = theme => ({
   selectable: {
     cursor: "pointer",
     "&:hover": {
-      outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+      outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
     }
   },
   selected: {

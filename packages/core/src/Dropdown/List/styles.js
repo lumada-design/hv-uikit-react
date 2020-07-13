@@ -34,7 +34,7 @@ const styles = theme => ({
     padding: `${theme.hv.spacing.sm}px`
   },
   marginTop: {
-    marginTop: `${theme.hv.spacing.sm}px`
+    paddingTop: `${theme.hv.spacing.sm}px`
   },
   listBorderDown: {
     display: "block",
@@ -54,12 +54,12 @@ const styles = theme => ({
   },
   listOpenDown: {
     display: "block",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    border: "none",
     boxShadow: theme.hv.shadows[1]
   },
   listOpenUp: {
     display: "block",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo1}`
+    border: "none"
   },
   inputExtensionOpen: {
     width: "310px",

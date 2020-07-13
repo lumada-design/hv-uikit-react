@@ -59,17 +59,17 @@ const styles = theme => ({
 
   disabled: {
     color: theme.hv.palette.atmosphere.atmo4,
-    borderColor: theme.hv.palette.atmosphere.atmo6,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     cursor: "no-drop",
     "& + $track": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4} !important`,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`,
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`,
       opacity: "1 !important",
       cursor: "no-drop"
     },
     "& $thumb": {
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`,
-      border: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+      border: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`
     }
   },
 

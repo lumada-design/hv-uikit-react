@@ -266,8 +266,8 @@ export const Main = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -526,8 +526,8 @@ export const Configurations = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -889,8 +889,8 @@ export const ThreeViews = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -1125,8 +1125,8 @@ export const ServerSidePagination = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -1464,8 +1464,8 @@ export const Accessibility = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 
@@ -1759,8 +1759,8 @@ export const AccessibilityList = () => {
 
   const myActions = [
     { id: "post", label: "Dismiss", disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo7" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo7" />, disabled: true },
+    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
+    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
     { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
   ];
 

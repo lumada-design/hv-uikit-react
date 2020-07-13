@@ -25,7 +25,7 @@ const styles = theme => {
     },
     sema0: {
       position: "absolute",
-      backgroundColor: theme.hv.palette.atmosphere.atmo6,
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
       width: "100%",
       height: "2px",
       top: -1,
@@ -59,7 +59,7 @@ const styles = theme => {
     },
     selectable: {
       "&:hover": {
-        outline: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+        outline: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
       }
     },
     selected: {

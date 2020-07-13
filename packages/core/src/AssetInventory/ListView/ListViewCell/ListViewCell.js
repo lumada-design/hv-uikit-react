@@ -121,8 +121,7 @@ ListViewCell.propTypes = {
     "atmo2",
     "atmo3",
     "atmo4",
-    "atmo5",
-    "atmo6"
+    "atmo5"
   ]),
   children: PropTypes.node.isRequired
 };

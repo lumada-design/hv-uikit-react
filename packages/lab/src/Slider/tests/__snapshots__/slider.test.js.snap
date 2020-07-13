@@ -376,7 +376,7 @@ exports[`Slider  should render correctly 1`] = `
                 "cviz26": "#FF5252",
                 "cviz27": "#EC3D57",
                 "cviz28": "#D8265D",
-                "sema1": "#63A621",
+                "sema1": "#59941B",
                 "sema5": "#C51162",
               },
               "sequential": Object {
@@ -432,7 +432,7 @@ exports[`Slider  should render correctly 1`] = `
                 "outlineWidth": "0px",
               },
               "&:hover": Object {
-                "backgroundColor": "#CCCED0",
+                "backgroundColor": "#E8E8E8",
               },
               "borderRadius": 0,
               "padding": 0,
@@ -532,7 +532,7 @@ exports[`Slider  should render correctly 1`] = `
           "secondary": Object {
             "contrastText": "#fff",
             "dark": "rgb(45, 45, 45)",
-            "light": "rgb(103, 103, 103)",
+            "light": "#999999",
             "main": "#414141",
           },
           "sema1": "#59941B",
@@ -567,7 +567,7 @@ exports[`Slider  should render correctly 1`] = `
           "supp4": "#C19C31",
           "supp5": "#546B6B",
           "text": Object {
-            "disabled": undefined,
+            "disabled": "#999999",
             "hint": "rgba(0, 0, 0, 0.38)",
             "primary": "#414141",
             "secondary": "rgba(0, 0, 0, 0.54)",
