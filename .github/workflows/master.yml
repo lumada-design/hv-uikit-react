@@ -183,7 +183,7 @@ jobs:
         ROBOT_TESTS_DIR: ./automation/robot/storybook/core
         ROBOT_REPORTS_DIR: ./reports
         ROBOT_THREADS: 4
-        ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude pa11y --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
+        ROBOT_OPTIONS: "--variable STORYBOOK_URL:http://storybook --variable BROWSER:${{ matrix.browser }} --exclude bug-${{ matrix.browser }} --exclude bug-${{ matrix.browser }}-webdriver --exclude issue --exclude issue-${{ matrix.browser }} --exclude bug-infrastructure --exclude bug-infrastructure-${{ matrix.browser }}"
 
     services:
       storybook:
@@ -250,7 +250,6 @@ jobs:
           storybook-url: http://localhost:9002
           browser: ${{ matrix.browser }}
           excludes: |
-            pa11y
             bug-${{ matrix.browser }}
             bug-${{ matrix.browser }}-webdriver
             issue
