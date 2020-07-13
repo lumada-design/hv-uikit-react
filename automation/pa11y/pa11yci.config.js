@@ -22,6 +22,11 @@ function getStories(url, filter) {
         s =>
           s.parameters == null || s.parameters.pa11y == null || s.parameters.pa11y.disable !== false
       )
+      // TODO Remove before major release
+      .filter(
+        s =>
+          s.parameters != null && s.parameters.v3
+      )
       .filter(s => filter == null || s.id.indexOf(filter.toLowerCase()) !== -1)
       .map(s => ({
         url: url + "?id=" + s.id,
