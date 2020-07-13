@@ -1,40 +1,27 @@
-# See https://octokit.github.io/rest.js/v17#repos-create-dispatch-event on how to trigger repository_dispatch events.
-#
-# An example using curl:
-# curl \
-#  -H "Accept: application/vnd.github.everest-preview+json" \
-#  -H "Authorization: token <user-token>" \
-#  --request POST \
-#  --data "{\"event_type\": \"master\"}" \
-#  https://api.github.com/repos/pentaho/hv-uikit-react/dispatches
-
-name: Next Nightly
+name: Pull Request
 on:
-  schedule:
-    - cron: "0 7 * * *" # daily at 07:00
-  repository_dispatch:
-    types: [next]
-
-# flow:
-# Notify Start
-# License-Checks | Lint | Test-Jest | Build-Documentation
-# A11Y-Tests | Robot (chrome | ie | firefox)
-# Notify End
-# Release
+  pull_request:
+    branches:
+      - next
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
-  RELEASE_COMMIT_MESSAGE: "chore(release): publish"
+  DOCUMENTATION_PUBLISH_REPO: ${{ github.repository_owner }}/${{ github.repository_owner }}.github.io
+  DOCUMENTATION_PUBLISH_BRANCH: master
+  DOCUMENTATION_PUBLISH_FOLDER: uikit/pr-${{ github.event.number }}
+  DOCUMENTATION_PUBLISH_MESSAGE: "docs: storybook for PR ${{ github.repository }}#${{ github.event.number }}"
+  DOCUMENTATION_URL: https://${{ github.repository_owner }}.github.io/uikit/pr-${{ github.event.number }}/
+  PR_URL: https://github.com/${{ github.repository }}/pull/${{ github.event.number }}
+  RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 jobs:
   Static-Checks:
     name: Licenses, Lint, Jest
     runs-on: [self-hosted, Linux]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -64,8 +51,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -94,6 +79,65 @@ jobs:
         run: |
           rm -rf ${{ github.workspace }}/dist
 
+  Github-Deployment:
+    name: Github Deployment
+    needs: [Build-Documentation]
+    runs-on: [self-hosted, Linux]
+
+    steps:
+      - name: Start Documentation Deployment
+        uses: bobheadxi/deployments@master
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+          ref: ${{ github.head_ref }}
+          desc: ${{env.DOCUMENTATION_PUBLISH_MESSAGE}}
+
+      - name: Checkout Documentation Repository
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
+          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
+          ssh-key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
+          path: gh-docs
+          fetch-depth: 1
+
+      - name: Remove Previous Documentation
+        run: |
+          rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
+
+      - name: Fetch Storybook
+        uses: actions/download-artifact@v1
+        with:
+          name: documentation
+          path: ${{ github.workspace }}/gh-docs/${{env.DOCUMENTATION_PUBLISH_FOLDER}}
+
+      - name: Push Documentation
+        run: |
+          cd ${{ github.workspace }}/gh-docs
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A ${DOCUMENTATION_PUBLISH_FOLDER}
+          git commit -m "${DOCUMENTATION_PUBLISH_MESSAGE}"
+          git push
+
+      - name: Cleanup Folder
+        if: always()
+        run: |
+          rm -rf ${{ github.workspace }}/gh-docs
+
+      - name: Update Deployment Status
+        uses: bobheadxi/deployments@master
+        if: always()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+          env_url: ${{env.DOCUMENTATION_URL}}
+
   A11Y-Tests:
     name: Accessibility Tests
     needs: [Build-Documentation]
@@ -112,8 +156,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "next"
 
       - uses: actions/setup-node@v1
         with:
@@ -154,7 +196,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome, firefox]
+        browser: [chrome]
     container:
       image: ppodgorsek/robot-framework:latest
       options: --shm-size=6g --cpus 4 -u 2501
@@ -176,8 +218,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: "next"
 
       - name: Fetch Storybook
         uses: actions/download-artifact@v1
@@ -206,61 +246,9 @@ jobs:
           rm -rf ${{ github.workspace }}/dist
           rm -rf ${{ github.workspace }}/reports
 
-  Robot-Windows:
-    name: Test Robot (Windows)
-    needs: Build-Documentation
-    runs-on: [self-hosted, Windows]
-    timeout-minutes: 150
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [ie]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: "next"
-
-      - name: Fetch Storybook
-        uses: actions/download-artifact@v1
-        with:
-          name: documentation
-          path: ${{ github.workspace }}/dist
-
-      - name: Run SELENIUM Robot
-        uses: ./.github/robot
-        with:
-          storybook-url: http://localhost:9002
-          browser: ${{ matrix.browser }}
-          includes: v3
-          excludes: |
-            bug-${{ matrix.browser }}
-            bug-${{ matrix.browser }}-webdriver
-            issue
-            issue-${{ matrix.browser }}
-            bug-infrastructure
-            bug-infrastructure-${{ matrix.browser }}
-          output-dir: ./reports
-          processes: 3
-          path: ./automation/robot/storybook/core
-
-      - name: Save Reports
-        uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: ${{ matrix.browser }}-reports
-          path: ${{ github.workspace }}/reports
-
-      - name: Clean Folders
-        if: always()
-        run: |
-          Remove-Item -path ${{ github.workspace }}/dist -recurse -force
-          Remove-Item -path ${{ github.workspace }}/reports -recurse -force
-
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Robot, Robot-Windows]
+    needs: [Static-Checks, Build-Documentation, Github-Deployment, A11Y-Tests, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -289,6 +277,7 @@ jobs:
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CONCLUSION: ${{ env.WORKFLOW_CONCLUSION }}
+          DOCUMENTATION: ${{ env.DOCUMENTATION_URL }}
         with:
           args: |
             {
@@ -297,8 +286,11 @@ jobs:
                 {
                   "mrkdwn_in": ["text"],
                   "color": "${{env.COLOR}}",
-                  "title": "${{ github.workflow }} (${{github.ref}}) build finished - ${{ env.CONCLUSION }}",
-                  "text": "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+                  "title": "${{ github.workflow }} (#${{github.event.number}}) build finished - ${{ env.CONCLUSION }}",
+                  "title_link": "${{ env.RUN_URL }}",
+                  "text": "${{env.PR_URL}}\n Storybook published: ${{env.DOCUMENTATION}}",
+                  "footer": "by ${{github.actor}}",
+                  "footer_icon": "https://github.com/${{github.actor}}.png?size=20"
                 }
               ]
             }

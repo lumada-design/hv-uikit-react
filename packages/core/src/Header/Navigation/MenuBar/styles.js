@@ -35,9 +35,6 @@ const styles = theme => {
     },
     hidden: {
       ...hide,
-      "& li": {
-        marginTop: -2
-      },
       "& li > div": {
         height: 2 * theme.hv.spacing.sm,
         "& p": {
