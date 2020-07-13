@@ -24,8 +24,6 @@ activate and focus button when is clicked a secondary button          secondary
 
 activate and focus button when is clicked a ghost button              ghost
 
-activate and focus button when is clicked a ghost Secondary button    ghostSecondary
-
 activate and focus button when is clicked a semantic button           semantic
 
 unable to activate and focus a disabled button when it is clicked

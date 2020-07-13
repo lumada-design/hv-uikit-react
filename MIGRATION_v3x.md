@@ -71,8 +71,8 @@ With our first major release several components where reviewed in order to remov
 
 ### Button
 
-- `ghostSecondary` category is deprecated.
-- `ghostSecondary` and `ghostSecondaryDisabled` class are deprecated.
+- `ghostSecondary` category was removed.
+- `ghostSecondary` and `ghostSecondaryDisabled` class were removed.
 
 ### Card
 

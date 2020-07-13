@@ -16,7 +16,9 @@ export const MainStory = () => {
   const semanticButtonStyling = {
     backgroundColor: "#D3E3F6",
     width: "100px",
+    height: "50px",
     display: "flex",
+    alignItems: "center",
     justifyContent: "center"
   };
 
@@ -145,7 +147,9 @@ export const SemanticButton = () => {
   const semanticButtonStyling = {
     backgroundColor: "#D3E3F6",
     width: "100px",
+    height: "50px",
     display: "flex",
+    alignItems: "center",
     justifyContent: "center"
   };
   return (
