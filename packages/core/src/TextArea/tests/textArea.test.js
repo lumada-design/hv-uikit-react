@@ -85,8 +85,7 @@ describe("TextArea Component", () => {
     expect(instance.state.currentValueLength).toBe(17);
   });
 
-  // TODO to be solved in the Text Area upgrade
-  xit("should render the count label correctly", () => {
+  it("should render the count label correctly", () => {
     const wrapperMount = mount(
       <HvProvider>
         <HvTextArea

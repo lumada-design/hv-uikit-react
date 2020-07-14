@@ -513,9 +513,8 @@ describe("Input", () => {
 
     const iconInfo = wrapper.find(Info);
     expect(iconInfo.length).toBe(0);
-    // TODO: to be solve with input upgrade
-    // const labelParagraph = wrapper.find("p");
-    // expect(labelParagraph.length).toBe(2);
+    const labelParagraph = wrapper.find("p");
+    expect(labelParagraph.length).toBe(2);
   });
 
   const getWrapper = wrap => {

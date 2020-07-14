@@ -85,8 +85,7 @@ describe("FileUploader withStyles", () => {
 describe("FileUploader validations", () => {
   let uploadWrapper;
 
-  // TODO to be solve on the file uploader upgrade
-  xit("correctly display incorrect file type warning", () => {
+  it("correctly display incorrect file type warning", () => {
     const faultyCompProps = {
       fileList: [
         {
@@ -114,7 +113,7 @@ describe("FileUploader validations", () => {
     ).toEqual("File type not allowed for upload");
   });
 
-  xit("correctly display incorrect file size warning", () => {
+  it("correctly display incorrect file size warning", () => {
     const faultyCompProps = {
       fileList: [
         {

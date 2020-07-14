@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should render correctly 1`] = `
+exports[`[v3] Button should render correctly 1`] = `
 <WithStyles(HvButton)>
   <HvButton
     classes={

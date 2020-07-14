@@ -4,7 +4,7 @@ Suite Setup       Run Keywords
 ...               Go To    ${patterns}button--smoke-tests
 ...               AND    Wait Until Element Is Visible    css:button
 Test Template     Activate and focus button when it is clicked
-
+Force Tags        v3
 
 *** Keywords ***
 Activate and focus button when it is clicked

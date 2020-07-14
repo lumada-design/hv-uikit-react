@@ -7,6 +7,7 @@ export default {
   title: "Patterns/Button",
   parameters: {
     componentSubtitle: null,
+    v3: true,
     usage: "import { HvButton } from '@hv/uikit-react-core/dist'"
   },
   component: HvButton
@@ -90,7 +91,8 @@ DisabledButtons.story = {
   parameters: {
     docs: {
       storyDescription: "Disabled buttons that don't allow any interaction."
-    }
+    },
+    v3: true
   }
 };
 
@@ -104,7 +106,8 @@ PrimaryButton.story = {
   parameters: {
     docs: {
       storyDescription: "Primary Button with click action."
-    }
+    },
+    v3: true
   }
 };
 
@@ -118,7 +121,8 @@ SecondaryButton.story = {
   parameters: {
     docs: {
       storyDescription: "Secondary button."
-    }
+    },
+    v3: true
   }
 };
 
@@ -139,7 +143,8 @@ GhostButton.story = {
   parameters: {
     docs: {
       storyDescription: "Ghost button with click action."
-    }
+    },
+    v3: true
   }
 };
 
@@ -172,7 +177,8 @@ SemanticButton.story = {
   parameters: {
     docs: {
       storyDescription: "Semantic button with click action."
-    }
+    },
+    v3: true
   }
 };
 
@@ -290,6 +296,7 @@ SmokeTests.story = {
   parameters: {
     docs: {
       disable: true
-    }
+    },
+    v3: true
   }
 };
