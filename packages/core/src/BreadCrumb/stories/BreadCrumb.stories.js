@@ -2,7 +2,7 @@ import React from "react";
 import HvBreadCrumb from "../BreadCrumb";
 
 export default {
-  title: "Components/Breadcrumb",
+  title: "Patterns/Breadcrumb",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'"

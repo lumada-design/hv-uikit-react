@@ -2,7 +2,7 @@
 Resource      ../_keywords.resource
 Variables     variables.yaml
 Test Setup    Run Keywords
-...           Go To    ${components}login--successful
+...           Go To    ${patterns}login--successful
 ...           AND    Wait Until Element Is Visible    ${button_login}
 Force Tags    keyboard    bug-infrastructure-ie
 

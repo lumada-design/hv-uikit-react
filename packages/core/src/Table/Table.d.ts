@@ -2,7 +2,7 @@ import * as React from "react";
 import { StandardProps } from "@material-ui/core";
 import { ListValueProp } from "../List";
 import { PaginationLabelsProp } from "../Pagination";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
 export interface TableLabel {
   /**
@@ -76,7 +76,7 @@ export interface SecondaryAction extends ListValueProp {
 
 export interface HvTableProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvTableClassKey>,
-    HvActionsCommonProps {
+    HvActionsGenericCommonProps {
   /**
    * Unique class name used to identify the fixed table
    */

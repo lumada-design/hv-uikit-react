@@ -12,7 +12,7 @@ Focus on input when open dropdown with input
     Element Should Be Focused        ${searchInput}
 
 Focus on Select All when open dropdown without input
-    Go To                            ${components}dropdown--multi-selection-no-search
+    Go To                            ${patterns}dropdown--multi-selection-no-search
     Wait Until Element Is Visible    ${dropdown}
     Click Element                    ${dropdown}
     Wait Until Element Is Enabled    ${selectAll}

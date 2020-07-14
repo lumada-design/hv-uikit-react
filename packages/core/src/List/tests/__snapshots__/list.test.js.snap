@@ -207,11 +207,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     role="option"
                     tabindex="0"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 1
-                    </p>
+                    </span>
                   </li>
                   <li
                     aria-selected="false"
@@ -231,11 +231,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     role="option"
                     tabindex="-1"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 3
-                    </p>
+                    </span>
                   </li>
                 </ul>
               </div>,
@@ -279,11 +279,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       role="option"
                       tabindex="0"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </li>
                     <li
                       aria-selected="false"
@@ -303,11 +303,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       role="option"
                       tabindex="-1"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 3
-                      </p>
+                      </span>
                     </li>
                   </ul>
                 </div>,
@@ -344,23 +344,20 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -368,11 +365,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       }
                       variant="selectedText"
                     >
-                      <p
-                        className="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        className="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </ForwardRef>
                   </WithStyles(ForwardRef)>
                 </Text>
@@ -409,11 +406,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     role="option"
                     tabindex="0"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 1
-                    </p>
+                    </span>
                   </li>
                   <li
                     aria-selected="false"
@@ -433,11 +430,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     role="option"
                     tabindex="-1"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 3
-                    </p>
+                    </span>
                   </li>
                 </ul>
               </div>,
@@ -481,11 +478,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       role="option"
                       tabindex="0"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </li>
                     <li
                       aria-selected="false"
@@ -505,11 +502,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       role="option"
                       tabindex="-1"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 3
-                      </p>
+                      </span>
                     </li>
                   </ul>
                 </div>,
@@ -546,23 +543,20 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -611,11 +605,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     role="option"
                     tabindex="0"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 1
-                    </p>
+                    </span>
                   </li>
                   <li
                     aria-selected="false"
@@ -635,11 +629,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                     role="option"
                     tabindex="-1"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 3
-                    </p>
+                    </span>
                   </li>
                 </ul>
               </div>,
@@ -683,11 +677,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       role="option"
                       tabindex="0"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </li>
                     <li
                       aria-selected="false"
@@ -707,11 +701,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       role="option"
                       tabindex="-1"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 3
-                      </p>
+                      </span>
                     </li>
                   </ul>
                 </div>,
@@ -748,23 +742,20 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -772,11 +763,11 @@ exports[`<List /> Multi selection should render correctly 1`] = `
                       }
                       variant="selectedText"
                     >
-                      <p
-                        className="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        className="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 3
-                      </p>
+                      </span>
                     </ForwardRef>
                   </WithStyles(ForwardRef)>
                 </Text>
@@ -1520,7 +1511,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M0 0h16v16H0z"
-                                              fill="#FFFFFF"
+                                              fill="#FBFCFC"
                                             />
                                             <g
                                               className="color1"
@@ -1602,23 +1593,20 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -1641,23 +1629,20 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                     "3xlTitle": "HvTypography-3xlTitle",
                                     "4xlTitle": "HvTypography-4xlTitle",
                                     "5xlTitle": "HvTypography-5xlTitle",
-                                    "disabledButtonText": "HvTypography-disabledButtonText",
+                                    "disabledText": "HvTypography-disabledText",
                                     "highlightText": "HvTypography-highlightText",
-                                    "infoText": "HvTypography-infoText",
-                                    "inlineLink": "HvTypography-inlineLink",
                                     "lTitle": "HvTypography-lTitle",
-                                    "labelText": "HvTypography-labelText",
+                                    "link": "HvTypography-link",
                                     "mTitle": "HvTypography-mTitle",
                                     "normalText": "HvTypography-normalText",
                                     "placeholderText": "HvTypography-placeholderText",
                                     "root": "HvTypography-root",
-                                    "sLink": "HvTypography-sLink",
-                                    "sText": "HvTypography-sText",
                                     "sTitle": "HvTypography-sTitle",
                                     "selectedNavText": "HvTypography-selectedNavText",
-                                    "selectedText": "HvTypography-selectedText",
                                     "vizText": "HvTypography-vizText",
+                                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                                     "xlTitle": "HvTypography-xlTitle",
+                                    "xsInlineLink": "HvTypography-xsInlineLink",
                                     "xsTitle": "HvTypography-xsTitle",
                                     "xxlTitle": "HvTypography-xxlTitle",
                                     "xxsTitle": "HvTypography-xxsTitle",
@@ -1738,7 +1723,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           <path
                             class="color0"
                             d="M0 0h16v16H0z"
-                            fill="#FFFFFF"
+                            fill="#FBFCFC"
                           />
                           <g
                             class="color1"
@@ -1819,7 +1804,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color1"
                                 d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -1869,7 +1854,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color0"
                                 d="M0 0h16v16H0z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -1930,7 +1915,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color1"
                                 d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -2004,7 +1989,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             <path
                               class="color0"
                               d="M0 0h16v16H0z"
-                              fill="#FFFFFF"
+                              fill="#FBFCFC"
                             />
                             <g
                               class="color1"
@@ -2085,7 +2070,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color1"
                                   d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -2135,7 +2120,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color0"
                                   d="M0 0h16v16H0z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -2196,7 +2181,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color1"
                                   d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -2603,7 +2588,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                       <path
                                                         className="color1"
                                                         d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                                        fill="#FFFFFF"
+                                                        fill="#FBFCFC"
                                                       />
                                                     </svg>
                                                   </div>
@@ -2725,7 +2710,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           <path
                             class="color0"
                             d="M0 0h16v16H0z"
-                            fill="#FFFFFF"
+                            fill="#FBFCFC"
                           />
                           <g
                             class="color1"
@@ -2806,7 +2791,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color1"
                                 d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -2856,7 +2841,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color0"
                                 d="M0 0h16v16H0z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -2917,7 +2902,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color1"
                                 d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -2991,7 +2976,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             <path
                               class="color0"
                               d="M0 0h16v16H0z"
-                              fill="#FFFFFF"
+                              fill="#FBFCFC"
                             />
                             <g
                               class="color1"
@@ -3072,7 +3057,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color1"
                                   d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -3122,7 +3107,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color0"
                                   d="M0 0h16v16H0z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -3183,7 +3168,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color1"
                                   d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -3585,7 +3570,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                       <path
                                                         className="color0"
                                                         d="M0 0h16v16H0z"
-                                                        fill="#FFFFFF"
+                                                        fill="#FBFCFC"
                                                       />
                                                       <path
                                                         className="color1"
@@ -3712,7 +3697,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                           <path
                             class="color0"
                             d="M0 0h16v16H0z"
-                            fill="#FFFFFF"
+                            fill="#FBFCFC"
                           />
                           <g
                             class="color1"
@@ -3793,7 +3778,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color1"
                                 d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -3843,7 +3828,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color0"
                                 d="M0 0h16v16H0z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -3904,7 +3889,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               <path
                                 class="color1"
                                 d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -3978,7 +3963,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             <path
                               class="color0"
                               d="M0 0h16v16H0z"
-                              fill="#FFFFFF"
+                              fill="#FBFCFC"
                             />
                             <g
                               class="color1"
@@ -4059,7 +4044,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color1"
                                   d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -4109,7 +4094,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color0"
                                   d="M0 0h16v16H0z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -4170,7 +4155,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 <path
                                   class="color1"
                                   d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -4577,7 +4562,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                       <path
                                                         className="color1"
                                                         d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
-                                                        fill="#FFFFFF"
+                                                        fill="#FBFCFC"
                                                       />
                                                     </svg>
                                                   </div>
@@ -4765,11 +4750,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     role="option"
                     tabindex="0"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 1
-                    </p>
+                    </span>
                   </li>
                   <li
                     class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
@@ -4834,11 +4819,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       role="option"
                       tabindex="0"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </li>
                     <li
                       class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
@@ -4897,23 +4882,20 @@ exports[`<List /> Single selection should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -4921,11 +4903,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       }
                       variant="selectedText"
                     >
-                      <p
-                        className="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        className="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </ForwardRef>
                   </WithStyles(ForwardRef)>
                 </Text>
@@ -4961,11 +4943,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     role="option"
                     tabindex="0"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 1
-                    </p>
+                    </span>
                   </li>
                   <li
                     class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
@@ -5030,11 +5012,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       role="option"
                       tabindex="0"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </li>
                     <li
                       class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
@@ -5092,23 +5074,20 @@ exports[`<List /> Single selection should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -5156,11 +5135,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                     role="option"
                     tabindex="0"
                   >
-                    <p
-                      class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                    <span
+                      class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                     >
                       Value 1
-                    </p>
+                    </span>
                   </li>
                   <li
                     class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
@@ -5225,11 +5204,11 @@ exports[`<List /> Single selection should render correctly 1`] = `
                       role="option"
                       tabindex="0"
                     >
-                      <p
-                        class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-selectedText"
+                      <span
+                        class="HvList-label HvList-truncate HvList-selected HvTypography-root"
                       >
                         Value 1
-                      </p>
+                      </span>
                     </li>
                     <li
                       class="HvList-listItem HvFocus-root HvFocus-focusDisabled"
@@ -5287,23 +5266,20 @@ exports[`<List /> Single selection should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -5665,23 +5641,20 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -5926,23 +5899,20 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -6187,23 +6157,20 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                           "3xlTitle": "HvTypography-3xlTitle",
                           "4xlTitle": "HvTypography-4xlTitle",
                           "5xlTitle": "HvTypography-5xlTitle",
-                          "disabledButtonText": "HvTypography-disabledButtonText",
+                          "disabledText": "HvTypography-disabledText",
                           "highlightText": "HvTypography-highlightText",
-                          "infoText": "HvTypography-infoText",
-                          "inlineLink": "HvTypography-inlineLink",
                           "lTitle": "HvTypography-lTitle",
-                          "labelText": "HvTypography-labelText",
+                          "link": "HvTypography-link",
                           "mTitle": "HvTypography-mTitle",
                           "normalText": "HvTypography-normalText",
                           "placeholderText": "HvTypography-placeholderText",
                           "root": "HvTypography-root",
-                          "sLink": "HvTypography-sLink",
-                          "sText": "HvTypography-sText",
                           "sTitle": "HvTypography-sTitle",
                           "selectedNavText": "HvTypography-selectedNavText",
-                          "selectedText": "HvTypography-selectedText",
                           "vizText": "HvTypography-vizText",
+                          "vizTextDisabled": "HvTypography-vizTextDisabled",
                           "xlTitle": "HvTypography-xlTitle",
+                          "xsInlineLink": "HvTypography-xsInlineLink",
                           "xsTitle": "HvTypography-xsTitle",
                           "xxlTitle": "HvTypography-xxlTitle",
                           "xxsTitle": "HvTypography-xxsTitle",
@@ -6406,7 +6373,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color1"
                                 d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -6453,7 +6420,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color0"
                                 d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -6505,7 +6472,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color0"
                                 d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -6599,7 +6566,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color1"
                                   d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -6646,7 +6613,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color0"
                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -6698,7 +6665,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color0"
                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -7063,7 +7030,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                       <path
                                                         className="color1"
                                                         d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                                        fill="#FFFFFF"
+                                                        fill="#FBFCFC"
                                                       />
                                                     </svg>
                                                   </div>
@@ -7200,7 +7167,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color1"
                                 d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -7247,7 +7214,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color0"
                                 d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -7299,7 +7266,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color0"
                                 d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -7393,7 +7360,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color1"
                                   d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -7440,7 +7407,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color0"
                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -7492,7 +7459,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color0"
                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -7851,7 +7818,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                       <path
                                                         className="color0"
                                                         d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                        fill="#FFFFFF"
+                                                        fill="#FBFCFC"
                                                       />
                                                       <path
                                                         className="color1"
@@ -7993,7 +7960,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color1"
                                 d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                             </svg>
                           </div>
@@ -8040,7 +8007,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color0"
                                 d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -8092,7 +8059,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               <path
                                 class="color0"
                                 d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#FFFFFF"
+                                fill="#FBFCFC"
                               />
                               <path
                                 class="color1"
@@ -8186,7 +8153,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color1"
                                   d="M8 12a4.013 4.013 0 01-4-4 4.013 4.013 0 014-4 4.013 4.013 0 014 4 4.013 4.013 0 01-4 4z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                               </svg>
                             </div>
@@ -8233,7 +8200,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color0"
                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -8285,7 +8252,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                 <path
                                   class="color0"
                                   d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#FFFFFF"
+                                  fill="#FBFCFC"
                                 />
                                 <path
                                   class="color1"
@@ -8644,7 +8611,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                       <path
                                                         className="color0"
                                                         d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                        fill="#FFFFFF"
+                                                        fill="#FBFCFC"
                                                       />
                                                       <path
                                                         className="color1"

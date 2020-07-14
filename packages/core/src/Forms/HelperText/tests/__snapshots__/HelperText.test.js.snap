@@ -30,23 +30,20 @@ exports[`HelperText should render correctly 1`] = `
             "3xlTitle": "HvTypography-3xlTitle",
             "4xlTitle": "HvTypography-4xlTitle",
             "5xlTitle": "HvTypography-5xlTitle",
-            "disabledButtonText": "HvTypography-disabledButtonText",
+            "disabledText": "HvTypography-disabledText",
             "highlightText": "HvTypography-highlightText",
-            "infoText": "HvTypography-infoText",
-            "inlineLink": "HvTypography-inlineLink",
             "lTitle": "HvTypography-lTitle",
-            "labelText": "HvTypography-labelText",
+            "link": "HvTypography-link",
             "mTitle": "HvTypography-mTitle",
             "normalText": "HvTypography-normalText",
             "placeholderText": "HvTypography-placeholderText",
             "root": "HvTypography-root",
-            "sLink": "HvTypography-sLink",
-            "sText": "HvTypography-sText",
             "sTitle": "HvTypography-sTitle",
             "selectedNavText": "HvTypography-selectedNavText",
-            "selectedText": "HvTypography-selectedText",
             "vizText": "HvTypography-vizText",
+            "vizTextDisabled": "HvTypography-vizTextDisabled",
             "xlTitle": "HvTypography-xlTitle",
+            "xsInlineLink": "HvTypography-xsInlineLink",
             "xsTitle": "HvTypography-xsTitle",
             "xxlTitle": "HvTypography-xxlTitle",
             "xxsTitle": "HvTypography-xxsTitle",
@@ -55,12 +52,12 @@ exports[`HelperText should render correctly 1`] = `
         id="base"
         variant="infoText"
       >
-        <p
-          className="HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-infoText"
+        <span
+          className="HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
           id="base"
         >
           test
-        </p>
+        </span>
       </ForwardRef>
     </WithStyles(ForwardRef)>
     <WithStyles(ForwardRef)
@@ -81,23 +78,20 @@ exports[`HelperText should render correctly 1`] = `
             "3xlTitle": "HvTypography-3xlTitle",
             "4xlTitle": "HvTypography-4xlTitle",
             "5xlTitle": "HvTypography-5xlTitle",
-            "disabledButtonText": "HvTypography-disabledButtonText",
+            "disabledText": "HvTypography-disabledText",
             "highlightText": "HvTypography-highlightText",
-            "infoText": "HvTypography-infoText",
-            "inlineLink": "HvTypography-inlineLink",
             "lTitle": "HvTypography-lTitle",
-            "labelText": "HvTypography-labelText",
+            "link": "HvTypography-link",
             "mTitle": "HvTypography-mTitle",
             "normalText": "HvTypography-normalText",
             "placeholderText": "HvTypography-placeholderText",
             "root": "HvTypography-root",
-            "sLink": "HvTypography-sLink",
-            "sText": "HvTypography-sText",
             "sTitle": "HvTypography-sTitle",
             "selectedNavText": "HvTypography-selectedNavText",
-            "selectedText": "HvTypography-selectedText",
             "vizText": "HvTypography-vizText",
+            "vizTextDisabled": "HvTypography-vizTextDisabled",
             "xlTitle": "HvTypography-xlTitle",
+            "xsInlineLink": "HvTypography-xsInlineLink",
             "xsTitle": "HvTypography-xsTitle",
             "xxlTitle": "HvTypography-xxlTitle",
             "xxsTitle": "HvTypography-xxsTitle",
@@ -106,15 +100,15 @@ exports[`HelperText should render correctly 1`] = `
         id="base-notification"
         variant="infoText"
       >
-        <p
+        <span
           aria-atomic="true"
           aria-live="polite"
           aria-relevant="additions text"
-          className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-infoText"
+          className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
           id="base-notification"
         >
           test
-        </p>
+        </span>
       </ForwardRef>
     </WithStyles(ForwardRef)>
   </HvHelperText>

@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import { HvButton, HvCheckBox, HvTypography } from "..";
-import Actions from "../Actions";
+import ActionsGeneric from "../ActionsGeneric";
 import withLabels from "../withLabels";
 import styles from "./styles";
 import { setId } from "../utils";
@@ -49,7 +49,7 @@ const HvBulkActions = props => {
       ) : (
         <>
           <b>{numSelected}</b>
-          {` of ${numTotal} items`}
+          {` / ${numTotal} items`}
         </>
       )}
     </HvTypography>
@@ -80,11 +80,13 @@ const HvBulkActions = props => {
             category={editMode ? "semantic" : "ghost"}
             onClick={(...args) => onSelectAllPages?.(...args)}
           >
-            {numSelected === numTotal ? labels.deselectAllPages : labels.selectAllPages}
+            <HvTypography variant="highlightText" component="span">
+              {numSelected === numTotal ? labels.deselectAllPages : labels.selectAllPages}
+            </HvTypography>
           </HvButton>
         )}
       </div>
-      <Actions
+      <ActionsGeneric
         id={setId(id, "actions")}
         classes={{ root: classes.actions }}
         category={editMode ? "semantic" : "ghost"}

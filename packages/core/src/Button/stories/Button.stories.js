@@ -5,7 +5,7 @@ import { Caution } from "@hv/uikit-react-icons/dist";
 import { HvButton, HvGrid } from "../..";
 
 export default {
-  title: "Components/Button",
+  title: "Patterns/Button",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvButton } from '@hv/uikit-react-core/dist'"

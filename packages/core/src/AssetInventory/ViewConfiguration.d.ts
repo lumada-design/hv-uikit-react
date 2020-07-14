@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 
-export interface ViewConfiguration extends HvActionsCommonProps {
+export interface ViewConfiguration extends HvActionsGenericCommonProps {
   /**
    * Callback evoked in the selection of an element.
    */

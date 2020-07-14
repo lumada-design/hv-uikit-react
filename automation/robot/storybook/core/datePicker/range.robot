@@ -2,7 +2,7 @@
 Resource      ../_keywords.resource
 Variables     variables.yaml
 Test Setup    Run Keywords
-...           Go To    ${components}date-picker--range-with-values    AND
+...           Go To    ${patterns}date-picker--range-with-values    AND
 ...           Wait Until Element Is Visible    DatePicker
 Force Tags    bug-ie-webdriver
 

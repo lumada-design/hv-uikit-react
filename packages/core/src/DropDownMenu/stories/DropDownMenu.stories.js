@@ -5,7 +5,7 @@ import { HvButton, HvDropDownMenu } from "../..";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Dropdown Menu",
+  title: "Patterns/Dropdown Menu",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvDropDownMenu } from '@hv/uikit-react-core/dist'"

@@ -6,7 +6,7 @@ import HvLoading from "../Loading";
 import Typography from "../../Typography";
 
 export default {
-  title: "Components/Loading",
+  title: "Patterns/Loading",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvLoading } from '@hv/uikit-react-core/dist'"

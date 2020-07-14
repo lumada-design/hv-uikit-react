@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HvTextArea, HvButton, HvInput } from "../..";
 
 export default {
-  title: "Components/Text Area",
+  title: "Patterns/Text Area",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'"

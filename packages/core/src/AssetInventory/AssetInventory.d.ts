@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvActionsCommonProps } from "../Actions";
+import { HvActionsGenericCommonProps } from "../ActionsGeneric";
 import { CardViewConfiguration } from "./CardView";
 import { ListViewConfiguration } from "./ListView";
 import { ListValueProp } from "../List";
@@ -58,7 +58,7 @@ export type AssetInventoryMetadata = {
 
 export interface HvAssetInventoryProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, ClassKey>,
-    HvActionsCommonProps,
+    HvActionsGenericCommonProps,
     HvPaginationCommonProps {
   /**
    * Data passed to the component.

@@ -5,7 +5,7 @@ import { HvButton, HvBanner, HvBannerContent, HvTypography } from "../..";
 /* eslint-disable react/prop-types */
 
 export default {
-  title: "Components/Notification/Banner",
+  title: "Patterns/Notification/Banner",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBanner } from '@hv/uikit-react-core/dist'"

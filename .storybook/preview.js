@@ -39,6 +39,7 @@ addParameters({
         "Foundation",
         ["Grid", "Container", "Typography", "Colors", "Icons", "Theming"],
         "Components",
+        "Patterns",
         "Visualizations",
         "Lab",
         "Templates",
@@ -66,7 +67,11 @@ const App = ({ story: Story }) => {
     return () => channel.off(UIKIT_THEME, setTheme);
   }, [channel, setTheme]);
 
-  return <HvProvider uiKitTheme={theme}><Story /></HvProvider>;
+  return (
+    <HvProvider uiKitTheme={theme}>
+      <Story />
+    </HvProvider>
+  );
 };
 
 addDecorator(story => <App story={story} />);

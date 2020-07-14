@@ -1,7 +1,7 @@
 *** Setting ***
 Resource       ../_keywords.resource
 Suite Setup    Run Keywords
-...            Go To    ${components}avatar--fallbacks    AND
+...            Go To    ${patterns}avatar--fallbacks    AND
 ...            Wait Until Element Is Visible    ${fallbackToDefaultUserIcon}
 
 

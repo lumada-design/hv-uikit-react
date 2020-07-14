@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}file-uploader--automation-sample
+...           Go To    ${patterns}file-uploader--automation-sample
 ...           AND    Wait Until Element Is Enabled    ${button_removeFile}
 
 

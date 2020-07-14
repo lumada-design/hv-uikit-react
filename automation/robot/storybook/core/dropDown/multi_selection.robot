@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resources.resource
 Test Setup    Run Keywords
-...           Go To    ${components}dropdown--multi-selection    AND
+...           Go To    ${patterns}dropdown--multi-selection    AND
 ...           Wait Until Element Is Enabled    ${dropdown}
 
 

@@ -8,7 +8,7 @@ Documentation
 
 *** Test Cases ***
 Focus next element when TAB keyboard is pressed on focused tab
-    Go To                                ${components}tabs--main
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
     Element Should Be Focused            tabs-tab1
@@ -16,7 +16,7 @@ Focus next element when TAB keyboard is pressed on focused tab
     Element Should Be Focused            tabs-tab2
 
 Focus next enabled element and jumps disabled elements when TAB is pressed
-    Go To                                ${components}tabs--text-size
+    Go To                                ${patterns}tabs--text-size
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab1
     Element Should Be Focused            tabs-tab1
@@ -24,7 +24,7 @@ Focus next enabled element and jumps disabled elements when TAB is pressed
     Element Should Be Focused            tabs-tab3
 
 Focus previous element when using SHIFT+TAB on a focused element
-    Go To                                ${components}tabs--main
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab2
     Element Should Be Focused            tabs-tab2
@@ -32,7 +32,7 @@ Focus previous element when using SHIFT+TAB on a focused element
     Element Should Be Focused            tabs-tab1
 
 Focus previous element and jumps disabled elements when using SHIFT TAB on a focused element
-    Go To                                ${components}tabs--text-size
+    Go To                                ${patterns}tabs--text-size
     Wait Until Element Is Visible        tabs
     Set Focus To Element                 tabs-tab3
     Element Should Be Focused            tabs-tab3
@@ -40,7 +40,7 @@ Focus previous element and jumps disabled elements when using SHIFT TAB on a foc
     Element Should Be Focused            tabs-tab1
 
 Selection does not change when selecting a selected element when using SPACE
-    Go To                                ${components}tabs--main
+    Go To                                ${patterns}tabs--main
     Wait Until Element Is Visible        tabs
     Element Attribute Value Should Be    tabs-tab1        aria-selected  true
     Element Attribute Value Should Be    tabs-tab2        aria-selected  false

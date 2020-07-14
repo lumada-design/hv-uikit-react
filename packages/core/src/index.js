@@ -1,4 +1,5 @@
 // components
+export { default as HvActionsGeneric } from "./ActionsGeneric";
 export { default as HvAssetInventory } from "./AssetInventory";
 export * from "./AssetInventory";
 export { default as HvAvatar } from "./Avatar";

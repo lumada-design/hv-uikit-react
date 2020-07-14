@@ -2,7 +2,7 @@ import React from "react";
 import { HvSearchBox } from "../..";
 
 export default {
-  title: "Components/Searchbox",
+  title: "Patterns/Searchbox",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvSearchBox } from '@hv/uikit-react-core/dist'"

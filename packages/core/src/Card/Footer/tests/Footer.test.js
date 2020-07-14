@@ -4,7 +4,7 @@ import React from "react";
 import { mount } from "enzyme";
 
 import HvProvider from "../../../Provider";
-import Actions from "../../../Actions";
+import ActionsGeneric from "../../../ActionsGeneric";
 import Footer from "..";
 
 const myActions = [
@@ -33,7 +33,7 @@ describe("Footer", () => {
       </HvProvider>
     );
 
-    expect(wrapper.find(Actions)).toMatchSnapshot();
+    expect(wrapper.find(ActionsGeneric)).toMatchSnapshot();
 
     wrapper = mount(
       <HvProvider>
@@ -41,7 +41,7 @@ describe("Footer", () => {
       </HvProvider>
     );
 
-    expect(wrapper.find(Actions)).toMatchSnapshot();
+    expect(wrapper.find(ActionsGeneric)).toMatchSnapshot();
 
     wrapper = mount(
       <HvProvider>
@@ -49,6 +49,6 @@ describe("Footer", () => {
       </HvProvider>
     );
 
-    expect(wrapper.find(Actions)).toMatchSnapshot();
+    expect(wrapper.find(ActionsGeneric)).toMatchSnapshot();
   });
 });

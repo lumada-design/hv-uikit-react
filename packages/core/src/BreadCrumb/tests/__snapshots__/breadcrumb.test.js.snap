@@ -191,23 +191,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -215,11 +212,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 1
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -351,23 +348,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -375,11 +369,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 2
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -511,23 +505,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -535,11 +526,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 3
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -671,23 +662,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -695,11 +683,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 4
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -831,23 +819,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -855,11 +840,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 5
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -991,23 +976,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -1015,11 +997,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 6
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -1151,23 +1133,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -1175,11 +1154,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 7
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -1311,23 +1290,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "3xlTitle": "HvTypography-3xlTitle",
                               "4xlTitle": "HvTypography-4xlTitle",
                               "5xlTitle": "HvTypography-5xlTitle",
-                              "disabledButtonText": "HvTypography-disabledButtonText",
+                              "disabledText": "HvTypography-disabledText",
                               "highlightText": "HvTypography-highlightText",
-                              "infoText": "HvTypography-infoText",
-                              "inlineLink": "HvTypography-inlineLink",
                               "lTitle": "HvTypography-lTitle",
-                              "labelText": "HvTypography-labelText",
+                              "link": "HvTypography-link",
                               "mTitle": "HvTypography-mTitle",
                               "normalText": "HvTypography-normalText",
                               "placeholderText": "HvTypography-placeholderText",
                               "root": "HvTypography-root",
-                              "sLink": "HvTypography-sLink",
-                              "sText": "HvTypography-sText",
                               "sTitle": "HvTypography-sTitle",
                               "selectedNavText": "HvTypography-selectedNavText",
-                              "selectedText": "HvTypography-selectedText",
                               "vizText": "HvTypography-vizText",
+                              "vizTextDisabled": "HvTypography-vizTextDisabled",
                               "xlTitle": "HvTypography-xlTitle",
+                              "xsInlineLink": "HvTypography-xsInlineLink",
                               "xsTitle": "HvTypography-xsTitle",
                               "xxlTitle": "HvTypography-xxlTitle",
                               "xxsTitle": "HvTypography-xxsTitle",
@@ -1335,11 +1311,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                           }
                           variant="sLink"
                         >
-                          <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-sLink"
+                          <span
+                            className="HvBreadCrumb-link HvTypography-root"
                           >
                             Label 8
-                          </p>
+                          </span>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -1415,23 +1391,20 @@ exports[`Breadcrumb should render correctly 1`] = `
                     "3xlTitle": "HvTypography-3xlTitle",
                     "4xlTitle": "HvTypography-4xlTitle",
                     "5xlTitle": "HvTypography-5xlTitle",
-                    "disabledButtonText": "HvTypography-disabledButtonText",
+                    "disabledText": "HvTypography-disabledText",
                     "highlightText": "HvTypography-highlightText",
-                    "infoText": "HvTypography-infoText",
-                    "inlineLink": "HvTypography-inlineLink",
                     "lTitle": "HvTypography-lTitle",
-                    "labelText": "HvTypography-labelText",
+                    "link": "HvTypography-link",
                     "mTitle": "HvTypography-mTitle",
                     "normalText": "HvTypography-normalText",
                     "placeholderText": "HvTypography-placeholderText",
                     "root": "HvTypography-root",
-                    "sLink": "HvTypography-sLink",
-                    "sText": "HvTypography-sText",
                     "sTitle": "HvTypography-sTitle",
                     "selectedNavText": "HvTypography-selectedNavText",
-                    "selectedText": "HvTypography-selectedText",
                     "vizText": "HvTypography-vizText",
+                    "vizTextDisabled": "HvTypography-vizTextDisabled",
                     "xlTitle": "HvTypography-xlTitle",
+                    "xsInlineLink": "HvTypography-xsInlineLink",
                     "xsTitle": "HvTypography-xsTitle",
                     "xxlTitle": "HvTypography-xxlTitle",
                     "xxsTitle": "HvTypography-xxsTitle",
@@ -1439,11 +1412,11 @@ exports[`Breadcrumb should render correctly 1`] = `
                 }
                 variant="sText"
               >
-                <p
-                  className="HvTypography-root HvTypography-sText"
+                <span
+                  className="HvTypography-root"
                 >
                   Label 9
-                </p>
+                </span>
               </ForwardRef>
             </WithStyles(ForwardRef)>
           </li>

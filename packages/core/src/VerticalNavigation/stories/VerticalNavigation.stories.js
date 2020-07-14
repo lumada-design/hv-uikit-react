@@ -3,7 +3,7 @@ import { LogOut, OpenBook, Operation, Tool, User, Stop, Play } from "@hv/uikit-r
 import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 
 export default {
-  title: "Components/Navigation System/Vertical Navigation",
+  title: "Patterns/Navigation System/Vertical Navigation",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvVerticalNavigation } from '@hv/uikit-react-core/dist'",
