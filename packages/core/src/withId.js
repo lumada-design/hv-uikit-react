@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import hoistNonReactStatics from "hoist-non-react-statics";
 import uniqueId from "lodash/uniqueId";
+import getComponentName from "./utils/getComponentName";
 
 const pascalToKebab = (string = "") => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
 
 const withId = Component => {
   const WithId = ({ id, ...others }) => {
-    const [internalId] = useState(id || uniqueId(`${pascalToKebab(Component.name)}-`));
+    const [internalId] = useState(id || uniqueId(`${pascalToKebab(getComponentName(Component))}-`));
     return <Component id={internalId} {...others} />;
   };
 
