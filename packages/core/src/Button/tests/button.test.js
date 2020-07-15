@@ -6,7 +6,7 @@ import { Download } from "@hv/uikit-react-icons";
 import { HvButton, HvProvider } from "../..";
 import materialButtonConfiguration from "../materialButtonConfiguration";
 
-describe("Button", () => {
+describe("[v3] Button", () => {
   let wrapper;
 
   const getMaterialButtonProps = ParentElement =>
@@ -96,20 +96,6 @@ describe("Button", () => {
     const mountWrapper = mount(
       <HvProvider>
         <HvButton category="ghost">Click!</HvButton>
-      </HvProvider>
-    ).find(HvButton);
-    expect(getMaterialButtonProps(mountWrapper).color).toEqual(
-      materialButtonConfiguration.color.primary
-    );
-    expect(getMaterialButtonProps(mountWrapper).variant).toEqual(
-      materialButtonConfiguration.variant.text
-    );
-  });
-
-  it("should correctly map the secondary type to the material ui configurations", () => {
-    const mountWrapper = mount(
-      <HvProvider>
-        <HvButton category="ghostSecondary">Click!</HvButton>
       </HvProvider>
     ).find(HvButton);
     expect(getMaterialButtonProps(mountWrapper).color).toEqual(

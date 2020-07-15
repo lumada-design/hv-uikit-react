@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should render correctly 1`] = `
+exports[`[v3] Button should render correctly 1`] = `
 <WithStyles(HvButton)>
   <HvButton
     classes={
@@ -8,9 +8,6 @@ exports[`Button should render correctly 1`] = `
         "ghost": "HvButton-ghost",
         "ghostDisabled": "HvButton-ghostDisabled",
         "ghostSVG": "HvButton-ghostSVG",
-        "ghostSecondary": "HvButton-ghostSecondary",
-        "ghostSecondaryDisabled": "HvButton-ghostSecondaryDisabled",
-        "ghostSecondarySVG": "HvButton-ghostSecondarySVG",
         "iconSVG": "HvButton-iconSVG",
         "primary": "HvButton-primary",
         "primaryDisabled": "HvButton-primaryDisabled",

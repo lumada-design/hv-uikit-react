@@ -52,14 +52,7 @@ HvButton.propTypes = {
   /**
    * Category of button to use
    */
-  category: PropTypes.oneOf([
-    "ghost",
-    "ghostSecondary",
-    "icon",
-    "primary",
-    "secondary",
-    "semantic"
-  ]),
+  category: PropTypes.oneOf(["ghost", "icon", "primary", "secondary", "semantic"]),
   /**
    * The content of the button.
    */
@@ -77,14 +70,6 @@ HvButton.propTypes = {
      * Styles applied to the ghost button when it is disabled.
      */
     ghostDisabled: PropTypes.string,
-    /**
-     * Styles applied to the secondary ghost button.
-     */
-    ghostSecondary: PropTypes.string,
-    /**
-     * Styles applied to the secondary ghost button when it is disabled.
-     */
-    ghostSecondaryDisabled: PropTypes.string,
     /**
      * Styles applied to the primary button.
      */

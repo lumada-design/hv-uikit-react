@@ -1,6 +1,5 @@
 /* eslint-disable no-alert */
 import * as React from "react";
-import { withStyles } from "@material-ui/core";
 import { Caution } from "@hv/uikit-react-icons/dist";
 import { HvButton, HvGrid } from "../..";
 
@@ -8,20 +7,47 @@ export default {
   title: "Patterns/Button",
   parameters: {
     componentSubtitle: null,
+    v3: true,
     usage: "import { HvButton } from '@hv/uikit-react-core/dist'"
   },
   component: HvButton
 };
 
-// any other clever way of doing this?
-// the sample source code will have HvButtonWithMargin instead of HvButton...
-const HvButtonWithMargin = withStyles({
-  root: {
-    margin: "0 5px"
-  }
-})(HvButton);
-
 export const MainStory = () => {
+  const semanticButtonStyling = {
+    backgroundColor: "#D3E3F6",
+    width: "100px",
+    height: "50px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  };
+
+  const separator = {
+    margin: "0 5px"
+  };
+
+  return (
+    <div style={{ display: "flex" }}>
+      <div style={separator}>
+        <HvButton category="primary">Primary</HvButton>
+      </div>
+      <div style={separator}>
+        <HvButton category="secondary">Secondary</HvButton>
+      </div>
+      <div style={separator}>
+        <HvButton category="ghost">Ghost</HvButton>
+      </div>
+      <div style={semanticButtonStyling}>
+        <div style={separator}>
+          <HvButton category="semantic">Semantic</HvButton>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const DisabledButtons = () => {
   const semanticButtonStyling = {
     backgroundColor: "#D3E3F6",
     width: "100px",
@@ -29,17 +55,45 @@ export const MainStory = () => {
     justifyContent: "center"
   };
 
+  const separator = {
+    margin: "0 5px"
+  };
+
   return (
     <div style={{ display: "flex" }}>
-      <HvButtonWithMargin category="primary">Primary</HvButtonWithMargin>
-      <HvButtonWithMargin category="secondary">Secondary</HvButtonWithMargin>
-      <HvButtonWithMargin category="ghost">Ghost</HvButtonWithMargin>
-      <HvButtonWithMargin category="ghostSecondary">Ghost Secondary</HvButtonWithMargin>
+      <div style={separator}>
+        <HvButton onClick={() => alert("This can't be triggered")} disabled category="primary">
+          Primary
+        </HvButton>
+      </div>
+      <div style={separator}>
+        <HvButton onClick={() => alert("This can't be triggered")} disabled category="secondary">
+          Secondary
+        </HvButton>
+      </div>
+      <div style={separator}>
+        <HvButton onClick={() => alert("This can't be triggered")} disabled category="ghost">
+          Ghost
+        </HvButton>
+      </div>
       <div style={semanticButtonStyling}>
-        <HvButtonWithMargin category="semantic">Semantic</HvButtonWithMargin>
+        <div style={separator}>
+          <HvButton onClick={() => alert("This can't be triggered")} disabled category="semantic">
+            Semantic
+          </HvButton>
+        </div>
       </div>
     </div>
   );
+};
+
+DisabledButtons.story = {
+  parameters: {
+    docs: {
+      storyDescription: "Disabled buttons that don't allow any interaction."
+    },
+    v3: true
+  }
 };
 
 export const PrimaryButton = () => (
@@ -52,21 +106,8 @@ PrimaryButton.story = {
   parameters: {
     docs: {
       storyDescription: "Primary Button with click action."
-    }
-  }
-};
-
-export const PrimaryDisabledButton = () => (
-  <HvButton onClick={() => alert("This can't be triggered")} disabled>
-    Disabled
-  </HvButton>
-);
-
-PrimaryDisabledButton.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Disabled button that doesn't allow any interaction."
-    }
+    },
+    v3: true
   }
 };
 
@@ -80,7 +121,8 @@ SecondaryButton.story = {
   parameters: {
     docs: {
       storyDescription: "Secondary button."
-    }
+    },
+    v3: true
   }
 };
 
@@ -101,28 +143,8 @@ GhostButton.story = {
   parameters: {
     docs: {
       storyDescription: "Ghost button with click action."
-    }
-  }
-};
-
-export const GhostSecondaryButton = () => (
-  <HvButton
-    onClick={() => {
-      // eslint-disable-next-line no-alert
-      alert("You clicked me");
-    }}
-    category="ghostSecondary"
-  >
-    Ghost Secondary
-  </HvButton>
-);
-
-GhostSecondaryButton.story = {
-  name: "Ghost Secondary Button",
-  parameters: {
-    docs: {
-      storyDescription: "Ghost Secondary button with click action."
-    }
+    },
+    v3: true
   }
 };
 
@@ -130,7 +152,9 @@ export const SemanticButton = () => {
   const semanticButtonStyling = {
     backgroundColor: "#D3E3F6",
     width: "100px",
+    height: "50px",
     display: "flex",
+    alignItems: "center",
     justifyContent: "center"
   };
   return (
@@ -153,7 +177,8 @@ SemanticButton.story = {
   parameters: {
     docs: {
       storyDescription: "Semantic button with click action."
-    }
+    },
+    v3: true
   }
 };
 
@@ -186,16 +211,6 @@ export const SmokeTests = () => (
           onClick={() => alert("ghost")}
         >
           ghost
-        </HvButton>
-      </HvGrid>
-      <HvGrid item xl={2}>
-        <HvButton
-          id="ghostSecondary"
-          category="ghostSecondary"
-          startIcon={<Caution />}
-          onClick={() => alert("ghostSecondary")}
-        >
-          ghostSecondary
         </HvButton>
       </HvGrid>
       <HvGrid item xl={2}>
@@ -247,17 +262,6 @@ export const SmokeTests = () => (
       </HvGrid>
       <HvGrid item xl={2}>
         <HvButton
-          id="disabledGhostSecondary"
-          disabled
-          category="ghostSecondary"
-          startIcon={<Caution />}
-          onClick={() => alert("disabled ghostSecondary")}
-        >
-          disabled ghostSecondary
-        </HvButton>
-      </HvGrid>
-      <HvGrid item xl={2}>
-        <HvButton
           id="disabledSemantic"
           disabled
           category="semantic"
@@ -292,6 +296,7 @@ SmokeTests.story = {
   parameters: {
     docs: {
       disable: true
-    }
+    },
+    v3: true
   }
 };

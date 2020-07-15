@@ -6,6 +6,7 @@ Test Setup    Run Keywords
 
 
 *** Test Cases ***
+
 helper text - change value when input is edited
     Element Text Should Be           ${infoText}    Enter your password
     Element Text Should Be           ${helperText}    ${empty}
