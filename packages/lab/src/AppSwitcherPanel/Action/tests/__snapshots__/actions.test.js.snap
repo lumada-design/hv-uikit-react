@@ -330,7 +330,7 @@ exports[`<Action /> with an element icon should render correctly 1`] = `
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo5": "#CCC3D0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -1195,7 +1195,7 @@ exports[`<Action /> with description should render correctly 1`] = `
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo5": "#CCC3D0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -2074,7 +2074,7 @@ exports[`<Action /> without description should render correctly 1`] = `
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo5": "#CCC3D0",
+                "atmo5": "#CCCED0",
               },
             },
           },

@@ -386,7 +386,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo5": "#CCC3D0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -1179,7 +1179,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo5": "#CCC3D0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -2055,7 +2055,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo5": "#CCC3D0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -2932,7 +2932,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo5": "#CCC3D0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -3723,7 +3723,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo5": "#CCC3D0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -4561,7 +4561,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo5": "#CCC3D0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -5439,7 +5439,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo5": "#CCC3D0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
