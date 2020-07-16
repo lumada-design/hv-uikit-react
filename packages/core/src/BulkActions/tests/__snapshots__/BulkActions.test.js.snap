@@ -3818,7 +3818,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                                 <path
                                                   className="color0"
                                                   d="M0 0h16v16H0z"
-                                                  fill="#FFFFFF"
+                                                  fill="#FBFCFC"
                                                 />
                                                 <g
                                                   className="color1"
@@ -4523,7 +4523,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                                 <path
                                                   className="color0"
                                                   d="M0 0h16v16H0z"
-                                                  fill="#FFFFFF"
+                                                  fill="#FBFCFC"
                                                 />
                                                 <g
                                                   className="color1"

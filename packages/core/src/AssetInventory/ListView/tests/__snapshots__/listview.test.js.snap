@@ -880,7 +880,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             <path
                                                               class="color0"
                                                               d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                              fill="#C62828"
+                                                              fill="#BA2626"
                                                             />
                                                             <path
                                                               class="color1"
@@ -1050,7 +1050,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               class="color0"
                                                               cx="12"
                                                               cy="12"
-                                                              fill="#D77249"
+                                                              fill="#CE703D"
                                                               r="12"
                                                             />
                                                             <path
@@ -1542,7 +1542,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               <path
                                                                 class="color0"
                                                                 d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                fill="#C62828"
+                                                                fill="#BA2626"
                                                               />
                                                               <path
                                                                 class="color1"
@@ -1712,7 +1712,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 class="color0"
                                                                 cx="12"
                                                                 cy="12"
-                                                                fill="#D77249"
+                                                                fill="#CE703D"
                                                                 r="12"
                                                               />
                                                               <path
@@ -2418,7 +2418,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           <path
                                                             class="color0"
                                                             d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                            fill="#C62828"
+                                                            fill="#BA2626"
                                                           />
                                                           <path
                                                             class="color1"
@@ -2588,7 +2588,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             class="color0"
                                                             cx="12"
                                                             cy="12"
-                                                            fill="#D77249"
+                                                            fill="#CE703D"
                                                             r="12"
                                                           />
                                                           <path
@@ -3113,7 +3113,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             <path
                                                               class="color0"
                                                               d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                              fill="#C62828"
+                                                              fill="#BA2626"
                                                             />
                                                             <path
                                                               class="color1"
@@ -3283,7 +3283,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               class="color0"
                                                               cx="12"
                                                               cy="12"
-                                                              fill="#D77249"
+                                                              fill="#CE703D"
                                                               r="12"
                                                             />
                                                             <path
@@ -4430,7 +4430,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color0"
                                                                         d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                        fill="#C62828"
+                                                                        fill="#BA2626"
                                                                       />
                                                                       <path
                                                                         class="color1"
@@ -4600,7 +4600,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         class="color0"
                                                                         cx="12"
                                                                         cy="12"
-                                                                        fill="#D77249"
+                                                                        fill="#CE703D"
                                                                         r="12"
                                                                       />
                                                                       <path
@@ -5051,7 +5051,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color0"
                                                                           d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                          fill="#C62828"
+                                                                          fill="#BA2626"
                                                                         />
                                                                         <path
                                                                           class="color1"
@@ -5221,7 +5221,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           class="color0"
                                                                           cx="12"
                                                                           cy="12"
-                                                                          fill="#D77249"
+                                                                          fill="#CE703D"
                                                                           r="12"
                                                                         />
                                                                         <path
@@ -7723,7 +7723,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color0"
                                                                         d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                        fill="#C62828"
+                                                                        fill="#BA2626"
                                                                       />
                                                                       <path
                                                                         class="color1"
@@ -7893,7 +7893,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         class="color0"
                                                                         cx="12"
                                                                         cy="12"
-                                                                        fill="#D77249"
+                                                                        fill="#CE703D"
                                                                         r="12"
                                                                       />
                                                                       <path
@@ -8344,7 +8344,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color0"
                                                                           d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                          fill="#C62828"
+                                                                          fill="#BA2626"
                                                                         />
                                                                         <path
                                                                           class="color1"
@@ -8514,7 +8514,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           class="color0"
                                                                           cx="12"
                                                                           cy="12"
-                                                                          fill="#D77249"
+                                                                          fill="#CE703D"
                                                                           r="12"
                                                                         />
                                                                         <path
@@ -9202,7 +9202,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <path
                                                                     className="color0"
                                                                     d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                    fill="#C62828"
+                                                                    fill="#BA2626"
                                                                   />
                                                                   <path
                                                                     className="color1"
@@ -11016,7 +11016,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color0"
                                                                         d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                        fill="#C62828"
+                                                                        fill="#BA2626"
                                                                       />
                                                                       <path
                                                                         class="color1"
@@ -11186,7 +11186,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         class="color0"
                                                                         cx="12"
                                                                         cy="12"
-                                                                        fill="#D77249"
+                                                                        fill="#CE703D"
                                                                         r="12"
                                                                       />
                                                                       <path
@@ -11637,7 +11637,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color0"
                                                                           d="M12 0A12 12 0 110 12 12 12 0 0112 0z"
-                                                                          fill="#C62828"
+                                                                          fill="#BA2626"
                                                                         />
                                                                         <path
                                                                           class="color1"
@@ -11807,7 +11807,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           class="color0"
                                                                           cx="12"
                                                                           cy="12"
-                                                                          fill="#D77249"
+                                                                          fill="#CE703D"
                                                                           r="12"
                                                                         />
                                                                         <path
@@ -12496,7 +12496,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     className="color0"
                                                                     cx={12}
                                                                     cy={12}
-                                                                    fill="#D77249"
+                                                                    fill="#CE703D"
                                                                     r={12}
                                                                   />
                                                                   <path
