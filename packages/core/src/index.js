@@ -20,6 +20,7 @@ export { default as HvEmptyState } from "./EmptyState";
 export { default as HvFileUploader } from "./FileUploader";
 export { default as HvFooter } from "./Footer";
 export * from "./Forms";
+export { default as HvActionContainer } from "./ActionBar";
 export { default as HvGrid } from "./Grid";
 export { default as HvHeader } from "./Header";
 export { default as HvInput } from "./Input";
