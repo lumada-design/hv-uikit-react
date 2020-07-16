@@ -24,7 +24,7 @@ export default function storybookThemeFromUiKitTheme(theme) {
       // dark: "#666666",
       // darker: "#444444",
       // darkest: "#333333",
-      border: theme.palette.atmosphere.atmo5,
+      border: theme.palette.atmosphere.atmo4,
       // positive: "#66BF3C",
       // negative: "#FF4400",
       // warning: "#E69D00",
@@ -51,12 +51,12 @@ export default function storybookThemeFromUiKitTheme(theme) {
     },
     layoutMargin: 10,
     appBg: theme.palette.atmosphere.atmo3,
-    appContentBg: theme.palette.atmosphere.atmo3,
-    appBorderColor: theme.palette.atmosphere.atmo5,
-    appBorderRadius: 1,
+    appContentBg: theme.palette.atmosphere.atmo2,
+    appBorderColor: theme.palette.atmosphere.atmo4,
+    appBorderRadius: 2,
     barTextColor: theme.palette.accent.acce1,
     barSelectedColor: theme.palette.accent.acce1,
-    barBg: theme.palette.atmosphere.atmo1,
+    barBg: theme.palette.atmosphere.atmo2,
 
     // Typography
     typography: {

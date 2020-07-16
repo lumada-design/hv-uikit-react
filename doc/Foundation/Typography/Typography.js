@@ -26,7 +26,7 @@ const styles = theme => ({
   sentenceContainer: {
     display: "flex",
     padding: "10px",
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
   },
   container: {
     display: "flex",
@@ -41,11 +41,10 @@ const styles = theme => ({
   }
 });
 
-const text =
-  "ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.";
+const text = "The quick brown fox jumps over the lazy dog.";
 
 const CodeButton = ({ classes, onClick }) => (
-  <IconButton className={classes.iconCode} aria-label="Delete" onClick={onClick}>
+  <IconButton className={classes.iconCode} aria-label="View code" onClick={onClick}>
     <Code className={classes.icon} />
   </IconButton>
 );

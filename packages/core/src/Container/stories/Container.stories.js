@@ -17,8 +17,8 @@ export const Main = () => {
   const styles = theme => ({
     root: {
       border: "1px solid",
-      borderColor: theme.hv.palette.atmosphere.atmo5,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      borderColor: theme.hv.palette.atmosphere.atmo4,
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.sText
     },
@@ -45,8 +45,8 @@ export const Main = () => {
 export const SmMaxWidth = () => {
   const styles = theme => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.sText
     },
@@ -81,8 +81,8 @@ SmMaxWidth.story = {
 export const FullWidth = () => {
   const styles = theme => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.sText
     },
