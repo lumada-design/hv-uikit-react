@@ -15,7 +15,7 @@ export default {
 export const Main = () => {
   const styles = theme => ({
     root: {
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       marginTop: theme.spacing(2),
       flex: 1,
@@ -119,7 +119,7 @@ export const The12Columns = () => {
 
   const styledContainer = {
     border: "1px solid",
-    borderColor: theme.hv.palette.atmosphere.atmo5,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
     marginTop: theme.hv.spacing.xs
   };
@@ -148,7 +148,7 @@ export const Behaviour = () => {
 
   const styledContainer = {
     border: "1px solid",
-    borderColor: theme.hv.palette.atmosphere.atmo5,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     backgroundColor: theme.hv.palette.atmosphere.atmo2,
     marginTop: theme.hv.spacing.xs
   };

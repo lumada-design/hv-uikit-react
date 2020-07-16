@@ -8,7 +8,7 @@ import { HvTypography } from "@hv/uikit-react-core/dist";
 const styles = theme => ({
   colorGroup: {
     paddingBottom: theme.hv.spacing.xl,
-    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    borderTop: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
   },
   title: {
     paddingBottom: theme.hv.spacing.md
@@ -30,7 +30,7 @@ const styles = theme => ({
   colorSquare: {
     width: 130,
     height: 130,
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`,
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     marginBottom: theme.hv.spacing.xs
   },
   colorName: {
@@ -52,9 +52,9 @@ const Group = ({ classes, name, colors }) => {
           <div key={idx} className={classes.colorContainer}>
             <div className={classes.colorSquare} style={{ backgroundColor: colors[color] }} />
             <span className={classes.colorName}>
-              <HvTypography variant="labelText">{color}</HvTypography>
+              <HvTypography variant="highlightText">{color}</HvTypography>
               &nbsp;
-              <HvTypography variant="infoText">({colors[color]})</HvTypography>
+              <HvTypography variant="normalText"> {colors[color]}</HvTypography>
             </span>
           </div>
         ))}
