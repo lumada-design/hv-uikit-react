@@ -553,7 +553,6 @@ exports[`Input should not have the validation section 1`] = `
                       Object {
                         "helperDisabled": "HvHelperText-helperDisabled",
                         "helperText": "HvHelperText-helperText",
-                        "root": "HvHelperText-root",
                         "showText": "HvHelperText-showText",
                         "topGutter": "HvHelperText-topGutter",
                       }
@@ -1291,7 +1290,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                       Object {
                         "helperDisabled": "HvHelperText-helperDisabled",
                         "helperText": "HvHelperText-helperText",
-                        "root": "HvHelperText-root",
                         "showText": "HvHelperText-showText",
                         "topGutter": "HvHelperText-topGutter",
                       }
@@ -1989,7 +1987,6 @@ exports[`Input should render correctly 1`] = `
                       Object {
                         "helperDisabled": "HvHelperText-helperDisabled",
                         "helperText": "HvHelperText-helperText",
-                        "root": "HvHelperText-root",
                         "showText": "HvHelperText-showText",
                         "topGutter": "HvHelperText-topGutter",
                       }

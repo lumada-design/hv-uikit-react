@@ -149,6 +149,7 @@ const HvInput = props => {
    * allowing the customization of the input if required.
    *
    * @param {Object} event - The event provided by the material ui input
+   * @param val
    */
   const onChangeHandler = (event, val) => {
     const newValue = onChange?.(event, val) ?? val;
@@ -283,7 +284,7 @@ const HvInput = props => {
 
   // show the validation icon only if the input is enabled, validationIconVisible and showInfo are true and:
   // - the input has some sort of validation
-  // - also if states is invalid (even if there is no validation, because that would mean it had to be explicity set like that)
+  // - also if states is invalid (even if there is no validation, because that would mean it had to be explicitly set like that)
   const showValidationIcon = !disabled && validationIconVisible && showInfo && hasValidation;
 
   // show the clear button only if the input is enabled, disableClear is false and the input is not empty
@@ -297,7 +298,6 @@ const HvInput = props => {
     </div>
   );
   const InfoIcon = withTooltips(IconDisplay, labels.infoText);
-
   const showInfoIcon = showInfo && infoIcon && labels.infoText;
 
   return (
@@ -382,7 +382,9 @@ const HvInput = props => {
 
       <HvHelperText
         id={setId(id, "description")}
-        {...(showInfoIcon || !labels.infoText ? { style: { display: "none" } } : {})}
+        {...(!isInvalid && (showInfoIcon || !labels.infoText)
+          ? { style: { display: "none" } }
+          : {})}
         className={clsx(classes.infoText, {
           [classes.infoIcon]: infoIcon
         })}

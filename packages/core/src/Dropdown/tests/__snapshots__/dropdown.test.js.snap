@@ -3235,7 +3235,6 @@ exports[`<Dropdown /> <Dropdown /> with multiselect and search should render cor
                                                                   Object {
                                                                     "helperDisabled": "HvHelperText-helperDisabled",
                                                                     "helperText": "HvHelperText-helperText",
-                                                                    "root": "HvHelperText-root",
                                                                     "showText": "HvHelperText-showText",
                                                                     "topGutter": "HvHelperText-topGutter",
                                                                   }
@@ -11077,7 +11076,6 @@ exports[`<Dropdown /> with defaults should render correctly 1`] = `
                                                                   Object {
                                                                     "helperDisabled": "HvHelperText-helperDisabled",
                                                                     "helperText": "HvHelperText-helperText",
-                                                                    "root": "HvHelperText-root",
                                                                     "showText": "HvHelperText-showText",
                                                                     "topGutter": "HvHelperText-topGutter",
                                                                   }
