@@ -300,7 +300,7 @@ exports[`Provider should render correctly 1`] = `
                   "cviz1_900": "#40B9E2",
                 },
                 "undefinedState": Object {
-                  "atmo5": "#CCC3D0",
+                  "atmo5": "#CCCED0",
                 },
               },
             },
