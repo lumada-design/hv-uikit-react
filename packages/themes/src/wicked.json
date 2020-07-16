@@ -34,7 +34,7 @@
       "atmo5": "#656565"
     },
     "base": {
-      "base1": "#FFFFFF",
+      "base1": "#FBFCFC",
       "base2": "#414141"
     },
     "semantic": {
@@ -228,7 +228,7 @@
         "cviz9": "#646A98",
         "cviz10": "#EB7397",
         "cviz11": "#33ABCC",
-        "cviz12": "#F8C189",
+        "cviz12": "#F8C169",
         "cviz13": "#DE64BD",
         "cviz14": "#419393",
         "cviz15": "#F5996E",
