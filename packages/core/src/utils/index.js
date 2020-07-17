@@ -8,4 +8,6 @@ export * from "./focusableElementFinder";
 
 export * from "./sizes";
 
+export { default as Random } from "./Random";
+
 export { default as useImageLoaded } from "./useImageLoaded";

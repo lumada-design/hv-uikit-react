@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Random } from "../../utils";
 import HvBarchart from "../Barchart";
 
 export default {
@@ -229,7 +230,7 @@ StackedHorizontalBarchart.story = {
 };
 
 export const WithIntervalUpdates = () => {
-  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+  const r = new Random();
 
   const [data, setData] = useState([
     {
@@ -244,7 +245,7 @@ export const WithIntervalUpdates = () => {
       setData([
         {
           x: ["January", "February", "March"],
-          y: [rand(1000, 3000), rand(500, 3500), 8500],
+          y: [r.next(1000, 3000), r.next(500, 3500), 8500],
           name: "Sales Target"
         }
       ]);

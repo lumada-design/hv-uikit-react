@@ -16,12 +16,25 @@ export default {
 
 export const Main = () => <HvTimePicker locale="pt-pt" />;
 
+Main.story = {
+  parameters: {
+    eyes: {
+      // excluded due to dynamic date (which is the default that we intend to exemplify)
+      include: false
+    }
+  }
+};
+
 export const Format12Hours = () => <HvTimePicker locale="en-US" />;
 
 Format12Hours.story = {
   parameters: {
     docs: {
       storyDescription: "TimePicker to select time in 12-hour format."
+    },
+    eyes: {
+      // excluded due to dynamic date (which is the default that we intend to exemplify)
+      include: false
     }
   }
 };
@@ -40,8 +53,8 @@ CustomDefault.story = {
 
 export const WithOnChange = () => {
   const timeProps = {
-    hours: new Date().getHours(),
-    minutes: new Date().getMinutes(),
+    hours: 9,
+    minutes: 10,
     seconds: 30
   };
 

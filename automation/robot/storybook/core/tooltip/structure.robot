@@ -3,6 +3,7 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}tooltip--long-text    AND
 ...           Wait Until Element Is Visible    ${tooltipPlaceholder}
+Force Tags    bug-infrastructure-ie
 
 
 *** Comments ***

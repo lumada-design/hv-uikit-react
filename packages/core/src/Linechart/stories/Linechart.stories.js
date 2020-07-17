@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Random } from "../../utils";
 import HvLinechart from "../Linechart";
 
 export default {
@@ -167,9 +168,10 @@ LinechartStacked.story = {
 };
 
 export const TimeRepresentation = () => {
-  const rand = diff => Math.random() * diff - diff / 2;
+  const r = new Random();
+  const rand = diff => r.next() * diff - diff / 2;
 
-  const generateDates = (num = 100, startDate = new Date()) =>
+  const generateDates = (num = 100, startDate = new Date(2020, 0)) =>
     Array.from(Array(num).keys()).map(i =>
       new Date(new Date(startDate).setDate(startDate.getDate() + i)).toISOString().slice(0, 10)
     );
@@ -211,7 +213,8 @@ TimeRepresentation.story = {
 };
 
 export const WithIntervalUpdates = () => {
-  const rand = diff => Math.random() * diff - diff / 2;
+  const r = new Random();
+  const rand = diff => r.next() * diff - diff / 2;
 
   const generateDates = (initialDate, num = 200) =>
     Array.from(Array(num).keys()).map(i =>
