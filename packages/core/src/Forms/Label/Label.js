@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import { HvFormElementContext } from "../FormElement";
 import { getDescriptorMap } from "../FormElement/utils/FormUtils";
 import { HvTypography } from "../..";
@@ -23,12 +23,13 @@ const getChildIdToLabel = (children, childName) => {
   }
   return childId;
 };
+
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  * If it receives a children, the component will set itself as a label for the children.
  */
 const HvLabel = props => {
-  const { label, children, classes, id, disabled, ...others } = props;
+  const { label, children, classes, className, id, disabled, ...others } = props;
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
   const localDisabled = disabled || elementDisabled;
@@ -38,7 +39,7 @@ const HvLabel = props => {
     <>
       <HvTypography
         id={localId}
-        className={clsx(classes.root, {
+        className={clsx(className, classes.root, {
           [classes.labelDisabled]: localDisabled,
           [classes.childGutter]: !isNil(children)
         })}
@@ -55,6 +56,10 @@ const HvLabel = props => {
 };
 
 HvLabel.propTypes = {
+  /**
+   * Class names to be applied.
+   */
+  className: PropTypes.string,
   /**
    * Id to be applied to the root node.
    */
@@ -84,7 +89,7 @@ HvLabel.propTypes = {
   /**
    * The text to be shown by the label.
    */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /**
    * If ´true´ the label is disabled.
    */

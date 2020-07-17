@@ -66,6 +66,7 @@ const HvBaseInput = props => {
         [classes.inputRootInvalid]: localInvalid
       })}
       inputProps={{
+        required,
         "aria-required": required || undefined,
         "aria-invalid": localInvalid || undefined,
         "aria-describedby": HvHelperText?.[0]?.id,

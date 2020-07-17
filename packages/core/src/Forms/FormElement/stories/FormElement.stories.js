@@ -5,7 +5,7 @@ import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
 import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvAdornment } from "../../..";
 
 export default {
-  title: "Components/Forms/FormElement",
+  title: "Components/Forms/Form Element",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvFormElement } from '@hv/uikit-react-core/dist'"

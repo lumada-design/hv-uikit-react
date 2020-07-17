@@ -59,7 +59,7 @@ HvFormElement.propTypes = {
    */
   className: PropTypes.string,
   /**
-   *  A Jss Object used to override or extend the styles applied to the FormElement.
+   * A Jss Object used to override or extend the styles applied to the FormElement.
    */
   classes: PropTypes.shape({
     /**

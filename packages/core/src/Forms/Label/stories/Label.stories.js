@@ -1,5 +1,4 @@
 import React from "react";
-
 import { HvLabel } from "../../..";
 
 export default {

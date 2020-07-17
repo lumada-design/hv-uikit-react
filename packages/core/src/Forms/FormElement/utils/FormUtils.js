@@ -1,4 +1,4 @@
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 
 /**
  * Returns a descriptor in case the element being checked matches with the name.

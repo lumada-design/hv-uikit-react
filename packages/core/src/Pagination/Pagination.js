@@ -2,18 +2,13 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { IconButton, withStyles } from "@material-ui/core";
-import Down from "@hv/uikit-react-icons/dist/DropDownXS";
-import ArrowFirst from "@hv/uikit-react-icons/dist/Start";
-import ArrowLeft from "@hv/uikit-react-icons/dist/Backwards";
-import ArrowRight from "@hv/uikit-react-icons/dist/Forwards";
-import ArrowLast from "@hv/uikit-react-icons/dist/End";
+import { DropDownXS, Start, End, Backwards, Forwards } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes as Codes } from "../utils/KeyboardUtils";
-import HvTypography from "../Typography";
-import HvInput from "../Input";
+import { HvInput, HvTypography } from "..";
+import withTooltip from "../withTooltip";
 import withLabels from "../withLabels";
 import { setId } from "../utils";
 import styles from "./styles";
-import withTooltip from "../withTooltip";
 
 const DEFAULT_LABELS = {
   pageSizePrev: "Show",
@@ -68,26 +63,19 @@ const Pagination = ({
     if (page !== statePage || page >= pages) {
       changePage(page);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, pageSize]);
 
-  const FirstPage = () => (
-    <ArrowFirst className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
-  );
-  const PreviousPage = () => (
-    <ArrowLeft className={classes.icon} color={!canPrevious ? "atmo7" : undefined} />
-  );
-  const NextPage = () => (
-    <ArrowRight className={classes.icon} color={!canNext ? "atmo7" : undefined} />
-  );
-  const LastPage = () => (
-    <ArrowLast className={classes.icon} color={!canNext ? "atmo7" : undefined} />
-  );
+  const setColor = condition => (condition ? "atmo7" : undefined);
+  const FirstPage = () => <Start className={classes.icon} color={setColor(!canPrevious)} />;
+  const PrevPage = () => <Backwards className={classes.icon} color={setColor(!canPrevious)} />;
+  const NextPage = () => <Forwards className={classes.icon} color={setColor(!canNext)} />;
+  const LastPage = () => <End className={classes.icon} color={setColor(!canNext)} />;
 
   const FirstPageTooltipWrapper = withTooltip(FirstPage, labels.paginationFirstPageTitle);
-  const PreviousPageTooltipWrapper = withTooltip(PreviousPage, labels.paginationPreviousPageTitle);
+  const PreviousPageTooltipWrapper = withTooltip(PrevPage, labels.paginationPreviousPageTitle);
   const NextPageTooltipWrapper = withTooltip(NextPage, labels.paginationNextPageTitle);
   const LastPageTooltipWrapper = withTooltip(LastPage, labels.paginationLastPageTitle);
-  const totalPagesId = setId(id, "totalPages");
 
   return (
     <div id={id} className={clsx(className, classes.root)}>
@@ -111,7 +99,7 @@ const Pagination = ({
                 </option>
               ))}
             </select>
-            <Down className={classes.selectDownIcon} />
+            <DropDownXS className={classes.selectDownIcon} />
             <HvTypography component="span" variant="sText">
               {labels.pageSizeEntryName}
             </HvTypography>
@@ -171,7 +159,7 @@ const Pagination = ({
           <HvTypography component="span" variant="sText">
             {` ${labels.pagesSeparator} `}
           </HvTypography>
-          <HvTypography id={totalPagesId} component="span" variant="sText">
+          <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
             {pages}
           </HvTypography>
         </div>

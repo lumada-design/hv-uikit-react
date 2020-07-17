@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { isNil } from "lodash";
 import { withStyles } from "@material-ui/core";
 import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
 const HvAdornment = props => {
   const {
+    id,
     classes,
     className,
     icon,
@@ -21,41 +21,42 @@ const HvAdornment = props => {
 
   const displayIcon = isVisible ?? (showWhen === "" || elementStatus === showWhen);
 
-  let element = null;
-  if (!isNil(onClick)) {
-    element = (
-      <button
-        type="button"
-        tabIndex={-1}
-        aria-controls={HvBaseInput?.[0]?.id}
-        className={clsx(className, [classes.adornment, classes.adornmentButton], {
-          [classes.hideIcon]: !displayIcon
-        })}
-        onClick={onClick}
-        onKeyDown={() => {}}
-        {...others}
-      >
-        <div className={classes.icon}>{icon}</div>
-      </button>
-    );
-  } else {
-    element = (
-      <div
-        className={clsx(className, [classes.adornment, classes.adornmentIcon], {
-          [classes.hideIcon]: !displayIcon
-        })}
-        role="presentation"
-        {...others}
-      >
-        <div className={classes.icon}>{icon}</div>
-      </div>
-    );
-  }
+  const isClickable = !!onClick;
 
-  return <div className={classes.root}>{element}</div>;
+  return isClickable ? (
+    <button
+      id={id}
+      type="button"
+      tabIndex={-1}
+      aria-controls={HvBaseInput?.[0]?.id}
+      className={clsx(className, classes.root, classes.adornment, classes.adornmentButton, {
+        [classes.hideIcon]: !displayIcon
+      })}
+      onClick={onClick}
+      onKeyDown={() => {}}
+      {...others}
+    >
+      <div className={classes.icon}>{icon}</div>
+    </button>
+  ) : (
+    <div
+      id={id}
+      className={clsx(className, classes.root, classes.adornment, classes.adornmentIcon, {
+        [classes.hideIcon]: !displayIcon
+      })}
+      role="presentation"
+      {...others}
+    >
+      <div className={classes.icon}>{icon}</div>
+    </div>
+  );
 };
 
 HvAdornment.propTypes = {
+  /**
+   * Id to be applied to the root node.
+   */
+  id: PropTypes.string,
   /**
    * Class names to be applied.
    */

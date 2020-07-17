@@ -1,22 +1,17 @@
 import { StandardProps } from "@material-ui/core";
 
-export interface HvInfoTextInputProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInfoTextClassKey> {
-  /**
-   * Id to be applied to the root node.
-   */
-  id?: string;
+export interface HvLabelProps
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvLabelClassKey> {
   /**
    * The text to be shown by the info text.
    */
-  label?: string;
+  label?: React.ReactNode;
   /**
    * If ´true´ the input is disabled.
    */
   disabled?: boolean;
-  children?: React.ReactNode;
 }
 
-export type HvInfoTextClassKey = "root" | "labelDisabled" | "childGutter";
+export type HvLabelClassKey = "root" | "labelDisabled" | "childGutter";
 
-export default function HvInfoText(props: HvInfoTextInputProps): JSX.Element | null;
+export default function HvLabel(props: HvLabelProps): JSX.Element | null;
