@@ -40,8 +40,8 @@ CustomDefault.story = {
 
 export const WithOnChange = () => {
   const timeProps = {
-    hours: new Date().getHours(),
-    minutes: new Date().getMinutes(),
+    hours: 9,
+    minutes: 10,
     seconds: 30
   };
 

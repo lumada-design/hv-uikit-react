@@ -2086,8 +2086,8 @@ TableWithChangingData.story = {
 };
 
 export const ServerSidePagination = () => {
-  const start = new Date(2001, 0, 1);
-  const end = new Date();
+  const start = new Date(2001, 0);
+  const end = new Date(2020, 0);
 
   const getRand = id => (Math.abs(Math.sin(id)) * 10 ** 4) % 1;
   const getRandom = (id = 0, max = 100, min = 1) => {
