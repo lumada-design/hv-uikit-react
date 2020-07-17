@@ -3,6 +3,7 @@ Resource      _resource.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}forms-form-element--main
 ...           AND    Wait Until Element Is Enabled    ${input}
+Force Tags    bug-infrastructure-ie
 
 
 *** Test Cases ***
