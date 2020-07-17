@@ -13,41 +13,45 @@ export default {
 
 export const Main = () => {
   const useStyles = makeStyles(theme => ({
-    root: {
+    container: {
+      position: "relative",
       margin: "auto",
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
-      width: "1000px"
+      height: "150px",
+      width: "400px"
     },
-    flexBox: {
-      display: "flex"
+    actionBar: {
+      position: "absolute",
+      bottom: "0"
     },
-    separator: {
+    space: {
+      flex: 1
+    },
+    buttonSeparator: {
       marginRight: theme.hv.spacing.sm
     }
   }));
 
   const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <HvActionContainer id="ActionContainer">
-        <div className={classes.flexBox}>
-          <div className={classes.separator}>
-            <HvButton category="ghost" onClick={() => console.log("Save action")}>
-              Save
-            </HvButton>
-          </div>
-          <div>
-            <HvButton category="ghost" onClick={() => console.log("Cancel action")}>
-              Cancel
-            </HvButton>
-          </div>
+    <div className={classes.container}>
+      <HvActionContainer className={classes.actionBar}>
+        <HvButton category="ghost" onClick={() => console.log("Help action")}>
+          Help
+        </HvButton>
+        <div aria-hidden="true" className={classes.space}>
+          &nbsp;
         </div>
-        <div>
-          <HvButton category="ghost" onClick={() => console.log("Help action")}>
-            Help
-          </HvButton>
-        </div>
+        <HvButton
+          className={classes.buttonSeparator}
+          category="ghost"
+          onClick={() => console.log("Save action")}
+        >
+          Save
+        </HvButton>
+        <HvButton category="ghost" onClick={() => console.log("Cancel action")}>
+          Cancel
+        </HvButton>
       </HvActionContainer>
     </div>
   );
@@ -55,36 +59,39 @@ export const Main = () => {
 
 export const DualAction = () => {
   const useStyles = makeStyles(theme => ({
-    root: {
+    container: {
+      position: "relative",
       margin: "auto",
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
-      width: "1000px"
+      height: "150px",
+      width: "400px"
     },
-    flexBox: {
-      display: "flex"
+    actionBar: {
+      position: "absolute",
+      bottom: "0"
     },
-    separator: {
+    space: {
+      flex: 1
+    },
+    buttonSeparator: {
       marginRight: theme.hv.spacing.sm
     }
   }));
 
   const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <HvActionContainer id="ActionContainer">
-        <div className={classes.flexBox}>
-          <div className={classes.separator}>
-            <HvButton category="ghost" onClick={() => console.log("Save action")}>
-              Save
-            </HvButton>
-          </div>
-          <div>
-            <HvButton category="ghost" onClick={() => console.log("Cancel action")}>
-              Cancel
-            </HvButton>
-          </div>
-        </div>
+    <div className={classes.container}>
+      <HvActionContainer className={classes.actionBar}>
+        <HvButton
+          className={classes.buttonSeparator}
+          category="ghost"
+          onClick={() => console.log("Save action")}
+        >
+          Save
+        </HvButton>
+        <HvButton category="ghost" onClick={() => console.log("Cancel action")}>
+          Cancel
+        </HvButton>
       </HvActionContainer>
     </div>
   );
@@ -100,42 +107,46 @@ DualAction.story = {
 
 export const VariedActionBar = () => {
   const useStyles = makeStyles(theme => ({
-    root: {
+    container: {
+      position: "relative",
       margin: "auto",
       backgroundColor: theme.hv.palette.atmosphere.atmo1,
-      width: "1000px"
+      height: "150px",
+      width: "400px"
     },
-    flexBox: {
-      display: "flex"
+    actionBar: {
+      position: "absolute",
+      bottom: "0"
     },
-    separator: {
+    space: {
+      flex: 1
+    },
+    buttonSeparator: {
       marginRight: theme.hv.spacing.sm
     }
   }));
 
   const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <HvActionContainer id="ActionContainer">
-        <div className={classes.flexBox}>
-          <div className={classes.separator}>
-            <HvButton category="ghost" onClick={() => console.log("Save action")}>
-              Save
-            </HvButton>
-          </div>
-          <div>
-            <HvDropDownMenu
-              onClick={(e, item) => console.log(item.label)}
-              dataList={[{ label: "Delete" }, { label: "Update" }]}
-            />
-          </div>
+    <div className={classes.container}>
+      <HvActionContainer className={classes.actionBar}>
+        <HvButton category="ghost" onClick={() => console.log("Help action")}>
+          Help
+        </HvButton>
+        <div aria-hidden="true" className={classes.space}>
+          &nbsp;
         </div>
-        <div>
-          <HvButton category="ghost" onClick={() => console.log("Help action")}>
-            Help
-          </HvButton>
-        </div>
+        <HvButton
+          className={classes.buttonSeparator}
+          category="ghost"
+          onClick={() => console.log("Save action")}
+        >
+          Save
+        </HvButton>
+        <HvDropDownMenu
+          onClick={(e, item) => console.log(item.label)}
+          dataList={[{ label: "Delete" }, { label: "Update" }]}
+        />
       </HvActionContainer>
     </div>
   );
