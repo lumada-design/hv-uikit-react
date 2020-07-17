@@ -58,15 +58,32 @@ addParameters({
 
 const channel = addons.getChannel();
 
+const getInitialTheme = () => {
+  const isEyesStorybook = new URL(window.location).searchParams.get("eyes-storybook");
+  if (isEyesStorybook) {
+    // if being tested, don't rely on the stored theme but instead on the variation url parameter
+    const isWickedVariation =
+      new URL(window.location).searchParams.get("eyes-variation") === "theme:wicked";
+
+    return isWickedVariation ? "wicked" : "dawn";
+  }
+
+  return getStoredTheme();
+};
+
 const App = ({ story: Story }) => {
-  const [theme, setTheme] = useState(getStoredTheme());
+  const [theme, setTheme] = useState(getInitialTheme());
 
   useEffect(() => {
     channel.on(UIKIT_THEME, setTheme);
     return () => channel.off(UIKIT_THEME, setTheme);
   }, [channel, setTheme]);
 
-  return <HvProvider uiKitTheme={theme}><Story /></HvProvider>;
+  return (
+    <HvProvider uiKitTheme={theme}>
+      <Story />
+    </HvProvider>
+  );
 };
 
 addDecorator(story => <App story={story} />);
