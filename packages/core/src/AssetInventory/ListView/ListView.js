@@ -24,6 +24,7 @@ const ListView = ({
   values,
   selectedValues,
   metadata,
+  emptyComponent,
   ...others
 }) => {
   const GridDisplay = containerRef => {
@@ -31,6 +32,9 @@ const ListView = ({
       containerRef,
       ...viewConfiguration
     };
+
+    const hasValues = values.length > 0;
+
     return (
       <Grid container justify="center" alignContent="stretch">
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -40,11 +44,12 @@ const ListView = ({
             className={clsx(className, classes.root)}
             {...others}
           >
-            {viewConfiguration?.columnConfiguration?.length > 0 && values.length > 0 && (
+            {viewConfiguration?.columnConfiguration?.length > 0 && hasValues && (
               <div className={classes.tableHead}>
                 <ListViewHeaderRow viewConfiguration={enhancedViewConfiguration} />
               </div>
             )}
+            {!hasValues && emptyComponent}
             <ul className={classes.tableBody}>
               <ListViewContextProvider value={enhancedViewConfiguration}>
                 <Rows
@@ -84,6 +89,10 @@ ListView.propTypes = {
    * Icon used in the multi button in the assert inventory.
    */
   icon: PropTypes.node.isRequired,
+  /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent: PropTypes.node,
   /**
    * Configuration used to setup various properties of the view.
    * This configuration is propagated to the known childs of the asset inventory through context.
