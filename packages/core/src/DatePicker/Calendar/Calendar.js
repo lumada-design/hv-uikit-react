@@ -85,7 +85,6 @@ class Calendar extends React.Component {
     this.listMonthNamesLong = getMonthNamesList(locale, REPRESENTATION_VALUES.LONG);
     this.listMonthNamesShort = getMonthNamesList(locale, REPRESENTATION_VALUES.SHORT);
     this.listWeekdayNamesNarrow = getWeekdayNamesList(locale, REPRESENTATION_VALUES.NARROW);
-    this.listWeekdayNamesLong = getWeekdayNamesList(locale, REPRESENTATION_VALUES.LONG);
   };
 
   changeSelectedDateHeader = (date, shouldCloseCalendar) =>
@@ -129,13 +128,11 @@ class Calendar extends React.Component {
   navigateTo = (navOption, month) => {
     const { calendarModel } = this.state;
 
-    this.setState(
-      {
-        calendarModel: calendarModel.navigateTo(navOption, month),
-        viewMode: VIEW_MODE.CALENDAR
-      },
-      this.visibleDateChanged()
-    );
+    this.setState({
+      calendarModel: calendarModel.navigateTo(navOption, month),
+      viewMode: VIEW_MODE.CALENDAR
+    });
+    this.visibleDateChanged();
   };
 
   /**
@@ -165,7 +162,7 @@ class Calendar extends React.Component {
    * }}
    * @memberOf Calendar
    */
-  resolveStateFromDates = (selectedDate, visibleDate) => {
+  resolveStateFromDates = (selectedDate, visibleDate = null) => {
     const { locale } = this.props;
 
     const isDateObject = isDate(selectedDate);
@@ -264,7 +261,7 @@ class Calendar extends React.Component {
     });
   };
 
-  arrowKeysFocus = (event, onClickFunc, rowLenght) => {
+  arrowKeysFocus = (event, onClickFunc, rowLength) => {
     if (isKeypress(event, KeyboardCodes.ArrowLeft)) {
       event.preventDefault();
       document.activeElement.previousSibling.focus();
@@ -276,7 +273,7 @@ class Calendar extends React.Component {
     if (isKeypress(event, KeyboardCodes.ArrowUp)) {
       event.preventDefault();
       let element = document.activeElement;
-      for (let i = 0; i < rowLenght; i += 1) {
+      for (let i = 0; i < rowLength; i += 1) {
         element = element.previousSibling;
       }
       element.focus();
@@ -284,7 +281,7 @@ class Calendar extends React.Component {
     if (isKeypress(event, KeyboardCodes.ArrowDown)) {
       event.preventDefault();
       let element = document.activeElement;
-      for (let i = 0; i < rowLenght; i += 1) {
+      for (let i = 0; i < rowLength; i += 1) {
         element = element.nextSibling;
       }
       element.focus();
@@ -339,7 +336,6 @@ class Calendar extends React.Component {
         onClick={onClickFunc}
         onKeyDown={event => this.arrowKeysFocus(event, onClickFunc, 7)}
         role="presentation"
-        title={getFormattedDate(currentDate, locale)}
         tabIndex={0}
       >
         <HvTypography
@@ -374,36 +370,6 @@ class Calendar extends React.Component {
         onSelection={this.changeSelectedDateHeader}
       />
     );
-  };
-
-  arrowKeysFocus = (event, onClickFunc) => {
-    if (isKeypress(event, KeyboardCodes.ArrowLeft)) {
-      event.preventDefault();
-      document.activeElement.previousSibling.focus();
-    }
-    if (isKeypress(event, KeyboardCodes.ArrowRight)) {
-      event.preventDefault();
-      document.activeElement.nextSibling.focus();
-    }
-    if (isKeypress(event, KeyboardCodes.ArrowUp)) {
-      event.preventDefault();
-      let element = document.activeElement;
-      for (let i = 0; i < 3; i += 1) {
-        element = element.previousSibling;
-      }
-      element.focus();
-    }
-    if (isKeypress(event, KeyboardCodes.ArrowDown)) {
-      event.preventDefault();
-      let element = document.activeElement;
-      for (let i = 0; i < 3; i += 1) {
-        element = element.nextSibling;
-      }
-      element.focus();
-    }
-    if (isKeypress(event, KeyboardCodes.Enter)) {
-      onClickFunc();
-    }
   };
 
   /**
