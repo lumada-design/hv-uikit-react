@@ -548,7 +548,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                                 />
                                                 <path
                                                   className="color1"
-                                                  d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1z"
                                                   fill="#414141"
                                                 />
                                               </svg>
@@ -916,7 +916,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       >
                                         <path
                                           className="color0"
-                                          d="M16 7.5H8.5V0h-1v7.5H0v1h7.5V16h1V8.5H16z"
+                                          d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -1111,7 +1111,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       >
                                         <path
                                           className="color0"
-                                          d="M4 0h8v1H4zm12 2H0v1h2.1L3 16h10l.9-13H16zm-3.89547 13h-8.1l-.9-12h9.9z"
+                                          d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -1277,7 +1277,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                   >
                                     <path
                                       class="color0"
-                                      d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                      d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                       fill="#999999"
                                     />
                                   </svg>
@@ -1321,7 +1321,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                     >
                                       <path
                                         class="color0"
-                                        d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                         fill="#999999"
                                       />
                                     </svg>
@@ -1378,7 +1378,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                       >
                                         <path
                                           class="color0"
-                                          d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                          d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                           fill="#999999"
                                         />
                                       </svg>
@@ -1424,7 +1424,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         >
                                           <path
                                             class="color0"
-                                            d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                            d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                             fill="#999999"
                                           />
                                         </svg>
@@ -1500,7 +1500,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         >
                                           <path
                                             className="color0"
-                                            d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                            d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                             fill="#999999"
                                           />
                                         </svg>
@@ -2077,7 +2077,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                                 />
                                                 <path
                                                   className="color1"
-                                                  d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1z"
                                                   fill="#414141"
                                                 />
                                               </svg>
@@ -2451,17 +2451,11 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         width="16px"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <g
+                                        <path
                                           className="color0"
+                                          d="M16 11v5H0v-5h1v4h14v-4zM7.5 1.90015V13h1V1.90015l4.1 4.2.8-.80005-5.4-5.3-5.4 5.30005.8.80005z"
                                           fill="#414141"
-                                        >
-                                          <path
-                                            d="M15 11v4H1v-4H0v5h16v-5z"
-                                          />
-                                          <path
-                                            d="M7.5 2.2V13h1V2.2l4.1 4.1999.8-.8-5.4-5.3-5.4 5.30005.8.8z"
-                                          />
-                                        </g>
+                                        />
                                       </svg>
                                     </div>
                                   </Upload>
@@ -2654,12 +2648,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       >
                                         <path
                                           className="color0"
-                                          d="M7.5 8.09h1v4h-1z"
-                                          fill="#414141"
-                                        />
-                                        <path
-                                          className="color0"
-                                          d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10z"
+                                          d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10zM7.5 8h1v4h-1z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -2854,7 +2843,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       >
                                         <path
                                           className="color0"
-                                          d="M4 0h8v1H4zm12 2H0v1h2.1L3 16h10l.9-13H16zm-3.89547 13h-8.1l-.9-12h9.9z"
+                                          d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -3018,7 +3007,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                   >
                                     <path
                                       class="color0"
-                                      d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                      d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                       fill="#999999"
                                     />
                                   </svg>
@@ -3062,7 +3051,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                     >
                                       <path
                                         class="color0"
-                                        d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                        d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                         fill="#999999"
                                       />
                                     </svg>
@@ -3119,7 +3108,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                       >
                                         <path
                                           class="color0"
-                                          d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                          d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                           fill="#999999"
                                         />
                                       </svg>
@@ -3165,7 +3154,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         >
                                           <path
                                             class="color0"
-                                            d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                            d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                             fill="#999999"
                                           />
                                         </svg>
@@ -3241,7 +3230,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         >
                                           <path
                                             className="color0"
-                                            d="M7 7h2v2H7zm0-5h2v2H7zm0 10h2v2H7z"
+                                            d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
                                             fill="#999999"
                                           />
                                         </svg>
@@ -3808,17 +3797,11 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                                   d="M0 0h16v16H0z"
                                                   fill="#FBFCFC"
                                                 />
-                                                <g
+                                                <path
                                                   className="color1"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                                                   fill="#414141"
-                                                >
-                                                  <path
-                                                    d="M0 0v16h16V0zm15 15H1V1h14z"
-                                                  />
-                                                  <path
-                                                    d="M4 7h8v2H4z"
-                                                  />
-                                                </g>
+                                                />
                                               </svg>
                                             </div>
                                           </CheckboxPartial>
@@ -4509,17 +4492,11 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                                   d="M0 0h16v16H0z"
                                                   fill="#FBFCFC"
                                                 />
-                                                <g
+                                                <path
                                                   className="color1"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                                                   fill="#414141"
-                                                >
-                                                  <path
-                                                    d="M0 0v16h16V0zm15 15H1V1h14z"
-                                                  />
-                                                  <path
-                                                    d="M4 7h8v2H4z"
-                                                  />
-                                                </g>
+                                                />
                                               </svg>
                                             </div>
                                           </CheckboxPartial>
