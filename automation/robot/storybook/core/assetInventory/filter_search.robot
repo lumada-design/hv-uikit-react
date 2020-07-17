@@ -4,6 +4,7 @@ Test Setup        Run Keywords
 ...               Go To    ${components}asset-inventory--configurations
 ...               AND    Wait Until Element Is Visible    hv-assetinventory
 Test Template     validate search
+Force Tags        bug-infrastructure-ie
 
 
 *** Test Cases ***

@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      _resource.resource
 Test Setup    Run Keywords
-...           Go To    ${patterns}forms-formelement--main
+...           Go To    ${patterns}forms-form-element--main
 ...           AND    Wait Until Element Is Enabled    ${input}
 
 
@@ -12,6 +12,7 @@ show clean button when input is not empty and is focused
     wait Until Element Is Visible    ${clean_button}
 
 show clean button when input is not empty and mouse is hover it
+    [Tags]    bug-ie
     [Documentation]    to avoid firefox errors must be used input text and then keyboard kw
     Input Text                           ${input}    Joao
     Press Keys                           NONE    TAB

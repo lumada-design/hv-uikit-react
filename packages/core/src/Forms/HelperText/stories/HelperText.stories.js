@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
 import { HvHelperText, HvButton } from "../../..";
 
 export default {
-  title: "Patterns/Forms/HelperText",
+  title: "Patterns/Forms/Helper Text",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvHelperText } from '@hv/uikit-react-core/dist'"
@@ -11,19 +10,14 @@ export default {
   component: HvHelperText
 };
 
-export const Main = () => {
-  return (
-    <HvHelperText id="helperText">Write your name in this input do not put numbers</HvHelperText>
-  );
-};
+export const Main = () => (
+  <HvHelperText id="helperText">Write your name in this input do not put numbers</HvHelperText>
+);
 
 export const HelperTextNotification = () => {
   const [notificationText, setNotificationText] = useState("");
-  const btnStyle = {
-    width: "250px",
-    height: "50px",
-    margin: "10px"
-  };
+  const btnStyle = { margin: "10px" };
+
   return (
     <>
       <HvHelperText id="helperText-notify" notification={notificationText}>
@@ -43,7 +37,7 @@ export const HelperTextNotification = () => {
           setNotificationText("");
         }}
       >
-        clear notification text
+        Clear notification text
       </HvButton>
     </>
   );
@@ -58,7 +52,7 @@ HelperTextNotification.story = {
   }
 };
 
-export const DisabledInfoText = () => {
+export const DisabledHelperText = () => {
   return (
     <HvHelperText id="helperText-disabled" disabled>
       Write your name in this input do not put numbers
@@ -66,7 +60,7 @@ export const DisabledInfoText = () => {
   );
 };
 
-DisabledInfoText.story = {
+DisabledHelperText.story = {
   parameters: {
     docs: {
       storyDescription: "Helper text showcasing the disabled state."

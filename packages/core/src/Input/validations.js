@@ -1,4 +1,7 @@
+import React from "react";
+import { Success, Fail } from "@hv/uikit-react-icons";
 import validationTypes from "./validationTypes";
+import validationStates from "./validationStates";
 
 /**
  * Validates if the value is within the accepted length range.
@@ -8,7 +11,7 @@ import validationTypes from "./validationTypes";
  * @param {Number} minCharQuantity
  * @returns {Boolean} - true if valid false if not.
  */
-const validateCharLength = (value, maxCharQuantity, minCharQuantity) => {
+export const validateCharLength = (value, maxCharQuantity, minCharQuantity) => {
   if (maxCharQuantity === null && minCharQuantity === null) {
     return true;
   }
@@ -30,16 +33,17 @@ const validateCharLength = (value, maxCharQuantity, minCharQuantity) => {
  * @param {Number || String} num - The value to test.
  * @returns {Boolean} - ´true´ if the value is a number ´false´ otherwise.
  */
-const isNumeric = num =>
+export const isNumeric = num =>
   // to prevent Number( <spaces> ) = 0
   num.trim().length > 0 && !Number.isNaN(Number(num));
+
 /**
  * Checks if the value is an email
  *
  * @param {String} email - The value to test.
  * @returns {Boolean} - ´true´ if the value is an email ´false´ otherwise.
  */
-const isEmail = email => {
+export const isEmail = email => {
   const regexp = new RegExp(
     "^[^\\s]+[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])$"
   );
@@ -59,7 +63,7 @@ const isEmail = email => {
  * @param {String} validationType - the validation type.
  * @returns {Boolean} - true if valid false if not.
  */
-const validateInput = (value, validation, validationType) => {
+export const validateInput = (value, validation, validationType) => {
   if (validation) {
     return validation(value);
   }
@@ -74,4 +78,13 @@ const validateInput = (value, validation, validationType) => {
   }
 };
 
-export { validateCharLength, validateInput, isNumeric, isEmail };
+export const validationIcon = (state, className) => {
+  switch (state) {
+    case validationStates.valid:
+      return <Success semantic="sema1" className={className} />;
+    case validationStates.invalid:
+      return <Fail semantic="sema4" className={className} />;
+    default:
+      return null;
+  }
+};

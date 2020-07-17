@@ -292,7 +292,7 @@ DefaultValue.story = {
   }
 };
 
-export const EventDemostration = () => {
+export const EventDemonstration = () => {
   const labels = {
     placeholder: "Insert text",
     infoText: "Look at the browser's developer console to see the event handlers output",
@@ -314,7 +314,7 @@ export const EventDemostration = () => {
   );
 };
 
-EventDemostration.story = {
+EventDemonstration.story = {
   parameters: {
     docs: {
       storyDescription: "Input with all events functions enabled."

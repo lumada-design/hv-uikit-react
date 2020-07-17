@@ -1,7 +1,7 @@
 import { StandardProps } from "@material-ui/core";
 
-export interface HvInfoTextProps
-  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInfoTextClassKey> {
+export interface HvHelperTextProps
+  extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvHelperTextClassKey> {
   /**
    * The text to be shown by the helper text as a notification for the user.
    */
@@ -12,6 +12,6 @@ export interface HvInfoTextProps
   disabled?: boolean;
 }
 
-export type HvInfoTextClassKey = "helperText" | "showText" | "helperDisabled" | "@global";
+export type HvHelperTextClassKey = "helperText" | "showText" | "helperDisabled" | "@global";
 
-export default function HvInfoText(props: HvInfoTextProps): JSX.Element | null;
+export default function HvHelperText(props: HvHelperTextProps): JSX.Element | null;

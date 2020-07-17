@@ -2,7 +2,7 @@
 Resource         _resource.resource
 Suite Setup      Set Selenium Speed    0.1 seconds
 Test Setup       Run Keywords
-...              Go To    ${components}forms-formelement--main
+...              Go To    ${components}forms-form-element--main
 ...              AND    Wait Until Element Is Enabled    ${input}
 Documentation
 ...             was verified a firefox webdriver error!!

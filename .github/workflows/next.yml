@@ -154,7 +154,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome, firefox]
+        # Firefox temporarily disabled #1788
+        browser: [chrome]
     container:
       image: ppodgorsek/robot-framework:latest
       options: --shm-size=6g --cpus 4 -u 2501
