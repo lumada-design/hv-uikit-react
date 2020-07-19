@@ -33,7 +33,7 @@ close suggestions list when a suggestion item is selected
     Textfield Value Should Be            ${input}    Portugal
 
 select correctly suggestion when suggestion text area is pressed
-    [Tags]    run-any-way
+    [Tags]    bug-ie
     [Documentation]   Bug wait resolution
     ...               https://github.com/lumada-design/hv-uikit-react/issues/1746
     Press Keys                           ${input}    po

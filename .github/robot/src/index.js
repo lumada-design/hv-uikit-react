@@ -7,6 +7,7 @@ const env = process.env;
 async function main() {
   const storybookURL = core.getInput("storybook-url");
   const browser = core.getInput("browser");
+  const includes = core.getInput("includes").split("\n");
   const excludes = core.getInput("excludes").split("\n");
   const outputDir = path.join(
     env.GITHUB_WORKSPACE,
@@ -14,6 +15,12 @@ async function main() {
   );
   const testsPath = path.join(env.GITHUB_WORKSPACE, core.getInput("path"));
   const processes = core.getInput("processes");
+
+  const includesArray = [];
+
+  includes.forEach(include => {
+    includesArray.push("--include", include);
+  });
 
   const excludesArray = [];
 
@@ -24,6 +31,7 @@ async function main() {
   const firstCommandArgs = [
     "--variable", `STORYBOOK_URL:${storybookURL}`,
     "--variable", `BROWSER:${browser}`,
+    ...includesArray,
     ...excludesArray,
     "--outputdir", outputDir,
     "--output", "firstRun.xml",

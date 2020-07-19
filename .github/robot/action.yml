@@ -12,6 +12,9 @@ inputs:
     description: "The browser which will execute robot tests"
     required: true
     default: "chrome"
+  includes:
+    description: "The inclusions of the robot tests"
+    required: false
   excludes:
     description: "The exclusions of the robot tests"
     required: false

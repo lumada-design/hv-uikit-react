@@ -953,7 +953,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="28 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -1007,7 +1006,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="28 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -1215,7 +1213,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="29 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -1269,7 +1266,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="29 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -1477,7 +1473,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="30 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -1531,7 +1526,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="30 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -1739,7 +1733,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="31 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -1793,7 +1786,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="31 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -2001,7 +1993,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="1 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected"
@@ -2055,7 +2046,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="1 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected  HvTypography-root HvTypography-normalText"
@@ -2263,7 +2253,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="2 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -2317,7 +2306,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="2 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -2525,7 +2513,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="3 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -2579,7 +2566,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="3 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -2787,7 +2773,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="4 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -2841,7 +2826,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="4 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -3049,7 +3033,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="5 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -3103,7 +3086,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="5 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -3311,7 +3293,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="6 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -3365,7 +3346,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="6 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -3573,7 +3553,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="7 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -3627,7 +3606,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="7 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -3835,7 +3813,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="8 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -3889,7 +3866,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="8 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -4097,7 +4073,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="9 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -4151,7 +4126,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="9 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -4359,7 +4333,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="10 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -4413,7 +4386,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="10 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -4621,7 +4593,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="11 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -4675,7 +4646,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="11 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -4883,7 +4853,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="12 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -4937,7 +4906,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="12 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -5145,7 +5113,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="13 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -5199,7 +5166,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="13 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -5407,7 +5373,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="14 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -5461,7 +5426,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="14 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -5669,7 +5633,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="15 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -5723,7 +5686,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="15 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -5931,7 +5893,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="16 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -5985,7 +5946,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="16 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -6193,7 +6153,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="17 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -6247,7 +6206,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="17 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -6455,7 +6413,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="18 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -6509,7 +6466,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="18 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -6717,7 +6673,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="19 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -6771,7 +6726,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="19 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -6979,7 +6933,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="20 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -7033,7 +6986,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="20 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -7241,7 +7193,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="21 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -7295,7 +7246,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="21 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -7503,7 +7453,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="22 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -7557,7 +7506,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="22 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -7765,7 +7713,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="23 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -7819,7 +7766,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="23 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -8027,7 +7973,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="24 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -8081,7 +8026,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="24 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -8289,7 +8233,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="25 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -8343,7 +8286,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="25 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -8551,7 +8493,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="26 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -8605,7 +8546,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="26 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -8813,7 +8753,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="27 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -8867,7 +8806,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="27 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -9075,7 +9013,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="28 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -9129,7 +9066,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="28 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -9337,7 +9273,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="29 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -9391,7 +9326,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="29 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -9599,7 +9533,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="30 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -9653,7 +9586,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="30 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -9861,7 +9793,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="31 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -9915,7 +9846,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="31 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -10123,7 +10053,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="1 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -10177,7 +10106,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="1 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -10385,7 +10313,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="2 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -10439,7 +10366,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="2 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -10647,7 +10573,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="3 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -10701,7 +10626,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="3 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -10909,7 +10833,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="4 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -10963,7 +10886,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="4 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -11171,7 +11093,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="5 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -11225,7 +11146,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="5 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -11433,7 +11353,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="6 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -11487,7 +11406,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="6 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -11695,7 +11613,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="7 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -11749,7 +11666,6 @@ exports[`<Calendar /> with configurations should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="7 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -12736,7 +12652,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="28 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -12790,7 +12705,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="28 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -12998,7 +12912,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="29 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -13052,7 +12965,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="29 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -13260,7 +13172,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="30 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -13314,7 +13225,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="30 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -13522,7 +13432,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="31 Dec 1969"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -13576,7 +13485,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="31 Dec 1969"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -13784,7 +13692,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="1 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected"
@@ -13838,7 +13745,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="1 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateSelected  HvTypography-root HvTypography-normalText"
@@ -14046,7 +13952,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="2 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -14100,7 +14005,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="2 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -14308,7 +14212,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="3 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -14362,7 +14265,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="3 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -14570,7 +14472,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="4 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -14624,7 +14525,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="4 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -14832,7 +14732,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="5 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -14886,7 +14785,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="5 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -15094,7 +14992,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="6 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -15148,7 +15045,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="6 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -15356,7 +15252,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="7 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -15410,7 +15305,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="7 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -15618,7 +15512,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="8 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -15672,7 +15565,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="8 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -15880,7 +15772,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="9 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -15934,7 +15825,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="9 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -16142,7 +16032,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="10 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -16196,7 +16085,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="10 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -16404,7 +16292,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="11 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -16458,7 +16345,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="11 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -16666,7 +16552,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="12 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -16720,7 +16605,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="12 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -16928,7 +16812,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="13 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -16982,7 +16865,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="13 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -17190,7 +17072,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="14 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -17244,7 +17125,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="14 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -17452,7 +17332,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="15 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -17506,7 +17385,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="15 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -17714,7 +17592,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="16 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -17768,7 +17645,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="16 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -17976,7 +17852,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="17 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -18030,7 +17905,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="17 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -18238,7 +18112,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="18 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -18292,7 +18165,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="18 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -18500,7 +18372,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="19 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -18554,7 +18425,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="19 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -18762,7 +18632,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="20 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -18816,7 +18685,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="20 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -19024,7 +18892,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="21 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -19078,7 +18945,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="21 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -19286,7 +19152,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="22 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -19340,7 +19205,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="22 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -19548,7 +19412,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="23 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -19602,7 +19465,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="23 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -19810,7 +19672,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="24 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -19864,7 +19725,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="24 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -20072,7 +19932,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="25 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -20126,7 +19985,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="25 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -20334,7 +20192,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="26 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -20388,7 +20245,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="26 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -20596,7 +20452,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="27 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -20650,7 +20505,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="27 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -20858,7 +20712,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="28 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -20912,7 +20765,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="28 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -21120,7 +20972,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="29 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -21174,7 +21025,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="29 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -21382,7 +21232,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="30 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -21436,7 +21285,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="30 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -21644,7 +21492,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="31 Jan 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate"
@@ -21698,7 +21545,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="31 Jan 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate  HvTypography-root HvTypography-normalText"
@@ -21906,7 +21752,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="1 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -21960,7 +21805,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="1 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -22168,7 +22012,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="2 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -22222,7 +22065,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="2 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -22430,7 +22272,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="3 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -22484,7 +22325,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="3 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -22692,7 +22532,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="4 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -22746,7 +22585,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="4 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -22954,7 +22792,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="5 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -23008,7 +22845,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="5 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -23216,7 +23052,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="6 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -23270,7 +23105,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="6 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"
@@ -23478,7 +23312,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="presentation"
                         tabIndex={0}
-                        title="7 Feb 1970"
                       >
                         <WithStyles(ForwardRef)
                           className="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth"
@@ -23532,7 +23365,6 @@ exports[`<Calendar /> with minimum configuration should render correctly 1`] = `
                           class="HvDatePickerCalendar-focusSelection"
                           role="presentation"
                           tabindex="0"
-                          title="7 Feb 1970"
                         >
                           <p
                             class="HvDatePickerCalendar-calendarDate HvDatePickerCalendar-calendarDateNotInMonth  HvTypography-root HvTypography-normalText"

@@ -169,6 +169,10 @@ Iops.story = {
   parameters: {
     docs: {
       storyDescription: "A Kpi sample showcasing the total IOPS."
+    },
+    eyes: {
+      // excluded due to the trendline chart rendering issues #1792
+      include: false
     }
   }
 };
@@ -371,6 +375,10 @@ Selectable.story = {
   parameters: {
     docs: {
       storyDescription: "A selectable kpi with the total numbers of event."
+    },
+    eyes: {
+      // excluded due to the trendline chart rendering issues #1792
+      include: false
     }
   }
 };
@@ -476,6 +484,10 @@ SelectableNoSemantic.story = {
   parameters: {
     docs: {
       storyDescription: "A selectable kpi with the total numbers of event."
+    },
+    eyes: {
+      // excluded due to the trendline chart rendering issues #1792
+      include: false
     }
   }
 };
@@ -580,6 +592,10 @@ SelectableNoTrendIcon.story = {
   parameters: {
     docs: {
       storyDescription: "A selectable kpi with the total numbers of event."
+    },
+    eyes: {
+      // excluded due to the trendline chart rendering issues #1792
+      include: false
     }
   }
 };

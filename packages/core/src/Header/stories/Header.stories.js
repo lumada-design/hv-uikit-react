@@ -112,3 +112,12 @@ export const Main = () => {
     </HvHeader>
   );
 };
+
+Main.story = {
+  parameters: {
+    eyes: {
+      // excluded because of the initial animation #1794
+      include: false
+    }
+  }
+};
