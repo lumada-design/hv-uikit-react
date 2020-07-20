@@ -19,13 +19,17 @@ async function main() {
   const includesArray = [];
 
   includes.forEach(include => {
-    includesArray.push("--include", include);
+    if(include) {
+      includesArray.push("--include", include);
+    }
   });
 
   const excludesArray = [];
 
   excludes.forEach(exclude => {
-    excludesArray.push("--exclude", exclude);
+    if(exclude) {
+      excludesArray.push("--exclude", exclude);
+    }
   });
 
   const firstCommandArgs = [
