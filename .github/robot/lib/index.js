@@ -1503,13 +1503,17 @@ async function main() {
   const includesArray = [];
 
   includes.forEach(include => {
-    includesArray.push("--include", include);
+    if(include && include !="") {
+      includesArray.push("--include", include);
+    }
   });
 
   const excludesArray = [];
 
   excludes.forEach(exclude => {
-    excludesArray.push("--exclude", exclude);
+    if(exclude  && exclude !="") {
+      excludesArray.push("--exclude", exclude);
+    }
   });
 
   const firstCommandArgs = [
@@ -1535,7 +1539,7 @@ async function main() {
     "--loglevel", "TRACE",
     testsPath
   ];
-  
+
   const rebotFirstCommandArgs = [
     "--outputdir", outputDir,
     "--output", "output.xml",
@@ -1582,6 +1586,7 @@ async function main() {
 }
 
 main()
+
 
 /***/ }),
 
