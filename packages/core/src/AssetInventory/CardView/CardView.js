@@ -53,6 +53,7 @@ const CardView = ({
   viewConfiguration = DEFAULT_VIEW_CONFIGURATION,
   innerCardContent,
   metadata,
+  emptyComponent,
   ...others
 }) => {
   const containerRef = useRef(null);
@@ -99,21 +100,28 @@ const CardView = ({
     });
   };
 
+  const hasValues = values.length > 0;
+
   return (
-    <div className={classes.root} ref={containerRef}>
-      <div className={classes.elements}>
-        <Grid
-          className={clsx(className, classes.root)}
-          id={id}
-          container
-          justify="flex-start"
-          alignItems="flex-start"
-          spacing={4}
-        >
-          {renderCards()}
-        </Grid>
-      </div>
-    </div>
+    <>
+      {!hasValues && emptyComponent}
+      {hasValues && (
+        <div className={classes.root} ref={containerRef}>
+          <div className={classes.elements}>
+            <Grid
+              className={clsx(className, classes.root)}
+              id={id}
+              container
+              justify="flex-start"
+              alignItems="flex-start"
+              spacing={4}
+            >
+              {renderCards()}
+            </Grid>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
@@ -176,6 +184,10 @@ CardView.propTypes = {
    * innerCardContent to be passed to the standard render.
    */
   innerCardContent: PropTypes.func,
+  /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent: PropTypes.node,
   /**
    * Configuration settings for the view.
    */
