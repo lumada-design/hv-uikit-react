@@ -19,7 +19,7 @@ async function main() {
   const includesArray = [];
 
   includes.forEach(include => {
-    if(include) {
+    if(include && include !="") {
       includesArray.push("--include", include);
     }
   });
@@ -27,7 +27,7 @@ async function main() {
   const excludesArray = [];
 
   excludes.forEach(exclude => {
-    if(exclude) {
+    if(exclude  && exclude !="") {
       excludesArray.push("--exclude", exclude);
     }
   });
@@ -55,7 +55,7 @@ async function main() {
     "--loglevel", "TRACE",
     testsPath
   ];
-  
+
   const rebotFirstCommandArgs = [
     "--outputdir", outputDir,
     "--output", "output.xml",
