@@ -182,13 +182,13 @@ export const AllComponents = () => {
     {
       id: "get",
       label: "Preview",
-      iconCallback: () => <Preview color="atmo7" />,
+      iconCallback: () => <Preview color="atmo5" />,
       disabled: true
     },
     {
       id: "put",
       label: "Add",
-      iconCallback: () => <Add color="atmo7" />,
+      iconCallback: () => <Add color="atmo5" />,
       disabled: true
     },
     {
@@ -754,7 +754,7 @@ export const WithFooterComposition = () => {
 
   const headerStyles = theme => ({
     root: {
-      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo6}`
+      borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
     }
   });
 
@@ -811,13 +811,13 @@ export const AutomaticActions = () => {
     {
       id: "get",
       label: "Preview",
-      iconCallback: () => <Preview color="atmo7" />,
+      iconCallback: () => <Preview color="atmo5" />,
       disabled: true
     },
     {
       id: "put",
       label: "Upload",
-      iconCallback: () => <Upload color="atmo7" />,
+      iconCallback: () => <Upload color="atmo5" />,
       disabled: true
     },
     {

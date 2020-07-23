@@ -14,6 +14,7 @@ import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
 import ConditionalWrapper from "../../utils/ConditionalWrapper";
 import styles from "./styles";
+import Typography from "../../Typography";
 
 const List = ({
   id,
@@ -32,6 +33,7 @@ const List = ({
   singleSelectionToggle,
   placement,
   popperProps,
+  onPositionChange,
   ...others
 }) => {
   const [searchStr, setSearchStr] = useState();
@@ -41,7 +43,6 @@ const List = ({
   const [created, setCreated] = useState(false);
   const [allSelected, setAllSelected] = useState(false);
   const [anySelected, setAnySelected] = useState(false);
-  const [selectionLabel, setSelectionLabel] = useState(labels.selectAll);
   const theme = useTheme();
 
   const newLabels = {
@@ -57,10 +58,6 @@ const List = ({
     setPrevList(values);
     if (notifyChangesOnFirstRender) {
       onChange?.(values, false, false, true);
-    }
-    if (list) {
-      // eslint-disable-next-line no-use-before-define
-      updateSelectionLabel(values);
     }
   }, [values]);
 
@@ -109,22 +106,6 @@ const List = ({
   );
 
   /**
-   * Update the selectionLabel.
-   *
-   * @param selection
-   */
-  const updateSelectionLabel = selection => {
-    const { selectAll, multiSelectionConjunction } = labels;
-    const selected = getSelected(selection);
-
-    setSelectionLabel(
-      !selected.length
-        ? selectAll
-        : `${selected.length} ${multiSelectionConjunction} ${list.length}`
-    );
-  };
-
-  /**
    * Centralized point to call the prop onChange, altering the selection label.
    * @param selection
    * @param commitChanges
@@ -134,7 +115,6 @@ const List = ({
    */
   const sendOnChange = (selection, commitChanges, toggle, notifyChanges, event) => {
     onChange?.(selection, commitChanges, toggle, notifyChanges, event);
-    updateSelectionLabel(selection);
   };
 
   /**
@@ -164,19 +144,30 @@ const List = ({
     sendOnChange(newList, false, false, false);
   };
 
-  const renderSelectAll = () => (
-    <div className={classes.selectAllContainer}>
-      <HvCheckBox
-        id={setId(id, "select-all")}
-        label={selectionLabel}
-        onChange={() => handleSelectAll()}
-        classes={{ container: classes.selection }}
-        className={classes.selectAll}
-        indeterminate={anySelected && !allSelected}
-        checked={allSelected}
-      />
-    </div>
-  );
+  const renderSelectAll = () => {
+    const { selectAll } = labels;
+
+    const label = selectAll || (
+      <Typography component="span">
+        <b>Select All</b>
+        {` (${list.length})`}
+      </Typography>
+    );
+
+    return (
+      <div className={classes.selectAllContainer}>
+        <HvCheckBox
+          id={setId(id, "select-all")}
+          label={label}
+          onChange={() => handleSelectAll()}
+          classes={{ container: classes.selection }}
+          className={classes.selectAll}
+          indeterminate={anySelected && !allSelected}
+          checked={allSelected}
+        />
+      </div>
+    );
+  };
 
   /**
    * Set hidden to false.
@@ -260,6 +251,16 @@ const List = ({
   );
 
   /**
+   * Sets the position, notifying the dropdown of the change.
+   *
+   * @param position
+   */
+  const setterPosition = position => {
+    setPositionUp(position);
+    onPositionChange(position);
+  };
+
+  /**
    * When the list is rendered, it should determine its position.
    *
    * @param data
@@ -267,14 +268,14 @@ const List = ({
   const handleListFlip = data => {
     const position = data.flipped;
     if (positionUp !== position) {
-      setPositionUp(position);
+      setterPosition(position);
     }
   };
 
   const handleListCreate = data => {
     const position = data.flipped;
     if (!created) {
-      setPositionUp(position);
+      setterPosition(position);
       setCreated(true);
       updateSelectAll(prevList);
     }
@@ -434,7 +435,11 @@ List.propTypes = {
   /**
    * An object containing props to be wired to the popper component.
    */
-  popperProps: PropTypes.shape()
+  popperProps: PropTypes.shape(),
+  /**
+   * Notify changes on position.
+   */
+  onPositionChange: PropTypes.func.isRequired
 };
 
 export default withStyles(styles, { name: "HvDropdownList" })(List);

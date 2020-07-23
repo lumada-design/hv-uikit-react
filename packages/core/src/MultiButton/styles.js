@@ -4,7 +4,7 @@ const styles = theme => ({
     height: 32,
     alignItems: "center",
     transition: "none",
-    boxShadow: `-1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, -1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}, 1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo6}`,
+    boxShadow: `-1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo4}, 1px 1px 0px 0px ${theme.hv.palette.atmosphere.atmo4}, -1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo4}, 1px -1px 0px 0px ${theme.hv.palette.atmosphere.atmo4}`,
     background: theme.hv.palette.atmosphere.atmo2,
     position: "relative",
     zIndex: 0

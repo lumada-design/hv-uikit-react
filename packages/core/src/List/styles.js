@@ -1,16 +1,16 @@
 const selected = theme => ({
-  background: theme.hv.palette.accent.acce1,
-  color: theme.hv.palette.atmosphere.atmo1,
+  background: theme.hv.palette.atmosphere.atmo3,
+  color: theme.hv.palette.accent.acce1,
   "& *": {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1
+    background: theme.hv.palette.atmosphere.atmo3,
+    color: theme.hv.palette.accent.acce1
   }
 });
 
 const hover = theme => ({
-  background: theme.hv.palette.atmosphere.atmo4,
+  background: theme.hv.palette.atmosphere.atmo3,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
+    background: theme.hv.palette.atmosphere.atmo3
   }
 });
 

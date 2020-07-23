@@ -100,7 +100,7 @@ export const SingleSelection = () => (
 export const SingleSelectionWithIcon = () => {
   /* eslint-disable no-nested-ternary */
   const ColoredIcon = Icon => ({ isSelected, isDisabled }) => (
-    <Icon color={isSelected ? "atmo1" : isDisabled ? "atmo7" : undefined} />
+    <Icon color={isSelected ? "atmo1" : isDisabled ? "atmo5" : undefined} />
   );
 
   const data = [

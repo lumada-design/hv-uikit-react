@@ -9,22 +9,24 @@ import HvTypography from "../Typography";
 import withLabels from "../withLabels";
 import withId from "../withId";
 import List from "./List";
-import { getSelected, getSelectionLabel } from "./utils";
+import { getSelected, getSelectionLabel, hasSelected } from "./utils";
 import styles from "./styles";
 
 const DEFAULT_LABELS = {
-  select: "Select...",
-  selectAll: "All",
+  select: undefined,
+  selectAll: undefined,
   cancelLabel: "Cancel",
   applyLabel: "Apply",
-  multiSelectionAction: "Selected",
-  multiSelectionConjunction: "of"
+  multiSelectionConjunction: "/",
+  // internal label, used when no select is passed.
+  selectSingle: "Select..."
 };
 
 const DEFAULT_STATE = {
-  selectionLabel: null,
+  selectionLabel: {},
   anchorEl: null,
-  values: []
+  values: [],
+  positionUp: false
 };
 
 /**
@@ -36,25 +38,37 @@ class HvDropdown extends React.Component {
 
     this.ref = React.createRef();
 
-    const { expanded } = props;
+    const { values, expanded, labels } = props;
 
     this.state = {
       isOpen: expanded,
+      labels,
+      hasSelection: hasSelected(values),
       ...DEFAULT_STATE
     };
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.values !== state.values) {
+    if (props.values !== state.values || props.labels !== state.labels) {
       return {
         isOpen: props.expanded,
         selectionLabel: getSelectionLabel(props.values, props.labels, props.multiSelect),
+        hasSelection: hasSelected(props.values),
         anchorEl: null,
         values: props.values
       };
     }
 
     return null;
+  }
+
+  /**
+   * Sets the position of the list when opened.
+   *
+   * @param position
+   */
+  setPosition(position) {
+    this.setState({ positionUp: position });
   }
 
   /**
@@ -106,10 +120,40 @@ class HvDropdown extends React.Component {
 
     if (commitChanges) {
       const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
-      this.setState({ selectionLabel });
+      this.setState({ selectionLabel, hasSelection: selected.length });
     }
     if (toggle) this.handleToggle(event);
     if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
+  }
+
+  buildHeaderLabel(selectionLabelId) {
+    const { labels, classes, multiSelect, disabled } = this.props;
+    const { isOpen, selectionLabel, hasSelection } = this.state;
+
+    if (labels.select || !multiSelect)
+      return (
+        <HvTypography
+          id={selectionLabelId}
+          variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
+          className={clsx(classes.selection, classes.truncate, {
+            [classes.selectionDisabled]: disabled
+          })}
+        >
+          {selectionLabel.selected}
+        </HvTypography>
+      );
+
+    return (
+      <HvTypography
+        id={selectionLabelId}
+        className={clsx(classes.selection, classes.truncate, {
+          [classes.selectionDisabled]: disabled
+        })}
+      >
+        <b>{selectionLabel.selected}</b>
+        {` ${labels.multiSelectionConjunction} ${selectionLabel.total}`}
+      </HvTypography>
+    );
   }
 
   renderLabel() {
@@ -143,9 +187,9 @@ class HvDropdown extends React.Component {
       ...others
     } = this.props;
 
-    const { isOpen, selectionLabel } = this.state;
+    const { isOpen } = this.state;
 
-    const color = disabled ? "atmo7" : undefined;
+    const color = disabled ? "atmo5" : undefined;
 
     return (
       <div
@@ -163,15 +207,7 @@ class HvDropdown extends React.Component {
         style={disabled ? { pointerEvents: "none" } : undefined}
         {...others}
       >
-        <HvTypography
-          id={selectionLabelId}
-          variant="normalText"
-          className={clsx(classes.selection, classes.truncate, {
-            [classes.selectionDisabled]: disabled
-          })}
-        >
-          {selectionLabel}
-        </HvTypography>
+        {this.buildHeaderLabel(selectionLabelId)}
         {isOpen ? (
           <ArrowUp iconSize="XS" className={classes.arrow} />
         ) : (
@@ -223,19 +259,19 @@ class HvDropdown extends React.Component {
         aria-labelledby={labels.title ? setId(id, "label") : undefined}
         placement={placement}
         popperProps={popperProps}
+        onPositionChange={position => this.setPosition(position)}
       />
     );
   }
 
   render() {
     const { id, classes, className, labels, disabled } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, positionUp } = this.state;
     const selectionLabelId = setId(id, "selectionLabel");
 
     return (
       <>
-        {/* TODO: remove label? use composition */}
-        {labels.title ? this.renderLabel() : null}
+        {labels.title && this.renderLabel()}
         <div
           id={id}
           role="combobox"
@@ -249,7 +285,9 @@ class HvDropdown extends React.Component {
           }}
           className={clsx(classes.root, className, {
             [classes.rootDisabled]: disabled,
-            [classes.rootOpen]: isOpen
+            [classes.rootOpen]: isOpen,
+            [classes.rootOpenUp]: isOpen && positionUp,
+            [classes.rootOpenDown]: isOpen && !positionUp
           })}
         >
           {this.renderHeader(selectionLabelId)}
@@ -281,6 +319,14 @@ HvDropdown.propTypes = {
      * Styles applied to the component when is open.
      */
     rootOpen: PropTypes.string,
+    /**
+     * Styles applied to the root when the list is opened up.
+     */
+    rootOpenUp: PropTypes.string,
+    /**
+     * Styles applied to the root when the list is opened down.
+     */
+    rootOpenDown: PropTypes.string,
     /**
      * Styles applied to the component when is disable.
      */
@@ -377,7 +423,7 @@ HvDropdown.propTypes = {
      */
     title: PropTypes.string,
     /**
-     * The default when there are no options available.
+     * Label for overwrite the default header behaviour.
      */
     select: PropTypes.string,
     /**
@@ -392,10 +438,6 @@ HvDropdown.propTypes = {
      * Apply button label.
      */
     applyLabel: PropTypes.string,
-    /**
-     * The label used preceding the multiselection count.
-     */
-    multiSelectionAction: PropTypes.string,
     /**
      * The label used in the middle of the multiselection count.
      */

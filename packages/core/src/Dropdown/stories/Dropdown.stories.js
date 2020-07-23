@@ -26,6 +26,7 @@ export const Main = () => (
 
 Main.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: ["region"]
     }
@@ -36,6 +37,7 @@ export const Empty = () => <HvDropdown id="dropdown1" />;
 
 Empty.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Dropdown with no values"
     },
@@ -65,7 +67,8 @@ SingleSelection.story = {
     },
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -83,6 +86,12 @@ export const MultiSelection = () => (
     ]}
   />
 );
+
+MultiSelection.story = {
+  parameters: {
+    v3: true
+  }
+};
 
 export const MultiSelectionNoSearch = () => (
   <HvDropdown
@@ -102,7 +111,8 @@ MultiSelectionNoSearch.story = {
   parameters: {
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -126,7 +136,8 @@ SingleSelectionWithSearch.story = {
     },
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -149,7 +160,8 @@ SingleSelectionNoDefault.story = {
   parameters: {
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -195,7 +207,8 @@ DifferentSizeAndPlacements.story = {
     },
     pa11y: {
       ignore: ["region"]
-    }
+    },
+    v3: true
   }
 };
 
@@ -232,7 +245,8 @@ Disabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };
 
@@ -264,6 +278,7 @@ Expanded.story = {
   parameters: {
     docs: {
       inlineStories: false
-    }
+    },
+    v3: true
   }
 };

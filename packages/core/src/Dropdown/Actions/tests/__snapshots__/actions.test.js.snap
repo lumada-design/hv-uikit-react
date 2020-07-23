@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Actions /> should render correctly 1`] = `
+exports[`[v3]  <Actions /> should render correctly 1`] = `
 <WithStyles(Actions)
   id="acts"
 >

@@ -531,7 +531,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   <FirstPage>
                                     <WithStyles(Start)
                                       className="HvPagination-icon"
-                                      color="atmo7"
+                                      color="atmo5"
                                     >
                                       <Start
                                         className="HvPagination-icon"
@@ -544,7 +544,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             "rootXs": "HvIconStart-rootXs",
                                           }
                                         }
-                                        color="atmo7"
+                                        color="atmo5"
                                       >
                                         <div
                                           className="HvPagination-icon HvIconStart-root HvIconStart-rootS"
@@ -559,7 +559,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                              fill="#414141"
+                                              fill="#999999"
                                             />
                                           </svg>
                                         </div>
@@ -586,7 +586,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M12.7 15.5L5.3 8.1001l7.4-7.5.7.80005-6.7 6.7 6.7 6.7zM3 0h1v16H3z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>
@@ -866,7 +866,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   <PrevPage>
                                     <WithStyles(Backwards)
                                       className="HvPagination-icon"
-                                      color="atmo7"
+                                      color="atmo5"
                                     >
                                       <Backwards
                                         className="HvPagination-icon"
@@ -879,7 +879,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             "rootXs": "HvIconBackwards-rootXs",
                                           }
                                         }
-                                        color="atmo7"
+                                        color="atmo5"
                                       >
                                         <div
                                           className="HvPagination-icon HvIconBackwards-root HvIconBackwards-rootS"
@@ -894,7 +894,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             <path
                                               className="color0"
                                               d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                              fill="#414141"
+                                              fill="#999999"
                                             />
                                           </svg>
                                         </div>
@@ -921,7 +921,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           <path
                                             class="color0"
                                             d="M11.35 15.45l-7.4-7.4 7.4-7.5.7.8-6.7 6.7 6.7 6.7z"
-                                            fill="#414141"
+                                            fill="#999999"
                                           />
                                         </svg>
                                       </div>

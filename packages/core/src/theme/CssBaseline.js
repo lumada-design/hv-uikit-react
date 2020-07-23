@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
       boxSizing: "inherit"
     },
     "strong, b": {
-      fontWeight: theme.typography.fontWeightBold
+      fontWeight: theme.hv.typography.highlightText.fontWeight
     },
     body: {
       margin: 0,

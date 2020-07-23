@@ -26,7 +26,7 @@ export const getLabelStyles = (classes, labelPosition, label) => {
 
 export const getSelectorIcons = (classes, options) => {
   const { disabled, semantic } = options;
-  const color = (disabled && ["atmo4", "atmo6"]) || (semantic && ["base1", "base2"]) || undefined;
+  const color = (disabled && ["atmo4", "atmo4"]) || (semantic && ["base1", "base2"]) || undefined;
   const checkedColor = semantic ? ["base2", "base1"] : color;
 
   return {

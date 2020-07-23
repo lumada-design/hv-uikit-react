@@ -195,7 +195,7 @@
       "lineHeight": "15px",
       "fontWeight": 400
     },
-    "xsInlineText": {
+    "xsInlineLink": {
       "color": "#2064B4",
       "fontSize": "10px",
       "letterSpacing": "0.02em",

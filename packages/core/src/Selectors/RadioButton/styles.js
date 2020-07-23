@@ -6,10 +6,10 @@ const styles = theme => ({
     marginRight: 0,
     marginLeft: 0,
     "&:hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
+      backgroundColor: theme.hv.palette.atmosphere.atmo3
     },
     "&:focus-within:not(.disableFocus)": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
       "& svg": {
         borderRadius: "50%",
         ...outlineStyles

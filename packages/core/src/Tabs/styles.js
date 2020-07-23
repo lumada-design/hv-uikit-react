@@ -13,7 +13,7 @@ const styles = theme => ({
   },
   scroller: {
     "& $flexContainer": {
-      borderTop: `solid 1px ${theme.hv.palette.atmosphere.atmo6}`
+      borderTop: `solid 1px ${theme.hv.palette.atmosphere.atmo4}`
     }
   },
   flexContainer: {}

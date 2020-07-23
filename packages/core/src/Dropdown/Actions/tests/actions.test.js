@@ -4,7 +4,7 @@ import HvProvider from "../../../Provider";
 import HvButton from "../../../Button";
 import Actions from "..";
 
-describe("<Actions />", () => {
+describe("[v3]  <Actions />", () => {
   let wrapper;
   let actionsComponent;
   const onCancelMock = jest.fn();

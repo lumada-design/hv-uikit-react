@@ -42,7 +42,7 @@ const onKeyDownHandler = (handlers, event, value) => {
  */
 const changeIconColor = disabled => (
   <SearchIcon
-    color={disabled ? "atmo7" : undefined}
+    color={disabled ? "atmo5" : undefined}
     boxStyles={{
       width: "30px",
       height: "30px"

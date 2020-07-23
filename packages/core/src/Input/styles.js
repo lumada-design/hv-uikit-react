@@ -11,7 +11,7 @@ const styles = theme => ({
     borderStyle: "solid",
     borderWidth: " 0 0 1px 0",
     background: theme.hv.palette.atmosphere.atmo1,
-    borderColor: theme.hv.palette.atmosphere.atmo6,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
       borderStyle: "solid",
       borderWidth: " 0 0 1px 0",
@@ -25,10 +25,10 @@ const styles = theme => ({
     }
   },
   inputRootDisabled: {
-    borderColor: theme.hv.palette.atmosphere.atmo6,
+    borderColor: theme.hv.palette.atmosphere.atmo4,
     background: theme.hv.palette.atmosphere.atmo4,
     "&:hover": {
-      borderColor: theme.hv.palette.atmosphere.atmo6,
+      borderColor: theme.hv.palette.atmosphere.atmo4,
       background: theme.hv.palette.atmosphere.atmo4,
       cursor: "not-allowed"
     },
@@ -86,7 +86,7 @@ const styles = theme => ({
     display: "block"
   },
   labelDisabled: {
-    color: theme.hv.palette.atmosphere.atmo7
+    color: theme.hv.palette.atmosphere.atmo5
   },
   infoIconContainer: {
     height: "32px",
