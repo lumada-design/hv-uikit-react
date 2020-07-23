@@ -44,8 +44,7 @@ const HvBaseInput = props => {
   const localValue = value ?? elementValue;
   const localDisabled = disabled || elementDisabled;
   const localId = id ?? setId(elementId, "input");
-  const { HvLabel, HvHelperText, HvSuggestions } = descriptors;
-
+  const { HvLabel, HvHelperText, HvSuggestions, HvInfoMessage } = descriptors;
   return (
     <Input
       id={localId}
@@ -69,7 +68,7 @@ const HvBaseInput = props => {
         required,
         "aria-required": required || undefined,
         "aria-invalid": localInvalid || undefined,
-        "aria-describedby": HvHelperText?.[0]?.id,
+        "aria-describedby": String.prototype.concat(HvHelperText?.[0]?.id, HvInfoMessage?.[0]?.id),
         "aria-labelledby": HvLabel?.[0]?.id,
         "aria-controls": HvSuggestions?.[0]?.id,
         ...inputProps

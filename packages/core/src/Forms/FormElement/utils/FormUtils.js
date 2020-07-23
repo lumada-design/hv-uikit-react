@@ -68,4 +68,19 @@ const findDescriptors = (children, names, descriptors = {}) => {
   return newDescriptorsMap;
 };
 
-export { getDescriptorMap, findDescriptors, updateDescriptors };
+const getChildIdToLabel = (children, childName) => {
+  let childId = "";
+  if (Array.isArray(children)) {
+    childId = children.forEach(child => {
+      const foundId = getDescriptorMap(child, childName)?.id;
+      if (!isNil(foundId)) {
+        childId = childId.concat(`${foundId} `);
+      }
+    });
+  } else {
+    childId = getDescriptorMap(children, childName)?.id;
+  }
+  return childId;
+};
+
+export { getDescriptorMap, findDescriptors, updateDescriptors, getChildIdToLabel };

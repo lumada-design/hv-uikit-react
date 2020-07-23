@@ -2,45 +2,39 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import isNil from "lodash/isNil";
 import { HvFormElementContext } from "../FormElement";
-import { getChildIdToLabel } from "../FormElement/utils/FormUtils";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";
 import styles from "./styles";
 
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
- * If it receives a children, the component will set itself as a label for the children.
  */
-const HvLabel = props => {
-  const { label, children, classes, className, id, disabled, ...others } = props;
+const HvInfoMessage = props => {
+  const { label, children, classes, className, id, disabled, noGutter, ...others } = props;
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const childId = children ? getChildIdToLabel(children, "HvBaseInput") : undefined;
   const localDisabled = disabled || elementDisabled;
-  const localId = id ?? setId(elementId, "label");
+  const localId = id ?? setId(elementId, "info");
 
   return (
     <>
       <HvTypography
         id={localId}
         className={clsx(className, classes.root, {
-          [classes.labelDisabled]: localDisabled,
-          [classes.childGutter]: !isNil(children)
+          [classes.infoDisabled]: localDisabled,
+          [classes.gutter]: noGutter
         })}
-        variant="highlightText"
+        variant="normalText"
         component="label"
-        htmlFor={childId}
         {...others}
       >
-        {label}
+        {children}
       </HvTypography>
-      {children}
     </>
   );
 };
 
-HvLabel.propTypes = {
+HvInfoMessage.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -60,11 +54,11 @@ HvLabel.propTypes = {
     /**
      * Styles applied when the text should be shown.
      */
-    labelDisabled: PropTypes.string,
+    infoDisabled: PropTypes.string,
     /**
-     * Separation between the label and the children.
+     * Separation for the message.
      */
-    childGutter: PropTypes.string
+    gutter: PropTypes.string
   }).isRequired,
   /**
    * The children to label.
@@ -78,7 +72,11 @@ HvLabel.propTypes = {
   /**
    * If ´true´ the label is disabled.
    */
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  /**
+   * If ´true´ the info message won't have bottom margin.
+   */
+  noGutter: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvLabel" })(HvLabel);
+export default withStyles(styles, { name: "HvInfoMessage" })(HvInfoMessage);
