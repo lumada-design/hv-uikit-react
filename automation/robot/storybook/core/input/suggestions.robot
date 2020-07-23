@@ -33,15 +33,12 @@ close suggestions list when a suggestion item is selected
     Textfield Value Should Be            ${input}    Portugal
 
 select correctly suggestion when suggestion text area is pressed
-    [Tags]    bug-ie
-    [Documentation]   Bug wait resolution
-    ...               https://github.com/lumada-design/hv-uikit-react/issues/1746
+    [Tags]     bug-ie-webdriver
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
     Click Element                        xpath://p[.='Portugal']
     Wait Until Element Is Not Visible    ${suggestion_list}
-    Run Keyword And Expect Error         *should have been 'Portugal' but was 'po'.
-    ...    Textfield Value Should Be     ${input}    Portugal
+    Textfield Value Should Be            ${input}    Portugal
 
 
 close suggestions list when did not have related suggestions to display
