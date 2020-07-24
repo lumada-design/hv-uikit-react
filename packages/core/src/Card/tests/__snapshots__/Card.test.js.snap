@@ -464,7 +464,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                                       }
                                     >
                                       <WithStyles(ForwardRef)
-                                        variant="labelText"
+                                        variant="highlightText"
                                       >
                                         <ForwardRef
                                           classes={
@@ -491,13 +491,13 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "xxsTitle": "HvTypography-xxsTitle",
                                             }
                                           }
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
-                                          <span
-                                            className="HvTypography-root"
+                                          <p
+                                            className="HvTypography-root HvTypography-highlightText"
                                           >
                                             ID
-                                          </span>
+                                          </p>
                                         </ForwardRef>
                                       </WithStyles(ForwardRef)>
                                       <WithStyles(ForwardRef)
@@ -508,7 +508,6 @@ exports[`Card should be able to render with every property defined 1`] = `
                                             "whiteSpace": "nowrap",
                                           }
                                         }
-                                        variant="normalText"
                                       >
                                         <ForwardRef
                                           classes={
@@ -542,7 +541,6 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "whiteSpace": "nowrap",
                                             }
                                           }
-                                          variant="normalText"
                                         >
                                           <p
                                             className="HvTypography-root HvTypography-normalText"
@@ -567,7 +565,7 @@ exports[`Card should be able to render with every property defined 1`] = `
                                       }
                                     >
                                       <WithStyles(ForwardRef)
-                                        variant="labelText"
+                                        variant="highlightText"
                                       >
                                         <ForwardRef
                                           classes={
@@ -594,13 +592,13 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "xxsTitle": "HvTypography-xxsTitle",
                                             }
                                           }
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
-                                          <span
-                                            className="HvTypography-root"
+                                          <p
+                                            className="HvTypography-root HvTypography-highlightText"
                                           >
                                             Last connected
-                                          </span>
+                                          </p>
                                         </ForwardRef>
                                       </WithStyles(ForwardRef)>
                                       <WithStyles(ForwardRef)
@@ -611,7 +609,6 @@ exports[`Card should be able to render with every property defined 1`] = `
                                             "whiteSpace": "nowrap",
                                           }
                                         }
-                                        variant="normalText"
                                       >
                                         <ForwardRef
                                           classes={
@@ -645,7 +642,6 @@ exports[`Card should be able to render with every property defined 1`] = `
                                               "whiteSpace": "nowrap",
                                             }
                                           }
-                                          variant="normalText"
                                         >
                                           <p
                                             className="HvTypography-root HvTypography-normalText"

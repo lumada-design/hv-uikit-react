@@ -21,7 +21,7 @@ const styles = theme => {
       left: "0"
     },
     pageSizeOptionsSelect: {
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
       "-webkit-appearance": "none",
       border: "none",
       borderRadius: 0,
@@ -65,7 +65,7 @@ const styles = theme => {
       marginRight: `${theme.hv.spacing.xs}px`
     },
     pageSizeInput: {
-      ...theme.hv.typography.labelText,
+      ...theme.hv.typography.highlightText,
       paddingLeft: `${theme.hv.spacing.xs / 2}px`,
       paddingRight: `${theme.hv.spacing.xs / 2}px`,
       margin: 0,

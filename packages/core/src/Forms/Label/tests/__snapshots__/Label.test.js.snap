@@ -17,7 +17,7 @@ exports[`Label should render correctly 1`] = `
     <WithStyles(ForwardRef)
       className="HvLabel-root"
       component="label"
-      variant="labelText"
+      variant="highlightText"
     >
       <ForwardRef
         className="HvLabel-root"
@@ -46,10 +46,10 @@ exports[`Label should render correctly 1`] = `
           }
         }
         component="label"
-        variant="labelText"
+        variant="highlightText"
       >
         <label
-          className="HvLabel-root HvTypography-root"
+          className="HvLabel-root HvTypography-root HvTypography-highlightText"
         >
           description
         </label>

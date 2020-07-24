@@ -15,7 +15,7 @@ const ModalContent = ({ classes, className, children }) => {
       })}
     >
       {!isString && children}
-      {isString && <HvTypography variant="normalText">{children}</HvTypography>}
+      {isString && <HvTypography>{children}</HvTypography>}
     </DialogContent>
   );
 };

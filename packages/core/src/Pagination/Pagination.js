@@ -82,9 +82,7 @@ const Pagination = ({
       <div className={classes.pageSizeOptions} {...showPageProps}>
         {showPageSizeOptions && (
           <>
-            <HvTypography component="span" variant="sText">
-              {labels.pageSizePrev}
-            </HvTypography>
+            <HvTypography component="span">{labels.pageSizePrev}</HvTypography>
             <select
               id={setId(id, "pageSize")}
               disabled={pageSize === 0}
@@ -100,9 +98,7 @@ const Pagination = ({
               ))}
             </select>
             <DropDownXS className={classes.selectDownIcon} />
-            <HvTypography component="span" variant="sText">
-              {labels.pageSizeEntryName}
-            </HvTypography>
+            <HvTypography component="span">{labels.pageSizeEntryName}</HvTypography>
           </>
         )}
       </div>
@@ -152,14 +148,10 @@ const Pagination = ({
               />
             </div>
           ) : (
-            <HvTypography component="span" variant="sText">
-              {`${statePage + 1}`}
-            </HvTypography>
+            <HvTypography component="span">{`${statePage + 1}`}</HvTypography>
           )}
-          <HvTypography component="span" variant="sText">
-            {` ${labels.pagesSeparator} `}
-          </HvTypography>
-          <HvTypography id={setId(id, "totalPages")} component="span" variant="sText">
+          <HvTypography component="span">{` ${labels.pagesSeparator} `}</HvTypography>
+          <HvTypography id={setId(id, "totalPages")} component="span">
             {pages}
           </HvTypography>
         </div>

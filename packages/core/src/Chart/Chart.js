@@ -88,9 +88,7 @@ const Chart = ({
       <div id={id} className={classes.root}>
         <div className={classes.titleContainer}>
           {title && <Typography variant="mTitle">{title}</Typography>}
-          <div className={classes.subtitle}>
-            {subtitle && <Typography variant="sText">{subtitle}</Typography>}
-          </div>
+          <div className={classes.subtitle}>{subtitle && <Typography>{subtitle}</Typography>}</div>
         </div>
         <div className={clsx({ [classes.paddingTop]: title })} onMouseMove={onMouseMove}>
           <Plot

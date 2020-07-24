@@ -34,7 +34,7 @@ const styles = theme => ({
       paddingLeft: "4px"
     },
     "& a": {
-      ...theme.hv.typography.inlineLink,
+      ...theme.hv.typography.link,
       textDecoration: "none"
     }
   },

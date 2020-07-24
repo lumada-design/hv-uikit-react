@@ -403,9 +403,7 @@ class Calendar extends React.Component {
               onKeyDown={event => this.arrowKeysFocus(event, onClick, 3)}
               tabIndex={0}
             >
-              <HvTypography variant="normalText" className={className}>
-                {monthName}
-              </HvTypography>
+              <HvTypography className={className}>{monthName}</HvTypography>
             </div>
           );
         })}

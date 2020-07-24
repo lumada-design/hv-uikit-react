@@ -37,7 +37,6 @@ const Option = ({ classes, id, className, label, icon, onClick, ...others }) => 
       <HvTypography
         id={id}
         component="div"
-        variant={isSelected ? "selectedText" : "normalText"}
         role="button"
         className={clsx(className, classes.action, {
           [classes.noIcon]: !icon,

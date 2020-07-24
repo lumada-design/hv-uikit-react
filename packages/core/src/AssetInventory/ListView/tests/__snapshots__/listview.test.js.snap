@@ -581,55 +581,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         id="0"
                                                         style="text-align: left; padding-left: 8px; width: 52px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Status
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
                                                         style="text-align: left; width: 370px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Event
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
                                                         style="text-align: right; width: 93px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Probability
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
                                                         style="text-align: right; width: 108px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Time horizon
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
                                                         style="text-align: left; width: 195px; padding-left: 30px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Related Assets
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                     </div>
                                                   </div>
@@ -734,20 +734,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             Risk of downtime on Truck 12
                                                           </p>
-                                                          <span
-                                                            class="Row-timestamp-1 HvTypography-root"
+                                                          <p
+                                                            class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                           >
                                                             Just now
-                                                          </span>
+                                                          </p>
                                                           <div
                                                             class="Row-columnSplitter-2"
                                                           />
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-normalText"
                                                             style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                       <div
@@ -903,20 +903,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             Track severe breakdown
                                                           </p>
-                                                          <span
-                                                            class="Row-timestamp-1 HvTypography-root"
+                                                          <p
+                                                            class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                           >
                                                             2 minutes ago
-                                                          </span>
+                                                          </p>
                                                           <div
                                                             class="Row-columnSplitter-2"
                                                           />
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-normalText"
                                                             style="padding-top: 2px;"
                                                           >
                                                             Fix now
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                       <div
@@ -1074,20 +1074,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             Risk of downtime associated
                                                           </p>
-                                                          <span
-                                                            class="Row-timestamp-1 HvTypography-root"
+                                                          <p
+                                                            class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                           >
                                                             2 hours ago
-                                                          </span>
+                                                          </p>
                                                           <div
                                                             class="Row-columnSplitter-2"
                                                           />
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-normalText"
                                                             style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                       <div
@@ -1243,55 +1243,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           id="0"
                                                           style="text-align: left; padding-left: 8px; width: 52px;"
                                                         >
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-highlightText"
                                                           >
                                                             Status
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="1"
                                                           style="text-align: left; width: 370px;"
                                                         >
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-highlightText"
                                                           >
                                                             Event
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="2"
                                                           style="text-align: right; width: 93px;"
                                                         >
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-highlightText"
                                                           >
                                                             Probability
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="3"
                                                           style="text-align: right; width: 108px;"
                                                         >
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-highlightText"
                                                           >
                                                             Time horizon
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="4"
                                                           style="text-align: left; width: 195px; padding-left: 30px;"
                                                         >
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-highlightText"
                                                           >
                                                             Related Assets
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                     </div>
@@ -1396,20 +1396,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             >
                                                               Risk of downtime on Truck 12
                                                             </p>
-                                                            <span
-                                                              class="Row-timestamp-1 HvTypography-root"
+                                                            <p
+                                                              class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                             >
                                                               Just now
-                                                            </span>
+                                                            </p>
                                                             <div
                                                               class="Row-columnSplitter-2"
                                                             />
-                                                            <span
-                                                              class="HvTypography-root"
+                                                            <p
+                                                              class="HvTypography-root HvTypography-normalText"
                                                               style="padding-top: 2px;"
                                                             >
                                                               Fix 3rd shift
-                                                            </span>
+                                                            </p>
                                                           </div>
                                                         </div>
                                                         <div
@@ -1565,20 +1565,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             >
                                                               Track severe breakdown
                                                             </p>
-                                                            <span
-                                                              class="Row-timestamp-1 HvTypography-root"
+                                                            <p
+                                                              class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                             >
                                                               2 minutes ago
-                                                            </span>
+                                                            </p>
                                                             <div
                                                               class="Row-columnSplitter-2"
                                                             />
-                                                            <span
-                                                              class="HvTypography-root"
+                                                            <p
+                                                              class="HvTypography-root HvTypography-normalText"
                                                               style="padding-top: 2px;"
                                                             >
                                                               Fix now
-                                                            </span>
+                                                            </p>
                                                           </div>
                                                         </div>
                                                         <div
@@ -1736,20 +1736,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             >
                                                               Risk of downtime associated
                                                             </p>
-                                                            <span
-                                                              class="Row-timestamp-1 HvTypography-root"
+                                                            <p
+                                                              class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                             >
                                                               2 hours ago
-                                                            </span>
+                                                            </p>
                                                             <div
                                                               class="Row-columnSplitter-2"
                                                             />
-                                                            <span
-                                                              class="HvTypography-root"
+                                                            <p
+                                                              class="HvTypography-root HvTypography-normalText"
                                                               style="padding-top: 2px;"
                                                             >
                                                               Fix 3rd shift
-                                                            </span>
+                                                            </p>
                                                           </div>
                                                         </div>
                                                         <div
@@ -1838,7 +1838,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         }
                                       >
                                         <WithStyles(ForwardRef)
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
                                           <ForwardRef
                                             classes={
@@ -1865,13 +1865,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "xxsTitle": "HvTypography-xxsTitle",
                                               }
                                             }
-                                            variant="labelText"
+                                            variant="highlightText"
                                           >
-                                            <span
-                                              className="HvTypography-root"
+                                            <p
+                                              className="HvTypography-root HvTypography-highlightText"
                                             >
                                               Status
-                                            </span>
+                                            </p>
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                       </div>
@@ -1887,7 +1887,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         }
                                       >
                                         <WithStyles(ForwardRef)
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
                                           <ForwardRef
                                             classes={
@@ -1914,13 +1914,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "xxsTitle": "HvTypography-xxsTitle",
                                               }
                                             }
-                                            variant="labelText"
+                                            variant="highlightText"
                                           >
-                                            <span
-                                              className="HvTypography-root"
+                                            <p
+                                              className="HvTypography-root HvTypography-highlightText"
                                             >
                                               Event
-                                            </span>
+                                            </p>
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                       </div>
@@ -1936,7 +1936,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         }
                                       >
                                         <WithStyles(ForwardRef)
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
                                           <ForwardRef
                                             classes={
@@ -1963,13 +1963,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "xxsTitle": "HvTypography-xxsTitle",
                                               }
                                             }
-                                            variant="labelText"
+                                            variant="highlightText"
                                           >
-                                            <span
-                                              className="HvTypography-root"
+                                            <p
+                                              className="HvTypography-root HvTypography-highlightText"
                                             >
                                               Probability
-                                            </span>
+                                            </p>
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                       </div>
@@ -1985,7 +1985,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         }
                                       >
                                         <WithStyles(ForwardRef)
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
                                           <ForwardRef
                                             classes={
@@ -2012,13 +2012,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "xxsTitle": "HvTypography-xxsTitle",
                                               }
                                             }
-                                            variant="labelText"
+                                            variant="highlightText"
                                           >
-                                            <span
-                                              className="HvTypography-root"
+                                            <p
+                                              className="HvTypography-root HvTypography-highlightText"
                                             >
                                               Time horizon
-                                            </span>
+                                            </p>
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                       </div>
@@ -2035,7 +2035,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         }
                                       >
                                         <WithStyles(ForwardRef)
-                                          variant="labelText"
+                                          variant="highlightText"
                                         >
                                           <ForwardRef
                                             classes={
@@ -2062,13 +2062,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "xxsTitle": "HvTypography-xxsTitle",
                                               }
                                             }
-                                            variant="labelText"
+                                            variant="highlightText"
                                           >
-                                            <span
-                                              className="HvTypography-root"
+                                            <p
+                                              className="HvTypography-root HvTypography-highlightText"
                                             >
                                               Related Assets
-                                            </span>
+                                            </p>
                                           </ForwardRef>
                                         </WithStyles(ForwardRef)>
                                       </div>
@@ -2119,55 +2119,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       id="0"
                                                       style="text-align: left; padding-left: 8px; width: 52px;"
                                                     >
-                                                      <span
-                                                        class="HvTypography-root"
+                                                      <p
+                                                        class="HvTypography-root HvTypography-highlightText"
                                                       >
                                                         Status
-                                                      </span>
+                                                      </p>
                                                     </div>
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="1"
                                                       style="text-align: left; width: 370px;"
                                                     >
-                                                      <span
-                                                        class="HvTypography-root"
+                                                      <p
+                                                        class="HvTypography-root HvTypography-highlightText"
                                                       >
                                                         Event
-                                                      </span>
+                                                      </p>
                                                     </div>
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="2"
                                                       style="text-align: right; width: 93px;"
                                                     >
-                                                      <span
-                                                        class="HvTypography-root"
+                                                      <p
+                                                        class="HvTypography-root HvTypography-highlightText"
                                                       >
                                                         Probability
-                                                      </span>
+                                                      </p>
                                                     </div>
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="3"
                                                       style="text-align: right; width: 108px;"
                                                     >
-                                                      <span
-                                                        class="HvTypography-root"
+                                                      <p
+                                                        class="HvTypography-root HvTypography-highlightText"
                                                       >
                                                         Time horizon
-                                                      </span>
+                                                      </p>
                                                     </div>
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="4"
                                                       style="text-align: left; width: 195px; padding-left: 30px;"
                                                     >
-                                                      <span
-                                                        class="HvTypography-root"
+                                                      <p
+                                                        class="HvTypography-root HvTypography-highlightText"
                                                       >
                                                         Related Assets
-                                                      </span>
+                                                      </p>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -2272,20 +2272,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           Risk of downtime on Truck 12
                                                         </p>
-                                                        <span
-                                                          class="Row-timestamp-1 HvTypography-root"
+                                                        <p
+                                                          class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                         >
                                                           Just now
-                                                        </span>
+                                                        </p>
                                                         <div
                                                           class="Row-columnSplitter-2"
                                                         />
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-normalText"
                                                           style="padding-top: 2px;"
                                                         >
                                                           Fix 3rd shift
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                     </div>
                                                     <div
@@ -2441,20 +2441,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           Track severe breakdown
                                                         </p>
-                                                        <span
-                                                          class="Row-timestamp-1 HvTypography-root"
+                                                        <p
+                                                          class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                         >
                                                           2 minutes ago
-                                                        </span>
+                                                        </p>
                                                         <div
                                                           class="Row-columnSplitter-2"
                                                         />
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-normalText"
                                                           style="padding-top: 2px;"
                                                         >
                                                           Fix now
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                     </div>
                                                     <div
@@ -2612,20 +2612,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           Risk of downtime associated
                                                         </p>
-                                                        <span
-                                                          class="Row-timestamp-1 HvTypography-root"
+                                                        <p
+                                                          class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                         >
                                                           2 hours ago
-                                                        </span>
+                                                        </p>
                                                         <div
                                                           class="Row-columnSplitter-2"
                                                         />
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-normalText"
                                                           style="padding-top: 2px;"
                                                         >
                                                           Fix 3rd shift
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                     </div>
                                                     <div
@@ -2814,55 +2814,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         id="0"
                                                         style="text-align: left; padding-left: 8px; width: 52px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Status
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
                                                         style="text-align: left; width: 370px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Event
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
                                                         style="text-align: right; width: 93px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Probability
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
                                                         style="text-align: right; width: 108px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Time horizon
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
                                                         style="text-align: left; width: 195px; padding-left: 30px;"
                                                       >
-                                                        <span
-                                                          class="HvTypography-root"
+                                                        <p
+                                                          class="HvTypography-root HvTypography-highlightText"
                                                         >
                                                           Related Assets
-                                                        </span>
+                                                        </p>
                                                       </div>
                                                     </div>
                                                   </div>
@@ -2967,20 +2967,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             Risk of downtime on Truck 12
                                                           </p>
-                                                          <span
-                                                            class="Row-timestamp-1 HvTypography-root"
+                                                          <p
+                                                            class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                           >
                                                             Just now
-                                                          </span>
+                                                          </p>
                                                           <div
                                                             class="Row-columnSplitter-2"
                                                           />
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-normalText"
                                                             style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                       <div
@@ -3136,20 +3136,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             Track severe breakdown
                                                           </p>
-                                                          <span
-                                                            class="Row-timestamp-1 HvTypography-root"
+                                                          <p
+                                                            class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                           >
                                                             2 minutes ago
-                                                          </span>
+                                                          </p>
                                                           <div
                                                             class="Row-columnSplitter-2"
                                                           />
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-normalText"
                                                             style="padding-top: 2px;"
                                                           >
                                                             Fix now
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                       <div
@@ -3307,20 +3307,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             Risk of downtime associated
                                                           </p>
-                                                          <span
-                                                            class="Row-timestamp-1 HvTypography-root"
+                                                          <p
+                                                            class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                           >
                                                             2 hours ago
-                                                          </span>
+                                                          </p>
                                                           <div
                                                             class="Row-columnSplitter-2"
                                                           />
-                                                          <span
-                                                            class="HvTypography-root"
+                                                          <p
+                                                            class="HvTypography-root HvTypography-normalText"
                                                             style="padding-top: 2px;"
                                                           >
                                                             Fix 3rd shift
-                                                          </span>
+                                                          </p>
                                                         </div>
                                                       </div>
                                                       <div
@@ -4131,55 +4131,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   id="0"
                                                                   style="text-align: left; padding-left: 8px; width: 52px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Status
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
                                                                   style="text-align: left; width: 370px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Event
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
                                                                   style="text-align: right; width: 93px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Probability
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
                                                                   style="text-align: right; width: 108px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Time horizon
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
                                                                   style="text-align: left; width: 195px; padding-left: 30px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Related Assets
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                               </div>
                                                             </div>
@@ -4284,20 +4284,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Risk of downtime on Truck 12
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       Just now
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -4453,20 +4453,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Track severe breakdown
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       2 minutes ago
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix now
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -4624,20 +4624,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Risk of downtime associated
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       2 hours ago
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -4752,55 +4752,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     id="0"
                                                                     style="text-align: left; padding-left: 8px; width: 52px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Status
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
                                                                     style="text-align: left; width: 370px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Event
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
                                                                     style="text-align: right; width: 93px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Probability
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
                                                                     style="text-align: right; width: 108px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Time horizon
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
                                                                     style="text-align: left; width: 195px; padding-left: 30px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Related Assets
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                               </div>
@@ -4905,20 +4905,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Risk of downtime on Truck 12
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         Just now
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -5074,20 +5074,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Track severe breakdown
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         2 minutes ago
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix now
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -5245,20 +5245,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Risk of downtime associated
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         2 hours ago
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -6028,7 +6028,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             </WithStyles(ForwardRef)>
                                                             <WithStyles(ForwardRef)
                                                               className="Row-timestamp-1"
-                                                              variant="sText"
                                                             >
                                                               <ForwardRef
                                                                 className="Row-timestamp-1"
@@ -6056,13 +6055,12 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                                   }
                                                                 }
-                                                                variant="sText"
                                                               >
-                                                                <span
-                                                                  className="Row-timestamp-1 HvTypography-root"
+                                                                <p
+                                                                  className="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                 >
                                                                   Just now
-                                                                </span>
+                                                                </p>
                                                               </ForwardRef>
                                                             </WithStyles(ForwardRef)>
                                                             <div
@@ -6074,7 +6072,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "paddingTop": "2px",
                                                                 }
                                                               }
-                                                              variant="sText"
                                                             >
                                                               <ForwardRef
                                                                 classes={
@@ -6106,10 +6103,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     "paddingTop": "2px",
                                                                   }
                                                                 }
-                                                                variant="sText"
                                                               >
-                                                                <span
-                                                                  className="HvTypography-root"
+                                                                <p
+                                                                  className="HvTypography-root HvTypography-normalText"
                                                                   style={
                                                                     Object {
                                                                       "paddingTop": "2px",
@@ -6117,7 +6113,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   }
                                                                 >
                                                                   Fix 3rd shift
-                                                                </span>
+                                                                </p>
                                                               </ForwardRef>
                                                             </WithStyles(ForwardRef)>
                                                           </div>
@@ -6183,9 +6179,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -6211,7 +6205,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -6282,9 +6275,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -6310,7 +6301,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -6384,9 +6374,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -6412,7 +6400,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -7424,55 +7411,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   id="0"
                                                                   style="text-align: left; padding-left: 8px; width: 52px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Status
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
                                                                   style="text-align: left; width: 370px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Event
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
                                                                   style="text-align: right; width: 93px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Probability
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
                                                                   style="text-align: right; width: 108px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Time horizon
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
                                                                   style="text-align: left; width: 195px; padding-left: 30px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Related Assets
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                               </div>
                                                             </div>
@@ -7577,20 +7564,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Risk of downtime on Truck 12
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       Just now
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -7746,20 +7733,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Track severe breakdown
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       2 minutes ago
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix now
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -7917,20 +7904,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Risk of downtime associated
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       2 hours ago
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -8045,55 +8032,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     id="0"
                                                                     style="text-align: left; padding-left: 8px; width: 52px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Status
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
                                                                     style="text-align: left; width: 370px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Event
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
                                                                     style="text-align: right; width: 93px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Probability
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
                                                                     style="text-align: right; width: 108px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Time horizon
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
                                                                     style="text-align: left; width: 195px; padding-left: 30px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Related Assets
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                               </div>
@@ -8198,20 +8185,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Risk of downtime on Truck 12
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         Just now
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -8367,20 +8354,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Track severe breakdown
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         2 minutes ago
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix now
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -8538,20 +8525,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Risk of downtime associated
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         2 hours ago
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -9321,7 +9308,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             </WithStyles(ForwardRef)>
                                                             <WithStyles(ForwardRef)
                                                               className="Row-timestamp-1"
-                                                              variant="sText"
                                                             >
                                                               <ForwardRef
                                                                 className="Row-timestamp-1"
@@ -9349,13 +9335,12 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                                   }
                                                                 }
-                                                                variant="sText"
                                                               >
-                                                                <span
-                                                                  className="Row-timestamp-1 HvTypography-root"
+                                                                <p
+                                                                  className="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                 >
                                                                   2 minutes ago
-                                                                </span>
+                                                                </p>
                                                               </ForwardRef>
                                                             </WithStyles(ForwardRef)>
                                                             <div
@@ -9367,7 +9352,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "paddingTop": "2px",
                                                                 }
                                                               }
-                                                              variant="sText"
                                                             >
                                                               <ForwardRef
                                                                 classes={
@@ -9399,10 +9383,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     "paddingTop": "2px",
                                                                   }
                                                                 }
-                                                                variant="sText"
                                                               >
-                                                                <span
-                                                                  className="HvTypography-root"
+                                                                <p
+                                                                  className="HvTypography-root HvTypography-normalText"
                                                                   style={
                                                                     Object {
                                                                       "paddingTop": "2px",
@@ -9410,7 +9393,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   }
                                                                 >
                                                                   Fix now
-                                                                </span>
+                                                                </p>
                                                               </ForwardRef>
                                                             </WithStyles(ForwardRef)>
                                                           </div>
@@ -9476,9 +9459,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -9504,7 +9485,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -9575,9 +9555,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -9603,7 +9581,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -9677,9 +9654,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -9705,7 +9680,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -10717,55 +10691,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   id="0"
                                                                   style="text-align: left; padding-left: 8px; width: 52px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Status
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
                                                                   style="text-align: left; width: 370px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Event
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
                                                                   style="text-align: right; width: 93px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Probability
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
                                                                   style="text-align: right; width: 108px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Time horizon
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
                                                                   style="text-align: left; width: 195px; padding-left: 30px;"
                                                                 >
-                                                                  <span
-                                                                    class="HvTypography-root"
+                                                                  <p
+                                                                    class="HvTypography-root HvTypography-highlightText"
                                                                   >
                                                                     Related Assets
-                                                                  </span>
+                                                                  </p>
                                                                 </div>
                                                               </div>
                                                             </div>
@@ -10870,20 +10844,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Risk of downtime on Truck 12
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       Just now
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -11039,20 +11013,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Track severe breakdown
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       2 minutes ago
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix now
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -11210,20 +11184,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       Risk of downtime associated
                                                                     </p>
-                                                                    <span
-                                                                      class="Row-timestamp-1 HvTypography-root"
+                                                                    <p
+                                                                      class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                     >
                                                                       2 hours ago
-                                                                    </span>
+                                                                    </p>
                                                                     <div
                                                                       class="Row-columnSplitter-2"
                                                                     />
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-normalText"
                                                                       style="padding-top: 2px;"
                                                                     >
                                                                       Fix 3rd shift
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                                 <div
@@ -11338,55 +11312,55 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     id="0"
                                                                     style="text-align: left; padding-left: 8px; width: 52px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Status
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
                                                                     style="text-align: left; width: 370px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Event
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
                                                                     style="text-align: right; width: 93px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Probability
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
                                                                     style="text-align: right; width: 108px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Time horizon
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
                                                                     style="text-align: left; width: 195px; padding-left: 30px;"
                                                                   >
-                                                                    <span
-                                                                      class="HvTypography-root"
+                                                                    <p
+                                                                      class="HvTypography-root HvTypography-highlightText"
                                                                     >
                                                                       Related Assets
-                                                                    </span>
+                                                                    </p>
                                                                   </div>
                                                                 </div>
                                                               </div>
@@ -11491,20 +11465,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Risk of downtime on Truck 12
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         Just now
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -11660,20 +11634,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Track severe breakdown
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         2 minutes ago
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix now
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -11831,20 +11805,20 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       >
                                                                         Risk of downtime associated
                                                                       </p>
-                                                                      <span
-                                                                        class="Row-timestamp-1 HvTypography-root"
+                                                                      <p
+                                                                        class="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                       >
                                                                         2 hours ago
-                                                                      </span>
+                                                                      </p>
                                                                       <div
                                                                         class="Row-columnSplitter-2"
                                                                       />
-                                                                      <span
-                                                                        class="HvTypography-root"
+                                                                      <p
+                                                                        class="HvTypography-root HvTypography-normalText"
                                                                         style="padding-top: 2px;"
                                                                       >
                                                                         Fix 3rd shift
-                                                                      </span>
+                                                                      </p>
                                                                     </div>
                                                                   </div>
                                                                   <div
@@ -12616,7 +12590,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             </WithStyles(ForwardRef)>
                                                             <WithStyles(ForwardRef)
                                                               className="Row-timestamp-1"
-                                                              variant="sText"
                                                             >
                                                               <ForwardRef
                                                                 className="Row-timestamp-1"
@@ -12644,13 +12617,12 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                                   }
                                                                 }
-                                                                variant="sText"
                                                               >
-                                                                <span
-                                                                  className="Row-timestamp-1 HvTypography-root"
+                                                                <p
+                                                                  className="Row-timestamp-1 HvTypography-root HvTypography-normalText"
                                                                 >
                                                                   2 hours ago
-                                                                </span>
+                                                                </p>
                                                               </ForwardRef>
                                                             </WithStyles(ForwardRef)>
                                                             <div
@@ -12662,7 +12634,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "paddingTop": "2px",
                                                                 }
                                                               }
-                                                              variant="sText"
                                                             >
                                                               <ForwardRef
                                                                 classes={
@@ -12694,10 +12665,9 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     "paddingTop": "2px",
                                                                   }
                                                                 }
-                                                                variant="sText"
                                                               >
-                                                                <span
-                                                                  className="HvTypography-root"
+                                                                <p
+                                                                  className="HvTypography-root HvTypography-normalText"
                                                                   style={
                                                                     Object {
                                                                       "paddingTop": "2px",
@@ -12705,7 +12675,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   }
                                                                 >
                                                                   Fix 3rd shift
-                                                                </span>
+                                                                </p>
                                                               </ForwardRef>
                                                             </WithStyles(ForwardRef)>
                                                           </div>
@@ -12771,9 +12741,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -12799,7 +12767,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -12870,9 +12837,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -12898,7 +12863,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"
@@ -12972,9 +12936,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(ForwardRef)
-                                                            variant="normalText"
-                                                          >
+                                                          <WithStyles(ForwardRef)>
                                                             <ForwardRef
                                                               classes={
                                                                 Object {
@@ -13000,7 +12962,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   "xxsTitle": "HvTypography-xxsTitle",
                                                                 }
                                                               }
-                                                              variant="normalText"
                                                             >
                                                               <p
                                                                 className="HvTypography-root HvTypography-normalText"

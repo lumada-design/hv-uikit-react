@@ -125,7 +125,6 @@ exports[`Custom Pagination should render correctly 1`] = `
         >
           <WithStyles(ForwardRef)
             component="span"
-            variant="sText"
           >
             <ForwardRef
               classes={
@@ -153,10 +152,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                 }
               }
               component="span"
-              variant="sText"
             >
               <span
-                className="HvTypography-root"
+                className="HvTypography-root HvTypography-normalText"
               >
                 Show
               </span>
@@ -243,7 +241,6 @@ exports[`Custom Pagination should render correctly 1`] = `
           </WithStyles(DropDownXS)>
           <WithStyles(ForwardRef)
             component="span"
-            variant="sText"
           >
             <ForwardRef
               classes={
@@ -271,10 +268,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                 }
               }
               component="span"
-              variant="sText"
             >
               <span
-                className="HvTypography-root"
+                className="HvTypography-root HvTypography-normalText"
               >
                 items
               </span>
@@ -373,9 +369,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             }
                           }
                           title={
-                            <ForwardRef(WithStyles)
-                              variant="infoText"
-                            >
+                            <ForwardRef(WithStyles)>
                               First page
                             </ForwardRef(WithStyles)>
                           }
@@ -407,9 +401,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               }
                             }
                             title={
-                              <ForwardRef(WithStyles)
-                                variant="infoText"
-                              >
+                              <ForwardRef(WithStyles)>
                                 First page
                               </ForwardRef(WithStyles)>
                             }
@@ -452,9 +444,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 }
                               }
                               title={
-                                <ForwardRef(WithStyles)
-                                  variant="infoText"
-                                >
+                                <ForwardRef(WithStyles)>
                                   First page
                                 </ForwardRef(WithStyles)>
                               }
@@ -506,9 +496,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   }
                                 }
                                 title={
-                                  <ForwardRef(WithStyles)
-                                    variant="infoText"
-                                  >
+                                  <ForwardRef(WithStyles)>
                                     First page
                                   </ForwardRef(WithStyles)>
                                 }
@@ -708,9 +696,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             }
                           }
                           title={
-                            <ForwardRef(WithStyles)
-                              variant="infoText"
-                            >
+                            <ForwardRef(WithStyles)>
                               Previous page
                             </ForwardRef(WithStyles)>
                           }
@@ -742,9 +728,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               }
                             }
                             title={
-                              <ForwardRef(WithStyles)
-                                variant="infoText"
-                              >
+                              <ForwardRef(WithStyles)>
                                 Previous page
                               </ForwardRef(WithStyles)>
                             }
@@ -787,9 +771,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 }
                               }
                               title={
-                                <ForwardRef(WithStyles)
-                                  variant="infoText"
-                                >
+                                <ForwardRef(WithStyles)>
                                   Previous page
                                 </ForwardRef(WithStyles)>
                               }
@@ -841,9 +823,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   }
                                 }
                                 title={
-                                  <ForwardRef(WithStyles)
-                                    variant="infoText"
-                                  >
+                                  <ForwardRef(WithStyles)>
                                     Previous page
                                   </ForwardRef(WithStyles)>
                                 }
@@ -1665,7 +1645,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                         "display": "none",
                                       }
                                     }
-                                    variant="infoText"
                                   >
                                     <ForwardRef
                                       className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -1699,10 +1678,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           "display": "none",
                                         }
                                       }
-                                      variant="infoText"
                                     >
-                                      <span
-                                        className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="pagination-currentPage-description"
                                         style={
                                           Object {
@@ -1723,7 +1701,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                         "display": "none",
                                       }
                                     }
-                                    variant="infoText"
                                   >
                                     <ForwardRef
                                       aria-atomic="true"
@@ -1760,13 +1737,12 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           "display": "none",
                                         }
                                       }
-                                      variant="infoText"
                                     >
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="pagination-currentPage-description-notification"
                                         style={
                                           Object {
@@ -1789,7 +1765,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             </div>
             <WithStyles(ForwardRef)
               component="span"
-              variant="sText"
             >
               <ForwardRef
                 classes={
@@ -1817,10 +1792,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                   }
                 }
                 component="span"
-                variant="sText"
               >
                 <span
-                  className="HvTypography-root"
+                  className="HvTypography-root HvTypography-normalText"
                 >
                    of 
                 </span>
@@ -1829,7 +1803,6 @@ exports[`Custom Pagination should render correctly 1`] = `
             <WithStyles(ForwardRef)
               component="span"
               id="pagination-totalPages"
-              variant="sText"
             >
               <ForwardRef
                 classes={
@@ -1858,10 +1831,9 @@ exports[`Custom Pagination should render correctly 1`] = `
                 }
                 component="span"
                 id="pagination-totalPages"
-                variant="sText"
               >
                 <span
-                  className="HvTypography-root"
+                  className="HvTypography-root HvTypography-normalText"
                   id="pagination-totalPages"
                 >
                   6
@@ -1958,9 +1930,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             }
                           }
                           title={
-                            <ForwardRef(WithStyles)
-                              variant="infoText"
-                            >
+                            <ForwardRef(WithStyles)>
                               Next page
                             </ForwardRef(WithStyles)>
                           }
@@ -1992,9 +1962,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               }
                             }
                             title={
-                              <ForwardRef(WithStyles)
-                                variant="infoText"
-                              >
+                              <ForwardRef(WithStyles)>
                                 Next page
                               </ForwardRef(WithStyles)>
                             }
@@ -2037,9 +2005,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 }
                               }
                               title={
-                                <ForwardRef(WithStyles)
-                                  variant="infoText"
-                                >
+                                <ForwardRef(WithStyles)>
                                   Next page
                                 </ForwardRef(WithStyles)>
                               }
@@ -2091,9 +2057,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   }
                                 }
                                 title={
-                                  <ForwardRef(WithStyles)
-                                    variant="infoText"
-                                  >
+                                  <ForwardRef(WithStyles)>
                                     Next page
                                   </ForwardRef(WithStyles)>
                                 }
@@ -2291,9 +2255,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             }
                           }
                           title={
-                            <ForwardRef(WithStyles)
-                              variant="infoText"
-                            >
+                            <ForwardRef(WithStyles)>
                               Last page
                             </ForwardRef(WithStyles)>
                           }
@@ -2325,9 +2287,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                               }
                             }
                             title={
-                              <ForwardRef(WithStyles)
-                                variant="infoText"
-                              >
+                              <ForwardRef(WithStyles)>
                                 Last page
                               </ForwardRef(WithStyles)>
                             }
@@ -2370,9 +2330,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 }
                               }
                               title={
-                                <ForwardRef(WithStyles)
-                                  variant="infoText"
-                                >
+                                <ForwardRef(WithStyles)>
                                   Last page
                                 </ForwardRef(WithStyles)>
                               }
@@ -2424,9 +2382,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   }
                                 }
                                 title={
-                                  <ForwardRef(WithStyles)
-                                    variant="infoText"
-                                  >
+                                  <ForwardRef(WithStyles)>
                                     Last page
                                   </ForwardRef(WithStyles)>
                                 }

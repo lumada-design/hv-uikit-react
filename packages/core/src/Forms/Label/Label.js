@@ -43,7 +43,7 @@ const HvLabel = props => {
           [classes.labelDisabled]: localDisabled,
           [classes.childGutter]: !isNil(children)
         })}
-        variant="labelText"
+        variant="highlightText"
         component="label"
         htmlFor={childId}
         {...others}

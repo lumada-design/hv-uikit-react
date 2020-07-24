@@ -63,7 +63,7 @@ const DropZone = ({
     <>
       <div id={id} className={classes.dropZoneLabelsGroup} aria-label="File Dropzone">
         <HvTypography
-          variant="labelText"
+          variant="highlightText"
           component="label"
           id={setId(id, "input-file-label")}
           htmlFor={setId(id, "input-file")}
@@ -71,13 +71,11 @@ const DropZone = ({
           {labels.dropzone}
         </HvTypography>
 
-        <HvTypography variant="sText">
-          {`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}
-        </HvTypography>
+        <HvTypography>{`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}</HvTypography>
         {acceptedFiles.length > 0 && (
           <>
-            <HvTypography variant="labelText">{labels.acceptedFiles}</HvTypography>
-            <HvTypography variant="sText">{acceptedFiles.join(", ")}</HvTypography>
+            <HvTypography variant="highlightText">{labels.acceptedFiles}</HvTypography>
+            <HvTypography>{acceptedFiles.join(", ")}</HvTypography>
           </>
         )}
       </div>

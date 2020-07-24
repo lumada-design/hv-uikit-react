@@ -35,7 +35,6 @@ exports[`Actions should be able to render 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
-            variant="normalText"
           >
             <ForwardRef
               className="HvVerticalNavigationAction-action"
@@ -67,7 +66,6 @@ exports[`Actions should be able to render 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <div
                 className="HvVerticalNavigationAction-action HvTypography-root HvTypography-normalText"
@@ -150,7 +148,6 @@ exports[`Actions should be able to render 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
-            variant="normalText"
           >
             <ForwardRef
               className="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon"
@@ -182,7 +179,6 @@ exports[`Actions should be able to render 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <div
                 className="HvVerticalNavigationAction-action HvVerticalNavigationAction-noIcon HvTypography-root HvTypography-normalText"
@@ -217,7 +213,6 @@ exports[`Actions should be able to render 1`] = `
             onKeyDown={[Function]}
             role="button"
             tabIndex={0}
-            variant="normalText"
           >
             <ForwardRef
               className="HvVerticalNavigationAction-action"
@@ -249,7 +244,6 @@ exports[`Actions should be able to render 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <div
                 className="HvVerticalNavigationAction-action HvTypography-root HvTypography-normalText"

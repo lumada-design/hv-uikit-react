@@ -21,7 +21,7 @@ const styles = theme => ({
       backgroundColor: `${theme.hv.palette.atmosphere.atmo4}`
     }
   },
-  labelText: {
+  highlightText: {
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     overflow: "hidden"

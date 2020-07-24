@@ -211,7 +211,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                   component="label"
                   htmlFor="drop-zone-2-input-file"
                   id="drop-zone-2-input-file-label"
-                  variant="labelText"
+                  variant="highlightText"
                 >
                   <ForwardRef
                     classes={
@@ -241,10 +241,10 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     component="label"
                     htmlFor="drop-zone-2-input-file"
                     id="drop-zone-2-input-file-label"
-                    variant="labelText"
+                    variant="highlightText"
                   >
                     <label
-                      className="HvTypography-root"
+                      className="HvTypography-root HvTypography-highlightText"
                       htmlFor="drop-zone-2-input-file"
                       id="drop-zone-2-input-file-label"
                     >
@@ -252,9 +252,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     </label>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="sText"
-                >
+                <WithStyles(ForwardRef)>
                   <ForwardRef
                     classes={
                       Object {
@@ -280,17 +278,16 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="sText"
                   >
-                    <span
-                      className="HvTypography-root"
+                    <p
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       Max. file size: 12.00B
-                    </span>
+                    </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
                 <WithStyles(ForwardRef)
-                  variant="labelText"
+                  variant="highlightText"
                 >
                   <ForwardRef
                     classes={
@@ -317,18 +314,16 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="labelText"
+                    variant="highlightText"
                   >
-                    <span
-                      className="HvTypography-root"
+                    <p
+                      className="HvTypography-root HvTypography-highlightText"
                     >
                       Accepted files:
-                    </span>
+                    </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
-                <WithStyles(ForwardRef)
-                  variant="sText"
-                >
+                <WithStyles(ForwardRef)>
                   <ForwardRef
                     classes={
                       Object {
@@ -354,13 +349,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="sText"
                   >
-                    <span
-                      className="HvTypography-root"
+                    <p
+                      className="HvTypography-root HvTypography-normalText"
                     >
                       jpeg
-                    </span>
+                    </p>
                   </ForwardRef>
                 </WithStyles(ForwardRef)>
               </div>
@@ -574,7 +568,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText"
-                      variant="sText"
                     >
                       <ForwardRef
                         className="HvFileUploaderFile-nameText"
@@ -602,21 +595,18 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
-                        variant="sText"
                       >
-                        <span
-                          className="HvFileUploaderFile-nameText HvTypography-root"
+                        <p
+                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
                         >
                           Screenshot 2019-12-05 at 17.15.43.png
-                        </span>
+                        </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <span
                       className="HvFileUploaderFile-progressTextContainer"
                     >
-                      <WithStyles(ForwardRef)
-                        variant="sText"
-                      >
+                      <WithStyles(ForwardRef)>
                         <ForwardRef
                           classes={
                             Object {
@@ -642,13 +632,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sText"
                         >
-                          <span
-                            className="HvTypography-root"
+                          <p
+                            className="HvTypography-root HvTypography-normalText"
                           >
                              of 14.10MB
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </span>
@@ -814,7 +803,6 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                     />
                     <WithStyles(ForwardRef)
                       className="HvFileUploaderFile-nameText"
-                      variant="sText"
                     >
                       <ForwardRef
                         className="HvFileUploaderFile-nameText"
@@ -842,21 +830,18 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                             "xxsTitle": "HvTypography-xxsTitle",
                           }
                         }
-                        variant="sText"
                       >
-                        <span
-                          className="HvFileUploaderFile-nameText HvTypography-root"
+                        <p
+                          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
                         >
                           Screenshot 2019-12-05 at 12.03.13.png
-                        </span>
+                        </p>
                       </ForwardRef>
                     </WithStyles(ForwardRef)>
                     <span
                       className="HvFileUploaderFile-progressTextContainer"
                     >
-                      <WithStyles(ForwardRef)
-                        variant="sText"
-                      >
+                      <WithStyles(ForwardRef)>
                         <ForwardRef
                           classes={
                             Object {
@@ -882,13 +867,12 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sText"
                         >
-                          <span
-                            className="HvTypography-root"
+                          <p
+                            className="HvTypography-root HvTypography-normalText"
                           >
                              of 875.00kB
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </span>

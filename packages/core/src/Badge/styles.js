@@ -1,5 +1,5 @@
 const labelBaseStyle = theme => ({
-  ...theme.hv.typography.labelText,
+  ...theme.hv.typography.highlightText,
   fontFamily: theme.hv.typography.fontFamily,
   padding: "0 5px",
   wordBreak: "keep-all",

@@ -281,7 +281,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                     onKeyDown={[Function]}
                     role="button"
                     tabIndex={0}
-                    variant="normalText"
                   >
                     <ForwardRef
                       className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -316,7 +315,6 @@ exports[`<Navigation /> navigation should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <div
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"

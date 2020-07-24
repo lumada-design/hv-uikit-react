@@ -5,7 +5,6 @@ import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 import HvProvider from "../../Provider";
 import HvCheckBox from "../../Selectors/CheckBox/CheckBox";
-import Typography from "../../Typography";
 import List from "../List";
 import Dropdown from "..";
 
@@ -53,8 +52,8 @@ describe("[v3] <Dropdown />", () => {
     });
 
     it("default value is selected", () => {
-      listComponent = wrapper.find(List).find(Typography);
-      expect(listComponent.at(1).prop("variant")).toBe("infoText");
+      listComponent = wrapper.find(List).find("li");
+      expect(listComponent.at(0).prop("aria-selected")).toBe(true);
     });
 
     it("onChange is triggered on first render when required", () => {
@@ -105,10 +104,10 @@ describe("[v3] <Dropdown />", () => {
     });
 
     it("no default value is selected", () => {
-      listComponent = wrapper.find(Typography);
+      listComponent = wrapper.find("li");
 
       for (let i = 1; i < listComponent.length; i += i) {
-        expect(listComponent.at(i).prop("variant")).toBe("normalText");
+        expect(listComponent.at(i).prop("aria-selected")).toBe(undefined);
       }
     });
   });

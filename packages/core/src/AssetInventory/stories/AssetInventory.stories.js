@@ -83,10 +83,8 @@ export const Main = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography className={classes.timestamp}>{values.event.timestamp}</HvTypography>
+          <HvTypography>{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -98,10 +96,8 @@ export const Main = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
-        </HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
+        <HvTypography className={classes.text}>{values.relatedAssets}</HvTypography>
       </HvGrid>
     </HvGrid>
   );
@@ -147,26 +143,22 @@ export const Main = () => {
         <HvListViewCell id={`description-${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
-              {value.event.timestamp}
-            </HvTypography>
+            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
-              {value.event.schedule}
-            </HvTypography>
+            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
         <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
+          <HvTypography>{`${value.probability}%`}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
+          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
+          <HvTypography>{value.relatedAssets}</HvTypography>
         </HvListViewCell>
       </HvListViewRow>
     );
@@ -372,10 +364,8 @@ export const Configurations = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography className={classes.timestamp}>{values.event.timestamp}</HvTypography>
+          <HvTypography>{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -387,10 +377,8 @@ export const Configurations = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
-        </HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
+        <HvTypography className={classes.text}>{values.relatedAssets}</HvTypography>
       </HvGrid>
     </HvGrid>
   );
@@ -437,22 +425,18 @@ export const Configurations = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
-              {value.event.timestamp}
-            </HvTypography>
+            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
-              {value.event.schedule}
-            </HvTypography>
+            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
         <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
+          <HvTypography>{`${value.probability}%`}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
+          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
@@ -686,10 +670,10 @@ export const ThreeViews = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
+          <HvTypography className={classes.timestamp} variant="normalText">
             {values.event.timestamp}
           </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -701,7 +685,7 @@ export const ThreeViews = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
         <HvTypography variant="normalText" className={classes.text}>
           {values.relatedAssets}
         </HvTypography>
@@ -751,11 +735,11 @@ export const ThreeViews = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
+            <HvTypography className={classes.timestamp} variant="normalText">
               {value.event.timestamp}
             </HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -810,11 +794,11 @@ export const ThreeViews = () => {
       <HvGrid container>
         {values.map(value => (
           <HvGrid item>
-            <HvTypography variant="labelText"> title</HvTypography>
+            <HvTypography variant="highlightText"> title</HvTypography>
             <HvTypography variant="normalText">{value.headerTitle}</HvTypography>
-            <HvTypography variant="labelText"> description</HvTypography>
+            <HvTypography variant="highlightText"> description</HvTypography>
             <HvTypography variant="normalText">{value.event.description}</HvTypography>
-            <HvTypography variant="labelText"> probability</HvTypography>
+            <HvTypography variant="highlightText"> probability</HvTypography>
             <HvTypography variant="normalText">{value.event.probability}</HvTypography>
           </HvGrid>
         ))}
@@ -1005,10 +989,10 @@ export const ServerSidePagination = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
+          <HvTypography className={classes.timestamp} variant="normalText">
             {values.event.timestamp}
           </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -1020,7 +1004,7 @@ export const ServerSidePagination = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
         <HvTypography variant="normalText" className={classes.text}>
           {values.relatedAssets}
         </HvTypography>
@@ -1069,11 +1053,11 @@ export const ServerSidePagination = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
+            <HvTypography className={classes.timestamp} variant="normalText">
               {value.event.timestamp}
             </HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -1288,10 +1272,10 @@ export const Accessibility = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
+          <HvTypography className={classes.timestamp} variant="normalText">
             {values.event.timestamp}
           </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -1303,7 +1287,7 @@ export const Accessibility = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
         <HvTypography variant="normalText" className={classes.text}>
           {values.relatedAssets}
         </HvTypography>
@@ -1350,11 +1334,11 @@ export const Accessibility = () => {
         <HvListViewCell id={`description-${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
+            <HvTypography className={classes.timestamp} variant="normalText">
               {value.event.timestamp}
             </HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
               {value.event.schedule}
             </HvTypography>
           </div>
@@ -1583,10 +1567,10 @@ export const AccessibilityList = () => {
     <HvGrid container className={classes.container}>
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
         <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="sText">
+          <HvTypography className={classes.timestamp} variant="normalText">
             {values.event.timestamp}
           </HvTypography>
-          <HvTypography variant="sText">{values.event.schedule}</HvTypography>
+          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
         </div>
       </HvGrid>
 
@@ -1598,7 +1582,7 @@ export const AccessibilityList = () => {
       </HvGrid>
 
       <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="labelText">Related assets</HvTypography>
+        <HvTypography variant="highlightText">Related assets</HvTypography>
         <HvTypography variant="normalText" className={classes.text}>
           {values.relatedAssets}
         </HvTypography>
@@ -1645,11 +1629,11 @@ export const AccessibilityList = () => {
         <HvListViewCell id={`description-${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
+            <HvTypography className={classes.timestamp} variant="normalText">
               {value.event.timestamp}
             </HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
+            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
               {value.event.schedule}
             </HvTypography>
           </div>

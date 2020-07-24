@@ -5,59 +5,51 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   title={
     <div>
       <ForwardRef(WithStyles)
-        variant="labelText"
+        variant="highlightText"
       >
         
       </ForwardRef(WithStyles)>
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Status
         </ForwardRef(WithStyles)>
         <div />
-        <ForwardRef(WithStyles)
-          variant="sText"
-        >
+        <ForwardRef(WithStyles)>
           Open
         </ForwardRef(WithStyles)>
       </div>
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Date
         </ForwardRef(WithStyles)>
         <div />
-        <ForwardRef(WithStyles)
-          variant="sText"
-        >
+        <ForwardRef(WithStyles)>
           12/08/2018
         </ForwardRef(WithStyles)>
       </div>
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Assignee
         </ForwardRef(WithStyles)>
         <div />
-        <ForwardRef(WithStyles)
-          variant="sText"
-        >
+        <ForwardRef(WithStyles)>
           Management
         </ForwardRef(WithStyles)>
       </div>
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Approval
         </ForwardRef(WithStyles)>
         <div />
-        <ForwardRef(WithStyles)
-          variant="sText"
-        >
+        <ForwardRef(WithStyles)>
           Not yet requested
         </ForwardRef(WithStyles)>
       </div>
@@ -84,59 +76,51 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
     title={
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           
         </ForwardRef(WithStyles)>
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Status
           </ForwardRef(WithStyles)>
           <div />
-          <ForwardRef(WithStyles)
-            variant="sText"
-          >
+          <ForwardRef(WithStyles)>
             Open
           </ForwardRef(WithStyles)>
         </div>
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Date
           </ForwardRef(WithStyles)>
           <div />
-          <ForwardRef(WithStyles)
-            variant="sText"
-          >
+          <ForwardRef(WithStyles)>
             12/08/2018
           </ForwardRef(WithStyles)>
         </div>
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Assignee
           </ForwardRef(WithStyles)>
           <div />
-          <ForwardRef(WithStyles)
-            variant="sText"
-          >
+          <ForwardRef(WithStyles)>
             Management
           </ForwardRef(WithStyles)>
         </div>
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Approval
           </ForwardRef(WithStyles)>
           <div />
-          <ForwardRef(WithStyles)
-            variant="sText"
-          >
+          <ForwardRef(WithStyles)>
             Not yet requested
           </ForwardRef(WithStyles)>
         </div>
@@ -175,59 +159,51 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
       title={
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             
           </ForwardRef(WithStyles)>
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               Status
             </ForwardRef(WithStyles)>
             <div />
-            <ForwardRef(WithStyles)
-              variant="sText"
-            >
+            <ForwardRef(WithStyles)>
               Open
             </ForwardRef(WithStyles)>
           </div>
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               Date
             </ForwardRef(WithStyles)>
             <div />
-            <ForwardRef(WithStyles)
-              variant="sText"
-            >
+            <ForwardRef(WithStyles)>
               12/08/2018
             </ForwardRef(WithStyles)>
           </div>
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               Assignee
             </ForwardRef(WithStyles)>
             <div />
-            <ForwardRef(WithStyles)
-              variant="sText"
-            >
+            <ForwardRef(WithStyles)>
               Management
             </ForwardRef(WithStyles)>
           </div>
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               Approval
             </ForwardRef(WithStyles)>
             <div />
-            <ForwardRef(WithStyles)
-              variant="sText"
-            >
+            <ForwardRef(WithStyles)>
               Not yet requested
             </ForwardRef(WithStyles)>
           </div>
@@ -274,59 +250,51 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
         title={
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               
             </ForwardRef(WithStyles)>
             <div>
               <ForwardRef(WithStyles)
-                variant="labelText"
+                variant="highlightText"
               >
                 Status
               </ForwardRef(WithStyles)>
               <div />
-              <ForwardRef(WithStyles)
-                variant="sText"
-              >
+              <ForwardRef(WithStyles)>
                 Open
               </ForwardRef(WithStyles)>
             </div>
             <div>
               <ForwardRef(WithStyles)
-                variant="labelText"
+                variant="highlightText"
               >
                 Date
               </ForwardRef(WithStyles)>
               <div />
-              <ForwardRef(WithStyles)
-                variant="sText"
-              >
+              <ForwardRef(WithStyles)>
                 12/08/2018
               </ForwardRef(WithStyles)>
             </div>
             <div>
               <ForwardRef(WithStyles)
-                variant="labelText"
+                variant="highlightText"
               >
                 Assignee
               </ForwardRef(WithStyles)>
               <div />
-              <ForwardRef(WithStyles)
-                variant="sText"
-              >
+              <ForwardRef(WithStyles)>
                 Management
               </ForwardRef(WithStyles)>
             </div>
             <div>
               <ForwardRef(WithStyles)
-                variant="labelText"
+                variant="highlightText"
               >
                 Approval
               </ForwardRef(WithStyles)>
               <div />
-              <ForwardRef(WithStyles)
-                variant="sText"
-              >
+              <ForwardRef(WithStyles)>
                 Not yet requested
               </ForwardRef(WithStyles)>
             </div>
@@ -385,33 +353,29 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   title={
     <div>
       <ForwardRef(WithStyles)
-        variant="labelText"
+        variant="highlightText"
       >
         January
       </ForwardRef(WithStyles)>
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Sales
         </ForwardRef(WithStyles)>
         <div />
-        <ForwardRef(WithStyles)
-          variant="sText"
-        >
+        <ForwardRef(WithStyles)>
           52,000 units
         </ForwardRef(WithStyles)>
       </div>
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Profit
         </ForwardRef(WithStyles)>
         <div />
-        <ForwardRef(WithStyles)
-          variant="sText"
-        >
+        <ForwardRef(WithStyles)>
           50%
         </ForwardRef(WithStyles)>
       </div>
@@ -438,33 +402,29 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
     title={
       <div>
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           January
         </ForwardRef(WithStyles)>
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Sales
           </ForwardRef(WithStyles)>
           <div />
-          <ForwardRef(WithStyles)
-            variant="sText"
-          >
+          <ForwardRef(WithStyles)>
             52,000 units
           </ForwardRef(WithStyles)>
         </div>
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Profit
           </ForwardRef(WithStyles)>
           <div />
-          <ForwardRef(WithStyles)
-            variant="sText"
-          >
+          <ForwardRef(WithStyles)>
             50%
           </ForwardRef(WithStyles)>
         </div>
@@ -503,33 +463,29 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
       title={
         <div>
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             January
           </ForwardRef(WithStyles)>
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               Sales
             </ForwardRef(WithStyles)>
             <div />
-            <ForwardRef(WithStyles)
-              variant="sText"
-            >
+            <ForwardRef(WithStyles)>
               52,000 units
             </ForwardRef(WithStyles)>
           </div>
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               Profit
             </ForwardRef(WithStyles)>
             <div />
-            <ForwardRef(WithStyles)
-              variant="sText"
-            >
+            <ForwardRef(WithStyles)>
               50%
             </ForwardRef(WithStyles)>
           </div>
@@ -576,33 +532,29 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
         title={
           <div>
             <ForwardRef(WithStyles)
-              variant="labelText"
+              variant="highlightText"
             >
               January
             </ForwardRef(WithStyles)>
             <div>
               <ForwardRef(WithStyles)
-                variant="labelText"
+                variant="highlightText"
               >
                 Sales
               </ForwardRef(WithStyles)>
               <div />
-              <ForwardRef(WithStyles)
-                variant="sText"
-              >
+              <ForwardRef(WithStyles)>
                 52,000 units
               </ForwardRef(WithStyles)>
             </div>
             <div>
               <ForwardRef(WithStyles)
-                variant="labelText"
+                variant="highlightText"
               >
                 Profit
               </ForwardRef(WithStyles)>
               <div />
-              <ForwardRef(WithStyles)
-                variant="sText"
-              >
+              <ForwardRef(WithStyles)>
                 50%
               </ForwardRef(WithStyles)>
             </div>
@@ -660,7 +612,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
 <WithStyles(HvTooltip)
   title={
     <ForwardRef(WithStyles)
-      variant="labelText"
+      variant="highlightText"
     >
       Grid View
     </ForwardRef(WithStyles)>
@@ -684,7 +636,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     }
     title={
       <ForwardRef(WithStyles)
-        variant="labelText"
+        variant="highlightText"
       >
         Grid View
       </ForwardRef(WithStyles)>
@@ -720,7 +672,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
       placement="top"
       title={
         <ForwardRef(WithStyles)
-          variant="labelText"
+          variant="highlightText"
         >
           Grid View
         </ForwardRef(WithStyles)>
@@ -765,7 +717,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         placement="top"
         title={
           <ForwardRef(WithStyles)
-            variant="labelText"
+            variant="highlightText"
           >
             Grid View
           </ForwardRef(WithStyles)>

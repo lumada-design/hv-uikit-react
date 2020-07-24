@@ -502,9 +502,7 @@ const HvTable = props => {
           </div>
           {labels.subtitleText && (
             <div className={classes.subtitle}>
-              <HvTypography variant="sText" id={setId(id, "subtitle")}>
-                {labels.subtitleText}
-              </HvTypography>
+              <HvTypography id={setId(id, "subtitle")}>{labels.subtitleText}</HvTypography>
             </div>
           )}
         </div>

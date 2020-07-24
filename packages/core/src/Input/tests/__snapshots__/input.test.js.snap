@@ -573,7 +573,6 @@ exports[`Input should not have the validation section 1`] = `
                           "display": "none",
                         }
                       }
-                      variant="infoText"
                     >
                       <ForwardRef
                         className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -607,10 +606,9 @@ exports[`Input should not have the validation section 1`] = `
                             "display": "none",
                           }
                         }
-                        variant="infoText"
                       >
-                        <span
-                          className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                        <p
+                          className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                           id="hv-input-7-description"
                           style={
                             Object {
@@ -631,7 +629,6 @@ exports[`Input should not have the validation section 1`] = `
                           "display": "none",
                         }
                       }
-                      variant="infoText"
                     >
                       <ForwardRef
                         aria-atomic="true"
@@ -668,13 +665,12 @@ exports[`Input should not have the validation section 1`] = `
                             "display": "none",
                           }
                         }
-                        variant="infoText"
                       >
-                        <span
+                        <p
                           aria-atomic="true"
                           aria-live="polite"
                           aria-relevant="additions text"
-                          className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                          className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                           id="hv-input-7-description-notification"
                           style={
                             Object {
@@ -1304,7 +1300,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                           "display": "none",
                         }
                       }
-                      variant="infoText"
                     >
                       <ForwardRef
                         className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -1338,10 +1333,9 @@ exports[`Input should pass other props to the child input component 1`] = `
                             "display": "none",
                           }
                         }
-                        variant="infoText"
                       >
-                        <span
-                          className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                        <p
+                          className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                           id="hv-input-9-description"
                           style={
                             Object {
@@ -1362,7 +1356,6 @@ exports[`Input should pass other props to the child input component 1`] = `
                           "display": "none",
                         }
                       }
-                      variant="infoText"
                     >
                       <ForwardRef
                         aria-atomic="true"
@@ -1399,13 +1392,12 @@ exports[`Input should pass other props to the child input component 1`] = `
                             "display": "none",
                           }
                         }
-                        variant="infoText"
                       >
-                        <span
+                        <p
                           aria-atomic="true"
                           aria-live="polite"
                           aria-relevant="additions text"
-                          className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                          className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                           id="hv-input-9-description-notification"
                           style={
                             Object {
@@ -1995,7 +1987,6 @@ exports[`Input should render correctly 1`] = `
                           "display": "none",
                         }
                       }
-                      variant="infoText"
                     >
                       <ForwardRef
                         className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -2029,10 +2020,9 @@ exports[`Input should render correctly 1`] = `
                             "display": "none",
                           }
                         }
-                        variant="infoText"
                       >
-                        <span
-                          className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                        <p
+                          className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                           id="hv-input-2-description"
                           style={
                             Object {
@@ -2053,7 +2043,6 @@ exports[`Input should render correctly 1`] = `
                           "display": "none",
                         }
                       }
-                      variant="infoText"
                     >
                       <ForwardRef
                         aria-atomic="true"
@@ -2090,13 +2079,12 @@ exports[`Input should render correctly 1`] = `
                             "display": "none",
                           }
                         }
-                        variant="infoText"
                       >
-                        <span
+                        <p
                           aria-atomic="true"
                           aria-live="polite"
                           aria-relevant="additions text"
-                          className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                          className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                           id="hv-input-2-description-notification"
                           style={
                             Object {
