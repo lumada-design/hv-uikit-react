@@ -208,6 +208,10 @@ TimeRepresentation.story = {
   parameters: {
     docs: {
       storyDescription: "Representation of time related data."
+    },
+    eyes: {
+      // excluded due inconstant position of chart subtitles
+      include: false
     }
   }
 };
