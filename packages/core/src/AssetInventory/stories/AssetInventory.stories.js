@@ -4,6 +4,7 @@ import {
   Cards,
   Connect,
   Delete,
+  Fail,
   Level1,
   Level2Average,
   Level3Bad,
@@ -17,6 +18,7 @@ import {
   HvAssetInventory,
   HvCard,
   HvCardView,
+  HvEmptyState,
   HvGrid,
   HvKpi,
   HvListView,
@@ -295,6 +297,10 @@ export const Main = () => {
     relatedAssets: "Track B, Load 2 Brake"
   });
 
+  const EmptyComponent = (
+    <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+  );
+
   const values = (num = 10) =>
     Array.from(Array(num).keys(), id => ({
       id: `id_${id}`,
@@ -321,8 +327,18 @@ export const Main = () => {
       ]}
       sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
-      <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
-      <HvListView id="list" icon={<List />} renderer={rowRenderer} />
+      <HvCardView
+        id="card"
+        icon={<Cards />}
+        renderer={cardRenderer}
+        emptyComponent={EmptyComponent}
+      />
+      <HvListView
+        id="list"
+        icon={<List />}
+        renderer={rowRenderer}
+        emptyComponent={EmptyComponent}
+      />
     </HvAssetInventory>
   );
 };
@@ -1825,6 +1841,10 @@ AccessibilityList.story = {
   parameters: {
     docs: {
       disable: true
+    },
+    eyes: {
+      // excluded due to the inconsistent viewport, opened applitools request (34169)
+      include: false
     }
   }
 };

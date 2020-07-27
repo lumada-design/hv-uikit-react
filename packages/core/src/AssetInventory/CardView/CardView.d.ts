@@ -51,6 +51,10 @@ export interface HvCardViewProps
    */
   innerCardContent?: React.ReactNode;
   /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent: React.ReactNode;
+  /**
    * Configuration settings for the view.
    */
   viewConfiguration?: CardViewConfiguration;
