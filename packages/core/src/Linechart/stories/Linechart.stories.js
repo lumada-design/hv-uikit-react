@@ -210,7 +210,7 @@ TimeRepresentation.story = {
       storyDescription: "Representation of time related data."
     },
     eyes: {
-      // excluded due inconstant position of chart subtitles
+      // excluded due inconstant position of chart subtitles, opened applitools request ( 34213 )
       include: false
     }
   }
