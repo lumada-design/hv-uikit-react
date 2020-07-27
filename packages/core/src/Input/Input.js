@@ -163,7 +163,9 @@ const HvInput = props => {
    *
    * @returns {undefined}
    */
-  const onInputBlurHandler = () => {
+  const onInputBlurHandler = event => {
+    if (event.relatedTarget) return;
+
     let validationStateResult;
     let warningTextResult = null;
 
