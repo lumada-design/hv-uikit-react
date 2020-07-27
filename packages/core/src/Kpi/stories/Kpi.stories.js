@@ -2,7 +2,7 @@ import React from "react";
 import Chart from "react-google-charts";
 import {
   Level0Good as Success,
-  UpXS as ArrowUp,
+  DropUpXS as ArrowUp,
   Level2Bad as Average,
   BottomXS as ArrowDown,
   Level3

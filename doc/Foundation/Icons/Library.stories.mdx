@@ -2,6 +2,8 @@ import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import IconLibrary from "./Library";
 import { ActualSize } from "@hv/uikit-react-icons/dist";
 import * as iconComponentList from "@hv/uikit-react-icons/dist";
+import { FemaleRunning } from "@hv/uikit-react-icons/dist/pictograms";
+import * as iconPictogramComponentList from "@hv/uikit-react-icons/dist/pictograms";
 
 
 <Meta title="Foundation/Icons/Library" />
@@ -30,5 +32,33 @@ This will be the result:
 <Preview>
   <Story name="Icons">
     <IconLibrary icons={iconComponentList}/>
+  </Story>
+</Preview>
+
+
+# Pictograms library
+
+You can import our React pictograms from the icon library as follows (example for the `FemaleRunning` icon):
+
+```js
+import { FemaleRunning } from "@hv/uikit-react-icons/dist/pictograms";
+```
+
+And to use them:
+
+```jsx
+<FemaleRunning />
+```
+
+This will be the result:
+
+<Preview>
+  <FemaleRunning />
+</Preview>
+
+
+<Preview>
+  <Story name="Pictograms">
+    <IconLibrary icons={iconPictogramComponentList} widerSpacing />
   </Story>
 </Preview>

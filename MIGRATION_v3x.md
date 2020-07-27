@@ -17,6 +17,8 @@ Name alterations:
 - `Level2Average` changed to `Level2Bad`
 - `Level3Bad` changed to `Level3`
 
+Removed:
+- `UpXS` use instead `DropUpXS`
 
 ##Theme
 
