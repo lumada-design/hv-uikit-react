@@ -56,7 +56,8 @@
     "react-resize-aware": "^3.0.0",
     "react-reveal": "^1.2.2",
     "react-table": "6.8.6",
-    "react-table-hoc-fixed-columns": "2.1.1"
+    "react-table-hoc-fixed-columns": "2.1.1",
+    "shallow-equal": "^1.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
