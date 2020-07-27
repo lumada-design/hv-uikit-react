@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { HvDropdown, HvTypography } from "@hv/uikit-react-core/dist";
-import * as iconComponentList from "@hv/uikit-react-icons/dist";
 
 const iconContainer = {
   margin: "5px",
   padding: "5px",
   width: "140px",
+  display: "inherit",
+  flexDirection: "column",
+  alignItems: "center"
+};
+
+const widerIconContainer = {
+  margin: "15px",
+  padding: "15px",
+  width: "200px",
   display: "inherit",
   flexDirection: "column",
   alignItems: "center"
@@ -18,20 +26,25 @@ const dropdownSizes = [
   { id: "3", label: "L" }
 ];
 
-const keys = Array.from(new Set([...Object.keys(iconComponentList)])).sort();
-
-const Group = ({ iconSize }) => {
+const Group = ({ iconSize, widerSpacing, iconsLibrary }) => {
+  const keys = Array.from(new Set([...Object.keys(iconsLibrary)])).sort();
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {keys.map(icon => (
-        <Icon key={icon} name={icon} Component={iconComponentList[icon]} iconSize={iconSize} />
+        <Icon
+          widerSpacing={widerSpacing}
+          key={icon}
+          name={icon}
+          Component={iconsLibrary[icon]}
+          iconSize={iconSize}
+        />
       ))}
     </div>
   );
 };
 
-const Icon = ({ name, Component, iconSize }) => (
-  <div style={iconContainer}>
+const Icon = ({ widerSpacing, name, Component, iconSize }) => (
+  <div style={widerSpacing ? widerIconContainer : iconContainer}>
     <Component iconSize={iconSize && iconSize.label} />
     <HvTypography style={{ margin: "6px 0" }} variant="placeholderText">
       {name}
@@ -39,7 +52,7 @@ const Icon = ({ name, Component, iconSize }) => (
   </div>
 );
 
-const Icons = () => {
+const Icons = ({ icons, widerSpacing }) => {
   const [iconSize, setIconSize] = useState(null);
 
   return (
@@ -53,7 +66,7 @@ const Icons = () => {
           notifyChangesOnFirstRender
         />
       </div>
-      <Group iconSize={iconSize} />
+      <Group iconSize={iconSize} widerSpacing={widerSpacing} iconsLibrary={icons} />
     </div>
   );
 };

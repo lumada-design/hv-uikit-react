@@ -3,9 +3,9 @@ import Chart from "react-google-charts";
 import {
   Level0Good as Success,
   UpXS as ArrowUp,
-  Level2Average as Average,
+  Level2Bad as Average,
   BottomXS as ArrowDown,
-  Level3Bad
+  Level3
 } from "@hv/uikit-react-icons/dist";
 import { HvKpi, HvTypography, HvCard } from "../..";
 
@@ -566,7 +566,7 @@ export const SelectableNoTrendIcon = () => {
     <div style={kpiContainer}>
       <HvKpi
         labels={labels}
-        visualIndicator={<Level3Bad title="Warning" semantic="sema13" />}
+        visualIndicator={<Level3 title="Warning" semantic="sema13" />}
         trendIndicator={<TrendIndicator />}
         visualComparison={<IopsComparisonVisualAverage />}
       />

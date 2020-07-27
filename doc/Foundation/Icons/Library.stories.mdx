@@ -1,6 +1,8 @@
 import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import IconLibrary from "./Library";
 import { ActualSize } from "@hv/uikit-react-icons/dist";
+import * as iconComponentList from "@hv/uikit-react-icons/dist";
+
 
 <Meta title="Foundation/Icons/Library" />
 
@@ -27,6 +29,6 @@ This will be the result:
 
 <Preview>
   <Story name="Icons">
-    <IconLibrary />
+    <IconLibrary icons={iconComponentList}/>
   </Story>
 </Preview>

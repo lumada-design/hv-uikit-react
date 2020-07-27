@@ -11,6 +11,13 @@
 
 ## Icons
 
+Name alterations:
+- `Operation` changed to `Operations`
+- `Level1` changed to `Level1Average`
+- `Level2Average` changed to `Level2Bad`
+- `Level3Bad` changed to `Level3`
+
+
 ##Theme
 
 ### Typography
