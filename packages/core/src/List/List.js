@@ -90,7 +90,7 @@ class List extends React.Component {
     const ofLabel = (
       <>
         {selection.length}
-        <HvTypography component="span" variant="normalText">
+        <HvTypography component="span">
           {`\xa0${selectionConjunction}\xa0`}
           {list.length}
         </HvTypography>
@@ -223,7 +223,6 @@ class List extends React.Component {
 
     return (
       <HvTypography
-        variant={item.selected ? "selectedText" : "normalText"}
         className={clsx(classes.label, classes.truncate, {
           [classes.selected]: item.selected,
           [classes.textDisabled]: item.disabled,

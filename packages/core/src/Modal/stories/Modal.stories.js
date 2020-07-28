@@ -233,7 +233,7 @@ export const CustomContent = () => {
           <HvModalTitle>
             <div>
               <HvTypography variant="xxsTitle">LHR-HDIFS-03</HvTypography>
-              <HvTypography variant="normalText">HDI</HvTypography>
+              <HvTypography>HDI</HvTypography>
             </div>
           </HvModalTitle>
         }

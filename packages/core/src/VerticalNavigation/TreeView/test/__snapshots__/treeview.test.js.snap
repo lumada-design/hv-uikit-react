@@ -104,7 +104,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <ForwardRef
                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -139,7 +138,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={0}
-                variant="normalText"
               >
                 <div
                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -257,7 +255,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -292,7 +289,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -363,7 +359,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -398,7 +393,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="normalText"
                               >
                                 <div
                                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -454,7 +448,7 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 Object {
                                   "current": <div
                                     aria-current="page"
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root"
+                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -468,7 +462,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="selectedText"
                             >
                               <ForwardRef
                                 aria-current="page"
@@ -504,11 +497,10 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="selectedText"
                               >
                                 <div
                                   aria-current="page"
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root"
+                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
                                   onBlur={[Function]}
                                   onClick={[Function]}
                                   onFocus={[Function]}
@@ -575,7 +567,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -610,7 +601,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="normalText"
                               >
                                 <div
                                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -696,7 +686,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -731,7 +720,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="normalText"
                               >
                                 <div
                                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -828,7 +816,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
-              variant="normalText"
             >
               <ForwardRef
                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -863,7 +850,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={0}
-                variant="normalText"
               >
                 <div
                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -981,7 +967,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1016,7 +1001,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1084,7 +1068,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1119,7 +1102,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1187,7 +1169,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={0}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1222,7 +1203,6 @@ exports[`<TreeView /> navigation tree should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={0}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1353,7 +1333,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={-1}
-              variant="normalText"
             >
               <ForwardRef
                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1388,7 +1367,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={-1}
-                variant="normalText"
               >
                 <div
                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1508,7 +1486,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1543,7 +1520,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1616,7 +1592,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={-1}
-                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1651,7 +1626,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={-1}
-                                variant="normalText"
                               >
                                 <div
                                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1707,7 +1681,7 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               innerRef={
                                 Object {
                                   "current": <div
-                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root"
+                                    class="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
                                     role="button"
                                     tabindex="0"
                                   >
@@ -1721,7 +1695,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={0}
-                              variant="selectedText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1756,10 +1729,9 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={0}
-                                variant="selectedText"
                               >
                                 <div
-                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root"
+                                  className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
                                   onBlur={[Function]}
                                   onClick={[Function]}
                                   onFocus={[Function]}
@@ -1827,7 +1799,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={-1}
-                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1862,7 +1833,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={-1}
-                                variant="normalText"
                               >
                                 <div
                                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -1949,7 +1919,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                               onKeyDown={[Function]}
                               role="button"
                               tabIndex={-1}
-                              variant="normalText"
                             >
                               <ForwardRef
                                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -1984,7 +1953,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                                 onKeyDown={[Function]}
                                 role="button"
                                 tabIndex={-1}
-                                variant="normalText"
                               >
                                 <div
                                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -2082,7 +2050,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
               onKeyDown={[Function]}
               role="button"
               tabIndex={-1}
-              variant="normalText"
             >
               <ForwardRef
                 className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -2117,7 +2084,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                 onKeyDown={[Function]}
                 role="button"
                 tabIndex={-1}
-                variant="normalText"
               >
                 <div
                   className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -2237,7 +2203,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -2272,7 +2237,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -2341,7 +2305,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -2376,7 +2339,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"
@@ -2445,7 +2407,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                       onKeyDown={[Function]}
                       role="button"
                       tabIndex={-1}
-                      variant="normalText"
                     >
                       <ForwardRef
                         className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled"
@@ -2480,7 +2441,6 @@ exports[`<TreeView /> treeview should render correctly 1`] = `
                         onKeyDown={[Function]}
                         role="button"
                         tabIndex={-1}
-                        variant="normalText"
                       >
                         <div
                           className="HvVerticalNavigationTreeViewItem-content HvVerticalNavigationTreeViewItem-contentFocusDisabled HvTypography-root HvTypography-normalText"

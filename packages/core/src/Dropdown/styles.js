@@ -35,7 +35,7 @@ const styles = theme => ({
     cursor: "not-allowed"
   },
   label: {
-    ...theme.hv.typography.labelText,
+    ...theme.hv.typography.highlightText,
     fontFamily: theme.hv.typography.fontFamily,
     marginBottom: theme.hv.spacing.xs + 1,
     display: "block"

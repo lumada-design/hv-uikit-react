@@ -43,7 +43,7 @@ const HvBulkActions = props => {
   }, [numSelected]);
 
   const defaultSelectAllLabel = (
-    <HvTypography component="span" variant="normalText">
+    <HvTypography component="span">
       {!editMode ? (
         <b>{labels.selectAll}</b>
       ) : (

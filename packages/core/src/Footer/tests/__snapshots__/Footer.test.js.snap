@@ -61,7 +61,6 @@ exports[`Footer should render correctly 1`] = `
       >
         <WithStyles(ForwardRef)
           className="HvFooter-copyright"
-          variant="sText"
         >
           <ForwardRef
             className="HvFooter-copyright"
@@ -89,13 +88,12 @@ exports[`Footer should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
-            variant="sText"
           >
-            <span
-              className="HvFooter-copyright HvTypography-root"
+            <p
+              className="HvFooter-copyright HvTypography-root HvTypography-normalText"
             >
               © Hitachi Vantara Corporation 2020. All Rights Reserved.
-            </span>
+            </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
       </div>

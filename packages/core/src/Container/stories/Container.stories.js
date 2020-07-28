@@ -20,7 +20,7 @@ export const Main = () => {
       borderColor: theme.hv.palette.atmosphere.atmo4,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.normalText
     },
     paper: {
       padding: theme.spacing(2),
@@ -48,7 +48,7 @@ export const SmMaxWidth = () => {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.normalText
     },
     paper: {
       padding: theme.spacing(2),
@@ -84,7 +84,7 @@ export const FullWidth = () => {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       backgroundColor: theme.hv.palette.atmosphere.atmo2,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.normalText
     },
     paper: {
       padding: theme.spacing(2),

@@ -401,7 +401,7 @@ class HvDatePicker extends React.Component {
     return (
       <Typography
         id={setId(id, "label")}
-        variant="labelText"
+        variant="highlightText"
         component="label"
         className={classes.label}
       >

@@ -1661,7 +1661,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
-                                              variant="normalText"
                                             >
                                               <ForwardRef
                                                 className="HvList-label HvList-truncate"
@@ -1689,7 +1688,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                   }
                                                 }
-                                                variant="normalText"
                                               >
                                                 <p
                                                   className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -1860,7 +1858,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
-                                              variant="normalText"
                                             >
                                               <ForwardRef
                                                 className="HvList-label HvList-truncate"
@@ -1888,7 +1885,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                   }
                                                 }
-                                                variant="normalText"
                                               >
                                                 <p
                                                   className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -2059,7 +2055,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
-                                              variant="normalText"
                                             >
                                               <ForwardRef
                                                 className="HvList-label HvList-truncate"
@@ -2087,7 +2082,6 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                   }
                                                 }
-                                                variant="normalText"
                                               >
                                                 <p
                                                   className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -3592,7 +3586,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
-                                              variant="normalText"
                                             >
                                               <ForwardRef
                                                 className="HvList-label HvList-truncate"
@@ -3620,7 +3613,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                   }
                                                 }
-                                                variant="normalText"
                                               >
                                                 <p
                                                   className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -3791,7 +3783,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
-                                              variant="normalText"
                                             >
                                               <ForwardRef
                                                 className="HvList-label HvList-truncate"
@@ -3819,7 +3810,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                   }
                                                 }
-                                                variant="normalText"
                                               >
                                                 <p
                                                   className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -3990,7 +3980,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           <Text>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
-                                              variant="normalText"
                                             >
                                               <ForwardRef
                                                 className="HvList-label HvList-truncate"
@@ -4018,7 +4007,6 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                     "xxsTitle": "HvTypography-xxsTitle",
                                                   }
                                                 }
-                                                variant="normalText"
                                               >
                                                 <p
                                                   className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"

@@ -99,7 +99,7 @@ const MultiButton = ({
         {...other}
       >
         {type !== "text" && iconButton}
-        {type !== "icon" && <div className={classes.labelText}>{value}</div>}
+        {type !== "icon" && <div className={classes.highlightText}>{value}</div>}
       </HvButton>
     );
   };
@@ -141,7 +141,7 @@ MultiButton.propTypes = {
     /**
      * Styles applied to the button label.
      */
-    labelText: PropTypes.string,
+    highlightText: PropTypes.string,
     /**
      * Styles applied to the each button.
      */

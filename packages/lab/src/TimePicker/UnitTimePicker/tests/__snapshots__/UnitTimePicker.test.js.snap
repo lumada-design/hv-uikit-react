@@ -683,7 +683,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "display": "none",
                               }
                             }
-                            variant="infoText"
+                            variant="normalText"
                           >
                             <ForwardRef
                               className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -717,10 +717,10 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "display": "none",
                                 }
                               }
-                              variant="infoText"
+                              variant="normalText"
                             >
-                              <span
-                                className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                              <p
+                                className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                 id="hv-input-2-description"
                                 style={
                                   Object {
@@ -741,7 +741,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "display": "none",
                               }
                             }
-                            variant="infoText"
+                            variant="normalText"
                           >
                             <ForwardRef
                               aria-atomic="true"
@@ -778,13 +778,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "display": "none",
                                 }
                               }
-                              variant="infoText"
+                              variant="normalText"
                             >
-                              <span
+                              <p
                                 aria-atomic="true"
                                 aria-live="polite"
                                 aria-relevant="additions text"
-                                className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                 id="hv-input-2-description-notification"
                                 style={
                                   Object {

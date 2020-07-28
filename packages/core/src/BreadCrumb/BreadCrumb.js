@@ -17,7 +17,7 @@ const removeExtension = label =>
 
 const LastPathElement = ({ classes, label }) => (
   <li className={classes.centerContainer}>
-    <HvTypography variant="sText">{startCase(removeExtension(label))}</HvTypography>
+    <HvTypography>{startCase(removeExtension(label))}</HvTypography>
   </li>
 );
 
@@ -35,7 +35,7 @@ const Page = ({ Component, onClick, elem, classes }) => (
     classes={{ a: classes.a }}
   >
     <div className={classes.centerContainer}>
-      <HvTypography variant="sLink" className={classes.link}>
+      <HvTypography variant="xsInlineLink" className={classes.link}>
         {startCase(elem.label)}
       </HvTypography>
     </div>

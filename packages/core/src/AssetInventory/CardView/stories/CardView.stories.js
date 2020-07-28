@@ -93,22 +93,18 @@ export const DefaultRender = () => {
     <>
       <div>
         <div>
-          <HvTypography variant="labelText">ID</HvTypography>
+          <HvTypography variant="highlightText">ID</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" className={classes.text}>
-            {values.data.firstContent}
-          </HvTypography>
+          <HvTypography className={classes.text}>{values.data.firstContent}</HvTypography>
         </div>
       </div>
       <div style={{ marginTop: "15px" }}>
         <div>
-          <HvTypography variant="labelText">Last connected</HvTypography>
+          <HvTypography variant="highlightText">Last connected</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" className={classes.text}>
-            {values.data.secondContent}
-          </HvTypography>
+          <HvTypography className={classes.text}>{values.data.secondContent}</HvTypography>
         </div>
       </div>
     </>

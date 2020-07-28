@@ -20,14 +20,14 @@ export const Main = () => {
       marginTop: theme.spacing(2),
       flex: 1,
       fontFamily: theme.hv.typography.fontFamily,
-      ...theme.hv.typography.sText
+      ...theme.hv.typography.normalText
     },
     paper: {
       padding: theme.spacing(2),
       height: 150,
       textAlign: "center",
       backgroundColor: theme.hv.palette.semantic.sema7,
-      ...theme.hv.typography.sText,
+      ...theme.hv.typography.normalText,
       color: theme.hv.palette.base.base2,
       display: "flex",
       alignItems: "center"
@@ -90,7 +90,7 @@ export const Main = () => {
 
 const Box = ({ text, classes }) => (
   <div className={classes.box}>
-    <HvTypography variant="sText">{text}</HvTypography>
+    <HvTypography>{text}</HvTypography>
   </div>
 );
 

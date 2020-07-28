@@ -631,7 +631,7 @@ exports[`Tooltip withStyles should render correctly 1`] = `
             >
               <div>
                 <WithStyles(ForwardRef)
-                  variant="labelText"
+                  variant="highlightText"
                 >
                   <ForwardRef
                     classes={
@@ -658,10 +658,10 @@ exports[`Tooltip withStyles should render correctly 1`] = `
                         "xxsTitle": "HvTypography-xxsTitle",
                       }
                     }
-                    variant="labelText"
+                    variant="highlightText"
                   >
-                    <span
-                      className="HvTypography-root"
+                    <p
+                      className="HvTypography-root HvTypography-highlightText"
                     />
                   </ForwardRef>
                 </WithStyles(ForwardRef)>

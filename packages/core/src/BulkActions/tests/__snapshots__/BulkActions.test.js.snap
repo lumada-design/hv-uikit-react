@@ -139,7 +139,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
             label={
               <ForwardRef(WithStyles)
                 component="span"
-                variant="normalText"
               >
                 <b>
                   All
@@ -169,7 +168,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
               label={
                 <ForwardRef(WithStyles)
                   component="span"
-                  variant="normalText"
                 >
                   <b>
                     All
@@ -221,7 +219,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                 label={
                   <ForwardRef(WithStyles)
                     component="span"
-                    variant="normalText"
                   >
                     <b>
                       All
@@ -276,7 +273,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   label={
                     <ForwardRef(WithStyles)
                       component="span"
-                      variant="normalText"
                     >
                       <b>
                         All
@@ -616,7 +612,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         >
                           <WithStyles(ForwardRef)
                             component="span"
-                            variant="normalText"
                           >
                             <ForwardRef
                               classes={
@@ -644,7 +639,6 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                 }
                               }
                               component="span"
-                              variant="normalText"
                             >
                               <span
                                 className="HvTypography-root HvTypography-normalText"
@@ -1685,7 +1679,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
             label={
               <ForwardRef(WithStyles)
                 component="span"
-                variant="normalText"
               >
                 <b>
                   All
@@ -1714,7 +1707,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
               label={
                 <ForwardRef(WithStyles)
                   component="span"
-                  variant="normalText"
                 >
                   <b>
                     All
@@ -1764,7 +1756,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 label={
                   <ForwardRef(WithStyles)
                     component="span"
-                    variant="normalText"
                   >
                     <b>
                       All
@@ -1817,7 +1808,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   label={
                     <ForwardRef(WithStyles)
                       component="span"
-                      variant="normalText"
                     >
                       <b>
                         All
@@ -2151,7 +2141,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         >
                           <WithStyles(ForwardRef)
                             component="span"
-                            variant="normalText"
                           >
                             <ForwardRef
                               classes={
@@ -2179,7 +2168,6 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                 }
                               }
                               component="span"
-                              variant="normalText"
                             >
                               <span
                                 className="HvTypography-root HvTypography-normalText"
@@ -4005,7 +3993,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
             label={
               <ForwardRef(WithStyles)
                 component="span"
-                variant="normalText"
               >
                 <React.Fragment>
                   <b>
@@ -4037,7 +4024,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
               label={
                 <ForwardRef(WithStyles)
                   component="span"
-                  variant="normalText"
                 >
                   <React.Fragment>
                     <b>
@@ -4108,7 +4094,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                 label={
                   <ForwardRef(WithStyles)
                     component="span"
-                    variant="normalText"
                   >
                     <React.Fragment>
                       <b>
@@ -4182,7 +4167,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                   label={
                     <ForwardRef(WithStyles)
                       component="span"
-                      variant="normalText"
                     >
                       <React.Fragment>
                         <b>
@@ -4597,7 +4581,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                         >
                           <WithStyles(ForwardRef)
                             component="span"
-                            variant="normalText"
                           >
                             <ForwardRef
                               classes={
@@ -4625,7 +4608,6 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                 }
                               }
                               component="span"
-                              variant="normalText"
                             >
                               <span
                                 className="HvTypography-root HvTypography-normalText"

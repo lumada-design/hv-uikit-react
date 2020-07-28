@@ -26,19 +26,17 @@ const getProgressText = (classes, data, progressConjunctionLabel) => {
   return (
     <>
       {!hasFailed && data.progress != null && (
-        <HvTypography variant="labelText">{`${convertUnits(data.progress)}`}</HvTypography>
+        <HvTypography variant="highlightText">{`${convertUnits(data.progress)}`}</HvTypography>
       )}
 
       {!hasFailed && data.size && (
-        <HvTypography variant="sText">
+        <HvTypography>
           {`\xa0${progressConjunctionLabel}\xa0${convertUnits(data.size)}`}
         </HvTypography>
       )}
 
       {hasFailed && data.errorMessage && (
-        <HvTypography variant="sText" className={classes.fail}>
-          {data.errorMessage}
-        </HvTypography>
+        <HvTypography className={classes.fail}>{data.errorMessage}</HvTypography>
       )}
     </>
   );
@@ -81,9 +79,7 @@ const File = ({
 
       {statusIcon}
 
-      <HvTypography className={classes.nameText} variant="sText">
-        {data.name}
-      </HvTypography>
+      <HvTypography className={classes.nameText}>{data.name}</HvTypography>
 
       <span className={classes.progressTextContainer}>{progressText}</span>
 

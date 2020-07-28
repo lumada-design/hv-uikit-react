@@ -46,7 +46,7 @@ const styles = theme => ({
     paddingTop: theme.hv.spacing.xs
   },
   disabled: {
-    ...theme.hv.typography.infoText
+    ...theme.hv.typography.normalText
   },
   invalid: {
     color: theme.hv.palette.accent.acce3

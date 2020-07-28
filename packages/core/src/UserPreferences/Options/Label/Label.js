@@ -8,7 +8,7 @@ import Typography from "../../../Typography";
 const Label = ({ className, children, classes, ...others }) => (
   <Typography
     component="li"
-    variant="labelText"
+    variant="highlightText"
     className={clsx(className, classes.root)}
     {...others}
   >

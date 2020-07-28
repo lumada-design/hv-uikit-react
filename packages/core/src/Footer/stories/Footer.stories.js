@@ -26,7 +26,7 @@ export const CustomLabels = () => {
       name="Hitachi Vantara"
       copyright="© Hitachi Vantara Corporation 2018"
       links={
-        <HvTypography component="div" variant="inlineLink">
+        <HvTypography component="div" variant="link">
           <HvLink route="https://www.hitachivantara.com">License information</HvLink>
         </HvTypography>
       }

@@ -46,7 +46,7 @@ const Navigation = ({
         onKeyDown={onTextClick && (event => onkeyDownHandler(event, onTextClick))}
         tabIndex={onTextClick ? 0 : -1}
       >
-        <HvTypography variant="normalText">{navigationText}</HvTypography>
+        <HvTypography>{navigationText}</HvTypography>
       </div>
 
       <DropRightIcon

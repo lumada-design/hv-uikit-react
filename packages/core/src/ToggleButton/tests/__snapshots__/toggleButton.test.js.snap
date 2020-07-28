@@ -1858,9 +1858,7 @@ exports[`ToggleButton should render correctly 1`] = `
               }
             }
             title={
-              <ForwardRef(WithStyles)
-                variant="infoText"
-              >
+              <ForwardRef(WithStyles)>
                 Open
               </ForwardRef(WithStyles)>
             }
@@ -1892,9 +1890,7 @@ exports[`ToggleButton should render correctly 1`] = `
                 }
               }
               title={
-                <ForwardRef(WithStyles)
-                  variant="infoText"
-                >
+                <ForwardRef(WithStyles)>
                   Open
                 </ForwardRef(WithStyles)>
               }
@@ -1937,9 +1933,7 @@ exports[`ToggleButton should render correctly 1`] = `
                   }
                 }
                 title={
-                  <ForwardRef(WithStyles)
-                    variant="infoText"
-                  >
+                  <ForwardRef(WithStyles)>
                     Open
                   </ForwardRef(WithStyles)>
                 }
@@ -1991,9 +1985,7 @@ exports[`ToggleButton should render correctly 1`] = `
                     }
                   }
                   title={
-                    <ForwardRef(WithStyles)
-                      variant="infoText"
-                    >
+                    <ForwardRef(WithStyles)>
                       Open
                     </ForwardRef(WithStyles)>
                   }

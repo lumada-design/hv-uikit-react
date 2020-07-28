@@ -499,16 +499,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-1-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-1-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-1-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -532,11 +532,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -674,16 +674,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-2-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-2-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-2-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -707,11 +707,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -849,16 +849,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-3-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-3-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-3-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -882,11 +882,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -1024,16 +1024,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-4-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-4-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-4-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -1057,11 +1057,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -1199,16 +1199,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-5-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-5-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-5-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -1232,11 +1232,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -1374,16 +1374,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-6-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-6-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-6-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -1407,11 +1407,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -1697,16 +1697,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="test-dropdown-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="test-dropdown-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="test-dropdown-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -3268,7 +3268,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                                                       "display": "none",
                                                                     }
                                                                   }
-                                                                  variant="infoText"
                                                                 >
                                                                   <ForwardRef
                                                                     className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -3302,10 +3301,9 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                                                         "display": "none",
                                                                       }
                                                                     }
-                                                                    variant="infoText"
                                                                   >
-                                                                    <span
-                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                                                    <p
+                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                                                       id="test-dropdown-values-search-description"
                                                                       style={
                                                                         Object {
@@ -3326,7 +3324,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                                                       "display": "none",
                                                                     }
                                                                   }
-                                                                  variant="infoText"
                                                                 >
                                                                   <ForwardRef
                                                                     aria-atomic="true"
@@ -3363,13 +3360,12 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                                                         "display": "none",
                                                                       }
                                                                     }
-                                                                    variant="infoText"
                                                                   >
-                                                                    <span
+                                                                    <p
                                                                       aria-atomic="true"
                                                                       aria-live="polite"
                                                                       aria-relevant="additions text"
-                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                                                       id="test-dropdown-values-search-description-notification"
                                                                       style={
                                                                         Object {
@@ -7558,16 +7554,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-1-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-1-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-1-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -7591,11 +7587,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -7733,16 +7729,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-2-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-2-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-2-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -7766,11 +7762,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -7908,16 +7904,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-3-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-3-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-3-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -7941,11 +7937,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -8083,16 +8079,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-4-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-4-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-4-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -8116,11 +8112,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -8258,16 +8254,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-5-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-5-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-5-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -8291,11 +8287,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -8433,16 +8429,16 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-6-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-6-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-6-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -8466,11 +8462,11 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -8877,7 +8873,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                                       <Text>
                                                         <WithStyles(ForwardRef)
                                                           className="HvList-label HvList-truncate"
-                                                          variant="normalText"
                                                         >
                                                           <ForwardRef
                                                             className="HvList-label HvList-truncate"
@@ -8905,7 +8900,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                                                 "xxsTitle": "HvTypography-xxsTitle",
                                                               }
                                                             }
-                                                            variant="normalText"
                                                           >
                                                             <p
                                                               className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -9076,7 +9070,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                                       <Text>
                                                         <WithStyles(ForwardRef)
                                                           className="HvList-label HvList-truncate"
-                                                          variant="normalText"
                                                         >
                                                           <ForwardRef
                                                             className="HvList-label HvList-truncate"
@@ -9104,7 +9097,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                                                 "xxsTitle": "HvTypography-xxsTitle",
                                                               }
                                                             }
-                                                            variant="normalText"
                                                           >
                                                             <p
                                                               className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -9275,7 +9267,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                                       <Text>
                                                         <WithStyles(ForwardRef)
                                                           className="HvList-label HvList-truncate"
-                                                          variant="normalText"
                                                         >
                                                           <ForwardRef
                                                             className="HvList-label HvList-truncate"
@@ -9303,7 +9294,6 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                                                 "xxsTitle": "HvTypography-xxsTitle",
                                                               }
                                                             }
-                                                            variant="normalText"
                                                           >
                                                             <p
                                                               className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -9832,16 +9822,16 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                         class="HvSuggestions-root HvInput-suggestionsContainer"
                                         id="hv-dropdown-1-values-search-suggestions"
                                       />
-                                      <span
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                      <p
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-1-values-search-description"
                                         style="display: none;"
                                       />
-                                      <span
+                                      <p
                                         aria-atomic="true"
                                         aria-live="polite"
                                         aria-relevant="additions text"
-                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                        class="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                         id="hv-dropdown-1-values-search-description-notification"
                                         style="display: none;"
                                       />
@@ -9865,11 +9855,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                           role="option"
                                           tabindex="0"
                                         >
-                                          <span
-                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                          <p
+                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                           >
                                             Value 1
-                                          </span>
+                                          </p>
                                         </li>
                                         <li
                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11173,7 +11163,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                       "display": "none",
                                                                     }
                                                                   }
-                                                                  variant="infoText"
                                                                 >
                                                                   <ForwardRef
                                                                     className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -11207,10 +11196,9 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                         "display": "none",
                                                                       }
                                                                     }
-                                                                    variant="infoText"
                                                                   >
-                                                                    <span
-                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+                                                                    <p
+                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                                                       id="hv-dropdown-1-values-search-description"
                                                                       style={
                                                                         Object {
@@ -11231,7 +11219,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                       "display": "none",
                                                                     }
                                                                   }
-                                                                  variant="infoText"
                                                                 >
                                                                   <ForwardRef
                                                                     aria-atomic="true"
@@ -11268,13 +11255,12 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                         "display": "none",
                                                                       }
                                                                     }
-                                                                    variant="infoText"
                                                                   >
-                                                                    <span
+                                                                    <p
                                                                       aria-atomic="true"
                                                                       aria-live="polite"
                                                                       aria-relevant="additions text"
-                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+                                                                      className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
                                                                       id="hv-dropdown-1-values-search-description-notification"
                                                                       style={
                                                                         Object {
@@ -11424,11 +11410,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                           role="option"
                                                           tabindex="0"
                                                         >
-                                                          <span
-                                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                          <p
+                                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                           >
                                                             Value 1
-                                                          </span>
+                                                          </p>
                                                         </li>
                                                         <li
                                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11497,11 +11483,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                             role="option"
                                                             tabindex="0"
                                                           >
-                                                            <span
-                                                              class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                            <p
+                                                              class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                             >
                                                               Value 1
-                                                            </span>
+                                                            </p>
                                                           </li>
                                                           <li
                                                             class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11554,7 +11540,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                       <Text>
                                                         <WithStyles(ForwardRef)
                                                           className="HvList-label HvList-truncate HvList-selected"
-                                                          variant="selectedText"
                                                         >
                                                           <ForwardRef
                                                             className="HvList-label HvList-truncate HvList-selected"
@@ -11582,13 +11567,12 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                 "xxsTitle": "HvTypography-xxsTitle",
                                                               }
                                                             }
-                                                            variant="selectedText"
                                                           >
-                                                            <span
-                                                              className="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                            <p
+                                                              className="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                             >
                                                               Value 1
-                                                            </span>
+                                                            </p>
                                                           </ForwardRef>
                                                         </WithStyles(ForwardRef)>
                                                       </Text>
@@ -11626,11 +11610,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                           role="option"
                                                           tabindex="0"
                                                         >
-                                                          <span
-                                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                          <p
+                                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                           >
                                                             Value 1
-                                                          </span>
+                                                          </p>
                                                         </li>
                                                         <li
                                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11699,11 +11683,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                             role="option"
                                                             tabindex="0"
                                                           >
-                                                            <span
-                                                              class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                            <p
+                                                              class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                             >
                                                               Value 1
-                                                            </span>
+                                                            </p>
                                                           </li>
                                                           <li
                                                             class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11755,7 +11739,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                       <Text>
                                                         <WithStyles(ForwardRef)
                                                           className="HvList-label HvList-truncate"
-                                                          variant="normalText"
                                                         >
                                                           <ForwardRef
                                                             className="HvList-label HvList-truncate"
@@ -11783,7 +11766,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                 "xxsTitle": "HvTypography-xxsTitle",
                                                               }
                                                             }
-                                                            variant="normalText"
                                                           >
                                                             <p
                                                               className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"
@@ -11827,11 +11809,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                           role="option"
                                                           tabindex="0"
                                                         >
-                                                          <span
-                                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                          <p
+                                                            class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                           >
                                                             Value 1
-                                                          </span>
+                                                          </p>
                                                         </li>
                                                         <li
                                                           class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11900,11 +11882,11 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                             role="option"
                                                             tabindex="0"
                                                           >
-                                                            <span
-                                                              class="HvList-label HvList-truncate HvList-selected HvTypography-root"
+                                                            <p
+                                                              class="HvList-label HvList-truncate HvList-selected HvTypography-root HvTypography-normalText"
                                                             >
                                                               Value 1
-                                                            </span>
+                                                            </p>
                                                           </li>
                                                           <li
                                                             class="HvList-listItem HvList-condensed HvFocus-root HvFocus-focusDisabled"
@@ -11956,7 +11938,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                       <Text>
                                                         <WithStyles(ForwardRef)
                                                           className="HvList-label HvList-truncate"
-                                                          variant="normalText"
                                                         >
                                                           <ForwardRef
                                                             className="HvList-label HvList-truncate"
@@ -11984,7 +11965,6 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                 "xxsTitle": "HvTypography-xxsTitle",
                                                               }
                                                             }
-                                                            variant="normalText"
                                                           >
                                                             <p
                                                               className="HvList-label HvList-truncate HvTypography-root HvTypography-normalText"

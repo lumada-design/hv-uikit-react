@@ -25,7 +25,7 @@ const withTooltip = (
     setShowTooltip(false);
   };
 
-  const title = <Typography variant="infoText">{label}</Typography>;
+  const title = <Typography>{label}</Typography>;
 
   return (
     <Tooltip

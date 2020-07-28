@@ -13,7 +13,7 @@ const MessageElement = ({ iconElement, showMessage, icon, message }) => {
   return (
     <div className={showMessage}>
       {iconClone}
-      <HvTypography variant="normalText">{message}</HvTypography>
+      <HvTypography>{message}</HvTypography>
     </div>
   );
 };

@@ -178,9 +178,7 @@ exports[`Barchart should render correctly 1`] = `
             <div
               className="HvChart-subtitle"
             >
-              <WithStyles(ForwardRef)
-                variant="sText"
-              >
+              <WithStyles(ForwardRef)>
                 <ForwardRef
                   classes={
                     Object {
@@ -206,13 +204,12 @@ exports[`Barchart should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-                  variant="sText"
                 >
-                  <span
-                    className="HvTypography-root"
+                  <p
+                    className="HvTypography-root HvTypography-normalText"
                   >
                     Sales performance (YTD)
-                  </span>
+                  </p>
                 </ForwardRef>
               </WithStyles(ForwardRef)>
             </div>

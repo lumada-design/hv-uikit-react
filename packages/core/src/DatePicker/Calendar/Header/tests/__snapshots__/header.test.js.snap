@@ -27,7 +27,7 @@ exports[`<Header /> should render correctly 1`] = `
   >
     <WithStyles(ForwardRef)
       className="HvDatePickerHeader-rangeLabel"
-      variant="labelText"
+      variant="highlightText"
     >
       <ForwardRef
         className="HvDatePickerHeader-rangeLabel"
@@ -55,13 +55,13 @@ exports[`<Header /> should render correctly 1`] = `
             "xxsTitle": "HvTypography-xxsTitle",
           }
         }
-        variant="labelText"
+        variant="highlightText"
       >
-        <span
-          className="HvDatePickerHeader-rangeLabel HvTypography-root"
+        <p
+          className="HvDatePickerHeader-rangeLabel HvTypography-root HvTypography-highlightText"
         >
           Mock text for the top text
-        </span>
+        </p>
       </ForwardRef>
     </WithStyles(ForwardRef)>
     <div
@@ -71,9 +71,7 @@ exports[`<Header /> should render correctly 1`] = `
       <div
         className="HvDatePickerHeader-headerDayOfWeek"
       >
-        <WithStyles(ForwardRef)
-          variant="normalText"
-        >
+        <WithStyles(ForwardRef)>
           <ForwardRef
             classes={
               Object {
@@ -99,7 +97,6 @@ exports[`<Header /> should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
-            variant="normalText"
           >
             <p
               className="HvTypography-root HvTypography-normalText"

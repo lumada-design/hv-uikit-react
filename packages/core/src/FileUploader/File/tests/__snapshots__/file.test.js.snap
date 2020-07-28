@@ -89,7 +89,6 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
     </WithStyles(Success)>
     <WithStyles(ForwardRef)
       className="HvFileUploaderFile-nameText"
-      variant="sText"
     >
       <ForwardRef
         className="HvFileUploaderFile-nameText"
@@ -117,20 +116,19 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
             "xxsTitle": "HvTypography-xxsTitle",
           }
         }
-        variant="sText"
       >
-        <span
-          className="HvFileUploaderFile-nameText HvTypography-root"
+        <p
+          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
         >
           somefile.png
-        </span>
+        </p>
       </ForwardRef>
     </WithStyles(ForwardRef)>
     <span
       className="HvFileUploaderFile-progressTextContainer"
     >
       <WithStyles(ForwardRef)
-        variant="labelText"
+        variant="highlightText"
       >
         <ForwardRef
           classes={
@@ -157,18 +155,16 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="labelText"
+          variant="highlightText"
         >
-          <span
-            className="HvTypography-root"
+          <p
+            className="HvTypography-root HvTypography-highlightText"
           >
             25.00B
-          </span>
+          </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
-      <WithStyles(ForwardRef)
-        variant="sText"
-      >
+      <WithStyles(ForwardRef)>
         <ForwardRef
           classes={
             Object {
@@ -194,13 +190,12 @@ exports[`File withStyles - Invalid File should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="sText"
         >
-          <span
-            className="HvTypography-root"
+          <p
+            className="HvTypography-root HvTypography-normalText"
           >
              progressConjunctionLabel 875.00B
-          </span>
+          </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
     </span>
@@ -411,7 +406,6 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
     </WithStyles(Success)>
     <WithStyles(ForwardRef)
       className="HvFileUploaderFile-nameText"
-      variant="sText"
     >
       <ForwardRef
         className="HvFileUploaderFile-nameText"
@@ -439,20 +433,19 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
             "xxsTitle": "HvTypography-xxsTitle",
           }
         }
-        variant="sText"
       >
-        <span
-          className="HvFileUploaderFile-nameText HvTypography-root"
+        <p
+          className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
         >
           somefile.png
-        </span>
+        </p>
       </ForwardRef>
     </WithStyles(ForwardRef)>
     <span
       className="HvFileUploaderFile-progressTextContainer"
     >
       <WithStyles(ForwardRef)
-        variant="labelText"
+        variant="highlightText"
       >
         <ForwardRef
           classes={
@@ -479,18 +472,16 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="labelText"
+          variant="highlightText"
         >
-          <span
-            className="HvTypography-root"
+          <p
+            className="HvTypography-root HvTypography-highlightText"
           >
             25.00B
-          </span>
+          </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
-      <WithStyles(ForwardRef)
-        variant="sText"
-      >
+      <WithStyles(ForwardRef)>
         <ForwardRef
           classes={
             Object {
@@ -516,13 +507,12 @@ exports[`File withStyles - Valid File should render correctly 1`] = `
               "xxsTitle": "HvTypography-xxsTitle",
             }
           }
-          variant="sText"
         >
-          <span
-            className="HvTypography-root"
+          <p
+            className="HvTypography-root HvTypography-normalText"
           >
              progressConjunctionLabel 875.00B
-          </span>
+          </p>
         </ForwardRef>
       </WithStyles(ForwardRef)>
     </span>

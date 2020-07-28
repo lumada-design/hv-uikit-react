@@ -186,7 +186,6 @@ class HvTextArea extends React.Component {
         {maxCharQuantity && (
           <div className={classes.characterCounter} aria-live="polite" {...countCharProps}>
             <HvTypography
-              variant="sText"
               component="span"
               aria-disabled={disabled}
               className={clsx({

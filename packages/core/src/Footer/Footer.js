@@ -24,9 +24,7 @@ const HvFooter = props => {
         {name}
       </HvTypography>
       <div className={classes.rightContainer}>
-        <HvTypography variant="sText" className={classes.copyright}>
-          {copyright}
-        </HvTypography>
+        <HvTypography className={classes.copyright}>{copyright}</HvTypography>
         {links && <div className={classes.separator} />}
         {links}
       </div>

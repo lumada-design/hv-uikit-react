@@ -16,7 +16,7 @@ const MessageContainer = ({
 }) => (
   <>
     {icon && <div className={classes.iconContainer}>{icon}</div>}
-    <HvTypography id={setId(id, "message-text")} variant="normalText" className={classes.message}>
+    <HvTypography id={setId(id, "message-text")} className={classes.message}>
       {message}
     </HvTypography>
     {actionsOnMessage && (

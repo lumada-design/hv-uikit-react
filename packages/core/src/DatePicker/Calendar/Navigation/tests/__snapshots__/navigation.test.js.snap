@@ -83,9 +83,7 @@ exports[`<Navigation /> should render correctly 1`] = `
         role="presentation"
         tabIndex={0}
       >
-        <WithStyles(ForwardRef)
-          variant="normalText"
-        >
+        <WithStyles(ForwardRef)>
           <ForwardRef
             classes={
               Object {
@@ -111,7 +109,6 @@ exports[`<Navigation /> should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
-            variant="normalText"
           >
             <p
               className="HvTypography-root HvTypography-normalText"

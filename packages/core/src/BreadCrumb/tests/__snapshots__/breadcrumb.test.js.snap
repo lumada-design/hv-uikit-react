@@ -182,7 +182,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -210,13 +210,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 1
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -339,7 +339,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -367,13 +367,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 2
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -496,7 +496,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -524,13 +524,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 3
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -653,7 +653,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -681,13 +681,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 4
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -810,7 +810,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -838,13 +838,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 5
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -967,7 +967,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -995,13 +995,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 6
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -1124,7 +1124,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -1152,13 +1152,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 7
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -1281,7 +1281,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="sLink"
+                        variant="xsInlineLink"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -1309,13 +1309,13 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="sLink"
+                          variant="xsInlineLink"
                         >
-                          <span
-                            className="HvBreadCrumb-link HvTypography-root"
+                          <p
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
                           >
                             Label 8
-                          </span>
+                          </p>
                         </ForwardRef>
                       </WithStyles(ForwardRef)>
                     </div>
@@ -1382,9 +1382,7 @@ exports[`Breadcrumb should render correctly 1`] = `
           <li
             className="HvBreadCrumb-centerContainer"
           >
-            <WithStyles(ForwardRef)
-              variant="sText"
-            >
+            <WithStyles(ForwardRef)>
               <ForwardRef
                 classes={
                   Object {
@@ -1410,13 +1408,12 @@ exports[`Breadcrumb should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
-                variant="sText"
               >
-                <span
-                  className="HvTypography-root"
+                <p
+                  className="HvTypography-root HvTypography-normalText"
                 >
                   Label 9
-                </span>
+                </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
           </li>

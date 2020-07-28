@@ -45,7 +45,7 @@ export const Main = () => (
 
 export const WithTitle = () => (
   <>
-    <HvTypography variant="labelText" style={{ margin: "0 10px 10px" }}>
+    <HvTypography variant="highlightText" style={{ margin: "0 10px 10px" }}>
       Options
     </HvTypography>
     <HvList

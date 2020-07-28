@@ -31,7 +31,6 @@ const HvHelperText = props => {
     <>
       <HvTypography
         id={localId}
-        variant="infoText"
         className={clsx(className, {
           [classes.showText]: !isVisible,
           [classes.helperDisabled]: localDisabled,
@@ -44,7 +43,6 @@ const HvHelperText = props => {
       </HvTypography>
       <HvTypography
         id={setId(localId, "notification")}
-        variant="infoText"
         className={clsx(className, {
           [classes.showText]: isVisible,
           [classes.helperDisabled]: localDisabled,

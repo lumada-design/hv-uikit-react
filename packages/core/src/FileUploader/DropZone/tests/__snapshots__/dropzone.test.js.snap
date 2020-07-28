@@ -152,7 +152,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
           component="label"
           htmlFor="dropzone1-input-file"
           id="dropzone1-input-file-label"
-          variant="labelText"
+          variant="highlightText"
         >
           <ForwardRef
             classes={
@@ -182,10 +182,10 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             component="label"
             htmlFor="dropzone1-input-file"
             id="dropzone1-input-file-label"
-            variant="labelText"
+            variant="highlightText"
           >
             <label
-              className="HvTypography-root"
+              className="HvTypography-root HvTypography-highlightText"
               htmlFor="dropzone1-input-file"
               id="dropzone1-input-file-label"
             >
@@ -193,9 +193,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
             </label>
           </ForwardRef>
         </WithStyles(ForwardRef)>
-        <WithStyles(ForwardRef)
-          variant="sText"
-        >
+        <WithStyles(ForwardRef)>
           <ForwardRef
             classes={
               Object {
@@ -221,13 +219,12 @@ exports[`Dropzone withStyles should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
-            variant="sText"
           >
-            <span
-              className="HvTypography-root"
+            <p
+              className="HvTypography-root HvTypography-normalText"
             >
               Max. file size: 1.00B
-            </span>
+            </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
       </div>
@@ -506,7 +503,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
           component="label"
           htmlFor="dropzone1-input-file"
           id="dropzone1-input-file-label"
-          variant="labelText"
+          variant="highlightText"
         >
           <ForwardRef
             classes={
@@ -536,10 +533,10 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             component="label"
             htmlFor="dropzone1-input-file"
             id="dropzone1-input-file-label"
-            variant="labelText"
+            variant="highlightText"
           >
             <label
-              className="HvTypography-root"
+              className="HvTypography-root HvTypography-highlightText"
               htmlFor="dropzone1-input-file"
               id="dropzone1-input-file-label"
             >
@@ -547,9 +544,7 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
             </label>
           </ForwardRef>
         </WithStyles(ForwardRef)>
-        <WithStyles(ForwardRef)
-          variant="sText"
-        >
+        <WithStyles(ForwardRef)>
           <ForwardRef
             classes={
               Object {
@@ -575,13 +570,12 @@ exports[`Dropzone withStyles should render correctly when disabled 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
-            variant="sText"
           >
-            <span
-              className="HvTypography-root"
+            <p
+              className="HvTypography-root HvTypography-normalText"
             >
               Max. file size: 1.00B
-            </span>
+            </p>
           </ForwardRef>
         </WithStyles(ForwardRef)>
       </div>

@@ -41,16 +41,12 @@ export const Main = () => {
   const SingleContent = () => (
     <>
       <div style={{ marginTop: "15px" }}>
-        <HvTypography variant="labelText">ID</HvTypography>
-        <HvTypography variant="normalText" style={textStyles}>
-          2101cad3-7cd4-1000-bdp95-d8c497176e7c
-        </HvTypography>
+        <HvTypography variant="highlightText">ID</HvTypography>
+        <HvTypography style={textStyles}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
       </div>
       <div style={{ marginTop: "15px" }}>
-        <HvTypography variant="labelText">Last connected</HvTypography>
-        <HvTypography variant="normalText" style={textStyles}>
-          Aug 30, 2017 12:27:53 PM
-        </HvTypography>
+        <HvTypography variant="highlightText">Last connected</HvTypography>
+        <HvTypography style={textStyles}>Aug 30, 2017 12:27:53 PM</HvTypography>
       </div>
     </>
   );
@@ -124,27 +120,23 @@ export const AllComponents = () => {
       <>
         <Grid container>
           <Grid item xs={5} style={mediaStyles.item}>
-            <HvTypography variant="labelText">{cellATitle}</HvTypography>
-            <HvTypography variant="normalText" style={mediaStyles.text}>
-              {cellAContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellATitle}</HvTypography>
+            <HvTypography style={mediaStyles.text}>{cellAContent}</HvTypography>
           </Grid>
           <Grid item xs={7} style={mediaStyles.item}>
-            <HvTypography variant="labelText">{cellBTitle}</HvTypography>
-            <HvTypography variant="normalText" style={mediaStyles.text}>
-              {cellBContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellBTitle}</HvTypography>
+            <HvTypography style={mediaStyles.text}>{cellBContent}</HvTypography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={5} style={mediaStyles.bottomItem}>
-            <HvTypography variant="labelText">{cellCTitle}</HvTypography>
+            <HvTypography variant="highlightText">{cellCTitle}</HvTypography>
             <HvTypography variant="sTitle" style={mediaStyles.text}>
               {cellCContent}
             </HvTypography>
           </Grid>
           <Grid item xs={7} style={mediaStyles.bottomItem}>
-            <HvTypography variant="labelText">{cellDTitle}</HvTypography>
+            <HvTypography variant="highlightText">{cellDTitle}</HvTypography>
             <HvTypography variant="sTitle" style={mediaStyles.text}>
               {cellDContent}
             </HvTypography>
@@ -300,38 +292,28 @@ export const MultipleActions = () => {
       <>
         <Grid container>
           <Grid item xs={5} style={MultipleActionsStyles.item}>
-            <HvTypography variant="labelText">{cellATitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellAContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellATitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellAContent}</HvTypography>
           </Grid>
           <Grid item xs={7} style={MultipleActionsStyles.item}>
-            <HvTypography variant="labelText">{cellBTitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellBContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellBTitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellBContent}</HvTypography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={5} style={MultipleActionsStyles.item}>
-            <HvTypography variant="labelText">{cellCTitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellCContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellCTitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellCContent}</HvTypography>
           </Grid>
           <Grid item xs={7} style={MultipleActionsStyles.bottomItem}>
-            <HvTypography variant="labelText">{cellDTitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellDContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellDTitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellDContent}</HvTypography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={12} style={MultipleActionsStyles.bottomItem}>
-            <HvTypography variant="labelText">{cellETitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellEContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellETitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellEContent}</HvTypography>
           </Grid>
         </Grid>
       </>
@@ -435,38 +417,28 @@ export const NoActions = () => {
       <>
         <Grid container>
           <Grid item xs={5} style={MultipleActionsStyles.item}>
-            <HvTypography variant="labelText">{cellATitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellAContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellATitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellAContent}</HvTypography>
           </Grid>
           <Grid item xs={7} style={MultipleActionsStyles.item}>
-            <HvTypography variant="labelText">{cellBTitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellBContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellBTitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellBContent}</HvTypography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={5} style={MultipleActionsStyles.item}>
-            <HvTypography variant="labelText">{cellCTitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellCContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellCTitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellCContent}</HvTypography>
           </Grid>
           <Grid item xs={7} style={MultipleActionsStyles.bottomItem}>
-            <HvTypography variant="labelText">{cellDTitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellDContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellDTitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellDContent}</HvTypography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xs={12} style={MultipleActionsStyles.bottomItem}>
-            <HvTypography variant="labelText">{cellETitle}</HvTypography>
-            <HvTypography variant="normalText" style={MultipleActionsStyles.text}>
-              {cellEContent}
-            </HvTypography>
+            <HvTypography variant="highlightText">{cellETitle}</HvTypography>
+            <HvTypography style={MultipleActionsStyles.text}>{cellEContent}</HvTypography>
           </Grid>
         </Grid>
       </>
@@ -584,14 +556,14 @@ export const KPICard = () => {
       </Grid>
       <Grid container>
         <Grid item style={kpiStyles.item} xs={4} sm={8} md={12} lg={12} xl={12}>
-          <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
-          <HvTypography variant="normalText">{data.firstContent}</HvTypography>
+          <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+          <HvTypography>{data.firstContent}</HvTypography>
         </Grid>
       </Grid>
       <Grid container>
         <Grid item xs={4} sm={8} md={12} lg={12} xl={12}>
-          <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
-          <HvTypography variant="normalText">{data.secondContent}</HvTypography>
+          <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+          <HvTypography>{data.secondContent}</HvTypography>
         </Grid>
       </Grid>
     </>
@@ -887,22 +859,18 @@ export const Selectable = () => {
     <>
       <div>
         <div>
-          <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
+          <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" style={styles.text}>
-            {data.firstContent}
-          </HvTypography>
+          <HvTypography style={styles.text}>{data.firstContent}</HvTypography>
         </div>
       </div>
       <div style={{ marginTop: "15px" }}>
         <div>
-          <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
+          <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" style={styles.text}>
-            {data.secondContent}
-          </HvTypography>
+          <HvTypography style={styles.text}>{data.secondContent}</HvTypography>
         </div>
       </div>
     </>
@@ -980,22 +948,18 @@ export const SelectableNoFooter = () => {
     <>
       <div>
         <div>
-          <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
+          <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" style={styles.text}>
-            {data.firstContent}
-          </HvTypography>
+          <HvTypography style={styles.text}>{data.firstContent}</HvTypography>
         </div>
       </div>
       <div style={{ marginTop: "15px" }}>
         <div>
-          <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
+          <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" style={styles.text}>
-            {data.secondContent}
-          </HvTypography>
+          <HvTypography style={styles.text}>{data.secondContent}</HvTypography>
         </div>
       </div>
     </>
@@ -1063,22 +1027,18 @@ export const WithClickAction = () => {
     <>
       <div>
         <div>
-          <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
+          <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" style={styles.text}>
-            {data.firstContent}
-          </HvTypography>
+          <HvTypography style={styles.text}>{data.firstContent}</HvTypography>
         </div>
       </div>
       <div style={{ marginTop: "15px" }}>
         <div>
-          <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
+          <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
         </div>
         <div>
-          <HvTypography variant="normalText" style={styles.text}>
-            {data.secondContent}
-          </HvTypography>
+          <HvTypography style={styles.text}>{data.secondContent}</HvTypography>
         </div>
       </div>
     </>
@@ -1139,16 +1099,12 @@ const SingleContent = ({ classes }) => {
   return (
     <>
       <div>
-        <HvTypography variant="labelText">{data.firstTitle}</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {data.firstContent}
-        </HvTypography>
+        <HvTypography variant="highlightText">{data.firstTitle}</HvTypography>
+        <HvTypography className={classes.text}>{data.firstContent}</HvTypography>
       </div>
       <div style={{ marginTop: "15px" }}>
-        <HvTypography variant="labelText">{data.secondTitle}</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {data.secondContent}
-        </HvTypography>
+        <HvTypography variant="highlightText">{data.secondTitle}</HvTypography>
+        <HvTypography className={classes.text}>{data.secondContent}</HvTypography>
       </div>
     </>
   );

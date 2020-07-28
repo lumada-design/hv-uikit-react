@@ -158,7 +158,6 @@ exports[`FileList withStyles should render correctly 1`] = `
             </WithStyles(Fail)>
             <WithStyles(ForwardRef)
               className="HvFileUploaderFile-nameText"
-              variant="sText"
             >
               <ForwardRef
                 className="HvFileUploaderFile-nameText"
@@ -186,13 +185,12 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
-                variant="sText"
               >
-                <span
-                  className="HvFileUploaderFile-nameText HvTypography-root"
+                <p
+                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
                 >
                   Screenshot 2019-12-05 at 17.15.43.png
-                </span>
+                </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
             <span
@@ -200,7 +198,6 @@ exports[`FileList withStyles should render correctly 1`] = `
             >
               <WithStyles(ForwardRef)
                 className="HvFileUploaderFile-fail"
-                variant="sText"
               >
                 <ForwardRef
                   className="HvFileUploaderFile-fail"
@@ -228,13 +225,12 @@ exports[`FileList withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-                  variant="sText"
                 >
-                  <span
-                    className="HvFileUploaderFile-fail HvTypography-root"
+                  <p
+                    className="HvFileUploaderFile-fail HvTypography-root HvTypography-normalText"
                   >
                     File type not allowed for upload
-                  </span>
+                  </p>
                 </ForwardRef>
               </WithStyles(ForwardRef)>
             </span>
@@ -446,7 +442,6 @@ exports[`FileList withStyles should render correctly 1`] = `
             </WithStyles(Fail)>
             <WithStyles(ForwardRef)
               className="HvFileUploaderFile-nameText"
-              variant="sText"
             >
               <ForwardRef
                 className="HvFileUploaderFile-nameText"
@@ -474,13 +469,12 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
-                variant="sText"
               >
-                <span
-                  className="HvFileUploaderFile-nameText HvTypography-root"
+                <p
+                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
                 >
                   Screenshot 2019-12-05 at 12.03.13.png
-                </span>
+                </p>
               </ForwardRef>
             </WithStyles(ForwardRef)>
             <span
@@ -488,7 +482,6 @@ exports[`FileList withStyles should render correctly 1`] = `
             >
               <WithStyles(ForwardRef)
                 className="HvFileUploaderFile-fail"
-                variant="sText"
               >
                 <ForwardRef
                   className="HvFileUploaderFile-fail"
@@ -516,13 +509,12 @@ exports[`FileList withStyles should render correctly 1`] = `
                       "xxsTitle": "HvTypography-xxsTitle",
                     }
                   }
-                  variant="sText"
                 >
-                  <span
-                    className="HvFileUploaderFile-fail HvTypography-root"
+                  <p
+                    className="HvFileUploaderFile-fail HvTypography-root HvTypography-normalText"
                   >
                     File type not allowed for upload
-                  </span>
+                  </p>
                 </ForwardRef>
               </WithStyles(ForwardRef)>
             </span>

@@ -20,7 +20,6 @@ exports[`HelperText should render correctly 1`] = `
     <WithStyles(ForwardRef)
       className="HvHelperText-helperText HvHelperText-topGutter"
       id="base"
-      variant="infoText"
     >
       <ForwardRef
         className="HvHelperText-helperText HvHelperText-topGutter"
@@ -49,14 +48,13 @@ exports[`HelperText should render correctly 1`] = `
           }
         }
         id="base"
-        variant="infoText"
       >
-        <span
-          className="HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
+        <p
+          className="HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
           id="base"
         >
           test
-        </span>
+        </p>
       </ForwardRef>
     </WithStyles(ForwardRef)>
     <WithStyles(ForwardRef)
@@ -65,7 +63,6 @@ exports[`HelperText should render correctly 1`] = `
       aria-relevant="additions text"
       className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
       id="base-notification"
-      variant="infoText"
     >
       <ForwardRef
         aria-atomic="true"
@@ -97,17 +94,16 @@ exports[`HelperText should render correctly 1`] = `
           }
         }
         id="base-notification"
-        variant="infoText"
       >
-        <span
+        <p
           aria-atomic="true"
           aria-live="polite"
           aria-relevant="additions text"
-          className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
+          className="HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
           id="base-notification"
         >
           test
-        </span>
+        </p>
       </ForwardRef>
     </WithStyles(ForwardRef)>
   </HvHelperText>

@@ -752,15 +752,17 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
             "lineHeight": "16px",
           },
           "subtitle2": Object {
+            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "0.875rem",
-            "fontWeight": 500,
-            "lineHeight": 1.57,
+            "fontSize": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "0.02em",
+            "lineHeight": "16px",
           },
           "suppressDeprecationWarnings": true,
         },
@@ -1532,15 +1534,17 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               "lineHeight": "16px",
             },
             "subtitle2": Object {
+              "color": "#414141",
               "fontFamily": Array [
                 "'Open Sans'",
                 "Arial",
                 "Helvetica",
                 "sans-serif",
               ],
-              "fontSize": "0.875rem",
-              "fontWeight": 500,
-              "lineHeight": 1.57,
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
             },
             "suppressDeprecationWarnings": true,
           },
@@ -2317,15 +2321,17 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 "lineHeight": "16px",
               },
               "subtitle2": Object {
+                "color": "#414141",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
                   "Helvetica",
                   "sans-serif",
                 ],
-                "fontSize": "0.875rem",
-                "fontWeight": 500,
-                "lineHeight": 1.57,
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
               },
               "suppressDeprecationWarnings": true,
             },
@@ -3188,15 +3194,17 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             "lineHeight": "16px",
           },
           "subtitle2": Object {
+            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "0.875rem",
-            "fontWeight": 500,
-            "lineHeight": 1.57,
+            "fontSize": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "0.02em",
+            "lineHeight": "16px",
           },
           "suppressDeprecationWarnings": true,
         },
@@ -3967,15 +3975,17 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               "lineHeight": "16px",
             },
             "subtitle2": Object {
+              "color": "#414141",
               "fontFamily": Array [
                 "'Open Sans'",
                 "Arial",
                 "Helvetica",
                 "sans-serif",
               ],
-              "fontSize": "0.875rem",
-              "fontWeight": 500,
-              "lineHeight": 1.57,
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
             },
             "suppressDeprecationWarnings": true,
           },
@@ -4751,15 +4761,17 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 "lineHeight": "16px",
               },
               "subtitle2": Object {
+                "color": "#414141",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
                   "Helvetica",
                   "sans-serif",
                 ],
-                "fontSize": "0.875rem",
-                "fontWeight": 500,
-                "lineHeight": 1.57,
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
               },
               "suppressDeprecationWarnings": true,
             },
@@ -5643,15 +5655,17 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             "lineHeight": "16px",
           },
           "subtitle2": Object {
+            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "0.875rem",
-            "fontWeight": 500,
-            "lineHeight": 1.57,
+            "fontSize": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "0.02em",
+            "lineHeight": "16px",
           },
           "suppressDeprecationWarnings": true,
         },
@@ -6424,15 +6438,17 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               "lineHeight": "16px",
             },
             "subtitle2": Object {
+              "color": "#414141",
               "fontFamily": Array [
                 "'Open Sans'",
                 "Arial",
                 "Helvetica",
                 "sans-serif",
               ],
-              "fontSize": "0.875rem",
-              "fontWeight": 500,
-              "lineHeight": 1.57,
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
             },
             "suppressDeprecationWarnings": true,
           },
@@ -7208,15 +7224,17 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 "lineHeight": "16px",
               },
               "subtitle2": Object {
+                "color": "#414141",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
                   "Helvetica",
                   "sans-serif",
                 ],
-                "fontSize": "0.875rem",
-                "fontWeight": 500,
-                "lineHeight": 1.57,
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
               },
               "suppressDeprecationWarnings": true,
             },
@@ -7241,7 +7259,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             className="HvDatePicker-label"
             component="label"
             id="testingDatePicker-label"
-            variant="labelText"
+            variant="highlightText"
           >
             <ForwardRef
               className="HvDatePicker-label"
@@ -7271,10 +7289,10 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               }
               component="label"
               id="testingDatePicker-label"
-              variant="labelText"
+              variant="highlightText"
             >
               <label
-                className="HvDatePicker-label HvTypography-root"
+                className="HvDatePicker-label HvTypography-root HvTypography-highlightText"
                 id="testingDatePicker-label"
               >
                 TESTING LABEL
@@ -8118,15 +8136,17 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             "lineHeight": "16px",
           },
           "subtitle2": Object {
+            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "0.875rem",
-            "fontWeight": 500,
-            "lineHeight": 1.57,
+            "fontSize": "12px",
+            "fontWeight": 600,
+            "letterSpacing": "0.02em",
+            "lineHeight": "16px",
           },
           "suppressDeprecationWarnings": true,
         },
@@ -8894,15 +8914,17 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               "lineHeight": "16px",
             },
             "subtitle2": Object {
+              "color": "#414141",
               "fontFamily": Array [
                 "'Open Sans'",
                 "Arial",
                 "Helvetica",
                 "sans-serif",
               ],
-              "fontSize": "0.875rem",
-              "fontWeight": 500,
-              "lineHeight": 1.57,
+              "fontSize": "12px",
+              "fontWeight": 600,
+              "letterSpacing": "0.02em",
+              "lineHeight": "16px",
             },
             "suppressDeprecationWarnings": true,
           },
@@ -9677,15 +9699,17 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 "lineHeight": "16px",
               },
               "subtitle2": Object {
+                "color": "#414141",
                 "fontFamily": Array [
                   "'Open Sans'",
                   "Arial",
                   "Helvetica",
                   "sans-serif",
                 ],
-                "fontSize": "0.875rem",
-                "fontWeight": 500,
-                "lineHeight": 1.57,
+                "fontSize": "12px",
+                "fontWeight": 600,
+                "letterSpacing": "0.02em",
+                "lineHeight": "16px",
               },
               "suppressDeprecationWarnings": true,
             },

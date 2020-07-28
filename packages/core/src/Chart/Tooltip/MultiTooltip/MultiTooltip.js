@@ -8,7 +8,7 @@ const MultiTooltip = ({ classes, data }) => (
   <div className={classes.root}>
     <div className={classes.title}>
       <div>
-        <Typography variant="labelText">{data.title}</Typography>
+        <Typography variant="highlightText">{data.title}</Typography>
       </div>
     </div>
     <div className={classes.valuesContainer}>
@@ -17,11 +17,11 @@ const MultiTooltip = ({ classes, data }) => (
           <div className={classes.color} style={{ backgroundColor: element.color }} />
           <div className={classes.separatorColor} />
           <div>
-            <Typography variant="labelText">{element.name}</Typography>
+            <Typography variant="highlightText">{element.name}</Typography>
           </div>
           <div className={classes.separator} />
           <div>
-            <Typography variant="sText">{element.value}</Typography>
+            <Typography>{element.value}</Typography>
           </div>
         </div>
       ))}

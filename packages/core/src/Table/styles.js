@@ -175,7 +175,7 @@ const styles = theme => ({
   theadGroupTr: {},
   theadGroupTh: {},
   thead: {
-    ...theme.hv.typography.labelText
+    ...theme.hv.typography.highlightText
   },
   theadTh: {},
 
@@ -249,7 +249,7 @@ const styles = theme => ({
   link: {
     justifyContent: "flex-start",
     "& > a": {
-      ...theme.hv.typography.inlineLink,
+      ...theme.hv.typography.link,
       textDecoration: "none"
     }
   },

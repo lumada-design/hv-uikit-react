@@ -116,7 +116,7 @@ const HvUserPreferences = ({
           {userInfo && (
             <div className={classes.userInfo}>
               <Typography variant="highlightText">{userInfo.label1}</Typography>
-              <Typography variant="sText">{userInfo.label2}</Typography>
+              <Typography>{userInfo.label2}</Typography>
             </div>
           )}
           {children}

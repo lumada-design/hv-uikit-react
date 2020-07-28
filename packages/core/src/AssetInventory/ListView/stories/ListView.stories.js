@@ -73,26 +73,22 @@ export const Main = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
-              {value.event.timestamp}
-            </HvTypography>
+            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
-              {value.event.schedule}
-            </HvTypography>
+            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
         <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{value.probability}</HvTypography>
+          <HvTypography>{value.probability}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
+          <HvTypography>{value.timeHorizon}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
+          <HvTypography>{value.relatedAssets}</HvTypography>
         </HvListViewCell>
       </HvListViewRow>
     );
@@ -224,25 +220,21 @@ export const NotSelectable = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
-              {value.event.timestamp}
-            </HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
-              {value.event.schedule}
-            </HvTypography>
+            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
+            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
         <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{value.probability}</HvTypography>
+          <HvTypography>{value.probability}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
+          <HvTypography>{value.timeHorizon}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
+          <HvTypography>{value.relatedAssets}</HvTypography>
         </HvListViewCell>
       </HvListViewRow>
     );
@@ -369,25 +361,21 @@ export const NotSelectableWithMenu = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
-              {value.event.timestamp}
-            </HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
-              {value.event.schedule}
-            </HvTypography>
+            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
+            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
         <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{value.probability}</HvTypography>
+          <HvTypography>{value.probability}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
+          <HvTypography>{value.timeHorizon}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
+          <HvTypography>{value.relatedAssets}</HvTypography>
         </HvListViewCell>
       </HvListViewRow>
     );
@@ -529,25 +517,21 @@ export const NotStyled = () => {
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="sText">
-              {value.event.timestamp}
-            </HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }} variant="sText">
-              {value.event.schedule}
-            </HvTypography>
+            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
+            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
         <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{value.probability}</HvTypography>
+          <HvTypography>{value.probability}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{value.timeHorizon}</HvTypography>
+          <HvTypography>{value.timeHorizon}</HvTypography>
         </HvListViewCell>
 
         <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
+          <HvTypography>{value.relatedAssets}</HvTypography>
         </HvListViewCell>
       </HvListViewRow>
     );
