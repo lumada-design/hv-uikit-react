@@ -210,8 +210,14 @@ TimeRepresentation.story = {
       storyDescription: "Representation of time related data."
     },
     eyes: {
-      // excluded due inconstant position of chart subtitles, opened applitools request ( 34213 )
-      include: false
+      floatingRegions: [
+        { // Ticket 34213, applitools supported fix solution
+          selector: '.floating-region',
+          maxUpOffset: 7,
+          maxDownOffset: 7,
+          maxLeftOffset: 7,
+          maxRightOffset: 7,
+        }]
     }
   }
 };
