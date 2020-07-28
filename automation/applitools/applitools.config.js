@@ -20,6 +20,7 @@ module.exports = {
     // { width: 1920, height: 1080, name: "firefox-two-versions-back" },
     // { width: 1920, height: 1080, name: "safari-two-versions-back" }
   ],
-  include: ({name, kind, parameters}) => (kind.includes("Components") || kind.includes("Visualizations")),
+  //asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
+  include: ({name, kind, parameters}) => ( kind.includes("Components") && !kind.includes("Components/Asset Inventory") || kind.includes("Visualizations") ),
   concurrency: 10
 };

@@ -1841,10 +1841,6 @@ AccessibilityList.story = {
   parameters: {
     docs: {
       disable: true
-    },
-    eyes: {
-      // excluded due to the inconsistent viewport, opened applitools request (34169)
-      include: false
     }
   }
 };
