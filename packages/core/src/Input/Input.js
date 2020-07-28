@@ -9,7 +9,7 @@ import withLabels from "../withLabels";
 import withTooltips from "../withTooltip";
 import { isKeypress, KeyboardCodes, setId } from "../utils";
 import validationTypes from "./validationTypes";
-import validationStates from "./validationStates";
+import validationStates, { isInvalid } from "./validationStates";
 import { validateCharLength, validateInput, validationIcon } from "./validations";
 import styles from "./styles";
 
@@ -66,7 +66,7 @@ const HvInput = props => {
   const [suggestionValues, setSuggestionValues] = useState(null);
   const [validationState, setValidationState] = useState(validationStateProp);
   const [warningText, setWarningText] = useState(
-    validationStateProp === validationStates.invalid ? labels.warningText : null
+    isInvalid(validationStateProp) ? labels.warningText : null
   );
 
   const materialInputRef = useRef(null);
@@ -77,8 +77,11 @@ const HvInput = props => {
   }, [valueProp]);
 
   useEffect(() => {
-    if (validationStateProp != null) setValidationState(validationStateProp);
-  }, [validationStateProp]);
+    if (validationStateProp != null) {
+      setValidationState(validationStateProp);
+      setWarningText(isInvalid(validationStateProp) ? labels.warningText : null);
+    }
+  }, [validationStateProp, labels.warningText]);
 
   /**
    * Updates the states while the input is being entered.
@@ -276,9 +279,9 @@ const HvInput = props => {
     );
   };
 
-  const isInvalid = validationState === validationStates.invalid;
+  const isStateInvalid = isInvalid(validationState);
   const hasValidation =
-    isInvalid ||
+    isStateInvalid ||
     validationType !== validationTypes.none ||
     maxCharQuantity != null ||
     minCharQuantity != null ||
@@ -349,9 +352,9 @@ const HvInput = props => {
         }}
         className={clsx({
           [classes.inputRootDisabled]: disabled,
-          [classes.inputRootInvalid]: validationState === validationStates.invalid
+          [classes.inputRootInvalid]: isStateInvalid
         })}
-        invalid={isInvalid}
+        invalid={isStateInvalid}
         required={isRequired}
         onChange={onChangeHandler}
         inputProps={{
@@ -384,13 +387,13 @@ const HvInput = props => {
 
       <HvHelperText
         id={setId(id, "description")}
-        {...(!isInvalid && (showInfoIcon || !labels.infoText)
+        {...(!isStateInvalid && (showInfoIcon || !labels.infoText)
           ? { style: { display: "none" } }
           : {})}
         className={clsx(classes.infoText, {
           [classes.infoIcon]: infoIcon
         })}
-        notification={isInvalid ? externalWarningTextOverride || warningText : ""}
+        notification={isStateInvalid ? externalWarningTextOverride || warningText : ""}
       >
         {labels.infoText}
       </HvHelperText>

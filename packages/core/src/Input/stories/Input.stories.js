@@ -455,3 +455,45 @@ Suggestion.story = {
     }
   }
 };
+
+export const ControlledState = () => {
+  const [inputValidationState, setInputValidationState] = useState("empty");
+
+  const labels = {
+    placeholder: "input",
+    inputLabel: "ex. us-east",
+    warningText: "this field is required"
+  };
+
+  const handleDoneOnClick = () => setInputValidationState("invalid");
+  const handleClearOnClick = () => setInputValidationState("empty");
+
+  return (
+    <>
+      <HvButton
+        onClick={() => {
+          handleDoneOnClick();
+        }}
+      >
+        Error
+      </HvButton>
+      <HvButton
+        onClick={() => {
+          handleClearOnClick();
+        }}
+      >
+        Clear
+      </HvButton>
+
+      <HvInput id="validation" labels={labels} isRequired validationState={inputValidationState} />
+    </>
+  );
+};
+
+ControlledState.story = {
+  parameters: {
+    docs: {
+      disable: true
+    }
+  }
+};
