@@ -211,13 +211,15 @@ TimeRepresentation.story = {
     },
     eyes: {
       floatingRegions: [
-        { // Ticket 34213, applitools supported fix solution
-          selector: '.floating-region',
+        {
+          // Ticket 34213, applitools support fix solution
+          selector: ".floating-region",
           maxUpOffset: 7,
           maxDownOffset: 7,
           maxLeftOffset: 7,
-          maxRightOffset: 7,
-        }]
+          maxRightOffset: 7
+        }
+      ]
     }
   }
 };
