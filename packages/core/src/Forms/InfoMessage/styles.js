@@ -6,6 +6,7 @@ const styles = theme => ({
     color: theme.hv.palette.atmosphere.atmo5
   },
   gutter: {
+    marginLeft: theme.hv.spacing.xs,
     marginBottom: 8
   }
 });

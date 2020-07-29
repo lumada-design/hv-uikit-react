@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-
 import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
 
-import { HvFormElement, HvBaseInput, HvHelperText, HvLabel, HvAdornment } from "../../..";
+import {
+  HvFormElement,
+  HvBaseInput,
+  HvLabel,
+  HvAdornment,
+  HvInfoMessage,
+  HvWarningText
+} from "../../..";
 
 export default {
   title: "Patterns/Forms/Form Element",
@@ -18,9 +24,6 @@ export const Main = () => {
   const [elementValue, setElementValue] = useState("");
   const [elementStatus, setElementStatus] = useState("standBy");
   const [showCloseAdornment, setShowCloseAdornment] = useState(false);
-  const [notificationText, setNotificationText] = useState(
-    "Write your name in this input do not put numbers"
-  );
 
   const inputId = "controlled-input";
   const inputLabelId = "controlled-input-label";
@@ -31,11 +34,6 @@ export const Main = () => {
 
     if (setStatus) {
       setElementStatus((hasNumber && "invalid") || (isEmpty && "standBy") || "valid");
-      setNotificationText(
-        (hasNumber && "Names do not contain numbers") ||
-          (isEmpty && "Write your name in this input do not put numbers") ||
-          "Your value is valid"
-      );
     }
     isEmpty ? setShowCloseAdornment(false) : setShowCloseAdornment(true);
     setElementValue(value);
@@ -46,7 +44,6 @@ export const Main = () => {
     if (type === "button") return;
     if (!event.currentTarget.contains(document.activeElement) || elementStatus !== "standBy") {
       setElementStatus("standBy");
-      setNotificationText(undefined);
       if (!showCloseAdornment && elementValue) {
         setShowCloseAdornment(true);
         return;
@@ -80,6 +77,7 @@ export const Main = () => {
       status={elementStatus}
     >
       <HvLabel id={inputLabelId} label="First name">
+        <HvInfoMessage> Do not put numbers.</HvInfoMessage>
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
@@ -102,9 +100,9 @@ export const Main = () => {
           }
         />
       </HvLabel>
-      <HvHelperText key="2" id="info-text-valid" notification={notificationText}>
-        Write your name in this input do not put numbers
-      </HvHelperText>
+      <HvWarningText key="2" id="warning-text">
+        Names do not contain numbers.
+      </HvWarningText>
     </HvFormElement>
   );
 };
@@ -113,11 +111,12 @@ export const FormElementInvalid = () => {
   return (
     <HvFormElement value="Albert2" status="invalid">
       <HvLabel key="1" id="invalid-input-label" label="First name">
+        <HvInfoMessage> Do not put numbers.</HvInfoMessage>
         <HvBaseInput id="invalid-input" />
       </HvLabel>
-      <HvHelperText key="2" id="error-text-invalid" notification="Names do not contain numbers">
-        Write your name in this input do not put numbers
-      </HvHelperText>
+      <HvWarningText key="2" id="invalid-warning-text">
+        Names do not contain numbers.
+      </HvWarningText>
     </HvFormElement>
   );
 };
@@ -134,11 +133,12 @@ export const FormElementValid = () => {
   return (
     <HvFormElement value="Hello" status="valid">
       <HvLabel key="1" id="valid-input-label" label="First name">
+        <HvInfoMessage> Do not put numbers.</HvInfoMessage>
         <HvBaseInput id="valid-input" />
       </HvLabel>
-      <HvHelperText key="2" id="info-text-valid">
-        Your value is valid
-      </HvHelperText>
+      <HvWarningText key="2" id="valid-warning-text">
+        Names do not contain numbers.
+      </HvWarningText>
     </HvFormElement>
   );
 };
@@ -155,11 +155,12 @@ export const FormElementDisabled = () => {
   return (
     <HvFormElement status="valid" disabled>
       <HvLabel key="1" id="disabled-input-label" label="First name">
+        <HvInfoMessage>Info message here</HvInfoMessage>
         <HvBaseInput id="disable-input" placeholder="Insert your name" />
       </HvLabel>
-      <HvHelperText key="2" id="info-text-valid-disabled">
-        Your value is valid
-      </HvHelperText>
+      <HvWarningText key="2" id="disabled-warning-text">
+        Names do not contain numbers.
+      </HvWarningText>
     </HvFormElement>
   );
 };
