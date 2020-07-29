@@ -10,6 +10,10 @@ export interface HvInfoMessageProps
    * If ´true´ the input is disabled.
    */
   disabled?: boolean;
+  /**
+   * If ´true´ the info message won't have margins.
+   */
+  disableGutter?: boolean;
 }
 
 export type HvInfoMessageClassKey = "root" | "infoDisabled" | "gutter";

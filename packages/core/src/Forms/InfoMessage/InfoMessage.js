@@ -11,7 +11,16 @@ import styles from "./styles";
  * Component used in conjunction with other form elements, to give extra information about status.
  */
 const HvInfoMessage = props => {
-  const { label, children, classes, className, id, disabled, noGutter, ...others } = props;
+  const {
+    label,
+    children,
+    classes,
+    className,
+    id,
+    disabled,
+    disableGutter = false,
+    ...others
+  } = props;
   const { elementId, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
   const localId = id ?? setId(elementId, "info");
@@ -22,7 +31,7 @@ const HvInfoMessage = props => {
         id={localId}
         className={clsx(className, classes.root, {
           [classes.infoDisabled]: localDisabled,
-          [classes.gutter]: noGutter
+          [classes.gutter]: !disableGutter
         })}
         variant="normalText"
         component="label"
@@ -74,9 +83,9 @@ HvInfoMessage.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the info message won't have bottom margin.
+   * If ´true´ the info message won't have margins.
    */
-  noGutter: PropTypes.bool
+  disableGutter: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvInfoMessage" })(HvInfoMessage);

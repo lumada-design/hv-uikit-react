@@ -2,13 +2,13 @@ import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
   root: {
-    minWidth: "150px",
-    maxWidth: "610px"
+    position: "relative"
   },
   inputRoot: {
     margin: 0,
     width: "100%",
     borderStyle: "solid",
+    borderRadius: "2px",
     borderWidth: " 0 0 1px 0",
     backgroundColor: theme.hv.palette.atmosphere.atmo1,
     borderColor: theme.hv.palette.atmosphere.atmo4,
@@ -21,10 +21,10 @@ const styles = theme => ({
   },
   inputRootDisabled: {
     borderColor: theme.hv.palette.atmosphere.atmo4,
-    background: theme.hv.palette.atmosphere.atmo4,
+    background: theme.hv.palette.atmosphere.atmo3,
     "&:hover": {
       borderColor: theme.hv.palette.atmosphere.atmo4,
-      background: theme.hv.palette.atmosphere.atmo4,
+      background: theme.hv.palette.atmosphere.atmo3,
       cursor: "not-allowed"
     },
     cursor: "not-allowed"
@@ -63,6 +63,12 @@ const styles = theme => ({
     "&::-ms-clear": {
       display: "none"
     }
+  },
+  inputLowerBorder: {
+    width: "100%",
+    heigth: "1px",
+    backgroundColor: "red",
+    position: "absolute"
   },
   inputDisabled: {
     cursor: "not-allowed"
