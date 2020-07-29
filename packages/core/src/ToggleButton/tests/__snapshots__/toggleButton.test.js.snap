@@ -2031,17 +2031,11 @@ exports[`ToggleButton should render correctly 1`] = `
                               width="16px"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-                              <g
+                              <path
                                 className="color0"
+                                d="M8.5 12h-1V8h1zM14 4v12H2V4h2V0h6v1H5v3zm-1 1H3v10h10z"
                                 fill="#414141"
-                              >
-                                <path
-                                  d="M7.5 8h1v4h-1z"
-                                />
-                                <path
-                                  d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
-                                />
-                              </g>
+                              />
                             </svg>
                           </div>
                         </Unlock>
@@ -2064,17 +2058,11 @@ exports[`ToggleButton should render correctly 1`] = `
                             width="16px"
                             xmlns="http://www.w3.org/2000/svg"
                           >
-                            <g
+                            <path
                               class="color0"
+                              d="M8.5 12h-1V8h1zM14 4v12H2V4h2V0h6v1H5v3zm-1 1H3v10h10z"
                               fill="#414141"
-                            >
-                              <path
-                                d="M7.5 8h1v4h-1z"
-                              />
-                              <path
-                                d="M5 4V1h5V0H4v4H2v12h12V4zm8 11H3V5h10z"
-                              />
-                            </g>
+                            />
                           </svg>
                         </div>
                       </div>

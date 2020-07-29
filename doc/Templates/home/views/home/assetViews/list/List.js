@@ -2,7 +2,7 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { HvListViewCell, HvListViewRow } from "@hv/uikit-react-core/dist/AssetInventory/ListView";
 import Typography from "@hv/uikit-react-core/dist/Typography";
-import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
+import { Level1Average, Level2Bad, Level3, Level4, Level5 } from "@hv/uikit-react-icons/dist";
 import styles from "./styles";
 
 const Row = ({ classes, status, value, id }) => {
@@ -63,15 +63,15 @@ const rowRenderer = (value, index) => {
   switch (true) {
     default:
     case probability < 20:
-      status.Icon = Level1;
+      status.Icon = Level1Average;
       status.sema = "sema10";
       break;
     case probability < 40:
-      status.Icon = Level2Average;
+      status.Icon = Level2Bad;
       status.sema = "sema11";
       break;
     case probability < 60:
-      status.Icon = Level3Bad;
+      status.Icon = Level3;
       status.sema = "sema12";
       break;
     case probability < 80:

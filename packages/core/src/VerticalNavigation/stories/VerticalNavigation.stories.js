@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LogOut, OpenBook, Operation, Tool, User, Stop, Play } from "@hv/uikit-react-icons/dist";
+import { LogOut, OpenBook, Operations, Tool, User, Stop, Play } from "@hv/uikit-react-icons/dist";
 import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 
 export default {
@@ -47,7 +47,7 @@ export const Main = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
+      icon: <Operations />,
       data: [
         {
           id: "02-01",
@@ -155,7 +155,7 @@ export const WithoutActions = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
+      icon: <Operations />,
       data: [
         {
           id: "02-01",
@@ -239,7 +239,7 @@ export const Collapsable = () => {
     {
       id: "02",
       label: "Administration",
-      icon: <Operation />,
+      icon: <Operations />,
       data: [
         {
           id: "02-01",

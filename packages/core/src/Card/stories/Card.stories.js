@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import {
-  Level2Average,
+  Level2Bad,
   Add,
   Delete,
-  Level3Bad,
+  Level3,
   Tool,
-  Level1,
+  Level1Average,
   Preview,
   Upload,
   MoreOptionsVertical
@@ -194,7 +194,7 @@ export const AllComponents = () => {
   return (
     <div style={{ width: "360px" }}>
       <HvCard
-        icon={<Level3Bad semantic="sema4" />}
+        icon={<Level3 semantic="sema4" />}
         headerTitle={configuration.title}
         subheader={<StyledSubheader />}
         innerCardContent={<MultipleActionsWithMedia />}
@@ -578,7 +578,9 @@ export const KPICard = () => {
         <StyledCard
           icon={<Tool />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
+          innerCardContent={
+            <ContentWithStyles value="85" icon={<Level1Average semantic="sema2" />} />
+          }
           semantic="sema2"
           isSelectable
           checkboxProps={{
@@ -595,9 +597,7 @@ export const KPICard = () => {
         <StyledCard
           icon={<Tool />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={
-            <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
-          }
+          innerCardContent={<ContentWithStyles value="45" icon={<Level2Bad semantic="sema3" />} />}
           semantic="sema3"
           isSelectable
           checkboxProps={{
@@ -614,7 +614,7 @@ export const KPICard = () => {
         <StyledCard
           icon={<Tool />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<ContentWithStyles value="19" icon={<Level3Bad semantic="sema4" />} />}
+          innerCardContent={<ContentWithStyles value="19" icon={<Level3 semantic="sema4" />} />}
           semantic="sema4"
           isSelectable
           checkboxProps={{
