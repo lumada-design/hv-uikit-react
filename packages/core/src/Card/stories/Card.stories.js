@@ -578,9 +578,7 @@ export const KPICard = () => {
         <StyledCard
           icon={<Tool />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={
-            <ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />
-          }
+          innerCardContent={<ContentWithStyles value="85" icon={<Level1 semantic="sema2" />} />}
           semantic="sema2"
           isSelectable
           checkboxProps={{
@@ -597,7 +595,9 @@ export const KPICard = () => {
         <StyledCard
           icon={<Tool />}
           headerTitle="Replace contaminated oil"
-          innerCardContent={<ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />}
+          innerCardContent={
+            <ContentWithStyles value="45" icon={<Level2Average semantic="sema3" />} />
+          }
           semantic="sema3"
           isSelectable
           checkboxProps={{
