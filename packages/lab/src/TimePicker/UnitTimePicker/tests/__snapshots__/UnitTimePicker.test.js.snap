@@ -683,7 +683,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "display": "none",
                               }
                             }
-                            variant="normalText"
                           >
                             <ForwardRef
                               className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -717,7 +716,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "display": "none",
                                 }
                               }
-                              variant="normalText"
                             >
                               <p
                                 className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
@@ -741,7 +739,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "display": "none",
                               }
                             }
-                            variant="normalText"
                           >
                             <ForwardRef
                               aria-atomic="true"
@@ -778,7 +775,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "display": "none",
                                 }
                               }
-                              variant="normalText"
                             >
                               <p
                                 aria-atomic="true"

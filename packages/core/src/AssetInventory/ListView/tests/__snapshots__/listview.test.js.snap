@@ -699,7 +699,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style="padding-left: 8px; width: 52px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                          class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -716,7 +716,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                              fill="#F0F0F0"
+                                                              fill="#f9f9f9"
                                                             />
                                                           </svg>
                                                         </div>
@@ -885,7 +885,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                              fill="#F0F0F0"
+                                                              fill="#f9f9f9"
                                                             />
                                                           </svg>
                                                         </div>
@@ -1037,7 +1037,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style="padding-left: 8px; width: 52px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                          class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -1055,8 +1055,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             />
                                                             <path
                                                               class="color1"
-                                                              d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                              fill="#F0F0F0"
+                                                              d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                              fill="#f9f9f9"
                                                             />
                                                           </svg>
                                                         </div>
@@ -1361,7 +1361,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           style="padding-left: 8px; width: 52px;"
                                                         >
                                                           <div
-                                                            class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                            class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                           >
                                                             <svg
                                                               focusable="false"
@@ -1378,7 +1378,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               <path
                                                                 class="color1"
                                                                 d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                fill="#F0F0F0"
+                                                                fill="#f9f9f9"
                                                               />
                                                             </svg>
                                                           </div>
@@ -1547,7 +1547,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               <path
                                                                 class="color1"
                                                                 d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                fill="#F0F0F0"
+                                                                fill="#f9f9f9"
                                                               />
                                                             </svg>
                                                           </div>
@@ -1699,7 +1699,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           style="padding-left: 8px; width: 52px;"
                                                         >
                                                           <div
-                                                            class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                            class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                           >
                                                             <svg
                                                               focusable="false"
@@ -1717,8 +1717,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               />
                                                               <path
                                                                 class="color1"
-                                                                d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                fill="#F0F0F0"
+                                                                d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                fill="#f9f9f9"
                                                               />
                                                             </svg>
                                                           </div>
@@ -2237,7 +2237,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       style="padding-left: 8px; width: 52px;"
                                                     >
                                                       <div
-                                                        class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                        class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                       >
                                                         <svg
                                                           focusable="false"
@@ -2254,7 +2254,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           <path
                                                             class="color1"
                                                             d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                            fill="#F0F0F0"
+                                                            fill="#f9f9f9"
                                                           />
                                                         </svg>
                                                       </div>
@@ -2423,7 +2423,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           <path
                                                             class="color1"
                                                             d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                            fill="#F0F0F0"
+                                                            fill="#f9f9f9"
                                                           />
                                                         </svg>
                                                       </div>
@@ -2575,7 +2575,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       style="padding-left: 8px; width: 52px;"
                                                     >
                                                       <div
-                                                        class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                        class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                       >
                                                         <svg
                                                           focusable="false"
@@ -2593,8 +2593,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           />
                                                           <path
                                                             class="color1"
-                                                            d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                            fill="#F0F0F0"
+                                                            d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                            fill="#f9f9f9"
                                                           />
                                                         </svg>
                                                       </div>
@@ -2932,7 +2932,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style="padding-left: 8px; width: 52px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                          class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -2949,7 +2949,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                              fill="#F0F0F0"
+                                                              fill="#f9f9f9"
                                                             />
                                                           </svg>
                                                         </div>
@@ -3118,7 +3118,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             <path
                                                               class="color1"
                                                               d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                              fill="#F0F0F0"
+                                                              fill="#f9f9f9"
                                                             />
                                                           </svg>
                                                         </div>
@@ -3270,7 +3270,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style="padding-left: 8px; width: 52px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                          class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -3288,8 +3288,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             />
                                                             <path
                                                               class="color1"
-                                                              d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                              fill="#F0F0F0"
+                                                              d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                              fill="#f9f9f9"
                                                             />
                                                           </svg>
                                                         </div>
@@ -3398,7 +3398,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         "Icon": Object {
                                           "$$typeof": Symbol(react.forward_ref),
                                           "Naked": [Function],
-                                          "displayName": "WithStyles(Level3)",
+                                          "displayName": "WithStyles(Level3Bad)",
                                           "options": Object {
                                             "defaultTheme": Object {
                                               "breakpoints": Object {
@@ -3683,7 +3683,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "tooltip": 1500,
                                               },
                                             },
-                                            "name": "HvIconLevel3",
+                                            "name": "HvIconLevel3Bad",
                                           },
                                           "propTypes": Object {
                                             "classes": [Function],
@@ -3725,7 +3725,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                           "Icon": Object {
                                             "$$typeof": Symbol(react.forward_ref),
                                             "Naked": [Function],
-                                            "displayName": "WithStyles(Level3)",
+                                            "displayName": "WithStyles(Level3Bad)",
                                             "options": Object {
                                               "defaultTheme": Object {
                                                 "breakpoints": Object {
@@ -4010,7 +4010,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   "tooltip": 1500,
                                                 },
                                               },
-                                              "name": "HvIconLevel3",
+                                              "name": "HvIconLevel3Bad",
                                             },
                                             "propTypes": Object {
                                               "classes": [Function],
@@ -4249,7 +4249,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   style="padding-left: 8px; width: 52px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                    class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -4266,7 +4266,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                        fill="#F0F0F0"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -4435,7 +4435,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                        fill="#F0F0F0"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -4587,7 +4587,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   style="padding-left: 8px; width: 52px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                    class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -4605,8 +4605,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       />
                                                                       <path
                                                                         class="color1"
-                                                                        d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                        fill="#F0F0F0"
+                                                                        d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -4870,7 +4870,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     style="padding-left: 8px; width: 52px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                      class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -4887,7 +4887,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                          fill="#F0F0F0"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -5056,7 +5056,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                          fill="#F0F0F0"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -5208,7 +5208,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     style="padding-left: 8px; width: 52px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                      class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -5226,8 +5226,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         />
                                                                         <path
                                                                           class="color1"
-                                                                          d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                          fill="#F0F0F0"
+                                                                          d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -5879,25 +5879,25 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(Level3)
+                                                          <WithStyles(Level3Bad)
                                                             className="Row-icon-3"
                                                             semantic="sema12"
                                                           >
-                                                            <Level3
+                                                            <Level3Bad
                                                               className="Row-icon-3"
                                                               classes={
                                                                 Object {
-                                                                  "root": "HvIconLevel3-root",
-                                                                  "rootL": "HvIconLevel3-rootL",
-                                                                  "rootM": "HvIconLevel3-rootM",
-                                                                  "rootS": "HvIconLevel3-rootS",
-                                                                  "rootXs": "HvIconLevel3-rootXs",
+                                                                  "root": "HvIconLevel3Bad-root",
+                                                                  "rootL": "HvIconLevel3Bad-rootL",
+                                                                  "rootM": "HvIconLevel3Bad-rootM",
+                                                                  "rootS": "HvIconLevel3Bad-rootS",
+                                                                  "rootXs": "HvIconLevel3Bad-rootXs",
                                                                 }
                                                               }
                                                               semantic="sema12"
                                                             >
                                                               <div
-                                                                className="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                className="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                               >
                                                                 <svg
                                                                   focusable={false}
@@ -5914,12 +5914,12 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <path
                                                                     className="color1"
                                                                     d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                    fill="#F0F0F0"
+                                                                    fill="#f9f9f9"
                                                                   />
                                                                 </svg>
                                                               </div>
-                                                            </Level3>
-                                                          </WithStyles(Level3)>
+                                                            </Level3Bad>
+                                                          </WithStyles(Level3Bad)>
                                                         </div>
                                                       </ListViewCell>
                                                     </WithStyles(ListViewCell)>
@@ -7529,7 +7529,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   style="padding-left: 8px; width: 52px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                    class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -7546,7 +7546,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                        fill="#F0F0F0"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -7715,7 +7715,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                        fill="#F0F0F0"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -7867,7 +7867,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   style="padding-left: 8px; width: 52px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                    class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -7885,8 +7885,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       />
                                                                       <path
                                                                         class="color1"
-                                                                        d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                        fill="#F0F0F0"
+                                                                        d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -8150,7 +8150,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     style="padding-left: 8px; width: 52px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                      class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -8167,7 +8167,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                          fill="#F0F0F0"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -8336,7 +8336,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                          fill="#F0F0F0"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -8488,7 +8488,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     style="padding-left: 8px; width: 52px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                      class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -8506,8 +8506,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         />
                                                                         <path
                                                                           class="color1"
-                                                                          d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                          fill="#F0F0F0"
+                                                                          d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -9194,7 +9194,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <path
                                                                     className="color1"
                                                                     d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                    fill="#F0F0F0"
+                                                                    fill="#f9f9f9"
                                                                   />
                                                                 </svg>
                                                               </div>
@@ -9958,7 +9958,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         "Icon": Object {
                                           "$$typeof": Symbol(react.forward_ref),
                                           "Naked": [Function],
-                                          "displayName": "WithStyles(Level1Average)",
+                                          "displayName": "WithStyles(Level1)",
                                           "options": Object {
                                             "defaultTheme": Object {
                                               "breakpoints": Object {
@@ -10243,7 +10243,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                 "tooltip": 1500,
                                               },
                                             },
-                                            "name": "HvIconLevel1Average",
+                                            "name": "HvIconLevel1",
                                           },
                                           "propTypes": Object {
                                             "classes": [Function],
@@ -10285,7 +10285,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                           "Icon": Object {
                                             "$$typeof": Symbol(react.forward_ref),
                                             "Naked": [Function],
-                                            "displayName": "WithStyles(Level1Average)",
+                                            "displayName": "WithStyles(Level1)",
                                             "options": Object {
                                               "defaultTheme": Object {
                                                 "breakpoints": Object {
@@ -10570,7 +10570,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                   "tooltip": 1500,
                                                 },
                                               },
-                                              "name": "HvIconLevel1Average",
+                                              "name": "HvIconLevel1",
                                             },
                                             "propTypes": Object {
                                               "classes": [Function],
@@ -10809,7 +10809,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   style="padding-left: 8px; width: 52px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                    class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -10826,7 +10826,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                        fill="#F0F0F0"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -10995,7 +10995,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       <path
                                                                         class="color1"
                                                                         d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                        fill="#F0F0F0"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -11147,7 +11147,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   style="padding-left: 8px; width: 52px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                    class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -11165,8 +11165,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                       />
                                                                       <path
                                                                         class="color1"
-                                                                        d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                        fill="#F0F0F0"
+                                                                        d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                        fill="#f9f9f9"
                                                                       />
                                                                     </svg>
                                                                   </div>
@@ -11430,7 +11430,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     style="padding-left: 8px; width: 52px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel3-root HvIconLevel3-rootS"
+                                                                      class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -11447,7 +11447,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25z"
-                                                                          fill="#F0F0F0"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -11616,7 +11616,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         <path
                                                                           class="color1"
                                                                           d="M10.88 15.81h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm4 9.87h2.25v2.25h-2.25zm0-9.87h2.25v8h-2.25zm-8 9.87h2.25v2.25H6.88zm0-9.87h2.25v8H6.88z"
-                                                                          fill="#F0F0F0"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -11768,7 +11768,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     style="padding-left: 8px; width: 52px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                      class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -11786,8 +11786,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         />
                                                                         <path
                                                                           class="color1"
-                                                                          d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                          fill="#F0F0F0"
+                                                                          d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                          fill="#f9f9f9"
                                                                         />
                                                                       </svg>
                                                                     </div>
@@ -12439,25 +12439,25 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                             }
                                                           }
                                                         >
-                                                          <WithStyles(Level1Average)
+                                                          <WithStyles(Level1)
                                                             className="Row-icon-3"
                                                             semantic="sema10"
                                                           >
-                                                            <Level1Average
+                                                            <Level1
                                                               className="Row-icon-3"
                                                               classes={
                                                                 Object {
-                                                                  "root": "HvIconLevel1Average-root",
-                                                                  "rootL": "HvIconLevel1Average-rootL",
-                                                                  "rootM": "HvIconLevel1Average-rootM",
-                                                                  "rootS": "HvIconLevel1Average-rootS",
-                                                                  "rootXs": "HvIconLevel1Average-rootXs",
+                                                                  "root": "HvIconLevel1-root",
+                                                                  "rootL": "HvIconLevel1-rootL",
+                                                                  "rootM": "HvIconLevel1-rootM",
+                                                                  "rootS": "HvIconLevel1-rootS",
+                                                                  "rootXs": "HvIconLevel1-rootXs",
                                                                 }
                                                               }
                                                               semantic="sema10"
                                                             >
                                                               <div
-                                                                className="Row-icon-3 HvIconLevel1Average-root HvIconLevel1Average-rootS"
+                                                                className="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
                                                               >
                                                                 <svg
                                                                   focusable={false}
@@ -12475,13 +12475,13 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   />
                                                                   <path
                                                                     className="color1"
-                                                                    d="M8.4643388425 14.1213703436L14.121193092 8.464516094l1.4142135624 1.4142135623L9.878552405 15.535583906z"
-                                                                    fill="#F0F0F0"
+                                                                    d="M8.864311555 14.121317631l5.6568542495-5.6568542494L15.935379367 9.878676944l-5.6568542495 5.6568542495z"
+                                                                    fill="#f9f9f9"
                                                                   />
                                                                 </svg>
                                                               </div>
-                                                            </Level1Average>
-                                                          </WithStyles(Level1Average)>
+                                                            </Level1>
+                                                          </WithStyles(Level1)>
                                                         </div>
                                                       </ListViewCell>
                                                     </WithStyles(ListViewCell)>

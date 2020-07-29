@@ -212,6 +212,6 @@ export interface HvThemeVizPalette {
     categorical: Map<string, string>;
     undefinedState: Map<string, string>;
     sequential: Map<string, string>;
-    polarizes: Map<string, string>;
+    polarized: Map<string, string>;
   };
 }

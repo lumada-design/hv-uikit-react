@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core";
-import { Level1Average, Level2Bad, Level3, Level4, Level5 } from "@hv/uikit-react-icons/dist";
+import { Level1, Level2Average, Level3Bad, Level4, Level5 } from "@hv/uikit-react-icons/dist";
 import { HvListView, HvListViewCell, HvListViewRow, HvTypography } from "../../..";
 
 /* eslint-disable react/prop-types */
@@ -114,11 +114,11 @@ export const Main = () => {
   const getStatus = statusNumber => {
     switch (statusNumber) {
       case 1:
-        return { Icon: Level1Average, sema: "sema10" };
+        return { Icon: Level1, sema: "sema10" };
       case 2:
-        return { Icon: Level2Bad, sema: "sema11" };
+        return { Icon: Level2Average, sema: "sema11" };
       case 3:
-        return { Icon: Level3, sema: "sema12" };
+        return { Icon: Level3Bad, sema: "sema12" };
       case 4:
         return { Icon: Level4, sema: "sema13" };
       case 5:
@@ -154,7 +154,7 @@ export const Main = () => {
   return (
     <HvListView
       id="list"
-      icon={<Level1Average />}
+      icon={<Level1 />}
       values={values}
       renderer={rowRenderer}
       viewConfiguration={configuration}
@@ -256,11 +256,11 @@ export const NotSelectable = () => {
   const getStatus = statusNumber => {
     switch (statusNumber) {
       case 1:
-        return { Icon: Level1Average, sema: "sema10" };
+        return { Icon: Level1, sema: "sema10" };
       case 2:
-        return { Icon: Level2Bad, sema: "sema11" };
+        return { Icon: Level2Average, sema: "sema11" };
       case 3:
-        return { Icon: Level3, sema: "sema12" };
+        return { Icon: Level3Bad, sema: "sema12" };
       case 4:
         return { Icon: Level4, sema: "sema13" };
       case 5:
@@ -295,7 +295,7 @@ export const NotSelectable = () => {
 
   return (
     <HvListView
-      icon={<Level1Average />}
+      icon={<Level1 />}
       values={values}
       renderer={rowRenderer}
       viewConfiguration={configuration}
@@ -397,11 +397,11 @@ export const NotSelectableWithMenu = () => {
   const getStatus = statusNumber => {
     switch (statusNumber) {
       case 1:
-        return { Icon: Level1Average, sema: "sema10" };
+        return { Icon: Level1, sema: "sema10" };
       case 2:
-        return { Icon: Level2Bad, sema: "sema11" };
+        return { Icon: Level2Average, sema: "sema11" };
       case 3:
-        return { Icon: Level3, sema: "sema12" };
+        return { Icon: Level3Bad, sema: "sema12" };
       case 4:
         return { Icon: Level4, sema: "sema13" };
       case 5:
@@ -442,7 +442,7 @@ export const NotSelectableWithMenu = () => {
 
   return (
     <HvListView
-      icon={<Level1Average />}
+      icon={<Level1 />}
       values={values}
       renderer={rowRenderer}
       viewConfiguration={configuration}
@@ -550,11 +550,11 @@ export const NotStyled = () => {
   const getStatus = statusNumber => {
     switch (statusNumber) {
       case 1:
-        return { Icon: Level1Average, sema: "sema10" };
+        return { Icon: Level1, sema: "sema10" };
       case 2:
-        return { Icon: Level2Bad, sema: "sema11" };
+        return { Icon: Level2Average, sema: "sema11" };
       case 3:
-        return { Icon: Level3, sema: "sema12" };
+        return { Icon: Level3Bad, sema: "sema12" };
       case 4:
         return { Icon: Level4, sema: "sema13" };
       case 5:
@@ -573,7 +573,7 @@ export const NotStyled = () => {
     />
   );
 
-  return <HvListView icon={<Level1Average />} values={values} renderer={rowRenderer} />;
+  return <HvListView icon={<Level1 />} values={values} renderer={rowRenderer} />;
 };
 
 NotStyled.story = {

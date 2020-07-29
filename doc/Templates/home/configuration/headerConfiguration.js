@@ -1,5 +1,5 @@
 import React from "react";
-import { Operations, Tool } from "@hv/uikit-react-icons/dist";
+import { Operation, Tool } from "@hv/uikit-react-icons/dist";
 
 const headerConfiguration = [
   {
@@ -42,7 +42,7 @@ const headerConfiguration = [
   {
     id: "02",
     label: "Administration",
-    icon: <Operations />,
+    icon: <Operation />,
     onClick: () => console.log("02"),
     data: [
       {

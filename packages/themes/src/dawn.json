@@ -15,7 +15,7 @@
         "categorical": {},
         "undefinedState": {},
         "sequential": {},
-        "polarizes": {}
+        "polarized": {}
       }
     }
   },
@@ -253,7 +253,7 @@
         "cviz1_200": "#CFEAF3",
         "cviz1_100": "#E3F1F6"
       },
-      "polarizes": {
+      "polarized": {
         "sema1": "#59941B",
         "cviz21": "#869F1E",
         "cviz22": "#A4991C",

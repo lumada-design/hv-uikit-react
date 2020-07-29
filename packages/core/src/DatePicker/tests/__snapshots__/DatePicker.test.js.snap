@@ -82,7 +82,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarizes": Object {},
+                "polarized": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -314,7 +314,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarizes": Object {
+              "polarized": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -864,7 +864,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               "viz": Object {
                 "palette": Object {
                   "categorical": Object {},
-                  "polarizes": Object {},
+                  "polarized": Object {},
                   "sequential": Object {},
                   "undefinedState": Object {},
                 },
@@ -1096,7 +1096,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                   "cviz8": "#4AB573",
                   "cviz9": "#646A98",
                 },
-                "polarizes": Object {
+                "polarized": Object {
                   "cviz21": "#869F1E",
                   "cviz22": "#A4991C",
                   "cviz23": "#C4931A",
@@ -1651,7 +1651,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
-                    "polarizes": Object {},
+                    "polarized": Object {},
                     "sequential": Object {},
                     "undefinedState": Object {},
                   },
@@ -1883,7 +1883,7 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
                     "cviz8": "#4AB573",
                     "cviz9": "#646A98",
                   },
-                  "polarizes": Object {
+                  "polarized": Object {
                     "cviz21": "#869F1E",
                     "cviz22": "#A4991C",
                     "cviz23": "#C4931A",
@@ -2518,7 +2518,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarizes": Object {},
+                "polarized": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -2750,7 +2750,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarizes": Object {
+              "polarized": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -3299,7 +3299,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               "viz": Object {
                 "palette": Object {
                   "categorical": Object {},
-                  "polarizes": Object {},
+                  "polarized": Object {},
                   "sequential": Object {},
                   "undefinedState": Object {},
                 },
@@ -3531,7 +3531,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                   "cviz8": "#4AB573",
                   "cviz9": "#646A98",
                 },
-                "polarizes": Object {
+                "polarized": Object {
                   "cviz21": "#869F1E",
                   "cviz22": "#A4991C",
                   "cviz23": "#C4931A",
@@ -4085,7 +4085,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
-                    "polarizes": Object {},
+                    "polarized": Object {},
                     "sequential": Object {},
                     "undefinedState": Object {},
                   },
@@ -4317,7 +4317,7 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
                     "cviz8": "#4AB573",
                     "cviz9": "#646A98",
                   },
-                  "polarizes": Object {
+                  "polarized": Object {
                     "cviz21": "#869F1E",
                     "cviz22": "#A4991C",
                     "cviz23": "#C4931A",
@@ -4973,7 +4973,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarizes": Object {},
+                "polarized": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -5205,7 +5205,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarizes": Object {
+              "polarized": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -5756,7 +5756,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               "viz": Object {
                 "palette": Object {
                   "categorical": Object {},
-                  "polarizes": Object {},
+                  "polarized": Object {},
                   "sequential": Object {},
                   "undefinedState": Object {},
                 },
@@ -5988,7 +5988,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                   "cviz8": "#4AB573",
                   "cviz9": "#646A98",
                 },
-                "polarizes": Object {
+                "polarized": Object {
                   "cviz21": "#869F1E",
                   "cviz22": "#A4991C",
                   "cviz23": "#C4931A",
@@ -6542,7 +6542,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
-                    "polarizes": Object {},
+                    "polarized": Object {},
                     "sequential": Object {},
                     "undefinedState": Object {},
                   },
@@ -6774,7 +6774,7 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
                     "cviz8": "#4AB573",
                     "cviz9": "#646A98",
                   },
-                  "polarizes": Object {
+                  "polarized": Object {
                     "cviz21": "#869F1E",
                     "cviz22": "#A4991C",
                     "cviz23": "#C4931A",
@@ -7448,7 +7448,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarizes": Object {},
+                "polarized": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -7680,7 +7680,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarizes": Object {
+              "polarized": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -8226,7 +8226,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               "viz": Object {
                 "palette": Object {
                   "categorical": Object {},
-                  "polarizes": Object {},
+                  "polarized": Object {},
                   "sequential": Object {},
                   "undefinedState": Object {},
                 },
@@ -8458,7 +8458,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                   "cviz8": "#4AB573",
                   "cviz9": "#646A98",
                 },
-                "polarizes": Object {
+                "polarized": Object {
                   "cviz21": "#869F1E",
                   "cviz22": "#A4991C",
                   "cviz23": "#C4931A",
@@ -9011,7 +9011,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                 "viz": Object {
                   "palette": Object {
                     "categorical": Object {},
-                    "polarizes": Object {},
+                    "polarized": Object {},
                     "sequential": Object {},
                     "undefinedState": Object {},
                   },
@@ -9243,7 +9243,7 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
                     "cviz8": "#4AB573",
                     "cviz9": "#646A98",
                   },
-                  "polarizes": Object {
+                  "polarized": Object {
                     "cviz21": "#869F1E",
                     "cviz22": "#A4991C",
                     "cviz23": "#C4931A",

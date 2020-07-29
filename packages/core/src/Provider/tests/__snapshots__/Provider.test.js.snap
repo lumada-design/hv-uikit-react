@@ -43,7 +43,7 @@ exports[`Provider should render correctly 1`] = `
               "viz": Object {
                 "palette": Object {
                   "categorical": Object {},
-                  "polarizes": Object {},
+                  "polarized": Object {},
                   "sequential": Object {},
                   "undefinedState": Object {},
                 },
@@ -275,7 +275,7 @@ exports[`Provider should render correctly 1`] = `
                   "cviz8": "#4AB573",
                   "cviz9": "#646A98",
                 },
-                "polarizes": Object {
+                "polarized": Object {
                   "cviz21": "#869F1E",
                   "cviz22": "#A4991C",
                   "cviz23": "#C4931A",

@@ -12,11 +12,6 @@
 ## Icons
 
 Changes
-
-- `Operation` changed to `Operations`
-- `Level1` changed to `Level1Average`
-- `Level2Average` changed to `Level2Bad`
-- `Level3Bad` changed to `Level3`
 - `UpXS` changed to `DropUpXS`
 - `AppleLogo` changed to `AppleLogoFilled`
 - `LocatinTarget` changed to `LocationTarget`

@@ -129,7 +129,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarizes": Object {},
+                "polarized": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -361,7 +361,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarizes": Object {
+              "polarized": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -924,7 +924,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarizes": Object {},
+                        "polarized": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -1156,7 +1156,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarizes": Object {
+                      "polarized": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -1797,7 +1797,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarizes": Object {},
+                        "polarized": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -2029,7 +2029,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarizes": Object {
+                      "polarized": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -2676,7 +2676,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarizes": Object {},
+                "polarized": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -2908,7 +2908,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarizes": Object {
+              "polarized": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -3469,7 +3469,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarizes": Object {},
+                        "polarized": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -3701,7 +3701,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarizes": Object {
+                      "polarized": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -4309,7 +4309,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarizes": Object {},
+                        "polarized": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -4541,7 +4541,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarizes": Object {
+                      "polarized": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -5184,7 +5184,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarizes": Object {},
+                        "polarized": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -5416,7 +5416,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarizes": Object {
+                      "polarized": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",

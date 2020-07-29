@@ -4,7 +4,7 @@ import Grid from "@hv/uikit-react-core/dist/Grid";
 import Typography from "@hv/uikit-react-core/dist/Typography";
 import Kpi from "@hv/uikit-react-core/dist/Kpi";
 import Card from "@hv/uikit-react-core/dist/Card";
-import { Level1Average, Level2Bad, Level3, Level4, Level5 } from "@hv/uikit-react-icons/dist";
+import { Level1, Level2Bad, Level3, Level4, Level5 } from "@hv/uikit-react-icons/dist";
 import styles from "./styles";
 
 const KpiProbability = score => ({
