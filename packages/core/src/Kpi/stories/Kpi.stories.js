@@ -171,8 +171,9 @@ Iops.story = {
       storyDescription: "A Kpi sample showcasing the total IOPS."
     },
     eyes: {
-      // excluded due to the trendline chart rendering issues #1792
-      include: false
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+      include: true
     }
   }
 };
@@ -377,8 +378,9 @@ Selectable.story = {
       storyDescription: "A selectable kpi with the total numbers of event."
     },
     eyes: {
-      // excluded due to the trendline chart rendering issues #1792
-      include: false
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+      include: true
     }
   }
 };
@@ -486,8 +488,9 @@ SelectableNoSemantic.story = {
       storyDescription: "A selectable kpi with the total numbers of event."
     },
     eyes: {
-      // excluded due to the trendline chart rendering issues #1792
-      include: false
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+      include: true
     }
   }
 };
@@ -594,8 +597,9 @@ SelectableNoTrendIcon.story = {
       storyDescription: "A selectable kpi with the total numbers of event."
     },
     eyes: {
-      // excluded due to the trendline chart rendering issues #1792
-      include: false
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+      include: true
     }
   }
 };

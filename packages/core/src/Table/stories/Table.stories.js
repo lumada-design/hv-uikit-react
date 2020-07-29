@@ -1033,8 +1033,9 @@ WithExpanderAndCustomContent.story = {
         "Table sample that shows the ability to add a complex expander and custom cell."
     },
     eyes: {
-      // excluded due to the custom chart rendering issues #1792
-      include: false
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+      include: true
     }
   }
 };
@@ -1450,8 +1451,9 @@ WithCheckboxCustomContent.story = {
       storyDescription: "Table sample that shows the ability to add use a checkbox."
     },
     eyes: {
-      // excluded due to the custom chart rendering issues #1792
-      include: false
+      // waiting until external charts are rendered (issue #1792)
+      waitBeforeScreenshot: "[id|=reactgooglegraph]",
+      include: true
     }
   }
 };

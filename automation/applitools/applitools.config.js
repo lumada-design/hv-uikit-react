@@ -1,5 +1,6 @@
 module.exports = {
   // showLogs: true,
+  matchLevel: 'Strict',
   puppeteerOptions: { args: ['--no-sandbox', "--disable-setuid-sandbox"], ignoreHTTPSErrors: true},
   runInDocker: true,
   variations: () => ["theme:wicked"],
