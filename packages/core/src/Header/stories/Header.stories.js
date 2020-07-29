@@ -116,8 +116,8 @@ export const Main = () => {
 Main.story = {
   parameters: {
     eyes: {
-      // excluded because of the initial animation #1794
-      include: false
+      // waiting until all elements are rendered (issue #1794)
+      waitBeforeScreenshot: ".HvHeaderMenuBar-active"
     }
   }
 };
