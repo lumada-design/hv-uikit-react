@@ -39,7 +39,7 @@
     },
     "semantic": {
       "sema1": "#59941B",
-      "sema2": "#519884",
+      "sema2": "#4D9284",
       "sema3": "#DB6B22",
       "sema4": "#C62828",
       "sema5": "#C51162",
@@ -239,7 +239,7 @@
         "cviz20": "#F7B552"
       },
       "undefinedState": {
-        "atmo5": "#CCCED0"
+        "atmo4": "#CCCED0"
       },
       "sequential": {
         "cviz1": "#2DB3E0",
