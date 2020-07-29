@@ -210,16 +210,8 @@ TimeRepresentation.story = {
       storyDescription: "Representation of time related data."
     },
     eyes: {
-      floatingRegions: [
-        {
-          // Ticket 34213, applitools support fix solution
-          selector: ".floating-region",
-          maxUpOffset: 7,
-          maxDownOffset: 7,
-          maxLeftOffset: 7,
-          maxRightOffset: 7
-        }
-      ]
+      // story excluded due inconsistent component alignment and relative position, opened 1822 issue
+      include: false
     }
   }
 };

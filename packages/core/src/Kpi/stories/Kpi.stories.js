@@ -172,8 +172,7 @@ Iops.story = {
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]",
-      include: true
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
     }
   }
 };
@@ -379,8 +378,7 @@ Selectable.story = {
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]",
-      include: true
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
     }
   }
 };
@@ -489,8 +487,7 @@ SelectableNoSemantic.story = {
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]",
-      include: true
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
     }
   }
 };
@@ -598,8 +595,7 @@ SelectableNoTrendIcon.story = {
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]",
-      include: true
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
     }
   }
 };

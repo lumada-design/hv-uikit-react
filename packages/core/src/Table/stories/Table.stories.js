@@ -1034,8 +1034,7 @@ WithExpanderAndCustomContent.story = {
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]",
-      include: true
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
     }
   }
 };
@@ -1452,8 +1451,7 @@ WithCheckboxCustomContent.story = {
     },
     eyes: {
       // waiting until external charts are rendered (issue #1792)
-      waitBeforeScreenshot: "[id|=reactgooglegraph]",
-      include: true
+      waitBeforeScreenshot: "[id|=reactgooglegraph]"
     }
   }
 };
