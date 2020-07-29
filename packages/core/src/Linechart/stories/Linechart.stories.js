@@ -210,7 +210,7 @@ TimeRepresentation.story = {
       storyDescription: "Representation of time related data."
     },
     eyes: {
-      // story excluded due component alignment and relative position are inconsistent (? it's the plotly ???)
+      // story excluded due inconsistent component alignment and relative position, opened 1822 issue
       include: false
     }
   }
