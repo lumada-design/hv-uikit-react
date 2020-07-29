@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
+import equalObjects from "shallow-equal/objects";
 import ArrowUp from "@hv/uikit-react-icons/dist/DropUpXS";
 import ArrowDown from "@hv/uikit-react-icons/dist/DropDownXS";
 import { setId, isKeypress, KeyboardCodes } from "../utils";
@@ -49,7 +50,7 @@ class HvDropdown extends React.Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.values !== state.values || props.labels !== state.labels) {
+    if (!equalObjects(props.values, state.values) || !equalObjects(props.labels, state.labels)) {
       return {
         isOpen: props.expanded,
         selectionLabel: getSelectionLabel(props.values, props.labels, props.multiSelect),
