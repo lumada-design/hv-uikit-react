@@ -49,7 +49,7 @@ exports[`PeriodPicker should render correctly 1`] = `
             >
               <path
                 className="color0"
-                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
                 fill="#414141"
               />
             </svg>
@@ -76,7 +76,6 @@ exports[`PeriodPicker should render correctly 1`] = `
               "placeholderText": "HvTypography-placeholderText",
               "root": "HvTypography-root",
               "sTitle": "HvTypography-sTitle",
-              "sectionTitle": "HvTypography-sectionTitle",
               "selectedNavText": "HvTypography-selectedNavText",
               "vizText": "HvTypography-vizText",
               "vizTextDisabled": "HvTypography-vizTextDisabled",

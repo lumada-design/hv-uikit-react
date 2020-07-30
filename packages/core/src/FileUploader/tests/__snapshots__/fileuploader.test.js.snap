@@ -749,7 +749,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                       >
                                         <path
                                           className="color0"
-                                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                                          d="M14 2.7l-.7-.7L8 7.3 2.7 2l-.7.7L7.3 8 2 13.3l.7.7L8 8.7l5.3 5.3.7-.7L8.7 8z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -986,7 +986,7 @@ exports[`FileUploader withStyles should render correctly 1`] = `
                                       >
                                         <path
                                           className="color0"
-                                          d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                                          d="M14 2.7l-.7-.7L8 7.3 2.7 2l-.7.7L7.3 8 2 13.3l.7.7L8 8.7l5.3 5.3.7-.7L8.7 8z"
                                           fill="#414141"
                                         />
                                       </svg>

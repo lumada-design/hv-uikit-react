@@ -1506,11 +1506,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                               d="M0 0h16v16H0z"
                                               fill="#FBFCFC"
                                             />
-                                            <path
+                                            <g
                                               className="color1"
-                                              d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                                               fill="#414141"
-                                            />
+                                            >
+                                              <path
+                                                d="M0 0v16h16V0zm15 15H1V1h14z"
+                                              />
+                                              <path
+                                                d="M4 7h8v2H4z"
+                                              />
+                                            </g>
                                           </svg>
                                         </div>
                                       </CheckboxPartial>
@@ -1712,11 +1718,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             d="M0 0h16v16H0z"
                             fill="#FBFCFC"
                           />
-                          <path
+                          <g
                             class="color1"
-                            d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                             fill="#414141"
-                          />
+                          >
+                            <path
+                              d="M0 0v16h16V0zm15 15H1V1h14z"
+                            />
+                            <path
+                              d="M4 7h8v2H4z"
+                            />
+                          </g>
                         </svg>
                       </div>
                     </span>
@@ -1783,13 +1795,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 fill="#414141"
                               />
                               <path
-                                class="color0"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                fill="#414141"
-                              />
-                              <path
                                 class="color1"
-                                d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                 fill="#FBFCFC"
                               />
                             </svg>
@@ -1844,7 +1851,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               />
                               <path
                                 class="color1"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
+                                d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                 fill="#414141"
                               />
                             </svg>
@@ -1899,13 +1906,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 fill="#414141"
                               />
                               <path
-                                class="color0"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                fill="#414141"
-                              />
-                              <path
                                 class="color1"
-                                d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                 fill="#FBFCFC"
                               />
                             </svg>
@@ -1982,11 +1984,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               d="M0 0h16v16H0z"
                               fill="#FBFCFC"
                             />
-                            <path
+                            <g
                               class="color1"
-                              d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                               fill="#414141"
-                            />
+                            >
+                              <path
+                                d="M0 0v16h16V0zm15 15H1V1h14z"
+                              />
+                              <path
+                                d="M4 7h8v2H4z"
+                              />
+                            </g>
                           </svg>
                         </div>
                       </span>
@@ -2053,13 +2061,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   fill="#414141"
                                 />
                                 <path
-                                  class="color0"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                                  fill="#414141"
-                                />
-                                <path
                                   class="color1"
-                                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                  d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                   fill="#FBFCFC"
                                 />
                               </svg>
@@ -2114,7 +2117,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 />
                                 <path
                                   class="color1"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                                  d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                   fill="#414141"
                                 />
                               </svg>
@@ -2169,13 +2172,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   fill="#414141"
                                 />
                                 <path
-                                  class="color0"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                                  fill="#414141"
-                                />
-                                <path
                                   class="color1"
-                                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                  d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                   fill="#FBFCFC"
                                 />
                               </svg>
@@ -2581,13 +2579,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                         fill="#414141"
                                                       />
                                                       <path
-                                                        className="color0"
-                                                        d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                        fill="#414141"
-                                                      />
-                                                      <path
                                                         className="color1"
-                                                        d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                                        d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                                         fill="#FBFCFC"
                                                       />
                                                     </svg>
@@ -2712,11 +2705,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             d="M0 0h16v16H0z"
                             fill="#FBFCFC"
                           />
-                          <path
+                          <g
                             class="color1"
-                            d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                             fill="#414141"
-                          />
+                          >
+                            <path
+                              d="M0 0v16h16V0zm15 15H1V1h14z"
+                            />
+                            <path
+                              d="M4 7h8v2H4z"
+                            />
+                          </g>
                         </svg>
                       </div>
                     </span>
@@ -2783,13 +2782,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 fill="#414141"
                               />
                               <path
-                                class="color0"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                fill="#414141"
-                              />
-                              <path
                                 class="color1"
-                                d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                 fill="#FBFCFC"
                               />
                             </svg>
@@ -2844,7 +2838,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               />
                               <path
                                 class="color1"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
+                                d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                 fill="#414141"
                               />
                             </svg>
@@ -2899,13 +2893,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 fill="#414141"
                               />
                               <path
-                                class="color0"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                fill="#414141"
-                              />
-                              <path
                                 class="color1"
-                                d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                 fill="#FBFCFC"
                               />
                             </svg>
@@ -2982,11 +2971,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               d="M0 0h16v16H0z"
                               fill="#FBFCFC"
                             />
-                            <path
+                            <g
                               class="color1"
-                              d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                               fill="#414141"
-                            />
+                            >
+                              <path
+                                d="M0 0v16h16V0zm15 15H1V1h14z"
+                              />
+                              <path
+                                d="M4 7h8v2H4z"
+                              />
+                            </g>
                           </svg>
                         </div>
                       </span>
@@ -3053,13 +3048,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   fill="#414141"
                                 />
                                 <path
-                                  class="color0"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                                  fill="#414141"
-                                />
-                                <path
                                   class="color1"
-                                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                  d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                   fill="#FBFCFC"
                                 />
                               </svg>
@@ -3114,7 +3104,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 />
                                 <path
                                   class="color1"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                                  d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                   fill="#414141"
                                 />
                               </svg>
@@ -3169,13 +3159,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   fill="#414141"
                                 />
                                 <path
-                                  class="color0"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                                  fill="#414141"
-                                />
-                                <path
                                   class="color1"
-                                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                  d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                   fill="#FBFCFC"
                                 />
                               </svg>
@@ -3582,7 +3567,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                       />
                                                       <path
                                                         className="color1"
-                                                        d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                        d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                                         fill="#414141"
                                                       />
                                                     </svg>
@@ -3707,11 +3692,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                             d="M0 0h16v16H0z"
                             fill="#FBFCFC"
                           />
-                          <path
+                          <g
                             class="color1"
-                            d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                             fill="#414141"
-                          />
+                          >
+                            <path
+                              d="M0 0v16h16V0zm15 15H1V1h14z"
+                            />
+                            <path
+                              d="M4 7h8v2H4z"
+                            />
+                          </g>
                         </svg>
                       </div>
                     </span>
@@ -3778,13 +3769,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 fill="#414141"
                               />
                               <path
-                                class="color0"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                fill="#414141"
-                              />
-                              <path
                                 class="color1"
-                                d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                 fill="#FBFCFC"
                               />
                             </svg>
@@ -3839,7 +3825,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               />
                               <path
                                 class="color1"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
+                                d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                 fill="#414141"
                               />
                             </svg>
@@ -3894,13 +3880,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 fill="#414141"
                               />
                               <path
-                                class="color0"
-                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                fill="#414141"
-                              />
-                              <path
                                 class="color1"
-                                d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                 fill="#FBFCFC"
                               />
                             </svg>
@@ -3977,11 +3958,17 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                               d="M0 0h16v16H0z"
                               fill="#FBFCFC"
                             />
-                            <path
+                            <g
                               class="color1"
-                              d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
                               fill="#414141"
-                            />
+                            >
+                              <path
+                                d="M0 0v16h16V0zm15 15H1V1h14z"
+                              />
+                              <path
+                                d="M4 7h8v2H4z"
+                              />
+                            </g>
                           </svg>
                         </div>
                       </span>
@@ -4048,13 +4035,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   fill="#414141"
                                 />
                                 <path
-                                  class="color0"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                                  fill="#414141"
-                                />
-                                <path
                                   class="color1"
-                                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                  d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                   fill="#FBFCFC"
                                 />
                               </svg>
@@ -4109,7 +4091,7 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                 />
                                 <path
                                   class="color1"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                                  d="M0-.00291v16h16v-16zm15 15H1v-14h14z"
                                   fill="#414141"
                                 />
                               </svg>
@@ -4164,13 +4146,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                   fill="#414141"
                                 />
                                 <path
-                                  class="color0"
-                                  d="M16 16H0V0h16zM1 15h14V1H1z"
-                                  fill="#414141"
-                                />
-                                <path
                                   class="color1"
-                                  d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                  d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                   fill="#FBFCFC"
                                 />
                               </svg>
@@ -4576,13 +4553,8 @@ exports[`<List /> Multi selection with selectors should render correctly 1`] = `
                                                         fill="#414141"
                                                       />
                                                       <path
-                                                        className="color0"
-                                                        d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                        fill="#414141"
-                                                      />
-                                                      <path
                                                         className="color1"
-                                                        d="M6.049 12.463L2.293 8.707l1.414-1.414 2.244 2.244 6.3-7.2 1.506 1.317z"
+                                                        d="M5.95 13.1l-3.7-3.8 1.4-1.4 2.3 2.2 6.2-7.2 1.6 1.4z"
                                                         fill="#FBFCFC"
                                                       />
                                                     </svg>
@@ -5442,7 +5414,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           class="color0"
-                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                           fill="#414141"
                         />
                       </svg>
@@ -5486,7 +5458,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           class="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                           fill="#414141"
                         />
                       </svg>
@@ -5544,7 +5516,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                         >
                           <path
                             class="color0"
-                            d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                            d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                             fill="#414141"
                           />
                         </svg>
@@ -5588,7 +5560,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                         >
                           <path
                             class="color0"
-                            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                            d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                             fill="#414141"
                           />
                         </svg>
@@ -5640,7 +5612,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           className="color0"
-                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                           fill="#414141"
                         />
                       </svg>
@@ -5730,7 +5702,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           class="color0"
-                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                           fill="#414141"
                         />
                       </svg>
@@ -5774,7 +5746,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           class="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                           fill="#414141"
                         />
                       </svg>
@@ -5832,7 +5804,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                         >
                           <path
                             class="color0"
-                            d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                            d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                             fill="#414141"
                           />
                         </svg>
@@ -5876,7 +5848,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                         >
                           <path
                             class="color0"
-                            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                            d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                             fill="#414141"
                           />
                         </svg>
@@ -5987,7 +5959,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           class="color0"
-                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                          d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                           fill="#414141"
                         />
                       </svg>
@@ -6031,7 +6003,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           class="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                           fill="#414141"
                         />
                       </svg>
@@ -6089,7 +6061,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                         >
                           <path
                             class="color0"
-                            d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 16h16v-1H0z"
+                            d="M1.086 11.453l-.707-.707 5.559-5.558 4.2 4.2 4.832-4.831.707.707-5.539 5.536-4.2-4.2zM0 15h16v1H0z"
                             fill="#414141"
                           />
                         </svg>
@@ -6133,7 +6105,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                         >
                           <path
                             class="color0"
-                            d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                            d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                             fill="#414141"
                           />
                         </svg>
@@ -6230,7 +6202,7 @@ exports[`<List /> Single selection with icons should render correctly 1`] = `
                       >
                         <path
                           className="color0"
-                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          d="M8.65 6.00006l-4.6 4.6-.7-.7L7.25 6l-3.9-3.9.7-.7z"
                           fill="#414141"
                         />
                       </svg>
@@ -6382,12 +6354,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             >
                               <path
                                 class="color0"
-                                d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#414141"
-                              />
-                              <path
-                                class="color0"
-                                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                 fill="#414141"
                               />
                               <path
@@ -6580,12 +6547,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               >
                                 <path
                                   class="color0"
-                                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#414141"
-                                />
-                                <path
-                                  class="color0"
-                                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                  d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                   fill="#414141"
                                 />
                                 <path
@@ -7049,12 +7011,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                                                     >
                                                       <path
                                                         className="color0"
-                                                        d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                                        fill="#414141"
-                                                      />
-                                                      <path
-                                                        className="color0"
-                                                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                                        d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                                         fill="#414141"
                                                       />
                                                       <path
@@ -7191,12 +7148,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             >
                               <path
                                 class="color0"
-                                d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#414141"
-                              />
-                              <path
-                                class="color0"
-                                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                 fill="#414141"
                               />
                               <path
@@ -7389,12 +7341,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               >
                                 <path
                                   class="color0"
-                                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#414141"
-                                />
-                                <path
-                                  class="color0"
-                                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                  d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                   fill="#414141"
                                 />
                                 <path
@@ -7994,12 +7941,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                             >
                               <path
                                 class="color0"
-                                d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                fill="#414141"
-                              />
-                              <path
-                                class="color0"
-                                d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                 fill="#414141"
                               />
                               <path
@@ -8192,12 +8134,7 @@ exports[`<List /> Single selection with selectors should render correctly 1`] = 
                               >
                                 <path
                                   class="color0"
-                                  d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                  fill="#414141"
-                                />
-                                <path
-                                  class="color0"
-                                  d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                  d="M8 0a8 8 0 108 8 8 8 0 00-8-8z"
                                   fill="#414141"
                                 />
                                 <path

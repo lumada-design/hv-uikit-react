@@ -84,7 +84,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                             >
                               <path
                                 class="color0"
-                                d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                 fill="#414141"
                               />
                             </svg>
@@ -124,7 +124,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                               >
                                 <path
                                   class="color0"
-                                  d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                  d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                   fill="#414141"
                                 />
                               </svg>
@@ -184,7 +184,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                 >
                                   <path
                                     class="color0"
-                                    d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                    d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                     fill="#414141"
                                   />
                                 </svg>
@@ -236,7 +236,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                   >
                                     <path
                                       class="color0"
-                                      d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                      d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                       fill="#414141"
                                     />
                                   </svg>
@@ -311,7 +311,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                     >
                                       <path
                                         class="color0"
-                                        d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                        d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                         fill="#414141"
                                       />
                                     </svg>
@@ -356,7 +356,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       >
                                         <path
                                           class="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                          d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -429,7 +429,7 @@ exports[`<VerticalNavigation /> collapsable closed vertical navigation should re
                                       >
                                         <path
                                           className="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                          d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -538,7 +538,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                             >
                               <path
                                 class="color0"
-                                d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                 fill="#414141"
                               />
                             </svg>
@@ -578,7 +578,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                               >
                                 <path
                                   class="color0"
-                                  d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                  d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                   fill="#414141"
                                 />
                               </svg>
@@ -638,7 +638,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                 >
                                   <path
                                     class="color0"
-                                    d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                    d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                     fill="#414141"
                                   />
                                 </svg>
@@ -690,7 +690,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                   >
                                     <path
                                       class="color0"
-                                      d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                      d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                       fill="#414141"
                                     />
                                   </svg>
@@ -765,7 +765,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                     >
                                       <path
                                         class="color0"
-                                        d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                        d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                         fill="#414141"
                                       />
                                     </svg>
@@ -810,7 +810,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                       >
                                         <path
                                           class="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                          d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                           fill="#414141"
                                         />
                                       </svg>
@@ -883,7 +883,7 @@ exports[`<VerticalNavigation /> collapsable open vertical navigation should rend
                                       >
                                         <path
                                           className="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                          d="M0 7.5h16v1H0zM0 2h16v1H0zm0 11h16v1H0z"
                                           fill="#414141"
                                         />
                                       </svg>

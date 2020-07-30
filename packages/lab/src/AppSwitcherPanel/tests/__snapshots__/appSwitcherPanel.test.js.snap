@@ -129,7 +129,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarized": Object {},
+                "polarizes": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -166,7 +166,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "sema17": "#3388B1",
               "sema18": "#1A85A1",
               "sema19": "#00838F",
-              "sema2": "#4D9284",
+              "sema2": "#519884",
               "sema20": "#F9E3C5",
               "sema3": "#DB6B22",
               "sema4": "#C62828",
@@ -246,12 +246,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "lineHeight": "40px",
             },
             "link": Object {
-              "color": "#414141",
+              "color": "#2064B4",
               "fontSize": "12px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecoration": "underline",
             },
             "mTitle": Object {
               "color": "#414141",
@@ -280,14 +279,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
-            },
-            "sectionTitle": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.32em",
-              "lineHeight": "18px",
-              "textTransform": "uppercase",
             },
             "selectedNavText": Object {
               "color": "#CC0000",
@@ -318,12 +309,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "lineHeight": "40px",
             },
             "xsInlineLink": Object {
-              "color": "#414141",
+              "color": "#2064B4",
               "fontSize": "10px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "15px",
-              "textDecoration": "underline",
             },
             "xsTitle": Object {
               "color": "#414141",
@@ -371,7 +361,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarized": Object {
+              "polarizes": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -396,7 +386,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo4": "#CCCED0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -550,7 +540,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
           "sema17": "#3388B1",
           "sema18": "#1A85A1",
           "sema19": "#00838F",
-          "sema2": "#4D9284",
+          "sema2": "#519884",
           "sema20": "#F9E3C5",
           "sema3": "#DB6B22",
           "sema4": "#C62828",
@@ -809,17 +799,15 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
             "lineHeight": "16px",
           },
           "subtitle2": Object {
-            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "lineHeight": 1.57,
           },
           "suppressDeprecationWarnings": true,
         },
@@ -934,7 +922,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarized": Object {},
+                        "polarizes": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -971,7 +959,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "sema17": "#3388B1",
                       "sema18": "#1A85A1",
                       "sema19": "#00838F",
-                      "sema2": "#4D9284",
+                      "sema2": "#519884",
                       "sema20": "#F9E3C5",
                       "sema3": "#DB6B22",
                       "sema4": "#C62828",
@@ -1051,12 +1039,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
-                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -1085,14 +1072,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
-                    },
-                    "sectionTitle": Object {
-                      "color": "#414141",
-                      "fontSize": "14px",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.32em",
-                      "lineHeight": "18px",
-                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -1123,12 +1102,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -1176,7 +1154,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarized": Object {
+                      "polarizes": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -1201,7 +1179,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo4": "#CCCED0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -1355,7 +1333,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "sema17": "#3388B1",
                   "sema18": "#1A85A1",
                   "sema19": "#00838F",
-                  "sema2": "#4D9284",
+                  "sema2": "#519884",
                   "sema20": "#F9E3C5",
                   "sema3": "#DB6B22",
                   "sema4": "#C62828",
@@ -1614,17 +1592,15 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     "lineHeight": "16px",
                   },
                   "subtitle2": Object {
-                    "color": "#414141",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
                       "Helvetica",
                       "sans-serif",
                     ],
-                    "fontSize": "12px",
-                    "fontWeight": 600,
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "16px",
+                    "fontSize": "0.875rem",
+                    "fontWeight": 500,
+                    "lineHeight": 1.57,
                   },
                   "suppressDeprecationWarnings": true,
                 },
@@ -1670,7 +1646,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -1733,7 +1708,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                           >
                             <path
                               className="color0"
-                              d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                              d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1z"
+                              fill="#414141"
+                            />
+                            <path
+                              className="color0"
+                              d="M7.5 6h1v6h-1zm0-2h1v1h-1z"
                               fill="#414141"
                             />
                           </svg>
@@ -1818,7 +1798,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarized": Object {},
+                        "polarizes": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -1855,7 +1835,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "sema17": "#3388B1",
                       "sema18": "#1A85A1",
                       "sema19": "#00838F",
-                      "sema2": "#4D9284",
+                      "sema2": "#519884",
                       "sema20": "#F9E3C5",
                       "sema3": "#DB6B22",
                       "sema4": "#C62828",
@@ -1935,12 +1915,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
-                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -1969,14 +1948,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
-                    },
-                    "sectionTitle": Object {
-                      "color": "#414141",
-                      "fontSize": "14px",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.32em",
-                      "lineHeight": "18px",
-                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -2007,12 +1978,11 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -2060,7 +2030,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarized": Object {
+                      "polarizes": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -2085,7 +2055,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo4": "#CCCED0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -2239,7 +2209,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                   "sema17": "#3388B1",
                   "sema18": "#1A85A1",
                   "sema19": "#00838F",
-                  "sema2": "#4D9284",
+                  "sema2": "#519884",
                   "sema20": "#F9E3C5",
                   "sema3": "#DB6B22",
                   "sema4": "#C62828",
@@ -2498,17 +2468,15 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                     "lineHeight": "16px",
                   },
                   "subtitle2": Object {
-                    "color": "#414141",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
                       "Helvetica",
                       "sans-serif",
                     ],
-                    "fontSize": "12px",
-                    "fontWeight": 600,
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "16px",
+                    "fontSize": "0.875rem",
+                    "fontWeight": 500,
+                    "lineHeight": 1.57,
                   },
                   "suppressDeprecationWarnings": true,
                 },
@@ -2554,7 +2522,6 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -2708,7 +2675,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarized": Object {},
+                "polarizes": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -2745,7 +2712,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "sema17": "#3388B1",
               "sema18": "#1A85A1",
               "sema19": "#00838F",
-              "sema2": "#4D9284",
+              "sema2": "#519884",
               "sema20": "#F9E3C5",
               "sema3": "#DB6B22",
               "sema4": "#C62828",
@@ -2825,12 +2792,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "lineHeight": "40px",
             },
             "link": Object {
-              "color": "#414141",
+              "color": "#2064B4",
               "fontSize": "12px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecoration": "underline",
             },
             "mTitle": Object {
               "color": "#414141",
@@ -2859,14 +2825,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
-            },
-            "sectionTitle": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.32em",
-              "lineHeight": "18px",
-              "textTransform": "uppercase",
             },
             "selectedNavText": Object {
               "color": "#CC0000",
@@ -2897,12 +2855,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "lineHeight": "40px",
             },
             "xsInlineLink": Object {
-              "color": "#414141",
+              "color": "#2064B4",
               "fontSize": "10px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "15px",
-              "textDecoration": "underline",
             },
             "xsTitle": Object {
               "color": "#414141",
@@ -2950,7 +2907,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarized": Object {
+              "polarizes": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -2975,7 +2932,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo4": "#CCCED0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -3129,7 +3086,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
           "sema17": "#3388B1",
           "sema18": "#1A85A1",
           "sema19": "#00838F",
-          "sema2": "#4D9284",
+          "sema2": "#519884",
           "sema20": "#F9E3C5",
           "sema3": "#DB6B22",
           "sema4": "#C62828",
@@ -3388,17 +3345,15 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
             "lineHeight": "16px",
           },
           "subtitle2": Object {
-            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "lineHeight": 1.57,
           },
           "suppressDeprecationWarnings": true,
         },
@@ -3511,7 +3466,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarized": Object {},
+                        "polarizes": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -3548,7 +3503,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "sema17": "#3388B1",
                       "sema18": "#1A85A1",
                       "sema19": "#00838F",
-                      "sema2": "#4D9284",
+                      "sema2": "#519884",
                       "sema20": "#F9E3C5",
                       "sema3": "#DB6B22",
                       "sema4": "#C62828",
@@ -3628,12 +3583,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
-                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -3662,14 +3616,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
-                    },
-                    "sectionTitle": Object {
-                      "color": "#414141",
-                      "fontSize": "14px",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.32em",
-                      "lineHeight": "18px",
-                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -3700,12 +3646,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -3753,7 +3698,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarized": Object {
+                      "polarizes": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -3778,7 +3723,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo4": "#CCCED0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -3932,7 +3877,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "sema17": "#3388B1",
                   "sema18": "#1A85A1",
                   "sema19": "#00838F",
-                  "sema2": "#4D9284",
+                  "sema2": "#519884",
                   "sema20": "#F9E3C5",
                   "sema3": "#DB6B22",
                   "sema4": "#C62828",
@@ -4191,17 +4136,15 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "lineHeight": "16px",
                   },
                   "subtitle2": Object {
-                    "color": "#414141",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
                       "Helvetica",
                       "sans-serif",
                     ],
-                    "fontSize": "12px",
-                    "fontWeight": 600,
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "16px",
+                    "fontSize": "0.875rem",
+                    "fontWeight": 500,
+                    "lineHeight": 1.57,
                   },
                   "suppressDeprecationWarnings": true,
                 },
@@ -4247,7 +4190,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -4362,7 +4304,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarized": Object {},
+                        "polarizes": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -4399,7 +4341,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "sema17": "#3388B1",
                       "sema18": "#1A85A1",
                       "sema19": "#00838F",
-                      "sema2": "#4D9284",
+                      "sema2": "#519884",
                       "sema20": "#F9E3C5",
                       "sema3": "#DB6B22",
                       "sema4": "#C62828",
@@ -4479,12 +4421,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
-                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -4513,14 +4454,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
-                    },
-                    "sectionTitle": Object {
-                      "color": "#414141",
-                      "fontSize": "14px",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.32em",
-                      "lineHeight": "18px",
-                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -4551,12 +4484,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -4604,7 +4536,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarized": Object {
+                      "polarizes": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -4629,7 +4561,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo4": "#CCCED0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -4783,7 +4715,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "sema17": "#3388B1",
                   "sema18": "#1A85A1",
                   "sema19": "#00838F",
-                  "sema2": "#4D9284",
+                  "sema2": "#519884",
                   "sema20": "#F9E3C5",
                   "sema3": "#DB6B22",
                   "sema4": "#C62828",
@@ -5042,17 +4974,15 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "lineHeight": "16px",
                   },
                   "subtitle2": Object {
-                    "color": "#414141",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
                       "Helvetica",
                       "sans-serif",
                     ],
-                    "fontSize": "12px",
-                    "fontWeight": 600,
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "16px",
+                    "fontSize": "0.875rem",
+                    "fontWeight": 500,
+                    "lineHeight": 1.57,
                   },
                   "suppressDeprecationWarnings": true,
                 },
@@ -5098,7 +5028,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -5161,7 +5090,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                           >
                             <path
                               className="color0"
-                              d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                              d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1z"
+                              fill="#414141"
+                            />
+                            <path
+                              className="color0"
+                              d="M7.5 6h1v6h-1zm0-2h1v1h-1z"
                               fill="#414141"
                             />
                           </svg>
@@ -5248,7 +5182,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "viz": Object {
                       "palette": Object {
                         "categorical": Object {},
-                        "polarized": Object {},
+                        "polarizes": Object {},
                         "sequential": Object {},
                         "undefinedState": Object {},
                       },
@@ -5285,7 +5219,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "sema17": "#3388B1",
                       "sema18": "#1A85A1",
                       "sema19": "#00838F",
-                      "sema2": "#4D9284",
+                      "sema2": "#519884",
                       "sema20": "#F9E3C5",
                       "sema3": "#DB6B22",
                       "sema4": "#C62828",
@@ -5365,12 +5299,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
-                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -5399,14 +5332,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
-                    },
-                    "sectionTitle": Object {
-                      "color": "#414141",
-                      "fontSize": "14px",
-                      "fontWeight": 400,
-                      "letterSpacing": "0.32em",
-                      "lineHeight": "18px",
-                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -5437,12 +5362,11 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#414141",
+                      "color": "#2064B4",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
-                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -5490,7 +5414,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz8": "#4AB573",
                         "cviz9": "#646A98",
                       },
-                      "polarized": Object {
+                      "polarizes": Object {
                         "cviz21": "#869F1E",
                         "cviz22": "#A4991C",
                         "cviz23": "#C4931A",
@@ -5515,7 +5439,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                         "cviz1_900": "#40B9E2",
                       },
                       "undefinedState": Object {
-                        "atmo4": "#CCCED0",
+                        "atmo5": "#CCCED0",
                       },
                     },
                   },
@@ -5669,7 +5593,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                   "sema17": "#3388B1",
                   "sema18": "#1A85A1",
                   "sema19": "#00838F",
-                  "sema2": "#4D9284",
+                  "sema2": "#519884",
                   "sema20": "#F9E3C5",
                   "sema3": "#DB6B22",
                   "sema4": "#C62828",
@@ -5928,17 +5852,15 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                     "lineHeight": "16px",
                   },
                   "subtitle2": Object {
-                    "color": "#414141",
                     "fontFamily": Array [
                       "'Open Sans'",
                       "Arial",
                       "Helvetica",
                       "sans-serif",
                     ],
-                    "fontSize": "12px",
-                    "fontWeight": 600,
-                    "letterSpacing": "0.02em",
-                    "lineHeight": "16px",
+                    "fontSize": "0.875rem",
+                    "fontWeight": 500,
+                    "lineHeight": 1.57,
                   },
                   "suppressDeprecationWarnings": true,
                 },
@@ -5984,7 +5906,6 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
-                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -6047,7 +5968,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                           >
                             <path
                               className="color0"
-                              d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1zm-.5 11h1V6h-1zm0-7h1V4h-1z"
+                              d="M8 16a8 8 0 118-8 8 8 0 01-8 8zM8 1a6.957 6.957 0 00-7 6.91373Q.99973 7.95687 1 8a6.957 6.957 0 006.91373 7q.04314.00027.08627 0a6.957 6.957 0 007-6.91373Q15.00027 8.04313 15 8a6.957 6.957 0 00-6.91373-7Q8.04313.99973 8 1z"
+                              fill="#414141"
+                            />
+                            <path
+                              className="color0"
+                              d="M7.5 6h1v6h-1zm0-2h1v1h-1z"
                               fill="#414141"
                             />
                           </svg>

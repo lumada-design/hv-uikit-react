@@ -55,7 +55,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
             >
               <path
                 className="color0"
-                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                d="M6.00006 3.35l4.6 4.6-.7.7L6 4.75l-3.9 3.9-.7-.7z"
                 fill="#414141"
               />
             </svg>
@@ -268,6 +268,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           Object {
                             "ref": Object {
                               "current": <input
+                                aria-describedby="undefinedundefined"
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                 id="hv-input-2-input"
                                 type="text"
@@ -279,6 +280,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                         inputRef={
                           Object {
                             "current": <input
+                              aria-describedby="undefinedundefined"
                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                               id="hv-input-2-input"
                               type="text"
@@ -315,6 +317,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             Object {
                               "ref": Object {
                                 "current": <input
+                                  aria-describedby="undefinedundefined"
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                   id="hv-input-2-input"
                                   type="text"
@@ -326,6 +329,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           inputRef={
                             Object {
                               "current": <input
+                                aria-describedby="undefinedundefined"
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                 id="hv-input-2-input"
                                 type="text"
@@ -358,12 +362,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             inputProps={
                               Object {
                                 "aria-controls": undefined,
-                                "aria-describedby": undefined,
+                                "aria-describedby": "undefinedundefined",
                                 "aria-invalid": undefined,
                                 "aria-labelledby": undefined,
                                 "aria-required": undefined,
                                 "ref": Object {
                                   "current": <input
+                                    aria-describedby="undefinedundefined"
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                     id="hv-input-2-input"
                                     type="text"
@@ -376,6 +381,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                             inputRef={
                               Object {
                                 "current": <input
+                                  aria-describedby="undefinedundefined"
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                   id="hv-input-2-input"
                                   type="text"
@@ -419,12 +425,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               inputProps={
                                 Object {
                                   "aria-controls": undefined,
-                                  "aria-describedby": undefined,
+                                  "aria-describedby": "undefinedundefined",
                                   "aria-invalid": undefined,
                                   "aria-labelledby": undefined,
                                   "aria-required": undefined,
                                   "ref": Object {
                                     "current": <input
+                                      aria-describedby="undefinedundefined"
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                       id="hv-input-2-input"
                                       type="text"
@@ -437,6 +444,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               inputRef={
                                 Object {
                                   "current": <input
+                                    aria-describedby="undefinedundefined"
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                     id="hv-input-2-input"
                                     type="text"
@@ -481,12 +489,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 inputProps={
                                   Object {
                                     "aria-controls": undefined,
-                                    "aria-describedby": undefined,
+                                    "aria-describedby": "undefinedundefined",
                                     "aria-invalid": undefined,
                                     "aria-labelledby": undefined,
                                     "aria-required": undefined,
                                     "ref": Object {
                                       "current": <input
+                                        aria-describedby="undefinedundefined"
                                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                         id="hv-input-2-input"
                                         type="text"
@@ -499,6 +508,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 inputRef={
                                   Object {
                                     "current": <input
+                                      aria-describedby="undefinedundefined"
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                       id="hv-input-2-input"
                                       type="text"
@@ -547,12 +557,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   inputProps={
                                     Object {
                                       "aria-controls": undefined,
-                                      "aria-describedby": undefined,
+                                      "aria-describedby": "undefinedundefined",
                                       "aria-invalid": undefined,
                                       "aria-labelledby": undefined,
                                       "aria-required": undefined,
                                       "ref": Object {
                                         "current": <input
+                                          aria-describedby="undefinedundefined"
                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                           id="hv-input-2-input"
                                           type="text"
@@ -565,6 +576,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   inputRef={
                                     Object {
                                       "current": <input
+                                        aria-describedby="undefinedundefined"
                                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                         id="hv-input-2-input"
                                         type="text"
@@ -585,6 +597,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                     onClick={[Function]}
                                   >
                                     <input
+                                      aria-describedby="undefinedundefined"
                                       autoFocus={false}
                                       className="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvTimePickerUnitTimePicker-unitTimeInput"
                                       disabled={false}
@@ -683,6 +696,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "display": "none",
                               }
                             }
+                            variant="infoText"
                           >
                             <ForwardRef
                               className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter"
@@ -700,7 +714,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",
                                   "sTitle": "HvTypography-sTitle",
-                                  "sectionTitle": "HvTypography-sectionTitle",
                                   "selectedNavText": "HvTypography-selectedNavText",
                                   "vizText": "HvTypography-vizText",
                                   "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -717,9 +730,10 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "display": "none",
                                 }
                               }
+                              variant="infoText"
                             >
-                              <p
-                                className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
+                              <span
+                                className="HvInput-infoText HvHelperText-helperText HvHelperText-showText HvHelperText-topGutter HvTypography-root"
                                 id="hv-input-2-description"
                                 style={
                                   Object {
@@ -740,6 +754,7 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                 "display": "none",
                               }
                             }
+                            variant="infoText"
                           >
                             <ForwardRef
                               aria-atomic="true"
@@ -760,7 +775,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",
                                   "sTitle": "HvTypography-sTitle",
-                                  "sectionTitle": "HvTypography-sectionTitle",
                                   "selectedNavText": "HvTypography-selectedNavText",
                                   "vizText": "HvTypography-vizText",
                                   "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -777,12 +791,13 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   "display": "none",
                                 }
                               }
+                              variant="infoText"
                             >
-                              <p
+                              <span
                                 aria-atomic="true"
                                 aria-live="polite"
                                 aria-relevant="additions text"
-                                className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root HvTypography-normalText"
+                                className="HvInput-infoText HvHelperText-helperText HvHelperText-topGutter HvTypography-root"
                                 id="hv-input-2-description-notification"
                                 style={
                                   Object {

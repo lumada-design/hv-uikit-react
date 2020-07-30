@@ -135,7 +135,7 @@ exports[`Slider  should render correctly 1`] = `
             "viz": Object {
               "palette": Object {
                 "categorical": Object {},
-                "polarized": Object {},
+                "polarizes": Object {},
                 "sequential": Object {},
                 "undefinedState": Object {},
               },
@@ -172,7 +172,7 @@ exports[`Slider  should render correctly 1`] = `
               "sema17": "#3388B1",
               "sema18": "#1A85A1",
               "sema19": "#00838F",
-              "sema2": "#4D9284",
+              "sema2": "#519884",
               "sema20": "#F9E3C5",
               "sema3": "#DB6B22",
               "sema4": "#C62828",
@@ -252,12 +252,11 @@ exports[`Slider  should render correctly 1`] = `
               "lineHeight": "40px",
             },
             "link": Object {
-              "color": "#414141",
+              "color": "#2064B4",
               "fontSize": "12px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
-              "textDecoration": "underline",
             },
             "mTitle": Object {
               "color": "#414141",
@@ -286,14 +285,6 @@ exports[`Slider  should render correctly 1`] = `
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
-            },
-            "sectionTitle": Object {
-              "color": "#414141",
-              "fontSize": "14px",
-              "fontWeight": 400,
-              "letterSpacing": "0.32em",
-              "lineHeight": "18px",
-              "textTransform": "uppercase",
             },
             "selectedNavText": Object {
               "color": "#CC0000",
@@ -324,12 +315,11 @@ exports[`Slider  should render correctly 1`] = `
               "lineHeight": "40px",
             },
             "xsInlineLink": Object {
-              "color": "#414141",
+              "color": "#2064B4",
               "fontSize": "10px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "15px",
-              "textDecoration": "underline",
             },
             "xsTitle": Object {
               "color": "#414141",
@@ -377,7 +367,7 @@ exports[`Slider  should render correctly 1`] = `
                 "cviz8": "#4AB573",
                 "cviz9": "#646A98",
               },
-              "polarized": Object {
+              "polarizes": Object {
                 "cviz21": "#869F1E",
                 "cviz22": "#A4991C",
                 "cviz23": "#C4931A",
@@ -402,7 +392,7 @@ exports[`Slider  should render correctly 1`] = `
                 "cviz1_900": "#40B9E2",
               },
               "undefinedState": Object {
-                "atmo4": "#CCCED0",
+                "atmo5": "#CCCED0",
               },
             },
           },
@@ -556,7 +546,7 @@ exports[`Slider  should render correctly 1`] = `
           "sema17": "#3388B1",
           "sema18": "#1A85A1",
           "sema19": "#00838F",
-          "sema2": "#4D9284",
+          "sema2": "#519884",
           "sema20": "#F9E3C5",
           "sema3": "#DB6B22",
           "sema4": "#C62828",
@@ -815,17 +805,15 @@ exports[`Slider  should render correctly 1`] = `
             "lineHeight": "16px",
           },
           "subtitle2": Object {
-            "color": "#414141",
             "fontFamily": Array [
               "'Open Sans'",
               "Arial",
               "Helvetica",
               "sans-serif",
             ],
-            "fontSize": "12px",
-            "fontWeight": 600,
-            "letterSpacing": "0.02em",
-            "lineHeight": "16px",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "lineHeight": 1.57,
           },
           "suppressDeprecationWarnings": true,
         },
