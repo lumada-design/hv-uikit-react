@@ -160,11 +160,12 @@ exports[`Provider should render correctly 1`] = `
                 "lineHeight": "40px",
               },
               "link": Object {
-                "color": "#2064B4",
+                "color": "#414141",
                 "fontSize": "12px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "16px",
+                "textDecoration": "underline",
               },
               "mTitle": Object {
                 "color": "#414141",
@@ -193,6 +194,14 @@ exports[`Provider should render correctly 1`] = `
                 "fontWeight": 400,
                 "letterSpacing": "0.02em",
                 "lineHeight": "30px",
+              },
+              "sectionTitle": Object {
+                "color": "#414141",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0.32em",
+                "lineHeight": "18px",
+                "textTransform": "uppercase",
               },
               "selectedNavText": Object {
                 "color": "#CC0000",
@@ -223,11 +232,12 @@ exports[`Provider should render correctly 1`] = `
                 "lineHeight": "40px",
               },
               "xsInlineLink": Object {
-                "color": "#2064B4",
+                "color": "#414141",
                 "fontSize": "10px",
                 "fontWeight": 600,
                 "letterSpacing": "0.02em",
                 "lineHeight": "15px",
+                "textDecoration": "underline",
               },
               "xsTitle": Object {
                 "color": "#414141",

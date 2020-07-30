@@ -11,26 +11,27 @@
 
 ## Icons
 
-Changes
+**Changes**
+
 - `UpXS` changed to `DropUpXS`
 - `AppleLogo` changed to `AppleLogoFilled`
 - `LocatinTarget` changed to `LocationTarget`
 - `ShowMargins` changed to `MarginsOn`
 - `WindowsLogo` changed to `WindowsLogoFilled`
 
-##Theme
+## Theme
 
 ### Typography
 
-Added:
+**Added**
 
 - `section-title`
 
-Removed
+**Removed**
 
 - `selected-text` - the responsibility should lie on CSS of the component.
 
-Changes
+**Changes**
 
 - `inline-link` changed to `link`
 - `disabled-label-text` changed to `disabled-text`
@@ -40,4 +41,4 @@ Changes
 - `s-link` changed to `xs-inline-link`
 - `s-text` changed to `normal-text`
 
-## Component
+## Components

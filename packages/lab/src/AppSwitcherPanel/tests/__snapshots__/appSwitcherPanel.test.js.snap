@@ -246,11 +246,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "lineHeight": "40px",
             },
             "link": Object {
-              "color": "#2064B4",
+              "color": "#414141",
               "fontSize": "12px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
+              "textDecoration": "underline",
             },
             "mTitle": Object {
               "color": "#414141",
@@ -279,6 +280,14 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
+            },
+            "sectionTitle": Object {
+              "color": "#414141",
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.32em",
+              "lineHeight": "18px",
+              "textTransform": "uppercase",
             },
             "selectedNavText": Object {
               "color": "#CC0000",
@@ -309,11 +318,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
               "lineHeight": "40px",
             },
             "xsInlineLink": Object {
-              "color": "#2064B4",
+              "color": "#414141",
               "fontSize": "10px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "15px",
+              "textDecoration": "underline",
             },
             "xsTitle": Object {
               "color": "#414141",
@@ -1041,11 +1051,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
+                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -1074,6 +1085,14 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
+                    },
+                    "sectionTitle": Object {
+                      "color": "#414141",
+                      "fontSize": "14px",
+                      "fontWeight": 400,
+                      "letterSpacing": "0.32em",
+                      "lineHeight": "18px",
+                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -1104,11 +1123,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
+                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -1650,6 +1670,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -1914,11 +1935,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
+                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -1947,6 +1969,14 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
+                    },
+                    "sectionTitle": Object {
+                      "color": "#414141",
+                      "fontSize": "14px",
+                      "fontWeight": 400,
+                      "letterSpacing": "0.32em",
+                      "lineHeight": "18px",
+                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -1977,11 +2007,12 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
+                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -2523,6 +2554,7 @@ exports[`<AppSwitcherPanel /> Applications without a name or url should not be r
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -2793,11 +2825,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "lineHeight": "40px",
             },
             "link": Object {
-              "color": "#2064B4",
+              "color": "#414141",
               "fontSize": "12px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "16px",
+              "textDecoration": "underline",
             },
             "mTitle": Object {
               "color": "#414141",
@@ -2826,6 +2859,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "fontWeight": 400,
               "letterSpacing": "0.02em",
               "lineHeight": "30px",
+            },
+            "sectionTitle": Object {
+              "color": "#414141",
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0.32em",
+              "lineHeight": "18px",
+              "textTransform": "uppercase",
             },
             "selectedNavText": Object {
               "color": "#CC0000",
@@ -2856,11 +2897,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
               "lineHeight": "40px",
             },
             "xsInlineLink": Object {
-              "color": "#2064B4",
+              "color": "#414141",
               "fontSize": "10px",
               "fontWeight": 600,
               "letterSpacing": "0.02em",
               "lineHeight": "15px",
+              "textDecoration": "underline",
             },
             "xsTitle": Object {
               "color": "#414141",
@@ -3586,11 +3628,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
+                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -3619,6 +3662,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
+                    },
+                    "sectionTitle": Object {
+                      "color": "#414141",
+                      "fontSize": "14px",
+                      "fontWeight": 400,
+                      "letterSpacing": "0.32em",
+                      "lineHeight": "18px",
+                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -3649,11 +3700,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
+                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -4195,6 +4247,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -4426,11 +4479,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
+                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -4459,6 +4513,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
+                    },
+                    "sectionTitle": Object {
+                      "color": "#414141",
+                      "fontSize": "14px",
+                      "fontWeight": 400,
+                      "letterSpacing": "0.32em",
+                      "lineHeight": "18px",
+                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -4489,11 +4551,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
+                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -5035,6 +5098,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
@@ -5301,11 +5365,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "link": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "12px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "16px",
+                      "textDecoration": "underline",
                     },
                     "mTitle": Object {
                       "color": "#414141",
@@ -5334,6 +5399,14 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "fontWeight": 400,
                       "letterSpacing": "0.02em",
                       "lineHeight": "30px",
+                    },
+                    "sectionTitle": Object {
+                      "color": "#414141",
+                      "fontSize": "14px",
+                      "fontWeight": 400,
+                      "letterSpacing": "0.32em",
+                      "lineHeight": "18px",
+                      "textTransform": "uppercase",
                     },
                     "selectedNavText": Object {
                       "color": "#CC0000",
@@ -5364,11 +5437,12 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "lineHeight": "40px",
                     },
                     "xsInlineLink": Object {
-                      "color": "#2064B4",
+                      "color": "#414141",
                       "fontSize": "10px",
                       "fontWeight": 600,
                       "letterSpacing": "0.02em",
                       "lineHeight": "15px",
+                      "textDecoration": "underline",
                     },
                     "xsTitle": Object {
                       "color": "#414141",
@@ -5910,6 +5984,7 @@ exports[`<AppSwitcherPanel /> with minimum configuration should render correctly
                       "placeholderText": "HvTypography-placeholderText",
                       "root": "HvTypography-root",
                       "sTitle": "HvTypography-sTitle",
+                      "sectionTitle": "HvTypography-sectionTitle",
                       "selectedNavText": "HvTypography-selectedNavText",
                       "vizText": "HvTypography-vizText",
                       "vizTextDisabled": "HvTypography-vizTextDisabled",
