@@ -3,19 +3,17 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { HvProvider, HvHelperText } from "../../..";
+import { HvProvider, HvInfoMessage } from "../../..";
 
 /* eslint-disable no-console */
 
-describe("HelperText", () => {
+describe("v3 InfoMessage", () => {
   let wrapper;
 
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvHelperText id="base" notification="test">
-          test
-        </HvHelperText>
+        <HvInfoMessage id="base">test</HvInfoMessage>
       </HvProvider>
     );
   });
@@ -25,11 +23,11 @@ describe("HelperText", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(HvHelperText)).toMatchSnapshot();
+    expect(wrapper.find(HvInfoMessage)).toMatchSnapshot();
   });
 
   it("should render the Input component", () => {
-    const HvHelperTextComponent = wrapper.find(HvHelperText);
-    expect(HvHelperTextComponent.length).toBe(1);
+    const HvInfoMessageComponent = wrapper.find(HvInfoMessage);
+    expect(HvInfoMessageComponent.length).toBe(1);
   });
 });

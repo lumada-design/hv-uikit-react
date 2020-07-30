@@ -6,6 +6,18 @@ import { setId } from "../../utils";
 import { HvFormElementContext } from "../FormElement";
 import styles from "./styles";
 
+const concatDescribeBy = descriptors => {
+  let result;
+  descriptors.forEach(descriptor => {
+    if (descriptor && !result) {
+      result = descriptor;
+      return;
+    }
+    if (descriptor) result = result.concat(` ${descriptor}`);
+  });
+  return result;
+};
+
 /**
  * An Input component that only posses the most basic functionalities.
  * It should be used alongside the other form elements to construct a proper accessible form.
@@ -47,41 +59,50 @@ const HvBaseInput = props => {
   const { HvLabel, HvHelperText, HvSuggestions, HvInfoMessage, HvWarningText } = descriptors;
 
   return (
-    <Input
-      id={localId}
-      name={elementName}
-      defaultValue={defaultValue}
-      value={localValue}
-      disabled={localDisabled}
-      placeholder={placeholder}
-      onChange={onChangeHandler}
-      classes={{
-        input: classes.input,
-        focused: classes.inputRootFocused,
-        disabled: classes.inputDisabled,
-        multiline: classes.multiLine
-      }}
-      className={clsx(classes.inputRoot, className, {
-        [classes.inputRootDisabled]: localDisabled,
-        [classes.inputRootInvalid]: localInvalid
+    <div
+      className={clsx(classes.root, {
+        [classes.disabledRoot]: localDisabled,
+        [classes.invalidRoot]: localInvalid
       })}
-      inputProps={{
-        required,
-        "aria-required": required || undefined,
-        "aria-invalid": localInvalid || undefined,
-        "aria-describedby": String.prototype.concat(
-          HvWarningText?.[0]?.id,
-          HvInfoMessage?.[0]?.id,
-          HvHelperText?.[0]?.id
-        ),
-        "aria-labelledby": HvLabel?.[0]?.id,
-        "aria-controls": HvSuggestions?.[0]?.id,
-        ...inputProps
-      }}
-      inputRef={inputRef}
-      multiline={multiline}
-      {...others}
-    />
+    >
+      <Input
+        id={localId}
+        name={elementName}
+        defaultValue={defaultValue}
+        value={localValue}
+        disabled={localDisabled}
+        placeholder={placeholder}
+        onChange={onChangeHandler}
+        classes={{
+          input: classes.input,
+          focused: classes.inputRootFocused,
+          disabled: classes.inputDisabled,
+          multiline: classes.multiLine
+        }}
+        className={clsx(classes.inputRoot, className, {
+          [classes.inputRootDisabled]: localDisabled
+        })}
+        inputProps={{
+          required,
+          "aria-required": required || undefined,
+          "aria-invalid": localInvalid || undefined,
+          "aria-describedby": concatDescribeBy([
+            HvWarningText?.[0]?.id,
+            HvInfoMessage?.[0]?.id,
+            HvHelperText?.[0]?.id
+          ]),
+          "aria-labelledby": HvLabel?.[0]?.id,
+          "aria-controls": HvSuggestions?.[0]?.id,
+          ...inputProps
+        }}
+        inputRef={inputRef}
+        multiline={multiline}
+        {...others}
+      />
+      <div className={classes.inputBorderContainer}>
+        <div className={classes.inputLowerBorder} />
+      </div>
+    </div>
   );
 };
 
@@ -103,17 +124,29 @@ HvBaseInput.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to input root which is comprising of everything but the labels and descriptions.
+     * Styles applied to the root container of the input when it is disabled.
+     */
+    disabledRoot: PropTypes.string,
+    /**
+     * Styles applied to the root container of the input when it is invalid.
+     */
+    invalidRoot: PropTypes.string,
+    /**
+     * Styles applied to input root which is the input that encloses all the other elements.
      */
     inputRoot: PropTypes.string,
+    /**
+     * Styles applied to the container of the border element.
+     */
+    inputBorderContainer: PropTypes.string,
+    /**
+     * Styles applied to the border element.
+     */
+    inputLowerBorder: PropTypes.string,
     /**
      * Styles applied to input root when it is disabled.
      */
     inputRootDisabled: PropTypes.string,
-    /**
-     * Styles applied to input root when it is invalid.
-     */
-    inputRootInvalid: PropTypes.string,
     /**
      * Styles applied to input root when it is focused.
      */

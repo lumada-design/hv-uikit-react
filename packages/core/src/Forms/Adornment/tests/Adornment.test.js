@@ -7,7 +7,7 @@ import Close from "@hv/uikit-react-icons/dist/CloseXS";
 import HvProvider from "../../../Provider";
 import HvAdornment from "../Adornment";
 
-describe("Adornment", () => {
+describe("v3 Adornment", () => {
   let wrapper;
 
   beforeEach(async () => {
