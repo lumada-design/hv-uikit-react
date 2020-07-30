@@ -208,6 +208,10 @@ TimeRepresentation.story = {
   parameters: {
     docs: {
       storyDescription: "Representation of time related data."
+    },
+    eyes: {
+      // story excluded due inconsistent component alignment and relative position, opened 1822 issue
+      include: false
     }
   }
 };

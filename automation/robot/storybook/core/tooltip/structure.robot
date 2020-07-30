@@ -3,13 +3,16 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${patterns}tooltip--long-text    AND
 ...           Wait Until Element Is Visible    ${tooltipPlaceholder}
-Force Tags    bug-infrastructure-ie
+Force Tags    bug-ie-webdriver
 
 
 *** Comments ***
-    an ie and firefox webdriver issue was found:
-    - with repeated 'mouse hover' actions the react event handler does not trust them.
-    similar as: https://github.com/SeleniumHQ/selenium/issues/6741
+1 - bug-ie-webdriver, documentation explicit it as a current issue unresolved (hovering over
+    Elements) although we experience with sucess running it on local machine.
+    https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver#hovering-over-elements
+
+2 - react event handler does not trust when actions "mouse hover are repeated, using Firefox or IE
+    similar: https://github.com/SeleniumHQ/selenium/issues/6741
 
 
 *** Variables ***
