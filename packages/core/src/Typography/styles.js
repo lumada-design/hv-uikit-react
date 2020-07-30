@@ -13,6 +13,7 @@ const styles = theme => ({
   sTitle: theme.hv.typography.sTitle,
   xsTitle: theme.hv.typography.xsTitle,
   xxsTitle: theme.hv.typography.xxsTitle,
+  sectionTitle: theme.hv.typography.sectionTitle,
   highlightText: theme.hv.typography.highlightText,
   normalText: theme.hv.typography.normalText,
   placeholderText: theme.hv.typography.placeholderText,

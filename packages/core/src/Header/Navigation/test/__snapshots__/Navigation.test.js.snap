@@ -139,6 +139,7 @@ exports[`Navigation withStyles should be able to render 1`] = `
                                   "placeholderText": "HvTypography-placeholderText",
                                   "root": "HvTypography-root",
                                   "sTitle": "HvTypography-sTitle",
+                                  "sectionTitle": "HvTypography-sectionTitle",
                                   "selectedNavText": "HvTypography-selectedNavText",
                                   "vizText": "HvTypography-vizText",
                                   "vizTextDisabled": "HvTypography-vizTextDisabled",

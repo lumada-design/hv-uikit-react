@@ -139,6 +139,14 @@
       "lineHeight": "28px",
       "fontWeight": 400
     },
+    "sectionTitle": {
+      "color": "#CCCCCC",
+      "fontSize": "14px",
+      "letterSpacing": "0.32em",
+      "lineHeight": "18px",
+      "fontWeight": 400,
+      "textTransform": "uppercase"
+    },
     "highlightText": {
       "color": "#CCCCCC",
       "fontSize": "12px",
@@ -161,11 +169,12 @@
       "fontWeight": 400
     },
     "link": {
-      "color": "#2064B4",
+      "color": "#CCCCCC",
       "fontSize": "12px",
       "letterSpacing": "0.02em",
       "lineHeight": "16px",
-      "fontWeight": 600
+      "fontWeight": 600,
+      "textDecoration": "underline"
     },
     "disabledText": {
       "color": "#656565",
@@ -196,11 +205,12 @@
       "fontWeight": 400
     },
     "xsInlineLink": {
-      "color": "#2064B4",
+      "color": "#CCCCCC",
       "fontSize": "10px",
       "letterSpacing": "0.02em",
       "lineHeight": "15px",
-      "fontWeight": 600
+      "fontWeight": 600,
+      "textDecoration": "underline"
     }
   },
 
