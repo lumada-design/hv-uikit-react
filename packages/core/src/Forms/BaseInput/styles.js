@@ -2,50 +2,50 @@ import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
   root: {
-    position: "relative"
+    position: "relative",
+    "&:hover $inputLowerBorder": {
+      backgroundColor: theme.hv.palette.accent.acce1
+    }
+  },
+  disabledRoot: {
+    "& $inputLowerBorder": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      borderLeft: `4px solid ${theme.hv.palette.atmosphere.atmo3}`,
+      borderRight: `4px solid ${theme.hv.palette.atmosphere.atmo3}`
+    },
+    "&:hover $inputLowerBorder": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      borderLeft: `4px solid ${theme.hv.palette.atmosphere.atmo3}`,
+      borderRight: `4px solid ${theme.hv.palette.atmosphere.atmo3}`
+    }
+  },
+  invalidRoot: {
+    "& $inputLowerBorder": {
+      backgroundColor: theme.hv.palette.semantic.sema4
+    },
+    "&:hover $inputLowerBorder": {
+      backgroundColor: theme.hv.palette.semantic.sema4
+    }
   },
   inputRoot: {
     margin: 0,
     width: "100%",
-    borderStyle: "solid",
     borderRadius: "2px",
-    borderWidth: " 0 0 1px 0",
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    borderColor: theme.hv.palette.atmosphere.atmo4,
-    "&:hover": {
-      borderStyle: "solid",
-      borderWidth: " 0 0 1px 0",
-      borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    }
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   inputRootDisabled: {
-    borderColor: theme.hv.palette.atmosphere.atmo4,
     background: theme.hv.palette.atmosphere.atmo3,
     "&:hover": {
-      borderColor: theme.hv.palette.atmosphere.atmo4,
       background: theme.hv.palette.atmosphere.atmo3,
       cursor: "not-allowed"
     },
     cursor: "not-allowed"
   },
   inputRootFocused: {
-    borderStyle: "solid",
-    borderWidth: " 0 0 1px 0",
-    borderColor: theme.hv.palette.accent.acce1,
     background: theme.hv.palette.atmosphere.atmo1,
     ...outlineStyles,
     "&:hover": {
-      borderStyle: "solid",
-      borderWidth: "0 0 1px 0",
-      borderColor: theme.hv.palette.accent.acce1,
       background: theme.hv.palette.atmosphere.atmo1
-    }
-  },
-  inputRootInvalid: {
-    borderColor: theme.hv.palette.semantic.sema4,
-    "&:hover": {
-      borderColor: theme.hv.palette.semantic.sema4
     }
   },
   input: {
@@ -64,11 +64,19 @@ const styles = theme => ({
       display: "none"
     }
   },
+  inputBorderContainer: {
+    position: "absolute",
+    width: "100%",
+    height: "1px",
+    top: "31px",
+    left: "0px"
+  },
   inputLowerBorder: {
     width: "100%",
-    heigth: "1px",
-    backgroundColor: "red",
-    position: "absolute"
+    height: "100%",
+    backgroundColor: theme.hv.palette.atmosphere.atmo4,
+    borderLeft: `4px solid ${theme.hv.palette.atmosphere.atmo1}`,
+    borderRight: `4px solid ${theme.hv.palette.atmosphere.atmo1}`
   },
   inputDisabled: {
     cursor: "not-allowed"

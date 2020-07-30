@@ -100,10 +100,6 @@ HvWarningText.propTypes = {
    */
   adornment: PropTypes.node,
   /**
-   * The text to replace the description to shown an alert to the user.
-   */
-  notification: PropTypes.string,
-  /**
    * If ´true´ the text is not rendered.
    */
   isVisible: PropTypes.bool,

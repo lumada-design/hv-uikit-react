@@ -22,8 +22,11 @@ export interface HvBaseInputProps
 export type HvBaseInputClassKey =
   | "root"
   | "inputRoot"
+  | "disabledRoot"
+  | "invalidRoot"
+  | "inputLowerBorder"
+  | "inputBorderContainer"
   | "inputRootDisabled"
-  | "inputRootInvalid"
   | "inputRootFocused"
   | "input"
   | "inputDisabled"

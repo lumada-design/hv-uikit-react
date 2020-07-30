@@ -77,7 +77,7 @@ export const Main = () => {
       status={elementStatus}
     >
       <HvLabel id={inputLabelId} label="First name">
-        <HvInfoMessage> Do not put numbers.</HvInfoMessage>
+        <HvInfoMessage id="main-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput
           id={inputId}
           placeholder="Insert your name"
@@ -111,7 +111,7 @@ export const FormElementInvalid = () => {
   return (
     <HvFormElement value="Albert2" status="invalid">
       <HvLabel key="1" id="invalid-input-label" label="First name">
-        <HvInfoMessage> Do not put numbers.</HvInfoMessage>
+        <HvInfoMessage id="invalid-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput id="invalid-input" />
       </HvLabel>
       <HvWarningText key="2" id="invalid-warning-text">
@@ -133,7 +133,7 @@ export const FormElementValid = () => {
   return (
     <HvFormElement value="Hello" status="valid">
       <HvLabel key="1" id="valid-input-label" label="First name">
-        <HvInfoMessage> Do not put numbers.</HvInfoMessage>
+        <HvInfoMessage id="main-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput id="valid-input" />
       </HvLabel>
       <HvWarningText key="2" id="valid-warning-text">
