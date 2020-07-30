@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CloseXS, Success, Fail } from "@hv/uikit-react-icons";
+import { CloseXS, Success } from "@hv/uikit-react-icons";
 
 import {
   HvFormElement,
@@ -94,7 +94,6 @@ export const Main = () => {
                 icon={<CloseXS />}
                 aria-label="clear button"
               />
-              <HvAdornment showWhen="invalid" icon={<Fail semantic="sema4" />} />
               <HvAdornment showWhen="valid" icon={<Success semantic="sema1" />} />
             </>
           }
@@ -134,7 +133,10 @@ export const FormElementValid = () => {
     <HvFormElement value="Hello" status="valid">
       <HvLabel key="1" id="valid-input-label" label="First name">
         <HvInfoMessage id="main-info-message"> Do not put numbers.</HvInfoMessage>
-        <HvBaseInput id="valid-input" />
+        <HvBaseInput
+          id="valid-input"
+          endAdornment={<HvAdornment showWhen="valid" icon={<Success semantic="sema1" />} />}
+        />
       </HvLabel>
       <HvWarningText key="2" id="valid-warning-text">
         Names do not contain numbers.
