@@ -9,14 +9,10 @@ const styles = theme => ({
   },
   disabledRoot: {
     "& $inputLowerBorder": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      borderLeft: `4px solid ${theme.hv.palette.atmosphere.atmo3}`,
-      borderRight: `4px solid ${theme.hv.palette.atmosphere.atmo3}`
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:hover $inputLowerBorder": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      borderLeft: `4px solid ${theme.hv.palette.atmosphere.atmo3}`,
-      borderRight: `4px solid ${theme.hv.palette.atmosphere.atmo3}`
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
     }
   },
   invalidRoot: {
@@ -49,7 +45,7 @@ const styles = theme => ({
     }
   },
   input: {
-    height: `20px`,
+    height: "21px",
     marginLeft: theme.hv.spacing.xs,
     marginRight: theme.hv.spacing.xs,
     padding: "6px 0 5px",
@@ -66,17 +62,15 @@ const styles = theme => ({
   },
   inputBorderContainer: {
     position: "absolute",
-    width: "100%",
+    width: "calc(100% - 4px)",
     height: "1px",
     top: "31px",
-    left: "0px"
+    left: "2px"
   },
   inputLowerBorder: {
     width: "100%",
     height: "100%",
-    backgroundColor: theme.hv.palette.atmosphere.atmo4,
-    borderLeft: `4px solid ${theme.hv.palette.atmosphere.atmo1}`,
-    borderRight: `4px solid ${theme.hv.palette.atmosphere.atmo1}`
+    backgroundColor: theme.hv.palette.atmosphere.atmo4
   },
   inputDisabled: {
     cursor: "not-allowed"
