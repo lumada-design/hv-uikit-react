@@ -1,9 +1,13 @@
+import "focus-within-polyfill";
 import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
   root: {
     position: "relative",
-    "&:hover $inputLowerBorder": {
+    "&:hover $inputBorderContainer": {
+      backgroundColor: theme.hv.palette.accent.acce1
+    },
+    "&:focus-within $inputBorderContainer": {
       backgroundColor: theme.hv.palette.accent.acce1
     }
   },
@@ -11,15 +15,15 @@ const styles = theme => ({
     "& $inputLowerBorder": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
-    "&:hover $inputLowerBorder": {
+    "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     }
   },
   invalidRoot: {
-    "& $inputLowerBorder": {
+    "& $inputBorderContainer": {
       backgroundColor: theme.hv.palette.semantic.sema4
     },
-    "&:hover $inputLowerBorder": {
+    "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.semantic.sema4
     }
   },
@@ -65,11 +69,7 @@ const styles = theme => ({
     width: "calc(100% - 4px)",
     height: "1px",
     top: "31px",
-    left: "2px"
-  },
-  inputLowerBorder: {
-    width: "100%",
-    height: "100%",
+    left: "2px",
     backgroundColor: theme.hv.palette.atmosphere.atmo4
   },
   inputDisabled: {
