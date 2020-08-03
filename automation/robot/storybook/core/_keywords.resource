@@ -66,15 +66,14 @@ get elements text
 
 open browser webdriver
     [Documentation]
-    ...   Open the chosen browser on the storybook url provided with options: \n
-    ...    - *window-size=1920,1080;  start-maximized;  headless*
+    ...   Opens browser with blank page and window-size=1920,1080 (width,height),
+    ...   by default,  runs on headless mode, except on IE which does not support it \n
     ...   Arguments:
-    ...   - url        url address of storybook (by default about:blank)
-    ...   - browser    the desired browser ( by defautl is assuming variable ${BROWSER} )
+    ...   - url        (by default about:blank)
+    ...   - browser    (by defautl is assuming Global variable ${BROWSER} )
     [Arguments]        ${url}=about:blank    ${browser}=${BROWSER}
-    Open Browser    ${url}    ${browser}
-    ...             options=add_argument("--window-size=1920,1080");\ add_argument("--headless")
-    Maximize Browser Window
+    Open Browser    ${url}    ${browser}    options=add_argument("--headless")
+    Set Window Size    1920    1080
 
 set focus and press keys
     [Documentation]
