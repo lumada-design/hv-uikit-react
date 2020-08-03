@@ -23,6 +23,7 @@ export const Main = () => (
   <>
     <HvBanner open variant="default" style={styles} label="This is a banner." />
     <HvBanner open variant="success" showIcon style={styles} label="This is a success message." />
+    <HvBanner open variant="warning" showIcon style={styles} label="This is a warning message." />
     <HvBanner open variant="error" showIcon style={styles} label="This is an error message." />
     <HvBanner
       open
@@ -142,6 +143,7 @@ export const BannerVariations = () => {
       <HvTypography variant="xsTitle">Semantics</HvTypography>
       <BannerContent content="This is a default banner." variant="default" />
       <BannerContent content="This is a success banner." variant="success" showIcon />
+      <BannerContent content="This is a warning banner." variant="warning" showIcon />
       <BannerContent content="This is an error banner." variant="error" showIcon />
       <p />
       <HvTypography variant="xsTitle">Actions</HvTypography>

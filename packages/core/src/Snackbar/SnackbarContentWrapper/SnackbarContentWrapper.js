@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import { SnackbarContent, withStyles } from "@material-ui/core";
 import TextTruncate from "./MultiLineEllipsis";
-import iconVariants from "../../utils/iconVariants";
+import iconVariant from "../../utils/iconVariant";
 import { setId } from "../../utils";
 import ActionsGeneric from "../../ActionsGeneric";
 import styles from "./styles";
@@ -19,7 +19,7 @@ const HvSnackbarContentWrapper = React.forwardRef((props, ref) => {
     actionCallback,
     ...others
   } = props;
-  const icon = customIcon || (showIcon && iconVariants(variant));
+  const icon = customIcon || (showIcon && iconVariant(variant));
   const innerAction = React.isValidElement(action) ? action : [action];
 
   return (
