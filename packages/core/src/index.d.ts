@@ -28,6 +28,8 @@ export * from "./Button";
 export { default as HvCard } from "./Card";
 export * from "./Card";
 
+export * from "./Calendar";
+
 export { default as HvContainer } from "./Container";
 export * from "./Container";
 

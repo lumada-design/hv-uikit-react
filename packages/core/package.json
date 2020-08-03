@@ -51,6 +51,7 @@
     "moment": "^2.24.0",
     "plotly.js-basic-dist": "^1.54.1",
     "prop-types": "^15.7.2",
+    "react-debounce-render": "^7.0.0",
     "react-google-charts": "^3.0.15",
     "react-outside-click-handler": "^1.2.4",
     "react-plotly.js": "^2.4.0",

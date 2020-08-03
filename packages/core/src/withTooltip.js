@@ -6,7 +6,9 @@ const withTooltip = (
   Component,
   label = "",
   placement,
-  evaluationExpression = evt => evt.target.scrollWidth > evt.target.clientWidth
+  evaluationExpression = evt => evt.target.scrollWidth > evt.target.clientWidth,
+  tooltipProps,
+  tooltipContainerProps
 ) => props => {
   const [showTooltip, setShowTooltip] = useState(false);
   const styles = {
@@ -35,8 +37,13 @@ const withTooltip = (
       title={title}
       open={showTooltip}
       placement={placement}
+      {...tooltipProps}
     >
-      <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        {...tooltipContainerProps}
+      >
         <Component {...props} />
       </div>
     </Tooltip>

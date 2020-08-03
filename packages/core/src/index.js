@@ -13,6 +13,7 @@ export { default as HvBulkActions } from "./BulkActions";
 export { default as HvButton } from "./Button";
 export { default as HvCard } from "./Card";
 export * from "./Card";
+export * from "./Calendar";
 export { default as HvContainer } from "./Container";
 export { default as HvDatePicker } from "./DatePicker";
 export { default as HvDropdown } from "./Dropdown";
