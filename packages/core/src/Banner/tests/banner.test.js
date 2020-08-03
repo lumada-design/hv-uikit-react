@@ -6,7 +6,7 @@ import { HvButton, HvBanner, HvProvider } from "../..";
 
 import Banner from "..";
 import HvBannerContentWrapper from "../BannerWrapper";
-import iconVariants from "../../utils/iconVariants";
+import iconVariant from "../../utils/iconVariant";
 
 describe("Banner ", () => {
   const wrapper = mount(
@@ -181,8 +181,9 @@ describe("Banner ", () => {
   });
 
   it("should return the severity variant", () => {
-    const error = mount(iconVariants("error")).find("Fail");
+    const error = mount(iconVariant("error")).find("Fail");
     expect(error.length).toBe(1);
-    expect(iconVariants("test")).toBe(null);
+    const invalid = mount(iconVariant("test"));
+    expect(invalid.isEmptyRender()).toBe(true);
   });
 });

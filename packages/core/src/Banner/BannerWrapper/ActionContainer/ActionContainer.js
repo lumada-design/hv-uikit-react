@@ -45,7 +45,7 @@ ActionContainer.propTypes = {
   /**
    * onClose function.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * Actions to display.
    */
