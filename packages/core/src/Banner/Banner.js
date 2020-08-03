@@ -114,7 +114,7 @@ HvBanner.propTypes = {
   /**
    * Callback fired when the component requests to be closed. Typically onClose is used to set state in the parent component, which is used to control the Snackbar open prop. The reason parameter can optionally be used to control the response to onClose, for example ignoring clickaway.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * The message to display.
    */

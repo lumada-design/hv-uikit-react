@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes, { oneOfType } from "prop-types";
 import clsx from "clsx";
 import { SnackbarContent, withStyles } from "@material-ui/core";
-import iconVariants from "../../utils/iconVariants";
+import iconVariant from "../../utils/iconVariant";
 import MessageContainer from "./MessageContainer";
 import ActionContainer from "./ActionContainer";
 import styles from "./styles";
@@ -23,7 +23,7 @@ const HvBannerContentWrapper = React.forwardRef((props, ref) => {
     ...others
   } = props;
 
-  const icon = customIcon || (showIcon && iconVariants(variant));
+  const icon = customIcon || (showIcon && iconVariant(variant, true));
 
   // default to inline
   // this might try to be more intelligent in the future,
@@ -86,7 +86,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * Variant of the snackbar.
    */
-  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"]).isRequired,
+  variant: PropTypes.oneOf(["success", "warning", "error", "info", "default"]),
   /**
    * Controls if the associated icon to the variant should be shown.
    */
@@ -98,7 +98,7 @@ HvBannerContentWrapper.propTypes = {
   /**
    * onClose function.
    */
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func,
   /**
    * Actions to display on the right side.
    */

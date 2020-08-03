@@ -23,6 +23,9 @@ const styles = theme => ({
   success: {
     backgroundColor: theme.hv.palette.semantic.sema8
   },
+  warning: {
+    backgroundColor: theme.hv.palette.semantic.sema20
+  },
   error: {
     backgroundColor: theme.hv.palette.semantic.sema9
   },
