@@ -7,7 +7,7 @@ const styles = theme => ({
   },
   gutter: {
     marginLeft: theme.hv.spacing.xs,
-    marginBottom: 8
+    marginBottom: 6
   }
 });
 

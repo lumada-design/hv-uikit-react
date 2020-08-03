@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { CloseXS, Success } from "@hv/uikit-react-icons";
 
 import {
@@ -27,6 +27,7 @@ export const Main = () => {
 
   const inputId = "controlled-input";
   const inputLabelId = "controlled-input-label";
+  const inputReference = useRef(null);
 
   const setElement = (value = "", setStatus = true) => {
     const hasNumber = /\d/.test(value);
@@ -80,6 +81,7 @@ export const Main = () => {
         <HvInfoMessage id="main-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput
           id={inputId}
+          inputRef={inputReference}
           placeholder="Insert your name"
           onChange={(event, value) => setElement(value, false)}
           onMouseEnter={onMouseEnterHandler}
@@ -90,6 +92,9 @@ export const Main = () => {
                 isVisible={showCloseAdornment}
                 onClick={() => {
                   setElement("");
+                  setTimeout(() => {
+                    inputReference.current?.focus();
+                  });
                 }}
                 icon={<CloseXS />}
                 aria-label="clear button"
