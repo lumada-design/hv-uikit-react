@@ -1,4 +1,4 @@
-import { outlineStyles } from "../../../Focus/styles";
+import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
   root: {
@@ -11,18 +11,18 @@ const styles = theme => ({
     width: "30px",
     height: "30px",
     "&:hover": {
-      backgroundColor: theme.palette.atmo4,
+      backgroundColor: theme.palette.atmo3,
       cursor: "pointer"
     },
     "&:focus": {
-      backgroundColor: theme.palette.atmo4,
+      backgroundColor: theme.palette.atmo3,
       cursor: "pointer",
       ...outlineStyles
     }
   },
   disabled: {
     "& svg *.color0": {
-      fill: theme.palette.atmo4
+      fill: theme.palette.atmo5
     },
     "&:hover": {
       backgroundColor: "transparent",
@@ -34,11 +34,11 @@ const styles = theme => ({
     textAlign: "center",
     padding: "5px 0",
     "&:hover": {
-      backgroundColor: theme.palette.atmo4,
+      backgroundColor: theme.palette.atmo3,
       cursor: "pointer"
     },
     "&:focus": {
-      backgroundColor: theme.palette.atmo4,
+      backgroundColor: theme.palette.atmo3,
       cursor: "pointer",
       ...outlineStyles
     }

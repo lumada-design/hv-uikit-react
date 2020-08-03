@@ -2,11 +2,12 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import DropLeftIcon from "@hv/uikit-react-icons/dist/DropLeftXS";
 import DropRightIcon from "@hv/uikit-react-icons/dist/DropRightXS";
-import { isKeypress, KeyboardCodes, setId } from "../../../utils";
-import HvTypography from "../../../Typography";
+import { isKeypress, KeyboardCodes, setId } from "../../utils";
+import HvTypography from "../../Typography";
 import styles from "./styles";
 
 const Navigation = ({
@@ -26,11 +27,15 @@ const Navigation = ({
     }
   };
 
+  const onTextClickIsFunction = typeof onTextClick === "function";
+
   return (
     <div className={classes.root}>
       <DropLeftIcon
         id={setId(id, "left")}
-        className={`${classes.icon} ${isPreviousEnabled ? "" : classes.disabled}`}
+        className={clsx(classes.icon, {
+          [classes.disabled]: isPreviousEnabled
+        })}
         onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
         onKeyDown={event =>
           isNextEnabled ? onkeyDownHandler(event, onNavigatePrevious) : undefined
@@ -40,13 +45,16 @@ const Navigation = ({
 
       <div
         id={id}
-        className={`${typeof onTextClick === "function" ? classes.text : classes.textWithoutHover}`}
+        className={clsx({
+          [classes.text]: onTextClickIsFunction,
+          [classes.textWithoutHover]: !onTextClickIsFunction
+        })}
         role="presentation"
         onClick={onTextClick}
         onKeyDown={onTextClick && (event => onkeyDownHandler(event, onTextClick))}
         tabIndex={onTextClick ? 0 : -1}
       >
-        <HvTypography>{navigationText}</HvTypography>
+        <HvTypography variant="normalText">{navigationText}</HvTypography>
       </div>
 
       <DropRightIcon
@@ -104,4 +112,4 @@ Navigation.defaultProps = {
   isNextEnabled: true
 };
 
-export default withStyles(styles, { name: "HvDatePickerNavigation" })(Navigation);
+export default withStyles(styles, { name: "HvCalendarNavigation" })(Navigation);

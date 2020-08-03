@@ -67,8 +67,10 @@ export default class CalendarModel {
         break;
     }
 
-    this.updateModel(newMonthYear.month, newMonthYear.year);
+    // this.updateModel(newMonthYear.month, newMonthYear.year);
 
-    return this;
+    // return this;
+
+    return newMonthYear;
   };
 }
