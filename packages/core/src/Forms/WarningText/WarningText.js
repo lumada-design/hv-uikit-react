@@ -31,7 +31,7 @@ const HvWarningText = props => {
   const localId = id ?? setId(elementId, "text");
   const showWarning = localVisible && !localDisabled;
   const content = showWarning ? children : "";
-  const localAdornment = adornment || <Fail semantic="sema4" />;
+  const localAdornment = adornment || <Fail className={classes.defaultIcon} semantic="sema4" />;
 
   return (
     <div
@@ -78,6 +78,10 @@ HvWarningText.propTypes = {
      * Styles applied to the component root class.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the default icon.
+     */
+    defaultIcon: PropTypes.string,
     /**
      * Styles applied to the warning text.
      */

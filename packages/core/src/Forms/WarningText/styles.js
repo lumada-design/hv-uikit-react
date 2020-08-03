@@ -7,6 +7,9 @@ const styles = theme => ({
     width: "100%",
     color: theme.hv.palette.semantic.sema4
   },
+  defaultIcon: {
+    minWidth: "32px"
+  },
   showText: {
     display: "flex"
   },

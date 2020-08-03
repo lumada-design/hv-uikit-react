@@ -16,6 +16,6 @@ export interface HvWarningTextProps
   disabled?: boolean;
 }
 
-export type HvWarningTextClassKey = "root" | "warningText" | "topGutter" | "showText" | "@global";
+export type HvWarningTextClassKey = "root" | "warningText" | "topGutter" | "showText" | "defaultIcon" | "@global";
 
 export default function HvWarningText(props: HvWarningTextProps): JSX.Element | null;
