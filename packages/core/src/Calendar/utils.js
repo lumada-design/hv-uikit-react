@@ -1,3 +1,4 @@
+import moment from "moment";
 import { REPRESENTATION_VALUES } from "./enums";
 
 /**
@@ -401,4 +402,30 @@ export const isNextDateValid = (year, month) => {
   const nextMonthYear = getNextMonth(month, year);
 
   return isDateInValidRange(makeUTCDate(nextMonthYear.year, nextMonthYear.month, 1));
+};
+
+/**
+ * Checks if the date falls within a specified date range.
+ *
+ * @param {Date} date - The date to be evaluated.
+ * @param {object} providedValueRange - Provided selection range.
+ * @returns {boolean} - True if the date falls within the range, false otherwise.
+ */
+export const dateInValueRange = (date, providedValueRange) => {
+  const { startDate, endDate } = providedValueRange;
+  const modStartDate = moment(startDate).format("YYYY-MM-DD");
+  const modEndDate = moment(endDate).format("YYYY-MM-DD");
+
+  const convertedDate = moment(date).format("YYYY-MM-DD");
+
+  return convertedDate >= modStartDate && convertedDate <= modEndDate;
+};
+
+export const checkIfDateIsDisabled = (date, minimumDate, maximumDate) => {
+  const modStartDate = minimumDate ? moment(minimumDate).format("YYYY-MM-DD") : undefined;
+  const modEndDate = maximumDate ? moment(maximumDate).format("YYYY-MM-DD") : undefined;
+
+  const convertedDate = moment(date).format("YYYY-MM-DD");
+
+  return convertedDate <= modStartDate || convertedDate >= modEndDate;
 };

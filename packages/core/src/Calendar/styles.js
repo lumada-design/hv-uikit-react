@@ -1,10 +1,17 @@
 const styles = theme => {
   const hover = {
-    backgroundColor: theme.palette.atmo4,
+    backgroundColor: theme.palette.atmo3,
     cursor: "pointer"
   };
 
   return {
+    calendarContainer: {
+      backgroundColor: theme.palette.atmo1,
+      width: "320px"
+    },
+    relativeWrapper: {
+      position: "relative"
+    },
     calendarWrapper: {
       overflow: "hidden",
       backgroundColor: theme.palette.atmo1,
@@ -55,8 +62,8 @@ const styles = theme => {
       color: theme.palette.atmo5
     },
     calendarDateSelected: {
-      backgroundColor: theme.palette.acce1,
-      color: theme.palette.atmo1,
+      backgroundColor: theme.palette.atmo3,
+      color: theme.palette.acce1,
       "&:hover": {
         ...hover
       }
@@ -66,6 +73,14 @@ const styles = theme => {
         cursor: "not-allowed",
         backgroundColor: "transparent"
       }
+    },
+    calendarDateInSelectionRange: {
+      backgroundColor: theme.palette.atmo3
+    },
+    calendarDateDisabled: {
+      // backgroundColor: "red",
+      color: theme.palette.atmo5,
+      cursor: "no-drop"
     },
     calendarMonthlyGrid: {
       top: "0",
@@ -102,7 +117,7 @@ const styles = theme => {
       backgroundColor: theme.palette.acce1,
       color: theme.palette.atmo1,
       "&:hover": {
-        backgroundColor: theme.palette.acce1,
+        backgroundColor: theme.palette.atmo3,
         color: theme.palette.atmo1
       }
     }

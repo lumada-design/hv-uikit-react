@@ -11,11 +11,11 @@ exports[`<Navigation /> should render correctly 1`] = `
   <Navigation
     classes={
       Object {
-        "disabled": "HvDatePickerNavigation-disabled",
-        "icon": "HvDatePickerNavigation-icon",
-        "root": "HvDatePickerNavigation-root",
-        "text": "HvDatePickerNavigation-text",
-        "textWithoutHover": "HvDatePickerNavigation-textWithoutHover",
+        "disabled": "HvCalendarNavigation-disabled",
+        "icon": "HvCalendarNavigation-icon",
+        "root": "HvCalendarNavigation-root",
+        "text": "HvCalendarNavigation-text",
+        "textWithoutHover": "HvCalendarNavigation-textWithoutHover",
       }
     }
     id="id1"
@@ -27,17 +27,17 @@ exports[`<Navigation /> should render correctly 1`] = `
     onTextClick={[MockFunction]}
   >
     <div
-      className="HvDatePickerNavigation-root"
+      className="HvCalendarNavigation-root"
     >
       <WithStyles(DropLeftXS)
-        className="HvDatePickerNavigation-icon"
+        className="HvCalendarNavigation-icon HvCalendarNavigation-disabled"
         id="id1-left"
         onClick={[MockFunction]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
         <DropLeftXS
-          className="HvDatePickerNavigation-icon"
+          className="HvCalendarNavigation-icon HvCalendarNavigation-disabled"
           classes={
             Object {
               "root": "HvIconDropLeftXS-root",
@@ -53,7 +53,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           tabIndex={0}
         >
           <div
-            className="HvDatePickerNavigation-icon HvIconDropLeftXS-root HvIconDropLeftXS-rootXs"
+            className="HvCalendarNavigation-icon HvCalendarNavigation-disabled HvIconDropLeftXS-root HvIconDropLeftXS-rootXs"
             id="id1-left"
             onClick={[MockFunction]}
             onKeyDown={[Function]}
@@ -76,14 +76,16 @@ exports[`<Navigation /> should render correctly 1`] = `
         </DropLeftXS>
       </WithStyles(DropLeftXS)>
       <div
-        className="HvDatePickerNavigation-text"
+        className="HvCalendarNavigation-text"
         id="id1"
         onClick={[MockFunction]}
         onKeyDown={[Function]}
         role="presentation"
         tabIndex={0}
       >
-        <WithStyles(ForwardRef)>
+        <WithStyles(ForwardRef)
+          variant="normalText"
+        >
           <ForwardRef
             classes={
               Object {
@@ -110,6 +112,7 @@ exports[`<Navigation /> should render correctly 1`] = `
                 "xxsTitle": "HvTypography-xxsTitle",
               }
             }
+            variant="normalText"
           >
             <p
               className="HvTypography-root HvTypography-normalText"
@@ -120,14 +123,14 @@ exports[`<Navigation /> should render correctly 1`] = `
         </WithStyles(ForwardRef)>
       </div>
       <WithStyles(DropRightXS)
-        className="HvDatePickerNavigation-icon"
+        className="HvCalendarNavigation-icon"
         id="id1-right"
         onClick={[MockFunction]}
         onKeyDown={[Function]}
         tabIndex={0}
       >
         <DropRightXS
-          className="HvDatePickerNavigation-icon"
+          className="HvCalendarNavigation-icon"
           classes={
             Object {
               "root": "HvIconDropRightXS-root",
@@ -143,7 +146,7 @@ exports[`<Navigation /> should render correctly 1`] = `
           tabIndex={0}
         >
           <div
-            className="HvDatePickerNavigation-icon HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+            className="HvCalendarNavigation-icon HvIconDropRightXS-root HvIconDropRightXS-rootXs"
             id="id1-right"
             onClick={[MockFunction]}
             onKeyDown={[Function]}

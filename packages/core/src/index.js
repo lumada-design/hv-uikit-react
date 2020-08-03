@@ -57,6 +57,8 @@ export { default as HvUserPreferences } from "./UserPreferences";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
 export { default as HvPanel } from "./Panel";
 
+export { default as HvCalendar } from "./Calendar";
+
 // HOCs
 export { default as withId } from "./withId";
 export { default as withLabels } from "./withLabels";

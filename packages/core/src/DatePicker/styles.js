@@ -22,6 +22,7 @@ const styles = theme => ({
   },
   inputCalendarClosed: {
     border: `1px solid ${theme.palette.atmo4}`,
+    borderRadius: 2,
     "&:hover": {
       cursor: "pointer",
       border: `1px solid ${theme.palette.acce1}`
@@ -29,7 +30,8 @@ const styles = theme => ({
   },
   inputCalendarOpen: {
     boxShadow: theme.hv.shadows[1],
-    border: `1px solid ${theme.palette.atmo1}`
+    border: `1px solid ${theme.palette.atmo1}`,
+    borderRadius: "2px 2px 0 0"
   },
   noBorderTop: {
     borderTop: "none"
