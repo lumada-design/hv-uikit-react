@@ -2,7 +2,7 @@ const styles = theme => ({
   root: {
     display: "none"
   },
-  topGutter: { marginTop: 8 },
+  topGutter: { paddingTop: 8 },
   warningText: {
     width: "100%",
     color: theme.hv.palette.semantic.sema4

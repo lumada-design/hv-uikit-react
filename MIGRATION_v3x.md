@@ -42,3 +42,7 @@
 - `s-text` changed to `normal-text`
 
 ## Components
+
+### Input
+
+- `showInfoIcon` removed.

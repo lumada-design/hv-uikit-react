@@ -3,10 +3,6 @@ import { StandardProps } from "@material-ui/core";
 export interface HvInfoMessageProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvInfoMessageClassKey> {
   /**
-   * The text to be shown by the info text.
-   */
-  label?: React.ReactNode;
-  /**
    * If ´true´ the input is disabled.
    */
   disabled?: boolean;

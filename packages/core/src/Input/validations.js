@@ -1,5 +1,5 @@
 import React from "react";
-import { Success, Fail } from "@hv/uikit-react-icons";
+import { Success } from "@hv/uikit-react-icons";
 import validationTypes from "./validationTypes";
 import validationStates from "./validationStates";
 
@@ -82,8 +82,6 @@ export const validationIcon = (state, className) => {
   switch (state) {
     case validationStates.valid:
       return <Success semantic="sema1" className={className} />;
-    case validationStates.invalid:
-      return <Fail semantic="sema4" className={className} />;
     default:
       return null;
   }

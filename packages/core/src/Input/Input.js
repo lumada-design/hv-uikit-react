@@ -2,11 +2,18 @@ import React, { useRef, useState, useEffect, isValidElement } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { CloseXS, Info } from "@hv/uikit-react-icons";
-import { HvAdornment, HvBaseInput, HvFormElement, HvLabel, HvHelperText, HvSuggestions } from "..";
+import { CloseXS } from "@hv/uikit-react-icons";
+import {
+  HvAdornment,
+  HvBaseInput,
+  HvFormElement,
+  HvLabel,
+  HvSuggestions,
+  HvWarningText,
+  HvInfoMessage
+} from "..";
 import withId from "../withId";
 import withLabels from "../withLabels";
-import withTooltips from "../withTooltip";
 import { isKeypress, KeyboardCodes, setId } from "../utils";
 import validationTypes from "./validationTypes";
 import validationStates, { isInvalid } from "./validationStates";
@@ -37,7 +44,6 @@ const HvInput = props => {
     password = false,
     disabled = false,
     isRequired = false,
-    infoIcon = false,
     validationIconVisible = true,
     disableClear = false,
     customFixedIcon,
@@ -297,13 +303,7 @@ const HvInput = props => {
 
   const adornments = getInputAdornments(showValidationIcon, showClear);
 
-  const IconDisplay = () => (
-    <div aria-hidden="true" className={classes.infoIconContainer}>
-      <Info />
-    </div>
-  );
-  const InfoIcon = withTooltips(IconDisplay, labels.infoText);
-  const showInfoIcon = showInfo && infoIcon && labels.infoText;
+  const showInfoMessage = showInfo && labels.infoText;
 
   return (
     <HvFormElement
@@ -312,6 +312,9 @@ const HvInput = props => {
       className={clsx(classes.root, className)}
       onBlur={onContainerBlurHandler}
       value={value}
+      status={
+        validationState === "invalid" || validationState === "valid" ? validationState : "standBy"
+      }
       disabled={disabled}
     >
       <div className={classes.labelContainer}>
@@ -332,9 +335,8 @@ const HvInput = props => {
           />
         )}
 
-        {showInfoIcon && <InfoIcon />}
+        {showInfoMessage && <HvInfoMessage id="main-info-message">{labels.infoText}</HvInfoMessage>}
       </div>
-
       <HvBaseInput
         id={setId(id, "input")}
         autoFocus={autoFocus}
@@ -385,18 +387,9 @@ const HvInput = props => {
         suggestionValues={suggestionValues}
       />
 
-      <HvHelperText
-        id={setId(id, "description")}
-        {...(!isStateInvalid && (showInfoIcon || !labels.infoText)
-          ? { style: { display: "none" } }
-          : {})}
-        className={clsx(classes.infoText, {
-          [classes.infoIcon]: infoIcon
-        })}
-        notification={isStateInvalid ? externalWarningTextOverride || warningText : ""}
-      >
-        {labels.infoText}
-      </HvHelperText>
+      <HvWarningText id={setId(id, "warning")}>
+        {isStateInvalid ? externalWarningTextOverride || warningText : ""}
+      </HvWarningText>
     </HvFormElement>
   );
 };
@@ -471,10 +464,6 @@ HvInput.propTypes = {
      */
     labelContainer: PropTypes.string,
     /**
-     * Styles applied to the icon information container.
-     */
-    infoIconContainer: PropTypes.string,
-    /**
      * Styles applied to the icon information text.
      */
     infoText: PropTypes.string,
@@ -487,10 +476,6 @@ HvInput.propTypes = {
      */
     textInfo: PropTypes.string,
     /**
-     * Styles applied to the description when it is showing a warning.
-     */
-    infoIcon: PropTypes.string,
-    /**
      * Styles applied to the input adornment icons.
      */
     icon: PropTypes.string,
@@ -498,7 +483,13 @@ HvInput.propTypes = {
      * Styles applied to the icon used to clean the input.
      */
     iconClear: PropTypes.string,
+    /**
+     * Styles applied to the div around the adornment.
+     */
     adornmentsBox: PropTypes.string,
+    /**
+     * Styles applied to the the adornment when behaving as a button.
+     */
     adornmentButton: PropTypes.string,
     /**
      * IE11 specific styling.
@@ -614,13 +605,8 @@ HvInput.propTypes = {
   autoFocus: PropTypes.bool,
   /**
    * The initial state of the input.
-   * note: Is recommended you use the provided validationStates object to set this value.
    */
   validationState: PropTypes.oneOf(["empty", "filled", "invalid", "valid"]),
-  /**
-   * Show info icon with info label.infoText.
-   */
-  infoIcon: PropTypes.bool,
   /**
    * If `true` the validation icon is visible, `false` otherwise
    */

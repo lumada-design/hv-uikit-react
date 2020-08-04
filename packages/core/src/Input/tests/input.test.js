@@ -20,7 +20,7 @@ const labels = {
 
 const getInputProps = ParentElement => ParentElement.find(HvInput).props();
 
-describe("Input", () => {
+describe("v3 Input", () => {
   let wrapper;
 
   beforeEach(async () => {
