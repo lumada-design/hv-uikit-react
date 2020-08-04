@@ -238,3 +238,32 @@ DynamicContent.story = {
     }
   }
 };
+
+export const Composition = () => (
+  <HvMultiButton multi style={{ margin: "10px", width: "320px" }}>
+    <HvButton>Avocado</HvButton>
+    <HvButton>Banana</HvButton>
+    <HvButton>Carrot</HvButton>
+    <HvButton startIcon={<Map />}>Map</HvButton>
+  </HvMultiButton>
+);
+
+export const CompositionControlled = () => {
+  const [selection, setSelection] = useState([]);
+
+  const handleChange = (event, _, idx) => setSelection([...selection, idx]);
+
+  return (
+    <HvMultiButton
+      multi
+      selection={selection}
+      onChange={handleChange}
+      style={{ margin: "10px", width: "320px" }}
+    >
+      <HvButton>Avocado</HvButton>
+      <HvButton>Banana</HvButton>
+      <HvButton>Carrot</HvButton>
+      <HvButton startIcon={<Map />}>Map</HvButton>
+    </HvMultiButton>
+  );
+};

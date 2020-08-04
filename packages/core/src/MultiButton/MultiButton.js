@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, cloneElement } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
@@ -9,15 +9,17 @@ import styles from "./styles";
  * parse button properties and if any buttons are preset as selected
  * set the state with their ids
  * */
-const getInitialState = buttons => buttons.filter(item => item.selected).map(item => item.id);
+const getInitialState = (buttons = []) =>
+  buttons.reduce((acc, button, i) => (button.selected ? [...acc, i] : acc), []);
 
 const MultiButton = ({
-  id,
   className,
+  children,
   classes,
   type,
   onChange,
   multi = false,
+  selection,
   minSelection = 0,
   maxSelection = Infinity,
   buttons,
@@ -29,57 +31,55 @@ const MultiButton = ({
    * in order to throw error in component and alert for the need to correctly
    * set the button props
    */
-  const [checkedItems, setCheckedItems] = useState(getInitialState(buttons));
+  const [checkedItems, setCheckedItems] = useState(selection ?? getInitialState(buttons));
+
+  useEffect(() => {
+    setCheckedItems(selection);
+  }, [selection]);
 
   useEffect(() => {
     setCheckedItems(getInitialState(buttons));
   }, [buttons]);
 
-  const handleClick = (event, idx) => {
+  const handleClick = (event, idx, btnProps) => {
+    const clickedButton = buttons?.[idx] || btnProps;
+    const btnClickable = clickedButton.enforced !== undefined ? clickedButton : false;
+
+    const isSelected = checkedItems.includes(idx);
+
+    if (
+      btnClickable ||
+      (checkedItems.length === minSelection && isSelected) ||
+      (checkedItems.length === maxSelection && !isSelected)
+    ) {
+      return;
+    }
+
     let newState;
-
-    const clickedBtnDefs = buttons[idx];
-    const btnClickable = clickedBtnDefs.enforced !== undefined ? clickedBtnDefs : false;
-
-    if (btnClickable) return;
-
-    const clickedBtnId = buttons[idx].id;
-
-    if (checkedItems.length === minSelection && checkedItems.includes(clickedBtnId)) {
-      return;
-    }
-
-    if (checkedItems.length === maxSelection && !checkedItems.includes(clickedBtnId)) {
-      return;
-    }
-
-    const clickedBtnPositionInState = checkedItems.indexOf(clickedBtnId);
-
     if (multi) {
       // check if item has not been clicked
-      if (clickedBtnPositionInState === -1) {
+      if (!isSelected) {
         // handle state change
-        newState = [...checkedItems, buttons[idx].id];
+        newState = [...checkedItems, idx];
       } else {
-        const itemToRemove = clickedBtnPositionInState;
-        newState = checkedItems.filter((_, i) => i !== itemToRemove);
+        newState = checkedItems.filter(item => item !== idx);
       }
-    } else if (clickedBtnPositionInState === -1) {
+    } else if (!isSelected) {
       // handle state change
       // this enforces that the change happens only when we click on
       // a deselected element mimicking the behavior of the button component
-      newState = [clickedBtnId];
+      newState = [idx];
     } else {
       return;
     }
 
     setCheckedItems(newState);
-    onChange?.(event, newState.slice());
+    onChange?.(event, newState.slice(), idx);
   };
 
   const renderButton = (button, idx) => {
-    const { id: bId, icon, selected, value, ...other } = button;
-    const isSelected = checkedItems.indexOf(bId) !== -1;
+    const { id, icon, selected, value, enforced, ...other } = button;
+    const isSelected = checkedItems.includes(idx);
 
     const iconButton =
       icon && type === "mixed" ? React.cloneElement(icon, { className: classes.icon }) : icon;
@@ -87,7 +87,7 @@ const MultiButton = ({
     return (
       <HvButton
         key={`btnkey_${idx + 1}`}
-        id={bId}
+        id={id}
         onClick={event => handleClick(event, idx)}
         className={clsx(classes.button, {
           [classes.isSelected]: isSelected,
@@ -104,28 +104,45 @@ const MultiButton = ({
     );
   };
 
+  const renderChild = (child, idx) => {
+    const isSelected = checkedItems.includes(idx);
+
+    return cloneElement(child, {
+      key: `btnkey_${idx + 1}`,
+      category: "ghost",
+      overrideIconColors: false,
+      onClick: event => {
+        handleClick(event, idx, child.props);
+        child.props.onClick?.(event);
+      },
+      className: clsx(classes.button, {
+        [classes.isSelected]: isSelected,
+        [classes.isUnselected]: !isSelected
+      })
+    });
+  };
+
   return (
     <div
-      id={id}
       className={clsx(className, classes.root, {
         [classes.vertical]: vertical
       })}
       {...others}
     >
-      {buttons.map((button, idx) => renderButton(button, idx))}
+      {children?.map(renderChild) || buttons?.map(renderButton)}
     </div>
   );
 };
 
 MultiButton.propTypes = {
   /**
-   * Identifier
-   */
-  id: PropTypes.string,
-  /**
    * Class names to be applied.
    */
   className: PropTypes.string,
+  /**
+   * The MultiButton's buttons.
+   */
+  children: PropTypes.node,
   /**
    * A Jss Object used to override or extend the styles applied.
    */
@@ -174,7 +191,7 @@ MultiButton.propTypes = {
    *    --"icon": displays just an icon,
    *    --"mixed": displays both a label and an icon
    */
-  type: PropTypes.oneOf(["text", "icon", "mixed"]).isRequired,
+  type: PropTypes.oneOf(["text", "icon", "mixed"]),
   /**
    * Buttons definitions
    */
@@ -183,7 +200,7 @@ MultiButton.propTypes = {
       /**
        * the button id.
        */
-      id: PropTypes.string.isRequired,
+      id: PropTypes.string,
       /**
        * the button label.
        */
@@ -201,11 +218,15 @@ MultiButton.propTypes = {
        */
       enforced: PropTypes.bool
     })
-  ).isRequired,
+  ),
   /**
    * Callback function to be triggered when the input value is changed
    */
   onChange: PropTypes.func,
+  /**
+   * Array of selection ids to use when controlled
+   */
+  selection: PropTypes.arrayOf(PropTypes.number),
   /**
    * Specify minimum number of selections in component
    */
