@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _resources.resource
 Test Template     verify dropped dropdownmenu has attributes
-Force Tags        wai-aria-practices
+Force Tags        wai-aria-practices, v3
 
 
 *** Test Cases ***
@@ -20,3 +20,7 @@ verify dropped dropdownmenu has attributes
     Click Element                        ${dropDownMenu}
     Wait Until Page Contains Element     ${droppedMenu}
     Element Attribute Value Should Be    ${locator}    ${attribute}    ${expected}
+
+
+*** Variable ***
+${dropDownMenu}    css:div[id='dpmDisabledItems']

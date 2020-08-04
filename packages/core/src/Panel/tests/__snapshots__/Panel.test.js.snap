@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel should render correctly 1`] = `
+<WithStyles(HvPanel)>
+  <HvPanel
+    classes={
+      Object {
+        "root": "HvPanel-root",
+      }
+    }
+  >
+    <Styled(MuiBox)
+      className="HvPanel-root"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-1 HvPanel-root"
+      >
+        Panel Content
+      </div>
+    </Styled(MuiBox)>
+  </HvPanel>
+</WithStyles(HvPanel)>
+`;

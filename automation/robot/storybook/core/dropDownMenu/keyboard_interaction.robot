@@ -1,7 +1,7 @@
 *** Setting ***
 Resource          _resources.resource
 Test Template     Run Keyword
-Force Tags        keyboard
+Force Tags        keyboard, v3
 
 
 *** Test Cases ***
