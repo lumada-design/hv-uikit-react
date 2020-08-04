@@ -8,7 +8,8 @@ export default {
   title: "Patterns/Notification/Banner",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBanner } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBanner } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvBanner
 };
@@ -83,7 +84,8 @@ BannerController.story = {
   parameters: {
     docs: {
       storyDescription: "Different Banner variants with actions and controlled by buttons"
-    }
+    },
+    v3: true
   }
 };
 
@@ -100,7 +102,8 @@ CustomIcon.story = {
   parameters: {
     docs: {
       storyDescription: "Banner with custom icon with base color on the semantic background"
-    }
+    },
+    v3: true
   }
 };
 
@@ -121,7 +124,8 @@ CustomAction.story = {
     docs: {
       storyDescription:
         "Banner can receive a component or object action that will render a semantic button"
-    }
+    },
+    v3: true
   }
 };
 
