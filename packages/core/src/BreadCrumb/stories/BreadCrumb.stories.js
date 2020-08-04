@@ -5,7 +5,8 @@ export default {
   title: "Patterns/Breadcrumb",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBreadCrumb } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvBreadCrumb
 };
@@ -44,7 +45,8 @@ LimitedToFivePaths.story = {
   parameters: {
     docs: {
       storyDescription: "Breadcrumb sample with 5 out of 7 paths visible."
-    }
+    },
+    v3: true
   }
 };
 
@@ -67,7 +69,8 @@ LimitedToTwoPaths.story = {
   parameters: {
     docs: {
       storyDescription: "Breadcrumb sample with 2 out of 8 paths visible, the minimum possible"
-    }
+    },
+    v3: true
   }
 };
 
@@ -83,7 +86,8 @@ WithURL.story = {
   parameters: {
     docs: {
       storyDescription: "Breadcrumb sample that generates the paths using an URL."
-    }
+    },
+    v3: true
   }
 };
 
@@ -102,7 +106,8 @@ WithURLLimited.story = {
   parameters: {
     docs: {
       storyDescription: "Breadcrumb sample that generates the limited paths using an URL."
-    }
+    },
+    v3: true
   }
 };
 
@@ -133,6 +138,7 @@ WithClickEvents.story = {
   parameters: {
     docs: {
       storyDescription: "Breadcrumb sample that has a onClick defined."
-    }
+    },
+    v3: true
   }
 };

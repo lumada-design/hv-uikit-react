@@ -13,10 +13,10 @@ const styles = theme => ({
     padding: 0,
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
+      backgroundColor: theme.hv.palette.atmosphere.atmo3
     },
     "&:focus": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
+      backgroundColor: theme.hv.palette.atmosphere.atmo3,
       ...outlineStyles
     },
     "&:disabled": {
