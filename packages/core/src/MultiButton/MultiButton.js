@@ -105,7 +105,7 @@ const MultiButton = ({
   };
 
   const renderChild = (child, idx) => {
-    const isSelected = checkedItems.includes(idx);
+    const isSelected = child.props.selected ?? checkedItems.includes(idx);
 
     return cloneElement(child, {
       key: `btnkey_${idx + 1}`,
@@ -115,7 +115,7 @@ const MultiButton = ({
         handleClick(event, idx, child.props);
         child.props.onClick?.(event);
       },
-      className: clsx(classes.button, {
+      className: clsx(child.props.className, classes.button, {
         [classes.isSelected]: isSelected,
         [classes.isUnselected]: !isSelected
       })

@@ -260,8 +260,8 @@ export const CompositionControlled = () => {
       onChange={handleChange}
       style={{ margin: "10px", width: "320px" }}
     >
-      <HvButton>Avocado</HvButton>
-      <HvButton>Banana</HvButton>
+      <HvButton selected>Avocado</HvButton>
+      <HvButton disabled>Banana</HvButton>
       <HvButton>Carrot</HvButton>
       <HvButton startIcon={<Map />}>Map</HvButton>
     </HvMultiButton>
