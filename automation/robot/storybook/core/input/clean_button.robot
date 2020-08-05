@@ -1,9 +1,9 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}input--main
+...           Go To    ${patterns}input--main
 ...           AND    Wait Until Element Is Enabled    ${input}
-Force Tags        v3
+Force Tags    v3
 
 
 *** Test Cases ***

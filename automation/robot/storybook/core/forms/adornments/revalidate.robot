@@ -2,7 +2,7 @@
 Resource         _resource.resource
 Suite Setup      Set Selenium Speed    0.1 seconds
 Test Setup       Run Keywords
-...              Go To    ${components}forms-form-element--main
+...              Go To    ${patterns}forms-form-element--main
 ...              AND    Wait Until Element Is Enabled    ${input}
 Documentation
 ...             was verified a firefox webdriver error!!
@@ -13,24 +13,25 @@ Documentation
 Suite Teardown    Set Selenium Speed    0 seconds
 Force Tags        v3
 
+
 *** Test Cases ***
 does not show validation adornment icons when input was cleaned
     Press Keys                           ${input}    Joao    TAB
     wait until element is Visible        ${adornment_accepted}
     Double Click Element                 ${input}
     Press Keys                           NONE    DELETE
-    Press Keys                           ${label}    TAB
+    Press Keys                           ${input}    TAB
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited
     Press Keys                           ${input}    Joao    TAB
     wait until element is Visible        ${adornment_accepted}
-    click Element                        ${label}
+    click Element                        ${input}
     wait until element is Not Visible    ${adornment_accepted}
 
 does not show previous adornment when input is being edited by clicking in label
     Input Text                       ${input}    Joao
-    Click Element                    ${label}
+    Click Element                    ${input}
     Wait Until Element Is Visible    ${input}:focus
     Element Should Not Be Visible    ${adornment_accepted}
 
@@ -39,7 +40,7 @@ revalidate adornments when input value is changed - failed to accepted
     Wait Until Element Is Visible    ${adornment_failed}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE   Joao
-    Press Keys                       ${label}    TAB
+    Press Keys                       ${input}    TAB
     Wait Until Element Is Visible    ${adornment_accepted}
     Element Should Not Be Visible    ${adornment_failed}
 
@@ -48,7 +49,7 @@ revalidate adornments when input value is changed - accepted to accepted
     Wait Until Element Is Visible    ${adornment_accepted}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE
-    Press Keys                       ${label}    Goncalves    TAB
+    Press Keys                       ${input}    Goncalves    TAB
     Wait Until Element Is Visible    ${adornment_accepted}
     Element Should Not Be Visible    ${adornment_failed}
 
@@ -57,7 +58,7 @@ revalidate input when focus goes out - failed to failed
     Wait Until Element Is Visible    ${adornment_failed}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE
-    Press Keys                       ${label}    1a    TAB
+    Press Keys                       ${input}    1a    TAB
     Wait Until Element Is Visible    ${adornment_failed}
     Element Should Not Be Visible    ${adornment_accepted}
 
@@ -66,6 +67,6 @@ revalidate input when focus goes out - accepted to failed
     Wait Until Element Is Visible    ${adornment_accepted}
     Double Click Element             ${input}
     Press Keys                       NONE    DELETE
-    Press Keys                       ${label}    1a    TAB
+    Press Keys                       ${input}    1a    TAB
     Wait Until Element Is Visible    ${adornment_failed}
     Element Should Not Be Visible    ${adornment_accepted}

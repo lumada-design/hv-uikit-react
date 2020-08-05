@@ -3,7 +3,8 @@ Resource      _resource.resource
 Test Setup    Run Keywords
 ...           Go To    ${patterns}forms-suggestions--main
 ...           AND    Wait Until Element Is Enabled    ${input}
-Force Tags        v3
+Force Tags    v3
+
 
 *** Test Cases ***
 update suggestions when input is being changed
