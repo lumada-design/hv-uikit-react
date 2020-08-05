@@ -26,7 +26,7 @@ describe("v3 InfoMessage", () => {
     expect(wrapper.find(HvInfoMessage)).toMatchSnapshot();
   });
 
-  it("should render the Input component", () => {
+  it("should render the info message component", () => {
     const HvInfoMessageComponent = wrapper.find(HvInfoMessage);
     expect(HvInfoMessageComponent.length).toBe(1);
   });

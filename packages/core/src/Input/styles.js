@@ -38,9 +38,7 @@ const styles = theme => ({
     paddingBottom: "6px",
     display: "block"
   },
-  labelDisabled: {
-    color: theme.hv.palette.atmosphere.atmo5
-  },
+  labelDisabled: {},
   adornmentsBox: {
     display: "flex",
     flexDirection: "row",

@@ -26,7 +26,7 @@ describe("HelperText", () => {
     expect(wrapper.find(HvWarningText)).toMatchSnapshot();
   });
 
-  it("should render the Input component", () => {
+  it("should render the helper text component", () => {
     const HvWarningTextComponent = wrapper.find(HvWarningText);
     expect(HvWarningTextComponent.length).toBe(1);
   });
