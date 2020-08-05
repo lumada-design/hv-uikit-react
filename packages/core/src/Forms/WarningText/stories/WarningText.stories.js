@@ -5,7 +5,8 @@ export default {
   title: "Patterns/Forms/Warning Text",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvWarningText } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvWarningText } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvWarningText,
   decorators: [storyFn => <div style={{ width: "300px" }}>{storyFn()}</div>]
@@ -49,6 +50,7 @@ export const WarningTextWithStatus = () => {
 
 WarningTextWithStatus.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Warning text showcasing the ability to notify the user and to react to the form status."
@@ -88,6 +90,7 @@ export const DisabledWarningText = () => {
 
 DisabledWarningText.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Helper text showcasing the disabled state."
     },

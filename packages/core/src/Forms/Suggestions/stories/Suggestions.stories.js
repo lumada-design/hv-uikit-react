@@ -7,7 +7,8 @@ export default {
   title: "Patterns/Forms/Suggestions",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvSuggestions } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvSuggestions } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvSuggestions,
   decorators: [
@@ -75,6 +76,7 @@ export const Main = () => {
 
 Main.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: [
         "region",
@@ -153,6 +155,7 @@ export const ServerSideSuggestions = () => {
 
 ServerSideSuggestions.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: [
         "region",
@@ -236,6 +239,7 @@ export const OpenWithDownArrow = () => {
 
 OpenWithDownArrow.story = {
   parameters: {
+    v3: true,
     pa11y: {
       ignore: [
         "region",

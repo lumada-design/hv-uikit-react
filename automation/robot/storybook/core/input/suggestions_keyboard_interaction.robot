@@ -5,7 +5,7 @@ Test Setup       Run Keywords
 ...              AND    Wait Until Element Is Enabled    ${input}
 Force Tags       keyboard    bug-ie
 Documentation    https://github.com/lumada-design/hv-uikit-react/issues/1750
-
+Force Tags        v3
 
 *** Test Cases ***
 focus first suggestion option when input is focused and is pressed TAB

@@ -3,7 +3,7 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}input--password
 ...           AND    Wait Until Element Is Enabled    ${input}
-
+Force Tags        v3
 
 *** Test Cases ***
 

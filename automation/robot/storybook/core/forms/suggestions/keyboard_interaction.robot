@@ -4,6 +4,7 @@ Test Setup    Run Keywords
 ...           Go To    ${patterns}forms-suggestions--main
 ...           AND    Wait Until Element Is Enabled    ${input}
 Force Tags    keyboard
+Force Tags        v3
 
 *** Test Cases ***
 focus first suggestion option when input is focused and is pressed TAB

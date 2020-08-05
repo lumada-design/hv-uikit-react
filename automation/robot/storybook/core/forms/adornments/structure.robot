@@ -3,7 +3,7 @@ Resource      _resource.resource
 Test Setup    Run Keywords
 ...           Go To    ${patterns}forms-form-element--main
 ...           AND    Wait Until Element Is Enabled    ${input}
-
+Force Tags        v3
 
 *** Test Cases ***
 show accepted adornment when inserted valid input and and focus goes out

@@ -1,26 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`v3 Label should render correctly 1`] = `
-<WithStyles(HvLabel)
-  label="description"
+exports[`v3 InfoMessage should render correctly 1`] = `
+<WithStyles(HvInfoMessage)
+  id="base"
 >
-  <HvLabel
+  <HvInfoMessage
     classes={
       Object {
-        "childGutter": "HvLabel-childGutter",
-        "labelDisabled": "HvLabel-labelDisabled",
-        "root": "HvLabel-root",
+        "gutter": "HvInfoMessage-gutter",
+        "infoDisabled": "HvInfoMessage-infoDisabled",
+        "root": "HvInfoMessage-root",
       }
     }
-    label="description"
+    id="base"
   >
     <WithStyles(ForwardRef)
-      className="HvLabel-root"
+      className="HvInfoMessage-root HvInfoMessage-gutter"
       component="label"
-      variant="highlightText"
+      id="base"
+      variant="normalText"
     >
       <ForwardRef
-        className="HvLabel-root"
+        className="HvInfoMessage-root HvInfoMessage-gutter"
         classes={
           Object {
             "3xlTitle": "HvTypography-3xlTitle",
@@ -47,15 +48,17 @@ exports[`v3 Label should render correctly 1`] = `
           }
         }
         component="label"
-        variant="highlightText"
+        id="base"
+        variant="normalText"
       >
         <label
-          className="HvLabel-root HvTypography-root HvTypography-highlightText"
+          className="HvInfoMessage-root HvInfoMessage-gutter HvTypography-root HvTypography-normalText"
+          id="base"
         >
-          description
+          test
         </label>
       </ForwardRef>
     </WithStyles(ForwardRef)>
-  </HvLabel>
-</WithStyles(HvLabel)>
+  </HvInfoMessage>
+</WithStyles(HvInfoMessage)>
 `;

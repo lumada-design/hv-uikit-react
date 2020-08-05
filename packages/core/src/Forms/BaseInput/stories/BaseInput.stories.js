@@ -5,7 +5,8 @@ export default {
   title: "Patterns/Forms/Base Input",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBaseInput } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvBaseInput,
   decorators: [storyFn => <div style={{ width: "600px" }}>{storyFn()}</div>]
@@ -45,7 +46,8 @@ DisabledInput.story = {
   parameters: {
     docs: {
       storyDescription: "Showcasing the disabled input style."
-    }
+    },
+    v3: true
   }
 };
 
@@ -67,6 +69,7 @@ InvalidInput.story = {
   parameters: {
     docs: {
       storyDescription: "Showcasing the input in Invalid State."
-    }
+    },
+    v3: true
   }
 };

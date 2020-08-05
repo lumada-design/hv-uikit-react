@@ -3,7 +3,7 @@ Resource         ../_keywords.resource
 Suite Setup      Run Keywords
 ...              Go To    ${components}input--disabled
 ...              AND    Wait Until Element Is Visible    ${input}
-
+Force Tags        v3
 
 *** Test Cases ***
 input is disabled when it is rendered

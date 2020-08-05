@@ -3,7 +3,7 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${components}input--controlled-state
 ...           AND    Wait Until Element Is Visible    ${input}
-
+Force Tags        v3
 
 *** Test Cases ***
 present warning controlled by outside
