@@ -14,10 +14,10 @@ const styles = theme => ({
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
+    fontWeight: 400,
     "&:hover": {
       cursor: "pointer",
-      textDecoration: "none",
-      color: theme.hv.palette.accent.acce2h
+      textDecoration: "underline"
     }
   },
   separator: {
@@ -25,14 +25,16 @@ const styles = theme => ({
   },
   separatorContainer: {
     width: "32px",
-    height: "32px"
+    height: "32px",
+    margin: "0 10px"
   },
   orderedList: {
     display: "flex"
   },
   a: {
     "&:focus > div > p": {
-      color: theme.hv.palette.accent.acce2h
+      color: theme.hv.palette.accent.acce1,
+      textDecoration: "underline"
     }
   }
 });

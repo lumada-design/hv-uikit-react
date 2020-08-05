@@ -1,6 +1,6 @@
 *** Setting ***
 Resource    ../_keywords.resource
-
+Force Tags  v3
 
 ***Variables***
 ${breadcrumb}    css:[id^=breadcrumb]
