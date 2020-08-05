@@ -13,7 +13,8 @@ export default {
   title: "Patterns/Badge",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvBadge } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvBadge } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvBadge
 };
@@ -25,32 +26,27 @@ export const Main = () => (
     <HvBadge id="badge3" showCount count={22} />
     <HvBadge id="badge4" showCount count={100} />
     <HvBadge id="labelBadge1" label="100%" />
-    <HvBadge id="labelBadge2" label="New" />
   </>
 );
 
 Main.story = {
-  decorators: [storyFn => <div style={container}>{storyFn()}</div>]
+  decorators: [storyFn => <div style={{ ...container, width: 300 }}>{storyFn()}</div>]
 };
 
 export const WithIcon = () => (
   <>
     <HvBadge id="badge5" count={0} icon={<Alert />} />
     <HvBadge id="badge6" count={1} icon={<Alert />} />
-    <HvBadge id="badge7" showCount count={8} icon={<Alert />} />
-    <HvBadge id="badge8" showCount count={88} icon={<Alert />} />
-    <HvBadge id="badge9" showCount count={888} icon={<Alert />} />
-    <HvBadge id="labelBadge3" label="100%" icon={<Alert />} />
-    <HvBadge id="labelBadge4" label="New" icon={<Alert />} />
   </>
 );
 
 WithIcon.story = {
-  decorators: [storyFn => <div style={container}>{storyFn()}</div>],
+  decorators: [storyFn => <div style={{ ...container, width: 50 }}>{storyFn()}</div>],
   parameters: {
     docs: {
       storyDescription: "Badge sample that uses a custom icon."
-    }
+    },
+    v3: true
   }
 };
 
@@ -62,16 +58,16 @@ export const WithText = () => (
     <HvBadge id="badge13" showCount count={88} text="Events" textVariant="sTitle" />
     <HvBadge id="badge14" showCount count={888} text="Events" textVariant="sTitle" />
     <HvBadge id="labelBadge5" label="100%" text="Events" textVariant="sTitle" />
-    <HvBadge id="labelBadge6" label="New" text="Events" textVariant="sTitle" />
   </>
 );
 
 WithText.story = {
-  decorators: [storyFn => <div style={{ ...container, width: 800 }}>{storyFn()}</div>],
+  decorators: [storyFn => <div style={{ ...container, width: 650 }}>{storyFn()}</div>],
   parameters: {
     docs: {
       storyDescription: "Badge sample using only text."
-    }
+    },
+    v3: true
   }
 };
 
@@ -92,7 +88,8 @@ WithState.story = {
   parameters: {
     docs: {
       storyDescription: "Badge sample using react hooks to set the number of events."
-    }
+    },
+    v3: true
   }
 };
 
@@ -130,6 +127,7 @@ WithState.story = {
   parameters: {
     docs: {
       storyDescription: "Badges applied to Tabs component."
-    }
+    },
+    v3: true
   }
 };
