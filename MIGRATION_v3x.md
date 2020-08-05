@@ -46,3 +46,7 @@
 ### Input
 
 - `showInfoIcon` removed.
+
+### FormElement
+
+- `HelperText` removed.

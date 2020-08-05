@@ -23,7 +23,6 @@ const HvFormElement = props => {
     ...others
   } = props;
   const descriptors = findDescriptors(children, [
-    "HvHelperText",
     "HvLabel",
     "HvSuggestions",
     "HvInfoMessage",
