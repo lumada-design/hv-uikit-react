@@ -8,7 +8,7 @@ const styles = theme => ({
     "&:hover": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3
     },
-    "&:focus-within": {
+    "&:not($disableFocus):focus-within": {
       backgroundColor: theme.hv.palette.atmosphere.atmo3,
       "& svg": {
         ...outlineStyles

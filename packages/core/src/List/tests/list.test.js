@@ -27,7 +27,7 @@ const mockDataMultiSelection = [
   { label: "Value 3", selected: true }
 ];
 
-describe("<List />", () => {
+describe("[v3] <List />", () => {
   global.document.addEventListener = jest.fn();
   global.document.removeEventListener = jest.fn();
   global.window.event = { type: "mousedown" };
