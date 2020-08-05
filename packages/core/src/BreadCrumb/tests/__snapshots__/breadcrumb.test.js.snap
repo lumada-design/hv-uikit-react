@@ -182,7 +182,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -211,10 +211,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 1
                           </p>
@@ -231,6 +231,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -243,6 +244,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -257,7 +259,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -340,7 +342,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -369,10 +371,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 2
                           </p>
@@ -389,6 +391,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -401,6 +404,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -415,7 +419,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -498,7 +502,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -527,10 +531,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 3
                           </p>
@@ -547,6 +551,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -559,6 +564,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -573,7 +579,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -656,7 +662,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -685,10 +691,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 4
                           </p>
@@ -705,6 +711,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -717,6 +724,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -731,7 +739,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -814,7 +822,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -843,10 +851,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 5
                           </p>
@@ -863,6 +871,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -875,6 +884,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -889,7 +899,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -972,7 +982,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -1001,10 +1011,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 6
                           </p>
@@ -1021,6 +1031,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -1033,6 +1044,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -1047,7 +1059,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -1130,7 +1142,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -1159,10 +1171,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 7
                           </p>
@@ -1179,6 +1191,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -1191,6 +1204,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -1205,7 +1219,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
@@ -1288,7 +1302,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                     >
                       <WithStyles(ForwardRef)
                         className="HvBreadCrumb-link"
-                        variant="xsInlineLink"
+                        variant="link"
                       >
                         <ForwardRef
                           className="HvBreadCrumb-link"
@@ -1317,10 +1331,10 @@ exports[`Breadcrumb should render correctly 1`] = `
                               "xxsTitle": "HvTypography-xxsTitle",
                             }
                           }
-                          variant="xsInlineLink"
+                          variant="link"
                         >
                           <p
-                            className="HvBreadCrumb-link HvTypography-root HvTypography-xsInlineLink"
+                            className="HvBreadCrumb-link HvTypography-root HvTypography-link"
                           >
                             Label 8
                           </p>
@@ -1337,6 +1351,7 @@ exports[`Breadcrumb should render correctly 1`] = `
             >
               <WithStyles(DropRightXS)
                 className="HvBreadCrumb-separatorContainer"
+                color="atmo5"
               >
                 <DropRightXS
                   className="HvBreadCrumb-separatorContainer"
@@ -1349,6 +1364,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       "rootXs": "HvIconDropRightXS-rootXs",
                     }
                   }
+                  color="atmo5"
                 >
                   <div
                     className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
@@ -1363,7 +1379,7 @@ exports[`Breadcrumb should render correctly 1`] = `
                       <path
                         className="color0"
                         d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#414141"
+                        fill="#999999"
                       />
                     </svg>
                   </div>
