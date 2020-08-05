@@ -4,32 +4,8 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
 
-const MultiButton = ({
-  className,
-  children,
-  classes,
-  onChange,
-  selection = [],
-  vertical = false,
-  ...others
-}) => {
-  const renderChild = (child, idx) => {
-    const isSelected = child.props.selected ?? selection.includes(idx);
-
-    return cloneElement(child, {
-      key: `btnkey_${idx + 1}`,
-      category: "ghost",
-      overrideIconColors: false,
-      onClick: event => {
-        onChange?.(event, idx);
-        child.props.onClick?.(event);
-      },
-      className: clsx(child.props.className, classes.button, {
-        [classes.isSelected]: isSelected,
-        [classes.isUnselected]: !isSelected
-      })
-    });
-  };
+const HvMultiButton = props => {
+  const { className, children, classes, category = "ghost", vertical = false, ...others } = props;
 
   return (
     <div
@@ -38,15 +14,21 @@ const MultiButton = ({
       })}
       {...others}
     >
-      {React.Children.map(
-        children.type === React.Fragment ? children.props.children : children,
-        renderChild
+      {React.Children.map(children, child =>
+        cloneElement(child, {
+          category,
+          overrideIconColors: false,
+          className: clsx(child.props.className, classes.button, {
+            [classes.isSelected]: child.props.selected,
+            [classes.isUnselected]: !child.props.selected
+          })
+        })
       )}
     </div>
   );
 };
 
-MultiButton.propTypes = {
+HvMultiButton.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -68,17 +50,9 @@ MultiButton.propTypes = {
      */
     vertical: PropTypes.string,
     /**
-     * Styles applied to the button label.
-     */
-    highlightText: PropTypes.string,
-    /**
      * Styles applied to the each button.
      */
     button: PropTypes.string,
-    /**
-     * Styles applied to the each button's icon.
-     */
-    icon: PropTypes.string,
     /**
      * Styles applied to the button when it's selected.
      */
@@ -93,13 +67,9 @@ MultiButton.propTypes = {
    */
   vertical: PropTypes.bool,
   /**
-   * Callback function to be triggered when the input value is changed
+   * Category of button to use
    */
-  onChange: PropTypes.func,
-  /**
-   * Array of selection ids to use when controlled
-   */
-  selection: PropTypes.arrayOf(PropTypes.number)
+  category: PropTypes.oneOf(["ghost", "icon", "primary", "secondary", "semantic"])
 };
 
-export default withStyles(styles, { name: "HvMultiButton" })(MultiButton);
+export default withStyles(styles, { name: "HvMultiButton" })(HvMultiButton);
