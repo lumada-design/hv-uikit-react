@@ -264,6 +264,7 @@ Expanded.story = {
   parameters: {
     docs: {
       inlineStories: false
-    }
+    },
+    eyes: { waitBeforeScreenshot: "[id*=search-input]:focus" }
   }
 };
