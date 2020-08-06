@@ -10,9 +10,10 @@ const html = {
 };
 
 const body = theme => ({
-  color: theme.hv.palette.accent.acce1,
+  fontFamily: theme.hv.typography.fontFamily,
   ...theme.hv.typography.normalText,
   backgroundColor: theme.hv.palette.atmosphere.atmo3,
+
   "@media print": {
     backgroundColor: "white"
   }

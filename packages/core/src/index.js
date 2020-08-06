@@ -49,6 +49,7 @@ export { default as HvTooltip } from "./Tooltip";
 export { default as HvTypography } from "./Typography";
 export { default as HvUserPreferences } from "./UserPreferences";
 export { default as HvVerticalNavigation } from "./VerticalNavigation";
+export { default as HvPanel } from "./Panel";
 
 // HOCs
 export { default as withId } from "./withId";
