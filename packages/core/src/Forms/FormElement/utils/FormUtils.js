@@ -71,10 +71,14 @@ const findDescriptors = (children, names, descriptors = {}) => {
 const getChildIdToLabel = (children, childName) => {
   let childId = "";
   if (Array.isArray(children)) {
-    childId = children.forEach(child => {
+    children.forEach(child => {
       const foundId = getDescriptorMap(child, childName)?.id;
       if (!isNil(foundId)) {
-        childId = childId.concat(`${foundId} `);
+        if (childId === "") {
+          childId = childId.concat(`${foundId}`);
+          return;
+        }
+        childId = childId.concat(` ${foundId}`);
       }
     });
   } else {
