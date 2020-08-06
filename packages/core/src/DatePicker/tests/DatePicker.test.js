@@ -5,10 +5,10 @@ import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
 import HvProvider from "../../Provider";
 import Typography from "../../Typography";
 
-import { convertISOStringDateToDate, getFormattedDate } from "../Calendar/utils";
+import { convertISOStringDateToDate, getFormattedDate } from "../../Calendar/utils";
 
 import Actions from "../Actions";
-import Calendar from "../Calendar";
+import Calendar from "../../Calendar";
 
 import DatePicker from "../index";
 

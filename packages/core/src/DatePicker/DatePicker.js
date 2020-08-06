@@ -6,7 +6,7 @@ import CalendarIcon from "@hv/uikit-react-icons/dist/Calendar";
 import clsx from "clsx";
 import { isKeypress, KeyboardCodes, setId } from "../utils";
 import Typography from "../Typography";
-import Calendar from "./Calendar";
+import Calendar from "../Calendar";
 import Actions from "./Actions";
 import styles from "./styles";
 import withLabels from "../withLabels";
@@ -18,7 +18,7 @@ import {
   getFormattedDate,
   isDate,
   isValidLocale
-} from "./Calendar/utils";
+} from "../Calendar/utils";
 
 const DEFAULT_LABELS = {
   applyLabel: "Apply",
