@@ -24,9 +24,7 @@ import {
   isSameMonth,
   isValidLocale,
   makeUTCDate,
-  makeUTCToday,
-  getPreviousMonth,
-  getNextMonth
+  makeUTCToday
 } from "./utils";
 
 import CalendarModel from "./model";
@@ -194,17 +192,6 @@ const HvCalendar = ({
 
     visibleDateChanged();
   };
-
-  // const [testLabel, setTestLabel] = useState("Test Label");
-
-  // useEffect(() => {
-  //   setTestLabel("First Go");
-  //   console.log("contents of the calModel:" + { ...calModel });
-  // }, [calModel]);
-
-  // useEffect(() => {
-  //   setTestLabel(testLabel + " manipulated");
-  // }, [testLabel]);
 
   /**
    * Navigates to the new date according to the received navigation option.
@@ -452,7 +439,6 @@ const HvCalendar = ({
       </div>
     </div>
   );
-  // }
 };
 
 HvCalendar.propTypes = {
