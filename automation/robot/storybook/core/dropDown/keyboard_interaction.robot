@@ -29,10 +29,12 @@ cancel dropdown selection when is pressed ESCAPE
     Click Element                        ${dropdown}
     Element Attribute Value Should Be    ${option1}     aria-selected    false
 
-move focus to apply button when focus is on last option and is pressed TAB
+move focus through component using TAB
     Click Element                    ${dropdown}
-    Wait Until Element Is Visible    ${option4}
-    set focus and press keys         ${option4}        TAB
+    Press Keys                       None           TAB
+    Press Keys                       None           TAB
+    Press Keys                       None           TAB
+
     Element Should Be Focused        ${buttonApply}
 
 move focus to cancel button when focus is on apply button and is pressed TAB

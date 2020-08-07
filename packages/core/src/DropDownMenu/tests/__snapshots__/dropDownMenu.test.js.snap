@@ -1658,7 +1658,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           role="menuitem"
                                           selected={false}
                                         >
-                                          <Text>
+                                          <ComponentFunction>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
                                               variant="normalText"
@@ -1701,7 +1701,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 </p>
                                               </ForwardRef>
                                             </WithStyles(ForwardRef)>
-                                          </Text>
+                                          </ComponentFunction>
                                         </li>
                                       </ConditionalWrapper>
                                     </Focus>
@@ -1860,7 +1860,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           role="menuitem"
                                           selected={false}
                                         >
-                                          <Text>
+                                          <ComponentFunction>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
                                               variant="normalText"
@@ -1903,7 +1903,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 </p>
                                               </ForwardRef>
                                             </WithStyles(ForwardRef)>
-                                          </Text>
+                                          </ComponentFunction>
                                         </li>
                                       </ConditionalWrapper>
                                     </Focus>
@@ -2062,7 +2062,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                           role="menuitem"
                                           selected={false}
                                         >
-                                          <Text>
+                                          <ComponentFunction>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
                                               variant="normalText"
@@ -2105,7 +2105,7 @@ exports[`DropDownMenu component with portal opens on click 1`] = `
                                                 </p>
                                               </ForwardRef>
                                             </WithStyles(ForwardRef)>
-                                          </Text>
+                                          </ComponentFunction>
                                         </li>
                                       </ConditionalWrapper>
                                     </Focus>
@@ -3598,7 +3598,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           role="menuitem"
                                           selected={false}
                                         >
-                                          <Text>
+                                          <ComponentFunction>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
                                               variant="normalText"
@@ -3641,7 +3641,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 </p>
                                               </ForwardRef>
                                             </WithStyles(ForwardRef)>
-                                          </Text>
+                                          </ComponentFunction>
                                         </li>
                                       </ConditionalWrapper>
                                     </Focus>
@@ -3800,7 +3800,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           role="menuitem"
                                           selected={false}
                                         >
-                                          <Text>
+                                          <ComponentFunction>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
                                               variant="normalText"
@@ -3843,7 +3843,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 </p>
                                               </ForwardRef>
                                             </WithStyles(ForwardRef)>
-                                          </Text>
+                                          </ComponentFunction>
                                         </li>
                                       </ConditionalWrapper>
                                     </Focus>
@@ -4002,7 +4002,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                           role="menuitem"
                                           selected={false}
                                         >
-                                          <Text>
+                                          <ComponentFunction>
                                             <WithStyles(ForwardRef)
                                               className="HvList-label HvList-truncate"
                                               variant="normalText"
@@ -4045,7 +4045,7 @@ exports[`DropDownMenu component without portal opens on click 1`] = `
                                                 </p>
                                               </ForwardRef>
                                             </WithStyles(ForwardRef)>
-                                          </Text>
+                                          </ComponentFunction>
                                         </li>
                                       </ConditionalWrapper>
                                     </Focus>
