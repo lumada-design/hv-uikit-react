@@ -105,9 +105,7 @@ export const Main = () => {
           }
         />
       </HvLabel>
-      <HvWarningText key="2" id="warning-text">
-        Names do not contain numbers.
-      </HvWarningText>
+      <HvWarningText id="warning-text">Names do not contain numbers.</HvWarningText>
     </HvFormElement>
   );
 };
@@ -115,13 +113,11 @@ export const Main = () => {
 export const FormElementInvalid = () => {
   return (
     <HvFormElement value="Albert2" status="invalid">
-      <HvLabel key="1" id="invalid-input-label" label="First name">
+      <HvLabel id="invalid-input-label" label="First name">
         <HvInfoMessage id="invalid-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput id="invalid-input" />
       </HvLabel>
-      <HvWarningText key="2" id="invalid-warning-text">
-        Names do not contain numbers.
-      </HvWarningText>
+      <HvWarningText id="invalid-warning-text">Names do not contain numbers.</HvWarningText>
     </HvFormElement>
   );
 };
@@ -138,16 +134,14 @@ FormElementInvalid.story = {
 export const FormElementValid = () => {
   return (
     <HvFormElement value="Hello" status="valid">
-      <HvLabel key="1" id="valid-input-label" label="First name">
+      <HvLabel id="valid-input-label" label="First name">
         <HvInfoMessage id="main-info-message"> Do not put numbers.</HvInfoMessage>
         <HvBaseInput
           id="valid-input"
           endAdornment={<HvAdornment showWhen="valid" icon={<Success semantic="sema1" />} />}
         />
       </HvLabel>
-      <HvWarningText key="2" id="valid-warning-text">
-        Names do not contain numbers.
-      </HvWarningText>
+      <HvWarningText id="valid-warning-text">Names do not contain numbers.</HvWarningText>
     </HvFormElement>
   );
 };
@@ -164,13 +158,11 @@ FormElementValid.story = {
 export const FormElementDisabled = () => {
   return (
     <HvFormElement status="valid" disabled>
-      <HvLabel key="1" id="disabled-input-label" label="First name">
+      <HvLabel id="disabled-input-label" label="First name">
         <HvInfoMessage>Info message here</HvInfoMessage>
         <HvBaseInput id="disable-input" placeholder="Insert your name" />
       </HvLabel>
-      <HvWarningText key="2" id="disabled-warning-text">
-        Names do not contain numbers.
-      </HvWarningText>
+      <HvWarningText id="disabled-warning-text">Names do not contain numbers.</HvWarningText>
     </HvFormElement>
   );
 };

@@ -95,7 +95,7 @@ const HvBaseInput = props => {
         multiline={multiline}
         {...others}
       />
-      <div className={classes.inputBorderContainer} />
+      <div role="presentation" className={classes.inputBorderContainer} />
     </div>
   );
 };
