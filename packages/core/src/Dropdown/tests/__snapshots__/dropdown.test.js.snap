@@ -496,6 +496,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -688,6 +689,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -880,6 +882,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -1072,6 +1075,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -1264,6 +1268,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -1456,6 +1461,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -1796,6 +1802,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -3304,6 +3311,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with multiselect and search should 
                                                                   </WithStyles(ForwardRef(Input))>
                                                                   <div
                                                                     className="HvBaseInput-inputBorderContainer"
+                                                                    role="presentation"
                                                                   />
                                                                 </div>
                                                               </HvBaseInput>
@@ -7632,6 +7640,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -7824,6 +7833,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -8016,6 +8026,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -8208,6 +8219,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -8400,6 +8412,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -8592,6 +8605,7 @@ exports[`[v3] <Dropdown /> [v3] <Dropdown /> with selectDefault false should ren
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -10006,6 +10020,7 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                         </div>
                                         <div
                                           class="HvBaseInput-inputBorderContainer"
+                                          role="presentation"
                                         />
                                       </div>
                                       <div
@@ -11284,6 +11299,7 @@ exports[`[v3] <Dropdown /> [v3] with defaults should render correctly 1`] = `
                                                                   </WithStyles(ForwardRef(Input))>
                                                                   <div
                                                                     className="HvBaseInput-inputBorderContainer"
+                                                                    role="presentation"
                                                                   />
                                                                 </div>
                                                               </HvBaseInput>

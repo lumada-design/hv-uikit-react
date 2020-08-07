@@ -197,6 +197,7 @@ exports[`v3 Input should render correctly 1`] = `
       </WithStyles(ForwardRef(Input))>
       <div
         className="HvBaseInput-inputBorderContainer"
+        role="presentation"
       />
     </div>
   </HvBaseInput>
