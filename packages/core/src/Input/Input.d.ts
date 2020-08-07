@@ -82,7 +82,6 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
   autoFocus?: boolean;
   /**
    * The initial state of the input.
-   * note: Is recommended you use the provided validationStates object to set this value.
    */
   validationState?: "empty" | "filled" | "invalid" | "valid";
   /**
@@ -123,7 +122,6 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
    * Overrides any validation with a specific error/warning message to set in the warningText slot.
    */
   externalWarningTextOverride?: string;
-
   /**
    * Called back when the value is changed.
    * Return the new value to be accepted, or undefined/void to accept as it is.

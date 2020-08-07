@@ -3,13 +3,32 @@ import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
   root: {
+    display: "inline-block",
+    width: "100%",
     position: "relative",
+    "& $textArea": {
+      overflow: "auto",
+      border: "none"
+    },
+    "&:hover $textArea": {
+      "& $input": {
+        border: `1px solid ${theme.hv.palette.accent.acce1}`
+      }
+    },
     "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.accent.acce1
     },
     "&:focus-within $inputBorderContainer": {
       backgroundColor: theme.hv.palette.accent.acce1
+    },
+    "&:focus-within $textArea": {
+      "& $input": {
+        border: `1px solid ${theme.hv.palette.accent.acce1}`
+      }
     }
+  },
+  rootResizable: {
+    width: "auto"
   },
   disabledRoot: {
     "& $inputBorderContainer": {
@@ -17,6 +36,18 @@ const styles = theme => ({
     },
     "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    "& $textArea": {
+      "& $input": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo3,
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+      }
+    },
+    "&:hover $textArea": {
+      "& $input": {
+        backgroundColor: theme.hv.palette.atmosphere.atmo3,
+        border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
+      }
     }
   },
   invalidRoot: {
@@ -25,6 +56,16 @@ const styles = theme => ({
     },
     "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.semantic.sema4
+    },
+    "& $textArea": {
+      "& $input": {
+        border: `1px solid ${theme.hv.palette.semantic.sema4}`
+      }
+    },
+    "&:hover $textArea": {
+      "& $input": {
+        border: `1px solid ${theme.hv.palette.semantic.sema4}`
+      }
     }
   },
   inputRoot: {
@@ -32,6 +73,9 @@ const styles = theme => ({
     width: "100%",
     borderRadius: "2px",
     backgroundColor: theme.hv.palette.atmosphere.atmo1
+  },
+  textAreaRoot: {
+    backgroundColor: "transparent"
   },
   inputRootDisabled: {
     background: theme.hv.palette.atmosphere.atmo3,
@@ -63,6 +107,23 @@ const styles = theme => ({
     "&::-ms-clear": {
       display: "none"
     }
+  },
+  textArea: {
+    "& $input": {
+      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+      borderRadius: "2px",
+      backgroundColor: theme.hv.palette.atmosphere.atmo1,
+      height: "auto",
+      minHeight: "21px",
+      padding: "5px 10px",
+      overflow: "auto",
+      marginLeft: "0px",
+      marginRight: "0px"
+    }
+  },
+  resize: {
+    resize: "auto",
+    width: "100%"
   },
   inputBorderContainer: {
     position: "absolute",

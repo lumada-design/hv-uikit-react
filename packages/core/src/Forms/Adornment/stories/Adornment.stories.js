@@ -5,7 +5,7 @@ import { Preview, PreviewOff, Success, Fail } from "@hv/uikit-react-icons";
 import { HvBaseInput, HvFormElement, HvLabel, HvAdornment, HvButton } from "../../..";
 
 export default {
-  title: "Patterns/Forms/Adornment",
+  title: "Components/Forms/Adornment",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvAdornment } from '@hv/uikit-react-core/dist'",

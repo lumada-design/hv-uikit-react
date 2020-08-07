@@ -26,6 +26,7 @@ const HvFormElement = props => {
     "HvLabel",
     "HvSuggestions",
     "HvInfoMessage",
+    "HvCharCounter",
     "HvWarningText",
     "HvBaseInput",
     "HvBaseDropdown"
