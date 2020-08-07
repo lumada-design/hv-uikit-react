@@ -28,15 +28,14 @@ const dataSuccess = {
 
 const onClickCallback = jest.fn();
 
-describe("File withStyles - Invalid File", () => {
+describe("[v3] File withStyles - Invalid File", () => {
   wrapper = mount(
     <HvProvider>
       <File
         data={dataFail}
         onFilesAdded={() => {}}
         onFileRemoved={() => {}}
-        progressConjunctionLabel="progressConjunctionLabel"
-        removeFileButtonLabel="progressConjunctionLabel"
+        removeFileButtonLabel="removeFileButtonLabel"
       />
     </HvProvider>
   );
@@ -55,7 +54,7 @@ describe("File withStyles - Invalid File", () => {
   });
 });
 
-describe("File withStyles - Valid File", () => {
+describe("[v3] File withStyles - Valid File", () => {
   wrapper = mount(
     <HvProvider>
       <File
@@ -63,8 +62,7 @@ describe("File withStyles - Valid File", () => {
         unit="mb"
         onFilesAdded={() => {}}
         onFileRemoved={onClickCallback}
-        progressConjunctionLabel="progressConjunctionLabel"
-        removeFileButtonLabel="progressConjunctionLabel"
+        removeFileButtonLabel="removeFileButtonLabel"
       />
     </HvProvider>
   );

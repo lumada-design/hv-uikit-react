@@ -33,10 +33,6 @@ export interface FileProps
    */
   onFileRemoved?: FileEvent;
   /**
-   * File upload progress conjunction.
-   */
-  progressConjunctionLabel: string;
-  /**
    * Value of aria-label to apply to remove file button in filelist
    * */
   removeFileButtonLabel: string;

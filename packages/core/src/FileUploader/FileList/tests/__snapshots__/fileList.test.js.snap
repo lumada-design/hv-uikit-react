@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FileList withStyles should render correctly 1`] = `
+exports[`[v3] FileList withStyles should render correctly 1`] = `
 <WithStyles(FileList)
   list={
     Array [
@@ -27,7 +27,6 @@ exports[`FileList withStyles should render correctly 1`] = `
     ]
   }
   onFileRemoved={[Function]}
-  progressConjunctionLabel="progressConjunctionLabel"
   removeFileButtonLabel="removeFileButtonLabel"
 >
   <FileList
@@ -61,16 +60,40 @@ exports[`FileList withStyles should render correctly 1`] = `
       ]
     }
     onFileRemoved={[Function]}
-    progressConjunctionLabel="progressConjunctionLabel"
     removeFileButtonLabel="removeFileButtonLabel"
   >
     <ul
       className="HvFileUploaderFileList-list"
     >
-      <li
+      <WithStyles(File)
+        data={
+          Object {
+            "errorMessage": "File type not allowed for upload",
+            "id": "1",
+            "lastModified": 1575566155192,
+            "name": "Screenshot 2019-12-05 at 17.15.43.png",
+            "size": 14106,
+            "status": "fail",
+            "type": "image/png",
+            "webkitRelativePath": "",
+          }
+        }
         key="1"
+        onFileRemoved={[Function]}
+        removeFileButtonLabel="removeFileButtonLabel"
       >
-        <WithStyles(File)
+        <File
+          classes={
+            Object {
+              "fail": "HvFileUploaderFile-fail",
+              "icon": "HvFileUploaderFile-icon",
+              "nameText": "HvFileUploaderFile-nameText",
+              "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
+              "progressbar": "HvFileUploaderFile-progressbar",
+              "progressbarBack": "HvFileUploaderFile-progressbarBack",
+              "removeButton": "HvFileUploaderFile-removeButton",
+            }
+          }
           data={
             Object {
               "errorMessage": "File type not allowed for upload",
@@ -84,37 +107,9 @@ exports[`FileList withStyles should render correctly 1`] = `
             }
           }
           onFileRemoved={[Function]}
-          progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
         >
-          <File
-            classes={
-              Object {
-                "fail": "HvFileUploaderFile-fail",
-                "icon": "HvFileUploaderFile-icon",
-                "nameText": "HvFileUploaderFile-nameText",
-                "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-                "progressbar": "HvFileUploaderFile-progressbar",
-                "progressbarBack": "HvFileUploaderFile-progressbarBack",
-                "removeButton": "HvFileUploaderFile-removeButton",
-              }
-            }
-            data={
-              Object {
-                "errorMessage": "File type not allowed for upload",
-                "id": "1",
-                "lastModified": 1575566155192,
-                "name": "Screenshot 2019-12-05 at 17.15.43.png",
-                "size": 14106,
-                "status": "fail",
-                "type": "image/png",
-                "webkitRelativePath": "",
-              }
-            }
-            onFileRemoved={[Function]}
-            progressConjunctionLabel="progressConjunctionLabel"
-            removeFileButtonLabel="removeFileButtonLabel"
-          >
+          <li>
             <WithStyles(Fail)
               className="HvFileUploaderFile-icon"
               color="sema4"
@@ -153,6 +148,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             </WithStyles(Fail)>
             <WithStyles(ForwardRef)
               className="HvFileUploaderFile-nameText"
+              variant="highlightText"
             >
               <ForwardRef
                 className="HvFileUploaderFile-nameText"
@@ -181,9 +177,10 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                variant="highlightText"
               >
                 <p
-                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
+                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
                 >
                   Screenshot 2019-12-05 at 17.15.43.png
                 </p>
@@ -192,6 +189,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             <span
               className="HvFileUploaderFile-progressTextContainer"
             >
+               | 
               <WithStyles(ForwardRef)
                 className="HvFileUploaderFile-fail"
               >
@@ -345,13 +343,38 @@ exports[`FileList withStyles should render correctly 1`] = `
                 </WithStyles(ForwardRef(ButtonBase))>
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
-          </File>
-        </WithStyles(File)>
-      </li>
-      <li
+          </li>
+        </File>
+      </WithStyles(File)>
+      <WithStyles(File)
+        data={
+          Object {
+            "errorMessage": "File type not allowed for upload",
+            "id": "2",
+            "lastModified": 1575547399043,
+            "name": "Screenshot 2019-12-05 at 12.03.13.png",
+            "size": 875,
+            "status": "fail",
+            "type": "image/png",
+            "webkitRelativePath": "",
+          }
+        }
         key="2"
+        onFileRemoved={[Function]}
+        removeFileButtonLabel="removeFileButtonLabel"
       >
-        <WithStyles(File)
+        <File
+          classes={
+            Object {
+              "fail": "HvFileUploaderFile-fail",
+              "icon": "HvFileUploaderFile-icon",
+              "nameText": "HvFileUploaderFile-nameText",
+              "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
+              "progressbar": "HvFileUploaderFile-progressbar",
+              "progressbarBack": "HvFileUploaderFile-progressbarBack",
+              "removeButton": "HvFileUploaderFile-removeButton",
+            }
+          }
           data={
             Object {
               "errorMessage": "File type not allowed for upload",
@@ -365,37 +388,9 @@ exports[`FileList withStyles should render correctly 1`] = `
             }
           }
           onFileRemoved={[Function]}
-          progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
         >
-          <File
-            classes={
-              Object {
-                "fail": "HvFileUploaderFile-fail",
-                "icon": "HvFileUploaderFile-icon",
-                "nameText": "HvFileUploaderFile-nameText",
-                "progressTextContainer": "HvFileUploaderFile-progressTextContainer",
-                "progressbar": "HvFileUploaderFile-progressbar",
-                "progressbarBack": "HvFileUploaderFile-progressbarBack",
-                "removeButton": "HvFileUploaderFile-removeButton",
-              }
-            }
-            data={
-              Object {
-                "errorMessage": "File type not allowed for upload",
-                "id": "2",
-                "lastModified": 1575547399043,
-                "name": "Screenshot 2019-12-05 at 12.03.13.png",
-                "size": 875,
-                "status": "fail",
-                "type": "image/png",
-                "webkitRelativePath": "",
-              }
-            }
-            onFileRemoved={[Function]}
-            progressConjunctionLabel="progressConjunctionLabel"
-            removeFileButtonLabel="removeFileButtonLabel"
-          >
+          <li>
             <WithStyles(Fail)
               className="HvFileUploaderFile-icon"
               color="sema4"
@@ -434,6 +429,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             </WithStyles(Fail)>
             <WithStyles(ForwardRef)
               className="HvFileUploaderFile-nameText"
+              variant="highlightText"
             >
               <ForwardRef
                 className="HvFileUploaderFile-nameText"
@@ -462,9 +458,10 @@ exports[`FileList withStyles should render correctly 1`] = `
                     "xxsTitle": "HvTypography-xxsTitle",
                   }
                 }
+                variant="highlightText"
               >
                 <p
-                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-normalText"
+                  className="HvFileUploaderFile-nameText HvTypography-root HvTypography-highlightText"
                 >
                   Screenshot 2019-12-05 at 12.03.13.png
                 </p>
@@ -473,6 +470,7 @@ exports[`FileList withStyles should render correctly 1`] = `
             <span
               className="HvFileUploaderFile-progressTextContainer"
             >
+               | 
               <WithStyles(ForwardRef)
                 className="HvFileUploaderFile-fail"
               >
@@ -626,9 +624,9 @@ exports[`FileList withStyles should render correctly 1`] = `
                 </WithStyles(ForwardRef(ButtonBase))>
               </ForwardRef(IconButton)>
             </WithStyles(ForwardRef(IconButton))>
-          </File>
-        </WithStyles(File)>
-      </li>
+          </li>
+        </File>
+      </WithStyles(File)>
     </ul>
   </FileList>
 </WithStyles(FileList)>

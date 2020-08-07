@@ -19,20 +19,15 @@ const styles = theme => ({
   },
   dropZoneContainerDisabled: {
     "&$dropZoneContainer": {
-      background: `${theme.hv.palette.atmosphere.atmo4}`,
-      border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
-      cursor: "not-allowed",
-      "&:hover": {
-        background: `${theme.hv.palette.atmosphere.atmo4}`,
-        border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
-        cursor: "not-allowed"
-      }
+      background: `${theme.hv.palette.atmosphere.atmo3}`,
+      border: `1px dotted ${theme.hv.palette.atmosphere.atmo4}`,
+      cursor: "not-allowed"
     },
     "& $dragText": {
-      color: theme.hv.palette.atmosphere.atmo4
+      color: theme.hv.palette.atmosphere.atmo5
     },
     "& $selectFilesText": {
-      color: theme.hv.palette.atmosphere.atmo4
+      color: theme.hv.palette.atmosphere.atmo5
     }
   },
   dragAction: {
@@ -57,11 +52,9 @@ const styles = theme => ({
   dropZoneLabelsGroup: {
     display: "flex",
     marginBottom: 5,
-    "& label:nth-child(1)": {
-      marginRight: `${theme.hv.spacing.sm}px`
-    },
-    "& p:nth-child(3)": {
-      marginRight: `${theme.hv.spacing.sm}px`,
+    justifyContent: "start",
+    "& label:nth-child(1)": {},
+    "& p:nth-child(2)": {
       marginLeft: "auto"
     }
   },

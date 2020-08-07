@@ -3,7 +3,7 @@ Resource      ../_keywords.resource
 Test Setup    Run Keywords
 ...           Go To    ${patterns}file-uploader--automation-sample
 ...           AND    Wait Until Element Is Enabled    ${button_removeFile}
-
+Force Tags    v3
 
 *** Variables ***
 ${dropZone-inputArea}    css:input[type=file]

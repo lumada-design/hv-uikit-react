@@ -3,7 +3,7 @@ const styles = theme => ({
     position: "absolute",
     top: "-1px",
     width: "100%",
-    border: `1px solid ${theme.hv.palette.atmosphere.atmo5}`
+    border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
   },
   progressbar: {
     position: "absolute",
@@ -16,18 +16,17 @@ const styles = theme => ({
     }
   },
   progressTextContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginLeft: "auto"
+    display: "flex"
   },
   icon: {
     width: 32,
-    height: 32
+    height: 32,
+    margin: `0 ${theme.hv.spacing.xs}px`
   },
   removeButton: {
-    marginLeft: `${theme.hv.spacing.sm}px`,
-    padding: 0,
-    minWidth: "unset"
+    position: "absolute",
+    margin: `0 ${theme.hv.spacing.xs}px`,
+    right: 0
   },
   fail: {
     color: theme.hv.palette.semantic.sema4
