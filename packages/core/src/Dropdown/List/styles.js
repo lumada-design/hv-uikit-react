@@ -8,7 +8,8 @@ const styles = theme => ({
     paddingLeft: `${theme.hv.spacing.sm}px`,
     marginRight: "2px",
     paddingRight: "18px",
-    paddingBottom: `${theme.hv.spacing.sm}px`
+    paddingBottom: `${theme.hv.spacing.sm}px`,
+    paddingTop: 2
   },
   searchContainer: {
     paddingLeft: `${theme.hv.spacing.sm}px`,

@@ -12,6 +12,7 @@ Documentation    https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_
 ...    appropriately.
 ...    - If options are arranged horizontally, the element with role listbox has aria-orientation
 ...     set to horizontal. The default value of aria-orientation for listbox is vertical.
+Force Tags    v3
 
 
 *** Test Cases ***
