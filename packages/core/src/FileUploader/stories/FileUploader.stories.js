@@ -4,6 +4,7 @@ import { HvFileUploader } from "../..";
 export default {
   title: "Patterns/File Uploader",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvFileUploader } from '@hv/uikit-react-core/dist'"
   },
@@ -166,6 +167,7 @@ export const Basic = () => {
 
 Basic.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "FileUploader default usage sample"
     }
@@ -254,6 +256,7 @@ export const SingleUpload = () => {
 
 SingleUpload.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "FileUploader which permits the upload of a single file at a time"
     },
@@ -386,6 +389,7 @@ export const AutomationSample = () => {
 
 AutomationSample.story = {
   parameters: {
+    v3: true,
     docs: {
       disable: true
     },

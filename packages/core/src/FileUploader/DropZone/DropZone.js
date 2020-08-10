@@ -71,12 +71,12 @@ const DropZone = ({
           {labels.dropzone}
         </HvTypography>
 
-        <HvTypography>{`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}</HvTypography>
+        {Number.isInteger(maxFileSize) && (
+          <HvTypography>{`${labels.sizeWarning} ${convertUnits(maxFileSize)}`}</HvTypography>
+        )}
+
         {acceptedFiles.length > 0 && (
-          <>
-            <HvTypography variant="highlightText">{labels.acceptedFiles}</HvTypography>
-            <HvTypography>{acceptedFiles.join(", ")}</HvTypography>
-          </>
+          <HvTypography>{`\u00A0(${acceptedFiles.join(", ")})`}</HvTypography>
         )}
       </div>
 

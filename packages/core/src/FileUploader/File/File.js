@@ -20,19 +20,19 @@ const getStatusIcon = (classes, status) => {
   }
 };
 
-const getProgressText = (classes, data, progressConjunctionLabel) => {
+const getProgressText = (classes, data) => {
   const hasFailed = data.status === "fail";
 
   return (
     <>
+      {`\xa0|\xa0`}
+
       {!hasFailed && data.progress != null && (
         <HvTypography variant="highlightText">{`${convertUnits(data.progress)}`}</HvTypography>
       )}
 
       {!hasFailed && data.size && (
-        <HvTypography>
-          {`\xa0${progressConjunctionLabel}\xa0${convertUnits(data.size)}`}
-        </HvTypography>
+        <HvTypography>{`\xa0/\xa0${convertUnits(data.size)}`}</HvTypography>
       )}
 
       {hasFailed && data.errorMessage && (
@@ -48,23 +48,16 @@ const getProgressBarWith = ({ size, progress }) => {
   return width;
 };
 
-const File = ({
-  id,
-  classes,
-  data,
-  progressConjunctionLabel,
-  onFileRemoved,
-  removeFileButtonLabel
-}) => {
+const File = ({ id, classes, data, onFileRemoved, removeFileButtonLabel }) => {
   const hasError = data.status === "fail";
   const inProgress = data.status === "progress";
-  const progressText = getProgressText(classes, data, progressConjunctionLabel);
+  const progressText = getProgressText(classes, data);
   const statusIcon = getStatusIcon(classes, data.status);
 
   const currentProgress = getProgressBarWith(data);
 
   return (
-    <>
+    <li>
       {!hasError && inProgress && <span className={classes.progressbarBack} />}
 
       {!hasError && inProgress && (
@@ -79,7 +72,9 @@ const File = ({
 
       {statusIcon}
 
-      <HvTypography className={classes.nameText}>{data.name}</HvTypography>
+      <HvTypography className={classes.nameText} variant="highlightText">
+        {data.name}
+      </HvTypography>
 
       <span className={classes.progressTextContainer}>{progressText}</span>
 
@@ -92,7 +87,7 @@ const File = ({
       >
         <Close iconSize="XS" />
       </IconButton>
-    </>
+    </li>
   );
 };
 
@@ -131,6 +126,10 @@ File.propTypes = {
    */
   data: PropTypes.shape({
     /**
+     * The file id.
+     */
+    id: PropTypes.string,
+    /**
      * The file name.
      */
     name: PropTypes.string,
@@ -143,10 +142,6 @@ File.propTypes = {
    * Callback fired when file is removed from list.
    */
   onFileRemoved: PropTypes.func.isRequired,
-  /**
-   * File upload progress conjunction.
-   */
-  progressConjunctionLabel: PropTypes.string.isRequired,
   /**
    * Value of aria-label to apply to remove file button in filelist
    * */

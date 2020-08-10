@@ -12,11 +12,6 @@ export interface FileListProps
    * Callback fired when file is removed from list.
    */
   onFileRemoved?: FileEvent;
-
-  /**
-   * File upload progress message conjunction.
-   */
-  progressConjunctionLabel: string;
   /**
    * Value of aria-label to apply to remove file button in FileList
    * */

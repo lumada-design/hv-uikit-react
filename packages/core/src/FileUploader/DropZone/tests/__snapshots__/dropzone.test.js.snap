@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropzone withStyles should render correctly 1`] = `
+exports[`[v3] Dropzone withStyles should render correctly 1`] = `
 <WithStyles(WithId)
   acceptedFiles={Array []}
   fileList={
@@ -348,7 +348,7 @@ exports[`Dropzone withStyles should render correctly 1`] = `
 </WithStyles(WithId)>
 `;
 
-exports[`Dropzone withStyles should render correctly when disabled 1`] = `
+exports[`[v3] Dropzone withStyles should render correctly when disabled 1`] = `
 <WithStyles(WithId)
   acceptedFiles={Array []}
   disabled={true}

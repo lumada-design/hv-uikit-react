@@ -31,13 +31,12 @@ const files = [
   }
 ];
 
-describe("FileList withStyles", () => {
+describe("[v3] FileList withStyles", () => {
   it("should be defined", () => {
     wrapper = mount(
       <HvProvider>
         <FileList
           list={files}
-          progressConjunctionLabel="progressConjunctionLabel"
           removeFileButtonLabel="removeFileButtonLabel"
           onFileRemoved={() => {}}
         />
