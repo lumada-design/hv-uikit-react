@@ -71,10 +71,15 @@ export const WithOpenControl = () => {
 
   return (
     <>
-      <HvButton onClick={() => setOpen(!open)}>{open ? "Close" : "Open"}</HvButton>
+      <HvButton id="controller" onClick={() => setOpen(!open)}>
+        {open ? "Close" : "Open"}
+      </HvButton>
       <HvUserPreferences
         isOpen={open}
         userInfo={{ label1: "Gabriela Jennings", label2: "Admin, Rean Test" }}
+        closeOnExit
+        toggleOpenCallback={setOpen}
+        id="user-preferences-controlled"
       >
         <Actions>
           <Action

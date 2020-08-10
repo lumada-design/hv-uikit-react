@@ -71,7 +71,7 @@ const HvUserPreferences = ({
       } else {
         setOpen(prevState => !prevState);
       }
-      toggleOpenCallback?.(open);
+      toggleOpenCallback?.(newState);
     },
     [toggleOpenCallback, open]
   );
@@ -106,7 +106,7 @@ const HvUserPreferences = ({
 
   const renderedContainer = useMemo(
     () => (
-      <>
+      <ClickAwayListener onClickAway={() => closeOnExit && toggleOpen(false)}>
         {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div
           ref={containerRef}
@@ -121,9 +121,17 @@ const HvUserPreferences = ({
           )}
           {children}
         </div>
-      </>
+      </ClickAwayListener>
     ),
-    [children, classes.userInfo, classes.contentContainer, handlerKeyContainer, userInfo]
+    [
+      children,
+      classes.userInfo,
+      classes.contentContainer,
+      handlerKeyContainer,
+      userInfo,
+      closeOnExit,
+      toggleOpen
+    ]
   );
 
   return (
@@ -139,11 +147,9 @@ const HvUserPreferences = ({
         className
       ])}
     >
-      <ClickAwayListener onClickAway={() => closeOnExit && toggleOpen(false)}>
-        <div className={classes.container} {...others}>
-          {open && renderedContainer}
-        </div>
-      </ClickAwayListener>
+      <div className={classes.container} {...others}>
+        {open && renderedContainer}
+      </div>
     </div>
   );
 };
