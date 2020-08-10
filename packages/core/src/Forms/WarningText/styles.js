@@ -1,15 +1,17 @@
 const styles = theme => ({
-  topGutter: { marginTop: 8 },
-  helperDisabled: {
-    color: theme.hv.palette.atmosphere.atmo5,
+  root: {
     display: "none"
   },
-  helperText: {
-    color: theme.hv.palette.accent.acce1,
-    display: "none"
+  topGutter: { paddingTop: 8 },
+  warningText: {
+    width: "100%",
+    color: theme.hv.palette.semantic.sema4
+  },
+  defaultIcon: {
+    minWidth: "32px"
   },
   showText: {
-    display: "block"
+    display: "flex"
   },
   "@global": {
     "input:-webkit-autofill": {

@@ -15,13 +15,12 @@ exports[`FormElement  should render correctly 1`] = `
       placeholder="Insert your name"
     />
   </WithStyles(HvLabel)>
-  <WithStyles(HvHelperText)
+  <WithStyles(HvWarningText)
     id="infotext-main"
     key="2"
-    notification="warning"
   >
-    Write your name in this input do not put numbers
-  </WithStyles(HvHelperText)>
+    warning
+  </WithStyles(HvWarningText)>
 </WithStyles(WithId)>
 `;
 
@@ -33,11 +32,10 @@ exports[`FormElement  should render correctly 2`] = `
 `;
 
 exports[`FormElement  should render correctly 3`] = `
-<WithStyles(HvHelperText)
+<WithStyles(HvWarningText)
   id="infotext-main"
   key="2"
-  notification="warning"
 >
-  Write your name in this input do not put numbers
-</WithStyles(HvHelperText)>
+  warning
+</WithStyles(HvWarningText)>
 `;

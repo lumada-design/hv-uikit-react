@@ -1,55 +1,55 @@
+import "focus-within-polyfill";
 import { outlineStyles } from "../../Focus/styles";
 
 const styles = theme => ({
   root: {
-    minWidth: "150px",
-    maxWidth: "610px"
+    position: "relative",
+    "&:hover $inputBorderContainer": {
+      backgroundColor: theme.hv.palette.accent.acce1
+    },
+    "&:focus-within $inputBorderContainer": {
+      backgroundColor: theme.hv.palette.accent.acce1
+    }
+  },
+  disabledRoot: {
+    "& $inputLowerBorder": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    },
+    "&:hover $inputBorderContainer": {
+      backgroundColor: theme.hv.palette.atmosphere.atmo4
+    }
+  },
+  invalidRoot: {
+    "& $inputBorderContainer": {
+      backgroundColor: theme.hv.palette.semantic.sema4
+    },
+    "&:hover $inputBorderContainer": {
+      backgroundColor: theme.hv.palette.semantic.sema4
+    }
   },
   inputRoot: {
     margin: 0,
     width: "100%",
-    borderStyle: "solid",
-    borderWidth: " 0 0 1px 0",
-    backgroundColor: theme.hv.palette.atmosphere.atmo1,
-    borderColor: theme.hv.palette.atmosphere.atmo4,
-    "&:hover": {
-      borderStyle: "solid",
-      borderWidth: " 0 0 1px 0",
-      borderColor: theme.hv.palette.accent.acce1,
-      background: theme.hv.palette.atmosphere.atmo1
-    }
+    borderRadius: "2px",
+    backgroundColor: theme.hv.palette.atmosphere.atmo1
   },
   inputRootDisabled: {
-    borderColor: theme.hv.palette.atmosphere.atmo4,
-    background: theme.hv.palette.atmosphere.atmo4,
+    background: theme.hv.palette.atmosphere.atmo3,
     "&:hover": {
-      borderColor: theme.hv.palette.atmosphere.atmo4,
-      background: theme.hv.palette.atmosphere.atmo4,
+      background: theme.hv.palette.atmosphere.atmo3,
       cursor: "not-allowed"
     },
     cursor: "not-allowed"
   },
   inputRootFocused: {
-    borderStyle: "solid",
-    borderWidth: " 0 0 1px 0",
-    borderColor: theme.hv.palette.accent.acce1,
     background: theme.hv.palette.atmosphere.atmo1,
     ...outlineStyles,
     "&:hover": {
-      borderStyle: "solid",
-      borderWidth: "0 0 1px 0",
-      borderColor: theme.hv.palette.accent.acce1,
       background: theme.hv.palette.atmosphere.atmo1
     }
   },
-  inputRootInvalid: {
-    borderColor: theme.hv.palette.semantic.sema4,
-    "&:hover": {
-      borderColor: theme.hv.palette.semantic.sema4
-    }
-  },
   input: {
-    height: `20px`,
+    height: "21px",
     marginLeft: theme.hv.spacing.xs,
     marginRight: theme.hv.spacing.xs,
     padding: "6px 0 5px",
@@ -63,6 +63,14 @@ const styles = theme => ({
     "&::-ms-clear": {
       display: "none"
     }
+  },
+  inputBorderContainer: {
+    position: "absolute",
+    width: "calc(100% - 4px)",
+    height: "1px",
+    top: "31px",
+    left: "2px",
+    backgroundColor: theme.hv.palette.atmosphere.atmo4
   },
   inputDisabled: {
     cursor: "not-allowed"

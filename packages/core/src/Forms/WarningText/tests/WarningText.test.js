@@ -3,7 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 
-import { HvProvider, HvHelperText } from "../../..";
+import { HvProvider, HvWarningText } from "../../..";
 
 /* eslint-disable no-console */
 
@@ -13,9 +13,7 @@ describe("HelperText", () => {
   beforeEach(async () => {
     wrapper = mount(
       <HvProvider>
-        <HvHelperText id="base" notification="test">
-          test
-        </HvHelperText>
+        <HvWarningText id="base">test</HvWarningText>
       </HvProvider>
     );
   });
@@ -25,11 +23,11 @@ describe("HelperText", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(HvHelperText)).toMatchSnapshot();
+    expect(wrapper.find(HvWarningText)).toMatchSnapshot();
   });
 
-  it("should render the Input component", () => {
-    const HvHelperTextComponent = wrapper.find(HvHelperText);
-    expect(HvHelperTextComponent.length).toBe(1);
+  it("should render the helper text component", () => {
+    const HvWarningTextComponent = wrapper.find(HvWarningText);
+    expect(HvWarningTextComponent.length).toBe(1);
   });
 });

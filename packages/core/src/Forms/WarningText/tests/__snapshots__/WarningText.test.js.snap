@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelperText should render correctly 1`] = `
+<WithStyles(HvWarningText)
+  id="base"
+>
+  <HvWarningText
+    classes={
+      Object {
+        "defaultIcon": "HvWarningText-defaultIcon",
+        "root": "HvWarningText-root",
+        "showText": "HvWarningText-showText",
+        "topGutter": "HvWarningText-topGutter",
+        "warningText": "HvWarningText-warningText",
+      }
+    }
+    id="base"
+  >
+    <div
+      className="HvWarningText-root"
+    >
+      <WithStyles(Fail)
+        className="HvWarningText-defaultIcon"
+        semantic="sema4"
+      >
+        <Fail
+          className="HvWarningText-defaultIcon"
+          classes={
+            Object {
+              "root": "HvIconFail-root",
+              "rootL": "HvIconFail-rootL",
+              "rootM": "HvIconFail-rootM",
+              "rootS": "HvIconFail-rootS",
+              "rootXs": "HvIconFail-rootXs",
+            }
+          }
+          semantic="sema4"
+        >
+          <div
+            className="HvWarningText-defaultIcon HvIconFail-root HvIconFail-rootS"
+          >
+            <svg
+              focusable={false}
+              height="16px"
+              viewBox="0 0 16 16"
+              width="16px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                className="color0"
+                d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                fill="#C62828"
+              />
+            </svg>
+          </div>
+        </Fail>
+      </WithStyles(Fail)>
+      <WithStyles(ForwardRef)
+        aria-atomic="true"
+        aria-live="polite"
+        aria-relevant="additions text"
+        className="HvWarningText-warningText HvWarningText-topGutter"
+        id="base-notification"
+        variant="infoText"
+      >
+        <ForwardRef
+          aria-atomic="true"
+          aria-live="polite"
+          aria-relevant="additions text"
+          className="HvWarningText-warningText HvWarningText-topGutter"
+          classes={
+            Object {
+              "3xlTitle": "HvTypography-3xlTitle",
+              "4xlTitle": "HvTypography-4xlTitle",
+              "5xlTitle": "HvTypography-5xlTitle",
+              "disabledText": "HvTypography-disabledText",
+              "highlightText": "HvTypography-highlightText",
+              "lTitle": "HvTypography-lTitle",
+              "link": "HvTypography-link",
+              "mTitle": "HvTypography-mTitle",
+              "normalText": "HvTypography-normalText",
+              "placeholderText": "HvTypography-placeholderText",
+              "root": "HvTypography-root",
+              "sTitle": "HvTypography-sTitle",
+              "sectionTitle": "HvTypography-sectionTitle",
+              "selectedNavText": "HvTypography-selectedNavText",
+              "vizText": "HvTypography-vizText",
+              "vizTextDisabled": "HvTypography-vizTextDisabled",
+              "xlTitle": "HvTypography-xlTitle",
+              "xsInlineLink": "HvTypography-xsInlineLink",
+              "xsTitle": "HvTypography-xsTitle",
+              "xxlTitle": "HvTypography-xxlTitle",
+              "xxsTitle": "HvTypography-xxsTitle",
+            }
+          }
+          id="base-notification"
+          variant="infoText"
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            aria-relevant="additions text"
+            className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root"
+            id="base-notification"
+          />
+        </ForwardRef>
+      </WithStyles(ForwardRef)>
+    </div>
+  </HvWarningText>
+</WithStyles(HvWarningText)>
+`;

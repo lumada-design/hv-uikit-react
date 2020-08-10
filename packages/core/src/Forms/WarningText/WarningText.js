@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import { isNil } from "lodash";
+import { Fail } from "@hv/uikit-react-icons";
 import { withStyles } from "@material-ui/core";
-import isEmpty from "lodash/isEmpty";
 import { HvFormElementContext } from "../FormElement";
 import { HvTypography } from "../..";
 import { setId } from "../../utils";
@@ -11,10 +12,11 @@ import styles from "./styles";
 /**
  * Component used in conjunction with other form elements, to give extra information about status.
  */
-const HvHelperText = props => {
+const HvWarningText = props => {
   const {
     children,
-    notification = "",
+    adornment,
+    isVisible,
     classes,
     className,
     id,
@@ -22,31 +24,26 @@ const HvHelperText = props => {
     disableGutter = false,
     ...others
   } = props;
-  const { elementId, elementDisabled } = useContext(HvFormElementContext);
-  const isVisible = !isEmpty(notification);
+
+  const { elementId, elementStatus, elementDisabled } = useContext(HvFormElementContext);
   const localDisabled = disabled || elementDisabled;
+  const localVisible = !isNil(isVisible) ? isVisible : elementStatus === "invalid";
   const localId = id ?? setId(elementId, "text");
+  const showWarning = localVisible && !localDisabled;
+  const content = showWarning ? children : "";
+  const localAdornment = adornment || <Fail className={classes.defaultIcon} semantic="sema4" />;
 
   return (
-    <>
-      <HvTypography
-        id={localId}
-        className={clsx(className, {
-          [classes.showText]: !isVisible,
-          [classes.helperDisabled]: localDisabled,
-          [classes.helperText]: !localDisabled,
-          [classes.topGutter]: !disableGutter
-        })}
-        {...others}
-      >
-        {children}
-      </HvTypography>
+    <div
+      className={clsx(classes.root, {
+        [classes.showText]: showWarning
+      })}
+    >
+      {localAdornment}
       <HvTypography
         id={setId(localId, "notification")}
-        className={clsx(className, {
-          [classes.showText]: isVisible,
-          [classes.helperDisabled]: localDisabled,
-          [classes.helperText]: !localDisabled,
+        variant="infoText"
+        className={clsx(className, classes.warningText, {
           [classes.topGutter]: !disableGutter
         })}
         aria-live="polite"
@@ -54,13 +51,13 @@ const HvHelperText = props => {
         aria-relevant="additions text"
         {...others}
       >
-        {notification}
+        {content}
       </HvTypography>
-    </>
+    </div>
   );
 };
 
-HvHelperText.propTypes = {
+HvWarningText.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -78,17 +75,21 @@ HvHelperText.propTypes = {
    */
   classes: PropTypes.shape({
     /**
-     * Styles applied to the information text.
+     * Styles applied to the component root class.
      */
-    helperText: PropTypes.string,
+    root: PropTypes.string,
+    /**
+     * Styles applied to the default icon.
+     */
+    defaultIcon: PropTypes.string,
+    /**
+     * Styles applied to the warning text.
+     */
+    warningText: PropTypes.string,
     /**
      * Styles applied when the text should be shown.
      */
     showText: PropTypes.string,
-    /**
-     * Styles applied when the text is disabled.
-     */
-    helperDisabled: PropTypes.string,
     /**
      * Separation between text and upper element.
      */
@@ -99,17 +100,21 @@ HvHelperText.propTypes = {
     "@global": PropTypes.string
   }).isRequired,
   /**
-   * The text to replace the description to shown an alert to the user.
+   * Icon to be rendered alongside the warning text.
    */
-  notification: PropTypes.string,
+  adornment: PropTypes.node,
+  /**
+   * If ´true´ the text is not rendered.
+   */
+  isVisible: PropTypes.bool,
   /**
    * If ´true´ the text is disabled.
    */
   disabled: PropTypes.bool,
   /**
-   * If ´true´ the text won't include a top gutter.
+   * If ´true´ the text won't include a gutter.
    */
   disableGutter: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvHelperText" })(HvHelperText);
+export default withStyles(styles, { name: "HvWarningText" })(HvWarningText);

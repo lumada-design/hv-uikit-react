@@ -22,11 +22,11 @@ const HvFormElement = props => {
     disabled = false,
     ...others
   } = props;
-
   const descriptors = findDescriptors(children, [
-    "HvHelperText",
     "HvLabel",
     "HvSuggestions",
+    "HvInfoMessage",
+    "HvWarningText",
     "HvBaseInput"
   ]);
   const contextValue = {
@@ -37,7 +37,6 @@ const HvFormElement = props => {
     elementDisabled: disabled,
     descriptors
   };
-
   return (
     <div className={clsx(className, classes.root)} {...others}>
       <HvFormElementContextProvider value={contextValue}>{children}</HvFormElementContextProvider>
