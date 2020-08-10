@@ -279,6 +279,7 @@ Expanded.story = {
     docs: {
       inlineStories: false
     },
-    v3: true
+    v3: true,
+    eyes: { waitBeforeScreenshot: "[id*=search-input]:focus" }
   }
 };
