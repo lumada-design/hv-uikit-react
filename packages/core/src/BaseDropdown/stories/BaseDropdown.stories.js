@@ -5,7 +5,7 @@ import HvBaseDropdown from "..";
 import HvInput from "../../Input";
 import HvButton from "../../Button";
 import HvTypography from "../../Typography";
-import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
+import { HvFormElement, HvInfoMessage, HvLabel } from "../../Forms";
 
 export default {
   title: "Components/BaseDropdown",
@@ -51,7 +51,9 @@ export const WithForms = () => (
   <HvFormElement id="withForms" disabled={false}>
     <HvLabel style={{ paddingBottom: "8px", display: "block" }} label="Label" />
     <HvBaseDropdown placeholder="Placeholder..." />
-    <HvWarningText>The description.</HvWarningText>
+    <HvInfoMessage disableGutter style={{ paddingTop: "8px", display: "block" }}>
+      The description.
+    </HvInfoMessage>
   </HvFormElement>
 );
 

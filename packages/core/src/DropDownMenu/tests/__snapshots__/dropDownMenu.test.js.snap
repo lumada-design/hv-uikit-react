@@ -1460,9 +1460,9 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                                       role="menuitem"
                                                       selected={false}
                                                     >
-                                                      <Text>
+                                                      <ComponentFunction>
                                                         Label 1
-                                                      </Text>
+                                                      </ComponentFunction>
                                                     </li>
                                                   </ConditionalWrapper>
                                                 </Focus>
@@ -1616,9 +1616,9 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                                       role="menuitem"
                                                       selected={false}
                                                     >
-                                                      <Text>
+                                                      <ComponentFunction>
                                                         Label 2
-                                                      </Text>
+                                                      </ComponentFunction>
                                                     </li>
                                                   </ConditionalWrapper>
                                                 </Focus>
@@ -1772,9 +1772,9 @@ exports[`[v3] DropDownMenu [v3] component with portal opens on click 1`] = `
                                                       role="menuitem"
                                                       selected={false}
                                                     >
-                                                      <Text>
+                                                      <ComponentFunction>
                                                         Label 3
-                                                      </Text>
+                                                      </ComponentFunction>
                                                     </li>
                                                   </ConditionalWrapper>
                                                 </Focus>
@@ -3129,9 +3129,9 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                                       role="menuitem"
                                                       selected={false}
                                                     >
-                                                      <Text>
+                                                      <ComponentFunction>
                                                         Label 1
-                                                      </Text>
+                                                      </ComponentFunction>
                                                     </li>
                                                   </ConditionalWrapper>
                                                 </Focus>
@@ -3285,9 +3285,9 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                                       role="menuitem"
                                                       selected={false}
                                                     >
-                                                      <Text>
+                                                      <ComponentFunction>
                                                         Label 2
-                                                      </Text>
+                                                      </ComponentFunction>
                                                     </li>
                                                   </ConditionalWrapper>
                                                 </Focus>
@@ -3441,9 +3441,9 @@ exports[`[v3] DropDownMenu [v3] component without portal opens on click 1`] = `
                                                       role="menuitem"
                                                       selected={false}
                                                     >
-                                                      <Text>
+                                                      <ComponentFunction>
                                                         Label 3
-                                                      </Text>
+                                                      </ComponentFunction>
                                                     </li>
                                                   </ConditionalWrapper>
                                                 </Focus>
