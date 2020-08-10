@@ -1,7 +1,7 @@
 *** Setting ***
 Variables        variables.yaml
 Resource         ../_keywords.resource
-Force Tags       wai-aria-practices
+Force Tags       v3 wai-aria-practices
 Documentation    https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props
 ...
 ...    doc parts not applied by UIKIT team: \n
@@ -12,7 +12,6 @@ Documentation    https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_
 ...    appropriately.
 ...    - If options are arranged horizontally, the element with role listbox has aria-orientation
 ...     set to horizontal. The default value of aria-orientation for listbox is vertical.
-Force Tags    v3
 
 
 *** Test Cases ***

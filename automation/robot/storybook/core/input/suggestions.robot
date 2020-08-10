@@ -37,7 +37,7 @@ select correctly suggestion when suggestion text area is pressed
     [Tags]     bug-ie-webdriver
     Press Keys                           ${input}    po
     Wait Until Element Is Visible        ${suggestion_list}
-    Click Element                        xpath://p[.='Portugal']
+    Click Element                        xpath://li[.='Portugal']
     Wait Until Element Is Not Visible    ${suggestion_list}
     Textfield Value Should Be            ${input}    Portugal
 
