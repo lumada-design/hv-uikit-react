@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import { Popper } from "@material-ui/core";
 
 import { HvDropDownMenu, HvProvider } from "../..";
-import { Main, KeyboardNavigation } from "../stories/DropDownMenu.stories";
+import { KeyboardNavigation, Main } from "../stories/DropDownMenu.stories";
 
 jest.mock(
   "popper.js",
@@ -19,12 +19,12 @@ jest.mock(
     }
 );
 
-describe("DropDownMenu", () => {
+describe("[v3] DropDownMenu", () => {
   let wrapper;
   const SPACE = " ";
   const ENTER = "Enter";
 
-  describe("component without portal", () => {
+  describe("[v3] component without portal", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
@@ -102,7 +102,7 @@ describe("DropDownMenu", () => {
     });
   });
 
-  describe("component with portal", () => {
+  describe("[v3] component with portal", () => {
     beforeEach(() => {
       wrapper = mount(
         <HvProvider>
