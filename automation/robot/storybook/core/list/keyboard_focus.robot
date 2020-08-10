@@ -1,9 +1,8 @@
 *** Setting ***
 Variables         variables.yaml
 Resource          ../_keywords.resource
-Force Tags        keyboard    issue
+Force Tags        v3    keyboard    issue
 Documentation     https://www.w3.org/TR/wai-aria-practices/#Listbox
-Force Tags    v3
 
 
 *** Test Cases ***

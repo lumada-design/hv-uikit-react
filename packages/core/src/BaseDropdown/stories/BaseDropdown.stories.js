@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
+import { MoreOptionsVertical } from "@hv/uikit-react-icons";
 import { useTheme } from "@material-ui/core";
 import HvBaseDropdown from "..";
 import HvInput from "../../Input";
 import HvButton from "../../Button";
 import HvTypography from "../../Typography";
-import { HvFormElement, HvHelperText, HvLabel } from "../../Forms";
+import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
 
 export default {
   title: "Components/BaseDropdown",
@@ -51,7 +51,7 @@ export const WithForms = () => (
   <HvFormElement id="withForms" disabled={false}>
     <HvLabel style={{ paddingBottom: "8px", display: "block" }} label="Label" />
     <HvBaseDropdown placeholder="Placeholder..." />
-    <HvHelperText>The description.</HvHelperText>
+    <HvWarningText>The description.</HvWarningText>
   </HvFormElement>
 );
 
@@ -102,7 +102,7 @@ export const Custom = () => {
           aria-label="Dropdown menu"
           style={{ backgroundColor: open ? theme.palette.atmo1 : undefined }}
         >
-          <MoreVert />
+          <MoreOptionsVertical />
         </HvButton>
       }
     >
