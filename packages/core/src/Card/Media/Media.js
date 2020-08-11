@@ -7,7 +7,7 @@ import styles from "./styles";
  * The media container.
  */
 const Media = props => {
-  const { classes, id, className, mediaPath = "", title, mediaHeight, onClick, ...others } = props;
+  const { classes, id, className, title, onClick, ...others } = props;
 
   return (
     <CardMedia
@@ -15,8 +15,6 @@ const Media = props => {
       classes={{ root: classes.root, media: classes.media }}
       className={className}
       role="img"
-      image={mediaPath}
-      style={mediaHeight ? { height: `${mediaHeight}px` } : undefined}
       title={title}
       onClick={onClick}
       {...others}
@@ -51,14 +49,6 @@ Media.propTypes = {
    *  The title of the media.
    */
   title: PropTypes.string,
-  /**
-   *  The path to the image to show in the media slot.
-   */
-  mediaPath: PropTypes.string,
-  /**
-   *  The height necessary to adjust the media container to the image.
-   */
-  mediaHeight: PropTypes.number,
   /**
    *  The function that will be executed when this section is clicked.
    */
