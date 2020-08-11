@@ -24,7 +24,6 @@ export type HvBaseInputClassKey =
   | "inputRoot"
   | "disabledRoot"
   | "invalidRoot"
-  | "inputLowerBorder"
   | "inputBorderContainer"
   | "inputRootDisabled"
   | "inputRootFocused"

@@ -12,7 +12,7 @@ const styles = theme => ({
     }
   },
   disabledRoot: {
-    "& $inputLowerBorder": {
+    "& $inputBorderContainer": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
     "&:hover $inputBorderContainer": {
