@@ -134,10 +134,6 @@ HvBaseInput.propTypes = {
      */
     inputBorderContainer: PropTypes.string,
     /**
-     * Styles applied to the border element.
-     */
-    inputLowerBorder: PropTypes.string,
-    /**
      * Styles applied to input root when it is disabled.
      */
     inputRootDisabled: PropTypes.string,
