@@ -242,6 +242,7 @@ export const Expanded = () => (
     expanded
     multiSelect
     showSearch
+    hasTooltips
     labels={{ title: "Dropdown" }}
     values={[
       { label: "value 1" },
