@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card should be able to render with every property defined 1`] = `
+exports[`[v3] Card should be able to render with every property defined 1`] = `
 <WithStyles(HvCard)
   bgcolor="atmo1"
   style={

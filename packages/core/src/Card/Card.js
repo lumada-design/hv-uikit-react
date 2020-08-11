@@ -21,7 +21,7 @@ const HvCard = props => {
 
   return (
     <Box
-      aria-selected={(selectable && selected) || undefined}
+      aria-selected={selectable ? selected : undefined}
       className={clsx(classes.root, className, {
         [classes.selectable]: selectable,
         [classes.selected]: selected
