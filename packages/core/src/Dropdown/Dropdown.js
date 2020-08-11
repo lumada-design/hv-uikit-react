@@ -147,9 +147,11 @@ class HvDropdown extends React.Component {
 
     const color = disabled ? "atmo7" : undefined;
 
+    const headerId = setId(id, "header");
+
     return (
       <div
-        id={setId(id, "header")}
+        id={headerId}
         aria-labelledby={selectionLabelId}
         className={clsx(classes.header, {
           [classes.headerDisabled]: disabled
@@ -223,6 +225,7 @@ class HvDropdown extends React.Component {
         aria-labelledby={labels.title ? setId(id, "label") : undefined}
         placement={placement}
         popperProps={popperProps}
+        headerId={id}
       />
     );
   }

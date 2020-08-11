@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import clone from "lodash/cloneDeep";
 import isNil from "lodash/isNil";
 import clsx from "clsx";
-import FocusTrap from "focus-trap-react";
 import { Popper, useTheme, withStyles } from "@material-ui/core";
 import OutsideClickHandler from "react-outside-click-handler";
 import { setId, isKeypress, KeyboardCodes } from "../../utils";
@@ -12,8 +11,8 @@ import Search from "../../SearchBox";
 import Actions from "../Actions";
 import HvCheckBox from "../../Selectors/CheckBox";
 import { getSelected } from "../utils";
-import ConditionalWrapper from "../../utils/ConditionalWrapper";
 import styles from "./styles";
+import { getFocusableList } from "../../utils/focusableElementFinder";
 
 const List = ({
   id,
@@ -48,6 +47,23 @@ const List = ({
     selectAll: labels.selectAll,
     selectionConjunction: labels.multiSelectionConjunction
   };
+
+  const { headerId } = others;
+
+  const applyFocusRef = useCallback(node => {
+    const dropdownHeader = document.getElementById(`${headerId}-header`);
+    if (node) {
+      const focusableList = getFocusableList(node);
+
+      if (focusableList.length === 0) {
+        return;
+      }
+      // apply implicitly to first element
+      focusableList[0].focus({ preventScroll: true });
+    } else if (dropdownHeader) {
+      dropdownHeader.focus({ preventScroll: true });
+    }
+  }, []);
 
   /**
    * After the first render, call onChange if notifyChangesOnFirstRender.
@@ -355,12 +371,11 @@ const List = ({
         onCreate: data => handleListCreate(data)
       }}
       style={{ zIndex: theme.zIndex.tooltip }}
+      ref={applyFocusRef}
       {...popperProps}
     >
       <OutsideClickHandler onOutsideClick={e => handleCancel(e)}>
-        <ConditionalWrapper condition={showList} wrapper={c => <FocusTrap>{c}</FocusTrap>}>
-          {renderInnerList()}
-        </ConditionalWrapper>
+        {renderInnerList()}
       </OutsideClickHandler>
     </Popper>
   );
