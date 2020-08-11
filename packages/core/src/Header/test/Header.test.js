@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import { HvHeader, HvProvider } from "../..";
 import { Main } from "../stories/Header.stories";
 
-describe("Header", () => {
+describe("[v3] Header", () => {
   let wrapper;
 
   it("should be able to render", () => {
