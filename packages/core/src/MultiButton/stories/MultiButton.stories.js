@@ -1,109 +1,170 @@
 import React, { useState } from "react";
-import { LocationPin, Map } from "@hv/uikit-react-icons/dist";
+import { LocationPin, Map } from "@hv/uikit-react-icons";
 import { HvButton, HvMultiButton } from "../..";
 
 export default {
   title: "Patterns/Multi Button",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvMultiButton } from '@hv/uikit-react-core/dist'",
+    v3: true
   },
   component: HvMultiButton
 };
 
-export const Main = () => (
-  <div style={{ display: "flex" }}>
-    <HvMultiButton
-      type="mixed"
-      style={{ margin: "10px", width: "210px" }}
-      buttons={[
-        { id: "mixed_map", value: "Map", icon: <Map />, selected: true },
-        { id: "mixed_satellite", value: "Satellite", icon: <LocationPin /> }
-      ]}
-    />
-    <HvMultiButton
-      type="icon"
-      style={{ margin: "10px", width: "64px" }}
-      buttons={[
-        { id: "icon_map", icon: <Map />, selected: true, "aria-label": "Map" },
-        { id: "icon_satellite", icon: <LocationPin />, "aria-label": "Satellite" }
-      ]}
-    />
-  </div>
+const range = n => Array.from(Array(n), (v, i) => i);
+
+export const Main = () => {
+  const [val, setVal] = useState(-1);
+
+  return (
+    <HvMultiButton style={{ width: "210px" }}>
+      <HvButton selected={val === 0} onClick={() => setVal(0)} startIcon={<Map />}>
+        Map
+      </HvButton>
+      <HvButton selected={val === 1} onClick={() => setVal(1)} startIcon={<LocationPin />}>
+        Satellite
+      </HvButton>
+    </HvMultiButton>
+  );
+};
+
+export const OnlyLabels = () => {
+  const [selection, setSelection] = useState(0);
+  const buttons = ["Map", "Satellite"];
+
+  const handleChange = (event, idx) => {
+    setSelection(idx);
+  };
+
+  return (
+    <HvMultiButton style={{ width: "210px" }}>
+      {buttons.map((button, i) => (
+        <HvButton
+          id={button.toLowerCase()}
+          selected={selection === i}
+          onClick={evt => handleChange(evt, i)}
+        >
+          {button}
+        </HvButton>
+      ))}
+    </HvMultiButton>
+  );
+};
+
+export const OnlyIcons = () => {
+  const [selection, setSelection] = useState([0]);
+  const buttons = [
+    { name: "Map", icon: <Map /> },
+    { name: "Location", icon: <LocationPin /> }
+  ];
+
+  const handleChange = (event, idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter(v => v !== idx)
+      : [...selection, idx];
+    setSelection(newSelection);
+  };
+
+  return (
+    <HvMultiButton style={{ width: "64px" }}>
+      {buttons.map(({ name, icon }, i) => (
+        <HvButton
+          id={name.toLowerCase()}
+          category="icon"
+          aria-label={name}
+          selected={selection.includes(i)}
+          onClick={evt => handleChange(evt, i)}
+        >
+          {icon}
+        </HvButton>
+      ))}
+    </HvMultiButton>
+  );
+};
+
+export const Disabled = () => (
+  <HvMultiButton style={{ margin: "10px", width: "320px" }}>
+    <HvButton selected>Avocado</HvButton>
+    <HvButton disabled>Banana</HvButton>
+    <HvButton>Carrot</HvButton>
+    <HvButton startIcon={<Map />}>Map</HvButton>
+  </HvMultiButton>
 );
 
-export const OnlyLabels = () => (
-  <HvMultiButton
-    type="text"
-    style={{ width: "210px" }}
-    buttons={[
-      { id: "map", value: "Map", selected: true },
-      { id: "satellite", value: "Satellite" }
-    ]}
-  />
-);
+export const MultipleSelection = () => {
+  const [selection, setSelection] = useState([0, 2, 3, 5]);
+  const buttons = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-export const OnlyIcons = () => (
-  <HvMultiButton
-    multi
-    type="icon"
-    style={{ width: "64px" }}
-    buttons={[
-      { id: "map", value: "Map", icon: <Map />, selected: true },
-      { id: "location", value: "Location", icon: <LocationPin /> }
-    ]}
-  />
-);
+  const handleChange = (event, idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter(v => v !== idx)
+      : [...selection, idx];
+    setSelection(newSelection);
+  };
 
-export const MultipleSelection = () => (
-  <HvMultiButton
-    multi
-    type="text"
-    style={{ width: "224px" }}
-    buttons={[
-      { id: "monday", value: "M", selected: true },
-      { id: "tuesday", value: "T" },
-      { id: "wednesday", value: "W", selected: true },
-      { id: "thursday", value: "T", selected: true },
-      { id: "friday", value: "F" },
-      { id: "saturday", value: "S", selected: true },
-      { id: "sunday", value: "S" }
-    ]}
-  />
-);
+  return (
+    <HvMultiButton style={{ width: "224px" }}>
+      {buttons.map((button, i) => (
+        <HvButton
+          aria-label={button}
+          selected={selection.includes(i)}
+          onClick={evt => handleChange(evt, i)}
+        >
+          {button[0]}
+        </HvButton>
+      ))}
+    </HvMultiButton>
+  );
+};
 
-export const VerticalOrientation = () => (
-  <div style={{ display: "flex" }}>
-    <HvMultiButton
-      multi
-      vertical
-      type="icon"
-      style={{ margin: "10px", width: "32px" }}
-      buttons={[
-        { id: "map", value: "Map", icon: <Map />, selected: true },
-        { id: "location", value: "Location", icon: <LocationPin /> },
-        { id: "map1", value: "Map", icon: <Map /> },
-        { id: "location1", value: "Location", icon: <LocationPin /> },
-        { id: "map2", value: "Map", icon: <Map /> },
-        { id: "location2", value: "Location", icon: <LocationPin /> }
-      ]}
-    />
-    <HvMultiButton
-      multi
-      vertical
-      type="mixed"
-      style={{ margin: "10px", width: "120px" }}
-      buttons={[
-        { id: "map10", icon: <Map />, value: "Map", selected: true },
-        { id: "location10", icon: <LocationPin />, value: "Location" },
-        { id: "map11", icon: <Map />, value: "Map 1" },
-        { id: "location11", icon: <LocationPin />, value: "Location 1" },
-        { id: "map12", icon: <Map />, value: "Map 2" },
-        { id: "location12", icon: <LocationPin />, value: "Location 2" }
-      ]}
-    />
-  </div>
-);
+export const VerticalOrientation = () => {
+  const [selection, setSelection] = useState([0, 2, 3, 5]);
+
+  const buttons = [
+    { name: "Map", icon: <Map /> },
+    { name: "Location", icon: <LocationPin /> },
+    { name: "Map", icon: <Map /> },
+    { name: "Location", icon: <LocationPin /> },
+    { name: "Map", icon: <Map /> },
+    { name: "Location", icon: <LocationPin /> }
+  ];
+
+  const handleChange = (event, idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter(v => v !== idx)
+      : [...selection, idx];
+    setSelection(newSelection);
+  };
+
+  return (
+    <div style={{ display: "flex" }}>
+      <HvMultiButton category="icon" vertical style={{ margin: "10px", width: "32px" }}>
+        {buttons.map(({ name, icon }, i) => (
+          <HvButton
+            aria-label={name}
+            selected={selection.includes(i)}
+            onClick={evt => handleChange(evt, i)}
+          >
+            {icon}
+          </HvButton>
+        ))}
+      </HvMultiButton>
+      <HvMultiButton vertical style={{ margin: "10px", width: "120px" }}>
+        {buttons.map(({ name, icon }, i) => (
+          <HvButton
+            aria-label={name}
+            startIcon={icon}
+            selected={selection.includes(i)}
+            onClick={evt => handleChange(evt, i)}
+          >
+            {name}
+          </HvButton>
+        ))}
+      </HvMultiButton>
+    </div>
+  );
+};
 
 VerticalOrientation.story = {
   parameters: {
@@ -113,20 +174,34 @@ VerticalOrientation.story = {
   }
 };
 
-export const EnforcedSelection = () => (
-  <div style={{ width: "500px" }}>
-    <HvMultiButton
-      multi
-      type="mixed"
-      buttons={[
-        { id: "map", value: "Map", icon: <Map />, selected: true, enforced: true },
-        { id: "satellite", value: "Satellite", icon: <LocationPin /> },
-        { id: "map1", value: "Chart", icon: <Map />, selected: true },
-        { id: "satellite1", value: "Place", icon: <LocationPin /> }
-      ]}
-    />
-  </div>
-);
+export const EnforcedSelection = () => {
+  const [selection, setSelection] = useState([0]);
+
+  const handleChange = (event, idx) => {
+    if (idx === 0) return; // enforced
+    const newSelection = selection.includes(idx)
+      ? selection.filter(v => v !== idx)
+      : [...selection, idx];
+    setSelection(newSelection);
+  };
+
+  return (
+    <div style={{ width: "500px" }}>
+      <HvMultiButton>
+        {range(5).map(i => (
+          <HvButton
+            id={`location${i + 1 || ""}`}
+            startIcon={<LocationPin />}
+            selected={selection.includes(i)}
+            onClick={evt => handleChange(evt, i)}
+          >
+            {`Location ${i + 1}`}
+          </HvButton>
+        ))}
+      </HvMultiButton>
+    </div>
+  );
+};
 
 EnforcedSelection.story = {
   parameters: {
@@ -137,23 +212,34 @@ EnforcedSelection.story = {
   }
 };
 
-export const MinimumSelection = () => (
-  <div style={{ width: "800px" }}>
-    <HvMultiButton
-      multi
-      type="mixed"
-      minSelection={2}
-      buttons={[
-        { id: "map", value: "Map", icon: <Map /> },
-        { id: "satellite", value: "Satellite", icon: <LocationPin />, selected: true },
-        { id: "map1", value: "Chart", icon: <Map />, selected: true },
-        { id: "satellite1", value: "Location 1", icon: <LocationPin /> },
-        { id: "satellite2", value: "Location 2", icon: <LocationPin /> },
-        { id: "satellite3", value: "Location 3", icon: <LocationPin /> }
-      ]}
-    />
-  </div>
-);
+export const MinimumSelection = () => {
+  const [selection, setSelection] = useState([1, 2]);
+
+  const handleChange = (event, idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter(v => v !== idx)
+      : [...selection, idx];
+
+    if (newSelection.length >= 2) setSelection(newSelection);
+  };
+
+  return (
+    <div style={{ width: "800px" }}>
+      <HvMultiButton>
+        {range(5).map(i => (
+          <HvButton
+            id={`location${i + 1}`}
+            startIcon={<LocationPin />}
+            selected={selection.includes(i)}
+            onClick={evt => handleChange(evt, i)}
+          >
+            {`Location ${i + 1}`}
+          </HvButton>
+        ))}
+      </HvMultiButton>
+    </div>
+  );
+};
 
 MinimumSelection.story = {
   parameters: {
@@ -164,77 +250,40 @@ MinimumSelection.story = {
   }
 };
 
-export const MaximumSelection = () => (
-  <div style={{ width: "800px" }}>
-    <HvMultiButton
-      multi
-      type="mixed"
-      maxSelection={2}
-      buttons={[
-        { id: "map", value: "Map", icon: <Map /> },
-        { id: "satellite", value: "Satellite", icon: <LocationPin /> },
-        { id: "map1", value: "Chart", icon: <Map /> },
-        { id: "satellite1", value: "Location 1", icon: <LocationPin /> },
-        { id: "satellite2", value: "Location 2", icon: <LocationPin /> },
-        { id: "satellite3", value: "Location 3", icon: <LocationPin /> }
-      ]}
-    />
-  </div>
-);
+export const MaximumSelection = () => {
+  const [selection, setSelection] = useState([]);
+
+  const handleChange = (event, idx) => {
+    const newSelection = selection.includes(idx)
+      ? selection.filter(v => v !== idx)
+      : [...selection, idx];
+
+    if (newSelection.length <= 2) setSelection(newSelection);
+  };
+
+  return (
+    <div style={{ width: "800px" }}>
+      <HvMultiButton>
+        {range(5).map(i => (
+          <HvButton
+            id={`location${i + 1}`}
+            startIcon={<LocationPin />}
+            selected={selection.includes(i)}
+            onClick={evt => handleChange(evt, i)}
+          >
+            {`Location ${i + 1}`}
+          </HvButton>
+        ))}
+      </HvMultiButton>
+    </div>
+  );
+};
 
 MaximumSelection.story = {
   parameters: {
     docs: {
       storyDescription:
         "Specify a number of maximum elements that can be selected - in this case a maximum of 2"
-    }
-  }
-};
-
-export const DynamicContent = () => {
-  const btnStyle = {
-    width: "120px",
-    height: "32px",
-    margin: "0 10px 30px 0"
-  };
-
-  const buttons1 = [
-    { id: "map", value: "Map", icon: <Map />, selected: true, enforced: true },
-    { id: "satellite", value: "Satellite", icon: <LocationPin /> },
-    { id: "map1", value: "Chart", icon: <Map />, selected: true },
-    { id: "satellite1", value: "Place", icon: <LocationPin /> }
-  ];
-
-  const buttons2 = [
-    { id: "f1", value: "F1" },
-    { id: "f2", value: "F2", icon: <LocationPin /> }
-  ];
-
-  function MultiButtonDynamic() {
-    const [buttons, setButtons] = useState(buttons1);
-
-    return (
-      <>
-        <HvButton style={btnStyle} onClick={() => setButtons(buttons1)}>
-          Initial Props
-        </HvButton>
-        <HvButton style={btnStyle} onClick={() => setButtons(buttons2)}>
-          New Props
-        </HvButton>
-        <div style={{ width: "400px" }}>
-          <HvMultiButton multi type="mixed" buttons={buttons} />
-        </div>
-      </>
-    );
-  }
-
-  return <MultiButtonDynamic />;
-};
-
-DynamicContent.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Changes MultiButton properties, triggered by an external agent"
     }
   }
 };

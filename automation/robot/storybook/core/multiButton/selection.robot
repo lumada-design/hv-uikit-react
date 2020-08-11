@@ -26,35 +26,28 @@ multiButton select all buttons
 
 multiButton unable unselect a fixed selection
     Go To                            ${patterns}multi-button--enforced-selection
-    Wait Until Element Is Visible    css:#map[class*=isSelected]
-    Click Button                     map
-    Element Should Be Visible        css:#map[class*=isSelected]
+    Wait Until Element Is Visible    css:#location1[class*=isSelected]
+    Click Button                     location1
+    Element Should Be Visible        css:#location1[class*=isSelected]
 
 multiButton minimum selection
     Go To                            ${patterns}multi-button--minimum-selection
-    Wait Until Element Is Visible    css:#map[class*=isUnselected]
-    Element Should Be Visible        css:#satellite[class*=isSelected]
-    Element Should Be Visible        css:#map1[class*=isSelected]
-    Click Button                     map1
-    Element Should Be Visible        css:#map1[class*=isSelected]
-    Click Button                     map
-    Click Button                     map1
-    Element Should Be Visible        css:#map[class*=isSelected]
-    Element Should Be Visible        css:#map1[class*=isUnselected]
-
-multiButton input controlled value
-    Go To                            ${patterns}multi-button--dynamic-content
-    Wait Until Element Is Visible    map
-    Page Should Contain Element      css:button[class*=MultiButton]    limit=4
-    Click Button                     New Props
-    Page Should Contain Element      css:button[class*=MultiButton]    limit=2
+    Wait Until Element Is Visible    css:#location1[class*=isUnselected]
+    Element Should Be Visible        css:#location2[class*=isSelected]
+    Element Should Be Visible        css:#location3[class*=isSelected]
+    Click Button                     location3
+    Element Should Be Visible        css:#location3[class*=isSelected]
+    Click Button                     location1
+    Click Button                     location3
+    Element Should Be Visible        css:#location1[class*=isSelected]
+    Element Should Be Visible        css:#location3[class*=isUnselected]
 
 multiButton maximun selection
     Go To                            ${patterns}multi-button--maximum-selection
-    Wait Until Element Is Visible    css:#map[class*=isUnselected]
-    Click Button                     map
-    Click Button                     satellite
-    Click Button                     map1
-    Element Should Be Visible        css:#map[class*=isSelected]
-    Element Should Be Visible        css:#satellite[class*=isSelected]
-    Element Should Be Visible        css:#map1[class*=isUnselected]
+    Wait Until Element Is Visible    css:#location1[class*=isUnselected]
+    Click Button                     location1
+    Click Button                     location2
+    Click Button                     location3
+    Element Should Be Visible        css:#location1[class*=isSelected]
+    Element Should Be Visible        css:#location2[class*=isSelected]
+    Element Should Be Visible        css:#location3[class*=isUnselected]
