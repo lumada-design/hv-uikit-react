@@ -19,11 +19,13 @@ const styles = theme => ({
     outline: "none !important"
   },
   labelTypography: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
     ...theme.hv.typography.normalText,
     "&$labelDisabled": {
       ...theme.hv.typography.placeholderText
-    },
-    display: "flex"
+    }
   },
   labelDisabled: {
     backgroundColor: "transparent",

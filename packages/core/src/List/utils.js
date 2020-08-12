@@ -1,3 +1,5 @@
+import { withTooltip } from "..";
+
 const isItemSelected = (item, newItem) => {
   const selectionKey = item && item.id ? "id" : "label";
   const selectionElement = item && item[selectionKey];
@@ -68,4 +70,9 @@ const parseList = (list, item, props, selectAll) => {
   return newList;
 };
 
-export { isItemSelected, parseList, parseState };
+const wrapperTooltip = (hasTooltips, Component, label) => {
+  const ComponentFunction = () => Component;
+  return hasTooltips ? withTooltip(ComponentFunction, label) : ComponentFunction;
+};
+
+export { isItemSelected, parseList, parseState, wrapperTooltip };

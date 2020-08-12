@@ -126,11 +126,12 @@ export const SingleSelectionWithSelectors = () => (
     selectDefault
     useSelector
     condensed
+    hasTooltips
     aria-label="Single Selection List with radio"
     values={[
       { label: "98001, Store Manager" },
       { label: "98002, Store Manager" },
-      { label: "98003, Store Manager" },
+      { label: "98003, Store Manager of district" },
       { label: "98004, Store Manager", disabled: true },
       { label: "98005, Store Manager" }
     ]}
@@ -151,11 +152,12 @@ export const MultiSelectionWithSelectors = () => (
     multiSelect
     useSelector
     condensed
+    hasTooltips
     aria-label="Multi Selection List with Selectors Title"
     values={[
       { id: "1", label: "Arhauss is somewhere" },
       { id: "2", label: "Allentown is not are 51" },
-      { id: "3", label: "Bergamo where you can eat", selected: true },
+      { id: "3", label: "Bergamo where you can eat whatever you want", selected: true },
       { id: "4", label: "Bergen city", disabled: true },
       { id: "5", label: "Boston of the Seven Seas" }
     ]}

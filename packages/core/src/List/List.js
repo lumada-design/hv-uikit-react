@@ -8,22 +8,14 @@ import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
 
 import DropRight from "@hv/uikit-react-icons/dist/DropRightXS";
-import { parseList, parseState } from "./utils";
+import { parseList, parseState, wrapperTooltip } from "./utils";
 
-import {
-  HvCheckBox,
-  HvRadio,
-  HvTypography,
-  HvListContainer,
-  HvListItem,
-  withTooltip,
-  setId
-} from "..";
+import { HvCheckBox, HvListContainer, HvListItem, HvRadio, HvTypography, setId } from "..";
 
 import HvBulkActions from "../BulkActions";
 import HvLink from "../Link";
 
-import styles, { selectAllStyles, linkStyles } from "./styles";
+import styles, { linkStyles, selectAllStyles } from "./styles";
 
 const DEFAULT_STATE = {
   list: [],
@@ -163,50 +155,58 @@ class List extends React.Component {
   };
 
   renderMultiSelectItem = (item, itemId) => {
-    const { classes, useSelector } = this.props;
+    const { classes, useSelector, hasTooltips } = this.props;
 
-    return useSelector ? (
-      <HvCheckBox
-        id={setId(itemId, "selector")}
-        label={item.label}
-        checked={item.selected}
-        disabled={item.disabled}
-        onChange={evt => this.handleSelect(evt, item)}
-        classes={{
-          container: classes.selectorContainer,
-          labelTypography: classes.truncate,
-          icon: classes.icon
-        }}
-      />
-    ) : (
-      this.renderItemText(item)
-    );
+    if (useSelector) {
+      const Selection = wrapperTooltip(
+        hasTooltips,
+        <HvCheckBox
+          id={setId(itemId, "selector")}
+          label={item.label}
+          checked={item.selected}
+          disabled={item.disabled}
+          onChange={evt => this.handleSelect(evt, item)}
+          classes={{
+            container: classes.selectorContainer,
+            labelTypography: classes.truncate,
+            icon: classes.icon
+          }}
+        />,
+        item.label
+      );
+      return <Selection />;
+    }
+
+    return this.renderItemText(item);
   };
 
   renderSingleSelectItem = (item, itemId) => {
-    const { classes, useSelector } = this.props;
+    const { classes, useSelector, hasTooltips } = this.props;
 
-    return useSelector ? (
-      <HvRadio
-        id={setId(itemId, "selector")}
-        label={item.label}
-        checked={item.selected}
-        disabled={item.disabled}
-        classes={{
-          container: classes.selectorContainer,
-          labelTypography: classes.truncate,
-          icon: classes.icon
-        }}
-      />
-    ) : (
-      this.renderItemText(item)
-    );
+    if (useSelector) {
+      const Selection = wrapperTooltip(
+        hasTooltips,
+        <HvRadio
+          id={setId(itemId, "selector")}
+          label={item.label}
+          checked={item.selected}
+          disabled={item.disabled}
+          classes={{
+            container: classes.selectorContainer,
+            labelTypography: classes.truncate,
+            icon: classes.icon
+          }}
+        />,
+        item.label
+      );
+      return <Selection />;
+    }
+    return this.renderItemText(item);
   };
 
   renderItemText = item => {
     const { multiSelect, hasTooltips } = this.props;
-    const Text = () => item.label;
-    const ItemText = hasTooltips ? withTooltip(Text, item.label) : Text;
+    const ItemText = wrapperTooltip(hasTooltips, item.label, item.label);
 
     return !multiSelect && item.path ? (
       <StyledHvLink key={item.label} route={item.path}>
