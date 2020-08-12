@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core";
-import { HvDropdown } from "../..";
+import HvDropdown from "..";
 
 export default {
   title: "Patterns/Dropdown",
@@ -182,7 +182,7 @@ export const DifferentSizeAndPlacements = () => {
       width: "520px"
     },
     list: {
-      maxWidth: "none"
+      maxWidth: "unset"
     }
   });
 
@@ -256,7 +256,6 @@ export const Expanded = () => (
     expanded
     multiSelect
     showSearch
-    hasTooltips
     labels={{ title: "Dropdown" }}
     values={[
       { label: "value 1" },
@@ -280,7 +279,6 @@ Expanded.story = {
     docs: {
       inlineStories: false
     },
-    v3: true,
-    eyes: { waitBeforeScreenshot: "[id*=search-input]:focus" }
+    v3: true
   }
 };

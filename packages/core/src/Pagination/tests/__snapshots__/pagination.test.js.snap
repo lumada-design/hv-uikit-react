@@ -1675,7 +1675,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                       aria-relevant="additions text"
                                       className="HvWarningText-warningText HvWarningText-topGutter"
                                       id="pagination-currentPage-warning-notification"
-                                      variant="infoText"
                                     >
                                       <ForwardRef
                                         aria-atomic="true"
@@ -1708,13 +1707,12 @@ exports[`Custom Pagination should render correctly 1`] = `
                                           }
                                         }
                                         id="pagination-currentPage-warning-notification"
-                                        variant="infoText"
                                       >
-                                        <span
+                                        <p
                                           aria-atomic="true"
                                           aria-live="polite"
                                           aria-relevant="additions text"
-                                          className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root"
+                                          className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                                           id="pagination-currentPage-warning-notification"
                                         />
                                       </ForwardRef>

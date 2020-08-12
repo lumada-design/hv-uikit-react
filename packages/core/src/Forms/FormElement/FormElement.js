@@ -27,7 +27,8 @@ const HvFormElement = props => {
     "HvSuggestions",
     "HvInfoMessage",
     "HvWarningText",
-    "HvBaseInput"
+    "HvBaseInput",
+    "HvBaseDropdown"
   ]);
   const contextValue = {
     elementId: id,

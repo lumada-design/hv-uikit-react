@@ -44,11 +44,11 @@ export interface HvBaseDropdownProps
   /**
    * When dropdown changes the expanded state.
    */
-  onToggle: (event: Event) => void;
+  onToggle?: (event: Event) => void;
   /**
    * When user click outside the open container.
    */
-  onClickOutside: (event: Event) => void;
+  onClickOutside?: (event: Event) => void;
   /**
    * When expanded dropdown changes position.
    */

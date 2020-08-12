@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { MoreOptionsVertical } from "@hv/uikit-react-icons";
 import { useTheme } from "@material-ui/core";
 import HvBaseDropdown from "..";
+import HvPanel from "../../Panel";
 import HvInput from "../../Input";
 import HvButton from "../../Button";
 import HvTypography from "../../Typography";
-import { HvFormElement, HvInfoMessage, HvLabel } from "../../Forms";
+import { HvFormElement, HvWarningText, HvLabel } from "../../Forms";
 
 export default {
   title: "Components/BaseDropdown",
@@ -34,9 +35,11 @@ export const WithContent = () => {
       placeholder={<HvTypography id="labelTypography">Placeholder</HvTypography>}
       aria-labelledby="labelTypography"
     >
-      <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
-        <HvInput id="input-dropdown" />
-      </div>
+      <HvPanel>
+        <div style={{ width: "300px", height: "300px", background: theme.palette.atmo2 }}>
+          <HvInput id="input-dropdown" />
+        </div>
+      </HvPanel>
     </HvBaseDropdown>
   );
 };
@@ -47,15 +50,20 @@ WithContent.story = {
   }
 };
 
-export const WithForms = () => (
-  <HvFormElement id="withForms" disabled={false}>
-    <HvLabel style={{ paddingBottom: "8px", display: "block" }} label="Label" />
-    <HvBaseDropdown placeholder="Placeholder..." />
-    <HvInfoMessage disableGutter style={{ paddingTop: "8px", display: "block" }}>
-      The description.
-    </HvInfoMessage>
-  </HvFormElement>
-);
+export const WithForms = () => {
+  const theme = useTheme();
+  return (
+    <HvFormElement id="withForms" disabled={false}>
+      <HvLabel style={{ paddingBottom: "8px", display: "block" }} label="Label" />
+      <HvBaseDropdown placeholder="Placeholder...">
+        <HvPanel>
+          <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
+        </HvPanel>
+      </HvBaseDropdown>
+      <HvWarningText>The description.</HvWarningText>
+    </HvFormElement>
+  );
+};
 
 WithForms.story = {
   parameters: {
@@ -65,16 +73,16 @@ WithForms.story = {
 
 export const Controlled = () => {
   const [open, setOpen] = useState(false);
-
+  const theme = useTheme();
   return (
     <>
       <HvButton onClick={() => setOpen(!open)}>change</HvButton>
       <p />
-      <HvBaseDropdown
-        placeholder="PlaceHolder..."
-        expanded={open}
-        onToggle={(e, s) => setOpen(s)}
-      />
+      <HvBaseDropdown placeholder="PlaceHolder..." expanded={open} onToggle={(e, s) => setOpen(s)}>
+        <HvPanel>
+          <div style={{ width: "270px", height: "300px", background: theme.palette.atmo2 }} />
+        </HvPanel>
+      </HvBaseDropdown>
     </>
   );
 };
@@ -96,6 +104,7 @@ export const Custom = () => {
     <HvBaseDropdown
       expanded={open}
       onClickOutside={setterOpen}
+      aria-label="custom menu"
       component={
         <HvButton
           overrideIconColors={false}
@@ -108,7 +117,9 @@ export const Custom = () => {
         </HvButton>
       }
     >
-      <div style={{ width: "500px", height: "500px", background: theme.palette.atmo2 }} />
+      <HvPanel>
+        <div style={{ width: "500px", height: "500px", background: theme.palette.atmo2 }} />
+      </HvPanel>
     </HvBaseDropdown>
   );
 };

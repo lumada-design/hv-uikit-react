@@ -3,7 +3,7 @@ Resource      _resources.resource
 Test Setup    Run Keywords
 ...           Go To    ${patterns}dropdown--multi-selection    AND
 ...           Wait Until Element Is Enabled    ${dropdown}
-
+Force Tags  v3
 
 
 *** Comments ***
