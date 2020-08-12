@@ -5,6 +5,7 @@ import { HvEmptyState, HvLink, HvTypography } from "../..";
 export default {
   title: "Patterns/Empty State",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvEmptyState } from '@hv/uikit-react-core/dist'"
   },
@@ -16,7 +17,7 @@ export const Main = () => {
     <HvEmptyState
       title="No data routes"
       message="After you start adding Data Routes, they will appear in here."
-      icon={<Fail iconSize="L" color="atmo5" />}
+      icon={<Fail iconSize="M" color="acce1" />}
     />
   );
 };
@@ -27,12 +28,13 @@ export const WithAction = () => (
     title="Start building data routes"
     message="Before we create any dashboard we need to get some data."
     action={<HvLink route="/">Create a new data route</HvLink>}
-    icon={<BarChart iconSize="L" color="atmo5" role="presentation" />}
+    icon={<BarChart iconSize="M" color="acce1" role="presentation" />}
   />
 );
 
 WithAction.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Empty states that includes an action inside its content."
     }
@@ -54,13 +56,14 @@ export const CustomMessages = () => {
       title="This page can't be displayed"
       message={CustomMessage}
       action={CustomAction}
-      icon={<Ghost iconSize="L" color="atmo5" role="presentation" />}
+      icon={<Ghost iconSize="M" color="acce1" role="presentation" />}
     />
   );
 };
 
 CustomMessages.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Empty states with message and action set as custom elements."
     }
@@ -77,6 +80,7 @@ export const Minimal = () => (
 
 Minimal.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Empty state without title and small icon."
     }
