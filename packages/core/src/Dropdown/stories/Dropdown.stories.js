@@ -182,7 +182,7 @@ export const DifferentSizeAndPlacements = () => {
       width: "520px"
     },
     list: {
-      maxWidth: "unset"
+      maxWidth: "none"
     }
   });
 
