@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import equalObjects from "shallow-equal/objects";
-import ArrowUp from "@hv/uikit-react-icons/dist/DropUpXS";
-import ArrowDown from "@hv/uikit-react-icons/dist/DropDownXS";
-import { setId, isKeypress, KeyboardCodes } from "../utils";
+import { setId } from "../utils";
 import HvTypography from "../Typography";
 import withLabels from "../withLabels";
 import withId from "../withId";
 import List from "./List";
-import { getSelected, getSelectionLabel, hasSelected } from "./utils";
+import { getSelected, getSelectionLabel } from "./utils";
 import styles from "./styles";
+import HvBaseDropdown from "../BaseDropdown";
+import { HvFormElement, HvLabel } from "../Forms";
 
 const DEFAULT_LABELS = {
   select: undefined,
@@ -23,131 +22,75 @@ const DEFAULT_LABELS = {
   selectSingle: "Select..."
 };
 
-const DEFAULT_STATE = {
-  selectionLabel: {},
-  anchorEl: null,
-  values: [],
-  positionUp: false
-};
-
 /**
  * A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
  */
-class HvDropdown extends React.Component {
-  constructor(props) {
-    super(props);
+const HvDropdownBase = ({
+  className,
+  id,
+  classes,
+  values,
+  multiSelect,
+  showSearch,
+  disabled,
+  expanded,
+  onChange,
+  notifyChangesOnFirstRender,
+  labels,
+  selectDefault,
+  hasTooltips,
+  disablePortal,
+  singleSelectionToggle,
+  placement,
+  popperProps
+}) => {
+  const [isOpen, setIsOpen] = useState(expanded);
+  const [selectionLabel, setSelectionLabel] = useState(
+    getSelectionLabel(values, labels, multiSelect)
+  );
+  const [internalValues, setInternalValues] = useState(values);
 
-    this.ref = React.createRef();
-
-    const { values, expanded, labels } = props;
-
-    this.state = {
-      isOpen: expanded,
-      labels,
-      hasSelection: hasSelected(values),
-      ...DEFAULT_STATE
-    };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    if (!equalObjects(props.values, state.values) || !equalObjects(props.labels, state.labels)) {
-      return {
-        isOpen: props.expanded,
-        selectionLabel: getSelectionLabel(props.values, props.labels, props.multiSelect),
-        hasSelection: hasSelected(props.values),
-        anchorEl: null,
-        values: props.values
-      };
+  useEffect(() => {
+    if (expanded !== isOpen) {
+      setIsOpen(expanded && !disabled);
     }
-
-    return null;
-  }
-
-  /**
-   * Sets the position of the list when opened.
-   *
-   * @param position
-   */
-  setPosition(position) {
-    this.setState({ positionUp: position });
-  }
-
-  /**
-   *  Opens and closes the dropdown.
-   *
-   * @param {Object} event - the event produced by the click action.
-   * @returns {undefined}
-   * @memberof Dropdown
-   */
-  handleToggle(event) {
-    const { disabled } = this.props;
-    const { isOpen } = this.state;
-    if (event && !isKeypress(event, KeyboardCodes.Tab)) {
-      event.stopPropagation();
-      event.preventDefault();
-    }
-    // we are checking specifically for false because if "iskeypress" returns true or undefined it should continue
-    if (
-      disabled ||
-      (isKeypress(event, KeyboardCodes.Enter) === false &&
-        isKeypress(event, KeyboardCodes.Esc) === false &&
-        isKeypress(event, KeyboardCodes.ArrowDown) === false) ||
-      (isKeypress(event, KeyboardCodes.Esc) && !isOpen) ||
-      (isKeypress(event, KeyboardCodes.ArrowDown) && isOpen)
-    )
-      return;
-
-    const anchor = event ? event.currentTarget.parentElement : null;
-
-    this.setState({
-      isOpen: !isOpen,
-      anchorEl: anchor
-    });
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expanded, disabled]);
 
   /**
    * Applies the selected values to the state
    *
-   * @param {Array} selection - An array containing the selected values.
+   * @param {Array} listValues - An array containing the selected values.
    * @param {Boolean} commitChanges - If `true` the selection if finally committed the dropdown header text should reflect the new selection
    * @param {Boolean} toggle -If `true` the dropdown should toggle it's current state
    * @param {Boolean} notifyChanges -If `true` the dropdown will call onChange.
-   * @param {Event} event - mouseUp event.
-   * @memberof Dropdown
    */
-  handleSelection(selection, commitChanges, toggle, notifyChanges = true, event) {
-    const { multiSelect, onChange, labels } = this.props;
-    const selected = getSelected(selection);
-
+  const handleSelection = (listValues, commitChanges, toggle, notifyChanges = true) => {
+    const selected = getSelected(listValues);
     if (commitChanges) {
-      const selectionLabel = getSelectionLabel(selection, labels, multiSelect);
-      this.setState({ selectionLabel, hasSelection: selected.length });
+      setInternalValues(listValues);
+      setSelectionLabel(getSelectionLabel(listValues, labels, multiSelect));
     }
-    if (toggle) this.handleToggle(event);
-    if (notifyChanges) onChange(multiSelect ? selected : selected[0]);
-  }
+    if (toggle) setIsOpen(false);
+    if (notifyChanges) onChange?.(multiSelect ? selected : selected[0]);
+  };
 
-  buildHeaderLabel(selectionLabelId) {
-    const { labels, classes, multiSelect, disabled } = this.props;
-    const { isOpen, selectionLabel, hasSelection } = this.state;
-
-    if (labels.select || !multiSelect)
-      return (
-        <HvTypography
-          id={selectionLabelId}
-          variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
-          className={clsx(classes.selection, classes.truncate, {
-            [classes.selectionDisabled]: disabled
-          })}
-        >
-          {selectionLabel.selected}
-        </HvTypography>
-      );
-
-    return (
+  const buildHeaderLabel = selectionLabelId => {
+    const hasSelection = getSelected(internalValues);
+    return labels.select || !multiSelect ? (
       <HvTypography
         id={selectionLabelId}
-        className={clsx(classes.selection, classes.truncate, {
+        variant={isOpen || hasSelection ? "normalText" : "placeholderText"}
+        className={clsx(classes.truncate, {
+          [classes.selectionDisabled]: disabled
+        })}
+      >
+        {selectionLabel.selected}
+      </HvTypography>
+    ) : (
+      <HvTypography
+        id={selectionLabelId}
+        className={clsx(classes.truncate, {
           [classes.selectionDisabled]: disabled
         })}
       >
@@ -155,154 +98,50 @@ class HvDropdown extends React.Component {
         {` ${labels.multiSelectionConjunction} ${selectionLabel.total}`}
       </HvTypography>
     );
-  }
+  };
 
-  renderLabel() {
-    const { id, classes, labels } = this.props;
-    return (
-      <label id={setId(id, "label")} className={classes.label} htmlFor={setId(id, "header")}>
-        {labels.title}
-      </label>
-    );
-  }
-
-  renderHeader(selectionLabelId) {
-    const {
-      classes,
-      disabled,
-      values,
-      id,
-      labels,
-      multiSelect,
-      showSearch,
-      expanded,
-      onChange,
-      notifyChangesOnFirstRender,
-      selectDefault,
-      disablePortal,
-      hasTooltips,
-      singleSelectionToggle,
-      // TODO: convert component to functional so we don't to destructure here
-      popperProps,
-      className,
-      ...others
-    } = this.props;
-
-    const { isOpen } = this.state;
-
-    const color = disabled ? "atmo5" : undefined;
-
-    const headerId = setId(id, "header");
-
-    return (
-      <div
-        id={headerId}
-        aria-labelledby={selectionLabelId}
-        className={clsx(classes.header, {
-          [classes.headerDisabled]: disabled
-        })}
-        onKeyDown={evt => this.handleToggle(evt)}
-        // Used instead of onClick because of OutsideClickHandler used in the List
-        onMouseUp={evt => this.handleToggle(evt)}
-        role="textbox"
-        ref={this.ref}
-        tabIndex={0}
-        style={disabled ? { pointerEvents: "none" } : undefined}
-        {...others}
-      >
-        {this.buildHeaderLabel(selectionLabelId)}
-        {isOpen ? (
-          <ArrowUp iconSize="XS" className={classes.arrow} />
-        ) : (
-          <ArrowDown iconSize="XS" className={classes.arrow} color={color} />
-        )}
-      </div>
-    );
-  }
-
-  renderList() {
-    const {
-      id,
-      multiSelect,
-      showSearch,
-      selectDefault,
-      notifyChangesOnFirstRender,
-      disablePortal,
-      hasTooltips,
-      labels,
-      singleSelectionToggle,
-      classes,
-      placement,
-      // TODO: convert component to functional so we don't to destructure here
-      popperProps
-    } = this.props;
-    const { isOpen, values, anchorEl } = this.state;
-
-    return (
-      <List
-        id={setId(id, "values")}
-        classes={{
-          rootList: classes.rootList,
-          list: classes.list
-        }}
-        values={values}
-        multiSelect={multiSelect}
-        showSearch={showSearch}
-        onChange={(selected, commitChanges, toggle, notifyChanges, evt) =>
-          this.handleSelection(selected, commitChanges, toggle, notifyChanges, evt)
-        }
-        labels={labels}
-        selectDefault={selectDefault}
-        notifyChangesOnFirstRender={notifyChangesOnFirstRender}
-        hasTooltips={hasTooltips}
+  return (
+    <HvFormElement id={id} disabled={disabled} value={getSelected(internalValues)}>
+      {labels.title && (
+        <HvLabel
+          htmlFor={id}
+          aria-disabled={disabled}
+          className={classes.label}
+          label={labels.title}
+        />
+      )}
+      <HvBaseDropdown
+        className={clsx(className, { root: classes.root, arrow: classes.arrow })}
+        expanded={isOpen}
         disablePortal={disablePortal}
-        isOpen={isOpen}
-        anchorEl={anchorEl}
-        singleSelectionToggle={singleSelectionToggle}
-        aria-labelledby={labels.title ? setId(id, "label") : undefined}
         placement={placement}
         popperProps={popperProps}
-        onPositionChange={position => this.setPosition(position)}
-        headerId={id}
-      />
-    );
-  }
-
-  render() {
-    const { id, classes, className, labels, disabled } = this.props;
-    const { isOpen, positionUp } = this.state;
-    const selectionLabelId = setId(id, "selectionLabel");
-
-    return (
-      <>
-        {labels.title && this.renderLabel()}
-        <div
-          id={id}
-          role="combobox"
-          aria-expanded={isOpen}
-          aria-owns={isOpen ? setId(id, "values") : undefined}
-          aria-controls={isOpen ? setId(id, "values") : undefined}
-          aria-labelledby={selectionLabelId}
-          aria-describedby={labels.title ? setId(id, "label") : undefined}
-          ref={el => {
-            this.node = el;
+        placeholder={buildHeaderLabel(setId(id, "selectionPlaceholder"))}
+        onToggle={(e, s) => setIsOpen(s)}
+        role="combobox"
+      >
+        <List
+          id={setId(id, "values")}
+          classes={{
+            rootList: classes.rootList
           }}
-          className={clsx(classes.root, className, {
-            [classes.rootDisabled]: disabled,
-            [classes.rootOpen]: isOpen,
-            [classes.rootOpenUp]: isOpen && positionUp,
-            [classes.rootOpenDown]: isOpen && !positionUp
-          })}
-        >
-          {this.renderHeader(selectionLabelId)}
-          {this.renderList()}
-        </div>
-      </>
-    );
-  }
-}
+          values={internalValues}
+          multiSelect={multiSelect}
+          showSearch={showSearch}
+          onChange={handleSelection}
+          labels={labels}
+          selectDefault={selectDefault}
+          notifyChangesOnFirstRender={notifyChangesOnFirstRender}
+          hasTooltips={hasTooltips}
+          singleSelectionToggle={singleSelectionToggle}
+          aria-labelledby={labels.title ? setId(id, "label") : undefined}
+        />
+      </HvBaseDropdown>
+    </HvFormElement>
+  );
+};
 
-HvDropdown.propTypes = {
+HvDropdownBase.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -320,45 +159,13 @@ HvDropdown.propTypes = {
      */
     root: PropTypes.string,
     /**
-     * Styles applied to the component when is open.
-     */
-    rootOpen: PropTypes.string,
-    /**
-     * Styles applied to the root when the list is opened up.
-     */
-    rootOpenUp: PropTypes.string,
-    /**
-     * Styles applied to the root when the list is opened down.
-     */
-    rootOpenDown: PropTypes.string,
-    /**
-     * Styles applied to the component when is disable.
-     */
-    rootDisabled: PropTypes.string,
-    /**
      * Styles applied to the label.
      */
     label: PropTypes.string,
     /**
-     * Styles applied to the header.
-     */
-    header: PropTypes.string,
-    /**
-     * Styles applied to the selection
-     */
-    selection: PropTypes.string,
-    /**
      * Styles applied to the arrow
      */
     arrow: PropTypes.string,
-    /**
-     * Styles applied when the header is disable.
-     */
-    headerDisabled: PropTypes.string,
-    /**
-     * Styles applied to the icon.
-     */
-    icon: PropTypes.string,
     /**
      * Styles applied for truncating the list elements.
      */
@@ -368,21 +175,13 @@ HvDropdown.propTypes = {
      */
     selectionDisabled: PropTypes.string,
     /**
-     * Styles applied when the selection is disabled.
-     */
-    list: PropTypes.string,
-    /**
-     * Styles applied when the selection is disabled.
+     * Styles applied to the list.
      */
     rootList: PropTypes.string
   }).isRequired,
   /**
    * The list to be rendered by the dropdown.
    */
-  // needed to disable eslint because:
-  // https://github.com/yannickcr/eslint-plugin-react/issues/1751
-  // https://github.com/yannickcr/eslint-plugin-react/issues/2028
-  // eslint-disable-next-line react/no-unused-prop-types
   values: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -391,7 +190,7 @@ HvDropdown.propTypes = {
     })
   ),
   /**
-   * If ´true´ the dropdown is multiselect, if ´false´ the dropdown is single select.
+   * If ´true´ the dropdown is multiSelect, if ´false´ the dropdown is single select.
    */
   multiSelect: PropTypes.bool,
   /**
@@ -405,10 +204,6 @@ HvDropdown.propTypes = {
   /**
    * If ´true´ the dropdown starts opened if ´false´ it starts closed.
    */
-  // needed to disable eslint because:
-  // https://github.com/yannickcr/eslint-plugin-react/issues/1751
-  // https://github.com/yannickcr/eslint-plugin-react/issues/2028
-  // eslint-disable-next-line react/no-unused-prop-types
   expanded: PropTypes.bool,
   /**
    * A function to be executed whenever a item is selected in the dropdown, the function receives the selected item(s).
@@ -443,7 +238,7 @@ HvDropdown.propTypes = {
      */
     applyLabel: PropTypes.string,
     /**
-     * The label used in the middle of the multiselection count.
+     * The label used in the middle of the multiSelection count.
      */
     multiSelectionConjunction: PropTypes.string
   }),
@@ -475,7 +270,7 @@ HvDropdown.propTypes = {
   popperProps: PropTypes.shape()
 };
 
-HvDropdown.defaultProps = {
+HvDropdownBase.defaultProps = {
   className: "",
   id: undefined,
   values: null,
@@ -495,5 +290,5 @@ HvDropdown.defaultProps = {
 };
 
 export default withStyles(styles, { name: "HvDropdown" })(
-  withLabels(DEFAULT_LABELS)(withId(HvDropdown))
+  withLabels(DEFAULT_LABELS)(withId(HvDropdownBase))
 );

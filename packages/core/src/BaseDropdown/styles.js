@@ -2,18 +2,17 @@ import { outlineStyles } from "../Focus/styles";
 
 const styles = theme => ({
   root: {
-    display: "inline-block"
+    display: "inline-block",
+    "&:focus": {
+      ...outlineStyles
+    },
+    width: "310px"
   },
   header: {
     height: `${theme.hv.spacing.md}px`,
     cursor: "pointer",
     userSelect: "none",
-    "&:focus": {
-      ...outlineStyles
-    },
     position: "relative",
-    maxWidth: 310,
-    minWidth: 310,
     background: theme.hv.palette.atmosphere.atmo1,
     border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     "&:hover": {
@@ -68,6 +67,7 @@ const styles = theme => ({
     ...theme.hv.typography.placeholderText
   },
   panel: {
+    position: "relative",
     boxShadow: theme.hv.shadows[1]
   },
   inputExtensionOpen: {

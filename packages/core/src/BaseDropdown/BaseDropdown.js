@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState, useContext } from "react";
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+import React, { useContext, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { Popper, useTheme, withStyles } from "@material-ui/core";
 import clsx from "clsx";
@@ -9,7 +10,6 @@ import { getFirstAndLastFocus, isKeypress, KeyboardCodes, setId } from "../utils
 import withId from "../withId";
 import styles from "./styles";
 import HvTypography from "../Typography";
-import HvPanel from "../Panel";
 import { HvFormElementContext } from "../Forms/FormElement";
 
 const HvBaseDropdown = ({
@@ -24,7 +24,7 @@ const HvBaseDropdown = ({
   onToggle,
   onFlip,
   onClickOutside,
-  disablePortal,
+  disablePortal = false,
   component,
   adornment,
   children,
@@ -61,7 +61,7 @@ const HvBaseDropdown = ({
    * If closes focus on the header component.
    */
   useEffect(() => {
-    if (!isOpen) anchorHeaderRef.current?.firstElementChild?.focus({ preventScroll: true });
+    if (!isOpen) anchorHeaderRef.current?.focus({ preventScroll: true });
   }, [isOpen]);
 
   /**
@@ -133,13 +133,12 @@ const HvBaseDropdown = ({
       />
     );
 
-  const renderHeader = () => {
-    const labelledby =
-      others["aria-labelledby"] ??
-      HvLabel?.[0]?.id ??
-      (elementId && setId(elementId, "label")) ??
-      setId(localId, "selectionPlaceholder");
+  const labelledby =
+    others["aria-labelledby"] ??
+    HvLabel?.[0]?.id ??
+    (!component && setId(localId, "selectionPlaceholder"));
 
+  const renderHeader = () => {
     return (
       <div
         id={setId(localId, "header")}
@@ -150,9 +149,9 @@ const HvBaseDropdown = ({
           [classes.headerOpenDown]: isOpen && !positionUp
         })}
         role="textbox"
-        tabIndex={0}
         style={localDisabled ? { pointerEvents: "none" } : undefined}
-        aria-labelledby={labelledby}
+        aria-labelledby={labelledby || undefined}
+        aria-label={others["aria-label"] ?? undefined}
       >
         {buildHeaderLabel()}
         {renderAdornment()}
@@ -198,9 +197,21 @@ const HvBaseDropdown = ({
     }
   };
 
+  /**
+   *  Handle keyboard inside children container.
+   */
   const handleContainerKeyDown = event => {
     if (isKeypress(event, KeyboardCodes.Esc)) {
       handleToggle(event);
+    }
+    if (isKeypress(event, KeyboardCodes.Tab)) {
+      const focusList = getFirstAndLastFocus(
+        document.getElementById(setId(localId, "children-container"))
+      );
+      if (document.activeElement === focusList?.last) {
+        event.preventDefault();
+        focusList?.first?.focus();
+      }
     }
   };
 
@@ -228,9 +239,9 @@ const HvBaseDropdown = ({
               style={{ width: widthInput }}
             />
           )}
-          <HvPanel id={setId(localId, "children-container")} className={classes.panel}>
+          <div id={setId(localId, "children-container")} className={classes.panel}>
             {children}
-          </HvPanel>
+          </div>
           {positionUp && (
             <div
               className={clsx(classes.inputExtensionOpen, classes.inputExtensionOpenShadow, {
@@ -250,16 +261,17 @@ const HvBaseDropdown = ({
       {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div
         id={localId}
-        aria-haspopup
-        aria-expanded={isOpen ? true : undefined}
-        aria-owns={isOpen ? setId(localId, "children-container") : undefined}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-owns={setId(localId, "children-container")}
         aria-controls={isOpen ? setId(localId, "children-container") : undefined}
-        // TODO: for the sample of dropdown
-        // aria-describedby={label ? setId(localId, "label") : undefined}
+        aria-labelledby={labelledby || undefined}
+        aria-label={labelledby ? undefined : others["aria-label"] || undefined}
         ref={anchorHeaderRef}
         className={clsx(className, classes.root)}
         onKeyDown={handleToggle}
         onClick={handleToggle}
+        tabIndex={0}
         {...others}
       >
         {component || renderHeader()}

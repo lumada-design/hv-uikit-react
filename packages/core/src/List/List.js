@@ -271,7 +271,7 @@ class List extends React.Component {
             disableGutters={useSelector}
             {...others}
           >
-            {list.map((item, i) => !item.isHidden && this.renderListItem(item, i))}
+            {list.filter(it => !it.isHidden).map((item, i) => this.renderListItem(item, i))}
           </HvListContainer>
         )}
       </>

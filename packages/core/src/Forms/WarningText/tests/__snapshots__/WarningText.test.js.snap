@@ -61,7 +61,6 @@ exports[`HelperText should render correctly 1`] = `
         aria-relevant="additions text"
         className="HvWarningText-warningText HvWarningText-topGutter"
         id="base-notification"
-        variant="infoText"
       >
         <ForwardRef
           aria-atomic="true"
@@ -94,13 +93,12 @@ exports[`HelperText should render correctly 1`] = `
             }
           }
           id="base-notification"
-          variant="infoText"
         >
-          <span
+          <p
             aria-atomic="true"
             aria-live="polite"
             aria-relevant="additions text"
-            className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root"
+            className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
             id="base-notification"
           />
         </ForwardRef>

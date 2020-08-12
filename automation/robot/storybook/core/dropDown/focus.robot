@@ -1,7 +1,7 @@
 *** Setting ***
 Resource         _resources.resource
 Documentation    please look complementary Test Cases on dropdown_keyboard_navigation.robot
-
+Force Tags  v3
 
 *** Test Cases ***
 Focus on input when open dropdown with input
