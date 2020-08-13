@@ -36,7 +36,7 @@ const Eye = props => {
         <defs>
           <style
             dangerouslySetInnerHTML={{
-              __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .default > rect{ fill: ${theme.hv.palette.accent.acce1} } .selected > rect{ fill: none; animation: dash_out .2s ease-in-out; } .notSelected > rect{ fill: ${theme.hv.palette.accent.acce1}; animation: dash_in .2s ease-in-out; } @keyframes dash_in { from { width: 0; } to { width: 19.8; } } @keyframes dash_out { from { width: 19.8; fill: ${theme.hv.palette.accent.acce1}; } to { width: 0; fill: ${theme.hv.palette.accent.acce1}; } }`
+              __html: `.cls-1 { fill: none; } .cls-2 { fill: ${theme.hv.palette.accent.acce1}; } .selected > rect{ fill: none; animation: dash_out .2s ease-in-out; } .notSelected > rect{ fill: ${theme.hv.palette.accent.acce1}; animation: dash_in .2s ease-in-out; } @keyframes dash_in { from { width: 0; } to { width: 19.8; } } @keyframes dash_out { from { width: 19.8; fill: ${theme.hv.palette.accent.acce1}; } to { width: 0; fill: ${theme.hv.palette.accent.acce1}; } }`
             }}
           />
         </defs>
