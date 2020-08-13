@@ -2,11 +2,11 @@
 
 exports[`ToggleButton should render correctly 1`] = `
 <WithStyles(WithLabels)
-  aria-label="Lock selection"
+  aria-label="Lock"
   labels={
     Object {
-      "notSelectedTitle": "Open",
-      "selectedTitle": "Closed",
+      "notSelectedTitle": "Close lock",
+      "selectedTitle": "Open lock",
     }
   }
   notSelectedIcon={
@@ -609,7 +609,7 @@ exports[`ToggleButton should render correctly 1`] = `
   }
 >
   <WithLabels
-    aria-label="Lock selection"
+    aria-label="Lock"
     classes={
       Object {
         "disabled": "HvToggleButton-disabled",
@@ -619,8 +619,8 @@ exports[`ToggleButton should render correctly 1`] = `
     }
     labels={
       Object {
-        "notSelectedTitle": "Open",
-        "selectedTitle": "Closed",
+        "notSelectedTitle": "Close lock",
+        "selectedTitle": "Open lock",
       }
     }
     notSelectedIcon={
@@ -1223,7 +1223,7 @@ exports[`ToggleButton should render correctly 1`] = `
     }
   >
     <ToggleButton
-      aria-label="Lock selection"
+      aria-label="Lock"
       classes={
         Object {
           "disabled": "HvToggleButton-disabled",
@@ -1233,8 +1233,8 @@ exports[`ToggleButton should render correctly 1`] = `
       }
       labels={
         Object {
-          "notSelectedTitle": "Open",
-          "selectedTitle": "Closed",
+          "notSelectedTitle": "Close lock",
+          "selectedTitle": "Open lock",
         }
       }
       notSelectedIcon={
@@ -1836,14 +1836,12 @@ exports[`ToggleButton should render correctly 1`] = `
         }
       }
     >
-      <div
-        aria-label="Lock selection"
+      <button
+        aria-label="Lock"
         aria-pressed={false}
         className="HvToggleButton-root"
         onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-        tabIndex={0}
+        type="button"
       >
         <Component>
           <WithStyles(HvTooltip)
@@ -1859,7 +1857,7 @@ exports[`ToggleButton should render correctly 1`] = `
             }
             title={
               <ForwardRef(WithStyles)>
-                Open
+                Close lock
               </ForwardRef(WithStyles)>
             }
           >
@@ -1891,7 +1889,7 @@ exports[`ToggleButton should render correctly 1`] = `
               }
               title={
                 <ForwardRef(WithStyles)>
-                  Open
+                  Close lock
                 </ForwardRef(WithStyles)>
               }
             >
@@ -1934,7 +1932,7 @@ exports[`ToggleButton should render correctly 1`] = `
                 }
                 title={
                   <ForwardRef(WithStyles)>
-                    Open
+                    Close lock
                   </ForwardRef(WithStyles)>
                 }
               >
@@ -1986,7 +1984,7 @@ exports[`ToggleButton should render correctly 1`] = `
                   }
                   title={
                     <ForwardRef(WithStyles)>
-                      Open
+                      Close lock
                     </ForwardRef(WithStyles)>
                   }
                 >
@@ -2005,7 +2003,7 @@ exports[`ToggleButton should render correctly 1`] = `
                     }
                     title={null}
                   >
-                    <IconDisplay>
+                    <StyledIcon>
                       <WithStyles(Unlock)
                         className="HvToggleButton-icon"
                       >
@@ -2040,7 +2038,7 @@ exports[`ToggleButton should render correctly 1`] = `
                           </div>
                         </Unlock>
                       </WithStyles(Unlock)>
-                    </IconDisplay>
+                    </StyledIcon>
                   </div>
                   <ForwardRef(Popper)
                     anchorEl={
@@ -2088,7 +2086,7 @@ exports[`ToggleButton should render correctly 1`] = `
             </HvTooltip>
           </WithStyles(HvTooltip)>
         </Component>
-      </div>
+      </button>
     </ToggleButton>
   </WithLabels>
 </WithStyles(WithLabels)>
