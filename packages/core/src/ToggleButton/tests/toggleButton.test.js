@@ -46,37 +46,4 @@ describe("ToggleButton", () => {
 
     expect(onClickMock.mock.calls.length).toBe(1);
   });
-
-  it("should set the default class if animated", () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvToggleButton notSelectedIcon={Unlock} animated />
-      </HvProvider>
-    );
-
-    const selectIcon = wrapper.find(Unlock);
-
-    expect(selectIcon.hasClass("default")).toBe(true);
-  });
-
-  it("should toggle the classes if animated", () => {
-    wrapper = mount(
-      <HvProvider>
-        <HvToggleButton notSelectedIcon={Unlock} animated />
-      </HvProvider>
-    );
-
-    const divs = wrapper.find("div");
-    divs.at(0).simulate("click");
-
-    let selectIcon = wrapper.find(Unlock);
-
-    expect(selectIcon.hasClass("selected")).toBe(true);
-
-    divs.at(0).simulate("click");
-
-    selectIcon = wrapper.find(Unlock);
-
-    expect(selectIcon.hasClass("notSelected")).toBe(true);
-  });
 });

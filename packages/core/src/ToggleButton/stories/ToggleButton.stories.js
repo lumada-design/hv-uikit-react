@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Lock, Unlock } from "@hv/uikit-react-icons/dist";
+import { Lock, Unlock, LightOff, LightOn } from "@hv/uikit-react-icons/dist";
 import { HvToggleButton, HvButton } from "../..";
 import Eye from "./Eye";
 
@@ -14,12 +14,12 @@ export default {
 
 export const Main = () => (
   <HvToggleButton
+    aria-label="Lock"
     notSelectedIcon={Unlock}
-    aria-label="Lock selection"
     selectedIcon={Lock}
     labels={{
-      notSelectedTitle: "Open",
-      selectedTitle: "Closed"
+      notSelectedTitle: "Close lock",
+      selectedTitle: "Open lock"
     }}
   />
 );
@@ -29,7 +29,7 @@ export const Controlled = () => {
 
   const toggleState = () => setSelect(!select);
 
-  const label = select ? "Selected" : "Not Selected";
+  const label = select ? "Open lock" : "Close lock";
 
   return (
     <>
@@ -38,14 +38,14 @@ export const Controlled = () => {
       </HvButton>
       <div>
         <HvToggleButton
+          aria-label="Lock"
           selected={select}
           notSelectedIcon={Unlock}
           selectedIcon={Lock}
           onClick={toggleState}
-          aria-label="Lock selection"
           labels={{
-            notSelectedTitle: "Open",
-            selectedTitle: "Closed"
+            notSelectedTitle: "Close lock",
+            selectedTitle: "Open lock"
           }}
         />
       </div>
@@ -57,6 +57,27 @@ Controlled.story = {
   parameters: {
     docs: {
       storyDescription: "A sample showcasing a toggle button with state."
+    }
+  }
+};
+
+export const Disabled = () => (
+  <HvToggleButton
+    aria-label="Light"
+    notSelectedIcon={LightOff}
+    selectedIcon={LightOn}
+    disabled
+    labels={{
+      notSelectedTitle: "Turn on light",
+      selectedTitle: "Turn off light"
+    }}
+  />
+);
+
+Disabled.story = {
+  parameters: {
+    docs: {
+      storyDescription: "A sample showcasing a disabled toggle button."
     }
   }
 };

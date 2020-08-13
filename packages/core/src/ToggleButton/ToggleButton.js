@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import withTooltip from "../withTooltip";
 import withLabels from "../withLabels";
-import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
 import styles from "./styles";
 
 const DEFAULT_LABELS = { selectedTitle: "", notSelectedTitle: "" };
@@ -26,7 +25,6 @@ const ToggleButton = ({
   ...others
 }) => {
   const [isSelected, setIsSelected] = useState(selected);
-  const [classSvg, setClassSvg] = useState("default");
 
   /**
    * Update state when prop selected is changed.
@@ -35,54 +33,39 @@ const ToggleButton = ({
     setIsSelected(selected);
   }, [selected]);
 
-  let Icon;
-  if (animated) {
-    Icon = notSelectedIcon;
-  } else {
-    Icon = isSelected ? selectedIcon : notSelectedIcon;
-  }
+  const Icon = animated || !isSelected ? notSelectedIcon : selectedIcon;
+  const StyledIcon = () => (
+    <Icon
+      className={clsx(
+        classes.icon,
+        animated ? { notSelected: !isSelected, selected: isSelected } : {}
+      )}
+    />
+  );
+  const title = isSelected ? labels.selectedTitle : labels.notSelectedTitle;
+  const WrappedIcon = title ? withTooltip(StyledIcon, title) : StyledIcon;
 
-  const { selectedTitle, notSelectedTitle } = labels;
-  const title = isSelected ? selectedTitle : notSelectedTitle;
+  const onClickHandler = e => {
+    if (disabled) return;
 
-  /**
-   * Toggle the classes for the case of an animated SVG.
-   */
-  const toggleClass = () => {
-    if (isSelected) setClassSvg("notSelected");
-    else setClassSvg("selected");
-  };
-
-  /**
-   * Toggle the state. If the key pressed is tab it should be ignored.
-   *
-   * @param e
-   */
-  const toggle = e => {
-    if (isKeypress(e, KeyboardCodes.Tab)) return;
     setIsSelected(!isSelected);
-    if (animated) toggleClass();
-    if (onClick) onClick(e, isSelected);
-  };
 
-  const IconDisplay = () => <Icon className={clsx(classes.icon, { [classSvg]: animated })} />;
-  const IconTooltipWrapper = title ? withTooltip(IconDisplay, title) : IconDisplay;
+    if (onClick) onClick(e, !isSelected);
+  };
 
   return (
-    <div
+    <button
       id={id}
       className={clsx(className, classes.root, {
         [classes.disabled]: disabled
       })}
-      role="button"
+      type="button"
       aria-pressed={isSelected}
-      tabIndex={0}
-      onClick={toggle}
-      onKeyDown={toggle}
+      onClick={onClickHandler}
       {...others}
     >
-      <IconTooltipWrapper />
-    </div>
+      <WrappedIcon />
+    </button>
   );
 };
 
