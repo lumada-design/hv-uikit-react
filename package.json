@@ -90,6 +90,7 @@
     "fs-readdir-recursive": "^1.1.0",
     "gh-pages": "^2.2.0",
     "glob": "^7.1.6",
+    "html-react-parser": "^0.13.0",
     "husky": "^4.2.5",
     "lerna": "^3.22.0",
     "license-checker": "^25.0.1",

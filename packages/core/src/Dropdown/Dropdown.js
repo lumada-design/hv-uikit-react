@@ -186,7 +186,8 @@ HvDropdownBase.propTypes = {
   values: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
-      label: PropTypes.string.isRequired,
+      label: PropTypes.node.isRequired,
+      value: PropTypes.string,
       selected: PropTypes.bool
     })
   ),
