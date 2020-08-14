@@ -83,6 +83,7 @@ const HvTable = props => {
     onPageSizeChange,
     onPageChange,
     pages,
+    collapseOnDataChange = true,
     ...others
   } = props;
 
@@ -100,6 +101,10 @@ const HvTable = props => {
   useEffect(() => {
     setInitiallyLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if (collapseOnDataChange) setExpanded({});
+  }, [data, collapseOnDataChange]);
 
   useEffect(() => {
     setSelection(selections || []);
@@ -872,7 +877,11 @@ HvTable.propTypes = {
   /**
    * Component to be shown when no data is displayed.
    */
-  noDataComponent: PropTypes.node
+  noDataComponent: PropTypes.node,
+  /**
+   * Defines if the expanded row is collapsed when data changes.
+   */
+  collapseOnDataChange: PropTypes.bool
 };
 
 export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(HvTable)));
