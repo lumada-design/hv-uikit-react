@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VerticalContainer withStyles should render correctly 1`] = `
+exports[`[v3] VerticalContainer withStyles should render correctly 1`] = `
 <WithStyles(VerticalContainer)>
   <div
     id="test_div"

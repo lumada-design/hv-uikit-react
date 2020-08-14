@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Actions should be able to render 1`] = `
+exports[`[v3] Actions should be able to render 1`] = `
 <WithStyles(Actions)>
   <Actions
     classes={

@@ -1,6 +1,6 @@
 const styles = theme => ({
   root: {
-    width: "320px",
+    width: "225px",
     "& > :only-child": {
       padding: `${theme.hv.spacing.sm}px`
     },
