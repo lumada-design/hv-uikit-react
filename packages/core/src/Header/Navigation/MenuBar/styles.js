@@ -2,7 +2,7 @@ import "focus-within-polyfill";
 
 const styles = theme => {
   const show = {
-    top: 46,
+    top: 2 * theme.hv.spacing.sm,
     transition: ["top"],
     boxShadow: theme.hv.shadows[1],
     transitionDuration: 500
@@ -24,23 +24,20 @@ const styles = theme => {
     },
     menubar: {
       position: "relative",
-      height: 46,
+      height: 2 * theme.hv.spacing.sm,
       backgroundColor: theme.hv.palette.atmosphere.atmo1
     },
     menu: {
       position: "absolute",
       height: 2 * theme.hv.spacing.sm,
       zIndex: -1,
-      backgroundColor: theme.hv.palette.atmosphere.atmo3
+      backgroundColor: theme.hv.palette.atmosphere.atmo2,
+      "& li > div": {
+        marginTop: 4
+      }
     },
     hidden: {
-      ...hide,
-      "& li > div": {
-        height: 2 * theme.hv.spacing.sm,
-        "& p": {
-          marginTop: 3
-        }
-      }
+      ...hide
     },
     active: {
       ...show

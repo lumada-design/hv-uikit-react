@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MenuItem withStyles should be able to render 1`] = `
+exports[`[v3] MenuItem withStyles should be able to render 1`] = `
 <WithStyles(MenuItem)
   item={
     Object {
