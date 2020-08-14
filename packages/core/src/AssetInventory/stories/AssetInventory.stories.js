@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core";
+import { wait, screen } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
 import {
   Cards,
   Connect,
@@ -1841,6 +1843,64 @@ AccessibilityList.story = {
   parameters: {
     docs: {
       disable: true
+    }
+  }
+};
+
+// __________________________________
+// Extended applitools test scenarios
+
+// test scenario, No data found
+export const NoDataFound = () => Main();
+
+NoDataFound.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.type(screen.getByRole("textbox", { name: /filters the data/i }), "João")
+        return wait(() => screen.getByText("No data found"))
+      }
+    }
+  }
+};
+
+// test scenario, Sort by comboBox Opened
+export const ComboOpened = () => Main();
+
+ComboOpened.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.click(screen.getByText("Newest first"))
+        return wait(() => screen.getByText("TimeHorizon descending"))
+      }
+    }
+  }
+};
+
+// test scenario, list view mix selection and dropped actions
+export const listMix = () => Main();
+
+listMix.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.click(screen.getByRole("button", { name: /select list view/i }))
+        userEvent.click(screen.getByRole("checkbox", { name: /select id_2/i }))
+        userEvent.click(screen.getByRole("checkbox", { name: /select id_3/i }))
+        userEvent.click(screen.getByRole("checkbox", { name: /select id_5/i }))
+        userEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[1])
+        return wait(() => screen.getByText("Delete"))
+      }
     }
   }
 };

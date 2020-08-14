@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
 import { Add, Delete, Lock, Preview, Upload } from "@hv/uikit-react-icons";
+import { wait, screen } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
 import { HvBulkActions, HvCheckBox, HvMultiButton } from "../..";
 
 export default {
@@ -207,6 +209,43 @@ WithMultiButton.story = {
   parameters: {
     docs: {
       disable: true
+    }
+  }
+};
+
+// __________________________________
+// Extended applitools test scenarios
+
+// test scenario, selected
+export const selected = () => ControlledWithActions();
+
+selected.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.click(screen.getByText("All"))
+        return wait(() => screen.getByText("8 of 8 items"))
+      }
+    }
+  }
+};
+
+// test scenario, indeterminate status
+export const indeterminate = () => ControlledWithActions();
+
+indeterminate.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.click(screen.getByText("Value 3"))
+        return wait(() => screen.getByText("1 of 8 items"))
+      }
     }
   }
 };

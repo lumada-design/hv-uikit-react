@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { wait, screen } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
 import Grid from "@material-ui/core/Grid";
 import {
   Level2Average,
@@ -12,11 +14,8 @@ import {
   MoreOptionsVertical
 } from "@hv/uikit-react-icons/dist";
 import withStyles from "@material-ui/core/styles/withStyles";
-
 import { HvButton, HvCard, HvKpi, HvSwitch, HvTypography } from "../..";
-
 import { HvCardMedia, HvCardFooter, HvCardHeader, HvCardContent } from "..";
-
 import compressor from "./resources/compressor.png";
 import leaf from "./resources/leaf.png";
 
@@ -1291,6 +1290,27 @@ Controlled.story = {
   parameters: {
     docs: {
       disable: true
+    }
+  }
+};
+
+// __________________________________
+// Extended applitools test scenarios
+
+// test scenario, card selected and dropdownmenu opned
+export const SelectedOpened = () => AllComponents();
+
+SelectedOpened.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.click(screen.getByRole("checkbox"))
+        userEvent.click(screen.getByLabelText("Dropdown menu"))
+        return wait(() => screen.getByText("Delete"))
+      }
     }
   }
 };

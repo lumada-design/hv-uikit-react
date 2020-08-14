@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+import { wait, screen } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
 import { HvFormElement, HvLabel, HvBaseInput, HvButton, HvSuggestions } from "../../..";
 import { KeyboardCodes, isKeypress } from "../../../utils";
 import countryList from "../../../Input/stories/countries";
@@ -245,6 +247,26 @@ OpenWithDownArrow.story = {
         "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
         "label"
       ]
+    }
+  }
+};
+
+// __________________________________
+// Extended applitools test scenarios
+
+// test scenario, list suggestion on typing
+export const ListSuggestionsOnTyping = () => Main();
+
+ListSuggestionsOnTyping.story = {
+  parameters: {
+    docs: {
+      disable: true
+    },
+    eyes: {
+      runBefore() {
+        userEvent.type(screen.getByRole("textbox", { name: /select country/i }), "P")
+        return wait(() => screen.getByText("Portugal"))
+      }
     }
   }
 };
