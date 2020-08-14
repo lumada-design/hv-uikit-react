@@ -10,19 +10,18 @@ const styles = theme => ({
     display: "inline-flex",
     cursor: "pointer",
 
-    "&:focus": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4,
-      ...outlineStyles
-    },
     "&:not($disabled):hover": {
-      backgroundColor: theme.hv.palette.atmosphere.atmo4
+      backgroundColor: theme.hv.palette.atmosphere.atmo3
     }
   },
-  icon: {},
+  focus: {
+    backgroundColor: theme.hv.palette.atmosphere.atmo3,
+    ...outlineStyles
+  },
   disabled: {
     cursor: "not-allowed",
     "& svg *.color0": {
-      fill: theme.hv.palette.atmosphere.atmo6
+      fill: theme.hv.palette.atmosphere.atmo5
     }
   }
 });
