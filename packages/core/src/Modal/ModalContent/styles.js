@@ -4,7 +4,7 @@ const styles = theme => ({
     flex: "none"
   },
   textContent: {
-    marginLeft: "58px"
+    marginLeft: "50px"
   }
 });
 

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { DialogTitle, withStyles } from "@material-ui/core";
 import HvTypography from "../../Typography";
-import { mapSeverityToVariant, severityIcon } from "./VariantUtils";
+import iconVariant from "../../utils/iconVariant";
 import styles from "./styles";
 
 const ModalTitle = ({
@@ -17,15 +17,7 @@ const ModalTitle = ({
 }) => {
   const isString = typeof children === "string";
 
-  let icon = null;
-  // inject the correct classes to the icon
-  if (customIcon) {
-    icon = React.cloneElement(customIcon, { className: classes.icon });
-  } else if (showIcon) {
-    icon = React.cloneElement(severityIcon(mapSeverityToVariant(variant)), {
-      className: classes.icon
-    });
-  }
+  const icon = customIcon || (showIcon && iconVariant(variant, true));
 
   return (
     <DialogTitle className={clsx(classes.root, className)} disableTypography {...others}>

@@ -7,9 +7,11 @@ const styles = theme => ({
     display: "flex",
     alignItems: "center"
   },
-  textWithIcon: {},
+  textWithIcon: {
+    marginLeft: 20
+  },
   icon: {
-    marginRight: `${theme.hv.spacing.xs}px`,
+    marginRight: `${theme.hv.spacing.md}px`,
     width: 48,
     height: 48
   }
