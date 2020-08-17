@@ -2,7 +2,7 @@
 
 import { NodeTreeMapUtils } from "../utils";
 
-describe("NodeTreeMapUtils", () => {
+describe("[v3] NodeTreeMapUtils", () => {
   let nodeMap;
 
   beforeEach(() => {
@@ -64,7 +64,7 @@ describe("NodeTreeMapUtils", () => {
     };
   });
 
-  describe("addNodeToNodeMap", () => {
+  describe("[v3] addNodeToNodeMap", () => {
     it("should add", () => {
       const result = NodeTreeMapUtils.addNodeToNodeMap(nodeMap, "Z", ["Z1", "Z2"], {
         label: "Z",
@@ -91,7 +91,7 @@ describe("NodeTreeMapUtils", () => {
     });
   });
 
-  describe("removeNodeFromNodeMap", () => {
+  describe("[v3] removeNodeFromNodeMap", () => {
     it("should remove if exists", () => {
       const result = NodeTreeMapUtils.removeNodeFromNodeMap(nodeMap, "C2");
 

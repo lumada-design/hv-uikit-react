@@ -3,11 +3,10 @@ import focusStyles from "../../Focus/styles";
 const { focused, focusDisabled } = focusStyles;
 
 const selected = theme => ({
-  background: theme.hv.palette.accent.acce1,
-  color: theme.hv.palette.atmosphere.atmo1,
+  background: theme.hv.palette.atmosphere.atmo3,
+  borderLeft: `2px solid ${theme.hv.palette.accent.acce3}`,
   "& *": {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1
+    background: theme.hv.palette.atmosphere.atmo3
   },
   "& svg *.color0": {
     fill: theme.hv.palette.atmosphere.atmo1
@@ -15,9 +14,9 @@ const selected = theme => ({
 });
 
 const hover = theme => ({
-  background: theme.hv.palette.atmosphere.atmo4,
+  background: theme.hv.palette.atmosphere.atmo3,
   "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
+    background: theme.hv.palette.atmosphere.atmo3
   }
 });
 
@@ -102,7 +101,8 @@ const styles = theme => ({
     justifyContent: "flex-start",
     alignItems: "center",
     height: "32px",
-    color: theme.hv.palette.atmosphere.acce1,
+    color: theme.hv.palette.accent.acce1,
+    borderLeft: `2px solid transparent`,
 
     // selected state
     "$selected>&": selected(theme),
