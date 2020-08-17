@@ -1,7 +1,7 @@
 module.exports = {
   // showLogs: true,
-  matchLevel: 'Strict',
-  puppeteerOptions: { args: ['--no-sandbox', "--disable-setuid-sandbox"], ignoreHTTPSErrors: true},
+  matchLevel: "Strict",
+  puppeteerOptions: { args: ["--no-sandbox", "--disable-setuid-sandbox"], ignoreHTTPSErrors: true },
   runInDocker: true,
   variations: () => ["theme:wicked"],
 
@@ -22,6 +22,10 @@ module.exports = {
     // { width: 1920, height: 1080, name: "safari-two-versions-back" }
   ],
   //asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
-  include: ({name, kind, parameters}) => ( kind.includes("Components") && !kind.includes("Components/Asset Inventory") || kind.includes("Visualizations") ),
+  include: ({ name, kind, parameters }) =>
+    (kind.includes("Components") && !kind.includes("Components/Asset Inventory")) ||
+    (kind.includes("Visualizations") &&
+      !kind.includes("Visualizations/Bar Chart") &&
+      !kind.includes("Visualizations/Line Chart")),
   concurrency: 10
 };
