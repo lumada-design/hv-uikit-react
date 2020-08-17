@@ -18,7 +18,7 @@ export const Main = () => {
     placeholder: "Enter value"
   };
 
-  return <HvTextArea label="Text Area" labels={labels} id="main" rows={5} />;
+  return <HvTextArea labels={labels} id="main" rows={5} />;
 };
 
 export const Resizable = () => {
@@ -27,16 +27,7 @@ export const Resizable = () => {
     placeholder: "Enter value"
   };
 
-  return (
-    <HvTextArea
-      label="Text Area"
-      labels={labels}
-      id="resize"
-      rows={5}
-      maxCharQuantity={1000}
-      resizable
-    />
-  );
+  return <HvTextArea labels={labels} id="resize" rows={5} maxCharQuantity={1000} resizable />;
 };
 
 Resizable.story = {

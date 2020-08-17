@@ -24,8 +24,6 @@ exports[`v3 Input should render correctly 1`] = `
         "resize": "HvBaseInput-resize",
         "root": "HvBaseInput-root",
         "rootResizable": "HvBaseInput-rootResizable",
-        "textArea": "HvBaseInput-textArea",
-        "textAreaRoot": "HvBaseInput-textAreaRoot",
       }
     }
     inputProps={
@@ -233,8 +231,6 @@ exports[`v3 Input should render the Input component with the multiline style 1`]
         "resize": "HvBaseInput-resize",
         "root": "HvBaseInput-root",
         "rootResizable": "HvBaseInput-rootResizable",
-        "textArea": "HvBaseInput-textArea",
-        "textAreaRoot": "HvBaseInput-textAreaRoot",
       }
     }
     multiline={true}
@@ -244,7 +240,7 @@ exports[`v3 Input should render the Input component with the multiline style 1`]
       className="HvBaseInput-root"
     >
       <WithStyles(ForwardRef(Input))
-        className="HvBaseInput-inputRoot HvBaseInput-textAreaRoot HvBaseInput-textArea"
+        className="HvBaseInput-inputRoot"
         classes={
           Object {
             "disabled": "HvBaseInput-inputDisabled",
@@ -269,7 +265,7 @@ exports[`v3 Input should render the Input component with the multiline style 1`]
         rows={10}
       >
         <ForwardRef(Input)
-          className="HvBaseInput-inputRoot HvBaseInput-textAreaRoot HvBaseInput-textArea"
+          className="HvBaseInput-inputRoot"
           classes={
             Object {
               "colorSecondary": "MuiInput-colorSecondary",
@@ -305,7 +301,7 @@ exports[`v3 Input should render the Input component with the multiline style 1`]
           rows={10}
         >
           <WithStyles(ForwardRef(InputBase))
-            className="HvBaseInput-inputRoot HvBaseInput-textAreaRoot HvBaseInput-textArea"
+            className="HvBaseInput-inputRoot"
             classes={
               Object {
                 "colorSecondary": "MuiInput-colorSecondary",
@@ -343,7 +339,7 @@ exports[`v3 Input should render the Input component with the multiline style 1`]
             type="text"
           >
             <ForwardRef(InputBase)
-              className="HvBaseInput-inputRoot HvBaseInput-textAreaRoot HvBaseInput-textArea"
+              className="HvBaseInput-inputRoot"
               classes={
                 Object {
                   "adornedEnd": "MuiInputBase-adornedEnd",
@@ -385,7 +381,7 @@ exports[`v3 Input should render the Input component with the multiline style 1`]
               type="text"
             >
               <div
-                className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvBaseInput-textAreaRoot HvBaseInput-textArea MuiInputBase-multiline MuiInput-multiline HvBaseInput-multiLine"
+                className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot MuiInputBase-multiline MuiInput-multiline HvBaseInput-multiLine"
                 onClick={[Function]}
               >
                 <textarea

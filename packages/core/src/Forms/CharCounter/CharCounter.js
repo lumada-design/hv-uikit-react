@@ -60,10 +60,7 @@ const HvCharCounter = props => {
         variant="normalText"
         component="label"
       >
-        &nbsp;
-        {separator}
-        &nbsp;
-        {maxCharQuantity}
+        {` ${separator} ${maxCharQuantity}`}
       </HvTypography>
     </div>
   );

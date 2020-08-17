@@ -6,11 +6,11 @@ const styles = theme => ({
     display: "inline-block",
     width: "100%",
     position: "relative",
-    "& $textArea": {
+    "& $multiLine": {
       overflow: "auto",
       border: "none"
     },
-    "&:hover $textArea": {
+    "&:hover $multiLine": {
       "& $input": {
         border: `1px solid ${theme.hv.palette.accent.acce1}`
       }
@@ -21,7 +21,7 @@ const styles = theme => ({
     "&:focus-within $inputBorderContainer": {
       backgroundColor: theme.hv.palette.accent.acce1
     },
-    "&:focus-within $textArea": {
+    "&:focus-within $multiLine": {
       "& $input": {
         border: `1px solid ${theme.hv.palette.accent.acce1}`
       }
@@ -37,13 +37,13 @@ const styles = theme => ({
     "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.atmosphere.atmo4
     },
-    "& $textArea": {
+    "& $multiLine": {
       "& $input": {
         backgroundColor: theme.hv.palette.atmosphere.atmo3,
         border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
       }
     },
-    "&:hover $textArea": {
+    "&:hover $multiLine": {
       "& $input": {
         backgroundColor: theme.hv.palette.atmosphere.atmo3,
         border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`
@@ -57,12 +57,12 @@ const styles = theme => ({
     "&:hover $inputBorderContainer": {
       backgroundColor: theme.hv.palette.semantic.sema4
     },
-    "& $textArea": {
+    "& $multiLine": {
       "& $input": {
         border: `1px solid ${theme.hv.palette.semantic.sema4}`
       }
     },
-    "&:hover $textArea": {
+    "&:hover $multiLine": {
       "& $input": {
         border: `1px solid ${theme.hv.palette.semantic.sema4}`
       }
@@ -73,9 +73,6 @@ const styles = theme => ({
     width: "100%",
     borderRadius: "2px",
     backgroundColor: theme.hv.palette.atmosphere.atmo1
-  },
-  textAreaRoot: {
-    backgroundColor: "transparent"
   },
   inputRootDisabled: {
     background: theme.hv.palette.atmosphere.atmo3,
@@ -108,7 +105,9 @@ const styles = theme => ({
       display: "none"
     }
   },
-  textArea: {
+  multiLine: {
+    padding: 0,
+    backgroundColor: "transparent",
     "& $input": {
       border: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
       borderRadius: "2px",
@@ -135,9 +134,6 @@ const styles = theme => ({
   },
   inputDisabled: {
     cursor: "not-allowed"
-  },
-  multiLine: {
-    padding: 0
   },
   "@global": {
     "input:-webkit-autofill": {

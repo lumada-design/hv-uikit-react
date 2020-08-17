@@ -76,6 +76,7 @@ describe("TextArea Component", () => {
         />
       </HvProvider>
     );
+
     const labelCount = wrapperMount
       .find("HvTextArea")
       .find("label")
@@ -83,7 +84,7 @@ describe("TextArea Component", () => {
       .text();
     const labelWarningText = wrapperMount
       .find("HvTextArea")
-      .find("span")
+      .find("p")
       .at(0)
       .text();
     expect(labelCount).toBe("5");

@@ -1255,8 +1255,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                                       "resize": "HvBaseInput-resize",
                                       "root": "HvBaseInput-root",
                                       "rootResizable": "HvBaseInput-rootResizable",
-                                      "textArea": "HvBaseInput-textArea",
-                                      "textAreaRoot": "HvBaseInput-textAreaRoot",
                                     }
                                   }
                                   endAdornment={null}

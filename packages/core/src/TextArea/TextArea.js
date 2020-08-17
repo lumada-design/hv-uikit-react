@@ -49,6 +49,8 @@ const HvTextArea = props => {
     blockMax = false,
     countCharProps,
     formElementProps,
+    warningProps,
+    labelProps,
     ...others
   } = props;
 
@@ -206,7 +208,7 @@ const HvTextArea = props => {
       value={valueProp || value}
       status={validationStateProp || validationState}
       disabled={disabled}
-      {...others}
+      {...formElementProps}
     >
       <div className={classes.labelContainer}>
         {labels.inputLabel && (
@@ -220,6 +222,7 @@ const HvTextArea = props => {
                 {isRequired && <span aria-hidden="true">*</span>}
               </>
             }
+            {...labelProps}
           />
         )}
         {maxCharQuantity && (
@@ -244,7 +247,9 @@ const HvTextArea = props => {
         aria-invalid={overflow || undefined}
         {...others}
       />
-      <HvWarningText id={setId(id, "warning")}>{isStateInvalid ? warningText : ""}</HvWarningText>
+      <HvWarningText id={setId(id, "warning")} {...warningProps}>
+        {isStateInvalid ? warningText : ""}
+      </HvWarningText>
     </HvFormElement>
   );
 };
@@ -421,7 +426,15 @@ HvTextArea.propTypes = {
   /**
    * Props passed to the HvCharCount component.
    */
-  countCharProps: PropTypes.instanceOf(Object)
+  countCharProps: PropTypes.instanceOf(Object),
+  /**
+   * Props passed to the HvLabel component.
+   */
+  labelProps: PropTypes.instanceOf(Object),
+  /**
+   * Props passed to the HvWarning component.
+   */
+  warningProps: PropTypes.instanceOf(Object)
 };
 
 export default withStyles(styles, { name: "HvTextArea" })(withLabels(DEFAULT_LABELS)(HvTextArea));

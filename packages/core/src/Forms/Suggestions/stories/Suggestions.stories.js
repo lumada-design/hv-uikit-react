@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import parser from "html-react-parser";
+import { parser } from "html-react-parser";
 import {
   HvBaseInput,
   HvButton,

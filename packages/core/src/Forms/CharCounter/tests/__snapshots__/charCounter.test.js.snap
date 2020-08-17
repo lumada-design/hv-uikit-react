@@ -110,10 +110,7 @@ exports[`v3 charCounter should render correctly 1`] = `
             className="HvTypography-root HvTypography-normalText"
             id="charCounter-maxQuantity"
           >
-             
-            /
-             
-            1500
+             / 1500
           </label>
         </ForwardRef>
       </WithStyles(ForwardRef)>

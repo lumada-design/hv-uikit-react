@@ -84,9 +84,7 @@ const HvBaseInput = props => {
           multiline: classes.multiLine
         }}
         className={clsx(classes.inputRoot, className, {
-          [classes.textAreaRoot]: multiline,
-          [classes.inputRootDisabled]: localDisabled,
-          [classes.textArea]: multiline
+          [classes.inputRootDisabled]: localDisabled
         })}
         inputProps={{
           required,

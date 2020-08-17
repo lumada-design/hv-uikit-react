@@ -1168,8 +1168,6 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                           "resize": "HvBaseInput-resize",
                                                                           "root": "HvBaseInput-root",
                                                                           "rootResizable": "HvBaseInput-rootResizable",
-                                                                          "textArea": "HvBaseInput-textArea",
-                                                                          "textAreaRoot": "HvBaseInput-textAreaRoot",
                                                                         }
                                                                       }
                                                                       endAdornment={
@@ -5065,8 +5063,6 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                           "resize": "HvBaseInput-resize",
                                                                           "root": "HvBaseInput-root",
                                                                           "rootResizable": "HvBaseInput-rootResizable",
-                                                                          "textArea": "HvBaseInput-textArea",
-                                                                          "textAreaRoot": "HvBaseInput-textAreaRoot",
                                                                         }
                                                                       }
                                                                       endAdornment={

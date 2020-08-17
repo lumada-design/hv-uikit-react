@@ -28,7 +28,7 @@ export const Main = () => {
   );
 };
 
-export const multiLine = () => {
+export const MultiLine = () => {
   return (
     <HvBaseInput
       id="multiline"
@@ -43,7 +43,7 @@ export const multiLine = () => {
   );
 };
 
-multiLine.story = {
+MultiLine.story = {
   parameters: {
     docs: {
       storyDescription: "Showcasing the multiline input style."
@@ -52,7 +52,7 @@ multiLine.story = {
   }
 };
 
-export const multiLineResize = () => {
+export const MultiLineResize = () => {
   return (
     <HvBaseInput
       id="multiline-resize"
@@ -68,7 +68,7 @@ export const multiLineResize = () => {
   );
 };
 
-multiLineResize.story = {
+MultiLineResize.story = {
   parameters: {
     docs: {
       storyDescription: "Showcasing the multiline input style with resizing."

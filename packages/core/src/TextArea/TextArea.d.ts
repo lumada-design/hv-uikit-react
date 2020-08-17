@@ -2,6 +2,8 @@ import { StandardProps } from "@material-ui/core";
 import { HvFormElementProps } from "../Forms";
 import { HvBaseInputProps } from "../Forms/BaseInput";
 import { HvCharCounterProps } from "../Forms/CharCounter";
+import { HvWarningTextProps } from "../Forms/WarningText";
+import { HvLabelProps } from "../Forms/Label";
 
 export interface HvTextAreaLabelsProp {
   startCount: string;
@@ -110,6 +112,14 @@ export interface HvTextAreaProps extends StandardProps<HvBaseInputProps, HvTextA
    * Props passed to the HvCharCount component.
    */
   formElementProps?: HvFormElementProps;
+  /**
+   * Props passed to the HvLabel component.
+   */
+  labelProps: HvLabelProps;
+  /**
+   * Props passed to the HvWarning component.
+   */
+  warningProps: HvWarningTextProps;
 }
 
 export type HvTextAreaClassKey =
