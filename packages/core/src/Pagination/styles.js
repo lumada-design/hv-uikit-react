@@ -1,7 +1,7 @@
 import { outlineStyles } from "../Focus/styles";
 
 const styles = theme => {
-  const hoverColor = theme.hv.palette.atmosphere.atmo4;
+  const hoverColor = theme.palette.atmo3;
 
   return {
     root: {
@@ -62,7 +62,7 @@ const styles = theme => {
     },
     pageJump: {
       display: "inline-block",
-      marginRight: `${theme.hv.spacing.xs}px`
+      marginRight: `${theme.hv.spacing.xs / 2}px`
     },
     pageSizeInput: {
       ...theme.hv.typography.highlightText,
@@ -73,22 +73,25 @@ const styles = theme => {
       MozAppearance: "textfield",
       "&:focus": {
         backgroundColor: hoverColor
-      }
-    },
-    pageSizeInputRoot: {
-      backgroundColor: "transparent",
-      "&:hover": {
-        backgroundColor: hoverColor
       },
-      '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
-        WebkitAppearance: "none",
-        margin: 0
+      "&:hover": {
+        cursor: "pointer"
       }
     },
     pageSizeInputContainer: {
       width: "40px",
       minWidth: "40px",
-      maxWidth: `${theme.hv.spacing.lg}px`
+      maxWidth: `${theme.hv.spacing.lg}px`,
+      "& :nth-child(2) > div": {
+        backgroundColor: "transparent",
+        "&:focus, &:hover": {
+          background: hoverColor
+        }
+      },
+      '& input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button': {
+        WebkitAppearance: "none",
+        margin: 0
+      }
     },
     iconContainer: {
       padding: 0,

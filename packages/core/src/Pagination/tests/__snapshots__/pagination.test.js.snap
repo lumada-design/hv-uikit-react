@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Custom Pagination should render correctly 1`] = `
+exports[`v3 Custom Pagination should render correctly 1`] = `
 <WithStyles(WithLabels)
   canNext={true}
   canPrevious={false}
@@ -38,7 +38,6 @@ exports[`Custom Pagination should render correctly 1`] = `
         "pageNavigator": "HvPagination-pageNavigator",
         "pageSizeInput": "HvPagination-pageSizeInput",
         "pageSizeInputContainer": "HvPagination-pageSizeInputContainer",
-        "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
         "pageSizeOptions": "HvPagination-pageSizeOptions",
         "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
         "root": "HvPagination-root",
@@ -79,7 +78,6 @@ exports[`Custom Pagination should render correctly 1`] = `
           "pageNavigator": "HvPagination-pageNavigator",
           "pageSizeInput": "HvPagination-pageSizeInput",
           "pageSizeInputContainer": "HvPagination-pageSizeInputContainer",
-          "pageSizeInputRoot": "HvPagination-pageSizeInputRoot",
           "pageSizeOptions": "HvPagination-pageSizeOptions",
           "pageSizeOptionsSelect": "HvPagination-pageSizeOptionsSelect",
           "root": "HvPagination-root",
@@ -92,7 +90,7 @@ exports[`Custom Pagination should render correctly 1`] = `
           "pageSizeEntryName": "items",
           "pageSizePrev": "Show",
           "pageSizeSelectorDescription": "Select how many to display",
-          "pagesSeparator": "of",
+          "pagesSeparator": "/",
           "paginationFirstPageTitle": "First page",
           "paginationInputLabel": "Total pages for page input",
           "paginationLastPageTitle": "Last page",
@@ -946,7 +944,6 @@ exports[`Custom Pagination should render correctly 1`] = `
                 classes={
                   Object {
                     "input": "HvPagination-pageSizeInput",
-                    "inputRoot": "HvPagination-pageSizeInputRoot",
                     "root": "HvPagination-pageSizeInputContainer",
                   }
                 }
@@ -964,7 +961,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                     "pageSizeEntryName": "items",
                     "pageSizePrev": "Show",
                     "pageSizeSelectorDescription": "Select how many to display",
-                    "pagesSeparator": "of",
+                    "pagesSeparator": "/",
                     "paginationFirstPageTitle": "First page",
                     "paginationInputLabel": "Total pages for page input",
                     "paginationLastPageTitle": "Last page",
@@ -988,7 +985,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       "iconClear": "HvInput-iconClear",
                       "input": "HvInput-input HvPagination-pageSizeInput",
                       "inputDisabled": "HvInput-inputDisabled",
-                      "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                      "inputRoot": "HvInput-inputRoot",
                       "inputRootDisabled": "HvInput-inputRootDisabled",
                       "inputRootFocused": "HvInput-inputRootFocused",
                       "inputRootInvalid": "HvInput-inputRootInvalid",
@@ -1015,7 +1012,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       "pageSizeEntryName": "items",
                       "pageSizePrev": "Show",
                       "pageSizeSelectorDescription": "Select how many to display",
-                      "pagesSeparator": "of",
+                      "pagesSeparator": "/",
                       "paginationFirstPageTitle": "First page",
                       "paginationInputLabel": "Total pages for page input",
                       "paginationLastPageTitle": "Last page",
@@ -1039,7 +1036,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                         "iconClear": "HvInput-iconClear",
                         "input": "HvInput-input HvPagination-pageSizeInput",
                         "inputDisabled": "HvInput-inputDisabled",
-                        "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                        "inputRoot": "HvInput-inputRoot",
                         "inputRootDisabled": "HvInput-inputRootDisabled",
                         "inputRootFocused": "HvInput-inputRootFocused",
                         "inputRootInvalid": "HvInput-inputRootInvalid",
@@ -1071,7 +1068,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                         "pageSizeEntryName": "items",
                         "pageSizePrev": "Show",
                         "pageSizeSelectorDescription": "Select how many to display",
-                        "pagesSeparator": "of",
+                        "pagesSeparator": "/",
                         "paginationFirstPageTitle": "First page",
                         "paginationInputLabel": "Total pages for page input",
                         "paginationLastPageTitle": "Last page",
@@ -1098,7 +1095,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           "iconClear": "HvInput-iconClear",
                           "input": "HvInput-input HvPagination-pageSizeInput",
                           "inputDisabled": "HvInput-inputDisabled",
-                          "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                          "inputRoot": "HvInput-inputRoot",
                           "inputRootDisabled": "HvInput-inputRootDisabled",
                           "inputRootFocused": "HvInput-inputRootFocused",
                           "inputRootInvalid": "HvInput-inputRootInvalid",
@@ -1130,7 +1127,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                           "pageSizeEntryName": "items",
                           "pageSizePrev": "Show",
                           "pageSizeSelectorDescription": "Select how many to display",
-                          "pagesSeparator": "of",
+                          "pagesSeparator": "/",
                           "paginationFirstPageTitle": "First page",
                           "paginationInputLabel": "Total pages for page input",
                           "paginationLastPageTitle": "Last page",
@@ -1196,7 +1193,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   Object {
                                     "input": "HvInput-input HvPagination-pageSizeInput",
                                     "inputDisabled": "HvInput-inputDisabled",
-                                    "inputRoot": "HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                                    "inputRoot": "HvInput-inputRoot",
                                     "inputRootFocused": "HvInput-inputRootFocused",
                                     "multiLine": "HvInput-multiLine",
                                   }
@@ -1245,7 +1242,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                       "input": "HvBaseInput-input HvInput-input HvPagination-pageSizeInput",
                                       "inputBorderContainer": "HvBaseInput-inputBorderContainer",
                                       "inputDisabled": "HvBaseInput-inputDisabled HvInput-inputDisabled",
-                                      "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot",
+                                      "inputRoot": "HvBaseInput-inputRoot HvInput-inputRoot",
                                       "inputRootDisabled": "HvBaseInput-inputRootDisabled",
                                       "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                                       "invalidRoot": "HvBaseInput-invalidRoot",
@@ -1293,7 +1290,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                   >
                                     <WithStyles(ForwardRef(Input))
                                       autoFocus={false}
-                                      className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                      className="HvBaseInput-inputRoot HvInput-inputRoot"
                                       classes={
                                         Object {
                                           "disabled": "HvBaseInput-inputDisabled HvInput-inputDisabled",
@@ -1346,7 +1343,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                     >
                                       <ForwardRef(Input)
                                         autoFocus={false}
-                                        className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                        className="HvBaseInput-inputRoot HvInput-inputRoot"
                                         classes={
                                           Object {
                                             "colorSecondary": "MuiInput-colorSecondary",
@@ -1410,7 +1407,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                       >
                                         <WithStyles(ForwardRef(InputBase))
                                           autoFocus={false}
-                                          className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                          className="HvBaseInput-inputRoot HvInput-inputRoot"
                                           classes={
                                             Object {
                                               "colorSecondary": "MuiInput-colorSecondary",
@@ -1475,7 +1472,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                         >
                                           <ForwardRef(InputBase)
                                             autoFocus={false}
-                                            className="HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                            className="HvBaseInput-inputRoot HvInput-inputRoot"
                                             classes={
                                               Object {
                                                 "adornedEnd": "MuiInputBase-adornedEnd",
@@ -1543,7 +1540,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                                             value="1"
                                           >
                                             <div
-                                              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot HvPagination-pageSizeInputRoot"
+                                              className="MuiInputBase-root MuiInput-root HvBaseInput-inputRoot HvInput-inputRoot"
                                               onClick={[Function]}
                                             >
                                               <input
@@ -1763,7 +1760,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                 <span
                   className="HvTypography-root HvTypography-normalText"
                 >
-                   of 
+                  / 
                 </span>
               </ForwardRef>
             </WithStyles(ForwardRef)>

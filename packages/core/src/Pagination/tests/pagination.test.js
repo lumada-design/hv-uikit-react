@@ -6,7 +6,7 @@ import { mount } from "enzyme";
 import { HvInput, HvPagination, HvProvider } from "../..";
 import { Main, ControlledSample } from "../stories/Pagination.stories";
 
-describe("Default Pagination", () => {
+describe("v3 Default Pagination", () => {
   const wrapper = mount(
     <HvProvider>
       <Main />
@@ -33,7 +33,7 @@ describe("Default Pagination", () => {
   });
 });
 
-describe("Pagination without pageJump Input", () => {
+describe("v3 Pagination without pageJump Input", () => {
   const wrapper = mount(
     <HvProvider>
       <HvPagination showPageJump={false} />
@@ -46,7 +46,7 @@ describe("Pagination without pageJump Input", () => {
   });
 });
 
-describe("Pagination without pageSize select", () => {
+describe("v3 Pagination without pageSize select", () => {
   const wrapper = mount(
     <HvProvider>
       <HvPagination showPageSizeOptions={false} />
@@ -59,7 +59,7 @@ describe("Pagination without pageSize select", () => {
   });
 });
 
-describe("Custom Pagination", () => {
+describe("v3 Custom Pagination", () => {
   const wrapper = mount(
     <HvProvider>
       <ControlledSample />
