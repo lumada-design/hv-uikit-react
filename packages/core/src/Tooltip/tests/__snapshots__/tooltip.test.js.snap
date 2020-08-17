@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Multi Line Tooltip - No Header should render multiple line tooltip correctly 1`] = `
-<WithStyles(HvTooltip)
+<WithStyles(ForwardRef)
   title={
     <div>
       <ForwardRef(WithStyles)
@@ -57,7 +57,7 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
   }
   useSingle={false}
 >
-  <HvTooltip
+  <ForwardRef
     classes={
       Object {
         "color": "HvTooltip-color",
@@ -344,12 +344,12 @@ exports[`Multi Line Tooltip - No Header should render multiple line tooltip corr
         />
       </ForwardRef(Tooltip)>
     </WithStyles(ForwardRef(Tooltip))>
-  </HvTooltip>
-</WithStyles(HvTooltip)>
+  </ForwardRef>
+</WithStyles(ForwardRef)>
 `;
 
 exports[`Multi Line Tooltip - With Header should render multiple line tooltip with header correctly 1`] = `
-<WithStyles(HvTooltip)
+<WithStyles(ForwardRef)
   title={
     <div>
       <ForwardRef(WithStyles)
@@ -383,7 +383,7 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
   }
   useSingle={false}
 >
-  <HvTooltip
+  <ForwardRef
     classes={
       Object {
         "color": "HvTooltip-color",
@@ -604,12 +604,12 @@ exports[`Multi Line Tooltip - With Header should render multiple line tooltip wi
         />
       </ForwardRef(Tooltip)>
     </WithStyles(ForwardRef(Tooltip))>
-  </HvTooltip>
-</WithStyles(HvTooltip)>
+  </ForwardRef>
+</WithStyles(ForwardRef)>
 `;
 
 exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
-<WithStyles(HvTooltip)
+<WithStyles(ForwardRef)
   title={
     <ForwardRef(WithStyles)
       variant="highlightText"
@@ -618,7 +618,7 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
     </ForwardRef(WithStyles)>
   }
 >
-  <HvTooltip
+  <ForwardRef
     classes={
       Object {
         "color": "HvTooltip-color",
@@ -766,6 +766,6 @@ exports[`Single Line Tooltip should render single line tooltip correctly 1`] = `
         />
       </ForwardRef(Tooltip)>
     </WithStyles(ForwardRef(Tooltip))>
-  </HvTooltip>
-</WithStyles(HvTooltip)>
+  </ForwardRef>
+</WithStyles(ForwardRef)>
 `;

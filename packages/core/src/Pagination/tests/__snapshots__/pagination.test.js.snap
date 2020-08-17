@@ -359,7 +359,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       className="MuiIconButton-label"
                     >
                       <Component>
-                        <WithStyles(HvTooltip)
+                        <WithStyles(ForwardRef)
                           disableFocusListener={true}
                           disableTouchListener={true}
                           open={false}
@@ -376,7 +376,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             </ForwardRef(WithStyles)>
                           }
                         >
-                          <HvTooltip
+                          <ForwardRef
                             classes={
                               Object {
                                 "color": "HvTooltip-color",
@@ -600,8 +600,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 />
                               </ForwardRef(Tooltip)>
                             </WithStyles(ForwardRef(Tooltip))>
-                          </HvTooltip>
-                        </WithStyles(HvTooltip)>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
                       </Component>
                     </span>
                   </button>
@@ -686,7 +686,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       className="MuiIconButton-label"
                     >
                       <Component>
-                        <WithStyles(HvTooltip)
+                        <WithStyles(ForwardRef)
                           disableFocusListener={true}
                           disableTouchListener={true}
                           open={false}
@@ -703,7 +703,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             </ForwardRef(WithStyles)>
                           }
                         >
-                          <HvTooltip
+                          <ForwardRef
                             classes={
                               Object {
                                 "color": "HvTooltip-color",
@@ -927,8 +927,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 />
                               </ForwardRef(Tooltip)>
                             </WithStyles(ForwardRef(Tooltip))>
-                          </HvTooltip>
-                        </WithStyles(HvTooltip)>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
                       </Component>
                     </span>
                   </button>
@@ -1888,7 +1888,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       className="MuiIconButton-label"
                     >
                       <Component>
-                        <WithStyles(HvTooltip)
+                        <WithStyles(ForwardRef)
                           disableFocusListener={true}
                           disableTouchListener={true}
                           open={false}
@@ -1905,7 +1905,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             </ForwardRef(WithStyles)>
                           }
                         >
-                          <HvTooltip
+                          <ForwardRef
                             classes={
                               Object {
                                 "color": "HvTooltip-color",
@@ -2127,8 +2127,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 />
                               </ForwardRef(Tooltip)>
                             </WithStyles(ForwardRef(Tooltip))>
-                          </HvTooltip>
-                        </WithStyles(HvTooltip)>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
                       </Component>
                     </span>
                   </button>
@@ -2213,7 +2213,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                       className="MuiIconButton-label"
                     >
                       <Component>
-                        <WithStyles(HvTooltip)
+                        <WithStyles(ForwardRef)
                           disableFocusListener={true}
                           disableTouchListener={true}
                           open={false}
@@ -2230,7 +2230,7 @@ exports[`Custom Pagination should render correctly 1`] = `
                             </ForwardRef(WithStyles)>
                           }
                         >
-                          <HvTooltip
+                          <ForwardRef
                             classes={
                               Object {
                                 "color": "HvTooltip-color",
@@ -2452,8 +2452,8 @@ exports[`Custom Pagination should render correctly 1`] = `
                                 />
                               </ForwardRef(Tooltip)>
                             </WithStyles(ForwardRef(Tooltip))>
-                          </HvTooltip>
-                        </WithStyles(HvTooltip)>
+                          </ForwardRef>
+                        </WithStyles(ForwardRef)>
                       </Component>
                     </span>
                   </button>
