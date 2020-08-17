@@ -110,7 +110,8 @@ WithClickActionDisabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    eyes: { waitBeforeScreenshot: ".MuiFormControlLabel-label" }
   }
 };
 

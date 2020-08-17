@@ -214,6 +214,10 @@ export interface HvTableProps
    * Component to be shown when no data is displayed.
    */
   noDataComponent?: React.ReactNode;
+  /**
+   * Defines if the expanded row is collapsed when data changes.
+   */
+  collapseOnDataChange?: boolean;
 }
 
 export type HvTableClassKey =

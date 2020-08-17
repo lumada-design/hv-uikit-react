@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.10.0...@hv/uikit-react-core@2.10.1) (2020-08-15)
+
+
+### Bug Fixes
+
+* **dropdown:** correct scroll back to open dropdown. [#1783](https://github.com/pentaho/hv-uikit-react/issues/1783) ([#1800](https://github.com/pentaho/hv-uikit-react/issues/1800)) ([9acd3c4](https://github.com/pentaho/hv-uikit-react/commit/9acd3c427a5954b6004c145ddd749a000546d8f8))
+* **dropdown:** sample not working in ie. [#1872](https://github.com/pentaho/hv-uikit-react/issues/1872) ([77adf2e](https://github.com/pentaho/hv-uikit-react/commit/77adf2e322ee56cb1f3380d6e974e49fca6ec531))
+* **list:** tooltip in multiselect. [#1853](https://github.com/pentaho/hv-uikit-react/issues/1853) ([#1855](https://github.com/pentaho/hv-uikit-react/issues/1855)) ([d368887](https://github.com/pentaho/hv-uikit-react/commit/d368887cca377d571b8a307399bf3242b09632fd))
+* **togglebutton:** toggle with click/space/enter and not disabled [#1875](https://github.com/pentaho/hv-uikit-react/issues/1875) ([68ab82a](https://github.com/pentaho/hv-uikit-react/commit/68ab82aeaaa65bbff2aad548dd0c2a8394de62a9))
+* **userPreferences:** closeOnExit not working. [#1856](https://github.com/pentaho/hv-uikit-react/issues/1856) ([eccd924](https://github.com/pentaho/hv-uikit-react/commit/eccd924855fc2cba2bbcef54bcb5e08870dbc92c))
+
+
+
+
+
 # [2.10.0](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.9.0...@hv/uikit-react-core@2.10.0) (2020-07-30)
 
 
