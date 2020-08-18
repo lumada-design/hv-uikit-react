@@ -5,7 +5,7 @@
 - [Icons](#icons)
 - [Theme](#theme)
   - [Typography](#typography)
-- [Component](#component)
+- [Components](#components)
 
 # From v2.x to v3.x
 
@@ -50,3 +50,7 @@
 ### FormElement
 
 - `HelperText` removed.
+
+### Pagination
+
+- `pageSizeInputRoot` class removed.

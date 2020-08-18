@@ -14,7 +14,7 @@ const DEFAULT_LABELS = {
   pageSizePrev: "Show",
   pageSizeEntryName: "rows",
   pageSizeSelectorDescription: "Select how many to display",
-  pagesSeparator: "of",
+  pagesSeparator: "/",
   paginationFirstPageTitle: "First page",
   paginationPreviousPageTitle: "Previous page",
   paginationNextPageTitle: "Next page",
@@ -132,8 +132,7 @@ const Pagination = ({
                 }}
                 classes={{
                   root: classes.pageSizeInputContainer,
-                  input: classes.pageSizeInput,
-                  inputRoot: classes.pageSizeInputRoot
+                  input: classes.pageSizeInput
                 }}
                 onChange={(event, val) => setStatePage(val - 1)}
                 initialValue={`${statePage + 1}`}
@@ -150,7 +149,7 @@ const Pagination = ({
           ) : (
             <HvTypography component="span">{`${statePage + 1}`}</HvTypography>
           )}
-          <HvTypography component="span">{` ${labels.pagesSeparator} `}</HvTypography>
+          <HvTypography component="span">{`${labels.pagesSeparator} `}</HvTypography>
           <HvTypography id={setId(id, "totalPages")} component="span">
             {pages}
           </HvTypography>
@@ -211,10 +210,6 @@ Pagination.propTypes = {
      * Styles passed down to the page selector Input component as `input`.
      */
     pageSizeInput: PropTypes.string,
-    /**
-     * Styles passed down to the page selector Input component as `inputRoot` .
-     */
-    pageSizeInputRoot: PropTypes.string,
     /**
      * Styles passed down to the page selector Input component as `container`.
      */
