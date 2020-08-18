@@ -5,8 +5,7 @@ const styles = theme => ({
     display: "inline-block",
     "&:focus": {
       ...outlineStyles
-    },
-    width: "310px"
+    }
   },
   header: {
     height: `${theme.hv.spacing.md}px`,

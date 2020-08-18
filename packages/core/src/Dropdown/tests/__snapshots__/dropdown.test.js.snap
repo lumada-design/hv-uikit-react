@@ -165,7 +165,13 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                 className="HvFormElement-root"
               >
                 <WithStyles(WithId)
-                  className="root arrow"
+                  className=""
+                  classes={
+                    Object {
+                      "arrow": "HvDropdown-arrow",
+                      "root": "HvDropdown-root",
+                    }
+                  }
                   disablePortal={false}
                   expanded={true}
                   onToggle={[Function]}
@@ -182,10 +188,10 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                   role="combobox"
                 >
                   <WithId
-                    className="root arrow"
+                    className=""
                     classes={
                       Object {
-                        "arrow": "HvBaseDropdown-arrow",
+                        "arrow": "HvBaseDropdown-arrow HvDropdown-arrow",
                         "header": "HvBaseDropdown-header",
                         "headerDisabled": "HvBaseDropdown-headerDisabled",
                         "headerOpen": "HvBaseDropdown-headerOpen",
@@ -197,7 +203,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                         "panel": "HvBaseDropdown-panel",
-                        "root": "HvBaseDropdown-root",
+                        "root": "HvBaseDropdown-root HvDropdown-root",
                         "selection": "HvBaseDropdown-selection",
                         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                         "truncate": "HvBaseDropdown-truncate",
@@ -219,10 +225,10 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                     role="combobox"
                   >
                     <HvBaseDropdown
-                      className="root arrow"
+                      className=""
                       classes={
                         Object {
-                          "arrow": "HvBaseDropdown-arrow",
+                          "arrow": "HvBaseDropdown-arrow HvDropdown-arrow",
                           "header": "HvBaseDropdown-header",
                           "headerDisabled": "HvBaseDropdown-headerDisabled",
                           "headerOpen": "HvBaseDropdown-headerOpen",
@@ -234,7 +240,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                           "panel": "HvBaseDropdown-panel",
-                          "root": "HvBaseDropdown-root",
+                          "root": "HvBaseDropdown-root HvDropdown-root",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                           "truncate": "HvBaseDropdown-truncate",
@@ -262,7 +268,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                         aria-haspopup="listbox"
                         aria-labelledby="hv-dropdown-base-1-selectionPlaceholder"
                         aria-owns="hv-dropdown-base-1-children-container"
-                        className="root arrow HvBaseDropdown-root"
+                        className="HvBaseDropdown-root HvDropdown-root"
                         id="hv-dropdown-base-1"
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -323,11 +329,11 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                             </WithStyles(ForwardRef)>
                           </div>
                           <WithStyles(DropUpXS)
-                            className="HvBaseDropdown-arrow"
+                            className="HvBaseDropdown-arrow HvDropdown-arrow"
                             iconSize="XS"
                           >
                             <DropUpXS
-                              className="HvBaseDropdown-arrow"
+                              className="HvBaseDropdown-arrow HvDropdown-arrow"
                               classes={
                                 Object {
                                   "root": "HvIconDropUpXS-root",
@@ -340,7 +346,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                               iconSize="XS"
                             >
                               <div
-                                className="HvBaseDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                                className="HvBaseDropdown-arrow HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
                               >
                                 <svg
                                   focusable={false}
@@ -2973,7 +2979,13 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                 className="HvFormElement-root"
               >
                 <WithStyles(WithId)
-                  className="root arrow"
+                  className=""
+                  classes={
+                    Object {
+                      "arrow": "HvDropdown-arrow",
+                      "root": "HvDropdown-root",
+                    }
+                  }
                   disablePortal={false}
                   expanded={true}
                   onToggle={[Function]}
@@ -2992,10 +3004,10 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                   role="combobox"
                 >
                   <WithId
-                    className="root arrow"
+                    className=""
                     classes={
                       Object {
-                        "arrow": "HvBaseDropdown-arrow",
+                        "arrow": "HvBaseDropdown-arrow HvDropdown-arrow",
                         "header": "HvBaseDropdown-header",
                         "headerDisabled": "HvBaseDropdown-headerDisabled",
                         "headerOpen": "HvBaseDropdown-headerOpen",
@@ -3007,7 +3019,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                         "panel": "HvBaseDropdown-panel",
-                        "root": "HvBaseDropdown-root",
+                        "root": "HvBaseDropdown-root HvDropdown-root",
                         "selection": "HvBaseDropdown-selection",
                         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                         "truncate": "HvBaseDropdown-truncate",
@@ -3031,10 +3043,10 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                     role="combobox"
                   >
                     <HvBaseDropdown
-                      className="root arrow"
+                      className=""
                       classes={
                         Object {
-                          "arrow": "HvBaseDropdown-arrow",
+                          "arrow": "HvBaseDropdown-arrow HvDropdown-arrow",
                           "header": "HvBaseDropdown-header",
                           "headerDisabled": "HvBaseDropdown-headerDisabled",
                           "headerOpen": "HvBaseDropdown-headerOpen",
@@ -3046,7 +3058,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                           "panel": "HvBaseDropdown-panel",
-                          "root": "HvBaseDropdown-root",
+                          "root": "HvBaseDropdown-root HvDropdown-root",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                           "truncate": "HvBaseDropdown-truncate",
@@ -3076,7 +3088,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                         aria-haspopup="listbox"
                         aria-labelledby="test-dropdown-selectionPlaceholder"
                         aria-owns="test-dropdown-children-container"
-                        className="root arrow HvBaseDropdown-root"
+                        className="HvBaseDropdown-root HvDropdown-root"
                         id="test-dropdown"
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -3143,11 +3155,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                             </WithStyles(ForwardRef)>
                           </div>
                           <WithStyles(DropUpXS)
-                            className="HvBaseDropdown-arrow"
+                            className="HvBaseDropdown-arrow HvDropdown-arrow"
                             iconSize="XS"
                           >
                             <DropUpXS
-                              className="HvBaseDropdown-arrow"
+                              className="HvBaseDropdown-arrow HvDropdown-arrow"
                               classes={
                                 Object {
                                   "root": "HvIconDropUpXS-root",
@@ -3160,7 +3172,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                               iconSize="XS"
                             >
                               <div
-                                className="HvBaseDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                                className="HvBaseDropdown-arrow HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
                               >
                                 <svg
                                   focusable={false}
@@ -9936,7 +9948,13 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                 className="HvFormElement-root"
               >
                 <WithStyles(WithId)
-                  className="root arrow"
+                  className=""
+                  classes={
+                    Object {
+                      "arrow": "HvDropdown-arrow",
+                      "root": "HvDropdown-root",
+                    }
+                  }
                   disablePortal={false}
                   expanded={true}
                   onToggle={[Function]}
@@ -9953,10 +9971,10 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                   role="combobox"
                 >
                   <WithId
-                    className="root arrow"
+                    className=""
                     classes={
                       Object {
-                        "arrow": "HvBaseDropdown-arrow",
+                        "arrow": "HvBaseDropdown-arrow HvDropdown-arrow",
                         "header": "HvBaseDropdown-header",
                         "headerDisabled": "HvBaseDropdown-headerDisabled",
                         "headerOpen": "HvBaseDropdown-headerOpen",
@@ -9968,7 +9986,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                         "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                         "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                         "panel": "HvBaseDropdown-panel",
-                        "root": "HvBaseDropdown-root",
+                        "root": "HvBaseDropdown-root HvDropdown-root",
                         "selection": "HvBaseDropdown-selection",
                         "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                         "truncate": "HvBaseDropdown-truncate",
@@ -9990,10 +10008,10 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                     role="combobox"
                   >
                     <HvBaseDropdown
-                      className="root arrow"
+                      className=""
                       classes={
                         Object {
-                          "arrow": "HvBaseDropdown-arrow",
+                          "arrow": "HvBaseDropdown-arrow HvDropdown-arrow",
                           "header": "HvBaseDropdown-header",
                           "headerDisabled": "HvBaseDropdown-headerDisabled",
                           "headerOpen": "HvBaseDropdown-headerOpen",
@@ -10005,7 +10023,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                           "inputExtensionOpen": "HvBaseDropdown-inputExtensionOpen",
                           "inputExtensionOpenShadow": "HvBaseDropdown-inputExtensionOpenShadow",
                           "panel": "HvBaseDropdown-panel",
-                          "root": "HvBaseDropdown-root",
+                          "root": "HvBaseDropdown-root HvDropdown-root",
                           "selection": "HvBaseDropdown-selection",
                           "selectionDisabled": "HvBaseDropdown-selectionDisabled",
                           "truncate": "HvBaseDropdown-truncate",
@@ -10033,7 +10051,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                         aria-haspopup="listbox"
                         aria-labelledby="hv-dropdown-base-9-selectionPlaceholder"
                         aria-owns="hv-dropdown-base-9-children-container"
-                        className="root arrow HvBaseDropdown-root"
+                        className="HvBaseDropdown-root HvDropdown-root"
                         id="hv-dropdown-base-9"
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -10094,11 +10112,11 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                             </WithStyles(ForwardRef)>
                           </div>
                           <WithStyles(DropUpXS)
-                            className="HvBaseDropdown-arrow"
+                            className="HvBaseDropdown-arrow HvDropdown-arrow"
                             iconSize="XS"
                           >
                             <DropUpXS
-                              className="HvBaseDropdown-arrow"
+                              className="HvBaseDropdown-arrow HvDropdown-arrow"
                               classes={
                                 Object {
                                   "root": "HvIconDropUpXS-root",
@@ -10111,7 +10129,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                               iconSize="XS"
                             >
                               <div
-                                className="HvBaseDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+                                className="HvBaseDropdown-arrow HvDropdown-arrow HvIconDropUpXS-root HvIconDropUpXS-rootXs"
                               >
                                 <svg
                                   focusable={false}

@@ -1,5 +1,7 @@
 const styles = theme => ({
-  root: {},
+  root: {
+    width: "310px"
+  },
   rootList: {},
   arrow: {},
   label: {

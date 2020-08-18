@@ -111,7 +111,8 @@ const HvDropdownBase = ({
         />
       )}
       <HvBaseDropdown
-        className={clsx(className, { root: classes.root, arrow: classes.arrow })}
+        className={className}
+        classes={{ root: classes.root, arrow: classes.arrow }}
         expanded={isOpen}
         disablePortal={disablePortal}
         placement={placement}
