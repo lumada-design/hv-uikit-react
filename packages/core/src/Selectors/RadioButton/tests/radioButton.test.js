@@ -8,7 +8,7 @@ import { HvProvider, HvRadio } from "../../..";
 import labelPositions from "../../labelPositions";
 import { Main, Disabled } from "../stories/RadioButton.stories";
 
-describe("RadioButton", () => {
+describe("[v3] RadioButton", () => {
   let wrapper;
 
   const labelStartClassName = "labelStart";

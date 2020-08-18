@@ -14,6 +14,12 @@ export const Main = () => {
   return <HvRadio inputProps={{ "aria-label": "Simple radio button" }} />;
 };
 
+Main.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const Disabled = () => (
   <HvRadio id="radio1" disabled inputProps={{ "aria-label": "Radio disabled" }} />
 );
@@ -32,7 +38,8 @@ Disabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };
 
@@ -54,7 +61,8 @@ CheckedDisabled.story = {
         "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
         "color-contrast"
       ]
-    }
+    },
+    v3: true
   }
 };
 
@@ -64,7 +72,8 @@ Label.story = {
   parameters: {
     docs: {
       storyDescription: "A sample showcasing a radio button that includes a label."
-    }
+    },
+    v3: true
   }
 };
 
@@ -82,7 +91,8 @@ WithClickAction.story = {
     docs: {
       storyDescription:
         "Returns the value when clicked, check the browser console to see the result."
-    }
+    },
+    v3: true
   }
 };
 
@@ -111,7 +121,8 @@ WithClickActionDisabled.story = {
         "color-contrast"
       ]
     },
-    eyes: { waitBeforeScreenshot: ".MuiFormControlLabel-label" }
+    eyes: { waitBeforeScreenshot: ".MuiFormControlLabel-label" },
+    v3: true
   }
 };
 
@@ -147,6 +158,7 @@ WithState.story = {
   parameters: {
     docs: {
       storyDescription: "Demostration of how to set the state of the radio button"
-    }
+    },
+    v3: true
   }
 };

@@ -1,8 +1,9 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}selectors-switch--main    AND
+...           Go To    ${patterns}selectors-switch--main    AND
 ...           Wait Until Element Is Enabled    ${switch}
+Force Tags  v3
 
 
 *** Variables ***
@@ -34,14 +35,14 @@ switch to different state when any label is clicked
 
 does not switch when disabled element is clicked
     [Setup]    NONE
-    Go To                               ${components}selectors-switch--disabled
+    Go To                               ${patterns}selectors-switch--disabled
     Wait Until Page Contains Element    ${switch}
     Checkbox Should Be Selected         ${switch} input
     Run Keyword And Ignore Error        Click Element      ${switch}
     Checkbox Should Be Selected         ${switch} input
 
 does not switch when is clicked any label of disabled element
-    Go To                               ${components}selectors-switch--disabled
+    Go To                               ${patterns}selectors-switch--disabled
     Wait Until Page Contains Element    ${switch}
     Checkbox Should Be Selected         ${switch} input
     Run Keyword And Ignore Error        Click Element      ${rightLabel}
@@ -59,7 +60,7 @@ switch to Off when checkbox is focused and is pressed SPACE
 
 switch state when is controlled by other component
     [Setup]    NONE
-    Go To                               ${components}selectors-switch--controlled
+    Go To                               ${patterns}selectors-switch--controlled
     Wait Until Page Contains Element    ${switch}
     Checkbox Should not Be Selected     ${switch} input
     Click Button                        Toggle
