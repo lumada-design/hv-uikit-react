@@ -24,7 +24,7 @@ export const CustomLabels = () => {
     <HvFooter
       id="sample2"
       name="Hitachi Vantara"
-      copyright="© Hitachi Vantara Corporation 2018"
+      copyright="© Hitachi Vantara Corporation 2020"
       links={
         <HvTypography component="div" variant="link">
           <HvLink route="https://www.hitachivantara.com">License information</HvLink>
