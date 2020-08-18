@@ -2,40 +2,19 @@
 
 exports[`Card should be able to render with every property defined 1`] = `
 <WithStyles(HvCard)
-  cardButtonProps={
+  bgcolor="atmo1"
+  style={
     Object {
-      "aria-label": "Compressor",
+      "width": 360,
     }
   }
-  footerProps={
-    Object {
-      "aria-label": "Compressor",
-    }
-  }
-  headerProps={
-    Object {
-      "aria-label": "Compressor",
-    }
-  }
-  headerTitle="Asset Avatar L90"
-  id="test"
-  innerCardContent={<SingleContent />}
-  mediaHeight={186}
-  mediaPath="IMAGE_MOCK"
-  mediaTitle="Compressor"
-  subheader="Compressor"
 >
   <HvCard
-    cardButtonProps={
-      Object {
-        "aria-label": "Compressor",
-      }
-    }
+    bgcolor="atmo1"
     classes={
       Object {
-        "cardContainer": "HvCard-cardContainer",
-        "cardContentWrapper": "HvCard-cardContentWrapper",
         "cardOutLine": "HvCard-cardOutLine",
+        "icon": "HvCard-icon",
         "root": "HvCard-root",
         "selectable": "HvCard-selectable",
         "selected": "HvCard-selected",
@@ -60,624 +39,457 @@ exports[`Card should be able to render with every property defined 1`] = `
         "sema7": "HvCard-sema7",
         "sema8": "HvCard-sema8",
         "sema9": "HvCard-sema9",
+        "semanticBar": "HvCard-semanticBar",
         "semanticContainer": "HvCard-semanticContainer",
-        "semanticSelected": "HvCard-semanticSelected",
         "upperAreaReference": "HvCard-upperAreaReference",
         "upperAreaSelectable": "HvCard-upperAreaSelectable",
       }
     }
-    footerProps={
+    style={
       Object {
-        "aria-label": "Compressor",
+        "width": 360,
       }
     }
-    headerProps={
-      Object {
-        "aria-label": "Compressor",
-      }
-    }
-    headerTitle="Asset Avatar L90"
-    id="test"
-    innerCardContent={<SingleContent />}
-    mediaHeight={186}
-    mediaPath="IMAGE_MOCK"
-    mediaTitle="Compressor"
-    subheader="Compressor"
   >
-    <div
+    <Styled(MuiBox)
+      bgcolor="atmo1"
       className="HvCard-root"
+      style={
+        Object {
+          "width": 360,
+        }
+      }
     >
       <div
-        className="HvCard-cardContentWrapper"
-        id="test-cardContentWrapper"
+        className="MuiBox-root MuiBox-root-1 HvCard-root"
+        style={
+          Object {
+            "width": 360,
+          }
+        }
       >
         <div
-          className="HvCard-semanticContainer HvCard-sema0"
-        />
-        <WithStyles(ForwardRef(Card))
-          className="HvCard-cardContainer"
-          id="test"
+          className="HvCard-semanticContainer"
         >
-          <ForwardRef(Card)
-            className="HvCard-cardContainer"
+          <div
+            className="HvCard-semanticBar HvCard-sema0"
+          />
+          <div
+            className="HvCard-icon"
+          />
+        </div>
+        <WithStyles(Header)
+          aria-label="Compressor"
+          subheader="Compressor"
+          title="Asset Avatar L90"
+        >
+          <Header
+            aria-label="Compressor"
             classes={
               Object {
-                "root": "MuiCard-root",
+                "action": "HvCardHeader-action",
+                "content": "HvCardHeader-content",
+                "root": "HvCardHeader-root",
+                "subheader": "HvCardHeader-subheader",
+                "title": "HvCardHeader-title",
+                "titleShort": "HvCardHeader-titleShort",
               }
             }
-            id="test"
+            subheader="Compressor"
+            title="Asset Avatar L90"
           >
-            <WithStyles(ForwardRef(Paper))
-              className="MuiCard-root HvCard-cardContainer"
-              elevation={1}
-              id="test"
+            <WithStyles(ForwardRef(CardHeader))
+              aria-label="Compressor"
+              className="HvCardHeader-root"
+              classes={
+                Object {
+                  "action": "HvCardHeader-action",
+                  "content": "HvCardHeader-content",
+                  "subheader": "HvCardHeader-subheader",
+                  "title": "HvCardHeader-title",
+                }
+              }
+              subheader="Compressor"
+              title="Asset Avatar L90"
             >
-              <ForwardRef(Paper)
-                className="MuiCard-root HvCard-cardContainer"
+              <ForwardRef(CardHeader)
+                aria-label="Compressor"
+                className="HvCardHeader-root"
                 classes={
                   Object {
-                    "elevation0": "MuiPaper-elevation0",
-                    "elevation1": "MuiPaper-elevation1",
-                    "elevation10": "MuiPaper-elevation10",
-                    "elevation11": "MuiPaper-elevation11",
-                    "elevation12": "MuiPaper-elevation12",
-                    "elevation13": "MuiPaper-elevation13",
-                    "elevation14": "MuiPaper-elevation14",
-                    "elevation15": "MuiPaper-elevation15",
-                    "elevation16": "MuiPaper-elevation16",
-                    "elevation17": "MuiPaper-elevation17",
-                    "elevation18": "MuiPaper-elevation18",
-                    "elevation19": "MuiPaper-elevation19",
-                    "elevation2": "MuiPaper-elevation2",
-                    "elevation20": "MuiPaper-elevation20",
-                    "elevation21": "MuiPaper-elevation21",
-                    "elevation22": "MuiPaper-elevation22",
-                    "elevation23": "MuiPaper-elevation23",
-                    "elevation24": "MuiPaper-elevation24",
-                    "elevation3": "MuiPaper-elevation3",
-                    "elevation4": "MuiPaper-elevation4",
-                    "elevation5": "MuiPaper-elevation5",
-                    "elevation6": "MuiPaper-elevation6",
-                    "elevation7": "MuiPaper-elevation7",
-                    "elevation8": "MuiPaper-elevation8",
-                    "elevation9": "MuiPaper-elevation9",
-                    "outlined": "MuiPaper-outlined",
-                    "root": "MuiPaper-root",
-                    "rounded": "MuiPaper-rounded",
+                    "action": "MuiCardHeader-action HvCardHeader-action",
+                    "avatar": "MuiCardHeader-avatar",
+                    "content": "MuiCardHeader-content HvCardHeader-content",
+                    "root": "MuiCardHeader-root",
+                    "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
+                    "title": "MuiCardHeader-title HvCardHeader-title",
                   }
                 }
-                elevation={1}
-                id="test"
+                subheader="Compressor"
+                title="Asset Avatar L90"
               >
                 <div
-                  className="MuiPaper-root MuiCard-root HvCard-cardContainer MuiPaper-elevation1 MuiPaper-rounded"
-                  id="test"
+                  aria-label="Compressor"
+                  className="MuiCardHeader-root HvCardHeader-root"
                 >
-                  <WithStyles(Focus)
-                    disabled={true}
-                    strategy="card"
-                    useFalseFocus={true}
+                  <div
+                    className="MuiCardHeader-content HvCardHeader-content"
                   >
-                    <Focus
-                      classes={
-                        Object {
-                          "disabled": "HvFocus-disabled",
-                          "externalReference": "HvFocus-externalReference",
-                          "falseFocus": "HvFocus-falseFocus",
-                          "focus": "HvFocus-focus",
-                          "focusDisabled": "HvFocus-focusDisabled",
-                          "focused": "HvFocus-focused",
-                          "root": "HvFocus-root",
-                          "selected": "HvFocus-selected",
-                        }
-                      }
-                      disabled={true}
-                      strategy="card"
-                      useFalseFocus={true}
+                    <WithStyles(ForwardRef(Typography))
+                      className="MuiCardHeader-title HvCardHeader-title"
+                      component="span"
+                      display="block"
+                      variant="h5"
                     >
-                      <div
-                        aria-label="Compressor"
-                        className=""
-                        id="test-upper-area"
-                        onClick={[Function]}
-                        onKeyUp={[Function]}
+                      <ForwardRef(Typography)
+                        className="MuiCardHeader-title HvCardHeader-title"
+                        classes={
+                          Object {
+                            "alignCenter": "MuiTypography-alignCenter",
+                            "alignJustify": "MuiTypography-alignJustify",
+                            "alignLeft": "MuiTypography-alignLeft",
+                            "alignRight": "MuiTypography-alignRight",
+                            "body1": "MuiTypography-body1",
+                            "body2": "MuiTypography-body2",
+                            "button": "MuiTypography-button",
+                            "caption": "MuiTypography-caption",
+                            "colorError": "MuiTypography-colorError",
+                            "colorInherit": "MuiTypography-colorInherit",
+                            "colorPrimary": "MuiTypography-colorPrimary",
+                            "colorSecondary": "MuiTypography-colorSecondary",
+                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                            "displayBlock": "MuiTypography-displayBlock",
+                            "displayInline": "MuiTypography-displayInline",
+                            "gutterBottom": "MuiTypography-gutterBottom",
+                            "h1": "MuiTypography-h1",
+                            "h2": "MuiTypography-h2",
+                            "h3": "MuiTypography-h3",
+                            "h4": "MuiTypography-h4",
+                            "h5": "MuiTypography-h5",
+                            "h6": "MuiTypography-h6",
+                            "noWrap": "MuiTypography-noWrap",
+                            "overline": "MuiTypography-overline",
+                            "paragraph": "MuiTypography-paragraph",
+                            "root": "MuiTypography-root",
+                            "srOnly": "MuiTypography-srOnly",
+                            "subtitle1": "MuiTypography-subtitle1",
+                            "subtitle2": "MuiTypography-subtitle2",
+                          }
+                        }
+                        component="span"
+                        display="block"
+                        variant="h5"
                       >
-                        <WithStyles(Header)
-                          aria-label="Compressor"
-                          headerTitle="Asset Avatar L90"
-                          id="test-header"
-                          subheader="Compressor"
+                        <span
+                          className="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
                         >
-                          <Header
-                            aria-label="Compressor"
-                            classes={
-                              Object {
-                                "action": "HvCardHeader-action",
-                                "content": "HvCardHeader-content",
-                                "root": "HvCardHeader-root",
-                                "subheader": "HvCardHeader-subheader",
-                                "title": "HvCardHeader-title",
-                                "titleShort": "HvCardHeader-titleShort",
-                              }
-                            }
-                            headerTitle="Asset Avatar L90"
-                            id="test-header"
-                            subheader="Compressor"
-                          >
-                            <WithStyles(ForwardRef(CardHeader))
-                              aria-label="Compressor"
-                              className="HvCardHeader-root"
-                              classes={
-                                Object {
-                                  "action": "HvCardHeader-action",
-                                  "content": "HvCardHeader-content",
-                                  "subheader": "HvCardHeader-subheader",
-                                  "title": "HvCardHeader-title",
-                                }
-                              }
-                              id="test-header"
-                              subheader="Compressor"
-                              title="Asset Avatar L90"
-                            >
-                              <ForwardRef(CardHeader)
-                                aria-label="Compressor"
-                                className="HvCardHeader-root"
-                                classes={
-                                  Object {
-                                    "action": "MuiCardHeader-action HvCardHeader-action",
-                                    "avatar": "MuiCardHeader-avatar",
-                                    "content": "MuiCardHeader-content HvCardHeader-content",
-                                    "root": "MuiCardHeader-root",
-                                    "subheader": "MuiCardHeader-subheader HvCardHeader-subheader",
-                                    "title": "MuiCardHeader-title HvCardHeader-title",
-                                  }
-                                }
-                                id="test-header"
-                                subheader="Compressor"
-                                title="Asset Avatar L90"
-                              >
-                                <div
-                                  aria-label="Compressor"
-                                  className="MuiCardHeader-root HvCardHeader-root"
-                                  id="test-header"
-                                >
-                                  <div
-                                    className="MuiCardHeader-content HvCardHeader-content"
-                                  >
-                                    <WithStyles(ForwardRef(Typography))
-                                      className="MuiCardHeader-title HvCardHeader-title"
-                                      component="span"
-                                      display="block"
-                                      variant="h5"
-                                    >
-                                      <ForwardRef(Typography)
-                                        className="MuiCardHeader-title HvCardHeader-title"
-                                        classes={
-                                          Object {
-                                            "alignCenter": "MuiTypography-alignCenter",
-                                            "alignJustify": "MuiTypography-alignJustify",
-                                            "alignLeft": "MuiTypography-alignLeft",
-                                            "alignRight": "MuiTypography-alignRight",
-                                            "body1": "MuiTypography-body1",
-                                            "body2": "MuiTypography-body2",
-                                            "button": "MuiTypography-button",
-                                            "caption": "MuiTypography-caption",
-                                            "colorError": "MuiTypography-colorError",
-                                            "colorInherit": "MuiTypography-colorInherit",
-                                            "colorPrimary": "MuiTypography-colorPrimary",
-                                            "colorSecondary": "MuiTypography-colorSecondary",
-                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                            "displayBlock": "MuiTypography-displayBlock",
-                                            "displayInline": "MuiTypography-displayInline",
-                                            "gutterBottom": "MuiTypography-gutterBottom",
-                                            "h1": "MuiTypography-h1",
-                                            "h2": "MuiTypography-h2",
-                                            "h3": "MuiTypography-h3",
-                                            "h4": "MuiTypography-h4",
-                                            "h5": "MuiTypography-h5",
-                                            "h6": "MuiTypography-h6",
-                                            "noWrap": "MuiTypography-noWrap",
-                                            "overline": "MuiTypography-overline",
-                                            "paragraph": "MuiTypography-paragraph",
-                                            "root": "MuiTypography-root",
-                                            "srOnly": "MuiTypography-srOnly",
-                                            "subtitle1": "MuiTypography-subtitle1",
-                                            "subtitle2": "MuiTypography-subtitle2",
-                                          }
-                                        }
-                                        component="span"
-                                        display="block"
-                                        variant="h5"
-                                      >
-                                        <span
-                                          className="MuiTypography-root MuiCardHeader-title HvCardHeader-title MuiTypography-h5 MuiTypography-displayBlock"
-                                        >
-                                          Asset Avatar L90
-                                        </span>
-                                      </ForwardRef(Typography)>
-                                    </WithStyles(ForwardRef(Typography))>
-                                    <WithStyles(ForwardRef(Typography))
-                                      className="MuiCardHeader-subheader HvCardHeader-subheader"
-                                      color="textSecondary"
-                                      component="span"
-                                      display="block"
-                                      variant="body1"
-                                    >
-                                      <ForwardRef(Typography)
-                                        className="MuiCardHeader-subheader HvCardHeader-subheader"
-                                        classes={
-                                          Object {
-                                            "alignCenter": "MuiTypography-alignCenter",
-                                            "alignJustify": "MuiTypography-alignJustify",
-                                            "alignLeft": "MuiTypography-alignLeft",
-                                            "alignRight": "MuiTypography-alignRight",
-                                            "body1": "MuiTypography-body1",
-                                            "body2": "MuiTypography-body2",
-                                            "button": "MuiTypography-button",
-                                            "caption": "MuiTypography-caption",
-                                            "colorError": "MuiTypography-colorError",
-                                            "colorInherit": "MuiTypography-colorInherit",
-                                            "colorPrimary": "MuiTypography-colorPrimary",
-                                            "colorSecondary": "MuiTypography-colorSecondary",
-                                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
-                                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
-                                            "displayBlock": "MuiTypography-displayBlock",
-                                            "displayInline": "MuiTypography-displayInline",
-                                            "gutterBottom": "MuiTypography-gutterBottom",
-                                            "h1": "MuiTypography-h1",
-                                            "h2": "MuiTypography-h2",
-                                            "h3": "MuiTypography-h3",
-                                            "h4": "MuiTypography-h4",
-                                            "h5": "MuiTypography-h5",
-                                            "h6": "MuiTypography-h6",
-                                            "noWrap": "MuiTypography-noWrap",
-                                            "overline": "MuiTypography-overline",
-                                            "paragraph": "MuiTypography-paragraph",
-                                            "root": "MuiTypography-root",
-                                            "srOnly": "MuiTypography-srOnly",
-                                            "subtitle1": "MuiTypography-subtitle1",
-                                            "subtitle2": "MuiTypography-subtitle2",
-                                          }
-                                        }
-                                        color="textSecondary"
-                                        component="span"
-                                        display="block"
-                                        variant="body1"
-                                      >
-                                        <span
-                                          className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
-                                        >
-                                          Compressor
-                                        </span>
-                                      </ForwardRef(Typography)>
-                                    </WithStyles(ForwardRef(Typography))>
-                                  </div>
-                                </div>
-                              </ForwardRef(CardHeader)>
-                            </WithStyles(ForwardRef(CardHeader))>
-                          </Header>
-                        </WithStyles(Header)>
-                        <WithStyles(Media)
-                          id="test-media"
-                          mediaHeight={186}
-                          mediaPath="IMAGE_MOCK"
-                          title="Compressor"
+                          Asset Avatar L90
+                        </span>
+                      </ForwardRef(Typography)>
+                    </WithStyles(ForwardRef(Typography))>
+                    <WithStyles(ForwardRef(Typography))
+                      className="MuiCardHeader-subheader HvCardHeader-subheader"
+                      color="textSecondary"
+                      component="span"
+                      display="block"
+                      variant="body1"
+                    >
+                      <ForwardRef(Typography)
+                        className="MuiCardHeader-subheader HvCardHeader-subheader"
+                        classes={
+                          Object {
+                            "alignCenter": "MuiTypography-alignCenter",
+                            "alignJustify": "MuiTypography-alignJustify",
+                            "alignLeft": "MuiTypography-alignLeft",
+                            "alignRight": "MuiTypography-alignRight",
+                            "body1": "MuiTypography-body1",
+                            "body2": "MuiTypography-body2",
+                            "button": "MuiTypography-button",
+                            "caption": "MuiTypography-caption",
+                            "colorError": "MuiTypography-colorError",
+                            "colorInherit": "MuiTypography-colorInherit",
+                            "colorPrimary": "MuiTypography-colorPrimary",
+                            "colorSecondary": "MuiTypography-colorSecondary",
+                            "colorTextPrimary": "MuiTypography-colorTextPrimary",
+                            "colorTextSecondary": "MuiTypography-colorTextSecondary",
+                            "displayBlock": "MuiTypography-displayBlock",
+                            "displayInline": "MuiTypography-displayInline",
+                            "gutterBottom": "MuiTypography-gutterBottom",
+                            "h1": "MuiTypography-h1",
+                            "h2": "MuiTypography-h2",
+                            "h3": "MuiTypography-h3",
+                            "h4": "MuiTypography-h4",
+                            "h5": "MuiTypography-h5",
+                            "h6": "MuiTypography-h6",
+                            "noWrap": "MuiTypography-noWrap",
+                            "overline": "MuiTypography-overline",
+                            "paragraph": "MuiTypography-paragraph",
+                            "root": "MuiTypography-root",
+                            "srOnly": "MuiTypography-srOnly",
+                            "subtitle1": "MuiTypography-subtitle1",
+                            "subtitle2": "MuiTypography-subtitle2",
+                          }
+                        }
+                        color="textSecondary"
+                        component="span"
+                        display="block"
+                        variant="body1"
+                      >
+                        <span
+                          className="MuiTypography-root MuiCardHeader-subheader HvCardHeader-subheader MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
                         >
-                          <Media
-                            classes={
-                              Object {
-                                "media": "HvCardMedia-media",
-                                "root": "HvCardMedia-root",
-                              }
-                            }
-                            id="test-media"
-                            mediaHeight={186}
-                            mediaPath="IMAGE_MOCK"
-                            title="Compressor"
-                          >
-                            <WithStyles(ForwardRef(CardMedia))
-                              classes={
-                                Object {
-                                  "media": "HvCardMedia-media",
-                                  "root": "HvCardMedia-root",
-                                }
-                              }
-                              id="test-media"
-                              image="IMAGE_MOCK"
-                              role="img"
-                              style={
-                                Object {
-                                  "height": "186px",
-                                }
-                              }
-                              title="Compressor"
-                            >
-                              <ForwardRef(CardMedia)
-                                classes={
-                                  Object {
-                                    "img": "MuiCardMedia-img",
-                                    "media": "MuiCardMedia-media HvCardMedia-media",
-                                    "root": "MuiCardMedia-root HvCardMedia-root",
-                                  }
-                                }
-                                id="test-media"
-                                image="IMAGE_MOCK"
-                                role="img"
-                                style={
-                                  Object {
-                                    "height": "186px",
-                                  }
-                                }
-                                title="Compressor"
-                              >
-                                <div
-                                  className="MuiCardMedia-root HvCardMedia-root"
-                                  id="test-media"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "backgroundImage": "url(\\"IMAGE_MOCK\\")",
-                                      "height": "186px",
-                                    }
-                                  }
-                                  title="Compressor"
-                                />
-                              </ForwardRef(CardMedia)>
-                            </WithStyles(ForwardRef(CardMedia))>
-                          </Media>
-                        </WithStyles(Media)>
-                        <WithStyles(Content)
-                          id="test-content"
-                        >
-                          <Content
-                            classes={
-                              Object {
-                                "content": "HvCardContent-content",
-                              }
-                            }
-                            id="test-content"
-                          >
-                            <WithStyles(ForwardRef(CardContent))
-                              className="HvCardContent-content"
-                              id="test-content"
-                            >
-                              <ForwardRef(CardContent)
-                                className="HvCardContent-content"
-                                classes={
-                                  Object {
-                                    "root": "MuiCardContent-root",
-                                  }
-                                }
-                                id="test-content"
-                              >
-                                <div
-                                  className="MuiCardContent-root HvCardContent-content"
-                                  id="test-content"
-                                >
-                                  <SingleContent>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginTop": "15px",
-                                        }
-                                      }
-                                    >
-                                      <WithStyles(ForwardRef)
-                                        variant="highlightText"
-                                      >
-                                        <ForwardRef
-                                          classes={
-                                            Object {
-                                              "3xlTitle": "HvTypography-3xlTitle",
-                                              "4xlTitle": "HvTypography-4xlTitle",
-                                              "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledText": "HvTypography-disabledText",
-                                              "highlightText": "HvTypography-highlightText",
-                                              "lTitle": "HvTypography-lTitle",
-                                              "link": "HvTypography-link",
-                                              "mTitle": "HvTypography-mTitle",
-                                              "normalText": "HvTypography-normalText",
-                                              "placeholderText": "HvTypography-placeholderText",
-                                              "root": "HvTypography-root",
-                                              "sTitle": "HvTypography-sTitle",
-                                              "sectionTitle": "HvTypography-sectionTitle",
-                                              "selectedNavText": "HvTypography-selectedNavText",
-                                              "vizText": "HvTypography-vizText",
-                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                              "xlTitle": "HvTypography-xlTitle",
-                                              "xsInlineLink": "HvTypography-xsInlineLink",
-                                              "xsTitle": "HvTypography-xsTitle",
-                                              "xxlTitle": "HvTypography-xxlTitle",
-                                              "xxsTitle": "HvTypography-xxsTitle",
-                                            }
-                                          }
-                                          variant="highlightText"
-                                        >
-                                          <p
-                                            className="HvTypography-root HvTypography-highlightText"
-                                          >
-                                            ID
-                                          </p>
-                                        </ForwardRef>
-                                      </WithStyles(ForwardRef)>
-                                      <WithStyles(ForwardRef)
-                                        style={
-                                          Object {
-                                            "overflow": "hidden",
-                                            "textOverflow": "ellipsis",
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        <ForwardRef
-                                          classes={
-                                            Object {
-                                              "3xlTitle": "HvTypography-3xlTitle",
-                                              "4xlTitle": "HvTypography-4xlTitle",
-                                              "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledText": "HvTypography-disabledText",
-                                              "highlightText": "HvTypography-highlightText",
-                                              "lTitle": "HvTypography-lTitle",
-                                              "link": "HvTypography-link",
-                                              "mTitle": "HvTypography-mTitle",
-                                              "normalText": "HvTypography-normalText",
-                                              "placeholderText": "HvTypography-placeholderText",
-                                              "root": "HvTypography-root",
-                                              "sTitle": "HvTypography-sTitle",
-                                              "sectionTitle": "HvTypography-sectionTitle",
-                                              "selectedNavText": "HvTypography-selectedNavText",
-                                              "vizText": "HvTypography-vizText",
-                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                              "xlTitle": "HvTypography-xlTitle",
-                                              "xsInlineLink": "HvTypography-xsInlineLink",
-                                              "xsTitle": "HvTypography-xsTitle",
-                                              "xxlTitle": "HvTypography-xxlTitle",
-                                              "xxsTitle": "HvTypography-xxsTitle",
-                                            }
-                                          }
-                                          style={
-                                            Object {
-                                              "overflow": "hidden",
-                                              "textOverflow": "ellipsis",
-                                              "whiteSpace": "nowrap",
-                                            }
-                                          }
-                                        >
-                                          <p
-                                            className="HvTypography-root HvTypography-normalText"
-                                            style={
-                                              Object {
-                                                "overflow": "hidden",
-                                                "textOverflow": "ellipsis",
-                                                "whiteSpace": "nowrap",
-                                              }
-                                            }
-                                          >
-                                            2101cad3-7cd4-1000-bdp95-d8c497176e7c
-                                          </p>
-                                        </ForwardRef>
-                                      </WithStyles(ForwardRef)>
-                                    </div>
-                                    <div
-                                      style={
-                                        Object {
-                                          "marginTop": "15px",
-                                        }
-                                      }
-                                    >
-                                      <WithStyles(ForwardRef)
-                                        variant="highlightText"
-                                      >
-                                        <ForwardRef
-                                          classes={
-                                            Object {
-                                              "3xlTitle": "HvTypography-3xlTitle",
-                                              "4xlTitle": "HvTypography-4xlTitle",
-                                              "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledText": "HvTypography-disabledText",
-                                              "highlightText": "HvTypography-highlightText",
-                                              "lTitle": "HvTypography-lTitle",
-                                              "link": "HvTypography-link",
-                                              "mTitle": "HvTypography-mTitle",
-                                              "normalText": "HvTypography-normalText",
-                                              "placeholderText": "HvTypography-placeholderText",
-                                              "root": "HvTypography-root",
-                                              "sTitle": "HvTypography-sTitle",
-                                              "sectionTitle": "HvTypography-sectionTitle",
-                                              "selectedNavText": "HvTypography-selectedNavText",
-                                              "vizText": "HvTypography-vizText",
-                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                              "xlTitle": "HvTypography-xlTitle",
-                                              "xsInlineLink": "HvTypography-xsInlineLink",
-                                              "xsTitle": "HvTypography-xsTitle",
-                                              "xxlTitle": "HvTypography-xxlTitle",
-                                              "xxsTitle": "HvTypography-xxsTitle",
-                                            }
-                                          }
-                                          variant="highlightText"
-                                        >
-                                          <p
-                                            className="HvTypography-root HvTypography-highlightText"
-                                          >
-                                            Last connected
-                                          </p>
-                                        </ForwardRef>
-                                      </WithStyles(ForwardRef)>
-                                      <WithStyles(ForwardRef)
-                                        style={
-                                          Object {
-                                            "overflow": "hidden",
-                                            "textOverflow": "ellipsis",
-                                            "whiteSpace": "nowrap",
-                                          }
-                                        }
-                                      >
-                                        <ForwardRef
-                                          classes={
-                                            Object {
-                                              "3xlTitle": "HvTypography-3xlTitle",
-                                              "4xlTitle": "HvTypography-4xlTitle",
-                                              "5xlTitle": "HvTypography-5xlTitle",
-                                              "disabledText": "HvTypography-disabledText",
-                                              "highlightText": "HvTypography-highlightText",
-                                              "lTitle": "HvTypography-lTitle",
-                                              "link": "HvTypography-link",
-                                              "mTitle": "HvTypography-mTitle",
-                                              "normalText": "HvTypography-normalText",
-                                              "placeholderText": "HvTypography-placeholderText",
-                                              "root": "HvTypography-root",
-                                              "sTitle": "HvTypography-sTitle",
-                                              "sectionTitle": "HvTypography-sectionTitle",
-                                              "selectedNavText": "HvTypography-selectedNavText",
-                                              "vizText": "HvTypography-vizText",
-                                              "vizTextDisabled": "HvTypography-vizTextDisabled",
-                                              "xlTitle": "HvTypography-xlTitle",
-                                              "xsInlineLink": "HvTypography-xsInlineLink",
-                                              "xsTitle": "HvTypography-xsTitle",
-                                              "xxlTitle": "HvTypography-xxlTitle",
-                                              "xxsTitle": "HvTypography-xxsTitle",
-                                            }
-                                          }
-                                          style={
-                                            Object {
-                                              "overflow": "hidden",
-                                              "textOverflow": "ellipsis",
-                                              "whiteSpace": "nowrap",
-                                            }
-                                          }
-                                        >
-                                          <p
-                                            className="HvTypography-root HvTypography-normalText"
-                                            style={
-                                              Object {
-                                                "overflow": "hidden",
-                                                "textOverflow": "ellipsis",
-                                                "whiteSpace": "nowrap",
-                                              }
-                                            }
-                                          >
-                                            Aug 30, 2017 12:27:53 PM
-                                          </p>
-                                        </ForwardRef>
-                                      </WithStyles(ForwardRef)>
-                                    </div>
-                                  </SingleContent>
-                                </div>
-                              </ForwardRef(CardContent)>
-                            </WithStyles(ForwardRef(CardContent))>
-                          </Content>
-                        </WithStyles(Content)>
-                      </div>
-                    </Focus>
-                  </WithStyles(Focus)>
+                          Compressor
+                        </span>
+                      </ForwardRef(Typography)>
+                    </WithStyles(ForwardRef(Typography))>
+                  </div>
                 </div>
-              </ForwardRef(Paper)>
-            </WithStyles(ForwardRef(Paper))>
-          </ForwardRef(Card)>
-        </WithStyles(ForwardRef(Card))>
+              </ForwardRef(CardHeader)>
+            </WithStyles(ForwardRef(CardHeader))>
+          </Header>
+        </WithStyles(Header)>
+        <WithStyles(Media)
+          aria-label="Compressor"
+          component="img"
+          height={186}
+          image="IMAGE_MOCK"
+        >
+          <Media
+            aria-label="Compressor"
+            classes={
+              Object {
+                "media": "HvCardMedia-media",
+                "root": "HvCardMedia-root",
+              }
+            }
+            component="img"
+            height={186}
+            image="IMAGE_MOCK"
+          >
+            <WithStyles(ForwardRef(CardMedia))
+              aria-label="Compressor"
+              classes={
+                Object {
+                  "media": "HvCardMedia-media",
+                  "root": "HvCardMedia-root",
+                }
+              }
+              component="img"
+              height={186}
+              image="IMAGE_MOCK"
+              role="img"
+            >
+              <ForwardRef(CardMedia)
+                aria-label="Compressor"
+                classes={
+                  Object {
+                    "img": "MuiCardMedia-img",
+                    "media": "MuiCardMedia-media HvCardMedia-media",
+                    "root": "MuiCardMedia-root HvCardMedia-root",
+                  }
+                }
+                component="img"
+                height={186}
+                image="IMAGE_MOCK"
+                role="img"
+              >
+                <img
+                  aria-label="Compressor"
+                  className="MuiCardMedia-root HvCardMedia-root MuiCardMedia-media HvCardMedia-media MuiCardMedia-img"
+                  height={186}
+                  role="img"
+                  src="IMAGE_MOCK"
+                />
+              </ForwardRef(CardMedia)>
+            </WithStyles(ForwardRef(CardMedia))>
+          </Media>
+        </WithStyles(Media)>
+        <WithStyles(Content)>
+          <Content
+            classes={
+              Object {
+                "content": "HvCardContent-content",
+              }
+            }
+          >
+            <WithStyles(ForwardRef(CardContent))
+              className="HvCardContent-content"
+            >
+              <ForwardRef(CardContent)
+                className="HvCardContent-content"
+                classes={
+                  Object {
+                    "root": "MuiCardContent-root",
+                  }
+                }
+              >
+                <div
+                  className="MuiCardContent-root HvCardContent-content"
+                >
+                  <div>
+                    <WithStyles(ForwardRef)
+                      variant="highlightText"
+                    >
+                      <ForwardRef
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        variant="highlightText"
+                      >
+                        <p
+                          className="HvTypography-root HvTypography-highlightText"
+                        >
+                          ID
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                    <WithStyles(ForwardRef)>
+                      <ForwardRef
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                      >
+                        <p
+                          className="HvTypography-root HvTypography-normalText"
+                        >
+                          2101cad3-7cd4-1000-bdp95-d8c497176e7c
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "marginTop": "15px",
+                      }
+                    }
+                  >
+                    <WithStyles(ForwardRef)
+                      variant="highlightText"
+                    >
+                      <ForwardRef
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                        variant="highlightText"
+                      >
+                        <p
+                          className="HvTypography-root HvTypography-highlightText"
+                        >
+                          Last connected
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                    <WithStyles(ForwardRef)>
+                      <ForwardRef
+                        classes={
+                          Object {
+                            "3xlTitle": "HvTypography-3xlTitle",
+                            "4xlTitle": "HvTypography-4xlTitle",
+                            "5xlTitle": "HvTypography-5xlTitle",
+                            "disabledText": "HvTypography-disabledText",
+                            "highlightText": "HvTypography-highlightText",
+                            "lTitle": "HvTypography-lTitle",
+                            "link": "HvTypography-link",
+                            "mTitle": "HvTypography-mTitle",
+                            "normalText": "HvTypography-normalText",
+                            "placeholderText": "HvTypography-placeholderText",
+                            "root": "HvTypography-root",
+                            "sTitle": "HvTypography-sTitle",
+                            "sectionTitle": "HvTypography-sectionTitle",
+                            "selectedNavText": "HvTypography-selectedNavText",
+                            "vizText": "HvTypography-vizText",
+                            "vizTextDisabled": "HvTypography-vizTextDisabled",
+                            "xlTitle": "HvTypography-xlTitle",
+                            "xsInlineLink": "HvTypography-xsInlineLink",
+                            "xsTitle": "HvTypography-xsTitle",
+                            "xxlTitle": "HvTypography-xxlTitle",
+                            "xxsTitle": "HvTypography-xxsTitle",
+                          }
+                        }
+                      >
+                        <p
+                          className="HvTypography-root HvTypography-normalText"
+                        >
+                          Aug 30, 2017 12:27:53 PM
+                        </p>
+                      </ForwardRef>
+                    </WithStyles(ForwardRef)>
+                  </div>
+                </div>
+              </ForwardRef(CardContent)>
+            </WithStyles(ForwardRef(CardContent))>
+          </Content>
+        </WithStyles(Content)>
       </div>
-    </div>
+    </Styled(MuiBox)>
   </HvCard>
 </WithStyles(HvCard)>
 `;

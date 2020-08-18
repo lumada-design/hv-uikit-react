@@ -1,8 +1,8 @@
 import React from "react";
-import { CardProps, StandardProps } from "@material-ui/core";
+import { StandardProps, BoxProps } from "@material-ui/core";
 import { HvSemanticColorKeys } from "..";
 
-export interface HvCardProps extends StandardProps<CardProps, HvCardClassKey> {
+export interface HvCardProps extends StandardProps<BoxProps, HvCardClassKey> {
   /**
    *  The renderable content inside the icon slot of the header.
    */

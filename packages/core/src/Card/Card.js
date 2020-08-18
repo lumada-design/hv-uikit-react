@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { Card, withStyles } from "@material-ui/core";
+import { Box, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 /**
@@ -18,8 +18,10 @@ const HvCard = props => {
     semantic = "sema0",
     ...others
   } = props;
+
   return (
-    <Card
+    <Box
+      aria-selected={(selectable && selected) || undefined}
       className={clsx(classes.root, className, {
         [classes.selectable]: selectable,
         [classes.selected]: selected
@@ -35,7 +37,7 @@ const HvCard = props => {
         <div className={classes.icon}>{icon}</div>
       </div>
       {children}
-    </Card>
+    </Box>
   );
 };
 

@@ -45,7 +45,7 @@ export default {
 };
 
 export const Main = () => (
-  <HvCard style={{ width: 360 }}>
+  <HvCard bgcolor="atmo1" style={{ width: 360 }}>
     <HvCardHeader title="Asset Avatar L90" subheader="Compressor" aria-label="Compressor" />
     <HvCardMedia component="img" aria-label="Compressor" height={186} image={compressor} />
     <HvCardContent>
@@ -72,9 +72,6 @@ export const AllComponents = () => {
   ];
 
   const useStyles = makeStyles(theme => ({
-    content: {
-      padding: theme.spacing(0, "sm", 0, "sm")
-    },
     item: {
       padding: theme.spacing(0, 0, "sm", 0)
     },
@@ -105,7 +102,8 @@ export const AllComponents = () => {
   return (
     <HvCard
       style={{ width: 360 }}
-      icon={<Level3Bad color="sema4" />}
+      bgcolor="atmo1"
+      icon={<Level3Bad semantic="sema4" />}
       semantic="sema4"
       selected={checked}
       selectable
@@ -153,8 +151,9 @@ export const AllComponents = () => {
         height={160}
         image={leaf}
       />
-      <HvCardFooter aria-label="Leaf">
+      <HvActionContainer aria-label="Leaf">
         <HvCheckBox
+          id="controller"
           onChange={() => setChecked(!checked)}
           checked={checked}
           value="value"
@@ -166,7 +165,7 @@ export const AllComponents = () => {
           maxVisibleActions={1}
           actionsCallback={(e, id, a) => alert(`You have pressed ${a.label}`)}
         />
-      </HvCardFooter>
+      </HvActionContainer>
     </HvCard>
   );
 };
@@ -188,12 +187,9 @@ export const NoActions = () => {
     { title: "UUID", content: "2101caf3-7cd4-1000-bdp95-d8c4971767c" }
   ];
 
-  const useStyles = makeStyles(() => ({
-    content: {
-      padding: `0 20px 0 20px`
-    },
+  const useStyles = makeStyles(theme => ({
     item: {
-      padding: `0 0 20px 0`
+      padding: theme.spacing(0, 0, "sm", 0)
     },
     bottomItem: {
       padding: 0
@@ -239,7 +235,7 @@ export const NoActions = () => {
   );
 
   return (
-    <HvCard style={{ width: "500px" }}>
+    <HvCard bgcolor="atmo1" style={{ width: "500px" }}>
       <HvCardHeader title="Advanced Server DS120" subheader="QTFCR27520007" />
       <HvCardContent>
         <Content />
@@ -257,7 +253,7 @@ NoActions.story = {
 };
 
 export const OnlyTitle = () => (
-  <HvCard style={{ width: "500px" }}>
+  <HvCard bgcolor="atmo1" style={{ width: "500px" }}>
     <HvCardHeader title="Advanced Server DS120" />
   </HvCard>
 );
@@ -274,9 +270,6 @@ export const KPICard = () => {
   const [checked, setChecked] = useState(0);
 
   const useStyles = makeStyles(theme => ({
-    content: {
-      padding: theme.spacing(0, "sm")
-    },
     item: {
       padding: theme.spacing(0, 0, "sm", 0)
     },
@@ -289,7 +282,8 @@ export const KPICard = () => {
       whiteSpace: "nowrap"
     },
     card: {
-      margin: theme.spacing("sm")
+      margin: theme.spacing("sm"),
+      backgroundColor: theme.palette.atmo1
     }
   }));
 
@@ -377,7 +371,7 @@ KPICard.story = {
 };
 
 export const WithComposition = () => (
-  <HvCard style={{ width: "500px" }}>
+  <HvCard bgcolor="atmo1" style={{ width: "500px" }}>
     <HvCardMedia
       style={{ paddingBottom: 0 }}
       component="img"
@@ -447,7 +441,7 @@ export const Selectable = () => {
   );
 
   return (
-    <HvCard style={{ width: 360 }} selectable selected={checked}>
+    <HvCard bgcolor="atmo1" style={{ width: 360 }} selectable selected={checked}>
       <button
         type="button"
         style={styles.button}
@@ -465,7 +459,7 @@ export const Selectable = () => {
           value="value"
           inputProps={{ "aria-label": "leaf input" }}
         />
-        <HvToggleButton selectedIcon={FavoriteSelected} notSelectedIcon={Favorite} />
+        <HvToggleButton selectedIcon={<FavoriteSelected />} notSelectedIcon={<Favorite />} />
         <div style={{ flex: 1 }} />
         <HvActionsGeneric
           actions={[
@@ -513,6 +507,7 @@ export const SelectableNoFooter = () => {
 
   return (
     <HvCard
+      bgcolor="atmo1"
       style={{ width: 360, cursor: "pointer" }}
       selectable
       selected={selected}

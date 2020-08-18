@@ -1,8 +1,6 @@
-const styles = theme => ({
+const styles = () => ({
   root: {
-    width: "100%",
-    paddingBottom: `${theme.hv.spacing.sm}px`,
-    backgroundColor: theme.hv.palette.atmosphere.atmo1
+    width: "100%"
   },
   media: {
     height: "100%",
