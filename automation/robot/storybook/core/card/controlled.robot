@@ -1,12 +1,13 @@
 *** Setting ***
+Force Tags  v3
 Resource    ../_keywords.resource
 Variables         variables.yaml
 
 
 *** Test Cases ***
 controlled card selection by switch
-  Go To                             ${patterns}card--controlled
-  Wait Until Element Is Enabled     controller
-  Checkbox Should Not Be Selected   ${Checkbox}
+  Go To                             ${patterns}card--all-components
+  Wait Until Element Is Enabled     ${checkbox}
+  Checkbox Should Not Be Selected   ${checkbox}
   Click Element                     controller
-  Checkbox Should Be Selected       ${Checkbox}
+  Checkbox Should Be Selected       ${checkbox}
