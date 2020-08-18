@@ -115,11 +115,11 @@ ToggleButton.propTypes = {
   /**
    * Icon for when not selected. Ignored if the component has children.
    */
-  notSelectedIcon: PropTypes.instanceOf(Object),
+  notSelectedIcon: PropTypes.node,
   /**
    * Icon for when selected. Ignored if the component has children.
    */
-  selectedIcon: PropTypes.instanceOf(Object),
+  selectedIcon: PropTypes.node,
   /**
    * An object containing the labels for the toggle button.
    */
