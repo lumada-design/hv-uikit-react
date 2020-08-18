@@ -5,7 +5,7 @@ Test Setup    Run Keywords
 ...           Go To    ${components}modal--text-and-semantic
 ...           AND    Wait Until Element Is Enabled    ${buttonWarning}
 Force Tags    keyboard
-
+Force Tags    v3
 
 *** Test Cases ***
 focus first element (close button) when modal is opened

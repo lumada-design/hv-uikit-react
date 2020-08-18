@@ -1,22 +1,17 @@
 import React from "react";
-import { useTheme } from "@material-ui/core";
-import { Fail, Success, Caution } from "@hv/uikit-react-icons/dist";
+import { Fail, Success, Caution, Info } from "@hv/uikit-react-icons/dist";
 
 const iconVariant = (variant, monochrome = false) => {
   const Icon = () => {
-    const theme = useTheme();
-
     switch (variant) {
       case "success":
-        return (
-          <Success iconSize="S" color={monochrome ? theme.hv.palette.accent.acce1 : "sema4"} />
-        );
+        return <Success iconSize="S" color={monochrome ? "acce1" : "sema4"} />;
       case "warning":
-        return (
-          <Caution iconSize="S" color={monochrome ? theme.hv.palette.accent.acce1 : "sema20"} />
-        );
+        return <Caution iconSize="S" color={monochrome ? "acce1" : "sema20"} />;
       case "error":
-        return <Fail iconSize="S" color={monochrome ? theme.hv.palette.accent.acce1 : "sema4"} />;
+        return <Fail iconSize="S" color={monochrome ? "acce1" : "sema4"} />;
+      case "info":
+        return <Info iconSize="S" color="acce1" />;
       default:
         return null;
     }
