@@ -42,7 +42,6 @@ const HvWarningText = props => {
       {localAdornment}
       <HvTypography
         id={setId(localId, "notification")}
-        variant="infoText"
         className={clsx(className, classes.warningText, {
           [classes.topGutter]: !disableGutter
         })}

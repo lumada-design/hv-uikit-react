@@ -1337,11 +1337,14 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           placement="left"
                         >
                           <div
-                            aria-haspopup={true}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-owns="bulkActions-actions-menu-children-container"
                             className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                             id="bulkActions-actions-menu"
                             onClick={[Function]}
                             onKeyDown={[Function]}
+                            tabIndex={0}
                           >
                             <WithStyles(ForwardRef(IconButton))
                               aria-label="Dropdown menu"
@@ -3015,11 +3018,14 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           placement="left"
                         >
                           <div
-                            aria-haspopup={true}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-owns="drop-down-menu-1-children-container"
                             className="HvBaseDropdown-root HvDropDownMenu-root HvActionsGeneric-dropDownMenu"
                             id="drop-down-menu-1"
                             onClick={[Function]}
                             onKeyDown={[Function]}
+                            tabIndex={0}
                           >
                             <WithStyles(ForwardRef(IconButton))
                               aria-label="Dropdown menu"

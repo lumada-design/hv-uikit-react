@@ -95,19 +95,10 @@ export interface HvDropdownProps
 
 export type HvDropdownClassKey =
   | "root"
-  | "rootOpen"
-  | "rootOpenUp"
-  | "rootOpenDown"
-  | "rootDisabled"
-  | "rootList"
-  | "list"
   | "label"
-  | "header"
-  | "selection"
   | "arrow"
-  | "headerDisabled"
-  | "icon"
   | "truncate"
-  | "selectionDisabled";
+  | "selectionDisabled"
+  | "rootList";
 
 export default function HvDropdown(props: HvDropdownProps): JSX.Element | null;

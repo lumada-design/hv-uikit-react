@@ -7,7 +7,7 @@ import isNil from "lodash/isNil";
  * @param {string} componentName - The name of the component this function should scan i.e.: HvWarningText.
  */
 const getDescriptorMap = (element, componentName) => {
-  if (element.type?.__docgenInfo?.displayName?.includes(componentName)) {
+  if (element?.type?.__docgenInfo?.displayName?.includes(componentName)) {
     return {
       id: element.props?.id,
       showWhen: element.props?.showWhen
@@ -53,7 +53,7 @@ const findDescriptors = (children, names, descriptors = {}) => {
     if (Array.isArray(children)) {
       children.forEach(child => {
         newDescriptorsMap = updateDescriptors(child, names, newDescriptorsMap);
-        if (child.props?.children) {
+        if (child?.props?.children) {
           newDescriptorsMap = findDescriptors(child.props.children, names, newDescriptorsMap);
         }
       });

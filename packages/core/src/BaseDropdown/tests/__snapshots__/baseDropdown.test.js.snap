@@ -52,18 +52,21 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
       placeholder="Placeholder..."
     >
       <div
-        aria-haspopup={true}
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
+        aria-owns="hv-base-dropdown-3-children-container"
         className="HvBaseDropdown-root"
         id="hv-base-dropdown-3"
         onClick={[Function]}
         onKeyDown={[Function]}
+        tabIndex={0}
       >
         <div
           aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
           className="HvBaseDropdown-header"
           id="hv-base-dropdown-3-header"
           role="textbox"
-          tabIndex={0}
         >
           <div
             className="HvBaseDropdown-selection"
@@ -153,16 +156,19 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
       <ForwardRef(Popper)
         anchorEl={
           <div
-            aria-haspopup="true"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
+            aria-owns="hv-base-dropdown-3-children-container"
             class="HvBaseDropdown-root"
             id="hv-base-dropdown-3"
+            tabindex="0"
           >
             <div
               aria-labelledby="hv-base-dropdown-3-selectionPlaceholder"
               class="HvBaseDropdown-header"
               id="hv-base-dropdown-3-header"
               role="textbox"
-              tabindex="0"
             >
               <div
                 class="HvBaseDropdown-selection"
@@ -194,6 +200,7 @@ exports[`[v3] BaseDropDown closes on double click 1`] = `
             </div>
           </div>
         }
+        disablePortal={false}
         open={false}
         placement="bottom-start"
         popperOptions={
@@ -265,18 +272,21 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
       placeholder="Placeholder..."
     >
       <div
-        aria-haspopup={true}
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
+        aria-owns="hv-base-dropdown-1-children-container"
         className="HvBaseDropdown-root"
         id="hv-base-dropdown-1"
         onClick={[Function]}
         onKeyDown={[Function]}
+        tabIndex={0}
       >
         <div
           aria-labelledby="hv-base-dropdown-1-selectionPlaceholder"
           className="HvBaseDropdown-header"
           id="hv-base-dropdown-1-header"
           role="textbox"
-          tabIndex={0}
         >
           <div
             className="HvBaseDropdown-selection"
@@ -365,6 +375,7 @@ exports[`[v3] BaseDropDown is rendered correctly and behaves as expected 1`] = `
       </div>
       <ForwardRef(Popper)
         anchorEl={null}
+        disablePortal={false}
         open={false}
         placement="bottom-start"
         popperOptions={
@@ -438,19 +449,20 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
       <div
         aria-controls="hv-base-dropdown-2-children-container"
         aria-expanded={true}
-        aria-haspopup={true}
+        aria-haspopup="listbox"
+        aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
         aria-owns="hv-base-dropdown-2-children-container"
         className="HvBaseDropdown-root"
         id="hv-base-dropdown-2"
         onClick={[Function]}
         onKeyDown={[Function]}
+        tabIndex={0}
       >
         <div
           aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
           className="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
           id="hv-base-dropdown-2-header"
           role="textbox"
-          tabIndex={0}
         >
           <div
             className="HvBaseDropdown-selection"
@@ -542,17 +554,18 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
           <div
             aria-controls="hv-base-dropdown-2-children-container"
             aria-expanded="true"
-            aria-haspopup="true"
+            aria-haspopup="listbox"
+            aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
             aria-owns="hv-base-dropdown-2-children-container"
             class="HvBaseDropdown-root"
             id="hv-base-dropdown-2"
+            tabindex="0"
           >
             <div
               aria-labelledby="hv-base-dropdown-2-selectionPlaceholder"
               class="HvBaseDropdown-header HvBaseDropdown-headerOpen HvBaseDropdown-headerOpenDown"
               id="hv-base-dropdown-2-header"
               role="textbox"
-              tabindex="0"
             >
               <div
                 class="HvBaseDropdown-selection"
@@ -584,6 +597,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
             </div>
           </div>
         }
+        disablePortal={false}
         open={true}
         placement="bottom-start"
         popperOptions={
@@ -615,7 +629,7 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
                       class="HvBaseDropdown-inputExtensionOpen"
                     />
                     <div
-                      class="MuiBox-root MuiBox-root-1 HvBaseDropdown-panel HvPanel-root"
+                      class="HvBaseDropdown-panel"
                       id="hv-base-dropdown-2-children-container"
                     />
                   </div>
@@ -648,30 +662,10 @@ exports[`[v3] BaseDropDown opens on click 1`] = `
                       }
                     }
                   />
-                  <WithStyles(HvPanel)
+                  <div
                     className="HvBaseDropdown-panel"
                     id="hv-base-dropdown-2-children-container"
-                  >
-                    <HvPanel
-                      className="HvBaseDropdown-panel"
-                      classes={
-                        Object {
-                          "root": "HvPanel-root",
-                        }
-                      }
-                      id="hv-base-dropdown-2-children-container"
-                    >
-                      <Styled(MuiBox)
-                        className="HvBaseDropdown-panel HvPanel-root"
-                        id="hv-base-dropdown-2-children-container"
-                      >
-                        <div
-                          className="MuiBox-root MuiBox-root-1 HvBaseDropdown-panel HvPanel-root"
-                          id="hv-base-dropdown-2-children-container"
-                        />
-                      </Styled(MuiBox)>
-                    </HvPanel>
-                  </WithStyles(HvPanel)>
+                  />
                 </div>
               </ForwardRef(ClickAwayListener)>
             </div>

@@ -9,6 +9,7 @@ import styles from "./styles";
 import withId from "../withId";
 import HvBaseDropdown from "../BaseDropdown";
 import List from "../List";
+import HvPanel from "../Panel";
 
 /**
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
@@ -84,17 +85,18 @@ const DropDownMenu = ({
       disabled={disabled}
       {...others}
     >
-      <List
-        id={listId}
-        values={dataList}
-        selectable={false}
-        condensed
-        onClick={(event, item) => {
-          if (!keepOpened) handleClose();
-          onClick?.(event, item);
-        }}
-        onKeyDown={handleKeyDown}
-      />
+      <HvPanel>
+        <List
+          id={listId}
+          values={dataList}
+          selectable={false}
+          onClick={(event, item) => {
+            if (!keepOpened) handleClose();
+            onClick?.(event, item);
+          }}
+          onKeyDown={handleKeyDown}
+        />
+      </HvPanel>
     </HvBaseDropdown>
   );
 };
