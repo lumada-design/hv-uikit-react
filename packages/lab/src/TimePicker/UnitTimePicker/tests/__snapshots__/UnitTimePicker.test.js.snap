@@ -307,8 +307,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               "resize": "HvBaseInput-resize",
                               "root": "HvBaseInput-root",
                               "rootResizable": "HvBaseInput-rootResizable",
-                              "textArea": "HvBaseInput-textArea",
-                              "textAreaRoot": "HvBaseInput-textAreaRoot",
                             }
                           }
                           endAdornment={null}
@@ -732,7 +730,6 @@ exports[`UnitTimePicker should render correctly 1`] = `
                               aria-relevant="additions text"
                               className="HvWarningText-warningText HvWarningText-topGutter"
                               id="hv-input-2-warning-notification"
-                              variant="infoText"
                             >
                               <ForwardRef
                                 aria-atomic="true"
@@ -765,13 +762,12 @@ exports[`UnitTimePicker should render correctly 1`] = `
                                   }
                                 }
                                 id="hv-input-2-warning-notification"
-                                variant="infoText"
                               >
-                                <span
+                                <p
                                   aria-atomic="true"
                                   aria-live="polite"
                                   aria-relevant="additions text"
-                                  className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root"
+                                  className="HvWarningText-warningText HvWarningText-topGutter HvTypography-root HvTypography-normalText"
                                   id="hv-input-2-warning-notification"
                                 />
                               </ForwardRef>

@@ -1,22 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tab, withStyles } from "@material-ui/core";
+import { Tab, ButtonBase, withStyles } from "@material-ui/core";
 import styles from "./styles";
 
 const HvTab = props => {
   const { classes, ...others } = props;
 
+  const TabSubstitute = React.forwardRef((subprops, ref) => {
+    return (
+      <ButtonBase disabled={others.disabled} ref={ref} {...subprops}>
+        {subprops.children}
+        <div role="presentation" className={classes.tabBorder} />
+      </ButtonBase>
+    );
+  });
+
   return (
-    <Tab
-      classes={{
-        root: classes.root,
-        selected: classes.selected,
-        disabled: classes.disabled
-      }}
-      disableRipple
-      disableTouchRipple
-      {...others}
-    />
+    <>
+      <Tab
+        classes={{
+          root: classes.root,
+          selected: classes.selected,
+          disabled: classes.disabled
+        }}
+        disableRipple
+        disableTouchRipple
+        component={TabSubstitute}
+        {...others}
+      />
+    </>
   );
 };
 
@@ -37,6 +49,10 @@ HvTab.propTypes = {
      * Styles applied to the root element.
      */
     root: PropTypes.string,
+    /**
+     * Styles applied to the tab bottom border.
+     */
+    tabBorder: PropTypes.string,
     /**
      * Styles applied to the label container element if `label` is provided.
      */

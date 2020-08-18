@@ -4,7 +4,7 @@ Force Tags    keyboard
 Documentation
 ...    We are using Material UI component which do not support w3c which uses arrows
 ...    Material UI issue https://github.com/mui-org/material-ui/issues/6955
-
+Force Tags    v3
 
 *** Test Cases ***
 Focus next element when TAB keyboard is pressed on focused tab
