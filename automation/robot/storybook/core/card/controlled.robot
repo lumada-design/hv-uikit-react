@@ -5,7 +5,7 @@ Variables         variables.yaml
 
 *** Test Cases ***
 controlled card selection by switch
-  Go To                             ${components}card--controlled
+  Go To                             ${tests}card--controlled
   Wait Until Element Is Enabled     controller
   Checkbox Should Not Be Selected   ${Checkbox}
   Click Element                     controller

@@ -14,8 +14,9 @@ module.exports = {
   // to avoid a manual setup, we must keep the "stories" suffix at least for mdx
   // see https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/docspage.md#story-file-names
   stories: [
-    "../doc/**/*.stories.(js|mdx)",
-    "../packages/core/src/**/*.stories.(js|mdx)",
+    "../doc/**/*.stories.@(js|mdx)",
+    "../packages/core/src/**/*.stories.@(js|mdx)",
+    ...(!process.env.EXCLUDE_TEST_STORIES ? ["../packages/core/src/**/stories/*.test.@(js|mdx)"] : []),
     "../packages/lab/src/**/*.stories.js"
   ],
   addons: [
