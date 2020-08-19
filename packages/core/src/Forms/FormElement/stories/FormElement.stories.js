@@ -7,11 +7,12 @@ import {
   HvLabel,
   HvAdornment,
   HvInfoMessage,
-  HvWarningText
+  HvWarningText,
+  HvCharCounter
 } from "../../..";
 
 export default {
-  title: "Patterns/Forms/Form Element",
+  title: "Components/Forms/Form Element",
   parameters: {
     v3: true,
     componentSubtitle: null,
@@ -108,6 +109,71 @@ export const Main = () => {
       <HvWarningText id="warning-text">Names do not contain numbers.</HvWarningText>
     </HvFormElement>
   );
+};
+
+export const TextAreaFormElement = () => {
+  const [elementValue, setElementValue] = useState("");
+  const [elementStatus, setElementStatus] = useState("standBy");
+
+  const inputId = "controlled-input";
+  const inputLabelId = "controlled-input-label";
+  const maxCharacterQuantity = 30;
+  const inputReference = useRef(null);
+
+  const setElement = (value = "") => {
+    const isOverloaded = value.length > maxCharacterQuantity;
+    const isEmpty = !value || value.length === 0;
+    setElementStatus((isOverloaded && "invalid") || (isEmpty && "standBy"));
+    setElementValue(value);
+  };
+
+  const onFocusHandler = event => {
+    const { type } = event.target;
+    if (type === "button") return;
+    if (!event.currentTarget.contains(document.activeElement) || elementStatus !== "standBy") {
+      setElementStatus("standBy");
+    }
+  };
+
+  const onBlurHandler = event => {
+    if (event.relatedTarget === null || event.relatedTarget === undefined) {
+      setElement(event.target.value);
+    }
+  };
+
+  return (
+    <HvFormElement
+      onBlur={event => onBlurHandler(event)}
+      onFocus={event => onFocusHandler(event)}
+      value={elementValue}
+      status={elementStatus}
+    >
+      <HvLabel id={inputLabelId} label="First name">
+        <HvCharCounter
+          id="main-info-message"
+          currentCharQuantity={elementValue.length}
+          maxCharQuantity={maxCharacterQuantity}
+        />
+        <HvBaseInput
+          id={inputId}
+          inputRef={inputReference}
+          placeholder="Insert your name"
+          onChange={(event, value) => setElement(value)}
+          multiline
+        />
+      </HvLabel>
+      <HvWarningText id="warning-text">Too many characters.</HvWarningText>
+    </HvFormElement>
+  );
+};
+
+TextAreaFormElement.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Form element propagating the invalid state to the input."
+    }
+  }
 };
 
 export const FormElementInvalid = () => {

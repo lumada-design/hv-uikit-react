@@ -47,6 +47,11 @@
 
 - `showInfoIcon` removed.
 
+### TextArea
+
+- `startCount` removed.
+- `endCount` removed.
+
 ### FormElement
 
 - `HelperText` removed.

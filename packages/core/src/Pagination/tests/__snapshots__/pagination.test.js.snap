@@ -1208,6 +1208,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                         aria-label="6 Total pages for page input"
                                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                         id="pagination-currentPage-input"
+                                        rows="10"
                                         type="number"
                                         value="1"
                                       />,
@@ -1220,6 +1221,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                       aria-label="6 Total pages for page input"
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                       id="pagination-currentPage-input"
+                                      rows="10"
                                       type="number"
                                       value="1"
                                     />,
@@ -1247,7 +1249,9 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                       "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                                       "invalidRoot": "HvBaseInput-invalidRoot",
                                       "multiLine": "HvBaseInput-multiLine HvInput-multiLine",
+                                      "resize": "HvBaseInput-resize",
                                       "root": "HvBaseInput-root",
+                                      "rootResizable": "HvBaseInput-rootResizable",
                                     }
                                   }
                                   endAdornment={null}
@@ -1260,6 +1264,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                           aria-label="6 Total pages for page input"
                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                           id="pagination-currentPage-input"
+                                          rows="10"
                                           type="number"
                                           value="1"
                                         />,
@@ -1272,6 +1277,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                         aria-label="6 Total pages for page input"
                                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                         id="pagination-currentPage-input"
+                                        rows="10"
                                         type="number"
                                         value="1"
                                       />,
@@ -1315,6 +1321,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                               aria-label="6 Total pages for page input"
                                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                               id="pagination-currentPage-input"
+                                              rows="10"
                                               type="number"
                                               value="1"
                                             />,
@@ -1328,6 +1335,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                             aria-label="6 Total pages for page input"
                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                             id="pagination-currentPage-input"
+                                            rows="10"
                                             type="number"
                                             value="1"
                                           />,
@@ -1338,6 +1346,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
+                                      rows={10}
                                       type="number"
                                       value="1"
                                     >
@@ -1379,6 +1388,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                                 aria-label="6 Total pages for page input"
                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                                 id="pagination-currentPage-input"
+                                                rows="10"
                                                 type="number"
                                                 value="1"
                                               />,
@@ -1392,6 +1402,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                               aria-label="6 Total pages for page input"
                                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                               id="pagination-currentPage-input"
+                                              rows="10"
                                               type="number"
                                               value="1"
                                             />,
@@ -1402,6 +1413,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                         onChange={[Function]}
                                         onFocus={[Function]}
                                         onKeyDown={[Function]}
+                                        rows={10}
                                         type="number"
                                         value="1"
                                       >
@@ -1444,6 +1456,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                                   aria-label="6 Total pages for page input"
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                                   id="pagination-currentPage-input"
+                                                  rows="10"
                                                   type="number"
                                                   value="1"
                                                 />,
@@ -1457,6 +1470,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                                 aria-label="6 Total pages for page input"
                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                                 id="pagination-currentPage-input"
+                                                rows="10"
                                                 type="number"
                                                 value="1"
                                               />,
@@ -1467,6 +1481,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                           onChange={[Function]}
                                           onFocus={[Function]}
                                           onKeyDown={[Function]}
+                                          rows={10}
                                           type="number"
                                           value="1"
                                         >
@@ -1513,6 +1528,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                                     aria-label="6 Total pages for page input"
                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                                     id="pagination-currentPage-input"
+                                                    rows="10"
                                                     type="number"
                                                     value="1"
                                                   />,
@@ -1526,6 +1542,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                                   aria-label="6 Total pages for page input"
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input HvPagination-pageSizeInput"
                                                   id="pagination-currentPage-input"
+                                                  rows="10"
                                                   type="number"
                                                   value="1"
                                                 />,
@@ -1536,6 +1553,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                             onChange={[Function]}
                                             onFocus={[Function]}
                                             onKeyDown={[Function]}
+                                            rows={10}
                                             type="number"
                                             value="1"
                                           >
@@ -1555,6 +1573,7 @@ exports[`v3 Custom Pagination should render correctly 1`] = `
                                                 onFocus={[Function]}
                                                 onKeyDown={[Function]}
                                                 required={false}
+                                                rows={10}
                                                 type="number"
                                                 value="1"
                                               />

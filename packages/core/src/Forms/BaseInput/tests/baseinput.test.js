@@ -44,4 +44,13 @@ describe("v3 Input", () => {
     );
     expect(getInputProps(wrapper).disabled).toBe(true);
   });
+
+  it("should render the Input component with the multiline style", () => {
+    const wrapperTextArea = mount(
+      <HvProvider>
+        <BaseInput placeholder="test" multiline />
+      </HvProvider>
+    );
+    expect(wrapperTextArea.find(BaseInput)).toMatchSnapshot();
+  });
 });

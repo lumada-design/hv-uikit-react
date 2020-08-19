@@ -34,6 +34,7 @@ const HvBaseInput = props => {
     onChange,
     value,
     multiline = false,
+    resizable = false,
     defaultValue,
     required = false,
     invalid = false,
@@ -56,13 +57,14 @@ const HvBaseInput = props => {
   const localValue = value ?? elementValue;
   const localDisabled = disabled || elementDisabled;
   const localId = id ?? setId(elementId, "input");
-  const { HvLabel, HvSuggestions, HvInfoMessage, HvWarningText } = descriptors;
+  const { HvLabel, HvSuggestions, HvInfoMessage, HvWarningText, HvCharCounter } = descriptors;
 
   return (
     <div
       className={clsx(classes.root, {
         [classes.disabledRoot]: localDisabled,
-        [classes.invalidRoot]: localInvalid
+        [classes.invalidRoot]: localInvalid,
+        [classes.rootResizable]: multiline && resizable
       })}
     >
       <Input
@@ -74,7 +76,9 @@ const HvBaseInput = props => {
         placeholder={placeholder}
         onChange={onChangeHandler}
         classes={{
-          input: classes.input,
+          input: clsx(classes.input, {
+            [classes.resize]: !disabled && resizable
+          }),
           focused: classes.inputRootFocused,
           disabled: classes.inputDisabled,
           multiline: classes.multiLine
@@ -88,14 +92,15 @@ const HvBaseInput = props => {
           "aria-invalid": localInvalid || undefined,
           "aria-describedby": concatDescribeBy([HvWarningText?.[0]?.id, HvInfoMessage?.[0]?.id]),
           "aria-labelledby": HvLabel?.[0]?.id,
-          "aria-controls": HvSuggestions?.[0]?.id,
+          "aria-controls": concatDescribeBy([HvSuggestions?.[0]?.id, HvCharCounter?.[0]?.id]),
           ...inputProps
         }}
         inputRef={inputRef}
         multiline={multiline}
+        rows={10}
         {...others}
       />
-      <div role="presentation" className={classes.inputBorderContainer} />
+      {!multiline && <div role="presentation" className={classes.inputBorderContainer} />}
     </div>
   );
 };
@@ -117,6 +122,10 @@ HvBaseInput.propTypes = {
      * Styles applied to the root container of the input.
      */
     root: PropTypes.string,
+    rootResizable: PropTypes.string,
+    resize: PropTypes.string,
+    textAreaRoot: PropTypes.string,
+    defaultWith: PropTypes.string,
     /**
      * Styles applied to the root container of the input when it is disabled.
      */
@@ -145,6 +154,7 @@ HvBaseInput.propTypes = {
      * Styles applied to input html element.
      */
     input: PropTypes.string,
+    textArea: PropTypes.string,
     /**
      * Styles applied to input html element when it is disabled.
      */
@@ -191,6 +201,7 @@ HvBaseInput.propTypes = {
    * If true, a textarea element will be rendered.
    */
   multiline: PropTypes.bool,
+  resizable: PropTypes.bool,
   /**
    * If true, the input element will be required.
    */

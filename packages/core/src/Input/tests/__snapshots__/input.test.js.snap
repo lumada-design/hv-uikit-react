@@ -159,6 +159,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                         "current": <input
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           id="hv-input-7-input"
+                          rows="10"
                           type="text"
                           value=""
                         />,
@@ -170,6 +171,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                       "current": <input
                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                         id="hv-input-7-input"
+                        rows="10"
                         type="text"
                         value=""
                       />,
@@ -197,7 +199,9 @@ exports[`v3 Input should not have the validation section 1`] = `
                         "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                         "invalidRoot": "HvBaseInput-invalidRoot",
                         "multiLine": "HvBaseInput-multiLine HvInput-multiLine",
+                        "resize": "HvBaseInput-resize",
                         "root": "HvBaseInput-root",
+                        "rootResizable": "HvBaseInput-rootResizable",
                       }
                     }
                     endAdornment={null}
@@ -208,6 +212,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                           "current": <input
                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                             id="hv-input-7-input"
+                            rows="10"
                             type="text"
                             value=""
                           />,
@@ -219,6 +224,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                         "current": <input
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           id="hv-input-7-input"
+                          rows="10"
                           type="text"
                           value=""
                         />,
@@ -260,6 +266,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                               "current": <input
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                 id="hv-input-7-input"
+                                rows="10"
                                 type="text"
                                 value=""
                               />,
@@ -272,6 +279,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                             "current": <input
                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                               id="hv-input-7-input"
+                              rows="10"
                               type="text"
                               value=""
                             />,
@@ -282,6 +290,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                         onChange={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
+                        rows={10}
                         type="text"
                       >
                         <ForwardRef(Input)
@@ -320,6 +329,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                                 "current": <input
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                   id="hv-input-7-input"
+                                  rows="10"
                                   type="text"
                                   value=""
                                 />,
@@ -332,6 +342,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                               "current": <input
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                 id="hv-input-7-input"
+                                rows="10"
                                 type="text"
                                 value=""
                               />,
@@ -342,6 +353,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
+                          rows={10}
                           type="text"
                         >
                           <WithStyles(ForwardRef(InputBase))
@@ -381,6 +393,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                                   "current": <input
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                     id="hv-input-7-input"
+                                    rows="10"
                                     type="text"
                                     value=""
                                   />,
@@ -393,6 +406,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                                 "current": <input
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                   id="hv-input-7-input"
+                                  rows="10"
                                   type="text"
                                   value=""
                                 />,
@@ -403,6 +417,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
+                            rows={10}
                             type="text"
                           >
                             <ForwardRef(InputBase)
@@ -446,6 +461,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                                     "current": <input
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                       id="hv-input-7-input"
+                                      rows="10"
                                       type="text"
                                       value=""
                                     />,
@@ -458,6 +474,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                                   "current": <input
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                     id="hv-input-7-input"
+                                    rows="10"
                                     type="text"
                                     value=""
                                   />,
@@ -468,6 +485,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
+                              rows={10}
                               type="text"
                             >
                               <div
@@ -485,6 +503,7 @@ exports[`v3 Input should not have the validation section 1`] = `
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   required={false}
+                                  rows={10}
                                   type="text"
                                 />
                               </div>
@@ -833,6 +852,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           id="hv-input-9-input"
                           maxlength="250"
+                          rows="10"
                           type="text"
                           value=""
                         />,
@@ -845,6 +865,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                         id="hv-input-9-input"
                         maxlength="250"
+                        rows="10"
                         type="text"
                         value=""
                       />,
@@ -872,7 +893,9 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                         "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                         "invalidRoot": "HvBaseInput-invalidRoot",
                         "multiLine": "HvBaseInput-multiLine HvInput-multiLine",
+                        "resize": "HvBaseInput-resize",
                         "root": "HvBaseInput-root",
+                        "rootResizable": "HvBaseInput-rootResizable",
                       }
                     }
                     endAdornment={null}
@@ -885,6 +908,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                             id="hv-input-9-input"
                             maxlength="250"
+                            rows="10"
                             type="text"
                             value=""
                           />,
@@ -897,6 +921,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           id="hv-input-9-input"
                           maxlength="250"
+                          rows="10"
                           type="text"
                           value=""
                         />,
@@ -940,6 +965,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                 id="hv-input-9-input"
                                 maxlength="250"
+                                rows="10"
                                 type="text"
                                 value=""
                               />,
@@ -953,6 +979,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                               id="hv-input-9-input"
                               maxlength="250"
+                              rows="10"
                               type="text"
                               value=""
                             />,
@@ -963,6 +990,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                         onChange={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
+                        rows={10}
                         type="text"
                       >
                         <ForwardRef(Input)
@@ -1003,6 +1031,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                   id="hv-input-9-input"
                                   maxlength="250"
+                                  rows="10"
                                   type="text"
                                   value=""
                                 />,
@@ -1016,6 +1045,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                 id="hv-input-9-input"
                                 maxlength="250"
+                                rows="10"
                                 type="text"
                                 value=""
                               />,
@@ -1026,6 +1056,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
+                          rows={10}
                           type="text"
                         >
                           <WithStyles(ForwardRef(InputBase))
@@ -1067,6 +1098,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                     id="hv-input-9-input"
                                     maxlength="250"
+                                    rows="10"
                                     type="text"
                                     value=""
                                   />,
@@ -1080,6 +1112,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                   id="hv-input-9-input"
                                   maxlength="250"
+                                  rows="10"
                                   type="text"
                                   value=""
                                 />,
@@ -1090,6 +1123,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
+                            rows={10}
                             type="text"
                           >
                             <ForwardRef(InputBase)
@@ -1135,6 +1169,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                       id="hv-input-9-input"
                                       maxlength="250"
+                                      rows="10"
                                       type="text"
                                       value=""
                                     />,
@@ -1148,6 +1183,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                     id="hv-input-9-input"
                                     maxlength="250"
+                                    rows="10"
                                     type="text"
                                     value=""
                                   />,
@@ -1158,6 +1194,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
+                              rows={10}
                               type="text"
                             >
                               <div
@@ -1176,6 +1213,7 @@ exports[`v3 Input should pass other props to the child input component 1`] = `
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   required={false}
+                                  rows={10}
                                   type="text"
                                 />
                               </div>
@@ -1501,6 +1539,7 @@ exports[`v3 Input should render correctly 1`] = `
                         "current": <input
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           id="hv-input-2-input"
+                          rows="10"
                           type="text"
                           value=""
                         />,
@@ -1512,6 +1551,7 @@ exports[`v3 Input should render correctly 1`] = `
                       "current": <input
                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                         id="hv-input-2-input"
+                        rows="10"
                         type="text"
                         value=""
                       />,
@@ -1539,7 +1579,9 @@ exports[`v3 Input should render correctly 1`] = `
                         "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                         "invalidRoot": "HvBaseInput-invalidRoot",
                         "multiLine": "HvBaseInput-multiLine HvInput-multiLine",
+                        "resize": "HvBaseInput-resize",
                         "root": "HvBaseInput-root",
+                        "rootResizable": "HvBaseInput-rootResizable",
                       }
                     }
                     endAdornment={null}
@@ -1550,6 +1592,7 @@ exports[`v3 Input should render correctly 1`] = `
                           "current": <input
                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                             id="hv-input-2-input"
+                            rows="10"
                             type="text"
                             value=""
                           />,
@@ -1561,6 +1604,7 @@ exports[`v3 Input should render correctly 1`] = `
                         "current": <input
                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                           id="hv-input-2-input"
+                          rows="10"
                           type="text"
                           value=""
                         />,
@@ -1602,6 +1646,7 @@ exports[`v3 Input should render correctly 1`] = `
                               "current": <input
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                 id="hv-input-2-input"
+                                rows="10"
                                 type="text"
                                 value=""
                               />,
@@ -1614,6 +1659,7 @@ exports[`v3 Input should render correctly 1`] = `
                             "current": <input
                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                               id="hv-input-2-input"
+                              rows="10"
                               type="text"
                               value=""
                             />,
@@ -1624,6 +1670,7 @@ exports[`v3 Input should render correctly 1`] = `
                         onChange={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
+                        rows={10}
                         type="text"
                       >
                         <ForwardRef(Input)
@@ -1662,6 +1709,7 @@ exports[`v3 Input should render correctly 1`] = `
                                 "current": <input
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                   id="hv-input-2-input"
+                                  rows="10"
                                   type="text"
                                   value=""
                                 />,
@@ -1674,6 +1722,7 @@ exports[`v3 Input should render correctly 1`] = `
                               "current": <input
                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                 id="hv-input-2-input"
+                                rows="10"
                                 type="text"
                                 value=""
                               />,
@@ -1684,6 +1733,7 @@ exports[`v3 Input should render correctly 1`] = `
                           onChange={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
+                          rows={10}
                           type="text"
                         >
                           <WithStyles(ForwardRef(InputBase))
@@ -1723,6 +1773,7 @@ exports[`v3 Input should render correctly 1`] = `
                                   "current": <input
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                     id="hv-input-2-input"
+                                    rows="10"
                                     type="text"
                                     value=""
                                   />,
@@ -1735,6 +1786,7 @@ exports[`v3 Input should render correctly 1`] = `
                                 "current": <input
                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                   id="hv-input-2-input"
+                                  rows="10"
                                   type="text"
                                   value=""
                                 />,
@@ -1745,6 +1797,7 @@ exports[`v3 Input should render correctly 1`] = `
                             onChange={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
+                            rows={10}
                             type="text"
                           >
                             <ForwardRef(InputBase)
@@ -1788,6 +1841,7 @@ exports[`v3 Input should render correctly 1`] = `
                                     "current": <input
                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                       id="hv-input-2-input"
+                                      rows="10"
                                       type="text"
                                       value=""
                                     />,
@@ -1800,6 +1854,7 @@ exports[`v3 Input should render correctly 1`] = `
                                   "current": <input
                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input"
                                     id="hv-input-2-input"
+                                    rows="10"
                                     type="text"
                                     value=""
                                   />,
@@ -1810,6 +1865,7 @@ exports[`v3 Input should render correctly 1`] = `
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
+                              rows={10}
                               type="text"
                             >
                               <div
@@ -1827,6 +1883,7 @@ exports[`v3 Input should render correctly 1`] = `
                                   onFocus={[Function]}
                                   onKeyDown={[Function]}
                                   required={false}
+                                  rows={10}
                                   type="text"
                                 />
                               </div>

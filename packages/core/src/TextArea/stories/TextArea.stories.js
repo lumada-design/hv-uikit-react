@@ -4,10 +4,12 @@ import { HvTextArea, HvButton, HvInput } from "../..";
 export default {
   title: "Patterns/Text Area",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvTextArea } from '@hv/uikit-react-core/dist'"
   },
-  component: HvTextArea
+  component: HvTextArea,
+  decorators: [storyFn => <div style={{ width: "600px", height: "400px" }}>{storyFn()}</div>]
 };
 
 export const Main = () => {
@@ -16,7 +18,7 @@ export const Main = () => {
     placeholder: "Enter value"
   };
 
-  return <HvTextArea label="Text Area" labels={labels} id="test" width={610} />;
+  return <HvTextArea labels={labels} id="main" rows={5} />;
 };
 
 export const Resizable = () => {
@@ -25,11 +27,12 @@ export const Resizable = () => {
     placeholder: "Enter value"
   };
 
-  return <HvTextArea label="Text Area" labels={labels} id="test" rows={5} resizable />;
+  return <HvTextArea labels={labels} id="resize" rows={5} maxCharQuantity={1000} resizable />;
 };
 
 Resizable.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Text area that allow resizing."
     }
@@ -41,7 +44,8 @@ export const LimitedBlocking = () => {
 
   const labels = {
     inputLabel: "Label",
-    placeholder: "Enter value"
+    placeholder: "Enter value",
+    maxCharQuantityWarningText: "too many characters"
   };
 
   const setCounter = (event, data) => {
@@ -51,6 +55,8 @@ export const LimitedBlocking = () => {
 
   return (
     <HvTextArea
+      id="limited-blocking"
+      initialValue="some text"
       rows={5}
       labels={labels}
       maxCharQuantity={10}
@@ -63,6 +69,7 @@ export const LimitedBlocking = () => {
 
 LimitedBlocking.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Text area that limits the quantity of character that can be introduced in the text area."
@@ -74,16 +81,25 @@ export const LimitedWithCustomLabels = () => {
   const labels = {
     inputLabel: "Label",
     placeholder: "Enter value",
-    startCount: "Inserted",
     middleCount: "of",
-    endCount: "allowed"
+    maxCharQuantityWarningText: "too many characters",
+    requiredWarningText: "This text area can't be empty"
   };
 
-  return <HvTextArea rows={5} labels={labels} maxCharQuantity={10} />;
+  return (
+    <HvTextArea
+      id="limited-custom-label"
+      rows={5}
+      labels={labels}
+      isRequired
+      maxCharQuantity={10}
+    />
+  );
 };
 
 LimitedWithCustomLabels.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Text area char count with a custom labels."
     }
@@ -93,56 +109,18 @@ LimitedWithCustomLabels.story = {
 export const Disabled = () => {
   const labels = {
     inputLabel: "Label",
-    placeholder: "Enter value"
+    placeholder: "Enter value",
+    maxCharQuantityWarningText: "too many characters"
   };
 
-  return <HvTextArea label="Text Area" rows={5} labels={labels} maxCharQuantity={1500} disabled />;
+  return <HvTextArea id="disabled" rows={5} labels={labels} maxCharQuantity={1500} disabled />;
 };
 
 Disabled.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Text area that does not allows any interaction."
-    }
-  }
-};
-
-export const Controlled = () => {
-  const [value, setValue] = useState("Initial State");
-
-  const btnStyle = {
-    width: 120,
-    marginRight: 20
-  };
-
-  return (
-    <>
-      <HvButton style={btnStyle} onClick={() => setValue("First value")}>
-        First value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Second value")}>
-        Second value
-      </HvButton>
-      <HvButton style={btnStyle} onClick={() => setValue("Third value")}>
-        Third value
-      </HvButton>
-
-      <p />
-
-      <HvTextArea
-        value={value}
-        rows={5}
-        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
-        onChange={(e, newValue) => setValue(newValue)}
-      />
-    </>
-  );
-};
-
-Controlled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Text area value altered from an outside component."
     }
   }
 };
@@ -178,12 +156,16 @@ export const ControlledLimited = () => {
       />
 
       <HvTextArea
+        id="controlled-limited"
         value={value}
         rows={5}
-        labels={{ inputLabel: "Label", placeholder: "Enter value" }}
+        labels={{
+          inputLabel: "Label",
+          placeholder: "Enter value",
+          maxCharQuantityWarningText: "too many characters"
+        }}
         onChange={(e, newValue) => setValue(newValue)}
         maxCharQuantity={maxChar}
-        blockMax
       />
     </>
   );
@@ -191,6 +173,81 @@ export const ControlledLimited = () => {
 
 ControlledLimited.story = {
   parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area value altered from an outside component."
+    }
+  }
+};
+
+export const customValidation = () => {
+  const hasNumber = value => /\d/.test(value);
+  return (
+    <>
+      <HvTextArea
+        id="custom-validation"
+        rows={5}
+        labels={{
+          inputLabel: "Label",
+          placeholder: "Enter value",
+          warningText: "This text area has a number",
+          maxCharQuantityWarningText: "too many characters"
+        }}
+        validation={value => !hasNumber(value)}
+      />
+    </>
+  );
+};
+
+customValidation.story = {
+  parameters: {
+    v3: true,
+    docs: {
+      storyDescription: "Text area value that can't contain numbers."
+    }
+  }
+};
+
+export const ControlledValidation = () => {
+  const [value, setValue] = useState("Initial State");
+  const [validationState, setvalidationState] = useState("standBy");
+
+  const btnStyle = {
+    width: 120,
+    marginRight: 20
+  };
+
+  return (
+    <>
+      <HvButton style={btnStyle} onClick={() => setvalidationState("standBy")}>
+        stand by
+      </HvButton>
+      <HvButton style={btnStyle} onClick={() => setvalidationState("invalid")}>
+        invalid
+      </HvButton>
+
+      <p />
+
+      <HvTextArea
+        id="controlled-validation"
+        value={value}
+        rows={5}
+        validationState={validationState}
+        labels={{
+          inputLabel: "Label",
+          placeholder: "Enter value",
+          warningText: "This text area is invalid",
+          maxCharQuantityWarningText: "too many characters"
+        }}
+        onChange={(e, newValue) => setValue(newValue)}
+      />
+    </>
+  );
+};
+
+ControlledValidation.story = {
+  parameters: {
+    v3: true,
     docs: {
       storyDescription: "Text area value altered from an outside component."
     }

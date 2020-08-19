@@ -432,6 +432,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-1-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -1114,6 +1115,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                             id="hv-dropdown-base-1-values-search-input"
                                                                             placeholder="Search"
+                                                                            rows="10"
                                                                             type="text"
                                                                             value=""
                                                                           />,
@@ -1127,6 +1129,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                           id="hv-dropdown-base-1-values-search-input"
                                                                           placeholder="Search"
+                                                                          rows="10"
                                                                           type="text"
                                                                           value=""
                                                                         />,
@@ -1168,7 +1171,9 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                           "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                                                                           "invalidRoot": "HvBaseInput-invalidRoot",
                                                                           "multiLine": "HvBaseInput-multiLine HvInput-multiLine",
+                                                                          "resize": "HvBaseInput-resize",
                                                                           "root": "HvBaseInput-root",
+                                                                          "rootResizable": "HvBaseInput-rootResizable",
                                                                         }
                                                                       }
                                                                       endAdornment={
@@ -1206,6 +1211,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                               id="hv-dropdown-base-1-values-search-input"
                                                                               placeholder="Search"
+                                                                              rows="10"
                                                                               type="text"
                                                                               value=""
                                                                             />,
@@ -1219,6 +1225,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                             id="hv-dropdown-base-1-values-search-input"
                                                                             placeholder="Search"
+                                                                            rows="10"
                                                                             type="text"
                                                                             value=""
                                                                           />,
@@ -1301,6 +1308,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                   id="hv-dropdown-base-1-values-search-input"
                                                                                   placeholder="Search"
+                                                                                  rows="10"
                                                                                   type="text"
                                                                                   value=""
                                                                                 />,
@@ -1315,6 +1323,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                 id="hv-dropdown-base-1-values-search-input"
                                                                                 placeholder="Search"
+                                                                                rows="10"
                                                                                 type="text"
                                                                                 value=""
                                                                               />,
@@ -1326,6 +1335,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                           onFocus={[Function]}
                                                                           onKeyDown={[Function]}
                                                                           placeholder="Search"
+                                                                          rows={10}
                                                                           type="text"
                                                                           value=""
                                                                           values={
@@ -1405,6 +1415,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                     id="hv-dropdown-base-1-values-search-input"
                                                                                     placeholder="Search"
+                                                                                    rows="10"
                                                                                     type="text"
                                                                                     value=""
                                                                                   />,
@@ -1419,6 +1430,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                   id="hv-dropdown-base-1-values-search-input"
                                                                                   placeholder="Search"
+                                                                                  rows="10"
                                                                                   type="text"
                                                                                   value=""
                                                                                 />,
@@ -1430,6 +1442,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                             onFocus={[Function]}
                                                                             onKeyDown={[Function]}
                                                                             placeholder="Search"
+                                                                            rows={10}
                                                                             type="text"
                                                                             value=""
                                                                             values={
@@ -1510,6 +1523,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                       id="hv-dropdown-base-1-values-search-input"
                                                                                       placeholder="Search"
+                                                                                      rows="10"
                                                                                       type="text"
                                                                                       value=""
                                                                                     />,
@@ -1524,6 +1538,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                     id="hv-dropdown-base-1-values-search-input"
                                                                                     placeholder="Search"
+                                                                                    rows="10"
                                                                                     type="text"
                                                                                     value=""
                                                                                   />,
@@ -1535,6 +1550,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                               onFocus={[Function]}
                                                                               onKeyDown={[Function]}
                                                                               placeholder="Search"
+                                                                              rows={10}
                                                                               type="text"
                                                                               value=""
                                                                               values={
@@ -1619,6 +1635,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                         id="hv-dropdown-base-1-values-search-input"
                                                                                         placeholder="Search"
+                                                                                        rows="10"
                                                                                         type="text"
                                                                                         value=""
                                                                                       />,
@@ -1633,6 +1650,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                       id="hv-dropdown-base-1-values-search-input"
                                                                                       placeholder="Search"
+                                                                                      rows="10"
                                                                                       type="text"
                                                                                       value=""
                                                                                     />,
@@ -1644,6 +1662,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                 onFocus={[Function]}
                                                                                 onKeyDown={[Function]}
                                                                                 placeholder="Search"
+                                                                                rows={10}
                                                                                 type="text"
                                                                                 value=""
                                                                                 values={
@@ -1690,6 +1709,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                     onKeyDown={[Function]}
                                                                                     placeholder="Search"
                                                                                     required={false}
+                                                                                    rows={10}
                                                                                     type="text"
                                                                                     value=""
                                                                                   />
@@ -1849,6 +1869,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                           id="hv-dropdown-base-1-values-search-input"
                                                                           placeholder="Search"
+                                                                          rows="10"
                                                                           type="text"
                                                                           value=""
                                                                         />
@@ -1930,6 +1951,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                             id="hv-dropdown-base-1-values-search-input"
                                                                             placeholder="Search"
+                                                                            rows="10"
                                                                             type="text"
                                                                             value=""
                                                                           />
@@ -2017,6 +2039,7 @@ exports[`[V3] <Dropdown /> [V3]  with defaults should render correctly 1`] = `
                                                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                 id="hv-dropdown-base-1-values-search-input"
                                                                                 placeholder="Search"
+                                                                                rows="10"
                                                                                 type="text"
                                                                                 value=""
                                                                               />
@@ -3258,6 +3281,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-1-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -3433,6 +3457,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-3-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -3608,6 +3633,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-5-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -3783,6 +3809,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-7-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -4070,6 +4097,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="test-dropdown-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -4988,6 +5016,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                             id="test-dropdown-values-search-input"
                                                                             placeholder="Search"
+                                                                            rows="10"
                                                                             type="text"
                                                                             value=""
                                                                           />,
@@ -5001,6 +5030,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                           id="test-dropdown-values-search-input"
                                                                           placeholder="Search"
+                                                                          rows="10"
                                                                           type="text"
                                                                           value=""
                                                                         />,
@@ -5042,7 +5072,9 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                           "inputRootFocused": "HvBaseInput-inputRootFocused HvInput-inputRootFocused",
                                                                           "invalidRoot": "HvBaseInput-invalidRoot",
                                                                           "multiLine": "HvBaseInput-multiLine HvInput-multiLine",
+                                                                          "resize": "HvBaseInput-resize",
                                                                           "root": "HvBaseInput-root",
+                                                                          "rootResizable": "HvBaseInput-rootResizable",
                                                                         }
                                                                       }
                                                                       endAdornment={
@@ -5080,6 +5112,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                               class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                               id="test-dropdown-values-search-input"
                                                                               placeholder="Search"
+                                                                              rows="10"
                                                                               type="text"
                                                                               value=""
                                                                             />,
@@ -5093,6 +5126,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                             id="test-dropdown-values-search-input"
                                                                             placeholder="Search"
+                                                                            rows="10"
                                                                             type="text"
                                                                             value=""
                                                                           />,
@@ -5175,6 +5209,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                   id="test-dropdown-values-search-input"
                                                                                   placeholder="Search"
+                                                                                  rows="10"
                                                                                   type="text"
                                                                                   value=""
                                                                                 />,
@@ -5189,6 +5224,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                 id="test-dropdown-values-search-input"
                                                                                 placeholder="Search"
+                                                                                rows="10"
                                                                                 type="text"
                                                                                 value=""
                                                                               />,
@@ -5200,6 +5236,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                           onFocus={[Function]}
                                                                           onKeyDown={[Function]}
                                                                           placeholder="Search"
+                                                                          rows={10}
                                                                           type="text"
                                                                           value=""
                                                                           values={
@@ -5279,6 +5316,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                     id="test-dropdown-values-search-input"
                                                                                     placeholder="Search"
+                                                                                    rows="10"
                                                                                     type="text"
                                                                                     value=""
                                                                                   />,
@@ -5293,6 +5331,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                   id="test-dropdown-values-search-input"
                                                                                   placeholder="Search"
+                                                                                  rows="10"
                                                                                   type="text"
                                                                                   value=""
                                                                                 />,
@@ -5304,6 +5343,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                             onFocus={[Function]}
                                                                             onKeyDown={[Function]}
                                                                             placeholder="Search"
+                                                                            rows={10}
                                                                             type="text"
                                                                             value=""
                                                                             values={
@@ -5384,6 +5424,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                       id="test-dropdown-values-search-input"
                                                                                       placeholder="Search"
+                                                                                      rows="10"
                                                                                       type="text"
                                                                                       value=""
                                                                                     />,
@@ -5398,6 +5439,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                     class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                     id="test-dropdown-values-search-input"
                                                                                     placeholder="Search"
+                                                                                    rows="10"
                                                                                     type="text"
                                                                                     value=""
                                                                                   />,
@@ -5409,6 +5451,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                               onFocus={[Function]}
                                                                               onKeyDown={[Function]}
                                                                               placeholder="Search"
+                                                                              rows={10}
                                                                               type="text"
                                                                               value=""
                                                                               values={
@@ -5493,6 +5536,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                         class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                         id="test-dropdown-values-search-input"
                                                                                         placeholder="Search"
+                                                                                        rows="10"
                                                                                         type="text"
                                                                                         value=""
                                                                                       />,
@@ -5507,6 +5551,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                       class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                       id="test-dropdown-values-search-input"
                                                                                       placeholder="Search"
+                                                                                      rows="10"
                                                                                       type="text"
                                                                                       value=""
                                                                                     />,
@@ -5518,6 +5563,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                 onFocus={[Function]}
                                                                                 onKeyDown={[Function]}
                                                                                 placeholder="Search"
+                                                                                rows={10}
                                                                                 type="text"
                                                                                 value=""
                                                                                 values={
@@ -5564,6 +5610,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                     onKeyDown={[Function]}
                                                                                     placeholder="Search"
                                                                                     required={false}
+                                                                                    rows={10}
                                                                                     type="text"
                                                                                     value=""
                                                                                   />
@@ -5723,6 +5770,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                           class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                           id="test-dropdown-values-search-input"
                                                                           placeholder="Search"
+                                                                          rows="10"
                                                                           type="text"
                                                                           value=""
                                                                         />
@@ -5804,6 +5852,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                             class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                             id="test-dropdown-values-search-input"
                                                                             placeholder="Search"
+                                                                            rows="10"
                                                                             type="text"
                                                                             value=""
                                                                           />
@@ -5891,6 +5940,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> disabled should render correctly 1`
                                                                                 class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                                                 id="test-dropdown-values-search-input"
                                                                                 placeholder="Search"
+                                                                                rows="10"
                                                                                 type="text"
                                                                                 value=""
                                                                               />
@@ -10215,6 +10265,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-1-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -10390,6 +10441,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-3-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -10565,6 +10617,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-5-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
@@ -10740,6 +10793,7 @@ exports[`[V3] <Dropdown /> [V3] <Dropdown /> with selectDefault false should ren
                                                   class="MuiInputBase-input MuiInput-input HvBaseInput-input HvInput-input MuiInputBase-inputAdornedEnd"
                                                   id="hv-dropdown-base-7-values-search-input"
                                                   placeholder="Search"
+                                                  rows="10"
                                                   type="text"
                                                   value=""
                                                 />
