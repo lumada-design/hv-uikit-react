@@ -79,7 +79,7 @@ const styles = theme => {
       flexFlow: "wrap",
       alignContent: "center",
       justifyContent: "space-evenly",
-      backgroundColor: "#FFFFFF"
+      backgroundColor: theme.palette.atmo1
     },
     normalWidth: {
       width: "calc(100% - 2px)" // 2px for the borders.
