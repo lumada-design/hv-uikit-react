@@ -24,7 +24,7 @@ module.exports = {
     "^@hv/uikit-react-icons(.*)$": "<rootDir>/node_modules/@hv/uikit-react-icons$1"
   },
   setupFilesAfterEnv: ["<rootDir>/config/test-setup.js"],
-  testRegex: "src/.*\\.test\\.(js|jsx)$",
+  testRegex: "src/.*/tests/.*\\.test\\.(js|jsx)$",
   rootDir: "../",
   testURL: "http://localhost/",
   snapshotSerializers: ["enzyme-to-json/serializer", "jss-snapshot-serializer"]
