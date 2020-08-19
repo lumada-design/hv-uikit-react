@@ -11,7 +11,7 @@ import labelPositions from "../../labelPositions";
 
 import { Main, Disabled } from "../stories/CheckBox.stories";
 
-describe("CheckBox", () => {
+describe("[v3] CheckBox", () => {
   let wrapper;
 
   const labelStartClassName = "labelStart";

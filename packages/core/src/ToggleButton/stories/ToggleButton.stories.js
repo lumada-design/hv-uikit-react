@@ -245,7 +245,7 @@ export const UsingChildren = () => {
 UsingChildren.story = {
   parameters: {
     docs: {
-      storyDescription: "A sample showcasing a toggle button with a custom animated icon."
+      storyDescription: "A sample using children to provide the toggle button content."
     },
     v3: true
   }

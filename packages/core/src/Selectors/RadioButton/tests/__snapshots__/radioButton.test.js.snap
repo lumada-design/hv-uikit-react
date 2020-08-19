@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton should render correctly 1`] = `
+exports[`[v3] RadioButton should render correctly 1`] = `
 <WithStyles(HvRadio)
   inputProps={
     Object {

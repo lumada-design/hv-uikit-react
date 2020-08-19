@@ -18,6 +18,12 @@ export const Main = () => {
   return <HvSwitch />;
 };
 
+Main.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const OnChange = () => {
   const [state, setState] = useState(false);
 
@@ -45,7 +51,6 @@ export const OnChange = () => {
         checked={state}
         id="Switch-no-labels"
         aria-label="Engine Control"
-        displayIconChecked
         onChange={() => setState(!state)}
       />
       <p />
@@ -58,19 +63,20 @@ OnChange.story = {
   parameters: {
     docs: {
       storyDescription: "OnChange is called in the labels as in the switch itself."
-    }
+    },
+    v3: true
   }
 };
 
 export const NoLabels = () => (
-  <HvSwitch
-    checked
-    id="Switch-no-labels"
-    showLabels={false}
-    aria-label="Engine Control"
-    displayIconChecked
-  />
+  <HvSwitch checked id="Switch-no-labels" showLabels={false} aria-label="Engine Control" />
 );
+
+NoLabels.story = {
+  parameters: {
+    v3: true
+  }
+};
 
 export const LabelsDefinition = () => {
   const labels = {
@@ -81,7 +87,19 @@ export const LabelsDefinition = () => {
   return <HvSwitch checked={false} labels={labels} aria-label="Server online" />;
 };
 
+LabelsDefinition.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const Disabled = () => <HvSwitch disabled />;
+
+Disabled.story = {
+  parameters: {
+    v3: true
+  }
+};
 
 export const Controlled = () => {
   const [checked, setChecked] = useState(false);
@@ -93,4 +111,10 @@ export const Controlled = () => {
       <HvSwitch checked={checked} />
     </>
   );
+};
+
+Controlled.story = {
+  parameters: {
+    v3: true
+  }
 };

@@ -10,7 +10,7 @@ let wrapper;
 
 // TODO - Improve Test Structure
 
-describe("Switch withStyles", () => {
+describe("[v3] Switch withStyles", () => {
   wrapper = mount(
     <HvProvider>
       <Main />
