@@ -7,7 +7,9 @@ export default {
   title: "Components/Login",
   parameters: {
     componentSubtitle: null,
-    usage: "import { HvLogin } from '@hv/uikit-react-core/dist'"
+    usage: "import { HvLogin } from '@hv/uikit-react-core/dist'",
+    deprecated: true,
+    compNameToUse: "HvLoginContainer component."
   },
   component: HvLogin,
   decorators: [storyFn => <div style={{ display: "flex", height: "100vh" }}>{storyFn()}</div>]
