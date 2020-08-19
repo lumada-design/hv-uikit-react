@@ -1,5 +1,3 @@
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 import HvBreadCrumb from "../BreadCrumb";
 
@@ -135,43 +133,6 @@ WithClickEvents.story = {
   parameters: {
     docs: {
       storyDescription: "Breadcrumb sample that has a onClick defined."
-    }
-  }
-};
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, drop/open hidden breadCrumb items
-export const LimitedToTwoPathsOpened = () => LimitedToTwoPaths();
-
-LimitedToTwoPathsOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button"))
-        return wait(() => screen.getByText("Label 7"))
-      }
-    }
-  }
-};
-
-// test scenario, drop/open hidden breadCrumb items
-export const WithURLLimitedOpened = () => WithURLLimited();
-
-WithURLLimitedOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button"))
-        return wait(() => screen.getByText("DesignSystem"))
-      }
     }
   }
 };

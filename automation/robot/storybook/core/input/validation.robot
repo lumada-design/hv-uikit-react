@@ -1,7 +1,7 @@
 *** Setting ***
 Resource      ../_keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}input--controlled-state
+...           Go To    ${tests}input--controlled-state
 ...           AND    Wait Until Element Is Visible    ${input}
 
 

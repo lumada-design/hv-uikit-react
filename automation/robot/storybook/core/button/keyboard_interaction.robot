@@ -1,7 +1,7 @@
 *** Setting ***
 Resource       ../_keywords.resource
 Suite Setup    Run Keywords
-...            Go To    ${components}button--smoke-tests
+...            Go To    ${tests}button--smoke-tests
 ...            AND    Wait Until Element Is Visible    css:button
 Force Tags     keyboard
 

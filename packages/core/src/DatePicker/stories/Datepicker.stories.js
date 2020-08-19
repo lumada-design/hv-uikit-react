@@ -1,5 +1,3 @@
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
 import moment from "moment";
 import { HvButton, HvDatePicker, HvInput } from "../..";
@@ -261,80 +259,6 @@ WithValueChange.story = {
         "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name",
         "WCAG2AA.Principle1.Guideline1_3.1_3_1.F68"
       ]
-    }
-  }
-};
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, datepicker default value opened
-export const DefaultValueOpened = () => DefaultValue();
-
-DefaultValueOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /date input/i }))
-        return wait(() => screen.getByText("January"))
-      }
-    }
-  }
-};
-
-// test scenario, datepicker months opened
-export const DatepickerMonths = () => DefaultValue();
-
-DatepickerMonths.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /date input/i }))
-        userEvent.click(screen.getByText("January"))
-        return wait(() => screen.getByText("Dec"))
-      }
-    }
-  }
-};
-
-// test scenario, dateRange default value opened
-export const RangeValuesOpened = () => RangeWithValues();
-
-RangeValuesOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /date input/i }))
-        return wait(() => screen.getByText("June"))
-      }
-    }
-  }
-};
-
-// test scenario, dateRange months opened
-export const RangeMonthsOpened = () => RangeWithValues();
-
-RangeMonthsOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /date input/i }))
-        userEvent.click(screen.getAllByText("June")[0])
-        userEvent.click(screen.getAllByText("June")[0])
-        return wait(() => screen.getAllByText("Dec")[1])
-      }
     }
   }
 };

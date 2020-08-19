@@ -31,7 +31,7 @@ activates item and close menu when item is focused and is pressed ENTER
 
 focus page elements with TAB
     [Template]    NONE
-    Go To                               ${components}dropdown-menu--keyboard-navigation
+    Go To                               ${tests}dropdown-menu--keyboard-navigation
     Wait Until Page Contains Element    ${dropDownMenu}
     set focus and press keys            id:button1         TAB    TAB
     Element Should Be Focused           id:button2

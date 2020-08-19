@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import uniqueId from "lodash/uniqueId";
 import { withStyles } from "@material-ui/core";
 import { Add, Delete, Lock, Preview, Upload } from "@hv/uikit-react-icons";
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
-import { HvBulkActions, HvCheckBox, HvMultiButton } from "../..";
+
+import { HvBulkActions, HvCheckBox } from "../..";
 
 export default {
   title: "Components/Bulk Actions",
@@ -165,87 +164,4 @@ export const ControlledWithActions = () => {
       <SampleComponent data={data} onChange={handleChange} />
     </div>
   );
-};
-
-export const WithMultiButton = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [data, setData] = useState([
-    { id: "monday", value: "M" },
-    { id: "tuesday", value: "T" },
-    { id: "wednesday", value: "W" },
-    { id: "thursday", value: "T" },
-    { id: "friday", value: "F" },
-    { id: "saturday", value: "S" },
-    { id: "sunday", value: "S" }
-  ]);
-
-  const handleSelectAll = (e, checked = false) => {
-    setData(data.map(el => ({ ...el, selected: !checked })));
-  };
-
-  return (
-    <div>
-      <HvBulkActions
-        numTotal={data.length}
-        numSelected={data.filter(el => el.selected).length}
-        onSelectAll={handleSelectAll}
-        onSelectAllPages={handleSelectAll}
-        maxVisibleActions={3}
-      />
-      <HvMultiButton
-        multi
-        type="text"
-        style={{ width: "224px", margin: 10 }}
-        buttons={data}
-        onChange={(e, state = []) => {
-          setData(data.map(el => ({ ...el, selected: state.includes(el.id) })));
-        }}
-      />
-    </div>
-  );
-};
-
-WithMultiButton.story = {
-  parameters: {
-    docs: {
-      disable: true
-    }
-  }
-};
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, selected
-export const selected = () => ControlledWithActions();
-
-selected.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("All"))
-        return wait(() => screen.getByText("8 of 8 items"))
-      }
-    }
-  }
-};
-
-// test scenario, indeterminate status
-export const indeterminate = () => ControlledWithActions();
-
-indeterminate.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("Value 3"))
-        return wait(() => screen.getByText("1 of 8 items"))
-      }
-    }
-  }
 };

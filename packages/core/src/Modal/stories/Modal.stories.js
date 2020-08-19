@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { withStyles } from "@material-ui/core/";
 import { Ungroup } from "@hv/uikit-react-icons/dist";
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
+
 import {
   HvButton,
   HvInput,
@@ -305,60 +304,6 @@ CustomContent.story = {
   parameters: {
     docs: {
       storyDescription: "It is possible to insert any component in the modal."
-    }
-  }
-};
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, modal open
-export const ModalOpened = () => Main();
-
-ModalOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("Open modal"))
-        return wait(() => screen.getByRole("heading", { name: /switch model view\?/i }))
-      }
-    }
-  }
-};
-
-// test scenario, modal with table open
-export const TableOpened = () => CustomContent();
-
-TableOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("Table"))
-        return wait(() => screen.getByRole("dialog"))
-      }
-    }
-  }
-};
-
-// test scenario, modal with inputs opened
-export const inputsOpened = () => CustomContent();
-
-inputsOpened.story = {
-  parameters: {
-    docs: {
-      disable: true
-    },
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("Inputs"))
-        return wait(() => screen.getByRole("dialog"))
-      }
     }
   }
 };
