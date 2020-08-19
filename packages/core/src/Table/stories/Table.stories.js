@@ -11,6 +11,7 @@ import { HvEmptyState, HvTable } from "../..";
 export default {
   title: "Visualizations/Table",
   parameters: {
+    v3: true,
     componentSubtitle: null,
     usage: "import { HvTable } from '@hv/uikit-react-core/dist'"
   },
@@ -357,6 +358,7 @@ export const Empty = () => {
 
 Empty.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample without data."
     }
@@ -478,6 +480,7 @@ export const CustomEmpty = () => {
 
 CustomEmpty.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample without data."
     }
@@ -745,6 +748,7 @@ export const WithExpander = () => {
 
 WithExpander.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add an expander."
     }
@@ -1028,6 +1032,7 @@ export const WithExpanderAndCustomContent = () => {
 
 WithExpanderAndCustomContent.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Table sample that shows the ability to add a complex expander and custom cell."
@@ -1304,6 +1309,7 @@ export const WithCheckbox = () => {
 
 WithCheckbox.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add checkboxes."
     }
@@ -1446,6 +1452,7 @@ export const WithCheckboxCustomContent = () => {
 
 WithCheckboxCustomContent.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add use a checkbox."
     },
@@ -1723,6 +1730,7 @@ export const WithCheckboxAndSecondaryActions = () => {
 
 WithCheckboxAndSecondaryActions.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample that shows the ability to add a secondary action column."
     }
@@ -1972,6 +1980,7 @@ export const WithNullValues = () => {
 
 WithNullValues.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Table sample with that has cell values that are null."
     }
@@ -2087,6 +2096,7 @@ export const TableWithChangingData = () => {
 
 TableWithChangingData.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription: "Sample showcasing the table component behavior with changing data."
     }
@@ -2289,6 +2299,7 @@ export const ServerSidePagination = () => {
 
 ServerSidePagination.story = {
   parameters: {
+    v3: true,
     docs: {
       storyDescription:
         "Table sample that shows how to use the table with server side pagination. Bulk Actions"

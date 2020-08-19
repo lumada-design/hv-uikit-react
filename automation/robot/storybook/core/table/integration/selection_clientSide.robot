@@ -3,7 +3,7 @@ Resource      ../table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--with-checkbox
 ...           AND    Wait Until Element Is Visible    ${table}
-
+Force Tags    v3
 
 *** Test Cases ***
 keep selection when pagination is moved to next page

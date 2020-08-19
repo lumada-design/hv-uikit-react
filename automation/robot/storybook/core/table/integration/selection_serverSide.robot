@@ -3,7 +3,7 @@ Resource      ../table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--server-side-pagination
 ...           AND    Wait Until Element Is Visible    ${table}
-
+Force Tags    v3
 
 *** Test Cases ***
 remove selection when pagination is moved to next page
@@ -37,7 +37,7 @@ remove selection when a selected row goes to next page
     Select Checkbox                     ${row_1_checkbox}
     Select Checkbox                     ${row_10_checkbox}
     Select From List By Value           ${rows_per_page}   5
-    Wait Until Page Contains            1 of 553 items
+    Wait Until Page Contains            1 / 553 items
     Page Should Contain Element         ${rows_selected}    limit=1
 
 keep selection when number of rows per table is increased

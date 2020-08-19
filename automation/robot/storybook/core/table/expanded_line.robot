@@ -3,7 +3,7 @@ Resource      table.resource
 Test Setup    Run Keywords
 ...           Go To    ${visualizations}table--with-expander-and-custom-content
 ...           AND    Wait Until Element Is Visible    ${table}
-
+Force Tags    v3
 
 *** Variables ***
 ${header_company}    xpath://th[text()='Company']
