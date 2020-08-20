@@ -1,14 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState, useRef } from "react";
+
 import { parser } from "html-react-parser";
-import {
-  HvBaseInput,
-  HvButton,
-  HvFormElement,
-  HvLabel,
-  HvSuggestions,
-  HvTypography
-} from "../../..";
-import { isKeypress, KeyboardCodes } from "../../../utils";
+
+import { HvFormElement, HvLabel, HvBaseInput, HvButton, HvSuggestions } from "../../..";
+import { KeyboardCodes, isKeypress } from "../../../utils";
+
 import countryList from "../../../Input/stories/countries";
 
 export default {

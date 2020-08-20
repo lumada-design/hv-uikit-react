@@ -4,6 +4,7 @@ import Chart from "react-google-charts";
 import orderBy from "lodash/orderBy";
 import { makeStyles } from "@material-ui/core/styles";
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+
 import { HvEmptyState, HvTable } from "../..";
 
 /* eslint-disable no-underscore-dangle */

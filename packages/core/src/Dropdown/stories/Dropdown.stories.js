@@ -1,6 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core";
-import HvDropdown from "..";
+
+import { HvDropdown } from "../..";
 
 export default {
   title: "Patterns/Dropdown",

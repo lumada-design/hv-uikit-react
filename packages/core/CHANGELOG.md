@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.2](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.10.1...@hv/uikit-react-core@2.10.2) (2020-08-18)
+
+
+### Bug Fixes
+
+* **table:** collapseOnDataChange not working. HVUIKIT-5468 ([#1885](https://github.com/pentaho/hv-uikit-react/issues/1885)) ([2c5f565](https://github.com/pentaho/hv-uikit-react/commit/2c5f5658de29a2bbe72bbc11beb5b5eef2fb0235))
+
+
+
+
+
 ## [2.10.1](https://github.com/pentaho/hv-uikit-react/compare/@hv/uikit-react-core@2.10.0...@hv/uikit-react-core@2.10.1) (2020-08-15)
 
 

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import { LogOut, OpenBook, Operation, Tool, User, Stop, Play } from "@hv/uikit-react-icons/dist";
 import HvVerticalNavigation, { Action, Actions, Navigation } from "..";
 
 export default {

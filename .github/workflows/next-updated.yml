@@ -45,6 +45,10 @@ jobs:
       - name: Bootstrap
         run: npm run bootstrap
 
+      - name: Generate Documentation
+        run: |
+          npm run build-documentation
+
       - name: Checkout Documentation Repository
         uses: actions/checkout@v2
         with:
@@ -58,9 +62,8 @@ jobs:
         run: |
           rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
 
-      - name: Generate Documentation
+      - name: Copy New Documentation
         run: |
-          npm run build-documentation
           mkdir -p ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
           cp -r dist/* ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
 

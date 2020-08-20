@@ -465,7 +465,7 @@ const HvTable = props => {
       Cell: propsCell =>
         propsCell.original.noActions ? null : (
           <DropDownMenu
-            id={setId(computeRowElementId(propsCell), secondaryActions)}
+            id={setId(computeRowElementId(propsCell))}
             secondaryActions={secondaryActions}
             original={propsCell.original}
             {...dropdownMenuProps}

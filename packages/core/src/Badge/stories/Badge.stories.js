@@ -37,6 +37,10 @@ export const WithIcon = () => (
   <>
     <HvBadge id="badge5" count={0} icon={<Alert />} />
     <HvBadge id="badge6" count={1} icon={<Alert />} />
+    <HvBadge id="badge7" showCount count={8} icon={<Alert />} />
+    <HvBadge id="badge8" showCount count={88} icon={<Alert />} />
+    <HvBadge id="badge9" showCount count={888} icon={<Alert />} />
+    <HvBadge id="labelBadge3" label="100%" icon={<Alert />} />
   </>
 );
 

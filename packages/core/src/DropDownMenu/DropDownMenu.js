@@ -90,6 +90,7 @@ const DropDownMenu = ({
           id={listId}
           values={dataList}
           selectable={false}
+          condensed
           onClick={(event, item) => {
             if (!keepOpened) handleClose();
             onClick?.(event, item);
