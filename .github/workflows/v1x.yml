@@ -14,13 +14,28 @@ on:
     - cron: "0 1 * * *" # daily at 01:00
   repository_dispatch:
     types: [v1x]
+  workflow_dispatch:
 
 # flow:
-# Notify Start
-# License-Checks | Lint | Test-Jest | Build-Documentation | Build-Automation-Storybook
-# Robot_pa11y | Robot (chrome | ie | firefox)
-# Notify End
-# Release
+#      +------------+
+#      |Notify-Start|
+#      +-----+------+
+#            |
+#            +--------------------------------------+
+#            |                                      |
+# +----------v-------------------------+  +---------v---------+
+# |Static-Checks (Licenses, Lint, Jest)|  |Build-Documentation|
+# +----------+-------------------------+  +---------+---------+
+#            |                                      |
+#            |                          +-----------v-----------+
+#            |                          |Robot (chrome, firefox)|
+#            |                          +-----------+-----------+
+#            |                                      |
+#            +------------------+-------------------+
+#                               |
+#            +----------+       |        +-------+
+#            |Notify End|<------+------->|Release|
+#            +----------+                +-------+
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -168,7 +183,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -207,7 +222,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, Build-Documentation, Robot]
+    needs: [Static-Checks, Robot]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release

@@ -14,15 +14,32 @@ on:
     - cron: "0 5 * * *" # daily at 05:00
   repository_dispatch:
     types: [master]
+  workflow_dispatch:
 
 # ref is not needed across checkouts because master is the default branch
 
 # flow:
-# Notify Start
-# License-Checks | Lint | Test-Jest | Build-Documentation
-# Applitools | A11Y-Tests | Robot (chrome | ie | firefox)
-# Notify End
-# Release
+#      +------------+
+#      |Notify-Start|
+#      +-----+------+
+#            |
+#            +----------------------------------------------+
+#            |                                              |
+# +----------v-------------------------+          +---------v---------+
+# |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
+# +----------+-------------------------+          +---------+---------+
+#            |                                              |
+#            |                   +-----------+--------------+-------------------------+
+#            |                   |           |              |                         |
+#            |             +-----v----+ +----v-----+ +------v----------------+ +------v-----------+
+#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)| |Robot-Windows (ie)|
+#            |             +-----+----+ +----+-----+ +------+----------------+ +------+-----------+
+#            |                   |           |              |                         |
+#            +-------------------+-----+-----+--------------+-------------------------+
+#                                      |
+#                   +----------+       |        +-------+
+#                   |Notify End|<------+------->|Release|
+#                   +----------+                +-------+
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -327,7 +344,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
     if: always()
     runs-on: [self-hosted, Linux]
 
@@ -372,7 +389,7 @@ jobs:
 
   Release:
     if: github.event_name == 'schedule' && !contains(github.event.head_commit.message, '${ RELEASE_COMMIT_MESSAGE }')
-    needs: [Static-Checks, Build-Documentation, A11Y-Tests, Applitools, Robot, Robot-Windows]
+    needs: [Static-Checks, A11Y-Tests, Applitools, Robot, Robot-Windows]
     runs-on: [self-hosted, Linux]
     steps:
       - name: Trigger Release

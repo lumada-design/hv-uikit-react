@@ -1,8 +1,8 @@
-
 name: Next Updated
 on:
   push:
     branches: [next]
+  workflow_dispatch:
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
