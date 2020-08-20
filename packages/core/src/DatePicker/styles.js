@@ -55,6 +55,9 @@ const styles = theme => ({
     "&::placeholder": {
       fontFamily: theme.hv.typography.fontFamily,
       ...theme.hv.typography.placeholderText
+    },
+    "&::-moz-placeholder": {
+      lineHeight: "26px"
     }
   },
   icon: {
