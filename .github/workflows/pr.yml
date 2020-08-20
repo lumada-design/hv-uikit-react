@@ -5,9 +5,21 @@ on:
       - master
 
 # flow:
-# License-Checks | Lint | Test-Jest | Build-Documentation
-# A11Y-Tests | Robot (chrome)
-# Notify End
+# +------------------------------------+          +-------------------+
+# |Static-Checks (Licenses, Lint, Jest)|          |Build-Documentation|
+# +----------+-------------------------+          +---------+---------+
+#            |                                              |
+#            |                   +-----------+----------------------------------------+
+#            |                   |           |              |                         |
+#            |             +-----v----+ +----v-----+ +------v----------------+ +------v----------+
+#            |             |A11Y-Tests| |Applitools| |Robot (chrome, firefox)| |Github-Deployment|
+#            |             +--------+-+ +--+-------+ +------+----------------+ +------+----------+
+#            |                      |      |                |                         |
+#            |                      |      |                |                         |
+#            |                      |      |                |                         |
+#            |                    +-v------v-+              |                         |
+#            +------------------->|Notify-End|<-------------+-------------------------+
+#                                 +----------+
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -253,7 +265,7 @@ jobs:
 
   Notify-End:
     name: Notify End
-    needs: [Static-Checks, Build-Documentation, Github-Deployment, A11Y-Tests, Robot]
+    needs: [Static-Checks, Github-Deployment, A11Y-Tests, Robot]
     if: always()
     runs-on: [self-hosted, Linux]
 

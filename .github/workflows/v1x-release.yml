@@ -17,6 +17,7 @@ name: v1.x Release
 on:
   repository_dispatch:
     types: [v1-release]
+  workflow_dispatch:
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
