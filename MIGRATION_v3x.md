@@ -6,6 +6,7 @@
 - [Theme](#theme)
   - [Typography](#typography)
 - [Components](#components)
+- [Templates](#templates)
 
 # From v2.x to v3.x
 
@@ -59,3 +60,7 @@
 ### Pagination
 
 - `pageSizeInputRoot` class removed.
+
+## Template
+
+The template section has been removed, as we considered that the [Adoption project](https://github.com/lumada-design/hv-uikit-adoption) does a better job of showing how to use the UI Kit project.
