@@ -2,7 +2,14 @@ import React, { useState, useRef } from "react";
 
 import { parser } from "html-react-parser";
 
-import { HvFormElement, HvLabel, HvBaseInput, HvButton, HvSuggestions } from "../../..";
+import {
+  HvFormElement,
+  HvLabel,
+  HvBaseInput,
+  HvButton,
+  HvSuggestions,
+  HvTypography
+} from "../../..";
 import { KeyboardCodes, isKeypress } from "../../../utils";
 
 import countryList from "../../../Input/stories/countries";
