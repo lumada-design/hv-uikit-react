@@ -233,6 +233,8 @@ export const getNextMonth = (month, year) => {
   return { month: nextMonth, year: nextMonthYear };
 };
 
+const uppercaseFirstLetter = monthName => monthName[0].toUpperCase() + monthName.substring(1);
+
 /**
  * Returns a list with the names of all the months localized in the received locale and representation value.
  *
@@ -247,7 +249,7 @@ export const getMonthNamesList = (locale, representationValue = REPRESENTATION_V
 
   return [...new Array(12)].map((n, index) => {
     const auxDate = new Date(1970, index, 1);
-    return new Intl.DateTimeFormat(locale, options).format(auxDate);
+    return uppercaseFirstLetter(Intl.DateTimeFormat(locale, options).format(auxDate));
   });
 };
 
