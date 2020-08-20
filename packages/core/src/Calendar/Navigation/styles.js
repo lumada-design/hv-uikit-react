@@ -45,7 +45,8 @@ const styles = theme => ({
   },
   textWithoutHover: {
     width: "calc(100% - 60px)",
-    textAlign: "center"
+    textAlign: "center",
+    padding: "0 5px"
   }
 });
 
