@@ -34,7 +34,7 @@ const Navigation = ({
       <DropLeftIcon
         id={setId(id, "left")}
         className={clsx(classes.icon, {
-          [classes.disabled]: isPreviousEnabled
+          [classes.disabled]: !isPreviousEnabled
         })}
         onClick={isPreviousEnabled ? onNavigatePrevious : undefined}
         onKeyDown={event =>

@@ -54,13 +54,20 @@ export const Localized = () => {
 
   return (
     <>
-      <HvInput
-        labels={{ inputLabel: "Locale" }}
-        type="text"
-        value={locale}
-        style={{ marginBottom: "20px", width: "150px" }}
-        onChange={value => setLocale(value)}
-      />
+      <div style={{ marginBottom: "20px", width: "150px" }}>
+        <HvInput
+          labels={{ inputLabel: "Locale" }}
+          type="text"
+          value={locale}
+          style={{ marginBottom: "20px", width: "150px" }}
+          onChange={value => {
+            const chosenLocale = value.currentTarget.value;
+            if (chosenLocale.match(/[a-z]{2}-[A-Z]{2}/g)) {
+              setLocale(chosenLocale);
+            }
+          }}
+        />
+      </div>
       <HvDatePicker locale={locale} id="DatePicker" />
     </>
   );
