@@ -48,7 +48,6 @@ const CardView = ({
   id = "",
   className,
   classes,
-  icon,
   values,
   selectedValues,
   renderer,
@@ -148,10 +147,6 @@ CardView.propTypes = {
      */
     elements: PropTypes.string
   }).isRequired,
-  /**
-   * Icon used in the multi button in the assert inventory.
-   */
-  icon: PropTypes.node.isRequired,
   /**
    * Metadata associated with the values.
    */

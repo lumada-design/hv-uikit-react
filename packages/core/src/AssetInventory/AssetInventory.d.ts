@@ -157,6 +157,10 @@ export interface HvAssetInventoryProps
    * and other props to pe passed to each button.
    */
   multibuttonProps?: object;
+  /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent: React.ReactNode;
 }
 
 export type ClassKey =

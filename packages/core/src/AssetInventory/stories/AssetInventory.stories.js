@@ -287,10 +287,6 @@ export const Main = () => {
     relatedAssets: "Track B, Load 2 Brake"
   });
 
-  const EmptyComponent = (
-    <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
-  );
-
   const values = (num = 10) =>
     Array.from(Array(num).keys(), id => ({
       id: `id_${id}`,
@@ -302,6 +298,7 @@ export const Main = () => {
 
   return (
     <HvAssetInventory
+      id="hv-assetinventory"
       values={values()}
       configuration={assetConfiguration}
       onSelection={event => console.log(event.target.value)}
@@ -310,22 +307,15 @@ export const Main = () => {
       actionsCallback={(e, id, action) => console.log(`You have pressed action ${action.label}`)}
       searchProps={{ ariaLabel: "Filters the data" }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view" },
-        { id: "list", "aria-label": "Select list view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
+      emptyComponent={
+        <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+      }
     >
-      <HvCardView
-        id="card"
-        icon={<Cards />}
-        renderer={cardRenderer}
-        emptyComponent={EmptyComponent}
-      />
-      <HvListView
-        id="list"
-        icon={<List />}
-        renderer={rowRenderer}
-        emptyComponent={EmptyComponent}
-      />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
     </HvAssetInventory>
   );
 };
@@ -565,16 +555,18 @@ export const Configurations = () => {
       hasPagination
       pageSizeOptions={[2, 4, 6, 8, 10]}
       pageSize={4}
-      selectedView="cardView"
+      selectedView={0}
       searchProps={{ ariaLabel: "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
-        { id: "cardView", "aria-label": "Select card view" },
-        { id: "listView", "aria-label": "Select list view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
+      emptyComponent={
+        <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+      }
     >
       <HvCardView
         id="cardView"
-        icon={<Cards />}
         renderer={cardRenderer}
         viewConfiguration={{
           breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
@@ -582,7 +574,6 @@ export const Configurations = () => {
       />
       <HvListView
         id="listView"
-        icon={<List />}
         renderer={rowRenderer}
         viewConfiguration={{
           columnConfiguration: [
@@ -876,14 +867,14 @@ export const ThreeViews = () => {
       }
       searchProps={{ ariaLabel: "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view" },
-        { id: "list", "aria-label": "Select list view" },
-        { id: "text", "aria-label": "Select text view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+        { id: "text-button", icon: <Connect />, "aria-label": "Select text view" }
       ]}
     >
-      <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
-      <HvListView id="list" icon={<List />} renderer={rowRenderer} />
-      <TextRender id="text" icon={<Connect />} />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
+      <TextRender id="text" />
     </HvAssetInventory>
   );
 };
@@ -1104,13 +1095,12 @@ export const ServerSidePagination = () => {
         searchString={searchString}
         searchProps={{ ariaLabel: "Filters data by title, probability and time horizon." }}
         multibuttonProps={[
-          { id: "card", "aria-label": "Select card view" },
-          { id: "list", "aria-label": "Select list view" }
+          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" }
         ]}
       >
         <HvCardView
           id="card"
-          icon={<Cards />}
           renderer={cardRenderer}
           viewConfiguration={{
             breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
@@ -1118,7 +1108,6 @@ export const ServerSidePagination = () => {
         />
         <HvListView
           id="list"
-          icon={<List />}
           renderer={rowRenderer}
           viewConfiguration={{
             columnConfiguration: [
@@ -1395,12 +1384,12 @@ export const Accessibility = () => {
       }
       searchProps={{ ariaLabel: "Filters data" }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view", title: "Card view" },
-        { id: "list", "aria-label": "Select list view", title: "List view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
     >
-      <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
-      <HvListView id="list" icon={<List />} renderer={rowRenderer} />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
     </HvAssetInventory>
   );
 };

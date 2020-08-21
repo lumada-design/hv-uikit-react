@@ -1,27 +1,27 @@
-import React, { memo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import HvMultiButton from "../../MultiButton";
 import HvButton from "../../Button";
 import { setId } from "../../utils";
 
-const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
-  const onChangeViewHandler = (event, buttonId) => {
-    const btn = buttonId.replace("-button", "");
-    changeView(event, btn);
-    onViewChange(event, btn);
+const AssetMultiButton = ({ id, views, selectedView, changeView, onViewChange }) => {
+  const onChangeViewHandler = (event, idx) => {
+    changeView?.(event, idx);
+    onViewChange?.(event, idx);
   };
 
   return (
     <HvMultiButton id={setId(id, "multi-button")}>
-      {views.map(view => (
+      {views.map(({ id: btnId, icon, ...others }, idx) => (
         <HvButton
-          id={view.id}
-          key={view.id}
+          id={btnId}
+          key={btnId}
           category="icon"
-          selected={view.selected}
-          onClick={evt => onChangeViewHandler(evt, view.id)}
+          selected={selectedView === idx}
+          onClick={evt => onChangeViewHandler(evt, idx)}
+          {...others}
         >
-          {view.icon}
+          {icon}
         </HvButton>
       ))}
     </HvMultiButton>
@@ -36,10 +36,9 @@ AssetMultiButton.propTypes = {
       icon: PropTypes.node
     })
   ).isRequired,
+  selectedView: PropTypes.number,
   changeView: PropTypes.func.isRequired,
   onViewChange: PropTypes.func
 };
 
-const arePropsEqual = (props, nextProps) => props.views === nextProps.views;
-
-export default memo(AssetMultiButton, arePropsEqual);
+export default AssetMultiButton;

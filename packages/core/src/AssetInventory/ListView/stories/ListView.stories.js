@@ -151,7 +151,6 @@ export const Main = () => {
   return (
     <HvListView
       id="list"
-      icon={<Level1 />}
       values={values}
       renderer={rowRenderer}
       viewConfiguration={configuration}
@@ -270,14 +269,7 @@ export const NotSelectable = () => {
     actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`)
   };
 
-  return (
-    <HvListView
-      icon={<Level1 />}
-      values={values}
-      renderer={rowRenderer}
-      viewConfiguration={configuration}
-    />
-  );
+  return <HvListView values={values} renderer={rowRenderer} viewConfiguration={configuration} />;
 };
 
 export const NotSelectableWithMenu = () => {
@@ -397,14 +389,7 @@ export const NotSelectableWithMenu = () => {
     actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`)
   };
 
-  return (
-    <HvListView
-      icon={<Level1 />}
-      values={values}
-      renderer={rowRenderer}
-      viewConfiguration={configuration}
-    />
-  );
+  return <HvListView values={values} renderer={rowRenderer} viewConfiguration={configuration} />;
 };
 
 NotSelectableWithMenu.story = {

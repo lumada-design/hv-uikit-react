@@ -1,10 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import find from "lodash/find";
-import isNil from "lodash/isNil";
-import isEqual from "lodash/isEqual";
-import sort from "lodash/sortBy";
-import isEmpty from "lodash/isEmpty";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
 import MultiButton from "./Multibutton/Multibutton";
@@ -22,146 +18,106 @@ const DEFAULT_LABELS = {
   placeholder: "Search"
 };
 
+const getPaginationData = ({ hasPagination, paginationServerSide }, values, pageSize, page) =>
+  hasPagination && !paginationServerSide
+    ? values.slice(pageSize * page, pageSize * (page + 1))
+    : values;
+
 /**
  * An Asset Inventory allows to switch between views.
  * The Sort and Filter are defined using the metadata configuration, while the remaining configuration can be ser in the AssetInventory or in the individual views.
  */
-class AssetInventory extends React.Component {
-  static areArraysEquals(a1, a2) {
-    return isEqual(sort(a1), sort(a2));
-  }
+const HvAssetInventory = props => {
+  const {
+    id,
+    classes,
+    className,
+    values: valuesProp,
+    selectedValues: selectedValuesProp = [],
+    selectedView: selectedViewProp = 0,
+    children,
+    searchString: searchStringProp,
+    sortOptionId,
+    labels,
+    configuration,
+    onSearch,
+    searchProps,
+    onSortChange,
+    disablePortal = false,
+    sortProps,
+    page: pageProp = 0,
+    pages = 0,
+    pageSize: pageSizeProp,
+    pageSizeOptions = [5, 10, 20, 25, 50, 100],
+    hasPagination = false,
+    paginationServerSide = false,
+    onPageChange,
+    onPageSizeChange,
+    onSelection,
+    isSelectable = false,
+    actions,
+    maxVisibleActions = 1,
+    actionsCallback,
+    FilterPlaceholder,
+    onViewChange,
+    multibuttonProps = [],
+    emptyComponent = null
+  } = props;
 
-  constructor(props) {
-    super(props);
-    const {
-      values,
-      pageSizeOptions,
-      page,
-      pageSize,
-      selectedValues,
-      selectedView,
-      children,
-      searchString,
-      sortOptionId
-    } = this.props;
+  const innerPageSize = pageSizeProp || pageSizeOptions[0];
+  const innerPageValues = getPaginationData(props, valuesProp, innerPageSize, pageProp);
 
-    const innerPageSize = pageSize || pageSizeOptions[0];
-    const viewValues = this.getPaginationData(values, innerPageSize, page);
-    const selectedViewId =
-      selectedView || (Array.isArray(children) ? children[0].props.id : children.props.id);
-    this.state = {
-      selectedView: selectedViewId,
-      originalSelectedView: selectedView,
-      pageSize: innerPageSize,
-      page,
-      // original values to compare in the getDerivedStateFromProps
-      originalValues: values.slice(),
-      // Data for manipulation (search and sorts)
-      values: values.slice(),
-      // Data shown in the "window"
-      viewValues,
-      // original selectedValues
-      originalSelectedValues: selectedValues.slice(),
-      // Values already selected
-      selectedValues: selectedValues.slice(),
-      // search
-      searchString,
-      originalSearchString: searchString,
-      // sort
-      selectedSort: sortOptionId,
-      originalSelectedSort: sortOptionId
-    };
-  }
+  const [selectedView, setSelectedView] = useState(selectedViewProp || 0);
+  const [pageSize, setPageSize] = useState(innerPageSize);
+  const [page, setPage] = useState(pageProp);
 
-  static getDerivedStateFromProps(props, state) {
-    let result = {};
+  const [values, setValues] = useState([...valuesProp]);
+  const [pageValues, setPageValues] = useState(innerPageValues);
 
-    if (
-      !AssetInventory.areArraysEquals(props.values, state.originalValues) ||
-      !AssetInventory.areArraysEquals(props.selectedValues, state.originalSelectedValues)
-    ) {
-      result = {
-        originalValues: props.values,
-        values: props.values,
-        viewValues: props.values,
-        page: props.page,
-        selectedValues: !AssetInventory.areArraysEquals(
-          props.selectedValues,
-          state.originalSelectedValues
-        )
-          ? props.selectedValues
-          : state.selectedValues,
-        pageSize: props.pageSize
-      };
-    }
+  const [selectedValues, setSelectedValues] = useState([...selectedValuesProp]);
+  const [searchString, setSearchString] = useState(searchStringProp);
+  const [selectedSort, setSelectedSort] = useState(sortOptionId);
 
-    if (props.selectedView !== state.originalSelectedView) {
-      result = {
-        ...result,
-        selectedView:
-          props.selectedView !== state.originalSelectedView
-            ? props.selectedView
-            : state.selectedView,
-        originalSelectedView:
-          props.selectedView !== state.originalSelectedView
-            ? props.selectedView
-            : state.originalSelectedView
-      };
-    }
+  useEffect(() => {
+    setValues(valuesProp);
+    setPageValues(innerPageValues);
+    setPage(pageProp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [valuesProp, pageProp]);
 
-    if (props.sortOptionId !== state.originalSelectedSort) {
-      result = {
-        ...result,
-        originalSelectedSort:
-          props.sortOptionId !== state.originalSelectedSort
-            ? props.sortOptionId
-            : state.originalSelectedSort,
-        selectedSort:
-          props.sortOptionId !== state.originalSelectedSort
-            ? props.sortOptionId
-            : state.sortOptionId
-      };
-    }
-    if (props.searchString !== state.originalSearchString) {
-      result = {
-        ...result,
-        originalSearchString:
-          props.searchString !== state.originalSearchString
-            ? props.searchString
-            : state.originalSearchString,
-        searchString:
-          props.searchString !== state.originalSearchString
-            ? props.searchString
-            : state.searchString
-      };
-    }
+  useEffect(() => {
+    setPageSize(pageSizeProp);
+  }, [pageSizeProp]);
 
-    return isEmpty(result) ? null : result;
-  }
+  useEffect(() => {
+    if (selectedValuesProp.length > 0) setSelectedValues(selectedValuesProp);
+  }, [selectedValuesProp]);
 
-  getPaginationData = (values, pageSize, page) => {
-    const { hasPagination, paginationServerSide } = this.props;
-    return hasPagination && !paginationServerSide
-      ? values.slice(pageSize * page, pageSize * (page + 1))
-      : values;
+  useEffect(() => {
+    setSelectedView(selectedViewProp);
+  }, [selectedViewProp]);
+
+  useEffect(() => {
+    setSelectedSort(sortOptionId);
+  }, [sortOptionId]);
+
+  useEffect(() => {
+    setSearchString(searchStringProp);
+  }, [searchStringProp]);
+
+  const changeView = (event, viewIndex) => {
+    setSelectedView(viewIndex);
   };
 
-  changeView = (event, id) => {
-    this.setState({
-      selectedView: id
-    });
+  const changePageValues = returnedPageValues => {
+    setPageValues(getPaginationData(props, returnedPageValues, pageSize, page));
   };
 
-  setViewValues = returnedViewValues => {
-    const { pageSize, page } = this.state;
-    this.setState({
-      viewValues: this.getPaginationData(returnedViewValues, pageSize, page)
-    });
-  };
-
-  setSearchResults = (results, value) => {
-    this.setState({ values: results, page: 0, searchString: value });
-    this.setViewValues(results);
+  const setSearchResults = (results, value) => {
+    setValues(results);
+    setPage(0);
+    setSearchString(value);
+    changePageValues(results);
   };
 
   /**
@@ -169,18 +125,16 @@ class AssetInventory extends React.Component {
    *
    * @returns {*}
    */
-  renderSearch = () => {
-    const { id, values, classes, labels, configuration, onSearch, searchProps } = this.props;
-    const { searchString } = this.state;
+  const renderSearch = () => {
     const { inputLabel, placeholder } = labels;
     return (
       <div className={classes.searchBoxContainer}>
         <Search
           id={id}
           searchString={searchString}
-          values={values}
+          values={valuesProp}
           metadata={configuration.metadata}
-          onFilter={this.setSearchResults}
+          onFilter={setSearchResults}
           onSearch={onSearch}
           labels={{ inputLabel, placeholder }}
           {...searchProps}
@@ -189,36 +143,22 @@ class AssetInventory extends React.Component {
     );
   };
 
-  onSort = (sortFunc, id) => {
-    const { values } = this.state;
-    values.sort(sortFunc);
-    this.setViewValues(values);
-    this.setState({ selectedSort: id });
+  const onSort = (sortFunc, sortId) => {
+    const sortedValues = [...values].sort(sortFunc);
+    setValues(sortedValues);
+    changePageValues(sortedValues);
+    setSelectedSort(sortId);
   };
 
-  renderSort = () => {
-    const {
-      id,
-      labels,
-      configuration,
-      classes,
-      onSortChange,
-      disablePortal,
-      sortProps
-    } = this.props;
-    const { selectedSort } = this.state;
-    const dropDownLabel = {
-      title: labels.sortBy
-    };
-
+  const renderSort = () => {
     return (
       <div className={classes.sortContainer}>
         <Sort
           id={id}
-          labels={dropDownLabel}
+          labels={{ title: labels.sortBy }}
           metadata={configuration.metadata}
           selected={selectedSort}
-          onSelection={this.onSort}
+          onSelection={onSort}
           onSortChange={onSortChange}
           disablePortal={disablePortal}
           {...sortProps}
@@ -227,52 +167,29 @@ class AssetInventory extends React.Component {
     );
   };
 
-  paginationOnPageChange = page => {
-    const { values, pageSize } = this.state;
+  const paginationOnPageChange = newPage => {
+    const pageData = values.slice(pageSize * newPage, pageSize * (newPage + 1));
 
-    const pageData = values.slice(pageSize * page, pageSize * (page + 1));
-
-    this.setState({
-      page,
-      viewValues: pageData
-    });
+    setPage(newPage);
+    setPageValues(pageData);
   };
 
-  paginationOnPageSizeChange = newPageSize => {
-    const { values, page } = this.state;
-
+  const paginationOnPageSizeChange = newPageSize => {
     const pageData = values.slice(newPageSize * page, newPageSize * (page + 1));
 
-    this.setState({
-      pageSize: newPageSize,
-      viewValues: pageData
-    });
+    setPageSize(newPageSize);
+    setPageValues(pageData);
   };
 
-  renderPagination = () => {
-    const {
-      id,
-      paginationServerSide,
-      pages,
-      pageSizeOptions,
-      classes,
-      onPageChange,
-      onPageSizeChange
-    } = this.props;
-
-    const { pageSize, page, values } = this.state;
-
-    if (values.length === 0) {
-      return undefined;
-    }
+  const renderPagination = () => {
+    if (values.length === 0) return null;
 
     const numPages = paginationServerSide ? pages : Math.ceil(values.length / pageSize);
-
-    const onPageChangeInternal = paginationServerSide ? onPageChange : this.paginationOnPageChange;
+    const onPageChangeInternal = paginationServerSide ? onPageChange : paginationOnPageChange;
 
     const onPageSizeChangeInternal = paginationServerSide
       ? onPageSizeChange
-      : this.paginationOnPageSizeChange;
+      : paginationOnPageSizeChange;
 
     return (
       <HvPagination
@@ -293,174 +210,108 @@ class AssetInventory extends React.Component {
     );
   };
 
-  innerOnSelection = onSelection => event => {
-    const { selectedValues } = this.state;
-    const id = event.target.value;
+  const innerOnSelection = onSelectionFn => event => {
+    const valueId = event.target.value;
 
-    let list;
-    if (event.target.checked) {
-      list = [...selectedValues, id];
-    } else {
-      const index = selectedValues.indexOf(id);
-      if (index > -1) {
-        list = selectedValues.filter(item => item !== id);
-      }
-    }
-    this.setState({ selectedValues: list });
-    onSelection(event);
+    const list =
+      (event.target.checked && [...selectedValues, valueId]) ||
+      (selectedValues.includes(valueId) && selectedValues.filter(item => item !== valueId)) ||
+      [];
+
+    setSelectedValues(list);
+    onSelectionFn?.(event);
   };
 
-  propsFillerManager = (source, target, props) => {
-    props.forEach(prop => this.propsFiller(source, target, prop[0], prop[1]));
-  };
-
-  propsFiller = (source, target, propName, value) => {
-    if (isNil(source.props[propName])) {
+  const propsFillerManager = (source, target, propObj) => {
+    Object.keys(propObj).forEach(key => {
       // eslint-disable-next-line no-param-reassign
-      target[propName] = value;
-    }
+      if (source.props[key] == null) target[key] = propObj[key];
+    });
   };
 
-  fillChildProp(child) {
-    const {
-      onSelection,
+  const fillChildProp = child => {
+    const childProps = {
+      ...(configuration?.viewConfiguration || child?.props?.viewConfiguration)
+    };
+
+    propsFillerManager(child, childProps, {
+      onSelection: innerOnSelection(onSelection),
       isSelectable,
       actions,
       maxVisibleActions,
-      actionsCallback,
-      configuration
-    } = this.props;
-
-    let childProps = {};
-
-    if (!isNil(child.props) && !isNil(child.props.viewConfiguration)) {
-      childProps = { ...child.props.viewConfiguration };
-    }
-
-    if (!isNil(configuration) && !isNil(configuration.viewConfiguration)) {
-      childProps = { ...configuration.viewConfiguration };
-    }
-
-    this.propsFillerManager(child, childProps, [
-      ["onSelection", this.innerOnSelection(onSelection)],
-      ["isSelectable", isSelectable],
-      ["actions", actions],
-      ["maxVisibleActions", maxVisibleActions],
-      ["actionsCallback", actionsCallback]
-    ]);
+      actionsCallback
+    });
 
     return childProps;
-  }
+  };
 
   /**
    * Render the view.
    *
    * @returns {*}
    */
-  renderView() {
-    const { selectedView, viewValues, selectedValues } = this.state;
-    const { children } = this.props;
+  const renderView = () => {
+    const view = Array.isArray(children) ? children[selectedView] : children;
 
-    const view = Array.isArray(children)
-      ? children.find(element => element.props.id === selectedView)
-      : children;
-
-    const childProps = this.fillChildProp(view);
+    if (values.length === 0) return emptyComponent;
 
     return React.cloneElement(view, {
-      values: viewValues,
+      values: pageValues,
       selectedValues,
-      viewConfiguration: childProps
+      viewConfiguration: fillChildProp(view)
     });
-  }
+  };
 
-  /**
-   * Render the passed filter placeholder.
-   *
-   * @returns {*}
-   */
-  renderFilterPlaceholder() {
-    const { FilterPlaceholder } = this.props;
+  const showButtons = children.length > 1;
+  const showSort = find(configuration.metadata, element => element.sortable);
+  const showSearch = find(configuration.metadata, element => element.searchable);
+  const showRightControls = showButtons || showSort;
 
-    return <FilterPlaceholder onSelection={this.setViewValues} />;
-  }
+  const align = !showSearch ? "flex-end" : "space-between";
 
-  render() {
-    const {
-      id,
-      classes,
-      className,
-      FilterPlaceholder,
-      children,
-      configuration,
-      hasPagination,
-      onViewChange,
-      multibuttonProps
-    } = this.props;
-
-    const { selectedView } = this.state;
-
-    const showButtons = children.length > 1;
-    const showSort = find(configuration.metadata, element => element.sortable);
-    const showSearch = find(configuration.metadata, element => element.searchable);
-    const showRightControls = showButtons || showSort;
-    const views = [];
-
-    const align = !showSearch ? "flex-end" : "space-between";
-
-    React.Children.forEach(children, child => {
-      const other = multibuttonProps.find(elem => elem.id === child.props.id);
-      views.push({
-        icon: child.props.icon,
-        selected: child.props.id === selectedView,
-        ...other,
-        id: setId(child.props.id, "button")
-      });
-    });
-
-    const pagination = this.renderPagination();
-
-    return (
-      <div id={id} className={clsx(className, classes.root)}>
-        {FilterPlaceholder && this.renderFilterPlaceholder()}
-        <HvGrid container spacing={0}>
-          <HvGrid container justify={align} alignItems="flex-end">
-            {showSearch && <HvGrid item>{this.renderSearch()}</HvGrid>}
-            {showRightControls && (
-              <HvGrid item>
-                <HvGrid container alignItems="flex-end" spacing={0}>
-                  {showSort && <HvGrid item>{this.renderSort()}</HvGrid>}
-                  {showButtons && (
-                    <HvGrid item>
-                      <div className={classes.multiButtons}>
-                        <MultiButton
-                          id={id}
-                          views={views}
-                          changeView={this.changeView}
-                          onViewChange={onViewChange}
-                        />
-                      </div>
-                    </HvGrid>
-                  )}
-                </HvGrid>
-              </HvGrid>
-            )}
-          </HvGrid>
-          <div className={classes.viewContainer}>{this.renderView()}</div>
-          {hasPagination && (
-            <HvGrid container>
-              <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                {pagination}
+  return (
+    <div id={id} className={clsx(className, classes.root)}>
+      {FilterPlaceholder && <FilterPlaceholder onSelection={changePageValues} />}
+      <HvGrid container spacing={0}>
+        <HvGrid container justify={align} alignItems="flex-end">
+          {showSearch && <HvGrid item>{renderSearch()}</HvGrid>}
+          {showRightControls && (
+            <HvGrid item>
+              <HvGrid container alignItems="flex-end" spacing={0}>
+                {showSort && <HvGrid item>{renderSort()}</HvGrid>}
+                {showButtons && (
+                  <HvGrid item>
+                    <div className={classes.multiButtons}>
+                      <MultiButton
+                        id={id}
+                        views={multibuttonProps}
+                        selectedView={selectedView}
+                        changeView={changeView}
+                        onViewChange={onViewChange}
+                      />
+                    </div>
+                  </HvGrid>
+                )}
               </HvGrid>
             </HvGrid>
           )}
         </HvGrid>
-      </div>
-    );
-  }
-}
+        <HvGrid item xs={12} className={classes.viewContainer}>
+          {renderView()}
+        </HvGrid>
+        {hasPagination && (
+          <HvGrid container>
+            <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12}>
+              {renderPagination()}
+            </HvGrid>
+          </HvGrid>
+        )}
+      </HvGrid>
+    </div>
+  );
+};
 
-AssetInventory.propTypes = {
+HvAssetInventory.propTypes = {
   /**
    * Class names to be applied.
    */
@@ -594,9 +445,9 @@ AssetInventory.propTypes = {
    */
   selectedValues: PropTypes.arrayOf(PropTypes.string),
   /**
-   * The selected view id.
+   * The selected view index.
    */
-  selectedView: PropTypes.string,
+  selectedView: PropTypes.number,
   /**
    * Defines if it has pagination.
    */
@@ -668,42 +519,16 @@ AssetInventory.propTypes = {
    */
   multibuttonProps: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string
+      id: PropTypes.string,
+      icon: PropTypes.node
     })
-  )
-};
-
-AssetInventory.defaultProps = {
-  className: "",
-  id: undefined,
-  FilterPlaceholder: null,
-  onSelection: null,
-  actions: null,
-  actionsCallback: null,
-  maxVisibleActions: 1,
-  isSelectable: false,
-
-  selectedValues: [],
-  selectedView: null,
-  hasPagination: false,
-  paginationServerSide: false,
-  pageSizeOptions: [5, 10, 20, 25, 50, 100],
-  page: 0,
-  pages: 0,
-  onPageChange: null,
-  onPageSizeChange: null,
-  pageSize: undefined,
-  onSearch: null,
-  onSortChange: null,
-  onViewChange: () => {},
-  sortOptionId: null,
-  searchString: undefined,
-  disablePortal: false,
-  searchProps: undefined,
-  sortProps: undefined,
-  multibuttonProps: []
+  ),
+  /**
+   * Component to the present when no data is available.
+   */
+  emptyComponent: PropTypes.node
 };
 
 export default withStyles(styles, { name: "HvAssetInventory" })(
-  withLabels(DEFAULT_LABELS)(AssetInventory)
+  withLabels(DEFAULT_LABELS)(HvAssetInventory)
 );

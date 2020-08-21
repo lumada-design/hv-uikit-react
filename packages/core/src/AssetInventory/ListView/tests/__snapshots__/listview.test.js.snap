@@ -2,7 +2,6 @@
 
 exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
 <WithStyles(ListView)
-  icon={<ForwardRef(WithStyles) />}
   id="list"
   renderer={[Function]}
   values={
@@ -106,7 +105,6 @@ exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
         "tableHead": "HvListView-tableHead",
       }
     }
-    icon={<ForwardRef(WithStyles) />}
     id="list"
     renderer={[Function]}
     values={

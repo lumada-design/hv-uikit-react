@@ -14,8 +14,6 @@ describe("[v3] Asset Inventory ", () => {
     </HvProvider>
   );
 
-  const mockConfiguration = { metadata: [] };
-
   const values = [
     {
       id: "1",
@@ -125,100 +123,6 @@ describe("[v3] Asset Inventory ", () => {
     expect(search.length).toBe(0);
   });
 
-  it("should correctly filter alpha-numeric values", () => {
-    const configuration = {
-      metadata: [
-        {
-          id: "id1",
-          accessor: "name",
-          cellType: "alpha-numeric",
-          searchable: true
-        }
-      ]
-    };
-
-    wrapper = mount(setupComponent({ values, configuration }));
-
-    let instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(3);
-
-    const search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: "a" } });
-
-    instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(1);
-    expect(instance.state.viewValues[0].name).toBe("AA");
-  });
-
-  it("should correctly filter numeric values", () => {
-    const configuration = {
-      metadata: [
-        {
-          id: "id1",
-          accessor: "number",
-          cellType: "numeric",
-          searchable: true
-        }
-      ]
-    };
-
-    wrapper = mount(setupComponent({ values, configuration }));
-
-    let instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(3);
-
-    const search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: "2" } });
-
-    instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(2);
-  });
-
-  it("should correctly filter custom values", () => {
-    const configuration = {
-      metadata: [
-        {
-          id: "id1",
-          accessor: "number",
-          cellType: "numeric",
-          searchable: true,
-          searchFunction: (evalValue, searchValue) => evalValue > searchValue
-        }
-      ]
-    };
-
-    wrapper = mount(setupComponent({ values, configuration }));
-
-    let instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(3);
-
-    let search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: "0" } });
-
-    instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(3);
-
-    search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: "10" } });
-
-    instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(2);
-
-    search = wrapper.find(Search).find("input");
-    search.simulate("change", { target: { value: "50" } });
-
-    instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(1);
-  });
-
   it("should render pagination", () => {
     wrapper = mount(
       setupComponent({ values, configuration: { metadata: [] }, hasPagination: true })
@@ -237,73 +141,5 @@ describe("[v3] Asset Inventory ", () => {
     const pagination = wrapper.find("Pagination");
 
     expect(pagination.length).toBe(0);
-  });
-
-  it("should present a subset of data using pagination, calculating the page total", () => {
-    const val = [
-      { id: "1", name: "AA" },
-      { id: "2", name: "BB" },
-      { id: "3", name: "CC" },
-      { id: "4", name: "DD" },
-      { id: "5", name: "EE" },
-      { id: "6", name: "FF" }
-    ];
-
-    wrapper = mount(
-      setupComponent({
-        id: "hv-pagination",
-        values: val,
-        configuration: mockConfiguration,
-        hasPagination: true,
-        pageSize: 2
-      })
-    );
-
-    const instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues.length).toBe(2);
-
-    const totalPages = wrapper.findWhere(
-      n => n.type() === "span" && n.prop("id") === "hv-pagination-pagination-totalPages"
-    );
-
-    expect(totalPages.text()).toBe("3");
-  });
-
-  it("should change the subset of data using pagination", () => {
-    const val = [
-      { id: "1", name: "AA" },
-      { id: "2", name: "BB" },
-      { id: "3", name: "CC" },
-      { id: "4", name: "DD" },
-      { id: "5", name: "EE" },
-      { id: "6", name: "FF" }
-    ];
-
-    wrapper = mount(
-      setupComponent({
-        id: "hv-pagination",
-        values: val,
-        configuration: mockConfiguration,
-        hasPagination: true,
-        pageSize: 2
-      })
-    );
-
-    const instance = wrapper.find("AssetInventory").instance();
-
-    expect(instance.state.viewValues[0].id).toBe("1");
-    expect(instance.state.viewValues[1].id).toBe("2");
-
-    wrapper
-      .findWhere(
-        n => n.type() === "button" && n.prop("id") === "hv-pagination-pagination-nextPage-button"
-      )
-      .simulate("click");
-
-    expect(instance.state.viewValues.length).toBe(2);
-
-    expect(instance.state.viewValues[0].id).toBe("3");
-    expect(instance.state.viewValues[1].id).toBe("4");
   });
 });

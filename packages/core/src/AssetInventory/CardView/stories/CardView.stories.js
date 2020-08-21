@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons";
+import { Add, Upload, Delete, Preview } from "@hv/uikit-react-icons";
 import {
   HvActionContainer,
   HvActionsGeneric,
@@ -123,7 +123,6 @@ export const Main = () => {
   return (
     <HvCardView
       id="id1"
-      icon={<Tool />}
       viewConfiguration={viewConfiguration}
       values={values()}
       renderer={renderer}
