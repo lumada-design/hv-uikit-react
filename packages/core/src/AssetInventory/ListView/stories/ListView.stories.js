@@ -15,6 +15,23 @@ export default {
   subcomponents: { HvListViewRow, HvListViewCell }
 };
 
+const getStatus = statusNumber => {
+  switch (statusNumber) {
+    case 1:
+      return { Icon: Level1, sema: "sema10" };
+    case 2:
+      return { Icon: Level2Average, sema: "sema11" };
+    case 3:
+      return { Icon: Level3Bad, sema: "sema12" };
+    case 4:
+      return { Icon: Level4, sema: "sema13" };
+    case 5:
+      return { Icon: Level5, sema: "sema14" };
+    default:
+      return { Icon: null, sema: "sema1" };
+  }
+};
+
 export const Main = () => {
   const values = [
     {
@@ -67,7 +84,7 @@ export const Main = () => {
         }}
       >
         <HvListViewCell semantic={sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon semantic={sema} className={classes.icon} />
+          <Icon semantic={sema} />
         </HvListViewCell>
 
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
@@ -103,30 +120,10 @@ export const Main = () => {
       width: "1px",
       height: "16px",
       marginRight: "10px"
-    },
-    icon: {
-      paddingLeft: "3px"
     }
   });
 
   const StyledRow = withStyles(styles)(Row);
-
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
 
   const rowRenderer = (value, index) => (
     <StyledRow
@@ -141,11 +138,11 @@ export const Main = () => {
     onSelection: event => alert(`this ${event.target.value}`),
     isSelectable: true,
     columnConfiguration: [
-      { title: "Status", style: { paddingLeft: "8px", width: "52px" }, align: "left" },
-      { title: "Event", style: { width: "370px" }, align: "left" },
-      { title: "Probability", style: { width: "93px" }, align: "right" },
-      { title: "Time horizon", style: { width: "108px" }, align: "right" },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" }, align: "left" }
+      { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
+      { title: "Event", style: { width: "370px" } },
+      { title: "Probability", style: { width: "93px" } },
+      { title: "Time horizon", style: { width: "108px" } },
+      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } }
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
     actionsCallback: (e, id, action) => alert(`You have pressed ${id} with action ${action.label}`)
@@ -214,7 +211,7 @@ export const NotSelectable = () => {
         }}
       >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon semantic={status.sema} className={classes.icon} />
+          <Icon semantic={status.sema} />
         </HvListViewCell>
 
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
@@ -245,30 +242,10 @@ export const NotSelectable = () => {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    },
-    icon: {
-      marginLeft: "3px"
     }
   });
 
   const StyledRow = withStyles(styles)(Row);
-
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
 
   const rowRenderer = (value, index) => (
     <StyledRow
@@ -283,11 +260,11 @@ export const NotSelectable = () => {
     onSelection: event => alert(`this ${event.target.value}`),
     isSelectable: false,
     columnConfiguration: [
-      { title: "Status", style: { paddingLeft: "8px", width: "52px" }, align: "left" },
-      { title: "Event", style: { width: "370px" }, align: "left" },
-      { title: "Probability", style: { width: "93px" }, align: "right" },
-      { title: "Time horizon", style: { width: "108px" }, align: "right" },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" }, align: "left" }
+      { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
+      { title: "Event", style: { width: "370px" } },
+      { title: "Probability", style: { width: "93px" } },
+      { title: "Time horizon", style: { width: "108px" } },
+      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } }
     ],
     actions: [{ id: "1", label: "Dismiss", disabled: false }],
     actionsCallback: (e, id, action) => alert(`You have pressed${id}with action${action.label}`)
@@ -355,7 +332,7 @@ export const NotSelectableWithMenu = () => {
         }}
       >
         <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon semantic={status.sema} className={classes.icon} />
+          <Icon semantic={status.sema} />
         </HvListViewCell>
 
         <HvListViewCell id={`description${id}`} key={`description${id}`}>
@@ -386,30 +363,10 @@ export const NotSelectableWithMenu = () => {
       padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
       marginRight: "10px",
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    },
-    icon: {
-      marginLeft: "3px"
     }
   });
 
   const StyledRow = withStyles(styles)(Row);
-
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
 
   const rowRenderer = (value, index) => (
     <StyledRow
@@ -424,11 +381,11 @@ export const NotSelectableWithMenu = () => {
     onSelection: event => alert(`this ${event.target.value}`),
     isSelectable: false,
     columnConfiguration: [
-      { title: "Status", style: { paddingLeft: "8px", width: "52px" }, align: "left" },
-      { title: "Event", style: { width: "370px" }, align: "left" },
-      { title: "Probability", style: { width: "93px" }, align: "right" },
-      { title: "Time horizon", style: { width: "108px" }, align: "right" },
-      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" }, align: "left" }
+      { title: "Status", style: { paddingLeft: "8px", width: "40px" } },
+      { title: "Event", style: { width: "370px" } },
+      { title: "Probability", style: { width: "93px" } },
+      { title: "Time horizon", style: { width: "108px" } },
+      { title: "Related Assets", style: { width: "195px", paddingLeft: "30px" } }
     ],
     actions: [
       { id: "1", label: "Dismiss", disabled: false },
@@ -455,131 +412,6 @@ NotSelectableWithMenu.story = {
     docs: {
       storyDescription:
         "List View that is not selectable with many actions, collapsed into a DropDownMenu"
-    }
-  }
-};
-
-export const NotStyled = () => {
-  const values = [
-    {
-      id: "1",
-      status: 3,
-      event: {
-        description: "Risk of downtime on Truck 12",
-        timestamp: "Just now",
-        schedule: "Fix 3rd shift"
-      },
-      probability: "88%",
-      timeHorizon: "23h",
-      relatedAssets: "Track A, Load 1 Brake"
-    },
-    {
-      id: "2",
-      status: 5,
-      event: {
-        description: "Track severe breakdown",
-        timestamp: "2 minutes ago",
-        schedule: "Fix now"
-      },
-      probability: "92%",
-      timeHorizon: "8h",
-      relatedAssets: "Track A, Zone 15 Brake"
-    },
-    {
-      id: "3",
-      status: 1,
-      event: {
-        description: "Risk of downtime associated",
-        timestamp: "2 hours ago",
-        schedule: "Fix 3rd shift"
-      },
-      probability: "90%",
-      timeHorizon: "20h",
-      relatedAssets: "Track B, Load 2 Brake"
-    }
-  ];
-
-  const Row = ({ classes, status, value, id }) => {
-    const { Icon } = status;
-
-    return (
-      <HvListViewRow
-        id={id}
-        checkboxProps={{
-          value: value.id,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
-        }}
-      >
-        <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon />
-        </HvListViewCell>
-
-        <HvListViewCell id={`description${id}`} key={`description${id}`}>
-          <div style={{ display: "inline-flex" }}>
-            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
-            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
-          </div>
-        </HvListViewCell>
-
-        <HvListViewCell id={`probability${id}`} key={`probability${id}`}>
-          <HvTypography>{value.probability}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`timeHorizon${id}`} key={`timeHorizon${id}`}>
-          <HvTypography>{value.timeHorizon}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`relatedAssets${id}`} key={`relatedAssets${id}`}>
-          <HvTypography>{value.relatedAssets}</HvTypography>
-        </HvListViewCell>
-      </HvListViewRow>
-    );
-  };
-
-  const styles = theme => ({
-    timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
-  });
-
-  const StyledRow = withStyles(styles)(Row);
-
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
-
-  const rowRenderer = (value, index) => (
-    <StyledRow
-      status={getStatus(value.status)}
-      value={value}
-      key={value.id + index}
-      id={value.id}
-    />
-  );
-
-  return <HvListView icon={<Level1 />} values={values} renderer={rowRenderer} />;
-};
-
-NotStyled.story = {
-  parameters: {
-    docs: {
-      storyDescription: "Default ListView without style overrides"
     }
   }
 };

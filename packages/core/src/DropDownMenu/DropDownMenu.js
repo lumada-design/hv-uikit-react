@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
-import { IconButton, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 import MoreVert from "@hv/uikit-react-icons/dist/MoreOptionsVertical";
 import { getPrevNextFocus, isKeypress, KeyboardCodes } from "../utils";
-import { setId } from "..";
+import { HvButton, HvList, HvPanel, HvBaseDropdown, setId } from "..";
 import styles from "./styles";
 import withId from "../withId";
-import HvBaseDropdown from "../BaseDropdown";
-import List from "../List";
-import HvPanel from "../Panel";
 
 /**
  * A drop-down menu is a graphical control element, similar to a list box, that allows the user to choose one value from a list.
@@ -57,16 +54,18 @@ const DropDownMenu = ({
   };
 
   const headerComponent = (
-    <IconButton
+    <HvButton
+      category="icon"
       id={setId(id, "icon-button")}
       className={clsx(classes.icon, {
         [classes.iconSelected]: open
       })}
       disabled={disabled}
+      tabIndex={-1}
       aria-label="Dropdown menu"
     >
       {icon || <MoreVert color={disabled ? "atmo5" : undefined} />}
-    </IconButton>
+    </HvButton>
   );
 
   return (
@@ -86,7 +85,7 @@ const DropDownMenu = ({
       {...others}
     >
       <HvPanel>
-        <List
+        <HvList
           id={listId}
           values={dataList}
           selectable={false}

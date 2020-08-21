@@ -1,17 +1,16 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
-import HvProvider from "../../Provider";
-import AssetInventory from "../index";
+import { HvProvider, HvAssetInventory } from "../..";
 import Search from "../Search/Search";
 
-describe("Asset Inventory ", () => {
+describe("[v3] Asset Inventory ", () => {
   let wrapper;
 
   const MockView = id => <div id={id} />;
 
   const setupComponent = (props, children = <MockView id="id" />) => (
     <HvProvider>
-      <AssetInventory {...props}>{children}</AssetInventory>
+      <HvAssetInventory {...props}>{children}</HvAssetInventory>
     </HvProvider>
   );
 
@@ -47,7 +46,7 @@ describe("Asset Inventory ", () => {
   });
 
   it("should render correctly", () => {
-    expect(wrapper.find(AssetInventory)).toMatchSnapshot();
+    expect(wrapper.find(HvAssetInventory)).toMatchSnapshot();
   });
 
   it("should render correctly sort", () => {
@@ -220,37 +219,6 @@ describe("Asset Inventory ", () => {
     expect(instance.state.viewValues.length).toBe(1);
   });
 
-  it("should correctly switch views", () => {
-    wrapper = mount(
-      setupComponent({ values, configuration: mockConfiguration }, [
-        <MockView id="view1" key="view1">
-          test1
-        </MockView>,
-        <MockView id="view2" key="view2" />
-      ])
-    );
-
-    let view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
-
-    expect(view.exists()).toBe(true);
-
-    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
-
-    expect(view.exists()).toBe(false);
-
-    wrapper
-      .findWhere(n => n.type() === "button" && n.prop("id") === "view2-button")
-      .simulate("click");
-
-    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view2");
-
-    expect(view.exists()).toBe(true);
-
-    view = wrapper.findWhere(n => n.type() === MockView && n.prop("id") === "view1");
-
-    expect(view.exists()).toBe(false);
-  });
-
   it("should render pagination", () => {
     wrapper = mount(
       setupComponent({ values, configuration: { metadata: [] }, hasPagination: true })
@@ -273,30 +241,12 @@ describe("Asset Inventory ", () => {
 
   it("should present a subset of data using pagination, calculating the page total", () => {
     const val = [
-      {
-        id: "1",
-        name: "AA"
-      },
-      {
-        id: "2",
-        name: "BB"
-      },
-      {
-        id: "3",
-        name: "CC"
-      },
-      {
-        id: "4",
-        name: "DD"
-      },
-      {
-        id: "5",
-        name: "EE"
-      },
-      {
-        id: "6",
-        name: "FF"
-      }
+      { id: "1", name: "AA" },
+      { id: "2", name: "BB" },
+      { id: "3", name: "CC" },
+      { id: "4", name: "DD" },
+      { id: "5", name: "EE" },
+      { id: "6", name: "FF" }
     ];
 
     wrapper = mount(
@@ -322,30 +272,12 @@ describe("Asset Inventory ", () => {
 
   it("should change the subset of data using pagination", () => {
     const val = [
-      {
-        id: "1",
-        name: "AA"
-      },
-      {
-        id: "2",
-        name: "BB"
-      },
-      {
-        id: "3",
-        name: "CC"
-      },
-      {
-        id: "4",
-        name: "DD"
-      },
-      {
-        id: "5",
-        name: "EE"
-      },
-      {
-        id: "6",
-        name: "FF"
-      }
+      { id: "1", name: "AA" },
+      { id: "2", name: "BB" },
+      { id: "3", name: "CC" },
+      { id: "4", name: "DD" },
+      { id: "5", name: "EE" },
+      { id: "6", name: "FF" }
     ];
 
     wrapper = mount(

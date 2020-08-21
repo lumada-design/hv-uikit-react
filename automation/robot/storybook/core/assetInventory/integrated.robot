@@ -1,8 +1,9 @@
 *** Setting ***
 Resource      _keywords.resource
 Test Setup    Run Keywords
-...           Go To    ${components}asset-inventory--configurations
+...           Go To    ${patterns}asset-inventory--configurations
 ...           AND    Wait Until Element Is Visible    hv-assetinventory
+Force Tags    v3
 
 
 *** Test Cases ***

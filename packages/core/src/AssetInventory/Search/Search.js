@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
-import SearchBox from "../../SearchBox";
+import HvSearchBox from "../../SearchBox";
+import { setId } from "../../utils";
 
 const searchOperationSetup = (metadata = []) => metadata.filter(element => element.searchable);
 
@@ -54,8 +55,8 @@ const Search = ({
   };
 
   return (
-    <SearchBox
-      id={`search_${id}`}
+    <HvSearchBox
+      id={setId(id, "search")}
       labels={labels}
       value={searchString}
       onChange={onSearch || handler}

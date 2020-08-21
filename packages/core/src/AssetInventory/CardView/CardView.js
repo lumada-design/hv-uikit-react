@@ -2,8 +2,7 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import Card from "../../Card";
-import Grid from "../../Grid";
+import { HvActionContainer, HvActionsGeneric, HvCard, HvCardContent, HvGrid } from "../..";
 import Focus from "../../Focus";
 import styles from "./styles";
 import setActionsId from "../setActionsId";
@@ -24,21 +23,24 @@ const DEFAULT_VIEW_CONFIGURATION = {
 };
 
 const CardRenderChooser = (viewConfiguration, render, cardContent, metadata, cardProps) => data => {
+  const { onSelection, isSelectable, maxVisibleActions, actionsCallback } = viewConfiguration;
   const actions = setActionsId(viewConfiguration.actions, data.id);
 
   return render ? (
     render(data, { ...viewConfiguration, actions }, metadata, cardProps)
   ) : (
-    <Card
-      {...data}
-      onChange={viewConfiguration.onSelection}
-      actions={actions}
-      isSelectable={viewConfiguration.isSelectable}
-      actionsCallback={viewConfiguration.actionsCallback}
-      maxVisibleActions={viewConfiguration.maxVisibleActions}
-      innerCardContent={cardContent?.(data)}
-      {...cardProps}
-    />
+    <HvCard onChange={onSelection} selectable={isSelectable} {...data} {...cardProps}>
+      <HvCardContent>{cardContent?.(data)}</HvCardContent>
+      {actions && (
+        <HvActionContainer>
+          <HvActionsGeneric
+            actions={actions}
+            actionsCallback={actionsCallback}
+            maxVisibleActions={maxVisibleActions}
+          />
+        </HvActionContainer>
+      )}
+    </HvCard>
   );
 };
 
@@ -82,7 +84,7 @@ const CardView = ({
       value.checked = !!(selectedValues && selectedValues.indexOf(value.id) > -1);
 
       return (
-        <Grid id={setId(value.id, "grid")} key={value.id} item {...breakpoints}>
+        <HvGrid id={setId(value.id, "grid")} key={value.id} item {...breakpoints}>
           <Focus
             rootRef={containerRef}
             key={value.id}
@@ -95,33 +97,30 @@ const CardView = ({
               {renderCard(value)}
             </div>
           </Focus>
-        </Grid>
+        </HvGrid>
       );
     });
   };
 
   const hasValues = values.length > 0;
 
-  return (
-    <>
-      {!hasValues && emptyComponent}
-      {hasValues && (
-        <div className={classes.root} ref={containerRef}>
-          <div className={classes.elements}>
-            <Grid
-              className={clsx(className, classes.root)}
-              id={id}
-              container
-              justify="flex-start"
-              alignItems="flex-start"
-              spacing={4}
-            >
-              {renderCards()}
-            </Grid>
-          </div>
-        </div>
-      )}
-    </>
+  return hasValues ? (
+    <div className={classes.root} ref={containerRef}>
+      <div className={classes.elements}>
+        <HvGrid
+          className={clsx(className, classes.root)}
+          id={id}
+          container
+          justify="flex-start"
+          alignItems="flex-start"
+          spacing={4}
+        >
+          {renderCards()}
+        </HvGrid>
+      </div>
+    </div>
+  ) : (
+    emptyComponent
   );
 };
 

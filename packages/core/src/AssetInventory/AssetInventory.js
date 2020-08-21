@@ -11,12 +11,10 @@ import MultiButton from "./Multibutton/Multibutton";
 import withLabels from "../withLabels";
 import Search from "./Search/Search";
 import Sort from "./Sort/Sort";
-import Grid from "../Grid";
-import Pagination from "../Pagination";
+import HvGrid from "../Grid";
+import HvPagination from "../Pagination";
 import styles from "./styles";
 import { setId } from "../utils";
-
-// TODO: review event args
 
 const DEFAULT_LABELS = {
   sortBy: "Sort by",
@@ -25,7 +23,8 @@ const DEFAULT_LABELS = {
 };
 
 /**
- * An Asset Inventory allows to switch between views. The Sort and Filter are defined using the metadata configuration, while the remaining configuration can be ser in the AssetInventory or in the individual views.
+ * An Asset Inventory allows to switch between views.
+ * The Sort and Filter are defined using the metadata configuration, while the remaining configuration can be ser in the AssetInventory or in the individual views.
  */
 class AssetInventory extends React.Component {
   static areArraysEquals(a1, a2) {
@@ -148,10 +147,8 @@ class AssetInventory extends React.Component {
   };
 
   changeView = (event, id) => {
-    const selectedId = id[0];
-
     this.setState({
-      selectedView: selectedId
+      selectedView: id
     });
   };
 
@@ -278,7 +275,7 @@ class AssetInventory extends React.Component {
       : this.paginationOnPageSizeChange;
 
     return (
-      <Pagination
+      <HvPagination
         id={setId(id, "pagination")}
         classes={{
           root: classes.pagination
@@ -426,15 +423,15 @@ class AssetInventory extends React.Component {
     return (
       <div id={id} className={clsx(className, classes.root)}>
         {FilterPlaceholder && this.renderFilterPlaceholder()}
-        <Grid container spacing={0}>
-          <Grid container justify={align} alignItems="flex-end">
-            {showSearch && <Grid item>{this.renderSearch()}</Grid>}
+        <HvGrid container spacing={0}>
+          <HvGrid container justify={align} alignItems="flex-end">
+            {showSearch && <HvGrid item>{this.renderSearch()}</HvGrid>}
             {showRightControls && (
-              <Grid item>
-                <Grid container alignItems="flex-end" spacing={0}>
-                  {showSort && <Grid item>{this.renderSort()}</Grid>}
+              <HvGrid item>
+                <HvGrid container alignItems="flex-end" spacing={0}>
+                  {showSort && <HvGrid item>{this.renderSort()}</HvGrid>}
                   {showButtons && (
-                    <Grid item>
+                    <HvGrid item>
                       <div className={classes.multiButtons}>
                         <MultiButton
                           id={id}
@@ -443,21 +440,21 @@ class AssetInventory extends React.Component {
                           onViewChange={onViewChange}
                         />
                       </div>
-                    </Grid>
+                    </HvGrid>
                   )}
-                </Grid>
-              </Grid>
+                </HvGrid>
+              </HvGrid>
             )}
-          </Grid>
+          </HvGrid>
           <div className={classes.viewContainer}>{this.renderView()}</div>
           {hasPagination && (
-            <Grid container>
-              <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <HvGrid container>
+              <HvGrid item xs={12} sm={12} md={12} lg={12} xl={12}>
                 {pagination}
-              </Grid>
-            </Grid>
+              </HvGrid>
+            </HvGrid>
           )}
-        </Grid>
+        </HvGrid>
       </div>
     );
   }

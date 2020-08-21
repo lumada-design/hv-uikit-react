@@ -1,24 +1,30 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
-import MultiButton from "../../MultiButton";
-import { setId } from "../../utils/setId";
+import HvMultiButton from "../../MultiButton";
+import HvButton from "../../Button";
+import { setId } from "../../utils";
 
 const AssetMultiButton = ({ id, views, changeView, onViewChange = null }) => {
   const onChangeViewHandler = (event, buttonId) => {
-    const ids = buttonId;
-    ids[0] = buttonId[0].replace("-button", "");
-    changeView(event, ids);
-    onViewChange(event, ids);
+    const btn = buttonId.replace("-button", "");
+    changeView(event, btn);
+    onViewChange(event, btn);
   };
 
   return (
-    <MultiButton
-      id={setId(id, "multi-button")}
-      buttons={views}
-      type="icon"
-      onChange={onChangeViewHandler}
-      minSelection={1}
-    />
+    <HvMultiButton id={setId(id, "multi-button")}>
+      {views.map(view => (
+        <HvButton
+          id={view.id}
+          key={view.id}
+          category="icon"
+          selected={view.selected}
+          onClick={evt => onChangeViewHandler(evt, view.id)}
+        >
+          {view.icon}
+        </HvButton>
+      ))}
+    </HvMultiButton>
   );
 };
 
@@ -34,6 +40,6 @@ AssetMultiButton.propTypes = {
   onViewChange: PropTypes.func
 };
 
-const arePropsEqual = (prevProps, nextProps) => prevProps.views === nextProps.views;
+const arePropsEqual = (props, nextProps) => props.views === nextProps.views;
 
 export default memo(AssetMultiButton, arePropsEqual);

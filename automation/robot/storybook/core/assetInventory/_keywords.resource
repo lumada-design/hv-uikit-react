@@ -6,7 +6,7 @@ Resource    _variables.resource
 *** Keywords ***
 filter cards and reduce Window size
     Set Window Size                  1200    800
-    Go To                            ${components}asset-inventory--configurations
+    Go To                            ${patterns}asset-inventory--configurations
     Wait Until Element Is Enabled    ${searchBox}
     Select From List By Label        ${pageSize}    6
 

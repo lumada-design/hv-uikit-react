@@ -1,14 +1,17 @@
 import React from "react";
-import { withStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
+import { Add, Upload, Delete, Preview, Tool } from "@hv/uikit-react-icons";
 import {
-  Add,
-  Upload,
-  Delete,
-  MoreOptionsVertical,
-  Preview,
-  Tool
-} from "@hv/uikit-react-icons/dist";
-import { HvButton, HvCard, HvCardFooter, HvCardMedia, HvCardView, HvTypography } from "../../..";
+  HvActionContainer,
+  HvActionsGeneric,
+  HvCard,
+  HvCardContent,
+  HvCardHeader,
+  HvCardMedia,
+  HvCardView,
+  HvCheckBox,
+  HvTypography
+} from "../../..";
 import compressor from "../../../Card/stories/resources/compressor.png";
 import leaf from "../../../Card/stories/resources/leaf.png";
 
@@ -20,66 +23,18 @@ export default {
     componentSubtitle: null,
     usage: "import { HvCardView } from '@hv/uikit-react-core/dist'"
   },
-  component: HvCardView
+  component: HvCardView,
+  decorators: [
+    Story => (
+      <div style={{ margin: 10 }}>
+        <Story />
+      </div>
+    )
+  ]
 };
 
 export const Main = () => {
-  const values = (num = 10) => {
-    const variations = [
-      {
-        semantic: "sema2",
-        subheader: "Compressor",
-        mediaPath: compressor,
-        mediaTitle: "Compressor"
-      },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
-    ];
-
-    return [...Array(num).keys()].map(id => ({
-      id: `id_${id + 1}`,
-      headerTitle: `Asset Avatar ${id + 1}`,
-      checkboxValue: `id_${id + 1}`,
-      checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
-      data: {
-        firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
-        secondContent: "Jun 30, 2015 12:27:53 PM"
-      },
-      mediaHeight: 186,
-      selected: false,
-      ...variations[id % variations.length]
-    }));
-  };
-
-  // --------------- Configuration ----------------
-  const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
-  ];
-
-  const viewConfiguration = {
-    onSelection: event => console.log(event.target.checked),
-    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
-    isSelectable: true,
-    actions: myActions,
-    actionsCallback: (e, id, action) =>
-      alert(`You have pressed card ${id} with action ${action.label}`)
-  };
-
-  return (
-    <HvCardView id="id1" icon={<Tool />} values={values()} viewConfiguration={viewConfiguration} />
-  );
-};
-
-export const DefaultRender = () => {
-  const styles = theme => ({
-    content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
-    },
-    item: {
-      padding: `0 0 ${theme.hv.spacing.sm}px 0`
-    },
+  const useStyles = makeStyles({
     text: {
       overflow: "hidden",
       textOverflow: "ellipsis",
@@ -87,54 +42,61 @@ export const DefaultRender = () => {
     }
   });
 
-  // ---------------- InnerContent ----------------
+  const classes = useStyles();
 
-  const InnerContent = ({ classes, values }) => (
-    <>
-      <div>
-        <div>
-          <HvTypography variant="highlightText">ID</HvTypography>
-        </div>
-        <div>
-          <HvTypography className={classes.text}>{values.data.firstContent}</HvTypography>
-        </div>
-      </div>
-      <div style={{ marginTop: "15px" }}>
-        <div>
-          <HvTypography variant="highlightText">Last connected</HvTypography>
-        </div>
-        <div>
-          <HvTypography className={classes.text}>{values.data.secondContent}</HvTypography>
-        </div>
-      </div>
-    </>
+  const renderer = (value, viewConfiguration) => (
+    <HvCard
+      id={value.id}
+      bgcolor="atmo1"
+      selectable={viewConfiguration.isSelectable}
+      semantic={value.semantic}
+    >
+      <HvCardHeader title={value.headerTitle} subheader={value.subtitle} />
+      <HvCardMedia
+        component="img"
+        image={value.mediaPath}
+        height={value.mediaHeight}
+        title={value.subtitle}
+        style={{ marginBottom: 10 }}
+      />
+      <HvCardContent>
+        <HvTypography variant="highlightText">ID</HvTypography>
+        <HvTypography className={classes.text}>2101cad3-7cd4-1000-bdp95-d8c497176e7c</HvTypography>
+      </HvCardContent>
+      <HvCardContent>
+        <HvTypography variant="highlightText">Last connected</HvTypography>
+        <HvTypography className={classes.text}>Jun 30, 2015 12:27:53 PM</HvTypography>
+      </HvCardContent>
+      <HvActionContainer aria-label="Leaf">
+        {viewConfiguration.isSelectable && (
+          <HvCheckBox
+            onChange={viewConfiguration.onSelection}
+            value={value.checkboxValue}
+            inputProps={{ "aria-label": `Select Asset ${value.id + 1}` }}
+          />
+        )}
+        <div style={{ flex: 1 }} />
+        <HvActionsGeneric
+          actions={viewConfiguration.actions}
+          maxVisibleActions={viewConfiguration.maxVisibleActions}
+          actionsCallback={viewConfiguration.actionsCallback}
+        />
+      </HvActionContainer>
+    </HvCard>
   );
 
-  const innerContentFunc = values => <InnerContent classes={styles} values={values} />;
-
-  // -------------------- Data --------------------
+  // ------------------- Data ---------------------
 
   const values = (num = 10) => {
     const variations = [
-      {
-        semantic: "sema2",
-        subheader: "Compressor",
-        mediaPath: compressor,
-        mediaTitle: "Compressor"
-      },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
+      { semantic: "sema2", mediaPath: compressor, subtitle: "Compressor" },
+      { semantic: "sema3", mediaPath: leaf, subtitle: "Leaf" }
     ];
 
     return [...Array(num).keys()].map(id => ({
       id: `id_${id}`,
       headerTitle: `Asset Avatar ${id + 1}`,
-      checkboxValue: `id_${id}`,
-      checkboxProps: { inputProps: { "aria-label": `Select Asset ${id + 1}` } },
-      data: {
-        firstContent: "2101cad3-7cd4-1000-bdp95-d8c497176e7c",
-        secondContent: "Jun 30, 2015 12:27:53 PM"
-      },
-      mediaHeight: 186,
+      mediaHeight: 160,
       selected: false,
       ...variations[id % variations.length]
     }));
@@ -153,190 +115,9 @@ export const DefaultRender = () => {
     breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
     isSelectable: true,
     actions: myActions,
+    maxVisibleActions: 1,
     actionsCallback: (e, id, action) =>
       alert(`You have pressed card ${id} with action ${action.label}`)
-  };
-
-  return (
-    <HvCardView
-      id="id1"
-      icon={<Tool />}
-      values={values()}
-      viewConfiguration={viewConfiguration}
-      innerCardContent={innerContentFunc}
-    />
-  );
-};
-
-export const CustomRender = () => {
-  const styles = theme => ({
-    root: {
-      width: "100%",
-      paddingBottom: "0px",
-      borderLeft: `1px solid ${theme.palette.grey.plain}`,
-      borderRight: `1px solid ${theme.palette.grey.plain}`
-    },
-    media: {
-      height: "100%",
-      width: "100%"
-    }
-  });
-
-  // ------------------ Render --------------------
-
-  const CustomMedia = withStyles(styles)(HvCardMedia);
-
-  const renderer = (value, viewConfiguration) => (
-    <HvCard id={value.id}>
-      <CustomMedia mediaPath={value.mediaPath} mediaHeight={160} title={value.mediaTitle} />
-      <HvCardFooter
-        actions={viewConfiguration.actions}
-        maxVisibleActions={viewConfiguration.maxVisibleActions}
-        actionsCallback={viewConfiguration.actionsCallback}
-        isSelectable={viewConfiguration.isSelectable}
-        onChange={viewConfiguration.onSelection}
-        checkboxProps={{
-          value: value.checkboxValue,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
-        }}
-      />
-    </HvCard>
-  );
-
-  // ------------------- Data ---------------------
-
-  const values = (num = 10) => {
-    const variations = [
-      {
-        semantic: "sema2",
-        subheader: "Compressor",
-        mediaPath: compressor,
-        mediaTitle: "Compressor"
-      },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
-    ];
-
-    return [...Array(num).keys()].map(id => ({
-      id: `id_${id}`,
-      headerTitle: `Asset Avatar ${id + 1}`,
-      mediaHeight: 186,
-      selected: false,
-      ...variations[id % variations.length]
-    }));
-  };
-
-  // --------------- Configuration ----------------
-  const myActions = [
-    { id: "post", label: "Add", iconCallback: () => <Add />, disabled: false },
-    { id: "get", label: "Preview", iconCallback: () => <Preview color="atmo5" />, disabled: true },
-    { id: "put", label: "Upload", iconCallback: () => <Upload color="atmo5" />, disabled: true },
-    { id: "delete", label: "Delete", iconCallback: () => <Delete />, disabled: false }
-  ];
-
-  const viewConfiguration = {
-    onSelection: event => console.log(event.target.value),
-    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
-    isSelectable: true,
-    actions: myActions,
-    actionsCallback: (e, id, action) =>
-      alert(`You have pressed card ${id} with action ${action.label}`)
-  };
-
-  return (
-    <HvCardView
-      id="id1"
-      icon={<Tool />}
-      viewConfiguration={viewConfiguration}
-      values={values()}
-      renderer={renderer}
-    />
-  );
-};
-
-export const CustomRenderAndActions = () => {
-  const styles = theme => ({
-    root: {
-      width: "100%",
-      paddingBottom: "0px",
-      borderLeft: `1px solid ${theme.palette.grey.plain}`,
-      borderRight: `1px solid ${theme.palette.grey.plain}`
-    },
-    media: {
-      height: "100%",
-      width: "100%"
-    }
-  });
-
-  const CustomMedia = withStyles(styles)(HvCardMedia);
-
-  const Actions = ({ classes }) => (
-    <>
-      <HvButton category="ghost">
-        <Upload />
-        Update
-      </HvButton>
-      <HvButton category="ghost" className={classes.smallButton} aria-label="More...">
-        <MoreOptionsVertical />
-      </HvButton>
-    </>
-  );
-
-  const actionsStyles = theme => ({
-    smallButton: {
-      width: "32px",
-      minWidth: "32px",
-      padding: 0,
-      color: theme.palette.grey.inspire,
-      "& span": {
-        color: theme.palette.grey.inspire
-      }
-    }
-  });
-
-  const StyledActions = withStyles(actionsStyles)(Actions);
-
-  const renderer = (value, viewConfiguration) => (
-    <HvCard id={value.id}>
-      <CustomMedia mediaPath={value.mediaPath} mediaHeight={160} title={value.mediaTitle} />
-      <HvCardFooter
-        actions={<StyledActions />}
-        isSelectable={viewConfiguration.isSelectable}
-        onChange={viewConfiguration.onSelection}
-        checkboxProps={{
-          value: value.checkboxValue,
-          inputProps: { "aria-label": `Select Asset ${value.id + 1}` }
-        }}
-      />
-    </HvCard>
-  );
-
-  // ------------------- Data ---------------------
-
-  const values = (num = 10) => {
-    const variations = [
-      {
-        semantic: "sema2",
-        subheader: "Compressor",
-        mediaPath: compressor,
-        mediaTitle: "Compressor"
-      },
-      { semantic: "sema3", subheader: "Plant", mediaPath: leaf, mediaTitle: "Leaf" }
-    ];
-
-    return [...Array(num).keys()].map(id => ({
-      id: `id_${id}`,
-      headerTitle: `Asset Avatar ${id + 1}`,
-      mediaHeight: 186,
-      selected: false,
-      ...variations[id % variations.length]
-    }));
-  };
-
-  // --------------- Configuration ----------------
-  const viewConfiguration = {
-    onSelection: event => alert(event.target.value),
-    breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
-    isSelectable: true
   };
 
   return (
