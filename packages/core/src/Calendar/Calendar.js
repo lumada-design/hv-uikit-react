@@ -9,7 +9,7 @@ import HvTypography from "../Typography";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import styles from "./styles";
-
+import moment from "moment";
 import { NAV_OPTIONS, REPRESENTATION_VALUES, VIEW_MODE } from "./enums";
 import {
   DEFAULT_LOCALE,
@@ -26,7 +26,7 @@ import {
   isValidLocale,
   makeUTCDate,
   makeUTCToday,
-  dateInValueRange,
+  dateInProvidedValueRange,
   checkIfDateIsDisabled
 } from "./utils";
 
@@ -323,8 +323,14 @@ const HvCalendar = ({
 
     // Checks if the date falls within a provided selection range
     const dateInProvidedSelectionRange = valueRange
-      ? dateInValueRange(currentDate, valueRange)
+      ? dateInProvidedValueRange(currentDate, valueRange)
       : false;
+
+    const { startDate, endDate } = valueRange;
+    const isDateRangeActivated = startDate !== null && endDate !== null && startDate !== endDate;
+    // Checks if date is a selection bookend
+    const startBookend = moment(currentDate).isSame(moment(startDate));
+    const endBookend = moment(currentDate).isSame(moment(endDate));
 
     const isDateDisabled =
       minimumDate || maximumDate
@@ -346,9 +352,11 @@ const HvCalendar = ({
           className={clsx(classes.calendarDate, {
             [classes.calendarDateSelected]: isCurrent,
             [classes.calendarDateNotInMonth]: !inMonth,
-            [classes.calendarDateInSelectionRange]: dateInProvidedSelectionRange,
+            [classes.calendarDateInSelectionRange]: dateInProvidedSelectionRange && inMonth,
             [classes.calendarDateDisabled]: isDateDisabled,
-            [classes.calendarDateInvalid]: !dateInValidRange
+            [classes.calendarDateInvalid]: !dateInValidRange,
+            [classes.startBookend]: startBookend && isDateRangeActivated,
+            [classes.endBookend]: endBookend && isDateRangeActivated
           })}
         >
           {currentDate.getUTCDate()}

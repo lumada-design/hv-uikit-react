@@ -120,6 +120,12 @@ const styles = theme => {
         backgroundColor: theme.palette.atmo3,
         color: theme.palette.atmo1
       }
+    },
+    startBookend: {
+      borderLeft: `1px solid ${theme.palette.acce1}`
+    },
+    endBookend: {
+      borderRight: `1px solid ${theme.palette.acce1}`
     }
   };
 };

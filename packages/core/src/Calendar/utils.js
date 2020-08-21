@@ -413,7 +413,7 @@ export const isNextDateValid = (year, month) => {
  * @param {object} providedValueRange - Provided selection range.
  * @returns {boolean} - True if the date falls within the range, false otherwise.
  */
-export const dateInValueRange = (date, providedValueRange) => {
+export const dateInProvidedValueRange = (date, providedValueRange) => {
   const { startDate, endDate } = providedValueRange;
   const modStartDate = moment(startDate).format("YYYY-MM-DD");
   const modEndDate = moment(endDate).format("YYYY-MM-DD");

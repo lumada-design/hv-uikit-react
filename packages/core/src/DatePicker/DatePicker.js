@@ -418,6 +418,7 @@ const HvDatePicker = ({
    */
 
   const renderRangeCalendars = () => {
+    // valueRange={{ startDate: "2020-08-19", endDate: "2020-09-20" }}
     return (
       <div className={classes.rangeMainContainer}>
         <div className={classes.rangeCalendarsContainer}>
@@ -427,6 +428,7 @@ const HvDatePicker = ({
               handleDateChange={date => handleCalendarDateChange(date, "start")}
               selectedDate={tempStartSelectedDate}
               visibleDate={startVisibleDate}
+              valueRange={{ startDate: tempStartSelectedDate, endDate: tempEndSelectedDate }}
               locale={datepickerLocale}
               rangeMode={rangeMode}
               label={labels.rangeStart}
@@ -441,6 +443,7 @@ const HvDatePicker = ({
               handleDateChange={date => handleCalendarDateChange(date, "end")}
               selectedDate={tempEndSelectedDate}
               visibleDate={endVisibleDate}
+              valueRange={{ startDate: tempStartSelectedDate, endDate: tempEndSelectedDate }}
               locale={datepickerLocale}
               rangeMode={rangeMode}
               label={labels.rangeEnd}
