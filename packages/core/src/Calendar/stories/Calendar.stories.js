@@ -43,108 +43,127 @@ const navigateTo = (navOptions, month = 1, year = 2000) => {
   return newMonthYear;
 };
 
-export const MainStory = () => {
+// export const MainStory = () => {
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar />
+//     </div>
+//   );
+// };
+
+export const CalendarWithDateSelected = () => {
+  const selectionDate = new Date("2020-08-19");
+
   return (
     <div style={{ display: "flex" }}>
-      <HvCalendar />
+      <HvCalendar selectedValue={selectionDate} onChange={date => alert("Click: " + date)} />
     </div>
   );
 };
 
-export const ControlledMonthYearCalendar = () => {
-  //   const newDates = calModel.navigateTo(navOption, month);
-  const [navMonth, setNavMonth] = useState(1);
-  const [navYear, setNavYear] = useState(2000);
+// export const ControlledDateSelectionCalendar = () => {
+//   const [date, setDate] = useState(new Date("2000-01-01"));
 
-  return (
-    <div style={{ display: "flex" }}>
-      <HvCalendar
-        visibleMonth={navMonth}
-        visibleYear={navYear}
-        handleVisibleDateChange={changeDirection => {
-          const { month, year } = navigateTo(changeDirection, navMonth, navYear);
-          setNavMonth(month);
-          setNavYear(year);
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar selectedValue={date} onChange={clickedDate => setDate(clickedDate)} />
+//     </div>
+//   );
+// };
 
-          return { month, year };
-        }}
-        handleDateChange={() => alert("Click")}
-      />
-    </div>
-  );
-};
+// export const ControlledMonthYearCalendar = () => {
+//   const [navMonth, setNavMonth] = useState(1);
+//   const [navYear, setNavYear] = useState(2000);
 
-export const WithPresetSelectionRangeCalendar = () => {
-  return (
-    <div style={{ display: "flex" }}>
-      <HvCalendar valueRange={{ startDate: "2020-08-19", endDate: "2020-09-20" }} />
-    </div>
-  );
-};
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar
+//         selectedDate="2020-01-01"
+//         // visibleMonth={navMonth}
+//         // visibleYear={navYear}
+//         handleVisibleDateChange={changeDirection => {
+//           const { month, year } = navigateTo(changeDirection, navMonth, navYear);
+//           setNavMonth(month);
+//           setNavYear(year);
+//           return { month, year };
+//         }}
+//         onChange={date => alert("Click: " + date)}
+//       />
+//     </div>
+//   );
+// };
 
-export const WithMinMaxDisabledRangeCalendar = () => {
-  return (
-    <div style={{ display: "flex" }}>
-      <HvCalendar minimumDate="2020-08-01" maximumDate="2020-09-10" />
-    </div>
-  );
-};
+// export const WithPresetSelectionRangeCalendar = () => {
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar valueRange={{ startDate: "2020-08-19", endDate: "2020-09-20" }} />
+//     </div>
+//   );
+// };
 
-export const WithMinDisabledRangeCalendar = () => {
-  return (
-    <div style={{ display: "flex" }}>
-      <HvCalendar minimumDate="2020-08-01" />
-    </div>
-  );
-};
+// export const WithMinMaxDisabledRangeCalendar = () => {
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar minimumDate="2020-08-01" maximumDate="2020-09-10" />
+//     </div>
+//   );
+// };
 
-export const WithMaxDisabledRangeCalendar = () => {
-  return (
-    <div style={{ display: "flex" }}>
-      <HvCalendar maximumDate="2020-08-10" />
-    </div>
-  );
-};
+// export const WithMinDisabledRangeCalendar = () => {
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar minimumDate="2020-08-01" />
+//     </div>
+//   );
+// };
 
-// improve so that localization can be set
-export const Localized = () => {
-  const [locale, setLocale] = useState("pt-PT");
+// export const WithMaxDisabledRangeCalendar = () => {
+//   return (
+//     <div style={{ display: "flex" }}>
+//       <HvCalendar maximumDate="2020-08-10" />
+//     </div>
+//   );
+// };
 
-  return (
-    <>
-      <HvInput
-        labels={{ inputLabel: "Locale" }}
-        type="text"
-        value={locale}
-        style={{ marginBottom: "20px", width: "150px" }}
-        onChange={value => setLocale(value)}
-      />
-      <HvCalendar locale={locale} id="Calendar" />
-    </>
-  );
-};
+// // improve so that localization can be set
+// export const Localized = () => {
+//   const [locale, setLocale] = useState("pt-PT");
 
-export const WithValueChange = () => {
-  const Example = () => {
-    const [date, setDate] = useState("2020-01-01");
+//   return (
+//     <>
+//       <HvInput
+//         labels={{ inputLabel: "Locale" }}
+//         type="text"
+//         value={locale}
+//         style={{ marginBottom: "20px", width: "150px" }}
+//         onChange={value => setLocale(value)}
+//       />
+//       <HvCalendar locale={locale} id="Calendar" />
+//     </>
+//   );
+// };
 
-    const addDay = () =>
-      setDate(
-        moment(date)
-          .add(1, "day")
-          .format("YYYY-MM-DD")
-      );
+// export const WithValueChange = () => {
+//   const Example = () => {
+//     const [date, setDate] = useState("2020-01-01");
 
-    return (
-      <>
-        <HvButton id="AddButton" onClick={addDay}>
-          Add a day
-        </HvButton>
-        <p />
-        <HvCalendar id="DatePicker" value={date} onChange={d => setDate(d)} />
-      </>
-    );
-  };
+//     const addDay = () =>
+//       setDate(
+//         moment(date)
+//           .add(1, "day")
+//           .format("YYYY-MM-DD")
+//       );
 
-  return <Example />;
-};
+//     return (
+//       <>
+//         <HvButton id="AddButton" onClick={addDay}>
+//           Add a day
+//         </HvButton>
+//         <p />
+//         <HvCalendar id="DatePicker" value={date} onChange={d => setDate(d)} />
+//       </>
+//     );
+//   };
+
+//   return <Example />;
+// };

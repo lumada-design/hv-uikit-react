@@ -23,7 +23,6 @@ import {
   isPreviousDateValid,
   isSameDay,
   isSameMonth,
-  // isValidLocale,
   makeUTCDate,
   makeUTCToday,
   dateInProvidedValueRange,
@@ -35,20 +34,18 @@ import withTooltip from "../withTooltip";
 
 const HvCalendar = ({
   classes,
-  id,
+  id = undefined,
   locale = DEFAULT_LOCALE,
-  selectedDate,
-  visibleDate,
-  visibleMonth,
-  visibleYear,
-  valueRange,
+  selectedValue = undefined,
+  visibleMonth = undefined,
+  visibleYear = undefined,
+  valueRange = undefined,
   minimumDate,
   maximumDate,
-  handleDateChange,
+  onChange = () => {},
   handleVisibleDateChange = () => {},
   rangeMode,
-  label,
-  onChange,
+  label = null,
   ...others
 }) => {
   // ToDo: Implement interaction tests in component
@@ -56,78 +53,14 @@ const HvCalendar = ({
   // used to place a css relative rule to control calendar display
   const { inDatepicker } = others;
 
-  const calModel = new CalendarModel(visibleMonth, visibleYear);
+  // if selected value is predefined, set visible Month, year to
+  const calModel = selectedValue
+    ? new CalendarModel(selectedValue.getMonth(), selectedValue.getFullYear())
+    : new CalendarModel(visibleMonth, visibleYear);
 
   // Hooks used to maintain state
-  // const [dateSelected, setDateSelected] = useState();
   const [calViewMode, setCalViewMode] = useState(VIEW_MODE.CALENDAR);
   const [today, setToday] = useState(makeUTCToday());
-
-  // set today date
-  // useEffect(() => {
-  //   setToday(makeUTCToday());
-  // }, []);
-
-  // set calendar view mode
-  // useEffect(() => {
-  //   setCalViewMode(VIEW_MODE.CALENDAR);
-  // }, []);
-
-  /**
-   * Resolves the state using the received date.
-   *
-   * @param {Date} selectedDate - The date that will be used to set the selected date.
-   * @param {Date} visibleDate - The date that will be used to set the currently visible month and year.
-   * @returns {{
-   *  selectedDate {Date} - Currently selected date
-   *  calendarModel {CalendarModel} - Object representing the current calendar.
-   *  viewMode {REPRESENTATION_VALUE} - Visualization mode currently active.
-   * }}
-   * @memberOf Calendar
-   */
-
-  // const dateObjectValidator = (selectionDate, visDate) => {
-  //   const isDateObject = isDate(selectionDate);
-  //   const validSelectedDate = isDateObject ? selectionDate : makeUTCToday();
-  //   const validVisibleDate = isDate(visDate) ? visDate : validSelectedDate;
-  //   return {
-  //     isDateObject,
-  //     validSelectedDate,
-  //     validVisibleDate
-  //   };
-  // };
-
-  // const retrieveCalendarModel = () => {
-  //   const { validVisibleDate } = dateObjectValidator(selectedDate);
-
-  //   const validatedVisibleMonth =
-  //     visibleMonth !== undefined ? visibleMonth : validVisibleDate.getUTCMonth() + 1;
-  //   const validatedVisibleYear =
-  //     visibleYear !== undefined ? visibleYear : validVisibleDate.getUTCFullYear();
-
-  //   return new CalendarModel(validatedVisibleMonth, validatedVisibleYear);
-  // };
-  // const [calModel, setCalModel] = useState(retrieveCalendarModel());
-
-  // const resolveStateFromDates = (selectionDate, visDate = null) => {
-  //   const { isDateObject, validVisibleDate } = dateObjectValidator(selectionDate, visDate);
-
-  //   const calcVisibleMonth = validVisibleDate.getUTCMonth() + 1;
-  //   const calcVisibleYear = validVisibleDate.getUTCFullYear();
-  //   // const validLocale = isValidLocale(calLocale) ? calLocale : DEFAULT_LOCALE;
-
-  //   setDateSelected(isDateObject ? selectionDate : null);
-  //   // setCalModel(new CalendarModel(calcVisibleMonth, calcVisibleYear));
-  //   setCalViewMode(VIEW_MODE.CALENDAR);
-  //   // setCalLocale(validLocale);
-  // };
-
-  // set selected date
-  // useEffect(() => {
-  //   setDateSelected(selectedDate);
-  //   // update calModel
-  //   setCalModel(retrieveCalendarModel());
-  // }, [selectedDate]);
 
   /**
    * Initializes the lists with the localized names for the months are weekday names.
@@ -145,8 +78,7 @@ const HvCalendar = ({
    * @param shouldCloseCalendar
    */
   const changeSelectDate = (date, shouldCloseCalendar = true) => {
-    resolveStateFromDates(date);
-    handleDateChange?.(date, shouldCloseCalendar);
+    onChange?.(date, shouldCloseCalendar);
   };
 
   const changeSelectedDateHeader = (date, shouldCloseCalendar) =>
@@ -168,27 +100,8 @@ const HvCalendar = ({
    *
    * @memberOf Calendar
    */
-  const visibleDateChanged = () => {
-    if (typeof handleVisibleDateChange === "function") {
-      // const changedVisibleDate = makeUTCDate(calModel.year, calModel.month, 1);
-      handleVisibleDateChange(changedVisibleDate);
-    }
-  };
-
-  /**
-   * Navigates through the calendar according to the received navigation options.
-   *
-   * @param navOption- Navigation option.
-   * @param month - Number of the month.
-   * @memberOf Calendar
-   */
-  // const navigateTo = (navOption, month) => {
-  //   const newDates = calModel.navigateTo(navOption, month);
-
-  //   setCalModel(new CalendarModel(newDates.month, newDates.year));
-  //   setCalViewMode(VIEW_MODE.CALENDAR);
-
-  //   visibleDateChanged();
+  // const visibleDateChanged = () => {
+  //   handleVisibleDateChange?.(changedVisibleDate);
   // };
 
   /**
@@ -210,7 +123,7 @@ const HvCalendar = ({
   const renderNavigation = () => {
     const { year, month } = calModel;
 
-    const monthName = listMonthNamesLong[month - 1];
+    const monthName = listMonthNamesLong[month];
     const previousYearValid = isPreviousDateValid(year, 1);
     const nextYearValid = isNextDateValid(year, 12);
     const previousMonthValid = isPreviousDateValid(year, month);
@@ -223,20 +136,14 @@ const HvCalendar = ({
             id={setId(id, "navigation-month")}
             navigationText={monthName}
             onNavigatePrevious={() => {
-              // navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
-
-              const newDates = handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_MONTH);
-              // setCalModel(new CalendarModel(newDates.month, newDates.year));
+              handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_MONTH);
             }}
             onNavigateNext={() => {
-              // navigateTo(NAV_OPTIONS.NEXT_MONTH)
-
-              const newDates = handleVisibleDateChange(NAV_OPTIONS.NEXT_MONTH);
-              // setCalModel(new CalendarModel(newDates.month, newDates.year));
+              handleVisibleDateChange(NAV_OPTIONS.NEXT_MONTH);
             }}
-            // onTextClick={() => {
-            //   setCalViewMode(VIEW_MODE.MONTHLY);
-            // }}
+            onTextClick={() => {
+              setCalViewMode(VIEW_MODE.MONTHLY);
+            }}
             className={classes.navigationMonth}
             isPreviousEnabled={previousMonthValid}
             isNextEnabled={nextMonthValid}
@@ -247,15 +154,12 @@ const HvCalendar = ({
           id={setId(id, "navigation-year")}
           navigationText={year.toString()}
           onNavigatePrevious={() => {
-            // navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)
-
-            const newDates = handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_YEAR);
-            // setCalModel(new CalendarModel(newDates.month, newDates.year));
+            // const newDates =
+            handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_YEAR);
           }}
           onNavigateNext={() => {
-            // navigateTo(NAV_OPTIONS.NEXT_YEAR)
-            const newDates = handleVisibleDateChange(NAV_OPTIONS.NEXT_YEAR);
-            // setCalModel(new CalendarModel(newDates.month, newDates.year));
+            // const newDates =
+            handleVisibleDateChange(NAV_OPTIONS.NEXT_YEAR);
           }}
           isPreviousEnabled={previousYearValid}
           isNextEnabled={nextYearValid}
@@ -326,7 +230,7 @@ const HvCalendar = ({
     const isToday = isSameDay(currentDate, today);
 
     // Checks if the received date is the same as the currently selected date.
-    const isCurrent = selectedDate && isSameDay(currentDate, selectedDate);
+    const isCurrent = selectedValue && isSameDay(currentDate, selectedValue);
 
     // Checks if the received date is in the same month and year the current month and year in the state.
     const inMonth =
@@ -366,6 +270,7 @@ const HvCalendar = ({
         <HvTypography
           variant={isToday ? "highlightText" : "normalText"}
           className={clsx(classes.calendarDate, {
+            [classes.calendarSelection]: isCurrent,
             [classes.calendarDateSelected]: isCurrent,
             [classes.calendarDateNotInMonth]: !inMonth,
             [classes.calendarDateInSelectionRange]: dateInProvidedSelectionRange && inMonth,
@@ -401,7 +306,7 @@ const HvCalendar = ({
     return (
       <Header
         id={id}
-        inputDate={headerInputDate || selectedDate || makeUTCToday()}
+        inputDate={headerInputDate || selectedValue || makeUTCToday()}
         locale={locale}
         topText={label}
         onSelection={changeSelectedDateHeader}
@@ -433,8 +338,8 @@ const HvCalendar = ({
               className={classes.focusSelection}
               key={key}
               role="presentation"
-              onClick={onClick}
-              onKeyDown={event => arrowKeysFocus(event, onClick, 3)}
+              // onClick={onClick}
+              // onKeyDown={event => arrowKeysFocus(event, onClick, 3)}
               tabIndex={0}
             >
               <HvTypography variant="normalText" className={className}>
@@ -495,7 +400,7 @@ HvCalendar.propTypes = {
   /**
    * Date that should be used as the starting selected date for the calendar.
    */
-  selectedDate: PropTypes.instanceOf(Date),
+  selectedValue: PropTypes.instanceOf(Date),
   /**
    * Date that will be used to know which month and year should be displayed on the calendar. The value of the day is
    * irrelevant.
@@ -512,7 +417,7 @@ HvCalendar.propTypes = {
   /**
    * Callback function to be triggered when the selected date has changed.
    */
-  handleDateChange: PropTypes.func,
+  onChange: PropTypes.func,
   /**
    * Callback function to be triggered when visible date has changed.
    */
@@ -536,22 +441,7 @@ HvCalendar.propTypes = {
   /**
    * The minimum selectable date before this all values are disabled.
    */
-  minimumDate: PropTypes.string,
-  /**
-   * Callback function to be triggered when the date value is changed
-   */
-  onChange: PropTypes.func
-};
-
-HvCalendar.defaultProps = {
-  id: undefined,
-  locale: DEFAULT_LOCALE,
-  selectedDate: undefined,
-  visibleDate: undefined,
-  handleDateChange: undefined,
-  handleVisibleDateChange: undefined,
-  rangeMode: false,
-  label: null
+  minimumDate: PropTypes.string
 };
 
 export default withStyles(styles, { name: "HvCalendar" })(HvCalendar);
