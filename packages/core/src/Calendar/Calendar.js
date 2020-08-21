@@ -48,6 +48,7 @@ const HvCalendar = ({
   handleVisibleDateChange,
   rangeMode,
   label,
+  onChange,
   ...others
 }) => {
   // ToDo: Implement interaction tests in component
@@ -183,14 +184,14 @@ const HvCalendar = ({
    * @param month - Number of the month.
    * @memberOf Calendar
    */
-  const navigateTo = (navOption, month) => {
-    const newDates = calModel.navigateTo(navOption, month);
+  // const navigateTo = (navOption, month) => {
+  //   const newDates = calModel.navigateTo(navOption, month);
 
-    setCalModel(new CalendarModel(newDates.month, newDates.year));
-    setCalViewMode(VIEW_MODE.CALENDAR);
+  //   setCalModel(new CalendarModel(newDates.month, newDates.year));
+  //   setCalViewMode(VIEW_MODE.CALENDAR);
 
-    visibleDateChanged();
-  };
+  //   visibleDateChanged();
+  // };
 
   /**
    * Navigates to the new date according to the received navigation option.
@@ -224,12 +225,20 @@ const HvCalendar = ({
             id={setId(id, "navigation-month")}
             navigationText={monthName}
             onNavigatePrevious={() => {
-              navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
+              // navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
+
+              const newDates = handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_MONTH);
+              setCalModel(new CalendarModel(newDates.month, newDates.year));
             }}
-            onNavigateNext={() => navigateTo(NAV_OPTIONS.NEXT_MONTH)}
-            onTextClick={() => {
-              setCalViewMode(VIEW_MODE.MONTHLY);
+            onNavigateNext={() => {
+              // navigateTo(NAV_OPTIONS.NEXT_MONTH)
+
+              const newDates = handleVisibleDateChange(NAV_OPTIONS.NEXT_MONTH);
+              setCalModel(new CalendarModel(newDates.month, newDates.year));
             }}
+            // onTextClick={() => {
+            //   setCalViewMode(VIEW_MODE.MONTHLY);
+            // }}
             className={classes.navigationMonth}
             isPreviousEnabled={previousMonthValid}
             isNextEnabled={nextMonthValid}
@@ -239,8 +248,17 @@ const HvCalendar = ({
         <Navigation
           id={setId(id, "navigation-year")}
           navigationText={year.toString()}
-          onNavigatePrevious={() => navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)}
-          onNavigateNext={() => navigateTo(NAV_OPTIONS.NEXT_YEAR)}
+          onNavigatePrevious={() => {
+            // navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)
+
+            const newDates = handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_YEAR);
+            setCalModel(new CalendarModel(newDates.month, newDates.year));
+          }}
+          onNavigateNext={() => {
+            // navigateTo(NAV_OPTIONS.NEXT_YEAR)
+            const newDates = handleVisibleDateChange(NAV_OPTIONS.NEXT_YEAR);
+            setCalModel(new CalendarModel(newDates.month, newDates.year));
+          }}
           isPreviousEnabled={previousYearValid}
           isNextEnabled={nextYearValid}
         />
@@ -326,7 +344,7 @@ const HvCalendar = ({
       ? dateInProvidedValueRange(currentDate, valueRange)
       : false;
 
-    const { startDate, endDate } = valueRange;
+    const { startDate, endDate } = { ...valueRange };
     const isDateRangeActivated = startDate !== null && endDate !== null && startDate !== endDate;
     // Checks if date is a selection bookend
     const startBookend = moment(currentDate).isSame(moment(startDate));
@@ -411,7 +429,7 @@ const HvCalendar = ({
           if (index + 1 === calModel.month) {
             className += ` ${classes.calendarMonthlyCellSelected}`;
           }
-          const onClick = () => navigateTo(NAV_OPTIONS.MONTH, index + 1);
+          // const onClick = () => navigateTo(NAV_OPTIONS.MONTH, index + 1);
           return (
             <div
               className={classes.focusSelection}
@@ -441,10 +459,10 @@ const HvCalendar = ({
       <>
         {calViewMode === VIEW_MODE.CALENDAR && renderNavigation()}
         {calViewMode === VIEW_MODE.MONTHLY && renderMonthlyView()}
-        <div className={classes.calendarGrid}>
+        {/* <div className={classes.calendarGrid}>
           {renderDayLabel()}
           {calModel.dates.map(renderCalendarDate)}
-        </div>
+        </div> */}
       </>
     );
   };
@@ -520,7 +538,11 @@ HvCalendar.propTypes = {
   /**
    * The minimum selectable date before this all values are disabled.
    */
-  minimumDate: PropTypes.string
+  minimumDate: PropTypes.string,
+  /**
+   * Callback function to be triggered when the date value is changed
+   */
+  onChange: PropTypes.func
 };
 
 HvCalendar.defaultProps = {
