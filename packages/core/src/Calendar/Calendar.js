@@ -23,7 +23,7 @@ import {
   isPreviousDateValid,
   isSameDay,
   isSameMonth,
-  isValidLocale,
+  // isValidLocale,
   makeUTCDate,
   makeUTCToday,
   dateInProvidedValueRange,
@@ -36,7 +36,7 @@ import withTooltip from "../withTooltip";
 const HvCalendar = ({
   classes,
   id,
-  locale,
+  locale = DEFAULT_LOCALE,
   selectedDate,
   visibleDate,
   visibleMonth,
@@ -45,7 +45,7 @@ const HvCalendar = ({
   minimumDate,
   maximumDate,
   handleDateChange,
-  handleVisibleDateChange,
+  handleVisibleDateChange = () => {},
   rangeMode,
   label,
   onChange,
@@ -56,24 +56,22 @@ const HvCalendar = ({
   // used to place a css relative rule to control calendar display
   const { inDatepicker } = others;
 
-  const validateLocale = useCallback(() => (isValidLocale(locale) ? locale : DEFAULT_LOCALE), [
-    locale
-  ]);
+  const calModel = new CalendarModel(visibleMonth, visibleYear);
+
   // Hooks used to maintain state
-  const [calLocale, setCalLocale] = useState(validateLocale(locale));
-  const [dateSelected, setDateSelected] = useState();
-  const [calViewMode, setCalViewMode] = useState();
-  const [today, setToday] = useState(VIEW_MODE.CALENDAR);
+  // const [dateSelected, setDateSelected] = useState();
+  const [calViewMode, setCalViewMode] = useState(VIEW_MODE.CALENDAR);
+  const [today, setToday] = useState(makeUTCToday());
 
   // set today date
-  useEffect(() => {
-    setToday(makeUTCToday());
-  }, []);
+  // useEffect(() => {
+  //   setToday(makeUTCToday());
+  // }, []);
 
   // set calendar view mode
-  useEffect(() => {
-    setCalViewMode(VIEW_MODE.CALENDAR);
-  }, []);
+  // useEffect(() => {
+  //   setCalViewMode(VIEW_MODE.CALENDAR);
+  // }, []);
 
   /**
    * Resolves the state using the received date.
@@ -88,57 +86,57 @@ const HvCalendar = ({
    * @memberOf Calendar
    */
 
-  const dateObjectValidator = (selectionDate, visDate) => {
-    const isDateObject = isDate(selectionDate);
-    const validSelectedDate = isDateObject ? selectionDate : makeUTCToday();
-    const validVisibleDate = isDate(visDate) ? visDate : validSelectedDate;
-    return {
-      isDateObject,
-      validSelectedDate,
-      validVisibleDate
-    };
-  };
+  // const dateObjectValidator = (selectionDate, visDate) => {
+  //   const isDateObject = isDate(selectionDate);
+  //   const validSelectedDate = isDateObject ? selectionDate : makeUTCToday();
+  //   const validVisibleDate = isDate(visDate) ? visDate : validSelectedDate;
+  //   return {
+  //     isDateObject,
+  //     validSelectedDate,
+  //     validVisibleDate
+  //   };
+  // };
 
-  const retrieveCalendarModel = () => {
-    const { validVisibleDate } = dateObjectValidator(selectedDate);
+  // const retrieveCalendarModel = () => {
+  //   const { validVisibleDate } = dateObjectValidator(selectedDate);
 
-    const validatedVisibleMonth =
-      visibleMonth !== undefined ? visibleMonth : validVisibleDate.getUTCMonth() + 1;
-    const validatedVisibleYear =
-      visibleYear !== undefined ? visibleYear : validVisibleDate.getUTCFullYear();
+  //   const validatedVisibleMonth =
+  //     visibleMonth !== undefined ? visibleMonth : validVisibleDate.getUTCMonth() + 1;
+  //   const validatedVisibleYear =
+  //     visibleYear !== undefined ? visibleYear : validVisibleDate.getUTCFullYear();
 
-    return new CalendarModel(validatedVisibleMonth, validatedVisibleYear);
-  };
-  const [calModel, setCalModel] = useState(retrieveCalendarModel());
+  //   return new CalendarModel(validatedVisibleMonth, validatedVisibleYear);
+  // };
+  // const [calModel, setCalModel] = useState(retrieveCalendarModel());
 
-  const resolveStateFromDates = (selectionDate, visDate = null) => {
-    const { isDateObject, validVisibleDate } = dateObjectValidator(selectionDate, visDate);
+  // const resolveStateFromDates = (selectionDate, visDate = null) => {
+  //   const { isDateObject, validVisibleDate } = dateObjectValidator(selectionDate, visDate);
 
-    const calcVisibleMonth = validVisibleDate.getUTCMonth() + 1;
-    const calcVisibleYear = validVisibleDate.getUTCFullYear();
-    const validLocale = isValidLocale(calLocale) ? calLocale : DEFAULT_LOCALE;
+  //   const calcVisibleMonth = validVisibleDate.getUTCMonth() + 1;
+  //   const calcVisibleYear = validVisibleDate.getUTCFullYear();
+  //   // const validLocale = isValidLocale(calLocale) ? calLocale : DEFAULT_LOCALE;
 
-    setDateSelected(isDateObject ? selectionDate : null);
-    setCalModel(new CalendarModel(calcVisibleMonth, calcVisibleYear));
-    setCalViewMode(VIEW_MODE.CALENDAR);
-    setCalLocale(validLocale);
-  };
+  //   setDateSelected(isDateObject ? selectionDate : null);
+  //   // setCalModel(new CalendarModel(calcVisibleMonth, calcVisibleYear));
+  //   setCalViewMode(VIEW_MODE.CALENDAR);
+  //   // setCalLocale(validLocale);
+  // };
 
   // set selected date
-  useEffect(() => {
-    setDateSelected(selectedDate);
-    // update calModel
-    setCalModel(retrieveCalendarModel());
-  }, [selectedDate]);
+  // useEffect(() => {
+  //   setDateSelected(selectedDate);
+  //   // update calModel
+  //   setCalModel(retrieveCalendarModel());
+  // }, [selectedDate]);
 
   /**
    * Initializes the lists with the localized names for the months are weekday names.
    *
    * @memberOf Calendar
    */
-  const listMonthNamesLong = getMonthNamesList(calLocale, REPRESENTATION_VALUES.LONG);
-  const listMonthNamesShort = getMonthNamesList(calLocale, REPRESENTATION_VALUES.SHORT);
-  const listWeekdayNamesNarrow = getWeekdayNamesList(calLocale, REPRESENTATION_VALUES.NARROW);
+  const listMonthNamesLong = getMonthNamesList(locale, REPRESENTATION_VALUES.LONG);
+  const listMonthNamesShort = getMonthNamesList(locale, REPRESENTATION_VALUES.SHORT);
+  const listWeekdayNamesNarrow = getWeekdayNamesList(locale, REPRESENTATION_VALUES.NARROW);
 
   /**
    * Sets the passed date, calling the callback from the DatePicker.
@@ -172,7 +170,7 @@ const HvCalendar = ({
    */
   const visibleDateChanged = () => {
     if (typeof handleVisibleDateChange === "function") {
-      const changedVisibleDate = makeUTCDate(calModel.year, calModel.month, 1);
+      // const changedVisibleDate = makeUTCDate(calModel.year, calModel.month, 1);
       handleVisibleDateChange(changedVisibleDate);
     }
   };
@@ -228,13 +226,13 @@ const HvCalendar = ({
               // navigateTo(NAV_OPTIONS.PREVIOUS_MONTH);
 
               const newDates = handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_MONTH);
-              setCalModel(new CalendarModel(newDates.month, newDates.year));
+              // setCalModel(new CalendarModel(newDates.month, newDates.year));
             }}
             onNavigateNext={() => {
               // navigateTo(NAV_OPTIONS.NEXT_MONTH)
 
               const newDates = handleVisibleDateChange(NAV_OPTIONS.NEXT_MONTH);
-              setCalModel(new CalendarModel(newDates.month, newDates.year));
+              // setCalModel(new CalendarModel(newDates.month, newDates.year));
             }}
             // onTextClick={() => {
             //   setCalViewMode(VIEW_MODE.MONTHLY);
@@ -252,12 +250,12 @@ const HvCalendar = ({
             // navigateTo(NAV_OPTIONS.PREVIOUS_YEAR)
 
             const newDates = handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_YEAR);
-            setCalModel(new CalendarModel(newDates.month, newDates.year));
+            // setCalModel(new CalendarModel(newDates.month, newDates.year));
           }}
           onNavigateNext={() => {
             // navigateTo(NAV_OPTIONS.NEXT_YEAR)
             const newDates = handleVisibleDateChange(NAV_OPTIONS.NEXT_YEAR);
-            setCalModel(new CalendarModel(newDates.month, newDates.year));
+            // setCalModel(new CalendarModel(newDates.month, newDates.year));
           }}
           isPreviousEnabled={previousYearValid}
           isNextEnabled={nextYearValid}
@@ -328,7 +326,7 @@ const HvCalendar = ({
     const isToday = isSameDay(currentDate, today);
 
     // Checks if the received date is the same as the currently selected date.
-    const isCurrent = dateSelected && isSameDay(currentDate, dateSelected);
+    const isCurrent = selectedDate && isSameDay(currentDate, selectedDate);
 
     // Checks if the received date is in the same month and year the current month and year in the state.
     const inMonth =
@@ -403,8 +401,8 @@ const HvCalendar = ({
     return (
       <Header
         id={id}
-        inputDate={headerInputDate || dateSelected || makeUTCToday()}
-        locale={calLocale}
+        inputDate={headerInputDate || selectedDate || makeUTCToday()}
+        locale={locale}
         topText={label}
         onSelection={changeSelectedDateHeader}
       />
@@ -459,10 +457,10 @@ const HvCalendar = ({
       <>
         {calViewMode === VIEW_MODE.CALENDAR && renderNavigation()}
         {calViewMode === VIEW_MODE.MONTHLY && renderMonthlyView()}
-        {/* <div className={classes.calendarGrid}>
+        <div className={classes.calendarGrid}>
           {renderDayLabel()}
           {calModel.dates.map(renderCalendarDate)}
-        </div> */}
+        </div>
       </>
     );
   };
