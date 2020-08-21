@@ -61,12 +61,8 @@ const styles = theme => {
     calendarDateNotInMonth: {
       color: theme.palette.atmo5
     },
-    calendarSelection: {
-      // backgroundColor: "red"
-    },
     calendarDateSelected: {
-      // backgroundColor: theme.palette.atmo3,
-      backgroundColor: "red",
+      backgroundColor: theme.palette.atmo3,
       color: theme.palette.acce1,
       "&:hover": {
         ...hover

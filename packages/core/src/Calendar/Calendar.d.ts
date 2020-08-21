@@ -6,7 +6,6 @@ export interface HvCalendarProps
   /**
    * Styles applied from the theme.
    */
-  // classes: PropTypes.instanceOf(Object).isRequired,
   /**
    * Identifier.
    */
@@ -35,7 +34,7 @@ export interface HvCalendarProps
   /**
    * Callback function to be triggered when the selected date has changed.
    */
-  handleDateChange?: (date?: string) => void;
+  onChange?: (date?: string) => void;
   /**
    * Callback function to be triggered when visible date has changed.
    */

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import clsx from "clsx";
@@ -10,14 +10,15 @@ import Header from "./Header";
 import Navigation from "./Navigation";
 import styles from "./styles";
 import moment from "moment";
+
 import { NAV_OPTIONS, REPRESENTATION_VALUES, VIEW_MODE } from "./enums";
+
 import {
   DEFAULT_LOCALE,
   getDateISO,
   getFormattedDate,
   getMonthNamesList,
   getWeekdayNamesList,
-  isDate,
   isDateInValidRange,
   isNextDateValid,
   isPreviousDateValid,
@@ -55,12 +56,12 @@ const HvCalendar = ({
 
   // if selected value is predefined, set visible Month, year to
   const calModel = selectedValue
-    ? new CalendarModel(selectedValue.getMonth(), selectedValue.getFullYear())
+    ? new CalendarModel(selectedValue.getMonth() + 1, selectedValue.getFullYear())
     : new CalendarModel(visibleMonth, visibleYear);
 
   // Hooks used to maintain state
   const [calViewMode, setCalViewMode] = useState(VIEW_MODE.CALENDAR);
-  const [today, setToday] = useState(makeUTCToday());
+  const today = makeUTCToday();
 
   /**
    * Initializes the lists with the localized names for the months are weekday names.
@@ -84,25 +85,10 @@ const HvCalendar = ({
   const changeSelectedDateHeader = (date, shouldCloseCalendar) =>
     changeSelectDate(date, shouldCloseCalendar);
 
-  /**
-   * Sets the state to the received date and triggers the `handleDateChange` callback in case it was defined.
-   *
-   * @param {Date} date - The date to which the state will be changed to.
-   * @memberOf Calendar
-   */
   const selectDate = date => event => {
     event?.preventDefault();
     changeSelectDate(date);
   };
-
-  /**
-   * Triggers the callback to warn that the visible date was changed.
-   *
-   * @memberOf Calendar
-   */
-  // const visibleDateChanged = () => {
-  //   handleVisibleDateChange?.(changedVisibleDate);
-  // };
 
   /**
    * Navigates to the new date according to the received navigation option.
@@ -123,7 +109,7 @@ const HvCalendar = ({
   const renderNavigation = () => {
     const { year, month } = calModel;
 
-    const monthName = listMonthNamesLong[month];
+    const monthName = listMonthNamesLong[month - 1];
     const previousYearValid = isPreviousDateValid(year, 1);
     const nextYearValid = isNextDateValid(year, 12);
     const previousMonthValid = isPreviousDateValid(year, month);
@@ -154,11 +140,9 @@ const HvCalendar = ({
           id={setId(id, "navigation-year")}
           navigationText={year.toString()}
           onNavigatePrevious={() => {
-            // const newDates =
             handleVisibleDateChange(NAV_OPTIONS.PREVIOUS_YEAR);
           }}
           onNavigateNext={() => {
-            // const newDates =
             handleVisibleDateChange(NAV_OPTIONS.NEXT_YEAR);
           }}
           isPreviousEnabled={previousYearValid}
