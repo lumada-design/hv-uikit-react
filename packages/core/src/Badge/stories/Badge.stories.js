@@ -127,11 +127,11 @@ export const WithTabs = () => {
   );
 };
 
-WithState.story = {
+WithTabs.story = {
   parameters: {
     docs: {
       storyDescription: "Badges applied to Tabs component."
-    },
-    v3: true
+    }
+    // Enabled with the tabs update
   }
 };
