@@ -861,6 +861,7 @@ export const ThreeViews = () => {
       configuration={assetConfiguration}
       onSelection={event => console.log(event.target.value)}
       isSelectable
+      hasBulkActions
       actions={myActions}
       actionsCallback={(e, id, action) =>
         console.log(`You have pressed data ${id} with action ${action.label}`)

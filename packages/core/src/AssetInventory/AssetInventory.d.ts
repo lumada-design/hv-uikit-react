@@ -112,7 +112,11 @@ export interface HvAssetInventoryProps
    */
   selectedView?: string;
   /**
-   * Defines if it has pagination.
+   * Defines whether the Asset Inventory includes the bulk actions component.
+   */
+  hasBulkActions?: boolean;
+  /**
+   * Defines whether the Asset Inventory includes the pagination component.
    */
   hasPagination?: boolean;
   /**

@@ -9,6 +9,7 @@ import Search from "./Search/Search";
 import Sort from "./Sort/Sort";
 import HvGrid from "../Grid";
 import HvPagination from "../Pagination";
+import HvBulkActions from "../BulkActions";
 import styles from "./styles";
 import { setId } from "../utils";
 
@@ -49,6 +50,7 @@ const HvAssetInventory = props => {
     pages = 0,
     pageSize: pageSizeProp,
     pageSizeOptions = [5, 10, 20, 25, 50, 100],
+    hasBulkActions = false,
     hasPagination = false,
     paginationServerSide = false,
     onPageChange,
@@ -210,6 +212,15 @@ const HvAssetInventory = props => {
     );
   };
 
+  const handleSelectPage = (e, checked = false) => {
+    setSelectedValues(checked ? [] : pageValues.map(v => v.id));
+  };
+
+  const handleSelectAll = () => {
+    const allSelected = selectedValues.length === values.length;
+    setSelectedValues(allSelected ? [] : values.map(v => v.id));
+  };
+
   const innerOnSelection = onSelectionFn => event => {
     const valueId = event.target.value;
 
@@ -294,6 +305,18 @@ const HvAssetInventory = props => {
                 )}
               </HvGrid>
             </HvGrid>
+          )}
+        </HvGrid>
+        <HvGrid item xs={12}>
+          {hasBulkActions && (
+            <HvBulkActions
+              numTotal={values.length}
+              numSelected={selectedValues.length}
+              onSelectAll={handleSelectPage}
+              onSelectAllPages={handleSelectAll}
+              showSelectAllPages
+              maxVisibleActions={maxVisibleActions}
+            />
           )}
         </HvGrid>
         <HvGrid item xs={12} className={classes.viewContainer}>
@@ -449,7 +472,11 @@ HvAssetInventory.propTypes = {
    */
   selectedView: PropTypes.number,
   /**
-   * Defines if it has pagination.
+   * Defines whether the Asset Inventory includes the bulk actions component.
+   */
+  hasBulkActions: PropTypes.bool,
+  /**
+   * Defines whether the Asset Inventory includes the pagination component.
    */
   hasPagination: PropTypes.bool,
   /**
