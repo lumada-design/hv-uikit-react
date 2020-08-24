@@ -20,7 +20,7 @@ const renderSort = (sortType, columnSortable) => {
   }
 
   if (columnSortable) {
-    return <Sort />;
+    return <div style={{ width: 32, height: 32 }} />;
   }
 
   return null;

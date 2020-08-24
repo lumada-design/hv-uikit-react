@@ -1,3 +1,5 @@
+import hexToRgbA from "../utils/hexToRgbA";
+
 const tableStyleOverrides = classes => ({
   getProps: () => ({ className: classes.root }),
   getTableProps: () => ({ className: classes.table }),
@@ -116,6 +118,9 @@ const styles = theme => ({
           },
           "& $tr.selected:hover > div": {
             background: theme.hv.palette.atmosphere.atmo3
+          },
+          "& $tr > $td.sorted": {
+            backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4)
           }
         },
         "& $td": {
@@ -286,7 +291,9 @@ const styles = theme => ({
     marginBottom: "-6px",
     marginTop: "-6px"
   },
-  expand: {},
+  expand: {
+    ...theme.hv.typography.highlightText
+  },
   separatorContainer: {
     width: "32px",
     height: "32px",

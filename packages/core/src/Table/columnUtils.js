@@ -1,8 +1,8 @@
-import React from "react";
+import { Down, Up } from "@hv/uikit-react-icons";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import React from "react";
 
-import { Down, Up } from "@hv/uikit-react-icons";
 import { isKeypress, KeyboardCodes } from "../utils";
 import CellWithTooltip from "./CellWithTooltip";
 
@@ -94,7 +94,7 @@ const createExpanderButton = (columns, subElementTemplate, classes, toggleExpand
         </div>
 
         <div
-          className={clsx({
+          className={clsx(classes.expand, {
             [classes.textContainer]: rest.column.cellType === "alpha-numeric",
             [classes.alphaNumeric]: rest.column.cellType === "alpha-numeric",
             [classes.firstWithNumeric]: rest.column.cellType === "numeric"

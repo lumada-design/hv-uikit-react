@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo, useRef } from "react";
-import PropTypes from "prop-types";
 import clsx from "clsx";
 import isNil from "lodash/isNil";
+import PropTypes from "prop-types";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import ReactTable, { ReactTableDefaults } from "react-table";
 import withFixedColumns from "react-table-hoc-fixed-columns";
 
@@ -10,16 +10,16 @@ import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
 import { HvBulkActions, HvPagination, HvTypography } from "..";
-import withLabels from "../withLabels";
-import withId from "../withId";
 import { setId } from "../utils";
+import withId from "../withId";
+import withLabels from "../withLabels";
 
-import expander from "./expander";
-import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
-import { isSelected, selectPage } from "./checkBoxUtils";
 import DropDownMenu from "./DropdownMenu";
-import NoData from "./NoData";
 import Header from "./Header";
+import NoData from "./NoData";
+import { isSelected, selectPage } from "./checkBoxUtils";
+import { appendClassnames, createExpanderButton, setHeaderSortableClass } from "./columnUtils";
+import expander from "./expander";
 import withCheckbox from "./selectTable";
 import { styles, tableStyleOverrides } from "./styles";
 
@@ -409,7 +409,9 @@ const HvTable = props => {
 
   const getTdProps = (state, rowInfo, column) => ({
     id: setId(computeRowElementId(rowInfo), "column", column.id),
-    className: classes.td,
+    className: clsx(classes.td, {
+      sorted: sorted.find(elemt => column.id === elemt.id) !== undefined
+    }),
     role: "cell"
   });
 
