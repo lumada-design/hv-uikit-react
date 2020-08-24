@@ -251,7 +251,6 @@ export const CustomValidation = () => {
     <HvInput
       id="custom-validation-input"
       labels={labels}
-      infoIcon
       validation={value => value.includes("hello")}
     />
   );

@@ -85,10 +85,6 @@ export interface HvInputProps extends StandardProps<InputProps, HvInputClassKey,
    */
   validationState?: "empty" | "filled" | "invalid" | "valid";
   /**
-   * Show info icon with info label.infoText.
-   */
-  infoIcon?: boolean;
-  /**
    * If `true` the validation icon is visible, `false` otherwise
    */
   validationIconVisible?: boolean;
@@ -147,7 +143,6 @@ export type HvInputClassKey =
   | "label"
   | "labelDisabled"
   | "labelContainer"
-  | "infoIconContainer"
   | "infoText"
   | "text"
   | "textInfo"
