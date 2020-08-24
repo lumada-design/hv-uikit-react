@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core";
 import Success from "@hv/uikit-react-icons/dist/Success";
 import Fail from "@hv/uikit-react-icons/dist/Fail";
 import withLabels from "../withLabels";
+import withDeprecate from "../withDeprecated";
 import HvGrid from "../Grid";
 import Login from "./Forms/Login";
 import Recovery from "./Forms/Recovery";
@@ -349,4 +350,7 @@ HvLogin.defaultProps = {
   formProps: {}
 };
 
-export default withStyles(styles, { name: "HvLogin" })(withLabels(DEFAULT_LABELS)(HvLogin));
+export default withDeprecate(
+  withStyles(styles, { name: "HvLogin" })(withLabels(DEFAULT_LABELS)(HvLogin)),
+  "Please use the HvLoginContainer component"
+);
