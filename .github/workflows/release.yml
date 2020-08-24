@@ -17,6 +17,7 @@ name: Release
 on:
   repository_dispatch:
     types: [release]
+  workflow_dispatch:
 
 env:
   RESOLVE_REGISTRY: https://repo.orl.eng.hitachivantara.com/artifactory/api/npm/npm/
@@ -105,6 +106,10 @@ jobs:
           ref: ${{ github.head_ref }}
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
+      - name: Generate Documentation
+        run: |
+          EXCLUDE_TEST_STORIES=true npm run build-documentation
+
       - name: Checkout Documentation Repository
         uses: actions/checkout@v2
         with:
@@ -118,18 +123,8 @@ jobs:
         run: |
           rm -rf ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}/*
 
-      - name: Checkout Documentation Repository
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ env.DOCUMENTATION_PUBLISH_REPO }}
-          ref: ${{ env.DOCUMENTATION_PUBLISH_BRANCH }}
-          ssh-key: ${{ secrets.ORG_GHPAGES_DEPLOY_KEY }}
-          path: gh-docs
-          fetch-depth: 1
-
-      - name: Generate Documentation
+      - name: Copy New Documentation
         run: |
-          npm run build-documentation
           mkdir -p ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
           cp -r dist/* ${{ github.workspace }}/gh-docs/${DOCUMENTATION_PUBLISH_FOLDER}
 

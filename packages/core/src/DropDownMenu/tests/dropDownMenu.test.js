@@ -3,7 +3,8 @@ import { mount } from "enzyme";
 import { Popper } from "@material-ui/core";
 
 import { HvDropDownMenu, HvProvider } from "../..";
-import { KeyboardNavigation, Main } from "../stories/DropDownMenu.stories";
+import { Main } from "../stories/DropDownMenu.stories";
+import { KeyboardNavigation } from "../stories/DropDownMenu.stories.test";
 
 jest.mock(
   "popper.js",

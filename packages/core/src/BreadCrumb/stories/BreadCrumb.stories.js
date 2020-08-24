@@ -27,6 +27,12 @@ export const Main = () => {
   return <HvBreadCrumb listRoute={data} id="breadcrumb1" aria-label="Breadcrumb" />;
 };
 
+Main.story = {
+  parameters: {
+    v3: true
+  }
+};
+
 export const LimitedToFivePaths = () => {
   const data = [
     { label: "Label 1", path: "route1" },

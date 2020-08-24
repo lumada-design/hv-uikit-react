@@ -47,7 +47,7 @@ exit focus from list when pressing TAB on option
     wait until element attribute not contain    ${option2}    class    focused
 
 focus first option when a list (no default options selected) is focused
-    Go To                                     ${patterns}list--test-list-not-selected
+    Go To                                     ${tests}list--test-list-not-selected
     Wait Until Element Is Visible             ${list}
     Element Should Be Visible                 anchorButton
     set focus and press keys                  anchorButton    TAB
@@ -58,7 +58,7 @@ focus selected option when a list (default options selected) is focused
     [Documentation]
     ...    If one or more options are selected before the listbox receives focus,
     ...    focus is set on the first option in the list that is selected.
-    Go To                                     ${patterns}list--test-list-focusable-selection
+    Go To                                     ${tests}list--test-list-focusable-selection
     Wait Until Element Is Visible             ${list}
     Element Should Be Visible                 anchorButton
     set focus and press keys                  anchorButton    TAB
@@ -66,7 +66,7 @@ focus selected option when a list (default options selected) is focused
     Element Attribute Value Should Be         ${option3}      aria-selected    true
 
 focus disabled option when is a list menu
-    Go To                                     ${patterns}list--test-list-selectable-disabled
+    Go To                                     ${tests}list--test-list-selectable-disabled
     Wait Until Element Is Visible             ${menubar}
     Element Should Be Visible                 anchorButton
     set focus and press keys                  anchorButton    TAB

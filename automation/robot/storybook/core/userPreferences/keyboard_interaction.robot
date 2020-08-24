@@ -1,7 +1,7 @@
 *** Setting ***
 Resource       ../_keywords.resource
 Suite Setup    Run Keywords
-...            Go To    ${patterns}user-preferences--two-buttons
+...            Go To    ${tests}user-preferences--two-buttons
 ...            AND               Wait Until Element Is Visible    ${userPreferences}
 Force Tags     keyboard    bug-infrastructure-ie
 

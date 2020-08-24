@@ -1,6 +1,8 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
+
 import { Calendar, LineChart, Machine, Plane, User } from "@hv/uikit-react-icons/dist";
+
 import { HvList, HvTypography } from "../..";
 
 const styles = theme => ({
@@ -194,90 +196,6 @@ MultiSelectionWithSelectAll.story = {
   parameters: {
     docs: {
       storyDescription: "List that has multi selection with selectors and a select all checkbox."
-    }
-  }
-};
-
-export const TestListNotSelected = () => (
-  <>
-    <button type="button" id="anchorButton" tabIndex={0}>
-      Anchor
-    </button>
-    <HvList
-      id="list"
-      aria-label="Test List Not Selected"
-      hasTooltips
-      values={[
-        { label: "Share" },
-        { label: "Edit" },
-        { label: "Remove" },
-        { label: "Delete" },
-        { label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
-      ]}
-    />
-  </>
-);
-
-TestListNotSelected.story = {
-  parameters: {
-    docs: {
-      disable: true
-    }
-  }
-};
-
-export const TestListFocusableSelection = () => (
-  <>
-    <button type="button" id="anchorButton" tabIndex={0}>
-      Anchor
-    </button>
-    <HvList
-      id="list"
-      aria-label="Test List Focusable Selection"
-      selectDefault
-      hasTooltips
-      values={[
-        { label: "Share" },
-        { label: "Edit" },
-        { label: "Remove", selected: true },
-        { label: "Delete" },
-        { label: "Updateaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }
-      ]}
-    />
-  </>
-);
-
-TestListFocusableSelection.story = {
-  parameters: {
-    docs: {
-      disable: true
-    }
-  }
-};
-
-export const TestListSelectableDisabled = () => (
-  <>
-    <button type="button" id="anchorButton" tabIndex={0}>
-      Anchor
-    </button>
-    <HvList
-      id="list"
-      selectable={false}
-      values={[
-        { label: "Share", disabled: true },
-        { label: "Edit" },
-        { label: "Remove", path: "https://www.hitachivantara.com" },
-        { label: "Delete" },
-        { label: "Update", path: "https://www.hitachivantara.com" }
-      ]}
-    />
-  </>
-);
-
-TestListSelectableDisabled.story = {
-  parameters: {
-    docs: {
-      disable: true
     }
   }
 };
