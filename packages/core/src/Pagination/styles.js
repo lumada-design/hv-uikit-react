@@ -15,13 +15,15 @@ const styles = theme => {
     },
     pageSizeOptions: {
       position: "absolute",
-      marginRight: "40px",
+      height: 32,
+      marginRight: 40,
       top: "50%",
       transform: "translateY(-50%)",
       left: "0"
     },
     pageSizeOptionsSelect: {
       ...theme.hv.typography.normalText,
+      fontFamily: theme.hv.typography.fontFamily,
       "-webkit-appearance": "none",
       border: "none",
       borderRadius: 0,
