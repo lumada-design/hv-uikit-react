@@ -1,4 +1,4 @@
-import hexToRgbA from "../utils/hexToRgbA";
+import { lighten } from "@material-ui/core";
 
 const tableStyleOverrides = classes => ({
   getProps: () => ({ className: classes.root }),
@@ -105,22 +105,26 @@ const styles = theme => ({
       },
       "& $tbody": {
         "-ms-overflow-y": "hidden",
+        background: theme.hv.palette.atmosphere.atmo2,
         "& $trGroups": {
           borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
+          "& $tr.selected": {
+            background: theme.hv.palette.atmosphere.atmo1
+          },
           "& $tr > div ": {
-            background: "transparent"
+            background: theme.hv.palette.atmosphere.atmo2
           },
           "& $tr:hover > div ": {
             background: theme.hv.palette.atmosphere.atmo3
           },
           "& $tr.selected > div": {
-            background: theme.hv.palette.atmosphere.atmo1
+            background: "none"
           },
           "& $tr.selected:hover > div": {
             background: theme.hv.palette.atmosphere.atmo3
           },
           "& $tr > $td.sorted": {
-            backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4)
+            backgroundColor: lighten(theme.hv.palette.atmosphere.atmo2, 0.35)
           }
         },
         "& $td": {
