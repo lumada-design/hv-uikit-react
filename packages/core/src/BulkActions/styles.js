@@ -1,4 +1,5 @@
 import { semanticStyles } from "../withSemantic";
+import fade from "../utils/hexToRgbA";
 
 const styles = theme => ({
   root: {
@@ -10,6 +11,9 @@ const styles = theme => ({
     backgroundColor: theme.palette.sema7,
     "& $selectAll": {
       ...semanticStyles(theme)
+    },
+    "& $selectAll:focus-within": {
+      backgroundColor: fade(theme.palette.base1, 0.3)
     }
   },
   selectAllContainer: {},

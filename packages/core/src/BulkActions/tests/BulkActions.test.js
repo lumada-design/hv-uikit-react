@@ -3,9 +3,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Main, ControlledWithActions } from "../stories/BulkActions.stories";
-import { HvProvider, HvBulkActions, HvDropDownMenu, HvCheckBox } from "../..";
-import ActionsGeneric from "../../ActionsGeneric";
-import { DEFAULT_LABELS } from "../BulkActions";
+import { HvActionsGeneric, HvProvider, HvBulkActions, HvDropDownMenu, HvCheckBox } from "../..";
 
 describe("[v3] BulkActions", () => {
   let wrapper;
@@ -34,7 +32,7 @@ describe("[v3] BulkActions", () => {
   });
 
   it("should render a Actions component", () => {
-    const component = wrapper.find(ActionsGeneric);
+    const component = wrapper.find(HvActionsGeneric);
     expect(component.length).toBe(1);
   });
 });
@@ -61,17 +59,13 @@ describe("[v3] BulkActions controlled with actions", () => {
   });
 
   it("should render the Actions component", () => {
-    const component = wrapper.find(ActionsGeneric);
+    const component = wrapper.find(HvActionsGeneric);
     expect(component.length).toBe(1);
   });
 
   it("should render the HvDropDownMenu component", () => {
     const component = wrapper.find(HvDropDownMenu);
     expect(component.length).toBe(1);
-  });
-
-  it("should display select all label", () => {
-    expect(wrapper.text().includes(DEFAULT_LABELS.selectAll)).toBe(true);
   });
 });
 

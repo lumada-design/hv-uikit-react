@@ -7,7 +7,7 @@ import { Add, Delete, Lock, Preview, Upload } from "@hv/uikit-react-icons";
 import { HvBulkActions, HvCheckBox, HvPagination } from "../..";
 
 export default {
-  title: "Patterns/Bulk Actions",
+  title: "Components/Bulk Actions",
   parameters: {
     componentSubtitle: null,
     usage: "import { HvBulkActions } from '@hv/uikit-react-core/dist'"
@@ -92,6 +92,8 @@ export const Controlled = () => {
     setData(data.map(el => ({ ...el, checked: !checked })));
   };
 
+  const handleSelectAllPages = e => handleSelectAll(e, true);
+
   const handleChange = (e, i, checked) => {
     const newData = [...data];
     newData[i].checked = !checked;
@@ -104,7 +106,7 @@ export const Controlled = () => {
         numTotal={data.length}
         numSelected={data.filter(el => el.checked).length}
         onSelectAll={handleSelectAll}
-        onSelectAllPages={handleSelectAll}
+        onSelectAllPages={handleSelectAllPages}
         maxVisibleActions={3}
       />
       <SampleComponent data={data} onChange={handleChange} />
@@ -200,11 +202,19 @@ export const ControlledWithAllPages = () => {
   });
 
   const [data, setData] = useState(Array.from(Array(18), (el, i) => addEntry(i)));
-  const [selectedAllPages, setSelectedAllPages] = useState(false);
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(pageSizeOptions[1]);
 
+  const handleSelectAllPages = (checked = true) => {
+    setData(data.map(el => ({ ...el, checked })));
+  };
+
   const handleSelectAll = () => {
+    if (data.some(el => el.checked)) {
+      handleSelectAllPages(false);
+      return;
+    }
+
     const start = pageSize * page;
     const end = pageSize * (page + 1);
 
@@ -215,11 +225,6 @@ export const ControlledWithAllPages = () => {
       if (i >= start && i < end) newData[i] = { ...el, checked: !selectedAll };
     });
     setData(newData);
-  };
-
-  const handleSelectAllPages = () => {
-    setData(data.map(el => ({ ...el, checked: !selectedAllPages })));
-    setSelectedAllPages(!selectedAllPages);
   };
 
   const handleChange = (e, i, checked) => {
