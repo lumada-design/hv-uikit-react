@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from "react";
+/* eslint-disable import/no-unresolved */
 
+/* eslint-disable import/no-extraneous-dependencies */
 import { wait, screen } from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
+import React, { useState } from "react";
 
 import { HvCard, HvSwitch, HvTypography } from "../..";
-import compressor from "./resources/compressor.png";
 
 import { AllComponents } from "./Card.stories";
+import compressor from "./resources/compressor.png";
 
 export default {
   title: "Tests/Card",

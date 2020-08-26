@@ -1,8 +1,6 @@
 /* eslint-disable no-console, react/prop-types */
-import React from "react";
-import { withStyles } from "@material-ui/core";
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 
 import {
   Cards,
@@ -16,6 +14,10 @@ import {
   Preview,
   Upload
 } from "@hv/uikit-react-icons/dist";
+import { withStyles } from "@material-ui/core";
+import { wait, screen } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
+import React from "react";
 
 import {
   HvAssetInventory,

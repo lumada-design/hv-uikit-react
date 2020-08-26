@@ -1,8 +1,11 @@
-import React from "react";
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
+
 import withStyles from "@material-ui/core/styles/withStyles";
 
 import { wait, screen } from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
+import React from "react";
 
 import { HvList } from "../..";
 
