@@ -15,3 +15,5 @@ export { default as useImageLoaded } from "./useImageLoaded";
 export { default as useControlled } from "./useControlled";
 
 export { default as useSavedState } from "./useSavedState";
+
+export { default as useUpdated } from "./useUpdated";
