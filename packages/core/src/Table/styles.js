@@ -117,6 +117,9 @@ const styles = theme => ({
           "& $tr:hover > div ": {
             background: theme.hv.palette.atmosphere.atmo3
           },
+          "& $tr:hover > div.sorted ": {
+            background: theme.hv.palette.atmosphere.atmo3
+          },
           "& $tr.selected > div": {
             background: "none"
           },
