@@ -38,7 +38,7 @@ describe("Actions with array", () => {
 
   it("should only show maxVisibleActions actions", () => {
     const buttons = wrapper.find(HvButton);
-    expect(buttons.length).toBe(2);
+    expect(buttons.length).toBe(3);
   });
 
   it("should render the icons correctly", () => {

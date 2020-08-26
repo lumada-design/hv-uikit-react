@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AssetInventoryListView should render correctly 1`] = `
+exports[`[v3]  AssetInventory ListView should render correctly 1`] = `
 <WithStyles(ListView)
-  icon={<ForwardRef(WithStyles) />}
   id="list"
   renderer={[Function]}
   values={
@@ -60,36 +59,31 @@ exports[`AssetInventoryListView should render correctly 1`] = `
       "actionsCallback": [Function],
       "columnConfiguration": Array [
         Object {
-          "align": "left",
           "style": Object {
             "paddingLeft": "8px",
-            "width": "52px",
+            "width": "40px",
           },
           "title": "Status",
         },
         Object {
-          "align": "left",
           "style": Object {
             "width": "370px",
           },
           "title": "Event",
         },
         Object {
-          "align": "right",
           "style": Object {
             "width": "93px",
           },
           "title": "Probability",
         },
         Object {
-          "align": "right",
           "style": Object {
             "width": "108px",
           },
           "title": "Time horizon",
         },
         Object {
-          "align": "left",
           "style": Object {
             "paddingLeft": "30px",
             "width": "195px",
@@ -111,7 +105,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
         "tableHead": "HvListView-tableHead",
       }
     }
-    icon={<ForwardRef(WithStyles) />}
     id="list"
     renderer={[Function]}
     values={
@@ -169,36 +162,31 @@ exports[`AssetInventoryListView should render correctly 1`] = `
         "actionsCallback": [Function],
         "columnConfiguration": Array [
           Object {
-            "align": "left",
             "style": Object {
               "paddingLeft": "8px",
-              "width": "52px",
+              "width": "40px",
             },
             "title": "Status",
           },
           Object {
-            "align": "left",
             "style": Object {
               "width": "370px",
             },
             "title": "Event",
           },
           Object {
-            "align": "right",
             "style": Object {
               "width": "93px",
             },
             "title": "Probability",
           },
           Object {
-            "align": "right",
             "style": Object {
               "width": "108px",
             },
             "title": "Time horizon",
           },
           Object {
-            "align": "left",
             "style": Object {
               "paddingLeft": "30px",
               "width": "195px",
@@ -514,36 +502,31 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       "actionsCallback": [Function],
                                       "columnConfiguration": Array [
                                         Object {
-                                          "align": "left",
                                           "style": Object {
                                             "paddingLeft": "8px",
-                                            "width": "52px",
+                                            "width": "40px",
                                           },
                                           "title": "Status",
                                         },
                                         Object {
-                                          "align": "left",
                                           "style": Object {
                                             "width": "370px",
                                           },
                                           "title": "Event",
                                         },
                                         Object {
-                                          "align": "right",
                                           "style": Object {
                                             "width": "93px",
                                           },
                                           "title": "Probability",
                                         },
                                         Object {
-                                          "align": "right",
                                           "style": Object {
                                             "width": "108px",
                                           },
                                           "title": "Time horizon",
                                         },
                                         Object {
-                                          "align": "left",
                                           "style": Object {
                                             "paddingLeft": "30px",
                                             "width": "195px",
@@ -579,7 +562,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="0"
-                                                        style="text-align: left; padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -590,7 +573,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
-                                                        style="text-align: left; width: 370px;"
+                                                        style="width: 370px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -601,7 +584,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
-                                                        style="text-align: right; width: 93px;"
+                                                        style="width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -612,7 +595,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
-                                                        style="text-align: right; width: 108px;"
+                                                        style="width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -623,7 +606,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
-                                                        style="text-align: left; width: 195px; padding-left: 30px;"
+                                                        style="width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -650,14 +633,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
                                                             >
                                                               <input
                                                                 aria-label="Select Asset 11"
-                                                                class="PrivateSwitchBase-input-7"
+                                                                class="PrivateSwitchBase-input-6"
                                                                 data-indeterminate="false"
                                                                 id="checkbox-1-input"
                                                                 type="checkbox"
@@ -696,10 +679,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                         id="icon1"
-                                                        style="padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                          class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -819,14 +802,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
                                                             >
                                                               <input
                                                                 aria-label="Select Asset 21"
-                                                                class="PrivateSwitchBase-input-7"
+                                                                class="PrivateSwitchBase-input-6"
                                                                 data-indeterminate="false"
                                                                 id="checkbox-2-input"
                                                                 type="checkbox"
@@ -865,10 +848,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                         id="icon2"
-                                                        style="padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                          class="HvIconLevel5-root HvIconLevel5-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -988,14 +971,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
                                                             >
                                                               <input
                                                                 aria-label="Select Asset 31"
-                                                                class="PrivateSwitchBase-input-7"
+                                                                class="PrivateSwitchBase-input-6"
                                                                 data-indeterminate="false"
                                                                 id="checkbox-3-input"
                                                                 type="checkbox"
@@ -1034,10 +1017,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                         id="icon3"
-                                                        style="padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                          class="HvIconLevel1-root HvIconLevel1-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -1176,36 +1159,31 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         "actionsCallback": [Function],
                                         "columnConfiguration": Array [
                                           Object {
-                                            "align": "left",
                                             "style": Object {
                                               "paddingLeft": "8px",
-                                              "width": "52px",
+                                              "width": "40px",
                                             },
                                             "title": "Status",
                                           },
                                           Object {
-                                            "align": "left",
                                             "style": Object {
                                               "width": "370px",
                                             },
                                             "title": "Event",
                                           },
                                           Object {
-                                            "align": "right",
                                             "style": Object {
                                               "width": "93px",
                                             },
                                             "title": "Probability",
                                           },
                                           Object {
-                                            "align": "right",
                                             "style": Object {
                                               "width": "108px",
                                             },
                                             "title": "Time horizon",
                                           },
                                           Object {
-                                            "align": "left",
                                             "style": Object {
                                               "paddingLeft": "30px",
                                               "width": "195px",
@@ -1241,7 +1219,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="0"
-                                                          style="text-align: left; padding-left: 8px; width: 52px;"
+                                                          style="padding-left: 8px; width: 40px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1252,7 +1230,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="1"
-                                                          style="text-align: left; width: 370px;"
+                                                          style="width: 370px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1263,7 +1241,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="2"
-                                                          style="text-align: right; width: 93px;"
+                                                          style="width: 93px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1274,7 +1252,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="3"
-                                                          style="text-align: right; width: 108px;"
+                                                          style="width: 108px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1285,7 +1263,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewHeaderRow-headCell"
                                                           id="4"
-                                                          style="text-align: left; width: 195px; padding-left: 30px;"
+                                                          style="width: 195px; padding-left: 30px;"
                                                         >
                                                           <p
                                                             class="HvTypography-root HvTypography-highlightText"
@@ -1312,14 +1290,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
                                                                   aria-label="Select Asset 11"
-                                                                  class="PrivateSwitchBase-input-7"
+                                                                  class="PrivateSwitchBase-input-6"
                                                                   data-indeterminate="false"
                                                                   id="checkbox-1-input"
                                                                   type="checkbox"
@@ -1358,10 +1336,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                           id="icon1"
-                                                          style="padding-left: 8px; width: 52px;"
+                                                          style="padding-left: 8px; width: 40px;"
                                                         >
                                                           <div
-                                                            class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                            class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                           >
                                                             <svg
                                                               focusable="false"
@@ -1481,14 +1459,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
                                                                   aria-label="Select Asset 21"
-                                                                  class="PrivateSwitchBase-input-7"
+                                                                  class="PrivateSwitchBase-input-6"
                                                                   data-indeterminate="false"
                                                                   id="checkbox-2-input"
                                                                   type="checkbox"
@@ -1527,10 +1505,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                           id="icon2"
-                                                          style="padding-left: 8px; width: 52px;"
+                                                          style="padding-left: 8px; width: 40px;"
                                                         >
                                                           <div
-                                                            class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                            class="HvIconLevel5-root HvIconLevel5-rootS"
                                                           >
                                                             <svg
                                                               focusable="false"
@@ -1650,14 +1628,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           >
                                                             <span
                                                               aria-disabled="false"
-                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                             >
                                                               <span
                                                                 class="MuiIconButton-label"
                                                               >
                                                                 <input
                                                                   aria-label="Select Asset 31"
-                                                                  class="PrivateSwitchBase-input-7"
+                                                                  class="PrivateSwitchBase-input-6"
                                                                   data-indeterminate="false"
                                                                   id="checkbox-3-input"
                                                                   type="checkbox"
@@ -1696,10 +1674,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         <div
                                                           class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                           id="icon3"
-                                                          style="padding-left: 8px; width: 52px;"
+                                                          style="padding-left: 8px; width: 40px;"
                                                         >
                                                           <div
-                                                            class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                            class="HvIconLevel1-root HvIconLevel1-rootS"
                                                           >
                                                             <svg
                                                               focusable="false"
@@ -1832,8 +1810,8 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         style={
                                           Object {
                                             "paddingLeft": "8px",
-                                            "textAlign": "left",
-                                            "width": "52px",
+                                            "textAlign": undefined,
+                                            "width": "40px",
                                           }
                                         }
                                       >
@@ -1882,7 +1860,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         key="th1"
                                         style={
                                           Object {
-                                            "textAlign": "left",
+                                            "textAlign": undefined,
                                             "width": "370px",
                                           }
                                         }
@@ -1932,7 +1910,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         key="th2"
                                         style={
                                           Object {
-                                            "textAlign": "right",
+                                            "textAlign": undefined,
                                             "width": "93px",
                                           }
                                         }
@@ -1982,7 +1960,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         key="th3"
                                         style={
                                           Object {
-                                            "textAlign": "right",
+                                            "textAlign": undefined,
                                             "width": "108px",
                                           }
                                         }
@@ -2033,7 +2011,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                         style={
                                           Object {
                                             "paddingLeft": "30px",
-                                            "textAlign": "left",
+                                            "textAlign": undefined,
                                             "width": "195px",
                                           }
                                         }
@@ -2122,7 +2100,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="0"
-                                                      style="text-align: left; padding-left: 8px; width: 52px;"
+                                                      style="padding-left: 8px; width: 40px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2133,7 +2111,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="1"
-                                                      style="text-align: left; width: 370px;"
+                                                      style="width: 370px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2144,7 +2122,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="2"
-                                                      style="text-align: right; width: 93px;"
+                                                      style="width: 93px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2155,7 +2133,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="3"
-                                                      style="text-align: right; width: 108px;"
+                                                      style="width: 108px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2166,7 +2144,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewHeaderRow-headCell"
                                                       id="4"
-                                                      style="text-align: left; width: 195px; padding-left: 30px;"
+                                                      style="width: 195px; padding-left: 30px;"
                                                     >
                                                       <p
                                                         class="HvTypography-root HvTypography-highlightText"
@@ -2193,14 +2171,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       >
                                                         <span
                                                           aria-disabled="false"
-                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                         >
                                                           <span
                                                             class="MuiIconButton-label"
                                                           >
                                                             <input
                                                               aria-label="Select Asset 11"
-                                                              class="PrivateSwitchBase-input-7"
+                                                              class="PrivateSwitchBase-input-6"
                                                               data-indeterminate="false"
                                                               id="checkbox-1-input"
                                                               type="checkbox"
@@ -2239,10 +2217,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                       id="icon1"
-                                                      style="padding-left: 8px; width: 52px;"
+                                                      style="padding-left: 8px; width: 40px;"
                                                     >
                                                       <div
-                                                        class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                        class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                       >
                                                         <svg
                                                           focusable="false"
@@ -2362,14 +2340,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       >
                                                         <span
                                                           aria-disabled="false"
-                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                         >
                                                           <span
                                                             class="MuiIconButton-label"
                                                           >
                                                             <input
                                                               aria-label="Select Asset 21"
-                                                              class="PrivateSwitchBase-input-7"
+                                                              class="PrivateSwitchBase-input-6"
                                                               data-indeterminate="false"
                                                               id="checkbox-2-input"
                                                               type="checkbox"
@@ -2408,10 +2386,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                       id="icon2"
-                                                      style="padding-left: 8px; width: 52px;"
+                                                      style="padding-left: 8px; width: 40px;"
                                                     >
                                                       <div
-                                                        class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                        class="HvIconLevel5-root HvIconLevel5-rootS"
                                                       >
                                                         <svg
                                                           focusable="false"
@@ -2531,14 +2509,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       >
                                                         <span
                                                           aria-disabled="false"
-                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                          class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                         >
                                                           <span
                                                             class="MuiIconButton-label"
                                                           >
                                                             <input
                                                               aria-label="Select Asset 31"
-                                                              class="PrivateSwitchBase-input-7"
+                                                              class="PrivateSwitchBase-input-6"
                                                               data-indeterminate="false"
                                                               id="checkbox-3-input"
                                                               type="checkbox"
@@ -2577,10 +2555,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                     <div
                                                       class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                       id="icon3"
-                                                      style="padding-left: 8px; width: 52px;"
+                                                      style="padding-left: 8px; width: 40px;"
                                                     >
                                                       <div
-                                                        class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                        class="HvIconLevel1-root HvIconLevel1-rootS"
                                                       >
                                                         <svg
                                                           focusable="false"
@@ -2752,36 +2730,31 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       "actionsCallback": [Function],
                                       "columnConfiguration": Array [
                                         Object {
-                                          "align": "left",
                                           "style": Object {
                                             "paddingLeft": "8px",
-                                            "width": "52px",
+                                            "width": "40px",
                                           },
                                           "title": "Status",
                                         },
                                         Object {
-                                          "align": "left",
                                           "style": Object {
                                             "width": "370px",
                                           },
                                           "title": "Event",
                                         },
                                         Object {
-                                          "align": "right",
                                           "style": Object {
                                             "width": "93px",
                                           },
                                           "title": "Probability",
                                         },
                                         Object {
-                                          "align": "right",
                                           "style": Object {
                                             "width": "108px",
                                           },
                                           "title": "Time horizon",
                                         },
                                         Object {
-                                          "align": "left",
                                           "style": Object {
                                             "paddingLeft": "30px",
                                             "width": "195px",
@@ -2817,7 +2790,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="0"
-                                                        style="text-align: left; padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -2828,7 +2801,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="1"
-                                                        style="text-align: left; width: 370px;"
+                                                        style="width: 370px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -2839,7 +2812,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="2"
-                                                        style="text-align: right; width: 93px;"
+                                                        style="width: 93px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -2850,7 +2823,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="3"
-                                                        style="text-align: right; width: 108px;"
+                                                        style="width: 108px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -2861,7 +2834,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewHeaderRow-headCell"
                                                         id="4"
-                                                        style="text-align: left; width: 195px; padding-left: 30px;"
+                                                        style="width: 195px; padding-left: 30px;"
                                                       >
                                                         <p
                                                           class="HvTypography-root HvTypography-highlightText"
@@ -2888,14 +2861,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
                                                             >
                                                               <input
                                                                 aria-label="Select Asset 11"
-                                                                class="PrivateSwitchBase-input-7"
+                                                                class="PrivateSwitchBase-input-6"
                                                                 data-indeterminate="false"
                                                                 id="checkbox-1-input"
                                                                 type="checkbox"
@@ -2934,10 +2907,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                         id="icon1"
-                                                        style="padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                          class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -3057,14 +3030,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
                                                             >
                                                               <input
                                                                 aria-label="Select Asset 21"
-                                                                class="PrivateSwitchBase-input-7"
+                                                                class="PrivateSwitchBase-input-6"
                                                                 data-indeterminate="false"
                                                                 id="checkbox-2-input"
                                                                 type="checkbox"
@@ -3103,10 +3076,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                         id="icon2"
-                                                        style="padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                          class="HvIconLevel5-root HvIconLevel5-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -3226,14 +3199,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         >
                                                           <span
                                                             aria-disabled="false"
-                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                            class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                           >
                                                             <span
                                                               class="MuiIconButton-label"
                                                             >
                                                               <input
                                                                 aria-label="Select Asset 31"
-                                                                class="PrivateSwitchBase-input-7"
+                                                                class="PrivateSwitchBase-input-6"
                                                                 data-indeterminate="false"
                                                                 id="checkbox-3-input"
                                                                 type="checkbox"
@@ -3272,10 +3245,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       <div
                                                         class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                         id="icon3"
-                                                        style="padding-left: 8px; width: 52px;"
+                                                        style="padding-left: 8px; width: 40px;"
                                                       >
                                                         <div
-                                                          class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                          class="HvIconLevel1-root HvIconLevel1-rootS"
                                                         >
                                                           <svg
                                                             focusable="false"
@@ -3720,7 +3693,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       classes={
                                         Object {
                                           "columnSplitter": "Row-columnSplitter-2",
-                                          "icon": "Row-icon-3",
                                           "timestamp": "Row-timestamp-1",
                                         }
                                       }
@@ -4134,7 +4106,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="0"
-                                                                  style="text-align: left; padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4145,7 +4117,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
-                                                                  style="text-align: left; width: 370px;"
+                                                                  style="width: 370px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4156,7 +4128,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
-                                                                  style="text-align: right; width: 93px;"
+                                                                  style="width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4167,7 +4139,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
-                                                                  style="text-align: right; width: 108px;"
+                                                                  style="width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4178,7 +4150,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
-                                                                  style="text-align: left; width: 195px; padding-left: 30px;"
+                                                                  style="width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -4205,14 +4177,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 11"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-1-input"
                                                                           type="checkbox"
@@ -4251,10 +4223,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                                   id="icon1"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                    class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -4374,14 +4346,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 21"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-2-input"
                                                                           type="checkbox"
@@ -4420,10 +4392,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                                   id="icon2"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                    class="HvIconLevel5-root HvIconLevel5-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -4543,14 +4515,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 31"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-3-input"
                                                                           type="checkbox"
@@ -4589,10 +4561,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                                   id="icon3"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                    class="HvIconLevel1-root HvIconLevel1-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -4755,7 +4727,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="0"
-                                                                    style="text-align: left; padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4766,7 +4738,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
-                                                                    style="text-align: left; width: 370px;"
+                                                                    style="width: 370px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4777,7 +4749,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
-                                                                    style="text-align: right; width: 93px;"
+                                                                    style="width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4788,7 +4760,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
-                                                                    style="text-align: right; width: 108px;"
+                                                                    style="width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4799,7 +4771,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
-                                                                    style="text-align: left; width: 195px; padding-left: 30px;"
+                                                                    style="width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -4826,14 +4798,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 11"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-1-input"
                                                                             type="checkbox"
@@ -4872,10 +4844,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                                     id="icon1"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                      class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -4995,14 +4967,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 21"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-2-input"
                                                                             type="checkbox"
@@ -5041,10 +5013,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                                     id="icon2"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                      class="HvIconLevel5-root HvIconLevel5-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -5164,14 +5136,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 31"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-3-input"
                                                                             type="checkbox"
@@ -5210,10 +5182,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                                     id="icon3"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                      class="HvIconLevel1-root HvIconLevel1-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -5597,10 +5569,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-5 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-6 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-7",
-                                                                            "root": "PrivateSwitchBase-root-4 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-4 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-5 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-6",
+                                                                            "root": "PrivateSwitchBase-root-3 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -5625,7 +5597,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         value="1"
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -5635,7 +5607,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -5659,7 +5631,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -5670,7 +5642,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -5688,7 +5660,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -5707,7 +5679,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                                   >
                                                                                     <input
                                                                                       aria-label="Select Asset 11"
-                                                                                      className="PrivateSwitchBase-input-7"
+                                                                                      className="PrivateSwitchBase-input-6"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="checkbox-1-input"
@@ -5828,7 +5800,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       style={
                                                         Object {
                                                           "paddingLeft": "8px",
-                                                          "width": "52px",
+                                                          "width": "40px",
                                                         }
                                                       }
                                                     >
@@ -5870,7 +5842,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style={
                                                           Object {
                                                             "paddingLeft": "8px",
-                                                            "width": "52px",
+                                                            "width": "40px",
                                                           }
                                                         }
                                                       >
@@ -5880,16 +5852,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           style={
                                                             Object {
                                                               "paddingLeft": "8px",
-                                                              "width": "52px",
+                                                              "width": "40px",
                                                             }
                                                           }
                                                         >
                                                           <WithStyles(Level3Bad)
-                                                            className="Row-icon-3"
                                                             semantic="sema12"
                                                           >
                                                             <Level3Bad
-                                                              className="Row-icon-3"
                                                               classes={
                                                                 Object {
                                                                   "root": "HvIconLevel3Bad-root",
@@ -5902,7 +5872,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               semantic="sema12"
                                                             >
                                                               <div
-                                                                className="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                className="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                               >
                                                                 <svg
                                                                   focusable={false}
@@ -7006,7 +6976,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       classes={
                                         Object {
                                           "columnSplitter": "Row-columnSplitter-2",
-                                          "icon": "Row-icon-3",
                                           "timestamp": "Row-timestamp-1",
                                         }
                                       }
@@ -7420,7 +7389,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="0"
-                                                                  style="text-align: left; padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7431,7 +7400,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
-                                                                  style="text-align: left; width: 370px;"
+                                                                  style="width: 370px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7442,7 +7411,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
-                                                                  style="text-align: right; width: 93px;"
+                                                                  style="width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7453,7 +7422,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
-                                                                  style="text-align: right; width: 108px;"
+                                                                  style="width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7464,7 +7433,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
-                                                                  style="text-align: left; width: 195px; padding-left: 30px;"
+                                                                  style="width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -7491,14 +7460,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 11"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-1-input"
                                                                           type="checkbox"
@@ -7537,10 +7506,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                                   id="icon1"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                    class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -7660,14 +7629,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 21"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-2-input"
                                                                           type="checkbox"
@@ -7706,10 +7675,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                                   id="icon2"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                    class="HvIconLevel5-root HvIconLevel5-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -7829,14 +7798,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 31"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-3-input"
                                                                           type="checkbox"
@@ -7875,10 +7844,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                                   id="icon3"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                    class="HvIconLevel1-root HvIconLevel1-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -8041,7 +8010,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="0"
-                                                                    style="text-align: left; padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8052,7 +8021,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
-                                                                    style="text-align: left; width: 370px;"
+                                                                    style="width: 370px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8063,7 +8032,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
-                                                                    style="text-align: right; width: 93px;"
+                                                                    style="width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8074,7 +8043,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
-                                                                    style="text-align: right; width: 108px;"
+                                                                    style="width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8085,7 +8054,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
-                                                                    style="text-align: left; width: 195px; padding-left: 30px;"
+                                                                    style="width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -8112,14 +8081,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 11"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-1-input"
                                                                             type="checkbox"
@@ -8158,10 +8127,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                                     id="icon1"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                      class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -8281,14 +8250,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 21"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-2-input"
                                                                             type="checkbox"
@@ -8327,10 +8296,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                                     id="icon2"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                      class="HvIconLevel5-root HvIconLevel5-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -8450,14 +8419,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 31"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-3-input"
                                                                             type="checkbox"
@@ -8496,10 +8465,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                                     id="icon3"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                      class="HvIconLevel1-root HvIconLevel1-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -8883,10 +8852,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-5 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-6 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-7",
-                                                                            "root": "PrivateSwitchBase-root-4 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-4 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-5 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-6",
+                                                                            "root": "PrivateSwitchBase-root-3 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -8911,7 +8880,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         value="2"
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -8921,7 +8890,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -8945,7 +8914,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -8956,7 +8925,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -8974,7 +8943,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -8993,7 +8962,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                                   >
                                                                                     <input
                                                                                       aria-label="Select Asset 21"
-                                                                                      className="PrivateSwitchBase-input-7"
+                                                                                      className="PrivateSwitchBase-input-6"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="checkbox-2-input"
@@ -9114,7 +9083,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       style={
                                                         Object {
                                                           "paddingLeft": "8px",
-                                                          "width": "52px",
+                                                          "width": "40px",
                                                         }
                                                       }
                                                     >
@@ -9156,7 +9125,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style={
                                                           Object {
                                                             "paddingLeft": "8px",
-                                                            "width": "52px",
+                                                            "width": "40px",
                                                           }
                                                         }
                                                       >
@@ -9166,16 +9135,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           style={
                                                             Object {
                                                               "paddingLeft": "8px",
-                                                              "width": "52px",
+                                                              "width": "40px",
                                                             }
                                                           }
                                                         >
                                                           <WithStyles(Level5)
-                                                            className="Row-icon-3"
                                                             semantic="sema14"
                                                           >
                                                             <Level5
-                                                              className="Row-icon-3"
                                                               classes={
                                                                 Object {
                                                                   "root": "HvIconLevel5-root",
@@ -9188,7 +9155,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               semantic="sema14"
                                                             >
                                                               <div
-                                                                className="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                className="HvIconLevel5-root HvIconLevel5-rootS"
                                                               >
                                                                 <svg
                                                                   focusable={false}
@@ -10292,7 +10259,6 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                       classes={
                                         Object {
                                           "columnSplitter": "Row-columnSplitter-2",
-                                          "icon": "Row-icon-3",
                                           "timestamp": "Row-timestamp-1",
                                         }
                                       }
@@ -10706,7 +10672,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="0"
-                                                                  style="text-align: left; padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -10717,7 +10683,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="1"
-                                                                  style="text-align: left; width: 370px;"
+                                                                  style="width: 370px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -10728,7 +10694,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="2"
-                                                                  style="text-align: right; width: 93px;"
+                                                                  style="width: 93px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -10739,7 +10705,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="3"
-                                                                  style="text-align: right; width: 108px;"
+                                                                  style="width: 108px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -10750,7 +10716,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewHeaderRow-headCell"
                                                                   id="4"
-                                                                  style="text-align: left; width: 195px; padding-left: 30px;"
+                                                                  style="width: 195px; padding-left: 30px;"
                                                                 >
                                                                   <p
                                                                     class="HvTypography-root HvTypography-highlightText"
@@ -10777,14 +10743,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 11"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-1-input"
                                                                           type="checkbox"
@@ -10823,10 +10789,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                                   id="icon1"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                    class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -10946,14 +10912,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 21"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-2-input"
                                                                           type="checkbox"
@@ -10992,10 +10958,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                                   id="icon2"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                    class="HvIconLevel5-root HvIconLevel5-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -11115,14 +11081,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   >
                                                                     <span
                                                                       aria-disabled="false"
-                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                      class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                     >
                                                                       <span
                                                                         class="MuiIconButton-label"
                                                                       >
                                                                         <input
                                                                           aria-label="Select Asset 31"
-                                                                          class="PrivateSwitchBase-input-7"
+                                                                          class="PrivateSwitchBase-input-6"
                                                                           data-indeterminate="false"
                                                                           id="checkbox-3-input"
                                                                           type="checkbox"
@@ -11161,10 +11127,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                 <div
                                                                   class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                                   id="icon3"
-                                                                  style="padding-left: 8px; width: 52px;"
+                                                                  style="padding-left: 8px; width: 40px;"
                                                                 >
                                                                   <div
-                                                                    class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                    class="HvIconLevel1-root HvIconLevel1-rootS"
                                                                   >
                                                                     <svg
                                                                       focusable="false"
@@ -11327,7 +11293,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="0"
-                                                                    style="text-align: left; padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11338,7 +11304,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="1"
-                                                                    style="text-align: left; width: 370px;"
+                                                                    style="width: 370px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11349,7 +11315,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="2"
-                                                                    style="text-align: right; width: 93px;"
+                                                                    style="width: 93px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11360,7 +11326,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="3"
-                                                                    style="text-align: right; width: 108px;"
+                                                                    style="width: 108px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11371,7 +11337,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewHeaderRow-headCell"
                                                                     id="4"
-                                                                    style="text-align: left; width: 195px; padding-left: 30px;"
+                                                                    style="width: 195px; padding-left: 30px;"
                                                                   >
                                                                     <p
                                                                       class="HvTypography-root HvTypography-highlightText"
@@ -11398,14 +11364,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 11"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-1-input"
                                                                             type="checkbox"
@@ -11444,10 +11410,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema12"
                                                                     id="icon1"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
+                                                                      class="HvIconLevel3Bad-root HvIconLevel3Bad-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -11567,14 +11533,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 21"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-2-input"
                                                                             type="checkbox"
@@ -11613,10 +11579,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema14"
                                                                     id="icon2"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel5-root HvIconLevel5-rootS"
+                                                                      class="HvIconLevel5-root HvIconLevel5-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -11736,14 +11702,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                     >
                                                                       <span
                                                                         aria-disabled="false"
-                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                       >
                                                                         <span
                                                                           class="MuiIconButton-label"
                                                                         >
                                                                           <input
                                                                             aria-label="Select Asset 31"
-                                                                            class="PrivateSwitchBase-input-7"
+                                                                            class="PrivateSwitchBase-input-6"
                                                                             data-indeterminate="false"
                                                                             id="checkbox-3-input"
                                                                             type="checkbox"
@@ -11782,10 +11748,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                   <div
                                                                     class="HvListViewCell-root HvListViewCell-semanticBar HvListViewCell-sema10"
                                                                     id="icon3"
-                                                                    style="padding-left: 8px; width: 52px;"
+                                                                    style="padding-left: 8px; width: 40px;"
                                                                   >
                                                                     <div
-                                                                      class="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                      class="HvIconLevel1-root HvIconLevel1-rootS"
                                                                     >
                                                                       <svg
                                                                         focusable="false"
@@ -12169,10 +12135,10 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         className="HvCheckBox-checkBox"
                                                                         classes={
                                                                           Object {
-                                                                            "checked": "PrivateSwitchBase-checked-5 Mui-checked",
-                                                                            "disabled": "PrivateSwitchBase-disabled-6 Mui-disabled",
-                                                                            "input": "PrivateSwitchBase-input-7",
-                                                                            "root": "PrivateSwitchBase-root-4 MuiCheckbox-root",
+                                                                            "checked": "PrivateSwitchBase-checked-4 Mui-checked",
+                                                                            "disabled": "PrivateSwitchBase-disabled-5 Mui-disabled",
+                                                                            "input": "PrivateSwitchBase-input-6",
+                                                                            "root": "PrivateSwitchBase-root-3 MuiCheckbox-root",
                                                                           }
                                                                         }
                                                                         color="default"
@@ -12197,7 +12163,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                         value="3"
                                                                       >
                                                                         <WithStyles(ForwardRef(IconButton))
-                                                                          className="PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                          className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                           color="default"
                                                                           component="span"
                                                                           disableRipple={true}
@@ -12207,7 +12173,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           tabIndex={null}
                                                                         >
                                                                           <ForwardRef(IconButton)
-                                                                            className="PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                            className="PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                             classes={
                                                                               Object {
                                                                                 "colorInherit": "MuiIconButton-colorInherit",
@@ -12231,7 +12197,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                           >
                                                                             <WithStyles(ForwardRef(ButtonBase))
                                                                               centerRipple={true}
-                                                                              className="MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                              className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                               component="span"
                                                                               disableRipple={true}
                                                                               disabled={false}
@@ -12242,7 +12208,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                             >
                                                                               <ForwardRef(ButtonBase)
                                                                                 centerRipple={true}
-                                                                                className="MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                className="MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                 classes={
                                                                                   Object {
                                                                                     "disabled": "Mui-disabled",
@@ -12260,7 +12226,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                               >
                                                                                 <span
                                                                                   aria-disabled={false}
-                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-4 MuiCheckbox-root HvCheckBox-checkBox"
+                                                                                  className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-3 MuiCheckbox-root HvCheckBox-checkBox"
                                                                                   onBlur={[Function]}
                                                                                   onDragLeave={[Function]}
                                                                                   onFocus={[Function]}
@@ -12279,7 +12245,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                                                   >
                                                                                     <input
                                                                                       aria-label="Select Asset 31"
-                                                                                      className="PrivateSwitchBase-input-7"
+                                                                                      className="PrivateSwitchBase-input-6"
                                                                                       data-indeterminate={false}
                                                                                       disabled={false}
                                                                                       id="checkbox-3-input"
@@ -12400,7 +12366,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                       style={
                                                         Object {
                                                           "paddingLeft": "8px",
-                                                          "width": "52px",
+                                                          "width": "40px",
                                                         }
                                                       }
                                                     >
@@ -12442,7 +12408,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                         style={
                                                           Object {
                                                             "paddingLeft": "8px",
-                                                            "width": "52px",
+                                                            "width": "40px",
                                                           }
                                                         }
                                                       >
@@ -12452,16 +12418,14 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                           style={
                                                             Object {
                                                               "paddingLeft": "8px",
-                                                              "width": "52px",
+                                                              "width": "40px",
                                                             }
                                                           }
                                                         >
                                                           <WithStyles(Level1)
-                                                            className="Row-icon-3"
                                                             semantic="sema10"
                                                           >
                                                             <Level1
-                                                              className="Row-icon-3"
                                                               classes={
                                                                 Object {
                                                                   "root": "HvIconLevel1-root",
@@ -12474,7 +12438,7 @@ exports[`AssetInventoryListView should render correctly 1`] = `
                                                               semantic="sema10"
                                                             >
                                                               <div
-                                                                className="Row-icon-3 HvIconLevel1-root HvIconLevel1-rootS"
+                                                                className="HvIconLevel1-root HvIconLevel1-rootS"
                                                               >
                                                                 <svg
                                                                   focusable={false}

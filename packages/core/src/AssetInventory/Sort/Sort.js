@@ -1,7 +1,8 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 import get from "lodash/get";
-import DropDown from "../../Dropdown";
+import HvDropdown from "../../Dropdown";
+import { setId } from "../../utils";
 
 const sortOperationSetup = (metadata, selectedSort) => {
   const sortableCriteria = [];
@@ -73,8 +74,8 @@ const Sort = ({
   };
 
   return (
-    <DropDown
-      id={`sort_${id}`}
+    <HvDropdown
+      id={setId(id, "sort")}
       labels={labels}
       values={sortOperationSetup(metadata, selected)}
       onChange={onSortChange || innerSortValues}

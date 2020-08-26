@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core";
-
+import { makeStyles } from "@material-ui/core";
 import {
   Cards,
   Connect,
@@ -14,11 +13,16 @@ import {
   List,
   Preview,
   Upload
-} from "@hv/uikit-react-icons/dist";
+} from "@hv/uikit-react-icons";
 import {
+  HvActionContainer,
+  HvActionsGeneric,
   HvAssetInventory,
   HvCard,
+  HvCardHeader,
+  HvCardContent,
   HvCardView,
+  HvCheckBox,
   HvEmptyState,
   HvGrid,
   HvKpi,
@@ -40,30 +44,26 @@ export default {
   component: HvAssetInventory
 };
 
+const getStatus = statusNumber => {
+  switch (statusNumber) {
+    case 1:
+      return { Icon: Level1, sema: "sema10" };
+    case 2:
+      return { Icon: Level2Average, sema: "sema11" };
+    case 3:
+      return { Icon: Level3Bad, sema: "sema12" };
+    case 4:
+      return { Icon: Level4, sema: "sema13" };
+    case 5:
+      return { Icon: Level5, sema: "sema14" };
+    default:
+      return { Icon: null, sema: "sema1" };
+  }
+};
+
 export const Main = () => {
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
-
-  // Card Renderer
-
-  const kpiStyles = theme => ({
-    content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
-    },
+  // Styles
+  const useStyles = makeStyles(theme => ({
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
@@ -79,123 +79,120 @@ export const Main = () => {
       paddingRight: `${theme.hv.spacing.xs}px`,
       borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
       marginRight: `${theme.hv.spacing.xs}px`
+    },
+    timestamp2: {
+      padding: theme.spacing(0, "xs")
+    },
+    columnSplitter: {
+      background: theme.hv.palette.accent.acce1,
+      width: "1px",
+      height: "16px",
+      marginRight: `${theme.hv.spacing.xs}px`
+    },
+    icon: {
+      margin: `0 ${theme.hv.spacing.xs}px`
     }
-  });
+  }));
 
-  const CardContent = ({ classes, values }) => (
-    <HvGrid container className={classes.container}>
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp}>{values.event.timestamp}</HvTypography>
-          <HvTypography>{values.event.schedule}</HvTypography>
-        </div>
-      </HvGrid>
+  const classes = useStyles();
 
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={{ title: "Probability", indicator: `${values.probability}%` }} />
-          <HvKpi labels={{ title: "Time horizon", indicator: `${values.timeHorizon}h` }} />
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="highlightText">Related assets</HvTypography>
-        <HvTypography className={classes.text}>{values.relatedAssets}</HvTypography>
-      </HvGrid>
-    </HvGrid>
-  );
-
-  const StyledCardContent = withStyles(kpiStyles)(CardContent);
-
+  // Card Renderer
   const cardRenderer = (data, viewConfiguration) => {
     const { Icon, sema } = getStatus(data.status);
-    const StyledIcon = <Icon semantic={sema} />;
 
     return (
       <HvCard
-        icon={StyledIcon}
-        headerTitle={data.headerTitle}
-        innerCardContent={<StyledCardContent values={data} icon={StyledIcon} />}
+        bgcolor="atmo1"
         semantic={sema}
-        checkboxProps={{ value: data.id, inputProps: { "aria-label": `Select ${data.id}` } }}
-        onChange={viewConfiguration.onSelection}
-        isSelectable={viewConfiguration.isSelectable}
-        actions={viewConfiguration.actions}
-        maxVisibleActions={viewConfiguration.maxVisibleActions}
-        actionsCallback={viewConfiguration.actionsCallback}
-        checked={data.checked}
-      />
+        icon={<Icon semantic={sema} />}
+        selectable={viewConfiguration.isSelectable}
+        selected={data.checked}
+      >
+        <HvCardHeader title={data.headerTitle} />
+        <HvCardContent>
+          <HvGrid container className={classes.container}>
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvTypography className={classes.timestamp}>{data.event.timestamp}</HvTypography>
+                <HvTypography>{data.event.schedule}</HvTypography>
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvKpi labels={{ title: "Probability", indicator: `${data.probability}%` }} />
+                <HvKpi labels={{ title: "Time horizon", indicator: `${data.timeHorizon}h` }} />
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+              <HvTypography variant="highlightText">Related assets</HvTypography>
+              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+            </HvGrid>
+          </HvGrid>
+        </HvCardContent>
+        <HvActionContainer aria-label="Leaf">
+          {viewConfiguration.isSelectable && (
+            <HvCheckBox
+              checked={data.checked}
+              onChange={viewConfiguration.onSelection}
+              value={data.id}
+              inputProps={{ "aria-label": `Select ${data.id}` }}
+            />
+          )}
+          <div style={{ flex: 1 }} />
+          <HvActionsGeneric
+            actions={viewConfiguration.actions}
+            maxVisibleActions={viewConfiguration.maxVisibleActions}
+            actionsCallback={viewConfiguration.actionsCallback}
+          />
+        </HvActionContainer>
+      </HvCard>
     );
   };
 
-  // ListView renderer
-
-  const Row = ({ classes, status, value, id }) => {
+  // ListRow renderer
+  const rowRenderer = value => {
+    const status = getStatus(value.status);
     const { Icon } = status;
+    const { id } = value;
 
     return (
       <HvListViewRow
         id={id}
+        key={`row${id}`}
         checked={value.checked}
         checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
       >
-        <HvListViewCell semantic={status.sema} id={`icon-${id}`} key={`icon${id}`}>
+        <HvListViewCell semantic={status.sema}>
           <Icon semantic={status.sema} className={classes.icon} />
         </HvListViewCell>
 
-        <HvListViewCell id={`description-${id}`} key={`description${id}`}>
+        <HvListViewCell>
           <div style={{ display: "inline-flex" }}>
             <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
+            <HvTypography className={classes.timestamp2}>{value.event.timestamp}</HvTypography>
             <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
+            <HvTypography>{value.event.schedule}</HvTypography>
           </div>
         </HvListViewCell>
 
-        <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
+        <HvListViewCell>
           <HvTypography>{`${value.probability}%`}</HvTypography>
         </HvListViewCell>
 
-        <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
+        <HvListViewCell>
           <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
         </HvListViewCell>
 
-        <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
+        <HvListViewCell>
           <HvTypography>{value.relatedAssets}</HvTypography>
         </HvListViewCell>
       </HvListViewRow>
     );
   };
 
-  const stylesRow = theme => ({
-    timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
-    },
-    columnSplitter: {
-      background: theme.hv.palette.accent.acce1,
-      width: "1px",
-      height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
-      marginTop: "2px"
-    },
-    icon: {
-      margin: `0 ${theme.hv.spacing.xs}px`
-    }
-  });
-
-  const StyledRow = withStyles(stylesRow)(Row);
-
-  const rowRenderer = (value, index) => (
-    <StyledRow
-      status={getStatus(value.status)}
-      value={value}
-      id={value.id}
-      key={value.id + index}
-    />
-  );
-
   // Asset Inventory configuration
-
   const assetConfiguration = {
     metadata: [
       {
@@ -290,10 +287,6 @@ export const Main = () => {
     relatedAssets: "Track B, Load 2 Brake"
   });
 
-  const EmptyComponent = (
-    <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
-  );
-
   const values = (num = 10) =>
     Array.from(Array(num).keys(), id => ({
       id: `id_${id}`,
@@ -305,60 +298,31 @@ export const Main = () => {
 
   return (
     <HvAssetInventory
+      id="hv-assetinventory"
       values={values()}
       configuration={assetConfiguration}
       onSelection={event => console.log(event.target.value)}
       isSelectable
       actions={myActions}
-      actionsCallback={(e, id, action) =>
-        console.log(`You have pressed ${id} with action ${action.label}`)
-      }
+      actionsCallback={(e, id, action) => console.log(`You have pressed action ${action.label}`)}
       searchProps={{ ariaLabel: "Filters the data" }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view" },
-        { id: "list", "aria-label": "Select list view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
-      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
+      emptyComponent={
+        <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+      }
     >
-      <HvCardView
-        id="card"
-        icon={<Cards />}
-        renderer={cardRenderer}
-        emptyComponent={EmptyComponent}
-      />
-      <HvListView
-        id="list"
-        icon={<List />}
-        renderer={rowRenderer}
-        emptyComponent={EmptyComponent}
-      />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
     </HvAssetInventory>
   );
 };
 
 export const Configurations = () => {
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
-
-  // ----------------------- CardView Render -----------------------------
-  const kpiStyles = theme => ({
-    content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
-    },
+  // Styles
+  const useStyles = makeStyles(theme => ({
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
@@ -372,123 +336,120 @@ export const Configurations = () => {
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
-  });
-
-  const Content = ({ classes, values }) => (
-    <HvGrid container className={classes.container}>
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp}>{values.event.timestamp}</HvTypography>
-          <HvTypography>{values.event.schedule}</HvTypography>
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={{ title: "Probability", indicator: `${values.probability}%` }} />
-          <HvKpi labels={{ title: "Time horizon", indicator: `${values.timeHorizon}h` }} />
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="highlightText">Related assets</HvTypography>
-        <HvTypography className={classes.text}>{values.relatedAssets}</HvTypography>
-      </HvGrid>
-    </HvGrid>
-  );
-
-  const ContentWithStyles = withStyles(kpiStyles)(Content);
-
-  const cardRenderer = (data, viewConfiguration) => {
-    const { Icon, sema } = getStatus(data.status);
-    const StyledIcon = <Icon semantic={sema} />;
-
-    return (
-      <HvCard
-        id={`Card_${data.id}`}
-        icon={StyledIcon}
-        headerTitle={data.headerTitle}
-        innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
-        semantic={sema}
-        checkboxProps={{ value: data.id, inputProps: { "aria-label": `Select ${data.id}` } }}
-        checked={data.checked}
-        isSelectable={viewConfiguration.isSelectable}
-        onChange={viewConfiguration.onSelection}
-        actions={viewConfiguration.actions}
-        maxVisibleActions={viewConfiguration.maxVisibleActions}
-        actionsCallback={viewConfiguration.actionsCallback}
-      />
-    );
-  };
-
-  // ----------------------- ListView Render -----------------------------
-
-  const Row = ({ classes, status, value, id }) => {
-    const { Icon } = status;
-
-    return (
-      <HvListViewRow
-        id={id}
-        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
-        checked={value.checked}
-      >
-        <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon className={classes.icon} semantic={status.sema} />
-        </HvListViewCell>
-
-        <HvListViewCell id={`description${id}`} key={`description${id}`}>
-          <div style={{ display: "inline-flex" }}>
-            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp}>{value.event.timestamp}</HvTypography>
-            <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }}>{value.event.schedule}</HvTypography>
-          </div>
-        </HvListViewCell>
-
-        <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
-          <HvTypography>{`${value.probability}%`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
-          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
-        </HvListViewCell>
-      </HvListViewRow>
-    );
-  };
-
-  const stylesRow = theme => ({
-    timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+      marginRight: `${theme.hv.spacing.xs}px`
+    },
+    timestamp2: {
+      padding: theme.spacing(0, "xs")
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
-      marginTop: "2px"
+      marginRight: `${theme.hv.spacing.xs}px`
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
     }
-  });
+  }));
 
-  const StyledRow = withStyles(stylesRow)(Row);
+  const classes = useStyles();
 
-  const rowRenderer = (value, index) => (
-    <StyledRow
-      status={getStatus(value.status)}
-      value={value}
-      id={value.id}
-      key={value.id + index}
-    />
-  );
+  // Card Renderer
+  const cardRenderer = (data, viewConfiguration) => {
+    const { Icon, sema } = getStatus(data.status);
+
+    return (
+      <HvCard
+        bgcolor="atmo1"
+        semantic={sema}
+        icon={<Icon semantic={sema} />}
+        selectable={viewConfiguration.isSelectable}
+        selected={data.checked}
+      >
+        <HvCardHeader title={data.headerTitle} />
+        <HvCardContent>
+          <HvGrid container className={classes.container}>
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvTypography className={classes.timestamp}>{data.event.timestamp}</HvTypography>
+                <HvTypography>{data.event.schedule}</HvTypography>
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvKpi labels={{ title: "Probability", indicator: `${data.probability}%` }} />
+                <HvKpi labels={{ title: "Time horizon", indicator: `${data.timeHorizon}h` }} />
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+              <HvTypography variant="highlightText">Related assets</HvTypography>
+              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+            </HvGrid>
+          </HvGrid>
+        </HvCardContent>
+        <HvActionContainer aria-label="Leaf">
+          {viewConfiguration.isSelectable && (
+            <HvCheckBox
+              checked={data.checked}
+              onChange={viewConfiguration.onSelection}
+              value={data.id}
+              inputProps={{ "aria-label": `Select ${data.id}` }}
+            />
+          )}
+          <div style={{ flex: 1 }} />
+          <HvActionsGeneric
+            actions={viewConfiguration.actions}
+            maxVisibleActions={viewConfiguration.maxVisibleActions}
+            actionsCallback={viewConfiguration.actionsCallback}
+          />
+        </HvActionContainer>
+      </HvCard>
+    );
+  };
+
+  // ListRow renderer
+  const rowRenderer = value => {
+    const status = getStatus(value.status);
+    const { Icon } = status;
+    const { id } = value;
+
+    return (
+      <HvListViewRow
+        id={id}
+        key={`row${id}`}
+        checked={value.checked}
+        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
+      >
+        <HvListViewCell semantic={status.sema}>
+          <Icon semantic={status.sema} className={classes.icon} />
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <div style={{ display: "inline-flex" }}>
+            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
+            <HvTypography className={classes.timestamp2}>{value.event.timestamp}</HvTypography>
+            <div className={classes.columnSplitter} />
+            <HvTypography>{value.event.schedule}</HvTypography>
+          </div>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.probability}%`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{value.relatedAssets}</HvTypography>
+        </HvListViewCell>
+      </HvListViewRow>
+    );
+  };
 
   // --------------------------- Values ---------------------------------
 
@@ -594,17 +555,18 @@ export const Configurations = () => {
       hasPagination
       pageSizeOptions={[2, 4, 6, 8, 10]}
       pageSize={4}
-      selectedView="cardView"
+      selectedView={0}
       searchProps={{ ariaLabel: "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
-        { id: "cardView", "aria-label": "Select card view" },
-        { id: "listView", "aria-label": "Select list view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
-      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
+      emptyComponent={
+        <HvEmptyState message="No data found" icon={<Fail iconSize="S" color="acce1" />} />
+      }
     >
       <HvCardView
         id="cardView"
-        icon={<Cards />}
         renderer={cardRenderer}
         viewConfiguration={{
           breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
@@ -612,7 +574,6 @@ export const Configurations = () => {
       />
       <HvListView
         id="listView"
-        icon={<List />}
         renderer={rowRenderer}
         viewConfiguration={{
           columnConfiguration: [
@@ -626,7 +587,6 @@ export const Configurations = () => {
             }
           ]
         }}
-        sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
       />
     </HvAssetInventory>
   );
@@ -642,29 +602,8 @@ Configurations.story = {
 };
 
 export const ThreeViews = () => {
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
-
-  // Card Renderer
-
-  const kpiStyles = theme => ({
-    content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
-    },
+  // Styles
+  const useStyles = makeStyles(theme => ({
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
@@ -678,134 +617,122 @@ export const ThreeViews = () => {
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
-  });
-
-  const CardContent = ({ classes, values }) => (
-    <HvGrid container className={classes.container}>
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="normalText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={{ title: "Probability", indicator: `${values.probability}%` }} />
-          <HvKpi labels={{ title: "Time horizon", indicator: `${values.timeHorizon}h` }} />
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="highlightText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
-        </HvTypography>
-      </HvGrid>
-    </HvGrid>
-  );
-
-  const StyledCardContent = withStyles(kpiStyles)(CardContent);
-
-  const cardRenderer = (data, viewConfiguration) => {
-    const { Icon, sema } = getStatus(data.status);
-    const StyledIcon = <Icon semantic={sema} />;
-    const { onSelection, ...others } = viewConfiguration;
-
-    return (
-      <HvCard
-        icon={StyledIcon}
-        headerTitle={data.headerTitle}
-        innerCardContent={<StyledCardContent values={data} icon={StyledIcon} />}
-        semantic={sema}
-        checkboxProps={{
-          value: data.id,
-          inputProps: { "aria-label": `Select ${data.id}` }
-        }}
-        onChange={onSelection}
-        checked={data.checked}
-        {...others}
-      />
-    );
-  };
-
-  // ListView renderer
-
-  const Row = ({ classes, status, value, id }) => {
-    const { Icon } = status;
-
-    return (
-      <HvListViewRow
-        id={id}
-        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
-        checked={value.checked}
-      >
-        <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon semantic={status.sema} className={classes.icon} />
-        </HvListViewCell>
-
-        <HvListViewCell id={`description${id}`} key={`description${id}`}>
-          <div style={{ display: "inline-flex" }}>
-            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="normalText">
-              {value.event.timestamp}
-            </HvTypography>
-            <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
-              {value.event.schedule}
-            </HvTypography>
-          </div>
-        </HvListViewCell>
-
-        <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
-        </HvListViewCell>
-      </HvListViewRow>
-    );
-  };
-
-  const stylesRow = theme => ({
-    timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+      marginRight: `${theme.hv.spacing.xs}px`
+    },
+    timestamp2: {
+      padding: theme.spacing(0, "xs")
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
-      marginTop: "2px"
+      marginRight: `${theme.hv.spacing.xs}px`
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
     }
-  });
+  }));
 
-  const StyledRow = withStyles(stylesRow)(Row);
+  const classes = useStyles();
 
-  const rowRenderer = (value, index) => (
-    <StyledRow
-      status={getStatus(value.status)}
-      value={value}
-      id={value.id}
-      key={value.id + index}
-    />
-  );
+  // Card Renderer
+  const cardRenderer = (data, viewConfiguration) => {
+    const { Icon, sema } = getStatus(data.status);
+
+    return (
+      <HvCard
+        bgcolor="atmo1"
+        semantic={sema}
+        icon={<Icon semantic={sema} />}
+        selectable={viewConfiguration.isSelectable}
+        selected={data.checked}
+      >
+        <HvCardHeader title={data.headerTitle} />
+        <HvCardContent>
+          <HvGrid container className={classes.container}>
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvTypography className={classes.timestamp}>{data.event.timestamp}</HvTypography>
+                <HvTypography>{data.event.schedule}</HvTypography>
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvKpi labels={{ title: "Probability", indicator: `${data.probability}%` }} />
+                <HvKpi labels={{ title: "Time horizon", indicator: `${data.timeHorizon}h` }} />
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+              <HvTypography variant="highlightText">Related assets</HvTypography>
+              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+            </HvGrid>
+          </HvGrid>
+        </HvCardContent>
+        <HvActionContainer aria-label="Leaf">
+          {viewConfiguration.isSelectable && (
+            <HvCheckBox
+              checked={data.checked}
+              onChange={viewConfiguration.onSelection}
+              value={data.id}
+              inputProps={{ "aria-label": `Select ${data.id}` }}
+            />
+          )}
+          <div style={{ flex: 1 }} />
+          <HvActionsGeneric
+            actions={viewConfiguration.actions}
+            maxVisibleActions={viewConfiguration.maxVisibleActions}
+            actionsCallback={viewConfiguration.actionsCallback}
+          />
+        </HvActionContainer>
+      </HvCard>
+    );
+  };
+
+  // ListRow renderer
+  const rowRenderer = value => {
+    const status = getStatus(value.status);
+    const { Icon } = status;
+    const { id } = value;
+
+    return (
+      <HvListViewRow
+        id={id}
+        key={`row${id}`}
+        checked={value.checked}
+        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
+      >
+        <HvListViewCell semantic={status.sema}>
+          <Icon semantic={status.sema} className={classes.icon} />
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <div style={{ display: "inline-flex" }}>
+            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
+            <HvTypography className={classes.timestamp2}>{value.event.timestamp}</HvTypography>
+            <div className={classes.columnSplitter} />
+            <HvTypography>{value.event.schedule}</HvTypography>
+          </div>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.probability}%`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{value.relatedAssets}</HvTypography>
+        </HvListViewCell>
+      </HvListViewRow>
+    );
+  };
 
   // Text renderer
-
   const TextRender = ({ id, values }) => (
     <div id={id}>
       <HvGrid container>
@@ -934,21 +861,21 @@ export const ThreeViews = () => {
       configuration={assetConfiguration}
       onSelection={event => console.log(event.target.value)}
       isSelectable
+      hasBulkActions
       actions={myActions}
       actionsCallback={(e, id, action) =>
         console.log(`You have pressed data ${id} with action ${action.label}`)
       }
       searchProps={{ ariaLabel: "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view" },
-        { id: "list", "aria-label": "Select list view" },
-        { id: "textRender", "aria-label": "Select text view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" },
+        { id: "text-button", icon: <Connect />, "aria-label": "Select text view" }
       ]}
-      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
-      <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
-      <HvListView id="list" icon={<List />} renderer={rowRenderer} />
-      <TextRender id="textRender" icon={<Connect />} />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
+      <TextRender id="text" />
     </HvAssetInventory>
   );
 };
@@ -962,28 +889,8 @@ ThreeViews.story = {
 };
 
 export const ServerSidePagination = () => {
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
-
-  // ----------------------- CardView Render -----------------------------
-  const kpiStyles = theme => ({
-    content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
-    },
+  // Styles
+  const useStyles = makeStyles(theme => ({
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
@@ -997,130 +904,120 @@ export const ServerSidePagination = () => {
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
-  });
-
-  const Content = ({ classes, values }) => (
-    <HvGrid container className={classes.container}>
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="normalText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={{ title: "Probability", indicator: `${values.probability}%` }} />
-          <HvKpi labels={{ title: "Time horizon", indicator: `${values.timeHorizon}h` }} />
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="highlightText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
-        </HvTypography>
-      </HvGrid>
-    </HvGrid>
-  );
-
-  const ContentWithStyles = withStyles(kpiStyles)(Content);
-
-  const cardRenderer = (data, viewConfiguration) => {
-    const { Icon, sema } = getStatus(data.status);
-    const StyledIcon = <Icon semantic={sema} />;
-
-    return (
-      <HvCard
-        icon={StyledIcon}
-        headerTitle={data.headerTitle}
-        innerCardContent={<ContentWithStyles values={data} icon={StyledIcon} />}
-        semantic={sema}
-        checkboxProps={{ value: data.id, inputProps: { "aria-label": `Select ${data.id}` } }}
-        checked={data.checked}
-        isSelectable={viewConfiguration.isSelectable}
-        onChange={viewConfiguration.onSelection}
-        actions={viewConfiguration.actions}
-        maxVisibleActions={viewConfiguration.maxVisibleActions}
-        actionsCallback={viewConfiguration.actionsCallback}
-      />
-    );
-  };
-
-  // ----------------------- ListView Render -----------------------------
-
-  const Row = ({ classes, status, value, id }) => {
-    const { Icon } = status;
-
-    return (
-      <HvListViewRow
-        id={id}
-        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
-        checked={value.checked}
-      >
-        <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon className={classes.icon} semantic={status.sema} />
-        </HvListViewCell>
-
-        <HvListViewCell id={`description${id}`} key={`description${id}`}>
-          <div style={{ display: "inline-flex" }}>
-            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="normalText">
-              {value.event.timestamp}
-            </HvTypography>
-            <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
-              {value.event.schedule}
-            </HvTypography>
-          </div>
-        </HvListViewCell>
-
-        <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
-        </HvListViewCell>
-      </HvListViewRow>
-    );
-  };
-
-  const stylesRow = theme => ({
-    timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+      marginRight: `${theme.hv.spacing.xs}px`
+    },
+    timestamp2: {
+      padding: theme.spacing(0, "xs")
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
-      marginTop: "2px"
+      marginRight: `${theme.hv.spacing.xs}px`
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
     }
-  });
+  }));
 
-  const StyledRow = withStyles(stylesRow)(Row);
+  const classes = useStyles();
 
-  const rowRenderer = (value, index) => (
-    <StyledRow
-      status={getStatus(value.status)}
-      value={value}
-      id={value.id}
-      key={value.id + index}
-    />
-  );
+  // Card Renderer
+  const cardRenderer = (data, viewConfiguration) => {
+    const { Icon, sema } = getStatus(data.status);
+
+    return (
+      <HvCard
+        bgcolor="atmo1"
+        semantic={sema}
+        icon={<Icon semantic={sema} />}
+        selectable={viewConfiguration.isSelectable}
+        selected={data.checked}
+      >
+        <HvCardHeader title={data.headerTitle} />
+        <HvCardContent>
+          <HvGrid container className={classes.container}>
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvTypography className={classes.timestamp}>{data.event.timestamp}</HvTypography>
+                <HvTypography>{data.event.schedule}</HvTypography>
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvKpi labels={{ title: "Probability", indicator: `${data.probability}%` }} />
+                <HvKpi labels={{ title: "Time horizon", indicator: `${data.timeHorizon}h` }} />
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+              <HvTypography variant="highlightText">Related assets</HvTypography>
+              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+            </HvGrid>
+          </HvGrid>
+        </HvCardContent>
+        <HvActionContainer aria-label="Leaf">
+          {viewConfiguration.isSelectable && (
+            <HvCheckBox
+              checked={data.checked}
+              onChange={viewConfiguration.onSelection}
+              value={data.id}
+              inputProps={{ "aria-label": `Select ${data.id}` }}
+            />
+          )}
+          <div style={{ flex: 1 }} />
+          <HvActionsGeneric
+            actions={viewConfiguration.actions}
+            maxVisibleActions={viewConfiguration.maxVisibleActions}
+            actionsCallback={viewConfiguration.actionsCallback}
+          />
+        </HvActionContainer>
+      </HvCard>
+    );
+  };
+
+  // ListRow renderer
+  const rowRenderer = value => {
+    const status = getStatus(value.status);
+    const { Icon } = status;
+    const { id } = value;
+
+    return (
+      <HvListViewRow
+        id={id}
+        key={`row${id}`}
+        checked={value.checked}
+        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
+      >
+        <HvListViewCell semantic={status.sema}>
+          <Icon semantic={status.sema} className={classes.icon} />
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <div style={{ display: "inline-flex" }}>
+            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
+            <HvTypography className={classes.timestamp2}>{value.event.timestamp}</HvTypography>
+            <div className={classes.columnSplitter} />
+            <HvTypography>{value.event.schedule}</HvTypography>
+          </div>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.probability}%`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{value.relatedAssets}</HvTypography>
+        </HvListViewCell>
+      </HvListViewRow>
+    );
+  };
 
   // ----------------------- Configuration ------------------------------
 
@@ -1199,14 +1096,12 @@ export const ServerSidePagination = () => {
         searchString={searchString}
         searchProps={{ ariaLabel: "Filters data by title, probability and time horizon." }}
         multibuttonProps={[
-          { id: "card", "aria-label": "Select card view" },
-          { id: "list", "aria-label": "Select list view" }
+          { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+          { id: "list-button", icon: <List />, "aria-label": "Select list view" }
         ]}
-        sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
       >
         <HvCardView
           id="card"
-          icon={<Cards />}
           renderer={cardRenderer}
           viewConfiguration={{
             breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }
@@ -1214,7 +1109,6 @@ export const ServerSidePagination = () => {
         />
         <HvListView
           id="list"
-          icon={<List />}
           renderer={rowRenderer}
           viewConfiguration={{
             columnConfiguration: [
@@ -1244,29 +1138,8 @@ ServerSidePagination.story = {
 };
 
 export const Accessibility = () => {
-  const getStatus = statusNumber => {
-    switch (statusNumber) {
-      case 1:
-        return { Icon: Level1, sema: "sema10" };
-      case 2:
-        return { Icon: Level2Average, sema: "sema11" };
-      case 3:
-        return { Icon: Level3Bad, sema: "sema12" };
-      case 4:
-        return { Icon: Level4, sema: "sema13" };
-      case 5:
-        return { Icon: Level5, sema: "sema14" };
-      default:
-        return { Icon: null, sema: "sema1" };
-    }
-  };
-
-  // Card Renderer
-
-  const kpiStyles = theme => ({
-    content: {
-      padding: `0 ${theme.hv.spacing.sm}px 0 ${theme.hv.spacing.sm}px`
-    },
+  // Styles
+  const useStyles = makeStyles(theme => ({
     item: {
       padding: `0 0 ${theme.hv.spacing.sm}px 0`
     },
@@ -1280,123 +1153,120 @@ export const Accessibility = () => {
     },
     timestamp: {
       paddingRight: `${theme.hv.spacing.xs}px`,
-      marginRight: "10px",
-      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`
-    }
-  });
-
-  const CardContent = ({ classes, values }) => (
-    <HvGrid container className={classes.container}>
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvTypography className={classes.timestamp} variant="normalText">
-            {values.event.timestamp}
-          </HvTypography>
-          <HvTypography variant="normalText">{values.event.schedule}</HvTypography>
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
-        <div className={classes.kpis}>
-          <HvKpi labels={{ title: "Probability", indicator: `${values.probability}%` }} />
-          <HvKpi labels={{ title: "Time horizon", indicator: `${values.timeHorizon}h` }} />
-        </div>
-      </HvGrid>
-
-      <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
-        <HvTypography variant="highlightText">Related assets</HvTypography>
-        <HvTypography variant="normalText" className={classes.text}>
-          {values.relatedAssets}
-        </HvTypography>
-      </HvGrid>
-    </HvGrid>
-  );
-
-  const StyledCardContent = withStyles(kpiStyles)(CardContent);
-
-  const cardRenderer = (data, viewConfiguration) => {
-    const { Icon, sema } = getStatus(data.status);
-    const StyledIcon = <Icon semantic={sema} />;
-
-    return (
-      <HvCard
-        icon={StyledIcon}
-        headerTitle={data.headerTitle}
-        innerCardContent={<StyledCardContent values={data} icon={StyledIcon} />}
-        semantic={sema}
-        checkboxProps={{ value: data.id, inputProps: { "aria-label": `Select ${data.id}` } }}
-        onChange={viewConfiguration.onSelection}
-        isSelectable={viewConfiguration.isSelectable}
-        actions={viewConfiguration.actions}
-        maxVisibleActions={viewConfiguration.maxVisibleActions}
-        actionsCallback={viewConfiguration.actionsCallback}
-      />
-    );
-  };
-
-  // ListView renderer
-
-  const Row = ({ classes, status, value, id }) => {
-    const { Icon } = status;
-
-    return (
-      <HvListViewRow
-        id={id}
-        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
-      >
-        <HvListViewCell semantic={status.sema} id={`icon${id}`} key={`icon${id}`}>
-          <Icon semantic={status.sema} className={classes.icon} />
-        </HvListViewCell>
-
-        <HvListViewCell id={`description-${id}`} key={`description${id}`}>
-          <div style={{ display: "inline-flex" }}>
-            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
-            <HvTypography className={classes.timestamp} variant="normalText">
-              {value.event.timestamp}
-            </HvTypography>
-            <div className={classes.columnSplitter} />
-            <HvTypography style={{ paddingTop: "2px" }} variant="normalText">
-              {value.event.schedule}
-            </HvTypography>
-          </div>
-        </HvListViewCell>
-
-        <HvListViewCell id={`probability-${id}`} key={`probability${id}`}>
-          <HvTypography variant="normalText">{`${value.probability}%`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`timeHorizon-${id}`} key={`timeHorizon${id}`}>
-          <HvTypography variant="normalText">{`${value.timeHorizon}h`}</HvTypography>
-        </HvListViewCell>
-
-        <HvListViewCell id={`relatedAssets-${id}`} key={`relatedAssets${id}`}>
-          <HvTypography variant="normalText">{value.relatedAssets}</HvTypography>
-        </HvListViewCell>
-      </HvListViewRow>
-    );
-  };
-
-  const stylesRow = theme => ({
-    timestamp: {
-      padding: `2px ${theme.hv.spacing.xs}px 0 ${theme.hv.spacing.xs}px`
+      borderRight: `solid 1px ${theme.hv.palette.accent.acce1}`,
+      marginRight: `${theme.hv.spacing.xs}px`
+    },
+    timestamp2: {
+      padding: theme.spacing(0, "xs")
     },
     columnSplitter: {
       background: theme.hv.palette.accent.acce1,
       width: "1px",
       height: "16px",
-      marginRight: `${theme.hv.spacing.xs}px`,
-      marginTop: "2px"
+      marginRight: `${theme.hv.spacing.xs}px`
     },
     icon: {
       margin: `0 ${theme.hv.spacing.xs}px`
     }
-  });
+  }));
 
-  const StyledRow = withStyles(stylesRow)(Row);
+  const classes = useStyles();
 
-  const rowRenderer = value => (
-    <StyledRow status={getStatus(value.status)} value={value} id={value.id} key={value.id} />
-  );
+  // Card Renderer
+  const cardRenderer = (data, viewConfiguration) => {
+    const { Icon, sema } = getStatus(data.status);
+
+    return (
+      <HvCard
+        bgcolor="atmo1"
+        semantic={sema}
+        icon={<Icon semantic={sema} />}
+        selectable={viewConfiguration.isSelectable}
+        selected={data.checked}
+      >
+        <HvCardHeader title={data.headerTitle} />
+        <HvCardContent>
+          <HvGrid container className={classes.container}>
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvTypography className={classes.timestamp}>{data.event.timestamp}</HvTypography>
+                <HvTypography>{data.event.schedule}</HvTypography>
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12}>
+              <div className={classes.kpis}>
+                <HvKpi labels={{ title: "Probability", indicator: `${data.probability}%` }} />
+                <HvKpi labels={{ title: "Time horizon", indicator: `${data.timeHorizon}h` }} />
+              </div>
+            </HvGrid>
+
+            <HvGrid item xs={4} sm={8} md={12} lg={12} xl={12} className={classes.item}>
+              <HvTypography variant="highlightText">Related assets</HvTypography>
+              <HvTypography className={classes.text}>{data.relatedAssets}</HvTypography>
+            </HvGrid>
+          </HvGrid>
+        </HvCardContent>
+        <HvActionContainer aria-label="Leaf">
+          {viewConfiguration.isSelectable && (
+            <HvCheckBox
+              checked={data.checked}
+              onChange={viewConfiguration.onSelection}
+              value={data.id}
+              inputProps={{ "aria-label": `Select ${data.id}` }}
+            />
+          )}
+          <div style={{ flex: 1 }} />
+          <HvActionsGeneric
+            actions={viewConfiguration.actions}
+            maxVisibleActions={viewConfiguration.maxVisibleActions}
+            actionsCallback={viewConfiguration.actionsCallback}
+          />
+        </HvActionContainer>
+      </HvCard>
+    );
+  };
+
+  // ListRow renderer
+  const rowRenderer = value => {
+    const status = getStatus(value.status);
+    const { Icon } = status;
+    const { id } = value;
+
+    return (
+      <HvListViewRow
+        id={id}
+        key={`row${id}`}
+        checked={value.checked}
+        checkboxProps={{ value: value.id, inputProps: { "aria-label": `Select ${id}` } }}
+      >
+        <HvListViewCell semantic={status.sema}>
+          <Icon semantic={status.sema} className={classes.icon} />
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <div style={{ display: "inline-flex" }}>
+            <HvTypography variant="highlightText">{value.event.description}</HvTypography>
+            <HvTypography className={classes.timestamp2}>{value.event.timestamp}</HvTypography>
+            <div className={classes.columnSplitter} />
+            <HvTypography>{value.event.schedule}</HvTypography>
+          </div>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.probability}%`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{`${value.timeHorizon}h`}</HvTypography>
+        </HvListViewCell>
+
+        <HvListViewCell>
+          <HvTypography>{value.relatedAssets}</HvTypography>
+        </HvListViewCell>
+      </HvListViewRow>
+    );
+  };
 
   // Asset Inventory configuration
 
@@ -1515,13 +1385,12 @@ export const Accessibility = () => {
       }
       searchProps={{ ariaLabel: "Filters data" }}
       multibuttonProps={[
-        { id: "card", "aria-label": "Select card view", title: "Card view" },
-        { id: "list", "aria-label": "Select list view", title: "List view" }
+        { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
+        { id: "list-button", icon: <List />, "aria-label": "Select list view" }
       ]}
-      sortProps={{ labels: { select: "Newest first", title: "Sort by" } }}
     >
-      <HvCardView id="card" icon={<Cards />} renderer={cardRenderer} />
-      <HvListView id="list" icon={<List />} renderer={rowRenderer} />
+      <HvCardView id="card" renderer={cardRenderer} />
+      <HvListView id="list" renderer={rowRenderer} />
     </HvAssetInventory>
   );
 };
