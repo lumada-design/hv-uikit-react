@@ -22,7 +22,7 @@ export type Semantic =
   | "sema18"
   | "sema19";
 
-export type IconSize = "XS" | "S" | "M" | "L" | "XL";
+export type IconSize = "XS" | "S" | "M" | "L";
 
 export interface HvIconBaseProps
   extends StandardProps<React.HTMLAttributes<HTMLDivElement>, HvIconBaseClassKey, "color"> {
@@ -30,7 +30,7 @@ export interface HvIconBaseProps
    * An array of strings representing the colors to override in the icon.
    * Each element inside the array will override a diferent color.
    */
-  color?: string[];
+  color?: string | string[];
 
   /**
    * A string that will override the viewbox of the svg
@@ -63,11 +63,11 @@ export interface HvIconBaseProps
   inverted?: boolean;
 
   /**
-   * Styles applied to the box around the svg.
+   * Props passed down to the svg element.
    */
-  boxStyles?: any;
+  svgProps?: any;
 }
 
-export type HvIconBaseClassKey = "root" | "rootXs" | "rootS" | "rootM" | "rootL";
+export type HvIconBaseClassKey = "root" | "xs" | "s" | "m" | "l";
 
 export default function HvIconBase(props: HvIconBaseProps): JSX.Element | null;
