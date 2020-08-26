@@ -1,5 +1,6 @@
 module.exports = {
-  // showLogs: true,
+  showLogs: true,
+  batchName: '[debug] - grid issue',
   matchLevel: "Strict",
   puppeteerOptions: { args: ["--no-sandbox", "--disable-setuid-sandbox"], ignoreHTTPSErrors: true },
   runInDocker: true,
@@ -23,9 +24,6 @@ module.exports = {
   ],
   //asset inventory stories excluded due inconsistent view port (applitools ticket 34169)
   include: ({ name, kind, parameters }) =>
-    (kind.includes("Components") && !kind.includes("Components/Asset Inventory")) ||
-    (kind.includes("Visualizations") &&
-      !kind.includes("Visualizations/Bar Chart") &&
-      !kind.includes("Visualizations/Line Chart")),
+    (kind.includes("Components/Asset Inventory")),
   concurrency: 10
 };
