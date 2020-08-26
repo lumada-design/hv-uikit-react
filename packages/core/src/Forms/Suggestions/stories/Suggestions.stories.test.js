@@ -1,8 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { Main } from "./Suggestions.stories";
@@ -32,11 +27,6 @@ export const ListSuggestionsOnTyping = () => Main();
 
 ListSuggestionsOnTyping.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.type(screen.getByRole("textbox", { name: /select country/i }), "P");
-        return wait(() => screen.getByText("Portugal"));
-      }
-    }
+    eyes: {}
   }
 };

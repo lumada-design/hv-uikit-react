@@ -1,6 +1,4 @@
 /* eslint-disable no-console, react/prop-types */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
 
 import {
   Cards,
@@ -15,8 +13,6 @@ import {
   Upload
 } from "@hv/uikit-react-icons/dist";
 import { withStyles } from "@material-ui/core";
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import {
@@ -338,12 +334,7 @@ export const NoDataFound = () => Main();
 
 NoDataFound.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.type(screen.getByRole("textbox", { name: /filters the data/i }), "João");
-        return wait(() => screen.getByText("No data found"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -352,12 +343,7 @@ export const ComboOpened = () => Main();
 
 ComboOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("Newest first"));
-        return wait(() => screen.getByText("TimeHorizon descending"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -366,15 +352,6 @@ export const listMix = () => Main();
 
 listMix.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /select list view/i }));
-        userEvent.click(screen.getByRole("checkbox", { name: /select id_2/i }));
-        userEvent.click(screen.getByRole("checkbox", { name: /select id_3/i }));
-        userEvent.click(screen.getByRole("checkbox", { name: /select id_5/i }));
-        userEvent.click(screen.getAllByRole("button", { name: /dropdown menu/i })[1]);
-        return wait(() => screen.getByText("Delete"));
-      }
-    }
+    eyes: {}
   }
 };

@@ -16,8 +16,9 @@ module.exports = {
   stories: [
     "../doc/**/*.stories.@(js|mdx)",
     "../packages/core/src/**/*.stories.@(js|mdx)",
-    // remove while there is no way to include @testing-library in storybook without breaking IE11
-    //...(!process.env.EXCLUDE_TEST_STORIES ? ["../packages/core/src/**/stories/*.test.@(js|mdx)"] : []),
+    ...(!process.env.EXCLUDE_TEST_STORIES
+      ? ["../packages/core/src/**/stories/*.test.@(js|mdx)"]
+      : []),
     "../packages/lab/src/**/*.stories.js"
   ],
   addons: [

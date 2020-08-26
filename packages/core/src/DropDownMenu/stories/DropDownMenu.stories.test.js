@@ -1,9 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { HvButton, HvDropDownMenu } from "../..";
@@ -78,12 +73,7 @@ export const IconsOpened = () => WithIconsAndActions();
 
 IconsOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /dropdownmenu-3/i }));
-        return wait(() => screen.getByText("Label 3"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -92,11 +82,6 @@ export const DisabledItemsOpened = () => DisabledItems();
 
 DisabledItemsOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /dropdownmenu-disableditems/i }));
-        return wait(() => screen.getByText("Label 3"));
-      }
-    }
+    eyes: {}
   }
 };

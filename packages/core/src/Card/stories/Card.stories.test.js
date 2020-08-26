@@ -1,9 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable import/no-unresolved */
-
-/* eslint-disable import/no-extraneous-dependencies */
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
 
 import { HvCard, HvSwitch, HvTypography } from "../..";
@@ -175,12 +170,6 @@ export const SelectedOpened = () => AllComponents();
 
 SelectedOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("checkbox"));
-        userEvent.click(screen.getByLabelText("Dropdown menu"));
-        return wait(() => screen.getByText("Delete"));
-      }
-    }
+    eyes: {}
   }
 };

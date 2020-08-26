@@ -1,8 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
 
 import { HvBulkActions, HvMultiButton } from "../..";
@@ -75,12 +70,7 @@ export const selected = () => ControlledWithActions();
 
 selected.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("All"));
-        return wait(() => screen.getByText("8 of 8 items"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -89,11 +79,6 @@ export const indeterminate = () => ControlledWithActions();
 
 indeterminate.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByText("Value 3"));
-        return wait(() => screen.getByText("1 of 8 items"));
-      }
-    }
+    eyes: {}
   }
 };

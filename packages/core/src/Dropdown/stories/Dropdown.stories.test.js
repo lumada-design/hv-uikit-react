@@ -1,9 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
-
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
@@ -34,12 +28,7 @@ export const EmptyOpened = () => Empty();
 
 EmptyOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /select\.\.\./i }));
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -48,12 +37,7 @@ export const singleOpened = () => SingleSelection();
 
 singleOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /select\.\.\./i }));
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -62,12 +46,7 @@ export const MultipleOpened = () => MultiSelection();
 
 MultipleOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /value 2/i }));
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -76,12 +55,7 @@ export const NoSearchOpened = () => MultiSelectionNoSearch();
 
 NoSearchOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /value 1/i }));
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -90,12 +64,7 @@ export const SingleNoDefaultOpened = () => SingleSelectionNoDefault();
 
 SingleNoDefaultOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /select\.\.\./i }));
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -104,12 +73,7 @@ export const DifferentSizeAndPlacementsLeftOpened = () => DifferentSizeAndPlacem
 
 DifferentSizeAndPlacementsLeftOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getAllByRole("textbox", { name: /all/i })[0]);
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -118,11 +82,6 @@ export const DifferentSizeAndPlacementsRightOpened = () => DifferentSizeAndPlace
 
 DifferentSizeAndPlacementsRightOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getAllByRole("textbox", { name: /all/i })[1]);
-        return wait(() => screen.getByRole("tooltip"));
-      }
-    }
+    eyes: {}
   }
 };

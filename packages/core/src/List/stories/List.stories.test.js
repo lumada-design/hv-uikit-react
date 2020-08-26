@@ -1,10 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { HvList } from "../..";
@@ -107,12 +102,6 @@ export const IconsOpened = () => MultiSelectionWithSelectAll();
 
 IconsOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("checkbox", { name: /bergen city/i }));
-        userEvent.click(screen.getByText("Boston of the Seven Seas"));
-        return wait(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
-      }
-    }
+    eyes: {}
   }
 };

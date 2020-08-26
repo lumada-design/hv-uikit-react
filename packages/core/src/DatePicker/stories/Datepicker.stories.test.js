@@ -1,8 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { DefaultValue, RangeWithValues } from "./Datepicker.stories";
@@ -26,12 +21,7 @@ export const DefaultValueOpened = () => DefaultValue();
 
 DefaultValueOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /date input/i }));
-        return wait(() => screen.getByText("January"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -40,13 +30,7 @@ export const DatepickerMonths = () => DefaultValue();
 
 DatepickerMonths.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /date input/i }));
-        userEvent.click(screen.getByText("January"));
-        return wait(() => screen.getByText("Dec"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -55,12 +39,7 @@ export const RangeValuesOpened = () => RangeWithValues();
 
 RangeValuesOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /date input/i }));
-        return wait(() => screen.getByText("June"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -69,13 +48,6 @@ export const RangeMonthsOpened = () => RangeWithValues();
 
 RangeMonthsOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("textbox", { name: /date input/i }));
-        userEvent.click(screen.getAllByText("June")[0]);
-        userEvent.click(screen.getAllByText("June")[0]);
-        return wait(() => screen.getAllByText("Dec")[1]);
-      }
-    }
+    eyes: {}
   }
 };

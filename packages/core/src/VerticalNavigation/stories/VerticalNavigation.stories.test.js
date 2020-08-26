@@ -1,9 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
-
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
@@ -27,12 +21,7 @@ export const CollapsableOpened = () => Collapsable();
 
 CollapsableOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /open/i }));
-        return wait(() => screen.getAllByRole("list")[0]);
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -41,11 +30,6 @@ export const CollapseOnExitOpened = () => CollapseOnExit();
 
 CollapseOnExitOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /open/i }));
-        return wait(() => screen.getByRole("navigation", { name: /example 2 navigation/i }));
-      }
-    }
+    eyes: {}
   }
 };

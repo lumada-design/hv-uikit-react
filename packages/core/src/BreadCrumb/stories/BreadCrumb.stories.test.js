@@ -1,8 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/no-unresolved */
-
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
@@ -26,12 +21,7 @@ export const LimitedToTwoPathsOpened = () => LimitedToTwoPaths();
 
 LimitedToTwoPathsOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button"));
-        return wait(() => screen.getByText("Label 7"));
-      }
-    }
+    eyes: {}
   }
 };
 
@@ -40,11 +30,6 @@ export const WithURLLimitedOpened = () => WithURLLimited();
 
 WithURLLimitedOpened.story = {
   parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button"));
-        return wait(() => screen.getByText("DesignSystem"));
-      }
-    }
+    eyes: {}
   }
 };
