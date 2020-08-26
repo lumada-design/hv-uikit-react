@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StandardProps } from "@material-ui/core";
-import { HvTypographyProps } from "../../Typography";
+import { HvTypographyProps } from "../..";
 
 export interface Payload {
   /**
@@ -31,7 +31,7 @@ export interface HvUserPreferenceActionProps
   onClick: (event: Event, payload: Payload) => void;
 }
 
-export type HvUserPreferenceActionClassKey = "action" | "noIcon";
+export type HvUserPreferenceActionClassKey = "root";
 
 export default function HvUserPreferencesAction(
   props: HvUserPreferenceActionProps
