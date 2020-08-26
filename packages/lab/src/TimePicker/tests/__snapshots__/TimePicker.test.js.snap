@@ -127,43 +127,53 @@ exports[`TimePicker should render correctly 1`] = `
             type="text"
             value="mockGetFormattedTime"
           />
-          <WithStyles(Time)
+          <Time
             className="HvTimePicker-icon"
             onClick={[Function]}
           >
-            <Time
+            <WithStyles(HvIconBase)
               className="HvTimePicker-icon"
-              classes={
-                Object {
-                  "root": "HvIconTime-root",
-                  "rootL": "HvIconTime-rootL",
-                  "rootM": "HvIconTime-rootM",
-                  "rootS": "HvIconTime-rootS",
-                  "rootXs": "HvIconTime-rootXs",
-                }
-              }
+              iconSize="S"
+              name="Time"
               onClick={[Function]}
             >
-              <div
-                className="HvTimePicker-icon HvIconTime-root HvIconTime-rootS"
+              <HvIconBase
+                className="HvTimePicker-icon"
+                classes={
+                  Object {
+                    "l": "HvIconBase-l",
+                    "m": "HvIconBase-m",
+                    "root": "HvIconBase-root",
+                    "s": "HvIconBase-s",
+                    "xs": "HvIconBase-xs",
+                  }
+                }
+                iconSize="S"
+                name="Time"
                 onClick={[Function]}
               >
-                <svg
-                  focusable={false}
-                  height="16px"
-                  viewBox="0 0 16 16"
-                  width="16px"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="HvTimePicker-icon HvIconBase-root HvIconBase-s"
+                  name="Time"
+                  onClick={[Function]}
                 >
-                  <path
-                    className="color0"
-                    d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8zm2.646-4.646L7.5 8.207V3h1v4.793l2.854 2.854z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </Time>
-          </WithStyles(Time)>
+                  <svg
+                    focusable={false}
+                    height={16}
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      className="color0"
+                      d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8zm2.646-4.646L7.5 8.207V3h1v4.793l2.854 2.854z"
+                      fill="#414141"
+                    />
+                  </svg>
+                </div>
+              </HvIconBase>
+            </WithStyles(HvIconBase)>
+          </Time>
         </div>
         <ForwardRef(Popper)
           anchorEl={null}

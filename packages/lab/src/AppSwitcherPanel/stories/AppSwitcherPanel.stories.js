@@ -15,11 +15,6 @@ export default {
 };
 
 export const Main = () => {
-  const boxStyles = {
-    width: 32,
-    height: 32
-  };
-
   const handlesActionSelectedCallback = application => {
     return window.location.href.startsWith(application.url);
   };
@@ -60,7 +55,7 @@ export const Main = () => {
     },
     {
       name: "UI-KIT GitHub (New Tab)",
-      iconElement: <Tool boxStyles={boxStyles} />,
+      iconElement: <Tool />,
       description: "This is the UI-KIT repository on Github",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_blank"
@@ -68,7 +63,7 @@ export const Main = () => {
     {
       name:
         "App with a bigger name than the other just to showcase the truncation on the AppSwitcherPanel",
-      iconElement: <Tool boxStyles={boxStyles} />,
+      iconElement: <Tool />,
       description: "App 1 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -97,11 +92,6 @@ export const Main = () => {
 
 // Sample 2 - Simple example with footer
 export const sample2 = () => {
-  const boxStyles = {
-    width: 32,
-    height: 32
-  };
-
   const handlesActionSelectedCallback = application => {
     return window.location.href.startsWith(application.url);
   };
@@ -117,7 +107,7 @@ export const sample2 = () => {
     },
     {
       name: "UI-KIT GitHub (New Tab)",
-      iconElement: <Tool boxStyles={boxStyles} />,
+      iconElement: <Tool />,
       description: "This is the UI-KIT repository on Github",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_blank"
@@ -197,11 +187,6 @@ sample3.parameters = {
 
 // Sample 4 - Example with a custom header
 export const sample4 = () => {
-  const boxStyles = {
-    width: 32,
-    height: 32
-  };
-
   const handlesActionSelectedCallback = application => {
     return window.location.href.startsWith(application.url);
   };
@@ -217,7 +202,7 @@ export const sample4 = () => {
     },
     {
       name: "UI-KIT GitHub (New Tab)",
-      iconElement: <Tool boxStyles={boxStyles} />,
+      iconElement: <Tool />,
       description: "This is the UI-KIT repository on Github",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_blank"
@@ -254,11 +239,6 @@ sample4.parameters = {
 
 // Sample 5 - Using icon components mixed with url icons
 export const sample5 = () => {
-  const boxStyles = {
-    width: 32,
-    height: 32
-  };
-
   const handlesActionSelectedCallback = application => {
     return window.location.href.startsWith(application.url);
   };
@@ -266,7 +246,7 @@ export const sample5 = () => {
   const applicationsList = [
     {
       name: "App 1 - Icon Tool",
-      iconElement: <Tool boxStyles={boxStyles} />,
+      iconElement: <Tool />,
       description: "App 1 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -280,7 +260,7 @@ export const sample5 = () => {
     },
     {
       name: "App 3 - Icon PingPong",
-      iconElement: <PingPong boxStyles={boxStyles} />,
+      iconElement: <PingPong />,
       description: "App 3 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -293,7 +273,7 @@ export const sample5 = () => {
     },
     {
       name: "App 5 - Icon GameController",
-      iconElement: <GameController boxStyles={boxStyles} />,
+      iconElement: <GameController />,
       description: "App 5 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -307,14 +287,14 @@ export const sample5 = () => {
     },
     {
       name: "App 7 - Icon Champion",
-      iconElement: <Champion boxStyles={boxStyles} />,
+      iconElement: <Champion />,
       description: "App 7 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
     },
     {
       name: "ýö ! ' º~ %&#%ç e 合気道",
-      iconElement: <Champion boxStyles={boxStyles} />,
+      iconElement: <Champion />,
       description: "App 8 Special characters",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -340,11 +320,6 @@ sample5.parameters = {
 
 // Sample 6 - Alerts on which menu was clicked
 export const sample6 = () => {
-  const boxStyles = {
-    width: 32,
-    height: 32
-  };
-
   const handleActionClicked = (event, application) => {
     event.preventDefault();
 
@@ -354,7 +329,7 @@ export const sample6 = () => {
   const applicationsList = [
     {
       name: "App 1 - Icon Tool",
-      iconElement: <Tool boxStyles={boxStyles} />,
+      iconElement: <Tool />,
       description: "App 1 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -368,7 +343,7 @@ export const sample6 = () => {
     },
     {
       name: "App 3 - Icon PingPong",
-      iconElement: <PingPong boxStyles={boxStyles} />,
+      iconElement: <PingPong />,
       description: "App 3 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -381,7 +356,7 @@ export const sample6 = () => {
     },
     {
       name: "App 5 - Icon GameController",
-      iconElement: <GameController boxStyles={boxStyles} />,
+      iconElement: <GameController />,
       description: "App 5 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
@@ -395,14 +370,14 @@ export const sample6 = () => {
     },
     {
       name: "App 7 - Icon Champion",
-      iconElement: <Champion boxStyles={boxStyles} />,
+      iconElement: <Champion />,
       description: "App 7 description",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"
     },
     {
       name: "ýö ! ' º~ %&#%ç e 合気道",
-      iconElement: <Champion boxStyles={boxStyles} />,
+      iconElement: <Champion />,
       description: "App 8 Special characters",
       url: "https://github.com/lumada-design/hv-uikit-react",
       target: "_top"

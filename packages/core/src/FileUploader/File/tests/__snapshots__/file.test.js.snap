@@ -45,42 +45,50 @@ exports[`[v3] File withStyles - Invalid File should render correctly 1`] = `
     unit="mb"
   >
     <li>
-      <WithStyles(Success)
+      <Success
         className="HvFileUploaderFile-icon"
         color="sema1"
       >
-        <Success
+        <WithStyles(HvIconBase)
           className="HvFileUploaderFile-icon"
-          classes={
-            Object {
-              "root": "HvIconSuccess-root",
-              "rootL": "HvIconSuccess-rootL",
-              "rootM": "HvIconSuccess-rootM",
-              "rootS": "HvIconSuccess-rootS",
-              "rootXs": "HvIconSuccess-rootXs",
-            }
-          }
-          color="sema1"
+          iconSize="S"
+          name="Success"
         >
-          <div
-            className="HvFileUploaderFile-icon HvIconSuccess-root HvIconSuccess-rootS"
+          <HvIconBase
+            className="HvFileUploaderFile-icon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="S"
+            name="Success"
           >
-            <svg
-              focusable={false}
-              height="16px"
-              viewBox="0 0 16 16"
-              width="16px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvFileUploaderFile-icon HvIconBase-root HvIconBase-s"
+              name="Success"
             >
-              <path
-                className="color0"
-                d="M6.387 12L4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 01-4.943-2.057A7.023 7.023 0 118 15m8-7a8 8 0 10-8 8 8 8 0 008-8z"
-                fill="#59941B"
-              />
-            </svg>
-          </div>
-        </Success>
-      </WithStyles(Success)>
+              <svg
+                focusable={false}
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M6.387 12L4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 01-4.943-2.057A7.023 7.023 0 118 15m8-7a8 8 0 10-8 8 8 8 0 008-8z"
+                  fill="#"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </Success>
       <WithStyles(ForwardRef)
         className="HvFileUploaderFile-nameText"
         variant="highlightText"
@@ -273,40 +281,47 @@ exports[`[v3] File withStyles - Invalid File should render correctly 1`] = `
                 <span
                   className="MuiIconButton-label"
                 >
-                  <WithStyles(Close)
+                  <Close
                     iconSize="XS"
                   >
-                    <Close
-                      classes={
-                        Object {
-                          "root": "HvIconClose-root",
-                          "rootL": "HvIconClose-rootL",
-                          "rootM": "HvIconClose-rootM",
-                          "rootS": "HvIconClose-rootS",
-                          "rootXs": "HvIconClose-rootXs",
-                        }
-                      }
+                    <WithStyles(HvIconBase)
                       iconSize="XS"
+                      name="Close"
                     >
-                      <div
-                        className="HvIconClose-root HvIconClose-rootXs"
+                      <HvIconBase
+                        classes={
+                          Object {
+                            "l": "HvIconBase-l",
+                            "m": "HvIconBase-m",
+                            "root": "HvIconBase-root",
+                            "s": "HvIconBase-s",
+                            "xs": "HvIconBase-xs",
+                          }
+                        }
+                        iconSize="XS"
+                        name="Close"
                       >
-                        <svg
-                          focusable={false}
-                          height="12px"
-                          viewBox="0 0 16 16"
-                          width="12px"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="HvIconBase-root HvIconBase-xs"
+                          name="Close"
                         >
-                          <path
-                            className="color0"
-                            d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                    </Close>
-                  </WithStyles(Close)>
+                          <svg
+                            focusable={false}
+                            height={12}
+                            viewBox="0 0 16 16"
+                            width={12}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              className="color0"
+                              d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                              fill="#414141"
+                            />
+                          </svg>
+                        </div>
+                      </HvIconBase>
+                    </WithStyles(HvIconBase)>
+                  </Close>
                 </span>
               </button>
             </ForwardRef(ButtonBase)>
@@ -363,42 +378,50 @@ exports[`[v3] File withStyles - Valid File should render correctly 1`] = `
     unit="mb"
   >
     <li>
-      <WithStyles(Success)
+      <Success
         className="HvFileUploaderFile-icon"
         color="sema1"
       >
-        <Success
+        <WithStyles(HvIconBase)
           className="HvFileUploaderFile-icon"
-          classes={
-            Object {
-              "root": "HvIconSuccess-root",
-              "rootL": "HvIconSuccess-rootL",
-              "rootM": "HvIconSuccess-rootM",
-              "rootS": "HvIconSuccess-rootS",
-              "rootXs": "HvIconSuccess-rootXs",
-            }
-          }
-          color="sema1"
+          iconSize="S"
+          name="Success"
         >
-          <div
-            className="HvFileUploaderFile-icon HvIconSuccess-root HvIconSuccess-rootS"
+          <HvIconBase
+            className="HvFileUploaderFile-icon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="S"
+            name="Success"
           >
-            <svg
-              focusable={false}
-              height="16px"
-              viewBox="0 0 16 16"
-              width="16px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvFileUploaderFile-icon HvIconBase-root HvIconBase-s"
+              name="Success"
             >
-              <path
-                className="color0"
-                d="M6.387 12L4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 01-4.943-2.057A7.023 7.023 0 118 15m8-7a8 8 0 10-8 8 8 8 0 008-8z"
-                fill="#59941B"
-              />
-            </svg>
-          </div>
-        </Success>
-      </WithStyles(Success)>
+              <svg
+                focusable={false}
+                height={16}
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M6.387 12L4 9.613l.707-.707 1.613 1.613 4.65-5.58.768.641zM8 15a6.953 6.953 0 01-4.943-2.057A7.023 7.023 0 118 15m8-7a8 8 0 10-8 8 8 8 0 008-8z"
+                  fill="#"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </Success>
       <WithStyles(ForwardRef)
         className="HvFileUploaderFile-nameText"
         variant="highlightText"
@@ -591,40 +614,47 @@ exports[`[v3] File withStyles - Valid File should render correctly 1`] = `
                 <span
                   className="MuiIconButton-label"
                 >
-                  <WithStyles(Close)
+                  <Close
                     iconSize="XS"
                   >
-                    <Close
-                      classes={
-                        Object {
-                          "root": "HvIconClose-root",
-                          "rootL": "HvIconClose-rootL",
-                          "rootM": "HvIconClose-rootM",
-                          "rootS": "HvIconClose-rootS",
-                          "rootXs": "HvIconClose-rootXs",
-                        }
-                      }
+                    <WithStyles(HvIconBase)
                       iconSize="XS"
+                      name="Close"
                     >
-                      <div
-                        className="HvIconClose-root HvIconClose-rootXs"
+                      <HvIconBase
+                        classes={
+                          Object {
+                            "l": "HvIconBase-l",
+                            "m": "HvIconBase-m",
+                            "root": "HvIconBase-root",
+                            "s": "HvIconBase-s",
+                            "xs": "HvIconBase-xs",
+                          }
+                        }
+                        iconSize="XS"
+                        name="Close"
                       >
-                        <svg
-                          focusable={false}
-                          height="12px"
-                          viewBox="0 0 16 16"
-                          width="12px"
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="HvIconBase-root HvIconBase-xs"
+                          name="Close"
                         >
-                          <path
-                            className="color0"
-                            d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
-                            fill="#414141"
-                          />
-                        </svg>
-                      </div>
-                    </Close>
-                  </WithStyles(Close)>
+                          <svg
+                            focusable={false}
+                            height={12}
+                            viewBox="0 0 16 16"
+                            width={12}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              className="color0"
+                              d="M8.7 8l5.3 5.3-.7.7L8 8.7 2.7 14l-.7-.7L7.3 8 2 2.7l.7-.7L8 7.3 13.3 2l.7.7z"
+                              fill="#414141"
+                            />
+                          </svg>
+                        </div>
+                      </HvIconBase>
+                    </WithStyles(HvIconBase)>
+                  </Close>
                 </span>
               </button>
             </ForwardRef(ButtonBase)>

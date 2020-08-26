@@ -195,7 +195,7 @@ exports[`[v3] <HvEmptyState /> with String title/message should render correctly
     </ForwardRef(WithStyles)>
   }
   icon={
-    <ForwardRef(WithStyles)
+    <Ghost
       color="acce1"
       iconSize="M"
       role="presentation"
@@ -237,7 +237,7 @@ exports[`[v3] <HvEmptyState /> with String title/message should render correctly
       }
     }
     icon={
-      <ForwardRef(WithStyles)
+      <Ghost
         color="acce1"
         iconSize="M"
         role="presentation"
@@ -261,45 +261,52 @@ exports[`[v3] <HvEmptyState /> with String title/message should render correctly
         <div
           className="HvEmptyState-iconContainer"
         >
-          <WithStyles(Ghost)
+          <Ghost
             color="acce1"
             iconSize="M"
             role="presentation"
           >
-            <Ghost
-              classes={
-                Object {
-                  "root": "HvIconGhost-root",
-                  "rootL": "HvIconGhost-rootL",
-                  "rootM": "HvIconGhost-rootM",
-                  "rootS": "HvIconGhost-rootS",
-                  "rootXs": "HvIconGhost-rootXs",
-                }
-              }
-              color="acce1"
+            <WithStyles(HvIconBase)
               iconSize="M"
+              name="Ghost"
               role="presentation"
             >
-              <div
-                className="HvIconGhost-root HvIconGhost-rootM"
+              <HvIconBase
+                classes={
+                  Object {
+                    "l": "HvIconBase-l",
+                    "m": "HvIconBase-m",
+                    "root": "HvIconBase-root",
+                    "s": "HvIconBase-s",
+                    "xs": "HvIconBase-xs",
+                  }
+                }
+                iconSize="M"
+                name="Ghost"
                 role="presentation"
               >
-                <svg
-                  focusable={false}
-                  height="32px"
-                  viewBox="0 0 16 16"
-                  width="32px"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="HvIconBase-root HvIconBase-m"
+                  name="Ghost"
+                  role="presentation"
                 >
-                  <path
-                    className="color0"
-                    d="M8 1a4.951 4.951 0 00-5 4.90151Q2.99951 5.95075 3 6v7.6l.3-.3.7-.7.7.7L6 14.6l1.3-1.3.7-.7.7.7 1.3 1.3 1.3-1.3.7-.7.7.7.3.3V6a4.951 4.951 0 00-4.90151-5Q8.04924.9995 8 1m0-1a6.018 6.018 0 016 6v10l-2-2-2 2-2-2-2 2-2-2-2 2V6a6.018 6.018 0 016-6zm1 6h2v2H9zM5 6h2v2H5z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </Ghost>
-          </WithStyles(Ghost)>
+                  <svg
+                    focusable={false}
+                    height={32}
+                    viewBox="0 0 16 16"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      className="color0"
+                      d="M8 1a4.951 4.951 0 00-5 4.90151Q2.99951 5.95075 3 6v7.6l.3-.3.7-.7.7.7L6 14.6l1.3-1.3.7-.7.7.7 1.3 1.3 1.3-1.3.7-.7.7.7.3.3V6a4.951 4.951 0 00-4.90151-5Q8.04924.9995 8 1m0-1a6.018 6.018 0 016 6v10l-2-2-2 2-2-2-2 2-2-2-2 2V6a6.018 6.018 0 016-6zm1 6h2v2H9zM5 6h2v2H5z"
+                      fill="#"
+                    />
+                  </svg>
+                </div>
+              </HvIconBase>
+            </WithStyles(HvIconBase)>
+          </Ghost>
         </div>
         <div
           className="HvEmptyState-textContainer"

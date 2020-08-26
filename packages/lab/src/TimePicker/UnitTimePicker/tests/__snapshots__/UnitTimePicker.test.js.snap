@@ -25,43 +25,53 @@ exports[`UnitTimePicker should render correctly 1`] = `
     <div
       className="HvTimePickerUnitTimePicker-unitTimeContainer"
     >
-      <WithStyles(DropUpXS)
+      <DropUpXS
         className="HvTimePickerUnitTimePicker-addIcon"
         onClick={[Function]}
       >
-        <DropUpXS
+        <WithStyles(HvIconBase)
           className="HvTimePickerUnitTimePicker-addIcon"
-          classes={
-            Object {
-              "root": "HvIconDropUpXS-root",
-              "rootL": "HvIconDropUpXS-rootL",
-              "rootM": "HvIconDropUpXS-rootM",
-              "rootS": "HvIconDropUpXS-rootS",
-              "rootXs": "HvIconDropUpXS-rootXs",
-            }
-          }
+          iconSize="XS"
+          name="DropUpXS"
           onClick={[Function]}
         >
-          <div
-            className="HvTimePickerUnitTimePicker-addIcon HvIconDropUpXS-root HvIconDropUpXS-rootXs"
+          <HvIconBase
+            className="HvTimePickerUnitTimePicker-addIcon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="XS"
+            name="DropUpXS"
             onClick={[Function]}
           >
-            <svg
-              focusable={false}
-              height="12px"
-              viewBox="0 0 12 12"
-              width="12px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvTimePickerUnitTimePicker-addIcon HvIconBase-root HvIconBase-xs"
+              name="DropUpXS"
+              onClick={[Function]}
             >
-              <path
-                className="color0"
-                d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </DropUpXS>
-      </WithStyles(DropUpXS)>
+              <svg
+                focusable={false}
+                height={12}
+                viewBox="0 0 12 12"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M10.6 7.95l-.7.7L6 4.75l-3.9 3.9-.7-.7L6 3.35z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </DropUpXS>
       <WithStyles(WithLabels)
         classes={
           Object {
@@ -688,42 +698,50 @@ exports[`UnitTimePicker should render correctly 1`] = `
                           <div
                             className="HvWarningText-root"
                           >
-                            <WithStyles(Fail)
+                            <Fail
                               className="HvWarningText-defaultIcon"
                               semantic="sema4"
                             >
-                              <Fail
+                              <WithStyles(HvIconBase)
                                 className="HvWarningText-defaultIcon"
-                                classes={
-                                  Object {
-                                    "root": "HvIconFail-root",
-                                    "rootL": "HvIconFail-rootL",
-                                    "rootM": "HvIconFail-rootM",
-                                    "rootS": "HvIconFail-rootS",
-                                    "rootXs": "HvIconFail-rootXs",
-                                  }
-                                }
-                                semantic="sema4"
+                                iconSize="S"
+                                name="Fail"
                               >
-                                <div
-                                  className="HvWarningText-defaultIcon HvIconFail-root HvIconFail-rootS"
+                                <HvIconBase
+                                  className="HvWarningText-defaultIcon"
+                                  classes={
+                                    Object {
+                                      "l": "HvIconBase-l",
+                                      "m": "HvIconBase-m",
+                                      "root": "HvIconBase-root",
+                                      "s": "HvIconBase-s",
+                                      "xs": "HvIconBase-xs",
+                                    }
+                                  }
+                                  iconSize="S"
+                                  name="Fail"
                                 >
-                                  <svg
-                                    focusable={false}
-                                    height="16px"
-                                    viewBox="0 0 16 16"
-                                    width="16px"
-                                    xmlns="http://www.w3.org/2000/svg"
+                                  <div
+                                    className="HvWarningText-defaultIcon HvIconBase-root HvIconBase-s"
+                                    name="Fail"
                                   >
-                                    <path
-                                      className="color0"
-                                      d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
-                                      fill="#C62828"
-                                    />
-                                  </svg>
-                                </div>
-                              </Fail>
-                            </WithStyles(Fail)>
+                                    <svg
+                                      focusable={false}
+                                      height={16}
+                                      viewBox="0 0 16 16"
+                                      width={16}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        className="color0"
+                                        d="M7.5 4.001h1v6h-1zm0 8h1v-1h-1zM16 8a8 8 0 10-8 8 8 8 0 008-8zm-1 0a7 7 0 11-7-7 7 7 0 017 7z"
+                                        fill="#C62828"
+                                      />
+                                    </svg>
+                                  </div>
+                                </HvIconBase>
+                              </WithStyles(HvIconBase)>
+                            </Fail>
                             <WithStyles(ForwardRef)
                               aria-atomic="true"
                               aria-live="polite"
@@ -783,43 +801,53 @@ exports[`UnitTimePicker should render correctly 1`] = `
           </WithId>
         </WithLabels>
       </WithStyles(WithLabels)>
-      <WithStyles(DropDownXS)
+      <DropDownXS
         className="HvTimePickerUnitTimePicker-subtractIcon"
         onClick={[Function]}
       >
-        <DropDownXS
+        <WithStyles(HvIconBase)
           className="HvTimePickerUnitTimePicker-subtractIcon"
-          classes={
-            Object {
-              "root": "HvIconDropDownXS-root",
-              "rootL": "HvIconDropDownXS-rootL",
-              "rootM": "HvIconDropDownXS-rootM",
-              "rootS": "HvIconDropDownXS-rootS",
-              "rootXs": "HvIconDropDownXS-rootXs",
-            }
-          }
+          iconSize="XS"
+          name="DropDownXS"
           onClick={[Function]}
         >
-          <div
-            className="HvTimePickerUnitTimePicker-subtractIcon HvIconDropDownXS-root HvIconDropDownXS-rootXs"
+          <HvIconBase
+            className="HvTimePickerUnitTimePicker-subtractIcon"
+            classes={
+              Object {
+                "l": "HvIconBase-l",
+                "m": "HvIconBase-m",
+                "root": "HvIconBase-root",
+                "s": "HvIconBase-s",
+                "xs": "HvIconBase-xs",
+              }
+            }
+            iconSize="XS"
+            name="DropDownXS"
             onClick={[Function]}
           >
-            <svg
-              focusable={false}
-              height="12px"
-              viewBox="0 0 12 12"
-              width="12px"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              className="HvTimePickerUnitTimePicker-subtractIcon HvIconBase-root HvIconBase-xs"
+              name="DropDownXS"
+              onClick={[Function]}
             >
-              <path
-                className="color0"
-                d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
-                fill="#414141"
-              />
-            </svg>
-          </div>
-        </DropDownXS>
-      </WithStyles(DropDownXS)>
+              <svg
+                focusable={false}
+                height={12}
+                viewBox="0 0 12 12"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="color0"
+                  d="M5.99994 8.65L1.4 4.05l.7-.7L6 7.25l3.9-3.9.7.7z"
+                  fill="#414141"
+                />
+              </svg>
+            </div>
+          </HvIconBase>
+        </WithStyles(HvIconBase)>
+      </DropDownXS>
     </div>
   </UnitTimePicker>
 </WithStyles(UnitTimePicker)>

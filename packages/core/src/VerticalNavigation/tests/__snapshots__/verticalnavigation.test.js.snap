@@ -73,13 +73,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                           class="MuiButton-label"
                         >
                           <div
-                            class="HvIconMenu-root HvIconMenu-rootS"
+                            class="HvIconBase-root HvIconBase-s"
+                            name="Menu"
                           >
                             <svg
                               focusable="false"
-                              height="16px"
+                              height="16"
                               viewBox="0 0 16 16"
-                              width="16px"
+                              width="16"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -113,13 +114,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                             class="MuiButton-label"
                           >
                             <div
-                              class="HvIconMenu-root HvIconMenu-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="Menu"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -173,13 +175,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                               class="MuiButton-label"
                             >
                               <div
-                                class="HvIconMenu-root HvIconMenu-rootS"
+                                class="HvIconBase-root HvIconBase-s"
+                                name="Menu"
                               >
                                 <svg
                                   focusable="false"
-                                  height="16px"
+                                  height="16"
                                   viewBox="0 0 16 16"
-                                  width="16px"
+                                  width="16"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -225,13 +228,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                                 class="MuiButton-label"
                               >
                                 <div
-                                  class="HvIconMenu-root HvIconMenu-rootS"
+                                  class="HvIconBase-root HvIconBase-s"
+                                  name="Menu"
                                 >
                                   <svg
                                     focusable="false"
-                                    height="16px"
+                                    height="16"
                                     viewBox="0 0 16 16"
-                                    width="16px"
+                                    width="16"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
@@ -300,13 +304,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                                   class="MuiButton-label"
                                 >
                                   <div
-                                    class="HvIconMenu-root HvIconMenu-rootS"
+                                    class="HvIconBase-root HvIconBase-s"
+                                    name="Menu"
                                   >
                                     <svg
                                       focusable="false"
-                                      height="16px"
+                                      height="16"
                                       viewBox="0 0 16 16"
-                                      width="16px"
+                                      width="16"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
@@ -345,13 +350,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                                     class="MuiButton-label"
                                   >
                                     <div
-                                      class="HvIconMenu-root HvIconMenu-rootS"
+                                      class="HvIconBase-root HvIconBase-s"
+                                      name="Menu"
                                     >
                                       <svg
                                         focusable="false"
-                                        height="16px"
+                                        height="16"
                                         viewBox="0 0 16 16"
-                                        width="16px"
+                                        width="16"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
@@ -405,37 +411,45 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable closed vertical navigation
                               <span
                                 className="MuiButton-label"
                               >
-                                <WithStyles(Menu)>
-                                  <Menu
-                                    classes={
-                                      Object {
-                                        "root": "HvIconMenu-root",
-                                        "rootL": "HvIconMenu-rootL",
-                                        "rootM": "HvIconMenu-rootM",
-                                        "rootS": "HvIconMenu-rootS",
-                                        "rootXs": "HvIconMenu-rootXs",
-                                      }
-                                    }
+                                <Menu>
+                                  <WithStyles(HvIconBase)
+                                    iconSize="S"
+                                    name="Menu"
                                   >
-                                    <div
-                                      className="HvIconMenu-root HvIconMenu-rootS"
+                                    <HvIconBase
+                                      classes={
+                                        Object {
+                                          "l": "HvIconBase-l",
+                                          "m": "HvIconBase-m",
+                                          "root": "HvIconBase-root",
+                                          "s": "HvIconBase-s",
+                                          "xs": "HvIconBase-xs",
+                                        }
+                                      }
+                                      iconSize="S"
+                                      name="Menu"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height="16px"
-                                        viewBox="0 0 16 16"
-                                        width="16px"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        className="HvIconBase-root HvIconBase-s"
+                                        name="Menu"
                                       >
-                                        <path
-                                          className="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </Menu>
-                                </WithStyles(Menu)>
+                                        <svg
+                                          focusable={false}
+                                          height={16}
+                                          viewBox="0 0 16 16"
+                                          width={16}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            className="color0"
+                                            d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </HvIconBase>
+                                  </WithStyles(HvIconBase)>
+                                </Menu>
                               </span>
                             </button>
                           </ForwardRef(ButtonBase)>
@@ -527,13 +541,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                           class="MuiButton-label"
                         >
                           <div
-                            class="HvIconMenu-root HvIconMenu-rootS"
+                            class="HvIconBase-root HvIconBase-s"
+                            name="Menu"
                           >
                             <svg
                               focusable="false"
-                              height="16px"
+                              height="16"
                               viewBox="0 0 16 16"
-                              width="16px"
+                              width="16"
                               xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
@@ -567,13 +582,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                             class="MuiButton-label"
                           >
                             <div
-                              class="HvIconMenu-root HvIconMenu-rootS"
+                              class="HvIconBase-root HvIconBase-s"
+                              name="Menu"
                             >
                               <svg
                                 focusable="false"
-                                height="16px"
+                                height="16"
                                 viewBox="0 0 16 16"
-                                width="16px"
+                                width="16"
                                 xmlns="http://www.w3.org/2000/svg"
                               >
                                 <path
@@ -627,13 +643,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                               class="MuiButton-label"
                             >
                               <div
-                                class="HvIconMenu-root HvIconMenu-rootS"
+                                class="HvIconBase-root HvIconBase-s"
+                                name="Menu"
                               >
                                 <svg
                                   focusable="false"
-                                  height="16px"
+                                  height="16"
                                   viewBox="0 0 16 16"
-                                  width="16px"
+                                  width="16"
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -679,13 +696,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                                 class="MuiButton-label"
                               >
                                 <div
-                                  class="HvIconMenu-root HvIconMenu-rootS"
+                                  class="HvIconBase-root HvIconBase-s"
+                                  name="Menu"
                                 >
                                   <svg
                                     focusable="false"
-                                    height="16px"
+                                    height="16"
                                     viewBox="0 0 16 16"
-                                    width="16px"
+                                    width="16"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
                                     <path
@@ -754,13 +772,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                                   class="MuiButton-label"
                                 >
                                   <div
-                                    class="HvIconMenu-root HvIconMenu-rootS"
+                                    class="HvIconBase-root HvIconBase-s"
+                                    name="Menu"
                                   >
                                     <svg
                                       focusable="false"
-                                      height="16px"
+                                      height="16"
                                       viewBox="0 0 16 16"
-                                      width="16px"
+                                      width="16"
                                       xmlns="http://www.w3.org/2000/svg"
                                     >
                                       <path
@@ -799,13 +818,14 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                                     class="MuiButton-label"
                                   >
                                     <div
-                                      class="HvIconMenu-root HvIconMenu-rootS"
+                                      class="HvIconBase-root HvIconBase-s"
+                                      name="Menu"
                                     >
                                       <svg
                                         focusable="false"
-                                        height="16px"
+                                        height="16"
                                         viewBox="0 0 16 16"
-                                        width="16px"
+                                        width="16"
                                         xmlns="http://www.w3.org/2000/svg"
                                       >
                                         <path
@@ -859,37 +879,45 @@ exports[`[v3] <VerticalNavigation /> [v3] collapsable open vertical navigation s
                               <span
                                 className="MuiButton-label"
                               >
-                                <WithStyles(Menu)>
-                                  <Menu
-                                    classes={
-                                      Object {
-                                        "root": "HvIconMenu-root",
-                                        "rootL": "HvIconMenu-rootL",
-                                        "rootM": "HvIconMenu-rootM",
-                                        "rootS": "HvIconMenu-rootS",
-                                        "rootXs": "HvIconMenu-rootXs",
-                                      }
-                                    }
+                                <Menu>
+                                  <WithStyles(HvIconBase)
+                                    iconSize="S"
+                                    name="Menu"
                                   >
-                                    <div
-                                      className="HvIconMenu-root HvIconMenu-rootS"
+                                    <HvIconBase
+                                      classes={
+                                        Object {
+                                          "l": "HvIconBase-l",
+                                          "m": "HvIconBase-m",
+                                          "root": "HvIconBase-root",
+                                          "s": "HvIconBase-s",
+                                          "xs": "HvIconBase-xs",
+                                        }
+                                      }
+                                      iconSize="S"
+                                      name="Menu"
                                     >
-                                      <svg
-                                        focusable={false}
-                                        height="16px"
-                                        viewBox="0 0 16 16"
-                                        width="16px"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                      <div
+                                        className="HvIconBase-root HvIconBase-s"
+                                        name="Menu"
                                       >
-                                        <path
-                                          className="color0"
-                                          d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
-                                          fill="#414141"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </Menu>
-                                </WithStyles(Menu)>
+                                        <svg
+                                          focusable={false}
+                                          height={16}
+                                          viewBox="0 0 16 16"
+                                          width={16}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            className="color0"
+                                            d="M0 7.4h16v1H0zM0 3h16V2H0zm0 11h16v-1H0z"
+                                            fill="#414141"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </HvIconBase>
+                                  </WithStyles(HvIconBase)>
+                                </Menu>
                               </span>
                             </button>
                           </ForwardRef(ButtonBase)>

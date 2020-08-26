@@ -8,4 +8,4 @@ option5:            list-item-4
 selectedItems:      css:li[aria-selected='true']
 headerItem:         list-select-all
 headerItemLabel:    css:#list-select-all-select
-iconChecked:        css:div[class*='CheckboxCheck']
+iconChecked:        css:div[name='CheckboxCheck']

@@ -256,44 +256,51 @@ exports[`[v3] Dropzone withStyles should render correctly 1`] = `
         <div
           className="HvFileUploaderDropZone-dropArea"
         >
-          <WithStyles(Doc)
+          <Doc
             className="HvFileUploaderDropZone-dropZoneAreaIcon"
             color="acce1"
             iconSize="M"
           >
-            <Doc
+            <WithStyles(HvIconBase)
               className="HvFileUploaderDropZone-dropZoneAreaIcon"
-              classes={
-                Object {
-                  "root": "HvIconDoc-root",
-                  "rootL": "HvIconDoc-rootL",
-                  "rootM": "HvIconDoc-rootM",
-                  "rootS": "HvIconDoc-rootS",
-                  "rootXs": "HvIconDoc-rootXs",
-                }
-              }
-              color="acce1"
               iconSize="M"
+              name="Doc"
             >
-              <div
-                className="HvFileUploaderDropZone-dropZoneAreaIcon HvIconDoc-root HvIconDoc-rootM"
+              <HvIconBase
+                className="HvFileUploaderDropZone-dropZoneAreaIcon"
+                classes={
+                  Object {
+                    "l": "HvIconBase-l",
+                    "m": "HvIconBase-m",
+                    "root": "HvIconBase-root",
+                    "s": "HvIconBase-s",
+                    "xs": "HvIconBase-xs",
+                  }
+                }
+                iconSize="M"
+                name="Doc"
               >
-                <svg
-                  focusable={false}
-                  height="32px"
-                  viewBox="0 0 16 16"
-                  width="32px"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="HvFileUploaderDropZone-dropZoneAreaIcon HvIconBase-root HvIconBase-m"
+                  name="Doc"
                 >
-                  <path
-                    className="color0"
-                    d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-                    fill="#414141"
-                  />
-                </svg>
-              </div>
-            </Doc>
-          </WithStyles(Doc)>
+                  <svg
+                    focusable={false}
+                    height={32}
+                    viewBox="0 0 16 16"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      className="color0"
+                      d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
+                      fill="#"
+                    />
+                  </svg>
+                </div>
+              </HvIconBase>
+            </WithStyles(HvIconBase)>
+          </Doc>
           <div
             className="HvFileUploaderDropZone-dropZoneAreaLabels"
           >
@@ -610,44 +617,51 @@ exports[`[v3] Dropzone withStyles should render correctly when disabled 1`] = `
         <div
           className="HvFileUploaderDropZone-dropArea"
         >
-          <WithStyles(Doc)
+          <Doc
             className="HvFileUploaderDropZone-dropZoneAreaIcon"
             color="atmo4"
             iconSize="M"
           >
-            <Doc
+            <WithStyles(HvIconBase)
               className="HvFileUploaderDropZone-dropZoneAreaIcon"
-              classes={
-                Object {
-                  "root": "HvIconDoc-root",
-                  "rootL": "HvIconDoc-rootL",
-                  "rootM": "HvIconDoc-rootM",
-                  "rootS": "HvIconDoc-rootS",
-                  "rootXs": "HvIconDoc-rootXs",
-                }
-              }
-              color="atmo4"
               iconSize="M"
+              name="Doc"
             >
-              <div
-                className="HvFileUploaderDropZone-dropZoneAreaIcon HvIconDoc-root HvIconDoc-rootM"
+              <HvIconBase
+                className="HvFileUploaderDropZone-dropZoneAreaIcon"
+                classes={
+                  Object {
+                    "l": "HvIconBase-l",
+                    "m": "HvIconBase-m",
+                    "root": "HvIconBase-root",
+                    "s": "HvIconBase-s",
+                    "xs": "HvIconBase-xs",
+                  }
+                }
+                iconSize="M"
+                name="Doc"
               >
-                <svg
-                  focusable={false}
-                  height="32px"
-                  viewBox="0 0 16 16"
-                  width="32px"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  className="HvFileUploaderDropZone-dropZoneAreaIcon HvIconBase-root HvIconBase-m"
+                  name="Doc"
                 >
-                  <path
-                    className="color0"
-                    d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
-                    fill="#CCCED0"
-                  />
-                </svg>
-              </div>
-            </Doc>
-          </WithStyles(Doc)>
+                  <svg
+                    focusable={false}
+                    height={32}
+                    viewBox="0 0 16 16"
+                    width={32}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      className="color0"
+                      d="M9 0H2v16h12V5zm3.6 5H9V1.4zm.4 10H3V1h5v5h5z"
+                      fill="#"
+                    />
+                  </svg>
+                </div>
+              </HvIconBase>
+            </WithStyles(HvIconBase)>
+          </Doc>
           <div
             className="HvFileUploaderDropZone-dropZoneAreaLabels"
           >

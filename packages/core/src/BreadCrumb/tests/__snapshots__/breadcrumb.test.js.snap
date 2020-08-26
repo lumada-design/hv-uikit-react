@@ -229,42 +229,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -389,42 +397,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -549,42 +565,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -709,42 +733,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -869,42 +901,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -1029,42 +1069,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -1189,42 +1237,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>
@@ -1349,42 +1405,50 @@ exports[`Breadcrumb should render correctly 1`] = `
               aria-hidden={true}
               className="HvBreadCrumb-separator"
             >
-              <WithStyles(DropRightXS)
+              <DropRightXS
                 className="HvBreadCrumb-separatorContainer"
                 color="atmo5"
               >
-                <DropRightXS
+                <WithStyles(HvIconBase)
                   className="HvBreadCrumb-separatorContainer"
-                  classes={
-                    Object {
-                      "root": "HvIconDropRightXS-root",
-                      "rootL": "HvIconDropRightXS-rootL",
-                      "rootM": "HvIconDropRightXS-rootM",
-                      "rootS": "HvIconDropRightXS-rootS",
-                      "rootXs": "HvIconDropRightXS-rootXs",
-                    }
-                  }
-                  color="atmo5"
+                  iconSize="XS"
+                  name="DropRightXS"
                 >
-                  <div
-                    className="HvBreadCrumb-separatorContainer HvIconDropRightXS-root HvIconDropRightXS-rootXs"
+                  <HvIconBase
+                    className="HvBreadCrumb-separatorContainer"
+                    classes={
+                      Object {
+                        "l": "HvIconBase-l",
+                        "m": "HvIconBase-m",
+                        "root": "HvIconBase-root",
+                        "s": "HvIconBase-s",
+                        "xs": "HvIconBase-xs",
+                      }
+                    }
+                    iconSize="XS"
+                    name="DropRightXS"
                   >
-                    <svg
-                      focusable={false}
-                      height="12px"
-                      viewBox="0 0 12 12"
-                      width="12px"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div
+                      className="HvBreadCrumb-separatorContainer HvIconBase-root HvIconBase-xs"
+                      name="DropRightXS"
                     >
-                      <path
-                        className="color0"
-                        d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
-                        fill="#999999"
-                      />
-                    </svg>
-                  </div>
-                </DropRightXS>
-              </WithStyles(DropRightXS)>
+                      <svg
+                        focusable={false}
+                        height={12}
+                        viewBox="0 0 12 12"
+                        width={12}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          className="color0"
+                          d="M4.05 10.6l-.7-.7L7.25 6l-3.9-3.9.7-.7L8.65 6z"
+                          fill="#"
+                        />
+                      </svg>
+                    </div>
+                  </HvIconBase>
+                </WithStyles(HvIconBase)>
+              </DropRightXS>
             </div>
           </li>
         </PathElement>

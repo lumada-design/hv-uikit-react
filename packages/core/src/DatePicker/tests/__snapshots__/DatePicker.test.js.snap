@@ -2399,43 +2399,53 @@ exports[`<DatePicker /> with Range Calendar mode should render correctly 1`] = `
               type="text"
               value="5 Jan 2019 - 10 Jan 2019"
             />
-            <WithStyles(Calendar)
+            <Calendar
               className="HvDatePicker-icon"
               tabIndex={-1}
             >
-              <Calendar
+              <WithStyles(HvIconBase)
                 className="HvDatePicker-icon"
-                classes={
-                  Object {
-                    "root": "HvIconCalendar-root",
-                    "rootL": "HvIconCalendar-rootL",
-                    "rootM": "HvIconCalendar-rootM",
-                    "rootS": "HvIconCalendar-rootS",
-                    "rootXs": "HvIconCalendar-rootXs",
-                  }
-                }
+                iconSize="S"
+                name="Calendar"
                 tabIndex={-1}
               >
-                <div
-                  className="HvDatePicker-icon HvIconCalendar-root HvIconCalendar-rootS"
+                <HvIconBase
+                  className="HvDatePicker-icon"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
+                  iconSize="S"
+                  name="Calendar"
                   tabIndex={-1}
                 >
-                  <svg
-                    focusable={false}
-                    height="16px"
-                    viewBox="0 0 16 16"
-                    width="16px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                    name="Calendar"
+                    tabIndex={-1}
                   >
-                    <path
-                      className="color0"
-                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </Calendar>
-            </WithStyles(Calendar)>
+                    <svg
+                      focusable={false}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </Calendar>
           </div>
           <ForwardRef(Popper)
             anchorEl={null}
@@ -4864,43 +4874,53 @@ exports[`<DatePicker /> with Single Calendar mode should render correctly 1`] = 
               type="text"
               value="1 Jan 2019"
             />
-            <WithStyles(Calendar)
+            <Calendar
               className="HvDatePicker-icon"
               tabIndex={-1}
             >
-              <Calendar
+              <WithStyles(HvIconBase)
                 className="HvDatePicker-icon"
-                classes={
-                  Object {
-                    "root": "HvIconCalendar-root",
-                    "rootL": "HvIconCalendar-rootL",
-                    "rootM": "HvIconCalendar-rootM",
-                    "rootS": "HvIconCalendar-rootS",
-                    "rootXs": "HvIconCalendar-rootXs",
-                  }
-                }
+                iconSize="S"
+                name="Calendar"
                 tabIndex={-1}
               >
-                <div
-                  className="HvDatePicker-icon HvIconCalendar-root HvIconCalendar-rootS"
+                <HvIconBase
+                  className="HvDatePicker-icon"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
+                  iconSize="S"
+                  name="Calendar"
                   tabIndex={-1}
                 >
-                  <svg
-                    focusable={false}
-                    height="16px"
-                    viewBox="0 0 16 16"
-                    width="16px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                    name="Calendar"
+                    tabIndex={-1}
                   >
-                    <path
-                      className="color0"
-                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </Calendar>
-            </WithStyles(Calendar)>
+                    <svg
+                      focusable={false}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </Calendar>
           </div>
           <ForwardRef(Popper)
             anchorEl={null}
@@ -7396,43 +7416,53 @@ exports[`<DatePicker /> with custom properties should render correctly 1`] = `
               type="text"
               value="5 Jan 2019"
             />
-            <WithStyles(Calendar)
+            <Calendar
               className="HvDatePicker-icon"
               tabIndex={-1}
             >
-              <Calendar
+              <WithStyles(HvIconBase)
                 className="HvDatePicker-icon"
-                classes={
-                  Object {
-                    "root": "HvIconCalendar-root",
-                    "rootL": "HvIconCalendar-rootL",
-                    "rootM": "HvIconCalendar-rootM",
-                    "rootS": "HvIconCalendar-rootS",
-                    "rootXs": "HvIconCalendar-rootXs",
-                  }
-                }
+                iconSize="S"
+                name="Calendar"
                 tabIndex={-1}
               >
-                <div
-                  className="HvDatePicker-icon HvIconCalendar-root HvIconCalendar-rootS"
+                <HvIconBase
+                  className="HvDatePicker-icon"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
+                  iconSize="S"
+                  name="Calendar"
                   tabIndex={-1}
                 >
-                  <svg
-                    focusable={false}
-                    height="16px"
-                    viewBox="0 0 16 16"
-                    width="16px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                    name="Calendar"
+                    tabIndex={-1}
                   >
-                    <path
-                      className="color0"
-                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </Calendar>
-            </WithStyles(Calendar)>
+                    <svg
+                      focusable={false}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </Calendar>
           </div>
           <ForwardRef(Popper)
             anchorEl={null}
@@ -9850,43 +9880,53 @@ exports[`<DatePicker /> with minimum configuration should render correctly 1`] =
               type="text"
               value=""
             />
-            <WithStyles(Calendar)
+            <Calendar
               className="HvDatePicker-icon"
               tabIndex={-1}
             >
-              <Calendar
+              <WithStyles(HvIconBase)
                 className="HvDatePicker-icon"
-                classes={
-                  Object {
-                    "root": "HvIconCalendar-root",
-                    "rootL": "HvIconCalendar-rootL",
-                    "rootM": "HvIconCalendar-rootM",
-                    "rootS": "HvIconCalendar-rootS",
-                    "rootXs": "HvIconCalendar-rootXs",
-                  }
-                }
+                iconSize="S"
+                name="Calendar"
                 tabIndex={-1}
               >
-                <div
-                  className="HvDatePicker-icon HvIconCalendar-root HvIconCalendar-rootS"
+                <HvIconBase
+                  className="HvDatePicker-icon"
+                  classes={
+                    Object {
+                      "l": "HvIconBase-l",
+                      "m": "HvIconBase-m",
+                      "root": "HvIconBase-root",
+                      "s": "HvIconBase-s",
+                      "xs": "HvIconBase-xs",
+                    }
+                  }
+                  iconSize="S"
+                  name="Calendar"
                   tabIndex={-1}
                 >
-                  <svg
-                    focusable={false}
-                    height="16px"
-                    viewBox="0 0 16 16"
-                    width="16px"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="HvDatePicker-icon HvIconBase-root HvIconBase-s"
+                    name="Calendar"
+                    tabIndex={-1}
                   >
-                    <path
-                      className="color0"
-                      d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
-                      fill="#414141"
-                    />
-                  </svg>
-                </div>
-              </Calendar>
-            </WithStyles(Calendar)>
+                    <svg
+                      focusable={false}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        className="color0"
+                        d="M10.5 2V0h-1v2h-3V0h-1v2H0v14h16V2zM15 15H1V3h14zM3 6h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm-8 4h2v2H3zm4 0h2v2H7zm4 0h2v2h-2z"
+                        fill="#414141"
+                      />
+                    </svg>
+                  </div>
+                </HvIconBase>
+              </WithStyles(HvIconBase)>
+            </Calendar>
           </div>
           <ForwardRef(Popper)
             anchorEl={null}

@@ -49,7 +49,7 @@ SemanticIcon.parameters = {
 };
 
 export const CustomSize = () => (
-  <CheckboxCheck height={200} width={200} boxStyles={{ width: 240, height: 240 }} />
+  <CheckboxCheck height={200} width={200} style={{ width: 240, height: 240 }} />
 );
 
 CustomSize.parameters = {

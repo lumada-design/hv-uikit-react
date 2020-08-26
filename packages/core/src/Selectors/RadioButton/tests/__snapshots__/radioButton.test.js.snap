@@ -39,7 +39,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
       control={
         <ForwardRef(WithStyles)
           checkedIcon={
-            <ForwardRef(WithStyles)
+            <RadioButtonSelected
               className="HvRadioButton-icon"
             />
           }
@@ -47,7 +47,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
           color="default"
           disableRipple={true}
           icon={
-            <ForwardRef(WithStyles)
+            <RadioButtonUnselected
               className="HvRadioButton-icon"
             />
           }
@@ -79,7 +79,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
         control={
           <ForwardRef(WithStyles)
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <RadioButtonSelected
                 className="HvRadioButton-icon"
               />
             }
@@ -87,7 +87,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
             color="default"
             disableRipple={true}
             icon={
-              <ForwardRef(WithStyles)
+              <RadioButtonUnselected
                 className="HvRadioButton-icon"
               />
             }
@@ -109,7 +109,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
         >
           <WithStyles(ForwardRef(Radio))
             checkedIcon={
-              <ForwardRef(WithStyles)
+              <RadioButtonSelected
                 className="HvRadioButton-icon"
               />
             }
@@ -117,7 +117,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
             color="default"
             disableRipple={true}
             icon={
-              <ForwardRef(WithStyles)
+              <RadioButtonUnselected
                 className="HvRadioButton-icon"
               />
             }
@@ -132,7 +132,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
           >
             <ForwardRef(Radio)
               checkedIcon={
-                <ForwardRef(WithStyles)
+                <RadioButtonSelected
                   className="HvRadioButton-icon"
                 />
               }
@@ -149,7 +149,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
               color="default"
               disableRipple={true}
               icon={
-                <ForwardRef(WithStyles)
+                <RadioButtonUnselected
                   className="HvRadioButton-icon"
                 />
               }
@@ -164,7 +164,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
             >
               <WithStyles(ForwardRef(SwitchBase))
                 checkedIcon={
-                  <ForwardRef(WithStyles)
+                  <RadioButtonSelected
                     className="HvRadioButton-icon"
                   />
                 }
@@ -180,7 +180,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                 disableRipple={true}
                 disabled={false}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <RadioButtonUnselected
                     className="HvRadioButton-icon"
                   />
                 }
@@ -196,7 +196,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
               >
                 <ForwardRef(SwitchBase)
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <RadioButtonSelected
                       className="HvRadioButton-icon"
                     />
                   }
@@ -213,7 +213,7 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <RadioButtonUnselected
                       className="HvRadioButton-icon"
                     />
                   }
@@ -316,45 +316,54 @@ exports[`[v3] RadioButton should render correctly 1`] = `
                                 type="radio"
                                 value=""
                               />
-                              <WithStyles(RadioButtonUnselected)
+                              <RadioButtonUnselected
                                 className="HvRadioButton-icon"
                               >
-                                <RadioButtonUnselected
+                                <WithStyles(HvIconBase)
                                   className="HvRadioButton-icon"
-                                  classes={
-                                    Object {
-                                      "root": "HvIconRadioButtonUnselected-root",
-                                      "rootL": "HvIconRadioButtonUnselected-rootL",
-                                      "rootM": "HvIconRadioButtonUnselected-rootM",
-                                      "rootS": "HvIconRadioButtonUnselected-rootS",
-                                      "rootXs": "HvIconRadioButtonUnselected-rootXs",
-                                    }
-                                  }
+                                  iconSize="S"
+                                  name="RadioButtonUnselected"
                                 >
-                                  <div
-                                    className="HvRadioButton-icon HvIconRadioButtonUnselected-root HvIconRadioButtonUnselected-rootS"
+                                  <HvIconBase
+                                    className="HvRadioButton-icon"
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
+                                    iconSize="S"
+                                    name="RadioButtonUnselected"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvRadioButton-icon HvIconBase-root HvIconBase-s"
+                                      name="RadioButtonUnselected"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
-                                        fill="#FBFCFC"
-                                      />
-                                      <path
-                                        className="color1"
-                                        d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </RadioButtonUnselected>
-                              </WithStyles(RadioButtonUnselected)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M8 15.5a7.525 7.525 0 115.3-2.2A7.446 7.446 0 018 15.5z"
+                                          fill="#FBFCFC"
+                                        />
+                                        <path
+                                          className="color1"
+                                          d="M8 15a7.023 7.023 0 10-4.943-2.057A6.953 6.953 0 008 15m0 1a8 8 0 118-8 8 8 0 01-8 8z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </RadioButtonUnselected>
                             </span>
                           </span>
                         </ForwardRef(ButtonBase)>

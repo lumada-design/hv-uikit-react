@@ -141,7 +141,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                 <ForwardRef(WithStyles)
                   checked={false}
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxCheck
                       className="HvCheckBox-icon"
                     />
                   }
@@ -150,14 +150,14 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <Checkbox
                       className="HvCheckBox-icon"
                     />
                   }
                   id="bulkActions-select-input"
                   indeterminate={false}
                   indeterminateIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxPartial
                       className="HvCheckBox-icon"
                     />
                   }
@@ -195,7 +195,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   <ForwardRef(WithStyles)
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                       />
                     }
@@ -204,14 +204,14 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                       />
                     }
                     id="bulkActions-select-input"
                     indeterminate={false}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                       />
                     }
@@ -240,7 +240,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   <WithStyles(ForwardRef(Checkbox))
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                       />
                     }
@@ -249,14 +249,14 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                       />
                     }
                     id="bulkActions-select-input"
                     indeterminate={false}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                       />
                     }
@@ -267,7 +267,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     <ForwardRef(Checkbox)
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxCheck
                           className="HvCheckBox-icon"
                         />
                       }
@@ -286,14 +286,14 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <Checkbox
                           className="HvCheckBox-icon"
                         />
                       }
                       id="bulkActions-select-input"
                       indeterminate={false}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxPartial
                           className="HvCheckBox-icon"
                         />
                       }
@@ -304,7 +304,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                       <WithStyles(ForwardRef(SwitchBase))
                         checked={false}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <CheckboxCheck
                             className="HvCheckBox-icon"
                             fontSize="default"
                           />
@@ -321,7 +321,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <Checkbox
                             className="HvCheckBox-icon"
                             fontSize="default"
                           />
@@ -340,7 +340,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <CheckboxCheck
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -358,7 +358,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <Checkbox
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -465,48 +465,58 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         type="checkbox"
                                         value=""
                                       />
-                                      <WithStyles(Checkbox)
+                                      <Checkbox
                                         className="HvCheckBox-icon"
                                         fontSize="default"
                                       >
-                                        <Checkbox
+                                        <WithStyles(HvIconBase)
                                           className="HvCheckBox-icon"
-                                          classes={
-                                            Object {
-                                              "root": "HvIconCheckbox-root",
-                                              "rootL": "HvIconCheckbox-rootL",
-                                              "rootM": "HvIconCheckbox-rootM",
-                                              "rootS": "HvIconCheckbox-rootS",
-                                              "rootXs": "HvIconCheckbox-rootXs",
-                                            }
-                                          }
                                           fontSize="default"
+                                          iconSize="S"
+                                          name="Checkbox"
                                         >
-                                          <div
-                                            className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                          <HvIconBase
+                                            className="HvCheckBox-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
                                             fontSize="default"
+                                            iconSize="S"
+                                            name="Checkbox"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height="16px"
-                                              viewBox="0 0 16 16"
-                                              width="16px"
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvCheckBox-icon HvIconBase-root HvIconBase-s"
+                                              fontSize="default"
+                                              name="Checkbox"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M0 0h16v16H0z"
-                                                fill="#FBFCFC"
-                                              />
-                                              <path
-                                                className="color1"
-                                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                fill="#414141"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </Checkbox>
-                                      </WithStyles(Checkbox)>
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M0 0h16v16H0z"
+                                                  fill="#FBFCFC"
+                                                />
+                                                <path
+                                                  className="color1"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                  fill="#414141"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </Checkbox>
                                     </span>
                                   </span>
                                 </ForwardRef(ButtonBase)>
@@ -698,7 +708,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
               id="add"
               key="bulkActions-actions-0-action-add"
               onClick={[Function]}
-              startIcon={<ForwardRef(WithStyles) />}
+              startIcon={<Add />}
             >
               <HvButton
                 category="ghost"
@@ -726,7 +736,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                 disabled={true}
                 id="add"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<Add />}
               >
                 <WithStyles(ForwardRef(Button))
                   className="HvActionsGeneric-button HvButton-ghostSVG"
@@ -745,7 +755,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   disabled={true}
                   id="add"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<Add />}
                   variant="text"
                 >
                   <ForwardRef(Button)
@@ -788,7 +798,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     disabled={true}
                     id="add"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<Add />}
                     variant="text"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
@@ -845,37 +855,45 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             <span
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
-                              <WithStyles(Add)>
-                                <Add
-                                  classes={
-                                    Object {
-                                      "root": "HvIconAdd-root",
-                                      "rootL": "HvIconAdd-rootL",
-                                      "rootM": "HvIconAdd-rootM",
-                                      "rootS": "HvIconAdd-rootS",
-                                      "rootXs": "HvIconAdd-rootXs",
-                                    }
-                                  }
+                              <Add>
+                                <WithStyles(HvIconBase)
+                                  iconSize="S"
+                                  name="Add"
                                 >
-                                  <div
-                                    className="HvIconAdd-root HvIconAdd-rootS"
+                                  <HvIconBase
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
+                                    iconSize="S"
+                                    name="Add"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Add"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </Add>
-                              </WithStyles(Add)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M16 8.5H8.5V16h-1V8.5H0v-1h7.5V0h1v7.5H16z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </Add>
                             </span>
                             Add
                           </span>
@@ -893,7 +911,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
               id="delete"
               key="bulkActions-actions-1-action-delete"
               onClick={[Function]}
-              startIcon={<ForwardRef(WithStyles) />}
+              startIcon={<Delete />}
             >
               <HvButton
                 category="ghost"
@@ -921,7 +939,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                 disabled={true}
                 id="delete"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<Delete />}
               >
                 <WithStyles(ForwardRef(Button))
                   className="HvActionsGeneric-button HvButton-ghostSVG"
@@ -940,7 +958,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   disabled={true}
                   id="delete"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<Delete />}
                   variant="text"
                 >
                   <ForwardRef(Button)
@@ -983,7 +1001,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                     disabled={true}
                     id="delete"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<Delete />}
                     variant="text"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
@@ -1040,37 +1058,45 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             <span
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
-                              <WithStyles(Delete)>
-                                <Delete
-                                  classes={
-                                    Object {
-                                      "root": "HvIconDelete-root",
-                                      "rootL": "HvIconDelete-rootL",
-                                      "rootM": "HvIconDelete-rootM",
-                                      "rootS": "HvIconDelete-rootS",
-                                      "rootXs": "HvIconDelete-rootXs",
-                                    }
-                                  }
+                              <Delete>
+                                <WithStyles(HvIconBase)
+                                  iconSize="S"
+                                  name="Delete"
                                 >
-                                  <div
-                                    className="HvIconDelete-root HvIconDelete-rootS"
+                                  <HvIconBase
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
+                                    iconSize="S"
+                                    name="Delete"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Delete"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </Delete>
-                              </WithStyles(Delete)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </Delete>
                             </span>
                             Delete
                           </span>
@@ -1107,7 +1133,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
               disablePortal={false}
               disabled={true}
               icon={
-                <ForwardRef(WithStyles)
+                <MoreOptionsVertical
                   color="atmo5"
                 />
               }
@@ -1142,7 +1168,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                 disablePortal={false}
                 disabled={true}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <MoreOptionsVertical
                     color="atmo5"
                   />
                 }
@@ -1177,7 +1203,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                   disablePortal={false}
                   disabled={true}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <MoreOptionsVertical
                       color="atmo5"
                     />
                   }
@@ -1202,7 +1228,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                         id="bulkActions-actions-menu-icon-button"
                         tabIndex={-1}
                       >
-                        <ForwardRef(WithStyles)
+                        <MoreOptionsVertical
                           color="atmo5"
                         />
                       </ForwardRef(WithStyles)>
@@ -1245,7 +1271,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                           id="bulkActions-actions-menu-icon-button"
                           tabIndex={-1}
                         >
-                          <ForwardRef(WithStyles)
+                          <MoreOptionsVertical
                             color="atmo5"
                           />
                         </ForwardRef(WithStyles)>
@@ -1288,7 +1314,7 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                             id="bulkActions-actions-menu-icon-button"
                             tabIndex={-1}
                           >
-                            <ForwardRef(WithStyles)
+                            <MoreOptionsVertical
                               color="atmo5"
                             />
                           </ForwardRef(WithStyles)>
@@ -1464,40 +1490,47 @@ exports[`[v3] BulkActions controlled with actions should render correctly 1`] = 
                                         <span
                                           className="MuiButton-label"
                                         >
-                                          <WithStyles(MoreOptionsVertical)
+                                          <MoreOptionsVertical
                                             color="atmo5"
                                           >
-                                            <MoreOptionsVertical
-                                              classes={
-                                                Object {
-                                                  "root": "HvIconMoreOptionsVertical-root",
-                                                  "rootL": "HvIconMoreOptionsVertical-rootL",
-                                                  "rootM": "HvIconMoreOptionsVertical-rootM",
-                                                  "rootS": "HvIconMoreOptionsVertical-rootS",
-                                                  "rootXs": "HvIconMoreOptionsVertical-rootXs",
-                                                }
-                                              }
-                                              color="atmo5"
+                                            <WithStyles(HvIconBase)
+                                              iconSize="S"
+                                              name="MoreOptionsVertical"
                                             >
-                                              <div
-                                                className="HvIconMoreOptionsVertical-root HvIconMoreOptionsVertical-rootS"
+                                              <HvIconBase
+                                                classes={
+                                                  Object {
+                                                    "l": "HvIconBase-l",
+                                                    "m": "HvIconBase-m",
+                                                    "root": "HvIconBase-root",
+                                                    "s": "HvIconBase-s",
+                                                    "xs": "HvIconBase-xs",
+                                                  }
+                                                }
+                                                iconSize="S"
+                                                name="MoreOptionsVertical"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height="16px"
-                                                  viewBox="0 0 16 16"
-                                                  width="16px"
-                                                  xmlns="http://www.w3.org/2000/svg"
+                                                <div
+                                                  className="HvIconBase-root HvIconBase-s"
+                                                  name="MoreOptionsVertical"
                                                 >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                                                    fill="#999999"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </MoreOptionsVertical>
-                                          </WithStyles(MoreOptionsVertical)>
+                                                  <svg
+                                                    focusable={false}
+                                                    height={16}
+                                                    viewBox="0 0 16 16"
+                                                    width={16}
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                  >
+                                                    <path
+                                                      className="color0"
+                                                      d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                                      fill="#"
+                                                    />
+                                                  </svg>
+                                                </div>
+                                              </HvIconBase>
+                                            </WithStyles(HvIconBase)>
+                                          </MoreOptionsVertical>
                                         </span>
                                       </button>
                                     </ForwardRef(ButtonBase)>
@@ -1678,7 +1711,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 <ForwardRef(WithStyles)
                   checked={false}
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxCheck
                       className="HvCheckBox-icon"
                     />
                   }
@@ -1687,13 +1720,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <Checkbox
                       className="HvCheckBox-icon"
                     />
                   }
                   indeterminate={false}
                   indeterminateIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxPartial
                       className="HvCheckBox-icon"
                     />
                   }
@@ -1730,7 +1763,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   <ForwardRef(WithStyles)
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1739,13 +1772,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                       />
                     }
                     indeterminate={false}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1772,7 +1805,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   <WithStyles(ForwardRef(Checkbox))
                     checked={false}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1781,13 +1814,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                       />
                     }
                     indeterminate={false}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                       />
                     }
@@ -1798,7 +1831,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     <ForwardRef(Checkbox)
                       checked={false}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxCheck
                           className="HvCheckBox-icon"
                         />
                       }
@@ -1817,13 +1850,13 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <Checkbox
                           className="HvCheckBox-icon"
                         />
                       }
                       indeterminate={false}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxPartial
                           className="HvCheckBox-icon"
                         />
                       }
@@ -1834,7 +1867,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                       <WithStyles(ForwardRef(SwitchBase))
                         checked={false}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <CheckboxCheck
                             className="HvCheckBox-icon"
                             fontSize="default"
                           />
@@ -1851,7 +1884,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <Checkbox
                             className="HvCheckBox-icon"
                             fontSize="default"
                           />
@@ -1869,7 +1902,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         <ForwardRef(SwitchBase)
                           checked={false}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <CheckboxCheck
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -1887,7 +1920,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <Checkbox
                               className="HvCheckBox-icon"
                               fontSize="default"
                             />
@@ -1992,48 +2025,58 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         type="checkbox"
                                         value=""
                                       />
-                                      <WithStyles(Checkbox)
+                                      <Checkbox
                                         className="HvCheckBox-icon"
                                         fontSize="default"
                                       >
-                                        <Checkbox
+                                        <WithStyles(HvIconBase)
                                           className="HvCheckBox-icon"
-                                          classes={
-                                            Object {
-                                              "root": "HvIconCheckbox-root",
-                                              "rootL": "HvIconCheckbox-rootL",
-                                              "rootM": "HvIconCheckbox-rootM",
-                                              "rootS": "HvIconCheckbox-rootS",
-                                              "rootXs": "HvIconCheckbox-rootXs",
-                                            }
-                                          }
                                           fontSize="default"
+                                          iconSize="S"
+                                          name="Checkbox"
                                         >
-                                          <div
-                                            className="HvCheckBox-icon HvIconCheckbox-root HvIconCheckbox-rootS"
+                                          <HvIconBase
+                                            className="HvCheckBox-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
                                             fontSize="default"
+                                            iconSize="S"
+                                            name="Checkbox"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height="16px"
-                                              viewBox="0 0 16 16"
-                                              width="16px"
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvCheckBox-icon HvIconBase-root HvIconBase-s"
+                                              fontSize="default"
+                                              name="Checkbox"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M0 0h16v16H0z"
-                                                fill="#FBFCFC"
-                                              />
-                                              <path
-                                                className="color1"
-                                                d="M16 16H0V0h16zM1 15h14V1H1z"
-                                                fill="#414141"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </Checkbox>
-                                      </WithStyles(Checkbox)>
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M0 0h16v16H0z"
+                                                  fill="#FBFCFC"
+                                                />
+                                                <path
+                                                  className="color1"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1z"
+                                                  fill="#414141"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </Checkbox>
                                     </span>
                                   </span>
                                 </ForwardRef(ButtonBase)>
@@ -2233,7 +2276,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
               id="get"
               key="0"
               onClick={[Function]}
-              startIcon={<ForwardRef(WithStyles) />}
+              startIcon={<Upload />}
             >
               <HvButton
                 category="ghost"
@@ -2261,7 +2304,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 disabled={true}
                 id="get"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<Upload />}
               >
                 <WithStyles(ForwardRef(Button))
                   className="HvActionsGeneric-button HvButton-ghostSVG"
@@ -2280,7 +2323,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   disabled={true}
                   id="get"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<Upload />}
                   variant="text"
                 >
                   <ForwardRef(Button)
@@ -2323,7 +2366,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     disabled={true}
                     id="get"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<Upload />}
                     variant="text"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
@@ -2380,37 +2423,45 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             <span
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
-                              <WithStyles(Upload)>
-                                <Upload
-                                  classes={
-                                    Object {
-                                      "root": "HvIconUpload-root",
-                                      "rootL": "HvIconUpload-rootL",
-                                      "rootM": "HvIconUpload-rootM",
-                                      "rootS": "HvIconUpload-rootS",
-                                      "rootXs": "HvIconUpload-rootXs",
-                                    }
-                                  }
+                              <Upload>
+                                <WithStyles(HvIconBase)
+                                  iconSize="S"
+                                  name="Upload"
                                 >
-                                  <div
-                                    className="HvIconUpload-root HvIconUpload-rootS"
+                                  <HvIconBase
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
+                                    iconSize="S"
+                                    name="Upload"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Upload"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M16 11v5H0v-5h1v4h14v-4zM7.5 1.90015V13h1V1.90015l4.1 4.2.8-.80005-5.4-5.3-5.4 5.30005.8.80005z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </Upload>
-                              </WithStyles(Upload)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M16 11v5H0v-5h1v4h14v-4zM7.5 1.90015V13h1V1.90015l4.1 4.2.8-.80005-5.4-5.3-5.4 5.30005.8.80005z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </Upload>
                             </span>
                             Upload
                           </span>
@@ -2428,7 +2479,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
               id="lock"
               key="1"
               onClick={[Function]}
-              startIcon={<ForwardRef(WithStyles) />}
+              startIcon={<Lock />}
             >
               <HvButton
                 category="ghost"
@@ -2456,7 +2507,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 disabled={true}
                 id="lock"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<Lock />}
               >
                 <WithStyles(ForwardRef(Button))
                   className="HvActionsGeneric-button HvButton-ghostSVG"
@@ -2475,7 +2526,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   disabled={true}
                   id="lock"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<Lock />}
                   variant="text"
                 >
                   <ForwardRef(Button)
@@ -2518,7 +2569,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     disabled={true}
                     id="lock"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<Lock />}
                     variant="text"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
@@ -2575,37 +2626,45 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             <span
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
-                              <WithStyles(Lock)>
-                                <Lock
-                                  classes={
-                                    Object {
-                                      "root": "HvIconLock-root",
-                                      "rootL": "HvIconLock-rootL",
-                                      "rootM": "HvIconLock-rootM",
-                                      "rootS": "HvIconLock-rootS",
-                                      "rootXs": "HvIconLock-rootXs",
-                                    }
-                                  }
+                              <Lock>
+                                <WithStyles(HvIconBase)
+                                  iconSize="S"
+                                  name="Lock"
                                 >
-                                  <div
-                                    className="HvIconLock-root HvIconLock-rootS"
+                                  <HvIconBase
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
+                                    iconSize="S"
+                                    name="Lock"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Lock"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10zM7.5 8h1v4h-1z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </Lock>
-                              </WithStyles(Lock)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M12 4V0H4v4H2v12h12V4zM5 1h6v3H5zm8 14H3V5h10zM7.5 8h1v4h-1z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </Lock>
                             </span>
                             Lock
                           </span>
@@ -2623,7 +2682,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
               id="delete"
               key="2"
               onClick={[Function]}
-              startIcon={<ForwardRef(WithStyles) />}
+              startIcon={<Delete />}
             >
               <HvButton
                 category="ghost"
@@ -2651,7 +2710,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 disabled={true}
                 id="delete"
                 onClick={[Function]}
-                startIcon={<ForwardRef(WithStyles) />}
+                startIcon={<Delete />}
               >
                 <WithStyles(ForwardRef(Button))
                   className="HvActionsGeneric-button HvButton-ghostSVG"
@@ -2670,7 +2729,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   disabled={true}
                   id="delete"
                   onClick={[Function]}
-                  startIcon={<ForwardRef(WithStyles) />}
+                  startIcon={<Delete />}
                   variant="text"
                 >
                   <ForwardRef(Button)
@@ -2713,7 +2772,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                     disabled={true}
                     id="delete"
                     onClick={[Function]}
-                    startIcon={<ForwardRef(WithStyles) />}
+                    startIcon={<Delete />}
                     variant="text"
                   >
                     <WithStyles(ForwardRef(ButtonBase))
@@ -2770,37 +2829,45 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             <span
                               className="MuiButton-startIcon HvButton-startIcon MuiButton-iconSizeMedium"
                             >
-                              <WithStyles(Delete)>
-                                <Delete
-                                  classes={
-                                    Object {
-                                      "root": "HvIconDelete-root",
-                                      "rootL": "HvIconDelete-rootL",
-                                      "rootM": "HvIconDelete-rootM",
-                                      "rootS": "HvIconDelete-rootS",
-                                      "rootXs": "HvIconDelete-rootXs",
-                                    }
-                                  }
+                              <Delete>
+                                <WithStyles(HvIconBase)
+                                  iconSize="S"
+                                  name="Delete"
                                 >
-                                  <div
-                                    className="HvIconDelete-root HvIconDelete-rootS"
+                                  <HvIconBase
+                                    classes={
+                                      Object {
+                                        "l": "HvIconBase-l",
+                                        "m": "HvIconBase-m",
+                                        "root": "HvIconBase-root",
+                                        "s": "HvIconBase-s",
+                                        "xs": "HvIconBase-xs",
+                                      }
+                                    }
+                                    iconSize="S"
+                                    name="Delete"
                                   >
-                                    <svg
-                                      focusable={false}
-                                      height="16px"
-                                      viewBox="0 0 16 16"
-                                      width="16px"
-                                      xmlns="http://www.w3.org/2000/svg"
+                                    <div
+                                      className="HvIconBase-root HvIconBase-s"
+                                      name="Delete"
                                     >
-                                      <path
-                                        className="color0"
-                                        d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
-                                        fill="#414141"
-                                      />
-                                    </svg>
-                                  </div>
-                                </Delete>
-                              </WithStyles(Delete)>
+                                      <svg
+                                        focusable={false}
+                                        height={16}
+                                        viewBox="0 0 16 16"
+                                        width={16}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          className="color0"
+                                          d="M12 1H4V0h8zm4 1v1h-2.1L13 16H3L2.1 3H0V2zm-3 1H3.1L4 15h8.1z"
+                                          fill="#414141"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </HvIconBase>
+                                </WithStyles(HvIconBase)>
+                              </Delete>
                             </span>
                             Delete
                           </span>
@@ -2837,7 +2904,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
               disablePortal={false}
               disabled={true}
               icon={
-                <ForwardRef(WithStyles)
+                <MoreOptionsVertical
                   color="atmo5"
                 />
               }
@@ -2871,7 +2938,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                 disablePortal={false}
                 disabled={true}
                 icon={
-                  <ForwardRef(WithStyles)
+                  <MoreOptionsVertical
                     color="atmo5"
                   />
                 }
@@ -2905,7 +2972,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                   disablePortal={false}
                   disabled={true}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <MoreOptionsVertical
                       color="atmo5"
                     />
                   }
@@ -2930,7 +2997,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                         id="drop-down-menu-1-icon-button"
                         tabIndex={-1}
                       >
-                        <ForwardRef(WithStyles)
+                        <MoreOptionsVertical
                           color="atmo5"
                         />
                       </ForwardRef(WithStyles)>
@@ -2973,7 +3040,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                           id="drop-down-menu-1-icon-button"
                           tabIndex={-1}
                         >
-                          <ForwardRef(WithStyles)
+                          <MoreOptionsVertical
                             color="atmo5"
                           />
                         </ForwardRef(WithStyles)>
@@ -3016,7 +3083,7 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                             id="drop-down-menu-1-icon-button"
                             tabIndex={-1}
                           >
-                            <ForwardRef(WithStyles)
+                            <MoreOptionsVertical
                               color="atmo5"
                             />
                           </ForwardRef(WithStyles)>
@@ -3192,40 +3259,47 @@ exports[`[v3] BulkActions should render correctly 1`] = `
                                         <span
                                           className="MuiButton-label"
                                         >
-                                          <WithStyles(MoreOptionsVertical)
+                                          <MoreOptionsVertical
                                             color="atmo5"
                                           >
-                                            <MoreOptionsVertical
-                                              classes={
-                                                Object {
-                                                  "root": "HvIconMoreOptionsVertical-root",
-                                                  "rootL": "HvIconMoreOptionsVertical-rootL",
-                                                  "rootM": "HvIconMoreOptionsVertical-rootM",
-                                                  "rootS": "HvIconMoreOptionsVertical-rootS",
-                                                  "rootXs": "HvIconMoreOptionsVertical-rootXs",
-                                                }
-                                              }
-                                              color="atmo5"
+                                            <WithStyles(HvIconBase)
+                                              iconSize="S"
+                                              name="MoreOptionsVertical"
                                             >
-                                              <div
-                                                className="HvIconMoreOptionsVertical-root HvIconMoreOptionsVertical-rootS"
+                                              <HvIconBase
+                                                classes={
+                                                  Object {
+                                                    "l": "HvIconBase-l",
+                                                    "m": "HvIconBase-m",
+                                                    "root": "HvIconBase-root",
+                                                    "s": "HvIconBase-s",
+                                                    "xs": "HvIconBase-xs",
+                                                  }
+                                                }
+                                                iconSize="S"
+                                                name="MoreOptionsVertical"
                                               >
-                                                <svg
-                                                  focusable={false}
-                                                  height="16px"
-                                                  viewBox="0 0 16 16"
-                                                  width="16px"
-                                                  xmlns="http://www.w3.org/2000/svg"
+                                                <div
+                                                  className="HvIconBase-root HvIconBase-s"
+                                                  name="MoreOptionsVertical"
                                                 >
-                                                  <path
-                                                    className="color0"
-                                                    d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
-                                                    fill="#999999"
-                                                  />
-                                                </svg>
-                                              </div>
-                                            </MoreOptionsVertical>
-                                          </WithStyles(MoreOptionsVertical)>
+                                                  <svg
+                                                    focusable={false}
+                                                    height={16}
+                                                    viewBox="0 0 16 16"
+                                                    width={16}
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                  >
+                                                    <path
+                                                      className="color0"
+                                                      d="M7 6.9h2v2H7zM7 4h2V2H7zm0 10h2v-2H7z"
+                                                      fill="#"
+                                                    />
+                                                  </svg>
+                                                </div>
+                                              </HvIconBase>
+                                            </WithStyles(HvIconBase)>
+                                          </MoreOptionsVertical>
                                         </span>
                                       </button>
                                     </ForwardRef(ButtonBase)>
@@ -3334,7 +3408,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                 <ForwardRef(WithStyles)
                   checked={true}
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxCheck
                       className="HvCheckBox-icon"
                       color={
                         Array [
@@ -3349,7 +3423,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <Checkbox
                       className="HvCheckBox-icon"
                       color={
                         Array [
@@ -3361,7 +3435,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                   }
                   indeterminate={true}
                   indeterminateIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxPartial
                       className="HvCheckBox-icon"
                       color={
                         Array [
@@ -3396,7 +3470,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                   <ForwardRef(WithStyles)
                     checked={true}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3411,7 +3485,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3423,7 +3497,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3448,7 +3522,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                   <WithStyles(ForwardRef(Checkbox))
                     checked={true}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3463,7 +3537,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3475,7 +3549,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -3492,7 +3566,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                     <ForwardRef(Checkbox)
                       checked={true}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxCheck
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3517,7 +3591,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <Checkbox
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3529,7 +3603,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                       }
                       indeterminate={true}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxPartial
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -3546,7 +3620,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                       <WithStyles(ForwardRef(SwitchBase))
                         checked={true}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <CheckboxPartial
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -3569,7 +3643,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <CheckboxPartial
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -3593,7 +3667,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                         <ForwardRef(SwitchBase)
                           checked={true}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <CheckboxPartial
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -3617,7 +3691,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <CheckboxPartial
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -3728,7 +3802,7 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                         type="checkbox"
                                         value=""
                                       />
-                                      <WithStyles(CheckboxPartial)
+                                      <CheckboxPartial
                                         className="HvCheckBox-icon"
                                         color={
                                           Array [
@@ -3738,50 +3812,54 @@ exports[`[v3] BulkActions with custom label should render correctly 1`] = `
                                         }
                                         fontSize="default"
                                       >
-                                        <CheckboxPartial
+                                        <WithStyles(HvIconBase)
                                           className="HvCheckBox-icon"
-                                          classes={
-                                            Object {
-                                              "root": "HvIconCheckboxPartial-root",
-                                              "rootL": "HvIconCheckboxPartial-rootL",
-                                              "rootM": "HvIconCheckboxPartial-rootM",
-                                              "rootS": "HvIconCheckboxPartial-rootS",
-                                              "rootXs": "HvIconCheckboxPartial-rootXs",
-                                            }
-                                          }
-                                          color={
-                                            Array [
-                                              "base1",
-                                              "base2",
-                                            ]
-                                          }
                                           fontSize="default"
+                                          iconSize="S"
+                                          name="CheckboxPartial"
                                         >
-                                          <div
-                                            className="HvCheckBox-icon HvIconCheckboxPartial-root HvIconCheckboxPartial-rootS"
+                                          <HvIconBase
+                                            className="HvCheckBox-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
                                             fontSize="default"
+                                            iconSize="S"
+                                            name="CheckboxPartial"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height="16px"
-                                              viewBox="0 0 16 16"
-                                              width="16px"
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvCheckBox-icon HvIconBase-root HvIconBase-s"
+                                              fontSize="default"
+                                              name="CheckboxPartial"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M0 0h16v16H0z"
-                                                fill="#FBFCFC"
-                                              />
-                                              <path
-                                                className="color1"
-                                                d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
-                                                fill="#414141"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </CheckboxPartial>
-                                      </WithStyles(CheckboxPartial)>
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M0 0h16v16H0z"
+                                                  fill="#FBFCFC"
+                                                />
+                                                <path
+                                                  className="color1"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                                                  fill="#414141"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </CheckboxPartial>
                                     </span>
                                   </span>
                                 </ForwardRef(ButtonBase)>
@@ -3990,7 +4068,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                 <ForwardRef(WithStyles)
                   checked={true}
                   checkedIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxCheck
                       className="HvCheckBox-icon"
                       color={
                         Array [
@@ -4005,7 +4083,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                   disableRipple={true}
                   disabled={false}
                   icon={
-                    <ForwardRef(WithStyles)
+                    <Checkbox
                       className="HvCheckBox-icon"
                       color={
                         Array [
@@ -4017,7 +4095,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                   }
                   indeterminate={true}
                   indeterminateIcon={
-                    <ForwardRef(WithStyles)
+                    <CheckboxPartial
                       className="HvCheckBox-icon"
                       color={
                         Array [
@@ -4063,7 +4141,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                   <ForwardRef(WithStyles)
                     checked={true}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4078,7 +4156,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4090,7 +4168,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4126,7 +4204,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                   <WithStyles(ForwardRef(Checkbox))
                     checked={true}
                     checkedIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxCheck
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4141,7 +4219,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                     disableRipple={true}
                     disabled={false}
                     icon={
-                      <ForwardRef(WithStyles)
+                      <Checkbox
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4153,7 +4231,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                     }
                     indeterminate={true}
                     indeterminateIcon={
-                      <ForwardRef(WithStyles)
+                      <CheckboxPartial
                         className="HvCheckBox-icon"
                         color={
                           Array [
@@ -4170,7 +4248,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                     <ForwardRef(Checkbox)
                       checked={true}
                       checkedIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxCheck
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4195,7 +4273,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                       disableRipple={true}
                       disabled={false}
                       icon={
-                        <ForwardRef(WithStyles)
+                        <Checkbox
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4207,7 +4285,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                       }
                       indeterminate={true}
                       indeterminateIcon={
-                        <ForwardRef(WithStyles)
+                        <CheckboxPartial
                           className="HvCheckBox-icon"
                           color={
                             Array [
@@ -4224,7 +4302,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                       <WithStyles(ForwardRef(SwitchBase))
                         checked={true}
                         checkedIcon={
-                          <ForwardRef(WithStyles)
+                          <CheckboxPartial
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -4247,7 +4325,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                         disableRipple={true}
                         disabled={false}
                         icon={
-                          <ForwardRef(WithStyles)
+                          <CheckboxPartial
                             className="HvCheckBox-icon"
                             color={
                               Array [
@@ -4271,7 +4349,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                         <ForwardRef(SwitchBase)
                           checked={true}
                           checkedIcon={
-                            <ForwardRef(WithStyles)
+                            <CheckboxPartial
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -4295,7 +4373,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                           disableRipple={true}
                           disabled={false}
                           icon={
-                            <ForwardRef(WithStyles)
+                            <CheckboxPartial
                               className="HvCheckBox-icon"
                               color={
                                 Array [
@@ -4406,7 +4484,7 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                         type="checkbox"
                                         value=""
                                       />
-                                      <WithStyles(CheckboxPartial)
+                                      <CheckboxPartial
                                         className="HvCheckBox-icon"
                                         color={
                                           Array [
@@ -4416,50 +4494,54 @@ exports[`[v3] BulkActions with selection should render correctly 1`] = `
                                         }
                                         fontSize="default"
                                       >
-                                        <CheckboxPartial
+                                        <WithStyles(HvIconBase)
                                           className="HvCheckBox-icon"
-                                          classes={
-                                            Object {
-                                              "root": "HvIconCheckboxPartial-root",
-                                              "rootL": "HvIconCheckboxPartial-rootL",
-                                              "rootM": "HvIconCheckboxPartial-rootM",
-                                              "rootS": "HvIconCheckboxPartial-rootS",
-                                              "rootXs": "HvIconCheckboxPartial-rootXs",
-                                            }
-                                          }
-                                          color={
-                                            Array [
-                                              "base1",
-                                              "base2",
-                                            ]
-                                          }
                                           fontSize="default"
+                                          iconSize="S"
+                                          name="CheckboxPartial"
                                         >
-                                          <div
-                                            className="HvCheckBox-icon HvIconCheckboxPartial-root HvIconCheckboxPartial-rootS"
+                                          <HvIconBase
+                                            className="HvCheckBox-icon"
+                                            classes={
+                                              Object {
+                                                "l": "HvIconBase-l",
+                                                "m": "HvIconBase-m",
+                                                "root": "HvIconBase-root",
+                                                "s": "HvIconBase-s",
+                                                "xs": "HvIconBase-xs",
+                                              }
+                                            }
                                             fontSize="default"
+                                            iconSize="S"
+                                            name="CheckboxPartial"
                                           >
-                                            <svg
-                                              focusable={false}
-                                              height="16px"
-                                              viewBox="0 0 16 16"
-                                              width="16px"
-                                              xmlns="http://www.w3.org/2000/svg"
+                                            <div
+                                              className="HvCheckBox-icon HvIconBase-root HvIconBase-s"
+                                              fontSize="default"
+                                              name="CheckboxPartial"
                                             >
-                                              <path
-                                                className="color0"
-                                                d="M0 0h16v16H0z"
-                                                fill="#FBFCFC"
-                                              />
-                                              <path
-                                                className="color1"
-                                                d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
-                                                fill="#414141"
-                                              />
-                                            </svg>
-                                          </div>
-                                        </CheckboxPartial>
-                                      </WithStyles(CheckboxPartial)>
+                                              <svg
+                                                focusable={false}
+                                                height={16}
+                                                viewBox="0 0 16 16"
+                                                width={16}
+                                                xmlns="http://www.w3.org/2000/svg"
+                                              >
+                                                <path
+                                                  className="color0"
+                                                  d="M0 0h16v16H0z"
+                                                  fill="#FBFCFC"
+                                                />
+                                                <path
+                                                  className="color1"
+                                                  d="M16 16H0V0h16zM1 15h14V1H1zm3-6h8V7H4z"
+                                                  fill="#414141"
+                                                />
+                                              </svg>
+                                            </div>
+                                          </HvIconBase>
+                                        </WithStyles(HvIconBase)>
+                                      </CheckboxPartial>
                                     </span>
                                   </span>
                                 </ForwardRef(ButtonBase)>
