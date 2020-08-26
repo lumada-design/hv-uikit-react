@@ -39,7 +39,7 @@ const styles = theme => ({
     opacity: 1
   },
   title: {
-    padding: "15px 20px 5px 20px",
+    padding: "15px 20px",
     borderBottom: `3px solid ${theme.hv.palette.atmosphere.atmo2}`
   },
   valuesContainer: {
