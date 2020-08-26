@@ -271,7 +271,7 @@ const HvBaseDropdown = ({
         className={clsx(className, classes.root)}
         onKeyDown={handleToggle}
         onClick={handleToggle}
-        tabIndex={0}
+        tabIndex={disabled ? -1 : 0}
         {...others}
       >
         {component || renderHeader()}
