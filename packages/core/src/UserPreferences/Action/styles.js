@@ -1,7 +1,7 @@
 import { outlineStyles } from "../../Focus/styles";
 
 const hover = theme => ({
-  backgroundColor: theme.hv.palette.atmosphere.atmo4
+  backgroundColor: theme.hv.palette.atmosphere.atmo3
 });
 
 const styles = theme => ({
@@ -12,6 +12,7 @@ const styles = theme => ({
     alignItems: "center",
     height: "32px",
     color: theme.hv.palette.atmosphere.acce1,
+    borderRadius: 0,
 
     "&:hover": hover(theme),
 

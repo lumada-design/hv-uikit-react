@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
 import styles from "./styles";
-import { HvButton } from "../..";
+import { HvButton, HvTypography } from "../..";
 
 const Action = ({ classes, className, id, label, icon, onClick, ...others }) => {
   const payload = { id, label };
@@ -21,7 +21,7 @@ const Action = ({ classes, className, id, label, icon, onClick, ...others }) => 
       onClick={handleClick}
       {...others}
     >
-      {label}
+      <HvTypography variant="normalText">{label}</HvTypography>
     </HvButton>
   );
 };

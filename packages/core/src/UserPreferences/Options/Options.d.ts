@@ -10,6 +10,6 @@ export interface HvOptionsProps
   onClick: (event: Event, payload: Payload) => void;
 }
 
-export type HvOptionsClassKey = "optionsRoot";
+export type HvOptionsClassKey = "root";
 
 export default function HvUserPreferencesOptions(props: HvOptionsProps): JSX.Element | null;

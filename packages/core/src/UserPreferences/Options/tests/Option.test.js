@@ -2,9 +2,9 @@
 
 import React from "react";
 import { mount } from "enzyme";
-import { Play, Stop } from "@hv/uikit-react-icons/dist";
-import HvProvider from "../../../Provider";
-import Options, { Option } from "../index";
+import { Play, Stop } from "@hv/uikit-react-icons";
+import { HvProvider } from "../../..";
+import { Option, Options } from "../..";
 
 describe("Options", () => {
   let wrapper;
@@ -37,9 +37,9 @@ describe("Options", () => {
       </HvProvider>
     );
 
-    wrapper.find('div[id="a1"]').simulate("click");
-    wrapper.find('div[id="a2"]').simulate("click");
-    wrapper.find('div[id="a3"]').simulate("click");
+    wrapper.find("button[id='a1']").simulate("click");
+    wrapper.find("button[id='a2']").simulate("click");
+    wrapper.find("button[id='a3']").simulate("click");
     expect(mockFn).toHaveBeenCalledTimes(3);
   });
 });

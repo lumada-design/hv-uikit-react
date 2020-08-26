@@ -1,36 +1,23 @@
 import { outlineStyles } from "../../Focus/styles";
 
 const hover = theme => ({
-  background: theme.hv.palette.atmosphere.atmo4,
-  "& *": {
-    background: theme.hv.palette.atmosphere.atmo4
-  }
+  backgroundColor: theme.palette.atmo3
 });
 
 const selected = theme => ({
-  background: theme.hv.palette.accent.acce1,
-  color: theme.hv.palette.atmosphere.atmo1,
+  backgroundColor: theme.palette.acce1,
+  color: theme.palette.atmo1,
   "& *": {
-    background: theme.hv.palette.accent.acce1,
-    color: theme.hv.palette.atmosphere.atmo1
+    backgroundColor: theme.palette.acce1,
+    color: theme.palette.atmo1
   },
   "& svg *.color0": {
-    fill: theme.hv.palette.atmosphere.atmo1
+    fill: theme.palette.atmo1
   }
 });
 
 const styles = theme => ({
-  optionsRoot: {},
-  root: {
-    display: "block",
-    paddingLeft: `${theme.hv.spacing.sm}px`,
-    paddingRight: `${theme.hv.spacing.sm}px`,
-    paddingTop: `${theme.hv.spacing.md}px`,
-    background: theme.hv.palette.atmosphere.atmo1,
-    "& :not(:last-child)": {
-      marginBottom: "8px"
-    }
-  },
+  root: {},
   action: {
     width: "100%",
     display: "flex",
@@ -38,6 +25,8 @@ const styles = theme => ({
     alignItems: "center",
     height: "32px",
     color: theme.hv.palette.atmosphere.acce1,
+    paddingLeft: 8,
+    borderRadius: 0,
     "&:hover": hover(theme),
     "&:focus": {
       ...hover(theme),
@@ -47,9 +36,6 @@ const styles = theme => ({
     "& *": {
       cursor: "pointer"
     }
-  },
-  noIcon: {
-    paddingLeft: `${theme.hv.spacing.xs}px`
   },
   li: {
     listStyle: "none"

@@ -2,54 +2,38 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core";
-import { isKeypress, KeyboardCodes } from "../../utils";
 import styles from "./styles";
-import HvTypography from "../../Typography";
+import { HvButton, HvTypography } from "../..";
 import WithId from "../../withId";
 import OptionsContext from "./OptionsContext";
 
 const Option = ({ classes, id, className, label, icon, onClick, ...others }) => {
-  const optionsContext = useContext(OptionsContext);
+  const { selected, onSelection } = useContext(OptionsContext);
 
-  const isSelected = id === optionsContext.selected;
+  const isSelected = id === selected;
 
   const handleClick = event => {
-    if (!isSelected) {
-      const payload = {
-        id,
-        label
-      };
-      optionsContext.onSelection(event, payload);
-      onClick?.(event, payload);
-    }
-  };
+    if (isSelected) return;
+    const payload = { id, label };
 
-  const handleKeyDown = event => {
-    if (!isKeypress(event, KeyboardCodes.Enter) && !isKeypress(event, KeyboardCodes.SpaceBar)) {
-      return;
-    }
-
-    handleClick(event);
+    onSelection?.(event, payload);
+    onClick?.(event, payload);
   };
 
   return (
     <li className={classes.li}>
-      <HvTypography
+      <HvButton
         id={id}
-        component="div"
-        role="button"
+        category="ghost"
         className={clsx(className, classes.action, {
-          [classes.noIcon]: !icon,
           [classes.selected]: isSelected
         })}
-        tabIndex={0}
-        onKeyDown={handleKeyDown}
         onClick={handleClick}
+        startIcon={icon}
         {...others}
       >
-        {icon}
-        {label}
-      </HvTypography>
+        <HvTypography>{label}</HvTypography>
+      </HvButton>
     </li>
   );
 };
