@@ -12,24 +12,3 @@ export default {
     }
   }
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, Collapse
-export const CollapsableOpened = () => Collapsable();
-
-CollapsableOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, Collapsable On Exit open
-export const CollapseOnExitOpened = () => CollapseOnExit();
-
-CollapseOnExitOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};

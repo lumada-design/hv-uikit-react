@@ -18,15 +18,3 @@ export default {
     )
   ]
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, list suggestion on typing
-export const ListSuggestionsOnTyping = () => Main();
-
-ListSuggestionsOnTyping.story = {
-  parameters: {
-    eyes: {}
-  }
-};

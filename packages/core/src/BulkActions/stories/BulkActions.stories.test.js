@@ -61,24 +61,3 @@ export const WithMultiButton = () => {
     </div>
   );
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, selected
-export const selected = () => ControlledWithActions();
-
-selected.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, indeterminate status
-export const indeterminate = () => ControlledWithActions();
-
-indeterminate.story = {
-  parameters: {
-    eyes: {}
-  }
-};

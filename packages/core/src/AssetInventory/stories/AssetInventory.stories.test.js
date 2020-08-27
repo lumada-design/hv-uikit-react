@@ -325,33 +325,3 @@ export const AccessibilityList = () => {
     </HvAssetInventory>
   );
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, No data found
-export const NoDataFound = () => Main();
-
-NoDataFound.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, Sort by comboBox Opened
-export const ComboOpened = () => Main();
-
-ComboOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, list view mix selection and dropped actions
-export const listMix = () => Main();
-
-listMix.story = {
-  parameters: {
-    eyes: {}
-  }
-};

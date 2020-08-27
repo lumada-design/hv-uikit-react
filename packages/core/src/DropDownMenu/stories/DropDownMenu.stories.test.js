@@ -64,24 +64,3 @@ A11YOpen.story = {
     }
   }
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, With Icons And Actions opened
-export const IconsOpened = () => WithIconsAndActions();
-
-IconsOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, Disabled Items opened
-export const DisabledItemsOpened = () => DisabledItems();
-
-DisabledItemsOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};

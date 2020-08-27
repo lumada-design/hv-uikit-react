@@ -12,33 +12,3 @@ export default {
     }
   }
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, modal open
-export const ModalOpened = () => Main();
-
-ModalOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, modal with table open
-export const TableOpened = () => CustomContent();
-
-TableOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, modal with inputs opened
-export const inputsOpened = () => CustomContent();
-
-inputsOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};

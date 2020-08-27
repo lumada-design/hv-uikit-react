@@ -161,15 +161,3 @@ export const Controlled = () => {
     </>
   );
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, card selected and dropdownmenu opned
-export const SelectedOpened = () => AllComponents();
-
-SelectedOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};

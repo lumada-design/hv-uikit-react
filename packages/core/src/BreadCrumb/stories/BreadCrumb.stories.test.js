@@ -12,24 +12,3 @@ export default {
     }
   }
 };
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, drop/open hidden breadCrumb items
-export const LimitedToTwoPathsOpened = () => LimitedToTwoPaths();
-
-LimitedToTwoPathsOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
-
-// test scenario, drop/open hidden breadCrumb items
-export const WithURLLimitedOpened = () => WithURLLimited();
-
-WithURLLimitedOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};

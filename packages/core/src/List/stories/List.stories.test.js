@@ -93,15 +93,3 @@ export const TestListSelectableDisabled = () => (
     />
   </>
 );
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, Multi Selection With Select All selecting some items
-export const IconsOpened = () => MultiSelectionWithSelectAll();
-
-IconsOpened.story = {
-  parameters: {
-    eyes: {}
-  }
-};
