@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import isString from "lodash/isString";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core";
 import HvTypography from "../Typography";
@@ -8,9 +7,9 @@ import styles from "./styles";
 
 const renderNode = (node, className, variant) =>
   node && (
-    <div className={className}>
-      {isString(node) ? <HvTypography variant={variant}>{node}</HvTypography> : node}
-    </div>
+    <HvTypography className={className} variant={variant}>
+      {node}
+    </HvTypography>
   );
 
 const EmptyState = props => {
@@ -19,12 +18,12 @@ const EmptyState = props => {
     <div className={clsx(className, classes.root)} {...others}>
       <div
         className={clsx(classes.container, {
-          [classes.containerMessageOnly]: message && !title && !action
+          [classes.containerMessageOnly]: message && !(title || action)
         })}
       >
         <div className={classes.iconContainer}>{icon}</div>
         <div className={classes.textContainer}>
-          {renderNode(title, classes.titleContainer, "sTitle")}
+          {renderNode(title, classes.titleContainer, "xxsTitle")}
           {renderNode(message, classes.messageContainer, "normalText")}
           {renderNode(action, classes.actionContainer, "normalText")}
         </div>

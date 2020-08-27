@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, Fail, Ghost } from "@hv/uikit-react-icons/dist";
+import { BarChart, Fail, Info, Ghost } from "@hv/uikit-react-icons/dist";
 import { HvEmptyState, HvLink, HvTypography } from "../..";
 
 export default {
@@ -17,7 +17,7 @@ export const Main = () => {
     <HvEmptyState
       title="No data routes"
       message="After you start adding Data Routes, they will appear in here."
-      icon={<Fail iconSize="M" color="acce1" />}
+      icon={<Info iconSize="M" color="acce1" />}
     />
   );
 };
