@@ -16,17 +16,17 @@ const HvTab = props => {
   });
 
   return (
-      <Tab
-        classes={{
-          root: classes.root,
-          selected: classes.selected,
-          disabled: classes.disabled
-        }}
-        disableRipple
-        disableTouchRipple
-        component={TabSubstitute}
-        {...others}
-      />
+    <Tab
+      classes={{
+        root: classes.root,
+        selected: classes.selected,
+        disabled: classes.disabled
+      }}
+      disableRipple
+      disableTouchRipple
+      component={TabSubstitute}
+      {...others}
+    />
   );
 };
 
