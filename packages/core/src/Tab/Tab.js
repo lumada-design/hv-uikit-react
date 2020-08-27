@@ -27,7 +27,6 @@ const HvTab = props => {
         component={TabSubstitute}
         {...others}
       />
-    </>
   );
 };
 
