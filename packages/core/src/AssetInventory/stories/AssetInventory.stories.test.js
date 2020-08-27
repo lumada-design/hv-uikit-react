@@ -27,8 +27,6 @@ import {
   HvTypography
 } from "../..";
 
-import { Main } from "./AssetInventory.stories";
-
 export default {
   title: "Tests/Asset Inventory",
   parameters: {

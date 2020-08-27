@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import { HvBulkActions, HvMultiButton } from "../..";
 
-import { ControlledWithActions } from "./BulkActions.stories";
-
 export default {
   title: "Tests/Bulk Actions",
   parameters: {

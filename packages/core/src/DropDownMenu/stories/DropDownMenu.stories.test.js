@@ -3,8 +3,6 @@ import React from "react";
 
 import { HvButton, HvDropDownMenu } from "../..";
 
-import { WithIconsAndActions, DisabledItems } from "./DropDownMenu.stories";
-
 export default {
   title: "Tests/Dropdown Menu",
   parameters: {

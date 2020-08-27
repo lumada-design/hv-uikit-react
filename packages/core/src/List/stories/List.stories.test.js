@@ -4,8 +4,6 @@ import React from "react";
 
 import { HvList } from "../..";
 
-import { MultiSelectionWithSelectAll } from "./List.stories";
-
 const styles = theme => ({
   wrapper: {
     display: "inline-block",

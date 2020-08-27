@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 import { HvCard, HvSwitch, HvTypography } from "../..";
 
-import { AllComponents } from "./Card.stories";
 import compressor from "./resources/compressor.png";
 
 export default {

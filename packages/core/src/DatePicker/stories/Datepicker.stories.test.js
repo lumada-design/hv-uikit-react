@@ -1,7 +1,5 @@
 import React from "react";
 
-import { DefaultValue, RangeWithValues } from "./Datepicker.stories";
-
 export default {
   title: "Tests/Date Picker",
   parameters: {
