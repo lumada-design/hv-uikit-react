@@ -8,27 +8,29 @@ const sortOperationSetup = (metadata, selectedSort) => {
   const sortableCriteria = [];
 
   metadata.forEach(element => {
-    if (element.sortable) {
-      sortableCriteria.push({
-        id: `${element.id}Asc`,
-        cellType: element.cellType,
-        label: element.sortableLabelAsc,
-        accessor: element.accessor,
-        type: "asc",
-        sortFunction: element.sortFunction,
-        selected: `${element.id}Asc` === selectedSort
-      });
-      sortableCriteria.push({
-        id: `${element.id}Desc`,
-        cellType: element.cellType,
-        label: element.sortableLabelDesc,
-        accessor: element.accessor,
-        type: "desc",
-        sortFunction: element.sortFunction,
-        selected: `${element.id}Desc` === selectedSort
-      });
-    }
+    if (!element.sortable) return;
+
+    sortableCriteria.push({
+      id: `${element.id}Asc`,
+      cellType: element.cellType,
+      label: element.sortableLabelAsc,
+      accessor: element.accessor,
+      type: "asc",
+      sortFunction: element.sortFunction,
+      selected: `${element.id}Asc` === selectedSort
+    });
+    sortableCriteria.push({
+      id: `${element.id}Desc`,
+      cellType: element.cellType,
+      label: element.sortableLabelDesc,
+      accessor: element.accessor,
+      type: "desc",
+      sortFunction: element.sortFunction,
+      selected: `${element.id}Desc` === selectedSort
+    });
   });
+
+  if (!selectedSort) sortableCriteria[0].selected = true;
 
   return sortableCriteria;
 };
@@ -60,12 +62,12 @@ const sortValues = ({ accessor, sortFunction: externalSortFunction, type, cellTy
 };
 
 const Sort = ({
-  id = undefined,
+  id,
   labels,
-  selected = undefined,
+  selected,
   onSelection,
   metadata,
-  onSortChange = null,
+  onSortChange,
   disablePortal = false,
   ...others
 }) => {

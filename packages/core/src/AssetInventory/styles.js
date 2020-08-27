@@ -17,7 +17,7 @@ const styles = theme => ({
     paddingLeft: `${theme.hv.spacing.md}px`
   },
   viewContainer: {
-    padding: `${theme.hv.spacing.md}px 0`,
+    padding: theme.spacing("sm", 0),
     width: "100%"
   },
   sortContainer: {},
@@ -26,6 +26,9 @@ const styles = theme => ({
   },
   pagination: {
     marginTop: 0
+  },
+  bulkActions: {
+    marginBottom: 0
   }
 });
 

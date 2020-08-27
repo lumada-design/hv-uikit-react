@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import {
   Cards,
-  Connect,
+  LeftAlign,
   Delete,
   Fail,
   Level1,
@@ -243,9 +243,9 @@ export const Main = () => {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
-        { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
-        { title: "Probability", style: { minWidth: "93px", textAlign: "end" } },
-        { title: "Time horizon", style: { minWidth: "108px", textAlign: "end" } },
+        { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+        { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+        { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
         {
           title: "Related Assets",
           style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
@@ -578,9 +578,9 @@ export const Configurations = () => {
         viewConfiguration={{
           columnConfiguration: [
             { style: { width: 1, textAlign: "center" } },
-            { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
-            { title: "Probability", style: { minWidth: "93px", textAlign: "end" } },
-            { title: "Time horizon", style: { minWidth: "108px", textAlign: "end" } },
+            { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+            { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+            { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
             {
               title: "Related Assets",
               style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
@@ -802,9 +802,9 @@ export const ThreeViews = () => {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
-        { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
-        { title: "Probability", style: { minWidth: "93px", textAlign: "end" } },
-        { title: "Time horizon", style: { minWidth: "108px", textAlign: "end" } },
+        { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+        { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+        { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
         {
           title: "Related Assets",
           style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
@@ -870,7 +870,7 @@ export const ThreeViews = () => {
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" },
-        { id: "text-button", icon: <Connect />, "aria-label": "Select text view" }
+        { id: "text-button", icon: <LeftAlign />, "aria-label": "Select text view" }
       ]}
     >
       <HvCardView id="card" renderer={cardRenderer} />
@@ -1113,9 +1113,9 @@ export const ServerSidePagination = () => {
           viewConfiguration={{
             columnConfiguration: [
               { style: { width: 1, textAlign: "center" } },
-              { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
-              { title: "Probability", style: { minWidth: "93px", textAlign: "end" } },
-              { title: "Time horizon", style: { minWidth: "108px", textAlign: "end" } },
+              { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+              { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+              { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
               {
                 title: "Related Assets",
                 style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
@@ -1320,9 +1320,9 @@ export const Accessibility = () => {
       breakpoints: { xs: 12, sm: 6, md: 4, lg: 3, xl: 3 },
       columnConfiguration: [
         { style: { width: 1, textAlign: "center" } },
-        { title: "Event", style: { minWidth: "570px", textAlign: "start" } },
-        { title: "Probability", style: { minWidth: "93px", textAlign: "end" } },
-        { title: "Time horizon", style: { minWidth: "108px" } },
+        { title: "Event", style: { minWidth: "360px", textAlign: "start" } },
+        { title: "Probability", style: { minWidth: "80px", textAlign: "end" } },
+        { title: "Time horizon", style: { minWidth: "100px", textAlign: "end" } },
         {
           title: "Related Assets",
           style: { minWidth: "195px", paddingLeft: "30px", textAlign: "start" }
