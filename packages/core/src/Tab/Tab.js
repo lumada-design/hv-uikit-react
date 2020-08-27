@@ -16,7 +16,6 @@ const HvTab = props => {
   });
 
   return (
-    <>
       <Tab
         classes={{
           root: classes.root,
