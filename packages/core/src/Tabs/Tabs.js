@@ -18,8 +18,8 @@ const HvTabs = props => {
         indicator: classes.indicator,
         scroller: classes.scroller
       }}
-      {...others}
       TabIndicatorProps={{ children: <div /> }}
+      {...others}
     />
   );
 };

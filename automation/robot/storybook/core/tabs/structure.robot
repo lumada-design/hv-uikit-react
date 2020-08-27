@@ -1,6 +1,6 @@
 *** Setting ***
 Resource    ../_keywords.resource
-
+Force Tags    v3
 
 *** Test Cases ***
 New Element of the tabs can be selected when using CLICK
