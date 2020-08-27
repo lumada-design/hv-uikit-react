@@ -1,4 +1,3 @@
-import { lighten } from "@material-ui/core";
 import hexToRgbA from "../utils/hexToRgbA";
 
 const tableStyleOverrides = classes => ({

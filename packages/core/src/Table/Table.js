@@ -9,10 +9,9 @@ import "react-table/react-table.css";
 import "react-table-hoc-fixed-columns/lib/styles.css";
 
 import { withStyles } from "@material-ui/core";
-import { HvBulkActions, HvPagination, HvTypography } from "..";
+import { HvBulkActions, HvPagination } from "..";
 import { setId } from "../utils";
 import withId from "../withId";
-import withLabels from "../withLabels";
 
 import DropDownMenu from "./DropdownMenu";
 import Header from "./Header";
@@ -63,7 +62,6 @@ const HvTable = props => {
     idForCheckbox = "",
     getTrProps: getTrPropsProp,
     getTableProps: getTablePropsProp,
-    labels,
     actions,
     actionsCallback,
     actionsDisabled,
