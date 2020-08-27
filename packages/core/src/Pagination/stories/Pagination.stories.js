@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { HvPagination, HvTypography } from "../..";
 
 export default {
@@ -25,7 +25,10 @@ export const ControlledSample = () => {
   const pageSizeOptions = [4, 6, 12, 24, 48, 2000];
   const data = [...Array(64).keys()];
 
-  const styles = theme => ({
+  const [page, setPage] = useState(0);
+  const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
+
+  const useStyles = makeStyles(theme => ({
     root: {
       display: "flex",
       flexWrap: "wrap",
@@ -38,45 +41,36 @@ export const ControlledSample = () => {
         background: theme.hv.palette.atmosphere.atmo1
       }
     }
-  });
+  }));
 
-  const Container = withStyles(styles)(({ classes, children }) => (
-    <div className={classes.root}>{children}</div>
-  ));
+  const classes = useStyles();
 
-  const ControlledPagination = () => {
-    const [page, setPage] = useState(0);
-    const [pageSize, setPageSize] = useState(pageSizeOptions[2]);
+  const numPages = Math.ceil(data.length / pageSize);
 
-    const numPages = Math.ceil(data.length / pageSize);
-
-    return (
-      <>
-        <Container>
-          {data.slice(pageSize * page, pageSize * (page + 1)).map(i => (
-            <HvTypography key={i} component="span">
-              {`Item ${i + 1}`}
-            </HvTypography>
-          ))}
-        </Container>
-        <p />
-        <HvPagination
-          id="pagination"
-          pages={numPages}
-          page={page}
-          canPrevious={page > 0}
-          canNext={page < numPages - 1}
-          pageSize={pageSize}
-          pageSizeOptions={pageSizeOptions}
-          onPageChange={value => setPage(value)}
-          onPageSizeChange={value => setPageSize(value)}
-          labels={{ pageSizeEntryName: "items" }}
-        />
-      </>
-    );
-  };
-
-  return <ControlledPagination />;
+  return (
+    <>
+      <div className={classes.root}>
+        {data.slice(pageSize * page, pageSize * (page + 1)).map(i => (
+          <HvTypography key={i} component="span">
+            {`Item ${i + 1}`}
+          </HvTypography>
+        ))}
+      </div>
+      <p />
+      <HvPagination
+        id="pagination"
+        pages={numPages}
+        page={page}
+        canPrevious={page > 0}
+        canNext={page < numPages - 1}
+        pageSize={pageSize}
+        pageSizeOptions={pageSizeOptions}
+        onPageChange={value => setPage(value)}
+        onPageSizeChange={value => setPageSize(value)}
+        labels={{ pageSizeEntryName: "items" }}
+      />
+    </>
+  );
 };
 
 ControlledSample.story = {
