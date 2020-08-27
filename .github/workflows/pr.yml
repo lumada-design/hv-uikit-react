@@ -76,7 +76,7 @@ jobs:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
           env: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
-          ref: ${{ github.head_ref }}
+          ref: refs/pull/${{ github.event.number }}/head
           desc: ${{env.DOCUMENTATION_PUBLISH_FOLDER}}
 
       - name: Checkout Documentation Repository
@@ -135,7 +135,7 @@ jobs:
       matrix:
         browser: [chrome, firefox]
     container:
-      image: ppodgorsek/robot-framework:latest
+      image: joaoeg/docker-robot-framework:0.1
       options: --shm-size=6g --cpus 4 -u 2501
       env:
         BROWSER: ${{ matrix.browser }}
