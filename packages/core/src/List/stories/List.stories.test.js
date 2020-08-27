@@ -1,12 +1,8 @@
-import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
+import React from "react";
 
 import { HvList } from "../..";
-
-import { MultiSelectionWithSelectAll } from "./List.stories";
 
 const styles = theme => ({
   wrapper: {
@@ -95,21 +91,3 @@ export const TestListSelectableDisabled = () => (
     />
   </>
 );
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, Multi Selection With Select All selecting some items
-export const IconsOpened = () => MultiSelectionWithSelectAll();
-
-IconsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("checkbox", { name: /bergen city/i }));
-        userEvent.click(screen.getByText("Boston of the Seven Seas"));
-        return wait(() => screen.getByRole("checkbox", { name: /3 of 5/i }));
-      }
-    }
-  }
-};

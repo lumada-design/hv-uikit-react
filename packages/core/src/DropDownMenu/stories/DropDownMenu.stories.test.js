@@ -1,12 +1,7 @@
 /* eslint-disable no-console */
 import React from "react";
 
-import { wait, screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
-
 import { HvButton, HvDropDownMenu } from "../..";
-
-import { WithIconsAndActions, DisabledItems } from "./DropDownMenu.stories";
 
 export default {
   title: "Tests/Dropdown Menu",
@@ -64,37 +59,6 @@ A11YOpen.story = {
         "click element #dropdownmenu-open-icon-button",
         "wait for element #dropdownmenu-open-list to be visible"
       ]
-    }
-  }
-};
-
-// __________________________________
-// Extended applitools test scenarios
-
-// test scenario, With Icons And Actions opened
-export const IconsOpened = () => WithIconsAndActions();
-
-IconsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /dropdownmenu-3/i }));
-        return wait(() => screen.getByText("Label 3"));
-      }
-    }
-  }
-};
-
-// test scenario, Disabled Items opened
-export const DisabledItemsOpened = () => DisabledItems();
-
-DisabledItemsOpened.story = {
-  parameters: {
-    eyes: {
-      runBefore() {
-        userEvent.click(screen.getByRole("button", { name: /dropdownmenu-disableditems/i }));
-        return wait(() => screen.getByText("Label 3"));
-      }
     }
   }
 };
