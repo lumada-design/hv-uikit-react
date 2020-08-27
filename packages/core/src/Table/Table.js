@@ -26,10 +26,7 @@ import { styles, tableStyleOverrides } from "./styles";
 const ReactTableFixedColumns = withFixedColumns(ReactTable);
 const ReactTableCheckbox = withCheckbox(ReactTable);
 
-const DEFAULT_LABELS = {
-  titleText: "",
-  subtitleText: ""
-};
+// TODO deprecate header labels in 2.x
 
 /**
  * Table component. This component offers:
@@ -500,21 +497,6 @@ const HvTable = props => {
 
   return (
     <div id={id} className={clsx(classes.tableContainer, className)}>
-      {labels.titleText && (
-        <div className={classes.title}>
-          <div>
-            <HvTypography variant="mTitle" id={setId(id, "title")}>
-              {labels.titleText}
-            </HvTypography>
-          </div>
-          {labels.subtitleText && (
-            <div className={classes.subtitle}>
-              <HvTypography id={setId(id, "subtitle")}>{labels.subtitleText}</HvTypography>
-            </div>
-          )}
-        </div>
-      )}
-
       {idForCheckbox && (
         <HvBulkActions
           id={setId(id, "select-all")}
@@ -675,19 +657,6 @@ HvTable.propTypes = {
      */
     table: PropTypes.string
   }).isRequired,
-  /**
-   * The labels inside the table.
-   */
-  labels: PropTypes.shape({
-    /**
-     * The title that identifies the title, rendered outside of the table.
-     */
-    titleText: PropTypes.string,
-    /**
-     * The subtitle that identifies the title, rendered outside of the table.
-     */
-    subtitleText: PropTypes.string
-  }),
   /**
    * Labels for the pagination.
    */
@@ -884,4 +853,4 @@ HvTable.propTypes = {
   collapseOnDataChange: PropTypes.bool
 };
 
-export default withStyles(styles, { name: "HvTable" })(withLabels(DEFAULT_LABELS)(withId(HvTable)));
+export default withStyles(styles, { name: "HvTable" })(withId(HvTable));

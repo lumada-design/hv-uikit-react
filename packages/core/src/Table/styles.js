@@ -1,4 +1,5 @@
 import { lighten } from "@material-ui/core";
+import hexToRgbA from "../utils/hexToRgbA";
 
 const tableStyleOverrides = classes => ({
   getProps: () => ({ className: classes.root }),
@@ -44,7 +45,7 @@ const styles = theme => ({
         "& $theadTh": {
           outline: "none",
           backgroundColor: theme.hv.palette.atmosphere.atmo1,
-          height: "54px",
+          height: "52px",
           minWidth: "72px",
           padding: 0,
           display: "flex",
@@ -127,7 +128,19 @@ const styles = theme => ({
             background: theme.hv.palette.atmosphere.atmo3
           },
           "& $tr > $td.sorted": {
-            backgroundColor: lighten(theme.hv.palette.atmosphere.atmo2, 0.35)
+            backgroundColor: hexToRgbA(theme.hv.palette.atmosphere.atmo1, 0.4)
+          },
+          "& $tr > div.rt-td.rthfc-td-fixed-left-last": {
+            background: theme.hv.palette.atmosphere.atmo2,
+            "&.sorted": {
+              background: theme.hv.palette.atmosphere.atmo2
+            }
+          },
+          "& $tr > div.rt-td.rthfc-td-fixed-right-first": {
+            background: theme.hv.palette.atmosphere.atmo2,
+            "&.sorted": {
+              background: theme.hv.palette.atmosphere.atmo2
+            }
           }
         },
         "& $td": {
@@ -201,6 +214,7 @@ const styles = theme => ({
   theadFilterTh: {},
   tbody: {},
   tBodyEmpty: {
+    borderBottom: `1px solid ${theme.hv.palette.atmosphere.atmo4}`,
     minHeight: "calc(32px * 3)"
   },
   trGroups: {},

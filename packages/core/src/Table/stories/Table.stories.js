@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import moment from "moment";
-import Chart from "react-google-charts";
-import orderBy from "lodash/orderBy";
-import { makeStyles } from "@material-ui/core/styles";
 import { Delete, Fail, Lock, Preview } from "@hv/uikit-react-icons";
+import { makeStyles } from "@material-ui/core/styles";
+import orderBy from "lodash/orderBy";
+import moment from "moment";
+import React, { useState } from "react";
+import Chart from "react-google-charts";
 
 import { HvEmptyState, HvTable } from "../..";
 
@@ -240,11 +240,6 @@ export const Main = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div style={{ padding: "10px" }}>
       <HvTable
@@ -255,7 +250,6 @@ export const Main = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -335,11 +329,6 @@ export const Empty = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div style={{ padding: "10px" }}>
       <HvTable
@@ -350,7 +339,6 @@ export const Empty = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -439,11 +427,6 @@ export const CustomEmpty = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const NoDataComponent = () => {
     const useStyles = makeStyles({
       root: {
@@ -471,7 +454,6 @@ export const CustomEmpty = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         noDataComponent={<NoDataComponent />}
       />
@@ -709,11 +691,6 @@ export const WithExpander = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const subElementTemplate = row => (
     <div>
       <table>
@@ -739,7 +716,6 @@ export const WithExpander = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         subElementTemplate={subElementTemplate}
         onPageSizeChange={onPageSizeChange}
       />
@@ -969,11 +945,6 @@ export const WithExpanderAndCustomContent = () => {
 
   const defaultSorted = [{ id: "name", desc: true }];
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const subElementTemplate = () => (
     <div>
       <table>
@@ -1024,7 +995,6 @@ export const WithExpanderAndCustomContent = () => {
         defaultPageSize={10}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         subElementTemplate={subElementTemplate}
       />
     </div>
@@ -1266,11 +1236,6 @@ export const WithCheckbox = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   const actions = [
     { id: "delete", label: "Delete", iconCallback: () => <Delete /> },
     { id: "lock", label: "Lock", iconCallback: () => <Lock /> },
@@ -1297,7 +1262,6 @@ export const WithCheckbox = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
         actions={actions}
@@ -1429,11 +1393,6 @@ export const WithCheckboxCustomContent = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "Sales overview",
-    subtitleText: "Click on a row to see store details"
-  };
-
   return (
     <div>
       <HvTable
@@ -1444,7 +1403,6 @@ export const WithCheckboxCustomContent = () => {
         onPageSizeChange={onPageSizeChange}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         idForCheckbox="id"
       />
     </div>
@@ -1686,11 +1644,6 @@ export const WithCheckboxAndSecondaryActions = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div>
       <HvTable
@@ -1701,7 +1654,6 @@ export const WithCheckboxAndSecondaryActions = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
         idForCheckbox="pid"
         secondaryActions={[
@@ -1957,11 +1909,6 @@ export const WithNullValues = () => {
     setPageSize(newPageSize);
   };
 
-  const labels = {
-    titleText: "This is a title",
-    subtitleText: "This is a subtitle"
-  };
-
   return (
     <div>
       <HvTable
@@ -1972,7 +1919,6 @@ export const WithNullValues = () => {
         pageSize={pageSize}
         resizable={false}
         defaultSorted={defaultSorted}
-        labels={labels}
         onPageSizeChange={onPageSizeChange}
       />
     </div>
@@ -2268,10 +2214,7 @@ export const ServerSidePagination = () => {
 
     render() {
       const { pages, pageSize, dataSize, sorted, data } = this.state;
-      const labels = {
-        titleText: "This is a title",
-        subtitleText: "This is a subtitle"
-      };
+
       return (
         <HvTable
           id="test"
@@ -2286,7 +2229,6 @@ export const ServerSidePagination = () => {
           pages={pages}
           resizable={false}
           defaultSorted={sorted}
-          labels={labels}
           onPageSizeChange={this.onPageSizeChange}
           paginationServerSide
           onFetchData={this.fetchData} // Request new data when things change
