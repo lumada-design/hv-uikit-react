@@ -1,27 +1,8 @@
-import { outlineStyles } from "../../Focus/styles";
-
-const hover = theme => ({
-  backgroundColor: theme.hv.palette.atmosphere.atmo3
-});
+import { buttonStyles } from "../styles";
 
 const styles = theme => ({
   root: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    height: "32px",
-    color: theme.hv.palette.atmosphere.acce1,
-    borderRadius: 0,
-
-    "&:hover": hover(theme),
-
-    "&:focus": {
-      ...hover(theme),
-      ...outlineStyles
-    },
-
-    cursor: "pointer"
+    ...buttonStyles(theme)
   }
 });
 

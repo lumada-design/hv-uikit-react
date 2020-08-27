@@ -1,41 +1,10 @@
 import { outlineStyles } from "../../Focus/styles";
-
-const hover = theme => ({
-  backgroundColor: theme.palette.atmo3
-});
-
-const selected = theme => ({
-  backgroundColor: theme.palette.acce1,
-  color: theme.palette.atmo1,
-  "& *": {
-    backgroundColor: theme.palette.acce1,
-    color: theme.palette.atmo1
-  },
-  "& svg *.color0": {
-    fill: theme.palette.atmo1
-  }
-});
+import { buttonStyles, selected } from "../styles";
 
 const styles = theme => ({
   root: {},
   action: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    height: "32px",
-    color: theme.hv.palette.atmosphere.acce1,
-    paddingLeft: 8,
-    borderRadius: 0,
-    "&:hover": hover(theme),
-    "&:focus": {
-      ...hover(theme),
-      ...outlineStyles
-    },
-    cursor: "pointer",
-    "& *": {
-      cursor: "pointer"
-    }
+    ...buttonStyles(theme)
   },
   li: {
     listStyle: "none"
