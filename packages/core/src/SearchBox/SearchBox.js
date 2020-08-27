@@ -1,18 +1,10 @@
-/*  TODO: Review accessibility */
-
-/*  eslint-disable  jsx-a11y/click-events-have-key-events */
-/*  eslint-disable jsx-a11y/no-static-element-interactions */
-
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import clsx from "clsx";
-import partial from "lodash/partial";
-import isNil from "lodash/isNil";
 import { withStyles } from "@material-ui/core";
-import SearchIcon from "@hv/uikit-react-icons/dist/Search";
+import { CloseXS, Search } from "@hv/uikit-react-icons";
+import { HvAdornment, HvFormElement, HvLabel, HvBaseInput, HvSuggestions } from "../..";
 import withLabels from "../withLabels";
 import { isKeypress, KeyboardCodes } from "../utils/KeyboardUtils";
-import HvInput from "../Input";
 import styles from "./styles";
 
 const DEFAULT_LABELS = {
@@ -20,81 +12,7 @@ const DEFAULT_LABELS = {
   placeholder: "Search"
 };
 
-/**
- *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
- *
- *  @param handlers - array with the callbacks to use
- *  @param event - contains the onKeyDown event
- *  @param value - the value inside the input
- */
-const onKeyDownHandler = (handlers, event, value) => {
-  const [onKeyDown, onSubmit] = handlers;
-  if (isKeypress(event, KeyboardCodes.Enter)) {
-    onSubmit?.(event, value);
-  }
-  onKeyDown?.(event, value);
-};
-
-/**
- *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
- *
- *  @param disabled - contains the onKeyDown event
- */
-const changeIconColor = disabled => (
-  <SearchIcon
-    color={disabled ? "atmo5" : undefined}
-    boxStyles={{
-      width: "30px",
-      height: "30px"
-    }}
-  />
-);
-
-const iconStateHandler = (value, disabled, setIcon) => {
-  if (isNil(value) || value === "") {
-    setIcon(changeIconColor(disabled));
-  } else {
-    setIcon(undefined);
-  }
-};
-
-/**
- *  Checks whether the user pressed Enter and executes on submit, otherwise it executes onKeyDown.
- *
- *  @param contextValues - array with the callback to use the disabled flag.
- *  @param value - the value inside the input.
- */
-const onChangeHandler = (contextValues, event, value) => {
-  const [onChange, disabled, setIcon] = contextValues;
-  let newValue = value;
-  newValue = onChange(event, newValue);
-  iconStateHandler(value, disabled, setIcon);
-  return newValue;
-};
-
-/**
- *  Clears the lens icon.
- *
- *  @param contextValues - array with the callback to use the disabled flag.
- *  @param value - the value inside the input.
- */
-const onFocusHandler = (contextValues, value) => {
-  const [onFocus, disabled, setIcon] = contextValues;
-  iconStateHandler(value, disabled, setIcon);
-  onFocus?.(value);
-};
-
-/**
- *  Puts the lens icon back in place.
- *
- *  @param contextValues - array with the callback to use the disabled flag.
- *  @param value - the value inside the input.
- */
-const onBlurHandler = (contextValues, value) => {
-  const [onBlur, disabled, setIcon] = contextValues;
-  setIcon(changeIconColor(disabled));
-  onBlur?.(value);
-};
+const { Enter, Esc, Tab } = KeyboardCodes;
 
 const HvSearchBox = props => {
   const {
@@ -102,9 +20,9 @@ const HvSearchBox = props => {
     id,
     className,
     labels,
-    initialValue = "",
-    value,
-    onChange = (event, payload) => payload,
+    initialValue,
+    value: valueProp,
+    onChange,
     disabled = false,
     suggestionListCallback,
     suggestionSelectedCallback,
@@ -113,35 +31,98 @@ const HvSearchBox = props => {
     onKeyDown,
     onSubmit,
     autoFocus = false,
-    ariaLabel = "search",
     ...others
   } = props;
+  const [open, setOpen] = useState(false);
+  const [suggestionList, setSuggestionList] = useState([]);
+  const [value, setValue] = useState("");
+  const inputRef = useRef(null);
 
-  const [lensIcon, setIcon] = useState(changeIconColor(disabled));
+  useEffect(() => {
+    setValue(valueProp || "");
+  }, [valueProp]);
 
-  return (
+  const changeValue = (evt, val) => {
+    setValue(val);
+    onChange?.(evt, val);
+  };
+
+  const handleChange = (evt, val) => {
+    const newList = (val.length >= 1 && suggestionListCallback?.(val)) || [];
+    setSuggestionList(newList);
+    setOpen(newList.length > 0);
+    changeValue(evt, val);
+  };
+
+  const handleSuggestionsKey = evt => {
+    if (isKeypress(evt, Esc)) {
+      inputRef?.current?.focus();
+      setOpen(false);
+    } else if (isKeypress(evt, Tab)) {
+      if (evt.shiftKey) {
+        setTimeout(() => inputRef?.current?.focus());
+      } else {
+        setOpen(false);
+      }
+    }
+  };
+
+  const handleSelection = (evt, val) => {
+    setOpen(false);
+    suggestionSelectedCallback?.(val);
+    setValue(val.label);
+    inputRef?.current?.focus();
+  };
+
+  const adornment = (
     <>
-      <HvInput
-        className={clsx(className, classes.root)}
-        labels={labels}
-        id={id}
-        initialValue={initialValue}
-        value={value}
-        suggestionListCallback={suggestionListCallback}
-        suggestionSelectedCallback={suggestionSelectedCallback}
-        customFixedIcon={lensIcon}
-        onChange={partial(onChangeHandler, [onChange, disabled, setIcon])}
-        onBlur={partial(onBlurHandler, [onBlur, disabled, setIcon])}
-        onFocus={partial(onFocusHandler, [onFocus, disabled, setIcon])}
-        onKeyDown={partial(onKeyDownHandler, [onKeyDown, onSubmit])}
-        autoFocus={autoFocus}
-        disabled={disabled}
-        showInfo={false}
-        validationIconVisible={false}
-        inputProps={{ "aria-label": ariaLabel }}
-        {...others}
+      <HvAdornment
+        isVisible={value?.length > 0}
+        onClick={evt => {
+          changeValue(evt, "");
+          setTimeout(() => {
+            inputRef.current?.focus();
+          });
+        }}
+        icon={<CloseXS />}
+        aria-label="clear button"
+      />
+      <HvAdornment
+        isVisible={value?.length === 0}
+        icon={<Search color={disabled ? "atmo5" : undefined} />}
       />
     </>
+  );
+
+  const handleKeyDown = evt => {
+    if (isKeypress(evt, Enter)) {
+      onSubmit?.(evt, value);
+    }
+  };
+
+  return (
+    <HvFormElement id={id} value={value} disabled={disabled} className={classes.root}>
+      <HvLabel label={labels.inputLabel}>
+        <HvBaseInput
+          inputRef={inputRef}
+          defaultValue={initialValue}
+          placeholder={labels.placeholder}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
+          autoFocus={autoFocus}
+          endAdornment={adornment}
+          {...others}
+        />
+        <HvSuggestions
+          expanded={open}
+          anchorEl={inputRef.current?.parentElement}
+          onClose={() => setOpen(false)}
+          onKeyDown={handleSuggestionsKey}
+          onSuggestionSelected={handleSelection}
+          suggestionValues={suggestionList.map((el, i) => ({ id: String(i), ...el }))}
+        />
+      </HvLabel>
+    </HvFormElement>
   );
 };
 
@@ -226,11 +207,7 @@ HvSearchBox.propTypes = {
   /**
    * The initial value of the searchBox.
    */
-  initialValue: PropTypes.string,
-  /**
-   * Arial Label.
-   */
-  ariaLabel: PropTypes.string
+  initialValue: PropTypes.string
 };
 
 export default withStyles(styles, { name: "HvSearchBox" })(withLabels(DEFAULT_LABELS)(HvSearchBox));

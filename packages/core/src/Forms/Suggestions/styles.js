@@ -1,6 +1,11 @@
 const styles = theme => ({
   root: {
-    position: "relative"
+    position: "relative",
+    "& $list": {
+      backgroundColor: theme.palette.atmo1,
+      boxShadow: theme.hv.shadows[1],
+      padding: theme.spacing("sm")
+    }
   },
   popper: {
     width: "100%",
@@ -8,11 +13,7 @@ const styles = theme => ({
     transform: "translate3d(0, -1px, 0) !important",
     zIndex: theme.zIndex.tooltip
   },
-  list: {
-    backgroundColor: theme.palette.atmo1,
-    boxShadow: theme.hv.shadows[1],
-    padding: theme.spacing("sm")
-  }
+  list: {}
 });
 
 export default styles;

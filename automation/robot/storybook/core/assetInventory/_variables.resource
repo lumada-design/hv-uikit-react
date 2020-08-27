@@ -10,7 +10,7 @@ ${checkBox1}          xpath:(//input[@type='checkbox'])[1]
 ${checkBox2}          xpath:(//input[@type='checkbox'])[2]
 ${checkBox3}          xpath:(//input[@type='checkbox'])[3]
 ${checkBox4}          xpath:(//input[@type='checkbox'])[4]
-${clearText}          css:button[title='Clear the text']
+${clearText}          css:button[aria-label='clear button']
 ${dropdownHeader}     id:hv-assetinventory-sort
 ${firstCardHeader}    xpath:(//span[contains(@class,'title')])[1]
 ${firstCheckbox}      css:input[value='id_0']

@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SearchBox /> renders correctly 1`] = `
+exports[`[v3] <SearchBox /> renders correctly 1`] = `
 <WithStyles(WithLabels)
   onChange={[MockFunction]}
 />
 `;
 
-exports[`<SearchBox /> renders disabled correctly 1`] = `
+exports[`[v3] <SearchBox /> renders disabled correctly 1`] = `
 <WithStyles(WithLabels)
   disabled={true}
   onChange={[MockFunction]}

@@ -305,7 +305,7 @@ export const Main = () => {
       isSelectable
       actions={myActions}
       actionsCallback={(e, id, action) => console.log(`You have pressed action ${action.label}`)}
-      searchProps={{ ariaLabel: "Filters the data" }}
+      searchProps={{ "aria-label": "Filters the data" }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" }
@@ -556,7 +556,7 @@ export const Configurations = () => {
       pageSizeOptions={[2, 4, 6, 8, 10]}
       pageSize={4}
       selectedView={0}
-      searchProps={{ ariaLabel: "Filters the cards by title, probability and time horizon." }}
+      searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" }
@@ -866,7 +866,7 @@ export const ThreeViews = () => {
       actionsCallback={(e, id, action) =>
         console.log(`You have pressed data ${id} with action ${action.label}`)
       }
-      searchProps={{ ariaLabel: "Filters the cards by title, probability and time horizon." }}
+      searchProps={{ "aria-label": "Filters the cards by title, probability and time horizon." }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" },
@@ -1094,7 +1094,7 @@ export const ServerSidePagination = () => {
         onSortChange={onSort}
         sortOptionId="id1Asc"
         searchString={searchString}
-        searchProps={{ ariaLabel: "Filters data by title, probability and time horizon." }}
+        searchProps={{ "aria-label": "Filters data by title, probability and time horizon." }}
         multibuttonProps={[
           { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
           { id: "list-button", icon: <List />, "aria-label": "Select list view" }
@@ -1383,7 +1383,7 @@ export const Accessibility = () => {
       actionsCallback={(e, id, action) =>
         console.log(`You have pressed data ${id} with action ${action.label}`)
       }
-      searchProps={{ ariaLabel: "Filters data" }}
+      searchProps={{ "aria-label": "Filters data" }}
       multibuttonProps={[
         { id: "card-button", icon: <Cards />, "aria-label": "Select card view" },
         { id: "list-button", icon: <List />, "aria-label": "Select list view" }
