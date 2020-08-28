@@ -1,14 +1,16 @@
 const styles = theme => ({
   root: {
-    padding: `${theme.hv.spacing.sm}px 0 0 ${theme.hv.spacing.sm}px`,
-    margin: 0
+    padding: theme.spacing("sm"),
+    margin: 0,
+    display: "flex",
+    justifyContent: "space-between"
   },
   messageContainer: {
     display: "flex",
     alignItems: "center"
   },
   textWithIcon: {
-    marginLeft: 20
+    marginLeft: theme.spacing("xs")
   },
   icon: {
     marginRight: `${theme.hv.spacing.md}px`,

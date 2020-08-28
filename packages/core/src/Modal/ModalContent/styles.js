@@ -1,10 +1,11 @@
 const styles = theme => ({
   root: {
-    padding: `${theme.hv.spacing.xs}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px ${theme.hv.spacing.sm}px`,
+    padding: theme.spacing(0, "sm", "sm", "sm"),
     flex: "none"
   },
   textContent: {
-    marginLeft: "50px"
+    marginLeft: "42px",
+    marginRight: "42px"
   }
 });
 
